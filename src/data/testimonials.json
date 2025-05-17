@@ -1,0 +1,19 @@
+{
+  "testimonials": [
+    {
+      "content": "Excelente profissional, me ajudou a deixar minha landing page pronta para vendas e deu todo suporte na parte operacional de coisas que eu nem o havia contratado. Quando o assunto for sistemas, landing page, segurança no digital, acessibilidade, super recomendo.",
+      "author": "João Kioshi",
+      "position": "Mentor em Vendas"
+    },
+    {
+      "content": "I've tried many SaaS solutions, but this one stands out for its ease of use and comprehensive feature set. The customer support is also exceptional.",
+      "author": "Michael Chen",
+      "position": "CTO"
+    },
+    {
+      "content": "The analytics capabilities alone are worth the investment. We've gained valuable insights that have helped us optimize our operations and reduce costs.",
+      "author": "Emily Rodriguez",
+      "position": "Operations Director"
+    }
+  ]
+}
