@@ -2,18 +2,29 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
+import About from '../components/About.astro';
+import Logos from '../components/Logos.astro';
+import Services from '../components/Services.astro';
+import Portfolio from '../components/Portfolio.astro';
 import Testimonials from '../components/Testimonials.astro';
+import Blog from '../components/Blog.astro';
 import Newsletter from '../components/Newsletter.astro';
+import ProjetosPessoais from '../components/ProjetosPessoais.astro';
 import Footer from '../components/Footer.astro';
+
 ---
 
-<Layout title="Sassify - Your Ultimate SasS Template">
+<Layout title="Bruno Pulis - Engenheiro de Acessibilidade" description="Bruno Pulis - Engenheiro de Software, desenvolvedor front-end e back-end, especialista em JavaScript, TypeScript, React, Node.js e muito mais.">
   <Header />
   <main>
     <Hero />
-    <Features />
+    <About />
+    <Logos />
+    <Services />
+    <Portfolio />
     <Testimonials />
+    <Blog />
+    <ProjetosPessoais
     <Newsletter />
   </main>
   <Footer />
