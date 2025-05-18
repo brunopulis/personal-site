@@ -48,9 +48,9 @@ const categories = [
             style={`animation-delay: ${index * 100}ms`}
           >
             <a href={"/blog/" + post.id} class="block">
-              {post.data.image && (
-                <img 
-                  src={post.data.image} 
+              {post.data.coverImage && (
+                <img
+                  src={post.data.coverImage}
                   alt={post.data.title}
                   class="w-full h-48 object-cover"
                   loading="lazy"

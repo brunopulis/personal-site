@@ -1,54 +1,21 @@
 ---
-const posts = [
-  {
-    id: "new-dashboard-features",
-    title: "New Dashboard Features Released",
-    excerpt:
-      "We've added powerful new analytics tools to help you gain deeper insights into your business performance.",
-    date: "May 15, 2025",
-    author: "Sarah Johnson",
-    authorRole: "Product Manager",
-    authorAvatar: "https://randomuser.me/api/portraits/women/32.jpg",
-    category: "Product Updates",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  },
-  {
-    id: "mobile-app-launch",
-    title: "Introducing Our Mobile App",
-    excerpt:
-      "Access your workspace from anywhere with our new mobile app, now available for iOS and Android devices.",
-    date: "April 28, 2025",
-    author: "Michael Chen",
-    authorRole: "CTO",
-    authorAvatar: "https://randomuser.me/api/portraits/men/46.jpg",
-    category: "New Features",
-    image:
-      "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  },
-  {
-    id: "api-improvements",
-    title: "API Improvements and New Endpoints",
-    excerpt: `We've expanded our API capabilities with new endpoints and improved documentation for developers.`,
-    date: "April 10, 2025",
-    author: "Emily Rodriguez",
-    authorRole: "Lead Developer",
-    authorAvatar: "https://randomuser.me/api/portraits/women/65.jpg",
-    category: "Developer Updates",
-    image:
-      "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-  },
-];
+import { getCollection } from 'astro:content';
 
-const categories = [...new Set(posts.map((post) => post.category))];
+// Buscar posts da collection
+const allPosts = await getCollection('blog');
+
+// Ordenar por data mais recente e limitar a 3 posts
+const posts = allPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
 ---
 
 <section class="section py-16 bg-gray-50 dark:bg-gray-800/50">
   <div class="container-custom py-8">
     <div class="flex justify-between items-center mb-12">
-      <h2 class="text-3xl font-bold">blog</h2>
+      <h2 class="text-3xl font-bold">Blog</h2>
       <a
-        href="/portfolio"
+        href="/blog"
         class="py-3 font-semibold underline underline-offset-8 inline-flex items-center justify-center"
       >
         Veja todos os artigos
@@ -63,47 +30,50 @@ const categories = [...new Set(posts.map((post) => post.category))];
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-arrow-right ml-2 h-5 w-5"
-          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-        >
+        ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </a>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        posts.map((post, index) => (
-          <div
-            class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up"
-            style={"animation-delay: " + index * 100 + "ms"}
-          >
-            <a href={"/blog/" + post.id} class="block">
+      {posts.map((post, index) => (
+        <div
+          class="card border border-gray-200 dark:border-gray-700 overflow-hidden slide-up"
+          style={`animation-delay: ${index * 100}ms`}
+        >
+          <a href={`/blog/${post.id}`} class="block">
+            {post.data.image && (
               <img
-                src={post.image}
-                alt={post.title}
+                src={post.data.image}
+                alt={post.data.title}
                 class="w-full h-48 object-cover"
                 loading="lazy"
               />
-            </a>
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <span class="text-sm font-medium text-primary-600 dark:text-primary-400">
-                  {post.category}
-                </span>
-                <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
-                <span class="text-sm text-gray-500 dark:text-gray-400">
-                  {post.date}
-                </span>
-              </div>
-              <a href={"/blog/" + post.id} class="block mb-3">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                  {post.title}
-                </h2>
-              </a>
-              <p class="text-gray-600 dark:text-gray-300 mb-6">
-                {post.excerpt}
-              </p>
+            )}
+          </a>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <span class="text-sm font-medium text-primary-600 dark:text-primary-400">
+                {post.data.category}
+              </span>
+              <span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+              <time class="text-sm text-gray-500 dark:text-gray-400">
+                {new Date(post.data.date).toLocaleDateString('pt-BR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
             </div>
+            <a href={`/blog/${post.id}`} class="block mb-3">
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                {post.data.title}
+              </h2>
+            </a>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              {post.data.excerpt}
+            </p>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </div>
 </section>
