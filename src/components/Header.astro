@@ -1,4 +1,6 @@
 ---
+import AvailabilityBanner from './AvailabilityBanner.astro';
+
 const allPages = [
   { text: "Página Inicial", url: "/" },
   { text: "Serviços", url: "/features" },
@@ -19,6 +21,11 @@ const allPages = [
 
 import pulisLogo from '../assets/logo-h.svg';
 ---
+
+<AvailabilityBanner
+  isAvailable={true}
+/>
+
 <header class="fixed w-full bg-white dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-4 transition-colors duration-300">
   <div class="container-custom flex items-center justify-between">
     <a href="/" class="flex items-center" aria-label="Go to homepage">

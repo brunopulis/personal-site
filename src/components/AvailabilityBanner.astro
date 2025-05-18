@@ -1,0 +1,25 @@
+---
+interface Props {
+  isAvailable: boolean;
+  message?: string;
+}
+
+const { isAvailable, message } = Astro.props;
+
+const defaultMessage = isAvailable
+  ? "Estou disponível para novos trabalhos! Entre em contato 👋"
+  : "No momento não estou disponível para novos trabalhos.";
+
+const bgColor = isAvailable ? "bg-green-100" : "bg-light-silver";
+const textColor = isAvailable ? "text-green-800" : "text-errie-black";
+---
+
+<div id="availability-banner" class={`${bgColor} ${textColor} font-bold py-2 px-4 mb-6`}>
+  <div class="container-custom mx-auto flex flex-col sm:flex-row flex-wrap justify-between items-center gap-2">
+    <div class="flex items-center text-center banner-content">
+      <p class="text-xs font-base text-center">
+        {message || defaultMessage}
+      </p>
+    </div>
+  </div>
+</div>
