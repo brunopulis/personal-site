@@ -73,7 +73,7 @@ Você pode consultar a minha palestra no Speaker Deck. Além da minha palestra, 
 
 Além de mim, a [Monetizze](https://www.monetizze.com.br/) também foi representada pelo [Bruno Vasconcelos](https://www.linkedin.com/in/brunovasconcelosdesign/) na Trilha de UX, onde ele falou sobre o [desenvolvimento de uma cultura de ux](https://speakerdeck.com/brunovasconcelos/inserindo-a-cultura-ux).
 
-![Bruno Vasconcelos palestrando na trilha de UX](assets/tdc-cultura-ux-sceElWEvMZAR.jpg)
+![Bruno Vasconcelos palestrando na trilha de UX](images/tdc-cultura-ux-sceElWEvMZAR.jpg)
 
 ## Almoço
 

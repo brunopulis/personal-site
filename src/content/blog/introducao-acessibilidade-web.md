@@ -72,7 +72,7 @@ Por isso a acessibilidade deve ser pensando no início do projeto para evitar re
 
 ### Descreve suas imagens
 
-![Carinha sorridente amarela utilizando um óculos escuros pretos. Ela exemplifica o uso do texto alternativo em imagens](assets/alternative-text-1024x402-gPg4VVO2DQe7.jpg)
+![Carinha sorridente amarela utilizando um óculos escuros pretos. Ela exemplifica o uso do texto alternativo em imagens](images/alternative-text-1024x402-gPg4VVO2DQe7.jpg)
 
 Imagens são um dos elementos mais utilizados para transmitir informação na web. Dessa forma, devemos permitir que pessoas com deficiência visual possam compreender a informação da mesma maneira que nós.  
 
@@ -84,7 +84,7 @@ Você pode conferir o [Guia Definitivo de texto alternativo](https://brunopulis.
 
 ### Navegação do conteúdo
 
-![Teclado de um iMac, com as teclas mais baixas. Sua estrutura é prata e as teclas brancas. ](assets/keyboard-1-768x515-keKS91opG0Aj.jpg)
+![Teclado de um iMac, com as teclas mais baixas. Sua estrutura é prata e as teclas brancas. ](images/keyboard-1-768x515-keKS91opG0Aj.jpg)
 
 **Foto de [Clay Banks](https://unsplash.com/pt-br/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) na [Unsplash](https://unsplash.com/pt-br/fotografias/PXaQXThG1FY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)**
 
@@ -102,7 +102,7 @@ O que devemos ter em mente: todos os recursos disponíveis via teclado devem est
 
 ### Evite o baixo contraste
 
-![Existem 6 círculos na imagem conteúdo números ao centro de cada círculo. Devido ao daltonismo algum deles não são exibidos. Isso exemplifica o uso correto de contraste](assets/daltonismo-300x210-hUiOdby3EXlW.jpg)
+![Existem 6 círculos na imagem conteúdo números ao centro de cada círculo. Devido ao daltonismo algum deles não são exibidos. Isso exemplifica o uso correto de contraste](images/daltonismo-300x210-hUiOdby3EXlW.jpg)
 
 Contraste é o campeão quando se trata de problemas de acessibilidade. Para garantir um bom contraste podemos utilizar ferramentas como o **Color Contrast Analyzer**.  
 
@@ -116,7 +116,7 @@ Nesse sentido, gravei um vídeo usando o Accesible Colors. Ele é uma alternativ
 
 ### Defina rótulos para os formulários
 
-![Formulário HTML que possuí os campos de: primeiro nome, último nome, data de nascimento, email e telefone celular. Existem dois botões um para enviar e outro para limpar o formulário](assets/HTML-Form-376x211-Q6Q3PjO7RZVt.webp)
+![Formulário HTML que possuí os campos de: primeiro nome, último nome, data de nascimento, email e telefone celular. Existem dois botões um para enviar e outro para limpar o formulário](images/HTML-Form-376x211-Q6Q3PjO7RZVt.webp)
 
 [**Foto de TutorialBrain**](https://www.tutorialbrain.com/html_tutorial/html_forms/)
 
@@ -139,7 +139,7 @@ Minha dica é adota hoje mesmo o uso dos atributos corretos para uma melhor nave
 
 ### Defina o idioma da sua página
 
-![](assets/headings-300x200-Im5jJOe3HXmA.webp)
+![](images/headings-300x200-Im5jJOe3HXmA.webp)
 
 Talvez esse seja o defeito mais ignorado de acessibilidade. O atributo **lang**, é um aliado extremamente poderoso, contudo poucas pessoas utilizam ele da maneira correta.  
 

@@ -8,7 +8,7 @@ metadata:
 tags:
   - teologia
 ---
-![Esta é uma ilustração colorida, organizada como um mapa mental, intitulada &quot;Como focar na era da distração&quot; (em inglês, &quot;How to Focus in the Age of Distraction&quot;). No centro da imagem, há um desenho de uma pessoa com expressão preocupada, cercada por várias ramificações que indicam estratégias para melhorar o foco e evitar distrações.](assets/geracao-distracao-jpg-768x560-w0EEiFV8djvf.avif)
+![Esta é uma ilustração colorida, organizada como um mapa mental, intitulada &quot;Como focar na era da distração&quot; (em inglês, &quot;How to Focus in the Age of Distraction&quot;). No centro da imagem, há um desenho de uma pessoa com expressão preocupada, cercada por várias ramificações que indicam estratégias para melhorar o foco e evitar distrações.](images/geracao-distracao-jpg-768x560-w0EEiFV8djvf.avif)
 
 Nesse estudo vamos abordar um tópico onde todos nós somos vítimas a **distração.**
 

@@ -114,7 +114,7 @@ O atributo lang deve ser usado sempre, ele é obrigatório.
 
 Use o axe dev tools para validar uma página sem o atributo.
 
-![Print do axe dev tools informando que o uso do atributo lang é obrigatório.](assets/axe-atributo-lang-768x416-eMBkCbCt7ff5.png)
+![Print do axe dev tools informando que o uso do atributo lang é obrigatório.](images/axe-atributo-lang-768x416-eMBkCbCt7ff5.png)
 
 ## Conclusão
 

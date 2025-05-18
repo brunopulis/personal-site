@@ -16,7 +16,7 @@ O evento contou com mentores para auxiliar os participantes em suas dúvidas e e
 
 Ele foi realizado no Guaja Café Co-working, até então não tinha ido lá gostei bastante. O ambiente é agradável e aconchegante, se você trabalha remotamente ou é um freelancer e procura um lugar em Belo Horizonte tranquilo com boa ambientação,gente bonita e boa localização vale a pena dar uma conferida nele.
 
-![Entrada do Guaja Coworking. Na imagem existem três mulheres sentadas ao fundo em uma mesa de madeira clara e um homem com um notebook aberto em um sofá.](assets/guaja-768x510-vKlgt12DpI7E.jpg)
+![Entrada do Guaja Coworking. Na imagem existem três mulheres sentadas ao fundo em uma mesa de madeira clara e um homem com um notebook aberto em um sofá.](images/guaja-768x510-vKlgt12DpI7E.jpg)
 
 ## O NodeSchool
 

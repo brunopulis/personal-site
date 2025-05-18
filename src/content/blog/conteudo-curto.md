@@ -1,16 +1,7 @@
 ---
 title: Uma doença chamada conteúdo curto
 date: 2024-10-02
-metadata:
-  categories:
-    - Opinião
-  tags:
-    - estratégia digital
-    - instagram
-    - produção de conteúdo
-  url: https://brunopulis.com/conteudo-curto/
-tags:
-  - opiniao
+coverImage: "/images/social-midia-scaled.jpg"
 ---
 Nesse artigo vou te contar a minha história com produção de conteúdo e como o conteúdo curto me atrapalhou.
 
