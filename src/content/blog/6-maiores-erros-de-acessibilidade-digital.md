@@ -12,7 +12,7 @@ A web é um prato cheio de erros de acessibilidade, infelizmente. Hoje, vamos di
 
 ## 1\. Texto com baixo contraste
 
-![hd wallpaper, colorful, painting-2468874.jpg](assets/hd-wallpaper-colorful-painting-jhWb9JnoxoXi.jpg)
+![hd wallpaper, colorful, painting-2468874.jpg](images/hd-wallpaper-colorful-painting-jhWb9JnoxoXi.jpg)
 
 Diariamente sofro na pele com isso, para quem não me acompanha ou está chegando por agora no blog, eu possuo [ceratocone](https://drauziovarella.uol.com.br/doencas-e-sintomas/ceratocone/), uma doença na córnea que aumenta o grau exponencialmente. Algumas combinações de cores e informações ficam bastante confusas para mim.
 
@@ -37,7 +37,7 @@ Atualmente utilizo o [Accessible Colors](https://accessible-colors.com/), é uma
 
 A grande vantagem dele é seu feedback claro e objetivo, como, por exemplo:
 
-![](assets/accessible-colors-768x551-Xb7gZroX6n1g.png)
+![](images/accessible-colors-768x551-Xb7gZroX6n1g.png)
 
 Resultado de uma avaliação das cores: `#ccc` para textos do tamanho de fonte 16px e background do site `#fff`.
 

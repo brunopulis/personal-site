@@ -11,30 +11,30 @@ Validadores de acessibilidade são parte crucial do trabalho de nós analistas d
 
 Nesse artigo, vou te mostrar 4 ferramentas que recomendo para utilizar nos dias de hoje.
 
-## 1\. axe Dev Tools
+## 1. axe Dev Tools
 
-![Print do axe dev tools](assets/devtools-pG8k4Or7yCNr.png)
+![Print do axe dev tools](images/devtools-pG8k4Or7yCNr.png)
 
 A extensão do axe DevTools é ideal para desenvolvedores e testadores encontrarem e corrigirem problemas comuns de acessibilidade em seus sites.
 
 Possui muitas vantagens, como:
 
--   Simplicidade de usar;
--   Não requer conhecimento avançado de acessibilidade;
--   Relatórios precisos;
--   Listas de como corrigir os problemas.
+- Simplicidade de usar;
+- Não requer conhecimento avançado de acessibilidade;
+- Relatórios precisos;
+- Listas de como corrigir os problemas.
 
 É uma das melhores ferramentas gratuitas para testar acessibilidade. De longe é a primeira ferramenta que indico para testar.
 
 ## WAVE
 
-![](assets/wave-768x322-hSX2F6FFA2lk.png)
+![](images/wave-768x322-hSX2F6FFA2lk.png)
 
 O [WAVE](http://wave.webaim.org/) por sua vez, traz um relatório completo, incluindo:
 
--   Avisos;
--   Melhorias;
--   Validação de contraste.
+- Avisos;
+- Melhorias;
+- Validação de contraste.
 
 E outros pontos que cobrem as diretrizes de acessibilidade.
 

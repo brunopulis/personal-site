@@ -33,7 +33,7 @@ Escrevi um guia completo sobre [como escrever textos alternativos](https://bruno
 
 Como exemplo, vou usar o gráfico da pesquisa [WebAim Million.](https://webaim.org/projects/million/) Seu objetivo é mostrar os erros de acessibilidade das páginas na web.
 
-![Gráfico sobre Páginas iniciais com falhas WCAG mais comuns (% de páginas iniciais), Existe uma relação entre o tipo de erro com a porcentagem que foi encontrado.](assets/graphic-300x192-SGK33Au1rlEc.png)
+![Gráfico sobre Páginas iniciais com falhas WCAG mais comuns (% de páginas iniciais), Existe uma relação entre o tipo de erro com a porcentagem que foi encontrado.](images/graphic-300x192-SGK33Au1rlEc.png)
 
 Para criar gráficos acessíveis, podemos usar duas técnicas: tabelas semânticas e atributos ARIA.
 

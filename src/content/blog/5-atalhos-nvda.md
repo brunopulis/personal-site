@@ -32,7 +32,7 @@ Você pode alterar a tecla modificadora do NVDA, por exemplo, uso o Caps Lock no
 
 ## Navegando por títulos
 
-![Ilustração das letras do alfabeto, representando a navegaçã por títulos](assets/headings-300x200-Im5jJOe3HXmA.webp)
+![Ilustração das letras do alfabeto, representando a navegaçã por títulos](images/headings-300x200-Im5jJOe3HXmA.webp)
 
 [](https://www.freepik.com/free-vector/switches-concept-illustration_16159878.htm#page=2&query=on%20off&position=10&from_view=search)[Imagem por rawpixel.com](https://www.freepik.com/free-vector/alphabets-hand-drawn-doodle-style-set_13313402.htm#query=alphabet&position=23&from_view=search) em Freepik
 
@@ -44,7 +44,7 @@ Para navegar por títulos use a tecla \`H\`, o leitor de telas irá verbalizar d
 
 ## Descobrindo links pela página
 
-![Ilustração de um cursor mouse conectando com outros recursos na rede](assets/links-416x250-TVkbN7D9MMS7.webp)
+![Ilustração de um cursor mouse conectando com outros recursos na rede](images/links-416x250-TVkbN7D9MMS7.webp)
 
 [](https://www.freepik.com/free-vector/illustration-social-media-concept_2806723.htm#query=connection&position=8&from_view=search)[Imagem por rawpixel.com](https://www.freepik.com/free-vector/illustration-social-media-concept_2806723.htm#query=connection&position=8&from_view=search) em Freepik
 
@@ -58,7 +58,7 @@ Ao ler o conteúdo o leitor traz a seguinte informação **“Relatório de vend
 
 ## Navegando por botões
 
-![Diversos botões de redes sociais](assets/buttons-300x150-rQvCvPzy9oeU.webp)
+![Diversos botões de redes sociais](images/buttons-300x150-rQvCvPzy9oeU.webp)
 
 [Imagem por starline](https://www.freepik.com/free-vector/abstract-watercolor-social-media-lower-third-collection_6558666.htm#query=buttons&position=24&from_view=search) em Freepik
 
@@ -70,7 +70,7 @@ Semelhantemente os links, iremos navegar em todos os botões declarados na pági
 
 ## Navegando por listas
 
-![Ilustração de uma lista de tarefas ao lado um avatar de uma mulher segurando a lista e no outro lado outra mulher segurando um lápis e marcando os itens da lista](assets/lists-300x218-VX1wTqHAWjsP.webp)
+![Ilustração de uma lista de tarefas ao lado um avatar de uma mulher segurando a lista e no outro lado outra mulher segurando um lápis e marcando os itens da lista](images/lists-300x218-VX1wTqHAWjsP.webp)
 
 [Imagem por starline](https://www.freepik.com/free-vector/abstract-watercolor-social-media-lower-third-collection_6558666.htm#query=buttons&position=24&from_view=search) em Freepik
 

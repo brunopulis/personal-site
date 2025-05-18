@@ -26,7 +26,7 @@ No blog do Jens, existe um a sessão que incentiva o usuário a compartilhar o p
 
 Isso é conhecido como _“toot”_, uma espécie de _tweet_ do Mastodon. O resultado final será semelhante a isso.
 
-![Print da tela de compartilhamento do Mastodon com o título do artigo, meu usuário e o link ](assets/image-216x300-7dTK5lAip763.jpeg)
+![Print da tela de compartilhamento do Mastodon com o título do artigo, meu usuário e o link ](images/image-216x300-7dTK5lAip763.jpeg)
 
 Para chegar nesse formato, vamos precisar de algumas informações importantes:
 

@@ -20,7 +20,7 @@ Para configurar seu GitHub Profile é simples, crie um repositório com o nome d
 
 O meu perfil ficou assim:
 
-![](assets/github-profile-300x247-572Xer0ATZoI.png)
+![](images/github-profile-300x247-572Xer0ATZoI.png)
 
 Usei uma estrutura baseada em tópicos, pois é mais fácil de organizar e deixar claro cada sessão. O meu GitHub Profile, está divido da seguinte forma:
 

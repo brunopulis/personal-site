@@ -32,7 +32,7 @@ Ser acessível significa que sites, ferramentas e tecnologias são projetados e 
 
 Existem onze letras entre o **A** e **Y** na palavra _accessibility_, então as pessoas começaram a abreviá-la como a11y. Tem a vantagem adicional de se parecer com a palavra aliado, por isso as pessoas às vezes a usam como tal. Na maioria das vezes, ouço as pessoas dizerem em voz alta como “a-eleven-y”, mas nesse ponto você também pode dizer “acessibilidade”!
 
-![A palavra a11y é o termo usado em inglës para 'accessibility'](assets/a11y-768x337-zi8qW65wKBgI.png)
+![A palavra a11y é o termo usado em inglës para 'accessibility'](images/a11y-768x337-zi8qW65wKBgI.png)
 
 Fonte: The A11y Project
 
@@ -50,7 +50,7 @@ Assim como a conformidade com [HIPAA](https://seginfo.com.br/2021/01/29/hipaa-ex
 
 O padrão WCAG mais recente (no momento da redação deste artigo em 2021) é WCAG 2.1. A WCAG é medida com **três níveis de conformidade**, de A (mais baixo), AA, a AAA (mais alto). Para medir a acessibilidade do seu site, você mede o quão compatível ele é com qualquer um desses níveis WCAG.
 
-![](assets/compliance-768x198-SCaODShBwVH3.png)
+![](images/compliance-768x198-SCaODShBwVH3.png)
 
 “Conformidade WCAG 2.1 AA” significa “Precisamos aderir ao padrão WCAG 2.1, com conformidade duplo A”
 
