@@ -2,7 +2,7 @@
 title: "Uma doença chamada conteúdo curto"
 date: 2024-10-02
 category: Opinião
-coverImage: "social-midia-scaled.jpg"
+coverImage: "/assets/social-midia-scaled.jpg"
 ---
 
 Nesse artigo vou te contar a minha história com produção de conteúdo e como o conteúdo curto me atrapalhou.

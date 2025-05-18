@@ -1,0 +1,163 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import HeroSection from "@/components/HeroSection.astro";
+
+import { db, GuestBook } from "astro:db";
+import { Blog, Client, Comment, Author, CheckResult } from "@cedx/akismet";
+
+// Watch for POST requests
+if (Astro.request.method === "POST") {
+  // Setup Akismet client
+  const blog = new Blog({ 
+    url: "https://brunopulis.com/",
+    // Remove qualquer dependência do navigator
+    userAgent: "Astro/1.0"
+  });
+  
+  const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
+
+  // Parse form data
+  let formData = await Astro.request.formData();
+  let author = formData.get("author");
+  let special = formData.get("special");
+  let content = formData.get("content");
+
+  // Will be used to validate the Akismet API key
+  let isValid = false;
+
+  if (!special) {
+    // Check if Akismet API key is valid
+    try {
+      isValid = await client.verifyKey();
+    } catch (error) {
+      handleError(error);
+    }
+
+    if (isValid) {
+      // Check if comment is spam or not
+      if (typeof author === "string" && typeof content === "string") {
+        try {
+          let commentAuthor = new Author({
+            name: author,
+          });
+
+          let comment = new Comment({
+            author: commentAuthor,
+            content,
+          });
+
+          const result = await client.checkComment(comment);
+
+          if (result === CheckResult.ham) {
+            // If comment is not spam, push the entry to the database.
+            await db.insert(GuestBook).values({ author, content });
+
+            // Finally redirect back to homepage!
+            return Astro.redirect("/");
+          } else {
+            // Otherwise disregard comment.
+            throw new Error("This comment has not been published.");
+          }
+        } catch (error) {
+          if (typeof error === "string" || typeof error === "object") {
+            handleError(error);
+          }
+        }
+      }
+    }
+  }
+}
+
+// @ts-ignore
+function handleError(error) {
+  if (typeof error === "string" || typeof error === "object") {
+    const message = error instanceof Error ? error.message : String(error);
+    console.log(`An error occurred: ${message}`);
+  }
+}
+
+const guestBook = await db.select().from(GuestBook);
+---
+
+<Layout title="Livro de Visitas - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection
+      title="Livro de Visitas"
+      highlightText="Visitas"
+      description="Find answers to common questions about Sassify and our services."
+    />
+
+    <div class="container-custom mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          guestBook
+            .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+            .map(({ author, content, timestamp }) => (
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">{content}</h3>
+                  <p class="text-errie-black mb-4">{author}</p>
+                  <p class="text-errie-black mb-4">{timestamp}</p>
+                </div>
+              </div>
+            ))
+        }
+      </div>
+
+      <form method="POST">
+        <fieldset>
+          <legend class="font-bold mb-5 font-2xl">Deixe seu comentário</legend>
+          <div class="mb-5">
+            <label for="author" class="font-bold mb-5">Nome</label>
+            <input
+              type="text"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              id="author"
+              name="author"
+              placeholder="Put in your fullname."
+            />
+          </div>
+
+          <div class="mb-5">
+            <label for="content" class="font-bold mb-5">Mensagem</label>
+            <textarea
+              rows="4"
+              id="content"
+              class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              name="content"></textarea>
+          </div>
+
+          <label for="special">
+            <input id="special" name="special" />
+          </label>
+
+          <button
+            type="submit"
+            class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+            >Leave your mark</button
+          >
+        </fieldset>
+      </form>
+    </div>
+  </main>
+</Layout>
+<Footer />
+
+<script>
+  // Código que precisa do navigator roda apenas no browser
+  function getBrowserInfo() {
+    if (typeof navigator !== 'undefined') {
+      return {
+        userAgent: navigator.userAgent,
+        language: navigator.language
+      };
+    }
+    return {
+      userAgent: '',
+      language: 'pt-BR'
+    };
+  }
+</script>
