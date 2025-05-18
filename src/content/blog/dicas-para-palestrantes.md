@@ -66,7 +66,7 @@ Dê preferência por usar as fontes no **tamanho de 24pt** e ao utilizar trechos
 
 ## 4\. Utilize linguagem clara
 
-![](assets/linguagem-768x509-vH8i5XX1D7mg.png)
+![](images/linguagem-768x509-vH8i5XX1D7mg.png)
 
 Foto de [Skylar Kang](https://www.pexels.com/pt-br/foto/texto-6207365/)
 

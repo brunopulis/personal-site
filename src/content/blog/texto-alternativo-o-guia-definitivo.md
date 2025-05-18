@@ -28,11 +28,11 @@ Muitas vezes o texto alternativo não ajuda, sendo um desperdício do meu tempo 
 
 Deixe-me ilustrar isso na [página inicial do The Verge](https://www.theverge.com/). Isto é o que exibe para pessoas com visão:
 
-![Listagem de notícias com imagem e título do artigo.](assets/1_wA4SL_9BCXv4ffG7WbjeiA-1024x-MMYiylGoQNXt.png)
+![Listagem de notícias com imagem e título do artigo.](images/1_wA4SL_9BCXv4ffG7WbjeiA-1024x-MMYiylGoQNXt.png)
 
 Abaixo é o que eu vejo. Eu substituí as imagens com o que meu leitor de tela lê:
 
-![Nomes de arquivos estranhos em balões de fala em vez de imagens na lista de notícias.](assets/texto-alternativo-768x353-lIXLLwQ30Ubf.png)
+![Nomes de arquivos estranhos em balões de fala em vez de imagens na lista de notícias.](images/texto-alternativo-768x353-lIXLLwQ30Ubf.png)
 
 Não ajuda muito, não é?
 
@@ -70,7 +70,7 @@ No HTML, um texto alternativo é um atributo em um elemento de imagem:
 
 A maioria dos gerenciadores de conteúdo, como WordPress, permite a você criar um texto alternativo quando subir a imagem:
 
-![Campo de descricao alternativa do WordPress](assets/alt-text-1-LtmSNwOt12h3.png)
+![Campo de descricao alternativa do WordPress](images/alt-text-1-LtmSNwOt12h3.png)
 
 Esse campo geralmente é chamado de Texto Alternativo mas em algumas interfaces é chamado de “descrição da imagem” ou algo similar.
 
@@ -93,7 +93,7 @@ As coisas que não pertencem a um texto alternativo são:
 
 Como você descreve a imagem depende do seu contexto. Deixe-me dar-lhe um exemplo:
 
-![Homem de meia idade parecendo tenso na chuva. Fotografia em tons de cinza com fundo fora de foco.](assets/image-alt-1-300x199-rseXWp2BcrOt.jpeg)
+![Homem de meia idade parecendo tenso na chuva. Fotografia em tons de cinza com fundo fora de foco.](images/image-alt-1-300x199-rseXWp2BcrOt.jpeg)
 
 Se essa imagem fosse exibida em um artigo sobre fotografia, o texto alternativo poderia ser algo ao longo das linhas de:
 
@@ -169,7 +169,7 @@ Você [sempre deve ter labels ao lado de ícones](https://axesslab.com/icons-ru
 
 Vamos dar um exemplo de mídia social como exemplo:
 
-![Ícones do Facebook e twitter com rótulos de texto.](assets/icones-alt-1-768x177-VQ7w8tAXBOyQ.png)
+![Ícones do Facebook e twitter com rótulos de texto.](images/icones-alt-1-768x177-VQ7w8tAXBOyQ.png)
 
 Se você escrevesse um texto alternativo para o ícone do Facebook, um leitor de tela diria algo ao longo da linha: **“Facebook Facebook”. Muito redundante!**
 
@@ -184,7 +184,7 @@ OK, isso não é tecnicamente sobre textos alternativos, mas ainda é importante
 
 Outro erro comum está nos botões de menus:
 
-![Ícone do menu com e sem rótulo.](assets/menu-hamburger-aWbw46E4XKz3.png)
+![Ícone do menu com e sem rótulo.](images/menu-hamburger-aWbw46E4XKz3.png)
 
 Se o botão de menu não tiver um label visual — o que, de maneira direta, é realmente ruim para a experiência do usuário, ele precisa de um texto alternativo (ou outra maneira de descrever sua função no código, como aria-label).
 
@@ -196,7 +196,7 @@ Se o ícone do menu tiver um label, você deve deixar o texto alternativo em bra
 
 Geralmente, uma imagem com um link é acompanhada com um texto. Como o exemplo abaixo:
 
-![Imagem acima de um link em um site de notícias.](assets/mourinho-1-300x232-U96vSwKKN2tF.png)
+![Imagem acima de um link em um site de notícias.](images/mourinho-1-300x232-U96vSwKKN2tF.png)
 
 Nesse caso, a imagem e o link **devem estar na mesma tag de link no HTML**. Você pode simplesmente deixar o texto alternativo em branco. O importante para o usuário é ouvir o texto do link.
 
@@ -210,7 +210,7 @@ De preferência, imagens decorativas que não transmitam nenhum significado ao u
 
 Eu classificaria a maioria das imagens em que você coloca texto como decorativas. Você não precisa de um texto alternativo nelas. Um exemplo é a imagem de fundo na página inicial do Netflix:
 
-![Página inicial do Netflix com texto no topo de uma imagem de fundo mostrando capas de filmes.](assets/netflix-768x344-s17hv24VUsgw.png)
+![Página inicial do Netflix com texto no topo de uma imagem de fundo mostrando capas de filmes.](images/netflix-768x344-s17hv24VUsgw.png)
 
 * * *
 
