@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+
+import { getCollection } from 'astro:content';
+
+const allNotes = await getCollection('notes');
+
+const sortedNotes = allNotes.sort((a, b) => {
+  return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime();
+});
+---
+
+<Layout title="Notas - Bruno Pulis">
+  <Header />
+    <main>
+    <HeroSection
+      title="Frequently Asked Questions"
+      highlightText="Questions"
+      description="Find answers to common questions about Sassify and our services."
+    />
+
+    <section class="py-16 bg-white dark:bg-gray-800 h-entry">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="">
+            <div class="">
+              <div class="">
+                {sortedNotes.length > 0 ? (sortedNotes.map((note) => (
+                  <div class="bg-gray-900 rounded-lg border border-gray-800 mb-4 p-5 text-white">
+                    {note.body && (
+                      <p class="note-excerpt">{note.body}</p>
+                    )}
+
+                    <hr class="my-4 h-0.5 border-t-0 bg-neutral-50 dark:bg-white/10" />
+                    <footer class="note-footer">
+                      {note.data.date && (
+
+                      <p class="note-date text-right">
+                        {new Date(note.data.date).toLocaleDateString('pt-BR', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </p>
+                    )}
+                    </footer>
+                  </div>
+                ))
+
+              ) : (
+                <div class="empty-state">
+                  <p>Nenhuma nota encontrada. Adicione suas notas na pasta content/notes.</p>
+                </div>
+              )}
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

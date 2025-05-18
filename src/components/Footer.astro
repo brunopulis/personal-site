@@ -36,7 +36,7 @@ const footerLinks = [
       { text: "Careers", url: "/career" },
       { text: "Contact", url: "/contact" },
       { text: "Reviews", url: "/reviews" },
-      { text: "Privacy Policy", url: "/privacy-policy" },
+      { text: "Política de Privacidade", url: "/privacy-policy" },
       { text: "Terms of Service", url: "/terms-conditions" }
     ]
   }
@@ -96,13 +96,21 @@ const footerLinks = [
     
     <div class="border-t border-gray-800 pt-8 mt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
+        <ul class="footer-social__list">
+          <li><a rel="external" class="footer-credits__link" href="https://a11y-webring.club/">a11y-webring.club</a></li>
+          <li><a rel="external" class="footer-credits__link" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev">Site anterior</a></li>
+          <li><a rel="external" class="footer-credits__link" referrerpolicy="strict-origin" href="https://a11y-webring.club/random">Site aleatório</a></li>
+          <li><a rel="external" class="footer-credits__link" referrerpolicy="strict-origin" href="https://a11y-webring.club/next">Próximo website</a></li>
+        </ul>
         <p class="text-gray-400 text-sm mb-4 md:mb-0">
-          &copy; {currentYear} SaaSify. All rights reserved.
+          Feito com <span role="img" aria-label="amor">❤️</span> em BH, 2012 - {currentYear}. <span xmlns:cc="http://creativecommons.org/ns#">
+            <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">CC BY-NC 4.0</a>
+          </span>
         </p>
         <div class="flex space-x-6">
-          <a href="/privacy-policy" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Privacy Policy</a>
-          <a href="/terms-conditions" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Terms of Service</a>
-          <a href="#" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Cookie Policy</a>
+          <a href="/accessibility" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Declaração de Acessibilidade</a>
+          <a href="/ai" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Uso de IA</a>
+          <a href="/privacy-policy" class="text-gray-400 hover:text-primary-400 text-sm transition-colors">Política de Privacidade</a>
         </div>
       </div>
     </div>

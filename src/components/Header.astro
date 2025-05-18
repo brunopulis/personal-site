@@ -1,101 +1,44 @@
 ---
 const allPages = [
-  { text: "Home", url: "/" },
-  { text: "Features", url: "/features" },
-  { text: "Pricing", url: "/pricing" },
-  { text: "FAQ", url: "/faqs" },
-  { text: "Changelog", url: "/changelog" },
+  { text: "Página Inicial", url: "/" },
+  { text: "Serviços", url: "/features" },
+  { text: "Portfólio", url: "/pricing" },
+  { text: "Newsletter", url: "/faqs" },
+  { text: "Blog", url: "/changelog" },
   { text: "Integrations", url: "/integrations" },
   { text: "Blog", url: "/blog" },
-  { text: "Case Studies", url: "/case-study" },
-  { text: "About Us", url: "/company" },
-  { text: "Careers", url: "/career" },
+  { text: "Sobre", url: "/case-study" },
+  { text: "Contato", url: "/company" },
+  { text: "Mais", url: "/career" },
   { text: "Contact", url: "/contact" },
   { text: "Reviews", url: "/reviews" },
   { text: "Privacy Policy", url: "/privacy-policy" },
   { text: "Terms of Service", url: "/terms-conditions" },
   { text: "404 Page", url: "/404" }
 ];
+
+import pulisLogo from '../assets/logo-h.svg';
 ---
-<header class="fixed w-full bg-white/90 dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-4 transition-colors duration-300">
+<header class="fixed w-full bg-white dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-4 transition-colors duration-300">
   <div class="container-custom flex items-center justify-between">
     <a href="/" class="flex items-center" aria-label="Go to homepage">
       <!-- Elephant Logo SVG -->
-      <svg class="h-10 w-auto" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background circle -->
-        <circle cx="50" cy="50" r="48" fill="#f0f9ff" class="dark:fill-slate-800" />
-        
-        <!-- Elephant body -->
-        <ellipse cx="55" cy="55" rx="30" ry="25" fill="#64748b" class="dark:fill-slate-600" />
-        
-        <!-- Head -->
-        <ellipse cx="30" cy="45" rx="18" ry="16" fill="#64748b" class="dark:fill-slate-600" />
-        
-        <!-- Ears -->
-        <ellipse cx="35" cy="35" rx="14" ry="12" fill="#94a3b8" class="dark:fill-slate-500" />
-        <ellipse cx="25" cy="35" rx="14" ry="12" fill="#64748b" class="dark:fill-slate-600" />
-        <ellipse cx="35" cy="35" rx="10" ry="9" fill="#64748b" class="dark:fill-slate-600" />
-        <ellipse cx="25" cy="35" rx="10" ry="9" fill="#475569" class="dark:fill-slate-700" />
-        
-        <!-- Trunk -->
-        <path d="M25 50 Q20 60 15 70 Q13 75 18 78 Q23 80 25 75 Q27 70 25 65 Q23 60 27 55 Q29 52 30 50" fill="#64748b" class="dark:fill-slate-600" />
-        
-        <!-- Eyes -->
-        <circle cx="25" cy="42" r="2" fill="#1e293b" class="dark:fill-white" />
-        
-        <!-- Tusks -->
-        <path d="M20 55 Q18 58 16 60" stroke="white" stroke-width="2" fill="none" class="dark:stroke-slate-300" />
-        <path d="M15 55 Q13 58 11 60" stroke="white" stroke-width="2" fill="none" class="dark:stroke-slate-300" />
-        
-        <!-- Decorative circle -->
-        <circle cx="50" cy="50" r="46" stroke="#0ea5e9" stroke-width="1.5" fill="none" class="dark:stroke-teal-500" stroke-dasharray="3,2" />
-      </svg>
-      <span class="ml-2 text-xl font-display font-semibold text-secondary-900 dark:text-white">Sassify</span>
+      <img src={pulisLogo.src} class="h-10 w-auto" fetchpriority="high" alt="">
     </a>
     
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href="/" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Home</a>
-      <a href="/features" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Features</a>
-      <a href="/pricing" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Pricing</a>
-      <a href="/blog" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Blog</a>
-      <a href="/contact" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Contact</a>
-      
-      <!-- All Pages Dropdown -->
-      <div x-data="{ open: false }" class="relative">
-        <button 
-          @click="open = !open" 
-          @click.away="open = false"
-          class="flex items-center text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
-        >
-          All Pages
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        
-        <div 
-          x-show="open" 
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 scale-95"
-          x-transition:enter-end="opacity-100 scale-100"
-          x-transition:leave="transition ease-in duration-150"
-          x-transition:leave-start="opacity-100 scale-100"
-          x-transition:leave-end="opacity-0 scale-95"
-          class="absolute left-0 mt-2 w-56 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-hidden z-50 max-h-96 overflow-y-auto"
-          x-cloak
-        >
-          <div class="py-2 grid grid-cols-1 gap-1">
-            {allPages.map(page => (
-              <a href={page.url} class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">
-                {page.text}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+    <nav class="hidden md:flex items-center justify-items-end space-x-8">
+      <ul class="flex items-center gap-6">
+        <li><a href="/features" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Serviços</a></li>
+        <li><a href="/pricing" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Portfólio</a></li>
+        <li><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Newsletter</a></li>
+        <li><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Blog</a></li>
+        <li><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Sobre</a></li>
+        <li><a href="/contact" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Contato</a></li>
+        <li><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Mais</a></li>
+      </ul>
     </nav>
     
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center justify-items-end space-x-4">
       <button 
         x-on:click="darkMode = !darkMode" 
         class="p-2 rounded-full text-secondary-500 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-200 focus:outline-hidden focus:ring-2 focus:ring-primary-500"
@@ -108,8 +51,6 @@ const allPages = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       </button>
-      
-      <a href="#signup" class="hidden sm:inline-flex btn-primary">Get Started</a>
       
       <!-- Mobile Menu Button and Dropdown -->
       <div x-data="{ open: false, showAllPages: false }">
@@ -168,7 +109,57 @@ const allPages = [
     </div>
   </div>
 </header>
+<style is:global>
+  nav {
+    display: grid;
+    place-items: center;
+  }
 
+  .pagefind-ui {
+    --pagefind-ui-scale: 0.75;
+    --pagefind-ui-primary: navy;
+    --pagefind-ui-text: black;
+    --pagefind-ui-border: slategrey;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.25rem;
+    --pagefind-ui-font: sans-serif;
+
+    width: 50%;
+  }
+
+  .pagefind-ui.yellow {
+    --pagefind-ui-background: lightyellow;
+  }
+
+  .pagefind-ui.red {
+    --pagefind-ui-background: peachpuff;
+    width: 100%;
+  }
+
+  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 0px;
+    z-index: 9999;
+    padding: 0 2em 1em;
+    overflow-y: auto;
+    box-shadow:
+      0 10px 10px -5px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: var(--pagefind-ui-border-radius);
+    border-bottom-left-radius: var(--pagefind-ui-border-radius);
+    background-color: var(--pagefind-ui-background);
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: var(--pagefind-ui-primary);
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    color: var(--pagefind-ui-text);
+  }
+</style>
 <style>
   /* Add styles for dark mode SVG in the header */
   @media (prefers-color-scheme: dark) {
