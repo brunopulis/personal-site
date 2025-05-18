@@ -40,11 +40,11 @@ Cada usuário na rede tem uma pontuação, a partir dela, seu posicionamento é 
 
 Para utilizá-lo basta selecionar o botão **“Get your score free”**, conforme a imagem abaixo:
 
-![Ferramenta do Linkedin que avalia suas estatísticas. Nela existe um botão com o rótulo &quot;Get your score free&quot;](assets/ssi-linkedin-768x255-tMozYMdecy9v.png)
+![Ferramenta do Linkedin que avalia suas estatísticas. Nela existe um botão com o rótulo &quot;Get your score free&quot;](images/ssi-linkedin-768x255-tMozYMdecy9v.png)
 
 O resultado do meu _score_, no momento da escrita desse artigo, foi:
 
-![Diversos gráficos relacionados ao Social Selling Index.  - primeiro gráfico é meu posicionamento no setor de TI, estou em 6% dos principais perfis; - segundo gráfico minha pontuação 62 em 100;](assets/ssi-768x398-UJ1PXjte0P1t.png)
+![Diversos gráficos relacionados ao Social Selling Index.  - primeiro gráfico é meu posicionamento no setor de TI, estou em 6% dos principais perfis; - segundo gráfico minha pontuação 62 em 100;](images/ssi-768x398-UJ1PXjte0P1t.png)
 
 Gráficos do Social Selling Index
 
@@ -70,7 +70,7 @@ Opte por fotos que focam seu rosto, com um fundo colorido ou que faça contraste
 
 Ele gera diversos formatos para fotos de perfil, o resultado é como, por exemplo:
 
-![](assets/free-profile-pic-768x520-pC8QdbwORGcD.png)
+![](images/free-profile-pic-768x520-pC8QdbwORGcD.png)
 
 Percebo duas vantagens nesse serviço, Além de ser gratuito irá deixar sua foto na rede muito mais apresentável e profissional.
 
@@ -163,7 +163,7 @@ Minha dica, analise as competências e recomendações que façam sentido para s
 
 É muito comum no Linkedin, postarmos certificados e cursos, visto que, comprova novas competências e demonstrar novas competências. Porém, o Linkedin parece uma chuva de certificados, me lembrando desse meme.
 
-![](assets/toy-story-300x166-lyyLhDojuu4D.jpg)
+![](images/toy-story-300x166-lyyLhDojuu4D.jpg)
 
 A minha dica nesse sentido é: publique certificados que façam sentido e que chamem atenção, por exemplo:
 

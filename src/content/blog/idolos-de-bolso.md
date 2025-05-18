@@ -8,7 +8,7 @@ metadata:
 tags:
   - teologia
 ---
-![](assets/idolos-bolso-1024x512-BQuioVDzExkq.avif)
+![](images/idolos-bolso-1024x512-BQuioVDzExkq.avif)
 
 Neste estudo, iremos abordar como o avanço da tecnologia trouxe grandes benefícios e malefícios para a humanidade e como podemos combate-los e vencer o mal que é depender estritamente de algo que deveria ser uma ferramenta, um meio e não um fim.
 
@@ -68,7 +68,7 @@ Tendência do usuário acreditar em todas as doenças sobre qual leu na internet
 
 O cérebro passa a agir como se não mais precisasse memorizar certas informações, já que conseguiria com facilidade na rede.
 
-![Ilustração do que acontece em 60 minutos na Internet. ](assets/60-minutos-715x1024-ABUYBRHM9aQP.avif)
+![Ilustração do que acontece em 60 minutos na Internet. ](images/60-minutos-715x1024-ABUYBRHM9aQP.avif)
 
 Os conceitos parecem que mudaram, segundo o sociólogo polonês Zygmunt Bauman as pessoas não sabem mais a diferença de comunidade e rede.
 

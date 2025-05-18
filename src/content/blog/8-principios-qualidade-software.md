@@ -22,7 +22,7 @@ Vamos lá?
 
 ## Adequação funcional
 
-![Mulher segurando uma prancheta e olhando em um quadro branco os requisitos do sistema.](assets/business-requires-lot-creativi-tJlPCg4djs0I.jpg)
+![Mulher segurando uma prancheta e olhando em um quadro branco os requisitos do sistema.](images/business-requires-lot-creativi-tJlPCg4djs0I.jpg)
 
 [Image by gpointstudio](https://www.freepik.com/free-photo/business-requires-lot-creativity_13191173.htm#query=requirements&from_query=requisitos&position=0&from_view=search&track=sph) on Freepik
 
@@ -32,7 +32,7 @@ Para isso acontecer devemos criar funcionalidades, que esperam alguma ação do 
 
 ## Eficiência de desempenho
 
-![](assets/digital-increasing-bar-graph-w-2Pb4Csat3i9w.jpg)
+![](images/digital-increasing-bar-graph-w-2Pb4Csat3i9w.jpg)
 
 [Image by rawpixel.com](https://www.freepik.com/free-photo/digital-increasing-bar-graph-with-businessman-hand-overlay_13312397.htm#query=perfomance&position=19&from_view=search&track=sph) on Freepik
 
@@ -44,7 +44,7 @@ Outros pontos importantes, como por exemplo: a **utilização de recursos** e su
 
 ## Compatibilidade
 
-![](assets/compatibilidade-768x576-WpBtTVsQvYIY.webp)
+![](images/compatibilidade-768x576-WpBtTVsQvYIY.webp)
 
 [Image by macrovector](https://www.freepik.com/free-vector/smartphone-compatible-smartwatch-data-transfer-symbols_4266186.htm#page=2&query=compatibility&position=48&from_view=keyword) on Freepik
 
@@ -58,7 +58,7 @@ A interoperabilidade é a capacidade de executar o software independente da estr
 
 ## Usabilidade
 
-![Mulher prototipando a usabilidade de um site em um iMac. ](assets/web-design-online-technology-c-1vjeCyJqkGHa.jpg)
+![Mulher prototipando a usabilidade de um site em um iMac. ](images/web-design-online-technology-c-1vjeCyJqkGHa.jpg)
 
 [Imagem de rawpixel.com](https://br.freepik.com/fotos-gratis/conceito-de-conteudo-de-tecnologia-online-de-design-da-web_17095743.htm#query=usability&position=10&from_view=search&track=sph) no Freepik
 
@@ -85,7 +85,7 @@ Contudo, vale sempre lembrar:
 
 ## Confiabilidade
 
-![Mão de uma pessoa avaliando o software com nota máxima, devido a sua confiabilidade](assets/hand-touching-doing-mark-five--7tDm8B2FKGYy.jpg)
+![Mão de uma pessoa avaliando o software com nota máxima, devido a sua confiabilidade](images/hand-touching-doing-mark-five--7tDm8B2FKGYy.jpg)
 
 [Image by DilokaStudio](https://www.freepik.com/free-photo/hand-touching-doing-mark-five-yellow-stars-black-background-best-customer-satisfaction-evaluation-good-quality-product-service_24458776.htm#query=reliable&position=39&from_view=keyword) on Freepik
 
@@ -104,7 +104,7 @@ Quando falamos de confiabilidade, alguns itens são importantes de citar, como p
 
 ## Segurança
 
-![Mão segurando sistema de nuvem com proteção de dados](assets/hand-holding-cloud-system-with-UXAvQciPY8uX.jpg)
+![Mão segurando sistema de nuvem com proteção de dados](images/hand-holding-cloud-system-with-UXAvQciPY8uX.jpg)
 
 [Imagem de rawpixel.com](https://br.freepik.com/fotos-gratis/mao-segurando-sistema-de-nuvem-com-protecao-de-dados_17121563.htm#query=cyber%20security&position=8&from_view=search&track=sph) no Freepik
 
@@ -119,7 +119,7 @@ Sempre quando falamos de segurança, esse conceito vem acompanhado de outros pou
 
 ## Capacidade de Manutenção
 
-![Computador sendo atualizado na sua tela existe a frase: Software Update](assets/upgrade-update-new-version-bet-LatiHMtPM9ML.jpg)
+![Computador sendo atualizado na sua tela existe a frase: Software Update](images/upgrade-update-new-version-bet-LatiHMtPM9ML.jpg)
 
 [Imagem de rawpixel.com](https://br.freepik.com/fotos-gratis/atualizacao-atualizacao-nova-versao-melhor-conceito-grafico_18042703.htm#query=update%20software&position=1&from_view=search&track=sph) no Freepik
 
@@ -137,7 +137,7 @@ Quando a manutenção é realizada, podemos avaliar os seguintes pontos:
 
 ## Portabilidade
 
-![](assets/portabilidade-768x548-0raBst9QllJu.webp)
+![](images/portabilidade-768x548-0raBst9QllJu.webp)
 
 [Image by pch.vector](https://www.freepik.com/free-vector/happy-tiny-man-woman-with-big-open-wallet_8609334.htm#page=4&query=portabilidade&position=38&from_view=search&track=sph) on Freepik
 

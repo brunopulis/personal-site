@@ -15,7 +15,7 @@ Arrume sua cama é um best-seller do Almirante William H. McRaven, com 10 princ�
 
 Nesse artigo te conto a minha experiência de leitura e como ele me impactou positivamente.
 
-![Capa do livro Arrume a sua cama: pequenas atitudes que podem mudar sua vida e talvez o mundo. ](assets/1000023069-1-193x300-excFLHq2PFv9.jpg)
+![Capa do livro Arrume a sua cama: pequenas atitudes que podem mudar sua vida e talvez o mundo. ](images/1000023069-1-193x300-excFLHq2PFv9.jpg)
 
 ## O livro em 3 frases
 

@@ -29,7 +29,7 @@ O caminho da felicidade é pensar na UX e Acessibilidade desde o começo, para d
 
 O que deveríamos ter é um desenvolvimento mais fluído e consciente (menos egocêntrico), para evitarmos situações como essa:
 
-![Ilustração de uma pessoa cega irritado ouvindo a TV que diz: Olhe para esta obra de arte, veja que design arrojado, lindo! Ficou interessado? Ligue para o fone que está na tela.](assets/deficiencia-300x247-6t57UdwIETkj.png)
+![Ilustração de uma pessoa cega irritado ouvindo a TV que diz: Olhe para esta obra de arte, veja que design arrojado, lindo! Ficou interessado? Ligue para o fone que está na tela.](images/deficiencia-300x247-6t57UdwIETkj.png)
 
 Pode parecer uma coisa boba, mas quantas vezes eu e você fomos obrigados a usar termos como:
 

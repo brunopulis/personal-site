@@ -8,7 +8,7 @@ metadata:
 tags:
   - acessibilidade
 ---
-![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](assets/stormtropper-jpg-768x480-wmCbY9YB8CX3.avif)
+![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](images/stormtropper-jpg-768x480-wmCbY9YB8CX3.avif)
 
 Aos que me conhecem sabem que eu sou defensor de uma **Web inclusiva** e não exclusiva, por isso luto pela Acessibilidade Web no Brasil.
 

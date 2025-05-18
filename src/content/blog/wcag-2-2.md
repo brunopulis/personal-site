@@ -83,7 +83,7 @@ Entretanto, existem outras possibilidade para atendê-lo.
 
 Recomendo verificar as técnicas de sucesso para cumprir esse critério. Um exemplo seria a imagem abaixo:
 
-![Critério 2.4.13 da WCAG 2.2, existem 2 botões azuis com um retângulo de foco de deslocamento escuro de 1 pixel de espessura ao redor do segundo.](assets/focus-indicator-basic-300x78-v50XtMiH24O2.png)
+![Critério 2.4.13 da WCAG 2.2, existem 2 botões azuis com um retângulo de foco de deslocamento escuro de 1 pixel de espessura ao redor do segundo.](images/focus-indicator-basic-300x78-v50XtMiH24O2.png)
 
 _Figura 1 Passes: Um retângulo de foco sólido em torno do segundo de dois botões._
 
