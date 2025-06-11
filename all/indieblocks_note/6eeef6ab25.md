@@ -1,8 +1,0 @@
----
-title: "Ontem, quitamos uma dívida, cancelamos um seguro inútil ..."
-date: "2024-12-18"
----
-
-Ontem, quitamos uma dívida, cancelamos um seguro inútil e mudei de plano de celular.
-
-Tudo para o bem da nossa família.
