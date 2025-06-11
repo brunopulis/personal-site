@@ -1,12 +1,9 @@
 ---
 title: 5 atalhos do NVDA para testar acessibilidade
 date: 2022-09-04
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/5-atalhos-nvda/
-tags:
-  - acessibilidade
+draft: false
+category: Acessibilidade
+tags: ["nvda", "leitor de tela"]
 ---
 O NVDA é um leitor de tela gratuito para Windows. Ele foi projetado para ajudar pessoas com deficiência a usar computadores e navegar na web.
 
@@ -18,7 +15,7 @@ Neste artigo irei mostrar 5 atalhos que ajudaram nesse sentido.
 
 O leitor de telas fornece a possibilidade de ligar e desligar o sintetizador de voz. Esse é um recurso muito interessante quando precisamos que ele se silencie completamente.
 
-Para ligar ou desligar o NVDA, devemos usar o comando <kbd>Insert + S</kbd>. Usando esse comando o leitor de telas será desligado.
+Para ligar ou desligar o NVDA, devemos usar o comando `<kbd>Insert + S</kbd>`. Usando esse comando o leitor de telas será desligado.
 
 Quando desligamos o leitor dá o feedback ao usuário **Modo de fala desativado**.
 

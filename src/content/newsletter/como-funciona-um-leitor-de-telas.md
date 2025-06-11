@@ -1,9 +1,7 @@
 ---
+issue: "18"
 title: "Como funciona um leitor de telas?"
 date: "2024-02-06"
-tags: 
-  - "000000"
-  - "18"
 ---
 
 Pulis Letters - Edição #18  

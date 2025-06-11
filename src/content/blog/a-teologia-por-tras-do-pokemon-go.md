@@ -1,12 +1,8 @@
 ---
 title: A teologia por trás do Pokémon Go
 date: 2016-08-13
-metadata:
-  categories:
-    - Teologia
-  url: https://brunopulis.com/a-teologia-por-tras-do-pokemon-go/
-tags:
-  - teologia
+draft: false
+category: "Teologia"
 ---
 ![](images/pokemon-1024x576-8UGKFWeMvsuk.avif)
 

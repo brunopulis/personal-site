@@ -1,0 +1,63 @@
+---
+import { ExternalLink, RssIcon } from '@lucide/astro'
+
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import HeroSection from '@/components/HeroSection.astro'
+import Footer from '@/components/Footer.astro'
+
+import blogrolls from '@/data/blogroll.json'
+---
+
+<Layout title="Blogroll - Bruno Pulis">
+	<Header />
+	<main>
+		<HeroSection title="Blogroll" description="Blogs que valea a pena dar uma olhada" />
+
+		<section class="bg-white py-16 dark:bg-gray-800">
+			<div class="container mx-auto">
+				<section>
+					<div class="container">
+						<div class="grid gap-8 md:grid-cols-3">
+							{
+								blogrolls.map((blogroll) => (
+									<div class="card border border-gray-200 p-6">
+										<h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+											{blogroll.name}
+										</h3>
+										<p class="text-gray-600 dark:text-gray-300">{blogroll.description}</p>
+
+										<ul class="flex py-4">
+											<li class="inline-flex">
+												<a
+													href={blogroll.rss}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="text-black inline-flex items-center gap-2 font-semibold underline underline-offset-8"
+												>
+													Assinar RSS
+												</a>
+											</li>
+											<li class="ml-2 inline-flex">
+												<a
+													href={blogroll.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="text-black inline-flex items-center gap-2 font-semibold underline underline-offset-8"
+												>
+													Site
+													<ExternalLink class="h-4 w-4" />
+												</a>
+											</li>
+										</ul>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

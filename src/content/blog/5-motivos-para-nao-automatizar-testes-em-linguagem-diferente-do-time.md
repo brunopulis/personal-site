@@ -1,13 +1,9 @@
 ---
 title: 5 motivos para não automatizar testes em linguagem diferente do time
 date: 2020-11-16
-metadata:
-  categories:
-    - Qualidade de Software
-  url: >-
-    https://brunopulis.com/5-motivos-para-nao-automatizar-testes-em-linguagem-diferente-do-time/
-tags:
-  - qualidade-de-software
+draft: false
+category: "Qualidade"
+tags: ["automação"]
 ---
 Automatizar cenários de teste é uma parte integrante de nossa atuação como profissionais focados em qualidade. Em um contexto ágil é de extrema importância, pois, contribui para promover e permear a qualidade no projeto.
 
@@ -57,11 +53,11 @@ Separei cinco pontos nocivos, sobre automatizar cenários de teste em uma lingua
 
 Ao usarmos uma linguagem diferente, a curva de aprendizado pode ser muito maior para os profissionais de qualidade. Cito alguns pontos que podem ser nocivos:
 
--   tempo de aprendizagem;
--   aprendizado do ecossistema em torno da linguagem;
--   falta de alguém como referencial no time;
--   falta de suporte;
--   segregação implícita dos QAs com o resto do time.
+- tempo de aprendizagem;
+- aprendizado do ecossistema em torno da linguagem;
+- falta de alguém como referencial no time;
+- falta de suporte;
+- segregação implícita dos QAs com o resto do time.
 
 ### 2 – Baixa produtividade
 
@@ -77,12 +73,12 @@ Até o profissional de qualidade compreender a linguagem e pegar a “maldade”
 
 Ao usar essa abordagem, a responsabilidade do teste fica inteiramente na mão do QA, reforçando uma má prática no contexto ágil. Essa má prática pode ocasionar em:
 
--   desconforto do time em relação à segregação;
--   antipatia entre devs e analistas de qualidade;
--   falta de engajamento do time;
--   separação por silos, indo contra os princípios da agilidade;
--   falta de colaboração do time nos testes;
--   base de conhecimento somente nas mãos de pessoas específicas.
+- desconforto do time em relação à segregação;
+- antipatia entre devs e analistas de qualidade;
+- falta de engajamento do time;
+- separação por silos, indo contra os princípios da agilidade;
+- falta de colaboração do time nos testes;
+- base de conhecimento somente nas mãos de pessoas específicas.
 
 ### 4 – Maior esforço para manutenção
 
@@ -100,11 +96,11 @@ A etapa de integração e entrega contínua é uma das mais importantes para um 
 
 Quando automatizamos em uma linguagem que não é falada pelo time, criamos uma série de possíveis problemas, tais como:
 
--   maior custo de infraestrutura;
--   arquitetura da pipeline pode ficar bastante complexa;
--   construção de uma nova estrutura de pipeline;
--   time desconhece a linguagem não podendo contribuir;
--   aumento de trabalho para os _DevOps_.
+- maior custo de infraestrutura;
+- arquitetura da pipeline pode ficar bastante complexa;
+- construção de uma nova estrutura de pipeline;
+- time desconhece a linguagem não podendo contribuir;
+- aumento de trabalho para os _DevOps_.
 
 ## Considerações finais
 
@@ -122,5 +118,5 @@ Quais são os seus pensamentos sobre o assunto? Gostaria muito de saber sua opin
 
 ## Referências
 
--   [TSPI](https://hotmart.com/product/treinamento-de-testes-de-software-para-iniciantes)
--   [Júlio de Lima](https://about.me/juliodelimas)
+- [TSPI](https://hotmart.com/product/treinamento-de-testes-de-software-para-iniciantes)
+- [Júlio de Lima](https://about.me/juliodelimas)

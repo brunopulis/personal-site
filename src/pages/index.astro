@@ -1,31 +1,28 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/Header.astro';
-import Hero from '@/components/Hero.astro';
-import About from '@/components/About.astro';
-import Logos from '@/components/Logos.astro';
-import Services from '@/components/Services.astro';
-import Portfolio from '@/components/Portfolio.astro';
-import Testimonials from '@/components/Testimonials.astro';
-import Blog from '@/components/Blog.astro';
-import Newsletter from '@/components/Newsletter.astro';
-import ProjetosPessoais from '@/components/ProjetosPessoais.astro';
-import Footer from '@/components/Footer.astro';
-
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Hero from "@/components/home/Hero.astro";
+import About from "@/components/home/About.astro";
+import Logos from "@/components/home/Logos.astro";
+import Services from "@/components/home/Services.astro";
+import Portfolio from "@/components/home/Portfolio.astro";
+import Testimonials from "@/components/home/Testimonials.astro";
+import Blog from "@/components/home/Blog.astro";
+import FinalCTA from "@/components/FinalCTA.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <Layout title="Bruno Pulis - Engenheiro de Acessibilidade" description="Bruno Pulis - Engenheiro de Software, desenvolvedor front-end e back-end, especialista em JavaScript, TypeScript, React, Node.js e muito mais.">
   <Header />
   <main>
     <Hero />
-    <About />
     <Logos />
-    <Services />
-    <Portfolio />
     <Testimonials />
+    <Services />
+    <About />
+    <Portfolio />
     <Blog />
-    <ProjetosPessoais />
-    <Newsletter />
+    <FinalCTA title="Pronto para melhorar a acessibilidade do seu produto?" description="Entre em contato e vamos conversar." label="Solicite uma consultoria" url="/contact" />
   </main>
   <Footer />
 </Layout>

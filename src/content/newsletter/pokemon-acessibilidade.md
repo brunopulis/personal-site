@@ -1,8 +1,7 @@
 ---
+issue: "21"
 title: "O que o Pokémon me ensinou sobre acessibilidade"
 date: "2024-02-29"
-tags: 
-  - "21"
 coverImage: "pokemon.jpg"
 ---
 

@@ -1,0 +1,63 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import HeroSection from '@/components/HeroSection.astro';
+---
+
+<Layout title="Declaração de Acessibilidade - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection
+      title="Declaração de Acessibilidade"
+      description="Última atualização: Maio 18, 2025"
+    />
+
+    <section class="py-16">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto prose dark:prose-invert prose-headings:font-display prose-headings:font-semibold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-lg">
+          <p class="lead">
+            Quero que todos que visitam meu site, se sintam bem-vindos e incluídos. Por isso, desenvolvi seguindo as melhores práticas de desenvolvimento web.
+          </p>
+          <p>Esse site passou por atualizações recentes e é um trabalho em andamento.</p>
+
+          <h2 class="my-5">O que estou fazendo?</h2>
+          <p class="mb-3">
+            Para tornar o site acessível, utilizei à <abbr title="Diretrizes de Acessibilidade de Conteúdo Web">WCAG 2.1</abbr>.
+            Elas explicam como tornar e manter o conteúdo da web mais acessível para todos e como manter sua simplicidade de uso.
+          </p>
+
+          <p class="mb-3">As diretrizes possuem três níveis de acessibilidade (A, AA e AAA). Escolhi para meu site o <strong>nível AA</strong>.</p>
+          <p class="mb-3">
+            Escolhi esse nível, pois se trata de um nível intermediário e cobre diversos aspectos da acessibilidade web.
+            Contudo, a escolha não invalida o uso de alguns critérios de sucesso do nível AAA.
+          </p>
+
+          <h3 class="my-5">Trabalho a fazer</h3>
+          <p class="mb-3">Tenho vários planos para o site, mas um dos primeiros itens para realizar serão:</p>
+
+          <ul class="list-disc list-inside mb-3">
+            <li>Dark mode;</li>
+            <li>Remove dependências de CSS.</li>
+          </ul>
+
+          <h3 class="my-5">O que é acessibilidade?</h3>
+          <p class="mb-3">A Iniciativa Internacional de Acessibilidade Digital (WAI) define a Acessibilidade como:</p>
+          <blockquote class="mb-3">
+            <p>Acessibilidade, significa que pessoas com deficiência podem usar a web. Mais especificamente, que possam perceber, compreender, navegar e interagir online e podem contribuir na web. Ela também beneficia outras pessoas, especialmente idosos cujas habilidades mudam com a idade.</p>
+          </blockquote>
+
+          <p class="mb-3">
+            Para se aprofundar, te convido a ler os artigos: <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" class="underline underline-offset-4 hover:text-blood-red" rel="noopener"> e introdução dos conceitos de acessibilidade</a> e <a class="underline underline-offset-4 hover:text-blood-red" href="https://brunopulis.com/introducao-acessibilidade-web/">acessibilidade Web: como começar do jeito certo</a>.
+          </p>
+
+          <h3 class="my-5">Encontrou alguma barreira de acesso?</h3>
+          <p class="mb-3">Caso você encontre alguma barreira de acesso, <a href="mailto:hello@brunopulis.com" class="underline underline-offset-4 hover:text-blood-red">entre em contato imediatamente</a>.</p>
+          <p class="mb-3">Monitoro constantemente o nível de conformidade para cumprir os critérios de sucesso.</p>
+          <p class="mb-3">Essa declaração é um compromisso público e um documento vivo, está em constante evolução.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

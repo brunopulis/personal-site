@@ -1,12 +1,9 @@
 ---
 title: 10 dicas de acessibilidade para desenvolvedores
 date: 2023-05-18
-metadata:
-  categories:
-    - Desenvolvimento web
-  url: https://brunopulis.com/10-dicas-de-acessibilidade/
-tags:
-  - desenvolvimento-web
+draft: false
+category: "Fronted"
+tags: ["WCAG"]
 ---
 Você sabia que a web pode ser um lugar incrível para todos, independentemente de suas habilidades ou deficiências? Vamos explorar as **10** **dicas de acessibilidade** que você pode incluir para tornar a web um lugar melhor para todos.
 

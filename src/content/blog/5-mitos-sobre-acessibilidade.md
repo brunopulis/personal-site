@@ -1,12 +1,8 @@
 ---
 title: 5 mitos sobre acessibilidade que você precisa esclarecer
 date: 2022-02-22
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/5-mitos-sobre-acessibilidade/
-tags:
-  - acessibilidade
+draft: false
+category: "Acessibilidade"
 ---
 Ao longo da minha carreira já ouvi muita bobagem sobre acessibilidade.  
 Hoje vou mostrar os 5 mitos sobre acessibilidade.
@@ -15,22 +11,23 @@ Vamos lá…
 
 ## Índice
 
--   [1\. Acessibilidade é somente para deficiente](#1-acessibilidade-e-somente-para-deficiente)
--   [2\. Ninguém liga para isso](#2-ninguem-liga-para-isso)
--   [3\. Não é meu público alvo](#3-nao-e-meu-publico-alvo)
--   [4\. Vou criar um site específico para acessibilidade](#4-vou-criar-um-site-especifico-para-acessibilidade)
--   [5\. Acessibilidade é perda de tempo](#5-acessibilidade-e-perda-de-tempo)
+- [Índice](#índice)
+- [1. Acessibilidade é somente para deficiente](#1-acessibilidade-é-somente-para-deficiente)
+- [2. Ninguém liga para isso](#2-ninguém-liga-para-isso)
+- [3. Não é meu público alvo](#3-não-é-meu-público-alvo)
+- [4. Vou criar um site específico para acessibilidade](#4-vou-criar-um-site-específico-para-acessibilidade)
+- [5. Acessibilidade é perda de tempo](#5-acessibilidade-é-perda-de-tempo)
 
 ## 1\. Acessibilidade é somente para deficiente
 
 O objetivo da acessibilidade é garantir que o conteúdo da web seja acessível por todos.  
 Um grupo de pessoas são mais beneficiadas, como, por exemplo:
 
--   alguém com mãos ocupadas;
--   canhotos (como eu);
--   idosos;
--   crianças;
--   pessoas com baixo letramento.
+- alguém com mãos ocupadas;
+- canhotos (como eu);
+- idosos;
+- crianças;
+- pessoas com baixo letramento.
 
 **Ou seja, todos.**
 

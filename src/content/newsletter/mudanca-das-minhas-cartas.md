@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Mudança das minhas cartas"
 date: "2023-12-15"
 ---

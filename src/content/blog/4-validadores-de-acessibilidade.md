@@ -1,10 +1,11 @@
 ---
 title: 4 validadores de acessibilidade que recomendo
 date: 2014-02-19
-categories: Acessibilidade
-tags:
-  - acessibilidade
+draft: false
+category: Acessibilidade
+tags: ["validadores"]
 ---
+
 ## Introdução
 
 Validadores de acessibilidade são parte crucial do trabalho de nós analistas de qualidade. Por isso, escolher as melhores ferramentas é importante.
@@ -28,7 +29,7 @@ Possui muitas vantagens, como:
 
 ## WAVE
 
-![](images/wave-768x322-hSX2F6FFA2lk.png)
+![Print do WAVE](images/wave-768x322-hSX2F6FFA2lk.png)
 
 O [WAVE](http://wave.webaim.org/) por sua vez, traz um relatório completo, incluindo:
 
@@ -40,15 +41,15 @@ E outros pontos que cobrem as diretrizes de acessibilidade.
 
 ## accessMonitor
 
-O [accessMonitor](https://accessmonitor.acessibilidade.gov.pt/) é o que mais utilizo, como é uma ferramenta de Portugal tive alguns problemas de compreensão.  
+O [accessMonitor](https://accessmonitor.acessibilidade.gov.pt/) é o que mais utilizo, como é uma ferramenta de Portugal tive alguns problemas de compreensão.
 Tirando esse ponto, é um dos melhores que já testei.
 
-## Total Validator
+~## Total Validator~
 
-O Total Validator é outra ferramenta no mesmo segmento, bastante completa.  
-Recomendo para quem quer fazer uma avaliação mais criteriosa.
+~O Total Validator é outra ferramenta no mesmo segmento, bastante completa.
+Recomendo para quem quer fazer uma avaliação mais criteriosa.~
 
 ## Minha experiência com cada validador de acessibilidade
 
-Cada um pode ajudar de um modo, minha opinião inicie pelo mais simples e vá aprimorando suas validações.  
+Cada um pode ajudar de um modo, minha opinião inicie pelo mais simples e vá aprimorando suas validações.
 O mais importante é você entender o que está sendo validado.

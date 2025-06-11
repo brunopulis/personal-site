@@ -1,11 +1,7 @@
 ---
+issue: ""
 title: "Erro de contraste como corrigir"
 date: "2024-11-07"
-tags: 
-  - "565656"
-  - "767676"
-  - "ccc"
-  - "fff"
 coverImage: "daltonismo.webp"
 ---
 

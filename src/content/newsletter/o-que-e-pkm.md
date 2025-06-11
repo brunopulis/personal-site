@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "O que é PKM?"
 date: "2024-01-31"
 coverImage: "obsidian-e1732042685511.png"

@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<Layout title="Uso de IA - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection title="Uso de IA" />
+    <section class="py-16">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto prose dark:prose-invert prose-headings:font-display prose-headings:font-semibold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-lg">
+          <h2 class="mb-5">Uso Inteligência Artificial no meu site</h2>
+          <p class="mb-3">A inteligência artifical não faz parte essencial do meu site.</p>
+          <p class="mb-3">Considero a escrita uma arte nobre e acredito que toda escrita deve ser feita por humanos.</p>
+          <p class="mb-3">E isso faz sentido para blog pessoais.</p>
+
+          <p class="mb-3">Utilizo a IA para:</p>
+          <ul class="list-disc list-inside mb-3">
+            <li>Realizar pesquisas;</li>
+            <li>Refinar conceitos;</li>
+            <li>Correções ortográficas.</li>
+          </ul>
+
+          <p class="mb-3">Não utilizo a IA para:</p>
+          <ul class="list-disc list-inside mb-3">
+            <li>Criar posts automáticos;</li>
+            <li>Gerar código fonte.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

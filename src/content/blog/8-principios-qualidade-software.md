@@ -1,12 +1,8 @@
 ---
 title: 8 Princípios da Qualidade de Software
 date: 2021-01-05
-metadata:
-  categories:
-    - Qualidade de Software
-  url: https://brunopulis.com/8-principios-qualidade-software/
-tags:
-  - qualidade-de-software
+draft: false
+category: "Qualidade"
 ---
 Construir um software envolve diversas áreas: comunicação, marketing, equipe de negócios, design, experiência do usuário, equipe técnica e tantos outros envolvidos.
 
@@ -68,12 +64,12 @@ Alguns itens necessitam de serem cumpridos para terem uma boa usabilidade.
 
 Como por exemplo:
 
--   Reconhecimento de adequação;
--   Aprendizagem;
--   Operabilidade;
--   Proteção contra erros do usuário;
--   Estética da interface do usuário;
--   Acessibilidade.
+- Reconhecimento de adequação;
+- Aprendizagem;
+- Operabilidade;
+- Proteção contra erros do usuário;
+- Estética da interface do usuário;
+- Acessibilidade.
 
 Todas essas subcaracterísticas são importantes, entretanto, quero destacar a acessibilidade.
 
@@ -97,10 +93,10 @@ Comecei a abandonar algumas redes sociais e outros serviços por causa desse pri
 
 Quando falamos de confiabilidade, alguns itens são importantes de citar, como por exemplo:
 
--   **Maturidade**: mede a frequencia de defeitos apresentados;
--   **Disponibilidade**: mede o quanto o software encontra-se disponível para os usuários;
--   **Tolerância a falhas**: como o software reage em situação de falhas;
--   **Recuperabilidade**: capacidade de recuperar de um incidenten.
+- **Maturidade**: mede a frequencia de defeitos apresentados;
+- **Disponibilidade**: mede o quanto o software encontra-se disponível para os usuários;
+- **Tolerância a falhas**: como o software reage em situação de falhas;
+- **Recuperabilidade**: capacidade de recuperar de um incidenten.
 
 ## Segurança
 
@@ -112,10 +108,10 @@ Além da confiabilidade a segurança, no meu ponto de vista, é um dos pontos ma
 
 Sempre quando falamos de segurança, esse conceito vem acompanhado de outros poucos conhecidos, como:
 
--   **Confidencialidade**: somente sistemas/pessoas autorizadas acessam um recurso;
--   **Integridade**: não permite sistemas/pessoas não autorizadas acessam um recurso;
--   **Rastreabilidade de uso**: rastreia ações do usuário, a fim de, comprovar suas ações;
--   **Autenticidade**: identifica se você é quem alega ser.
+- **Confidencialidade**: somente sistemas/pessoas autorizadas acessam um recurso;
+- **Integridade**: não permite sistemas/pessoas não autorizadas acessam um recurso;
+- **Rastreabilidade de uso**: rastreia ações do usuário, a fim de, comprovar suas ações;
+- **Autenticidade**: identifica se você é quem alega ser.
 
 ## Capacidade de Manutenção
 
@@ -129,11 +125,11 @@ Mesmo que isso seja incomôdo, é necessário para prevenir ataques maliciosos e
 
 Quando a manutenção é realizada, podemos avaliar os seguintes pontos:
 
--   Modularidade;
--   Reutilização;
--   Analisabilidade;
--   Modificabilidade;
--   Testabilidade.
+- Modularidade;
+- Reutilização;
+- Analisabilidade;
+- Modificabilidade;
+- Testabilidade.
 
 ## Portabilidade
 
@@ -151,9 +147,9 @@ Mas tudo teve um final feliz, com o avanço da tecnologia hoje é possível real
 
 Com a portabilidade, hoje temos a autonomia de poder decidir quando trocar para um serviço que nos atenda melhor.
 
--   Adaptabilidade;
--   Instalabilidade;
--   Capacidade de substituição.
+- Adaptabilidade;
+- Instalabilidade;
+- Capacidade de substituição.
 
 Esses são os princípios que norteiam o trabalho e tipos de testes de um QA. Além disso, [existem 21 qualidades que todo QA deve ter](https://brunopulis.com/21-qualidade-de-um-bom-qa/).
 
@@ -161,9 +157,9 @@ Esses são os princípios que norteiam o trabalho e tipos de testes de um QA. Al
 
 Para concluir gostaria de deixar algumas indicações de leitura. As três indicações são valiosas bases para o conhecimento em testes de software. Entretanto, não são as únicas gosto bastante delas.
 
--   [Base de conhecimento em teste de software;](https://www.amazon.com.br/Base-Conhecimento-em-Teste-Software/dp/8580630533?crid=1DQEN7AGYXIUX&keywords=base+de+conhecimento+em+teste+de+software&qid=1686710879&sprefix=Base+de+conhecimen%2Caps%2C221&sr=8-1&linkCode=li3&tag=pulis-20&linkId=03f874dd80a176cc1a52f81e267bbd3f&language=pt_BR&ref_=as_li_ss_il)
--   [Introdução ao teste de software](https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Teste-Software-Marcio-Delamaro-ebook/dp/B01JMAC4HU?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2EBNKJLV1H0DW&keywords=introdu%C3%A7%C3%A3o+ao+teste+de+software&qid=1686712129&sprefix=introducao+ao+teste+de+software%2Caps%2C238&sr=8-1&linkCode=li3&tag=pulis-20&linkId=1b102d60ef0b5e7bb940f613399cda84&language=pt_BR&ref_=as_li_ss_il);
--   [Lessons Learned Software Testing Context Driven](https://www.amazon.com.br/Lessons-Learned-Software-Testing-Context-Driven/dp/0471081124?crid=2TFWNYA94YUBU&keywords=lessons+learned+in+software+testing&qid=1686712164&sprefix=Lessons+lear%2Caps%2C208&sr=8-1&ufe=app_do%3Aamzn1.fos.6a09f7ec-d911-4889-ad70-de8dd83c8a74&linkCode=li2&tag=pulis-20&linkId=82c68364eca87bac669cc3262dfa5db7&language=pt_BR&ref_=as_li_ss_il).
+- [Base de conhecimento em teste de software;](https://www.amazon.com.br/Base-Conhecimento-em-Teste-Software/dp/8580630533?crid=1DQEN7AGYXIUX&keywords=base+de+conhecimento+em+teste+de+software&qid=1686710879&sprefix=Base+de+conhecimen%2Caps%2C221&sr=8-1&linkCode=li3&tag=pulis-20&linkId=03f874dd80a176cc1a52f81e267bbd3f&language=pt_BR&ref_=as_li_ss_il)
+- [Introdução ao teste de software](https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Teste-Software-Marcio-Delamaro-ebook/dp/B01JMAC4HU?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2EBNKJLV1H0DW&keywords=introdu%C3%A7%C3%A3o+ao+teste+de+software&qid=1686712129&sprefix=introducao+ao+teste+de+software%2Caps%2C238&sr=8-1&linkCode=li3&tag=pulis-20&linkId=1b102d60ef0b5e7bb940f613399cda84&language=pt_BR&ref_=as_li_ss_il);
+- [Lessons Learned Software Testing Context Driven](https://www.amazon.com.br/Lessons-Learned-Software-Testing-Context-Driven/dp/0471081124?crid=2TFWNYA94YUBU&keywords=lessons+learned+in+software+testing&qid=1686712164&sprefix=Lessons+lear%2Caps%2C208&sr=8-1&ufe=app_do%3Aamzn1.fos.6a09f7ec-d911-4889-ad70-de8dd83c8a74&linkCode=li2&tag=pulis-20&linkId=82c68364eca87bac669cc3262dfa5db7&language=pt_BR&ref_=as_li_ss_il).
 
 ## Conclusão
 

@@ -1,8 +1,7 @@
 ---
+issue: "30"
 title: "Use a cabeça, teste acessibilidade"
 date: "2024-05-02"
-tags: 
-  - "30"
 ---
 
 ## Indicações e links de afiliados

@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "2 formas de escrever formulários acessíveis"
 date: "2024-11-28"
 coverImage: "a-close-up-shot-of-a-hand-holding-a-vintage-compass-against-a-natural-background.-841286-scaled.jpg"

@@ -1,9 +1,7 @@
 ---
+issue: ""
 title: "Dos céus"
 date: "2024-01-18"
-tags: 
-  - "poesia"
-  - "poesia-autoral"
 ---
 
 Belo Horizonte, 28 de Janeiro de 2024. 

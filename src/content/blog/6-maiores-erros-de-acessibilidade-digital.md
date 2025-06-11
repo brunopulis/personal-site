@@ -1,12 +1,8 @@
 ---
 title: 6 maiores erros de acessibilidade digital
 date: 2020-09-02
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/6-maiores-erros-de-acessibilidade-digital/
-tags:
-  - acessibilidade
+draft: false
+category: "Acessibilidade"
 ---
 A web é um prato cheio de erros de acessibilidade, infelizmente. Hoje, vamos discutir os **6 maiores erros de acessibilidade digital,** suas implicações e barreiras de acesso e o melhor, como corrigir-los de maneira prática e objetiva. Vamos lá!
 
@@ -18,18 +14,18 @@ Diariamente sofro na pele com isso, para quem não me acompanha ou está chegand
 
 Para amenizar esse problema adotei algumas práticas:
 
--   dar zoom em textos com baixo contraste;
--   mudo as cores dos textos para uma com maior contraste via Inspetor de elementos do navegador;
--   usar tema escuro.
+- dar zoom em textos com baixo contraste;
+- mudo as cores dos textos para uma com maior contraste via Inspetor de elementos do navegador;
+- usar tema escuro.
 
 ### Guia sobre contraste
 
 Para aplicarmos as correções de maneira efetiva, devemos consultar as recomendações da WCAG. Abaixo as regras aplicadas ao contraste:
 
--   [1.4.3 – Contraste (mínimo) \[AA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum) (em inglês);
--   [1.4.6 – Contraste melhorado \[AAA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced) (em inglês);
--   [1.4.11 — Contraste Não-Textual \[AA\] — WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast) (em inglês);
--   [2.3.1 – Três flashes ou abaixo do limite \[A\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold).
+- [1.4.3 – Contraste (mínimo) \[AA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum) (em inglês);
+- [1.4.6 – Contraste melhorado \[AAA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced) (em inglês);
+- [1.4.11 — Contraste Não-Textual \[AA\] — WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast) (em inglês);
+- [2.3.1 – Três flashes ou abaixo do limite \[A\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold).
 
 ### Ferramentas para verificação
 
@@ -125,7 +121,7 @@ Uma das coisas que percebo muito com formulários é o uso inadequado do placeho
 
 ### Exemplo incorreto
 
-```
+```html
 <form> 
    <input type="email" placeholder="insira o seu melhor e-mail" /> 
 </form>
@@ -139,7 +135,7 @@ O atributo `placeholder` é uma string que fornece uma breve dica ao usuário qu
 
 ### Exemplo correto
 
-```
+```html
 <form> 
   <label for="email">E-mail</label> 
   <input type="email" id="email" placeholder="insira o seu melhor e-mail" /> 
@@ -152,12 +148,12 @@ Semelhantemente com os links vazios, os botões vazios querem dizer que o elemen
 
 Além disso, essa violação fere duas recomendações da WCAG:
 
--   [1.3.3 – Características sensoriais \[A\] — WCAG 2.0 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/sensory-characteristics);
--   [2.5.3 – Rótulo no nome acessível \[A\] — WCAG 2.1 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)
+- [1.3.3 – Características sensoriais \[A\] — WCAG 2.0 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/sensory-characteristics);
+- [2.5.3 – Rótulo no nome acessível \[A\] — WCAG 2.1 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)
 
 O exemplo a seguir, demonstra o problema de um botão sem informação textual.
 
-```
+```html
 <button type="submit"> 
   <svg id="search" viewBox="0 0 16 16.9"> 
      <path d="..."></path> 
@@ -165,11 +161,9 @@ O exemplo a seguir, demonstra o problema de um botão sem informação textual.
 </button>
 ```
 
- 
-
 Qualquer validador de acessibilidade notificará a inconsistência da violação das guidelines citadas acima. Para eles não existe um conteúdo textual definido, uma abordagem para correção seria inserir o elemento `<title>` no SVG, pois ele garante que SVGs sejam acessíveis. Scott O’Hara escreveu um artigo [imagens acessíveis e SVGS (em inglês)](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html).
 
-```
+```html
 <button type="submit"> 
   <svg id="search" role="img" aria-describedby="searchIcon" viewBox="0 0 16 16.9" > 
      <title id="searchIcon">Search</title> 
@@ -190,7 +184,7 @@ Além dessa confusão, ele descumpre a recomendação [3.1.1 – Idioma da pági
 
 ### Corrigindo
 
-```
+```html
 <!DOCTYPE html> 
 <html lang="pt-br"> ... </html>
 ```
@@ -207,16 +201,14 @@ Em conclusão, reciclar nosso conhecimento é primordial.
 
 E para reflexão gostaria de deixar uma frase do Tim Berners-Lee:
 
->  
-> 
-> <cite>O poder da Web está na sua universalidade. O acesso por todas as pessoas, não obstante a sua <strong>incapacidade</strong>, é um aspecto essencial.</cite>
+> O poder da Web está na sua universalidade. O acesso por todas as pessoas, não obstante a sua **incapacidade**, é um aspecto essencial.
 
 ## Referências
 
--   [Guia WCAG](https://guia-wcag.com/)
--   [Pesquisa do WebAIM](https://webaim.org/projects/million/#errors)
--   [Accessible Colors](https://accessible-colors.com/)
--   [Empty link example](https://blog.pope.tech/2020/03/13/empty-link-example/)
--   [Documentação do elemento A](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a)
--   [Documentação do atributo placeholder](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-placeholder)
--   [Explorando o atributo alt](http://reinaldoferraz.com.br/explorando-o-atributo-alt/)
+- [Guia WCAG](https://guia-wcag.com/)
+- [Pesquisa do WebAIM](https://webaim.org/projects/million/#errors)
+- [Accessible Colors](https://accessible-colors.com/)
+- [Empty link example](https://blog.pope.tech/2020/03/13/empty-link-example/)
+- [Documentação do elemento A](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a)
+- [Documentação do atributo placeholder](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-placeholder)
+- [Explorando o atributo alt](http://reinaldoferraz.com.br/explorando-o-atributo-alt/).

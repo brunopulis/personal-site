@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Indicações Prime Day"
 date: "2024-07-19"
 ---

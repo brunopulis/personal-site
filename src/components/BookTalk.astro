@@ -1,0 +1,140 @@
+---
+import { Mail, Calendar, Send } from '@lucide/astro'
+---
+
+<section id="schedule-talk" class="bg-gray-50 py-20">
+	<div class="container mx-auto px-4 md:px-6">
+		<div class="mx-auto">
+			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+				<div>
+					<h2 class="mb-6 text-3xl font-bold md:text-4xl">Agendar palestra</h2>
+					<p class="mb-6 leading-relaxed text-gray-700">
+						Interessado em ter Bruno como palestrante em seu evento? Entre em contato para discutir
+						disponibilidade, tópicos e detalhes.
+					</p>
+
+					<div class="mb-8 rounded-xl bg-white p-6 shadow-md">
+						<h3 class="mb-4 flex items-center text-xl font-semibold">
+							<Calendar class="mr-2 text-purple-600" size={20} />
+							Minhas especialidades
+						</h3>
+						<ul class="space-y-3">
+							<li class="flex items-start">
+								<div class="mr-3 mt-1 rounded-full bg-purple-100 p-1">
+									<div class="h-2 w-2 rounded-full bg-purple-600"></div>
+								</div>
+								<span class="text-gray-700">Acessibilidade Web e Diretrizes da WCAG</span>
+							</li>
+							<li class="flex items-start">
+								<div class="mr-3 mt-1 rounded-full bg-purple-100 p-1">
+									<div class="h-2 w-2 rounded-full bg-purple-600"></div>
+								</div>
+								<span class="text-gray-700">Boas práticas de Frontend</span>
+							</li>
+							<li class="flex items-start">
+								<div class="mr-3 mt-1 rounded-full bg-purple-100 p-1">
+									<div class="h-2 w-2 rounded-full bg-purple-600"></div>
+								</div>
+								<span class="text-gray-700">Qualidade de Software</span>
+							</li>
+							<li class="flex items-start">
+								<div class="mr-3 mt-1 rounded-full bg-purple-100 p-1">
+									<div class="h-2 w-2 rounded-full bg-purple-600"></div>
+								</div>
+								<span class="text-gray-700">Organização digital</span>
+							</li>
+							<li class="flex items-start">
+								<div class="mr-3 mt-1 rounded-full bg-purple-100 p-1">
+									<div class="h-2 w-2 rounded-full bg-purple-600"></div>
+								</div>
+								<span class="text-gray-700">Tópicos personalizados disponíveis mediante solicitação</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="mb-4 flex items-center text-gray-700">
+						<Mail class="mr-3 text-purple-600" size={20} />
+						<span>hello@brunopulis.com</span>
+					</div>
+				</div>
+
+				<div>
+					<form class="rounded-xl bg-white p-6 shadow-md md:p-8">
+						<div class="mb-4">
+							<label for="name" class="cursor-pointer mb-1 block text-sm font-medium text-gray-700">
+								Seu nome
+							</label>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								required
+								class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+								placeholder="John Doe"
+							/>
+						</div>
+
+						<div class="mb-4">
+							<label for="email" class="cursor-pointer mb-1 block text-sm font-medium text-gray-700">
+								E-mail
+							</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								required
+								class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+								placeholder="john@example.com"
+							/>
+						</div>
+
+						<div class="mb-4">
+							<label for="organization" class="cursor-pointer mb-1 block text-sm font-medium text-gray-700">
+								Empresa
+							</label>
+							<input
+								type="text"
+								id="organization"
+								name="organization"
+								class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+								placeholder="Empresa ou nome do evento"
+							/>
+						</div>
+
+						<div class="mb-4">
+							<label for="eventDate" class="cursor-pointer mb-1 block text-sm font-medium text-gray-700">
+								Data do evento (caso souber)
+							</label>
+							<input
+								type="date"
+								id="eventDate"
+								class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+							/>
+						</div>
+
+						<div class="mb-6">
+							<label for="message" class="cursor-pointer mb-1 block text-sm font-medium text-gray-700">
+								Mensagem
+							</label>
+							<textarea
+								id="message"
+								name="message"
+								required
+								rows={4}
+								class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500"
+								placeholder="Conte-me sobre seu evento e os tópicos de seu interesse..."
+							></textarea>
+						</div>
+
+						<button
+							type="submit"
+							class="flex w-full items-center justify-center rounded-lg bg-red-600 px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-purple-700"
+						>
+              Enviar mensagem
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

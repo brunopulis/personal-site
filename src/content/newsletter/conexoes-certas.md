@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Como fazer conexões certas"
 date: "2024-11-21"
 coverImage: "1888883-scaled-e1732138229256.jpg"

@@ -11,9 +11,24 @@
       "link": "https://github.com/qa-brasil"
     },
     {
-      "title": "Awsome Cypress",
+      "title": "Awesome Cypress",
       "description": "Lista com recursos sobre Cypress e automação de testes.",
       "link": "https://github.com/brunopulis/awesome-cypress"
+    },
+     {
+      "title": "Game of Thrones Quotes",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/got-quotes"
+    },
+    {
+      "title": "Nasa Experiments",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/nasa-experiments"
+    },
+    {
+      "title": "Star Wars Fun",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/starwarsfun"
     }
   ]
 }

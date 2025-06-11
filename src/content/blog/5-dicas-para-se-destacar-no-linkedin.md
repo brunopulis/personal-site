@@ -1,12 +1,9 @@
 ---
 title: Como construir um LinkedIn campeão
 date: 2021-04-25
-metadata:
-  categories:
-    - Carreira
-  url: https://brunopulis.com/5-dicas-para-se-destacar-no-linkedin/
-tags:
-  - carreira
+draft: false
+category: "Carreira"
+tags: ["carreira"]
 ---
 * * *
 

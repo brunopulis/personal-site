@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Pedido de ajuda!"
 date: "2024-05-09"
 ---

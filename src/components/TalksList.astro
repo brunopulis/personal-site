@@ -1,0 +1,113 @@
+---
+import { talks } from '@/data/talks.json';
+
+// Validar se talks é um array antes de filtrar
+const talksList = Array.isArray(talks) ? talks : [];
+
+// Separar palestras futuras e passadas com validação
+const upcomingTalks = talksList
+  .filter((talk) => talk?.isUpcoming)
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+const pastTalks = talksList
+  .filter((talk) => !talk?.isUpcoming)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Função para formatar data
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<section id="talks" class="bg-gray-50 py-20">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="mb-4 text-center text-3xl font-bold md:text-4xl">Palestras e apresentações</h2>
+      <p class="mx-auto mb-12 max-w-3xl text-center text-gray-600">
+        Descubra minhas palestras anteriores e futuras sobre acessibilidade da Web, desenvolvimento front-end
+				e qualidade de software.
+      </p>
+    </div>
+
+      {/* Upcoming Talks */}
+      <div class="mb-16">
+        <h3 class="mb-8 text-2xl font-bold text-purple-600">Próximas Palestras</h3>
+        {upcomingTalks.length > 0 ? (
+          <ul class="list-disc">
+            {upcomingTalks.map((talk) => (
+              <li class="flex flex-col mb-6 list-inside">
+                <h4 class="text-xl font-semibold mb-2 line-clamp-2">{talk.title}</h4>
+                <p class="text-gray-600 mb-4 line-clamp-3">{talk.description}</p>
+                <div class="flex items-center text-gray-500 mb-2">
+                  <time class="text-sm">{talk.date}</time>
+                </div>
+                <div class="flex items-center text-gray-500">
+                  <span class="text-sm">{talk.location}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="mb-16">
+            <div class="">
+              <h3 class="mb-4 text-2xl font-bold text-gray-700">Sem palestras agendadas 😥</h3>
+              <p class="text-gray-600 mb-6">
+                No momento não existem palestras agendadas. Gostaria de me convidar para falar no seu evento?
+              </p>
+              <a
+                href="#schedule-talk"
+                class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Agendar palestra
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Past Talks */}
+      {pastTalks.length > 0 && (
+        <div>
+          <h3 class="mb-8 text-2xl font-bold text-gray-700">Palestras Anteriores</h3>
+          <ul class="list-disc">
+            {pastTalks.map((talk) => (
+              <li class="flex flex-col mb-6 list-inside">
+                <h4 class="text-xl font-semibold mb-2 line-clamp-2">{talk.title}</h4>
+                <p class="text-gray-600 mb-4 line-clamp-3">{talk.description}</p>
+                <div class="flex items-center text-gray-500 mb-2">
+                  <time class="text-sm">{talk.date}</time>
+                </div>
+                <div class="flex items-center text-gray-500">
+                  <span class="text-sm">{talk.location}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Opcional: Adicionar estilos para fallback de imagem */
+  img {
+    background-color: #f3f4f6;
+  }
+</style>

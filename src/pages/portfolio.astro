@@ -1,0 +1,112 @@
+---
+import { Image } from 'astro:assets'
+import { ExternalLink } from '@lucide/astro'
+
+import projects from '@/data/portfolio.json'
+
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import HeroSection from '@/components/HeroSection.astro'
+import FinalCTA from '@/components/FinalCTA.astro'
+import Footer from '@/components/Footer.astro'
+
+import Logos from '@/components/home/Logos.astro'
+import Testimonials from '@/components/home/Testimonials.astro'
+
+// Importações das imagens
+import biblioteca from '/public/images/projects/biblioteca-da-revolucao.webp'
+import henriqueNoal from '/public/images/projects/henrique-noal.webp'
+import forja from '/public/images/projects/forja-comercial.webp'
+import vistaSer from '/public/images/projects/vista-ser.webp'
+import casamento from '/public/images/projects/casamento.webp'
+
+// Mapeamento correto das imagens
+const projectImages = {
+	'biblioteca-da-revolucao.webp': biblioteca,
+	'henrique-noal.webp': henriqueNoal,
+	'forja-comercial.webp': forja,
+	'vista-ser.webp': vistaSer,
+	'casamento.webp': casamento
+}
+
+// Função auxiliar para garantir que a imagem existe
+const getImageSource = (imageName) => {
+	const image = projectImages[imageName]
+
+	if (!image) {
+		console.warn(`Imagem não encontrada: ${imageName}`)
+		return '/public/images/fallback.webp' // fallback para uma imagem padrão
+	}
+
+	console.log(image)
+	return image
+}
+
+const latestProjects = projects.projects
+	.sort((a, b) => new Date(b.date) - new Date(a.date))
+	.slice(0, 12)
+---
+
+<Layout title="Portfólio - Bruno Pulis">
+	<Header />
+	<main id="main-content">
+  <HeroSection
+			title="Portfólio"
+			description="Conheça alguns dos projetos em que atuei, focando em acessibilidade, qualidade e impacto real na vida dos clientes."
+		/>
+
+		<section class="bg-gray-50 py-16 dark:bg-gray-800/50">
+			<div class="container mx-auto px-4">
+				<div class="grid gap-8 md:grid-cols-3">
+					{
+						latestProjects.map((project) => {
+							const imageName = project.projectImage.split('/').pop()
+							const imageSource = getImageSource(imageName)
+
+							return (
+								<div class="overflow-hidden rounded-lg bg-white shadow-lg transition-shadow hover:shadow-xl">
+									<Image
+										src={imageSource}
+										alt={`Foto de ${project.name}`}
+										class="h-48 w-full object-cover"
+										width={300}
+										height={300}
+									/>
+									<div class="p-6">
+										<h3 class="mb-2 text-xl font-semibold">{project.title}</h3>
+										<p class="mb-4 text-gray-600">{project.service}</p>
+
+										<div class="mb-4 flex flex-wrap gap-2">
+											{project.tags.map((tag) => (
+												<span class="rounded-full bg-gray-100 px-3 py-1 text-sm text-black">
+													{tag}
+												</span>
+											))}
+										</div>
+										<a
+											href={project.links.url}
+											class="text-blood-red inline-flex cursor-pointer items-center gap-2 font-semibold transition-colors hover:underline hover:underline-offset-8"
+										>
+											Ver detalhes
+											<ExternalLink class="h-4 w-4" />
+										</a>
+									</div>
+								</div>
+							)
+						})
+					}
+				</div>
+			</div>
+		</section>
+
+		<Logos />
+		<Testimonials />
+		<FinalCTA
+			title="Quer criar um case de sucesso em acessibilidade?"
+			description="Fale comigo e leve seu produto para o próximo nível."
+			label="Solicite uma consultoria"
+			url="/contact"
+		/>
+	</main>
+	<Footer />
+</Layout>

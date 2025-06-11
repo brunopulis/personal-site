@@ -1,0 +1,85 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/Header.astro'
+import HeroSection from '@/components/HeroSection.astro'
+import ProjetosPessoais from '@/components/home/ProjetosPessoais.astro'
+import Footer from '@/components/Footer.astro'
+
+import { Image } from 'astro:assets'
+
+import me from '@/assets/palestras.webp'
+---
+
+<Layout title="Sobre mim - Bruno Pulis">
+	<Header />
+	<main>
+		<HeroSection title="Sobre" description="Um pouco da minha trajetória profissional" />
+
+		<section class="bg-white py-16 dark:bg-gray-800">
+			<div class="container mx-auto">
+				<div class="mb-24 grid items-center gap-12 md:grid-cols-2">
+					<div>
+						<span
+							class="mb-4 inline-block rounded-full bg-[#610404] px-4 py-1 text-sm font-medium text-white"
+						>
+							Minha história
+						</span>
+						<h2 class="mb-6 text-3xl font-bold text-gray-900">Quem é Bruno Pulis?</h2>
+						<p class="mb-4 text-gray-600">
+							Sou um engenheiro de acessibilidade, palestrante, mentor e instrutor. Adoro os
+							padrões web e quero tornar a web acessível para todos. Me sinto privilegiado em poder
+							construir um futuro mais acessível. Sou formado em Sistemas para Internet e trabalho
+							na área de desenvolvimento desde 2010.
+						</p>
+						<p class="mb-4 text-gray-600">
+							Já ministrei diversos treinamentos para empresas, incluindo uma parceria com o <strong
+								>Movimento Web para Todos</strong
+							> fui professor convidado no <strong
+								>Curso de Acessibilidade Digital: Elimine barreiras de acesso</strong
+							> da HOW TO Bootcamps.
+						</p>
+						<p class="mb-4 text-gray-600">
+							Hoje, dedico a ensinar desenvolvedores e analistas de qualidade a criarem e testarem
+							interfaces acessíveis atráves dos meus conteúdos e da mentoria BASE
+						</p>
+					</div>
+					<div class="overflow-hidden rounded-lg shadow-xl">
+						<Image
+							src={me}
+							class="h-full w-full object-cover"
+							fetchpriority="high"
+							alt=""
+							loading="lazy"
+						/>
+					</div>
+				</div>
+
+				<div class="mb-24">
+					<div class="mb-12">
+						<h2 class="my-6 text-3xl font-bold text-gray-900">Da engenharia ao impacto em acessibilidade</h2>
+						<p> Comecei como engenheiro de software e, ao longo dos anos, foquei em acessibilidade digital. Já colaborei com empresas como Globo, Itaú e OLX, sempre promovendo acessibilidade técnica e estratégica.</p>
+						
+						<h2 class="my-6 text-3xl font-bold text-gray-900">Atuação técnica e reconhecimento</h2>
+            <p class="text-gray-600 mb-4">
+              Sou reconhecido nacionalmente como referência em acessibilidade web, já fui convidado como especialista da área para julgar monografias pela PUC MG.
+            </p>
+            <p class="text-gray-600">Em 2024, fui um dos cinco finalistas do Prêmio Profissionais de Acessibilidade do Link Festival.</p>
+
+            <h2 class="my-6 text-3xl font-bold text-gray-900">Publicações e Revistas</h2>
+            <p class="text-gray-600 mb-4">
+              Sou reconhecido nacionalmente como referência em acessibilidade web, já fui convidado como especialista da área para julgar monografias pela PUC MG.
+            </p>
+						Feed Me! – RSS Links for Digital Accessibility People – TPGi
+Como foi o TSPI Conference 2020
+Cotemig: Sua revolução começa aqui
+EDUCAMBIENTAL
+Revista iMasters #05 – Feveireiro
+            <p class="text-gray-600">Em 2024, fui um dos cinco finalistas do Prêmio Profissionais de Acessibilidade do Link Festival.</p>
+					</div>
+					<ProjetosPessoais />
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

@@ -1,9 +1,7 @@
 ---
+issue: "22"
 title: "Construindo em público"
 date: "2024-03-07"
-tags: 
-  - "22"
-  - "buildinpublic"
 ---
 
 Pulis Letters - Edição #22
