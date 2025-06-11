@@ -1,10 +1,10 @@
 ---
+issue: "08"
 title: "8 dicas para reuniões efetivas"
 date: "2024-01-03"
-issue: ""
 ---
 
-**3 de Janeiro de 2024**
+3 de Janeiro de 2024
 
 Semana passada, estava conversando com um casal de amigos nosso sobre trabalho e a rotina.
 
@@ -13,9 +13,7 @@ Chegamos no assunto que todos sofremos: a **reunião**.
 Todos nós trabalhamos com TI, o curioso foi ouvir o mesmo relato com palavras diferentes.
 
 - Reuniões são chatas;
-
 - Daily que demoram uma hora;
-
 - E o famoso **"essa reunião poderia ser resolvida com um e-mail"**.
 
 Nesse artigo, irei mostrar alguns passos para tornar suas reuniões mais efetivas.
@@ -32,7 +30,6 @@ Nesse artigo, irei mostrar alguns passos para tornar suas reuniões mais efetiva
 Por coincidência, estava lendo o [Brevidade Inteligente](https://amzn.to/3RNtkcU) (prometo escrever sobre ele), duas frases me chamaram atenção:
 
 > Três em cada quatro pessoas não receberam sequer um treinamento sobre reuniões.
-> 
 > Não é atoa que a maioria delas são péssimas. 90% das pessoas admitem ficar viajando na maionese e 72% fazem outras coisas durante a reunião.
 
 **POR QUE ISSO IMPORTA:** reuniões são importantes para dar uma visão ampla de um problema ou alinhamento de expectativas, nada, além disso. Por isso, vou te dar algumas dicas importantes sobre como ter reuniões efetivas e que façam sentido.
@@ -138,17 +135,11 @@ Isso ajuda bastante as pessoas entenderem seu lugar na reunião e consequentemen
 **Resumindo os 8 pontos:**
 
 - **Defina a duração da reunião;**
-
 - **Abra com a frase enviada por e-mail;**
-
 - **Explique a importância da reunião;**
-
 - **Seja claro nas decisões;**
-
 - **Conduza o debate com foco e eficiência;**
-
 - **Seja inclusivo;**
-
 - **Finalize 2 minutos antes.**
 
 Após a reunião terminar, envie um resumo no formato de tópicos e ações que precisam ser feitas para os participantes.

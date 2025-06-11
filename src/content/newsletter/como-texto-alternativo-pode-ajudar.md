@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "43"
 title: "Uma imagem vale mais que mil palavras"
 date: "2024-11-14"
 coverImage: "MB-421-scaled.jpg"
@@ -20,15 +20,10 @@ Na carta de hoje, vou te mostrar a importância do texto alternativo e como ele 
 Vamos percorrer os seguintes tópicos:
 
 - Resumo do critério 1.1.1;
-
 - Seu objetivo;
-
 - Onde podemos usar textos alternativos?
-
 - Quando descrever uma imagem?
-
 - Imagens contextuais e decorativas
-
 - Descrições curtas e longas.
 
 Vamos lá!
@@ -46,9 +41,7 @@ Esse critério tem um objetivo simples: fornecer informação para todos. Conseg
 Algumas pessoas são beneficiadas com isso, por exemplo:
 
 - Pessoas que têm dificuldade de perceber o conteúdo visual;
-
 - Pessoas que têm dificuldades em compreender fotografias, desenhos e outras imagens;
-
 - Pessoas surdo-cegas.
 
 ## Onde podemos usar textos alternativos?
@@ -56,13 +49,9 @@ Algumas pessoas são beneficiadas com isso, por exemplo:
 Podemos usar em quase todos os cenários, mas alguns estão presente em nosso cotidiano e nem percebemos, como:
 
 - **Carrosséis para redes sociais;**
-
 - **GIFs, memes e quadrinhos**;
-
 - **Um gráfico de dados;**
-
 - **Um mapa de imagem;**
-
 - **Uma animação que ilustra como funciona o motor de um carro.**
 
 Todos os casos citados podem ser acessível, porém, infelizmente na maioria das vezes não é. Uma vez que ignoramos descrever as imagens, pessoas com algum tipo de deficiência visual não compreendem seu conteúdo.
@@ -76,13 +65,11 @@ Essa é a pergunta de milhões, uma resposta objetiva seria: depende do contexto
 De forma geral, temos dois tipos de imagens:
 
 - Imagens informativas;
-
 - Imagens decorativas.
 
 E dois cenários:
 
 - Descrições curtas;
-
 - Descrições longas.
 
 ### Imagens informativas
@@ -94,9 +81,7 @@ Para ilustramos, temos o anúncio de um Aspirador Robô Eclipse. Se tivéssemos 
 Ele não explica quase nada, isso levaria algumas perguntas como:
 
 - Sua cor?
-
 - Qual a marca do produto?
-
 - Formato?
 
 Acho que deu para pegar a ideia, não é? Esse exemplo é uma imagem informativa, logo ela precisa ser descrita.
@@ -107,7 +92,7 @@ Uma possível descrição seria:
 
 Convertendo para código HTML ficaria:
 
-```markup
+```html
 <img src="aspirador.jpg"  alt="Aspirador Robô Eclipse, seu formato é redondo da cor preto com dois botões na parte de cima. Na parte debaixo, existe cerdas que fazem a limpeza da casa.">
 ```
 
@@ -123,13 +108,13 @@ A informação mais importante nesse contexto, é a frase, logo a imagem pode se
 
 Convertendo para código HTML ficaria:
 
-```markup
+```html
 <img src="alerta.png" alt="">
 <p>Proteja-se! Confira sempre se seu boleto vem com seu nome, telefone e endereço</p>
 ```
 
 > Para fixar
-> 
+>
 > Imagens decorativas devem ficar no CSS, caso não conseguir deixe o ALT em branco.
 
 ### Descrições curtas
@@ -142,7 +127,7 @@ Sua descrição deve informar as características principais da imagem.
 
 Uma imagem em um site fornece um link para uma newsletter gratuita. A imagem contém o texto "Newsletter gratuita. Receba receitas, notícias e muito mais. Saiba mais." O texto alternativo corresponde ao texto na imagem.
 
-```markup
+```html
 <img src="newsletter.gif" alt="Newsletter gratuita. Receba receitas, notícias e muito mais. Saiba mais.">
 ```
 
@@ -154,11 +139,11 @@ A técnica que descrevo a seguir é utilizada quando precisamos fazer descriçõ
 
 Uma fotografia do quadro “Uma noite estrelada de Van Gogh”. Esse exemplo utiliza o atributo  `aria-describedby` e demonstra como pode ser aplicado a uma imagem para fornecer uma descrição longa, onde essa descrição de texto está na mesma página da imagem.
 
-```markup
+```html
 <img src="noite-estrelada.jpg" alt="A noite estrela, Van Gogh 1889" aria-describedby="p1">
 <p id="p1">
-  A imagem é uma representação vibrante e dinâmica de uma noite estrelada, onde o céu parece vivo, 
-  com redemoinhos de luz e estrelas brilhantes contrastando com uma vila calma e silenciosa abaixo. 
+  A imagem é uma representação vibrante e dinâmica de uma noite estrelada, onde o céu parece vivo,
+  com redemoinhos de luz e estrelas brilhantes contrastando com uma vila calma e silenciosa abaixo.
   A combinação de cores intensas e movimento transmite uma sensação de energia pulsante e introspecção,
   como se capturasse a grandiosidade e o mistério do universo junto com a quietude da humanidade.
 </p>
@@ -167,7 +152,6 @@ Uma fotografia do quadro “Uma noite estrelada de Van Gogh”. Esse exemplo uti
 O leitor de telas irá ler as duas informações: a curta e a longa. Tudo devido à junção do aria-describebdy e o atributo id.
 
 > Para se aprofundar
-> 
 > Traduzi [um guia super completo de como escrever um texto alternativo](https://brunopulis.com/texto-alternativo-o-guia-definitivo/).
 
 ## Conclusão
@@ -180,5 +164,5 @@ Não deixe suas imagens falarem sozinhas. Torne-se parte da solução. **Escolha
 
 Até semana que vem,
 
-SDG,  
+SDG,
 Pulis.

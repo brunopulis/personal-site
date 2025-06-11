@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "26"
 title: "Vou te dar o mapa da mina!"
 date: "2024-04-04"
 ---

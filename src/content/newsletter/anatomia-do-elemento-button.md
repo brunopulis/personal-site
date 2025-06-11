@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "16"
 title: "Anatomia do elemento button"
 date: "2024-01-29"
 ---
@@ -32,11 +32,11 @@ Para as tecnologias assistivas identificarem seu estado, deve-se usar o atributo
 
 Por exemplo, um botão rotulado (texto do botão) como **Mute** em um player de áudio pode indicar que o som está silenciado, definindo o estado pressionado **true**.
 
-```markup
-<!-- Botão não pressionado --> 
-<button aria-pressed="false">Desligar som</button> 
+```html
+<!-- Botão não pressionado -->
+<button aria-pressed="false">Desligar som</button>
 
-<!-- Botão pressionado --> 
+<!-- Botão pressionado -->
 <button aria-pressed="true">Desligar som</button>
 ```
 
@@ -56,10 +56,9 @@ Esse [artigo da Marcy Sutton](https://css-tricks.com/buttons-vs-links/), esclar
 
 ## **Interação com teclado**
 
-Existem duas formas de ativar um <button> via teclado, através das tecla:
+Existem duas formas de ativar um `<button>` via teclado, através das tecla:
 
 - Space;
-
 - Enter.
 
 Ambas, ativam o botão. Depois de ativado, o foco é definido dependendo do contexto.
@@ -72,7 +71,7 @@ Por exemplo:
 
 ## **Considerações sobre WAI-ARIA, roles, states e properties**
 
-- O botão deve ter a _**role=button,**_ por padrão o elemento <button> vem com ela implícita não precisa de inserir;
+- O botão deve ter a `role=button`, por padrão o elemento `<button>` vem com ela implícita não precisa de inserir;
 
 - O botão deve ter um rótulo acessível. Por padrão, o nome acessível é o conteúdo de texto dentro do elemento do botão;
 
@@ -89,7 +88,6 @@ Se fez sentido para você, entre em contato comigo.
 ## **Para se aprofundar**
 
 - [Exemplos de Botões](https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/);
-
 - [Exemplos de botões (IDL)](https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button_idl/).
 
 Soli Deo Gloria, Bruno Pulis

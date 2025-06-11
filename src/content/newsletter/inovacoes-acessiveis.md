@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "02"
 title: "9 invenções que irão te surpreender"
 date: "2023-11-19"
 ---
