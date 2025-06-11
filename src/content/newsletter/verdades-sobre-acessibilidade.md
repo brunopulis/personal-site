@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "07"
 title: "6 verdades sobre acessibilidade"
 date: "2024-01-01"
 ---

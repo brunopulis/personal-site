@@ -1,12 +1,12 @@
 ---
-issue: ""
+issue: "35"
 title: "Indicações Prime Day"
 date: "2024-07-19"
 ---
 
 **18 de julho de 2024,**
 
-Olá, aqui é o Pulis com a edição 36.
+Olá, aqui é o Pulis com a edição 35.
 
 Eu escrevo sobre acessibilidade digital, Obsidian e organização digital.
 
@@ -23,14 +23,10 @@ Esta semana vou aproveitar o Prime Day e recomendar alguns títulos interessante
 Vamos lá?
 
 1. [Não me faça pensar](https://amzn.to/3LsihmX): um clássico da usabilidade web. Lembro quando li explodiu minha cabeça. Ótimo para abrir os horizontes em relação à usabilidade e experiência do usuário;
-
-3. [Criando um segundo cérebro](https://amzn.to/3LuyO9W): um dos meus livros de cabeceira em relação à organização digital;
-
-5. [Hiper Foco - Como trabalhar menos e render mais](https://amzn.to/3zZ6BFq): um livro que pode trazer uma dose de calma em nossas vidas agitadas;
-
-7. [Psicologia Financeira](https://amzn.to/4bR7iOH): li ele ano passado, um dos melhores livros sobre finanças me ajudou a ver o dinheiro de uma forma completamente diferente;
-
-9. [Box Trilogia Senhor dos Anéis](https://amzn.to/3LtOzOd): como um bom nerd de respeito, sou obrigado a indicar essa belezura. Uma edição de 2019 com acabamento perfeito e um super desconto.
+2. [Criando um segundo cérebro](https://amzn.to/3LuyO9W): um dos meus livros de cabeceira em relação à organização digital;
+3. [Hiper Foco - Como trabalhar menos e render mais](https://amzn.to/3zZ6BFq): um livro que pode trazer uma dose de calma em nossas vidas agitadas;
+4. [Psicologia Financeira](https://amzn.to/4bR7iOH): li ele ano passado, um dos melhores livros sobre finanças me ajudou a ver o dinheiro de uma forma completamente diferente;
+5. [Box Trilogia Senhor dos Anéis](https://amzn.to/3LtOzOd): como um bom nerd de respeito, sou obrigado a indicar essa belezura. Uma edição de 2019 com acabamento perfeito e um super desconto.
 
 * * *
 
@@ -47,7 +43,6 @@ Está na hora de as empresas pararem de exigir que os funcionários busquem a to
 Artigos recentes no blog
 
 - [Melhorias do meu site](https://brunopulis.com/melhorias-do-site/)
-
 - [GitHub Profile: dicas para se destacar](https://brunopulis.com/github-profile-dicas-para-se-destacar/)
 
 ## Projetos 🧪

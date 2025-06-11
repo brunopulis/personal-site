@@ -1,32 +1,27 @@
 ---
-issue: ""
+issue: "11"
 title: "Como incluir acessibilidade no Shift Left"
 date: "2024-01-15"
 ---
 
-![Imagem gerada com o Bing Create, prompt: teste automatizado.](images/1705342283447-1024x576.png) _Imagem gerada com o Bing Create, prompt: teste automatizado._\[/caption\]  
+![Imagem gerada com o Bing Create, prompt: teste automatizado.](images/1705342283447-1024x576.png) _Imagem gerada com o Bing Create, prompt: teste automatizado._\[/caption\]
 
 Semana passada, vi uma apresentação sobre **_shift left_ com acessibilidade** que me chamou minha atenção.
 
 Para quem não conhece o termo, shift left é uma abordagem para garantir a qualidade desde o início. Isso traz diversos benefícios, dentre eles:
 
 - Prevenir bugs;
-
 - Antecipar melhorias;
-
 - Gerar previsibilidade e agilidade;
-
 - Aumentar a confiança do time.
 
 De forma prática, vou te mostrar:
 
 - Ferramentas;
-
 - Abordagens;
-
 - Algumas dicas.
 
-\[caption id="attachment\_6706" align="aligncenter" width="760"\]![Piramide com a abordagem Shift Left para acessibilidade: Etapa 0 - testes estáticos, Etapa 1 - testes unitários, Etapa 2 - Testes de componentes, Etapa 3 - Testes E2E e Etapa 4 - Testes manuais](images/1705342474027-300x169.png) Pirâmide de testes usando Shift Left de acessibilidade\[/caption\] 
+\[caption id="attachment\_6706" align="aligncenter" width="760"\]![Piramide com a abordagem Shift Left para acessibilidade: Etapa 0 - testes estáticos, Etapa 1 - testes unitários, Etapa 2 - Testes de componentes, Etapa 3 - Testes E2E e Etapa 4 - Testes manuais](images/1705342474027-300x169.png) Pirâmide de testes usando Shift Left de acessibilidade\[/caption\]
 
 > Observação: nossa jornada irá seguir uma pirâmide que faz uma analogia com a famosa pirâmide de testes. Vale lembrar, que ela não é uma representação real da pirâmide de testes.
 
@@ -62,7 +57,7 @@ São testes extremamente objetivos e rápidos de executar.
 
 Uma ferramenta que pode ser utilizada é o [jest-axe](https://github.com/nickcolley/jest-axe). Ele é um _custom matcher_ para Jest que inclui validações de acessibilidade.
 
-Um exemplo de um componente <img> sem o atributo ALT inserido.
+Um exemplo de um componente `<img>` sem o atributo ALT inserido.
 
 ```javascript
 /**
@@ -70,7 +65,7 @@ Um exemplo de um componente <img> sem o atributo ALT inserido.
  */
 const { axe, toHaveNoViolations } = require('jest-axe')
 expect.extend(toHaveNoViolations)
-it('deve demonstrar o uso do matcher', async () => {
+it('deve demonstrar o uso do matchesr', async () => {
   const render = () => '<img src="#"/>'
   // pass anything that outputs html to axe
   const html = render()
