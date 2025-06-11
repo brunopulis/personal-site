@@ -1,12 +1,8 @@
 ---
 title: Acessibilidade para iniciantes
 date: 2021-05-19
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/acessibilidade-para-iniciantes/
-tags:
-  - acessibilidade
+draft: false
+category: "Acessibilidade"
 ---
 * * *
 

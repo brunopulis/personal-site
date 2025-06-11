@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Como usar atributos ARIA sem passar vergonha"
 date: "2023-12-18"
 ---
@@ -13,7 +14,7 @@ Semana passada estava testando uma tela, nela existiam três cards simples. Cada
 
 Porém, ao conferir o HTML escrito, estava assim:
 
-```markup
+```html
 <a href="#" role="button">Consultar</a>
 ```
 

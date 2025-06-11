@@ -1,7 +1,16 @@
 ---
-title: Uma doença chamada conteúdo curto
+layout: "@/layouts/PostLayout.astro"
+schema: "../../components/common/head/schemas/BlogPosting.astro"
+title: "Uma doença chamada conteúdo curto"
 date: 2024-10-02
-coverImage: "/images/social-midia-scaled.jpg"
+category: "Opinião"
+image: {
+  src: "/src/assets/images/social-midia-scaled.jpg",
+  alt: "A picture of a coder"
+}
+author: "Pulis"
+excerpt: "Have you ever wondered what the most important items of life are? Well, wonder no more!"
+coverImage: "/src/assets/images/social-midia-scaled.jpg"
 ---
 Nesse artigo vou te contar a minha história com produção de conteúdo e como o conteúdo curto me atrapalhou.
 
@@ -19,10 +28,10 @@ O RSS atualiza em tempo real seus sites favoritos em um local centralizado. Assi
 
 Alguns anos se passaram e outras redes sociais surgiram, como:
 
--   Twitter;
--   Orkut;
--   Facebook;
--   Instagram.
+- Twitter;
+- Orkut;
+- Facebook;
+- Instagram.
 
 Todas elas com um único propósito: **mantê-lo o maior tempo possível dentro de suas plataformas**.  
 Isso ajudou todas elas serem negócios milionários, cada uma teve seu auge.
@@ -71,9 +80,9 @@ Percebo que nessas três e a [Pulis Letters](https://brunopulis.ck.page) são ca
 
 O YouTube a longo prazo se torna muito vantajoso por alguns motivos:
 
--   Conteúdo de qualidade;
--   Não some na timeline;
--   Otimização de SEO.
+- Conteúdo de qualidade;
+- Não some na timeline;
+- Otimização de SEO.
 
 Além disso, posso montar verdadeiras aulas sobre acessibilidade, obsidian e outros assuntos que tenha vontade de compartilhar.
 
@@ -83,4 +92,4 @@ O que você achou? Adoraria saber sua opinião.
 
 Esse conteúdo está disponibilizado no Fediverso também, faça parte do movimento que mais crescer na web.
 
-Aproveita e me siga no Fediverso.
+Aproveita e me siga no Fediverso

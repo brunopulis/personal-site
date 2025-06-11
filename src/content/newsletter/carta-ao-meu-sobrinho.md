@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Carta ao meu sobrinho"
 date: "2024-01-07"
 ---

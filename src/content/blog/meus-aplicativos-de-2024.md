@@ -1,14 +1,8 @@
 ---
 title: Meus aplicativos de 2024
 date: 2024-12-31
-metadata:
-  categories:
-    - Pessoal
-  tags:
-    - tecnologia
-  url: https://brunopulis.com/meus-aplicativos-de-2024/
-tags:
-  - pessoal
+category: "Pessoal"
+excerpt: "Confira os aplicativos que mais usei em 2024."
 ---
 Estava navegando pelo meu RSS e vi um post do Kev Quirk que me despertou curiosidade. O Kev fez [uma lista de aplicativos que usou ao longo do ano](https://kevquirk.com/blog/my-default-apps-at-the-end-of-2024).
 

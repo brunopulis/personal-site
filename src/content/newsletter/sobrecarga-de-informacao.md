@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Como lidar com a sobrecarga de informação"
 date: "2024-01-17"
 ---

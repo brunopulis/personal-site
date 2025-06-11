@@ -3,10 +3,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-vista-blue: #849cdb;
-  --color-blood-red: #610404;
-  --color-errie-black: #171e1e;
-  --color-light-silver: #d9d9d9;
   --color-primary-50: #f5f3ff;
   --color-primary-100: #ede9fe;
   --color-primary-200: #ddd6fe;
@@ -55,8 +51,8 @@
   --color-warning-900: #713f12;
   --color-warning-950: #422006;
 
-  --font-sans: "Source Sans 3", system-ui, sans-serif;
-  --font-display: "Source Sans 3", system-ui, sans-serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: Lexend, system-ui, sans-serif;
 
   --animate-fade-in: fadeIn 0.5s ease-in-out;
   --animate-slide-up: slideUp 0.5s ease-in-out;
@@ -106,7 +102,11 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(#610404, currentcolor);
+  }
+
+  html {
+    font-family: "Source Sans 3 Variable", system-ui, sans-serif;
   }
 }
 
@@ -115,7 +115,7 @@
 }
 
 @utility btn-primary {
-  @apply btn bg-accent-400 hover:bg-accent-500 text-black shadow-md hover:shadow-lg;
+  @apply btn bg-[#610404] hover:bg-red-900 text-black shadow-md hover:shadow-lg;
 }
 
 @utility btn-secondary {
@@ -143,27 +143,6 @@
 }
 
 @layer base {
-  @font-face {
-    font-family: "Source Sans 3";
-    src: url("./fonts/sourcesans-black.woff2") format("woff2");
-    font-weight: 900;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Source Sans 3";
-    src: url("./fonts/sourcesans-bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Source Sans 3";
-    src: url("./fonts/sourcesans-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-  }
-
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }

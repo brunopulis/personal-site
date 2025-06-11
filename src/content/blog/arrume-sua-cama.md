@@ -1,15 +1,8 @@
 ---
 title: "Arrume sua cama: Pequenas coisas que podem mudar a sua vida"
 date: 2023-06-27
-metadata:
-  categories:
-    - Indicações
-  tags:
-    - desenvolvimento pessoal
-    - review
-  url: https://brunopulis.com/arrume-sua-cama/
-tags:
-  - indicacoes
+category: "Indicações"
+tags: ["livros", "review", "desenvolvimento pessoal"]
 ---
 Arrume sua cama é um best-seller do Almirante William H. McRaven, com 10 princípios ele deve uma carreira de sucesso na marinha americana ao longo de mais de 30 anos.
 
@@ -19,9 +12,9 @@ Nesse artigo te conto a minha experiência de leitura e como ele me impactou pos
 
 ## O livro em 3 frases
 
--   Grandes mudanças começam com pequenas coisas, isto é, comece arrumando a sua cama;
--   Dias ruins virão, entretanto, encare eles com todas as suas forças;
--   Trabalhe duro, mas trabalhe em equipe se quiser chegar mais longe.
+- Grandes mudanças começam com pequenas coisas, isto é, comece arrumando a sua cama;
+- Dias ruins virão, entretanto, encare eles com todas as suas forças;
+- Trabalhe duro, mas trabalhe em equipe se quiser chegar mais longe.
 
 ## Impressões
 
@@ -66,9 +59,7 @@ Aprendi também que devo encarar a vida de frente, pois como, o autor diz, a vid
 ## Minhas 3 melhores citações
 
 > Arrumar a cama corretamente não seria motivo de elogio. Era o que se esperava de mim. Era minha primeira tarefa do dia, e executá-la bem era importante. Demonstrava a minha disciplina. Revelava minha atenção ao detalhe e, no fim do dia, seria um lembrete de que eu havia feito uma coisa da qual poderia me orgulhar, não importa quão pequena fosse
-
 > Ninguém consegue remar sozinho. Encontre alguém para compartilhar sua vida. Faça tantos amigos quanto possível e nunca esqueça que seu sucesso depende dos outros.
-
 > Tiranos são sempre iguais. Não importa onde estejam: no pátio da escola, no local de trabalho ou governando um país por meio do terror. Eles prosperam onde há medo e intimidação. \[…\] Se você não encontra coragem para enfrentá-los, eles atacam.
 
 ## Resumo e Notas
@@ -77,16 +68,16 @@ O tema principal do livro é demonstrar que podemos muito mais do que imaginamos
 
 Cada capítulo trata de um princípio que McRaven usou ao longo de sua carreira de mais de 30 anos na marinha americana, abaixo todos os capítulos do livro:
 
--   Capítulo 1 – Comece o dia com uma tarefa feita
--   Capítulo 2 – Você não vai conseguir sozinho
--   Capítulo 3 – Tudo o que importa é o tamanho do coração
--   Capítulo 4 – A vida não é justa: siga em frente!
--   Capítulo 5 – O fracasso pode tornar você mais forte
--   Capítulo 6 – Você precisa ousar mais
--   Capítulo 7 – Enfrente os tiranos
--   Capítulo 8 – Mostre-se à altura da ocasião
--   Capítulo 9 – Dê esperança as pessoas
--   Capítulo 10 – Nunca, jamais, desista!
+- Capítulo 1 – Comece o dia com uma tarefa feita
+- Capítulo 2 – Você não vai conseguir sozinho
+- Capítulo 3 – Tudo o que importa é o tamanho do coração
+- Capítulo 4 – A vida não é justa: siga em frente!
+- Capítulo 5 – O fracasso pode tornar você mais forte
+- Capítulo 6 – Você precisa ousar mais
+- Capítulo 7 – Enfrente os tiranos
+- Capítulo 8 – Mostre-se à altura da ocasião
+- Capítulo 9 – Dê esperança as pessoas
+- Capítulo 10 – Nunca, jamais, desista!
 
 Se você ficou curioso, vou deixar [meu link de afiliado na Amazon](https://amzn.to/3PttRkG). Você não paga nada a mais, mas me ajuda a produzir mais conteúdo.
 

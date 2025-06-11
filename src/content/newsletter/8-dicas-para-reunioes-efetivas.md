@@ -1,8 +1,7 @@
 ---
 title: "8 dicas para reuniões efetivas"
 date: "2024-01-03"
-tags: 
-  - "comunicacao"
+issue: ""
 ---
 
 **3 de Janeiro de 2024**

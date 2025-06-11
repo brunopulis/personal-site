@@ -1,0 +1,134 @@
+---
+import { ChevronDown, ArrowRight } from '@lucide/astro'
+import { Icon } from 'astro-icon/components'
+
+import config from "@/data/site.config.json";
+
+import meImage from '@/assets/me.png'
+---
+
+<section class="h-50vh hero-section relative overflow-hidden bg-red-950 pt-20 md:pt-20">
+	<div class="container mx-auto px-6">
+		<div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+			<div class="space-y-8 lg:col-span-4">
+				<hr class="h-1 w-24 bg-white" />
+				<div class="space-y-4">
+					<h1 class="text-5xl font-bold leading-tight text-white lg:text-7xl">
+						Eu sou<br />
+						<span class="text-6xl lg:text-8xl">Bruno,</span>
+					</h1>
+					<h2 class="font-bolder text-2xl text-white lg:text-3xl">
+						engenheiro de<br />
+						acessibilidade digital.
+					</h2>
+				</div>
+
+				<p class="max-w-md text-lg font-light leading-relaxed text-white">
+					Transformo produtos digitais em experiências acessíveis para todos.
+				</p>
+
+				<!-- Scroll Indicator -->
+				<div class="pt-8">
+					<ChevronDown class="h-12 w-12 text-white sm:hidden" fill="none" stroke="currentColor" />
+				</div>
+			</div>
+
+			<div class="mx-auto flex justify-center lg:col-span-4">
+				<div class="relative">
+					<img src={meImage.src} class="h-60vh w-auto" fetchpriority="high" alt="" />
+				</div>
+			</div>
+
+			<div class="space-y-8 lg:col-span-4 text-right">
+				<div class="space-y-4">
+					<h3 class="text-xl font-bold text-white">Sobre</h3>
+					<p class="text-md font-light leading-relaxed text-[#C3CAD5] text-[18px]">
+						Engenheiro de acessibilidade com mais de 10 anos de mercado, construindo produtos acessíveis para todas as pessoas.
+					</p>
+					<a
+						href="/about"
+						class="group inline-flex items-center text-white transition-colors hover:text-red-200"
+					>
+						<span class="border-b border-white pb-1 group-hover:border-red-200">Saiba mais</span>
+						<ArrowRight class="ml-2 h-4 w-4" />
+					</a>
+				</div>
+
+				<!-- Work Section -->
+				<div class="space-y-4 ">
+					<h3 class="text-xl font-bold text-white">Meu trabalho</h3>
+					<p class="text-md font-light leading-relaxed text-[#C3CAD5] text-[18px]">
+						Purus ut faucibus pulvinar elementum integer enim neque fermentum iaculis eu non diam
+						phasellus dolor consectetur.
+					</p>
+					<a
+						href="/portfolio"
+						class="group inline-flex items-center text-white transition-colors hover:text-red-200"
+					>
+						<span class="border-b border-white pb-1 group-hover:border-red-200"
+							>Conheça meus trabalhos</span
+						>
+						<ArrowRight class="ml-2 h-4 w-4" />
+					</a>
+				</div>
+
+				<!-- Social Media -->
+				<div class="space-y-4 text-right">
+					<h3 class="text-xl font-bold text-white">Me siga nas redes sociais</h3>
+					<ul class="flex space-x-4 justify-end gap-3">
+						<li class="inline">
+							<a href={config.socialMidia.bluesky} class="text-xl text-white transition-colors hover:text-red-200">
+								<Icon name="fa6-brands:bluesky" />
+							</a>
+						</li>
+						<li class="inline">
+							<a href={config.socialMidia.mastodon} class="text-xl text-white transition-colors hover:text-red-200">
+								<Icon name="fa6-brands:mastodon" />
+							</a>
+						</li>
+						<li class="inline">
+							<a href={config.socialMidia.instagram} class="text-xl text-white transition-colors hover:text-red-200">
+								<Icon name="fa6-brands:instagram" />
+							</a>
+						</li>
+						<li class="inline">
+							<a href={config.socialMidia.linkedin} class="text-xl text-white transition-colors hover:text-red-200">
+								<Icon name="fa6-brands:linkedin" />
+							</a>
+						</li>
+						<li class="inline">
+							<a href={config.socialMidia.youtube} class="text-xl text-white transition-colors hover:text-red-200">
+								<Icon name="fa6-brands:youtube" />
+							</a>
+						</li>
+						<li class="inline">
+							<a href={config.socialMidia.github} class="text-xl text-white transition-colors hover:text-red-200">
+								<Icon name="fa6-brands:github" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Add keyframes for additional animations if needed */
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	/* Apply floating animation to the entire SVG container */
+	.fade-in svg {
+		animation: float 6s ease-in-out infinite;
+	}
+</style>

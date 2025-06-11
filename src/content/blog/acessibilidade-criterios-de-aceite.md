@@ -1,12 +1,8 @@
 ---
 title: "Acessibilidade e critérios de aceite: o quê eles tem um comum?"
 date: 2021-04-25
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/acessibilidade-criterios-de-aceite/
-tags:
-  - acessibilidade
+draft: false
+category: "Acessibilidade"
 ---
 Como QA, somos responsáveis por garantir a qualidade do software.
 

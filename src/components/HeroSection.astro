@@ -1,42 +1,62 @@
 ---
 interface Props {
-  title: string;
-  highlightText?: string;
-  description: string;
+	title: string
+	highlightText?: string
+	description: string
 }
 
-const { title, highlightText, description } = Astro.props;
+const { title, highlightText, description } = Astro.props
 
 // Split the title to insert the highlighted text if provided
-let titleStart = title;
-let titleEnd = "";
+let titleStart = title
+let titleEnd = ''
 
 if (highlightText) {
-  const titleParts = title.split(highlightText);
-  if (titleParts.length > 1) {
-    titleStart = titleParts[0];
-    titleEnd = titleParts[1];
-  }
+	const titleParts = title.split(highlightText)
+	if (titleParts.length > 1) {
+		titleStart = titleParts[0]
+		titleEnd = titleParts[1]
+	}
 }
 ---
 
 <!-- Hero Section -->
-<section class="relative overflow-hidden bg-blood-red pt-24 md:pt-32 pb-16 md:pb-20">
-
-  <div class="container-custom relative z-10">
-    <div class="mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 text-gray-900 dark:text-white animate-slide-down">
-        {highlightText ? (
-          <>
-            {titleStart}<span class="text-white">{highlightText}</span>{titleEnd}
-          </>
-        ) : (
-          title
-        )}
-      </h1>
-      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 md:mb-8 animate-slide-up" style="animation-delay: 200ms">
-        {description}
-      </p>
-    </div>
-  </div>
+<section
+	class="from-primary-100 relative overflow-hidden bg-gradient-to-b to-white pt-24 pb-16 md:pt-32 md:pb-20"
+>
+	<div class="absolute inset-0 z-0 opacity-30">
+		<div class="bg-grid-pattern absolute inset-0"></div>
+	</div>
+	<div class="container-custom relative z-10">
+		<div class="mx-auto max-w-3xl px-4 text-center">
+			<h1
+				class="animate-slide-down mb-4 text-3xl text-gray-900 md:mb-6 md:text-4xl lg:text-5xl"
+			>
+				{
+					highlightText ? (
+						<>
+							{titleStart}
+							<span class="text-white">{highlightText}</span>
+							{titleEnd}
+						</>
+					) : (
+						title
+					)
+				}
+			</h1>
+			<p
+				class="animate-slide-up mb-6 text-lg text-gray-700 md:mb-8 md:text-xl "
+				style="animation-delay: 200ms"
+			>
+				{description}
+			</p>
+		</div>
+	</div>
+	<!-- Animated Shapes -->
+	<div class="absolute right-0 -bottom-16 left-0 flex justify-center">
+		<div
+			class="bg-accent-400 h-48 w-48 animate-pulse rounded-full opacity-20 blur-3xl filter md:h-64 md:w-64"
+		>
+		</div>
+	</div>
 </section>

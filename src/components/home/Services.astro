@@ -1,0 +1,70 @@
+---
+
+import ButtonCTA from "@/components/ui/ButtonCTA.astro";
+import { PersonStanding, FileCode, Presentation, UserPen } from "@lucide/astro";
+import { Icon } from "astro-icon/components";
+
+const iconComponents = {
+  PersonStanding,
+  FileCode,
+  Presentation,
+  UserPen
+};
+
+const services = [
+  {
+    title: "Consultoria em Acessibilidade",
+    description: "Te ajudo a deixar seus produtos digitais acessíveis para todas as pessoas.",
+    icon: "PersonStanding",
+    color: "secondary"
+  },
+  {
+    title: "Desenvolvimento Web",
+    description: "Desenvolvo sites institucionais, páginas de vendas e sistemas sob medida.",
+    icon: "FileCode",
+    color: "secondary"
+  },
+  {
+    title: "Palestras e Workshops",
+    description: "Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.",
+    icon: "Presentation",
+    color: "secondary"
+  },
+  {
+    title: "Consultoria LinkedIn",
+    description: "Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.",
+    icon: "UserPen",
+    color: "secondary"
+  }
+];
+---
+
+<section id="services" class="section py-16 bg-neutral-100">
+  <div class="container mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="mb-6 text-gray-900 dark:text-white">Como posso ajudar</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        services.map((service, index) => {
+          const IconComponent = iconComponents[service.icon];
+
+          return (
+            <div class="card p-6 border border-gray-200 dark:border-gray-700 slide-up"
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <div class={`w-12 h-12 rounded-lg bg-${service.color}-100 dark:bg-${service.color}-900/30 flex items-center justify-center mb-6`}>
+                <IconComponent class='w-6 h-6'/>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{service.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{service.description}</p>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <ButtonCTA url="/services" text="Explore todos serviços "/>
+  </div>
+</section>

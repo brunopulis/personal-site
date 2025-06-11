@@ -1,14 +1,14 @@
 ---
+issue: "20"
 title: "Vim te ajudar a não cometer esse erro"
 date: "2024-02-22"
-tags: 
-  - "20"
+coverImage: ""
 ---
 
-Pulis Letters - Edição #20  
+Pulis Letters - Edição #20
 Tempo de leitura: 3 minutos
 
-Sexta-feira passada tivemos uma experiência inusitada.  
+Sexta-feira passada tivemos uma experiência inusitada.
 Fomos convidados para um estudo bíblico liderado por um casal de surdos.
 
 Chegando lá, tive uma surpresa: **o estudo era em Libras**.
@@ -37,7 +37,7 @@ Obrigado professor que esqueci o nome! Por causa da repetição, acabei decorand
 
 E por incrível que pareça, isso me ajudou.
 
-Só que tem um problema, dei um belo vacilo: esqueci o atributo **lang**.  
+Só que tem um problema, dei um belo vacilo: esqueci o atributo **lang**.
 E assim como eu, aposto que você nunca reparou nisso.
 
 **Não é mesmo?**
@@ -66,12 +66,12 @@ Já usei vários, o Emmet me ajuda muito, com ele minha rotina é assim:
 
 ![Código fonte HTML com a estrutura básica e com o atributo lang preenchido com o idioma em inglês.](images/code-1-300x149.webp)
 
-Até aqui, tudo bem, certo? **Errado!**  
+Até aqui, tudo bem, certo? **Errado!**
 Vou te explicar porquê.
 
 ## Para quê serve o atributo lang?
 
-O atributo **lang** faz parte da família dos atributos globais do HTML, ou seja, pode ser usado sem restrição em quase todos os elementos.  
+O atributo **lang** faz parte da família dos atributos globais do HTML, ou seja, pode ser usado sem restrição em quase todos os elementos.
 **Para fixar:** Seu objetivo é fornecer um mecanismo de internacionalização do conteúdo. Ele **é obrigatório na tag html**.
 
 Pode ser aplicado de duas formas:
@@ -104,7 +104,7 @@ Um exemplo:
 
 ## [Idioma em partes](https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts)
 
-Em contrapartida, esse critério é utilizado quando precisamos incluir expressões de outros idiomas dentro do nosso conteúdo.  
+Em contrapartida, esse critério é utilizado quando precisamos incluir expressões de outros idiomas dentro do nosso conteúdo.
 Certas expressões fazem mais sentido no idioma nativo. Ninguém fala, vamos fazer uma reunião no Google. 😂
 
 ![Print do VSCode com exemplo de uso do idioma em partes. A palavra Google Meeting está dentro de uma tag span com o lang em inglês.](images/code-3-300x72.webp)

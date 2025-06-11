@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Minha mentoria saiu do papel"
 date: "2024-08-22"
 ---

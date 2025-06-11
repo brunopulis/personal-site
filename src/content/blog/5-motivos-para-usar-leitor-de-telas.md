@@ -1,12 +1,8 @@
 ---
 title: 5 motivos para testar acessibilidade com leitor de telas
 date: 2022-04-04
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/5-motivos-para-usar-leitor-de-telas/
-tags:
-  - acessibilidade
+draft: false
+category: "Acessibilidade"
 ---
 Testar acessibilidade é quase uma arte, ela encontra-se nos detalhes. Alguns comportamentos são reconhecidos somente com muita prática e experiência.
 
@@ -26,10 +22,10 @@ Sua função básica é converter a informação, através de um API que lê a e
 
 Existem diversos leitores de telas no mercado, podemos citar alguns:
 
--   NVDA;
--   Jaws;
--   Talkback;
--   VoiceOver.
+- NVDA;
+- Jaws;
+- Talkback;
+- VoiceOver.
 
 Tendo em vista que, definimos o que são os leitores de tela irei apresentar para vocês, os **5 motivos para testar acessibilidade com leitor de telas**.
 
@@ -51,7 +47,7 @@ Cada elemento possuí duas informações extremamente importantes: **rótulo** e
 
 No exemplo a seguir, temos um botão que representa a ação de fechar, porém, ele não está rotulado corretamente.
 
-```
+```html
 <button>X</button>
 ```
 
@@ -61,9 +57,8 @@ Dessa forma, compromete drasticamente a experiência de quem usa leitor de telas
 
 Além disso, esse inocente botão fere as diretrizes da WCAG 2.1:
 
--   [1.3.1 – Informações e Relações \[A\]](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships);
--   [2.5.3 – Rótulo no  
-    Nome acessível \[A\]](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name);
+- [1.3.1 – Informações e Relações \[A\]](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships);
+- [2.5.3 – Rótulo no Nome acessível \[A\]](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name);
 
 A **1.3.1** nos diz:
 
@@ -81,7 +76,7 @@ Uma das possíveis soluções é adicionar um atributo da WAI-ARIA o **aria-labe
 
 O exemplo a seguir adotamos a técnica com o uso do _aria-label_:
 
-```
+```html
 <button aria-label="Fechar">X</button>
 ```
 
@@ -89,9 +84,9 @@ O exemplo a seguir adotamos a técnica com o uso do _aria-label_:
 
 É bem comum desenvolvermos um componente é esquecermos algumas ações, como, por exemplo:
 
--   teclas de atalho para acionar o componente;
--   navegação via teclado;
--   ordem de foco.
+- teclas de atalho para acionar o componente;
+- navegação via teclado;
+- ordem de foco.
 
 Esses itens diversas vezes são ignorados pelos desenvolvedores, costumo chamar isso de programação orientada a mouse. Com isso, precisamos de “descobrir” certos comportamentos.
 
@@ -161,4 +156,4 @@ Tudo depende de você e como diria o Tio Ben:
 
 Bruno Pulis
 
-Consultor de acessibilidade, apaixonado por HTML e Qualidade de Software. Nas horas vagas toca flamenco e é fã de Star Wars
+Consultor de acessibilidade, apaixonado por HTML e Qualidade de Software. Nas horas vagas toca flamenco e é fã de Star Wars.

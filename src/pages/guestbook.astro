@@ -10,12 +10,12 @@ import { Blog, Client, Comment, Author, CheckResult } from "@cedx/akismet";
 // Watch for POST requests
 if (Astro.request.method === "POST") {
   // Setup Akismet client
-  const blog = new Blog({ 
+  const blog = new Blog({
     url: "https://brunopulis.com/",
     // Remove qualquer dependência do navigator
     userAgent: "Astro/1.0"
   });
-  
+
   const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
 
   // Parse form data
@@ -90,7 +90,7 @@ const guestBook = await db.select().from(GuestBook);
       description="Find answers to common questions about Sassify and our services."
     />
 
-    <div class="container-custom mx-auto px-4">
+    <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-8">
         {
           guestBook

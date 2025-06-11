@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Mente agitada, vida desorganizada"
 date: "2024-07-05"
 ---

@@ -1,25 +1,24 @@
 ---
 interface Props {
-  isAvailable: boolean;
-  message?: string;
+	isAvailable: boolean
+	message?: string
 }
 
-const { isAvailable, message } = Astro.props;
+const { isAvailable, message } = Astro.props
 
 const defaultMessage = isAvailable
-  ? "Estou disponível para novos trabalhos! Entre em contato 👋"
-  : "No momento não estou disponível para novos trabalhos.";
+	? 'Disponível para freelas'
+	: 'Indisponível para freelas'
 
-const bgColor = isAvailable ? "bg-green-100" : "bg-light-silver";
-const textColor = isAvailable ? "text-green-800" : "text-errie-black";
+const bgColor = isAvailable ? 'bg-green-500' : 'bg-red-600'
 ---
 
-<div id="availability-banner" class={`${bgColor} ${textColor} font-bold py-2 px-4 mb-6`}>
-  <div class="container-custom mx-auto flex flex-col sm:flex-row flex-wrap justify-between items-center gap-2">
-    <div class="flex items-center text-center banner-content">
-      <p class="text-xs font-base text-center">
-        {message || defaultMessage}
-      </p>
-    </div>
-  </div>
+<div class="text-center lg:text-right" id="availability-banner">
+	<div class="inline-flex items-center rounded-full bg-white px-3 sm:px-4 py-1.5  shadow-md sm:py-2">
+		<p class="text-sm font-bold text-black text-[12px] sm:text-base md:text-lg">
+      {message || defaultMessage}
+    </p>
+
+    <span class={`${bgColor} ml-2 h-2.5 w-2.5 rounded-full sm:mr-2.5 sm:h-3 sm:w-3`}></span>
+	</div>
 </div>

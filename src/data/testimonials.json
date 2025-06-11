@@ -1,19 +1,46 @@
 {
   "testimonials": [
     {
+      "content": "Top! Mostrou como é importante a acessibilidade na web e várias ferramentas que ajudam os desenvolvedores a criarem sites com mais acessibilidade, ainda mais que há poucos sites que são acessíveis para pessoas com alguma deficiência.",
+      "author": "Allan Stanichescki",
+      "position": "Head de desenvolvimento - Elleven",
+      "type": "talk"
+    },
+    {
+      "content": "Gostei muito do tema abordado, foi de suma importancia para o nosso dia a dia.",
+      "author": "Thais Martins",
+      "position": "Produção Audiovisual - Grupo DLS",
+      "type": "talk"
+    },
+    {
+      "content": "A palestra com o Bruno foi muito enriquecedora, pois abriu nossas mentes para questões de acessibilidade que podem transformar tanto a funcionalidade das plataformas digitais quanto a rotina de pessoas com deficiências que exigem ferramentas comunicacionais específicas.",
+      "author": "Jéssica Martins",
+      "position": "Jornalista - Grupo DLS",
+      "type": "talk"
+    },
+    {
+      "content": "Achei a palestra muito esclarecedora. Por mais que tivemos pouco tempo para discutir de um assunto tão amplo, você conseguiu instigar em nós o desejo de melhora e aprimoramento. Obrigado!",
+      "author": "Pedro Bernardi",
+      "position": "Desenvolvedor - Elleven",
+      "type": "talk"
+    },
+    {
       "content": "Excelente profissional, me ajudou a deixar minha landing page pronta para vendas e deu todo suporte na parte operacional de coisas que eu nem o havia contratado. Quando o assunto for sistemas, landing page, segurança no digital, acessibilidade, super recomendo.",
       "author": "João Kioshi",
-      "position": "Mentor em Vendas"
+      "position": "Mentor em Vendas",
+      "type": ""
     },
     {
       "content": "I've tried many SaaS solutions, but this one stands out for its ease of use and comprehensive feature set. The customer support is also exceptional.",
       "author": "Michael Chen",
-      "position": "CTO"
+      "position": "CTO",
+      "type": ""
     },
     {
       "content": "The analytics capabilities alone are worth the investment. We've gained valuable insights that have helped us optimize our operations and reduce costs.",
       "author": "Emily Rodriguez",
-      "position": "Operations Director"
+      "position": "Operations Director",
+      "type": ""
     }
   ]
 }

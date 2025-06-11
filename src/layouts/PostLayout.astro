@@ -1,0 +1,14 @@
+---
+import Layout from "./PostLayout.astro";
+
+const { frontmatter } = Astro.props;
+
+---
+
+<Layout>
+  <main class="potato" id="main-content">
+    <div class="mx-auto max-w-3xl px-6 py-12 lg:py-24 basic-text basic-text--lg">
+      <slot />
+    </div>
+  </main>
+</Layout>

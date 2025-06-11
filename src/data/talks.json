@@ -1,0 +1,194 @@
+{
+	"talks": [
+		{
+			"id": "1",
+			"title": "Dev In Company 2013",
+			"description": "A comprehensive talk about the importance of accessibility in web development and how to implement WCAG guidelines effectively.",
+			"date": "2013-10-15",
+			"location": "TechConf 2023, São Paulo",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "2",
+			"title": "VIII Workshop de TI – Faculdade Cotemig 2014",
+			"description": "Learn how to structure and optimize large-scale React applications, with a focus on performance and maintainability.",
+			"date": "2014-11-05",
+			"location": "DevSummit, Rio de Janeiro",
+			"isUpcoming": false,
+			"category": "frontend",
+			"image": "https://images.pexels.com/photos/7256897/pexels-photo-7256897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "3",
+			"title": "Evento Una Barreiro 2014",
+			"description": "A practical guide for developers looking to understand and implement UX principles in their work, creating more user-friendly interfaces.",
+			"date": "2014-01-20",
+			"location": "UX Conference, Belo Horizonte",
+			"isUpcoming": false,
+			"category": "ux",
+			"image": "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "4",
+			"title": "Semana do Design Web 2014",
+			"description": "Discover how to implement automated testing for accessibility issues, saving time and ensuring compliance with standards.",
+			"date": "2014-03-10",
+			"location": "TestingConf, Curitiba",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/5474295/pexels-photo-5474295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "5",
+			"title": "Semana Uni+ 2014",
+			"description": "Learn advanced techniques to optimize frontend performance, from code splitting to image optimization and beyond.",
+			"date": "2014-05-22",
+			"location": "FrontendMasters Workshop, Online",
+			"isUpcoming": false,
+			"category": "frontend",
+			"image": "https://images.pexels.com/photos/6194087/pexels-photo-6194087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "6",
+			"title": "GDG DevFest Nordeste 2017",
+			"description": "A deep dive into creating design systems that work for everyone, including people with disabilities.",
+			"date": "2017-07-15",
+			"location": "DesignConf, Florianópolis",
+			"isUpcoming": false,
+			"category": "ux",
+			"image": "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "7",
+			"title": "GDG DevFest Belo Horizonte 2017",
+			"description": "Best practices for using TypeScript in large teams and complex projects, with real-world examples and patterns.",
+			"date": "2017-08-30",
+			"location": "DevSummit, Porto Alegre",
+			"isUpcoming": false,
+			"category": "dev",
+			"image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "8",
+			"title": "7 Semana de Sustentabilidade e Responsibilidade Social 2019",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2019-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+    {
+			"id": "9",
+			"title": "TSPI Conference 2020",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2020-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+    {
+			"id": "10",
+			"title": "Hacktoberfest 2020",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2020-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+    {
+			"id": "11",
+			"title": "AGXP2020 – Dia 03 – ALTER FACE, Testes de acessibilidade e Testes de segurança",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2020-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+    {
+			"id": "12",
+			"title": "Bee Lab Academy 2021",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2021-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+    {
+			"id": "13",
+			"title": "Live Vazamento de Dados e de segurança 20211",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2021-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "14",
+			"title": "DTAR Conference 2021",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2021-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "15",
+			"title": "Café, Testes e Pão de Queijo 2021",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2021-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "16",
+			"title": "Projeto Testers 2021",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2021-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "17",
+			"title": "Semana de Sustentabilidade e Responsabilidade Social 2021",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2021-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "18",
+			"title": "O fascinante universo da acessibilidade web 2023",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2023-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		},
+		{
+			"id": "19",
+			"title": "A11y pelo RS 2024",
+			"description": "An exploration of the upcoming WCAG 3.0 guidelines and how they will change the way we approach web accessibility.",
+			"date": "2024-11-10",
+			"location": "A11y Conference, Brasília",
+			"isUpcoming": false,
+			"category": "accessibility",
+			"image": "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		}
+	]
+}

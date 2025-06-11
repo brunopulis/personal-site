@@ -1,8 +1,7 @@
 ---
+issue: "24"
 title: "Mas que raios é essa tal de WCAG?"
 date: "2024-03-21"
-tags: 
-  - "24"
 ---
 
 Pulis Letters - Edição #24  

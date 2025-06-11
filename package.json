@@ -1,27 +1,41 @@
 {
-  "name": "@example/saas-landing",
+  "name": "brunopulis",
   "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --source dist",
     "preview": "astro build && astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.5",
-    "@astrojs/db": "^0.14.14",
-    "@astrojs/markdoc": "^0.14.2",
+    "@astrojs/alpinejs": "^0.4.8",
+    "@astrojs/db": "^0.15.0",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@cedx/akismet": "^17.1.0",
-    "@tailwindcss/vite": "^4.1.3",
-    "alpinejs": "^3.13.5",
-    "astro": "^5.6.1",
-    "astro-pagefind": "^1.8.3",
-    "tailwindcss": "^4.1.3"
+    "@fontsource-variable/source-sans-3": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.8",
+    "@lucide/astro": "^0.514.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "@yeskunall/astro-umami": "^0.0.6",
+    "alpinejs": "^3.14.9",
+    "astro": "^5.9.0",
+    "astro-icon": "^1.1.5",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.8"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@astrojs/partytown": "^2.1.4",
+    "@iconify-json/fa6-brands": "^1.2.5",
+    "@iconify-json/fa6-solid": "^1.2.3",
+    "@tailwindcss/typography": "^0.5.16",
+    "reading-time": "^1.5.0"
   }
 }

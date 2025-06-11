@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Teoria e Prática: no que focar?"
 date: "2024-09-06"
 ---

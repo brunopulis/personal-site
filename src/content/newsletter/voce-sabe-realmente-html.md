@@ -1,4 +1,5 @@
 ---
+issue: ""
 title: "Você realmente sabe HTML?"
 date: "2024-10-03"
 coverImage: "9AuaVHzkkoKiVF3Ehrf9N9.jpeg"
@@ -24,7 +25,7 @@ Alguns erros que cometi:
 
 - Links e botões sem ação;
 
-- Usar <div> e <span> para qualquer coisa;
+- Usar `<div>` e `<span>` para qualquer coisa;
 
 - Hierarquia de títulos incorreta.
 
@@ -48,9 +49,9 @@ O HTML segue tudo isso, notei que temos dois vilões: **faculdade** e o **mer
 
 Parece até contraditória falar que o vilão é a faculdade, mas nela aprendemos bem superficialmente e o mercado não exige proficiência em HTML.
 
-O HTML sempre foi uma persona non grata no desenvolvimento.  
-Você pode estar se perguntar, aprender HTML pra quê?  
-​  
+O HTML sempre foi uma persona non grata no desenvolvimento.
+Você pode estar se perguntar, aprender HTML pra quê?
+​
 Na faculdade, aprendemos muito pouco de HTML ou quase nada e o mercado não exige que saibamos.
 
 Existe uma ferramenta esquecida por muitos front-ends, o validador HTML. O mais famoso deles é o [Nu HTML Checker](https://validator.nu/).
@@ -79,5 +80,5 @@ Escreva sites com HTML válido e acessível. ❤
 
 Espero que essa carta te ajude!
 
-**SDG,  
+**SDG,
 Pulis.**

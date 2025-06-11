@@ -1,14 +1,9 @@
 ---
 title: 5 livros de acessibilidade digital
 date: 2021-07-01
-metadata:
-  categories:
-    - Indicações
-  tags:
-    - acessibilidade
-  url: https://brunopulis.com/5-livros-acessibilidade-digital/
-tags:
-  - indicacoes
+draft: false
+category: "Indicações"
+tags: ["livros"]
 ---
 Recentemente a acessibilidade digital ganhou os holofotes devido a pandemia. Entretanto, ainda é um assunto muito imaturo para profissionais do meio digital.
 

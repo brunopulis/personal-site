@@ -1,0 +1,50 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import HeroSection from '@/components/HeroSection.astro';
+---
+
+<Layout title="About Our Company - Sassify">
+  <Header />
+  <main>
+    <HeroSection
+      title="Mais"
+      description="Uma meta coleção que tenta descrever a pessoa por trás do site."
+    />
+    
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-1 gap-12 items-center mb-24">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">From Startup to Industry Leader</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Essa é uma meta coleção de is a meta coleção de /slashes – ela lista todas as minhas páginas slashes. Elas tentam descrever a pessoa por trás desse site, e são registradas pela IndieWeb.
+            </p>
+
+            <ul class="list-disc list-inside mb-4">
+              <li class="text-gray-600 dark:text-gray-300 mb-2">
+                
+    /acervo minha biblioteca de filmes e seriados
+    /biblioteca minha biblioteca virtual
+    /blogroll blogs que recomendo visitar e consumir
+    /changelog mudanças registradas do site
+    /colophon uma página que descreve como o site foi deito, com quais ferramentas e quais tecnologias suporta.
+    /ia recursos que uso ou não no meu site
+    /likes coisas que gostei por ai
+    /links uma lista de links
+    /notes minhas notas curtas
+    /nope coisas que não quero fazer
+    /now o que estou fazendo agora
+    /uses
+    /save links de afiliados que uso
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 

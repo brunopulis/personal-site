@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets'
+
+import laraBrenner from '@/assets/clients/lara-brenner.svg'
+import reponto from '@/assets/clients/reponto.svg'
+import mariaInclusiva from '@/assets/clients/maria-inclusiva.svg'
+import elleven from '@/assets/clients/elleven.svg';
+---
+
+<section class="bg-neutral-100 px-6 py-20">
+	<div class="container mx-auto">
+		<div class="mx-auto max-w-3xl text-center">
+			<h2 class="font-display text-3xl md:text-4xl font-bold py-6 text-gray-900">Empresas que confiam no meu trabalho</h2>
+		</div>
+		<div class="flex flex-col justify-center py-20">
+			<ul class="flex flex-wrap justify-center gap-5 md:justify-around">
+				<li class="inline  text-gray-400">
+					<Image
+						src={laraBrenner}
+						alt="Logo Reponto"
+						class="text-gray-400 h-14 w-full"
+						width={150}
+						height={31}
+						loading="lazy"
+					/>
+				</li>
+				<li class="inline text-gray-400">
+					<Image
+						src={reponto}
+						alt="Logo Reponto"
+						class="h-14 w-full text-gray-400"
+						width={150}
+						height={31}
+						loading="lazy"
+					/>
+				</li>
+				<li class="inline text-gray-400">
+					<Image
+						src={mariaInclusiva}
+						alt="Logo Reponto"
+						class="h-14 w-full"
+						width={150}
+						height={31}
+						loading="lazy"
+					/>
+				</li>
+
+				<li class="inline text-gray-400">
+					<Image
+						src={elleven}
+						alt="Logo Reponto"
+						class="h-14 w-full"
+						width={150}
+						height={31}
+						loading="lazy"
+					/>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
