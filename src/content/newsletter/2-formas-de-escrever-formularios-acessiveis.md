@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "44"
 title: "2 formas de escrever formulários acessíveis"
 date: "2024-11-28"
 coverImage: "a-close-up-shot-of-a-hand-holding-a-vintage-compass-against-a-natural-background.-841286-scaled.jpg"
@@ -17,9 +17,9 @@ Infelizmente, essa é uma realidade que muitas pessoas que usam leitores de tela
 
 Nesta carta, irei te ensinar algumas formas de deixar seu formulário acessível, vamos aprender:
 
-- Como usar uma <label> visível;
+- Como usar uma `<label>` visível;
 
-- Como usar uma <label> invisível;
+- Como usar uma `<label>` invisível;
 
 - Como usar com atributo aria-label;
 
@@ -52,11 +52,8 @@ Formulários podem ser visualmente e cognitivamente complexos e desafiadores de 
 Algumas vantagens de escrever formulários acessíveis:
 
 - **Pessoas com deficiências cognitivas** pode entender melhor o formulário e como completá-lo, pois tornar os formulários acessíveis melhoram a estrutura do layout, as instruções e o feedback.
-
 - **Pessoas usando a entrada de fala** pode usar os rótulos por comandos de voz para ativar controles e mover o foco para os campos que eles têm que completar.
-
 - **Pessoas com destreza limitada** beneficie-se de grandes áreas clicáveis que incluem os rótulos, especialmente para controles menores, como botões de opção e caixas de seleção.
-
 - **Pessoas que usam leitores de tela** pode identificar e entender os controles de formulário mais facilmente porque eles estão associados a rótulos, conjuntos de campos e outros elementos estruturais.
 
 ## Critérios da WCAG
@@ -66,18 +63,15 @@ Além das vantagens citadas acima, formulários acessíveis também cumprem dive
 Esses critérios, permitem seu formulário alcançar todas as pessoas. Usamos os seguintes critérios:
 
 - [**1.3.1** Informações e Relações:](https://www.w3.org/WAI/WCAG21/quickref/#qr-content-structure-separation-programmatic) a informação deve fazer sentido para quem vê ou ouve o conteúdo;
-
 - [**2.4.6** Títulos e Etiquetas:](https://www.w3.org/WAI/WCAG21/quickref/#qr-navigation-mechanisms-descriptive) títulos e rótulos (campos de fomulários) devem ser claros e objetivos;
-
 - [**3.3.2** Etiquetas ou Instruções:](https://www.w3.org/WAI/WCAG21/quickref/#qr-minimize-error-cues) todos os rótulos devem ser claros e sem ambiguidades a finalidade dos campos de formulário.
-
 - [**4.1.2** Nome, Papel, Valor:](https://www.w3.org/WAI/WCAG21/quickref/#qr-ensure-compat-rsv) tecnologias assistivas precisam do **nome, função e valor** para identificar os elementos padronizados do HTML.
 
 ## Sua estrutura básica
 
 Um formulário possui uma estrutura básica que é composta, conforme o código abaixo:
 
-```markup
+```html
 <form>
   <input type="text" id="fname" name="fname"><br>
   <input type="text" id="lname" name="lname">
@@ -97,9 +91,7 @@ https://youtu.be/eXn3-yyq0qc
 Isso levantaria uma série de questões, como, por exemplo:
 
 - Como devo preencher?
-
 - Possui algum campo obrigatório?
-
 - Necessita de um formato específico?
 
 São muitas perguntas e zero respostas. Por isso iremos usar as técnicas para deixar seu formulário acessível.
@@ -110,12 +102,12 @@ Eu sempre recomendo usar essa técnica, ela é a mais segura e assertiva de toda
 
 Um ponto importante é adicionar o atributo **for** com o mesmo valor do **id** do campo.
 
-> **Por que isso é importante?**  
+> **Por que isso é importante?**
 > Isso aumenta a área de clique e fornece um recurso visual e audível para identificar qual **<label>** está associada a um campo.
 
 Usando a label visível, nosso exemplo ficaria:
 
-```markup
+```html
 <form>
   <label for="fname">Nome</label>
   <input type="text" id="fname" name="fname">
@@ -140,10 +132,10 @@ Essa situação acontece geralmente quando o designer pensou na arquitetura da i
 
 Para resolver essa situação você precisa de uma classe CSS que oculta a informação visual, nada de usar **placeholder como <label>**.
 
-> **IMPORTANTE  
->   
-> **O atributo **placeholder é um complemento de informação**, uma dica de preenchimento.**  
->   
+> **IMPORTANTE
+>
+> **O atributo **placeholder é um complemento de informação**, uma dica de preenchimento.**
+>
 > A <label> é o rótulo de identificação dos campos do formulário.**
 
 Essas classes têm o objetivo de ocultar visualmente a <label>, porém, ela não perde sua função.
@@ -166,7 +158,7 @@ Uma alternativa seria:
 
 Aplicando a técnica em nosso exemplo, ficaria:
 
-```markup
+```html
 <form>
   <label class="sr-only" for="fname">Nome</label>
   <input type="text" id="fname" name="fname">
@@ -186,16 +178,16 @@ Dessa forma mantive as informações relevantes tanto para quem vê ou ouve. Iss
 
 Seja exibindo ou não suas labels os dois exemplos atendem perfeitamente os critérios de sucesso e auxiliam num preenchimento correto das informações.
 
-Viu como pode ser mais simples do que você imagina?  
-  
+Viu como pode ser mais simples do que você imagina?
+
 Me conta, você conhecia essas técnicas?
 
 * * *
 
-P.S.: Compartilha o trecho que você mais gostou no Instagram e me marque **brunopulis**  
-  
+P.S.: Compartilha o trecho que você mais gostou no Instagram e me marque **brunopulis**
+
 P.S2.: continuo com vagas abertas na [**Mentoria Acessibilidade Já**](https://mentoria.brunopulis.com)**.**
 
-Até semana que vem!  
-SDG,  
+Até semana que vem!
+SDG,
 Pulis.

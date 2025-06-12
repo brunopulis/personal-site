@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "46"
 title: "Se todos falassem a mesma língua?"
 date: "2024-12-18"
 coverImage: "the-cleveland-museum-of-art-axm7m_45_zk-unsplash-scaled.jpg"
@@ -14,14 +14,10 @@ Não acompanhou a série completa? Sem problemas!
 Você pode consultar todos os artigos anteriores aqui:
 
 1. [Erro de contraste como corrigir?](https://brunopulis.com/letters/erro-de-contraste-como-corrigir/)
-
-3. [Uma imagem vale mais que mil palavras](https://brunopulis.com/letters/como-texto-alternativo-pode-ajudar/)
-
-5. [Como fazer conexões certas](https://brunopulis.com/letters/conexoes-certas/)
-
-7. [Duas formas de escrever formulários acessíveis](https://brunopulis.com/letters/2-formas-de-escrever-formularios-acessiveis/)
-
-9. [Vida vazia, saudade sua](https://brunopulis.com/letters/vida-vazia-saudade-sua/)
+2. [Uma imagem vale mais que mil palavras](https://brunopulis.com/letters/como-texto-alternativo-pode-ajudar/)
+3. [Como fazer conexões certas](https://brunopulis.com/letters/conexoes-certas/)
+4. [Duas formas de escrever formulários acessíveis](https://brunopulis.com/letters/2-formas-de-escrever-formularios-acessiveis/)
+5. [Vida vazia, saudade sua](https://brunopulis.com/letters/vida-vazia-saudade-sua/)
 
 ## Destaque da semana
 
@@ -49,7 +45,7 @@ Alguns editores de código, como o Visual Code, definem por padrão o idioma ing
 
 O documento vem escrito da seguinte forma:
 
-```markup
+```html
 <!DOCTYPE html>
 <html lang="en">...</html>
 ```
@@ -82,7 +78,7 @@ Para explorar mais sobre o atributo `lang`, [consulte outro artigo que publiquei
 
 A correção é bem trivial, mas ajuda a todos. Faça isso:
 
-```markup
+```html
 <!DOCTYPE html>
 <html lang="pt-br">...</html>
 ```

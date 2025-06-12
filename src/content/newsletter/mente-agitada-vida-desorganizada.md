@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "34"
 title: "Mente agitada, vida desorganizada"
 date: "2024-07-05"
 ---

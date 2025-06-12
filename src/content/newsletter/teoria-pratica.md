@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "39"
 title: "Teoria e Prática: no que focar?"
 date: "2024-09-06"
 ---
@@ -13,11 +13,9 @@ Estou lendo As Fábulas de Esopo, publicado pelo [Clube de Literatura Clássica]
 Quero compartilhar uma fábula que chamou minha atenção.
 
 > **O pescador e o trombeiro**
-> 
-> Um pescador, tendo soltado a rede no mar, puxou um trombeiro. Sendo pequeno, ele suplicou que o não pegasse agora, mas o deixasse ir, por causa de seu tamanho. “Mas quando eu crescer”, diz, “e me tornar grande, poderás me pegar, pois então lhe serei de maior benefício.” E o pescador disse: “Mas eu seria tolo, se, abandonando o ganho que tenho em mãos, mesmo que pequeno, esperasse pelo futuro, ainda que grande.”  
-> .
+> Um pescador, tendo soltado a rede no mar, puxou um trombeiro. Sendo pequeno, ele suplicou que o não pegasse agora, mas o deixasse ir, por causa de seu tamanho. “Mas quando eu crescer”, diz, “e me tornar grande, poderás me pegar, pois então lhe serei de maior benefício.” E o pescador disse: “Mas eu seria tolo, se, abandonando o ganho que tenho em mãos, mesmo que pequeno, esperasse pelo futuro, ainda que grande.”
 
-A fábula mostra que seria irracional alguém abandonar o pequeno que tem em mãos pela esperança de algo maior  
+A fábula mostra que seria irracional alguém abandonar o pequeno que tem em mãos pela esperança de algo maior
 Somos como o trombeiro: queremos coisas grandes. Mas esquecemos que devemos passar pelo processo do crescimento.
 
 Quando comecei minha carreira, achava que a faculdade seria suficiente.
@@ -36,12 +34,12 @@ Aprendi algo valiosos com ele: praticar, saber a teoria é essencial para um bom
 
 Meu erro, focar muito na teoria. Com acessibilidade é o mesmo, muita teoria e pouca prática.
 
-Chega disso, vamos mudar o jogo!  
+Chega disso, vamos mudar o jogo!
 Por isso, a partir dessa semana, vou lançar um desafio para você!
 
 O desafio consiste em fazer alguma atividade relacionada a acessibilidade. Seu desafio dessa semana é:
 
-Desafio  
+Desafio
 Escolha um site e navegue sem o mouse, navegar somente com o teclado. E execute alguma tarefa básica.
 
 Responda esse e-mail com sua experiência.
@@ -53,21 +51,17 @@ Artigos, projetos e outras coisas interessantes que vi ao longo da semana.
 ### Projetos que vale a pena olhar 🧪
 
 - ​AMAWeb
-
 - ​​Free Online Open Graph Generator (artigo em inglês)
 
 ### Artigos interessantes 📖​
 
 - O que é blogroll?​
-
 - ​CSS display contents (artigo em inglês)
 
 ### Curadoria de links 🔗
 
 - Complete CSS - Piccalilli (artigo em inglês)
+- ​Ye Olde Blogroll - Blogroll.org (artigo em inglês)
 
-- ​Ye Olde Blogroll - Blogroll.org (artigo em inglês)  
-    ​
-
-SDG,  
+SDG,
 Bruno Pulis.

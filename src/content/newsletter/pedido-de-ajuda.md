@@ -1,13 +1,13 @@
 ---
-issue: ""
+issue: "31"
 title: "Pedido de ajuda!"
 date: "2024-05-09"
 ---
 
 **Quarta-feira, 8 de maio de 2024.**
 
-Essa edição é um pedido de ajuda!  
-O Brasil acompanha a tragédia do Rio Grande do Sul, cidades desoladas, grandes perdas, um caos generalizado.  
+Essa edição é um pedido de ajuda!
+O Brasil acompanha a tragédia do Rio Grande do Sul, cidades desoladas, grandes perdas, um caos generalizado.
 Fiquei muito abalado, pois tenho amigos no sul e já passei bons momentos em Porto Alegre.
 
 Se você quer ajudar as pessoas que perderam tudo, a oportunidade bate na sua porta.
