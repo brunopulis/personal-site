@@ -1,5 +1,5 @@
 ---
-issue: ""
+issue: "06"
 title: "Olhe para cima"
 date: "2023-12-20"
 ---

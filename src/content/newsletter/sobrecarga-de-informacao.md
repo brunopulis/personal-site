@@ -1,10 +1,10 @@
 ---
-issue: ""
+issue: "12"
 title: "Como lidar com a sobrecarga de informação"
 date: "2024-01-17"
 ---
 
-**17 de Janeiro de 2024.**  
+**17 de Janeiro de 2024.**
 **Tempo de leitura: 3 minutos.**
 
 Fiquei uma semana sem meu computador, o danado decidiu pifar justamente quando mais precisava.
@@ -15,17 +15,17 @@ Mas vamos ao que interessa...
 
 * * *
 
-Você já teve uma sensação de **exaustão mental** no final do seu dia?  
+Você já teve uma sensação de **exaustão mental** no final do seu dia?
 Não tinha forças para pensar ou fazer nada?
 
 Se você respondeu **sim** para essas perguntas você não está sozinho.
 
-> Por que isso importa?  
+> Por que isso importa?
 > Pesquisadores, descobriram que consumimos cerca 34GB de informações diárias.
-> 
+>
 > Isso equivale a aproximadamente 176 jornais impressos.
 
-**Não a cérebro que suporte.**  
+**Não a cérebro que suporte.**
 Mas antes de apresentar os meus segredos (que nem são segredos) precisamos identificar os excessos.
 
 ## Como identificar excessos?
@@ -48,7 +48,7 @@ Depois de identificar faça esses três passos:
 
 A máxima **menos é mais** nunca fez tanto sentido. O primeiro passo é: **consuma menos informações**.
 
-> Por que isso importa?  
+> Por que isso importa?
 > Assim como comer porcaria vai fazer mal para sua saúde, o excesso de informações vai te adoecer mentalmente.
 
 Um segundo cérebro auxilia nessa tarefa e cria uma espécie de barreira para sua sanidade mental.
@@ -68,7 +68,7 @@ A sobrecarga de informações, geralmente vem acompanhada da navegação irracio
 Você acorda, pega no celular, checa seus e-mails, da uma espiada na rede social e o tempo passa...
 
 > Por que isso importa?
-> 
+>
 > Redes sociais são projetadas para prender sua atenção a todo custo. Existem gatilhos psicológicos por lá. Não é atoa que o _feed_ é infinito, já pensou nisso?
 
 Ao invés de cair nas garras das redes pela manhã, faça:
@@ -85,12 +85,12 @@ Devemos usá-la como **ferramentas** para auxiliar nosso trabalho e vida, não 
 
 Um sábio já dizia:
 
-> _**Para tudo há uma ocasião certa;**_  
-> _**há um tempo certo para cada propósito**_  
-> _**debaixo do céu.**_  
+> _**Para tudo há uma ocasião certa;**_
+> _**há um tempo certo para cada propósito**_
+> _**debaixo do céu.**_
 > _**Ec 3:1**_
-> 
-> Por que isso importa?  
+>
+> Por que isso importa?
 > Adoramos distração e nosso cérebro se comporta como um viciado esperando a próxima dose de dopamina. Mas você pode e deve manter o controle.
 
 Temos a oportunidade de **filtrar, organizar e centralizar dados** com sua ajuda.
@@ -109,9 +109,9 @@ Tudo que comentei é explicado melhor no [Construindo seu segundo cérebro](http
 
 E para concluir:
 
-> Nunca na história da humanidade, nossos cérebros tiveram que trabalhar com tanta informação quanto hoje.  
-> Agora temos uma geração de pessoas que passam muitas horas na frente de um monitor de computador ou telefone celular e que estão tão ocupadas em processar as informações recebidas de todas as direções, então eles perdem a capacidade de pensar e sentir.  
-> A maioria dessas informações é superficial. As pessoas estão sacrificando a profundidade e o sentimento e isoladas de outras pessoas.  
+> Nunca na história da humanidade, nossos cérebros tiveram que trabalhar com tanta informação quanto hoje.
+> Agora temos uma geração de pessoas que passam muitas horas na frente de um monitor de computador ou telefone celular e que estão tão ocupadas em processar as informações recebidas de todas as direções, então eles perdem a capacidade de pensar e sentir.
+> A maioria dessas informações é superficial. As pessoas estão sacrificando a profundidade e o sentimento e isoladas de outras pessoas.
 > Edward Hallowell
 
 ## Para se aprofundar

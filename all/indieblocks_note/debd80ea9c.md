@@ -1,8 +1,0 @@
----
-title: "Talvez hoje seja um dos dias mais felizes ..."
-date: "2024-10-22"
----
-
-Talvez hoje seja um dos dias mais felizes comigo mesmo. Provei a mim mesmo que sou capaz no que me proponho. Mesmo com apreensão ou ansiedade, fiz acontecer.
-
-Soli Deo Gloria.
