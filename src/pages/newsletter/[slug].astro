@@ -1,14 +1,15 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header.astro'
+import Layout from "@/layouts/Layout.astro"
+import Header from "@/components/Header.astro"
 import HeroSection from "@/components/HeroSection.astro"
-import Footer from '@/components/Footer.astro'
+import Footer from "@/components/Footer.astro"
 
-import { getCollection, render } from 'astro:content'
+import { getCollection, render } from "astro:content"
+import Newsletter from "@/components/Newsletter.astro"
 
 // Gera as rotas para todos os letters
 export async function getStaticPaths() {
-	const letters = await getCollection('newsletter')
+	const letters = await getCollection("newsletter")
 
 	return letters.map((letter) => ({
 		params: { slug: letter.id }, // mantém apenas o ID do letter
@@ -21,20 +22,17 @@ const { title, summary, tags, modifiedDate } = letter.data
 const { Content } = await render(letter)
 
 // Formata a data para pt-BR
-const formattedDate = new Date(letter.data.date).toLocaleDateString('pt-BR', {
-	year: 'numeric',
-	month: 'long',
-	day: 'numeric'
+const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
+	year: "numeric",
+	month: "long",
+	day: "numeric"
 })
 ---
 
 <Layout title={`${letter.data.title} - Blog`} description={letter.data.excerpt}>
 	<Header />
 	<main id="main-content">
-    <HeroSection
-			title={letter.data.title}
-			description="Junte-se a mais de 300 assinantes e receba dicas sobre acessibilidade, Obsidian e organização digital toda quinta-feira de manhã."
-		/>
+    <HeroSection title={letter.data.title} />
 		<div class="container mx-auto p-6 md:p-8">
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				<div class="lg:col-span-2">
@@ -42,7 +40,7 @@ const formattedDate = new Date(letter.data.date).toLocaleDateString('pt-BR', {
 						<div class="container mx-auto max-w-4xl">
 							<div class="mb-8">
 								<a
-									href="/"
+									href="/newsletter"
 									class="hover:text-primary-600 dark:hover:text-primary-400 inline-flex items-center text-gray-600 transition-colors dark:text-gray-400"
 								>
 									<svg
@@ -56,7 +54,7 @@ const formattedDate = new Date(letter.data.date).toLocaleDateString('pt-BR', {
 											d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
 											clip-rule="evenodd"></path>
 									</svg>
-									Voltar para o Blog
+									Voltar para edições
 								</a>
 							</div>
 
@@ -109,27 +107,7 @@ const formattedDate = new Date(letter.data.date).toLocaleDateString('pt-BR', {
 				</div>
 
 				<div class="lg:col-span-1">
-					<aside class="sticky top-8 rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-						<h3 class="mb-4 text-2xl font-bold text-gray-900">Subscribe to the Newsletter</h3>
-						<p class="mb-6 leading-relaxed text-gray-600">
-							Join 175K+ readers of The Saturday Solopreneur for exclusive tips, strategies, and
-							resources to launch, grow, & monetize your one-person internet business.
-						</p>
-
-						<form class="space-y-4">
-							<input
-								type="email"
-								placeholder="Email Address"
-								class="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500"
-							/>
-							<button
-								type="submit"
-								class="w-full rounded-lg bg-gray-900 px-6 py-3 font-semibold text-white transition-colors duration-200 hover:bg-gray-800"
-							>
-								Se inscrever
-							</button>
-						</form>
-					</aside>
+					<Newsletter />
 				</div>
 			</div>
 		</div>
