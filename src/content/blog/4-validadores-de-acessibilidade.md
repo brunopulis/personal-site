@@ -14,8 +14,6 @@ Nesse artigo, vou te mostrar 4 ferramentas que recomendo para utilizar nos dias 
 
 ## 1. axe Dev Tools
 
-![Print do axe dev tools](images/devtools-pG8k4Or7yCNr.png)
-
 A extensão do axe DevTools é ideal para desenvolvedores e testadores encontrarem e corrigirem problemas comuns de acessibilidade em seus sites.
 
 Possui muitas vantagens, como:
@@ -28,8 +26,6 @@ Possui muitas vantagens, como:
 É uma das melhores ferramentas gratuitas para testar acessibilidade. De longe é a primeira ferramenta que indico para testar.
 
 ## WAVE
-
-![Print do WAVE](images/wave-768x322-hSX2F6FFA2lk.png)
 
 O [WAVE](http://wave.webaim.org/) por sua vez, traz um relatório completo, incluindo:
 

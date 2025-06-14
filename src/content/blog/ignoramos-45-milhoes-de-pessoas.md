@@ -12,7 +12,7 @@ tags:
 ---
 Este post é um alerta, provavelmente você está excluindo **45 milhões** de usuários nas suas aplicações e websites.
 
-Mas você pode me perguntar: Como?  
+Mas você pode me perguntar: Como?
 Te respondo meu caro: **Falta de acessibilidade nas suas páginas. ☹**
 
 Este número de usuário foi captado pelo último Censo do IBGE de 2010, **temos aproximadamente 45 milhões de brasileiros com algum tipo de necessidade especial para acessar as informações nos meios digitais**.
@@ -29,15 +29,15 @@ O caminho da felicidade é pensar na UX e Acessibilidade desde o começo, para d
 
 O que deveríamos ter é um desenvolvimento mais fluído e consciente (menos egocêntrico), para evitarmos situações como essa:
 
-![Ilustração de uma pessoa cega irritado ouvindo a TV que diz: Olhe para esta obra de arte, veja que design arrojado, lindo! Ficou interessado? Ligue para o fone que está na tela.](images/deficiencia-300x247-6t57UdwIETkj.png)
+![Ilustração de uma pessoa cega irritado ouvindo a TV que diz: Olhe para esta obra de arte, veja que design arrojado, lindo! Ficou interessado? Ligue para o fone que está na tela.](images/deficiencia.png)
 
 Pode parecer uma coisa boba, mas quantas vezes eu e você fomos obrigados a usar termos como:
 
--   **“Leia aqui”**;
--   **“Saiba mais**“;
--   **“Clique aqui”**.
+- **“Leia aqui”**;
+- **“Saiba mais**“;
+- **“Clique aqui”**.
 
-Esses termos não ajudam, mas atrapalham.  
+Esses termos não ajudam, mas atrapalham.
 Pois é, caros colegas estudamos tanto, nos matamos para aprendermos tecnologias novas e esquecemos da velha companheira acessibilidade.
 
 E engana-se que acessibilidade é somente para pessoas com necessidades especiais, ela é pra mim e para você.

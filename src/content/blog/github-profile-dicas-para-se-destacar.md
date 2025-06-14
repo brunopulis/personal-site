@@ -20,14 +20,14 @@ Para configurar seu GitHub Profile é simples, crie um repositório com o nome d
 
 O meu perfil ficou assim:
 
-![](images/github-profile-300x247-572Xer0ATZoI.png)
+![Github profile](images/github-profile.png)
 
 Usei uma estrutura baseada em tópicos, pois é mais fácil de organizar e deixar claro cada sessão. O meu GitHub Profile, está divido da seguinte forma:
 
--   Apresentação
--   Status do GitHub
--   Projetos pessoais e open source
--   Últimos artigos do blog
+- Apresentação
+- Status do GitHub
+- Projetos pessoais e open source
+- Últimos artigos do blog
 
 ## Apresentação
 
@@ -35,10 +35,10 @@ Creio que a apresentação é a sessão mais importante e esse é o motivo dela 
 
 É interessante colocar alguns fatos como:
 
--   Projetos que trabalhou;
--   Projetos que você mantém;
--   Passatempos;
--   Programas de ação social e voluntariado.
+- Projetos que trabalhou;
+- Projetos que você mantém;
+- Passatempos;
+- Programas de ação social e voluntariado.
 
 Assim, sua apresentação fica mais completa e pode chamar atenção de recrutadores e desenvolvedores. Quem sabe sua nova oportunidade no mercado não pode partir dai?
 
@@ -54,7 +54,7 @@ Essa é uma funcionalidade é interessante, pois exibe suas contribuições no G
 
 Para configurar o seu GitHub Status, copie o código abaixo, e cole no seu conteúdo markdown.
 
-https://github-readme-stats.vercel.app/api?username=brunopulis
+<https://github-readme-stats.vercel.app/api?username=brunopulis>
 
 Um detalhe importante é trocar para o seu usuário `?username=` pelo nome do seu usuário do GitHub.
 
@@ -82,7 +82,7 @@ O GitHub Profile, permite várias possibilidades para deixar seu perfil mais pro
 
 Na minha pesquisa para esse artigo encontrei uma lista com diversos GitHub Profiles criados. Deixo aqui alguns perfis que achei bem legal.
 
--   [Beto Muniz](https://github.com/obetomuniz)
--   [Davidson Fellipe](https://github.com/davidsonfellipe)
--   [Marco Vincit](https://github.com/marcovincit)
--   [Templates de GitHub Profile](https://github.com/elangosundar/awesome-README-templates)
+- [Beto Muniz](https://github.com/obetomuniz)
+- [Davidson Fellipe](https://github.com/davidsonfellipe)
+- [Marco Vincit](https://github.com/marcovincit)
+- [Templates de GitHub Profile](https://github.com/elangosundar/awesome-README-templates)

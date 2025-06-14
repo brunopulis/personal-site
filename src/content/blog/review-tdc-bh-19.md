@@ -64,7 +64,7 @@ Assisti uma live no YouTube e o conteúdo foi bastante rico e incentivador.
 
 ### Envio da proposta
 
-Lembro de escrever a proposta e pensar que não iria ser aprovada — bateu uma síndrome de impostor na hora (rs)!  
+Lembro de escrever a proposta e pensar que não iria ser aprovada — bateu uma síndrome de impostor na hora (rs)!
 Confesso que fiquei extremamente feliz, por receber a notícia que o tema da minha palestra tinha sido escolhido para o evento.
 
 O processo para enviar a palestra foi muito organizado e o tempo de resposta também. Meu tema foi: Always bet on a11y em uma tradução literal “Sempre aposte em acessibilidade”, onde expus sobre as vantagens de sempre apostar e abraçar os padrões web e como eles podem melhorar a interação entre os usuários e os negócios das empresas.
@@ -73,7 +73,7 @@ Você pode consultar a minha palestra no Speaker Deck. Além da minha palestra, 
 
 Além de mim, a [Monetizze](https://www.monetizze.com.br/) também foi representada pelo [Bruno Vasconcelos](https://www.linkedin.com/in/brunovasconcelosdesign/) na Trilha de UX, onde ele falou sobre o [desenvolvimento de uma cultura de ux](https://speakerdeck.com/brunovasconcelos/inserindo-a-cultura-ux).
 
-![Bruno Vasconcelos palestrando na trilha de UX](images/tdc-cultura-ux-sceElWEvMZAR.jpg)
+![Bruno Vasconcelos palestrando na trilha de UX](images/tdc-cultura-ux.jpg)
 
 ## Almoço
 
@@ -99,15 +99,15 @@ Duas iniciativas muito interessantes que aconteceram no meio dessa gama de pales
 
 De acordo com o próprio site do TDC, o Inspire visa:
 
-> Despertar e incentivar o interesse dos jovens para área de tecnologia, contribuindo para uma escolha profissional pautada nos desafios do futuro.  
+> Despertar e incentivar o interesse dos jovens para área de tecnologia, contribuindo para uma escolha profissional pautada nos desafios do futuro.
 > Ele é oferecido gratuitamente para 40 estudantes do terceiro ano do ensino médio regular e/ou profissionalizante das escolas públicas.\[1\]
 
 Logo após a mentoria do TDC Inspire os jovens apresentaram no Stadium o protótipo de suas ideias. Era visível o orgulho dos mentores pelo empenho e esforço dos jovens com suas ideias, muitas delas passíveis de serem implementadas.
 
 ### TDC4Kids
 
-> O TDC4Kids busca estimular e favorecer o uso de tecnologias pelas crianças, promovendo o aprendizado baseado em projetos em um ambiente lúdico e divertido.  
-> Todas as atividades realizadas são pensadas para despertar as habilidades e aptidões necessárias para o futuro através da programação, empreendedorismo e design.  
+> O TDC4Kids busca estimular e favorecer o uso de tecnologias pelas crianças, promovendo o aprendizado baseado em projetos em um ambiente lúdico e divertido.
+> Todas as atividades realizadas são pensadas para despertar as habilidades e aptidões necessárias para o futuro através da programação, empreendedorismo e design.
 > No formato de circuito, as crianças podem participar de todo os workshops, circulando entre as diversas propostas, participando conforme o seu interesse\[2\]
 
 ## Conclusão
@@ -120,5 +120,5 @@ E sim como foi dito, foi um sonho realizado e que venha o TDCBH 2020!
 
 ## Referências
 
--   [1 — O que é o TDC Inspire](http://www.thedevelopersconference.com.br/tdc/2019/belohorizonte/workshop-inspire)
--   [2 — O que é a iniciativa TDC4Kids](http://www.thedevelopersconference.com.br/tdc/2019/belohorizonte/tdc4kids)
+- [1 — O que é o TDC Inspire](http://www.thedevelopersconference.com.br/tdc/2019/belohorizonte/workshop-inspire)
+- [2 — O que é a iniciativa TDC4Kids](http://www.thedevelopersconference.com.br/tdc/2019/belohorizonte/tdc4kids)

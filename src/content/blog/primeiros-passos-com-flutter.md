@@ -22,10 +22,10 @@ Há princípio tinha pensando em React Native, mas depois que o Beto me mostrou 
 
 Flutter tem a promessa de escrever um único _codebase_ e executar em múltiplos ambientes, dentre eles:
 
--   mobile;
--   web;
--   desenvolvimento desktop;
--   pequenos widgets.
+- mobile;
+- web;
+- desenvolvimento desktop;
+- pequenos widgets.
 
 ## Produtividade
 
@@ -41,9 +41,9 @@ Além dessa característica fantástica, o código Flutter é compilado para ARM
 
 Como todo novo desafio, devemos ter boas referências para nos auxiliar. Vou compartilhar os recursos que encontrei que me ajudaram.
 
--   [documentação oficial](https://flutter.dev/docs/);
--   [comunidade Flutterando](https://flutterando.com.br);
--   [Curso completo de Flutter Gratuito](https://www.youtube.com/watch?v=XeUiJJN0vsE&list=PLlBnICoI-g-d-J57QIz6Tx5xtUDGQdBFB).
+- [documentação oficial](https://flutter.dev/docs/);
+- [comunidade Flutterando](https://flutterando.com.br);
+- [Curso completo de Flutter Gratuito](https://www.youtube.com/watch?v=XeUiJJN0vsE&list=PLlBnICoI-g-d-J57QIz6Tx5xtUDGQdBFB).
 
 ## Conclusão
 

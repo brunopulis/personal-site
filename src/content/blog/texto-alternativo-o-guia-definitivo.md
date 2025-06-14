@@ -28,19 +28,19 @@ Muitas vezes o texto alternativo não ajuda, sendo um desperdício do meu tempo 
 
 Deixe-me ilustrar isso na [página inicial do The Verge](https://www.theverge.com/). Isto é o que exibe para pessoas com visão:
 
-![Listagem de notícias com imagem e título do artigo.](images/1_wA4SL_9BCXv4ffG7WbjeiA-1024x-MMYiylGoQNXt.png)
+![Listagem de notícias com imagem e título do artigo.](./images/1_wA4SL_9BCXv4ffG7WbjeiA-1024x-MMYiylGoQNXt.png)
 
 Abaixo é o que eu vejo. Eu substituí as imagens com o que meu leitor de tela lê:
 
-![Nomes de arquivos estranhos em balões de fala em vez de imagens na lista de notícias.](images/texto-alternativo-768x353-lIXLLwQ30Ubf.png)
+![Nomes de arquivos estranhos em balões de fala em vez de imagens na lista de notícias.](./images/texto-alternativo.png)
 
 Não ajuda muito, não é?
 
 Aqui estão algumas falhas comuns de texto alternativo que encontro:
 
--   “cropped\_img32\_900px.png” ou “1521591232.jpg” — o nome dos arquivos, provavelmente porque a imagem não tem o atributo alt definido.
--   “ — em todas as imagens do artigo, provavelmente para melhorar o ranking de busca (SEO).
--   “Fotografa: Emma Lee” — provavelmente porque o editor da redação não sabe para que serve um texto alternativo
+- “cropped\_img32\_900px.png” ou “1521591232.jpg” — o nome dos arquivos, provavelmente porque a imagem não tem o atributo alt definido.
+- “ — em todas as imagens do artigo, provavelmente para melhorar o ranking de busca (SEO).
+- “Fotografa: Emma Lee” — provavelmente porque o editor da redação não sabe para que serve um texto alternativo
 
 Os textos alternativos nem sempre são tão ruins, mas geralmente há muito a melhorar. Então, se você é um iniciante ou quer levar o seu “jogo” para o próximo nível, aqui está o nosso guia final para textos alternativos!
 
@@ -48,29 +48,29 @@ Os textos alternativos nem sempre são tão ruins, mas geralmente há muito a me
 
 Um texto alternativo é uma descrição de uma imagem mostrada para pessoas que por alguma razão não conseguem ver a imagem. Entre outros, textos alternativos auxiliam:
 
--   pessoas com baixa visão ou cegas;
--   pessoa que desabilitaram imagem para economizar dados;
--   motores de busca (ex: Google, Bing).
+- pessoas com baixa visão ou cegas;
+- pessoa que desabilitaram imagem para economizar dados;
+- motores de busca (ex: Google, Bing).
 
 O primeiro grupo — pessoas com baixa visão ou cegas — é o grupo que mais se beneficia com os textos alternativos. Eles utilizam algo chamado leitores de tela para navegar na web. Um leitor de tela transforma uma informação visual em fala ou braile. Para fazer isso com precisão, as imagens do seu site precisam ter textos alternativos.
 
 Textos alternativos são super importantes! Tão importantes que o WCAG tem textos alternativos como sua primeira guideline a ser seguida:
 
 > Todo o conteúdo não textual que é apresentado ao usuário tem um texto alternativo com o propósito de ser equivalente.
-> 
+>
 > _– WCAG guideline 1.1.1_
 
 ### Como eu adiciono um texto alternativo?
 
 No HTML, um texto alternativo é um atributo em um elemento de imagem:
 
-```
+```html
 <img src="cachorro.png" alt="Cachorro brincando no prado." />
 ```
 
 A maioria dos gerenciadores de conteúdo, como WordPress, permite a você criar um texto alternativo quando subir a imagem:
 
-![Campo de descricao alternativa do WordPress](images/alt-text-1-LtmSNwOt12h3.png)
+![Campo de descricao alternativa do WordPress](./images/alt-text-1.png)
 
 Esse campo geralmente é chamado de Texto Alternativo mas em algumas interfaces é chamado de “descrição da imagem” ou algo similar.
 
@@ -80,20 +80,20 @@ Esse campo geralmente é chamado de Texto Alternativo mas em algumas interfaces 
 
 Pode parecer óbvio, mas um texto alternativo deve descrever uma imagem. Por exemplo:
 
-“Grupo de pessoas em uma estação de trem.”  
-“Bebê feliz brincando numa caixa de areia.”  
+“Grupo de pessoas em uma estação de trem.”
+“Bebê feliz brincando numa caixa de areia.”
 “Cinco pessoas na fila do supermercado.”
 
 As coisas que não pertencem a um texto alternativo são:
 
--   O nome do fotógrafo. Isso é bem comum, mas não faz sentido.
--   Palavras chave para SEO. Não preencha o texto alternativo com palavras irrelevantes que você espera classificar no _page rank_ do Google. Não é para isso que os textos alternativos servem e só irá confundir seus usuários.
+- O nome do fotógrafo. Isso é bem comum, mas não faz sentido.
+- Palavras chave para SEO. Não preencha o texto alternativo com palavras irrelevantes que você espera classificar no _page rank_ do Google. Não é para isso que os textos alternativos servem e só irá confundir seus usuários.
 
 ### 2\. Conteúdo do texto alternativo depende do seu contexto
 
 Como você descreve a imagem depende do seu contexto. Deixe-me dar-lhe um exemplo:
 
-![Homem de meia idade parecendo tenso na chuva. Fotografia em tons de cinza com fundo fora de foco.](images/image-alt-1-300x199-rseXWp2BcrOt.jpeg)
+![Homem de meia idade parecendo tenso na chuva. Fotografia em tons de cinza com fundo fora de foco.](images/homem-p-b.webp)
 
 Se essa imagem fosse exibida em um artigo sobre fotografia, o texto alternativo poderia ser algo ao longo das linhas de:
 
@@ -157,9 +157,9 @@ Imagine que você está percorrendo seu feed do Twitter. Toda vez que quiser ler
 
 Outros exemplos de feeds são:
 
--   Uma lista de links para artigos. Como o da página [Artigos](https://axesslab.com/articles/);
--   Chat ou feed de mensagens;
--   Feeds de comentários.
+- Uma lista de links para artigos. Como o da página [Artigos](https://axesslab.com/articles/);
+- Chat ou feed de mensagens;
+- Feeds de comentários.
 
 Portanto, para uma experiência de usuário ideal, deixe o texto alternativo em branco para imagens que são usadas repetidamente em feeds.
 
@@ -169,13 +169,13 @@ Você [sempre deve ter labels ao lado de ícones](https://axesslab.com/icons-ru
 
 Vamos dar um exemplo de mídia social como exemplo:
 
-![Ícones do Facebook e twitter com rótulos de texto.](images/icones-alt-1-768x177-VQ7w8tAXBOyQ.png)
+![Ícones do Facebook e twitter com rótulos de texto.](images/icons.png)
 
 Se você escrevesse um texto alternativo para o ícone do Facebook, um leitor de tela diria algo ao longo da linha: **“Facebook Facebook”. Muito redundante!**
 
 OK, isso não é tecnicamente sobre textos alternativos, mas ainda é importante: **certifique-se de que tanto o ícone quanto o texto do link estão no mesmo atributo de link**, para obter uma experiência fluída. Como isso:
 
-```
+```html
 <a href="...">
   <img src="fb_icon.png" alt="" />
   Facebook
@@ -184,7 +184,7 @@ OK, isso não é tecnicamente sobre textos alternativos, mas ainda é importante
 
 Outro erro comum está nos botões de menus:
 
-![Ícone do menu com e sem rótulo.](images/menu-hamburger-aWbw46E4XKz3.png)
+![Ícone do menu com e sem rótulo.](images/menu-hamburger.png)
 
 Se o botão de menu não tiver um label visual — o que, de maneira direta, é realmente ruim para a experiência do usuário, ele precisa de um texto alternativo (ou outra maneira de descrever sua função no código, como aria-label).
 
@@ -196,7 +196,7 @@ Se o ícone do menu tiver um label, você deve deixar o texto alternativo em bra
 
 Geralmente, uma imagem com um link é acompanhada com um texto. Como o exemplo abaixo:
 
-![Imagem acima de um link em um site de notícias.](images/mourinho-1-300x232-U96vSwKKN2tF.png)
+![Imagem acima de um link em um site de notícias.](images/mourinho.png)
 
 Nesse caso, a imagem e o link **devem estar na mesma tag de link no HTML**. Você pode simplesmente deixar o texto alternativo em branco. O importante para o usuário é ouvir o texto do link.
 
@@ -210,7 +210,7 @@ De preferência, imagens decorativas que não transmitam nenhum significado ao u
 
 Eu classificaria a maioria das imagens em que você coloca texto como decorativas. Você não precisa de um texto alternativo nelas. Um exemplo é a imagem de fundo na página inicial do Netflix:
 
-![Página inicial do Netflix com texto no topo de uma imagem de fundo mostrando capas de filmes.](images/netflix-768x344-s17hv24VUsgw.png)
+![Página inicial do Netflix com texto no topo de uma imagem de fundo mostrando capas de filmes.](images/netflix.png)
 
 * * *
 
@@ -232,10 +232,10 @@ Na minha opinião, isso é um pouco detalhado. Muito barulho! Como meu leitor de
 
 Existem dois caminhos principais para adicionar um SVG a uma página HTML.
 
-1.  Dentro de um elemento img.  
+1. Dentro de um elemento img.
     Nesse caso, basta adicionar um texto alternativo como de costume:
 
-```
+```html
 <img src="dog.svg" alt="Cachorro brincando na grama." />
 ```
 
@@ -255,6 +255,6 @@ Facebook e Instagram, atualmente incluíram uma feature que descreve imagens aut
 
 Então me desculpe, você ainda deve escrever textos alternativos!
 
-## Obrigado por criar uma web melhor!
+## Obrigado por criar uma web melhor
 
 Estou feliz por você ter lido até aqui! Isso quer dizer que você se importa em tornar a web um lugar melhor para todos os usuários. Compartilhe o conhecimento e continue sendo incrível!

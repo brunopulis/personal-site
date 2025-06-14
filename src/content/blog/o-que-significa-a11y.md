@@ -18,13 +18,13 @@ O termo, representa a ideia de ser aliado das pessoas com deficiência, afim de,
 
 Quando utilizamos, dizemos que somos aliados de uma causa tão nobre e em contrapartida, referenciando a acessibilidade digital em si.
 
-![Sigla A11y exemplificada](images/a11y-768x337-zi8qW65wKBgI.png)
+![Sigla A11y exemplificada](images/a11y.png)
 
 Existem outros termos que utilizam a mesma lógica, por exemplo:
 
--   A internacionalização é representado pela sigla **i18n**;
--   A localização é representada pela sigla **i10n**;
--   **World Wide Web**, pode ser representado por W3
+- A internacionalização é representado pela sigla **i18n**;
+- A localização é representada pela sigla **i10n**;
+- **World Wide Web**, pode ser representado por W3
 
 ## Voce conhecia esse termo?
 

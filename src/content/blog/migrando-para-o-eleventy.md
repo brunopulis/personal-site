@@ -24,10 +24,10 @@ Em meados de 2017, decidi criar um blog para escrever sobre diversos assuntos, a
 
 Dessa forma, eu tinha controle do código de ponta a ponta, a stack que utilizei por muito tempo foi:
 
--   WordPress;
--   MySQL;
--   Hospedagem compartilhada;
--   FTP 🤣
+- WordPress;
+- MySQL;
+- Hospedagem compartilhada;
+- FTP 🤣
 
 Nunca tive problemas com essa _stack_, porém, em 2022 queria algo mais minimalista.
 
@@ -45,12 +45,12 @@ Segundo o próprio site da [JamStack](https://jamstack.org),é:
 
 Existem diversas vantagens ao utilizar essa arquitetura, dentre elas, podemos destacar:
 
--   segurança;
--   escalabilidade;
--   performance;
--   manutenbilidade;
--   portabilidade;
--   experiência de desenvolvimento (DX).
+- segurança;
+- escalabilidade;
+- performance;
+- manutenbilidade;
+- portabilidade;
+- experiência de desenvolvimento (DX).
 
 ## Pontos positivos
 
@@ -62,9 +62,9 @@ Além disso, o nível de controle de código é total, facilitando assim a sua p
 
 Para realizar essa transição escolhi três tecnologias que contribuíram bastante:
 
--   [Eleventy](https://www.11ty.dev/);
--   [Netlify](https://www.netlify.com/);
--   [Github](http://github.com/).
+- [Eleventy](https://www.11ty.dev/);
+- [Netlify](https://www.netlify.com/);
+- [Github](http://github.com/).
 
 #### Eleventy
 
@@ -72,12 +72,12 @@ Para realizar essa transição escolhi três tecnologias que contribuíram basta
 
 Podemos destacar:
 
--   [Chrome Dev Summit](https://developer.chrome.com/devsummit/);
--   [A11y Project](https://www.a11yproject.com/);
--   [CSS Tricks](https://css-tricks.com/);
--   [ESlint](https://eslint.org/);
--   [Google V8](https://v8.dev/);
--   [web.dev](https://web.dev/).
+- [Chrome Dev Summit](https://developer.chrome.com/devsummit/);
+- [A11y Project](https://www.a11yproject.com/);
+- [CSS Tricks](https://css-tricks.com/);
+- [ESlint](https://eslint.org/);
+- [Google V8](https://v8.dev/);
+- [web.dev](https://web.dev/).
 
 Sua flexibilidade e praticidade me impressionaram, me lembrou bastante o Jekyll que é escrito em Ruby.
 
@@ -107,5 +107,5 @@ Bom, acredito que isso seja tudo (por enquanto) novas modificações serão come
 
 Algo que almejo é experimentar o uso de WebMentions, porém, isso é assunto para um próximo post.
 
-Até lá,  
+Até lá,
 Pulis.

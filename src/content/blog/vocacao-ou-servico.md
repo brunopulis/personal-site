@@ -25,7 +25,7 @@ Todos entendemos que _ser vocacionado tem a ver com o chamado de Deus e seus do
 
 Em contrapartida, o _ativismo religioso_ inicia-se por incrível que pareça com uma boa intenção no coração, mas logo me recordo daquele ditado popular:
 
-> De boa intenção o inferno está cheio.   
+> De boa intenção o inferno está cheio.
 > Dito Popular
 
 A raiz maligna dele é justamente o oposto da vocação, eu faço algo para Deus para ser algo, com isso muitos têm caído nesse quesito.
@@ -36,11 +36,11 @@ Elas ainda não compreenderam algo bastante simples, porém poderoso **o Sobera
 
 Alguns pontos que ao observar ativistas encontramos de forma latente:
 
--   Necessita de serviço;
--   Necessita de reconhecimento humano;
--   São Geralmente considerados pessoas “tops” nas comunidades por demonstrarem uma pré-disposição por fazerem muita coisa;
--   Possuem uma espiritualidade rasa, sem entrar em questões profundas da fé;
--   Se sentem como semi-deuses em suas posições de destaque.
+- Necessita de serviço;
+- Necessita de reconhecimento humano;
+- São Geralmente considerados pessoas “tops” nas comunidades por demonstrarem uma pré-disposição por fazerem muita coisa;
+- Possuem uma espiritualidade rasa, sem entrar em questões profundas da fé;
+- Se sentem como semi-deuses em suas posições de destaque.
 
 ## O problema
 
@@ -52,5 +52,5 @@ Além de ter uma postura orgulhosa e separatista, possuem uma capacidade absurda
 
 O Eterno não está preocupado com a quantidade de serviço que você supostamente faz, não está preocupado quantos eventos, reuniões, células, conferências participou. Ele se preocupa unicamente com a salvação dos perdidos, a única coisa que Cristo nos pediu foi ir e fazer discípulos, afinal Deus não necessita de empregados e nem de pessoas que levantam uma bandeira de orgulho e presunção diante dEle.
 
-SDG,  
+SDG,
 Bruno.

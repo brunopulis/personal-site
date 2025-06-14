@@ -18,8 +18,6 @@ Como um tema relevante, a acessibilidade na web ainda é pouco explorada no merc
 
 No entanto, a obra de Ferraz se destaca entre os cinco livros que ele já publicou, oferecendo insights valiosos sobre o assunto. Descubra mais sobre essa leitura indispensável e confira também a publicação de [Talita Pagani](http://talitapagani.com/pt-br), uma referência no tema de acessibilidade.
 
- 
-
 ## Lançamento do livro
 
 No dia 21 de março de 2020, [Reinaldo Ferraz](http://reinaldoferraz.com.br/sobre) lançou pela [Casa do Código](https://www.casadocodigo.com.br), seu mais novo livro: [Acessibilidade na Web: Boas práticas para construir sites e aplicações acessíveis](https://www.casadocodigo.com.br/products/livro-acessibilidade).
@@ -64,10 +62,10 @@ Continuemos com o nosso passeio, além da apresentação das diretrizes de acess
 
 Reinaldo dedica cinco capítulos do livro para exemplificar a eliminação de barreiras de acesso:
 
--   na **estrutura;**
--   na **navegação e interatividade;**
--   no **design;**
--   na **multimídia e conteúdo não textual.**
+- na **estrutura;**
+- na **navegação e interatividade;**
+- no **design;**
+- na **multimídia e conteúdo não textual.**
 
 ### Gerenciadores de conteúdo (CMS)
 
@@ -111,10 +109,10 @@ Seja um incentivador e não um detrator, compre e-books, livros, ajude a comunid
 
 ## Referências
 
--   Anúncio da publicação do livro de acessibilidade, 2020. Disponível em: [Twitter](https://twitter.com/reinaldoferraz/status/1263498521300348928) Acesso em: 19 de julho de 2020;
--   Acessibilidade na Web: Boas práticas para construir sites e aplicações acessíveis, 2020. Disponível em: [Livro disponível na Casa do Código](https://www.casadocodigo.com.br/products/livro-acessibilidade) Acesso em: 19 de julho de 2020;
--   Casa do Código, 2020. Disponível em : [Casa do código](https://www.casadocodigo.com.br/) Acesso em: 19 de julho de 2020;
--   Sobre Reinaldo Ferraz, 2020. Disponível em: [Sobre Reinaldo Ferraz](http://reinaldoferraz.com.br/sobre/) Acesso em: 19 de julho de 2020;
--   Como citar ebook, kindle e epub, 2020. Disponível em: [Como citar ebook, kindle e epub](https://guiadamonografia.com.br/como-citar-ebook-kindle-epub/#Como_citar_livros_no_formato_epub) Acesso em: 19 de julho de 2020;
--   Biografia de Tim Berners-Lee, 2020. Disponível em: [Tim Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee) Acesso em: 19 de julho de 2020;
--   Lei Brasileira de Inclusão, 2020. Disponível em: [Lei Brasileira de inclusão](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm) Acesso em: 19 de julho de 2020.
+- Anúncio da publicação do livro de acessibilidade, 2020. Disponível em: [Twitter](https://twitter.com/reinaldoferraz/status/1263498521300348928) Acesso em: 19 de julho de 2020;
+- Acessibilidade na Web: Boas práticas para construir sites e aplicações acessíveis, 2020. Disponível em: [Livro disponível na Casa do Código](https://www.casadocodigo.com.br/products/livro-acessibilidade) Acesso em: 19 de julho de 2020;
+- Casa do Código, 2020. Disponível em : [Casa do código](https://www.casadocodigo.com.br/) Acesso em: 19 de julho de 2020;
+- Sobre Reinaldo Ferraz, 2020. Disponível em: [Sobre Reinaldo Ferraz](http://reinaldoferraz.com.br/sobre/) Acesso em: 19 de julho de 2020;
+- Como citar ebook, kindle e epub, 2020. Disponível em: [Como citar ebook, kindle e epub](https://guiadamonografia.com.br/como-citar-ebook-kindle-epub/#Como_citar_livros_no_formato_epub) Acesso em: 19 de julho de 2020;
+- Biografia de Tim Berners-Lee, 2020. Disponível em: [Tim Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee) Acesso em: 19 de julho de 2020;
+- Lei Brasileira de Inclusão, 2020. Disponível em: [Lei Brasileira de inclusão](http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm) Acesso em: 19 de julho de 2020.

@@ -8,7 +8,7 @@ metadata:
 tags:
   - acessibilidade
 ---
-![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](images/stormtropper-jpg-768x480-wmCbY9YB8CX3.avif)
+![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](images/stormtropper.avif)
 
 Aos que me conhecem sabem que eu sou defensor de uma **Web inclusiva** e não exclusiva, por isso luto pela Acessibilidade Web no Brasil.
 
@@ -31,9 +31,9 @@ Confesso que minha consciência pesa muito, por isso a cada dia eu me apaixono m
 Você pode estar se questionando: “Isso é exagero da sua parte”.  
 Creio que não meu caro leitor faça alguns testes simples:
 
--   Retire o mouse e tente navegar em algum site de preferência sites governamentais e de grandes marcas;
--   Tente navegar as escuras com o auxílio de um leitor de tela;
--   Tente através do **TAB** chegar a um determinado local sem um link de pular para o conteúdo determinado.
+- Retire o mouse e tente navegar em algum site de preferência sites governamentais e de grandes marcas;
+- Tente navegar as escuras com o auxílio de um leitor de tela;
+- Tente através do **TAB** chegar a um determinado local sem um link de pular para o conteúdo determinado.
 
 Estes três pequenos e bobos testes podem te surpreender muito.  
 E pelo que eu já percebi, estamos construindo remendos sobre remendos, levando assim os espaços virtuais a terem deficiência e não inclusivos e como diria a [Thaís Frota](https://twitter.com/acessibilidade):
