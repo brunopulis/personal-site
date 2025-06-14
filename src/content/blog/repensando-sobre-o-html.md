@@ -42,13 +42,13 @@ O problema é que a maioria desses frameworks possuem erros grotescos de html, a
 
 Um exemplo do framework Vuetify com o componente select:
 
-```
+```js
 <v-select :items="items" label="Standard"></v-select>
 ```
 
 Aparentemente é um componente simples e elegante, mas qual é sua saída no código HTML? Sua saída é parecida com isso:
 
-```
+```html
 <div class="v-input theme--light v-text-field v-text-field--is-booted v-select"></div>
   <div class="v-input__control">
     <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-1359" class="v-input__slot">
@@ -77,7 +77,7 @@ Aparentemente é um componente simples e elegante, mas qual é sua saída no có
 
 Já no bom e velho HTML, o componente de select se parece com isso.
 
-```
+```html
 <select>
   <option>Selecione uma opção</option>
   <option>1</option>
@@ -115,13 +115,13 @@ Eu sempre tenho um mantra comigo: **Sempre utilize componentes nativos. SEMPRE!*
 Essa semana a [Talita Pagani](https://twitter.com/talitapagani) iniciou uma conversa no twitter sobre o mesmo tema. Você pode ver um trecho logo abaixo.
 
 > “Nós não temos um problema de acessibilidade.
-> 
+>
 > Nós temos um problema de falta de conhecimento básico em HTML.
-> 
+>
 > Grande parte dos problemas de acessibilidade encontrados durante inspeções vem de marcação HTML ruim.”
-> 
+>
 > Como avaliadora de acessibilidade, tenho a mesma percepção. [#a11y](/friends/tag/a11y/) [https://t.co/GM0bQS4k3s](https://t.co/GM0bQS4k3s)
-> 
+>
 > — Talita Pagani (@talitapagani) [April 28, 2020](https://twitter.com/talitapagani/status/1255190328690311169?ref_src=twsrc%5Etfw)
 
 Esse assunto no Twitter me fez lembrar de outra conversa com o [Reinaldo Ferraz](https://twitter.com/reinaldoferraz) em um BrazilJS. Estávamos falando sobre o estado atual da acessibilidade web no Brasil e os avanços que temos feito. Ele disse uma frase que me marcou muito:
@@ -134,28 +134,28 @@ A minha dica é desacelerar e voltar a base, não adianta nada saber os melhores
 
 Isso me lembra a Parábola dos dois fundamentos, segue um trecho:
 
-> Todo aquele, pois, que escuta estas minhas palavras, e as pratica, assemelhá-lo-ei ao homem prudente, que edificou a sua casa sobre a rocha;  
-> E desceu a chuva, e correram rios, e assopraram ventos, e combateram aquela casa, e não caiu, porque estava edificada sobre a rocha.  
-> E aquele que ouve estas minhas palavras, e não as cumpre, compará-lo-ei ao homem insensato, que edificou a sua casa sobre a areia;  
-> E desceu a chuva, e correram rios, e assopraram ventos, e combateram aquela casa, e caiu, e foi grande a sua queda.  
+> Todo aquele, pois, que escuta estas minhas palavras, e as pratica, assemelhá-lo-ei ao homem prudente, que edificou a sua casa sobre a rocha;
+> E desceu a chuva, e correram rios, e assopraram ventos, e combateram aquela casa, e não caiu, porque estava edificada sobre a rocha.
+> E aquele que ouve estas minhas palavras, e não as cumpre, compará-lo-ei ao homem insensato, que edificou a sua casa sobre a areia;
+> E desceu a chuva, e correram rios, e assopraram ventos, e combateram aquela casa, e caiu, e foi grande a sua queda.
 > (Mateus 7:24-27)
 
 Uma fundação com estrutura sólida nos dá segurança e confiança, mas uma fundação sem segurança e instável é passível de diversas falhas.
 
-A fundação HTML, CSS, Javascript devem ser sólidas, frameworks vem e vão.  
+A fundação HTML, CSS, Javascript devem ser sólidas, frameworks vem e vão.
 Que tal refletirmos e escrevermos de forma semântica?
 
 ### Para aprofundar
 
 Escolhi alguns links para aprofundar no assunto.
 
--   [Recomendações de acessibilidade](https://www.escolavirtual.gov.br/curso/42)
--   [HTML5 and CSS fundamentals](https://www.edx.org/course/html5-and-css-fundamentals)
--   [HTML5 Coding Essentials and best pratices](https://www.edx.org/course/html5-coding-essentials-and-best-practices)
--   [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [Recomendações de acessibilidade](https://www.escolavirtual.gov.br/curso/42)
+- [HTML5 and CSS fundamentals](https://www.edx.org/course/html5-and-css-fundamentals)
+- [HTML5 Coding Essentials and best pratices](https://www.edx.org/course/html5-coding-essentials-and-best-practices)
+- [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 
-## Referências:
+## Referências
 
--   [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
--   [Pesquisa WebAIM](https://webaim.org/projects/million/)
--   [Vuetify Select](https://vuetifyjs.com/en/components/selects/)
+- [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [Pesquisa WebAIM](https://webaim.org/projects/million/)
+- [Vuetify Select](https://vuetifyjs.com/en/components/selects/)

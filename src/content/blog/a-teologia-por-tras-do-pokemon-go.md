@@ -4,9 +4,9 @@ date: 2016-08-13
 draft: false
 category: "Teologia"
 ---
-![](images/pokemon-1024x576-8UGKFWeMvsuk.avif)
 
-“Eu temo o dia em que a tecnologia ultrapasse nossa interação humana, e o mundo terá uma geração de idiotas. — Albert Einstein”  
+
+“Eu temo o dia em que a tecnologia ultrapasse nossa interação humana, e o mundo terá uma geração de idiotas. — Albert Einstein”
 
 Confesso que não ia escrever sobre o assunto, até porque várias pessoas o tem feito e pensei que minha opinião seria mais uma em meio ao ecoar de muitas vozes emitidas.
 
@@ -26,7 +26,7 @@ Eu instalei e joguei, realmente é um jogo bastante interativo, atrativo e vicia
 
 Após ser lançado no Brasil, iniciou-se uma teoria conspiratória sobre o jogo que era demoníaco que os usuários não deveriam jogar. Creio que foi a pauta de muitos púlpitos e círculos teológicos pelo Brasil afora.
 
-Me espanta que muitos estão tão preocupados com o jogo e tanta ênfase nisso.  
+Me espanta que muitos estão tão preocupados com o jogo e tanta ênfase nisso.
 Pensei na hora que ouvi isso: “Sério que pessoas estão discutindo isso?”
 
 * * *
@@ -39,10 +39,10 @@ Pelo mais cômico que possa parecer, ele tem ajudado pessoas que sofrem de depre
 
 Exemplos como esse print que vi no Facebook:
 
-![Relato de uma pessoa com depressão que conseguiu sair de casa por causa do jogo. Hoje eu andei 2,45km no meu bairro por causa de Pokémon GO. Eu sou uma pessoa que tem depressäo e ansiedade - em alguns dias é dificil ter animo at pra sair da cama. E hoje, por causa de Pokémon GO, eu levantei e sai de casa por vontade propri coisa que näo acontecia hå vårios meses. Pense nisso antes de chamar quem curte Pokémon GO de &quot;alienados&quot;. Esse jogo faz um bem danado pra algumas pessoas. ](images/pokemon-go-300x236-8M7hW9T7iGhh.png)
+![Relato de uma pessoa com depressão que conseguiu sair de casa por causa do jogo. Hoje eu andei 2,45km no meu bairro por causa de Pokémon GO. Eu sou uma pessoa que tem depressäo e ansiedade - em alguns dias é dificil ter animo at pra sair da cama. E hoje, por causa de Pokémon GO, eu levantei e sai de casa por vontade propri coisa que näo acontecia hå vårios meses. Pense nisso antes de chamar quem curte Pokémon GO de &quot;alienados&quot;. Esse jogo faz um bem danado pra algumas pessoas. ](images/pokemon-go.png)
 
-Partindo do pressuposto que o jogo realmente é do, **coisa ruim**, ele iria querer promover alguma coisa boa para pessoas com problemas?  
-  
+Partindo do pressuposto que o jogo realmente é do, **coisa ruim**, ele iria querer promover alguma coisa boa para pessoas com problemas?
+
 Ou iria querer colocar elas mais, no fundo do poço? Essa é a pergunta que paira no ar.
 
 ## **Contras do Jogo**
@@ -55,7 +55,7 @@ Vale lembrar tudo em excesso não é bom.
 
 ### Motivação
 
-Não tem importância jogar, mas qual a motivação do coração ao jogar?   
+Não tem importância jogar, mas qual a motivação do coração ao jogar?
 O porquê de jogar?
 
 ## Conclusão
@@ -64,15 +64,15 @@ O pano de fundo contado dessa história é teológico, pois o jogo proporciona t
 
 Lembra um pouco do que Jesus fez por aqui, não é? A lição que retiro se baseia em um versículo do livro de Eclesiastes:
 
-> Não sejas demasiadamente justo, nem demasiadamente sábio; por que te destruirias a ti mesmo?  
-> Não sejas demasiadamente ímpio, nem sejas louco; por que morrerias fora de teu tempo?  
+> Não sejas demasiadamente justo, nem demasiadamente sábio; por que te destruirias a ti mesmo?
+> Não sejas demasiadamente ímpio, nem sejas louco; por que morrerias fora de teu tempo?
 > [Eclesiastes 7:16,17](https://www.bibliaonline.com.br/acf/ec/7/16,17)
-> 
+>
 > O que eu aprendo com tudo isto? A ter equilíbrio na vida e compreender que a tempo para tudo e não devemos viver nessa loucura desenfreada que a vida, o trabalho, a sociedade, as pessoas, as pressões nos impõem.
-> 
+>
 > Que vivamos uma vida em equilíbrio sabendo que o Autor da vida nos chamou para viver em comunhão uns com os outros.
-> 
+>
 > Me atrevo a deixar um conselho para você, meu caro leitor, **gaste tempo com pessoas e use as coisas. Não perca seu tempo, dizendo que nunca tem tempo. Faça da coisa principal a coisa principal.**
-> 
-> Ficando por aqui,  
+>
+> Ficando por aqui,
 > Bruno Pulis.

@@ -12,9 +12,9 @@ Como é que eu cheguei nesse ponto? Esta é a pergunta que muitos homens cristã
 
 ## O livro em 3 frases
 
--   Nossa cultura é estressada e tem sugado nossas energias sem percebemos;
--   Somos demasiadamente distraídos e cremos que mais 5 minutos de trabalho não vão fazer diferença.
--   Investir tempo em coisas preciosas, como: relacionamento com Deus, cônjuges, família, amigos e essencial para uma vida equilibrada.
+- Nossa cultura é estressada e tem sugado nossas energias sem percebemos;
+- Somos demasiadamente distraídos e cremos que mais 5 minutos de trabalho não vão fazer diferença.
+- Investir tempo em coisas preciosas, como: relacionamento com Deus, cônjuges, família, amigos e essencial para uma vida equilibrada.
 
 ## Impressões
 
@@ -36,11 +36,11 @@ Após a leitura, sinto que, estou mais leve comigo mesmo e não estou me cobrand
 
 Várias ideias mudaram ao longo da leitura, irei sintetizar as principais em tópicos:
 
--   Devo usar meu tempo mais sabiamente, com coisas que realmente importam;
--   Dedicar uma vida mais generosa perante a Deus e aos outros;
--   Perder, às vezes, é melhor do que ganhar;
--   O ritmo da graça traz conforto a nossa alma barulhenta;
--   O silêncio fala, na verdade, berra.
+- Devo usar meu tempo mais sabiamente, com coisas que realmente importam;
+- Dedicar uma vida mais generosa perante a Deus e aos outros;
+- Perder, às vezes, é melhor do que ganhar;
+- O ritmo da graça traz conforto a nossa alma barulhenta;
+- O silêncio fala, na verdade, berra.
 
 ## Minhas 3 melhores citações
 

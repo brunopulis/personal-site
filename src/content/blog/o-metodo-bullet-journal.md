@@ -19,9 +19,9 @@ Descubra como organizar sua vida com o **método bullet journal**, de uma forma
 
 ## O livro em 3 frases
 
--   Não se preocupe com a forma, mas sim com funcionalidade do seu Bullet Journal;
--   Limite seu poder decisão, senão será escravo da **fadiga da decisão**;
--   Tenha um registro de sua vida, ele pode salvar sua vida.
+- Não se preocupe com a forma, mas sim com funcionalidade do seu Bullet Journal;
+- Limite seu poder decisão, senão será escravo da **fadiga da decisão**;
+- Tenha um registro de sua vida, ele pode salvar sua vida.
 
 ## Impressões
 
@@ -41,7 +41,7 @@ Eu já conhecia o livro e vi o episódio do Ryder com o Tiago Forte no Youtube. 
 
 Você pode conferir na íntegra o vídeo.
 
-https://youtu.be/DZVaVav8lGo?si=l38hCxgGsr8lqISO
+<https://youtu.be/DZVaVav8lGo?si=l38hCxgGsr8lqISO>
 
 Em Novembro de 2022, viajei para São Paulo para a festa de final de ano da firma e me hospedei na casa da minha amiga Gabriela Eufrásia.
 
@@ -75,9 +75,9 @@ O Estoicismo é extremamente interessante e, acredito que, possa ser um grande a
 
 Um certo trecho me marcou profundamente, ele conta sobre uma mãe que tinha um filho que teve um crise convulsiva muito forte. Ela ficou apavorada frente aquela situação, entretanto seu Bullet Journal continha todas as informações sobre:
 
--   quantidade de crises que ele teve;
--   quais remédios toma;
--   quem são os médicos.
+- quantidade de crises que ele teve;
+- quais remédios toma;
+- quem são os médicos.
 
 Por causa de um uso consciente do Bullet Journal, essa mãe pode ajudar a salvar a vida de seu filho. Não foi atoa que usei a citação que ele pode salvar vidas. 😉
 
@@ -86,9 +86,7 @@ A minha forma de pensar e sistematizar meu método de produtividade pessoal vai 
 ## Minhas 3 melhores citações
 
 > Essa liberdade de escolha é uma faca de dois gumes. Cada decisão que você toma exige foco, e o foco é um investimento de tempo e energia. Ambos são recursos limitados – e, portanto, extremamente valioso.
-
 > Temos que reduzir o número de decisões que nos sobrecarregam para poder nos concentrar no que importa.
-
 > O caderno funciona como um templo mental onde somos livres para pensar, refletir, organizar e nos concentrar
 
 ## Resumo e Notas
@@ -99,8 +97,8 @@ O BuJo nos convida para retroceder, desacelerar e viver a vida em ritmo saudáve
 
 Se poderia resumir o BuJo em algumas palavras seria: um método atemporal para trazer um autoconhecimento.
 
--   Parte I — Preparação
--   Parte II — O sistema
--   Parte III — A prática
--   Parte IV — A arte
--   Parte V — Conclusão
+- Parte I — Preparação
+- Parte II — O sistema
+- Parte III — A prática
+- Parte IV — A arte
+- Parte V — Conclusão

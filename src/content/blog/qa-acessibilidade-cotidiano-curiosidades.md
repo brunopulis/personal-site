@@ -44,25 +44,25 @@ Geralmente um QA de acessibilidade atua de forma cross. Ele não fica fixo em um
 
 Para validarmos acessibilidade usamos a [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/#intro) , um documento da W3C, que contém as diretrizes de acessibilidade. Nossos testes são baseados em:
 
--   **testes exploratórios;**
--   **testes manuais;**
--   **testes semi automatizados;**
--   **testes automatizados.**
+- **testes exploratórios;**
+- **testes manuais;**
+- **testes semi automatizados;**
+- **testes automatizados.**
 
 Os testes manuais são realizados com o auxílio de leitores de telas. Usavamos três leitores distintos:
 
--   NVDA: para testar páginas web;
--   Talkback para dispositivos Android;
--   VoiceOver para dispositivos iOS.
+- NVDA: para testar páginas web;
+- Talkback para dispositivos Android;
+- VoiceOver para dispositivos iOS.
 
 ### Formas de validação
 
 Cada leitor de tela disponibiliza uma série de alternativas de navegação. As mais comuns são:
 
--   **navegação por palavras;**
--   **navegação por TAB e gestos;**
--   **navegação por setas e gestos;**
--   **navegação por teclas e gestos de atalhos.**
+- **navegação por palavras;**
+- **navegação por TAB e gestos;**
+- **navegação por setas e gestos;**
+- **navegação por teclas e gestos de atalhos.**
 
 Vale uma ressalva para os testes automatizados, eles contribuem em cerca de 57% para previnir possíveis inconsistências de acessibilidade. Esse número é resultado de [uma pesquisa](https://www.deque.com/blog/automated-testing-study-identifies-57-percent-of-digital-accessibility-issues/) da Deque Systems.
 
@@ -72,12 +72,12 @@ Existem diversas possibilidades de automação em testes de acessibilidade. Este
 
 Como um QA de acessibilidade, alguns pontos valem a pena ser destacados como:
 
--   boa comunicação verbal e escrita;
--   ser preciso;
--   entender os conceitos de agilidade;
--   ter flexibilidade;
--   conhecer sobre tecnologias assistivas;
--   uma noção de tecnologias web (HTML, CSS e JS).
+- boa comunicação verbal e escrita;
+- ser preciso;
+- entender os conceitos de agilidade;
+- ter flexibilidade;
+- conhecer sobre tecnologias assistivas;
+- uma noção de tecnologias web (HTML, CSS e JS).
 
 ## Curiosidades
 
@@ -85,11 +85,11 @@ Essas características nos auxiliam e deixam nosso trabalho mais tranquilo em re
 
 Existem algumas curiosidades bem interessantes sobre nossa atuação e como lidamos com os problemas do cotidiano:
 
--   trabalhamos em dupla;
--   utilizamos a todo tempo, tecnologias assistivas (leitores de tela);
--   realizamos testes de contraste;
--   o reporte de bugs de acessibilidade é um pouco diferente;
--   validamos a estrutura do HTML.
+- trabalhamos em dupla;
+- utilizamos a todo tempo, tecnologias assistivas (leitores de tela);
+- realizamos testes de contraste;
+- o reporte de bugs de acessibilidade é um pouco diferente;
+- validamos a estrutura do HTML.
 
 Outro fato legal, a acessibilidade é considerada desde a concepção do design. Isso contribui consideravelmente para nosso trabalho.
 

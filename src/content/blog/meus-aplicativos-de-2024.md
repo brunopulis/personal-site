@@ -32,5 +32,5 @@ Vamos lá
 - **Música:** Spotify
 - **Gerenciador de senhas:** [Bitwarden](https://bitwarden.com/)
 - **Social Media:** [Instagram](https://instagram.com/obrunopulis), [LinkedIn](https://linkedin.com/in/pulis), [Threads](https://threads.net/brunopulis), [Mastodon](https://mastodon.social/@brunopulis), [X/Twitter](https://twitter.com/obrunopulis) e [Pixelfed](https://pixelfed.social/brunopulis.com).
-- **Search:** [DuckDuckGo](https://duckduckgo.com/) 
+- **Search:** [DuckDuckGo](https://duckduckgo.com/)
 - **Editor de Código:** [VSCode](https://code.visualstudio.com/)

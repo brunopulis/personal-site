@@ -16,10 +16,18 @@ Nesse artigo, vou te mostrar sua utilidade e importância.
 
 ## Índice
 
--   [Por que isso é importante](#por-que-isso-e-importante)
--   [Quando usar atributo lang?](#quando-usar-atributo-lang)
--   [Conclusão](#conclusao)
--   [Referências](#referencias)
+- [Índice](#índice)
+- [Por que isso é importante](#por-que-isso-é-importante)
+  - [Qual a relação do atributo lang com acessibilidade?](#qual-a-relação-do-atributo-lang-com-acessibilidade)
+  - [Idioma da página](#idioma-da-página)
+    - [Quem se beneficia?](#quem-se-beneficia)
+    - [Exemplos](#exemplos)
+  - [Idiomas em partes](#idiomas-em-partes)
+    - [Quem se beneficia?](#quem-se-beneficia-1)
+    - [Exemplos](#exemplos-1)
+- [Quando usar atributo lang?](#quando-usar-atributo-lang)
+- [Conclusão](#conclusão)
+- [Referências](#referências)
 
 ## Por que isso é importante
 
@@ -29,21 +37,21 @@ Seu objetivo é fornecer um mecanismo de internacionalização do conteúdo.
 
 Podemos usar de duas formas:
 
--   **definir o idioma do documento inteiro;**
--   **definir o idioma para partes do documento.**
+- **definir o idioma do documento inteiro;**
+- **definir o idioma para partes do documento.**
 
 Podemos definir os idiomas por meio de uma [lista de idiomas](https://www.rfc-editor.org/rfc/bcp/bcp47.txt).
 
 Usando o idioma para o documento inteiro:
 
-```
+```html
 <!-- um documento HTML em espanhol -->
 <html lang="es">
 ```
 
 Usando para partes do documento:
 
-```
+```html
 <!-- um documento HTML em espanhol com uma palavra em inglês -->
 <p>Acepta su <span lang="en">feedback</span></p>
 ```
@@ -52,8 +60,8 @@ Usando para partes do documento:
 
 Na WCAG existem dois critérios relacionados ao idioma:
 
--   [3.1.1 Idioma da página](https://www.w3.org/WAI/WCAG22/Understanding/language-of-page)
--   [3.1.2 Idioma em partes](https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts)
+- [3.1.1 Idioma da página](https://www.w3.org/WAI/WCAG22/Understanding/language-of-page)
+- [3.1.2 Idioma em partes](https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts)
 
 ### Idioma da página
 
@@ -61,16 +69,16 @@ A intenção deste Critério de Sucesso é garantir que os desenvolvedores forne
 
 #### Quem se beneficia?
 
--   pessoas que usam leitores de tela;
--   pessoas com dificuldade em ler material escrito com fluência e precisão;
--   pessoas com certas dificuldades cognitivas;
--   pessoas que dependem de legendas para mídia sincronizada.
+- pessoas que usam leitores de tela;
+- pessoas com dificuldade em ler material escrito com fluência e precisão;
+- pessoas com certas dificuldades cognitivas;
+- pessoas que dependem de legendas para mídia sincronizada.
 
 #### Exemplos
 
 Uma página produzida na Alemanha e escrita em HTML inclui conteúdo em alemão e inglês, mas a maioria do conteúdo está em alemão. A língua padrão é identificada como alemão (de) pelo atributo lang no elemento HTML.
 
-```
+```html
 <!-- um documento HTML com conteúdo em alemão -->
 <html lang="de">
 ```
@@ -79,10 +87,10 @@ Uma página produzida na Alemanha e escrita em HTML inclui conteúdo em alemão 
 
 Seu objetivo é garantir que o navegador pode apresentar as frases de forma correta. Esse critério apresente o conteúdo considerando:
 
--   entonação;
--   pronúncia;
--   sotaque;
--   particularidades da língua.
+- entonação;
+- pronúncia;
+- sotaque;
+- particularidades da língua.
 
 Além disso, os leitores de telas conseguem diferenciar palavras de outro idioma. Fornecendo todas as particularidades do idioma.
 
@@ -98,7 +106,7 @@ Um site com internacionalização que possui links para versões da página em o
 
 O idioma de cada link é indicado por meio de um atributo `lang`:
 
-```
+```html
 <ul>
   <li><a href="..." lang="de">Deutsch</a></li>
   <li><a href="..." lang="it">Italiano</a></li>
@@ -114,7 +122,7 @@ O atributo lang deve ser usado sempre, ele é obrigatório.
 
 Use o axe dev tools para validar uma página sem o atributo.
 
-![Print do axe dev tools informando que o uso do atributo lang é obrigatório.](images/axe-atributo-lang-768x416-eMBkCbCt7ff5.png)
+![Print do axe dev tools informando que o uso do atributo lang é obrigatório.](images/axe-atributo-lang.png)
 
 ## Conclusão
 
@@ -128,5 +136,5 @@ Escreva um comentário.
 
 ## Referências
 
--   \[1\] Atributos globais > Lang. Mozilla Developer Network, 2019. Disponível em: [Atributo lang](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/lang). Acesso em: 14 de jan. de 2020.
--   \[2\] 3.1.1 – Language of Page (Level A). WUHCAG, 2019. Disponível em [Language of Page](https://www.wuhcag.com/language-of-page/). Acesso em 14 de jan. de 2020.
+- \[1\] Atributos globais > Lang. Mozilla Developer Network, 2019. Disponível em: [Atributo lang](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/lang). Acesso em: 14 de jan. de 2020.
+- \[2\] 3.1.1 – Language of Page (Level A). WUHCAG, 2019. Disponível em [Language of Page](https://www.wuhcag.com/language-of-page/). Acesso em 14 de jan. de 2020.

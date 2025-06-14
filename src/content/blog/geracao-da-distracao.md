@@ -1,14 +1,10 @@
 ---
 title: Geração da distração
 date: 2016-03-07
-metadata:
-  categories:
-    - Teologia
-  url: https://brunopulis.com/geracao-da-distracao/
-tags:
-  - teologia
+category: "Teologia"
+canonicalUrl: https://brunopulis.com/geracao-da-distracao/
+tags: ["teologia"]
 ---
-![Esta é uma ilustração colorida, organizada como um mapa mental, intitulada &quot;Como focar na era da distração&quot; (em inglês, &quot;How to Focus in the Age of Distraction&quot;). No centro da imagem, há um desenho de uma pessoa com expressão preocupada, cercada por várias ramificações que indicam estratégias para melhorar o foco e evitar distrações.](images/geracao-distracao-jpg-768x560-w0EEiFV8djvf.avif)
 
 Nesse estudo vamos abordar um tópico onde todos nós somos vítimas a **distração.**
 
@@ -30,19 +26,19 @@ Pessoas nascidas após a Primeira Guerra Mundial e durante a Segunda Grande Guer
 
 Seus valores absolutos da vida são:
 
--   **Trabalho**;
--   **Família**;
--   **Moral**;
--   **Amor a pátria**.
+- **Trabalho**;
+- **Família**;
+- **Moral**;
+- **Amor a pátria**.
 
 Cresceram geralmente em um ambiente de escassez de alimentos, empregos, diálogos e vários outros aspectos morais e sociais.
 
 Tem forte características como:
 
--   **São práticos**;
--   **Dedicados**;
--   **Gostam de hierarquias rígidas**;
--   **Sacrificam-se para alcançar seus objetivos.**
+- **São práticos**;
+- **Dedicados**;
+- **Gostam de hierarquias rígidas**;
+- **Sacrificam-se para alcançar seus objetivos.**
 
 ## Geração _Baby Boombers_
 
@@ -64,14 +60,14 @@ Com o mundo relativamente estável, eles cresceram em uma década de valorizaç�
 
 Características da geração Y:
 
--   **Pais enchendo os filhos de presente (pessoas mimadas)**;
--   **Atenção e atividade**;
--   **Autoestima**;
--   **Multitarefas**;
--   **Conseguem o que querem**;
--   **Não se sujeitam a tarefas subalternas**
--   **Ambiciosos**.
--   **Utilização constante de aparelhos eletrônicos, como smartphones e gadgets**.
+- **Pais enchendo os filhos de presente (pessoas mimadas)**;
+- **Atenção e atividade**;
+- **Autoestima**;
+- **Multitarefas**;
+- **Conseguem o que querem**;
+- **Não se sujeitam a tarefas subalternas**
+- **Ambiciosos**.
+- **Utilização constante de aparelhos eletrônicos, como smartphones e gadgets**.
 
 ## Aplicando a Palavra de Deus
 
@@ -79,22 +75,22 @@ A palavra de Deus vai contra todos os princípios morais criados por essa geraç
 
 Abaixo vamos fazer um comparativo entre os valores morais da Geração Y e a Geração da Palavra de Deus.
 
--   **Imediatismo: Sl 40:1; Is 25:9, 26:8;**
--   **Humanismo: Jo 3:30, Gl 2:20, Cl 2:20, 3:3;**
--   **Orgulho: Pv 8:13,Mt 23:27,Mt 5:5;**
--   **Aceitação do pecado como uma prática normal: Rm 6:23, Jo 3:16**
+- **Imediatismo: Sl 40:1; Is 25:9, 26:8;**
+- **Humanismo: Jo 3:30, Gl 2:20, Cl 2:20, 3:3;**
+- **Orgulho: Pv 8:13,Mt 23:27,Mt 5:5;**
+- **Aceitação do pecado como uma prática normal: Rm 6:23, Jo 3:16**
 
 Vemos algumas características que marcam essa geração afastada de Deus e tão ligada a coisas fúteis e carnais, a cada dia as pessoas se afogam dentro de si, morrendo aos poucos com seus prazeres carnais sendo satisfeitos.
 
 Nas escrituras vemos alguns exemplos de pessoas que foram ou tiveram momentos de distração que custaram sua vida ou um grande mal sobreveio a elas, dentre elas podemos citar:
 
--   **Profeta de Judá 1Rs 13**;
--   **Sansão Jz 14:1–8, 16:17–21**;
--   **Mulher de Ló Gn 19:26**;
--   **Discípulos no caminho de Emaús Lc 24:13–24**;
--   **Davi com Bate-Seba 2Sm 11:1–17**;
--   **Salomão com suas concubinas 1Rs 11:1–12**;
--   **Uzá com a Arca da Aliança 1Cr 13:7–10**.
+- **Profeta de Judá 1Rs 13**;
+- **Sansão Jz 14:1–8, 16:17–21**;
+- **Mulher de Ló Gn 19:26**;
+- **Discípulos no caminho de Emaús Lc 24:13–24**;
+- **Davi com Bate-Seba 2Sm 11:1–17**;
+- **Salomão com suas concubinas 1Rs 11:1–12**;
+- **Uzá com a Arca da Aliança 1Cr 13:7–10**.
 
 Podemos perceber que a distração trouxe desgraça para vidas de vários homens de Deus e ruína, quantos de nós hoje nos distraímos com coisas tão banais? O adversário mudou de estratégia, ela consiste em trazer toda a distração possível para deixar os seguidores de Cristo cegos, perversos com o coração longe de Deus e por consequência trazendo morte e vazio espiritual.
 

@@ -52,10 +52,10 @@ Sua saída principal é detalha **quais linhas nos quais os arquivos foram “at
 
 Usando o Xdebug para tais atividades podemos ter um impacto adicional no desempenho, pois ele irá certificar de algumas informações como:
 
--   _analisar quais linhas de código possuem código executável_;
--   _quais linhas de código podem ser atingidas_;
--   _também podem instrumentar para descobrir quais ramificações_;
--   _caminhos em funções e métodos foram seguidos_.
+- _analisar quais linhas de código possuem código executável_;
+- _quais linhas de código podem ser atingidas_;
+- _também podem instrumentar para descobrir quais ramificações_;
+- _caminhos em funções e métodos foram seguidos_.
 
 #### Filtros para o resgate
 
@@ -69,14 +69,13 @@ Esses são alguns relatos de pessoas que usaram os filtros:
 
 > This is the effect on the unit test suite of [@opencfp](https://twitter.com/opencfp?ref_src=twsrc%5Etfw) with/out xdebug filter. 44.39 vs. 15.34 seconds. I’d call that “much faster”. Great job [@derickr](https://twitter.com/derickr?ref_src=twsrc%5Etfw)!  
 > (Integration tests were omitted) [pic.twitter.com/LeNdaxBOOV](https://t.co/LeNdaxBOOV)
-> 
+>
 > — Holger W🌞ltersdorf (@hollodotme) [January 17, 2018](https://twitter.com/hollodotme/status/953719914686242816?ref_src=twsrc%5Etfw)
-
 > Without the filter 6 seconds  
 > With the filter about 4.9 seconds
-> 
+>
 > Anyway specifically you want me to beta test? 🙂
-> 
+>
 > — Cees-Jan Kiewiet (@WyriHaximus) [January 17, 2018](https://twitter.com/WyriHaximus/status/953667730003001344?ref_src=twsrc%5Etfw)
 
 Antes de aplicar a técnica de filtros do Xdebug os testes estavam tinham uma execução de aproximadamente **32 minutos**. 😱
@@ -87,7 +86,7 @@ Para criarmos o filtro basta utilizar dois comandos que irão reduzir drasticame
 
 O primeiro comando cria o arquivo `xdebug-filter.php` dentro do diretório, `build` ele será gerado no diretório raiz da aplicação. Na minha pesquisa não verifiquei se podemos colocar ele em outro diretório.
 
-```
+```php
 # dump filter file
 # Caso não tenha configurado globalmente o PHPUnit rode assim.
 php vendor/bin/phpunit --dump-xdebug-filter build/xdebug-filter.php
@@ -98,7 +97,7 @@ phpunit --dump-xdebug-filter build/xdebug-filter.php
 
 Após executar o comando do `xdebug-filter` sua saída é exatamente essa:
 
-```
+```php
 <?php
   declare(strict_types=1);
   if (!\function_exists('xdebug_set_filter')) {
@@ -115,7 +114,7 @@ Após executar o comando do `xdebug-filter` sua saída é exatamente essa:
 
 Após a configuração iremos rodar nossa suíte de testes com o seguinte comando:
 
-```
+```shell
 # Configuração local do PHPUnit
 php vendor/bin/phpunit --prepend build/xdebug-filter.php --coverage-html build/coverage-report
 
@@ -139,7 +138,7 @@ Podemos também usar os parâmetros `stopOnFailure="true"` que irá executar a s
 
 O meu arquivo do phpunit.xml ficou da seguinte forma:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8">
   <phpunit
         backupGlobals="false"
@@ -181,9 +180,9 @@ Garantir a qualidade está também nos detalhes que podem refletir em grandes co
 
 ## Para se aprofundar
 
--   [Xdebug code coverage](https://xdebug.org/docs/code_coverage)
--   [Tips to speed up phpunit tests](https://laravel-news.com/tips-to-speed-up-phpunit-tests)
--   [Speed up your phpunit test disable xdebug](https://dustinfraker.com/speed-up-your-phpunit-tests-disable-xdebug/)
--   [Speed up phpunit code coverage analysis](https://medium.com/@nicocabot/speed-up-phpunit-code-coverage-analysis-4e35345b3dad)
--   [Generating code coverage with phpunit and phpdbg](https://hackernoon.com/generating-code-coverage-with-phpunite-and-phpdbg-4d20347ffb45)
--   [Melhorando a performance do phpunit](https://eltonminetto.net/2016/04/08/melhorando-a-performance-do-phpunit/)
+- [Xdebug code coverage](https://xdebug.org/docs/code_coverage)
+- [Tips to speed up phpunit tests](https://laravel-news.com/tips-to-speed-up-phpunit-tests)
+- [Speed up your phpunit test disable xdebug](https://dustinfraker.com/speed-up-your-phpunit-tests-disable-xdebug/)
+- [Speed up phpunit code coverage analysis](https://medium.com/@nicocabot/speed-up-phpunit-code-coverage-analysis-4e35345b3dad)
+- [Generating code coverage with phpunit and phpdbg](https://hackernoon.com/generating-code-coverage-with-phpunite-and-phpdbg-4d20347ffb45)
+- [Melhorando a performance do phpunit](https://eltonminetto.net/2016/04/08/melhorando-a-performance-do-phpunit/)

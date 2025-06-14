@@ -22,12 +22,12 @@ Apesar disso, poucos profissionais conhecem o WAI e todos os recursos que ele po
 
 O site é repleto de recursos que irão te auxiliar sobre acesssibilidade, contando com as seguintes categorias:
 
--   [Fundamentos da acessibilidade](https://www.w3.org/WAI/fundamentals/);
--   [Planejamento e políticas de acessibilidade](https://www.w3.org/WAI/planning/);
--   [Design e Desenvolvimento](https://www.w3.org/WAI/design-develop/);
--   [Testes e avaliação](https://www.w3.org/WAI/test-evaluate/);
--   [Guias de ensino](https://www.w3.org/WAI/teach-advocate/);
--   [Padrões e diretrizes](https://www.w3.org/WAI/standards-guidelines/).
+- [Fundamentos da acessibilidade](https://www.w3.org/WAI/fundamentals/);
+- [Planejamento e políticas de acessibilidade](https://www.w3.org/WAI/planning/);
+- [Design e Desenvolvimento](https://www.w3.org/WAI/design-develop/);
+- [Testes e avaliação](https://www.w3.org/WAI/test-evaluate/);
+- [Guias de ensino](https://www.w3.org/WAI/teach-advocate/);
+- [Padrões e diretrizes](https://www.w3.org/WAI/standards-guidelines/).
 
 ## Fundamentos de acessibilidade
 
@@ -49,12 +49,12 @@ Em contrapartida, essa sessão não se destina somente para programadores e desi
 
 Além disso, conta com diversos tutoriais para melhorar a acessibilidade das páginas, como:
 
--   estrutura de uma página;
--   construção de menu;
--   imagens acessíveis;
--   tabelas acessíveis;
--   formulários acessíveis;
--   carousels acessíveis.
+- estrutura de uma página;
+- construção de menu;
+- imagens acessíveis;
+- tabelas acessíveis;
+- formulários acessíveis;
+- carousels acessíveis.
 
 ## Testes e avaliação
 
@@ -78,11 +78,11 @@ Dessa forma, temos a documentação oficial e demais recursos para auxiliar noss
 
 Além de todos esses recursos, a iniciativa conta com outras frentes bem interessantes, como, por exemplo:
 
--   [Accessibility Guideline Working Group](https://www.w3.org/WAI/GL/);
--   [Accessible Platform Architectures (APA) Working Group](https://www.w3.org/WAI/APA/)
--   [Accessible Rich Internet Applications (ARIA) Working Group](https://www.w3.org/WAI/ARIA/);
--   [Education and Outreach Working Group (EOWG)](https://www.w3.org/WAI/about/groups/eowg/);
--   [WAI Interest Group (WAI IG)](https://www.w3.org/WAI/about/groups/waiig/)
+- [Accessibility Guideline Working Group](https://www.w3.org/WAI/GL/);
+- [Accessible Platform Architectures (APA) Working Group](https://www.w3.org/WAI/APA/)
+- [Accessible Rich Internet Applications (ARIA) Working Group](https://www.w3.org/WAI/ARIA/);
+- [Education and Outreach Working Group (EOWG)](https://www.w3.org/WAI/about/groups/eowg/);
+- [WAI Interest Group (WAI IG)](https://www.w3.org/WAI/about/groups/waiig/)
 
 ## Conclusão
 
@@ -94,6 +94,6 @@ Acesse o site da Web Accessibility Initiative e descubra mais sobre o que eles f
 
 ## Referências
 
--   [https://pt.wikipedia.org/wiki/Tim\_Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee)
--   [The history of the Web – W3C Wiki](https://www.w3.org/wiki/The_history_of_the_Web#The_creation_of_World_Wide_Web)
--   [About W3C WAI | Web Accessibility Initiative (WAI) | W3C](https://www.w3.org/WAI/about/)
+- [https://pt.wikipedia.org/wiki/Tim\_Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee)
+- [The history of the Web – W3C Wiki](https://www.w3.org/wiki/The_history_of_the_Web#The_creation_of_World_Wide_Web)
+- [About W3C WAI | Web Accessibility Initiative (WAI) | W3C](https://www.w3.org/WAI/about/)

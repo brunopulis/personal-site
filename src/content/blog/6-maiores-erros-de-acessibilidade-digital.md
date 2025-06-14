@@ -33,7 +33,7 @@ Atualmente utilizo o [Accessible Colors](https://accessible-colors.com/), é uma
 
 A grande vantagem dele é seu feedback claro e objetivo, como, por exemplo:
 
-![](images/accessible-colors-768x551-Xb7gZroX6n1g.png)
+![](images/accessible-colors.png)
 
 Resultado de uma avaliação das cores: `#ccc` para textos do tamanho de fonte 16px e background do site `#fff`.
 
@@ -76,9 +76,9 @@ Usar sem definir o conteúdo textual descumpre a especificação do HTML e a rec
 Temos um link que inclui um ícone de rede social, mas não possuí um texto para descrever a ação. Dessa forma, os leitores de tela irão ler: **“Link”**.
 
 ```html
-`<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>a</span> <span class="token attr-name">href<span class="token punctuation attr-equals">="</span>https://twitter.com/obrunopulis<span class="token punctuation">"</span>></span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>i</span> <span class="token attr-name">class<span class="token punctuation attr-equals">="</span>fa fa-twitter<span class="token punctuation">"</span>><span class="token punctuation"></</span>i><span class="token punctuation"></</span>a></span></span>`
-
-MarkupCopy
+<a href="https://twitter.com/obrunopulis">
+  <i class="fa fa-twitter"></i>
+</a>
 ```
 
 Qualquer validador de acessibilidade encontrará esse problema, pois o elemento `<strong><em><a></em></strong>` encontra-se sem nenhum conteúdo textual, descumprindo seu propósito.
@@ -107,8 +107,8 @@ Nem sempre ter um conteúdo oculto é uma boa solução. É preciso haver uma co
 
 ## 4\. Labels de formulários ausentes
 
-Dos 4,2 milhões de formulário identificados na pesquisa do WebAIM, 55% não estavam usando o elemento `<strong><label></strong>`, `<strong><em>aria-label</em></strong>` ou `<strong><em>aria-labelledby</em></strong>`.  
-  
+Dos 4,2 milhões de formulário identificados na pesquisa do WebAIM, 55% não estavam usando o elemento `<strong><label></strong>`, `<strong><em>aria-label</em></strong>` ou `<strong><em>aria-labelledby</em></strong>`.
+
 Páginas com pelo menos um controle de formulário sem rótulo tiveram **em média mais 43 erros detectáveis** do que páginas sem nenhum erro de rótulo.
 
 Com efeito, é preocupante o descuido pela escrita do HTML, a grande maioria dos problemas são originados de uma escrita descuidada.
@@ -122,8 +122,8 @@ Uma das coisas que percebo muito com formulários é o uso inadequado do placeho
 ### Exemplo incorreto
 
 ```html
-<form> 
-   <input type="email" placeholder="insira o seu melhor e-mail" /> 
+<form>
+   <input type="email" placeholder="insira o seu melhor e-mail" />
 </form>
 ```
 
@@ -136,9 +136,9 @@ O atributo `placeholder` é uma string que fornece uma breve dica ao usuário qu
 ### Exemplo correto
 
 ```html
-<form> 
-  <label for="email">E-mail</label> 
-  <input type="email" id="email" placeholder="insira o seu melhor e-mail" /> 
+<form>
+  <label for="email">E-mail</label>
+  <input type="email" id="email" placeholder="insira o seu melhor e-mail" />
 </form>
 ```
 
@@ -154,9 +154,9 @@ Além disso, essa violação fere duas recomendações da WCAG:
 O exemplo a seguir, demonstra o problema de um botão sem informação textual.
 
 ```html
-<button type="submit"> 
-  <svg id="search" viewBox="0 0 16 16.9"> 
-     <path d="..."></path> 
+<button type="submit">
+  <svg id="search" viewBox="0 0 16 16.9">
+     <path d="..."></path>
   </svg>
 </button>
 ```
@@ -164,11 +164,11 @@ O exemplo a seguir, demonstra o problema de um botão sem informação textual.
 Qualquer validador de acessibilidade notificará a inconsistência da violação das guidelines citadas acima. Para eles não existe um conteúdo textual definido, uma abordagem para correção seria inserir o elemento `<title>` no SVG, pois ele garante que SVGs sejam acessíveis. Scott O’Hara escreveu um artigo [imagens acessíveis e SVGS (em inglês)](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html).
 
 ```html
-<button type="submit"> 
-  <svg id="search" role="img" aria-describedby="searchIcon" viewBox="0 0 16 16.9" > 
-     <title id="searchIcon">Search</title> 
-     <path d="..."></path> 
-  </svg> 
+<button type="submit">
+  <svg id="search" role="img" aria-describedby="searchIcon" viewBox="0 0 16 16.9" >
+     <title id="searchIcon">Search</title>
+     <path d="..."></path>
+  </svg>
 </button>
 ```
 
@@ -185,7 +185,7 @@ Além dessa confusão, ele descumpre a recomendação [3.1.1 – Idioma da pági
 ### Corrigindo
 
 ```html
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br"> ... </html>
 ```
 
