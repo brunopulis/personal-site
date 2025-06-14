@@ -5,37 +5,66 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --source dist",
+    "start": "astro dev",
+    "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind",
     "preview": "astro build && astro preview",
-    "astro": "astro"
+    "sync": "astro sync",
+    "astro": "astro",
+    "check": "astro check",
+    "format:check": "prettier --plugin-search-dir=. --check .",
+    "format": "prettier --plugin-search-dir=. --write .",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "write": "node ./scripts/write.js"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
+    "@astrojs/check": "^0.9.4",
     "@astrojs/db": "^0.15.0",
+    "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@cedx/akismet": "^17.1.0",
     "@fontsource-variable/source-sans-3": "^5.2.8",
     "@fontsource/source-sans-3": "^5.2.8",
-    "@lucide/astro": "^0.514.0",
-    "@tailwindcss/vite": "^4.1.8",
+    "@lucide/astro": "^0.515.0",
+    "@philnash/astro-pagination": "^0.5.0",
+    "@tailwindcss/vite": "^4.1.10",
     "@yeskunall/astro-umami": "^0.0.6",
     "alpinejs": "^3.14.9",
-    "astro": "^5.9.0",
+    "astro": "^5.9.3",
     "astro-icon": "^1.1.5",
+    "astro-robots-txt": "^1.0.0",
+    "astro-social-share": "^2.2.0",
     "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.12",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
   "devDependencies": {
     "@astrojs/partytown": "^2.1.4",
     "@iconify-json/fa6-brands": "^1.2.5",
     "@iconify-json/fa6-solid": "^1.2.3",
     "@tailwindcss/typography": "^0.5.16",
-    "reading-time": "^1.5.0"
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "pagefind": "^1.3.0",
+    "prettier-plugin-astro": "^0.14.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,mdx,json}": [
+      "prettier --plugin-search-dir=. --write"
+    ]
   }
 }
