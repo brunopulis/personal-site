@@ -8,11 +8,11 @@ metadata:
 tags:
   - carreira
 ---
-Me recordo como se fosse hoje, uma das primeiras apresentações que fiz. Foi no DevInCompany, uma ação promovida pela comunidade de desenvolvedores de Minas Gerais, o [Minas Dev](https://minasdev.org/).  
+Me recordo como se fosse hoje, uma das primeiras apresentações que fiz. Foi no DevInCompany, uma ação promovida pela comunidade de desenvolvedores de Minas Gerais, o [Minas Dev](https://minasdev.org/).
 
-O intuito era simples, levar para as empresas as tendências e boas práticas que o mercado aplicava e almejava no momento.  
+O intuito era simples, levar para as empresas as tendências e boas práticas que o mercado aplicava e almejava no momento.
 
-De lá para cá, se passaram uns bons anos e olhando para trás percebo o quanto melhorei, como palestrante e como pessoa também.  
+De lá para cá, se passaram uns bons anos e olhando para trás percebo o quanto melhorei, como palestrante e como pessoa também.
 
 Ao longo da caminhada já presenciei diversas palestras muito boas e outras nem tanto, mas a grande maioria delas peca em um quesito: **acessibilidade**.
 
@@ -66,17 +66,17 @@ Dê preferência por usar as fontes no **tamanho de 24pt** e ao utilizar trechos
 
 ## 4\. Utilize linguagem clara
 
-![](images/linguagem-768x509-vH8i5XX1D7mg.png)
+![](images/linguagem.png)
 
 Foto de [Skylar Kang](https://www.pexels.com/pt-br/foto/texto-6207365/)
 
 A linguagem dos seus slides e sua deve ser a mais clara possível, se atente para alguns pontos como:
 
--   você deve ser claro no que quer comunicar;
--   ser sucinto;
--   evitar expressões idiomáticas sem prover explicação;
--   fale pausadamente, existem pessoas surdas que fazem leitura labial;
--   evite vícios de linguagem como: **né**, **tipo**, **então**.
+- você deve ser claro no que quer comunicar;
+- ser sucinto;
+- evitar expressões idiomáticas sem prover explicação;
+- fale pausadamente, existem pessoas surdas que fazem leitura labial;
+- evite vícios de linguagem como: **né**, **tipo**, **então**.
 
 ## Conclusão
 

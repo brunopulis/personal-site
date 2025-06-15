@@ -18,9 +18,9 @@ Eu conhecia o evento há um tempo, porém, nunca tinha participado de nenhuma ed
 
 Inicialmente ele seria presencial, mas devido à pandemia global os organizadores decidiram fazer o MTC em casa. Uma aposta que deu super certo, nesse artigo irei analisar alguns pontos como:
 
--   plataforma escolhida;
--   análise de cada palestra;
--   considerações finais.
+- plataforma escolhida;
+- análise de cada palestra;
+- considerações finais.
 
 ## Plataforma escolhida
 
@@ -54,8 +54,8 @@ Quando eu vi o título dessa palestra fiquei curios imaginando como o Estevão i
 
 Mostrou as duas escolas sobre a metodologia e deixou ainda duas referências de livros interessantes:
 
--   🚨 [Test-Driven Development](https://www.amazon.com.br/Test-Driven-Development-Kent-Beck/dp/0321146530/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Test-Driven+Development&qid=1598138244&sr=8-2);
--   🚨 [Growing Object-Oriented Software, Guided by Tests](https://www.amazon.com.br/Growing-Object-Oriented-Software-Addison-Wesley-Signature-ebook/dp/B002TIOYVW/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Growing+Object-Oriented+Software%2C+Guided+by+Tests&qid=1598138439&sr=8-1)
+- 🚨 [Test-Driven Development](https://www.amazon.com.br/Test-Driven-Development-Kent-Beck/dp/0321146530/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Test-Driven+Development&qid=1598138244&sr=8-2);
+- 🚨 [Growing Object-Oriented Software, Guided by Tests](https://www.amazon.com.br/Growing-Object-Oriented-Software-Addison-Wesley-Signature-ebook/dp/B002TIOYVW/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Growing+Object-Oriented+Software%2C+Guided+by+Tests&qid=1598138439&sr=8-1)
 
 Além disso, fez um hands-on em como aplicar o TDD em uma funcionalidade. Deixou bem claro em como a metodologia pode contribuir para termos maior controle e previsibilidade de funcionalidades que porventura iremos desenvolver.
 

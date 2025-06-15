@@ -30,9 +30,9 @@ Os critérios de aceitação são as condições que um produto de software deve
 
 Podemos utilizar os critérios de aceite das mais variadas formas, como, por exemplo:
 
--   Orientado a cenários (Gherkin);
--   Checklist;
--   Formatos personalizados.
+- Orientado a cenários (Gherkin);
+- Checklist;
+- Formatos personalizados.
 
 ## Garantindo a acessibilidade nos critérios
 
@@ -50,13 +50,13 @@ Na aplicação da ACME Corportarion, no fluxo de Compras devemos exibir um botã
 
 A estória de usuário foi definida, de acordo, com a especificação abaixo:
 
-```
+```gherkin
 Como usuário gostaria quando selecionar "Add Delivery Address" seja exibido um formulário para preencher meu endereço.
 ```
 
 Em um _brainstorming_, foi levantado o protótipo que tem o objetivo de concluir a jornada de cadastro de endereço.
 
-![Uma janela modal, nela existem informações sobre o endereço do usuário](images/modal-768x301-4uo3LpBlaCWS.png)
+![Uma janela modal, nela existem informações sobre o endereço do usuário](images/modal.png)
 
 Exemplo de modal
 
@@ -70,14 +70,14 @@ Aparentemente é uma tela inocente de fácil implementação, porém, como diz o
 
 Devemos prever os comportamentos desse componente, por exemplo:
 
--   quais são as teclas que exibem e ocultam a modal?
--   quais teclas de atalho deverão ser mapeadas?
--   como será a apresentação desse componente na tela?
--   existirá algum elemento que receberá o foco quando ela for exibida?
+- quais são as teclas que exibem e ocultam a modal?
+- quais teclas de atalho deverão ser mapeadas?
+- como será a apresentação desse componente na tela?
+- existirá algum elemento que receberá o foco quando ela for exibida?
 
 Com esses questionamentos, poderíamos refinar os critérios conforme abaixo.
 
-```
+```gherkin
 [ACME-123] Cadastro de Endereço de Entrega
 
 Como usuário gostaria quando selecionar "Add Delivery Address" seja exibido um formulário para preencher meu endereço.
@@ -112,5 +112,5 @@ E você já conseguiu contribuir com algum critério de aceite, pensando em aces
 
 ## Referências
 
--   Altexsoft.com, 2021. Disponível em: [https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices](https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices). Acesso em: 22 de Abril de 2021.
--   W3C, 2021. Disponível em: [https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/). Acesso em: 23 de Abril de 2021.
+- Altexsoft.com, 2021. Disponível em: [https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices](https://www.altexsoft.com/blog/business/acceptance-criteria-purposes-formats-and-best-practices). Acesso em: 22 de Abril de 2021.
+- W3C, 2021. Disponível em: [https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/). Acesso em: 23 de Abril de 2021.

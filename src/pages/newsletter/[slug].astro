@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 }
 
 const { letter } = Astro.props
-const { title, summary, tags, modifiedDate } = letter.data
+const { title } = letter.data
 const { Content } = await render(letter)
 
 // Formata a data para pt-BR

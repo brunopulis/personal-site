@@ -4,6 +4,7 @@ date: 2022-02-22
 draft: false
 category: "Acessibilidade"
 ---
+
 Ao longo da minha carreira já ouvi muita bobagem sobre acessibilidade.  
 Hoje vou mostrar os 5 mitos sobre acessibilidade.
 

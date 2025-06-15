@@ -20,19 +20,19 @@ Essa lista deve ajudá-lo a ter uma compreensão básica do vocabulário que um 
 
 ## Tipos de teste
 
--   **Teste manual:**  significa testar o aplicativo ou site manualmente. Por exemplo, abrir um navegador e navegar manualmente para diferentes seções de um site, procurando por problemas de [experiência do usuário](https://www.mindfulqa.com/what-is-user-experience) ou bugs. (Para mais informações, consulte [O que é teste manual?](https://www.mindfulqa.com/what-is-manual-testing);
--   **Teste automatizado** significa usar uma linguagem de programação (como Java) para escrever scripts que irão navegar em um site ou aplicativo. Esses scripts podem gerar relatórios para problemas como links quebrados, texto ausente, etc. (para mais informações sobre as diferenças entre manual e automatizado, consulte [Teste manual vs. automatizado](https://www.mindfulqa.com/manual-vs-automated);
--   **[Teste de API](https://www.mindfulqa.com/api-testing-services)** significa verificar a qualidade/precisão de uma API. As APIs enviam solicitações e respostas de/para servidores remotos.
--   **[O teste de desempenho](https://www.mindfulqa.com/performance-testing):**  envolve verificar o tempo de resposta de um aplicativo ou site em cenários de uso típicos;
--   **O teste de carga:** é muito semelhante ao teste de desempenho, mas com ainda mais foco em encontrar o ponto exato em que um aplicativo ou site travaria, ou cairia.
+- **Teste manual:**  significa testar o aplicativo ou site manualmente. Por exemplo, abrir um navegador e navegar manualmente para diferentes seções de um site, procurando por problemas de [experiência do usuário](https://www.mindfulqa.com/what-is-user-experience) ou bugs. (Para mais informações, consulte [O que é teste manual?](https://www.mindfulqa.com/what-is-manual-testing);
+- **Teste automatizado** significa usar uma linguagem de programação (como Java) para escrever scripts que irão navegar em um site ou aplicativo. Esses scripts podem gerar relatórios para problemas como links quebrados, texto ausente, etc. (para mais informações sobre as diferenças entre manual e automatizado, consulte [Teste manual vs. automatizado](https://www.mindfulqa.com/manual-vs-automated);
+- **[Teste de API](https://www.mindfulqa.com/api-testing-services)** significa verificar a qualidade/precisão de uma API. As APIs enviam solicitações e respostas de/para servidores remotos.
+- **[O teste de desempenho](https://www.mindfulqa.com/performance-testing):**  envolve verificar o tempo de resposta de um aplicativo ou site em cenários de uso típicos;
+- **O teste de carga:** é muito semelhante ao teste de desempenho, mas com ainda mais foco em encontrar o ponto exato em que um aplicativo ou site travaria, ou cairia.
 
 ## Métodos de teste
 
--   **O Teste de Aceitação do Usuário (UAT):** significa fazer com que usuários reais testem o beta de seu aplicativo ou site e forneçam feedback;
--   **Teste de acessibilidade**  significa verificar se o aplicativo ou site é amigável para todas as pessoas. Por exemplo, verificar se os vídeos possuem legendas para pessoas com deficiência auditiva ou se as imagens têm descrições para pessoas com deficiência visual;
--   **Teste de unidade (unitários):** significa criar scripts automatizados para testar partes individuais do aplicativo ou código do site. Embora seja uma forma de teste, o teste de unidade geralmente é feito por desenvolvedores. O objetivo dos testes de unidade é garantir que cada área do código esteja funcionando corretamente;
--   **Teste Ad-hoc:** significa testar um aplicativo ou site sem seguir nenhum caso de teste específico. Em vez disso, o QA vasculhará o aplicativo à vontade, identificando quaisquer problemas que detectar durante o processo;
--   **Teste exploratório:** significa testar com a experiência e conhecimento existentes do aplicativo móvel ou site. Esse insight dá ao QA a capacidade de ter um envolvimento focado sem seguir casos de teste formais.
+- **O Teste de Aceitação do Usuário (UAT):** significa fazer com que usuários reais testem o beta de seu aplicativo ou site e forneçam feedback;
+- **Teste de acessibilidade**  significa verificar se o aplicativo ou site é amigável para todas as pessoas. Por exemplo, verificar se os vídeos possuem legendas para pessoas com deficiência auditiva ou se as imagens têm descrições para pessoas com deficiência visual;
+- **Teste de unidade (unitários):** significa criar scripts automatizados para testar partes individuais do aplicativo ou código do site. Embora seja uma forma de teste, o teste de unidade geralmente é feito por desenvolvedores. O objetivo dos testes de unidade é garantir que cada área do código esteja funcionando corretamente;
+- **Teste Ad-hoc:** significa testar um aplicativo ou site sem seguir nenhum caso de teste específico. Em vez disso, o QA vasculhará o aplicativo à vontade, identificando quaisquer problemas que detectar durante o processo;
+- **Teste exploratório:** significa testar com a experiência e conhecimento existentes do aplicativo móvel ou site. Esse insight dá ao QA a capacidade de ter um envolvimento focado sem seguir casos de teste formais.
 
 ## Testes básicos
 
@@ -68,10 +68,10 @@ Antes do início de um Sprint, a equipe se reúne para o Planejamento do Sprint.
 
 Por exemplo, aqui estão os critérios de aceitação para um recurso de mensagens:
 
--   Os usuários premium devem ser capazes de enviar mensagens a qualquer usuário de sua lista de amigos;
--   Todos os usuários devem ser capazes de bloquear qualquer usuário;
--   Os usuários administradores devem ser capazes de excluir uma mensagem;
--   Todos os usuários devem ter seções “caixa de entrada” e “enviado”.
+- Os usuários premium devem ser capazes de enviar mensagens a qualquer usuário de sua lista de amigos;
+- Todos os usuários devem ser capazes de bloquear qualquer usuário;
+- Os usuários administradores devem ser capazes de excluir uma mensagem;
+- Todos os usuários devem ter seções “caixa de entrada” e “enviado”.
 
 **Especificações** (abreviação de especificações) são documentações ou recursos que descrevem como um aplicativo ou site deve se parecer ou se comportar. Por exemplo, um testador pode pedir “especificações de design” para se certificar de que as imagens e o layout correspondem às expectativas.
 
@@ -81,7 +81,7 @@ Por exemplo, aqui estão os critérios de aceitação para um recurso de mensage
 
 Por exemplo:
 
-```
+```gherkin
 Dado um usuário quiser postar em Facebook
 Quando se digita a mensagem e clique em “publicar”
 Então seus amigos podem ver o post
@@ -131,6 +131,6 @@ Por exemplo, digamos que você tenha uma seção de registro em um aplicativo iO
 
 **Feature**  é um serviço ou funcionalidade em um aplicativo ou site. Por exemplo, poder ‘curtir’ tweets é um recurso do Twitter.
 
-## Você chegou ao final do nosso vocabulário de QA – parabéns!
+## Você chegou ao final do nosso vocabulário de QA – parabéns
 
 Embora essas definições não sejam exaustivas, agora você conhece os termos mais comuns de um profissional de qualidade.
