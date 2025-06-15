@@ -4,10 +4,10 @@ title: "6 Conselhos que gostaria de ter recebido"
 date: "2024-02-15"
 ---
 
-Pulis Letters - Edição #19  
+Pulis Letters - Edição #19
 Tempo de leitura: 7 minutos
 
-Estou muito feliz, ontem várias pessoas se inscreveram nas minhas cartas.  
+Estou muito feliz, ontem várias pessoas se inscreveram nas minhas cartas.
 Se você está chegando hoje, puxa uma cadeira e sinta-se em casa.
 
 Já comentei, em edições anteriores, que estou lendo e revendo _Game of Thrones_.
@@ -72,7 +72,7 @@ Um bom start também são os _roadmaps_ que a comunidade desenvolve.
 
 Essa frase diz muito sobre ser mentorando de alguém:
 
-> _Se eu vi mais longe, foi por estar de pé sobre ombros de gigantes.  
+> _Se eu vi mais longe, foi por estar de pé sobre ombros de gigantes.
 > Issac Newton_
 
 Eu tive a felicidade de ter bons mentores ao longo da minha carreira, um deles foi o [Reinaldo Ferraz](https://reinaldoferraz.com.br/).
@@ -127,7 +127,7 @@ Ter um conhecimento sólido nisso, fará você se destacar na multidão. Pode pa
 
 ## 4\. Aprenda acessibilidade
 
-Papo reto, acessibilidade é muito importante por uma série de razões.  
+Papo reto, acessibilidade é muito importante por uma série de razões.
 Uma delas é escrever um código cheio de gambiarra, pode impossibilitar o acesso para mais de 45 milhões de pessoas no seu site ou _app_.
 
 A escrita do HTML correto, está intimamente ligada com a acessibilidade.
@@ -182,5 +182,5 @@ A teoria aliada a prática é o segredo para termos:
 
 O mais importante é **saber suportar o processo**, demorou mais de 5 anos para ter o conhecimento de acessibilidade que tenho hoje.
 
-Talvez, você não tenha todo esse tempo disponível, mas não tem problema.  
+Talvez, você não tenha todo esse tempo disponível, mas não tem problema.
 Estou aqui para te ajudar ❤
