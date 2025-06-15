@@ -1,3 +1,45 @@
 ---
+import { Image } from "astro:assets";
+
 ---
 
+<div class="card slide-up overflow-hidden border border-gray-200 dark:border-gray-700">
+	<a href={`/blog/${post.id}`} class="block">
+		<Image
+			src={post.data.coverImage || fallbackImage}
+			alt={post.data.title || ''}
+			class="h-48 w-full object-cover"
+			width={382}
+			height={192}
+			loading="lazy"
+			inferSize={true}
+		/>
+	</a>
+	<div class="p-6">
+		<div class="mb-4 flex items-center">
+			<span class="text-primary-600 dark:text-primary-400 text-sm font-medium">
+				{post.data.category}
+			</span>
+			<span class="mx-2 text-gray-300 dark:text-gray-600">•</span>
+			<time class="text-sm text-gray-500 dark:text-gray-400">
+				{
+					new Date(post.data.date).toLocaleDateString('pt-BR', {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric'
+					})
+				}
+			</time>
+		</div>
+		<a href={`/blog/${post.id}`} class="mb-3 block">
+			<h3
+				class="hover:text-primary-600 dark:hover:text-primary-400 text-xl font-semibold text-gray-900 transition-colors dark:text-white"
+			>
+				{post.data.title}
+			</h3>
+		</a>
+		<p class="mb-6 text-gray-600 dark:text-gray-300">
+			{post.data.excerpt}
+		</p>
+	</div>
+</div>

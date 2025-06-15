@@ -13,6 +13,12 @@ const iconComponents = {
 
 const services = [
   {
+    title: "Palestras e Workshops",
+    description: "Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.",
+    icon: "Presentation",
+    color: "secondary"
+  },
+  {
     title: "Consultoria em Acessibilidade",
     description: "Te ajudo a deixar seus produtos digitais acessíveis para todas as pessoas.",
     icon: "PersonStanding",
@@ -24,28 +30,16 @@ const services = [
     icon: "FileCode",
     color: "secondary"
   },
-  {
-    title: "Palestras e Workshops",
-    description: "Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.",
-    icon: "Presentation",
-    color: "secondary"
-  },
-  {
-    title: "Consultoria LinkedIn",
-    description: "Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.",
-    icon: "UserPen",
-    color: "secondary"
-  }
 ];
 ---
 
 <section id="services" class="section py-16 bg-neutral-100">
-  <div class="container mx-auto">
+  <div class="container-custom mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="mb-6 text-gray-900 dark:text-white">Como posso ajudar</h2>
+      <h2 class="mb-6 text-gray-900 dark:text-white">Como posso te ajudar?</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         services.map((service, index) => {
           const IconComponent = iconComponents[service.icon];
@@ -64,7 +58,5 @@ const services = [
         })
       }
     </div>
-
-    <ButtonCTA url="/services" text="Explore todos serviços "/>
   </div>
 </section>

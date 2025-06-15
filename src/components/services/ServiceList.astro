@@ -9,38 +9,7 @@ const iconComponents = {
 	FileText
 }
 
-import code from '@/assets/code.avif'
-
 const services = [
-	{
-		icon: 'Code2',
-		color: 'green',
-		title: 'Desenvolvimento Acessível',
-		url: '/services/development',
-		description:
-			'Criação de sites e aplicações web seguindo as diretrizes WCAG e melhores práticas de acessibilidade.',
-		features: [
-			'HTML semântico e estruturado',
-			'Suporte a leitores de tela',
-			'Design responsivo e adaptável',
-			'Testes de acessibilidade'
-		],
-		image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80'
-	},
-	{
-		icon: 'Users2', // Corrigido de User2 para Users2
-		color: 'purple',
-		title: 'Consultoria em Acessibilidade',
-		url: '/services/consulting',
-		description: 'Avaliação e orientação para tornar seu site ou aplicação mais acessível.',
-		features: [
-			'Auditoria de acessibilidade',
-			'Testes web e mobile',
-			'Correções de bugs',
-			'Testes e remediação de documentos'
-		],
-		image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80'
-	},
 	{
 		icon: 'Presentation',
 		color: 'green',
@@ -57,20 +26,40 @@ const services = [
 		image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80'
 	},
 	{
-		icon: 'FileText',
+		icon: 'Users2', // Corrigido de User2 para Users2
 		color: 'purple',
-		title: 'Consultoria para LinkedIn',
-		url: '/services/documents',
-		description: 'Seja encontrado por empresas e pessoas',
-		features: ['Otimização de perfil', 'Elaboração de currículo'],
-		image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80'
+		title: 'Consultoria em Acessibilidade',
+		url: '/services/consulting',
+		description: 'Avaliação e orientação para tornar seu site ou aplicação mais acessível.',
+		features: [
+			'Auditoria de acessibilidade',
+			'Testes web e mobile',
+			'Correções de bugs',
+			'Testes e remediação de documentos'
+		],
+		image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80'
+	},
+	{
+		icon: 'Code2',
+		color: 'green',
+		title: 'Desenvolvimento Acessível',
+		url: '/services/development',
+		description:
+			'Criação de sites e aplicações web seguindo as diretrizes WCAG e melhores práticas de acessibilidade.',
+		features: [
+			'HTML semântico e estruturado',
+			'Suporte a leitores de tela',
+			'Design responsivo e adaptável',
+			'Testes de acessibilidade'
+		],
+		image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80'
 	}
 ]
 ---
 
 <section class="py-20">
-	<div class="container mx-auto px-4">
-		<div class="grid gap-4 md:grid-cols-4">
+	<div class="container-custom mx-auto px-4">
+		<div class="grid gap-4 md:grid-cols-3">
 			{
 				services.map((service, index) => {
 					return (

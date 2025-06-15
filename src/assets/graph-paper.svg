@@ -1,30 +1,4 @@
----
-interface Props {
-	title: string
-	highlightText?: string
-	description: string
-}
-
-const { title, highlightText, description } = Astro.props
-
-// Split the title to insert the highlighted text if provided
-let titleStart = title
-let titleEnd = ''
-
-if (highlightText) {
-	const titleParts = title.split(highlightText)
-	if (titleParts.length > 1) {
-		titleStart = titleParts[0]
-		titleEnd = titleParts[1]
-	}
-}
----
-
-<!-- Hero Section -->
-<section
-	class="from-primary-100 relative overflow-hidden bg-gradient-to-b to-white pt-24 pb-16 md:pt-32 md:pb-20"
->
-	<svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-50 stroke-neutral-950/5" width="100" height="100" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
   <g fill-rule="evenodd">
     <g fill="#000">
       <path opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z" />
@@ -32,35 +6,3 @@ if (highlightText) {
     </g>
   </g>
 </svg>
-	<div class="absolute inset-0 z-0 opacity-30">
-		<div class="bg-grid-pattern absolute inset-0"></div>
-	</div>
-	<div class="container-custom relative z-10">
-		<div class="mx-auto max-w-3xl px-4 text-center">
-			<h1
-				class="animate-slide-down mb-4 text-3xl text-gray-900 md:mb-6 md:text-4xl lg:text-5xl"
-			>
-				{
-					highlightText ? (
-						<>
-							{titleStart}
-							<span class="text-white">{highlightText}</span>
-							{titleEnd}
-						</>
-					) : (
-						title
-					)
-				}
-			</h1>
-			<p
-				class="animate-slide-up mb-6 text-lg text-gray-700 md:mb-8 md:text-xl "
-				style="animation-delay: 200ms"
-			>
-				{description}
-			</p>
-		</div>
-	</div>
-	<!-- Animated Shapes -->
-	
-
-</section>

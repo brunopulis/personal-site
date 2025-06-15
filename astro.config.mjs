@@ -16,6 +16,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: "https://brunopulis.com",
   integrations: [
     react(),
     db(),
