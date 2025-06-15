@@ -18,13 +18,13 @@ Agora entrei em uma nova fase, estou pensando com estratégia sobre o conteúdo 
 
 Ele vai deixar de ser somente um blog educativo/informativo e passará a também mostrar os serviços que presto. Atualmente estou trabalho em:
 
--   Criar páginas de cada serviço;
--   Criar um RSS feed para cada página;
--   Melhorar o desempenho do site.
+- Criar páginas de cada serviço;
+- Criar um RSS feed para cada página;
+- Melhorar o desempenho do site.
 
 Futuramente tenho algumas metas ousadas:
 
--   Retirar o Bootstrap;
--   Refatorar para utilizar grid-system nativo do CSS.
+- Retirar o Bootstrap;
+- Refatorar para utilizar grid-system nativo do CSS.
 
 Por enquanto é isso, aos poucos vou documentando essa nova jornada que encarei por aqui.

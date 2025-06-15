@@ -15,7 +15,7 @@ Neste artigo irei elencar alguns pontos para uma escolha consciente de ferrament
 
 ## Pontes ao invés de muros
 
-![](images/pontes-768x543-UMn9VIKj29He.webp)
+![](images/pontes.webp)
 
 [Imagem por creativeart](https://www.freepik.com/free-photo/wood-standing-blank-arms-crossed-understanding_1077755.htm#query=pontes&position=18&from_view=search) em Freepik
 

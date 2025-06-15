@@ -1,114 +1,87 @@
 ---
-// src/components/Pagination.astro
-export interface Props {
-  currentPage: number;
-  totalPages: number;
-  baseUrl?: string;
-}
+import { ArrowRight } from "@lucide/astro";
 
-const { currentPage, totalPages, baseUrl = "" } = Astro.props;
-
-// Gerar array de páginas para mostrar
-function generatePageNumbers(current: number, total: number) {
-  const pages: (number | string)[] = [];
-
-  if (total <= 7) {
-    // Se tem 7 páginas ou menos, mostra todas
-    for (let i = 1; i <= total; i++) {
-      pages.push(i);
-    }
-  } else {
-    // Lógica para páginas com ellipsis
-    if (current <= 4) {
-      // Início: 1, 2, 3, 4, 5, ..., last
-      for (let i = 1; i <= 5; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(total);
-    } else if (current >= total - 3) {
-      // Final: 1, ..., last-4, last-3, last-2, last-1, last
-      pages.push(1);
-      pages.push('...');
-      for (let i = total - 4; i <= total; i++) {
-        pages.push(i);
-      }
-    } else {
-      // Meio: 1, ..., current-1, current, current+1, ..., last
-      pages.push(1);
-      pages.push('...');
-      for (let i = current - 1; i <= current + 1; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(total);
-    }
-  }
-  
-  return pages;
-}
-
-const pageNumbers = generatePageNumbers(currentPage, totalPages);
-
-function getPageUrl(page: number) {
-  if (page === 1) {
-    return baseUrl || '/';
-  }
-  return `${baseUrl}/blog/${page}`;
-}
+const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
+  Astro.props;
+const paginationList = Array.from({ length: `${length}` }, (_, i) => i + 1);
 ---
 
-<nav class="pagination" aria-label="Navegação de páginas">
-  <div class="pagination-container">
-    <!-- Botão Anterior -->
-    {currentPage > 1 && (
-      <a 
-        href={getPageUrl(currentPage - 1)} 
-        class="pagination-btn pagination-prev"
-        aria-label="Página anterior"
+<nav aria-label="Blog pages" class=" inline-flex -space-x-px rounded-md shadow-xs">
+  <ul>
+
+  
+  {
+    firstUrl == currentUrl ? (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-left" />
+        <i class="pi-angle-left" />
+      </span>
+    ) : (
+      <a
+        href={firstUrl}
+        class="flex h-10 w-10 items-center justify-center bg-blue-800 text-sm font-semibold text-white hover:bg-blue-600"
       >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M10.5 3L5.5 8l5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Anterior
+        <i class="pi-angle-left" />
+        <i class="pi-angle-left" />
       </a>
-    )}
+    )
+  }
 
-    <!-- Números das páginas -->
-    <div class="pagination-numbers">
-      {pageNumbers.map((page) => (
-        page === '...' ? (
-          <span class="pagination-ellipsis">...</span>
-        ) : (
-          <a 
-            href={getPageUrl(page as number)}
-            class={`pagination-number ${page === currentPage ? 'active' : ''}`}
-            aria-label={`Página ${page}`}
-            aria-current={page === currentPage ? 'page' : undefined}
-          >
-            {page}
-          </a>
-        )
-      ))}
-    </div>
-
-    <!-- Botão Próximo -->
-    {currentPage < totalPages && (
-      <a 
-        href={getPageUrl(currentPage + 1)} 
-        class="pagination-btn pagination-next"
-        aria-label="Próxima página"
+  {
+    prevUrl ? (
+      <a
+        href={prevUrl}
+        class="flex h-10 w-10 items-center justify-center bg-blue-800 text-sm font-semibold text-white hover:bg-blue-600"
       >
-        Próximo
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M5.5 3l5 5-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <i class="pi-angle-left" />
       </a>
-    )}
-  </div>
+    ) : (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-left" />
+      </span>
+    )
+  }
 
-  <!-- Informações da página -->
-  <div class="pagination-info">
-    Página {currentPage} de {totalPages}
-  </div>
+  {
+    paginationList.map(num => (
+      <a
+        href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
+        class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}
+      >
+        {num}
+      </a>
+    ))
+  }
+
+  {
+    !nextUrl ? (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-right" />
+      </span>
+    ) : (
+      <a
+        href={nextUrl}
+        class="flex h-10 w-10 items-center justify-center bg-blue-800 text-sm font-semibold text-white hover:bg-blue-600"
+      >
+        <i class="pi-angle-right" />
+      </a>
+    )
+  }
+
+  {
+    lastUrl == currentUrl ? (
+      <span class="pagination__link disabled">
+        <i class="pi-angle-right" />
+        <i class="pi-angle-right" />
+      </span>
+    ) : (
+      <a
+        href={lastUrl}
+        class="flex h-10 w-10 items-center justify-center bg-red-900 text-sm font-semibold text-white hover:bg-red-950"
+      >
+        <ArrowRight class="h-10 w-10 bg-red-950" />
+      </a>
+    )
+  }
+  </ul>
 </nav>

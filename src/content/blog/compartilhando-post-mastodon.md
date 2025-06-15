@@ -26,13 +26,13 @@ No blog do Jens, existe um a sessão que incentiva o usuário a compartilhar o p
 
 Isso é conhecido como _“toot”_, uma espécie de _tweet_ do Mastodon. O resultado final será semelhante a isso.
 
-![Print da tela de compartilhamento do Mastodon com o título do artigo, meu usuário e o link ](images/image-216x300-7dTK5lAip763.jpeg)
+![Print da tela de compartilhamento do Mastodon com o título do artigo, meu usuário e o link ](images/mastodon-config.jpeg)
 
 Para chegar nesse formato, vamos precisar de algumas informações importantes:
 
--   Título do artigo;
--   Seu usuário do Mastodon;
--   Link do artigo.
+- Título do artigo;
+- Seu usuário do Mastodon;
+- Link do artigo.
 
 A instância do Mastodon, podemos predefinir ou deixar o usuário decidir. Recomendo deixar livre para o usuário, pois, o Mastodon é uma rede social descentralizada bem diferente do X ou Instagram.
 
@@ -40,8 +40,8 @@ A instância do Mastodon, podemos predefinir ou deixar o usuário decidir. Recom
 
 Para compartilhar o post do WordPress no Mastodon, iremos precisar de duas funções:
 
--   `the_title()` para pegar o título do post;
--   `the_permalink()` para buscar a url da publicação no seu blog.
+- `the_title()` para pegar o título do post;
+- `the_permalink()` para buscar a url da publicação no seu blog.
 
 Nossa estrutura deve seguir o seguinte padrão:
 
@@ -51,15 +51,15 @@ Nossa estrutura deve seguir o seguinte padrão:
 
 A estrutura da URL de compartilhamento do Mastodon ficaria da seguinte forma:
 
-```
+```html
 <a href="https://toot.kytta.dev/?text=<?php the_title(); ?>%20por%20@brunopulis@mastodon.social%3A%0A%0A<?php the_permalink() ?>">Toot</a>
 ```
 
 Você deve ter percebido, que existem uns caracteres estranhos, eles tem funções específicas:
 
--   %20: cria um espaço entre as palavras;
--   %3A gera o caracter “:”;
--   %0A%0A: cria os espaços entre as linhas.
+- %20: cria um espaço entre as palavras;
+- %3A gera o caracter “:”;
+- %0A%0A: cria os espaços entre as linhas.
 
 ## Conclusão
 
@@ -68,6 +68,6 @@ Gostou dessa dica?
 
 Adoraria seu comentário.
 
-## Me siga no Fediverso.
+## Me siga no Fediverso
 
 [↬meiert.com/en/blog/optimization-measures-26/](https://meiert.com/en/blog/optimization-measures-26/ "Este post é uma resposta ao conteúdo referenciado.")

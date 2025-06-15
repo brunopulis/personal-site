@@ -6,7 +6,7 @@ category: "Acessibilidade"
 ---
 * * *
 
-**Importante**
+## **Importante**
 
 Este artigo foi originalmente escrito por [Karina Chow](https://karomancer.medium.com/) e traduzido e adaptado por mim. Houve a autorização da autora para realizar a tradução.
 
@@ -28,7 +28,7 @@ Ser acessível significa que sites, ferramentas e tecnologias são projetados e 
 
 Existem onze letras entre o **A** e **Y** na palavra _accessibility_, então as pessoas começaram a abreviá-la como a11y. Tem a vantagem adicional de se parecer com a palavra aliado, por isso as pessoas às vezes a usam como tal. Na maioria das vezes, ouço as pessoas dizerem em voz alta como “a-eleven-y”, mas nesse ponto você também pode dizer “acessibilidade”!
 
-![A palavra a11y é o termo usado em inglës para 'accessibility'](images/a11y-768x337-zi8qW65wKBgI.png)
+![A palavra a11y é o termo usado em inglês para 'accessibility'](images/a11y.png)
 
 Fonte: The A11y Project
 
@@ -46,15 +46,15 @@ Assim como a conformidade com [HIPAA](https://seginfo.com.br/2021/01/29/hipaa-ex
 
 O padrão WCAG mais recente (no momento da redação deste artigo em 2021) é WCAG 2.1. A WCAG é medida com **três níveis de conformidade**, de A (mais baixo), AA, a AAA (mais alto). Para medir a acessibilidade do seu site, você mede o quão compatível ele é com qualquer um desses níveis WCAG.
 
-![](images/compliance-768x198-SCaODShBwVH3.png)
+![](images/compliance.png)
 
 “Conformidade WCAG 2.1 AA” significa “Precisamos aderir ao padrão WCAG 2.1, com conformidade duplo A”
 
 Por exemplo, para [mídia baseada em tempo](https://www.w3.org/TR/WCAG21/#time-based-media), aqui estão alguns exemplos das diferenças entre os níveis de conformidade:
 
--   **A – “Conformidade mínima”** – Legendas para vídeo/áudio pré-gravado, alternativas fornecidas para vídeo/áudio pré-gravado (por exemplo, transcrições);
--   **AA – “Conformidade aceitável”** – Tudo em A legendas para vídeo/áudio ao vivo, narrações adicionais fornecidas durante o vídeo pré-gravado;
--   **AAA – “Optimal Compliance”** – Tudo em AA e interpretação em linguagem de sinais para vídeo, narrações mais detalhadas fornecidas durante e em pausas para vídeo pré-gravado, transcrições ao vivo  
+- **A – “Conformidade mínima”** – Legendas para vídeo/áudio pré-gravado, alternativas fornecidas para vídeo/áudio pré-gravado (por exemplo, transcrições);
+- **AA – “Conformidade aceitável”** – Tudo em A legendas para vídeo/áudio ao vivo, narrações adicionais fornecidas durante o vídeo pré-gravado;
+- **AAA – “Optimal Compliance”** – Tudo em AA e interpretação em linguagem de sinais para vídeo, narrações mais detalhadas fornecidas durante e em pausas para vídeo pré-gravado, transcrições ao vivo
     Ao estabelecer metas de acessibilidade, pode ser aconselhável definir o nível de conformidade que você gostaria de atender, para que todos que trabalham no projeto possam trabalhar para a mesma meta.
 
 Se você não sabe qual nível de conformidade seguir, a conformidade WCAG 2.1 AA é considerada aceitável e cobrirá a grande maioria dos casos de uso.
@@ -67,23 +67,23 @@ Ao projetar seu produto para a web, você provavelmente está sempre imaginando 
 
 As deficiências mais comumente consideradas são as deficiências visuais, mas existem muitas outras categorias, todas as quais você deve considerar ao tornar seu produto acessível:
 
--   Visual – cegueira, daltonismo, baixa visão, glaucoma;
--   Audição – surdez, deficiência auditiva;
--   Motora – Controle de motor fino limitado;
--   Cognitiva – Focalização difícil, dificuldades de aprendizagem;
--   Convulsões.
+- Visual – cegueira, daltonismo, baixa visão, glaucoma;
+- Audição – surdez, deficiência auditiva;
+- Motora – Controle de motor fino limitado;
+- Cognitiva – Focalização difícil, dificuldades de aprendizagem;
+- Convulsões.
 
 ## Como devo considerá-los ao testar meu produto digital?
 
 Diferentes tipos de deficiências ditam como você pode acessar e interagir com os sites. Uma lista com algumas alternativas populares:
 
--   **Teclado  
+- **Teclado
     **Algumas pessoas não utilizam o mouse somente o teclado. Isso é comum entre pessoas com deficiências motoras que não conseguem operar os movimentos finos que um mouse exige.
--   **Leitores de tela  
+- **Leitores de tela
     **Tecnologia assistiva que lê o que está na tela, mais comumente usada por pessoas com cegueira ou baixa visão. Normalmente operado usando apenas um teclado.
--   **Zoom do Browser** (idealmente, suporte até 200%)  
+- **Zoom do Browser** (idealmente, suporte até 200%)
     Pessoas com deficiência visual podem usar o recurso de zoom em seus navegadores para compreender melhor o texto e ver as imagens.
--   **[Estilos customizados](https://webaim.org/techniques/css/)**  
+- **[Estilos customizados](https://webaim.org/techniques/css/)**
     Pessoas com baixa visão ou daltonismo podem ter suas próprias folhas de estilo personalizadas para ajustar estilos como tamanho e cor da fonte
 
 ## Como aprendo a usar um leitor de tela?
@@ -100,10 +100,10 @@ Depois de aprender um pouco, você pode praticar suas coisas neste divertido gui
 
 Vamos circular todo o caminho de volta à nossa declaração inicial. De acordo com as WCAG, existem [4 Princípios da Acessibilidade](https://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head) que todo produto deveria aderir a:
 
-1.  **Perceptível** — as informações precisam estar disponíveis para pelo menos um sentido (visão, audição, tato);
-2.  **Operável** — um usuário deve ser capaz de realizar todas as ações da interface (ou seja, com um teclado);
-3.  **Compreensível** — um usuário deve entender o idioma em uma página e como operá-lo;
-4.  **Robusto** — diferentes agentes de usuário, incluindo tecnologias assistivas, o conteúdo deve ser capaz de acessar todo o conteúdo.
+1. **Perceptível** — as informações precisam estar disponíveis para pelo menos um sentido (visão, audição, tato);
+2. **Operável** — um usuário deve ser capaz de realizar todas as ações da interface (ou seja, com um teclado);
+3. **Compreensível** — um usuário deve entender o idioma em uma página e como operá-lo;
+4. **Robusto** — diferentes agentes de usuário, incluindo tecnologias assistivas, o conteúdo deve ser capaz de acessar todo o conteúdo.
 
 O principal objetivo dos entusiastas de acessibilidade é atingir todos os quatro itens para todos os tipos de deficiência e tipos de dispositivos de entrada. Conforme mencionado anteriormente, existem muitos tipos de deficiência e mais dispositivos de entrada estão sendo inventados o tempo todo, então é uma missão para toda a vida, em vez de um objetivo único.
 
@@ -115,11 +115,11 @@ Fique atento para artigos futuros sobre como incorporar o trabalho de acessibili
 
 Gostaria de aprender ainda mais? Aqui estão alguns ótimos recursos:
 
--   [Google’s A11ycasts](https://www.youtube.com/playlist?list=PL7Bjl0Cb4SboBHNihVBRd-AdctfXcmClc), uma série de vídeos ensinando o básico de acessibilidade pelo time de desenvolvimento da Google;
--   [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/), versão atual das diretrizes de acessibilidade;
--   [WebAIM](https://webaim.org/), muita informação de acessibilidade e até mesmo treinamentos de certificação;
--   [Awesome A11y](https://github.com/brunopulis/awesome-a11y), uma lista com recursos sobre acessibilidade;
--   [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html), uma ferramenta de teste de acessibilidade automatizada para executar em suas páginas da web;
--   [Lighthouse](https://developers.google.com/web/tools/lighthouse), uma ferramenta automatizada para SEO, acessibilidade e desempenho;
--   [The A11y Project](https://www.a11yproject.com/), educação sobre como fazer designs acessíveis;
--   [Mozilla’s a11y documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility), documentação sobre a11y fácil de compreender.
+- [Google’s A11ycasts](https://www.youtube.com/playlist?list=PL7Bjl0Cb4SboBHNihVBRd-AdctfXcmClc), uma série de vídeos ensinando o básico de acessibilidade pelo time de desenvolvimento da Google;
+- [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/), versão atual das diretrizes de acessibilidade;
+- [WebAIM](https://webaim.org/), muita informação de acessibilidade e até mesmo treinamentos de certificação;
+- [Awesome A11y](https://github.com/brunopulis/awesome-a11y), uma lista com recursos sobre acessibilidade;
+- [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html), uma ferramenta de teste de acessibilidade automatizada para executar em suas páginas da web;
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse), uma ferramenta automatizada para SEO, acessibilidade e desempenho;
+- [The A11y Project](https://www.a11yproject.com/), educação sobre como fazer designs acessíveis;
+- [Mozilla’s a11y documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility), documentação sobre a11y fácil de compreender.

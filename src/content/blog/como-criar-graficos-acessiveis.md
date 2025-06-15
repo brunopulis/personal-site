@@ -10,7 +10,7 @@ tags:
 ---
 Gráficos, mapas e infográficos estão presentes em nossas vidas, mas é quando essas informações não estão acessíveis?
 
-Pessoas com deficiência, não conseguem compreender eles devido a falta de acessibilidade.  
+Pessoas com deficiência, não conseguem compreender eles devido a falta de acessibilidade.
 Nesse artigo, vou te mostrar duas técnicas que podem melhorar isso.
 
 Vamos lá?
@@ -19,21 +19,21 @@ Vamos lá?
 
 São representações visuais que contêm informações que não podem ser transmitidas através de uma sentença ou frase curta, como por exemplo:
 
--   fluxogramas;
--   organogramas;
--   diagramas e ilustrações em que o texto da página depende da capacidade do usuário de compreender a imagem;
--   infográficos;
--   mapas mostrando locais ou outras informações como sistemas climáticos;
--   os famosos CAPTCHAs.
+- fluxogramas;
+- organogramas;
+- diagramas e ilustrações em que o texto da página depende da capacidade do usuário de compreender a imagem;
+- infográficos;
+- mapas mostrando locais ou outras informações como sistemas climáticos;
+- os famosos CAPTCHAs.
 
-Nesses cenário o atributo **ALT** não funciona bem, Dessa forma precisamos encontrar outras soluções.  
+Nesses cenário o atributo **ALT** não funciona bem, Dessa forma precisamos encontrar outras soluções.
 Escrevi um guia completo sobre [como escrever textos alternativos](https://brunopulis.com/texto-alternativo-o-guia-definitivo/).
 
 ## Criando gráficos acessíveis
 
 Como exemplo, vou usar o gráfico da pesquisa [WebAim Million.](https://webaim.org/projects/million/) Seu objetivo é mostrar os erros de acessibilidade das páginas na web.
 
-![Gráfico sobre Páginas iniciais com falhas WCAG mais comuns (% de páginas iniciais), Existe uma relação entre o tipo de erro com a porcentagem que foi encontrado.](images/graphic-300x192-SGK33Au1rlEc.png)
+![Gráfico sobre Páginas iniciais com falhas WCAG mais comuns (% de páginas iniciais), Existe uma relação entre o tipo de erro com a porcentagem que foi encontrado.](images/graphic.png)
 
 Para criar gráficos acessíveis, podemos usar duas técnicas: tabelas semânticas e atributos ARIA.
 
@@ -51,7 +51,7 @@ Vamos usar duas abordagens com tabelas, a primeira será manter ela visível par
 
 Para fins didáticos vou considerar somente o erro de baixo contraste e texto alternativo no exemplo. A estrutura HTML da nossa tabela será da seguinte forma:
 
-```
+```html
 <table>
     <caption>Home pages with most common WCAG 2 failures</caption>
     <tbody>
@@ -82,8 +82,8 @@ Para fins didáticos vou considerar somente o erro de baixo contraste e texto al
 
 Detalhe importante estou usando o atributo `<strong><em>scope</em></strong>`, ele define o cabeçalho de uma coluna ou linha. Iremos usar os seguintes valores:
 
--   **row:** o cabeçalho refere-se a todas as células da linha a que pertence;
--   **col:** o cabeçalho refere-se a todas as células da coluna a que pertence.
+- **row:** o cabeçalho refere-se a todas as células da linha a que pertence;
+- **col:** o cabeçalho refere-se a todas as células da coluna a que pertence.
 
 Quando navegamos com o leitor de telas ele identifica esses atributos e conseguimos ter uma navegação mais linear e fluída dentro da tabela.
 
@@ -91,7 +91,7 @@ Quando navegamos com o leitor de telas ele identifica esses atributos e consegui
 
 A única diferença da tabela anterior é uso de uma classe CSS para ocultar a tabela visualmente, dessa forma somente o leitor de tela irá consumir a informação.
 
-```
+```html
 <table class="visually-hidden">
     <caption>Home pages with most common WCAG 2 failures</caption>
     <tbody>
@@ -126,14 +126,14 @@ Outra técnica interessante é utilizar o atributo **_aria-describedby_**, ele �
 
 Também pode ser usado uma sequência de ids ou somente um. Ele não está limitado a controles de formulários. Pode ser usado em contextos globais dentro de um documento HTML.
 
-```
+```html
 <img src="grafico.png" aria-describedby="description" alt="Representação dos erros mais comuns da WCAG 2.1 nas Home pages mais famosas"  />
 
-<div id="description"> 
-  <h2>Taxa de falhas de baixo contraste em porcentagem por ano</h2> 
+<div id="description">
+  <h2>Taxa de falhas de baixo contraste em porcentagem por ano</h2>
   <ul>
-     <li>Em 2019: 85.3%</li> 
-     <li>Em 2020: 86.3%</li> 
+     <li>Em 2019: 85.3%</li>
+     <li>Em 2020: 86.3%</li>
      <li>Em 2021: 86.4%</li>
      <li>Em 2022: 83.9%</li>
   </ul>
@@ -154,21 +154,21 @@ Me conte nos comentários as dificuldades que já teve nesse tema.
 
 ## Referências
 
--   [https://accessibility.psu.edu/images/charts/](https://accessibility.psu.edu/images/charts/)
--   [https://www.w3.org/TR/WCAG21/#text-alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives
+- [https://accessibility.psu.edu/images/charts/](https://accessibility.psu.edu/images/charts/)
+- [https://www.w3.org/TR/WCAG21/#text-alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives
     )
--   [https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
+- [https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
     )
--   [https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content
+- [https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content
     )
--   [https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html
+- [https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html
     )
--   [https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples
+- [https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples
     )
--   [https://www.w3.org/WAI/WCAG21/Techniques/general/G73](https://www.w3.org/WAI/WCAG21/Techniques/general/G73
+- [https://www.w3.org/WAI/WCAG21/Techniques/general/G73](https://www.w3.org/WAI/WCAG21/Techniques/general/G73
     )
--   [https://webaim.org/projects/million/](https://webaim.org/projects/million/
+- [https://webaim.org/projects/million/](https://webaim.org/projects/million/
     )
--   [https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
+- [https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
     )
--   [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)
+- [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)
