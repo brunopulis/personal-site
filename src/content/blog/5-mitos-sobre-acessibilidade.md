@@ -1,6 +1,6 @@
 ---
 title: 5 mitos sobre acessibilidade que você precisa esclarecer
-date: 2022-02-22
+publishDate: 2022-02-22
 draft: false
 category: "Acessibilidade"
 ---

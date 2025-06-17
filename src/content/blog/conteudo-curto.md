@@ -2,7 +2,7 @@
 layout: "@/layouts/PostLayout.astro"
 schema: "../../components/common/head/schemas/BlogPosting.astro"
 title: "Uma doença chamada conteúdo curto"
-date: 2024-10-02
+publishDate: 2024-10-02
 category: "Opinião"
 image: {
   src: "/src/assets/images/social-midia-scaled.jpg",

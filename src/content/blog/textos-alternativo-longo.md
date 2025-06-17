@@ -1,6 +1,6 @@
 ---
 title: Como criar texto alternativo longo
-date: 2024-03-25
+publishDate: 2024-03-25
 metadata:
   categories:
     - Desenvolvimento web

@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { ArrowUp } from "@lucide/astro";
+---
+
+
+<a href="#start" id="back-to-top" aria-label="Ir para o topo">
+  <ArrowUp class="w-5 h-5" />
+</a>
+
+<style>
+  a {
+    background: var(--color-green);
+    border-radius: var(--border-radius);
+    bottom: var(--space-xs);
+    position: fixed;
+    right: var(--space-xs);
+  }
+</style>
+
+<script>
+  const backToTopLink = document.getElementById("back-to-top");
+
+  const toggleBackToTopVisibility = () => {
+    backToTopLink!.style.display = window.scrollY > 0 ? "block" : "none";
+  };
+
+  window.addEventListener("scroll", toggleBackToTopVisibility);
+</script>

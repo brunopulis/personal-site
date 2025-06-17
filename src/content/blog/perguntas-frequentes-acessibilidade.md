@@ -1,6 +1,6 @@
 ---
 title: 11 Perguntas frequentes sobre acessibilidade
-date: 2023-11-22
+publishDate: 2023-11-22
 metadata:
   categories:
     - Acessibilidade

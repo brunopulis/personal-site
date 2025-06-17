@@ -1,6 +1,6 @@
 ---
 title: O que é blogroll?
-date: 2024-09-12
+publishDate: 2024-09-12
 metadata:
   categories:
     - Pessoal

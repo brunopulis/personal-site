@@ -1,6 +1,6 @@
 ---
 title: Como criar gráficos acessíveis
-date: 2022-06-23
+publishDate: 2022-06-23
 metadata:
   categories:
     - Acessibilidade

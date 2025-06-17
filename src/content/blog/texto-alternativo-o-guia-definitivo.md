@@ -1,6 +1,6 @@
 ---
 title: "Texto alternativo: o guia definitivo"
-date: 2021-09-26
+publishDate: 2021-09-26
 metadata:
   categories:
     - Acessibilidade

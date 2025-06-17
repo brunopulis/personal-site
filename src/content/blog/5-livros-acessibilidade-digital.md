@@ -1,6 +1,6 @@
 ---
 title: 5 livros de acessibilidade digital
-date: 2021-07-01
+publishDate: 2021-07-01
 draft: false
 category: "Indicações"
 tags: ["livros"]

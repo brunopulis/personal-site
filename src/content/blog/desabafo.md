@@ -1,6 +1,6 @@
 ---
 title: Desabafo
-date: 2016-06-26
+publishDate: 2016-06-26
 metadata:
   categories:
     - Pessoal

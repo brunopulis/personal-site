@@ -3,9 +3,10 @@ interface Props {
 	title: string
 	highlightText?: string
 	description: string
+	timestamp?: string
 }
 
-const { title, highlightText, description } = Astro.props
+const { title, highlightText, description, timestamp } = Astro.props
 
 // Split the title to insert the highlighted text if provided
 let titleStart = title
@@ -20,26 +21,14 @@ if (highlightText) {
 }
 ---
 
-<!-- Hero Section -->
-<section
-	class="from-primary-100 relative overflow-hidden bg-gradient-to-b to-white pt-24 pb-16 md:pt-32 md:pb-20"
->
-	<svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-50 stroke-neutral-950/5" width="100" height="100" viewBox="0 0 100 100">
-  <g fill-rule="evenodd">
-    <g fill="#000">
-      <path opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z" />
-      <path d="M6 5V0H5v5H0v1h5v94h1V6h94V5H6z" />
-    </g>
-  </g>
-</svg>
-	<div class="absolute inset-0 z-0 opacity-30">
-		<div class="bg-grid-pattern absolute inset-0"></div>
-	</div>
-	<div class="container-custom relative z-10">
-		<div class="mx-auto max-w-3xl px-4 text-center">
-			<h1
-				class="animate-slide-down mb-4 text-3xl text-gray-900 md:mb-6 md:text-4xl lg:text-5xl"
-			>
+<section class="body-font bg-red-950 text-white">
+	<div
+		class="container mx-auto flex flex-col items-center px-5 py-12 md:flex-row"
+	>
+		<div
+			class="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24"
+		>
+			<h1 class="title-font mb-4 text-3xl font-medium sm:text-4xl">
 				{
 					highlightText ? (
 						<>
@@ -52,15 +41,12 @@ if (highlightText) {
 					)
 				}
 			</h1>
-			<p
-				class="animate-slide-up mb-6 text-lg text-gray-700 md:mb-8 md:text-xl "
-				style="animation-delay: 200ms"
-			>
+			<p class="mb-3 text-lg leading-relaxed font-light" style="animation-delay: 200ms">
 				{description}
 			</p>
+			<time class="text-white" datetime={timestamp}>
+				{timestamp}
+			</time>
 		</div>
 	</div>
-	<!-- Animated Shapes -->
-	
-
 </section>

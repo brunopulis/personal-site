@@ -1,6 +1,6 @@
 ---
 title: Ignoramos 45 milhões de pessoas
-date: 2014-12-18
+publishDate: 2014-12-18
 metadata:
   categories:
     - Acessibilidade

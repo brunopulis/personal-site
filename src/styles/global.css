@@ -1,4 +1,5 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -111,11 +112,11 @@
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-hidden;
+  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all duration-300 focus:outline-hidden;
 }
 
 @utility btn-primary {
-  @apply btn bg-[#610404] hover:bg-red-900 text-black shadow-md hover:shadow-lg;
+  @apply btn bg-[#610404] text-black shadow-md hover:bg-red-900 hover:shadow-lg;
 }
 
 @utility btn-secondary {
@@ -127,11 +128,11 @@
 }
 
 @utility btn-outline {
-  @apply btn border-2 border-secondary-300 dark:border-secondary-700 hover:bg-secondary-100 dark:hover:bg-secondary-800 text-secondary-900 dark:text-secondary-100;
+  @apply btn border-secondary-300 dark:border-secondary-700 hover:bg-secondary-100 dark:hover:bg-secondary-800 text-secondary-900 dark:text-secondary-100 border-2;
 }
 
 @utility container-custom {
-  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  @apply container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
 @utility section {
@@ -139,32 +140,37 @@
 }
 
 @utility card {
-  @apply bg-white dark:bg-secondary-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-secondary-200 dark:border-secondary-800;
+  @apply dark:bg-secondary-900 border-secondary-200 dark:border-secondary-800 overflow-hidden rounded-xl border bg-white shadow-md transition-shadow duration-300 hover:shadow-lg;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans;
   }
-  
+
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-4xl font-bold md:text-5xl lg:text-6xl;
   }
-  
+
   h2 {
-    @apply text-3xl md:text-4xl font-bold;
+    @apply text-3xl font-bold md:text-4xl;
   }
-  
+
   h3 {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-2xl font-semibold md:text-3xl;
   }
-  
+
   h4 {
-    @apply text-xl md:text-2xl font-semibold;
+    @apply text-xl font-semibold md:text-2xl;
   }
-  
+
   p {
-    @apply text-base md:text-lg leading-relaxed;
+    @apply text-base leading-relaxed md:text-lg;
   }
 }
 
@@ -183,10 +189,70 @@
 
 /* Accessibility */
 .sr-only {
-  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  @apply absolute -m-px h-px w-px overflow-hidden border-0 p-0 whitespace-nowrap;
 }
 
 /* Focus styles for keyboard navigation */
 :focus-visible {
-  @apply outline-hidden ring-2 ring-primary-500 dark:ring-primary-400;
+  @apply ring-primary-500 dark:ring-primary-400 ring-2 outline-hidden;
+}
+
+.markdown-content h1 {
+  @apply mb-6 text-4xl font-bold text-gray-900;
+}
+
+.markdown-content h2 {
+  @apply mb-4 text-3xl font-semibold text-gray-800;
+}
+
+.markdown-content p {
+  @apply mb-4 leading-relaxed text-gray-700;
+}
+
+.markdown-content a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+.markdown-content ul {
+  @apply mb-4 list-inside list-disc space-y-2;
+}
+
+.markdown-content code {
+  @apply rounded bg-gray-100 px-2 py-1 font-mono text-sm;
+}
+
+@layer utilities {
+  .prose {
+    --tw-prose-body: var(--text-color-main);
+    --tw-prose-headings: var(--text-color-main);
+    --tw-prose-lead: var(--text-color-main);
+    --tw-prose-links: var(--text-color-main);
+    --tw-prose-bold: var(--text-color-main);
+    --tw-prose-counters: var(--text-color-main);
+    --tw-prose-bullets: var(--text-color-main);
+    --tw-prose-hr: var(--border-color-main);
+    --tw-prose-quotes: var(--text-color-main);
+    --tw-prose-quote-borders: var(--border-color-main);
+    --tw-prose-captions: var(--text-color-main);
+    --tw-prose-kbd: var(--text-color-main);
+    --tw-prose-code: var(--text-color-main);
+    --tw-prose-th-borders: var(--border-color-main);
+    --tw-prose-td-borders: var(--border-color-main);
+  }
+
+  .prose a {
+    @apply font-normal underline decoration-dashed decoration-1 underline-offset-2 hover:text-red-950 hover:decoration-solid;
+  }
+
+  .prose :where(h1, h2, h3, h4, h5, h6) {
+    @apply text-red-950 font-medium;
+  }
+
+  .prose :where(code, strong) {
+    @apply font-medium;
+  }
+
+  .prose blockquote {
+    @apply border-none pl-0 font-serif text-[1.375em] leading-snug font-normal italic sm:text-[1.66667em];
+  }
 }

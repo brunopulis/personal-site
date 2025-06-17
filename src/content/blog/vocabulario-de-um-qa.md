@@ -1,6 +1,6 @@
 ---
 title: Vocabulário de um QA
-date: 2020-08-18
+publishDate: 2020-08-18
 metadata:
   categories:
     - Qualidade de Software

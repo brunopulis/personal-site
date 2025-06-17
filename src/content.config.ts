@@ -1,30 +1,40 @@
-// 1. Import utilities from `astro:content`
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
-// 2. Import loader(s)
-import { glob, file } from "astro/loaders";
+const seoSchema = z.object({
+  title: z.string().min(5).max(120).optional(),
+  description: z.string().min(15).max(160).optional(),
+  image: z
+    .object({
+      src: z.string(),
+      alt: z.string().optional(),
+    })
+    .optional(),
+  pageType: z.enum(["website", "article"]).default("website"),
+});
 
 // 3. Define your collection(s)
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog/" }),
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog/" }),
   schema: z.object({
     title: z.string(),
-    date: z.date(),
-    category: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().optional().default(false),
     excerpt: z.string().optional(),
+    publishDate: z.date(),
+    modifiedDate: z.date().optional(),
+    isFeatured: z.boolean().default(false),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().optional().default(false),
     coverImage: z.string().optional(),
-    modifiedDate: z.string().date().optional(),
-  })
+    seo: seoSchema.optional()
+  }),
 });
 
 const notes = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
   schema: z.object({
-    date: z.string().date()
+    date: z.string().date(),
   }),
-})
+});
 
 const newsletter = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/newsletter" }),
@@ -33,12 +43,12 @@ const newsletter = defineCollection({
     title: z.string(),
     category: z.string().optional(),
     coverImage: z.string().optional(),
-    date: z.string().date()
+    date: z.string().date(),
   }),
-})
+});
 
 export const collections = {
   blog,
   newsletter,
-  notes
+  notes,
 };

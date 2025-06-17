@@ -1,6 +1,6 @@
 ---
 title: Novidades da WCAG 2.2
-date: 2023-07-22
+publishDate: 2023-07-22
 metadata:
   categories:
     - Acessibilidade

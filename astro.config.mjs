@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import sectionize from '@hbsnow/rehype-sectionize';
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from '@astrojs/alpinejs';
 import icon from 'astro-icon';
@@ -31,5 +32,8 @@ export default defineConfig({
     }),
     umami({ id: "f1cb7c07-2efc-4997-9dd3-d3198f0faa0c" }),
     robotsTxt()
-  ]
+  ],
+  markdown:{
+    rehypePlugins: [sectionize],
+  },
 });

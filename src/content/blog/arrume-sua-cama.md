@@ -1,6 +1,6 @@
 ---
 title: "Arrume sua cama: Pequenas coisas que podem mudar a sua vida"
-date: 2023-06-27
+publishDate: 2023-06-27
 category: "Indicações"
 tags: ["livros", "review", "desenvolvimento pessoal"]
 ---

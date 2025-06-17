@@ -1,6 +1,6 @@
 ---
 title: Ídolos de bolso
-date: 2016-09-05
+publishDate: 2016-09-05
 category: "Teologia"
 canonicalUrl: https://brunopulis.com/idolos-de-bolso/
 tags: ["teologia"]

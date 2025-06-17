@@ -1,6 +1,6 @@
 ---
 title: Um caso de amor chamado acessibilidade
-date: 2015-02-26
+publishDate: 2015-02-26
 metadata:
   categories:
     - Acessibilidade

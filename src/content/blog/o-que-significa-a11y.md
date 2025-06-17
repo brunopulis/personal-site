@@ -1,6 +1,6 @@
 ---
 title: "Afinal, o quê significa A11y?"
-date: 2021-08-26
+publishDate: 2021-08-26
 metadata:
   categories:
     - Acessibilidade

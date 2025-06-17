@@ -6,12 +6,13 @@
     "email": "hello@brunopulis.com"
   },
   "socialMidia": {
-    "bluesky": "https://bluesky.com/brunopulis",
+    "bluesky": "https://bsky.app/profile/brunopulis.bsky.social",
     "mastodon": "https://mastodon.social/@brunopulis",
     "instagram": "https://instagram.com/brunopulis",
     "linkedin": "https://linkedin.com/in/brunopulis",
     "youtube": "https://youtube.com/@brunopulis",
     "github":  "https://github.com/brunopulis",
+    "speakerdeck": "https://speakerdeck.com/brunopulis",
     "substack": "https://brunopulis.substack.com"
   }
 }

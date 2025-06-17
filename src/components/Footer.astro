@@ -6,51 +6,8 @@ import { ExternalLink } from "@lucide/astro";
 import me from "@/assets/palestras.webp";
 import writtenByHuman from "@/assets/written-by-human.svg";
 import config from "@/data/site.config.json";
-import { getCollection } from "astro:content";
-
-const posts = await getCollection("blog");
 
 const currentYear = new Date().getFullYear();
-const footerLinks = [
-  {
-    title: "Home",
-    links: [
-      { text: "Home", url: "/" },
-      { text: "Features", url: "/features" },
-      { text: "Pricing", url: "/pricing" },
-      { text: "Contact", url: "/contact" },
-    ],
-  },
-  {
-    title: "Product",
-    links: [
-      { text: "Features", url: "/features" },
-      { text: "Pricing", url: "/pricing" },
-      { text: "FAQ", url: "/faqs" },
-      { text: "Changelog", url: "/changelog" },
-      { text: "Integrations", url: "/integrations" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { text: "Blog", url: "/blog" },
-      { text: "Case Studies", url: "/case-study" },
-      { text: "404 Page", url: "/404" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { text: "About Us", url: "/company" },
-      { text: "Careers", url: "/career" },
-      { text: "Contact", url: "/contact" },
-      { text: "Reviews", url: "/reviews" },
-      { text: "Política de Privacidade", url: "/privacy-policy" },
-      { text: "Terms of Service", url: "/terms-conditions" },
-    ],
-  },
-];
 ---
 
 <footer class="bg-black text-white">
@@ -124,13 +81,6 @@ const footerLinks = [
               href="#"
               class="text-white transition-colors hover:underline hover:underline-offset-8"
               >Página inicial</a
-            >
-          </li>
-          <li class="mx-2 inline">
-            <a
-              href="/services"
-              class="text-white transition-colors hover:underline hover:underline-offset-8"
-              >Serviços</a
             >
           </li>
           <li class="mx-2 inline">

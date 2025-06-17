@@ -24,10 +24,10 @@ const formatDate = (date: string) => {
 ---
 
 <section id="talks" class="bg-gray-50 py-20">
-  <div class="container mx-auto px-4 md:px-6">
-    <div class="mx-auto max-w-5xl">
-      <h2 class="mb-4 text-center text-3xl font-bold md:text-4xl">Palestras e apresentações</h2>
-      <p class="mx-auto mb-12 max-w-3xl text-center text-gray-600">
+  <div class="container mx-auto px-5 md:px-6">
+    <div class="mx-auto ">
+      <h2 class="mb-4 text-3xl font-bold md:text-4xl">Palestras</h2>
+      <p class="mb-12  text-gray-600">
         Descubra minhas palestras anteriores e futuras sobre acessibilidade da Web, desenvolvimento front-end
 				e qualidade de software.
       </p>
@@ -35,7 +35,7 @@ const formatDate = (date: string) => {
 
       {/* Upcoming Talks */}
       <div class="mb-16">
-        <h3 class="mb-8 text-2xl font-bold text-purple-600">Próximas Palestras</h3>
+        <h3 class="mb-8 text-2xl font-bold text-red-950">Próximas Palestras</h3>
         {upcomingTalks.length > 0 ? (
           <ul class="list-disc">
             {upcomingTalks.map((talk) => (
@@ -59,21 +59,9 @@ const formatDate = (date: string) => {
                 No momento não existem palestras agendadas. Gostaria de me convidar para falar no seu evento?
               </p>
               <a
-                href="#schedule-talk"
-                class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                href="/contact/?subject=Quero uma palestra"
+                class="inline-flex items-center px-6 py-3 bg-red-900 text-white font-medium rounded-lg hover:bg-red-950 transition-colors"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
                 Agendar palestra
               </a>
             </div>
@@ -84,7 +72,7 @@ const formatDate = (date: string) => {
       {/* Past Talks */}
       {pastTalks.length > 0 && (
         <div>
-          <h3 class="mb-8 text-2xl font-bold text-gray-700">Palestras Anteriores</h3>
+          <h3 class="mb-8 text-2xl font-bold text-red-950">Palestras Anteriores</h3>
           <ul class="list-disc">
             {pastTalks.map((talk) => (
               <li class="flex flex-col mb-6 list-inside">

@@ -1,6 +1,6 @@
 ---
 title: "Reset: Vivendo no ritmo da graça em uma cultura estressada"
-date: 2022-10-15
+publishDate: 2022-10-15
 metadata:
   categories:
     - Indicações

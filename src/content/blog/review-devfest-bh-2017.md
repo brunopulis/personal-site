@@ -1,6 +1,6 @@
 ---
 title: DevFest BH 2017
-date: 2017-11-20
+publishDate: 2017-11-20
 metadata:
   categories:
     - Indicações
