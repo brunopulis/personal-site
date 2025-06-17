@@ -1,6 +1,6 @@
 ---
 title: "QA de acessibilidade: cotidiano e curiosidades"
-date: 2021-08-22
+publishDate: 2021-08-22
 metadata:
   categories:
     - Qualidade de Software

@@ -22,18 +22,17 @@ import pulisLogo from '../assets/logo-h.svg';
 
 <header class="w-full bg-white backdrop-blur-xs z-50 py-6">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" aria-label="Go to homepage">
-      <!-- Elephant Logo SVG -->
+    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" aria-label="Ir para página inicial">
       <img src={pulisLogo.src} class="h-10 w-auto" fetchpriority="high" alt="">
     </a>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <ul class="flex items-center gap-6">
-        <li class="mr-4"><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Blog</a></li>
-        <li class="mr-4"><a href="/speaking" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Palestras</a></li>
-        <li class="mr-4"><a href="/newsletter" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Newsletter</a></li>
-        <li class="mr-4"><a href="/about" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Sobre</a></li>
-        <li class="mr-4"><a href="/contact" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Contato</a></li>
-        <li class="mr-4"><a href="/slashes" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Mais</a></li>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center"  id="menu">
+      <ul class="flex items-center gap-3">
+        <li class="mr-2"><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Blog</a></li>
+        <li class="mr-2"><a href="/speaking" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Palestras</a></li>
+        <li class="mr-2"><a href="/newsletter" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Newsletter</a></li>
+        <li class="mr-2"><a href="/about" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Sobre</a></li>
+        <li class="mr-2"><a href="/contact" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Contato</a></li>
+        <li class="mr-2"><a href="/slashes" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Mais</a></li>
       </ul>
     </nav>
     <!-- <a

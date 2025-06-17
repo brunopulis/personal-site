@@ -1,6 +1,6 @@
 ---
 title: Conhecendo o Web Accessibility Initiative
-date: 2021-11-17
+publishDate: 2021-11-17
 metadata:
   categories:
     - Acessibilidade

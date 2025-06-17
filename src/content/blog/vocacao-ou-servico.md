@@ -1,6 +1,6 @@
 ---
 title: Vocação ou serviço?
-date: 2016-06-08
+publishDate: 2016-06-08
 metadata:
   categories:
     - Teologia

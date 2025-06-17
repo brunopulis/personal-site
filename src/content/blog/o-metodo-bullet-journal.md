@@ -1,6 +1,6 @@
 ---
 title: O método Bullet Journal
-date: 2023-07-25
+publishDate: 2023-07-25
 metadata:
   categories:
     - Indicações

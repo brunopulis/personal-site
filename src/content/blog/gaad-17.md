@@ -1,6 +1,6 @@
 ---
 title: "GAAD: Global Accessibility Awareness Day 17"
-date: 2017-09-11
+publishDate: 2017-09-11
 metadata:
   categories:
     - Indicações

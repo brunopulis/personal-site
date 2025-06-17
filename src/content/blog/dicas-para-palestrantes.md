@@ -1,6 +1,6 @@
 ---
 title: 4 dicas imperdíveis para palestrantes
-date: 2022-01-22
+publishDate: 2022-01-22
 metadata:
   categories:
     - Carreira

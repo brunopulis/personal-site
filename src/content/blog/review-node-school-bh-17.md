@@ -1,6 +1,6 @@
 ---
 title: "Review: Node School BH 17"
-date: 2017-11-15
+publishDate: 2017-11-15
 metadata:
   categories:
     - Indicações

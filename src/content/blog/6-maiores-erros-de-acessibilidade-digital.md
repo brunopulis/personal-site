@@ -1,6 +1,6 @@
 ---
 title: 6 maiores erros de acessibilidade digital
-date: 2020-09-02
+publishDate: 2020-09-02
 draft: false
 category: "Acessibilidade"
 ---

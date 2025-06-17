@@ -1,6 +1,6 @@
 ---
 title: Minas Test Conference 20
-date: 2020-08-22
+publishDate: 2020-08-22
 metadata:
   categories:
     - Indicações

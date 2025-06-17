@@ -1,6 +1,6 @@
 ---
 title: Resenha Acessibilidade na Web
-date: 2020-07-19
+publishDate: 2020-07-19
 metadata:
   categories:
     - Indicações

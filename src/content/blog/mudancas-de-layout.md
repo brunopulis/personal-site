@@ -1,6 +1,6 @@
 ---
 title: Mudanças de layout
-date: 2024-03-19
+publishDate: 2024-03-19
 category: Pessoal
 ---
 Há tempos não estou satisfeito com a aparência visual do meu site. Já pensei e pesquisei diversas referências mas sempre empacava na mesma coisa **perfeccionismo.**

@@ -1,6 +1,6 @@
 ---
 title: Acessibilidade para iniciantes
-date: 2021-05-19
+publishDate: 2021-05-19
 draft: false
 category: "Acessibilidade"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Review: TDC BH 19"
-date: 2019-06-17
+publishDate: 2019-06-17
 metadata:
   categories:
     - Indicações

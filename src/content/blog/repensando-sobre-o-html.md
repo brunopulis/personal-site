@@ -1,6 +1,6 @@
 ---
 title: "HTML Semântico: repensando sobre seu uso"
-date: 2020-04-30
+publishDate: 2020-04-30
 metadata:
   categories:
     - Desenvolvimento web

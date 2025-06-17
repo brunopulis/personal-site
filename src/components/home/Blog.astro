@@ -7,6 +7,21 @@ const allPosts = await getCollection("blog")
 const posts = allPosts
 	.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
 	.slice(0, 3)
+
+function formatDate(date) {
+	const formatter = new Intl.DateTimeFormat("pt-BR", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
+
+  return formatter.format(new Date(date));
+}
+
+function toISOString(dateString: string) {
+  const date = new Date(dateString);
+  return date.toISOString();
+}
 ---
 
 <section class="section py-16">
@@ -52,14 +67,8 @@ const posts = allPosts
 							<li class="inline-block border-b border-gray-200 pb-12">
 								<article class="space-y-5 pt-12">
 									<div class="flex items-center space-x-2 text-sm text-gray-500">
-										<time datetime={new Date(post.data.date).toISOString()}>
-											{
-												new Date(post.data.date).toLocaleDateString("pt-BR", {
-													year: "numeric",
-													month: "long",
-													day: "numeric"
-												})
-											}
+										<time datetime={toISOString(post.data.publishDate)}>
+											{formatDate(post.data.publishDate)}
 										</time>
 										<span>/</span>
 										<span>{post.data.category}</span>

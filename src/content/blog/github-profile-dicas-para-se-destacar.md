@@ -1,6 +1,6 @@
 ---
 title: "GitHub Profile: dicas para se destacar"
-date: 2024-07-07
+publishDate: 2024-07-07
 metadata:
   categories:
     - Carreira

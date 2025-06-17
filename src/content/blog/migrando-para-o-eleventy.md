@@ -1,6 +1,6 @@
 ---
 title: "WordPress vs. Eleventy: Qual é a melhor opção para o seu blog?"
-date: 2022-02-02
+publishDate: 2022-02-02
 metadata:
   categories:
     - Desenvolvimento web

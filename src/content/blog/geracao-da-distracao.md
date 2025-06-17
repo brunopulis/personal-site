@@ -1,6 +1,6 @@
 ---
 title: Geração da distração
-date: 2016-03-07
+publishDate: 2016-03-07
 category: "Teologia"
 canonicalUrl: https://brunopulis.com/geracao-da-distracao/
 tags: ["teologia"]

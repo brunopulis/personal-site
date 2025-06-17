@@ -1,6 +1,6 @@
 ---
 title: Para que serve o atributo lang no HTML?
-date: 2020-01-14
+publishDate: 2020-01-14
 metadata:
   categories:
     - Desenvolvimento web

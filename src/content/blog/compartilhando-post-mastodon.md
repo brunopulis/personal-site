@@ -1,23 +1,17 @@
 ---
 title: Compartilhando post no Mastodon
-date: 2024-09-23
-metadata:
-  categories:
-    - Hoje aprendi
-  tags:
-    - fediverso
-    - indie web
-  url: https://brunopulis.com/compartilhando-post-mastodon/
+publishDate: 2024-09-23
 tags:
-  - hoje-aprendi
+  - fediverso
+  - indie web
+  - til
 ---
+
 ## Introdução
 
 Hoje aprendi uma forma de compartilhar as postagens do seu blog WordPress no Fediverso através do Mastodon.
 
 Vou te ensinar como fazer isso passo a passo, vamos lá?
-
-* * *
 
 Vi essa técnica no blog do [Jens Oliver Meie](https://meiert.com/en/biography/), no artigo [Website Optimization Measures, Part XXVI · Jens Oliver Meiert](https://meiert.com/en/blog/optimization-measures-26/).
 
@@ -51,7 +45,7 @@ Nossa estrutura deve seguir o seguinte padrão:
 
 A estrutura da URL de compartilhamento do Mastodon ficaria da seguinte forma:
 
-```html
+```php
 <a href="https://toot.kytta.dev/?text=<?php the_title(); ?>%20por%20@brunopulis@mastodon.social%3A%0A%0A<?php the_permalink() ?>">Toot</a>
 ```
 
@@ -65,9 +59,3 @@ Você deve ter percebido, que existem uns caracteres estranhos, eles tem funçõ
 
 Pronto, seu post pode ser compartilhado no Mastodon.  
 Gostou dessa dica?
-
-Adoraria seu comentário.
-
-## Me siga no Fediverso
-
-[↬meiert.com/en/blog/optimization-measures-26/](https://meiert.com/en/blog/optimization-measures-26/ "Este post é uma resposta ao conteúdo referenciado.")

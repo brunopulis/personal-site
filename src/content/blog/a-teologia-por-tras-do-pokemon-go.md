@@ -1,6 +1,6 @@
 ---
 title: A teologia por trás do Pokémon Go
-date: 2016-08-13
+publishDate: 2016-08-13
 draft: false
 category: "Teologia"
 ---

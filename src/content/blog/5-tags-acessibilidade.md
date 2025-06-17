@@ -1,6 +1,6 @@
 ---
 title: 5 tags que ajudam na acessibilidade
-date: 2024-09-30
+publishDate: 2024-09-30
 draft: false
 category: "Acessibilidade"
 ---

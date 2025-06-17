@@ -1,87 +1,53 @@
 ---
-import { ArrowRight } from "@lucide/astro";
+import { ChevronRight, ChevronLeft } from "@lucide/astro";
 
-const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
-  Astro.props;
-const paginationList = Array.from({ length: `${length}` }, (_, i) => i + 1);
+interface Props {
+  currentPage: number;
+  lastPage: number;
+  prevUrl: string | undefined;
+  nextUrl: string | undefined;
+}
+
+const { currentPage, lastPage, prevUrl, nextUrl } = Astro.props;
+
+const isPrevDisabled = !prevUrl;
+const isNextDisabled = !nextUrl;
 ---
 
-<nav aria-label="Blog pages" class=" inline-flex -space-x-px rounded-md shadow-xs">
-  <ul>
+<nav aria-label="Navegação entre páginas" class="mt-8 flex items-center justify-center gap-4">
+  <a
+    href={prevUrl}
+    class:list={[
+      'inline-flex items-center px-4 py-2 rounded-lg border transition-colors',
+      {
+        'border-gray-300 text-gray-700 hover:bg-gray-100': !isPrevDisabled,
+        'border-gray-200 text-gray-400 cursor-not-allowed': isPrevDisabled,
+      },
+    ]}
+    aria-disabled={isPrevDisabled}
+    tabindex={isPrevDisabled ? -1 : undefined}
+  >
+    <ChevronLeft class="h-5 w-5 mr-2" />
+    Anterior
+  </a>
 
-  
-  {
-    firstUrl == currentUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-left" />
-        <i class="pi-angle-left" />
-      </span>
-    ) : (
-      <a
-        href={firstUrl}
-        class="flex h-10 w-10 items-center justify-center bg-blue-800 text-sm font-semibold text-white hover:bg-blue-600"
-      >
-        <i class="pi-angle-left" />
-        <i class="pi-angle-left" />
-      </a>
-    )
-  }
+  <span class="text-sm font-medium text-gray-700">
+    Página {currentPage} de {lastPage}
+  </span>
 
-  {
-    prevUrl ? (
-      <a
-        href={prevUrl}
-        class="flex h-10 w-10 items-center justify-center bg-blue-800 text-sm font-semibold text-white hover:bg-blue-600"
-      >
-        <i class="pi-angle-left" />
-      </a>
-    ) : (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-left" />
-      </span>
-    )
-  }
+  <a
+    href={nextUrl}
+    class:list={[
+      'inline-flex items-center px-4 py-2 rounded-lg border transition-colors',
+      {
+        'border-gray-300 hover:bg-gray-100': !isNextDisabled,
+        'border-gray-200 text-gray-400 cursor-not-allowed': isNextDisabled,
+      },
+    ]}
+    aria-disabled={isNextDisabled}
+    tabindex={isNextDisabled ? -1 : undefined}
+  >
+    Próximo
 
-  {
-    paginationList.map(num => (
-      <a
-        href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
-        class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}
-      >
-        {num}
-      </a>
-    ))
-  }
-
-  {
-    !nextUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-right" />
-      </span>
-    ) : (
-      <a
-        href={nextUrl}
-        class="flex h-10 w-10 items-center justify-center bg-blue-800 text-sm font-semibold text-white hover:bg-blue-600"
-      >
-        <i class="pi-angle-right" />
-      </a>
-    )
-  }
-
-  {
-    lastUrl == currentUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-right" />
-        <i class="pi-angle-right" />
-      </span>
-    ) : (
-      <a
-        href={lastUrl}
-        class="flex h-10 w-10 items-center justify-center bg-red-900 text-sm font-semibold text-white hover:bg-red-950"
-      >
-        <ArrowRight class="h-10 w-10 bg-red-950" />
-      </a>
-    )
-  }
-  </ul>
-</nav>
+    <ChevronRight class="h-5 w-5 ml-2" />
+  </a>

@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import TagsList from '@/components/TagsList.astro';
+import { getAllTags } from '@/content/blog/_schema';
+
+const tags = await getAllTags();
+---
+
+<Layout>
+  <h1>Lista de Tags</h1>
+  <TagsList tags={tags} />
+</Layout>
