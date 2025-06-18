@@ -2,12 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import HeroSection from "@/components/HeroSection.astro";
-import Search from "pagefind";
 import Footer from "@/components/Footer.astro";
 
 export const prerender = false;
-
-const q = Astro.url.searchParams.get("q") ?? undefined;
 ---
 
 <Layout
@@ -38,10 +35,3 @@ const q = Astro.url.searchParams.get("q") ?? undefined;
 
   <Footer />
 </Layout>
-
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    // @ts-ignore
-    new PagefindUI({ element: "#search", showSubResults: true });
-  });
-</script>

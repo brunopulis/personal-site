@@ -6,14 +6,6 @@ import Footer from "@/components/Footer.astro";
 
 import books from "@/data/books.json";
 
-interface Book {
-  title: string;
-  author: string;
-  date: string;
-  rating: 1 | 2 | 3 | 4 | 5;
-  year: number;
-}
-
 // Agrupar livros por ano
 const booksByYear = books.reduce(
   (acc, book) => {
@@ -27,11 +19,6 @@ const booksByYear = books.reduce(
   {} as Record<number, typeof books>
 );
 
-const formattedDate = new Date(books.date).toLocaleDateString("pt-BR", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
 
 // Ordenar anos em ordem decrescente
 const years = Object.keys(booksByYear)

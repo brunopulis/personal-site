@@ -11,9 +11,8 @@ import { Blog, Client, Comment, Author, CheckResult } from "@cedx/akismet";
 if (Astro.request.method === "POST") {
   // Setup Akismet client
   const blog = new Blog({
-    url: "https://brunopulis.com/",
+    url: "https://brunopulis.com/"
     // Remove qualquer dependência do navigator
-    userAgent: "Astro/1.0"
   });
 
   const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
@@ -71,7 +70,7 @@ if (Astro.request.method === "POST") {
 }
 
 // @ts-ignore
-function handleError(error) {
+function handleError(error: { message: any; }) {
   if (typeof error === "string" || typeof error === "object") {
     const message = error instanceof Error ? error.message : String(error);
     console.log(`An error occurred: ${message}`);
@@ -94,7 +93,7 @@ const guestBook = await db.select().from(GuestBook);
       <div class="grid md:grid-cols-3 gap-8">
         {
           guestBook
-            .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+            .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
             .map(({ author, content, timestamp }) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div class="p-6">
@@ -146,18 +145,4 @@ const guestBook = await db.select().from(GuestBook);
 </Layout>
 <Footer />
 
-<script>
-  // Código que precisa do navigator roda apenas no browser
-  function getBrowserInfo() {
-    if (typeof navigator !== 'undefined') {
-      return {
-        userAgent: navigator.userAgent,
-        language: navigator.language
-      };
-    }
-    return {
-      userAgent: '',
-      language: 'pt-BR'
-    };
-  }
-</script>
+

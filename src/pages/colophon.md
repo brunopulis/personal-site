@@ -1,15 +1,10 @@
 ---
-layout: '@/layouts/Layout.astro';
-title: "Colophon"
-date: "2024-03-10"
+"layout": '@/layouts/Layout.astro'
+"title": "Colophon"
+"date": "2024-03-10"
 ---
 
----
-title: Colophon
-layout: 'layouts/base.njk'
----
-
-# Colophon
+## Colophon
 
 Criei essa página para mostrar o meu setup e tecnologias usadas no site.
 
@@ -17,6 +12,7 @@ Criei essa página para mostrar o meu setup e tecnologias usadas no site.
 > 2 : uma marca de identificação usada por uma gráfica ou uma editora
 
 ## Sobre o site
+
 * Hospedagem: Hospeda.app;
 * HTTPS certificate: Let’s Encrypt;
 * Tecnologia: WordPress;
@@ -28,6 +24,7 @@ Criei essa página para mostrar o meu setup e tecnologias usadas no site.
 ## Meu setup
 
 ### Mesa, Cadeira & Monitor 🪑
+
 * Mesa de escritório feita sob medida;
 * Flexform Roller White;
 * Monitor Acer CB272 B 27.0″ 1920×1080 75 Hz
@@ -40,6 +37,7 @@ Criei essa página para mostrar o meu setup e tecnologias usadas no site.
 * Mouse: LED Ergonômico 1600dpi 6 botões – PC e Laptop – Verto Mouse 22885 – Trust
 
 ### Fones de Ouvido 🎧
-* Edifier W820NB 
+
+* Edifier W820NB
 
 ### Periféricos
