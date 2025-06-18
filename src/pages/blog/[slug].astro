@@ -3,10 +3,7 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import BlogSection from "@/components/BlogSection.astro";
-import ShareArticle from "@/components/ShareArticle.astro";
 import Footer from "@/components/Footer.astro";
-import Webmention from "@/components/common/Webmention.astro";
 import { slugify } from "@/utils/common-utils";
 
 // Gerar rotas para todos os posts
@@ -26,7 +23,6 @@ type Props = {
 };
 
 // Receber o post das props
-const { href } = Astro.url;
 const { post } = Astro.props;
 const { Content } = await render(post);
 

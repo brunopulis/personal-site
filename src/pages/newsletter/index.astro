@@ -14,7 +14,7 @@ const sortedPosts = letters.sort((a, b) => {
 	return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
 })
 
-function formatDate(date: Date, locale) {
+function formatDate(date: Date, locale: Intl.LocalesArgument) {
   return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
@@ -44,7 +44,7 @@ function formatDate(date: Date, locale) {
 
 					<div class="space-y-6">
 						{
-							sortedPosts.map((letter, index) => (
+							sortedPosts.map((letter) => (
 								<div class="group cursor-pointer">
 									<div class="flex items-start gap-4 rounded-lg p-4 transition-all duration-200 hover:bg-white hover:shadow-md">
 										<div class="flex flex-col items-center">
@@ -58,11 +58,7 @@ function formatDate(date: Date, locale) {
 												</a>
 											</h2>
 											<time class="mt-1 text-sm text-gray-500" datetime="">
-												{new Date(letter.data.date).toLocaleDateString('pt-BR', {
-													year: 'numeric',
-													month: 'long',
-													day: 'numeric'
-												})}
+												{formatDate(new Date(letter.data.date), "pt-BR")}
 											</time>
 										</div>
 										<ArrowRight />

@@ -1,9 +1,4 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header.astro'
-import Footer from '@/components/Footer.astro'
-import HeroSection from '@/components/HeroSection.astro'
-
 const faqs = [
   {
     question: "O que é a remediação de documentos?",
@@ -35,10 +30,18 @@ const faqs = [
 <section class="bg-white py-16 dark:bg-gray-800">
 	<div class="container mx-auto">
 		<div class="mx-auto max-w-4xl">
-      {
-        faqs.map((faq, index) => (
-        )
-      )}
+	  {
+		faqs.map((faq, index) => (
+		  <div class="card border border-gray-200 p-6 dark:border-gray-700" key={index}>
+			<h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
+			  {faq.question}
+			</h3>
+			<p class="text-gray-600 dark:text-gray-300">
+			  {faq.answer}
+			</p>
+		  </div>
+		))
+	  }
 			<!-- FAQ Categories Navigation -->
 			<div class="mb-12 flex flex-wrap justify-center gap-4">
 				<a

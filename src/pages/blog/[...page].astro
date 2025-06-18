@@ -32,7 +32,7 @@ console.log(blog);
 // const pathname = new URL(Astro.request.url).pathname.split("/");
 // const firstPath = pathname[1];
 
-function formatDate(date) {
+function formatDate(date: string | number | Date) {
   const formatter = new Intl.DateTimeFormat("pt-BR", {
     year: "numeric",
     month: "long",
@@ -68,7 +68,7 @@ function toISOString(dateString: string) {
               <li class="group mb-10 flex items-start justify-between gap-8 sm:mb-12">
                 <article class="space-y-5 pt-12">
                   <div class="space-x-2 text-sm text-gray-500">
-                    <time datetime={toISOString(post.data.publishDate)}>
+                    <time datetime={toISOString(String(post.data.publishDate))}>
                       {formatDate(post.data.publishDate)}
                     </time>
                     <span>/</span>

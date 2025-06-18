@@ -1,13 +1,6 @@
 ---
-import { Image } from 'astro:assets'
-import { Code2, Users2, Presentation, FileText, CheckCircle } from '@lucide/astro'
+import { CheckCircle } from '@lucide/astro'
 
-const iconComponents = {
-	Code2,
-	Users2,
-	Presentation,
-	FileText
-}
 
 const services = [
 	{
@@ -61,7 +54,7 @@ const services = [
 	<div class="container-custom mx-auto px-4">
 		<div class="grid gap-4 md:grid-cols-3">
 			{
-				services.map((service, index) => {
+				services.map((service) => {
 					return (
 						<div class="card border border-gray-200 p-6 dark:border-gray-700">
 							<h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">

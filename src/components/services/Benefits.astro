@@ -68,17 +68,17 @@ const benefits = [
           const IconComponent = iconComponents[benefit.icon]
 
 					return (
-            <div key={index} class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div class="flex items-start">
-                <IconComponent
-                  aria-hidden="true"
-                  class={`h-9 w-9 text-${benefit.color}-600  flex-shrink-0 mr-4 text-center dark:text-${benefit.color}-400`}
-                />
-                <div>
-                  <h3 class="text-xl font-bold mb-2 text-gray-800">{benefit.title}</h3>
-                  <p class="text-gray-600">{benefit.description}</p>
-                </div>
-              </div>
+			<div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+			  <div class="flex items-start">
+				<IconComponent
+				  aria-hidden="true"
+				  class="h-9 w-9 text-teal-600 flex-shrink-0 mr-4 text-center dark:text-teal-400"
+				/>
+				<div>
+				  <h3 class="text-xl font-bold mb-2 text-gray-800">{benefit.title}</h3>
+				  <p class="text-gray-600">{benefit.description}</p>
+				</div>
+			  </div>
 					  </div>
           )
         })
