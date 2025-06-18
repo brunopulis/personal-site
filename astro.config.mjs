@@ -12,12 +12,16 @@ import mdx from '@astrojs/mdx';
 import umami from "@yeskunall/astro-umami";
 import robotsTxt from 'astro-robots-txt';
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
   site: "https://brunopulis.com",
+
   integrations: [
     react(),
     db(),
@@ -33,7 +37,10 @@ export default defineConfig({
     umami({ id: "f1cb7c07-2efc-4997-9dd3-d3198f0faa0c" }),
     robotsTxt()
   ],
+
   markdown:{
     rehypePlugins: [sectionize],
   },
+
+  adapter: netlify(),
 });
