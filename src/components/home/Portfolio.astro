@@ -23,7 +23,12 @@ const projectImages = {
 };
 
 // Função auxiliar para garantir que a imagem existe
-const getImageSource = (imageName) => {
+const getImageSource = (imageName: string | number | undefined) => {
+  if (typeof imageName !== "string") {
+    console.warn(`Nome da imagem inválido: ${imageName}`);
+    return "/public/images/fallback.webp";
+  }
+
   const image = projectImages[imageName];
 
   if (!image) {
@@ -36,7 +41,6 @@ const getImageSource = (imageName) => {
 };
 
 const latestProjects = projects.projects
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
   .slice(0, 3);
 ---
 
@@ -55,7 +59,7 @@ const latestProjects = projects.projects
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <Image
                 src={imageSource}
-                alt={`Foto de ${project.name}`}
+                alt={`Foto de ${project.title}`}
                 class="w-full h-48 object-cover"
                 width={300}
                 height={300}
@@ -69,7 +73,7 @@ const latestProjects = projects.projects
                     </span>
                   ))}
                 </div>
-                <a href={project.links.url} class="cursor-pointer inline-flex items-center gap-2 text-blood-red hover:underline hover:underline-offset-8 font-semibold transition-colors">
+                <a href={project.links[0]?.url} class="cursor-pointer inline-flex items-center gap-2 text-blood-red hover:underline hover:underline-offset-8 font-semibold transition-colors">
                   Ver detalhes
                   <ExternalLink class="h-4 w-4" />
                 </a>
