@@ -4,9 +4,13 @@ interface Props {
 	highlightText?: string
 	description?: string
 	timestamp?: string
+	button?: {
+		text: string
+		href: string
+	}
 }
 
-const { title, highlightText, description, timestamp } = Astro.props
+const { title, highlightText, description, timestamp, button } = Astro.props
 
 // Split the title to insert the highlighted text if provided
 let titleStart = title
@@ -21,15 +25,15 @@ if (highlightText) {
 }
 ---
 
-<section class="body-font bg-red-950 text-white">
-	<div
-		class="container mx-auto flex flex-col items-center px-5 py-12 md:flex-row"
-	>
-		<div
-			class="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24"
-		>
-			<h1 class="title-font mb-4 text-3xl font-medium sm:text-4xl">
-				{
+<section class="body-font">
+	<div class="container px-5 mx-auto">
+		<div class="-mx-4 flex flex-wrap items-center">
+			<div class="w-full px-4 md:w-8/12 lg:w-7/12">
+				<div class="mb-8 max-w-[570px] md:mb-0 lg:mb-12">
+					<h1
+						class="mb-5 title-font text-3xl font-medium sm:text-4xl"
+					>
+						{
 					highlightText ? (
 						<>
 							{titleStart}
@@ -40,13 +44,13 @@ if (highlightText) {
 						title
 					)
 				}
-			</h1>
-			<p class="mb-3 text-lg leading-relaxed font-light" style="animation-delay: 200ms">
-				{description}
-			</p>
-			<time class="text-white" datetime={timestamp}>
-				{timestamp}
-			</time>
+					</h1>
+					<p
+						class="text-body-color text-base text- leading-relaxed font-medium"
+					>
+						{description}
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
-</section>

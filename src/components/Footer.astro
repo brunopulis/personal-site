@@ -6,6 +6,7 @@ import { ExternalLink } from "@lucide/astro";
 import me from "@/assets/palestras.webp";
 import writtenByHuman from "@/assets/written-by-human.svg";
 import config from "@/data/site.config.json";
+import BackToTop from "@/components/ui/BackToTop.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -298,3 +299,4 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 </footer>
+<BackToTop />

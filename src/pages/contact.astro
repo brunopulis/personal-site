@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
+import HeroSection from "@/components/HeroSection.astro";
 import ContactForm from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
 ---
@@ -8,35 +9,10 @@ import Footer from "@/components/Footer.astro";
 <Layout title="Contato - Bruno Pulis">
   <Header />
   <main>
-    <!-- <HeroSection
-    title="Blog"
-    description="Compartilhando conhecimento sobre desenvolvimento, acessibilidade e qualidade de software."
-  /> -->
-    <section class="body-font bg-red-950 text-white">
-      <div
-        class="container mx-auto flex flex-col items-center px-5 py-12 md:flex-row"
-      >
-        <div
-          class="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24"
-        >
-          <h1 class="title-font mb-4 text-3xl font-medium sm:text-4xl">
-            Contato
-          </h1>
-          <p class="mb-3 text-lg leading-relaxed font-light">
-            Se você está olhando para otimizar o desempenho do seu site,
-            construir algo novo, ou me convidar para falar ou colaborar, eu
-            adoraria ouvir de você.
-          </p>
-          <p class="mb-3 text-lg leading-relaxed font-light">
-            Eu trabalho melhor com equipes que valorizam
-            a clareza, a criatividade e fazer as coisas direito.
-          </p>
-          <p class="mb-3 text-lg leading-relaxed font-bold">
-            Tem um projeto em mente? Vamos nos conectar.
-          </p>
-        </div>
-      </div>
-    </section>
+    <HeroSection
+      title="Contato"
+      description="Compartilhando conhecimento sobre desenvolvimento, acessibilidade e qualidade de software."
+    />
     <ContactForm />
   </main>
   <Footer />

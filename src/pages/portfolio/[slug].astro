@@ -3,7 +3,6 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import ShareArticle from "@/components/ShareArticle.astro";
 import Footer from "@/components/Footer.astro";
 import { slugify } from "@/utils/common-utils";
 
@@ -38,6 +37,9 @@ const formattedDate = new Date(post.data.publishDate).toLocaleDateString(
 );
 
 const isoDate = new Date(post.data.publishDate).toISOString();
+
+// single portfolio page
+// https://juanfernandes.uk/work/neg/
 ---
 
 <Layout

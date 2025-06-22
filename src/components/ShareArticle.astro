@@ -1,11 +1,19 @@
 ---
+import { Mail } from "@lucide/astro";
 ---
 
       <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <h3 class="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-            Share this article
+            Me responda por
           </h3>
           <div class="flex space-x-4">
+            <a
+              href={``}
+              class="p-2 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/50 dark:hover:text-primary-400 transition-colors"
+              aria-label="Compartilhar por e-mail"
+            >
+              <Mail class="w-5 h-5" />
+            </a>
             <a
               href="#"
               class="p-2 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/50 dark:hover:text-primary-400 transition-colors"

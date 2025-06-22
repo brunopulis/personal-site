@@ -1,0 +1,243 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import HeroSection from "@/components/HeroSection.astro";
+import Footer from "@/components/Footer.astro";
+
+import {
+  FileText,
+  FilePlus,
+  FileSearch,
+  FileCheck,
+  PersonStanding,
+  Code,
+  Presentation,
+  ClipboardList,
+  Microscope,
+  Wrench,
+  CheckCircle,
+} from "@lucide/astro";
+
+const iconComponents = {
+  FileText,
+  FilePlus,
+  FileSearch,
+  FileCheck,
+  ClipboardList,
+  Microscope,
+  Wrench,
+  CheckCircle,
+};
+
+const services = [
+  {
+    icon: "FileText",
+    title: "Remediação de Documentos",
+    description:
+      "Transformamos seus documentos existentes para que sejam totalmente acessíveis, permitindo que pessoas com deficiência possam acessar todas as informações.",
+  },
+  {
+    icon: "FileSearch",
+    title: "Auditoria de Acessibilidade",
+    description:
+      "Analisamos seus documentos atuais e fornecemos um relatório detalhado sobre os problemas de acessibilidade encontrados.",
+  },
+  {
+    icon: "FilePlus",
+    title: "Criação de Modelos Acessíveis",
+    description:
+      "Desenvolvemos modelos de documentos personalizados e acessíveis que sua equipe pode usar para criar novos conteúdos.",
+  },
+  {
+    icon: "FileCheck",
+    title: "Certificação de Conformidade",
+    description:
+      "Emitimos certificados comprovando que seus documentos estão em conformidade com as diretrizes de acessibilidade.",
+  },
+];
+
+const process = [
+  {
+    icon: "ClipboardList",
+    title: "Avaliação Inicial",
+    description:
+      "Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.",
+  },
+  {
+    icon: "Microscope",
+    title: "Diagnóstico",
+    description:
+      "Elaboração de um relatório completo indicando os pontos que necessitam de remediação.",
+  },
+  {
+    icon: "Wrench",
+    title: "Remediação",
+    description:
+      "Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.",
+  },
+  {
+    icon: "CheckCircle",
+    title: "Validação",
+    description:
+      "Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.",
+  },
+];
+---
+
+<Layout title="Serviços - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection
+      title="Serviços"
+      description="Soluções completas para tornar sua presença digital mais acessível, desde o desenvolvimento até a consultoria e treinamento."
+    />
+    <section class="py-10">
+      <div class="container mx-auto px-5">
+        <div class="mb-6 grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900">
+              Por que me contratar?
+            </h2>
+            <p class="mb-4 text-gray-900">
+              Tenho especialidade em auditorias técnicas de acessibilidade digital e desenvolvimento de sites.
+              Já ajudei empresas de
+              pequeno e grande porte a tornarem suas jornadas para todas as pessoas.
+            </p>
+
+             <p class="mb-4 text-gray-900">
+              Também posso corrigir problemas específicos de acessibilidade, corrigir documentos digitais.
+            </p>
+
+            <a
+              href="/about"
+              class="text-gray-900 underline underline-offset-8 hover:text-red-950 hover:underline"
+              >Saiba mais sobre mim</a
+            >
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <div class="grid items-center gap-12 md:grid-cols-2">
+            <div>
+              <h2 class="mb-6 text-3xl font-bold text-gray-900">
+                Resumo dos meus serviços
+              </h2>
+
+              <p class="mb-4 text-gray-900">
+                Meu trabalho principal é ajudar os clientes a melhorar a
+                acessibilidade de suas aplicações - desde auditorias,
+                correções e até a implementação.
+              </p>
+              <p class="mb-4 text-gray-900">Para clientes selecionados,
+                também estou disponível para desenvolvimento web full-stack
+                tradicional. Os serviços que posso te ajudar</p>
+            </div>
+          </div>
+
+          <div class="grid gap-12 py-20 md:grid-cols-4">
+            <article>
+              <Code class="w-10 h-10 text-red-950 mb-4" />
+              <h3 class="mb-2 text-xl font-bold text-red-950">
+                Desenvolvimento web
+              </h3>
+              <ul class="list-disc py-4">
+                <li class="list-inside mb-2 text-gray-900">
+                  Sites institucionais
+                </li>
+                <li class="list-inside mb-2 text-gray-900">
+                  Páginas de vendas
+                </li>
+                <li class="list-inside mb-2 text-gray-900">
+                  Sistemas personalizados
+                </li>
+              </ul>
+              <a
+                href="/contact?subject=Solicitação de serviço de desenvolvimento"
+                class="text-errie-black hover:noderline inline-flex items-center gap-2 font-semibold underline underline-offset-8 transition-colors hover:text-red-950"
+              >
+                Serviços de desenvolvimento
+              </a>
+            </article>
+
+            <article>
+              <PersonStanding class="w-10 h-10 text-red-950 mb-4" />
+              <h3 class="mb-2 text-xl font-bold text-red-950">Acessibilidade</h3>
+              <ul class="list-disc py-4">
+                <li class="list-inside mb-2 text-gray-900">
+                  Auditoria de acessibilidade
+                </li>
+                 <li class="list-inside mb-2 text-gray-900">
+                  Testes de acessibilidade
+                </li>
+                <li class="list-inside mb-2 text-gray-900">
+                  Correção de documentos
+                </li>
+                <li class="list-inside mb-2 text-gray-900">
+                  Consultoria
+                </li>
+              </ul>
+              <a
+                href="/contact?subject=Solicitação de serviço acessibilidade"
+                class="text-errie-black hover:noderline inline-flex items-center gap-2 font-semibold underline underline-offset-8 transition-colors hover:text-red-950"
+              >
+                Serviços de acessibilidade
+              </a>
+            </article>
+
+            <article>
+              <Presentation class="w-10 h-10 text-red-950 mb-4" />
+              <h3
+                class="mb-2 text-xl font-bold text-red-950"
+              >
+                Palestras e Workshops
+              </h3>
+              <ul class="list-disc py-4">
+                <li class="list-inside text-gray-900 mb-2">
+                  Conferência e palestras corporativas
+                </li>
+                <li class="list-inside text-gray-900 mb-2">
+                  Workshops virtuais e presenciais
+                </li>
+                <li class="list-inside text-gray-900 mb-2">
+                  Mentoria para desenvolvedores
+                </li>
+                <li class="list-inside text-gray-900 mb-2">
+                  Consultoria para desenvolvedores
+                </li>
+              </ul>
+              <a
+                href="/contact?subject=Solicitação de serviço de palestras e workshops"
+                class="text-errie-black hover:noderline inline-flex items-center gap-2 font-semibold underline underline-offset-8 transition-colors hover:text-red-950"
+              >
+                Serviços de palestras e workshops
+              </a>
+            </article>
+          </div>
+        </div>
+
+        <div class="py-20 mb-6">
+          <h2 class="mb-6 text-3xl font-bold text-gray-900">
+            Como trabalho
+          </h2>
+          <div class="grid gap-12 md:grid-cols-4">
+            {
+              process.map((service) => {
+                const IconComponent = iconComponents[service.icon];
+                return (
+                  <article class="">
+                    <IconComponent class="w-10 h-10 text-red-950 mb-4" />
+                    <h3 class="mb-2 text-xl font-bold text-red-950">
+                      {service.title}
+                    </h3>
+                    <p class="text-gray-900">{service.description}</p>
+                  </article>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

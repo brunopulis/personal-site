@@ -5,11 +5,9 @@ import Footer from '@/components/Footer.astro'
 import HeroSection from '@/components/HeroSection.astro'
 import Newsletter from '@/components/Newsletter.astro'
 
-import { ArrowRight } from '@lucide/astro'
 import { getCollection } from 'astro:content'
 
 const letters = await getCollection('newsletter')
-
 const sortedPosts = letters.sort((a, b) => {
 	return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
 })
@@ -30,23 +28,21 @@ function formatDate(date: Date, locale: Intl.LocalesArgument) {
 	<Header />
 	<main>
 		<HeroSection
-			title="Pulis Letters"
-			description="Cartas semanais para deixar você um desenvolvedor mais inteligente."
+			title="Filtro Digital"
+			description="Semanalmente, filtramos o que realmente importa em acessibilidade, qualidade de software e organização digital"
 		/>
-		
-		<div class="container mx-auto px-5 py-6 md:p-8">
+		<div class="container mx-auto px-5">
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-				<!-- Main Content -->
 				<div class="lg:col-span-2">
 					<h2 class="mb-8 text-4xl font-bold leading-tight text-gray-900 md:text-5xl">
 						Edições anteriores
 					</h2>
 
-					<div class="space-y-6">
+					<div class="space-y-6 mb-5">
 						{
 							sortedPosts.map((letter) => (
 								<div class="group cursor-pointer">
-									<div class="flex items-start gap-4 rounded-lg p-4 transition-all duration-200 hover:bg-white hover:shadow-md">
+									<div class="flex items-start gap-4">
 										<div class="flex flex-col items-center">
 											<span class="text-lg font-medium text-brand-500">#{letter.data.issue}</span>
 											<div class="mt-1 h-1 w-12 bg-brand-500" />
@@ -61,7 +57,6 @@ function formatDate(date: Date, locale: Intl.LocalesArgument) {
 												{formatDate(new Date(letter.data.date), "pt-BR")}
 											</time>
 										</div>
-										<ArrowRight />
 									</div>
 								</div>
 							))
