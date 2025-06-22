@@ -1,30 +1,11 @@
 ---
-import pulisLogo from '../assets/logo-h.svg';
+import Logo from "@/components/ui/Logo.astro";
+import Navigation from "@/components/ui/Navigation.astro";
 ---
 
-<header class="w-full bg-white backdrop-blur-xs z-50 py-6">
+<header class="w-full bg-white backdrop-blur-xs z-50 py-6" id="start">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" aria-label="Ir para página inicial">
-      <img src={pulisLogo.src} class="h-10 w-auto" fetchpriority="high" alt="">
-    </a>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center"  id="menu">
-      <ul class="flex items-center gap-3">
-        <li class="mr-2"><a href="/blog" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Blog</a></li>
-        <li class="mr-2"><a href="/speaking" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Palestras</a></li>
-        <li class="mr-2"><a href="/newsletter" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Newsletter</a></li>
-        <li class="mr-2"><a href="/about" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Sobre</a></li>
-        <li class="mr-2"><a href="/contact" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Contato</a></li>
-        <li class="mr-2"><a href="/slashes" class="text-errie-black text-[20px] font-light hover:underline underline-offset-8">Mais</a></li>
-      </ul>
-    </nav>
-    <!-- <a
-        href="/search"
-        class="inline-flex items-center rounded-4xl bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"
-        aria-label="Ir para página de pesquisa"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </a> -->
+    <Logo />
+    <Navigation />
   </div>
 </header>

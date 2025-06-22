@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import HeroSection from '@/components/HeroSection.astro';
+---
+
+<Layout title="O que estou fazendo agora - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection
+      title="Agora"
+      description="Última atualização: Junho 22, 2025"
+    />
+
+    <section class="py-16">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto prose dark:prose-invert prose-headings:font-display prose-headings:font-semibold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-lg">
+          <p class="lead">
+            Essa página foi inspirado no trabalho de <a href="sive.rs">Derek Sivers</a> que você pode conferir em <a href="https://nownownow.com">nownownow</a>. 
+            O objetivo é mostrar no que estou focado no momento.
+          </p>
+          <p>Esse site passou por atualizações recentes e é um trabalho em andamento.</p>
+
+          <ul class="list-disc">
+            <li class="list-inline">Tentando ser um discípulo mais consciente;</li>
+            <li class="list-inline">Retornando a leitura diária da Bíblia e devocionais;</li>
+            <li class="list-inline">Tentando ser uma pessoa menos estressada;</li>
+            <li class="list-inline">Tentando ser um marido melhor;</li>
+            <li class="list-inline">Reorganizando meu site;</li>
+            <li class="list-inline">Vivendo em BH.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

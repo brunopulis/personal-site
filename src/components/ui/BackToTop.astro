@@ -2,20 +2,16 @@
 import { ArrowUp } from "@lucide/astro";
 ---
 
+<div class="fixed right-8 bottom-8 z-[99]">
+  <div
+    class="bg-red-950 hover:bg-opacity-80 hover:shadow-signUp flex h-10 w-10 cursor-pointer items-center justify-center rounded-md text-white shadow-md transition duration-300 ease-in-out"
+  >
+    <a href="#start" id="back-to-top" aria-label="Ir para o topo">
+      <ArrowUp class="h-5 w-5" />
+    </a>
+  </div>
+</div>
 
-<a href="#start" id="back-to-top" aria-label="Ir para o topo">
-  <ArrowUp class="w-5 h-5" />
-</a>
-
-<style>
-  a {
-    background: var(--color-green);
-    border-radius: var(--border-radius);
-    bottom: var(--space-xs);
-    position: fixed;
-    right: var(--space-xs);
-  }
-</style>
 
 <script>
   const backToTopLink = document.getElementById("back-to-top");

@@ -1,6 +1,7 @@
 ---
 import config from "@/data/site.config.json";
 import testimonials from "@/data/testimonials.json";
+import speaking from "@/assets/palestra.webp";
 
 import Layout from "@/layouts/Layout.astro"
 import Header from "@/components/Header.astro"
@@ -42,6 +43,16 @@ const talkTestimonials = testimonials.testimonials.filter(
 							necessidades do usuário.
 						</p>
 					</div>
+					<div>
+            <img
+              src={speaking.src}
+              alt="Bruno Pulis em uma palestra"
+              class="w-full rounded-lg shadow-lg"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+          </div>
 				</div>
 
 				<div class="mb-12">

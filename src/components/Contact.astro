@@ -45,7 +45,7 @@
                 id="email"
                 x-model="email"
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                placeholder="Your email"
+                placeholder="Seu email"
               />
               <p
                 class="mt-1 text-sm text-red-500"
@@ -65,6 +65,7 @@
                 type="text"
                 id="subject"
                 name="subject"
+                value=""
                 x-model="subject"
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu assunto"
@@ -88,9 +89,9 @@
                 x-model="message"
                 rows="5"
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                placeholder="Your message"></textarea>
+                placeholder="Sua mensagem"></textarea>
               <p
-                class="mt-1 text-sm text-red-500"
+                class="mt-1 text-sm text-red-700"
                 x-show="errors.message"
                 x-text="errors.message"
               >
@@ -100,7 +101,7 @@
             <div x-show="!submitted">
               <button
                 type="submit"
-                class="btn-primary w-full"
+                class="btn-primary text-white w-full"
               >
                 Enviar
               </button>
@@ -142,3 +143,11 @@
     </div>
   </div>
 </section>
+
+<script is:inline>
+  const params = new URLSearchParams(window.location.search.substring(1))
+  const subject = params.get('subject')
+
+  const subjectInput = document.querySelector('#subject');
+  subjectInput.value = subject;
+</script>

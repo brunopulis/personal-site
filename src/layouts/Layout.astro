@@ -1,10 +1,10 @@
 ---
-import { ClientRouter } from 'astro:transitions';
-import BasicScripts from '@/components/BasicScripts.astro';
-import '@fontsource-variable/source-sans-3';
+import { ClientRouter } from "astro:transitions";
+import BasicScripts from "@/components/BasicScripts.astro";
+import "@fontsource-variable/source-sans-3";
 
-import '@/styles/global.css';
-import '@/styles/transitions.css';
+import "@/styles/global.css";
+import "@/styles/transitions.css";
 
 export interface Props {
   title: string;
@@ -13,7 +13,7 @@ export interface Props {
 
 const {
   title,
-  description = "Modern SaaS landing page template with responsive design and modular sections."
+  description = "Modern SaaS landing page template with responsive design and modular sections.",
 } = Astro.props;
 ---
 
@@ -26,14 +26,32 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
     <script src="/pagefind/pagefind-ui.js" is:inline></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <ClientRouter />
   </head>
-  <body class="antialiased bg-white dark:bg-secondary-950 text-secondary-900 dark:text-secondary-100 transition-colors duration-300">
+  <body class="text-secondary-900 text-[20px]  bg-white antialiased">
+    <div
+      id="promo-banner"
+      class="mb-6 bg-gray-800 px-4 py-2 text-white shadow-md"
+    >
+      <div
+        class="container mx-auto flex flex-col flex-wrap items-center justify-between gap-2 sm:flex-row"
+      >
+        <div class="banner-content flex items-center">
+          <p class="banner-text text-center text-sm">
+            Esse site está em processo de refatoração e redesign. Então se algo
+            estiver quebrado, é por causa disso.
+          </p>
+        </div>
+      </div>
+    </div>
     <slot />
 
     <BasicScripts />
