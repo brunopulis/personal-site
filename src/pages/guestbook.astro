@@ -1,85 +1,85 @@
 ---
-export const prerender = false
+// export const prerender = false
 
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import HeroSection from "@/components/HeroSection.astro";
 
-import { db, GuestBook } from "astro:db";
-import { Blog, Client, Comment, Author, CheckResult } from "@cedx/akismet";
+// import { db, GuestBook } from "astro:db";
+// import { Blog, Client, Comment, Author, CheckResult } from "@cedx/akismet";
 
 // Watch for POST requests
-if (Astro.request.method === "POST") {
-  // Setup Akismet client
-  const blog = new Blog({
-    url: "https://brunopulis.com/"
-    // Remove qualquer dependência do navigator
-  });
+// if (Astro.request.method === "POST") {
+//   // Setup Akismet client
+//   const blog = new Blog({
+//     url: "https://brunopulis.com/"
+//     // Remove qualquer dependência do navigator
+//   });
 
-  const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
+//   const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
 
-  // Parse form data
-  let formData = await Astro.request.formData();
-  let author = formData.get("author");
-  let special = formData.get("special");
-  let content = formData.get("content");
+//   // Parse form data
+//   let formData = await Astro.request.formData();
+//   let author = formData.get("author");
+//   let special = formData.get("special");
+//   let content = formData.get("content");
 
-  // Will be used to validate the Akismet API key
-  let isValid = false;
+//   // Will be used to validate the Akismet API key
+//   let isValid = false;
 
-  if (!special) {
-    // Check if Akismet API key is valid
-    try {
-      isValid = await client.verifyKey();
-    } catch (error) {
-      handleError(error);
-    }
+//   if (!special) {
+//     // Check if Akismet API key is valid
+//     try {
+//       isValid = await client.verifyKey();
+//     } catch (error) {
+//       handleError(error);
+//     }
 
-    if (isValid) {
-      // Check if comment is spam or not
-      if (typeof author === "string" && typeof content === "string") {
-        try {
-          let commentAuthor = new Author({
-            name: author,
-          });
+//     if (isValid) {
+//       // Check if comment is spam or not
+//       if (typeof author === "string" && typeof content === "string") {
+//         try {
+//           let commentAuthor = new Author({
+//             name: author,
+//           });
 
-          let comment = new Comment({
-            author: commentAuthor,
-            content,
-          });
+//           let comment = new Comment({
+//             author: commentAuthor,
+//             content,
+//           });
 
-          const result = await client.checkComment(comment);
+//           const result = await client.checkComment(comment);
 
-          if (result === CheckResult.ham) {
-            // If comment is not spam, push the entry to the database.
-            await db.insert(GuestBook).values({ author, content });
+//           if (result === CheckResult.ham) {
+//             // If comment is not spam, push the entry to the database.
+//             await db.insert(GuestBook).values({ author, content });
 
-            // Finally redirect back to homepage!
-            return Astro.redirect("/");
-          } else {
-            // Otherwise disregard comment.
-            throw new Error("This comment has not been published.");
-          }
-        } catch (error) {
-          if (typeof error === "string" || typeof error === "object") {
-            handleError(error);
-          }
-        }
-      }
-    }
-  }
-}
+//             // Finally redirect back to homepage!
+//             return Astro.redirect("/");
+//           } else {
+//             // Otherwise disregard comment.
+//             throw new Error("This comment has not been published.");
+//           }
+//         } catch (error) {
+//           if (typeof error === "string" || typeof error === "object") {
+//             handleError(error);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-// @ts-ignore
-function handleError(error: { message: any; }) {
-  if (typeof error === "string" || typeof error === "object") {
-    const message = error instanceof Error ? error.message : String(error);
-    console.log(`An error occurred: ${message}`);
-  }
-}
+// // @ts-ignore
+// function handleError(error: { message: any; }) {
+//   if (typeof error === "string" || typeof error === "object") {
+//     const message = error instanceof Error ? error.message : String(error);
+//     console.log(`An error occurred: ${message}`);
+//   }
+// }
 
-const guestBook = await db.select().from(GuestBook);
+// const guestBook = await db.select().from(GuestBook);
 ---
 
 <Layout title="Livro de Visitas - Bruno Pulis">
@@ -93,19 +93,13 @@ const guestBook = await db.select().from(GuestBook);
 
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-8">
-        {
-          guestBook
-            .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
-            .map(({ author, content, timestamp }) => (
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold mb-2">{content}</h3>
-                  <p class="text-errie-black mb-4">{author}</p>
-                  <p class="text-errie-black mb-4">{timestamp}</p>
-                </div>
-              </div>
-            ))
-        }
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2"></h3>
+            <p class="text-errie-black mb-4"></p>
+            <p class="text-errie-black mb-4"></p>
+          </div>
+        </div>
       </div>
 
       <form method="POST">
