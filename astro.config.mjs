@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import db from "@astrojs/db";
+// import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import sectionize from '@hbsnow/rehype-sectionize';
@@ -24,7 +24,6 @@ export default defineConfig({
 
   integrations: [
     react(),
-    db(),
     icon(),
     alpinejs(),
     sitemap(),
