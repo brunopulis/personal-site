@@ -1,5 +1,5 @@
 ---
-
+const { pathname } = Astro.url;
 ---
 
 <nav
@@ -12,42 +12,63 @@
     <li class="mr-2">
       <a
         href="/blog"
-        class="text-errie-black text-[20px] font-light underline-offset-8 hover:underline"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/blog' ? ' font-bold text-red-950 underline' : ''
+        }`}
         >Blog</a
       >
     </li>
     <li class="mr-2">
       <a
         href="/services"
-        class="text-errie-black text-[20px] font-light underline-offset-8 hover:underline"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/services' ? ' font-bold text-red-950 underline' : ''
+        }`}
         >Serviços</a
+      >
+    </li>
+     <li class="mr-2">
+      <a
+        href="/training"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/training' ? ' font-bold text-red-950 underline' : ''
+        }`}
+        >Treinamentos</a
       >
     </li>
     <li class="mr-2">
       <a
         href="/speaking"
-        class="text-errie-black text-[20px] font-light underline-offset-8 hover:underline"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/speaking' ? ' font-bold text-red-950 underline' : ''
+        }`}
         >Palestras</a
       >
     </li>
     <li class="mr-2">
       <a
         href="/newsletter"
-        class="text-errie-black text-[20px] font-light underline-offset-8 hover:underline"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/newsletter' ? ' font-bold text-red-950 underline' : ''
+        }`}
         >Newsletter</a
       >
     </li>
     <li class="mr-2">
       <a
         href="/about"
-        class="text-errie-black text-[20px] font-light underline-offset-8 hover:underline"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/about' ? ' font-bold text-red-950 underline' : ''
+        }`}
         >Sobre</a
       >
     </li>
     <li class="mr-2">
       <a
         href="/slashes"
-        class="text-errie-black text-[20px] font-light underline-offset-8 hover:underline"
+        class={`text-errie-black text-[20px] underline-offset-8 hover:underline${
+          pathname === '/slashes' ? ' font-bold text-red-950 underline' : ''
+        }`}
         >Mais</a
       >
     </li>
