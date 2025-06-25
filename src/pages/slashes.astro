@@ -1,43 +1,104 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Header from "@/components/Header.astro"
-import Footer from "@/components/Footer.astro"
-import HeroSection from "@/components/HeroSection.astro"
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import HeroSection from "@/components/HeroSection.astro";
+
+const slashes = [
+	{
+		title: "Blogroll",
+		description: "Blogs que eu sigo e recomendo.",
+		link: "/blogroll",
+	},
+	{
+		title: "Minhas Leituras",
+		description: "Os livros que li desde 2018.",
+		link: "/bookshelf",
+	},
+	{
+		title: "Colophon",
+		description: "Uma página que descreve como o site foi feito.",
+		link: "/colophon",
+	},
+	{
+		title: "Livro de visitas",
+		description: "Meu livro de visitas que você pode assinar!",
+		link: "/guestbook",
+	},
+	{
+		title: "Como uso IA no meu site",
+		description: "Como utilizo inteligência artificial no meu site.",
+		link: "/ai",
+	},
+	{
+		title: "Minhas Notas",
+		description: "Minhas notas curtas.",
+		link: "/notes",
+	},
+	{
+		title: "O que estou fazendo agora",
+		description: "Coisas que estou fazendo agora.",
+		link: "/now",
+	},
+	{
+		title: "Links de afiliado",
+		description: "Meus links de afiliado.",
+		link: "/referrals",
+	},
+];
 ---
 
 <Layout title="Mais - Bruno Pulis">
-	<Header />
-	<main>
-		<HeroSection
-			title="Mais"
-			description="Uma grande lista de todas as páginas, projetos, posts no meu site."
-		/>
-		<section class="bg-white py-16 dark:bg-gray-800">
-			<div class="container px-5 mx-auto">
-				<div class="mb-24 grid items-center gap-12 md:grid-cols-1">
-					<div>
-						<h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-							Lista das páginas
-						</h2>
-						<p class="mb-4 text-gray-600 dark:text-gray-300">
-							Essa é minha <span lang="en">slash page</span>, você pode encontrar todos os tipos em <a class="hover:offset font-bold text-red-950 hover:underline hover:underline-offset-8" href="https://slashpages.net/">slashes pages</a>
-						</p>
+  <Header />
+  <main>
+    <HeroSection
+      title="Mais"
+      description="Uma grande lista de todas as páginas, projetos, posts no meu site."
+    />
+    <section class="bg-white py-16 dark:bg-gray-800">
+      <div class="container mx-auto px-5">
+        <div class="mb-24 grid items-center gap-12 md:grid-cols-1">
+          <div>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+              Lista das páginas
+            </h2>
+            <p class="mb-4 text-gray-600 dark:text-gray-300">
+              Essa é minha <span lang="en">slash page</span>, você pode
+              encontrar todos os tipos em <a
+                class="hover:offset font-bold text-red-950 hover:underline hover:underline-offset-8"
+                href="https://slashpages.net/">slashes pages</a
+              >
+            </p>
 
-						<ul class="list-disc list-inside text-gray-600 dark:text-gray-300 ml-6 space-y-2">
-              <li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/blogroll">/blogroll</a>: Blogs que eu sigo e recomendo;</li>
-							<!-- <li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/bookmarks">/bookmarks</a>: Meus links favoritos</li> -->
-							<li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/bookshelf">/reading</a>: Os livros que li desde 2018.</li>
-							<li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/colophon">/colophon</a>: uma página que descreve como o site foi feito</li>
-              <li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/guestbook">/guestbook</a>: Meu livro de visitas que você pode assinar!</li>
-              <li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/ai">/ai</a>: Como utiliza inteligência artificial no meu site.</li>
-							<li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/notes">/notes</a>: Minhas notas curtas.</li>
-							<li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/now">/now</a>: Coisas que estou fazendo agora.</li>
-							<li class="mb-2 text-gray-600 dark:text-gray-300"><a class="hover:offset font-bold text-[20px] text-red-950 hover:underline hover:underline-offset-8" href="/referrals">/referrals</a>: Meus links de afiliado.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-	<Footer />
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+							{
+								slashes.map((slash, index) => (
+									<div
+										class="card slide-up border border-gray-200 p-6 dark:border-gray-700"
+										style={`animation-delay: ${index * 100}ms`}
+									>
+										<h3
+											class="mt-6 mb-3 text-xl font-semibold text-gray-900 dark:text-white"
+										>
+											{slash.title}
+										</h3>
+										<p class="text-gray-600 dark:text-gray-300">
+											{slash.description}
+										</p>
+										<a
+											href={slash.link}
+											class="mt-4 inline-block text-red-950 hover:underline hover:underline-offset-8"
+										>
+											Acessar <span class="sr-only">{slash.title}</span>
+										</a>
+									</div>
+				))
+							}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>

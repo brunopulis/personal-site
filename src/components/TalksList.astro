@@ -27,7 +27,7 @@ const formatDate = (date: string) => {
   <div class="container mx-auto px-5 md:px-6">
     <div class="mx-auto ">
       <h2 class="mb-4 text-3xl font-bold md:text-4xl">Palestras</h2>
-      <p class="mb-12  text-gray-600">
+      <p class="mb-12  text-gray-900">
         Descubra minhas palestras anteriores e futuras sobre acessibilidade da Web, desenvolvimento front-end
 				e qualidade de software.
       </p>
@@ -41,7 +41,7 @@ const formatDate = (date: string) => {
             {upcomingTalks.map((talk) => (
               <li class="flex flex-col mb-6 list-inside">
                 <h4 class="text-xl font-semibold mb-2 line-clamp-2">{talk.title}</h4>
-                <p class="text-gray-600 mb-4 line-clamp-3">{talk.description}</p>
+                <p class="text-gray-900 mb-4 line-clamp-3">{talk.description}</p>
                 <div class="flex items-center text-gray-500 mb-2">
                   <time class="text-sm">{formatDate(talk.date)}</time>
                 </div>
@@ -54,8 +54,8 @@ const formatDate = (date: string) => {
         ) : (
           <div class="mb-16">
             <div class="">
-              <h3 class="mb-4 text-2xl font-bold text-gray-700">Sem palestras agendadas 😥</h3>
-              <p class="text-gray-600 mb-6">
+              <h3 class="mb-4 text-2xl font-bold text-gray-900">Sem palestras agendadas</h3>
+              <p class="text-gray-900 mb-6">
                 No momento não existem palestras agendadas. Gostaria de me convidar para falar no seu evento?
               </p>
               <a
@@ -77,11 +77,11 @@ const formatDate = (date: string) => {
             {pastTalks.map((talk) => (
               <li class="flex flex-col mb-6 list-inside">
                 <h4 class="text-xl font-semibold mb-2 line-clamp-2">{talk.title}</h4>
-                <p class="text-gray-600 mb-4 line-clamp-3">{talk.description}</p>
-                <div class="flex items-center text-gray-500 mb-2">
+                <p class="text-gray-900 mb-4 line-clamp-3">{talk.description}</p>
+                <div class="flex items-center text-gray-800 mb-2">
                   <time class="text-sm">{talk.date}</time>
                 </div>
-                <div class="flex items-center text-gray-500">
+                <div class="flex items-center text-gray-800">
                   <span class="text-sm">{talk.location}</span>
                 </div>
               </li>
