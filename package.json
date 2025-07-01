@@ -31,7 +31,7 @@
     "@tailwindcss/vite": "^4.1.10",
     "@yeskunall/astro-umami": "^0.0.6",
     "alpinejs": "^3.14.9",
-    "astro": "^5.9.3",
+    "astro": "^5.10.2",
     "astro-icon": "^1.1.5",
     "astro-robots-txt": "^1.0.0",
     "astro-social-share": "^2.2.0",
