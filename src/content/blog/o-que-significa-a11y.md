@@ -1,12 +1,8 @@
 ---
 title: "Afinal, o quê significa A11y?"
 publishDate: 2021-08-26
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/o-que-significa-a11y/
-tags:
-  - acessibilidade
+category: "Acessibilidade"
+url: https://brunopulis.com/o-que-significa-a11y/
 ---
 Talvez você já tenha visto pessoas utilizando o termo a11y ou até mesmo a hashtag **#a11y** e não compreendeu a correlação dele com acessibilidade. Este termo refere-se a palavra inglesa _accessibility_.
 

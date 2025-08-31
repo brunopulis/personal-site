@@ -1,12 +1,8 @@
 ---
 title: Melhorias do meu site
 publishDate: 2024-07-18
-metadata:
-  categories:
-    - Pessoal
-  tags:
-    - otimizacao
-  url: https://brunopulis.com/melhorias-do-site/
+category: "Pessoal"
+url: https://brunopulis.com/melhorias-do-site/
 tags:
   - pessoal
 ---

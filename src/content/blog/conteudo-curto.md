@@ -3,15 +3,13 @@ layout: "@/layouts/PostLayout.astro"
 schema: "../../components/common/head/schemas/BlogPosting.astro"
 title: "Uma doença chamada conteúdo curto"
 publishDate: 2024-10-02
-category: "Opinião"
-image: {
-  src: "/src/assets/images/social-midia-scaled.jpg",
-  alt: "A picture of a coder"
-}
+category: "Pessoal"
+image: "/src/assets/images/social-midia-scaled.jpg"
 author: "Pulis"
 excerpt: "Have you ever wondered what the most important items of life are? Well, wonder no more!"
 coverImage: "/src/assets/images/social-midia-scaled.jpg"
 ---
+
 Nesse artigo vou te contar a minha história com produção de conteúdo e como o conteúdo curto me atrapalhou.
 
 Escrevo na web desde 2012 por aí, meu primeiro blog foi no antigo blogspot.

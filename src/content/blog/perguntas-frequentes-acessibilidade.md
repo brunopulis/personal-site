@@ -1,13 +1,10 @@
 ---
 title: 11 Perguntas frequentes sobre acessibilidade
 publishDate: 2023-11-22
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/perguntas-frequentes-acessibilidade/
-tags:
-  - acessibilidade
+category: "Acessibilidade"
+url: https://brunopulis.com/perguntas-frequentes-acessibilidade/
 ---
+
 Acessibilidade é um tema em alta, por isso, traduzi as perguntas frequentes sobre acessibilidade.
 
 Ele vai te ajudar em questionamentos básicos e clarear sua trajetória nesse universo de possibilidades.

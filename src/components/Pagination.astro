@@ -14,40 +14,54 @@ const isPrevDisabled = !prevUrl;
 const isNextDisabled = !nextUrl;
 ---
 
-<nav aria-label="Navegação entre páginas" class="mt-8 flex items-center justify-center gap-4">
-  <a
-    href={prevUrl}
-    class:list={[
-      'inline-flex items-center px-4 py-2 rounded-lg border transition-colors',
-      {
-        'border-gray-300 text-gray-700 hover:bg-gray-100': !isPrevDisabled,
-        'border-gray-200 text-gray-400 cursor-not-allowed': isPrevDisabled,
-      },
-    ]}
-    aria-disabled={isPrevDisabled}
-    tabindex={isPrevDisabled ? -1 : undefined}
-  >
-    <ChevronLeft class="h-5 w-5 mr-2" />
-    Anterior
-  </a>
+<nav aria-label="Paginação" class="pagination">
+  <ul class="pagination__list" role="list">
+    <li class="pagination__item">
+      <a
+        href={prevUrl}
+        class="pagination__link"
+        aria-disabled={isPrevDisabled}
+        tabindex={isPrevDisabled ? -1 : undefined}
+      >
+        <ChevronLeft width="24" height="24"  aria-hidden="true" />
+        Anterior
+      </a>
+    </li>
+    <li class="pagination__item">
+      <a
+        href={nextUrl}
+        class="pagination__link"
+        aria-disabled={isNextDisabled}
+        tabindex={isNextDisabled ? -1 : undefined}
+      >
+        Próximo
+        <ChevronRight width="24" height="24"  aria-hidden="true" />
+      </a>
+    </li>
+  </ul>
+</nav>
 
-  <span class="text-sm font-medium text-gray-700">
-    Página {currentPage} de {lastPage}
-  </span>
+<style>
+  .pagination {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  <a
-    href={nextUrl}
-    class:list={[
-      'inline-flex items-center px-4 py-2 rounded-lg border transition-colors',
-      {
-        'border-gray-300 hover:bg-gray-100': !isNextDisabled,
-        'border-gray-200 text-gray-400 cursor-not-allowed': isNextDisabled,
-      },
-    ]}
-    aria-disabled={isNextDisabled}
-    tabindex={isNextDisabled ? -1 : undefined}
-  >
-    Próximo
+  .pagination__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 
-    <ChevronRight class="h-5 w-5 ml-2" />
-  </a>
+  .pagination__link {
+    display: flex;
+    align-items: center;
+  }
+
+  .pagination__item {
+    display: flex;
+  }
+</style>

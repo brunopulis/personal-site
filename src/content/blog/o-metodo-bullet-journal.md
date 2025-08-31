@@ -1,15 +1,12 @@
 ---
 title: O método Bullet Journal
 publishDate: 2023-07-25
-metadata:
-  categories:
-    - Indicações
-  tags:
-    - bujo
-    - pkm
-  url: https://brunopulis.com/o-metodo-bullet-journal/
+category: "Indicações"
+url: https://brunopulis.com/o-metodo-bullet-journal/
 tags:
   - indicacoes
+  - bujo
+  - pkm
 ---
 Se você está procurando uma maneira criativa e simples de organizar sua rotina, o **método bullet journal** é ideal para você!
 

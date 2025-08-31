@@ -1,14 +1,11 @@
 ---
 title: O que é blogroll?
 publishDate: 2024-09-12
-metadata:
-  categories:
-    - Pessoal
-  tags:
-    - indie web
-  url: https://brunopulis.com/o-que-blogroll/
+category: "Pessoal"
+url: https://brunopulis.com/o-que-blogroll/
 tags:
   - pessoal
+  - indie web
 ---
 A web antiga me fascina, talvez seja porque era feita **de pessoas para pessoas** e não existia essa web corporativa. Um dos conceitos mais legais dela é o **blogroll.**
 

@@ -1,15 +1,10 @@
 ---
 title: Resenha Acessibilidade na Web
 publishDate: 2020-07-19
-metadata:
-  categories:
-    - Indicações
-  tags:
-    - acessibilidade
-  url: https://brunopulis.com/review-acessibilidade-web/
-tags:
-  - indicacoes
+category: "Indicações"
+url: https://brunopulis.com/review-acessibilidade-web/
 ---
+
 ## Introdução
 
 Nesta revisão do livro “Acessibilidade na Web” de Reinaldo Ferraz, compartilho minhas impressões pessoais após concluir a leitura.

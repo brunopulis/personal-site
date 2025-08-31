@@ -1,10 +1,8 @@
 ---
 title: "GitHub Profile: dicas para se destacar"
 publishDate: 2024-07-07
-metadata:
-  categories:
-    - Carreira
-  url: https://brunopulis.com/github-profile-dicas-para-se-destacar/
+category: "Carreira"
+url: https://brunopulis.com/github-profile-dicas-para-se-destacar/
 tags:
   - carreira
 ---

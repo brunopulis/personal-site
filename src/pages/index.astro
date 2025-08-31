@@ -1,14 +1,14 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header.astro'
-import Hero from '@/components/home/Hero.astro'
-import About from '@/components/home/About.astro'
-import Logos from '@/components/home/Logos.astro'
-import Services from '@/components/home/Services.astro'
-import Portfolio from '@/components/home/Portfolio.astro'
-import Testimonials from '@/components/home/Testimonials.astro'
-import Blog from '@/components/home/Blog.astro'
-import Footer from '@/components/Footer.astro'
+import Layout from "@/layouts/Layout.astro"
+import Header from "@/components/layout/Header.astro"
+import Hero from "@/components/home/Hero.astro"
+import About from "@/components/home/About.astro"
+import Features from "@/components/Features.astro"
+import Projects from "@/components/Projects.astro"
+import Testimonials from "@/components/Testimonials.astro"
+import Blog from "@/components/home/Blog.astro"
+import Work from "@/components/Work.astro"
+import Footer from "@/components/layout/Footer.astro"
 ---
 
 <Layout
@@ -19,11 +19,11 @@ import Footer from '@/components/Footer.astro'
 	<main>
 		<Hero />
 		<About />
-		<Logos />
+		<Features />
+		<Projects />
 		<Testimonials />
-		<Services />
-		<Portfolio />
 		<Blog />
+		<Work />
 	</main>
 	<Footer />
 </Layout>

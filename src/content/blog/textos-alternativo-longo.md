@@ -1,13 +1,10 @@
 ---
 title: Como criar texto alternativo longo
 publishDate: 2024-03-25
-metadata:
-  categories:
-    - Desenvolvimento web
-  url: https://brunopulis.com/textos-alternativo-longo/
-tags:
-  - desenvolvimento-web
+category: "Frontend"
+url: https://brunopulis.com/textos-alternativo-longo/
 ---
+
 Esse final de semana estava atualizando o site do meu casamento e me deparei com um problema.
 
 Minha noiva fez os **textos alternativos longos** e completos para a página de Galeria de fotos do nosso pré-wedding.

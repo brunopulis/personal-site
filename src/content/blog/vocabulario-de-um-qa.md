@@ -1,13 +1,10 @@
 ---
 title: Vocabulário de um QA
 publishDate: 2020-08-18
-metadata:
-  categories:
-    - Qualidade de Software
-  url: https://brunopulis.com/vocabulario-de-um-qa/
-tags:
-  - qualidade-de-software
+category: "Qualidade"
+url: https://brunopulis.com/vocabulario-de-um-qa/
 ---
+
 > Este artigo é uma tradução e adaptação livre do artigo “QA Testing Vocabulary” que pode ser acessado no [blog](https://www.mindfulqa.com/qa-vocabulary/). O autor foi notificado e houve permissão para realizar a tradução.
 
 Se você trabalha em um time onde exista um QA, com certeza já se deparou com ele dizendo vários jargões técnicos, não é mesmo?

@@ -1,10 +1,8 @@
 ---
 title: Desabafo
 publishDate: 2016-06-26
-metadata:
-  categories:
-    - Pessoal
-  url: https://brunopulis.com/desabafo/
+category: "Poesia"
+url: https://brunopulis.com/desabafo/
 tags:
   - pessoal
 ---

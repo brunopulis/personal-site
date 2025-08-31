@@ -5,57 +5,43 @@ import laraBrenner from '@/assets/clients/lara-brenner.svg'
 import reponto from '@/assets/clients/reponto.svg'
 import mariaInclusiva from '@/assets/clients/maria-inclusiva.svg'
 import elleven from '@/assets/clients/elleven.svg';
+import una from '@/assets/clients/una.svg';
+import uniBh from '@/assets/clients/uni-bh.svg';
+import estacio from '@/assets/clients/estacio.svg';
+import cotemig from '@/assets/clients/cotemig.svg';
 ---
 
-<section class="bg-neutral-100 px-6 py-20">
-	<div class="container mx-auto">
-		<div class="mx-auto max-w-3xl text-center">
-			<h2 class="font-display text-3xl md:text-4xl font-bold py-6 text-gray-900">Empresas que confiam no meu trabalho</h2>
-		</div>
-		<div class="flex flex-col justify-center py-20">
-			<ul class="flex flex-wrap justify-center gap-5 md:justify-around">
-				<li class="inline  text-gray-400">
-					<Image
-						src={laraBrenner}
-						alt="Logo Reponto"
-						class="text-gray-400 h-14 w-full"
-						width={150}
-						height={31}
-						loading="lazy"
-					/>
-				</li>
-				<li class="inline text-gray-400">
-					<Image
-						src={reponto}
-						alt="Logo Reponto"
-						class="h-14 w-full text-gray-400"
-						width={150}
-						height={31}
-						loading="lazy"
-					/>
-				</li>
-				<li class="inline text-gray-400">
-					<Image
-						src={mariaInclusiva}
-						alt="Logo Reponto"
-						class="h-14 w-full"
-						width={150}
-						height={31}
-						loading="lazy"
-					/>
-				</li>
+<section class="py-12">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto">
+    <h2 class="block antialiased tracking-normal font-semibold text-blood-red leading-relaxed text-2xl mb-8">
+      Empresas que confiam no meu trabalho
+    </h2>
 
-				<li class="inline text-gray-400">
-					<Image
-						src={elleven}
-						alt="Logo Reponto"
-						class="h-14 w-full"
-						width={150}
-						height={31}
-						loading="lazy"
-					/>
-				</li>
-			</ul>
-		</div>
+		<div class="mt-8 grid grid-cols-1 gap-6 overflow-hidden sm:grid-cols-4 sm:rounded-2xl lg:grid-cols-4">
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={laraBrenner.src} alt="Lara Brenner" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={reponto.src} alt="Reponto" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={mariaInclusiva.src} alt="Maria Inclusiva" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={elleven.src} alt="Elleven" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={una.src} alt="Una" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={uniBh.src} alt="Uni BH" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={estacio.src} alt="Estacio de Sa" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+      <div class="flex items-center justify-center p-4 sm:p-8 lg:p-8">
+        <img class="max-h-12 w-full object-contain" src={cotemig.src} alt="Cotemig" loading="lazy" decoding="async" fetchpriority="high" width="230" height="48">
+      </div>
+    </div>
 	</div>
 </section>

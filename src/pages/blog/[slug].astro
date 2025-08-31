@@ -2,8 +2,9 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import Author from "@/components/Author.astro";
+import Footer from "@/components/layout/Footer.astro";
 import { slugify } from "@/utils/common-utils";
 
 // Gerar rotas para todos os posts
@@ -46,7 +47,7 @@ const isoDate = new Date(post.data.publishDate).toISOString();
   <Header />
   <main>
     <div
-      class="text-primary mx-auto max-w-5xl px-5 pt-12 pb-8 md:px-8 md:pt-16 md:pb-10"
+      class="text-primary my-5"
     >
       <h1 class="mb-4 text-4xl font-medium sm:text-5xl">
         {post.data.title}
@@ -74,24 +75,23 @@ const isoDate = new Date(post.data.publishDate).toISOString();
         </div>
       </div>
     </div>
-    <div class="mx-auto flex max-w-5xl items-start gap-12 px-5 md:px-8">
-      <article class="my-8 grid max-w-2xl justify-items-start gap-8">
-        {
-          post.data.coverImage && (
-            <img
-              src={post.data.coverImage}
-              class="mb-10 h-auto w-full rounded-xl object-cover"
-              alt={post.data.title || ""}
-              style="max-height: 500px;"
-            />
-          )
-        }
-        <div class="prose prose-lg max-w-none">
-          <Content />
-        </div>
-      </article>
-    </div>
-
+   
+    <article class="my-8 grid max-w-2xl justify-items-start gap-8">
+      {
+        post.data.coverImage && (
+          <img
+            src={post.data.coverImage}
+            class="mb-10 h-auto w-full rounded-xl object-cover"
+            alt={post.data.title || ""}
+            style="max-height: 500px;"
+          />
+        )
+      }
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <Content />
+        <Author />
+      </div>
+    </article>
     <Footer />
   </main>
 </Layout>

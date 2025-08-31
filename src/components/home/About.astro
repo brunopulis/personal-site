@@ -1,57 +1,161 @@
 ---
-import { ArrowRight  } from '@lucide/astro'
+
 ---
 
-<section class="px-6 py-16">
-	<div class="container mx-auto">
-		<div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
-			<div class="space-y-6">
-				<div class="space-y-2">
-					<p class="text-sm font-medium tracking-wider text-black mb-6">Sobre</p>
-					<h1 class="text-4xl leading-tight font-bold text-gray-900 lg:text-5xl">
-						Construindo,<br />
-						soluções digitais desde 2010
-					</h1>
-				</div>
-				<p class="max-w-lg text-lg leading-relaxed text-gray-500 mt-6">
-					Com 15 anos de experiência em desenvolvimento web, descobri minha paixão <strong>por
-					acessibilidade digital</strong> ao perceber como pequenas mudanças no código podem fazer uma enorme
-					diferença na vida das pessoas.
-				</p>
-				<div class="flex flex-wrap gap-4">
-					<a
-						href="/about"
-						class="cursor-pointer text-base font-bold underline underline-offset-8 hover:no-underline"
-					>
-						Saiba mais
-						<ArrowRight
-							class="inline h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-						/>
-					</a>
-				</div>
-			</div>
+<section class="bg-white px-6 py-20 lg:px-20">
+  <div class="container-custom">
+    <div class="mb-16 text-center">
+      <h2 class="text-errie-black-900 mb-6 text-4xl font-bold lg:text-5xl">
+        Sobre Mim
+      </h2><p
+        class="text-errie-black-900 mx-auto max-w-3xl text-xl leading-relaxed"
+      >
+        Sou um desenvolvedor e engenheiro de acessibilidade apaixonado por criar
+        soluções digitais que combinam funcionalidades acessíveis e design
+        elegante. Com mais de 15 anos de experiência, trabalho na intersecção
+        entre acessibilidade e tecnologia.
+      </p>
+    </div>
 
-			<!-- Connect With Me Section -->
-			<div class="space-y-6">
-				<div class="flex flex-col gap-8 sm:flex-row mt-14">
-					<div class="flex flex-row items-center justify-center">
-						<div class="mb-2 text-5xl font-bold text-gray-900 lg:text-6xl">15</div>
-						<p class="text-sm tracking-wide ml-2 font-bold text-gray-900">
-							Anos de<br />experiência
-						</p>
-					</div>
-					<div class="flex flex-row items-center justify-center">
-						<div class="mb-2 text-5xl font-bold text-gray-900 lg:text-6xl">150</div>
-						<p class="text-sm tracking-wide ml-2 font-bold text-gray-900">
-							projetos bem-<br />sucedidos
-						</p>
-					</div>
-				</div>
-				<p class="text-lg leading-relaxed text-gray-500 mt-16">
-					Meu trabalho é tornar a web mais inclusiva e potencializar negócios a alcançarem a todos.
-					Conecte-se comigo nas redes sociais para conteúdo exclusivo sobre acessibilidade digital.
-				</p>
-			</div>
-		</div>
-	</div>
+    <div class="mb-16 grid gap-8 md:grid-cols-3">
+      <article class="card">
+        <div
+          class="card__icon"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-palette h-8 w-8"
+            aria-hidden="true"
+            ><path
+              d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"
+            ></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"
+            ></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"
+            ></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"
+            ></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"
+            ></circle></svg
+          >
+        </div>
+        <h3 class="card__title">
+          Acessibilidade Digital
+        </h3><p class="text-errie-black-900 leading-relaxed">
+          Criação de interfaces acessíveis e experiências de usuário
+          excepcionais
+        </p>
+      </article>
+
+      <article
+        class="card"
+      >
+        <div
+          class="card__icon"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-code h-8 w-8"
+            aria-hidden="true"
+            ><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg
+          >
+        </div><h3 class="card__title">
+          Desenvolvimento Frontend
+        </h3><p class="text-errie-black-900 leading-relaxed">
+          Desenvolvimento em WordPress, Astro, TypeScript e tecnologias modernas
+        </p>
+      </article>
+
+      <article
+        class="card"
+      >
+        <div
+          class="card__icon"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-zap h-8 w-8"
+            aria-hidden="true"
+            ><path
+              d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+            ></path></svg
+          >
+        </div><h3 class="card__title">
+          Prototipagem
+        </h3><p class="text-errie-black-900 leading-relaxed">
+          Prototipagem rápida e validação de ideias com Figma e ferramentas de
+          design
+        </p>
+      </article>
+    </div>
+
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <h3 class="mb-6 text-3xl font-bold text-gray-900">
+          Experiência e <span lang="en">Expertise</span>
+        </h3>
+        
+        <ul class="space-y-4 list-disc list-inside text-blood-red-900 marker:text-blood-red-900">
+          <li>
+            5+ anos em Design de Interface
+          </li>
+          <li>
+            3+ anos em Desenvolvimento Frontend
+          </li>
+          <li>
+            Especialista em React e TypeScript
+          </li>
+          <li>
+            Figma e ferramentas de design
+          </li>
+        </ul>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-6">
+        <div class="rounded-lg bg-[var(--color-light-gray)] p-6 text-center">
+          <div class="mb-2 text-3xl font-bold text-blood-red-900">
+            Mais de 50
+          </div><div class="text-errie-black-900">Projetos Concluídos</div>
+        </div><div
+          class="rounded-lg bg-[var(--color-light-gray)] p-6 text-center"
+        >
+          <div class="mb-2 text-3xl font-bold text-blood-red-900">
+            Mais de 25
+          </div><div class="text-errie-black-900">Clientes Satisfeitos</div>
+        </div><div
+          class="rounded-lg bg-[var(--color-light-gray)] p-6 text-center"
+        >
+          <div class="mb-2 text-3xl font-bold text-blood-red-900">
+            15
+          </div><div class="text-errie-black-900">Anos de Experiência</div>
+        </div><div
+          class="rounded-lg bg-[var(--color-light-gray)] p-6 text-center"
+        >
+          <div class="mb-2 text-3xl font-bold text-blood-red-900">
+            100%
+          </div><div class="text-errie-black-900">Dedicação</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

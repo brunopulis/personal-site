@@ -18,13 +18,14 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog/" }),
   schema: z.object({
     title: z.string(),
+    category: z.string(),
     excerpt: z.string().optional(),
     publishDate: z.date(),
     modifiedDate: z.date().optional(),
     isFeatured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().optional().default(false),
-    coverImage: z.string().optional(),
+    image: z.string().optional(),
     seo: seoSchema.optional()
   }),
 });

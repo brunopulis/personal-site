@@ -1,13 +1,10 @@
 ---
 title: Conhecendo o Web Accessibility Initiative
 publishDate: 2021-11-17
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/web-accessibility-initiative/
-tags:
-  - acessibilidade
+category: "Acessibilidade"
+url: https://brunopulis.com/web-accessibility-initiative/
 ---
+
 Se você é desenvolvedor web, ter conhecimento sobre o **Web Accessibility Initiative** (WAI) é essencial. Neste artigo, vamos explorar sobre a iniciativa e os recursos que ela disponibiliza para tornar a web um local mais acesssível e inclusivo para todas as pessoas.
 
 ## O que é o Web Accessibility Initiative?

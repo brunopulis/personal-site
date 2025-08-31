@@ -1,0 +1,242 @@
+---
+import pulisLogo from "@/assets/horizontal/white.svg";
+import {
+  Rss,
+  Github,
+  Mailbox,
+  Linkedin,
+  Youtube,
+  Instagram,
+  Shuffle,
+  ArrowLeft,
+  ArrowRight,
+} from "@lucide/astro";
+
+import writtenByHuman from "@/assets/written-by-human.svg";
+import config from "@/data/site.config.json";
+---
+
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="container-custom">
+    <div class="mb-12 grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+      <div class="md:col-span-2 lg:col-span-2">
+        <a href="/" class="mb-6 flex items-center" aria-label="Go to homepage">
+          <img src={pulisLogo.src} alt="" loading="lazy" />
+        </a>
+        <p class="mb-6 max-w-md text-gray-400">
+          Empowering businesses with innovative SaaS solutions that drive
+          growth, efficiency, and success in the digital age.
+        </p>
+        <div class="flex space-x-4">
+          <ul class="flex space-x-4">
+            <li class="social__item">
+              <a
+                href=""
+                rel="alternate"
+                type="application/rss+xml"
+                class="social__link"
+              >
+                <Rss class="" width="24" height="24" aria-hidden="true" />
+                <span class="sr-only">Assine o RSS</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a
+                href={config.socialMidia.github}
+                target="_blank"
+                rel="me noopener noreferrer"
+                class="social__link"
+              >
+                <Github class="" width="24" height="24" aria-hidden="true" />
+                <span class="sr-only">GitHub (abre em uma nova janela)</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a
+                href={config.socialMidia.instagram}
+                target="_blank"
+                rel="me noopener noreferrer"
+                class="social__link"
+              >
+                <Instagram class="" width="24" height="24" aria-hidden="true" />
+                <span class="sr-only">Instagram (abre em uma nova janela)</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a
+                href={config.socialMidia.youtube}
+                target="_blank"
+                rel="me noopener noreferrer"
+                class="social__link"
+              >
+                <Youtube class="" width="24" height="24" aria-hidden="true" />
+                <span class="sr-only">YouTube (abre em uma nova janela)</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a
+                href={config.socialMidia.linkedin}
+                target="_blank"
+                rel="me noopener noreferrer"
+                class="social__link"
+              >
+                <Linkedin class="" width="24" height="24" aria-hidden="true" />
+                <span class="sr-only">LinkedIn (abre em uma nova janela)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3 class="mb-4 text-lg font-semibold">Home</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Home</a
+            >
+          </li><li>
+            <a
+              href="/features"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Features</a
+            >
+          </li><li>
+            <a
+              href="/pricing"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Pricing</a
+            >
+          </li><li>
+            <a
+              href="/contact"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div><div>
+        <h3 class="mb-4 text-lg font-semibold">Product</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/features"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Features</a
+            >
+          </li><li>
+            <a
+              href="/pricing"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Pricing</a
+            >
+          </li><li>
+            <a
+              href="/faqs"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >FAQ</a
+            >
+          </li><li>
+            <a
+              href="/changelog"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Changelog</a
+            >
+          </li><li>
+            <a
+              href="/integrations"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Integrations</a
+            >
+          </li>
+        </ul>
+      </div><div>
+        <h3 class="mb-4 text-lg font-semibold">Resources</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/blog"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Blog</a
+            >
+          </li><li>
+            <a
+              href="/case-study"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >Case Studies</a
+            >
+          </li><li>
+            <a
+              href="/404"
+              class="hover:text-primary-400 text-gray-400 transition-colors"
+              >404 Page</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:items-center md:justify-between md:flex-row">
+        <p class="mb-4 text-sm text-gray-400 md:mb-0">
+          Feito com <span role="img" aria-label="amor">❤️</span> em BH.
+          Conteúdo licenciado por
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            rel="noopener noreferrer"
+            class=""
+          >
+            CC-BY-SA
+          </a>
+        </p>
+        <div class="flex flex-col md:flex-row space-x-6">
+          <ul class="flex gap-2">
+            <li><a
+            href="/declaracao-acessibilidade"
+            class="hover:text-primary-400 text-sm text-gray-400 transition-colors"
+            >Declaração de Acessibilidade</a
+          ></li>
+            <li><a
+            href="/uso-ia"
+            class="hover:text-primary-400 text-sm text-gray-400 transition-colors"
+            >Uso de IA</a
+          ></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-custom">
+    <div class="flex flex-col md:flex-row gap-3 justify-between mt-5">
+       <ul class="flex flex-col md:flex-row gap-3 sm:justify-between space-x-5" >
+        <li class="social__item">
+          <a rel="external" class="text-sm text-gray-400" href="https://a11y-webring.club/"
+            >a11y-webring.club</a
+          >
+        </li>
+        <li class="social__item">
+          <a rel="external" class="text-sm text-gray-400" href="https://a11y-webring.club/prev">
+            <ArrowLeft class="" width="24" height="24" aria-hidden="true" />
+            <span class="sr-only">Site anterior</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a rel="external" class="text-sm text-gray-400" href="https://a11y-webring.club/random">
+            <Shuffle class="" width="24" height="24" aria-hidden="true" />
+            <span class="sr-only">Site aleatório</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a rel="external" class="text-sm text-gray-400" href="https://a11y-webring.club/next">
+            <ArrowRight class="" width="24" height="24" aria-hidden="true" />
+            <span class="sr-only">Próximo website</span>
+          </a>
+        </li>
+      </ul>
+      <div class="flex flex-col space-x-5">
+        <img src={writtenByHuman.src} width="88" height="30" />
+      </div>
+    </div>
+  </div>
+</footer>
