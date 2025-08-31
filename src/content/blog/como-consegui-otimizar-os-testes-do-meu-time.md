@@ -1,10 +1,8 @@
 ---
 title: "PHPUnit: como otimizar a performance dos testes"
 publishDate: 2020-04-30
-metadata:
-  categories:
-    - Qualidade de Software
-  url: https://brunopulis.com/como-consegui-otimizar-os-testes-do-meu-time/
+category: "Qualidade"
+url: https://brunopulis.com/como-consegui-otimizar-os-testes-do-meu-time/
 tags:
   - qualidade-de-software
 ---

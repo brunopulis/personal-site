@@ -1,13 +1,10 @@
 ---
 title: Novidades da WCAG 2.2
 publishDate: 2023-07-22
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/wcag-2-2/
-tags:
-  - acessibilidade
+category: "Acessibilidade"
+url: https://brunopulis.com/wcag-2-2/
 ---
+
 Se você descobriu a WCAG a pouco tempo, vim te contar que irá acontecer grandes **mudanças da WCAG 2.2**.
 
 Semana passada, a **WCAG 2.2** mudou de status e passou para _**Proposed Recommendation**._

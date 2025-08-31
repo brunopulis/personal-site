@@ -1,14 +1,9 @@
 ---
 title: "Review: TDC BH 19"
 publishDate: 2019-06-17
-metadata:
-  categories:
-    - Indicações
-  url: https://brunopulis.com/review-tdc-bh-19/
-tags:
-  - indicacoes
+category: "Indicações"
+url: https://brunopulis.com/review-tdc-bh-19/
 ---
-* * *
 
 ## The Developer Conference BH 2019
 

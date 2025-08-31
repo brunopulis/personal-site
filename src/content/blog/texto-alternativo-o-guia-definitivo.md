@@ -1,14 +1,10 @@
 ---
 title: "Texto alternativo: o guia definitivo"
 publishDate: 2021-09-26
-metadata:
-  categories:
-    - Acessibilidade
-  tags:
-    - texto alternativo
-  url: https://brunopulis.com/texto-alternativo-o-guia-definitivo/
+category: "Acessibilidade"
+url: https://brunopulis.com/texto-alternativo-o-guia-definitivo/
 tags:
-  - acessibilidade
+  - texto alternativo
 ---
 Esta publicação contém tudo o que você precisa saber sobre texto alternativo! Quando usá-los e como desenhá-los perfeitamente. Por mim, Daniel, um desenvolvedor web com deficiência visual que usa um leitor de tela no meu dia-a-dia.
 

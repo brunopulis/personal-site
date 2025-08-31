@@ -1,10 +1,8 @@
 ---
 title: Um caso de amor chamado acessibilidade
 publishDate: 2015-02-26
-metadata:
-  categories:
-    - Acessibilidade
-  url: https://brunopulis.com/caso-de-amor-acessibilidade/
+category: Acessibilidade
+canonical: https://brunopulis.com/caso-de-amor-acessibilidade/
 tags:
   - acessibilidade
 ---

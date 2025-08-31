@@ -1,0 +1,63 @@
+---
+import { Mail, Phone, MapPin, Clock } from '@lucide/astro'
+
+const contactMethods = [
+  {
+    icon: '<Mail class="h-6 w-6" />',
+    title: "Email",
+    info: "contato@accessdev.com.br",
+    description: "Respondo em até 24 horas",
+  },
+  {
+    icon: '<Phone class="h-6 w-6" />',
+    title: "Telefone",
+    info: "(11) 99999-9999",
+    description: "WhatsApp disponível",
+  },
+  {
+    icon: '<MapPin class="h-6 w-6" />',
+    title: "Localização",
+    info: "São Paulo, SP",
+    description: "Atendimento remoto em todo Brasil",
+  },
+  {
+    icon: '<Clock class="h-6 w-6" />',
+    title: "Horário",
+    info: "Seg - Sex: 9h às 18h",
+    description: "Fuso horário de Brasília",
+  },
+];
+---
+
+<div>
+  <h2 class="mb-8 text-3xl font-bold">Vamos conversar?</h2>
+  <p class="mb-8 text-gray-600">
+    Estou disponível para novos projetos, consultorias e palestras. Entre em
+    contato através de qualquer um dos canais abaixo.
+  </p>
+
+  <div class="space-y-6">
+    {
+      contactMethods.map((method, index) => (
+        <div key={index} class="flex items-start gap-4">
+          <div class="text-indigo-600 mt-1">{method.icon}</div>
+          <div>
+            <h3 class="font-semibold text-gray-900">{method.title}</h3>
+            <p class="text-gray-700">{method.info}</p>
+            <p class="text-sm text-gray-500">{method.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-8 rounded-lg bg-indigo-50 p-6">
+    <h3 class="mb-2 font-semibold text-indigo-900">
+      Consulta inicial gratuita
+    </h3>
+    <p class="text-indigo-700">
+      Ofereço uma consulta inicial de 30 minutos sem custo para entender suas
+      necessidades e como posso ajudar seu projeto.
+    </p>
+  </div>
+</div>

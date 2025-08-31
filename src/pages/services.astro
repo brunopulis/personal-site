@@ -1,8 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import HeroSection from "@/components/HeroSection.astro";
-import Footer from "@/components/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import HeroSection from "@/components/layout/HeroSection.astro";
+import Footer from "@/components/layout/Footer.astro";
 
 import {
   FileText,
@@ -59,158 +59,241 @@ const process = [
 
 <Layout title="Serviços - Bruno Pulis">
   <Header />
-  <main>
-    <HeroSection
-      title="Serviços"
-      description="Soluções completas para tornar sua presença digital mais acessível, desde o desenvolvimento até a consultoria e treinamento."
-    />
-    <section class="py-10">
-      <div class="container mx-auto px-5">
-        <div class="mb-6 grid items-center gap-12 md:grid-cols-2">
-          <div>
-            <h2 class="mb-6 text-3xl font-bold text-gray-900">
-              Por que me contratar?
-            </h2>
-            <p class="mb-4 text-gray-900">
-              Tenho especialidade em auditorias técnicas de acessibilidade digital e desenvolvimento de sites.
-              Já ajudei empresas de
-              pequeno e grande porte a tornarem suas jornadas para todas as pessoas.
-            </p>
-
-             <p class="mb-4 text-gray-900">
-              Também posso corrigir problemas específicos de acessibilidade, corrigir documentos digitais.
-            </p>
-
-            <a
-              href="/about"
-              class="text-gray-900 underline underline-offset-8 hover:text-red-950 hover:underline"
-              >Saiba mais sobre mim</a
-            >
-          </div>
+  <main class="pt-16">
+    <div class="min-h-screen">
+      <section class="bg-blood-red-800 px-6 py-20 lg:px-20">
+        <div class="mx-auto max-w-7xl text-center">
+          <h1 class="mb-6 text-5xl font-bold text-white lg:text-6xl">
+            Nossos Serviços
+          </h1>
+          <p class="mx-auto max-w-3xl text-xl leading-relaxed text-white/90">
+            Oferecemos soluções completas em acessibilidade digital para tornar
+            seus produtos mais inclusivos e alcançar mais pessoas.
+          </p>
         </div>
+      </section>
 
-        <div class="mb-6">
-          <div class="grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <h2 class="mb-6 text-3xl font-bold text-gray-900">
-                Resumo dos meus serviços
-              </h2>
-
-              <p class="mb-4 text-gray-900">
-                Meu trabalho principal é ajudar os clientes a melhorar a
-                acessibilidade de suas aplicações - desde auditorias,
-                correções e até a implementação.
-              </p>
-              <p class="mb-4 text-gray-900">Para clientes selecionados,
-                também estou disponível para desenvolvimento web full-stack
-                tradicional. Os serviços que posso te ajudar</p>
+      <section class="bg-white py-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-20">
+          <div class="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+            <div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border-0 bg-[var(--color-card-gray)] shadow-sm transition-shadow hover:shadow-md"
+            >
+              <div data-slot="card-content" class="p-8 [&:last-child]:pb-6">
+                <div
+                  class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-burgundy)]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-users h-8 w-8 text-white"
+                    aria-hidden="true"
+                    ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                    ></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path
+                      d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle
+                      cx="9"
+                      cy="7"
+                      r="4"></circle></svg>
+                </div><h3 class="mb-4 text-[22px] font-bold">
+                  Mentoria e Consultoria
+                </h3><p class="mb-6 text-gray-600">
+                  Acompanhamento estratégico e personalizado para quem deseja
+                  implementar acessibilidade com segurança, clareza e autonomia.
+                </p><div class="mb-6">
+                  <h4 class="mb-3 text-[16px] font-bold">
+                    O que entregamos:
+                  </h4><ul class="space-y-2">
+                    <li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Diagnóstico inicial e definição de objetivos
+                      claros
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Sessões individuais ou em grupo, com foco prático
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Apoio técnico na tomada de decisões, implementação
+                      e validação
+                    </li>
+                  </ul>
+                </div><a href="/servicos/mentoria" data-discover="true"
+                  ><button
+                    data-slot="button"
+                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-9 w-full shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--color-burgundy)] px-4 py-2 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-[var(--color-burgundy)]/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                    >Saiba Mais</button
+                  ></a>
+              </div>
+            </div><div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border-0 bg-[var(--color-card-gray)] shadow-sm transition-shadow hover:shadow-md"
+            >
+              <div data-slot="card-content" class="p-8 [&:last-child]:pb-6">
+                <div
+                  class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-burgundy)]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-search h-8 w-8 text-white"
+                    aria-hidden="true"
+                    ><path d="m21 21-4.34-4.34"></path><circle
+                      cx="11"
+                      cy="11"
+                      r="8"></circle></svg>
+                </div><h3 class="mb-4 text-[22px] font-bold">
+                  Auditoria de Acessibilidade
+                </h3><p class="mb-6 text-gray-600">
+                  Vamos verificar se seu site, app ou documento pode ser usado
+                  por pessoas com deficiência. Encontramos os problemas e
+                  mostramos como resolver.
+                </p><div class="mb-6">
+                  <h4 class="mb-3 text-[16px] font-bold">
+                    O que entregamos:
+                  </h4><ul class="space-y-2">
+                    <li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Análise técnica com base nas diretrizes de
+                      acessibilidade
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Testes com ferramentas automáticas e manuais
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Relatório completo com imagens e instruções passo
+                      a passo
+                    </li>
+                  </ul>
+                </div><a href="/servicos/auditoria" data-discover="true"
+                  ><button
+                    data-slot="button"
+                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-9 w-full shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--color-burgundy)] px-4 py-2 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-[var(--color-burgundy)]/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                    >Saiba Mais</button
+                  ></a>
+              </div>
+            </div><div
+              data-slot="card"
+              class="text-card-foreground flex flex-col gap-6 rounded-xl border-0 bg-[var(--color-card-gray)] shadow-sm transition-shadow hover:shadow-md"
+            >
+              <div data-slot="card-content" class="p-8 [&:last-child]:pb-6">
+                <div
+                  class="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-burgundy)]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-presentation h-8 w-8 text-white"
+                    aria-hidden="true"
+                    ><path d="M2 3h20"></path><path
+                      d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"></path><path
+                      d="m7 21 5-5 5 5"></path></svg>
+                </div><h3 class="mb-4 text-[22px] font-bold">
+                  Palestras e Treinamentos
+                </h3><p class="mb-6 text-gray-600">
+                  Ensinamos sobre acessibilidade digital de um jeito claro,
+                  prático e inspirador.
+                </p><div class="mb-6">
+                  <h4 class="mb-3 text-[16px] font-bold">
+                    O que entregamos:
+                  </h4><ul class="space-y-2">
+                    <li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Palestras com conteúdo atual e linguagem acessível
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Workshops com atividades práticas, dinâmicas
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Treinamentos técnicos para devs, designers e QAs
+                    </li><li class="flex items-start text-gray-600">
+                      <span
+                        class="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-[var(--color-burgundy)]"
+                      ></span>Materiais de apoio e certificado de participação
+                    </li>
+                  </ul>
+                </div><a href="/servicos/palestras" data-discover="true"
+                  ><button
+                    data-slot="button"
+                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-9 w-full shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--color-burgundy)] px-4 py-2 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-[var(--color-burgundy)]/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                    >Saiba Mais</button
+                  ></a>
+              </div>
             </div>
           </div>
 
-          <div class="grid gap-12 py-20 md:grid-cols-4">
-            <article>
-              <Code class="w-10 h-10 text-red-950 mb-4" />
-              <h3 class="mb-2 text-xl font-bold text-red-950">
-                Desenvolvimento web
-              </h3>
-              <ul class="list-disc py-4">
-                <li class="list-inside mb-2 text-gray-900">
-                  Sites institucionais
-                </li>
-                <li class="list-inside mb-2 text-gray-900">
-                  Páginas de vendas
-                </li>
-                <li class="list-inside mb-2 text-gray-900">
-                  Sistemas personalizados
-                </li>
-              </ul>
-              <a
-                href="/contact?subject=Solicitação de serviço de desenvolvimento"
-                class="text-errie-black hover:noderline inline-flex items-center gap-2 font-semibold underline underline-offset-8 transition-colors hover:text-red-950"
-              >
-                Serviços de desenvolvimento
-              </a>
-            </article>
-
-            <article>
-              <PersonStanding class="w-10 h-10 text-red-950 mb-4" />
-              <h3 class="mb-2 text-xl font-bold text-red-950">Acessibilidade</h3>
-              <ul class="list-disc py-4">
-                <li class="list-inside mb-2 text-gray-900">
-                  Auditoria de acessibilidade
-                </li>
-                 <li class="list-inside mb-2 text-gray-900">
-                  Testes de acessibilidade
-                </li>
-                <li class="list-inside mb-2 text-gray-900">
-                  Correção de documentos
-                </li>
-                <li class="list-inside mb-2 text-gray-900">
-                  Consultoria
-                </li>
-              </ul>
-              <a
-                href="/contact?subject=Solicitação de serviço acessibilidade"
-                class="text-errie-black hover:noderline inline-flex items-center gap-2 font-semibold underline underline-offset-8 transition-colors hover:text-red-950"
-              >
-                Serviços de acessibilidade
-              </a>
-            </article>
-
-            <article>
-              <Presentation class="w-10 h-10 text-red-950 mb-4" />
-              <h3
-                class="mb-2 text-xl font-bold text-red-950"
-              >
-                Palestras e Workshops
-              </h3>
-              <ul class="list-disc py-4">
-                <li class="list-inside text-gray-900 mb-2">
-                  Conferência e palestras corporativas
-                </li>
-                <li class="list-inside text-gray-900 mb-2">
-                  Workshops virtuais e presenciais
-                </li>
-                <li class="list-inside text-gray-900 mb-2">
-                  Mentoria para desenvolvedores
-                </li>
-                <li class="list-inside text-gray-900 mb-2">
-                  Consultoria para desenvolvedores
-                </li>
-              </ul>
-              <a
-                href="/contact?subject=Solicitação de serviço de palestras e workshops"
-                class="text-errie-black hover:noderline inline-flex items-center gap-2 font-semibold underline underline-offset-8 transition-colors hover:text-red-950"
-              >
-                Serviços de palestras e workshops
-              </a>
-            </article>
-          </div>
+          
         </div>
+      </section>
 
-        <div class="py-20 mb-6">
-          <h2 class="mb-6 text-3xl font-bold text-gray-900">
-            Como trabalho
-          </h2>
-          <div class="grid gap-12 md:grid-cols-4">
-            {
-              process.map((service) => {
-                const IconComponent = iconComponents[service.icon];
-                return (
-                  <article class="">
-                    <IconComponent class="w-10 h-10 text-red-950 mb-4" />
-                    <h3 class="mb-2 text-xl font-bold text-red-950">
-                      {service.title}
-                    </h3>
-                    <p class="text-gray-900">{service.description}</p>
-                  </article>
-                );
-              })
-            }
-          </div>
+      <section class="bg-gray-100 px-6 py-20 lg:px-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-20">
+            <h2 class="mb-6 text-3xl font-bold text-gray-900">Como trabalho</h2>
+            <div class="grid gap-12 md:grid-cols-4">
+              {
+                process.map(service => {
+                  const IconComponent = iconComponents[service.icon];
+                  return (
+                    <article class="">
+                      <IconComponent class="mb-4 h-10 w-10 text-red-950" />
+                      <h3 class="mb-2 text-xl font-bold text-red-950">
+                        {service.title}
+                      </h3>
+                      <p class="text-gray-900">{service.description}</p>
+                    </article>
+                  );
+                })
+              }
+            </div>
+            </div>
+          </section>
+
+      <section class="bg-gray-900 py-20 text-white">
+        <div class="mx-auto max-w-4xl p-[0px] px-6 text-center lg:px-20">
+          <h2 class="mb-6 text-[42px] font-bold">
+            Precisa de uma solução personalizada?
+          </h2><p class="mx-auto mb-8 max-w-2xl text-xl opacity-90">
+            Cada projeto é único. Vamos conversar sobre suas necessidades
+            específicas e encontrar a melhor solução para seu caso.
+          </p><a href="/contato" data-discover="true"
+            ><a
+              href=""
+              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-blood-red-800 hover:bg-blood-red-800/90 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md px-8 py-4 text-sm font-medium whitespace-nowrap text-white transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+              >Vamos Conversar</a
+            ></a
+          >
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+    <Footer />
   </main>
-  <Footer />
 </Layout>

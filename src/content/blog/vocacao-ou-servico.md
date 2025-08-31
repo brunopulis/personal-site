@@ -1,13 +1,10 @@
 ---
 title: Vocação ou serviço?
 publishDate: 2016-06-08
-metadata:
-  categories:
-    - Teologia
-  url: https://brunopulis.com/vocacao-ou-servico/
-tags:
-  - teologia
+category: "Teologia"
+url: https://brunopulis.com/vocacao-ou-servico/
 ---
+
 Muitos têm o prazer de “servir” na casa de Deus, mas será que estão com a motivação correta? Diante daquele que tudo pode e tudo vê?
 
 * * *

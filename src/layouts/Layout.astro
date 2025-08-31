@@ -29,29 +29,12 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <ClientRouter />
   </head>
-  <body class="text-secondary-900 text-[20px]  bg-white antialiased">
-    <div
-      id="promo-banner"
-      class="mb-6 bg-gray-800 px-4 py-2 text-white shadow-md"
-    >
-      <div
-        class="container mx-auto flex flex-col flex-wrap items-center justify-between gap-2 sm:flex-row"
-      >
-        <div class="banner-content flex items-center">
-          <p class="banner-text text-center text-sm">
-            Esse site está em processo de refatoração e redesign. Então se algo
-            estiver quebrado, é por causa disso.
-          </p>
-        </div>
-      </div>
-    </div>
+  <body class="antialiased">
     <slot />
-
     <BasicScripts />
   </body>
 </html>

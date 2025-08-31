@@ -1,12 +1,8 @@
 ---
 title: Ignoramos 45 milhões de pessoas
 publishDate: 2014-12-18
-metadata:
-  categories:
-    - Acessibilidade
-  tags:
-    - mimi
-  url: https://brunopulis.com/ignoramos-45-milhoes-de-pessoas/
+category: "Acessibilidade"
+url: https://brunopulis.com/ignoramos-45-milhoes-de-pessoas/
 tags:
   - acessibilidade
 ---

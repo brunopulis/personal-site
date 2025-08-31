@@ -1,13 +1,10 @@
 ---
 title: "HTML Semântico: repensando sobre seu uso"
 publishDate: 2020-04-30
-metadata:
-  categories:
-    - Desenvolvimento web
-  url: https://brunopulis.com/repensando-sobre-o-html/
-tags:
-  - desenvolvimento-web
+category: "Frontend"
+url: https://brunopulis.com/repensando-sobre-o-html/
 ---
+
 ## Introdução
 
 O HTML é o bloco de construção mais básico da web. É o responsável por definir duas características importantíssimas: **significado** e a **estrutura** do conteúdo da web.

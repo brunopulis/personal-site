@@ -1,13 +1,10 @@
 ---
 title: DevFest BH 2017
 publishDate: 2017-11-20
-metadata:
-  categories:
-    - Indicações
-  url: https://brunopulis.com/review-devfest-bh-2017/
-tags:
-  - indicacoes
+category: "Indicações"
+url: https://brunopulis.com/review-devfest-bh-2017/
 ---
+
 ## O local
 
 O Devfest da edição mineira, foi no One Bussiness Center na Raja Gabália. Uma excelente acomodação para um evento desse porte. Além, do local ser bem conservado e contar com estacionamento próprio, a equipe do GDG BH deu um show no quesito de organização.

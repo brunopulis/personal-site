@@ -31,6 +31,7 @@ export default {
     extend: {
       colors: {
         transparent: "transparent",
+        'blood-red': "#610404",
         brand: {
           50: "#fff1f1",
           100: "#ffdfdf",

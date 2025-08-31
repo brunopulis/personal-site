@@ -1,15 +1,10 @@
 ---
 title: Minas Test Conference 20
 publishDate: 2020-08-22
-metadata:
-  categories:
-    - Indicações
-  url: https://brunopulis.com/review-minas-test-conference-20/
-tags:
-  - indicacoes
+category: "Indicações"
+url: https://brunopulis.com/review-minas-test-conference-20/
 ---
  
-
 ## Introdução
 
 Sábado dia 22 de agosto, aconteceu o Minas Test Conference um evento focado na área de qualidade de software.

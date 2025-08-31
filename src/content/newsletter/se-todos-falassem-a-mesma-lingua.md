@@ -2,7 +2,7 @@
 issue: "46"
 title: "Se todos falassem a mesma língua?"
 date: "2024-12-18"
-coverImage: "the-cleveland-museum-of-art-axm7m_45_zk-unsplash-scaled.jpg"
+coverImage: "images/the-cleveland-museum-of-art-axm7m_45_zk-unsplash-scaled.jpg"
 ---
 
 Opa!

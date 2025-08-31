@@ -1,8 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header.astro'
-import Footer from '@/components/Footer.astro'
-import HeroSection from '@/components/HeroSection.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
 import Newsletter from '@/components/Newsletter.astro'
 
 import { getCollection } from 'astro:content'
@@ -31,43 +31,38 @@ function formatDate(date: Date, locale: Intl.LocalesArgument) {
 			title="Filtro Digital"
 			description="Semanalmente, filtramos o que realmente importa em acessibilidade, qualidade de software e organização digital"
 		/>
-		<div class="container mx-auto px-5">
-			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-				<div class="lg:col-span-2">
-					<h2 class="mb-8 text-4xl font-bold leading-tight text-gray-900 md:text-5xl">
-						Edições anteriores
-					</h2>
-
-					<div class="space-y-6 mb-5">
-						{
-							sortedPosts.map((letter) => (
-								<div class="group cursor-pointer">
-									<div class="flex items-start gap-4">
-										<div class="flex flex-col items-center">
-											<span class="text-lg font-medium text-brand-500">#{letter.data.issue}</span>
-											<div class="mt-1 h-1 w-12 bg-brand-500" />
-										</div>
-										<div class="flex-1">
-											<h2 class="text-xl font-semibold text-gray-900 transition-colors group-hover:text-red-950">
-												<a href={'/newsletter/' + letter.id} class="block">
-													{letter.data.title}
-												</a>
-											</h2>
-											<time class="mt-1 text-sm text-gray-500" datetime="">
-												{formatDate(new Date(letter.data.date), "pt-BR")}
-											</time>
-										</div>
+		<div class="container-custom py-8">
+			<div class="grid grid-cols-1 gap-8">
+				<h2 class="title-font my-5 text-3xl font-medium sm:text-4xl">
+					Edições anteriores
+				</h2>
+				<div class="space-y-6 mb-5">
+					{
+						sortedPosts.map((letter) => (
+							<div class="group cursor-pointer">
+								<div class="flex items-start gap-4">
+									<div class="flex flex-col items-center">
+										<span class="text-lg font-medium text-brand-500">#{letter.data.issue}</span>
+										<div class="mt-1 h-1 w-12 bg-brand-500" />
+									</div>
+									<div class="flex-1">
+										<h2 class="text-xl font-semibold text-gray-900 transition-colors group-hover:text-red-950">
+											<a href={'/newsletter/' + letter.id} class="block">
+												{letter.data.title}
+											</a>
+										</h2>
+										<time class="mt-1 text-sm text-gray-500" datetime="">
+											{formatDate(new Date(letter.data.date), "pt-BR")}
+										</time>
 									</div>
 								</div>
-							))
-						}
+							</div>
+						))
+					}
 					</div>
-				</div>
-
-				<!-- Sidebar -->
-				<div class="lg:col-span-1">
-					<Newsletter />
-				</div>
+			</div>
+			<Newsletter />
+			
 			</div>
 		</div>
 	</main>

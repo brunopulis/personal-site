@@ -1,13 +1,10 @@
 ---
 title: "Reset: Vivendo no ritmo da graça em uma cultura estressada"
 publishDate: 2022-10-15
-metadata:
-  categories:
-    - Indicações
-  url: https://brunopulis.com/resumo-reset/
-tags:
-  - indicacoes
+category: "Indicações"
+url: https://brunopulis.com/resumo-reset/
 ---
+
 Como é que eu cheguei nesse ponto? Esta é a pergunta que muitos homens cristãos estressados que estão perto de um “burnout” se fazem. Eles estão exaustos, deprimidos, ansiosos e sem alegria. Seu tempo é gasto fazendo muitas coisas boas, mas seu ritmo é insustentável – não descansam adequadamente e precisam recalibrar as forças com urgência. Este livro oferece uma boa notícia para quem está vivendo estressado. Acompanhe comigo, os pontos importantes desse livro e como ele mudou a minha vida.  
 
 ## O livro em 3 frases

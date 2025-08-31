@@ -1,10 +1,8 @@
 ---
 title: "GAAD: Global Accessibility Awareness Day 17"
 publishDate: 2017-09-11
-metadata:
-  categories:
-    - Indicações
-  url: https://brunopulis.com/gaad-17/
+category: "Indicações"
+url: https://brunopulis.com/gaad-17/
 tags:
   - indicacoes
 ---

@@ -1,0 +1,128 @@
+---
+---
+
+<footer>
+  <ul class="author__list" role="list">
+    <li class="author__item">
+      <strong>
+        <img draggable="false"
+          class="emoji"
+          alt="📍"
+          src="https://media.hacdias.com/emoji/16.0.1/svg/1f4cd.svg"
+        /> Onde:
+      </strong>
+      <span class="p-location h-adr"><span class="p-locality">Eindhoven</span>,
+      <span class="p-country">Netherlands</span></span>
+    </li>
+    <li class="author__item">
+      <strong>
+        <img
+          draggable="false"
+          class="emoji"
+          alt="📁"
+          src="https://media.hacdias.com/emoji/16.0.1/svg/1f4c1.svg"
+        /> Tags: </strong
+      >
+      <span
+        ><a class="p-category author__link" href="/tags/indieweb/">IndieWeb</a>,
+        <a class="p-category author__link" href="/tags/indieweb-carnival/"
+          >Indieweb Carnival</a
+        >,
+        <a class="p-category author__link" href="/tags/reflection/">Reflection</a></span
+      >
+    </li><li class="author__item">
+      <strong>
+        <img
+          draggable="false"
+          class="emoji"
+          alt="🌐"
+          src="https://media.hacdias.com/emoji/16.0.1/svg/1f310.svg"
+        /> Também:</strong
+      >
+      <span
+        ><a
+          class="u-syndication author__link"
+          rel="noopener noreferrer"
+           href="https://news.indieweb.org/en">news.indieweb.org</a
+        >, <a
+          class="u-syndication author__link"
+          rel="noopener noreferrer"
+           href="https://fosstodon.org/@hacdias/114964919259561217"
+          >fosstodon.org</a
+        >, <a
+          class="u-syndication author__link"
+          rel="noopener noreferrer"
+           href="https://bsky.app/profile/hacdias.com/post/3lvipskdies27"
+          >bsky.app</a
+        ></span
+      >
+    </li><li class="author__item">
+      <strong>
+        <img
+          draggable="false"
+          class="emoji"
+          alt="💬"
+          src="https://media.hacdias.com/emoji/16.0.1/svg/1f4ac.svg"
+        /> Reply</strong
+      >
+      <span
+        ><a
+         class="author__link"  href="mailto:mail@hacdias.com?subject=Re: IndieWeb%20Carnival%3a%20Colors"
+          rel="noopener noreferrer">E-Mail</a
+        >,
+        <a class="author__link" href="https://fosstodon.org/@hacdias" rel="noopener noreferrer"
+          >Mastodon</a
+        >,
+        <a class="author__link" href="https://bsky.app/profile/hacdias.com" rel="noopener noreferrer"
+          >Bluesky</a
+        >,
+        <a class="author__link" href="https://indieweb.org/Webmention" rel="noopener noreferrer"
+          >Webmentions</a
+        ></span>
+    </li>
+  </ul>
+</footer>
+
+<style>
+  .emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 0.05em 0 0.1em;
+    vertical-align: -0.1em;
+  }
+
+  .author__list {
+    margin: 1rem 0;
+    border: 1px solid var(--clr-errie-900);
+    background: var(--color-vista);
+  }
+
+  .author__item {
+    margin: 0;
+    color: var(--clr-errie-900);
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 6rem auto;
+    padding: 1rem;
+  }
+
+  .author__item strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .author__item > * {
+    display: block;
+    margin: var(--hms) 0;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .author__link {
+    color: var(--clr-errie-900);
+  }
+</style>

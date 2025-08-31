@@ -3,171 +3,260 @@ import config from "@/data/site.config.json";
 import testimonials from "@/data/testimonials.json";
 import speaking from "@/assets/palestra.webp";
 
-import Layout from "@/layouts/Layout.astro"
-import Header from "@/components/Header.astro"
-import HeroSection from "@/components/HeroSection.astro";
-import Footer from "@/components/Footer.astro"
-import ButtonCTA from "@/components/ui/ButtonCTA.astro"
-import TalksList from "@/components/TalksList.astro"
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/layout/Header.astro";
+import HeroSection from "@/components/layout/HeroSection.astro";
+import Footer from "@/components/layout/Footer.astro";
+import TalksList from "@/components/TalksList.astro";
+import TypeTalks from "@/components/TypeTalks.astro";
+import PricingSpeaking from "@/components/PricingSpeaking.astro";
+
+import talks from "@/assets/talks.avif";
 
 const talkTestimonials = testimonials.testimonials.filter(
   testimonial => testimonial.type === "talk"
 );
 ---
 
-<Layout title="Palestras e Workshops - Bruno Pulis">
-	<Header />
-	<main>
-		<HeroSection
-			title="Palestras e Workshops"
-			description="Compartilhando conhecimento e inspiro equipes a criar uma web mais inclusiva."
-		/>
-		<section class="bg-white py-16 dark:bg-gray-800">
-			<div class="container mx-auto px-5">
-				<div class="mb-12 grid items-center gap-12 md:grid-cols-2">
-					<div>
-						<h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-							Sobre o palestrante
-						</h2>
-						<p class="mb-6 leading-relaxed text-gray-700">
-							Bruno Pulis é um defensor apaixonado da acessibilidade na Web e das práticas
-							recomendadas de desenvolvimento de front-end. Com mais de uma década de experiência na
-							criação de experiências digitais inclusivas, Bruno se tornou uma voz reconhecida na
-							comunidade de acessibilidade.
-						</p>
+<Layout title="Palestras - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection
+      title="Palestras e"
+      highlightText="  Workshops"
+      description="Apresentações inspiradoras e workshops práticos sobre acessibilidade digital para eventos, empresas e instituições de ensino."
+    />
+    <div class="container-custom py-8">
+      <div class="mb-24 grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+            Transformando mentalidades
+          </h2>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">
+            Minhas palestras e workshops não apenas informam, mas transformam a
+            forma como as pessoas pensam sobre acessibilidade digital. Com uma
+            abordagem prática e inspiradora, mostro como a inclusão digital
+            beneficia todos e como implementá-la de forma eficiente.
+          </p>
 
-						<p class="mb-6 leading-relaxed text-gray-700">
-							Por meio de palestras e workshops envolventes, Bruno compartilha insights práticos que
-							capacitam desenvolvedores e designers a criar aplicativos mais acessíveis e fáceis de
-							usar. Sua abordagem combina conhecimento técnico com uma profunda compreensão das
-							necessidades do usuário.
-						</p>
-					</div>
-					<div>
+          <ul class="list-inside list-disc space-y-2">
+            <li class="text-gray-600 dark:text-gray-300">
+              Conscientização sobre a importância da acessibilidade;
+            </li>
+            <li class="text-gray-600 dark:text-gray-300">
+              Casos reais de impacto positivo;
+            </li>
+            <li class="text-gray-600 dark:text-gray-300">
+              Demonstrações práticas com tecnologias assistivas;
+            </li>
+            <li class="text-gray-600 dark:text-gray-300">
+              Estratégias de implementação imediata;
+            </li>
+            <li class="text-gray-600 dark:text-gray-300">
+              ROI e benefícios de negócio;
+            </li>
+            <li class="text-gray-600 dark:text-gray-300">
+              Mudança cultural sustentável.
+            </li>
+          </ul>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-xl">
+          <img
+            class="h-auto w-full rounded-lg object-cover object-center"
+            alt=""
+            src={talks.src}
+          />
+        </div>
+      </div>
+
+      <TypeTalks />
+
+      <section class="section py-8" id="testimonials">
+        <div class="container-custom">
+          <div class="mx-auto mb-16 max-w-3xl text-center">
+            <h2 class="text-blood-red mb-6 dark:text-white">
+              O que as pessoas dizem
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300">
+              <span lang="en">Feedback</span> dos participantes que assistiram às
+              palestras e apresentações.
+            </p>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-3">
+            {
+              talkTestimonials.length > 0 ? (
+                talkTestimonials.map((testimonial, index) => (
+                  <div
+                    class="card slide-up border border-gray-200 p-6 dark:border-gray-700"
+                    style={`animation-delay: ${index * 150}ms`}
+                  >
+                    <div class="mb-6">
+                      {[...Array(5)].map(() => (
+                        <svg
+                          class="text-warning-400 inline-block h-5 w-5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+
+                    <blockquote class="text-errie-black mb-6 italic dark:text-gray-300">
+                      "{testimonial.content}"
+                    </blockquote>
+                    <div class="flex items-center">
+                      <div>
+                        <p class="text-errie-black font-semibold dark:text-white">
+                          {testimonial.author}
+                        </p>
+                        <p class="text-errie-black-500 text-sm dark:text-gray-400">
+                          {testimonial.position}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div class="col-span-3 text-center">
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Nenhum depoimento sobre palestras encontrado.
+                  </p>
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="mb-12 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+            Sobre o palestrante
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600 dark:text-gray-300">
+            O que dizem sobre as palestras e workshops.
+          </p>
+        </div>
+        <div class="mb-24 grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+              Quem é Bruno Pulis?
+            </h2>
+            <p class="mb-4 text-gray-600 dark:text-gray-300">
+              Bruno Pulis é um defensor apaixonado da acessibilidade na Web e
+              das práticas recomendadas de desenvolvimento de front-end. Com
+              mais de uma década de experiência na criação de experiências
+              digitais inclusivas.
+            </p>
+            <p class="dark:texgray-300 mb-4 text-gray-600">
+              Por meio de palestras e workshops envolventes, Bruno compartilha
+              insights práticos que capacitam desenvolvedores e designers a
+              criar aplicativos mais acessíveis e fáceis de usar.
+            </p>
+            <p class="dark:texgray-300 mb-4 text-gray-600">
+              Sua abordagem combina conhecimento técnico com uma profunda
+              compreensão das necessidades do usuário.
+            </p>
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-xl">
             <img
               src={speaking.src}
+              class="h-auto w-full rounded-lg object-cover object-center"
               alt="Bruno Pulis em uma palestra"
-              class="w-full rounded-lg shadow-lg"
               loading="lazy"
               width="600"
               height="400"
             />
           </div>
-				</div>
+        </div>
+      </section>
 
-				<div class="mb-12">
-					<h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Informações para divulgação</h2>
-					<p class="mb-4 text-gray-600">
-						Para facilitar a divulgação do seu evento, post promocional aqui está as minhas
-						informações relevantes.
-					</p>
-					<details class="mb-4">
-						<summary>Mini biografia</summary>
-						<p class="my-2">
-							Bruno Pulis é desenvolvedor de software especialista em acessibilidade web, formado
-							pela Faculdade Pitágoras, com 15 anos de experiência.
-						</p>
-						<p class="my-5">Apaixonado por
-							acessibilidade, criou o Awesome A11y, também é co-fundador do Minas Dev. Curioso.
-							Viciado em Star Wars e café. Acredita que a web é um local democrático e diverso
-							onde todos podem usufruir dos seus benefícios e troca de conhecimentos.</p>
-					</details>
+      <section>
+        <div>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+            Informações para divulgação
+          </h2>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">
+            Para facilitar a divulgação do seu evento, post promocional aqui
+            está as minhas informações relevantes.
+          </p>
+          <details class="mb-4 text-gray-600 dark:text-gray-300">
+            <summary>Mini biografia</summary>
+            <p class="my-2">
+              Bruno Pulis é desenvolvedor de software especialista em
+              acessibilidade web, formado pela Faculdade Pitágoras, com 15 anos
+              de experiência.
+            </p>
+            <p class="my-5">
+              Apaixonado por acessibilidade, criou o Awesome A11y, também é
+              co-fundador do Minas Dev. Curioso. Viciado em Star Wars e café.
+              Acredita que a web é um local democrático e diverso onde todos
+              podem usufruir dos seus benefícios e troca de conhecimentos.
+            </p>
+          </details>
 
-					<details class="mb-4">
-						<summary>Biografia completa</summary>
-						<p>
-							Bruno Pulis conheceu acessibilidade digital na Faculdade através de conversas
-							informais com um dos seus professores. Através de pesquisas na internet e fóruns
-							aprofundou seus conhecimentos. Curioso por natureza, começou a fazer uma curadoria
-							de conteúdos relacionados ao tema e criou o famoso <a
-								href="https://github.com/brunopulis/awesome-a11y"
-								rel="noopener">Awesome A11y</a
-							>, um projeto <em>open source </em>que concentra todos os seus estudos.<br />Desde
-							do início de sua carreira tinha um objetivo: ajudar as pessoas a aplicarem a
-							acessibilidade no cotidiano e desmistificar a sua complexidade, compartilha conteúdo
-							desde 2013 e se tornou uma das referências nacionais do assunto.&nbsp;<br />Hoje,
-							ajuda desenvolvedores, analistas de qualidade e designers com a <a
-								href="https://mentoria.brunopulis.com">Mentoria Acessibilidade Já</a
-							>.
-						</p>
-					</details>
+          <details class="mb-4 text-gray-600 dark:text-gray-300">
+            <summary>Biografia completa</summary>
+            <p class="text-gray-600 dark:text-gray-300">
+              Bruno Pulis conheceu acessibilidade digital na Faculdade através
+              de conversas informais com um dos seus professores. Através de
+              pesquisas na internet e fóruns aprofundou seus conhecimentos.
+              Curioso por natureza, começou a fazer uma curadoria de conteúdos
+              relacionados ao tema e criou o famoso <a
+                href="https://github.com/brunopulis/awesome-a11y"
+                rel="noopener">Awesome A11y</a
+              >, um projeto <em>open source </em>que concentra todos os seus
+              estudos.<br />Desde do início de sua carreira tinha um objetivo:
+              ajudar as pessoas a aplicarem a acessibilidade no cotidiano e
+              desmistificar a sua complexidade, compartilha conteúdo desde 2013
+              e se tornou uma das referências nacionais do assunto.&nbsp;<br
+              />Hoje, ajuda desenvolvedores, analistas de qualidade e designers
+              com a <a href="https://mentoria.brunopulis.com"
+                >Mentoria Acessibilidade Já</a
+              >.
+            </p>
+          </details>
 
-					<h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Avatar</h2>
-					<p class="mb-6 leading-relaxed text-gray-700">
-						Você pode baixar meu avatar diretamente por aqui.
-					</p>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+            Avatar
+          </h2>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">
+            Você pode baixar meu avatar diretamente por aqui.
+          </p>
 
-					<h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Links</h2>
-					<ul class="list-disc space-y-2 pl-6 text-gray-700">
-						<li><a href={config.socialMidia.bluesky} class="underline hover:no-underline">Bluesky</a> </li>
-						<li><a href={config.socialMidia.speakerdeck} class="underline hover:no-underline">Speaker Deck</a></li>
-						<li><a href={config.socialMidia.linkedin} class="underline hover:no-underline">LinkedIn</a></li>
-						<li><a href={config.socialMidia.instagram} class="underline hover:no-underline">Instagram</li>
-						<li><a href={config.socialMidia.github} class="underline hover:no-underline"></a>GitHub</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+            Links
+          </h2>
+          <ul class="list-inside list-disc">
+            <li><a href={config.socialMidia.bluesky}>Bluesky</a></li>
+            <li><a href={config.socialMidia.speakerdeck}>Speaker Deck</a></li>
+            <li><a href={config.socialMidia.linkedin}>LinkedIn</a></li>
+            <li>
+              <a href={config.socialMidia.instagram}>Instagram</a>
+              <li><a href={config.socialMidia.github}></a>GitHub</li>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-		<TalksList />
+      <TalksList />
 
-		 {/* Refactoring to component */}
-		<section class="section py-16" id="testimonials">
-			<div class="container mx-auto">
-				<div class="mx-auto mb-16 max-w-3xl text-center">
-					<h2 class="text-blood-red mb-6 dark:text-white">O que as pessoas dizem</h2>
-					<p class="text-gray-600 dark:text-gray-300">
-						<span lang="en">Feedback</span> dos participantes que assistiram às palestras e apresentações.
-					</p>
-				</div>
+      <section class="bg-gray-50 dark:bg-gray-800/50" id="pricing">
+        <div class="mb-12 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+            Investimento
+          </h2>
+          <p class="mx-auto max-w-3xl text-gray-600 dark:text-gray-300">
+            Valores transparentes para diferentes tipos de apresentação
+          </p>
+        </div>
 
-				<div class="grid gap-8 md:grid-cols-3">
-					{talkTestimonials.length > 0 ? (
-						talkTestimonials.map((testimonial, index) => (
-							<div
-								class="card slide-up border border-gray-200 p-6 dark:border-gray-700"
-								style={`animation-delay: ${index * 150}ms`}
-							>
-								<div class="mb-6">
-									{[...Array(5)].map(() => (
-										<svg
-											class="text-warning-400 inline-block h-5 w-5"
-											fill="currentColor"
-											viewBox="0 0 20 20"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-										</svg>
-									))}
-								</div>
-
-								<blockquote class="text-errie-black mb-6 italic dark:text-gray-300">
-									"{testimonial.content}"
-								</blockquote>
-								<div class="flex items-center">
-									<div>
-										<p class="text-errie-black font-semibold dark:text-white">
-											{testimonial.author}
-										</p>
-										<p class="text-errie-black-500 text-sm dark:text-gray-400">
-											{testimonial.position}
-										</p>
-									</div>
-								</div>
-							</div>
-						))
-					) : (
-						<div class="col-span-3 text-center">
-							<p class="text-gray-600 dark:text-gray-300">
-								Nenhum depoimento sobre palestras encontrado.
-							</p>
-						</div>
-					)}
-				</div>
-
-				<ButtonCTA url="/reviews" text="Todos os comentários" />
-			</div>
-		</section>
-	</main>
-	<Footer />
+        <PricingSpeaking />
+      </section>
+    </div>
+  </main>
 </Layout>
+<Footer />

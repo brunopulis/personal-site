@@ -1,13 +1,10 @@
 ---
 title: "Review: Node School BH 17"
 publishDate: 2017-11-15
-metadata:
-  categories:
-    - Indicações
-  url: https://brunopulis.com/review-node-school-bh-17/
-tags:
-  - indicacoes
+category: "Indicações"
+url: https://brunopulis.com/review-node-school-bh-17/
 ---
+
 Fala galera, nos dois últimos sábados aconteceram o Node School BH uma iniciativa open-source para promover workshop’s presenciais e partilhar conhecimento.
 
 O evento contou com mentores para auxiliar os participantes em suas dúvidas e explicações voltadas ao mundo da programação. Foi a minha primeira edição como mentor e gostei bastante de poder gastar meu tempo em ajudar aqueles interessados em Node e Javascript.

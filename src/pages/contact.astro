@@ -1,19 +1,370 @@
 ---
+import { Clock, Calendar, MapPin, Mail } from "@lucide/astro";
+
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import HeroSection from "@/components/HeroSection.astro";
-import ContactForm from "@/components/Contact.astro";
-import Footer from "@/components/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import FAQ from "@/components/FAQ.astro";
+import Footer from "@/components/layout/Footer.astro";
 ---
 
 <Layout title="Contato - Bruno Pulis">
   <Header />
-  <main>
-    <HeroSection
-      title="Contato"
-      description="Compartilhando conhecimento sobre desenvolvimento, acessibilidade e qualidade de software."
-    />
-    <ContactForm />
+  <main class="pt-16">
+    <div class="min-h-screen">
+      <section class="bg-blood-red-800 px-6 py-20 lg:px-20">
+        <div class="mx-auto max-w-7xl text-center">
+          <h1 class="mb-6 text-5xl font-bold text-white lg:text-6xl">
+            Vamos trabalhar juntos?
+          </h1>
+          <p class="mx-auto max-w-3xl text-xl leading-relaxed text-white/90">
+            Estou sempre interessado em novos projetos desafiadores e
+            oportunidades de colaboração. Vamos conversar sobre como posso
+            ajudar a transformar suas ideias em realidade digital.
+          </p>
+
+          <ul
+            class="flex flex-wrap justify-center gap-6 py-3 text-white/80"
+            aria-label="Informações de contato"
+          >
+            <li class="flex items-center gap-2">
+              <Clock class="h-5 w-5" aria-hidden="true" />
+              <span>Resposta em até 24h</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <Calendar class="h-5 w-5" aria-hidden="true" />
+              <span>Reunião gratuita de 30min</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <MapPin class="h-5 w-5" aria-hidden="true" />
+              <span>São Paulo, Brasil</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="bg-white px-6 py-20 lg:px-20"
+        aria-labelledby="contact-methods-title"
+      >
+        <div class="mx-auto max-w-7xl">
+          <h2
+            id="contact-methods-title"
+            class="mb-16 text-center text-4xl font-bold text-gray-900"
+          >
+            Como Entrar em Contato
+          </h2>
+          <div
+            class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            role="list"
+            aria-label="Métodos de contato"
+          >
+            <div
+              class="bg-card text-card-foreground group ring-opacity-20 flex cursor-pointer flex-col gap-6 rounded-xl border p-6 text-center ring-2 transition-shadow hover:shadow-lg"
+              role="listitem"
+            >
+              <span
+                data-slot="badge"
+                class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 bg-blood-red-800)] mb-4 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
+                >Preferido</span
+              ><div
+                class="bg-blood-red-800 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-white transition-transform group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <Mail class="h-5 w-5" aria-hidden="true" />
+              </div><h3 class="mb-2 text-lg font-semibold text-gray-900">
+                Email
+              </h3><p class="mb-3 text-sm text-gray-600">
+                Para projetos e oportunidades
+              </p><a
+                href="mailto:hello@brunopulis"
+                class="text-blood-red-800 hover:text-blood-red-800/80 focus:ring-blood-red-text-blood-red-800 rounded-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                aria-label="Entrar em contato via Email: hello@brunopulis.com"
+                >hello@brunopulis.com</a
+              >
+            </div>
+
+            <div
+              class="bg-card text-card-foreground group flex cursor-pointer flex-col gap-6 rounded-xl border p-6 text-center transition-shadow hover:shadow-lg"
+              role="listitem"
+            >
+              <div
+                class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 text-gray-600 transition-transform group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-phone h-6 w-6"
+                  aria-hidden="true"
+                  ><path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  ></path></svg
+                >
+              </div><h3 class="mb-2 text-lg font-semibold text-gray-900">
+                WhatsApp
+              </h3><p class="mb-3 text-sm text-gray-600">
+                Para conversas rápidas
+              </p><a
+                href="https://wa.me/5511999999999"
+                class="text-blood-red-800 hover:text-blood-red-800/80 focus:ring-blood-red-text-blood-red-800 rounded-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                aria-label="Entrar em contato via WhatsApp: +55 (11) 99999-9999"
+                >+55 (11) 99999-9999</a
+              >
+            </div>
+
+            <div
+              class="bg-card text-card-foreground group flex cursor-pointer flex-col gap-6 rounded-xl border p-6 text-center transition-shadow hover:shadow-lg"
+              role="listitem"
+            >
+              <div
+                class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 text-gray-600 transition-transform group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-linkedin h-6 w-6"
+                  aria-hidden="true"
+                  ><path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path><rect width="4" height="12" x="2" y="9"></rect><circle
+                    cx="4"
+                    cy="4"
+                    r="2"></circle></svg
+                >
+              </div><h3 class="mb-2 text-lg font-semibold text-gray-900">
+                LinkedIn
+              </h3><p class="mb-3 text-sm text-gray-600">Rede profissional</p><a
+                href="https://linkedin.com/in/brunopulis"
+                class="text-blood-red-800 hover:text-blood-red-800/80 focus:ring-blood-red-text-blood-red-800 rounded-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                aria-label="Entrar em contato via LinkedIn: /in/brunopulis"
+                >/in/brunopulis</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="px-6 py-20 lg:px-20"
+        aria-labelledby="contact-form-title"
+        style="background-color: var(--color-light-gray);"
+      >
+        <div class="mx-auto max-w-4xl">
+          <div class="mb-12 text-center">
+            <h2
+              id="contact-form-title"
+              class="mb-6 text-4xl font-bold text-gray-900"
+            >
+              Conte-me Sobre Seu Projeto
+            </h2><p class="text-xl leading-relaxed text-gray-600">
+              Quanto mais detalhes você compartilhar, melhor poderei entender
+              suas necessidades e propor a solução ideal.
+            </p>
+          </div><div
+            data-slot="card"
+            class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border p-8 shadow-lg lg:p-12"
+          >
+            <form class="space-y-8" novalidate="">
+              <fieldset>
+                <legend class="sr-only">Informações básicas</legend><div
+                  class="grid gap-6 md:grid-cols-2"
+                >
+                  <div>
+                    <label
+                      data-slot="label"
+                      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                      for="name">Nome Completo *</label
+                    ><input
+                      data-slot="input"
+                      class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input bg-input-background focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-2 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                      id="name"
+                      name="name"
+                      placeholder="Seu nome completo"
+                      required=""
+                      aria-required="true"
+                      aria-invalid="false"
+                      value=""
+                    />
+                  </div><div>
+                    <label
+                      data-slot="label"
+                      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                      for="email">Email *</label
+                    ><input
+                      type="email"
+                      data-slot="input"
+                      class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input bg-input-background focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-2 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                      id="email"
+                      name="email"
+                      placeholder="seu@email.com"
+                      required=""
+                      aria-required="true"
+                      aria-invalid="false"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </fieldset><fieldset>
+                <legend class="sr-only">Detalhes do projeto</legend><div
+                  class="grid gap-6 md:grid-cols-2"
+                >
+                  <div>
+                    <label
+                      data-slot="label"
+                      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                      for="company">Empresa/Organização</label
+                    ><input
+                      data-slot="input"
+                      class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input bg-input-background focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-2 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                      id="company"
+                      name="company"
+                      placeholder="Nome da sua empresa"
+                      value=""
+                    />
+                  </div><div>
+                    <label
+                      data-slot="label"
+                      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                      for="project">Tipo de Projeto *</label
+                    ><select
+                      id="project"
+                      name="project"
+                      class="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--color-burgundy)] focus:outline-none"
+                      required=""
+                      aria-required="true"
+                      aria-invalid="false"
+                      ><option value="">Selecione o tipo de projeto</option
+                      ><option value="Website/Landing Page"
+                        >Website/Landing Page</option
+                      ><option value="Aplicativo Web">Aplicativo Web</option
+                      ><option value="Aplicativo Mobile"
+                        >Aplicativo Mobile</option
+                      ><option value="E-commerce">E-commerce</option><option
+                        value="Dashboard/Sistema">Dashboard/Sistema</option
+                      ><option value="Design System">Design System</option
+                      ><option value="Consultoria UX/UI"
+                        >Consultoria UX/UI</option
+                      ><option value="Outros">Outros</option></select>
+                  </div>
+                </div>
+              </fieldset><fieldset>
+                <legend class="sr-only">Orçamento e prazo</legend><div
+                  class="grid gap-6 md:grid-cols-2"
+                >
+                  <div>
+                    <label
+                      data-slot="label"
+                      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                      for="budget">Orçamento Estimado</label
+                    ><select
+                      id="budget"
+                      name="budget"
+                      class="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-[var(--color-burgundy)] focus:outline-none"
+                      ><option value="">Selecione uma faixa de orçamento</option
+                      ><option value="Menos de R$ 5.000"
+                        >Menos de R$ 5.000</option
+                      ><option value="R$ 5.000 - R$ 15.000"
+                        >R$ 5.000 - R$ 15.000</option
+                      ><option value="R$ 15.000 - R$ 30.000"
+                        >R$ 15.000 - R$ 30.000</option
+                      ><option value="R$ 30.000 - R$ 50.000"
+                        >R$ 30.000 - R$ 50.000</option
+                      ><option value="Mais de R$ 50.000"
+                        >Mais de R$ 50.000</option
+                      ><option value="Prefiro discutir">Prefiro discutir</option
+                      ></select>
+                  </div><div>
+                    <label
+                      data-slot="label"
+                      class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                      for="timeline">Prazo Desejado</label
+                    ><input
+                      data-slot="input"
+                      class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input bg-input-background focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive mt-2 flex h-9 w-full min-w-0 rounded-md border px-3 py-1 text-base transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-[3px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                      id="timeline"
+                      name="timeline"
+                      placeholder="Ex: 2 meses, Flexível, Urgente"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </fieldset><div>
+                <label
+                  data-slot="label"
+                  class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+                  for="message">Descrição do Projeto *</label
+                ><textarea
+                  data-slot="textarea"
+                  class="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 bg-input-background mt-2 flex field-sizing-content min-h-16 w-full resize-none rounded-md border px-3 py-2 text-base transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                  id="message"
+                  name="message"
+                  placeholder="Descreva seu projeto, objetivos, público-alvo e qualquer informação relevante que possa me ajudar a entender melhor suas necessidades..."
+                  required=""
+                  aria-required="true"
+                  aria-invalid="false"
+                  aria-describedby="message-help"
+                  rows="6"></textarea><p
+                  id="message-help"
+                  class="mt-1 text-sm text-gray-500"
+                >
+                  Mínimo de 20 caracteres
+                </p>
+              </div><div
+                class="rounded-lg bg-blue-50 p-4"
+                role="complementary"
+                aria-label="Dica para melhor proposta"
+              >
+                <p class="text-sm text-blue-800">
+                  <strong>💡 Dica:</strong> Inclua informações sobre seu público-alvo,
+                  objetivos do projeto, inspirações ou referências que você tem em
+                  mente. Isso me ajudará a criar uma proposta mais alinhada com suas
+                  expectativas.
+                </p>
+              </div><button
+                data-slot="button"
+                class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-10 w-full shrink-0 items-center justify-center gap-2 rounded-md bg-[var(--color-burgundy)] px-6 py-6 text-lg font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-[var(--color-burgundy)]/90 focus:ring-2 focus:ring-[var(--color-burgundy)] focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+                type="submit"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-send mr-2 h-5 w-5"
+                  aria-hidden="true"
+                  ><path
+                    d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+                  ></path><path d="m21.854 2.147-10.94 10.939"></path></svg
+                >Enviar Proposta de Projeto</button
+              ><p class="text-center text-sm text-gray-500">
+                Normalmente respondo em até 24 horas durante dias úteis
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    
+      <FAQ />
+    </div>
   </main>
   <Footer />
 </Layout>

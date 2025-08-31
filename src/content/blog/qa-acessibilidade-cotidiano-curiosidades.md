@@ -1,15 +1,10 @@
 ---
 title: "QA de acessibilidade: cotidiano e curiosidades"
 publishDate: 2021-08-22
-metadata:
-  categories:
-    - Qualidade de Software
-  tags:
-    - acessibilidade
-  url: https://brunopulis.com/qa-acessibilidade-cotidiano-curiosidades/
-tags:
-  - qualidade-de-software
+category: "Qualidade de Software"
+url: https://brunopulis.com/qa-acessibilidade-cotidiano-curiosidades/
 ---
+
 Testes de acessibilidade são parte integrante da disciplina de qualidade de software.
 
 Entretanto, a forma de atuação e ferramentas são bem diferentes dos outros perfis de testes.
