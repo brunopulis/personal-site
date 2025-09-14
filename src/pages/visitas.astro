@@ -1,0 +1,69 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/layout/Header.astro";
+import HeroSection from "@/components/layout/HeroSection.astro";
+import Footer from "@/components/layout/Footer.astro";
+
+---
+
+<Layout title="Livro de Visitas - Bruno Pulis">
+  <Header />
+  <main>
+    <HeroSection
+      title="Livro de Visitas"
+      description="Find answers to common questions about Sassify and our services."
+    />
+
+    <div>
+      <form method="POST" class="box" id="guestbook">
+        <fieldset>
+          <legend class="font-bold mb-5 font-2xl">Deixe seu comentário</legend>
+          <div class="mb-5">
+            <label for="author" class="font-bold mb-5">Nome</label>
+            <input
+              type="text"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              id="author"
+              name="author"
+              placeholder="Put in your fullname."
+            />
+          </div>
+
+          <div class="mb-5">
+            <label for="author" class="font-bold mb-5">Website</label>
+            <input
+              type="url"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              id="author"
+              name="author"
+              placeholder="Put in your fullname."
+            />
+          </div>
+
+          <div class="mb-5">
+            <label for="content" class="font-bold mb-5">Mensagem</label>
+            <textarea
+              rows="4"
+              id="content"
+              class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              name="content"></textarea>
+          </div>
+
+          <label for="special">
+            <input id="special" name="special" />
+          </label>
+
+          <button
+            type="submit"
+            class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+            >Leave your mark</button
+          >
+        </fieldset>
+      </form>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+
+

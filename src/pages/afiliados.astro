@@ -7,18 +7,13 @@ import Header from "@/components/layout/Header.astro"
 import HeroSection from "@/components/layout/HeroSection.astro";
 import Footer from "@/components/layout/Footer.astro"
 import ButtonCTA from "@/components/ui/ButtonCTA.astro"
-import TalksList from "@/components/TalksList.astro"
-
-const talkTestimonials = testimonials.testimonials.filter(
-  testimonial => testimonial.type === "talk"
-);
 ---
 
-<Layout title="Palestras e Workshops - Bruno Pulis">
+<Layout title="Links de afiliados - Bruno Pulis">
 	<Header />
 	<main>
 		<HeroSection
-			title="Palestras e Workshops"
+			title="Afiliados"
 			description="Compartilhando conhecimento e inspiro equipes a criar uma web mais inclusiva."
 		/>
 		<section class="bg-white py-16 dark:bg-gray-800">
@@ -97,9 +92,7 @@ const talkTestimonials = testimonials.testimonials.filter(
 				</div>
 			</div>
 		</section>
-
-		<TalksList />
-
+		
 		 {/* Refactoring to component */}
 		<section class="section py-16" id="testimonials">
 			<div class="container mx-auto">
@@ -109,52 +102,6 @@ const talkTestimonials = testimonials.testimonials.filter(
 						<span lang="en">Feedback</span> dos participantes que assistiram às palestras e apresentações.
 					</p>
 				</div>
-
-				<div class="grid gap-8 md:grid-cols-3">
-					{talkTestimonials.length > 0 ? (
-						talkTestimonials.map((testimonial, index) => (
-							<div
-								class="card slide-up border border-gray-200 p-6 dark:border-gray-700"
-								style={`animation-delay: ${index * 150}ms`}
-							>
-								<div class="mb-6">
-									{[...Array(5)].map(() => (
-										<svg
-											class="text-warning-400 inline-block h-5 w-5"
-											fill="currentColor"
-											viewBox="0 0 20 20"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-										</svg>
-									))}
-								</div>
-
-								<blockquote class="text-errie-black mb-6 italic dark:text-gray-300">
-									"{testimonial.content}"
-								</blockquote>
-								<div class="flex items-center">
-									<div>
-										<p class="text-errie-black font-semibold dark:text-white">
-											{testimonial.author}
-										</p>
-										<p class="text-errie-black-500 text-sm dark:text-gray-400">
-											{testimonial.position}
-										</p>
-									</div>
-								</div>
-							</div>
-						))
-					) : (
-						<div class="col-span-3 text-center">
-							<p class="text-gray-600 dark:text-gray-300">
-								Nenhum depoimento sobre palestras encontrado.
-							</p>
-						</div>
-					)}
-				</div>
-
-				<ButtonCTA url="/reviews" text="Todos os comentários" />
 			</div>
 		</section>
 	</main>

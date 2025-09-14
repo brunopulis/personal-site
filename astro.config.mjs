@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 // import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
 import sitemapPlugin from '@astrojs/sitemap';
-import sectionize from '@hbsnow/rehype-sectionize';
+import compress from 'astro-compress';
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from '@astrojs/alpinejs';
 import icon from 'astro-icon';
@@ -16,6 +16,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
+  compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
   },
@@ -28,6 +29,7 @@ export default defineConfig({
     alpinejs(),
     sitemapPlugin(),
     mdx(),
+    compress(),
     partytown({
       config: {
         forward: ["dataLayer.push"],
@@ -64,8 +66,8 @@ export default defineConfig({
     })
   ],
 
-  markdown: {
-    rehypePlugins: [sectionize],
+  image: {
+    responsiveStyles: true,
   },
   adapter: netlify(),
 });

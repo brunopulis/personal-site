@@ -18,14 +18,22 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog/" }),
   schema: z.object({
     title: z.string(),
+    location: z.string().optional(),
+    country: z.string().optional(),
     category: z.string(),
     excerpt: z.string().optional(),
     publishDate: z.date(),
+    publishedAt: z.array(z.string()).optional(),
+    reply: z.string().optional(),
     modifiedDate: z.date().optional(),
     isFeatured: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().optional().default(false),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    readingTime: z.number().optional(),
+    url: z.string().optional(),
+    canonicalUrl: z.string().optional(),
     seo: seoSchema.optional()
   }),
 });

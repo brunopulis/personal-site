@@ -1,43 +1,46 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { type CollectionEntry, getCollection, render } from 'astro:content'
 
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import Author from "@/components/Author.astro";
-import Footer from "@/components/layout/Footer.astro";
-import { slugify } from "@/utils/common-utils";
+import { CalendarIcon, ClockIcon } from '@lucide/astro'
+
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import BackBlog from '@/components/blog/BackBlog.astro'
+import Tags from '@/components/blog/Tags.astro'
+import Author from '@/components/blog/Author.astro'
+import Footer from '@/components/layout/Footer.astro'
+import { slugify } from '@/utils/common-utils'
+
+import { User } from '@lucide/astro'
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection('blog')
 
-  return posts.map(post => ({
+  return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
-  }));
+  }))
 }
 
 type Props = {
-  post: CollectionEntry<"blog">;
-  prevPost: CollectionEntry<"blog">;
-  nextPost: CollectionEntry<"blog">;
-};
+  post: CollectionEntry<'blog'>
+  prevPost: CollectionEntry<'blog'>
+  nextPost: CollectionEntry<'blog'>
+}
 
 // Receber o post das props
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { post } = Astro.props
+const { Content } = await render(post)
 
 // Formatar data para pt-BR
-const formattedDate = new Date(post.data.publishDate).toLocaleDateString(
-  "pt-BR",
-  {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }
-);
+const formattedDate = new Date(post.data.publishDate).toLocaleDateString('pt-BR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 
-const isoDate = new Date(post.data.publishDate).toISOString();
+const isoDate = new Date(post.data.publishDate).toISOString()
 ---
 
 <Layout
@@ -46,52 +49,44 @@ const isoDate = new Date(post.data.publishDate).toISOString();
 >
   <Header />
   <main>
-    <div
-      class="text-primary my-5"
-    >
-      <h1 class="mb-4 text-4xl font-medium sm:text-5xl">
-        {post.data.title}
-      </h1><div
-        class="text-primary-small flex flex-wrap items-center gap-x-5 gap-y-2"
-      >
-        <time datetime={isoDate}>{formattedDate}</time>
-        <div
-          class="text-primary-small flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs"
-        >
-          {
-            post.data.tags.length > 0 && (
-              <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
-                {post.data.tags.map(tag => (
-                  <a
-                    class="bg-opacity-10 bg-primary text-main rounded px-1 py-0.5 hover:underline"
-                    href={`/tags/${slugify(tag)}`}
-                  >
-                    #{tag}
-                  </a>
-                ))}
-              </div>
-            )
-          }
+    <div class="min-h-screen bg-white">
+      <BackBlog />
+
+      <header class="bg-white px-6 py-12 lg:px-20">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-4">
+            <span
+              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 bg-blood-red-800 mb-4 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
+            >
+              {post.data.category}
+            </span>
+          </div>
+
+          <h1 class="text-errie-black-900 mb-6 text-4xl leading-tight font-bold lg:text-5xl">
+            {post.data.title}
+          </h1>
+          <p>{post.data.excerpt}</p>
+
+          <div class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base">
+            <div class="flex items-center gap-2">
+              <CalendarIcon class="h-4 w-4" aria-hidden="true" />
+              <time datetime={isoDate}>{formattedDate}</time>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <ClockIcon class="h-4 w-4" aria-hidden="true" />
+              <span>8 min de leitura</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </header>
+      <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <Content />
+        </div>
+      </article>
+      <Author />
     </div>
-   
-    <article class="my-8 grid max-w-2xl justify-items-start gap-8">
-      {
-        post.data.coverImage && (
-          <img
-            src={post.data.coverImage}
-            class="mb-10 h-auto w-full rounded-xl object-cover"
-            alt={post.data.title || ""}
-            style="max-height: 500px;"
-          />
-        )
-      }
-      <div class="prose prose-lg dark:prose-invert max-w-none">
-        <Content />
-        <Author />
-      </div>
-    </article>
-    <Footer />
   </main>
+  <Footer />
 </Layout>

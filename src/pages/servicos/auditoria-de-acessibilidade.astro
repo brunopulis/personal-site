@@ -1,0 +1,705 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+
+import {
+  Settings,
+  Users,
+  Award,
+  FileText,
+  Eye,
+  Download,
+  Phone,
+  Shield,
+  CheckCircle,
+  ArrowRight,
+} from "@lucide/astro";
+
+const services = [
+  {
+    icon: `<Search class="h-8 w-8 text-blue-600" />`,
+    title: "Auditoria de Acessibilidade",
+    description:
+      "Análise completa do seu site para identificar barreiras e problemas de acessibilidade",
+    details: [
+      "Análise técnica automatizada com ferramentas especializadas",
+      "Testes manuais realizados por especialistas",
+      "Avaliação de navegação com tecnologias assistivas",
+      "Relatório detalhado com priorização de correções",
+      "Planilha de ações para sua equipe técnica",
+    ],
+    price: "A partir de R$ 1.500",
+    duration: "5 a 10 dias úteis",
+  },
+  {
+    icon: `<Settings class="h-8 w-8 text-green-600" />`,
+    title: "Implementação de Correções",
+    description:
+      "Aplicação prática das melhorias necessárias em seu site ou sistema",
+    details: [
+      "Correção de problemas identificados na auditoria",
+      "Otimização de códigos HTML, CSS e JavaScript",
+      "Implementação de recursos acessíveis",
+      "Testes de validação das correções",
+      "Documentação das alterações realizadas",
+    ],
+    price: "A partir de R$ 3.500",
+    duration: "10 a 30 dias úteis",
+  },
+  {
+    icon: `<Users class="h-8 w-8 text-purple-600" />`,
+    title: "Consultoria Especializada",
+    description: "Orientação estratégica para manter seu site sempre acessível",
+    details: [
+      "Reuniões mensais com especialistas",
+      "Orientação sobre melhores práticas",
+      "Suporte para dúvidas técnicas",
+      "Acompanhamento de atualizações do site",
+      "Relatórios de monitoramento",
+    ],
+    price: "A partir de R$ 800/mês",
+    duration: "Contrato semestral ou anual",
+  },
+  {
+    icon: `<GraduationCap class="h-8 w-8 text-orange-600" />`,
+    title: "Treinamento da Equipe",
+    description:
+      "Capacitação da sua equipe para manter a acessibilidade internamente",
+    details: [
+      "Workshop presencial ou online (8 horas)",
+      "Material didático completo",
+      "Certificado de participação",
+      "Suporte pós-treinamento por 30 dias",
+      "Checklist de boas práticas",
+    ],
+    price: "A partir de R$ 2.500",
+    duration: "1 dia de treinamento",
+  },
+  {
+    icon: `<Award class="h-8 w-8 text-red-600" />`,
+    title: "Certificação de Conformidade",
+    description: "Documentação oficial comprovando que seu site está acessível",
+    details: [
+      "Auditoria completa de conformidade",
+      "Relatório oficial de conformidade",
+      "Certificado digital de acessibilidade",
+      "Selo para uso no site",
+      "Suporte para apresentação a órgãos fiscalizadores",
+    ],
+    price: "A partir de R$ 1.200",
+    duration: "3 a 5 dias úteis",
+  },
+];
+
+const packages = [
+  {
+    name: "Pacote Essencial",
+    description: "Ideal para sites institucionais simples",
+    price: "R$ 1.500",
+    duration: "5 dias úteis",
+    features: [
+      "Auditoria de até 10 páginas",
+      "Relatório técnico completo",
+      "Suporte por 30 dias",
+      "Orientações de implementação",
+    ],
+    popular: false,
+  },
+  {
+    name: "Pacote Profissional",
+    description: "Ideal para e-commerce e sites complexos",
+    price: "R$ 4.500",
+    duration: "15 dias úteis",
+    features: [
+      "Auditoria de até 25 páginas",
+      "Implementação das correções",
+      "Relatório executivo + técnico",
+      "Suporte por 60 dias",
+      "Certificado de conformidade",
+    ],
+    popular: true,
+  },
+  {
+    name: "Pacote Completo",
+    description: "Ideal para empresas que querem suporte contínuo",
+    price: "R$ 8.500",
+    duration: "20 dias úteis",
+    features: [
+      "Auditoria ilimitada",
+      "Implementação completa",
+      "Consultoria por 6 meses",
+      "Treinamento da equipe",
+      "Certificação oficial",
+      "Selo de acessibilidade",
+    ],
+    popular: false,
+  },
+];
+
+const testimonials = [
+  {
+    name: "Maria Santos",
+    position: "Proprietária - Loja Virtual MariModa",
+    text: "Nunca imaginei que tornar nosso site acessível seria tão importante para os negócios. Além da questão legal, ganhamos muitos clientes novos!",
+    rating: 5,
+  },
+  {
+    name: "João Silva",
+    position: "Sócio-diretor - Clínica Bem Estar",
+    text: "O atendimento foi excepcional. Explicaram tudo de forma clara e o resultado superou nossas expectativas. Recomendo!",
+    rating: 5,
+  },
+  {
+    name: "Ana Costa",
+    position: "Gerente de Marketing - TechSolutions",
+    text: "Investimento que se pagou rapidamente. Nosso site ficou mais rápido e profissional. Valeu cada centavo!",
+    rating: 5,
+  },
+  {
+    name: "Carlos Oliveira",
+    position: "Proprietário - Distribuidora Oliveira",
+    text: "Equipe super qualificada e preços justos. Fizeram todo o trabalho sem interferir na nossa rotina.",
+    rating: 5,
+  },
+];
+
+const faqs = [
+  {
+    question: "Meu site precisa ser acessível mesmo sendo uma empresa pequena?",
+    answer:
+      "Sim! A Lei Brasileira de Inclusão (LBI) não faz distinção por tamanho da empresa. Além disso, tornar seu site acessível amplia seu mercado e melhora sua imagem.",
+  },
+  {
+    question: "Quanto tempo leva para tornar meu site acessível?",
+    answer:
+      "Depende da complexidade do site. Sites simples levam 5-10 dias, enquanto sites complexos podem levar 15-30 dias.",
+  },
+  {
+    question: "Vocês fazem a implementação ou só indicam o que fazer?",
+    answer:
+      "Oferecemos ambas as opções! Podemos fazer toda a implementação ou apenas orientar sua equipe técnica.",
+  },
+  {
+    question: "O preço inclui todas as correções necessárias?",
+    answer:
+      "Nossos pacotes Profissional e Completo incluem a implementação. O pacote Essencial inclui apenas a auditoria e orientações.",
+  },
+  {
+    question: "Posso pagar parcelado?",
+    answer:
+      "Sim! Oferecemos parcelamento em até 6x sem juros no cartão de crédito.",
+  },
+  {
+    question: "Meu site sairá do ar durante o processo?",
+    answer:
+      "Não! Todas as implementações são feitas sem interromper o funcionamento do site.",
+  },
+];
+---
+
+<Layout title="Auditoria de Acessibilidade - Bruno Pulis">
+  <Header />
+  <main>
+    <div class="min-h-screen">
+      <section class="bg-blood-red-800 px-6 py-20 lg:px-20">
+        <div class="mx-auto max-w-7xl text-center">
+          <h1 class="mb-6 text-5xl font-bold text-white lg:text-6xl">
+            Auditoria de Acessibilidade
+          </h1>
+          <p class="mx-auto max-w-3xl text-xl leading-relaxed text-white/90">
+            Corrija barreiras e torne sua plataforma acessível a todos.
+          </p>
+          <button
+            class="rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-colors hover:bg-blue-700"
+          >
+            Quero auditar meu site
+          </button>
+        </div>
+      </section>
+
+      {/* Seção 1 - Benefícios da Auditoria */}
+      <section class="bg-white py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            {/* Texto à esquerda */}
+            <div>
+              <h2 class="mb-8 text-3xl font-bold text-gray-900 lg:text-4xl">
+                Por que fazer uma Auditoria de Acessibilidade?
+              </h2>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <Shield
+                    class="mt-1 mr-4 h-8 w-8 flex-shrink-0 text-blue-600"
+                  />
+                  <div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">
+                      Acessibilidade legal (WCAG/LBI)
+                    </h3>
+                    <p class="text-gray-600">
+                      Garanta conformidade com as diretrizes WCAG 2.1 e a Lei
+                      Brasileira de Inclusão, evitando problemas legais e
+                      multas.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <Users
+                    class="mt-1 mr-4 h-8 w-8 flex-shrink-0 text-green-600"
+                  />
+                  <div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">
+                      Experiência do usuário aprimorada
+                    </h3>
+                    <p class="text-gray-600">
+                      Melhore a usabilidade para todos os usuários, resultando
+                      em maior satisfação e conversões.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <Award
+                    class="mt-1 mr-4 h-8 w-8 flex-shrink-0 text-purple-600"
+                  />
+                  <div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">
+                      Inclusão e responsabilidade social
+                    </h3>
+                    <p class="text-gray-600">
+                      Demonstre compromisso com a inclusão e amplie seu mercado
+                      para 24% da população brasileira.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <FileText
+                    class="mt-1 mr-4 h-8 w-8 flex-shrink-0 text-red-600"
+                  />
+                  <div>
+                    <h3 class="mb-2 text-xl font-semibold text-gray-900">
+                      Redução de riscos jurídicos
+                    </h3>
+                    <p class="text-gray-600">
+                      Minimize riscos de processos e reclamações relacionadas à
+                      falta de acessibilidade digital.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Imagem à direita */}
+            <div class="relative">
+              <div
+                class="rounded-2xl border border-gray-100 bg-white p-8 shadow-2xl"
+              >
+                <div class="mb-6 flex items-center">
+                  <FileText class="mr-4 h-12 w-12 text-blue-600" />
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900">
+                      Relatório Técnico
+                    </h3>
+                    <p class="text-gray-600">
+                      Análise completa e detalhada
+                    </p>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div
+                    class="flex items-center justify-between border-b border-gray-100 py-2"
+                  >
+                    <span class="text-gray-700">Páginas analisadas</span>
+                    <span class="font-semibold text-blue-600">25</span>
+                  </div>
+                  <div
+                    class="flex items-center justify-between border-b border-gray-100 py-2"
+                  >
+                    <span class="text-gray-700">Problemas encontrados</span>
+                    <span class="font-semibold text-red-600">47</span>
+                  </div>
+                  <div
+                    class="flex items-center justify-between border-b border-gray-100 py-2"
+                  >
+                    <span class="text-gray-700">Nível de conformidade</span>
+                    <span class="font-semibold text-orange-600">AA</span>
+                  </div>
+                  <div class="flex items-center justify-between py-2">
+                    <span class="text-gray-700">Prioridade de correção</span
+                    >
+                    <span class="font-semibold text-green-600">Alta</span>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-lg bg-blue-50 p-4">
+                  <p class="text-sm text-blue-800">
+                    <strong>Recomendação:</strong> Implementar correções de alta
+                    prioridade primeiro para máximo impacto.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 2 - O que entregamos */}
+      <section class="bg-gray-50 py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-16 text-center">
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
+              O que você recebe na nossa Auditoria
+            </h2>
+            <p class="mx-auto max-w-3xl text-xl text-gray-600">
+              Um processo completo e detalhado que identifica todos os problemas
+              de acessibilidade do seu site
+            </p>
+          </div>
+
+          <div
+            class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          >
+            <div
+              class="rounded-xl bg-white p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <Settings class="mx-auto mb-4 h-12 w-12 text-blue-600" />
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Verificação automatizada
+              </h3>
+              <p class="text-gray-600">
+                Análise técnica completa usando ferramentas especializadas para
+                identificar problemas de código e estrutura.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl bg-white p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <Eye class="mx-auto mb-4 h-12 w-12 text-green-600" />
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Avaliação humana especializada
+              </h3>
+              <p class="text-gray-600">
+                Testes manuais realizados por especialistas certificados em
+                acessibilidade digital.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl bg-white p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <FileText class="mx-auto mb-4 h-12 w-12 text-purple-600" />
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Laudo técnico completo
+              </h3>
+              <p class="text-gray-600">
+                Relatório detalhado com todos os problemas encontrados,
+                priorização e recomendações de correção.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl bg-white p-8 text-center shadow-lg transition-shadow hover:shadow-xl"
+            >
+              <Phone class="mx-auto mb-4 h-12 w-12 text-orange-600" />
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Suporte direto e sem complicação
+              </h3>
+              <p class="text-gray-600">
+                Atendimento personalizado para esclarecer dúvidas e orientar
+                sobre as próximas etapas.
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              class="rounded-lg bg-green-600 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-green-700"
+            >
+              Fale com um especialista
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 3 - Prova de valor */}
+      <section class="bg-white py-20">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div
+            class="rounded-2xl bg-gradient-to-r from-blue-50 to-purple-50 p-12 text-center"
+          >
+            <h2 class="mb-6 text-3xl font-bold text-gray-900">
+              Veja como é nosso laudo técnico.
+            </h2>
+            <p class="mb-8 text-xl text-gray-600">
+              Baixe uma amostra gratuita do nosso relatório de auditoria e veja
+              a qualidade e detalhamento do nosso trabalho.
+            </p>
+
+            <div
+              class="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+              <button
+                class="flex items-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-700"
+              >
+                <Download class="mr-2 h-5 w-5" />
+                Baixar amostra gratuita
+              </button>
+
+              <div class="flex items-center text-sm text-gray-600">
+                <CheckCircle class="mr-2 h-4 w-4 text-green-500" />
+                <span>PDF de 15 páginas com exemplo real</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Processo detalhado */}
+      <section class="bg-gray-50 py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-16 text-center">
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
+              Como funciona nossa Auditoria
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+            {
+              [
+                {
+                  step: "1",
+                  title: "Mapeamento",
+                  description:
+                    "Identificamos as páginas principais e funcionalidades críticas do seu site",
+                  duration: "1 dia",
+                },
+                {
+                  step: "2",
+                  title: "Análise Técnica",
+                  description:
+                    "Executamos testes automatizados e manuais de acessibilidade",
+                  duration: "2-3 dias",
+                },
+                {
+                  step: "3",
+                  title: "Avaliação Especializada",
+                  description:
+                    "Nossos especialistas validam e complementam os resultados",
+                  duration: "1-2 dias",
+                },
+                {
+                  step: "4",
+                  title: "Relatório Detalhado",
+                  description:
+                    "Compilamos todos os achados em um relatório técnico completo",
+                  duration: "1 dia",
+                },
+                {
+                  step: "5",
+                  title: "Apresentação",
+                  description:
+                    "Apresentamos os resultados e orientamos sobre as próximas etapas",
+                  duration: "1 dia",
+                },
+              ].map((step, index) => (
+                <div key={index} class="text-center">
+                  <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                    {step.step}
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    {step.title}
+                  </h3>
+                  <p class="text-gray-600 mb-2">{step.description}</p>
+                  <span class="text-sm text-blue-600 font-semibold">
+                    {step.duration}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      {/* Investimento */}
+      <section class="bg-white py-20">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-16 text-center">
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
+              Investimento em Auditoria
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div
+              class="rounded-xl border border-gray-200 bg-white p-8 shadow-lg"
+            >
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Auditoria Básica
+              </h3>
+              <div class="mb-4 text-3xl font-bold text-blue-600">
+                R$ 1.500
+              </div>
+              <ul class="mb-6 space-y-3">
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Até 10 páginas</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Relatório técnico</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Suporte por 30 dias</span>
+                </li>
+              </ul>
+              <button
+                class="w-full rounded-lg bg-blue-50 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-100"
+              >
+                Contratar
+              </button>
+            </div>
+
+            <div
+              class="relative rounded-xl border-2 border-blue-600 bg-white p-8 shadow-lg"
+            >
+              <div
+                class="absolute -top-4 left-1/2 -translate-x-1/2 transform rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white"
+              >
+                Mais Popular
+              </div>
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Auditoria Completa
+              </h3>
+              <div class="mb-4 text-3xl font-bold text-blue-600">
+                R$ 2.500
+              </div>
+              <ul class="mb-6 space-y-3">
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Até 25 páginas</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700"
+                    >Relatório executivo + técnico</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Planilha de ações</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Suporte por 60 dias</span>
+                </li>
+              </ul>
+              <button
+                class="w-full rounded-lg bg-blue-600 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
+              >
+                Contratar
+              </button>
+            </div>
+
+            <div
+              class="rounded-xl border border-gray-200 bg-white p-8 shadow-lg"
+            >
+              <h3 class="mb-4 text-xl font-bold text-gray-900">
+                Auditoria Premium
+              </h3>
+              <div class="mb-4 text-3xl font-bold text-blue-600">
+                R$ 4.500
+              </div>
+              <ul class="mb-6 space-y-3">
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Páginas ilimitadas</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Relatório completo</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Consultoria incluída</span>
+                </li>
+                <li class="flex items-start">
+                  <CheckCircle
+                    class="mt-0.5 mr-3 h-5 w-5 flex-shrink-0 text-green-500"
+                  />
+                  <span class="text-gray-700">Suporte por 90 dias</span>
+                </li>
+              </ul>
+              <button
+                class="w-full rounded-lg bg-blue-50 py-3 font-semibold text-blue-600 transition-colors hover:bg-blue-100"
+              >
+                Contratar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção final - CTA Direto */}
+      <section class="bg-gradient-to-r from-gray-900 to-blue-900 py-20">
+        <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 class="mb-6 text-3xl font-bold text-white lg:text-4xl">
+            Pronto para garantir acessibilidade?
+          </h2>
+          <p class="mb-8 text-xl text-blue-100">
+            Solicite sua auditoria agora e transforme sua presença digital.
+          </p>
+          <button
+            class="mx-auto flex items-center rounded-lg bg-white px-12 py-4 text-lg font-semibold text-gray-900 shadow-lg transition-colors hover:bg-gray-100"
+          >
+            Solicitar auditoria personalizada
+            <ArrowRight class="ml-2 h-5 w-5" />
+          </button>
+
+          <div
+            class="mt-8 flex flex-col items-center justify-center gap-4 text-blue-100 sm:flex-row"
+          >
+            <div class="flex items-center">
+              <CheckCircle class="mr-2 h-5 w-5 text-green-400" />
+              <span>Resposta em 24h</span>
+            </div>
+            <div class="flex items-center">
+              <CheckCircle class="mr-2 h-5 w-5 text-green-400" />
+              <span>Orçamento sem compromisso</span>
+            </div>
+            <div class="flex items-center">
+              <CheckCircle class="mr-2 h-5 w-5 text-green-400" />
+              <span>Especialistas certificados</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <Footer />
+  </main>
+</Layout>

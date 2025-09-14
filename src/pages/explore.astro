@@ -7,8 +7,8 @@ import HeroSection from "@/components/layout/HeroSection.astro";
 const slashes = [
 	{
 		title: "Livro de visitas",
-		description: "Blogs que eu sigo e recomendo.",
-		link: "/guestbook",
+		description: "Assine meu livro de visitas.",
+		link: "/visitas",
 	},
 	{
 		title: "Blogroll",
@@ -18,32 +18,32 @@ const slashes = [
 	{
 		title: "Minhas Leituras",
 		description: "Os livros que li desde 2018.",
-		link: "/reading",
-	},
-	{
-		title: "Como uso IA no meu site",
-		description: "Como utilizo inteligência artificial no meu site.",
-		link: "/ai",
+		link: "/leituras",
 	},
 	{
 		title: "Minhas Notas",
 		description: "Minhas notas curtas.",
-		link: "/notes",
+		link: "/notas",
 	},
 	{
-		title: "Watches",
+		title: "Meus filmes",
 		description: "Coisas que estou fazendo agora.",
-		link: "/now",
+		link: "/filmes",
+	},
+	{
+		title: "Como uso IA no meu site",
+		description: "Como utilizo inteligência artificial no meu site.",
+		link: "/ia",
 	},
 	{
 		title: "O que estou fazendo agora",
 		description: "Coisas que estou fazendo agora.",
-		link: "/watches",
+		link: "/now",
 	},
 	{
 		title: "Links de afiliado",
 		description: "Meus links de afiliado.",
-		link: "/referrals",
+		link: "/afiliados",
 	},
 ];
 ---
@@ -71,13 +71,17 @@ const slashes = [
 					encontrar todos os tipos em <a href="https://slashpages.net/">slashes pages</a>
 				</p>
 
-				<ul  class="list-inside list-disc space-y-2">
-					{
-						slashes.map(slash => (
-							<li><a href={slash.link}>{slash.title}</a></li>
-						))
-					}
-				</ul>
+						<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
+							{
+								slashes.map(slash => (
+									<a href={slash.link} class="block rounded-xl bg-gray-100 shadow-md hover:shadow-lg transition-shadow border border-gray-200 p-6 h-full">
+										<h3 class="text-xl font-bold text-blood-red-800 mb-2">{slash.title}</h3>
+										<p class="text-gray-700 mb-4">{slash.description}</p>
+										<span class="inline-block mt-auto text-blood-red-800 hover:underline -underline-offset-8 font-semibold">Acessar</span>
+									</a>
+								))
+							}
+						</div>
 			</div>
     </section>
   </main>

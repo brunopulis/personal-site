@@ -2,31 +2,6 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: ["selector"],
-  safelist: [
-    {
-      pattern: /col-span-(\d+)/,
-      variants: ["lg"],
-    },
-    // Height
-    {
-      pattern: /h-(0|2|3|4|6|8|12|16|24|32)/,
-      variants: ["lg"],
-    },
-    // Text sizes for all screen sizes
-    {
-      pattern: /text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/,
-      variants: ["lg"],
-    },
-    // Font weights
-    {
-      pattern: /font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)/,
-    },
-    // Alignments
-    {
-      pattern: /text-(left|center|right)/,
-    },
-  ],
   theme: {
     extend: {
       colors: {
@@ -71,10 +46,6 @@ export default {
           800: "#1e293b",
           900: "#0f172a",
           950: "#020617",
-        },
-      },
-      cursor: {
-        fancy: "url(https://www.svgrepo.com/show/269/color-picker.svg)",
       },
       fontFamily: {
         sans: ["Source Sans 3 Variable", ...defaultTheme.fontFamily.sans],
@@ -97,13 +68,47 @@ export default {
         fadeInShadowLight: "fadeInShadowLight 500ms ease-in-out forwards",
         fadeInShadowDark: "fadeInShadowDark 500ms ease-in-out forwards",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#333',
+            h1: {
+              fontWeight: '700',
+              color: '#1a202c',
+            },
+            h2: {
+              fontWeight: '600',
+              color: '#2d3748',
+            },
+            p: {
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
+              color: '#4a5568',
+            },
+            a: {
+              color: '#3182ce',
+              '&:hover': {
+                color: '#2b6cb0',
+              },
+            },
+            blockquote: {
+              fontStyle: 'italic',
+              borderLeftColor: '#3182ce',
+            },
+            'ul li::marker': {
+              color: '#3182ce',
+            },
+          },
+        },
+      },
+    },
     },
   },
   variants: {
     animation: ["responsive"],
   },
   plugins: [
-    require("@tailwindcss/typography"),
+    require('@tailwindcss/typography'),
     require("tailwindcss/plugin")(function ({ addVariant }) {
       addVariant("dark-me", ".dark_&");
     }),
