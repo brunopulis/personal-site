@@ -17,7 +17,7 @@ const sortedNotes = allNotes.sort((a, b) => {
   <Header />
   <HeroSection
     title="Notas"
-    description="Find answers to common questions about Sassify and our services."
+    description="Minhas notas pessoais"
   />
   <main>
     <section class="py-16 bg-white h-entry">
@@ -25,9 +25,9 @@ const sortedNotes = allNotes.sort((a, b) => {
         <div class="mx-auto">
           <div class="">
             <div class="">
-              <div class="">
+              <div class="prose prose-lg max-w-none">
                 {sortedNotes.length > 0 ? (sortedNotes.map((note) => (
-                  <div class="bg-silver-grey rounded-lg border  mb-4 p-5 ">
+                  <blockquote class="bg-gray-100 rounded-lg border  mb-4 p-5 ">
                     {note.body && (
                       <p class="note-excerpt">{note.body}</p>
                     )}
@@ -45,7 +45,7 @@ const sortedNotes = allNotes.sort((a, b) => {
                       </p>
                     )}
                     </footer>
-                  </div>
+                  </blockquote>
                 ))
 
               ) : (

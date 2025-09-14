@@ -1,0 +1,80 @@
+---
+
+import { Users, Presentation, PersonStanding, ChevronRight } from "@lucide/astro";
+
+const icons = { Users, Presentation, PersonStanding };
+
+const features = [
+  {
+    title: "Mentoria e Consultoria",
+    description: "Ajudamos você ou sua equipe a colocar a acessibilidade em prática.",
+    icon: "Users",
+    color: "primary",
+  },
+  {
+    title: "Auditoria de acessibilidade",
+    description:
+      "Analisamos seu site, aplicativo ou documento digital.",
+    icon: "Presentation",
+    color: "secondary",
+  },
+  {
+    title: "Palestras e Treinamentos",
+    description:
+      "Levamos conhecimento acessível para empresas e eventos.",
+    icon: "PersonStanding",
+    color: "accent",
+  }
+];
+---
+
+<section class="bg-white py-20" id="features">
+  <div class="container-custom">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span
+        class="bg-blood-red-800 text-white mb-4 inline-block rounded-full px-4 py-1 text-sm font-medium"
+      >
+        Meus serviços
+      </span>
+      <h2 class="text-errie-black-900 mb-6 text-4xl font-bold lg:text-5xl">O que eu faço</h2>
+      <p class="text-errie-black-900">
+        Oferecemos soluções completas em acessibilidade digital para tornar seus produtos
+        inclusivos e conformes com as melhores práticas.
+      </p>
+    </div>
+
+    <div class="mb-12 grid gap-8 md:grid-cols-3">
+      {
+        features.map((feature, index) => (
+          <article
+            class="slide-up flex flex-col gap-6 rounded-xl border-0 border-gray-200 bg-gray-50 p-8 text-center shadow-sm transition-shadow hover:shadow-lg"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <div
+              class="bg-blood-red-100 card__icon mx-auto mb-2 flex items-center justify-center rounded-full p-4"
+            >
+              {icons[feature.icon] && <icons[feature.icon] class="h-8 w-8" aria-hidden="true" />}
+            </div>
+            <h3 class="mb-3 text-xl font-bold text-blood-red-800">
+              {feature.title}
+            </h3>
+            <p class="text-errie-black-900 font-medium">
+              {feature.description}
+            </p>
+
+            <a href="/servicos/mentoria"
+               class="mt-6 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium aria-invalid:border-destructive border bg-blood-red-800 text-white hover:border-blood-red-800 hover:text-blood-red-800 hover:bg-transparent h-9 px-4 py-2 transition-colors">
+              Saiba mais <span class="sr-only">sobre {feature.title}</span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+    <div class="text-center">
+      <a href="/servicos" class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md bg-blood-red-800 px-8 py-4 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-blood-red-800/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+        Explorar serviços
+        <ChevronRight aria-hidden="true" class="ml-2 h-5 w-5" />
+      </a>
+    </div>
+  </div>
+</section>

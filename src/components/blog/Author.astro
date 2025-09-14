@@ -1,0 +1,29 @@
+---
+import { Picture } from "astro:assets";
+import me from "@/assets/me.webp";
+---
+
+<section class="px-6 py-12 lg:px-20 bg-gray-100">
+  <div class="mx-auto max-w-4xl">
+    <div class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border p-8">
+      <div class="flex items-center gap-6">
+        <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full">
+          <Picture
+            src={me.src}
+            formats={["avif", "webp"]}
+            alt="Bruno Pulis"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="flex-1">
+          <h3 class="mb-2 text-xl font-semibold text-blood-red-800">Bruno Pulis</h3>
+          <p class="mb-4 leading-relaxed text-gray-600">
+            Designer e desenvolvedor frontend com mais de 6 anos de experiência criando produtos digitais. Especialista
+            em React, TypeScript e Design Systems. Apaixonado por compartilhar conhecimento e ajudar outros
+            profissionais a crescer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
