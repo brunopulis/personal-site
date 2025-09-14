@@ -1,30 +1,31 @@
 ---
-import pulisLogo from "@/assets/horizontal/blood.svg";
+import pulisLogo from '@/assets/horizontal/blood.svg'
 
-const { pathname } = Astro.url;
+import { Menu, X } from "@lucide/astro";
+
+const { pathname } = Astro.url
 ---
 
-<div class="bg-errie-black-900 text-center text-white py-3" style="font-size: .85rem;">
+<div class="bg-errie-black-900 py-3 text-center text-white" style="font-size: .85rem;">
   Este site está sendo refatorado. Se algo parecer quebrado é por esse motivo.
 </div>
-<header
-  class="w-full bg-white/90 py-4 backdrop-blur-xs transition-colors duration-300"
->
+
+<header x-data="{ open: false }" class="w-full bg-white/90 py-4 backdrop-blur-xs transition-colors duration-300">
   <div class="container-custom flex items-center justify-between">
-    <a href="/" class="" aria-label="Ir para página inicial">
-      <img
-        src={pulisLogo.src}
-        class="h-6 w-auto"
-        alt=""
-      />
-    </a>
-    <nav class="hidden md:flex items-center space-x-8">
-      <ul class="md:flex space-x-5 text-lg font-medium">
+    <div class="flex-shrink-0">
+      <a href="/" class="" aria-label="Ir para página inicial">
+        <img src={pulisLogo.src} class="h-6 w-auto" alt="" />
+      </a>
+    </div>
+    <nav class="hidden items-center space-x-8 md:flex" aria-label="Navegação principal">
+      <ul class="space-x-5 text-lg font-medium md:flex">
         <li class="main-nav__item">
           <a
             href="/sobre"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900  hover:text-blood-red-800 underline-offset-8 hover:underline ${
-              pathname === "/sobre" ? " text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active" : ""
+              pathname === '/sobre'
+                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
+                : ''
             }`}>Sobre</a
           >
         </li>
@@ -32,15 +33,19 @@ const { pathname } = Astro.url;
           <a
             href="/projetos"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline   ${
-              pathname === "/projetos" ? " text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active" : ""
+              pathname === '/projetos'
+                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
+                : ''
             }`}>Projetos</a
           >
         </li>
-         <li class="main-nav__item">
+        <li class="main-nav__item">
           <a
             href="/servicos"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === "/servicos" ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active" : ""
+              pathname === '/servicos'
+                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
+                : ''
             }`}>Serviços</a
           >
         </li>
@@ -48,7 +53,9 @@ const { pathname } = Astro.url;
           <a
             href="/blog"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === "/blog" ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active" : ""
+              pathname === '/blog'
+                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
+                : ''
             }`}>Blog</a
           >
         </li>
@@ -56,7 +63,9 @@ const { pathname } = Astro.url;
           <a
             href="/newsletter"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === "/newsletter" ? " text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active" : ""
+              pathname === '/newsletter'
+                ? ' text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active'
+                : ''
             }`}>Newsletter</a
           >
         </li>
@@ -64,7 +73,9 @@ const { pathname } = Astro.url;
           <a
             href="/contato"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline  ${
-              pathname === "/contato" ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active" : ""
+              pathname === '/contato'
+                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
+                : ''
             }`}>Contato</a
           >
         </li>
@@ -72,7 +83,7 @@ const { pathname } = Astro.url;
           <a
             href="/explore"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline  ${
-              pathname === "/explore" ? " main-nav__link--active" : ""
+              pathname === '/explore' ? ' main-nav__link--active' : ''
             }`}
             id="p-2utton"
           >
@@ -82,42 +93,43 @@ const { pathname } = Astro.url;
       </ul>
     </nav>
 
-    <div class="flex items-center space-x-4">
-      <a href="/orcamento" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 px-4 py-2 has-[>svg]:px-3 bg-blood-red-800 hover:bg-blood-red-800/90 text-white focus:ring-2 focus:ring-blood-red-bg-blood-red-800 focus:ring-offset-2">vamos conversar</a>
-
-      <!-- Mobile Menu Button and Dropdown -->
-      <div x-data="{ open: false, showAllPages: false }">
-        <button
-          @click="open = !open"
-          class="md:hidden p-2 rounded-md text-errie-black-900 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
-          aria-label="Toggle menu"
-        >
-          <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <div
-          x-show="open"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 scale-95"
-          x-transition:enter-end="opacity-100 scale-100"
-          x-transition:leave="transition ease-in duration-150"
-          x-transition:leave-start="opacity-100 scale-100"
-          x-transition:leave-end="opacity-0 scale-95"
-          class="absolute top-16 right-4 w-48 py-2 bg-white dark:bg-secondary-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-hidden"
-          x-cloak
-        >
-          <a href="/features" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Features</a>
-          <a href="/pricing" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Pricing</a>
-          <a href="/blog" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Blog</a>
-          <a href="/contact" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800">Contact</a>
-        </div>
-      </div>
+    <div class="hidden md:flex">
+      <a
+        href="/orcamento"
+        class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-blood-red-800 hover:bg-blood-red-800/90 focus:ring-blood-red-bg-blood-red-800 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium whitespace-nowrap text-white transition-all outline-none focus:ring-2 focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+        >vamos conversar</a
+      >
     </div>
+
+    <div class="md:hidden">
+      <button
+        @click="open = !open"
+        :aria-expanded="open"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu"
+        class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex size-9 shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus:ring-2 focus:ring-[var(--color-burgundy)] focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+      >
+        <Menu class="h-6 w-6" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" x-show="open" x-transition class="inset-0 z-50 bg-white/95 backdrop-blur-lg p-6 md:hidden">
+    <button @click="open = false" aria-label="Fechar menu" class="absolute top-4 right-4 text-errie-black-900">
+      <X class="h-4 w-4" aria-hidden="true" />
+    </button>
+    <ul class="flex flex-col gap-6 mt-12 text-lg font-medium">
+      <li><a href="/sobre" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Sobre</a></li>
+      <li><a href="/projetos" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Projetos</a></li>
+      <li><a href="/servicos" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Serviços</a></li>
+      <li><a href="/blog" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Blog</a></li>
+      <li><a href="/newsletter" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Newsletter</a></li>
+      <li><a href="/contato" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Contato</a></li>
+      <li><a href="/explore" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Explore</a></li>
+      <li><a href="/orcamento" class="block px-4 py-2 rounded bg-blood-red-800 text-white">Vamos conversar</a></li>
+    </ul>
+  </nav>
   </div>
 </header>
 
@@ -129,5 +141,7 @@ const { pathname } = Astro.url;
   }
 
   /* Hide Alpine.js elements before Alpine loads */
-  [x-cloak] { display: none !important; }
+  [x-cloak] {
+    display: none !important;
+  }
 </style>
