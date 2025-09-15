@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import me from "@/assets/me.webp";
 ---
 
@@ -19,12 +19,8 @@ import me from "@/assets/me.webp";
         Criando experiências digitais excepcionais com foco em acessibilidade
         e desenvolvimento de alta qualidade.
       </p>
-      
-      <div
-        class="flex gap-4 pt-4"
-        role="group"
-        aria-label="Ações principais"
-      >
+
+      <div class="flex gap-4 pt-4">
         <a href="/projetos" class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-blood-red-800 focus:ring-offset-bloodtext-blood-red-800 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md bg-white px-8 text-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-white/90 focus:ring-2 focus:ring-white focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
           ver projetos
         </a>
@@ -33,15 +29,14 @@ import me from "@/assets/me.webp";
         </a>
       </div>
     </div>
-    
+
     <div class="flex justify-center lg:justify-end">
       <div class="relative">
         <div
           class="h-50 md:h-80 w-50 md:w-80 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl lg:h-96 lg:w-96"
         >
-          <Picture
-            src={me.src}
-            formats={["avif", "webp"]}
+          <Image
+            src={me}
             alt="Bruno Pulis"
             class="h-full w-full fluid object-cover"
           />
@@ -59,7 +54,7 @@ import me from "@/assets/me.webp";
       </div>
     </div>
   </div>
-  
+
   <button
     class="focus:ring-offset-bloodtext-blood-red-800 absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce rounded-full p-2 text-white/60 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
     aria-label="Rolar para a próxima seção"
