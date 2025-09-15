@@ -12,8 +12,6 @@ import mdx from '@astrojs/mdx';
 import umami from "@yeskunall/astro-umami";
 import robotsTxt from 'astro-robots-txt';
 
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
@@ -68,6 +66,5 @@ export default defineConfig({
 
   image: {
     responsiveStyles: true,
-  },
-  adapter: netlify(),
+  }
 });

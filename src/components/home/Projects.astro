@@ -1,9 +1,74 @@
 ---
 import { Image } from "astro:assets";
 
+import magraDeVerdade from "@/assets/projects/magra-de-verdade.webp";
+import bibliotecaDaRevolucao from "@/assets/projects/biblioteca-da-revolucao.webp";
+import henriqueNoal from "@/assets/projects/henrique-noal.webp";
+import forja from "@/assets/projects/forja-comercial.webp";
+
+
+
 import { ExternalLink } from "@lucide/astro";
 
-import projectsData from "@/data/projects.json";
+const projectsData = {
+  "projects": [
+    {
+      "image": magraDeVerdade,
+      "title": "Magra de Verdade",
+      "service": "Desenvolvimento web",
+      "description": "Página de Vendas",
+      "featured": true,
+      "techs": ["WordPress", "Elementor", "A11y"],
+      "demo": [
+        {
+          "url": "https://magradeverdade.com/",
+          "label": "LinkedIn"
+        }
+      ]
+    },
+    {
+      "image": bibliotecaDaRevolucao,
+      "title": "Biblioteca da Revolução",
+      "service": "Desenvolvimento web",
+      "description": "Página de Vendas",
+      "featured": false,
+      "techs": ["WordPress", "Elementor", "A11y"],
+      "demo": [
+        {
+          "url": "https://serqsabe.com.br",
+          "label": "LinkedIn"
+        }
+      ]
+    },
+    {
+      "image": henriqueNoal,
+      "title": "Henrique Noal",
+      "service": "Desenvolvimento web",
+      "description": "Página de Vendas",
+      "featured": false,
+      "techs": ["Astro", "TailwindCSS", "A11y"],
+      "demo": [
+        {
+          "url": "https://henriquenoal.netlify.app/",
+          "label": "LinkedIn"
+        }
+      ]
+    },
+    {
+      "image": forja,
+      "title": "Forja Comercial",
+      "description": "Página de Vendas",
+      "featured": false,
+      "techs": ["WordPress", "Elementor", "A11y"],
+      "demo": [
+        {
+          "url": "https://joaokioshi.com",
+          "label": "LinkedIn"
+        }
+      ]
+    }
+  ]
+}
 
 const projects = projectsData.projects;
 const featuredProject = projects.find(p => p.featured);
@@ -58,13 +123,11 @@ const otherProjects = projects.filter(p => !p.featured);
               </div>
             </div>
             <div class="order-1 h-64 lg:order-2 lg:h-auto">
-              {featuredProject.image && (
-                <Image
-                  src={featuredProject.image}
-                  alt={featuredProject.title}
-                  class="h-full w-full object-cover"
-                />
-              )}
+              <Image
+                src={featuredProject.image}
+                alt={featuredProject.title}
+                class="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -75,11 +138,19 @@ const otherProjects = projects.filter(p => !p.featured);
       {otherProjects.slice(0, 2).map(project => (
         <div class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border border-gray-700 bg-gray-800 transition-shadow hover:shadow-xl">
           <div class="h-48 overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
+            {typeof project.image === "object" ? (
+              <Image
+                src={project.image}
+                alt={project.title}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            )}
           </div>
           <div class="p-6">
             <h3 class="mb-3 text-xl font-semibold text-white">

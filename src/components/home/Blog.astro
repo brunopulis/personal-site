@@ -44,13 +44,13 @@ function toISOString(dateString: string) {
         posts.map((post, index) => (
           <a href={"/blog/" + post.id} class="u-url block">
 						<div class="text-card-foreground group flex cursor-pointer flex-col gap-6 overflow-hidden rounded-xl border-0 bg-white transition-shadow hover:shadow-xl">
-							<div class="h-48 overflow-hidden">
-								<img
-									src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB0aGlua2luZyUyMHByb2Nlc3N8ZW58MXx8fHwxNzU1OTUxMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-									alt="Design Thinking: Como Transformar Problemas em Soluções Inovadoras"
-									class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-								/>
-							</div>
+											<div class="h-48 overflow-hidden">
+												<img
+													src={post.data.image ? post.data.image : '/src/assets/images/image-default.png'}
+													alt={post.data.title || ""}
+													class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+												/>
+											</div>
 							
 							<div class="p-6">
 								<div class="mb-4 flex items-center gap-4">
