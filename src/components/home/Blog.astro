@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blog");
@@ -44,20 +45,24 @@ function toISOString(dateString: string) {
         posts.map((post, index) => (
           <a href={"/blog/" + post.id} class="u-url block">
 						<div class="text-card-foreground group flex cursor-pointer flex-col gap-6 overflow-hidden rounded-xl border-0 bg-white transition-shadow hover:shadow-xl">
-											<div class="h-48 overflow-hidden">
-												<img
-													src={post.data.image ? post.data.image : '/src/assets/images/image-default.png'}
-													alt={post.data.title || ""}
-													class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-												/>
-											</div>
-							
+							<div class="h-48 overflow-hidden">
+								<Image
+										src={post.data.image ? post.data.image : '/src/assets/images/image-default.png'}
+										alt={post.data.title || ""}
+										class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+										loading="lazy"
+										decoding="async"
+										width={400}
+										height={192}
+								/>
+							</div>
+
 							<div class="p-6">
 								<div class="mb-4 flex items-center gap-4">
 									<span
 										class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent bg-blood-red-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
 										>{post.data.category}</span>
-										
+
 										<div class="flex items-center gap-2 text-sm text-gray-500">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
