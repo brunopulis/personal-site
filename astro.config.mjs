@@ -14,13 +14,15 @@ import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
+  site: "https://brunopulis.com",
+  build: {
+    assets: 'assets'
+  },
   compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
   },
-
-  site: "https://brunopulis.com",
-
   integrations: [
     react(),
     icon(),
@@ -63,7 +65,6 @@ export default defineConfig({
       ]
     })
   ],
-
   image: {
     responsiveStyles: true,
   }

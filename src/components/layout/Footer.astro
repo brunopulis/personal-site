@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import pulisLogo from '@/assets/horizontal/white.svg'
 import { Rss, Github, Linkedin, Youtube, Instagram, Shuffle, ArrowLeft, ArrowRight } from '@lucide/astro'
 
@@ -135,7 +136,12 @@ import config from '@/data/site.config.json'
         </li>
       </ul>
       <div class="flex flex-col space-x-5">
-        <img src={writtenByHuman.src} width="88" alt="Conteúdo escrito por um humano" height="30" />
+        <Image 
+          src={writtenByHuman}
+          width={88}
+          height={30}
+          loading="lazy"
+          alt="Conteúdo escrito por um humano" />
       </div>
     </div>
   </div>

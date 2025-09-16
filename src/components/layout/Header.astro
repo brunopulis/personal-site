@@ -1,9 +1,9 @@
 ---
-import pulisLogo from '@/assets/horizontal/blood.svg'
-
+import { Image } from 'astro:assets';
+import pulisLogo from '@/assets/horizontal/blood.svg';
 import { Menu, X } from "@lucide/astro";
 
-const { pathname } = Astro.url
+const { pathname } = Astro.url;
 ---
 
 <div class="bg-errie-black-900 py-3 text-center text-white" style="font-size: .85rem;">
@@ -14,7 +14,11 @@ const { pathname } = Astro.url
   <div class="container-custom flex items-center justify-between">
     <div class="flex-shrink-0">
       <a href="/" class="" aria-label="Ir para página inicial">
-        <img src={pulisLogo.src} class="h-6 w-auto" alt="" />
+        <Image
+          src={pulisLogo}
+          class="h6- w-auto"
+          alt="Bruno Pulis"
+          loading="eager" />
       </a>
     </div>
     <nav class="hidden items-center space-x-8 md:flex" aria-label="Navegação principal">
