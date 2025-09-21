@@ -18,7 +18,7 @@ import { testimonials } from '@/data/testimonials.json';
 
     <div class="grid gap-8 md:grid-cols-3">
       {
-        testimonials.map((testimonial, index) => (
+        testimonials.slice(-6).map((testimonial, index) => (
           <div
             class="flex flex-col gap-6 rounded-xl border-0 bg-gray-50 p-8 text-center shadow-sm transition-shadow hover:shadow-lg slide-up  border-gray-200"
             style={`animation-delay: ${index * 150}ms`}
@@ -46,7 +46,7 @@ import { testimonials } from '@/data/testimonials.json';
                   {testimonial.author}
                 </p>
                 <p class="text-sm text-errie-black-900">
-                  {testimonial.position}, {testimonial.company}
+                  {testimonial.position}
                 </p>
               </div>
             </div>
@@ -54,6 +54,5 @@ import { testimonials } from '@/data/testimonials.json';
         ))
       }
     </div>
-    
   </div>
 </section>

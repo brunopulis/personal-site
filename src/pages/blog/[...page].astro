@@ -51,12 +51,12 @@ function toISOString(dateString: string) {
   <Header />
   <main>
     <HeroSection
-      title="Textos"
-      description="Artigos, reviews, opiniões pessoais e pitadas ácidas de humor."
+      title="Blog e Artigos"
+      description="Compartilho insights, técnicas e aprendizados sobre acessibilidade, desenvolvimento, teologia e produtividade que podem te ajudar."
     />
 
     <div class="container-custom py-8">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         {
           posts.map((post, index) => (
             <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">

@@ -1,5 +1,4 @@
 ---
-
 import { Users, Presentation, PersonStanding, ChevronRight } from "@lucide/astro";
 
 const icons = { Users, Presentation, PersonStanding };
@@ -9,21 +8,21 @@ const features = [
     title: "Mentoria e Consultoria",
     description: "Ajudamos você ou sua equipe a colocar a acessibilidade em prática.",
     icon: "Users",
-    color: "primary",
+    url: "/servicos/mentorias-consultorias",
   },
   {
     title: "Auditoria de acessibilidade",
     description:
       "Analisamos seu site, aplicativo ou documento digital.",
     icon: "Presentation",
-    color: "secondary",
+    url: "/servicos/auditoria-de-acessibilidade",
   },
   {
     title: "Palestras e Treinamentos",
     description:
       "Levamos conhecimento acessível para empresas e eventos.",
     icon: "PersonStanding",
-    color: "accent",
+    url: "/servicos/palestras-treinamentos",
   }
 ];
 ---
@@ -61,11 +60,6 @@ const features = [
             <p class="text-errie-black-900 font-medium">
               {feature.description}
             </p>
-
-            <a href="/servicos/mentoria"
-               class="mt-6 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium aria-invalid:border-destructive border bg-blood-red-800 text-white hover:border-blood-red-800 hover:text-blood-red-800 hover:bg-transparent h-9 px-4 py-2 transition-colors">
-              Saiba mais <span class="sr-only">sobre {feature.title}</span>
-            </a>
           </article>
         ))
       }
