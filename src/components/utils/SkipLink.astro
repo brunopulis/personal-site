@@ -1,0 +1,48 @@
+<a id="skip-link" href="#main"
+  >Ir para conteúdo principal
+  <svg
+    aria-hidden="true"
+    height="32"
+    fill="#fff"
+    viewBox="0 -960 960 960"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon"
+  >
+    <path
+      d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"
+    ></path>
+  </svg>
+</a>
+
+<style>
+  a {
+    align-items: center;
+    display: flex;
+    height: 1px;
+    left: -9999px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    width: 1px;
+  }
+
+  a:focus,
+  a:focus-visible {
+    background-color: blue;
+    color: var(--color-white);
+    height: auto;
+    left: var(--space-xs);
+    padding: var(--space-xs);
+    position: fixed;
+    text-decoration: none;
+    top: 0;
+    width: auto;
+    z-index: 1 !important;
+  }
+
+  .icon {
+    margin-left: var(--space-3xs);
+    transform: rotate(180deg);
+  }
+</style>

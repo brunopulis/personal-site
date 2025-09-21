@@ -5,9 +5,6 @@ import magraDeVerdade from "@/assets/projects/magra-de-verdade.webp";
 import bibliotecaDaRevolucao from "@/assets/projects/biblioteca-da-revolucao.webp";
 import henriqueNoal from "@/assets/projects/henrique-noal.webp";
 import forja from "@/assets/projects/forja-comercial.webp";
-
-
-
 import { ExternalLink } from "@lucide/astro";
 
 const projectsData = {
@@ -17,8 +14,7 @@ const projectsData = {
       "title": "Magra de Verdade",
       "service": "Desenvolvimento web",
       "description": "Página de Vendas",
-      "featured": true,
-      "techs": ["WordPress", "Elementor", "A11y"],
+     "techs": ["WordPress", "Elementor", "A11y"],
       "demo": [
         {
           "url": "https://magradeverdade.com/",
@@ -31,7 +27,6 @@ const projectsData = {
       "title": "Biblioteca da Revolução",
       "service": "Desenvolvimento web",
       "description": "Página de Vendas",
-      "featured": false,
       "techs": ["WordPress", "Elementor", "A11y"],
       "demo": [
         {
@@ -45,7 +40,6 @@ const projectsData = {
       "title": "Henrique Noal",
       "service": "Desenvolvimento web",
       "description": "Página de Vendas",
-      "featured": false,
       "techs": ["Astro", "TailwindCSS", "A11y"],
       "demo": [
         {
@@ -58,7 +52,6 @@ const projectsData = {
       "image": forja,
       "title": "Forja Comercial",
       "description": "Página de Vendas",
-      "featured": false,
       "techs": ["WordPress", "Elementor", "A11y"],
       "demo": [
         {
@@ -71,117 +64,69 @@ const projectsData = {
 }
 
 const projects = projectsData.projects;
-const featuredProject = projects.find(p => p.featured);
-const otherProjects = projects.filter(p => !p.featured);
 ---
 
 <section class="bg-errie-black-900 px-6 py-20 lg:px-20">
   <div class="container-custom">
     <div class="mb-16 text-center">
       <h2 class="mb-6 text-4xl font-bold text-white lg:text-5xl">
-        Projetos em Destaque
+        Últimos projetos
       </h2>
       <p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300">
         Seleção dos meus trabalhos mais recentes, cada um desenvolvido com
         atenção aos detalhes e foco na experiência do usuário.
       </p>
     </div>
-
-     {featuredProject && (
-      <div class="mb-16">
-        <div class="text-card-foreground flex flex-col gap-6 overflow-hidden rounded-xl border border-gray-700 bg-gray-800">
-          <div class="grid gap-0 lg:grid-cols-2">
-            <div class="order-2 flex flex-col justify-center p-8 lg:order-1 lg:p-12">
-              <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&]:hover:bg-primary/90 w-fit mb-4 bg-blood-red-800 text-white">
-                Projeto em Destaque
-              </span>
-              <h3 class="mb-4 text-3xl font-bold text-white">
-                {featuredProject.title}
+    <div class="grid gap-8 md:grid-cols-3">
+      {
+        projects.slice(0, 3).map(project => (
+          <div class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border border-gray-700 bg-gray-800 transition-shadow hover:shadow-xl">
+            <div class="h-48 overflow-hidden">
+              {typeof project.image === "object" ? (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              ) : (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              )}
+            </div>
+            <div class="p-6">
+              <h3 class="mb-3 text-xl font-semibold text-white">
+                {project.title}
               </h3>
-              <p class="mb-6 text-lg leading-relaxed text-white">
-                {featuredProject.description}
+              <p class="mb-4 leading-relaxed text-white">
+                {project.description}
               </p>
-              <div class="mb-8 flex flex-wrap gap-2">
-                {featuredProject.techs.map(tech => (
+              <div class="mb-4 flex flex-wrap gap-2">
+                {project.techs.map(tech => (
                   <span class="inline-flex w-fit items-center justify-center gap-1 rounded-md border border-gray-600 px-2 py-0.5 text-xs font-medium bg-white text-blood-red-800">
                     {tech}
                   </span>
                 ))}
               </div>
               <div class="flex gap-4">
-                {featuredProject.demo && (
+                {project.demo && (
                   <a
-                    href={featuredProject.demo[0].url}
+                    href={project.demo[0].url}
                     target="_blank"
                     rel="noopener"
-                    class="flex items-center gap-2 text-white hover:underline underline-offset-8"
+                    class="flex items-center gap-2 text-white"
                   >
-                    <span>Ver Projeto</span>
+                    <span class="text-sm">Ver Projeto</span>
                     <ExternalLink class="w-4 h-4" aria-hidden="true" />
                   </a>
                 )}
               </div>
             </div>
-            <div class="order-1 h-64 lg:order-2 lg:h-auto">
-              <Image
-                src={featuredProject.image}
-                alt={featuredProject.title}
-                class="h-full w-full object-cover"
-              />
-            </div>
           </div>
-        </div>
-      </div>
-    )}
-
-    <div class="grid gap-8 md:grid-cols-2">
-      {otherProjects.slice(0, 2).map(project => (
-        <div class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border border-gray-700 bg-gray-800 transition-shadow hover:shadow-xl">
-          <div class="h-48 overflow-hidden">
-            {typeof project.image === "object" ? (
-              <Image
-                src={project.image}
-                alt={project.title}
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            ) : (
-              <img
-                src={project.image}
-                alt={project.title}
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            )}
-          </div>
-          <div class="p-6">
-            <h3 class="mb-3 text-xl font-semibold text-white">
-              {project.title}
-            </h3>
-            <p class="mb-4 leading-relaxed text-white">
-              {project.description}
-            </p>
-            <div class="mb-4 flex flex-wrap gap-2">
-              {project.techs.map(tech => (
-                <span class="inline-flex w-fit items-center justify-center gap-1 rounded-md border border-gray-600 px-2 py-0.5 text-xs font-medium bg-white text-blood-red-800">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div class="flex gap-4">
-              {project.demo && (
-                <a
-                  href={project.demo[0].url}
-                  target="_blank"
-                  rel="noopener"
-                  class="flex items-center gap-2 text-white"
-                >
-                  <span class="text-sm">Ver Projeto</span>
-                  <ExternalLink class="w-4 h-4" aria-hidden="true" />
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
+        )
+      )}
     </div>
   </div>
 </section>

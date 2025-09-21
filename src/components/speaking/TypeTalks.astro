@@ -1,45 +1,24 @@
 ---
-
+import { Presentation, Users, Code } from "@lucide/astro";
 ---
 
-<section class="talk-types section bg-gray-100">
-  <div class="container mx-auto">
-    <div class="mb-12 text-center">
-      <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
-        Tipos de apresentação
-      </h2>
-      <p class="mx-auto max-w-3xl text-errie-black-900">
-        Formatos adaptáveis para diferentes públicos e objetivos.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<section class="talk-types section">
+  <div class="container-custom mx-auto">
+    <div class="grid md:grid-cols-3 gap-8">
       <article
-        class="bg-white p-6 rounded-lg shadow-lg"
+        class="bg-gray-100 p-6 text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-sm"
         style={`animation-delay: ${0 * 100}ms`}
       >
         <div
-          class={`h-12 w-12 rounded-lg  mb-6 flex items-center justify-center`}
+          class="w-16 h-16 bg-blood-red-800 rounded-full flex items-center justify-center mb-6"
         >
-          <svg
-            class={`h-6 w-6`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d=""></path>
-          </svg>
+          <Presentation class="h-8 w-8 text-white text-center" aria-hidden="true" />
         </div>
         <h3 class="text-xl font-semibold mb-3">
-          Keynotes
+          Palestras Inspiradoras
         </h3>
         <p class="text-errie-black-900 mb-4">
-          Apresentações principais em conferências e eventos de tecnologia.
+         Apresentações envolventes com conteúdo atual e linguagem acessível para sensibilizar e educar sua equipe.
         </p>
 
         <ul class="list-inside list-disc space-y-2 text-sm text-gray-500">
@@ -54,31 +33,19 @@
       </article>
 
       <article
-        class="bg-white p-6 rounded-lg shadow-lg"
+        class="bg-gray-100 p-6 text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-sm"
         style={`animation-delay: ${0 * 100}ms`}
       >
         <div
-          class={`h-12 w-12 rounded-lg  mb-6 flex items-center justify-center`}
+          class="w-16 h-16 bg-blood-red-800 rounded-full flex items-center justify-center mb-6"
         >
-          <svg
-            class={`h-6 w-6`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d=""></path>
-          </svg>
+          <Users class="h-8 w-8 text-white text-center" aria-hidden="true" />
         </div>
         <h3 class="text-xl font-semibold mb-3" lang="en">
-          Workshops
+          Workshops Práticos
         </h3>
         <p class="text-errie-black-900">
-          Sessões práticas e interativas com exercícios hands-on.
+          Sessões <span lang="en">hands-on</span> com atividades dinâmicas para aplicar conceitos de acessibilidade na prática.
         </p>
 
         <ul class="list-inside list-disc space-y-2">
@@ -93,74 +60,24 @@
       </article>
 
       <article
-        class="bg-white p-6 rounded-lg shadow-lg"
+        class="bg-gray-100 p-6 text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-sm"
         style={`animation-delay: ${0 * 100}ms`}
       >
         <div
-          class={`h-12 w-12 rounded-lg  mb-6 flex items-center justify-center`}
+          class="w-16 h-16 bg-blood-red-800 rounded-full flex items-center justify-center mb-6"
         >
-          <svg
-            class={`h-6 w-6`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d=""></path>
-          </svg>
+         <Code class="h-8 w-8 text-white text-center" aria-hidden="true" />
         </div>
         <h3 class="text-xl font-semibold mb-3" lang="en">
-          Webinars
+          Treinamentos Técnicos
         </h3>
         <p class="text-errie-black-900">
-          Apresentações online ao vivo com sessão de perguntas.
+          Capacitação especializada para desenvolvedores, designers e profissionais de QA implementarem acessibilidade.
         </p>
 
         <ul class="list-inside list-disc space-y-2">
           <li class="text-errie-black-900">Duração: 60-90 minutos;</li>
           <li class="text-errie-black-900">Público: Ilimitado;</li>
-          <li class="text-errie-black-900">
-            Formato: Presencial ou online.
-          </li>
-        </ul>
-      </article>
-      <article
-        class="bg-white p-6 rounded-lg shadow-lg"
-        style={`animation-delay: ${0 * 100}ms`}
-      >
-        <div
-          class={`h-12 w-12 rounded-lg  mb-6 flex items-center justify-center`}
-        >
-          <svg
-            class={`h-6 w-6`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d=""></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold mb-3">
-          Treinamentos <span lang="en">In-Company</span>
-        </h3>
-        <p class="text-errie-black-900">
-          Capacitação personalizada para equipes internas.
-        </p>
-
-        <ul class="list-inside list-disc space-y-2">
-          <li class="text-errie-black-900">Duração: 1-2 dias;</li>
-          <li class="text-errie-black-900">
-            Público: 10-30 pessoas;
-          </li>
           <li class="text-errie-black-900">
             Formato: Presencial ou online.
           </li>

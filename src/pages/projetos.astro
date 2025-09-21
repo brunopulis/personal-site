@@ -1,841 +1,158 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import ProjetosPessoais from "@/components/home/ProjetosPessoais.astro";
-import Footer from "@/components/layout/Footer.astro";
-import meImage from "@/assets/me.png";
-import BackToTop from "@/components/ui/BackToTop.astro";
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
+import Footer from '@/components/layout/Footer.astro'
 
-const skills = [
-  {
-    skill: "Javascript/TypeScript",
-  },
+import { Image } from 'astro:assets'
 
-  {
-    skill: "Javascript/TypeScript",
-  },
+import magraDeVerdade from '@/assets/projects/magra-de-verdade.webp'
+import bibliotecaDaRevolucao from '@/assets/projects/biblioteca-da-revolucao.webp'
+import henriqueNoal from '@/assets/projects/henrique-noal.webp'
+import forja from '@/assets/projects/forja-comercial.webp'
+import { ExternalLink } from '@lucide/astro'
 
-  {
-    skill: "Javascript/TypeScript",
-  },
+const projectsData = {
+  projects: [
+    {
+      image: magraDeVerdade,
+      title: 'Magra de Verdade',
+      year: '2025',
+      service: 'Desenvolvimento web',
+      description: 'Página de Vendas',
+      techs: ['WordPress', 'Elementor', 'Acessibilidade'],
+      demo: [
+        {
+          url: 'https://magradeverdade.com/',
+          label: 'LinkedIn',
+        },
+      ],
+    },
+        {
+      image: magraDeVerdade,
+      title: 'Reponto - Recrutamento e Seleção',
+      year: '2025',
+      service: 'Desenvolvimento web',
+      description: 'Site institucional',
+      techs: ['WordPress', 'Bootstrap', 'Acessibilidade'],
+      demo: [
+        {
+          url: 'https://magradeverdade.com/',
+          label: 'LinkedIn',
+        },
+      ],
+    },
+    {
+      image: bibliotecaDaRevolucao,
+      title: 'Biblioteca da Revolução',
+      service: 'Desenvolvimento web',
+      description: 'Página de Vendas',
+      techs: ['WordPress', 'Elementor', 'Acessibilidade'],
+      demo: [
+        {
+          url: 'https://serqsabe.com.br',
+          label: 'LinkedIn',
+        },
+      ],
+    },
+    {
+      image: henriqueNoal,
+      title: 'Henrique Noal',
+      service: 'Desenvolvimento web',
+      description: 'Página de Vendas',
+      techs: ['Astro', 'TailwindCSS', 'Acessibilidade'],
+      demo: [
+        {
+          url: 'https://henriquenoal.netlify.app/',
+          label: 'LinkedIn',
+        },
+      ],
+    },
+    {
+      image: forja,
+      title: 'Forja Comercial',
+      description: 'Página de Vendas',
+      techs: ['WordPress', 'Elementor', 'Acessibilidade'],
+      demo: [
+        {
+          url: 'https://joaokioshi.com',
+          label: 'LinkedIn',
+        },
+      ],
+    },
+  ],
+}
 
-  {
-    skill: "Javascript/TypeScript",
-  },
-  "HTML5/CSS3",
-  "Sass",
-  "Tailwind CSS",
-  "WordPress",
-  "Figma",
-];
-
-const jobs = [{}];
+const projects = projectsData.projects
 ---
 
-<Layout title="Sobre - Bruno Pulis">
+<Layout title="Projetos - Bruno Pulis">
   <Header />
   <main class="pt-16">
     <div class="min-h-screen">
-      <section class="bg-blood-red-800 px-6 py-20 lg:px-20">
-        <div class="mx-auto max-w-7xl text-center">
-          <h1 class="mb-6 text-5xl font-bold text-white lg:text-6xl">
-            Meus Projetos
-          </h1><p
-            class="mx-auto max-w-3xl text-xl leading-relaxed text-white/90"
-          >
-            Uma seleção dos trabalhos que mais me orgulho, desde aplicações web
-            completas até designs de interface inovadores. Cada projeto
-            representa um desafio único e uma oportunidade de crescimento.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="Meus"
+        highlightText=" Projetos"
+        description="Dê uma olhada em nossos projetos acessíveis e personalizados que ajudam pessoas e empresas a crescer, aprimorar sua marca para um público mais amplo."
+      />
 
-      <section class="bg-white px-6 py-20 lg:px-20">
+      <section class="px-6 py-20 lg:px-20">
         <div class="mx-auto max-w-7xl">
-          <h2 class="mb-16 text-center text-4xl font-bold text-gray-900">
-            Projetos em Destaque
-          </h2><div class="grid gap-12 lg:grid-cols-2">
-            <div
-              data-slot="card"
-              class="bg-card text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border shadow-lg transition-shadow hover:shadow-xl"
-            >
-              <div class="h-64 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1NTg4MzgwNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="E-commerce Platform - TechStore"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-8">
-                <div class="mb-4 flex items-center gap-4">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent bg-blood-red-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Destaque</span
-                  ><span class="text-sm text-gray-500">2024</span>
-                </div><h3 class="mb-3 text-2xl font-bold text-gray-900">
-                  E-commerce Platform - TechStore
-                </h3><p class="mb-6 leading-relaxed text-gray-600">
-                  Plataforma completa de e-commerce com sistema de pagamento
-                  integrado, gestão de estoque e dashboard administrativo.
-                  Desenvolvida com React, Node.js e integração com APIs de
-                  pagamento.
-                </p><div class="mb-6 space-y-4">
-                  <div class="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span class="font-medium text-gray-900">Cliente:</span><p
-                        class="text-gray-600"
-                      >
-                        TechStore Inc.
-                      </p>
-                    </div><div>
-                      <span class="font-medium text-gray-900">Duração:</span><p
-                        class="text-gray-600"
-                      >
-                        4 meses
-                      </p>
-                    </div>
-                  </div><div>
-                    <span class="text-sm font-medium text-gray-900"
-                      >Meu Papel:</span
-                    ><p class="text-sm text-gray-600">
-                      Full Stack Developer &amp; UI Designer
-                    </p>
+          <h2 class="mb-16 text-center text-4xl font-bold text-gray-900">Todos os Projetos</h2>
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {
+              projects.slice(0, 6).map((project) => (
+                <div class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg">
+                  <div class="h-48 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                </div><div class="mb-6 flex flex-wrap gap-2">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >React</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Node.js</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Stripe</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >MongoDB</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Tailwind CSS</span
-                  >
-                </div><div class="flex gap-4">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md bg-blood-red-800 px-3 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-blood-red-800/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link mr-2 h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    >Ver Projeto</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md border px-3 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-github mr-2 h-4 w-4"
-                      aria-hidden="true"
-                      ><path
-                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-                      ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
-                    >Código</button
-                  >
-                </div>
-              </div>
-            </div><div
-              data-slot="card"
-              class="bg-card text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border shadow-lg transition-shadow hover:shadow-xl"
-            >
-              <div class="h-64 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWFzJTIwZGFzaGJvYXJkJTIwZGVzaWdufGVufDF8fHx8MTc1NTk2NzgwMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="SaaS Analytics Dashboard - DataViz Pro"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-8">
-                <div class="mb-4 flex items-center gap-4">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent bg-blood-red-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Destaque</span
-                  ><span class="text-sm text-gray-500">2023</span>
-                </div><h3 class="mb-3 text-2xl font-bold text-gray-900">
-                  SaaS Analytics Dashboard - DataViz Pro
-                </h3><p class="mb-6 leading-relaxed text-gray-600">
-                  Dashboard complexo para análise de dados com visualizações
-                  interativas, relatórios customizáveis e sistema de alertas.
-                  Interface clean e funcional para facilitar a tomada de
-                  decisões.
-                </p><div class="mb-6 space-y-4">
-                  <div class="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span class="font-medium text-gray-900">Cliente:</span><p
-                        class="text-gray-600"
-                      >
-                        DataViz Corporation
-                      </p>
-                    </div><div>
-                      <span class="font-medium text-gray-900">Duração:</span><p
-                        class="text-gray-600"
-                      >
-                        6 meses
-                      </p>
+                  <div class="p-6">
+                    <h3 class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900">{project.title}</h3>
+                    <p class="mb-4 line-clamp-3 text-sm text-gray-600">{project.description}</p>
+                    <div class="mb-4 flex flex-wrap gap-1">
+                      {project.techs.map((tech) => (
+                        <span class="text-blood-red-800 inline-flex w-fit items-center justify-center gap-1 rounded-md border border-gray-600 bg-white px-2 py-0.5 text-xs font-medium">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                  </div><div>
-                    <span class="text-sm font-medium text-gray-900"
-                      >Meu Papel:</span
-                    ><p class="text-sm text-gray-600">
-                      Frontend Lead &amp; Data Visualization Specialist
-                    </p>
+                    <div class="flex gap-2">
+                      <a
+                        href={project.demo[0].url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center focus-visible:border-ring focus-visible:ring-ring/50 text-blood-red-800 hover:bg-accent hover:text-accent-foreground inline-flex h-8 font-medium"
+                        >
+                        Acessar projeto
+                        <ExternalLink class="ml-1 h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
-                </div><div class="mb-6 flex flex-wrap gap-2">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >React</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >TypeScript</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >D3.js</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Chart.js</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >PostgreSQL</span
-                  >
-                </div><div class="flex gap-4">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md bg-blood-red-800 px-3 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-blood-red-800/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link mr-2 h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    >Ver Projeto</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md border px-3 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-github mr-2 h-4 w-4"
-                      aria-hidden="true"
-                      ><path
-                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-                      ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
-                    >Código</button
-                  >
                 </div>
-              </div>
-            </div>
+              ))
+            }
           </div>
         </div>
       </section>
 
-      <section
-        class="px-6 py-20 lg:px-20"
-        style="background-color: var(--color-light-gray);"
-      >
-        <div class="mx-auto max-w-7xl">
-          <h2 class="mb-16 text-center text-4xl font-bold text-gray-900">
-            Todos os Projetos
-          </h2><div class="mb-12 flex flex-wrap justify-center gap-4">
-            <button
-              data-slot="button"
-              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-blood-red-800 px-4 py-2 text-sm font-medium whitespace-nowrap text-white transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-funnel mr-2 h-4 w-4"
-                aria-hidden="true"
-                ><path
-                  d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"
-                ></path></svg
-              >Todos os Projetos</button
-            ><button
-              data-slot="button"
-              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium whitespace-nowrap text-gray-700 transition-all outline-none hover:bg-blood-red-800 hover:text-white focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-funnel mr-2 h-4 w-4"
-                aria-hidden="true"
-                ><path
-                  d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"
-                ></path></svg
-              >Web Applications</button
-            ><button
-              data-slot="button"
-              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium whitespace-nowrap text-gray-700 transition-all outline-none hover:bg-blood-red-800 hover:text-white focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-funnel mr-2 h-4 w-4"
-                aria-hidden="true"
-                ><path
-                  d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"
-                ></path></svg
-              >Mobile Apps</button
-            ><button
-              data-slot="button"
-              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium whitespace-nowrap text-gray-700 transition-all outline-none hover:bg-blood-red-800 hover:text-white focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-funnel mr-2 h-4 w-4"
-                aria-hidden="true"
-                ><path
-                  d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"
-                ></path></svg
-              >UI/UX Design</button
-            ><button
-              data-slot="button"
-              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium whitespace-nowrap text-gray-700 transition-all outline-none hover:bg-blood-red-800 hover:text-white focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-funnel mr-2 h-4 w-4"
-                aria-hidden="true"
-                ><path
-                  d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"
-                ></path></svg
-              >E-commerce</button
-            >
-          </div><div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div
-              data-slot="card"
-              class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div class="h-48 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1577333715735-8fcb0359d906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1NTg4MzgwNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="E-commerce Platform - TechStore"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-6">
-                <div class="mb-3 flex items-center justify-between">
-                  <span class="text-sm font-medium text-blood-red-800"
-                    >2024</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent bg-blood-red-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Destaque</span
-                  >
-                </div><h3
-                  class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900"
-                >
-                  E-commerce Platform - TechStore
-                </h3><p class="mb-4 line-clamp-3 text-sm text-gray-600">
-                  Plataforma completa de e-commerce com sistema de pagamento
-                  integrado, gestão de estoque e dashboard administrativo.
-                  Desenvolvida com React, Node.js e integração com APIs de
-                  pagamento.
-                </p><div class="mb-4 flex flex-wrap gap-1">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >React</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Node.js</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Stripe</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >+2</span
-                  >
-                </div><div class="flex gap-2">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md border px-3 text-xs font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    >Ver Detalhes</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md p-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    ></button
-                  >
-                </div>
-              </div>
-            </div><div
-              data-slot="card"
-              class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div class="h-48 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1663153206138-cc0f166f82af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZGVsaXZlcnklMjBhcHAlMjBkZXNpZ258ZW58MXx8fHwxNzU1OTY3ODA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Food Delivery Mobile App - QuickEats"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-6">
-                <div class="mb-3 flex items-center justify-between">
-                  <span class="text-sm font-medium text-blood-red-800"
-                    >2023</span
-                  >
-                </div><h3
-                  class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900"
-                >
-                  Food Delivery Mobile App - QuickEats
-                </h3><p class="mb-4 line-clamp-3 text-sm text-gray-600">
-                  Aplicativo mobile para delivery de comida com interface
-                  intuitiva, rastreamento em tempo real e sistema de avaliações.
-                  Design focado na experiência do usuário e otimização para
-                  conversão.
-                </p><div class="mb-4 flex flex-wrap gap-1">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >React Native</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Figma</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >UI/UX</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >+2</span
-                  >
-                </div><div class="flex gap-2">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md border px-3 text-xs font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    >Ver Detalhes</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md p-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    ></button
-                  >
-                </div>
-              </div>
-            </div><div
-              data-slot="card"
-              class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div class="h-48 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWFzJTIwZGFzaGJvYXJkJTIwZGVzaWdufGVufDF8fHx8MTc1NTk2NzgwMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="SaaS Analytics Dashboard - DataViz Pro"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-6">
-                <div class="mb-3 flex items-center justify-between">
-                  <span class="text-sm font-medium text-blood-red-800"
-                    >2023</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent bg-blood-red-800 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Destaque</span
-                  >
-                </div><h3
-                  class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900"
-                >
-                  SaaS Analytics Dashboard - DataViz Pro
-                </h3><p class="mb-4 line-clamp-3 text-sm text-gray-600">
-                  Dashboard complexo para análise de dados com visualizações
-                  interativas, relatórios customizáveis e sistema de alertas.
-                  Interface clean e funcional para facilitar a tomada de
-                  decisões.
-                </p><div class="mb-4 flex flex-wrap gap-1">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >React</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >TypeScript</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >D3.js</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >+2</span
-                  >
-                </div><div class="flex gap-2">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md border px-3 text-xs font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    >Ver Detalhes</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md p-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    ></button
-                  >
-                </div>
-              </div>
-            </div><div
-              data-slot="card"
-              class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div class="h-48 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1610387695018-3a90bf21c575?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB3ZWJzaXRlJTIwZGVzaWdufGVufDF8fHx8MTc1NTg4MzQ4M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Corporate Website - Innovation Labs"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-6">
-                <div class="mb-3 flex items-center justify-between">
-                  <span class="text-sm font-medium text-blood-red-800"
-                    >2023</span
-                  >
-                </div><h3
-                  class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900"
-                >
-                  Corporate Website - Innovation Labs
-                </h3><p class="mb-4 line-clamp-3 text-sm text-gray-600">
-                  Website institucional moderno para empresa de tecnologia, com
-                  foco em performance, SEO e experiência do usuário. Design
-                  responsivo e otimizado para conversão.
-                </p><div class="mb-4 flex flex-wrap gap-1">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Next.js</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >SCSS</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >CMS</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >+2</span
-                  >
-                </div><div class="flex gap-2">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md border px-3 text-xs font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    >Ver Detalhes</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md p-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    ></button
-                  >
-                </div>
-              </div>
-            </div><div
-              data-slot="card"
-              class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div class="h-48 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1612556810513-617a5a892418?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBwcm90b3R5cGV8ZW58MXx8fHwxNzU1OTAyMzcwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Mobile Banking App Prototype"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-6">
-                <div class="mb-3 flex items-center justify-between">
-                  <span class="text-sm font-medium text-blood-red-800"
-                    >2022</span
-                  >
-                </div><h3
-                  class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900"
-                >
-                  Mobile Banking App Prototype
-                </h3><p class="mb-4 line-clamp-3 text-sm text-gray-600">
-                  Prototipagem de aplicativo bancário com foco em segurança e
-                  usabilidade. Design system completo e testes de usabilidade
-                  com usuários reais.
-                </p><div class="mb-4 flex flex-wrap gap-1">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Figma</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Prototyping</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >User Testing</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >+2</span
-                  >
-                </div><div class="flex gap-2">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md border px-3 text-xs font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    >Ver Detalhes</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md p-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    ></button
-                  >
-                </div>
-              </div>
-            </div><div
-              data-slot="card"
-              class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div class="h-48 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1656264142377-22ae3fefdbc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3J0Zm9saW8lMjB3ZWJzaXRlJTIwbW9ja3VwfGVufDF8fHx8MTc1NTk2NzgwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Personal Portfolio Website"
-                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div><div class="p-6">
-                <div class="mb-3 flex items-center justify-between">
-                  <span class="text-sm font-medium text-blood-red-800"
-                    >2022</span
-                  >
-                </div><h3
-                  class="mb-2 line-clamp-2 text-xl font-semibold text-gray-900"
-                >
-                  Personal Portfolio Website
-                </h3><p class="mb-4 line-clamp-3 text-sm text-gray-600">
-                  Website de portfólio pessoal com design minimalista e foco na
-                  apresentação de trabalhos. Animações suaves e navegação
-                  intuitiva.
-                </p><div class="mb-4 flex flex-wrap gap-1">
-                  <span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >React</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Framer Motion</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >Tailwind CSS</span
-                  ><span
-                    data-slot="badge"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-                    >+1</span
-                  >
-                </div><div class="flex gap-2">
-                  <button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 inline-flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md border px-3 text-xs font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    >Ver Detalhes</button
-                  ><button
-                    data-slot="button"
-                    class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex h-8 shrink-0 items-center justify-center gap-1.5 rounded-md p-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-2.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-external-link h-4 w-4"
-                      aria-hidden="true"
-                      ><path d="M15 3h6v6"></path><path d="M10 14 21 3"
-                      ></path><path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path></svg
-                    ></button
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="px-6 py-20 lg:px-20 bg-gray-900"
-      >
+      <section class="bg-gray-900 px-6 py-20 lg:px-20">
         <div class="mx-auto max-w-4xl text-center">
-          <h2 class="mb-6 text-4xl font-bold text-white">
-            Gostou do Que Viu?
-          </h2><p class="mb-8 text-xl leading-relaxed text-gray-300">
-            Estes são apenas alguns exemplos do meu trabalho. Cada projeto é uma
-            oportunidade de criar algo único e impactante. Vamos conversar sobre
-            o seu próximo projeto?
+          <h2 class="mb-6 text-4xl font-bold text-white">Gostou do Que Viu?</h2><p
+            class="mb-8 text-xl leading-relaxed text-gray-300"
+          >
+            Estes são apenas alguns exemplos do meu trabalho. Cada projeto é uma oportunidade de criar algo único e
+            impactante. Vamos conversar sobre o seu próximo projeto?
           </p><a
-           
-            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md bg-blood-red-800 px-8 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-blood-red-800/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-            >Iniciar um Projeto</a>
+            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-blood-red-800 hover:bg-blood-red-800/90 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md px-8 text-sm font-medium whitespace-nowrap text-white transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+            >Iniciar um Projeto</a
+          >
         </div>
       </section>
-    </div>
+    </div>s
   </main>
   <Footer />
 </Layout>
-<BackToTop />
