@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets'
 import pulisLogo from '@/assets/horizontal/white.svg'
-import { Rss, Github, Linkedin, Youtube, Instagram } from '@lucide/astro'
 
-import writtenByHuman from '@/assets/written-by-human.svg'
+
+import writtenByHuman from '@/assets/images/written-by-human.svg'
 import config from '@/data/site.config.json'
 ---
 
 <footer class="bg-gray-900 pt-16 pb-8 text-white">
   <div class="container-custom">
-    <div class="mb-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div class="mb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <div class="md:col-span-2 lg:col-span-2">
         <a href="/" class="mb-6 flex items-center" aria-label="Go to homepage">
           <img src={pulisLogo.src} alt="" loading="lazy" />
@@ -21,7 +21,7 @@ import config from '@/data/site.config.json'
       </div>
       <div>
         <h2 class="sr-only">Rodapé</h2>
-        <h3 class="mb-4 text-lg font-semibold">Links rápidos</h3>
+        <h3 class="mb-4 text-lg font-semibold">Trabalho</h3>
         <ul class="space-y-2">
           <li>
             <a href="/sobre" class="text-white underline-offset-8 transition-colors hover:underline">Sobre</a>
@@ -39,37 +39,29 @@ import config from '@/data/site.config.json'
       </div>
 
       <div>
-        <h3 class="mb-4 text-lg font-semibold">Redes sociais</h3>
-        <ul class="flex space-x-2">
-          <li class="social__item">
-            <a href="/sitemap-index.xml" rel="alternate" type="application/rss+xml" class="social__link">
-              <Rss class="w-6 h-6" width="24" height="24" aria-hidden="true" />
-              <span class="sr-only">Assine o RSS</span>
-            </a>
+        <h3 class="mb-4 text-lg font-bold">Pessoal</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="/sobre" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
+              >Livro de Visitas</a
+            >
           </li>
-          <li class="social__item">
-            <a href={config.socialMidia.github} target="_blank" rel="me noopener noreferrer" class="social__link">
-              <Github class="w-6 h-6" width="24" height="24" aria-hidden="true" />
-              <span class="sr-only">GitHub (abre em uma nova janela)</span>
-            </a>
+          <li>
+            <a href="/servicos" class="text-white underline-offset-8 transition-colors hover:underline">Blogroll</a>
           </li>
-          <li class="social__item">
-            <a href={config.socialMidia.instagram} target="_blank" rel="me noopener noreferrer" class="social__link">
-              <Instagram class="w-6 h-6" width="24" height="24" aria-hidden="true" />
-              <span class="sr-only">Instagram (abre em uma nova janela)</span>
-            </a>
+          <li>
+            <a href="/sobre" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
+              >Biblioteca</a
+            >
           </li>
-          <li class="social__item">
-            <a href={config.socialMidia.youtube} target="_blank" rel="me noopener noreferrer" class="social__link">
-              <Youtube class="w-6 h-6" width="24" height="24" aria-hidden="true" />
-              <span class="sr-only">YouTube (abre em uma nova janela)</span>
-            </a>
+          <li>
+            <a href="/projetos" class="text-white underline-offset-8 transition-colors hover:underline">Filmes</a>
           </li>
-          <li class="social__item">
-            <a href={config.socialMidia.linkedin} target="_blank" rel="me noopener noreferrer" class="social__link">
-              <Linkedin class="w-6 h-6" width="24" height="24" aria-hidden="true" />
-              <span class="sr-only">LinkedIn (abre em uma nova janela)</span>
-            </a>
+          <li>
+            <a href="/servicos" class="text-white underline-offset-8 transition-colors hover:underline">Notas</a>
+          </li>
+          <li>
+            <a href="/explore" class="text-white underline-offset-8 transition-colors hover:underline">Now</a>
           </li>
         </ul>
       </div>
@@ -87,11 +79,17 @@ import config from '@/data/site.config.json'
               <a
                 href="/declaracao-acessibilidade"
                 class="text-sm text-white underline-offset-8 transition-colors hover:underline"
-                >Declaração de Acessibilidade</a>
+                >Declaração de Acessibilidade</a
+              >
             </li>
             <li>
-              <a href="/ia" class="text-sm text-white underline-offset-8 transition-colors hover:underline"
-                >Uso de IA</a>
+              <a href="/now" class="text-sm text-white underline-offset-8 transition-colors hover:underline" lang="en"
+                >Now</a
+              >
+            </li>
+            <li>
+              <a href="/ia" class="text-sm text-white underline-offset-8 transition-colors hover:underline">Uso de IA</a
+              >
             </li>
           </ul>
         </div>
@@ -100,7 +98,7 @@ import config from '@/data/site.config.json'
   </div>
   <div class="container-custom">
     <div class="mt-5 flex flex-col justify-between gap-3 md:flex-row">
-      <ul class="flex flex-col gap-3 space-x-5 sm:justify-between md:flex-row">
+      <ul class="flex flex-col gap-3 space-x-2 sm:justify-between md:flex-row">
         <li class="social__item">
           <a
             rel="external"
@@ -132,17 +130,32 @@ import config from '@/data/site.config.json'
             class="text-sm text-white underline-offset-8 hover:underline"
             href="https://a11y-webring.club/next"
           >
-            próximo site          
+            próximo site
           </a>
         </li>
       </ul>
-      <div class="flex flex-col space-x-5">
-        <Image 
-          src={writtenByHuman}
-          width={88}
-          height={30}
-          loading="lazy"
-          alt="Conteúdo escrito por um humano" />
+      <div class="flex flex-row space-x-5">
+        <ul class="flex space-x-2">
+          <li class="social__item">
+            <a href="/sitemap-index.xml" rel="alternate" type="application/rss+xml" class="text-sm text-white underline-offset-8 hover:underline"> RSS </a>
+          </li>
+          <li class="social__item">
+            <a href={config.socialMidia.github} target="_blank" rel="me noopener noreferrer" class="text-sm text-white underline-offset-8 hover:underline">
+              GitHub
+            </a>
+          </li>
+          <li class="social__item">
+            <a href={config.socialMidia.youtube} target="_blank" rel="me noopener noreferrer" class="text-sm text-white underline-offset-8 hover:underline">
+              YouTube
+            </a>
+          </li>
+          <li class="social__item">
+            <a href={config.socialMidia.linkedin} target="_blank" rel="me noopener noreferrer" class="text-sm text-white underline-offset-8 hover:underline">
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+        <Image src={writtenByHuman} width={88} height={30} loading="lazy" alt="Conteúdo escrito por um humano" />
       </div>
     </div>
   </div>
