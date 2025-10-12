@@ -3,7 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/layout/Header.astro";
 import HeroSection from "@/components/layout/HeroSection.astro";
 import QuoteForm from "@/components/quote/QuoteForm.astro";
-import BackToTop from "@/components/ui/BackToTop.astro";
 import Footer from "@/components/layout/Footer.astro";
 ---
 
@@ -15,7 +14,7 @@ import Footer from "@/components/layout/Footer.astro";
       highlightText=" Orçamento"
       description="Conte-me sobre seu projeto e receba um orçamento personalizado. Todas as informações são tratadas com confidencialidade e você receberá uma proposta detalhada em até 48 horas."
     />
-    <section class="bg-white py-16 dark:bg-gray-800">
+    <section class="bg-white py-16">
       <div class="container-custom max-w-4xl">
         <div class="grid gap-8">
           <div class="lg:col-span-2">
@@ -27,4 +26,3 @@ import Footer from "@/components/layout/Footer.astro";
   </main>
   <Footer />
 </Layout>
-<BackToTop />
