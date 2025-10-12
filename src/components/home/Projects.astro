@@ -1,187 +1,97 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
+import { ExternalLink, ArrowRight } from '@lucide/astro'
 
-import magraDeVerdade from "@/assets/projects/magra-de-verdade.webp";
-import bibliotecaDaRevolucao from "@/assets/projects/biblioteca-da-revolucao.webp";
-import henriqueNoal from "@/assets/projects/henrique-noal.webp";
-import forja from "@/assets/projects/forja-comercial.webp";
-
-
-
-import { ExternalLink } from "@lucide/astro";
+import magraDeVerdade from '@/assets/projects/magra-de-verdade.webp'
+import bibliotecaDaRevolucao from '@/assets/projects/biblioteca-da-revolucao.webp'
+import henriqueNoal from '@/assets/projects/henrique-noal.webp'
+import forja from '@/assets/projects/forja-comercial.webp'
 
 const projectsData = {
-  "projects": [
+  projects: [
     {
-      "image": magraDeVerdade,
-      "title": "Magra de Verdade",
-      "service": "Desenvolvimento web",
-      "description": "Página de Vendas",
-      "featured": true,
-      "techs": ["WordPress", "Elementor", "A11y"],
-      "demo": [
-        {
-          "url": "https://magradeverdade.com/",
-          "label": "LinkedIn"
-        }
-      ]
+      title: 'Magra de Verdade',
+      description:
+        'Tornei esta página de vendas totalmente acessível, permitindo que pessoas com deficiência visual pudessem conhecer o produto.',
+      tags: ['WordPress', 'Elementor', 'WCAG AA'],
+      image: magraDeVerdade,
     },
     {
-      "image": bibliotecaDaRevolucao,
-      "title": "Biblioteca da Revolução",
-      "service": "Desenvolvimento web",
-      "description": "Página de Vendas",
-      "featured": false,
-      "techs": ["WordPress", "Elementor", "A11y"],
-      "demo": [
-        {
-          "url": "https://serqsabe.com.br",
-          "label": "LinkedIn"
-        }
-      ]
+      title: 'Biblioteca da Revolução',
+      description: 'Redesign completo focando em leitores de tela e navegação simplificada para um público diverso.',
+      tags: ['WordPress', 'A11y', 'Design'],
+      image: bibliotecaDaRevolucao,
     },
     {
-      "image": henriqueNoal,
-      "title": "Henrique Noal",
-      "service": "Desenvolvimento web",
-      "description": "Página de Vendas",
-      "featured": false,
-      "techs": ["Astro", "TailwindCSS", "A11y"],
-      "demo": [
-        {
-          "url": "https://henriquenoal.netlify.app/",
-          "label": "LinkedIn"
-        }
-      ]
-    },
-    {
-      "image": forja,
-      "title": "Forja Comercial",
-      "description": "Página de Vendas",
-      "featured": false,
-      "techs": ["WordPress", "Elementor", "A11y"],
-      "demo": [
-        {
-          "url": "https://joaokioshi.com",
-          "label": "LinkedIn"
-        }
-      ]
+      title: 'Henrique Noal',
+      description: 'Landing page moderna com performance e acessibilidade desde o início do projeto.',
+      tags: ['Astro', 'Tailwind', 'A11y'],
+      image: henriqueNoal,
     }
-  ]
+  ],
 }
 
-const projects = projectsData.projects;
-const featuredProject = projects.find(p => p.featured);
-const otherProjects = projects.filter(p => !p.featured);
+const projects = projectsData.projects
 ---
 
-<section class="bg-errie-black-900 px-6 py-20 lg:px-20">
-  <div class="container-custom">
+<section id="projetos" class="bg-gray-900 py-24 text-white">
+  <div class="mx-auto max-w-6xl px-6">
     <div class="mb-16 text-center">
-      <h2 class="mb-6 text-4xl font-bold text-white lg:text-5xl">
-        Projetos em Destaque
-      </h2>
-      <p class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300">
-        Seleção dos meus trabalhos mais recentes, cada um desenvolvido com
-        atenção aos detalhes e foco na experiência do usuário.
-      </p>
+      <h2 class="mb-4 text-4xl font-bold">Projetos recentes</h2>
+      <p class="text-xl text-white">Cada um com uma história e um impacto real</p>
     </div>
 
-     {featuredProject && (
-      <div class="mb-16">
-        <div class="text-card-foreground flex flex-col gap-6 overflow-hidden rounded-xl border border-gray-700 bg-gray-800">
-          <div class="grid gap-0 lg:grid-cols-2">
-            <div class="order-2 flex flex-col justify-center p-8 lg:order-1 lg:p-12">
-              <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&]:hover:bg-primary/90 w-fit mb-4 bg-blood-red-800 text-white">
-                Projeto em Destaque
-              </span>
-              <h3 class="mb-4 text-3xl font-bold text-white">
-                {featuredProject.title}
-              </h3>
-              <p class="mb-6 text-lg leading-relaxed text-white">
-                {featuredProject.description}
-              </p>
-              <div class="mb-8 flex flex-wrap gap-2">
-                {featuredProject.techs.map(tech => (
-                  <span class="inline-flex w-fit items-center justify-center gap-1 rounded-md border border-gray-600 px-2 py-0.5 text-xs font-medium bg-white text-blood-red-800">
-                    {tech}
+    <div class="grid gap-8 md:grid-cols-3">
+      {
+        projects.map((project, idx) => (
+          <div
+            key={idx}
+            class="group cursor-pointer overflow-hidden rounded-2xl bg-gray-800 transition hover:scale-105 hover:transform"
+            onMouseEnter={() => setHoveredProject(idx)}
+            onMouseLeave={() => setHoveredProject(null)}
+          >
+            <div class="relative overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                class="h-48 w-full object-cover transition duration-300 group-hover:scale-110"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="mb-3 text-2xl font-bold">{project.title}</h3>
+              <p class="mb-4 text-white">{project.description}</p>
+              <div class="mb-4 flex flex-wrap gap-2">
+                {project.tags.map((tag, count) => (
+                  <span key={count} class="rounded-full bg-gray-700 px-3 py-1 text-xs text-white">
+                    {tag}
                   </span>
                 ))}
               </div>
-              <div class="flex gap-4">
-                {featuredProject.demo && (
-                  <a
-                    href={featuredProject.demo[0].url}
-                    target="_blank"
-                    rel="noopener"
-                    class="flex items-center gap-2 text-white hover:underline underline-offset-8"
-                  >
-                    <span>Ver Projeto</span>
-                    <ExternalLink class="w-4 h-4" aria-hidden="true" />
-                  </a>
-                )}
-              </div>
-            </div>
-            <div class="order-1 h-64 lg:order-2 lg:h-auto">
-              <Image
-                src={featuredProject.image}
-                alt={featuredProject.title}
-                class="h-full w-full object-cover"
-              />
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 font-semibold text-white transition-all group-hover:gap-3"
+              >
+                Ver projeto completo
+                <ExternalLink class="h-4 w-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    )}
+        ))
+      }
+    </div>
 
-    <div class="grid gap-8 md:grid-cols-2">
-      {otherProjects.slice(0, 2).map(project => (
-        <div class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border border-gray-700 bg-gray-800 transition-shadow hover:shadow-xl">
-          <div class="h-48 overflow-hidden">
-            {typeof project.image === "object" ? (
-              <Image
-                src={project.image}
-                alt={project.title}
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            ) : (
-              <img
-                src={project.image}
-                alt={project.title}
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            )}
-          </div>
-          <div class="p-6">
-            <h3 class="mb-3 text-xl font-semibold text-white">
-              {project.title}
-            </h3>
-            <p class="mb-4 leading-relaxed text-white">
-              {project.description}
-            </p>
-            <div class="mb-4 flex flex-wrap gap-2">
-              {project.techs.map(tech => (
-                <span class="inline-flex w-fit items-center justify-center gap-1 rounded-md border border-gray-600 px-2 py-0.5 text-xs font-medium bg-white text-blood-red-800">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div class="flex gap-4">
-              {project.demo && (
-                <a
-                  href={project.demo[0].url}
-                  target="_blank"
-                  rel="noopener"
-                  class="flex items-center gap-2 text-white"
-                >
-                  <span class="text-sm">Ver Projeto</span>
-                  <ExternalLink class="w-4 h-4" aria-hidden="true" />
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
+    <div class="mt-12 text-center">
+      <a
+        href="/projetos"
+        class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-100"
+      >
+        Ver todos os projetos
+        <ArrowRight class="h-4 w-4" />
+      </a>
     </div>
   </div>
 </section>
+

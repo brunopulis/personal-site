@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 import me from "@/assets/me.webp";
 ---
 
@@ -8,11 +8,13 @@ import me from "@/assets/me.webp";
     <div class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border p-8">
       <div class="flex items-center gap-6">
         <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full">
-          <Picture
-            src={me.src}
-            formats={["avif", "webp"]}
+          <Image
+            src={me}
             alt="Bruno Pulis"
+            width={64}
+            height={64}
             class="h-full w-full object-cover"
+            loading="lazy"
           />
         </div>
         <div class="flex-1">

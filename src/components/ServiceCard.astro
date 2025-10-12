@@ -1,110 +1,40 @@
 ---
-
-import { Image } from "astro:assets";
-
 interface Props {
-  title: string;
-  description: string;
-  image: string;
-  formats?: string[];
-  alt?: string;
-  deliveries?: string[];
-  link?: string;
-  linkText?: string;
-  imagePosition?: 'left' | 'right';
+  title: string
+  description: string
+  deliveries?: string[]
+  link?: string
+  linkText?: string
 }
 
-const {
-  title,
-  description,
-  image,
-  alt = "",
-  deliveries = [],
-  link,
-  linkText = "Saiba mais",
-  imagePosition = 'left'
-} = Astro.props;
-
+const { title, description, deliveries = [], link, linkText = 'Saiba mais' } = Astro.props
 ---
 
-<article class="flex flex-col items-center gap-8 space-y-8 pb-20 lg:flex-row">
-  {imagePosition === 'left' ? (
-    <>
-      <div class="w-full lg:w-1/2">
-        <Image
-          src={image}
-          alt={alt}
-          loading="lazy"
-          decoding="async"
-          fetchpriority="low"
-          width={608}
-          height={390}
-          class="h-auto w-full rounded-xl object-cover shadow-lg"
-        />
+<article class="rounded-xl border-0 border-gray-200 bg-gray-50 p-6 shadow-sm transition-shadow hover:shadow-lg flex flex-col h-full">
+  <h3 class="text-xl font-semibold text-blood-red-800 mb-3">{title}</h3>
+  <p class="text-errie-black-900 mb-6">
+    {description}
+  </p>
+
+  <ul class="space-y-3 my-6 list-disc">
+    {
+      deliveries.map(item => (
+        <li class="flex items-center gap-2 text-errie-black-900">
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+  {
+    link && (
+      <div class="mt-auto flex flex-col gap-3 sm:flex-row">
+        <a
+          href={link}
+          class="text-blood-red-800 text-xl font-semibold transition-colors underline underline-offset-4 hover:no-underline"
+        >
+          {linkText}
+        </a>
       </div>
-      <div class="relative w-full lg:w-1/2">
-        <h2 class="text-blood-red mb-4 text-3xl font-bold md:text-4xl">{title}</h2>
-        <p class="mb-3 text-lg text-errie-black-900">{description}</p>
-        {deliveries.length > 0 && (
-          <>
-            <p class="mb-3 text-lg text-errie-black-900">O que entregamos:</p>
-            <ul class="mb-6 list-disc pl-5">
-              {deliveries.map(item => (
-                <li class="text-lg text-errie-black-900">{item}</li>
-              ))}
-            </ul>
-          </>
-        )}
-        {link && (
-          <div class="mb-4 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={link}
-              class="bg-blood-red-800 border-blood-red-800 text-white hover:bg-white hover:border-blood-red-800 hover:text-blood-red-800 inline-block rounded-lg border px-6 py-3 text-base font-semibold transition"
-            >
-              {linkText}
-            </a>
-          </div>
-        )}
-      </div>
-    </>
-  ) : (
-    <>
-      <div class="relative w-full lg:w-1/2">
-        <h2 class="text-blood-red mb-4 text-3xl font-bold md:text-4xl">{title}</h2>
-        <p class="mb-3 text-lg text-errie-black-900">{description}</p>
-        {deliveries.length > 0 && (
-          <>
-            <p class="mb-3 text-lg text-errie-black-900">O que entregamos:</p>
-            <ul class="mb-6 list-disc pl-5">
-              {deliveries.map(item => (
-                <li class="text-lg text-errie-black-900">{item}</li>
-              ))}
-            </ul>
-          </>
-        )}
-        {link && (
-          <div class="mb-4 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={link}
-              class="bg-blood-red-800 border-blood-red-800 text-white hover:bg-white hover:border-blood-red-800 hover:text-blood-red-800 inline-block rounded-lg border px-6 py-3 text-base font-semibold transition"
-            >
-              {linkText}
-            </a>
-          </div>
-        )}
-      </div>
-      <div class="w-full lg:w-1/2">
-        <Image
-          src={image}
-          alt={alt}
-          loading="lazy"
-          decoding="async"
-          fetchpriority="low"
-          width={608}
-          height={390}
-          class="h-auto w-full rounded-xl object-cover shadow-lg"
-        />
-      </div>
-    </>
-  )}
+    )
+  }
 </article>
