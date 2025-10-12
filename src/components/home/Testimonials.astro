@@ -1,58 +1,172 @@
 ---
-import { testimonials } from '@/data/testimonials.json';
+import { testimonials } from '@/data/testimonials.json'
+
+import { ArrowRight, Star } from '@lucide/astro'
 ---
 
-<section class="bg-white px-6 py-20 lg:px-20" id="testimonials">
-  <div class="mx-auto max-w-6xl">
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span
-        class="bg-blood-red-800 text-white mb-4 inline-block rounded-full px-4 py-1 text-sm font-medium"
-      >
-        Depoimentos
-      </span>
-      <h2 class="mb-6 text-2xl text-errie-black-900 font-bold" aria-labelledby="testimonials">O que dizem sobre meu trabalho</h2>
-      <p class="text-errie-black-700 mx-auto text-lg leading-relaxed">
-        Feedback de clientes e parceiros que trabalharam comigo em projetos transformadores.
+<section class="bg-white py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mb-16 text-center">
+      <h2 class="mb-4 text-4xl font-bold text-gray-900">O que as pessoas falam</h2>
+      <p class="text-xl text-errie-black-700">
+        Trabalho é sobre pessoas. Aqui está o que alguns clientes e parceiros falam sobre nossa parceria
       </p>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-3">
-      {
-        testimonials.slice(-6).map((testimonial, index) => (
-          <div
-            class="flex flex-col gap-6 rounded-xl border-0 bg-gray-50 p-8 text-center shadow-sm transition-shadow hover:shadow-lg slide-up  border-gray-200"
-            style={`animation-delay: ${index * 150}ms`}
-          >
-            <div class="mb-6">
-              {[...Array(5)].map(() => (
-                <svg
-                  class="text-warning-400 inline-block h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-
-            <blockquote class="mb-6 text-errie-black-900 italic">
-              "{testimonial.content}"
-            </blockquote>
-
-            <div class="flex items-center justify-center">
-              <div>
-                <p class="font-semibold text-blood-red-800">
-                  {testimonial.author}
-                </p>
-                <p class="text-sm text-errie-black-900">
-                  {testimonial.position}
-                </p>
-              </div>
-            </div>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <article
+        class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div>
+            <p class="font-bold text-gray-900">João Kioshi</p>
+            <p class="text-sm text-errie-black-700">Mentor em Vendas</p>
           </div>
-        ))
-      }
+        </div>
+        <div class="mb-3 flex gap-1" aria-label="Classificação: 5 estrelas">
+          {
+            [...Array(5)].map((_, i) => (
+              <span key={i} class="text-yellow-400">
+                <Star class="inline-block h-5 w-5 stroke-gray-900 fill-yellow-300" aria-hidden="true" />
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-sm leading-relaxed text-gray-700">
+          "Excelente profissional, me ajudou a deixar minha landing page pronta para vendas e <strong>deu todo suporte na parte operacional</strong
+          > de coisas que eu nem o havia contratado. Super recomendo."
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div>
+            <div class="font-bold text-gray-900">Bruce Rocha</div>
+            <p class="text-sm text-errie-black-700" lang="en">Health Innovation Designer</p>
+          </div>
+        </div>
+        <div class="mb-3 flex gap-1" aria-label="Classificação: 5 estrelas">
+          {
+            [...Array(5)].map((_, i) => (
+              <span key={i} class="text-yellow-400">
+                <Star class="inline-block h-5 w-5 stroke-gray-900 fill-yellow-300" aria-hidden="true" />
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-sm leading-relaxed text-gray-700">
+          "O Bruno possui um <strong>conhecimento enorme e uma facilidade em ensinar</strong
+          > de forma fácil quais ferramentas e metodologias podem ser utilizadas para garantir uma aplicação inclusiva e
+          acessível."
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div>
+            <div class="font-bold text-gray-900">Victoria Raupp Krupp</div>
+            <div class="text-sm text-errie-black-700">Instrutora de Acessibilidade</div>
+          </div>
+        </div>
+        <div class="mb-3 flex gap-1" aria-label="Classificação: 5 estrelas">
+          {
+            [...Array(5)].map((_, i) => (
+              <span key={i} class="text-yellow-400">
+                <Star class="inline-block h-5 w-5 stroke-gray-900 fill-yellow-300" aria-hidden="true" />
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-sm leading-relaxed text-gray-700">
+          "É uma pessoa que entende muito do processo de desenvolvimento de software em diferentes áreas. <strong
+            >É uma das maiores referências em acessibilidade digital no Brasil.</strong
+          >"
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div>
+            <div class="font-bold text-gray-900">Mone de França</div>
+            <div class="text-sm text-errie-black-700">Empreendedora</div>
+          </div>
+        </div>
+        <div class="mb-3 flex gap-1" aria-label="Classificação: 5 estrelas">
+          {
+            [...Array(5)].map((_, i) => (
+              <span key={i} class="text-yellow-400">
+                <Star class="inline-block h-5 w-5 stroke-gray-900 fill-yellow-300" aria-hidden="true" />
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-sm leading-relaxed text-gray-700">
+          "Excelente! <strong>Trabalho rápido e eficiente.</strong>"
+        </p>
+      </article>
+
+      <article
+       class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div>
+            <div class="font-bold text-gray-900">Raphael Bessa</div>
+            <div class="text-sm text-errie-black-700">Advogado</div>
+          </div>
+        </div>
+        <div class="mb-3 flex gap-1" aria-label="Classificação: 5 estrelas">
+          {
+            [...Array(5)].map((_, i) => (
+              <span key={i} class="text-yellow-400">
+                <Star class="inline-block h-5 w-5 stroke-gray-900 fill-yellow-300" aria-hidden="true" />
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-sm leading-relaxed text-gray-700">
+          "<strong>Responsabilidade, competência e preço justo.</strong> Recomendo!"
+        </p>
+      </article>
+
+      <article
+        class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <div>
+            <div class="font-bold text-gray-900">Prof<sup>a</sup> Dra Yara Miranda</div>
+            <div class="text-sm text-errie-black-700">Professora</div>
+          </div>
+        </div>
+        <div class="mb-3 flex gap-1" aria-label="Classificação: 5 estrelas">
+          {
+            [...Array(5)].map((_, i) => (
+              <span key={i} class="text-yellow-400">
+                <Star class="inline-block h-5 w-5 stroke-gray-900 fill-yellow-300" aria-hidden="true" />
+              </span>
+            ))
+          }
+        </div>
+        <p class="text-sm leading-relaxed text-gray-700">
+          "Um profissional ético, comprometido e muito atencioso. <strong
+            >Facilidade para compartilhar seu conhecimento</strong
+          > conforme a necessidade e as dúvidas do cliente leigo na área."
+        </p>
+      </article>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="mb-4 text-errie-black-700">Quer deixar seu depoimento também?</p>
+      <a href="/visitas" class="inline-flex items-center gap-2 font-semibold text-blood-red-800 hover:underline">
+        Assinar o livro de visitas
+        <ArrowRight class="h-4 w-4" aria-hidden="true" />
+      </a>
     </div>
   </div>
 </section>
+
