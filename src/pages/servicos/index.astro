@@ -1,76 +1,795 @@
 ---
-import mentoria from '@/assets/mentoria.avif'
-import audit from '@/assets/audit.avif'
-import talks from '@/assets/talks.avif'
-
+---
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header.astro'
-import HeroSection from '@/components/layout/HeroSection.astro'
-import ServiceCard from '@/components/ServiceCard.astro'
 import ServiceCTA from '@/components/ServiceCTA.astro'
 import Footer from '@/components/layout/Footer.astro'
+import { Clock, ArrowRight } from 'astro-lucide'
+
+interface Servico {
+  id: string;
+  nome: string;
+  tagline: string;
+  descricao: string;
+  duracao: string;
+  investimento: string;
+  badge?: string;
+}
+
+const servicos: Servico[] = [
+  {
+    id: 'mentoria',
+    nome: 'Mentoria e Consultoria',
+    tagline: 'Trabalho COM você, não SÓ para você',
+    descricao: 'Não adianta só entregar um relatório. Eu trabalho lado a lado com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.',
+    duracao: '1-6 meses',
+    investimento: 'A partir de R$ 3.000/mês',
+    badge: '🔥 Mais procurado'
+  },
+  {
+    id: 'auditoria',
+    nome: 'Auditoria de Acessibilidade',
+    tagline: 'Descubra EXATAMENTE o que precisa ser corrigido',
+    descricao: 'Analiso seu site, app ou documento e te mostro exatamente o que precisa melhorar - e por quê isso importa para seus usuários.',
+    duracao: '2-4 semanas',
+    investimento: 'A partir de R$ 5.000',
+    badge: '⭐ Começo ideal'
+  }
+]
 ---
 
 <Layout title="Serviços - Bruno Pulis">
   <Header />
-  <main>
-    <div class="min-h-screen">
-      <HeroSection
-        title="Meus"
-        highlightText=" Serviços"
-        description="Oferecemos soluções completas em acessibilidade digital para tornar seus produtos mais inclusivos e alcançar mais pessoas."
-      />
+  
+  <main id="main-content">
+    <section id="servicos" class="bg-gray-50 py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Meus Serviços</h2>
+          <p class="mx-auto max-w-3xl text-xl text-gray-600">
+            Cada serviço é desenhado para resolver um problema específico.
+          </p>
+        </div>
 
-      <section class="bg-white py-20">
-        <div class="container-custom mx-auto px-6">
-          <ServiceCard
-            title="Mentoria e Consultoria"
-            description="Acompanhamento estratégico e personalizado para quem deseja implementar acessibilidade com segurança, clareza e autonomia."
-            image={mentoria}
-            alt="Mentoria"
-            deliveries={[
-              'Diagnóstico inicial e definição de objetivos claros;',
-              'Sessões individuais ou em grupo, com foco prático;',
-              'Apoio técnico na tomada de decisões, implementação e validação;',
-            ]}
-            link="/servicos/mentoria-consultoria"
-            linkText="Conheça a mentoria"
-            imagePosition="right"
-          />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {servicos.map((servico) => (
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden p-6">
+              <header class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">{servico.nome}</h3>
+                  <p class="text-lg text-gray-600 italic">{servico.tagline}</p>
+                </div>
+                {servico.badge && (
+                  <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ml-4">
+                    {servico.badge}
+                  </span>
+                )}
+              </header>
 
-          <ServiceCard
-            title="Auditoria de Acessibilidade"
-            description="Vamos verificar se seu site, app ou documento pode ser usado por pessoas com deficiência. Encontramos os problemas e mostramos como resolver."
-            image={audit}
-            alt="Mentoria"
-            deliveries={[
-              'Análise técnica com base nas diretrizes de acessibilidade;',
-              'Testes com ferramentas automáticas e manuais;',
-              'Relatório completo com imagens e instruções passo a passo.',
-            ]}
-            link="/servicos/auditoria-de-acessibilidade"
-            linkText="Conheça minhas auditorias"
-            imagePosition="left"
-          />
+              <p class="text-gray-700 leading-relaxed mb-4">{servico.descricao}</p>
 
-          <ServiceCard
-            title="Palestras e Treinamentos"
-            description="Ensinamos sobre acessibilidade digital de um jeito claro, prático e inspirador."
-            image={talks}
-            alt="Mentoria"
-            deliveries={[
-              'Palestras com conteúdo atual e linguagem acessível;',
-              'Workshops com atividades práticas, dinâmicas;',
-              'Treinamentos técnicos para devs, designers e QAs;',
-              'Materiais de apoio e certificado de participação;',
-            ]}
-            link="/servicos/palestras-treinamentos"
-            linkText="Contrate minhas palestras"
-            imagePosition="right"
-          />
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-6">
+                <div class="flex items-center gap-2">
+                  <Clock class="w-4 h-4" />
+                  <span>{servico.duracao}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <ArrowRight class="w-4 h-4" />
+                  <span>{servico.investimento}</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="/contato"
+                  class="bg-red-600 rounded-lg px-6 py-3 font-semibold text-white hover:bg-red-700 text-center transition flex-1"
+                >
+                  Contratar este serviço
+                </a>
+                <a
+                  href="/contato"
+                  class="bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-center flex-1"
+                >
+                  Tirar dúvidas
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <section class="mb-20">
+      <ServiceCTA />
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+---
+
+<Layout title="Serviços - Bruno Pulis">
+  <Header />
+  <main id="main-content">
+    <section id="servicos" class="bg-gray-50 py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Meus Serviços</h2>
+          <p class="mx-auto max-w-3xl text-xl text-gray-600">
+            Cada serviço é desenhado para resolver um problema específico.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {servicos.map((servico) => (
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden p-6">
+              <header class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">{servico.nome}</h3>
+                  <p class="text-lg text-gray-600 italic">{servico.tagline}</p>
+                </div>
+                {servico.badge && (
+                  <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ml-4">
+                    {servico.badge}
+                  </span>
+                )}
+              </header>
+
+              <p class="text-gray-700 leading-relaxed mb-4">{servico.descricao}</p>
+
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-6">
+                <div class="flex items-center gap-2">
+                  <Clock class="w-4 h-4" />
+                  <span>{servico.duracao}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <ArrowRight class="w-4 h-4" />
+                  <span>{servico.investimento}</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="/contato"
+                  class="bg-red-600 rounded-lg px-6 py-3 font-semibold text-white hover:bg-red-700 text-center transition flex-1"
+                >
+                  Contratar este serviço
+                </a>
+                <a
+                  href="/contato"
+                  class="bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-center flex-1"
+                >
+                  Tirar dúvidas
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <div class="mb-20">
+      <ServiceCTA />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<Layout title="Serviços - Bruno Pulis">
+  <Header />
+  <main id="main-content">
+    <section id="servicos" class="bg-gray-50 py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Meus Serviços</h2>
+          <p class="mx-auto max-w-3xl text-xl text-gray-600">
+            Cada serviço é desenhado para resolver um problema específico. Clique para saber mais.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {servicos.map((servico) => (
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden p-6">
+              <header class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">{servico.nome}</h3>
+                  <p class="text-lg text-gray-600 italic">{servico.tagline}</p>
+                </div>
+                {servico.badge && (
+                  <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ml-4">
+                    {servico.badge}
+                  </span>
+                )}
+              </header>
+
+              <p class="text-gray-700 leading-relaxed mb-4">{servico.descricao}</p>
+
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-6">
+                <div class="flex items-center gap-2">
+                  <Clock class="w-4 h-4" />
+                  <span>{servico.duracao}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <ArrowRight class="w-4 h-4" />
+                  <span>{servico.investimento}</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="/contato"
+                  class="bg-red-600 rounded-lg px-6 py-3 font-semibold text-white hover:bg-red-700 text-center transition flex-1"
+                >
+                  Contratar este serviço
+                </a>
+                <a
+                  href="/contato"
+                  class="bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-center flex-1"
+                >
+                  Tirar dúvidas
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
+      <div class="mb-20">
+        <ServiceCTA />
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+        </div>
+
+        <div class="mt-12">
+          <ServiceCTA />
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <ServiceCTA />
+  </main>
+  <Footer />
+</Layout>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">eCTA.astro'
+import Footer from '@/components/layout/Footer.astro'
+import { 
+  ShieldCheck, 
+  Users, 
+  FileText, 
+  MessageCircle, 
+  Search, 
+  ArrowRight, 
+  Code, 
+  Monitor, 
+  BookOpen,
+  Clock,
+  Target,
+  Package,
+  CheckCircle,
+  Zap,
+  GraduationCap,
+  AlertCircle,
+  Star
+} from '@lucide/astro'
+
+const iconMap = {
+  ShieldCheck,
+  Search,
+  Code,
+  Monitor,
+  BookOpen,
+  ArrowRight,
+  Clock,
+  Target,
+  Package,
+  CheckCircle,
+  Zap,
+  GraduationCap,
+  AlertCircle,
+  Star
+}
+
+// https://claude.ai/public/artifacts/5757f761-fc49-4bfc-b9af-736740afd31a
+
+const servicos = [
+  {
+    id: 'mentoria',
+    nome: 'Mentoria e Consultoria',
+    icone: Users,
+    tagline: 'Trabalho COM você, não SÓ para você',
+    descricao:
+      'Não adianta só entregar um relatório. Eu trabalho lado a lado com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.',
+    ideal:
+      'Para equipes que querem aprender fazendo, empresas que precisam de acompanhamento contínuo, ou profissionais que querem se especializar em acessibilidade.',
+    duracao: '1-6 meses',
+    investimento: 'A partir de R$ 3.000/mês',
+    cor: 'red',
+    badge: '🔥 Mais procurado',
+    oqueinclui: [
+      'Reuniões semanais de 1-2 horas',
+      'Revisão de código e design em tempo real',
+      'Acesso direto via Slack/WhatsApp',
+      'Documentação personalizada para seu projeto',
+      'Treinamento prático da equipe',
+      'Acompanhamento de implementação',
+    ],
+    processo: [
+      'Diagnóstico inicial do projeto e equipe',
+      'Definição de objetivos e roadmap',
+      'Sessões práticas semanais',
+      'Revisões e ajustes contínuos',
+      'Entrega de documentação final',
+    ],
+    resultados: [
+      'Equipe capacitada para criar produtos acessíveis',
+      'Redução de 70% em bugs de acessibilidade',
+      'Processos internos estabelecidos',
+      'Cultura de acessibilidade implementada',
+    ],
+  },
+  {
+    id: 'auditoria',
+    nome: 'Auditoria de Acessibilidade',
+    icone: FileText,
+    tagline: 'Descubra EXATAMENTE o que precisa ser corrigido',
+    descricao:
+      'Analiso seu site, app ou documento e te mostro exatamente o que precisa melhorar - e por quê isso importa para seus usuários.',
+    ideal:
+      'Para empresas que precisam saber a situação atual, que enfrentam requisitos legais, ou que querem priorizar investimentos em acessibilidade.',
+    duracao: '2-4 semanas',
+    investimento: 'A partir de R$ 5.000',
+    cor: 'blue',
+    badge: '⭐ Começo ideal',
+    oqueinclui: [
+      'Auditoria completa baseada em WCAG 2.1/2.2',
+      'Testes com leitores de tela (NVDA, JAWS, VoiceOver)',
+      'Testes de navegação por teclado',
+      'Análise de contraste de cores',
+      'Relatório detalhado com prints e vídeos',
+      'Planilha de problemas priorizados por impacto',
+      'Reunião de apresentação dos resultados',
+      'Recomendações práticas de correção',
+    ],
+    processo: [
+      'Kickoff: definição de escopo e páginas prioritárias',
+      'Auditoria técnica e testes com usuários simulados',
+      'Elaboração do relatório detalhado',
+      'Apresentação dos resultados e recomendações',
+      'Suporte pós-auditoria (2 semanas)',
+    ],
+    resultados: [
+      'Mapa completo de problemas de acessibilidade',
+      'Roadmap priorizado de correções',
+      'Documentação para desenvolvedores',
+      'Clareza sobre investimento necessário',
+    ],
+  },
+  {
+    id: 'palestras',
+    nome: 'Palestras e Treinamentos',
+    icone: MessageCircle,
+    tagline: 'Acessibilidade sem jargões complicados',
+    descricao:
+      'Levo conhecimento acessível para empresas e eventos. Explico conceitos complexos de forma simples e prática.',
+    ideal:
+      'Para eventos, empresas que querem sensibilizar equipes, ou organizações que precisam de treinamento inicial em acessibilidade.',
+    duracao: '1-8 horas',
+    investimento: 'A partir de R$ 2.000',
+    cor: 'purple',
+    badge: '💡 Inspirador',
+    oqueinclui: [
+      'Palestra personalizada para seu contexto',
+      'Material didático em formato acessível',
+      'Demonstrações práticas ao vivo',
+      'Sessão de perguntas e respostas',
+      'Certificados de participação',
+      'Gravação da palestra (opcional)',
+    ],
+    temas: [
+      'Introdução à Acessibilidade Web (WCAG)',
+      'Acessibilidade em React/Vue/Angular',
+      'Design Inclusivo na Prática',
+      'Como testar acessibilidade',
+      'Acessibilidade e SEO',
+      'Cases reais de implementação',
+      'Acessibilidade em Design Systems',
+    ],
+    formatos: [
+      'Palestra: 1h (keynote, conferências)',
+      'Workshop: 3-4h (hands-on, prático)',
+      'Treinamento: 8h (curso completo)',
+      'Webinar: 1-2h (remoto, interativo)',
+    ],
+  },
+  {
+    id: 'remediacao',
+    nome: 'Remediação de Sites e Apps',
+    icone: Code,
+    tagline: 'Corrijo o que está quebrado',
+    descricao:
+      'Pego seu site ou app inacessível e faço as correções necessárias no código. Trabalho direto na implementação.',
+    ideal:
+      'Para empresas que já sabem o que precisa ser corrigido mas não têm capacidade técnica interna, ou que precisam de resultados rápidos.',
+    duracao: '1-3 meses',
+    investimento: 'Sob consulta',
+    cor: 'green',
+    badge: '🚀 Resultados rápidos',
+    oqueinclui: [
+      'Análise do código-fonte atual',
+      'Correção de problemas identificados',
+      'Refatoração de componentes inacessíveis',
+      'Implementação de ARIA correto',
+      'Ajustes de HTML semântico',
+      'Testes durante implementação',
+      'Documentação do que foi alterado',
+      'Treinamento básico da equipe',
+    ],
+    tecnologias: [
+      'HTML/CSS/JavaScript puro',
+      'React, Vue.js, Angular',
+      'WordPress, Elementor',
+      'Gatsby, Next.js, Astro',
+      'Tailwind CSS, Bootstrap',
+      'Web Components',
+      'E outras tecnologias sob consulta',
+    ],
+    alertas: [
+      'Necessário acesso ao código-fonte',
+      'Prazo depende da complexidade do projeto',
+      'Pode exigir refatoração significativa',
+      'Ideal combinar com mentoria da equipe',
+    ],
+  },
+]
+
+const pacotes = [
+  {
+    nome: 'Starter',
+    preco: 'R$ 5.000',
+    ideal: 'Pequenos projetos',
+    inclui: [
+      'Auditoria de até 5 páginas',
+      'Relatório simplificado',
+      'Recomendações de correção',
+      '1 reunião de apresentação',
+    ],
+  },
+  {
+    nome: 'Professional',
+    preco: 'R$ 12.000',
+    ideal: 'Projetos médios',
+    destaque: true,
+    inclui: [
+      'Auditoria de até 15 páginas',
+      'Relatório completo detalhado',
+      'Planilha priorizada de issues',
+      '2 reuniões (apresentação + dúvidas)',
+      'Suporte de 30 dias pós-entrega',
+      'Testes com usuários reais (opcional)',
+    ],
+  },
+  {
+    nome: 'Enterprise',
+    preco: 'Sob consulta',
+    ideal: 'Grandes projetos',
+    inclui: [
+      'Auditoria completa do sistema',
+      'Múltiplos produtos/plataformas',
+      'Mentoria da equipe incluída',
+      'Acompanhamento de implementação',
+      'SLA de resposta garantido',
+      'Contrato anual disponível',
+    ],
+  },
+]
+
+const faq = [
+  {
+    pergunta: 'Quanto tempo leva cada serviço?',
+    resposta:
+      'Depende do escopo. Auditorias levam 2-4 semanas, mentorias são contratos de 1-6 meses, palestras são pontuais (1 dia), e remediação varia de 1-3 meses dependendo da complexidade.',
+  },
+  {
+    pergunta: 'Trabalha remoto ou presencial?',
+    resposta:
+      'Trabalho 100% remoto para mentorias, auditorias e remediação. Para palestras e treinamentos, posso ser presencial (Belo Horizonte e região) ou remoto, dependendo da preferência.',
+  },
+  {
+    pergunta: 'Qual o nível de conformidade que garante?',
+    resposta:
+      'Trabalho baseado nas diretrizes WCAG 2.1 e 2.2, níveis A e AA (AAA sob consulta). O objetivo é sempre a melhor experiência possível para todos os usuários, não apenas "passar no teste".',
+  },
+  {
+    pergunta: 'Emite nota fiscal?',
+    resposta: 'Sim, emito nota fiscal como MEI para todos os serviços.',
+  },
+  {
+    pergunta: 'Tem contrato mínimo?',
+    resposta:
+      'Para mentorias, o mínimo é 1 mês. Para outros serviços, não há contrato mínimo - trabalhamos por projeto.',
+  },
+  {
+    pergunta: 'E se eu não souber qual serviço preciso?',
+    resposta:
+      'Normal! A maioria das pessoas não sabe. Vamos conversar sem compromisso e eu te ajudo a entender o que faz mais sentido para o seu caso.',
+  },
+]
+---
+
+<Layout title="Serviços - Bruno Pulis">
+  <Header />
+  <main id="main-content">
+    <div class="min-h-screen">
+      <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+          <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+        </div>
+        <div class="mx-auto max-w-7xl px-6 py-20">
+          <div class="max-w-3xl">
+            <h1 class="mb-6 text-5xl font-bold">Como posso te ajudar a criar uma web mais acessível?</h1>
+            <p class="mb-8 text-xl leading-relaxed font-light text-white">
+              Ofereço quatro formas principais de trabalharmos juntos. Não sei qual você precisa? Normal. Vamos
+              conversar sem compromisso e descobrir juntos.
+            </p>
+            <a
+              href="#servicos"
+              class="inline-flex items-center gap-2 rounded-lg bg-red-600 px-8 py-4 font-semibold text-white transition hover:bg-red-700"
+            >
+              Ver serviços
+              <ArrowRight class="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Serviços Principais */}
+      <section id="servicos" class="bg-gray-50 py-24">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-16 text-center">
+            <h2 class="mb-4 text-4xl font-bold text-gray-900">Meus Serviços</h2>
+            <p class="mx-auto max-w-3xl text-xl text-gray-600">
+              Cada serviço é desenhado para resolver um problema específico. Clique para saber mais.
+            </p>
+          </div>
+
+                    <div class="space-y-6">
+            {servicos.map((servico) => (
+          {servicos.map(servico => (
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden p-6">
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">{servico.nome}</h3>
+                  <p class="text-lg text-gray-600 italic">{servico.tagline}</p>
+                </div>
+                {servico.badge && (
+                  <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ml-4">
+                    {servico.badge}
+                  </span>
+                )}
+              </div>
+
+              <p class="text-gray-700 leading-relaxed mb-4">{servico.descricao}</p>
+
+              <div class="flex items-center gap-4 text-sm text-gray-600 mb-6">
+                <div class="flex items-center gap-2">
+                  <Clock class="w-4 h-4" />
+                  <span>{servico.duracao}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <ArrowRight class="w-4 h-4" />
+                  <span>{servico.investimento}</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="/contato"
+                  class="bg-red-600 rounded-lg px-6 py-3 font-semibold text-white hover:bg-red-700 text-center transition flex-1"
+                >
+                  Contratar este serviço
+                </a>
+                <a
+                  href="/contato"
+                  class="bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-center flex-1"
+                >
+                  Tirar dúvidas
+                </a>
+              </div>
+            </div>
+          ))}
+
+                          <p class="text-gray-700 leading-relaxed mb-4">{servico.descricao}</p>
+
+                          <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+                            <div class="flex items-center gap-2">
+                              <Clock class="w-4 h-4" />
+                              <span>{servico.duracao}</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                              <Target class="w-4 h-4" />
+                              <span>{servico.investimento}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    {/* Conteúdo Expandido */}
+ 
+                      <div class="px-8 pb-8 space-y-8 border-t border-gray-200 pt-8">
+                        {/* Ideal para */}
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                            <Target class="w-5 h-5 text-blue-600" />
+                            Ideal para
+                          </h4>
+                          <p class="text-gray-700 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            {servico.ideal}
+                          </p>
+                        </div>
+
+                        {/* O que inclui */}
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <Package class="w-5 h-5 text-green-600" />O que está incluído
+                          </h4>
+                          <div class="grid md:grid-cols-2 gap-3">
+                            {servico.oqueinclui?.map((item, i) => (
+                              <div class="flex items-start gap-2">
+                                <CheckCircle class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                                <span class="text-gray-700 text-sm">{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Processo ou Temas */}
+ 
+                          <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                              <Zap class="w-5 h-5 text-purple-600" />
+                              Como funciona
+                            </h4>
+                            <div class="space-y-3">
+                              {servico.processo?.map((etapa, i) => (
+                                <div class="flex items-start gap-3">
+                                  <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <span class="text-purple-600 font-bold text-sm">{i + 1}</span>
+                                  </div>
+                                  <p class="text-gray-700 pt-1">{etapa}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                              <GraduationCap class="w-5 h-5 text-purple-600" />
+                              Temas disponíveis
+                            </h4>
+                            <div class="grid md:grid-cols-2 gap-2">
+                              {servico.temas.map((tema, i) => (
+                                <div key={i} class="bg-purple-50 px-4 py-2 rounded-lg text-sm text-gray-700">
+                                  • {tema}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                      
+                          <div>
+                            <h4 class="font-bold text-gray-900 mb-4">Formatos disponíveis</h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                              {servico.formatos.map((formato, i) => (
+                                <div
+                                  key={i}
+                                  class="bg-gray-50 px-4 py-3 rounded-lg text-sm text-gray-700 border border-gray-200"
+                                >
+                                  {formato}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                  
+
+     
+                          <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                              <Code class="w-5 h-5 text-green-600" />
+                              Tecnologias que trabalho
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                              {servico.tecnologias.map((tech, i) => (
+                                <span key={i} class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+        
+
+
+                          <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                              <AlertCircle class="w-5 h-5 text-orange-600" />
+                              Importante saber
+                            </h4>
+                            <div class="space-y-2">
+                              {servico.alertas.map((alerta, i) => (
+                                <div key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                                  <span class="text-orange-600">⚠️</span>
+                                  <span>{alerta}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+
+                        {/* Resultados esperados */}
+ 
+                          <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                              <Star class="w-5 h-5 text-yellow-600" />
+                              Resultados esperados
+                            </h4>
+                            <div class="grid md:grid-cols-2 gap-3">
+                              {servico.resultados.map((resultado, i) => (
+                                <div
+                                  key={i}
+                                  class="bg-yellow-50 px-4 py-3 rounded-lg border-l-4 border-yellow-500 text-sm text-gray-700"
+                                >
+                                  {resultado}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+
+                        {/* CTA */}
+                        <div class="flex gap-4 pt-4">
+                          <a
+                            href="/contato"
+                            class={`flex-1 bg-${servico.cor}-600 rounded-lg px-6 py-3 font-semibold text-white hover:bg-${servico.cor}-700 text-center transition`}
+                          >
+                            Contratar este serviço
+                          </a>
+                          <a
+                            href="/contato"
+                            class="flex-1 bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition text-center"
+                          >
+                            Tirar dúvidas
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+              })
+
+          </div>
+        </div>
+      </section>
+
+      <section class="container-custom mx-auto px-4 py-20">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {
+            services.map((service) => (
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                deliveries={service.deliveries}
+                link={service.link}
+                linkText={service.linkText}
+              />
+            ))
+          }
+        </div>
+      </section>
       <ServiceCTA />
     </div>
   </main>
