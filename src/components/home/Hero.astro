@@ -1,97 +1,75 @@
 ---
-import { Image } from "astro:assets";
-import me from "@/assets/me.webp";
+import { Image } from 'astro:assets'
+import { BookOpen, Code, ArrowRight } from '@lucide/astro'
+import AvailabilityBanner from '@/components/AvailabilityBanner.astro'
+import me from '@/assets/me.webp'
 ---
 
-<section
-  class="bg-blood-red-800 flex min-h-screen items-center px-6 lg:px-20"
-  aria-label="Seção principal"
->
-  <div class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2">
-    <div class="space-y-6 text-white">
-      <h1 class="text-5xl leading-tight font-bold lg:text-6xl">
-        Bruno Pulis
+<section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+    <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+  </div>
+  <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <div>
+      <AvailabilityBanner isAvailable={false} />
+      <h1 class="mb-6 text-5xl leading-tight font-bold">
+        Olá, eu sou o<br />Bruno Pulis
       </h1>
-      <h2 class="text-2xl font-medium text-white/90 lg:text-3xl">
-        Engenheiro de acessibilidade
-      </h2>
-      <p class="max-w-lg text-lg leading-relaxed text-white/80">
-        Criando experiências digitais excepcionais com foco em acessibilidade
-        e desenvolvimento de alta qualidade.
+      <p class="mb-6 text-2xl font-light text-white">Faço a web funcionar para todo mundo, não só para alguns</p>
+
+      <p class="mb-8 text-lg leading-relaxed text-white opacity-90">
+        Acredito que tecnologia boa é tecnologia que inclui. Nos últimos 15 anos, tenho ajudado empresas a criar
+        experiências digitais que funcionam para pessoas com deficiência, idosos, quem usa leitores de tela, e todo
+        mundo que a web costuma ignorar.
       </p>
 
-      <div class="flex gap-4 pt-4">
-        <a href="/projetos" class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-blood-red-800 focus:ring-offset-bloodtext-blood-red-800 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md bg-white px-8 text-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-white/90 focus:ring-2 focus:ring-white focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
-          ver projetos
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#projetos"
+          class="flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-red-900 transition hover:bg-red-50"
+        >
+          Ver meu trabalho
+          <ArrowRight class="h-4 w-4" aria-hidden="true" />
         </a>
-        <a href="/contato" class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:text-blood-red-800 focus:ring-offset-bloodtext-blood-red-800 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md border border-white px-8 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
-          contato
+        <a
+          href="#contato"
+          class="rounded-lg border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+        >
+          Vamos conversar?
         </a>
       </div>
     </div>
 
-    <div class="flex justify-center lg:justify-end">
-      <div class="relative">
-        <div
-          class="h-50 md:h-80 w-50 md:w-80 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl lg:h-96 lg:w-96"
-        >
-          <Image
-            src={me}
-            alt="Bruno Pulis"
-            class="h-full w-full fluid object-cover"
-            loading="eager"
-          />
-        </div>
-        <div
-          class="absolute -top-4 -right-4 h-20 w-20 rounded-full bg-white/10"
-          aria-hidden="true"
-        >
-        </div>
-        <div
-          class="absolute -bottom-6 -left-6 h-16 w-16 rounded-full bg-white/10"
-          aria-hidden="true"
-        >
-        </div>
-      </div>
+    <div class="relative">
+      <Image
+        src={me}
+        alt="Bruno Pulis"
+        class="mx-auto h-80 w-80 rounded-2xl border-4 border-white/20 object-cover shadow-2xl"
+        loading="eager"
+      />
     </div>
   </div>
-
-  <button
-    class="focus:ring-offset-bloodtext-blood-red-800 absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce rounded-full p-2 text-white/60 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none"
-    aria-label="Rolar para a próxima seção"
-    ><svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-arrow-down h-6 w-6"
-      aria-hidden="true"
-      ><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg
-    ></button
-  >
 </section>
-
-<style>
-  /* Add keyframes for additional animations if needed */
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  /* Apply floating animation to the entire SVG container */
-  .fade-in svg {
-    animation: float 6s ease-in-out infinite;
-  }
-</style>
+<section class="border-y border-amber-100 bg-amber-50">
+  <div class="mx-auto max-w-7xl px-6 py-6">
+    <ul class="flex flex-wrap items-center justify-between gap-4 text-sm">
+      <li class="flex items-center gap-2">
+        <BookOpen class="h-4 w-4 text-amber-600" aria-hidden="true" />
+        <span class="text-gray-700">Lendo:</span>
+        <span class="font-medium text-gray-900">Crônicas de Olam Vol 3</span>
+      </li>
+      <li class="flex items-center gap-2">
+        <Code class="h-4 w-4 text-amber-600" aria-hidden="true" />
+        <span class="text-gray-700">Trabalhando em:</span>
+        <span class="font-medium text-gray-900">Auditoria para startup de acessibilidade</span>
+      </li>
+      <li class="flex items-center gap-2">
+        <a href="/now" class="text-errie-black-900 flex items-center gap-1 font-medium hover:underline">
+          Ver tudo que estou fazendo agora
+          <ArrowRight class="h-3 w-3" aria-hidden="true" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

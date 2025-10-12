@@ -1,0 +1,88 @@
+---
+// https://claude.ai/public/artifacts/a3658293-f2ff-4904-a92c-0d697d7207a4
+import { Star } from '@lucide/astro'
+
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+
+import books from '@/data/books.json'
+
+const livrosPorAno = Object.entries(
+  books
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .reduce((acc, book) => {
+      const year = new Date(book.date).getFullYear();
+      acc[year] = acc[year] || [];
+      acc[year].push(book);
+      return acc;
+    }, {} as Record<string, typeof books[0][]>)
+).sort((a, b) => Number(b[0]) - Number(a[0]));
+---
+
+<Layout title="Minha Biblioteca - Bruno Pulis" description="Livros que li ao longo dos anos">
+  <Header />
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <div class="max-w-3xl">
+          <div class="mb-6 flex items-center gap-3">
+            <h1 class="text-5xl font-bold text-white">Minha Biblioteca</h1>
+          </div>
+          <p class="mb-8 text-xl leading-relaxed text-white">
+            Livros que estão moldando minha forma de pensar, trabalhar e viver. Leio de tudo: de acessibilidade web a
+            teologia, de ficção científica a produtividade.
+          </p>
+          <p class="text-lg text-white">
+            <strong>Por que compartilho isso?</strong>
+            Porque livros mudaram minha vida e talvez possam mudar a sua também.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtros -->
+        <!-- Filtros -->
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <div class="space-y-12">
+        <!-- Agrupar livros por ano e renderizar usando Astro syntax -->
+        {livrosPorAno.map(([year, booksInYear]) => (
+          <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-800">Lidos em {year}</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {booksInYear.map((book) => (
+                <article class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+                  <img src={book.cover} alt={book.title} class="h-72 w-full object-cover" />
+                  <div class="p-6">
+                    <h3 class="mb-1 text-xl font-semibold">{book.title}</h3>
+                    <p class="mb-2 text-sm text-gray-600">por {book.author}</p>
+                    <p class="mb-4 text-sm text-gray-700">{book.description}</p>
+                    <blockquote class="mb-4 border-l-4 border-red-500 pl-3 text-gray-600 italic">
+                      "{book.quotes}"
+                    </blockquote>
+                    <div class="flex items-center gap-2">
+                      {Array.from({ length: book.rating }).map(() => (
+                        <Star class="h-4 w-4 text-yellow-500" aria-hidden="true" />
+                      ))}
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                      {book.tags.map((tag) => (
+                        <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+  </main>
+  <Footer />
+</Layout>

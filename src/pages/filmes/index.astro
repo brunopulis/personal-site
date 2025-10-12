@@ -1,106 +1,87 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import Footer from "@/components/layout/Footer.astro";
+// https://claude.ai/public/artifacts/a3658293-f2ff-4904-a92c-0d697d7207a4
+import { Star, Film } from '@lucide/astro'
 
-import books from "@/data/books.json";
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
 
-// Agrupar livros por ano
-const booksByYear = books.reduce(
-  (acc, book) => {
-    const year = book.year;
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(book);
-    return acc;
-  },
-  {} as Record<number, typeof books>
-);
+import movies from '@/data/movies.json'
 
-
-// Ordenar anos em ordem decrescente
-const years = Object.keys(booksByYear)
-  .map(Number)
-  .sort((a, b) => b - a);
+const moviesPerYear = Object.entries(
+  movies
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .reduce(
+      (acc, book) => {
+        const year = new Date(book.date).getFullYear()
+        acc[year] = acc[year] || []
+        acc[year].push(book)
+        return acc
+      },
+      {} as Record<string, (typeof books)[0][]>
+    )
+).sort((a, b) => Number(b[0]) - Number(a[0]))
 ---
 
-<Layout
-  title="Minha Estante - Bruno Pulis"
-  description="Livros que li ao longo dos anos"
->
+<Layout title="Meus Filmes - Bruno Pulis" description="Livros que li ao longo dos anos">
   <Header />
   <main id="main-content">
-    <HeroSection
-		  title="Leituras"
-			description="Minhas leituras ao longo dos anos"
-		/>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6 py-20">
+        <div class="max-w-3xl">
+          <div class="mb-6 flex items-center gap-3">
+            <Film class="w-12 h-12 text-white" />
+            <h1 class="text-5xl font-bold text-white">Meus Filmes</h1>
+          </div>
+          <p class="mb-8 text-xl leading-relaxed text-white">
+            Cinema é arte que me emociona, me faz pensar e me inspira. De ficção científica a animações da Pixar, aqui está o que tenho assistido e amado.
+          </p>
+          <p class="text-lg text-white">
+            <strong>Por que compartilho isso?</strong>
+            Porque livros mudaram minha vida e talvez possam mudar a sua também.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <section class="section">
-      <div class="u-container">
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <div class="space-y-12">
+        <!-- Agrupar livros por ano e renderizar usando Astro syntax -->
         {
-          years.map(year => (
-            <section class="mb-12">
-              <div class="mb-6 flex items-center">
-                <h2>
-                  {year}
-
-                   <small>
-                  {booksByYear[year].length}{" "}
-                  {booksByYear[year].length === 1
-                    ? "livro lido"
-                    : "livros lidos"}
-                </small>
-                </h2>
-               
+          moviesPerYear.map(([year, moviesInYear]) => (
+            <div class="space-y-6">
+              <h2 class="text-2xl font-bold text-gray-800">Visto em {year}</h2>
+              <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                {moviesInYear.map((movie) => (
+                  <article class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+                    <img src={movie.poster} alt={movie.title} class="h-72 w-full object-cover" />
+                    <div class="p-6">
+                      <h3 class="mb-1 text-xl font-semibold">{movie.title}</h3>
+                      <p class="mb-2 text-sm text-gray-600">por {movie.author}</p>
+                      <p class="mb-4 text-sm text-gray-700">{movie.description}</p>
+                      <blockquote class="mb-4 border-l-4 border-red-500 pl-3 text-gray-600 italic">
+                        "{movie.quotes}"
+                      </blockquote>
+                      <div class="flex items-center gap-2">
+                        {Array.from({ length: movie.rating }).map(() => (
+                          <Star class="h-4 w-4 text-yellow-500" aria-hidden="true" />
+                        ))}
+                      </div>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {movie.tags.map((tag) => (
+                          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
-
-              <table class="w-6xl">
-                <thead>
-                  <tr class="border-b">
-                    <th scope="col" class="px-6 py-4 text-left font-bold text-gray-600">
-                      Título
-                    </th>
-                    <th scope="col" class="px-6 py-4 text-left font-bold text-gray-600">
-                      Autor
-                    </th>
-                    <th scope="col" class="px-6 py-4 text-left font-bold text-gray-600">
-                      Ranking
-                    </th>
-                    <th scope="col" class="px-6 py-4 text-left font-bold text-gray-600">
-                      Data
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {booksByYear[year].map(book => (
-                    <tr class="border-b">
-                      <td class="px-6 py-4 gap-4">
-                        <p class="underline">
-                          <a href={book.url} rel="external noopener noreferrer sponsored" class="hover:text-red-950">
-                            {book.title}
-                          </a>
-                        </p>
-                      </td>
-                      <td class="px-6 py-4 gap-4">{book.author}</td>
-                      <td class="px-6 py-4 gap-4">
-                        
-                      </td>
-                      <td>
-                        {
-                          new Date(book.date).toLocaleDateString("pt-BR", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })
-                        }
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </section>
+            </div>
           ))
         }
       </div>

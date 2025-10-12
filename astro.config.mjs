@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 // import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
-import sitemapPlugin from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from '@astrojs/alpinejs';
@@ -27,7 +27,7 @@ export default defineConfig({
     react(),
     icon(),
     alpinejs(),
-    sitemapPlugin(),
+    sitemap(),
     mdx(),
     compress(),
     partytown({

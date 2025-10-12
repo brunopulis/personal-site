@@ -1,76 +1,62 @@
 /10-dicas-de-acessibilidade                  /blog/10-dicas-de-acessibilidade
 /21-qualidade-de-um-bom-qa                  /blog/21-qualidade-de-um-bom-qa
 /3-dicas-para-ser-mais-produtivo            /blog/
-/4-validadores-de-acessibilidade  /blog/ 
-/5-atalhos-nvda
-/5-dicas-para-se-destacar-no-linkedin
-/5-livros-acessibilidade-digital
-/5-mitos-sobre-acessibilidade
-/5-motivos-para-nao-automatizar-testes-em-linguagem-diferente-do-time
-/5-motivos-para-usar-leitor-de-telas
-/5-tags-acessibilidade
-/6-conselhos/
-/6-maiores-erros-de-acessibilidade-digital
-/6-maiores-erros-de-acessibilidade-digital
-/8-principios-qualidade-software
-/a-estoria-de-paloma
-/a-teologia-por-tras-do-pokemon-go
-/acessibilidade-criterios-de-aceite
-/acessibilidade-para-iniciantes
-/acessibilidade-web/
-/alternativas-google-analytics
-/arrume-sua-cama
-/blog/page/1/
-/bookshelf
-/caminhos-para-uma-web-inclusiva
-/carta-ao-amado
-/caso-de-amor-acessibilidade
-/como-consegui-otimizar-os-testes-do-meu-time
-/como-criar-graficos-acessiveis
-/como-funciona-um-leitor-de-telas/
-/compartilhando-post-mastodon
-/contato
-/conteudo-curto
-/declaracao-de-acessibilidade
-/desabafo
-/dicas-para-palestrantes
-/feed
-/gaad-17
-/geracao-da-distracao
-/github-profile-dicas-para-se-destacar
-/humanidade
-/ia
-/identidade
-/idolos-de-bolso
-/ignoramos-45-milhoes-de-pessoas
-/inquietude
-/introducao-acessibilidade-web
-/letters
-/letters/6-conselhos
-/letters/8-dicas-reunioes-efetivas/
-/letters/como-funciona-um-leitor-de-telas
-/letters/page/1/
-/letters/page/11/
-/letters/page/12/
-/letters/setup-de-automacao-para-acessibilidade-parte-3/
-/likes
-/melhorias-do-site
-/meus-aplicativos-de-2024
-/migrando-para-o-eleventy
-/mudancas-de-layout
-/newsletter/page/1/
-/notes
-/o-metodo-bullet-journal
-/o-que-blogroll
-/o-que-significa-a11y
-/orcamento/
-/perguntas-frequentes-acessibilidade
-/politica-de-privacidade
+/4-validadores-de-acessibilidade  /blog/4-validadores-de-acessibilidade
+/4-razoes-para-incluir-acessibilidade       /blog/4-razoes-para-incluir-acessibilidade
+/4-razoes-para-usar-o-aria                 /blog/4-razoes-para-usar-o-aria
+/4-tecnologias-assistivas                   /blog/4-tecnologias-assistivas
+/5-atalhos-nvda                           /blog/5-atalhos-nvda
+/5-dicas-para-se-destacar-no-linkedin    /blog/5-dicas-para-se-destacar-no-linkedin
+/5-livros-acessibilidade-digital         /blog/5-livros-acessibilidade-digital
+/5-mitos-sobre-acessibilidade  /blog/5-mitos-sobre-acessibilidade
+/5-motivos-para-nao-automatizar-testes-em-linguagem-diferente-do-time /blog/5-motivos-para-nao-automatizar-testes-em-linguagem-diferente-do-time
+/5-motivos-para-usar-leitor-de-telas /blog/5-motivos-para-usar-leitor-de-telas
+/5-tags-acessibilidade /blog/5-tags-acessibilidade
+/6-conselhos/  /blog/6-conselhos
+/6-maiores-erros-de-acessibilidade-digital  /blog/6-maiores-erros-de-acessibilidade-digital
+/8-principios-qualidade-software /blog/8-principios-qualidade-software
+/a-estoria-de-paloma /blog/a-estoria-de-paloma
+/a-teologia-por-tras-do-pokemon-go /blog/a-teologia-por-tras-do-pokemon-go
+/acessibilidade-criterios-de-aceite /blog/acessibilidade-criterios-de-aceite
+/acessibilidade-para-iniciantes /blog/acessibilidade-para-iniciantes
+/acessibilidade-web/ /blog/acessibilidade-web
+/alternativas-google-analytics /blog/alternativas-google-analytics
+/arrume-sua-cama /blog/arrume-sua-cama
+/bookshelf /leituras
+/caminhos-para-uma-web-inclusiva /blog/caminhos-para-uma-web-inclusiva
+/carta-ao-amado /blog/carta-ao-amado
+/caso-de-amor-acessibilidade /blog/caso-de-amor-acessibilidade
+/como-consegui-otimizar-os-testes-do-meu-time /blog/como-consegui-otimizar-os-testes-do-meu-time
+/como-criar-graficos-acessiveis /blog/como-criar-graficos-acessiveis
+/como-funciona-um-leitor-de-telas/ /blog/como-funciona-um-leitor-de-telas
+/compartilhando-post-mastodon /blog/compartilhando-post-mastodon
+/conteudo-curto /blog/conteudo-curto
+/desabafo /blog/desabafo
+/dicas-para-palestrantes /blog/dicas-para-palestrantes
+/gaad-17 /blog/gaad-17
+/geracao-da-distracao /blog/geracao-da-distracao
+/github-profile-dicas-para-se-destacar /blog/github-profile-dicas-para-se-destacar
+/humanidade /blog/humanidade
+/identidade /blog/identidade
+/idolos-de-bolso /blog/idolos-de-bolso
+/ignoramos-45-milhoes-de-pessoas /blog/ignoramos-45-milhoes-de-pessoas
+/inquietude /blog/inquietude
+/introducao-acessibilidade-web /blog/introducao-acessibilidade-web
+/letters /newsletter
+/letters/6-conselhos /newsletter/6-conselhos
+/letters/8-dicas-reunioes-efetivas/  /newsletter/8-dicas-reunioes-efetivas
+/letters/como-funciona-um-leitor-de-telas /newsletter/como-funciona-um-leitor-de-telas
+/letters/setup-de-automacao-para-acessibilidade-parte-3/ /newsletter/setup-de-automacao-para-acessibilidade-parte-3
+/melhorias-do-site /blog/melhorias-do-site
+/meus-aplicativos-de-2024 /blog/meus-aplicativos-de-2024
+/migrando-para-o-eleventy /blog/migrando-para-o-eleventy
+/mudancas-de-layout /blog/mudancas-de-layout
+/notes /notas
+/o-metodo-bullet-journal /blog/o-metodo-bullet-journal
+/o-que-blogroll /blog/o-que-blogroll
+/o-que-significa-a11y /blog/o-que-significa-a11y
+/perguntas-frequentes-acessibilidade /blog/perguntas-frequentes-acessibilidade
 /por-todos-os-lugares
-/portfolio
-/portfolio/forja-comercial
-/portfolio/mari-e-bruno
-/portfolio/vista-ser
 /primeiros-passos-com-flutter
 /qa-acessibilidade-cotidiano-curiosidades
 /repensando-sobre-o-html
@@ -82,11 +68,6 @@
 /review-node-school-bh-17
 /review-tdc-bh-19
 /sangue
-/servicos
-/servicos/acessibilidade
-/servicos/desenvolvimento-sites
-/sobre
-/teste
 /texto-alternativo-o-guia-definitivo
 /textos-alternativo-longo
 /usando-o-atributo-lang-corretamente

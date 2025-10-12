@@ -1,0 +1,400 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+
+import {
+  Settings,
+  Users,
+  Award,
+  FileText,
+  Eye,
+  Download,
+  Phone,
+  Shield,
+  TrendingUp,
+  CheckCircle,
+  ArrowRight,
+} from '@lucide/astro'
+
+const packages = [
+  {
+    name: 'Pacote Essencial',
+    description: 'Ideal para sites institucionais simples',
+    price: 'R$ 1.500',
+    duration: '5 dias úteis',
+    features: [
+      'Auditoria de até 10 páginas',
+      'Relatório técnico completo',
+      'Suporte por 30 dias',
+      'Orientações de implementação',
+    ],
+    popular: false,
+  },
+  {
+    name: 'Pacote Profissional',
+    description: 'Ideal para e-commerce e sites complexos',
+    price: 'R$ 4.500',
+    duration: '15 dias úteis',
+    features: [
+      'Auditoria de até 25 páginas',
+      'Implementação das correções',
+      'Relatório executivo + técnico',
+      'Suporte por 60 dias',
+      'Certificado de conformidade',
+    ],
+    popular: true,
+  },
+  {
+    name: 'Pacote Completo',
+    description: 'Ideal para empresas que querem suporte contínuo',
+    price: 'R$ 8.500',
+    duration: '20 dias úteis',
+    features: [
+      'Auditoria ilimitada',
+      'Implementação completa',
+      'Consultoria por 6 meses',
+      'Treinamento da equipe',
+      'Certificação oficial',
+      'Selo de acessibilidade',
+    ],
+    popular: false,
+  },
+]
+
+const testimonials = [
+  {
+    name: 'Maria Santos',
+    position: 'Proprietária - Loja Virtual MariModa',
+    text: 'Nunca imaginei que tornar nosso site acessível seria tão importante para os negócios. Além da questão legal, ganhamos muitos clientes novos!',
+    rating: 5,
+  },
+  {
+    name: 'João Silva',
+    position: 'Sócio-diretor - Clínica Bem Estar',
+    text: 'O atendimento foi excepcional. Explicaram tudo de forma clara e o resultado superou nossas expectativas. Recomendo!',
+    rating: 5,
+  },
+  {
+    name: 'Ana Costa',
+    position: 'Gerente de Marketing - TechSolutions',
+    text: 'Investimento que se pagou rapidamente. Nosso site ficou mais rápido e profissional. Valeu cada centavo!',
+    rating: 5,
+  },
+  {
+    name: 'Carlos Oliveira',
+    position: 'Proprietário - Distribuidora Oliveira',
+    text: 'Equipe super qualificada e preços justos. Fizeram todo o trabalho sem interferir na nossa rotina.',
+    rating: 5,
+  },
+]
+---
+
+<Layout title="Remediação de documentos - Bruno Pulis">
+  <Header />
+  <main>
+    <section class="bg-blood-red-800 relative overflow-hidden py-16">
+      <div class="container-custom relative z-10 px-4">
+        <div class="max-w-3xl px-4">
+          <h1 class="mb-6 text-5xl leading-tight font-bold text-white md:text-6xl">Documentos acessíveis, agora</h1>
+          <p class="mb-8 text-xl leading-relaxed text-white md:text-2xl">
+            Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e em conformidade com a <abbr
+              title="Web Content Accessibility Guidelines 2.2">WCAG 2.2</abbr
+            > e <abbr title="PDF/Universal Accessibility">PDF/UA</abbr>.
+          </p>
+          <a
+            href="#contato"
+            class="text-blood-red-800 hover:bg-blood-red-800/90 focus:ring-blood-red-bg-blood-red-800 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus:ring-2 focus:ring-offset-2"
+          >
+            Solicitar avaliação gratuita
+          </a>
+          <p class="pt-8 text-sm text-white">Em poucos dias, seus arquivos prontos para todos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="entregamos" class="bg-gray-100 px-6 py-20">
+      <div class="container-custom">
+        <div class="mx-auto max-w-6xl">
+          <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">O que entregamos</h2>
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {
+              [
+                'Remediação completa de PDF, Word e PowerPoint',
+                'Textos alternativos para imagens e gráficos',
+                'Navegação por teclado e leitores de tela',
+                'Relatório antes e depois com recomendações',
+              ].map((item, idx) => (
+                <div key={idx} class="flex items-start gap-3">
+                  <CheckCircle class="text-blood-red-800 mt-1 h-6 w-6 flex-shrink-0" />
+                  <p class="text-errie-black-900">{item}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema" class="px-6 py-20">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+          Documentos inacessíveis excluem e custam caro
+        </h2>
+        <p class="text-xl leading-relaxed text-gray-600">
+          Um único PDF inacessível pode barrar contratos, gerar denúncias e comprometer sua marca.
+        </p>
+      </div>
+    </section>
+
+    <section id="solucao" class="bg-gray-50 px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Eu corrijo isso pra você</h2>
+          <p class="text-xl text-gray-600">Remediação técnica com foco em usabilidade e conformidade.</p>
+        </div>
+
+        <div class="grid gap-12 md:grid-cols-2">
+          <div>
+            <h3 class="mb-6 text-2xl font-bold text-gray-900">O que incluímos</h3>
+            <ul class="space-y-4">
+              {
+                [
+                  'Estrutura semântica e hierarquia de títulos',
+                  'Textos alternativos e descrições',
+                  'Marcação correta de tabelas e listas',
+                  'Validação com PAC, Acrobat e leitores de tela',
+                ].map((item, idx) => (
+                  <li key={idx} class="flex items-start gap-3">
+                    <CheckCircle class="text-blood-red-800 mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <span class="text-gray-700">{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-6 text-2xl font-bold text-gray-900">Processo simplificado</h3>
+            <div class="space-y-6">
+              {
+                [
+                  { num: '01', text: 'Diagnóstico' },
+                  { num: '02', text: 'Correção' },
+                  { num: '03', text: 'Testes' },
+                  { num: '04', text: 'Relatório' },
+                ].map((step, idx) => (
+                  <div key={idx} class="flex items-center gap-4">
+                    <span class="text-blood-red-800 text-3xl font-bold">{step.num}</span>
+                    <span class="text-lg text-gray-700">{step.text}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="px-6 py-20">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">Mais que acessibilidade é respeito</h2>
+        <p class="text-xl leading-relaxed text-gray-600">
+          Documentos acessíveis demonstram empatia e profissionalismo. Você não só cumpre uma norma, faz o certo.
+        </p>
+      </div>
+    </section>
+
+    <section id="clientes" class="bg-gray-50 px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">Quem já confia neste trabalho</h2>
+        <p class="mb-12 text-center text-gray-600">
+          Empresas, órgãos públicos e instituições de ensino já garantem acessibilidade com minha ajuda.
+        </p>
+        <div class="grid grid-cols-2 items-center justify-items-center gap-8 opacity-60 md:grid-cols-3">
+          <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
+            <Users class="h-8 w-8 text-gray-400" />
+          </div>
+          <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
+            <Shield class="h-8 w-8 text-gray-400" />
+          </div>
+          <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
+            <TrendingUp class="h-8 w-8 text-gray-400" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">O que dizem os clientes</h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          {
+            [
+              {
+                text: 'Depois da remediação, nossos relatórios ficaram inclusivos e sem erros. Excelente trabalho!',
+                author: 'Paula Andrade',
+                role: 'Analista de Qualidade',
+              },
+              {
+                text: 'Economizamos tempo e eliminamos retrabalho. O resultado ficou impecável.',
+                author: 'Rafael Gomes',
+                role: 'Designer de Produto',
+              },
+            ].map((testimonial, idx) => (
+              <div key={idx} class="rounded-2xl bg-gray-50 p-8">
+                <p class="mb-6 text-lg leading-relaxed text-gray-700">"{testimonial.text}"</p>
+                <div>
+                  <p class="font-semibold text-gray-900">{testimonial.author}</p>
+                  <p class="text-sm text-gray-500">{testimonial.role}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="investimento" class="bg-gray-50 px-6 py-20">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-6 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+          Quanto custa tornar seus documentos acessíveis?
+        </h2>
+        <p class="mx-auto mb-12 max-w-3xl text-center text-lg text-gray-600">
+          Cada projeto é avaliado conforme volume e complexidade dos arquivos. O diagnóstico inicial é <strong
+            >gratuito</strong
+          > — você recebe um relatório com recomendações antes de investir.
+        </p>
+
+        <div class="mb-12 grid gap-6 md:grid-cols-3">
+          {
+            [
+              {
+                title: 'Pacote Essencial',
+                description: 'Até 5 documentos simples',
+                highlighted: false,
+              },
+              {
+                title: 'Pacote Profissional',
+                description: 'Até 20 documentos com gráficos e tabelas',
+                highlighted: true,
+              },
+              {
+                title: 'Pacote Corporativo',
+                description: 'Grandes volumes e relatórios técnicos',
+                highlighted: false,
+              },
+            ].map((pack, idx) => (
+              <div
+                key={idx}
+                class={`rounded-2xl p-8 ${
+                  pack.highlighted ? 'scale-105 transform bg-gray-900 text-white' : 'border border-gray-200 bg-white'
+                }`}
+              >
+                <h3 class={`mb-3 text-2xl font-bold ${pack.highlighted ? 'text-white' : 'text-gray-900'}`}>
+                  {pack.title}
+                </h3>
+                <p class={pack.highlighted ? 'text-gray-300' : 'text-gray-600'}>{pack.description}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="text-center">
+          <a
+            href="#contato"
+            class="inline-block transform rounded-full bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all hover:scale-105 hover:bg-gray-800"
+          >
+            Solicitar diagnóstico gratuito
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="autoridade" class="px-6 py-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">Por que escolher meu serviço</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          {
+            [
+              '+15 anos em acessibilidade e qualidade digital',
+              'Testes reais com NVDA e JAWS',
+              'Relatório "antes e depois" em todos os projetos',
+              'Clientes do setor público e privado',
+            ].map((item, idx) => (
+              <div key={idx} class="flex items-start gap-3 rounded-xl bg-gray-50 p-6">
+                <Award class="mt-1 h-6 w-6 flex-shrink-0 text-gray-900" />
+                <p class="text-gray-700">{item}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-final" class="bg-gray-900 px-6 py-20 text-white">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="mb-6 text-3xl font-bold md:text-4xl">Seus documentos merecem ser acessíveis</h2>
+        <p class="mb-8 text-xl text-gray-300">
+          Envie seus arquivos e receba uma avaliação gratuita com recomendações práticas.
+        </p>
+        <a
+          href="#contato"
+          class="inline-block transform rounded-full bg-white px-8 py-4 text-lg font-medium text-gray-900 transition-all hover:scale-105 hover:bg-gray-100"
+        >
+          Solicitar diagnóstico agora
+        </a>
+      </div>
+    </section>
+
+    <section id="contato" class="px-6 py-20">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">Solicitar Avaliação Gratuita</h2>
+        <form class="space-y-6">
+          <div>
+            <label htmlFor="nome" class="mb-2 block text-sm font-medium text-gray-700"> Nome </label>
+            <input
+              type="text"
+              id="nome"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
+              placeholder="Seu nome"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" class="mb-2 block text-sm font-medium text-gray-700"> Email </label>
+            <input
+              type="email"
+              id="email"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
+              placeholder="seu@email.com"
+            />
+          </div>
+          <div>
+            <label htmlFor="empresa" class="mb-2 block text-sm font-medium text-gray-700"> Empresa (opcional) </label>
+            <input
+              type="text"
+              id="empresa"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
+              placeholder="Nome da empresa"
+            />
+          </div>
+          <div>
+            <label htmlFor="mensagem" class="mb-2 block text-sm font-medium text-gray-700"> Mensagem </label>
+            <textarea
+              id="mensagem"
+              rows={4}
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
+              placeholder="Conte um pouco sobre seus documentos e necessidades..."></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full transform rounded-full bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all hover:scale-105 hover:bg-gray-800"
+          >
+            Enviar solicitação
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

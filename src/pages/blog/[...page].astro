@@ -1,86 +1,396 @@
 ---
-import type { GetStaticPathsOptions, Page } from "astro";
-import { type CollectionEntry, getCollection } from "astro:content";
+import type { GetStaticPathsOptions, Page } from 'astro'
+import { type CollectionEntry, getCollection } from 'astro:content'
 
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import Footer from "@/components/layout/Footer.astro";
-import Pagination from "@/components/Pagination.astro";
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+import Pagination from '@/components/Pagination.astro'
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const posts = await getCollection("blog", ({ data }) => {
-    return data.draft !== true;
-  });
+  const posts = await getCollection('blog', ({ data }) => {
+    return data.draft !== true
+  })
 
   const sortedPosts = posts.sort((a, b) => {
-    return (
-      new Date(b.data.publishDate).valueOf() -
-      new Date(a.data.publishDate).valueOf()
-    );
-  });
+    return new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()
+  })
 
-  return paginate(sortedPosts, { pageSize: 6 });
+  return paginate(sortedPosts, { pageSize: 12 })
 }
 
-type Props = { page: Page<CollectionEntry<"blog">> };
+type Props = { page: Page<CollectionEntry<'blog'>> }
 
-const { page } = Astro.props;
-const posts = page.data;
+const { page } = Astro.props
+const posts = page.data
 
 function formatDate(date: string | number | Date) {
-  const formatter = new Intl.DateTimeFormat("pt-BR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const formatter = new Intl.DateTimeFormat('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
 
-  return formatter.format(new Date(date));
+  return formatter.format(new Date(date))
 }
 
 function toISOString(dateString: string) {
-  const date = new Date(dateString);
-  return date.toISOString();
+  const date = new Date(dateString)
+  return date.toISOString()
 }
 ---
 
-<Layout
-  title="Blog - Bruno Pulis"
-  description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
->
+<Layout title="Blog - Bruno Pulis" description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software">
   <Header />
+
   <main>
-    <HeroSection
-      title="Textos"
-      description="Artigos, reviews, opiniões pessoais e pitadas ácidas de humor."
-    />
+    <section class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <h1 class="mb-6 text-5xl font-bold text-gray-900">Coisas que tenho pensado</h1>
+          <p class="text-xl leading-relaxed text-gray-700">
+            Escrevo sobre acessibilidade, tecnologia, teologia, produtividade e tudo que me faz refletir. Nem tudo é
+            técnico, às vezes é só sobre a vida.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <div class="container-custom py-8">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          posts.map((post, index) => (
-            <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div class="relative">
-                <img src={post.data.image ?? "/src/assets/images/image-default.png"}
-                     alt="WCAG 2.1: Guia Completo para Implementação"
-                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+    <template x-if="artigoDestaque()">
+      <section class="bg-white py-16">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-8 flex items-center gap-2">
+            <!-- TrendingUp icon (simple svg) -->
+            <svg
+              class="h-6 w-6 text-red-600"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8"></path></svg
+            >
+            <h2 class="text-2xl font-bold text-gray-900">Em destaque</h2>
+          </div>
 
-                <div class="absolute top-4 left-4">
-                  <span class="bg-blood-red-800 text-white text-xs font-medium px-3 py-1 rounded-full">{post.data.category}</span>
+          <a :href="'/blog/' + artigoDestaque().slug" class="group block">
+            <div
+              class="grid gap-8 overflow-hidden rounded-2xl border-2 border-red-200 bg-gradient-to-br from-red-50 to-orange-50 transition hover:border-red-400 md:grid-cols-2"
+            >
+              <div class="h-80 overflow-hidden md:h-auto">
+                <img
+                  :src="artigoDestaque().imagem"
+                  :alt="artigoDestaque().titulo"
+                  class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <div class="flex flex-col justify-center p-8">
+                <div class="mb-4 inline-block w-fit rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white">
+                  🔥 DESTAQUE
+                </div>
+                <h3
+                  class="mb-4 text-3xl font-bold text-gray-900 transition group-hover:text-red-600"
+                  x-text="artigoDestaque().titulo"
+                >
+                </h3>
+                <p class="mb-6 leading-relaxed text-gray-700" x-text="artigoDestaque().resumo"></p>
+
+                <div class="mb-6 flex items-center gap-4 text-sm text-gray-600">
+                  <div class="flex items-center gap-2">
+                    <!-- Calendar icon -->
+                    <svg
+                      class="h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      ></path></svg
+                    >
+                    <span x-text="artigoDestaque().data"></span>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <!-- Clock icon -->
+                    <svg
+                      class="h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      ><circle cx="12" cy="12" r="9" stroke-width="2"></circle><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 7v5l3 3"></path></svg
+                    >
+                    <span x-text="artigoDestaque().tempoLeitura + ' de leitura'"></span>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2 font-semibold text-red-600 transition-all group-hover:gap-3">
+                  Ler artigo completo
+                  <!-- ArrowRight icon -->
+                  <svg
+                    class="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"
+                    ></path></svg
+                  >
                 </div>
               </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </template>
 
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blood-red-800 transition-colors">
-                  <a href={"/blog/" + post.id} class="u-url block hover:text-blood-red-800">
-                    {post.data.title}
+    <!-- Filtros e Busca -->
+    <section class="border-y border-gray-200 bg-gray-50">
+      <div class="mx-auto max-w-6xl px-6 py-6">
+        <!-- Categorias -->
+        <div class="flex items-center gap-3 overflow-x-auto pb-2">
+          <!-- Filter icon -->
+          <svg
+            class="h-5 w-5 flex-shrink-0 text-gray-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a2 2 0 01-.586 1.414L15 13.828V19a1 1 0 01-1.447.894L9 18v-4.172L3.586 7.414A2 2 0 013 6V4z"
+            ></path></svg
+          >
+
+          <template x-for="categoria in categorias" :key="categoria.id">
+            <button
+              @click="categoriaAtiva = categoria.id"
+              class="rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition"
+              :class="categoriaAtiva === categoria.id ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'"
+            >
+              <span x-text="categoria.icon"></span>
+              <span class="ml-2" x-text="categoria.nome + ' (' + categoria.count + ')'"></span>
+            </button>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de Artigos -->
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid gap-8 lg:grid-cols-3">
+          <!-- Artigos Principais -->
+          <div class="lg:col-span-2">
+            <div x-show="artigosFiltrados().length === 0" class="py-20 text-center">
+              <p class="text-xl text-gray-600">Nenhum artigo encontrado.</p>
+            </div>
+
+            <div class="space-y-8">
+              <template x-for="artigo in artigosFiltrados()" :key="artigo.id">
+                <a :href="'/blog/' + artigo.slug" class="group block">
+                  <article
+                    class="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:border-blue-400 hover:shadow-lg"
+                  >
+                    <div class="md:flex">
+                      <div class="h-64 overflow-hidden md:h-auto md:w-2/5">
+                        <img
+                          :src="artigo.imagem"
+                          :alt="artigo.titulo"
+                          class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div class="p-6 md:w-3/5">
+                        <div class="mb-3 flex items-center gap-2">
+                          <span
+                            class="rounded-full px-3 py-1 text-xs font-semibold"
+                            :class="artigo.categoria === 'acessibilidade' ? 'bg-green-100 text-green-700' : artigo.categoria === 'pessoal' ? 'bg-purple-100 text-purple-700' : artigo.categoria === 'teologia' ? 'bg-blue-100 text-blue-700' : artigo.categoria === 'carreira' ? 'bg-orange-100 text-orange-700' : 'bg-pink-100 text-pink-700'"
+                          >
+                            <span x-text="(categorias.find(c=>c.id===artigo.categoria) || {}).icon"></span>
+                            <span class="ml-1" x-text="artigo.categoria"></span>
+                          </span>
+                        </div>
+
+                        <h3
+                          class="mb-3 text-2xl font-bold text-gray-900 transition group-hover:text-blue-600"
+                          x-text="artigo.titulo"
+                        >
+                        </h3>
+                        <p class="mb-4 line-clamp-2 leading-relaxed text-gray-700" x-text="artigo.resumo"></p>
+
+                        <div class="mb-4 flex items-center gap-4 text-sm text-gray-600">
+                          <div class="flex items-center gap-2">
+                            <!-- calendar -->
+                            <svg
+                              class="h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                              ></path></svg
+                            >
+                            <span x-text="artigo.data"></span>
+                          </div>
+
+                          <div class="flex items-center gap-2">
+                            <!-- clock -->
+                            <svg
+                              class="h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              ><circle cx="12" cy="12" r="9" stroke-width="2"></circle><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 7v5l3 3"></path></svg
+                            >
+                            <span x-text="artigo.tempoLeitura"></span>
+                          </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                          <template x-for="(tag, i) in artigo.tags" :key="i">
+                            <span class="rounded bg-gray-100 px-2 py-1 text-xs text-gray-600" x-text="tag"></span>
+                          </template>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </template>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="space-y-8">
+            <!-- Mais Lidos -->
+            <div class="rounded-xl border-2 border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50 p-6">
+              <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900">
+                <!-- TrendingUp svg -->
+                <svg
+                  class="h-5 w-5 text-orange-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8"
+                  ></path></svg
+                >
+                Mais lidos
+              </h3>
+
+              <div class="space-y-4">
+                <template x-for="(artigo, index) in artigosMaisLidos()" :key="artigo.id">
+                  <a :href="'/blog/' + artigo.slug" class="group block">
+                    <div class="flex gap-3">
+                      <div
+                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-orange-600 text-xl font-bold text-white"
+                        x-text="index + 1"
+                      >
+                      </div>
+                      <div class="flex-1">
+                        <h4
+                          class="mb-1 text-sm font-bold text-gray-900 transition group-hover:text-orange-600"
+                          x-text="artigo.titulo"
+                        >
+                        </h4>
+                        <p class="text-xs text-gray-600" x-text="formatNumber(artigo.visualizacoes) + ' visualizações'">
+                        </p>
+                      </div>
+                    </div>
                   </a>
-                </h3>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                  {post.data.excerpt}
-                </p>
+                </template>
               </div>
-            </article>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 p-6 text-white">
+              <h3 class="mb-3 text-xl font-bold">📬 Newsletter</h3>
+              <p class="mb-4 text-sm text-blue-100">Receba os novos artigos direto no seu email. Sem spam, prometo.</p>
+              <a
+                href="/newsletter"
+                class="block w-full rounded-lg bg-white px-4 py-3 text-center font-semibold text-blue-600 transition hover:bg-blue-50"
+              >
+                Assinar newsletter
+              </a>
+            </div>
+
+            <!-- Tags Populares -->
+            <div class="rounded-xl border border-gray-200 bg-white p-6">
+              <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900">
+                <!-- Tag icon -->
+                <svg
+                  class="h-5 w-5 text-gray-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20.59 13.41L11 3.83a2 2 0 00-2.83 0L3.83 8.17a2 2 0 000 2.83l9.59 9.59a2 2 0 002.83 0l4.34-4.34a2 2 0 000-2.83z"
+                  ></path></svg
+                >
+                Tags populares
+              </h3>
+
+              <div class="flex flex-wrap gap-2">
+                <template
+                  x-for="(tag, i) in ['React', 'WCAG', 'Reflexão', 'Tutorial', 'ARIA', 'Produtividade', 'Fé', 'Web', 'Design']"
+                  :key="i"
+                >
+                  <button
+                    class="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 transition hover:bg-gray-200"
+                    x-text="tag"></button>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-custom py-8">
+      <div class="mx-auto mt-16 grid grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-20 lg:max-w-none">
+        {
+          posts.map((post) => (
+            <a href={'/blog/' + post.id} class="u-url block">
+              <article class="flex flex-col items-start justify-between">
+                <div class="group relative mt-3">
+                  <h3 class="text-errie-black-900 text-2xl leading-6 font-semibold group-hover:underline group-hover:underline-offset-4">
+                    {post.data.title}
+                  </h3>
+                  <div class="text-errie-black-900 mt-5 flex items-center gap-x-2 text-sm">
+                    <time
+                      datetime={toISOString(String(post.data.publishDate))}
+                      class="dt-published text-errie-black-900 text-sm"
+                    >
+                      {formatDate(post.data.publishDate)}
+                    </time>
+                  </div>
+                  <p class="text-errie-black-900 mt-5 line-clamp-2 text-xl leading-6">{post.data.excerpt}</p>
+                </div>
+              </article>
+            </a>
           ))
         }
       </div>
@@ -95,3 +405,194 @@ function toISOString(dateString: string) {
   </main>
   <Footer />
 </Layout>
+
+  <script>
+    function blogPage() {
+      const artigos = [
+        {
+          id: 1,
+          titulo: 'Uma doença chamada conteúdo curto',
+          slug: 'doenca-conteudo-curto',
+          categoria: 'pessoal',
+          resumo:
+            'Como o conteúdo curto nos viciou e quais são as alternativas para sair dessa loucura. Uma reflexão sobre como consumimos informação na era dos reels e shorts.',
+          imagem: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop',
+          data: '1 de outubro de 2024',
+          tempoLeitura: '8 min',
+          tags: ['Reflexão', 'Digital', 'Produtividade'],
+          destaque: true,
+          visualizacoes: 2340,
+        },
+        {
+          id: 2,
+          titulo: 'Meus aplicativos de 2024',
+          slug: 'apps-2024',
+          categoria: 'pessoal',
+          resumo:
+            'Confira os aplicativos que mais usei em 2024 e por que eles melhoraram minha produtividade e bem-estar.',
+          imagem: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop',
+          data: '30 de dezembro de 2024',
+          tempoLeitura: '6 min',
+          tags: ['Apps', 'Produtividade', 'Tech'],
+          destaque: false,
+          visualizacoes: 1823,
+        },
+        {
+          id: 3,
+          titulo: '5 tags HTML que ajudam na acessibilidade',
+          slug: '5-tags-acessibilidade',
+          categoria: 'acessibilidade',
+          resumo:
+            'Tags HTML semânticas que fazem toda a diferença para usuários de leitores de tela e melhoram a experiência de todos.',
+          imagem: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=400&fit=crop',
+          data: '29 de setembro de 2024',
+          tempoLeitura: '10 min',
+          tags: ['HTML', 'Web', 'WCAG'],
+          destaque: false,
+          visualizacoes: 3421,
+        },
+        {
+          id: 4,
+          titulo: 'Acessibilidade como missão cristã',
+          slug: 'acessibilidade-missao',
+          categoria: 'teologia',
+          resumo:
+            'Por que criar uma web acessível é, para mim, uma extensão da minha fé e do chamado ao amor ao próximo.',
+          imagem: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&h=400&fit=crop',
+          data: '15 de setembro de 2024',
+          tempoLeitura: '12 min',
+          tags: ['Fé', 'Propósito', 'Missão'],
+          destaque: false,
+          visualizacoes: 1564,
+        },
+        {
+          id: 5,
+          titulo: 'Como implementar navegação por teclado em React',
+          slug: 'navegacao-teclado-react',
+          categoria: 'acessibilidade',
+          resumo:
+            'Um guia prático e completo sobre como garantir que seus componentes React sejam totalmente navegáveis por teclado.',
+          imagem: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop',
+          data: '10 de agosto de 2024',
+          tempoLeitura: '15 min',
+          tags: ['React', 'Keyboard', 'Tutorial'],
+          destaque: false,
+          visualizacoes: 4521,
+        },
+        {
+          id: 6,
+          titulo: 'Por que parei de usar redes sociais',
+          slug: 'parei-redes-sociais',
+          categoria: 'pessoal',
+          resumo:
+            'Minha experiência de 6 meses longe do Twitter, Instagram e outras plataformas. O que mudou na minha vida e saúde mental.',
+          imagem: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop',
+          data: '5 de julho de 2024',
+          tempoLeitura: '9 min',
+          tags: ['Minimalismo Digital', 'Saúde Mental', 'Reflexão'],
+          destaque: false,
+          visualizacoes: 2876,
+        },
+        {
+          id: 7,
+          titulo: 'ARIA: quando usar e quando NÃO usar',
+          slug: 'aria-quando-usar',
+          categoria: 'acessibilidade',
+          resumo:
+            'ARIA é poderoso mas pode ser perigoso. Aprenda quando é necessário e quando você está piorando a acessibilidade.',
+          imagem: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop',
+          data: '20 de junho de 2024',
+          tempoLeitura: '13 min',
+          tags: ['ARIA', 'Semântica', 'Boas Práticas'],
+          destaque: false,
+          visualizacoes: 5234,
+        },
+        {
+          id: 8,
+          titulo: 'Lições de 10 anos trabalhando com web',
+          slug: 'licoes-10-anos-web',
+          categoria: 'carreira',
+          resumo:
+            'O que aprendi em uma década criando para a web. Os erros, as vitórias, e as lições que me tornaram quem sou hoje.',
+          imagem: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop',
+          data: '1 de maio de 2024',
+          tempoLeitura: '11 min',
+          tags: ['Carreira', 'Aprendizados', 'Experiência'],
+          destaque: false,
+          visualizacoes: 1987,
+        },
+        {
+          id: 9,
+          titulo: 'Contraste de cores: além do básico',
+          slug: 'contraste-cores',
+          categoria: 'design',
+          resumo:
+            'Contraste não é só preto no branco. Entenda as nuances, como testar corretamente, e por que isso importa tanto.',
+          imagem: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=400&fit=crop',
+          data: '12 de abril de 2024',
+          tempoLeitura: '7 min',
+          tags: ['Design', 'Cores', 'WCAG'],
+          destaque: false,
+          visualizacoes: 3102,
+        },
+      ]
+
+      const categorias = [
+        { id: 'todos', nome: 'Todos os artigos', icon: '📚', count: artigos.length },
+        {
+          id: 'acessibilidade',
+          nome: 'Acessibilidade',
+          icon: '♿',
+          count: artigos.filter((a) => a.categoria === 'acessibilidade').length,
+        },
+        { id: 'pessoal', nome: 'Pessoal', icon: '💭', count: artigos.filter((a) => a.categoria === 'pessoal').length },
+        {
+          id: 'teologia',
+          nome: 'Teologia',
+          icon: '✝️',
+          count: artigos.filter((a) => a.categoria === 'teologia').length,
+        },
+        {
+          id: 'carreira',
+          nome: 'Carreira',
+          icon: '💼',
+          count: artigos.filter((a) => a.categoria === 'carreira').length,
+        },
+        { id: 'design', nome: 'Design', icon: '🎨', count: artigos.filter((a) => a.categoria === 'design').length },
+      ]
+
+      return {
+        artigos,
+        categorias,
+        categoriaAtiva: 'todos',
+        busca: '',
+        // retorna array filtrado dinamicamente
+        artigosFiltrados() {
+          const busca = (this.busca || '').toLowerCase().trim()
+          return this.artigos.filter((artigo) => {
+            const matchCategoria = this.categoriaAtiva === 'todos' || artigo.categoria === this.categoriaAtiva
+            const matchBusca =
+              !busca ||
+              artigo.titulo.toLowerCase().includes(busca) ||
+              artigo.resumo.toLowerCase().includes(busca) ||
+              (artigo.tags || []).some((t) => t.toLowerCase().includes(busca))
+            return matchCategoria && matchBusca
+          })
+        },
+        artigoDestaque() {
+          return this.artigos.find((a) => a.destaque) || null
+        },
+        artigosMaisLidos() {
+          return [...this.artigos].sort((a, b) => b.visualizacoes - a.visualizacoes).slice(0, 3)
+        },
+        avgLeitura() {
+          // extrai número de 'tempoLeitura' (ex: '8 min')
+          const total = this.artigos.reduce((acc, a) => acc + (parseInt(a.tempoLeitura, 10) || 0), 0)
+          return Math.round(total / this.artigos.length) || 0
+        },
+        formatNumber(n) {
+          return n.toLocaleString()
+        },
+      }
+    }
+  </script>
