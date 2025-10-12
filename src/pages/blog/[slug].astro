@@ -6,12 +6,8 @@ import { CalendarIcon, ClockIcon } from '@lucide/astro'
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header.astro'
 import BackBlog from '@/components/blog/BackBlog.astro'
-import Tags from '@/components/blog/Tags.astro'
 import Author from '@/components/blog/Author.astro'
 import Footer from '@/components/layout/Footer.astro'
-import { slugify } from '@/utils/common-utils'
-
-import { User } from '@lucide/astro'
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
@@ -34,13 +30,14 @@ const { post } = Astro.props
 const { Content } = await render(post)
 
 // Formatar data para pt-BR
-const formattedDate = new Date(post.data.publishDate).toLocaleDateString('pt-BR', {
+const publishDateString = String(post.data.publishDate)
+const formattedDate = new Date(publishDateString).toLocaleDateString('pt-BR', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 })
 
-const isoDate = new Date(post.data.publishDate).toISOString()
+const isoDate = new Date(publishDateString).toISOString()
 ---
 
 <Layout

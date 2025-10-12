@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 // import db from "@astrojs/db";
 import partytown from "@astrojs/partytown";
-import sitemapPlugin from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 import compress from 'astro-compress';
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from '@astrojs/alpinejs';
@@ -12,22 +12,22 @@ import mdx from '@astrojs/mdx';
 import umami from "@yeskunall/astro-umami";
 import robotsTxt from 'astro-robots-txt';
 
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
+  site: "https://brunopulis.com",
+  build: {
+    assets: 'assets'
+  },
   compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
   },
-
-  site: "https://brunopulis.com",
-
   integrations: [
     react(),
     icon(),
     alpinejs(),
-    sitemapPlugin(),
+    sitemap(),
     mdx(),
     compress(),
     partytown({
@@ -65,9 +65,7 @@ export default defineConfig({
       ]
     })
   ],
-
   image: {
     responsiveStyles: true,
-  },
-  adapter: netlify(),
+  }
 });

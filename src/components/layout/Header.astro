@@ -1,9 +1,10 @@
 ---
-import pulisLogo from '@/assets/horizontal/blood.svg'
-
+import { Image } from 'astro:assets';
+import pulisLogo from '@/assets/horizontal/blood.svg';
 import { Menu, X } from "@lucide/astro";
+import SkipLink from "@/components/utils/SkipLink.astro";
 
-const { pathname } = Astro.url
+const { pathname } = Astro.url;
 ---
 
 <div class="bg-errie-black-900 py-3 text-center text-white" style="font-size: .85rem;">
@@ -11,10 +12,15 @@ const { pathname } = Astro.url
 </div>
 
 <header x-data="{ open: false }" class="w-full bg-white/90 py-4 backdrop-blur-xs transition-colors duration-300">
+  <SkipLink />
   <div class="container-custom flex items-center justify-between">
     <div class="flex-shrink-0">
       <a href="/" class="" aria-label="Ir para página inicial">
-        <img src={pulisLogo.src} class="h-6 w-auto" alt="" />
+        <Image
+          src={pulisLogo}
+          class="h6- w-auto"
+          alt="Bruno Pulis"
+          loading="eager" />
       </a>
     </div>
     <nav class="hidden items-center space-x-8 md:flex" aria-label="Navegação principal">
@@ -79,17 +85,6 @@ const { pathname } = Astro.url
             }`}>Contato</a
           >
         </li>
-        <li class="main-nav__item">
-          <a
-            href="/explore"
-            class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline  ${
-              pathname === '/explore' ? ' main-nav__link--active' : ''
-            }`}
-            id="p-2utton"
-          >
-            Explore
-          </a>
-        </li>
       </ul>
     </nav>
 
@@ -126,7 +121,6 @@ const { pathname } = Astro.url
       <li><a href="/blog" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Blog</a></li>
       <li><a href="/newsletter" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Newsletter</a></li>
       <li><a href="/contato" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Contato</a></li>
-      <li><a href="/explore" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Explore</a></li>
       <li><a href="/orcamento" class="block px-4 py-2 rounded bg-blood-red-800 text-white">Vamos conversar</a></li>
     </ul>
   </nav>

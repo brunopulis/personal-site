@@ -12,62 +12,66 @@ const serviceOptions = [
 ---
 
 <div>
-  <h2 class="text-3xl font-bold mb-8">Detalhes do Projeto</h2>
-  
-  <form id="quote-form" class="space-y-8">
+  <h2 class="text-3xl font-bold mb-6">Detalhes do Projeto</h2>
+  <p class="text-sm text-gray-500 pt-4 pb-4">
+    Campos com * são obrigatórios.
+    Você receberá uma resposta detalhada em até 48 horas.
+  </p>
+
+  <form id="quote-form" class="my-6 space-y-8">
     <!-- Informações Pessoais -->
-    <fieldset class="bg-white p-6 rounded-lg shadow-lg">
+    <fieldset class="bg-gray-50 p-6 rounded-lg shadow-lg">
       <legend class="text-xl font-semibold mb-6">Informações de Contato</legend>
       <div class="grid gap-4">
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-            Nome Completo *
+          <label for="name" class="block text-sm font-medium text-errie-black-900 mb-2">
+            Nome Completo <span class="font-bold text-blood-red-800">*</span>
           </label>
           <input
             type="text"
             id="name"
             name="name"
             required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           />
         </div>
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-            Email *
+          <label for="email" class="block text-sm font-medium text-errie-black-900 mb-2">
+            Email <span class="font-bold text-blood-red-800">*</span>
           </label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           />
         </div>
         <div>
-          <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+          <label for="phone" class="block text-sm font-medium text-errie-black-900 mb-2">
             Telefone
           </label>
           <input
             type="tel"
             id="phone"
             name="phone"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           />
         </div>
         <div>
-          <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+          <label for="company" class="block text-sm font-medium text-errie-black-900 mb-2">
             Empresa
           </label>
           <input
             type="text"
             id="company"
             name="company"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           />
         </div>
       </div>
       <div class="mt-4">
-        <label for="website" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="website" class="block text-sm font-medium text-errie-black-900 mb-2">
           Website Atual (se houver)
         </label>
         <input
@@ -75,41 +79,41 @@ const serviceOptions = [
           id="website"
           name="website"
           placeholder="https://exemplo.com"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
         />
       </div>
     </fieldset>
 
     <!-- Serviços -->
-    <fieldset class="bg-white p-6 rounded-lg shadow-lg">
+    <fieldset class="bg-gray-50 p-6 rounded-lg shadow-lg">
       <legend class="text-xl font-semibold mb-6">Serviços de Interesse *</legend>
       <div class="grid md:grid-cols-2 gap-3">
         {serviceOptions.map(service => (
-          <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+          <label class="flex items-center gap-3 p-3 border bg-white border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
             <input
               type="checkbox"
               name="services"
               value={service}
-              class="w-4 h-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+              class="w-4 h-4 text-blood-red-800 focus:ring-blood-red-800 border-blood-red-800 rounded"
             />
-            <span class="text-gray-700">{service}</span>
+            <span class="text-errie-black-900 font-bold">{service}</span>
           </label>
         ))}
       </div>
     </fieldset>
 
     <!-- Detalhes do Projeto -->
-    <fieldset class="bg-white p-6 rounded-lg shadow-lg">
+    <fieldset class="bg-gray-50 p-6 rounded-lg shadow-lg">
       <legend class="text-xl font-semibold mb-6">Detalhes do Projeto</legend>
       <div class="grid md:grid-cols-2 gap-4 mb-4">
         <div>
-          <label for="projectType" class="block text-sm font-medium text-gray-700 mb-2">
+          <label for="projectType" class="block text-sm font-medium text-errie-black-900 mb-2">
             Tipo de Projeto
           </label>
           <select
             id="projectType"
             name="projectType"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           >
             <option value="">Selecione o tipo</option>
             <option value="novo-site">Novo Site</option>
@@ -121,13 +125,13 @@ const serviceOptions = [
           </select>
         </div>
         <div>
-          <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">
+          <label for="timeline" class="block text-sm font-medium text-errie-black-900 mb-2">
             Prazo Desejado
           </label>
           <select
             id="timeline"
             name="timeline"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           >
             <option value="">Selecione o prazo</option>
             <option value="urgente">Urgente (até 2 semanas)</option>
@@ -139,13 +143,13 @@ const serviceOptions = [
         </div>
       </div>
       <div class="mb-4">
-        <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="budget" class="block text-sm font-medium text-errie-black-900 mb-2">
           Orçamento Estimado
         </label>
         <select
           id="budget"
           name="budget"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
         >
           <option value="">Selecione a faixa</option>
           <option value="ate-2500">Até R$ 2.500</option>
@@ -157,7 +161,7 @@ const serviceOptions = [
         </select>
       </div>
       <div class="mb-4">
-        <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="description" class="block text-sm font-medium text-errie-black-900 mb-2">
           Descrição do Projeto *
         </label>
         <textarea
@@ -165,58 +169,54 @@ const serviceOptions = [
           name="description"
           rows="4"
           required
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           placeholder="Descreva seu projeto, objetivos e o que você espera alcançar..."
         ></textarea>
       </div>
       <div class="mb-4">
-        <label for="requirements" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="requirements" class="block text-sm font-medium text-errie-black-900 mb-2">
           Requisitos Específicos de Acessibilidade
         </label>
         <textarea
           id="requirements"
           name="requirements"
           rows="3"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           placeholder="Ex: Conformidade WCAG 2.1 AA, suporte a leitores de tela específicos, etc."
         ></textarea>
       </div>
       <div class="mb-4">
-        <label for="targetAudience" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="targetAudience" class="block text-sm font-medium text-errie-black-900 mb-2">
           Público-alvo
         </label>
         <input
           type="text"
           id="targetAudience"
           name="targetAudience"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           placeholder="Ex: Pessoas com deficiência visual, idosos, usuários de dispositivos móveis..."
         />
       </div>
       <div>
-        <label for="additionalInfo" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="additionalInfo" class="block text-sm font-medium text-errie-black-900 mb-2">
           Informações Adicionais
         </label>
         <textarea
           id="additionalInfo"
           name="additionalInfo"
           rows="3"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-4 py-3 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blood-red-800 focus:border-transparent"
           placeholder="Qualquer informação adicional que possa ser relevante para o orçamento..."
         ></textarea>
       </div>
     </fieldset>
 
-    <button type="submit" variant="primary" class="w-full">
-      <Send class="mr-2 h-5 w-5" />
+    <button type="submit"
+            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md bg-blood-red-800 px-8 py-4 text-sm font-medium whitespace-nowrap text-white transition-all outline-none hover:bg-blood-red-800/90 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
+      <Send class="mr-2 h-5 w-5 inline-block" />
       Solicitar Orçamento
     </button>
   </form>
-
-  <p class="text-sm text-gray-500 mt-4">
-    * Campos obrigatórios. Todas as informações são tratadas com confidencialidade.
-    Você receberá uma resposta detalhada em até 48 horas.
-  </p>
 </div>
 
 <script>
