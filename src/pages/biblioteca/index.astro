@@ -27,7 +27,7 @@ const livrosPorAno = Object.entries(
   <Header />
   <main id="main-content">
     <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+    <section class="relative overflow-hidden bg-blood-red-800 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -48,16 +48,13 @@ const livrosPorAno = Object.entries(
         </div>
       </div>
     </section>
-
-    <!-- Filtros -->
-    <!-- Filtros -->
     <section class="mx-auto max-w-7xl px-6 py-12">
       <div class="space-y-12">
         <!-- Agrupar livros por ano e renderizar usando Astro syntax -->
         {
           livrosPorAno.map(([year, booksInYear]) => (
             <div class="space-y-6">
-              <h2 class="text-2xl font-bold text-gray-800">Lidos em {year}</h2>
+              <h2 class="text-2xl font-bold text-blood-red-800">Lidos em {year}</h2>
               <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {booksInYear.map((book) => (
                   <article class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
@@ -87,7 +84,7 @@ const livrosPorAno = Object.entries(
           ))
         }
       </div>
-      <Footer />
     </section>
-  </main></Layout
->
+  </main>
+  <Footer />
+  </Layout>
