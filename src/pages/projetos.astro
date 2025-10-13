@@ -9,7 +9,7 @@ import magraDeVerdade from '@/assets/projects/magra-de-verdade.webp'
 import bibliotecaDaRevolucao from '@/assets/projects/biblioteca-da-revolucao.webp'
 import henriqueNoal from '@/assets/projects/henrique-noal.webp'
 import forja from '@/assets/projects/forja-comercial.webp'
-import { ExternalLink, Search } from '@lucide/astro'
+import { ExternalLink } from '@lucide/astro'
 
 const projectsData = {
   projects: [
@@ -88,12 +88,12 @@ const projects = projectsData.projects
 <Layout title="Projetos - Bruno Pulis">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+    <section class="relative overflow-hidden bg-blood-red-800 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
       </div>
-      <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="mx-auto max-w-7xl px-6 py-20">
         <div class="max-w-3xl">
           <h1 class="mb-6 text-5xl font-bold">Projetos que transformam barreiras em pontes</h1>
           <p class="text-xl leading-relaxed text-gray-300">
@@ -120,30 +120,6 @@ const projects = projectsData.projects
             <div class="mb-2 text-3xl font-bold">∞</div>
             <div class="text-sm text-gray-300">Vidas impactadas</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Filtros e Busca */}
-    <section class="sticky top-[73px] z-40 border-b border-gray-200 bg-gray-50">
-      <div class="mx-auto max-w-6xl px-6 py-6">
-        {/* Categorias */}
-        <div class="flex items-center gap-3 overflow-x-auto pb-2">
-          <Filter class="h-5 w-5 flex-shrink-0 text-gray-500" />
-          {
-            categorias.map((categoria) => (
-              <button
-                key={categoria.id}
-                class={`rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition ${
-                  filtroAtivo === categoria.id
-                    ? 'bg-red-600 text-white'
-                    : 'border border-gray-200 bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {categoria.nome} ({categoria.count})
-              </button>
-            ))
-          }
         </div>
       </div>
     </section>
