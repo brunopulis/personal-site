@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import pulisLogo from '@/assets/horizontal/blood.svg';
-import { Menu, X } from "@lucide/astro";
-import SkipLink from "@/components/utils/SkipLink.astro";
+import { Image } from 'astro:assets'
+import pulisLogo from '@/assets/horizontal/blood.svg'
+import { Menu, X } from '@lucide/astro'
+import SkipLink from '@/components/utils/SkipLink.astro'
 
-const { pathname } = Astro.url;
+const { pathname } = Astro.url
 ---
 
 <div class="bg-errie-black-900 py-3 text-center text-white" style="font-size: .85rem;">
@@ -16,11 +16,7 @@ const { pathname } = Astro.url;
   <div class="container-custom flex items-center justify-between">
     <div class="flex-shrink-0">
       <a href="/" class="" aria-label="Ir para página inicial">
-        <Image
-          src={pulisLogo}
-          class="h6- w-auto"
-          alt="Bruno Pulis"
-          loading="eager" />
+        <Image src={pulisLogo} class="h6- w-auto" alt="Bruno Pulis" loading="eager" />
       </a>
     </div>
     <nav class="hidden items-center space-x-8 md:flex" aria-label="Navegação principal">
@@ -110,21 +106,28 @@ const { pathname } = Astro.url;
   </div>
 
   <!-- Mobile menu -->
-  <nav id="mobile-menu" x-show="open" x-transition class="inset-0 z-50 bg-white/95 backdrop-blur-lg p-6 md:hidden">
-    <button @click="open = false" aria-label="Fechar menu" class="absolute top-4 right-4 text-errie-black-900">
+  <nav id="mobile-menu" x-show="open" x-transition class="inset-0 z-50 bg-white/95 p-6 backdrop-blur-lg md:hidden">
+    <button @click="open = false" aria-label="Fechar menu" class="text-errie-black-900 absolute top-4 right-4">
       <X class="h-4 w-4" aria-hidden="true" />
     </button>
-    <ul class="flex flex-col gap-6 mt-12 text-lg font-medium">
-      <li><a href="/sobre" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Sobre</a></li>
-      <li><a href="/projetos" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Projetos</a></li>
-      <li><a href="/servicos" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Serviços</a></li>
-      <li><a href="/blog" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Blog</a></li>
-      <li><a href="/newsletter" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Newsletter</a></li>
-      <li><a href="/contato" class="block px-4 py-2 rounded hover:bg-blood-red-100 text-errie-black-900">Contato</a></li>
-      <li><a href="/orcamento" class="block px-4 py-2 rounded bg-blood-red-800 text-white">Vamos conversar</a></li>
+    <ul class="mt-12 flex flex-col gap-6 text-lg font-medium">
+      <li><a href="/sobre" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Sobre</a></li>
+      <li>
+        <a href="/projetos" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Projetos</a>
+      </li>
+      <li>
+        <a href="/servicos" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Serviços</a>
+      </li>
+      <li><a href="/blog" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Blog</a></li>
+      <li>
+        <a href="/newsletter" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Newsletter</a>
+      </li>
+      <li>
+        <a href="/contato" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Contato</a>
+      </li>
+      <li><a href="/orcamento" class="bg-blood-red-800 block rounded px-4 py-2 text-white">Vamos conversar</a></li>
     </ul>
   </nav>
-  </div>
 </header>
 
 <style>

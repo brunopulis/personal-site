@@ -2,8 +2,8 @@
 title: 5 livros de acessibilidade digital
 publishDate: 2021-07-01
 draft: false
-category: "Indicações"
-tags: ["livros"]
+category: 'Indicações'
+tags: ['livros']
 ---
 
 Recentemente a acessibilidade digital ganhou os holofotes devido a pandemia. Entretanto, ainda é um assunto muito imaturo para profissionais do meio digital.
@@ -20,7 +20,7 @@ Você pode conferir uma lista completa na [categoria de livros no Awesome A11y](
 
 Vamos as indicações!
 
-![Garoto comemorando na arquibancada de um time de futebol. Ele está vestido com uma blusa azul e boné. Gesticula com as mãos vibrando e dizendo &quot;Sim, vamos lá&quot;](images/giphy.gif)
+![Garoto comemorando na arquibancada de um time de futebol. Ele está vestido com uma blusa azul e boné. Gesticula com as mãos vibrando e dizendo "Sim, vamos lá"](images/giphy.gif)
 
 ## [Acessibilidade na web](https://amzn.to/3MlXvVo)
 
@@ -32,7 +32,7 @@ Escrevi [uma resenha](https://brunopulis.com/acessibilidade-web/) sobre o livro 
 
 Além disso, a obra traz diversas barreiras de acessos e as principais soluções para corrigí-las.
 
-* * *
+---
 
 ## [GAIA: Um Guia de Recomendações Sobre Design Digital Inclusivo para Pessoas com Autismo](https://amzn.to/3rOOZFb)
 
@@ -42,7 +42,7 @@ GAIA é um guia de recomendações sobre design digital inclusivo para pessoas c
 
 A obra busca equalizar aspectos psicopedagógicos sobre o autismo, mais conhecidos por profissionais de educação e saúde, com requisitos tecnológicos para desenvolver soluções acessíveis, domínio dos profissionais de tecnologia.
 
-* * *
+---
 
 ## [Inclusive Design Patterns](https://amzn.to/3rMryfG)
 
@@ -52,7 +52,7 @@ Podemos não perceber, mas, construímos sites inacessíveis o tempo todo. Poré
 
 O livro explora como podemos criar interfaces acessíveis sem esforço extra – e quais padrões de design de front-end podemos usar para criar experiências inclusivas.
 
-* * *
+---
 
 ## [Agile Accessibility Handbook](https://accessibility.deque.com/agile-accessibility-handbook)
 
@@ -66,7 +66,7 @@ Outro ponto importante é a junção de agilidade com a acessibilidade, no curso
 
 O e-book é disponibilizado **gratuitamente** pela Deque System.
 
-* * *
+---
 
 ## [Accessibility for Everyone](https://amzn.to/3TflZBV)
 

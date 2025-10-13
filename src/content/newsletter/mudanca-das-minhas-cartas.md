@@ -1,7 +1,7 @@
 ---
-issue: "04"
-title: "Mudança das minhas cartas"
-date: "2023-12-15"
+issue: '04'
+title: 'Mudança das minhas cartas'
+date: '2023-12-15'
 ---
 
 Olá,

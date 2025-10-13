@@ -15,7 +15,7 @@ import {
   Target,
   BookOpen,
   Film,
-  Zap
+  Zap,
 } from '@lucide/astro'
 
 import Layout from '@/layouts/Layout.astro'
@@ -32,7 +32,7 @@ const title = 'Sobre — Bruno Pulis'
   <Header />
   <main>
     {/* Hero */}
-    <section class="relative overflow-hidden bg-gradient-to-br py-12 from-red-900 via-red-800 to-red-950 text-white">
+    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 py-12 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -137,20 +137,23 @@ const title = 'Sobre — Bruno Pulis'
         <div class="mb-6">
           <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">Sempre gostei de compartilhar o que aprendo.</p>
           <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-            Sou co-fundador do <a href="https://minasdev.org" target="_blank" class="underline text-blood-red-800" rel="noopener noreferral"
-              >Minas Dev <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" /></a
+            Sou co-fundador do <a
+              href="https://minasdev.org"
+              target="_blank"
+              class="text-blood-red-800 underline"
+              rel="noopener noreferral">Minas Dev <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" /></a
             >
             e já organizei diversos meetups e eventos em Belo Horizonte.
           </p>
 
           <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">Mantenho alguns projetos como:</p>
-          <ul class="mb-4 space-y-2 list-disc list-inside">
+          <ul class="mb-4 list-inside list-disc space-y-2">
             <li>
               <a
                 href="https://github.com/brunopulis/awesome-a11y"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-semibold underline text-blood-red-800 transition hover:bg-red-50"
+                class="text-blood-red-800 font-semibold underline transition hover:bg-red-50"
                 lang="en"
               >
                 Awesome A11y
@@ -162,7 +165,7 @@ const title = 'Sobre — Bruno Pulis'
                 href="https://github.com/brunopulis/awesome-cypress"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-semibold underline text-blood-red-800 transition hover:bg-red-50"
+                class="text-blood-red-800 font-semibold underline transition hover:bg-red-50"
                 lang="en"
               >
                 Awesome Cypress
@@ -190,21 +193,20 @@ const title = 'Sobre — Bruno Pulis'
           <p class="text-xl text-gray-600">Estes são os princípios que orientam meu trabalho</p>
         </div>
 
-        <article class="mb-12 rounded-2xl border-2 border-light-gray-200 bg-white p-8">
+        <article class="border-light-gray-200 mb-12 rounded-2xl border-2 bg-white p-8">
           <div class="flex items-start gap-4">
             <div>
               <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Fé e trabalho andam juntos</h3>
-              <p class="mb-4 leading-relaxed text-lg  text-errie-black-900">
+              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
                 Sou cristão e isso molda como enxergo o trabalho e o mundo.
               </p>
-              <p class="mb-4 leading-relaxed text-lg  text-errie-black-900">
-                Criar uma web acessível é uma extensão do chamado
-                bíblico ao <em>amor ao próximo</em>.
+              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
+                Criar uma web acessível é uma extensão do chamado bíblico ao <em>amor ao próximo</em>.
               </p>
-              <p class="mb-4 leading-relaxed text-lg  text-errie-black-900">
+              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
                 Quando Jesus curava pessoas com deficiência, Ele dizia: vocês têm valor.
               </p>
-              <p class="mb-4  leading-relaxed text-lg  text-errie-black-900">
+              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
                 Meu trabalho é fazer o mesmo no mundo digital.
               </p>
             </div>
@@ -212,14 +214,12 @@ const title = 'Sobre — Bruno Pulis'
         </article>
 
         <div class="grid gap-6 md:grid-cols-2">
-          <article
-            class="rounded-2xl border border-light-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
-          >
+          <article class="border-light-gray-200 rounded-2xl border bg-white p-8 shadow-sm transition hover:shadow-xl">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
               <Heart class="h-7 w-7 text-red-600" aria-hidden="true" />
             </div>
             <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Inclusão acima de tudo</h3>
-            <p class="mb-4 leading-relaxed text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 leading-relaxed">
               Acredito que tecnologia deve servir a todos. Cada decisão que tomo passa pelo filtro: Isso funciona para
               todo mundo?
             </p>
@@ -228,41 +228,35 @@ const title = 'Sobre — Bruno Pulis'
             </p>
           </article>
 
-          <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
-          >
+          <article class="border-light-gray-200 rounded-2xl border-2 bg-white p-8 shadow-sm transition hover:shadow-xl">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100">
               <Users class="h-7 w-7 text-blue-600" aria-hidden="true" />
             </div>
             <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Educação, não julgamento</h3>
-            <p class="mb-4 leading-relaxed text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 leading-relaxed">
               Eu já fui o desenvolvedor que criava sites inacessíveis. Então nunca julgo. Meu trabalho é educar,
               explicar o porquê.
             </p>
             <p class="text-sm text-gray-600 italic">A maioria quer fazer o certo - só precisa de orientação.</p>
           </article>
 
-          <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
-          >
+          <article class="border-light-gray-200 rounded-2xl border-2 bg-white p-8 shadow-sm transition hover:shadow-xl">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100">
               <Church class="h-7 w-7 text-purple-600" aria-hidden="true" />
             </div>
             <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Qualidade sem desculpas</h3>
-            <p class="mb-4 leading-relaxed text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 leading-relaxed">
               Já ouvi todas as desculpas. Mas se você tem tempo para construir, tem tempo para construir CERTO.
             </p>
             <p class="text-sm text-gray-600 italic">Não aceito bom o suficiente quando exclui pessoas.</p>
           </article>
 
-          <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
-          >
+          <article class="border-light-gray-200 rounded-2xl border-2 bg-white p-8 shadow-sm transition hover:shadow-xl">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100">
               <Target class="h-7 w-7 text-green-600" aria-hidden="true" />
             </div>
             <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Pragmatismo com propósito</h3>
-            <p class="mb-4 leading-relaxed text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 leading-relaxed">
               Acessibilidade perfeita não existe. Prefiro 80% de progresso real do que 100% de idealismo paralisante.
             </p>
             <p class="text-sm text-gray-600 italic">Meu objetivo é melhorar vidas, não ganhar prêmios.</p>
@@ -281,83 +275,83 @@ const title = 'Sobre — Bruno Pulis'
 
         <div class="grid gap-6 md:grid-cols-3">
           <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800 hover:shadow-lg"
+            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
           >
-            <Heart class="mb-4 h-10 w-10 text-blood-red-800" aria-hidden="true" />
+            <Heart class="text-blood-red-800 mb-4 h-10 w-10" aria-hidden="true" />
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Família primeiro</h3>
-            <p class="mb-4 text-sm text-errie-black-900">Marido e pai. Minha família é meu porquê em tudo.</p>
-            <p class="text-sm text-blood-red-800 italic">(Por isso tenho limites de horário)</p>
+            <p class="text-errie-black-900 mb-4 text-sm">Marido e pai. Minha família é meu porquê em tudo.</p>
+            <p class="text-blood-red-800 text-sm italic">(Por isso tenho limites de horário)</p>
           </article>
           <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800 hover:shadow-lg"
+            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
           >
-            <BookOpen class="mb-4 h-10 w-10 text-blood-red-800" />
+            <BookOpen class="text-blood-red-800 mb-4 h-10 w-10" />
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Leitor compulsivo</h3>
-            <p class="mb-4 text-sm text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 text-sm">
               Leio de tudo: teologia, ficção científica, biografias. Atualmente em 3 livros simultaneamente.
             </p>
             <a
               href="/biblioteca"
-              class="inline-flex items-center gap-1 text-sm font-semibold text-blood-red-800 hover:underline"
+              class="text-blood-red-800 inline-flex items-center gap-1 text-sm font-semibold hover:underline"
             >
               Ver biblioteca <ArrowRight class="h-3 w-3" />
             </a>
           </article>
 
           <div
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800 hover:shadow-lg"
+            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
           >
-            <Film class="mb-4 h-10 w-10 text-blood-red-800" aria-hidden="true" />
+            <Film class="text-blood-red-800 mb-4 h-10 w-10" aria-hidden="true" />
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Cinéfilo casual</h3>
-            <p class="mb-4 text-sm text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 text-sm">
               Favoritos: ficção científica pensativa, dramas históricos, e qualquer coisa da Pixar.
             </p>
             <a
               href="/filmes"
-              class="inline-flex items-center gap-1 text-sm font-semibold text-blood-red-800 hover:underline"
+              class="text-blood-red-800 inline-flex items-center gap-1 text-sm font-semibold hover:underline"
             >
               Ver filmes <ArrowRight class="h-3 w-3" aria-hidden="true" />
             </a>
           </div>
 
           <div
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800 hover:shadow-lg"
+            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
           >
-            <Church class="mb-4 h-10 w-10 text-blood-red-800" />
+            <Church class="text-blood-red-800 mb-4 h-10 w-10" />
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Estudante de teologia</h3>
-            <p class="mb-4 text-sm text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 text-sm">
               Fascinado por questões de fé e como a Bíblia se conecta com a vida moderna.
             </p>
             <a
               href="/blog?cat=teologia"
-              class="inline-flex items-center gap-1 text-sm font-semibold text-blood-red-800 hover:underline"
+              class="text-blood-red-800 inline-flex items-center gap-1 text-sm font-semibold hover:underline"
             >
               Ler reflexões <ArrowRight class="h-3 w-3" />
             </a>
           </div>
 
           <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800 hover:shadow-lg"
+            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
           >
-            <Zap class="mb-4 h-10 w-10 text-blood-red-800" />
+            <Zap class="text-blood-red-800 mb-4 h-10 w-10" />
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Nerd de produtividade</h3>
-            <p class="mb-4 text-sm text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 text-sm">
               Sistemas, apps, métodos. Atualmente: GTD + Obsidian + analog journaling.
             </p>
             <a
               href="/colophon"
-              class="inline-flex items-center gap-1 text-sm font-semibold text-blood-red-800 hover:underline"
+              class="text-blood-red-800 inline-flex items-center gap-1 text-sm font-semibold hover:underline"
             >
               Ver setup <ArrowRight class="h-3 w-3" />
             </a>
           </article>
 
           <article
-            class="rounded-2xl border-2 border-light-gray-200 bg-white p-6 transition hover:border-blood-red-800 hover:shadow-lg"
+            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
           >
-            <Guitar class="mb-4 h-10 w-10 text-blood-red-800" />
+            <Guitar class="text-blood-red-800 mb-4 h-10 w-10" />
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Violonista</h3>
-            <p class="mb-4 text-sm text-errie-black-900">
+            <p class="text-errie-black-900 mb-4 text-sm">
               Apaixonado por violão flamenco, instrumental, chorinho e clássico.
             </p>
           </article>
@@ -373,12 +367,10 @@ const title = 'Sobre — Bruno Pulis'
             <h2 class="text-errie-black-900 text-4xl font-bold">O que estou fazendo agora</h2>
           </div>
 
-          <p class="mb-8 text-errie-black-900">
+          <p class="text-errie-black-900 mb-8">
             Atualizado em Janeiro 2025. Um snapshot do que ocupa minha atenção neste momento.
           </p>
-          <p class="mb-8 text-errie-black-900">
-            Para ver a lista completa visite a página.
-          </p>
+          <p class="text-errie-black-900 mb-8">Para ver a lista completa visite a página.</p>
 
           <div class="grid gap-6 md:grid-cols-2">
             <div class="rounded-xl bg-white p-6 shadow-sm">
@@ -386,7 +378,7 @@ const title = 'Sobre — Bruno Pulis'
                 <Code class="h-5 w-5 text-red-600" />
                 No trabalho
               </h3>
-              <ul class="space-y-2 text-sm text-errie-black-900">
+              <ul class="text-errie-black-900 space-y-2 text-sm">
                 <li class="flex gap-2">
                   <span class="text-red-600">•</span><span>Auditoria para startup de saúde</span>
                 </li>
@@ -407,7 +399,7 @@ const title = 'Sobre — Bruno Pulis'
                 <Lightbulb class="h-5 w-5 text-blue-600" />
                 Aprendendo
               </h3>
-              <ul class="space-y-2 text-sm text-errie-black-900">
+              <ul class="text-errie-black-900 space-y-2 text-sm">
                 <li class="flex gap-2">
                   <span class="text-blue-600">•</span><span>IA e acessibilidade web</span>
                 </li>
@@ -422,10 +414,10 @@ const title = 'Sobre — Bruno Pulis'
 
             <div class="rounded-xl bg-white p-6 shadow-sm">
               <h3 class="text-errie-black-900 mb-4 flex items-center gap-2 text-xl font-bold">
-                <BookOpen class="h-5 w-5 text-blood-red-800" />
+                <BookOpen class="text-blood-red-800 h-5 w-5" />
                 Lendo
               </h3>
-              <ul class="space-y-2 text-sm text-errie-black-900">
+              <ul class="text-errie-black-900 space-y-2 text-sm">
                 <li>📖 Accessibility for Everyone</li>
                 <li>✝️ Teologia Sistemática</li>
                 <li>📚 Duna (releitura)</li>
@@ -437,7 +429,7 @@ const title = 'Sobre — Bruno Pulis'
                 <Heart class="h-5 w-5 text-pink-600" />
                 Vida pessoal
               </h3>
-              <ul class="space-y-2 text-sm text-errie-black-900">
+              <ul class="text-errie-black-900 space-y-2 text-sm">
                 <li class="flex gap-2"><span class="text-pink-600">•</span><span>Tempo com família</span></li>
                 <li class="flex gap-2">
                   <span class="text-pink-600">•</span><span>Rotina de exercícios</span>
@@ -451,7 +443,7 @@ const title = 'Sobre — Bruno Pulis'
 
           <div class="mt-8 rounded-xl bg-gray-100 p-6">
             <h4 class="text-errie-black-900 mb-3 font-bold">O que NÃO estou fazendo</h4>
-            <ul class="space-y-2 text-sm text-errie-black-900">
+            <ul class="text-errie-black-900 space-y-2 text-sm">
               <li>• Projetos de remediação (focando em auditoria e mentoria)</li>
               <li>• Redes sociais (pausa intencional)</li>
               <li>• Séries (escolhi ler mais)</li>

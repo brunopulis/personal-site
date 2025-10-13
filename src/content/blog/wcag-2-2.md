@@ -1,7 +1,7 @@
 ---
 title: Novidades da WCAG 2.2
 publishDate: 2023-07-22
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/wcag-2-2/
 ---
 
@@ -40,8 +40,8 @@ A **WCAG 2.2** incluiu 9 novos critérios de sucesso. Eles são:
 - **2.5.8 Tamanho do Alvo (Mínimo) (Nível AA)**
 - **3.2.6 Ajuda consistente (Nível A)**
 - **3.3.7 Entrada Redundante (Nível A)**
-- **3.3.8 **Autenticação Acessível (Nível AA)****
-- **3.3.9 **Autenticação Acessível (aprimorado) (Nível AAA)****
+- **3.3.8 **Autenticação Acessível (Nível AA)\*\*\*\*
+- **3.3.9 **Autenticação Acessível (aprimorado) (Nível AAA)\*\*\*\*
 
 Vamos explicar cada critério de sucesso e como atendê-lo.
 

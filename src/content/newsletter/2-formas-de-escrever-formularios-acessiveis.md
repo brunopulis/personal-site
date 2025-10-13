@@ -1,8 +1,8 @@
 ---
-issue: "44"
-title: "2 formas de escrever formulários acessíveis"
-date: "2024-11-28"
-coverImage: "a-close-up-shot-of-a-hand-holding-a-vintage-compass-against-a-natural-background.-841286-scaled.jpg"
+issue: '44'
+title: '2 formas de escrever formulários acessíveis'
+date: '2024-11-28'
+coverImage: 'a-close-up-shot-of-a-hand-holding-a-vintage-compass-against-a-natural-background.-841286-scaled.jpg'
 ---
 
 Fiz um teste essa semana que me deixou puto, uma tela simples com mais de 18 erros de acessibilidade. Fiquei pensando "como uma criatura conseguiu fazer isso".
@@ -25,7 +25,7 @@ Nesta carta, irei te ensinar algumas formas de deixar seu formulário acessível
 
 Vamos lá!
 
-* * *
+---
 
 ## O que são formulários?
 
@@ -73,8 +73,8 @@ Um formulário possui uma estrutura básica que é composta, conforme o código 
 
 ```html
 <form>
-  <input type="text" id="fname" name="fname"><br>
-  <input type="text" id="lname" name="lname">
+  <input type="text" id="fname" name="fname" /><br />
+  <input type="text" id="lname" name="lname" />
 </form>
 ```
 
@@ -110,9 +110,9 @@ Usando a label visível, nosso exemplo ficaria:
 ```html
 <form>
   <label for="fname">Nome</label>
-  <input type="text" id="fname" name="fname">
+  <input type="text" id="fname" name="fname" />
   <label for="lname">Sobrenome</label>
-  <input type="text" id="lname" name="lname">
+  <input type="text" id="lname" name="lname" />
 </form>
 ```
 
@@ -132,11 +132,11 @@ Essa situação acontece geralmente quando o designer pensou na arquitetura da i
 
 Para resolver essa situação você precisa de uma classe CSS que oculta a informação visual, nada de usar **placeholder como <label>**.
 
-> **IMPORTANTE
+> \*\*IMPORTANTE
 >
 > **O atributo **placeholder é um complemento de informação**, uma dica de preenchimento.**
 >
-> A <label> é o rótulo de identificação dos campos do formulário.**
+> A <label> é o rótulo de identificação dos campos do formulário.\*\*
 
 Essas classes têm o objetivo de ocultar visualmente a <label>, porém, ela não perde sua função.
 
@@ -145,12 +145,12 @@ Essas classes têm o objetivo de ocultar visualmente a <label>, porém, ela não
 .sr-only {
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
+  margin: -1px;
+  padding: 0;
   width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 ```
 
@@ -161,10 +161,10 @@ Aplicando a técnica em nosso exemplo, ficaria:
 ```html
 <form>
   <label class="sr-only" for="fname">Nome</label>
-  <input type="text" id="fname" name="fname">
+  <input type="text" id="fname" name="fname" />
 
   <label class="sr-only" for="lname">Sobrenome</label>
-  <input type="text" id="lname" name="lname">
+  <input type="text" id="lname" name="lname" />
 </form>
 ```
 
@@ -182,7 +182,7 @@ Viu como pode ser mais simples do que você imagina?
 
 Me conta, você conhecia essas técnicas?
 
-* * *
+---
 
 P.S.: Compartilha o trecho que você mais gostou no Instagram e me marque **brunopulis**
 

@@ -1,7 +1,7 @@
 ---
-issue: "11"
-title: "Como incluir acessibilidade no Shift Left"
-date: "2024-01-15"
+issue: '11'
+title: 'Como incluir acessibilidade no Shift Left'
+date: '2024-01-15'
 ---
 
 ![Imagem gerada com o Bing Create, prompt: teste automatizado.](images/1705342283447-1024x576.png) _Imagem gerada com o Bing Create, prompt: teste automatizado._\[/caption\]
@@ -21,13 +21,13 @@ De forma prática, vou te mostrar:
 - Abordagens;
 - Algumas dicas.
 
-\[caption id="attachment\_6706" align="aligncenter" width="760"\]![Piramide com a abordagem Shift Left para acessibilidade: Etapa 0 - testes estáticos, Etapa 1 - testes unitários, Etapa 2 - Testes de componentes, Etapa 3 - Testes E2E e Etapa 4 - Testes manuais](images/1705342474027-300x169.png) Pirâmide de testes usando Shift Left de acessibilidade\[/caption\]
+\[caption id="attachment_6706" align="aligncenter" width="760"\]![Piramide com a abordagem Shift Left para acessibilidade: Etapa 0 - testes estáticos, Etapa 1 - testes unitários, Etapa 2 - Testes de componentes, Etapa 3 - Testes E2E e Etapa 4 - Testes manuais](images/1705342474027-300x169.png) Pirâmide de testes usando Shift Left de acessibilidade\[/caption\]
 
 > Observação: nossa jornada irá seguir uma pirâmide que faz uma analogia com a famosa pirâmide de testes. Vale lembrar, que ela não é uma representação real da pirâmide de testes.
 
 Vamos lá.
 
-* * *
+---
 
 ### A informação n°1: O teste de acessibilidade automatizado substitui o teste manual?
 

@@ -1,7 +1,7 @@
 ---
-issue: "30"
-title: "Use a cabeça, teste acessibilidade"
-date: "2024-05-02"
+issue: '30'
+title: 'Use a cabeça, teste acessibilidade'
+date: '2024-05-02'
 ---
 
 ## Indicações e links de afiliados
@@ -66,20 +66,20 @@ No caso do Toggle Button, podemos validar:
 
 1. Verificar se o atributo **aria-pressed** existe no elemento;
 
-3. Verificar o estado inicial do **aria-pressed** tem o valor **false**;
+2. Verificar o estado inicial do **aria-pressed** tem o valor **false**;
 
-5. Verificar se o rótulo tem o valor de **“Desativado”** por padrão;
+3. Verificar se o rótulo tem o valor de **“Desativado”** por padrão;
 
-7. Verificar quando pressionado, o **aria-pressed** mudar para **true**;
+4. Verificar quando pressionado, o **aria-pressed** mudar para **true**;
 
-9. Verificar quando pressionado, o rótulo muda para **“Ativado”;**
+5. Verificar quando pressionado, o rótulo muda para **“Ativado”;**
 
-11. Verificar quando desativar o botão, o estado deve retornar ao estado inicial.
+6. Verificar quando desativar o botão, o estado deve retornar ao estado inicial.
 
 **Percebeu, como conseguimos extrair seis cenários de testes bem interessantes?**   
 O mais legal é que você pode explorar e usar na sua stack preferida.
 
-* * *
+---
 
 ## Garimpo da semana ⛏
 

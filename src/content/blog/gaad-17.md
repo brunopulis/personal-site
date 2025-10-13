@@ -1,11 +1,12 @@
 ---
-title: "GAAD: Global Accessibility Awareness Day 17"
+title: 'GAAD: Global Accessibility Awareness Day 17'
 publishDate: 2017-09-11
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/gaad-17/
 tags:
   - indicacoes
 ---
+
 Fala pessoal, nesse post vou contar um pouco de como foi participar no Global Acessibility Awarenss da edição de Belo Horizonte promovido pelo IXDABH.
 
 ## Objetivos do evento

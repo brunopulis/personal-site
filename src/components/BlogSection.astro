@@ -1,8 +1,8 @@
 ---
 interface Props {
-	title: string
-	highlightText?: string
-	timestamp?: string
+  title: string
+  highlightText?: string
+  timestamp?: string
 }
 
 const { title, highlightText, timestamp } = Astro.props
@@ -12,42 +12,38 @@ let titleStart = title
 let titleEnd = ''
 
 if (highlightText) {
-	const titleParts = title.split(highlightText)
-	if (titleParts.length > 1) {
-		titleStart = titleParts[0]
-		titleEnd = titleParts[1]
-	}
+  const titleParts = title.split(highlightText)
+  if (titleParts.length > 1) {
+    titleStart = titleParts[0]
+    titleEnd = titleParts[1]
+  }
 }
 ---
 
 <section class="body-font bg-red-950 text-white">
-	<div
-		class="container mx-auto flex flex-col items-center px-5 py-12 md:flex-row"
-	>
-		<div
-			class="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24"
-		>
-			<h1 class="title-font mb-4 text-3xl font-medium sm:text-4xl">
-				{
-					highlightText ? (
-						<>
-							{titleStart}
-							<span class="text-white">{highlightText}</span>
-							{titleEnd}
-						</>
-					) : (
-						title
-					)
-				}
-			</h1>
-			<div class="items-center flex flex-wrap gap-x-5 gap-y-2 text-primary-small">
-				<time class="text-white" datetime={timestamp}>
-					{timestamp}
-				</time>
-				<div class="items-center flex flex-wrap gap-x-5 gap-y-2 text-primary-small font-mono text-xs">
-					tags where
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container mx-auto flex flex-col items-center px-5 py-12 md:flex-row">
+    <div
+      class="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24"
+    >
+      <h1 class="title-font mb-4 text-3xl font-medium sm:text-4xl">
+        {
+          highlightText ? (
+            <>
+              {titleStart}
+              <span class="text-white">{highlightText}</span>
+              {titleEnd}
+            </>
+          ) : (
+            title
+          )
+        }
+      </h1>
+      <div class="text-primary-small flex flex-wrap items-center gap-x-5 gap-y-2">
+        <time class="text-white" datetime={timestamp}>
+          {timestamp}
+        </time>
+        <div class="text-primary-small flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs">tags where</div>
+      </div>
+    </div>
+  </div>
 </section>

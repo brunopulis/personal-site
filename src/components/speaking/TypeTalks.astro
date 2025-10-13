@@ -1,76 +1,56 @@
 ---
-import { Presentation, Users, Code } from "@lucide/astro";
+import { Presentation, Users, Code } from '@lucide/astro'
 ---
 
 <section class="talk-types section">
   <div class="container-custom mx-auto">
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid gap-8 md:grid-cols-3">
       <article
-        class="bg-gray-100 p-6 text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-sm"
+        class="text-card-foreground flex flex-col gap-6 rounded-xl border-0 bg-gray-100 p-6 shadow-sm"
         style={`animation-delay: ${0 * 100}ms`}
       >
-        <div
-          class="w-16 h-16 bg-blood-red-800 rounded-full flex items-center justify-center mb-6"
-        >
-          <Presentation class="h-8 w-8 text-white text-center" aria-hidden="true" />
+        <div class="bg-blood-red-800 mb-6 flex h-16 w-16 items-center justify-center rounded-full">
+          <Presentation class="h-8 w-8 text-center text-white" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold mb-3">
-          Palestras Inspiradoras
-        </h3>
+        <h3 class="mb-3 text-xl font-semibold">Palestras Inspiradoras</h3>
         <p class="text-errie-black-900 mb-4">
-         Apresentações envolventes com conteúdo atual e linguagem acessível para sensibilizar e educar sua equipe.
+          Apresentações envolventes com conteúdo atual e linguagem acessível para sensibilizar e educar sua equipe.
         </p>
 
         <ul class="list-inside list-disc space-y-2 text-sm text-gray-500">
           <li class="text-errie-black-900">Duração: 45-60 minutos</li>
-          <li class="text-errie-black-900">
-            Público: acima de 200 pessoas
-          </li>
-          <li class="text-errie-black-900">
-            Formato: Presencial ou online
-          </li>
+          <li class="text-errie-black-900">Público: acima de 200 pessoas</li>
+          <li class="text-errie-black-900">Formato: Presencial ou online</li>
         </ul>
       </article>
 
       <article
-        class="bg-gray-100 p-6 text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-sm"
+        class="text-card-foreground flex flex-col gap-6 rounded-xl border-0 bg-gray-100 p-6 shadow-sm"
         style={`animation-delay: ${0 * 100}ms`}
       >
-        <div
-          class="w-16 h-16 bg-blood-red-800 rounded-full flex items-center justify-center mb-6"
-        >
-          <Users class="h-8 w-8 text-white text-center" aria-hidden="true" />
+        <div class="bg-blood-red-800 mb-6 flex h-16 w-16 items-center justify-center rounded-full">
+          <Users class="h-8 w-8 text-center text-white" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold mb-3" lang="en">
-          Workshops Práticos
-        </h3>
+        <h3 class="mb-3 text-xl font-semibold" lang="en">Workshops Práticos</h3>
         <p class="text-errie-black-900">
           Sessões <span lang="en">hands-on</span> com atividades dinâmicas para aplicar conceitos de acessibilidade na prática.
         </p>
 
         <ul class="list-inside list-disc space-y-2">
           <li class="text-errie-black-900">Duração: 2-4 horas;</li>
-          <li class="text-errie-black-900">
-            Público: 20-50 pessoas
-          </li>
-          <li class="text-errie-black-900">
-            Formato: Presencial ou online
-          </li>
+          <li class="text-errie-black-900">Público: 20-50 pessoas</li>
+          <li class="text-errie-black-900">Formato: Presencial ou online</li>
         </ul>
       </article>
 
       <article
-        class="bg-gray-100 p-6 text-card-foreground flex flex-col gap-6 rounded-xl border-0 shadow-sm"
+        class="text-card-foreground flex flex-col gap-6 rounded-xl border-0 bg-gray-100 p-6 shadow-sm"
         style={`animation-delay: ${0 * 100}ms`}
       >
-        <div
-          class="w-16 h-16 bg-blood-red-800 rounded-full flex items-center justify-center mb-6"
-        >
-         <Code class="h-8 w-8 text-white text-center" aria-hidden="true" />
+        <div class="bg-blood-red-800 mb-6 flex h-16 w-16 items-center justify-center rounded-full">
+          <Code class="h-8 w-8 text-center text-white" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold mb-3" lang="en">
-          Treinamentos Técnicos
-        </h3>
+        <h3 class="mb-3 text-xl font-semibold" lang="en">Treinamentos Técnicos</h3>
         <p class="text-errie-black-900">
           Capacitação especializada para desenvolvedores, designers e profissionais de QA implementarem acessibilidade.
         </p>
@@ -78,9 +58,7 @@ import { Presentation, Users, Code } from "@lucide/astro";
         <ul class="list-inside list-disc space-y-2">
           <li class="text-errie-black-900">Duração: 60-90 minutos;</li>
           <li class="text-errie-black-900">Público: Ilimitado;</li>
-          <li class="text-errie-black-900">
-            Formato: Presencial ou online.
-          </li>
+          <li class="text-errie-black-900">Formato: Presencial ou online.</li>
         </ul>
       </article>
     </div>

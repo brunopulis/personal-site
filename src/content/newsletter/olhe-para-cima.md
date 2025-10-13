@@ -1,7 +1,7 @@
 ---
-issue: "06"
-title: "Olhe para cima"
-date: "2023-12-20"
+issue: '06'
+title: 'Olhe para cima'
+date: '2023-12-20'
 ---
 
 Ontem estava bem cansado. Íamos assistir um episódio de Game of Thrones, mas não deu. Estou numa saga de apresentar conteúdos de fantasia para minha esposa.
@@ -34,7 +34,7 @@ Vou te mostrar alguns passos para melhorar isso.
 
 Antes de ir para a cama, coloque o telefone no modo avião ou no modo de dormir.  Seu alarme ainda vai funcionar, mas ficará livres de interrupções desnecessárias.
 
-Se quiser algo mais _hardcore_, deixe o celular em outro cômodo.
+Se quiser algo mais *hardcore*, deixe o celular em outro cômodo.
 
 ## **Crie uma rotina matinal**
 

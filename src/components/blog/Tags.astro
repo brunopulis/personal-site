@@ -22,6 +22,7 @@ function slugify(str: string) {
     .replace(/[^a-z0-9-]/g, '')
 }
 ---
+
 <!-- 
 <Tags
               tags={post.data.tags}
@@ -29,9 +30,8 @@ function slugify(str: string) {
               publishedAt={post.data.publishedAt}
               reply={post.data.reply}
             /> -->
-
 <footer>
-  <ul class="border-gray-50 my-2 overflow-hidden rounded-xl border bg-gray-50" role="list">
+  <ul class="my-2 overflow-hidden rounded-xl border border-gray-50 bg-gray-50" role="list">
     <li class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2">
       {
         location && (

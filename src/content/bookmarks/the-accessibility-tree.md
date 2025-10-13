@@ -1,6 +1,4 @@
 ---
-title: "The Accessibility Tree"
-date: "2024-07-24"
+title: 'The Accessibility Tree'
+date: '2024-07-24'
 ---
-
-

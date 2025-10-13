@@ -1,7 +1,7 @@
 ---
-issue: "24"
-title: "Mas que raios é essa tal de WCAG?"
-date: "2024-03-21"
+issue: '24'
+title: 'Mas que raios é essa tal de WCAG?'
+date: '2024-03-21'
 ---
 
 Pulis Letters - Edição #24  
@@ -47,7 +47,7 @@ Poucos desenvolvedores frontend e QAs que conheço sabem da existência dela. Is
 
 1. As universidades não dão a devida atenção pra ela;
 
-3. O mercado raramente cobra esse tipo de conhecimento.
+2. O mercado raramente cobra esse tipo de conhecimento.
 
 Algumas empresas (como a minha) é obrigatório ter conhecimento sobre a WCAG.
 
@@ -132,11 +132,9 @@ Por isso cada critério temos dois documentos auxiliares:
 
 Dentro de cada critério de sucesso existem níveis de conformidade. Pensa nesses caras, como graus de maturidade ou qualidade em acessibilidade.
 
-Existem três:  
+Existem três:
 
-- **Nível A****:** são critérios básicos que **todo site deve ter**. 29 critérios no total;  
-      
-    
+- **Nível A\*\***:** são critérios básicos que **todo site deve ter\*\*. 29 critérios no total;
 
 - **Nível AA:** critérios intermediários, empresas comprometidas usam eles. 20 critérios no total;
 

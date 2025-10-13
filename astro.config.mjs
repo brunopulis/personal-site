@@ -1,23 +1,23 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 // import db from "@astrojs/db";
-import partytown from "@astrojs/partytown";
-import sitemap from '@astrojs/sitemap';
-import compress from 'astro-compress';
-import tailwindcss from "@tailwindcss/vite";
-import alpinejs from '@astrojs/alpinejs';
-import icon from 'astro-icon';
-import react from '@astrojs/react';
-import mdx from '@astrojs/mdx';
-import umami from "@yeskunall/astro-umami";
-import robotsTxt from 'astro-robots-txt';
+import partytown from '@astrojs/partytown'
+import sitemap from '@astrojs/sitemap'
+import compress from 'astro-compress'
+import tailwindcss from '@tailwindcss/vite'
+import alpinejs from '@astrojs/alpinejs'
+import icon from 'astro-icon'
+import react from '@astrojs/react'
+import mdx from '@astrojs/mdx'
+import umami from '@yeskunall/astro-umami'
+import robotsTxt from 'astro-robots-txt'
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: "https://brunopulis.com",
+  site: 'https://brunopulis.com',
   build: {
-    assets: 'assets'
+    assets: 'assets',
   },
   compressHTML: true,
   vite: {
@@ -32,10 +32,10 @@ export default defineConfig({
     compress(),
     partytown({
       config: {
-        forward: ["dataLayer.push"],
+        forward: ['dataLayer.push'],
       },
     }),
-    umami({ id: "f1cb7c07-2efc-4997-9dd3-d3198f0faa0c" }),
+    umami({ id: 'f1cb7c07-2efc-4997-9dd3-d3198f0faa0c' }),
     robotsTxt({
       policy: [
         {
@@ -62,10 +62,10 @@ export default defineConfig({
           userAgent: 'FacebookBot',
           disallow: '/',
         },
-      ]
-    })
+      ],
+    }),
   ],
   image: {
     responsiveStyles: true,
-  }
-});
+  },
+})

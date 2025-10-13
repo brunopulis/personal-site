@@ -9,40 +9,38 @@
     xmlns="http://www.w3.org/2000/svg"
     class="icon"
   >
-    <path
-      d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"
-    ></path>
+    <path d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
   </svg>
 </a>
 
 <style>
   a {
-    align-items: center;
     display: flex;
-    height: 1px;
-    left: -9999px;
     position: absolute;
-    overflow: hidden;
     top: 0;
+    left: -9999px;
+    align-items: center;
     width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 
   a:focus,
   a:focus-visible {
-    background-color: blue;
-    color: var(--color-white);
-    height: auto;
-    left: var(--space-xs);
-    padding: var(--space-xs);
     position: fixed;
-    text-decoration: none;
     top: 0;
-    width: auto;
+    left: var(--space-xs);
     z-index: 1 !important;
+    background-color: blue;
+    padding: var(--space-xs);
+    width: auto;
+    height: auto;
+    color: var(--color-white);
+    text-decoration: none;
   }
 
   .icon {
-    margin-left: var(--space-3xs);
     transform: rotate(180deg);
+    margin-left: var(--space-3xs);
   }
 </style>

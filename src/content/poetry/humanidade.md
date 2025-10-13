@@ -8,9 +8,10 @@ metadata:
 tags:
   - pessoal
 ---
+
 No dia 12/06/16 o mundo assistiu mais um massacre desumano, pessoas saíram para se divertir, passar um tempo com amigos e desconhecidos e não voltaram para suas casas, famílias e entes queridos.
 
-A cada dia a humanidade se torna mais desumana, injusta e totalmente cheia de si. Em contrapartida eu percebo um clamor coletivo, sobre aceitação, paz, sustentabilidade, modo de vida _mais light._
+A cada dia a humanidade se torna mais desumana, injusta e totalmente cheia de si. Em contrapartida eu percebo um clamor coletivo, sobre aceitação, paz, sustentabilidade, modo de vida *mais light.*
 
 De fato, as pessoas estão preocupadas com questões outrora esquecidas ou que não eram tocadas por conta de tabus e repressões sociais, isso é ótimo para uma sociedade menos desigual e mais humana, porém a realidade é distante das ideologias se tornando um pouco utópica…
 
