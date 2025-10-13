@@ -2,15 +2,16 @@
 title: Acessibilidade para iniciantes
 publishDate: 2021-05-19
 draft: false
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
-* * *
+
+---
 
 ## **Importante**
 
 Este artigo foi originalmente escrito por [Karina Chow](https://karomancer.medium.com/) e traduzido e adaptado por mim. Houve a autorização da autora para realizar a tradução.
 
-* * *
+---
 
 No mundo atual da computação ubíqua e no desejo de todo o setor de melhorar a diversidade e inclusão de empresas e produtos, não há mais uma desculpa para não investir em acessibilidade na web. Dito isso, começar a acessibilidade na web pode ser uma tarefa difícil. É difícil saber por onde começar e o que você pode fazer agora para melhorar seu produto!
 
@@ -55,7 +56,7 @@ Por exemplo, para [mídia baseada em tempo](https://www.w3.org/TR/WCAG21/#time-b
 - **A – “Conformidade mínima”** – Legendas para vídeo/áudio pré-gravado, alternativas fornecidas para vídeo/áudio pré-gravado (por exemplo, transcrições);
 - **AA – “Conformidade aceitável”** – Tudo em A legendas para vídeo/áudio ao vivo, narrações adicionais fornecidas durante o vídeo pré-gravado;
 - **AAA – “Optimal Compliance”** – Tudo em AA e interpretação em linguagem de sinais para vídeo, narrações mais detalhadas fornecidas durante e em pausas para vídeo pré-gravado, transcrições ao vivo
-    Ao estabelecer metas de acessibilidade, pode ser aconselhável definir o nível de conformidade que você gostaria de atender, para que todos que trabalham no projeto possam trabalhar para a mesma meta.
+  Ao estabelecer metas de acessibilidade, pode ser aconselhável definir o nível de conformidade que você gostaria de atender, para que todos que trabalham no projeto possam trabalhar para a mesma meta.
 
 Se você não sabe qual nível de conformidade seguir, a conformidade WCAG 2.1 AA é considerada aceitável e cobrirá a grande maioria dos casos de uso.
 
@@ -78,13 +79,13 @@ As deficiências mais comumente consideradas são as deficiências visuais, mas 
 Diferentes tipos de deficiências ditam como você pode acessar e interagir com os sites. Uma lista com algumas alternativas populares:
 
 - **Teclado
-    **Algumas pessoas não utilizam o mouse somente o teclado. Isso é comum entre pessoas com deficiências motoras que não conseguem operar os movimentos finos que um mouse exige.
+  **Algumas pessoas não utilizam o mouse somente o teclado. Isso é comum entre pessoas com deficiências motoras que não conseguem operar os movimentos finos que um mouse exige.
 - **Leitores de tela
-    **Tecnologia assistiva que lê o que está na tela, mais comumente usada por pessoas com cegueira ou baixa visão. Normalmente operado usando apenas um teclado.
+  **Tecnologia assistiva que lê o que está na tela, mais comumente usada por pessoas com cegueira ou baixa visão. Normalmente operado usando apenas um teclado.
 - **Zoom do Browser** (idealmente, suporte até 200%)
-    Pessoas com deficiência visual podem usar o recurso de zoom em seus navegadores para compreender melhor o texto e ver as imagens.
+  Pessoas com deficiência visual podem usar o recurso de zoom em seus navegadores para compreender melhor o texto e ver as imagens.
 - **[Estilos customizados](https://webaim.org/techniques/css/)**
-    Pessoas com baixa visão ou daltonismo podem ter suas próprias folhas de estilo personalizadas para ajustar estilos como tamanho e cor da fonte
+  Pessoas com baixa visão ou daltonismo podem ter suas próprias folhas de estilo personalizadas para ajustar estilos como tamanho e cor da fonte
 
 ## Como aprendo a usar um leitor de tela?
 

@@ -2,8 +2,9 @@
 title: 21 qualidades de um bom QA
 publishDate: 2018-01-19
 draft: false
-category: "Qualidade"
+category: 'Qualidade'
 ---
+
 [Post traduzido](http://tryqa.com/software-tester/) e adaptado por [Bruno Pulis](https://github.com/brunopulis) e escrito originalmente por [Try QA](http://tryqa.com/).
 
 Atualmente, toda organização está usando tecnologia. De grandes mídias a gigantes têxteis, fundos mútuos a startups, cada uma tem seus requisitos exclusivos de software e automação. Embora o desenvolvimento e a implementação do software sejam vitais para essas organizações, há uma necessidade crescente de **bons testadores de software que adoram testar**.

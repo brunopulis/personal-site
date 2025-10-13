@@ -2,9 +2,10 @@
 title: A estória de Paloma
 date: 2016-09-16
 draft: false
-category: "Teologia"
-tags: ["contos", "ficção"]
+category: 'Teologia'
+tags: ['contos', 'ficção']
 ---
+
 Vou contar uma estória fictícia, porém com um tom de realidade que por volta e meia tende a ser mascarada e desprezada por uma grande maioria de pessoas.
 
 Ps: Os personagens são fictícios foram criados para debater a temática em questão.
@@ -21,7 +22,7 @@ Muitos deixaram de se relacionar com ela por causa disso. Ela passou a ser exclu
 
 Lembrando desse ocorrido, pensa que tudo foi em vão e quem sabe as pessoas a aceitavam até descobrirem a verdade. Paloma dá um trago no uísque e logo esquece, pois decidiu largar isso pra trás.
 
-* * *
+---
 
 Paloma é um retrato de um grupo de pessoas que estão em nossa realidade e podem estar escondidas em nossas igrejas, por medo e repressão não revelam a verdade sobre si mesma.
 
@@ -38,15 +39,16 @@ Eis o trecho:
 > > **Proibindo a Entrada de Pessoas Perfeitas pág.185**
 > > O que mais me intriga é aquela pergunta:
 > > **“E se Jesus estivesse aqui, o que ele ia fazer no caso de Paloma?”**
-> > Nossa querida Paloma nos mostra uma dura realidade, _a igreja não está preparada para inserir essas pessoas no seu contexto religioso._
+> > Nossa querida Paloma nos mostra uma dura realidade, *a igreja não está preparada para inserir essas pessoas no seu contexto religioso.*
 > >
 > > - Não estamos preparados por que exalamos hipocrisia ao invés de santidade e amor, Jesus repudiava fortemente a hipocrisia (Mt 23).
 > > - Não estamos preparados por que escondemos nossos rostos para a realidade de nossa era.
 > > - Não estamos preparados por que criamos uma cultura para nosso povo e esquecemos dos lá de fora.
-> > Por essas e outras razões, nos desculpem a tantas Palomas que repudiamos e rejeitamos e não tratamos com honestidade e dignidade e amor, nós como igreja temos falhado, nos perdoe por sermos tão egoístas.
-> > _O que nos resta é clamar a misericórdia de Deus.
+> >   Por essas e outras razões, nos desculpem a tantas Palomas que repudiamos e rejeitamos e não tratamos com honestidade e dignidade e amor, nós como igreja temos falhado, nos perdoe por sermos tão egoístas.
+> >   \_O que nos resta é clamar a misericórdia de Deus.
 >
-> >_E como o mestre disse certa vez:
+> > \_E como o mestre disse certa vez:
+> >
 > > > _Se alguém vier a mim de maneira nenhuma, eu o lançarei fora._
-> > Na Paz,
-> > @brunopulis
+> > > Na Paz,
+> > > @brunopulis

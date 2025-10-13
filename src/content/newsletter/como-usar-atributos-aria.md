@@ -1,7 +1,7 @@
 ---
-issue: "05"
-title: "Como usar atributos ARIA sem passar vergonha"
-date: "2023-12-18"
+issue: '05'
+title: 'Como usar atributos ARIA sem passar vergonha'
+date: '2023-12-18'
 ---
 
 Essa é a última carta sobre acessibilidade do ano de 2023. Vamos retornar em Janeiro, com muita informação útil e novidades.
@@ -22,7 +22,7 @@ Porém, ao conferir o HTML escrito, estava assim:
 
 ## **Explicando**
 
-Toda vez que usamos algum dos três  atributos ARIA, _role, states e properties_ **alteramos a semântica do elemento HTML**.
+Toda vez que usamos algum dos três  atributos ARIA, *role, states e properties* **alteramos a semântica do elemento HTML**.
 
 Guarda essa informação: **alteramos a semântica do elemento.**
 
@@ -34,13 +34,13 @@ Para resolver esse problema, devemos ter em mente as 5 regras de uso dos atribut
 
 1. Use sempre que possível recursos nativos do HTML 5.1;
 
-3. **Não altere a semântica nativa, a menos que você realmente precise;**
+2. **Não altere a semântica nativa, a menos que você realmente precise;**
 
-5. Todos os controles ARIA devem ser interativos via teclado;
+3. Todos os controles ARIA devem ser interativos via teclado;
 
-7. Não use em um elemento **focalizável**, como links e campos de formulários os atributos `role="presentation" e` `aria-hidden="true"`;
+4. Não use em um elemento **focalizável**, como links e campos de formulários os atributos `role="presentation" e` `aria-hidden="true"`;
 
-9. Todos os elementos interativos, como links, botões, campos de formulários, devem ter um **nome acessível.**
+5. Todos os elementos interativos, como links, botões, campos de formulários, devem ter um **nome acessível.**
 
 Em nosso exemplo, a segunda regra é violada, pois, o elemento **<a>** não necessita de mudar sua semântica.
 

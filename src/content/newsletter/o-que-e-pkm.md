@@ -1,8 +1,8 @@
 ---
-issue: "17"
-title: "O que é PKM?"
-date: "2024-01-31"
-coverImage: "obsidian-e1732042685511.png"
+issue: '17'
+title: 'O que é PKM?'
+date: '2024-01-31'
+coverImage: 'obsidian-e1732042685511.png'
 ---
 
 Ontem foi um dia atípico, sabe aqueles dias que nada parece se encaixar e você fica meio perdido?
@@ -29,9 +29,9 @@ Além da organização e produtividade, precisamos de uma forma de armazenar nos
 
 - Fácil de usar;
 
-Para dar um _**upgrade**_ nesse aspecto, podemos usar um conceito pouco explorado (ainda) no Brasil: o **PKM**.
+Para dar um ***upgrade*** nesse aspecto, podemos usar um conceito pouco explorado (ainda) no Brasil: o **PKM**.
 
-PKM é sigla (mais uma pra decorar, malditos americanos) para _Personal Knowledge Management_ ou **Gestão de conhecimento pessoal**.
+PKM é sigla (mais uma pra decorar, malditos americanos) para *Personal Knowledge Management* ou **Gestão de conhecimento pessoal**.
 
 Ele é um processo de coleta de informações que uma pessoa usa para:
 
@@ -53,7 +53,7 @@ Ou seja, com ele você conseguirá coletar informações, classificar e usá-las
 
 Lembro quando não conhecia esses conceitos, vivia sempre tentando lembrar onde anotei alguma informação, minhas fotos, documentos, arquivos era uma completa bagunça.
 
-E quando precisava de fazer _backup_, era um deus nos acuda (quantas vezes já perdi documentos importantes).
+E quando precisava de fazer *backup*, era um deus nos acuda (quantas vezes já perdi documentos importantes).
 
 Com o PKM e o Segundo Cérebro isso mudou meu cenário. Hoje tenho certeza onde estão as minhas informações e sei claramente aonde procurar.
 
@@ -81,7 +81,7 @@ Sinta-se livre para escolher algum e usar, já experimentei vários e acabei esc
 
 Eu gosto dele por uma infinita de razões, mas vou te mostrar de forma prática, porque escolhi ele.
 
-- Armazenamento local em um formato acessível o **_markdown_****. Por que é importante?** Seus dados sempre serão seus. Isso significa que os dados permanecerão sempre meus, e num formato que sempre poderei editar e manter. Isso é ótimo para independência do fornecedor, privacidade, segurança, etc;
+- Armazenamento local em um formato acessível o **_markdown_\*\***. Por que é importante?\*\* Seus dados sempre serão seus. Isso significa que os dados permanecerão sempre meus, e num formato que sempre poderei editar e manter. Isso é ótimo para independência do fornecedor, privacidade, segurança, etc;
 
 - Um desempenho alto em comparação a outras alternativas baseadas na web. Comece rápido sem muita preocupação;
 

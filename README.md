@@ -69,6 +69,7 @@ The template uses the following font families:
 ### Animations
 
 Custom animations are included:
+
 - Fade In
 - Slide Up
 - Slide Down

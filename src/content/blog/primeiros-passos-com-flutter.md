@@ -1,7 +1,7 @@
 ---
 title: Primeiros passos com Flutter
 publishDate: 2021-11-16
-category: "Frontend"
+category: 'Frontend'
 url: https://brunopulis.com/primeiros-passos-com-flutter/
 ---
 

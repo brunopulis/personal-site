@@ -8,6 +8,7 @@ metadata:
 tags:
   - pessoal
 ---
+
 Vermelho escorrente,
 Como um rubi incandescente,
 Derretido em lava rubra

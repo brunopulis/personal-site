@@ -1,8 +1,8 @@
 ---
-issue: "46"
-title: "Se todos falassem a mesma língua?"
-date: "2024-12-18"
-coverImage: "images/the-cleveland-museum-of-art-axm7m_45_zk-unsplash-scaled.jpg"
+issue: '46'
+title: 'Se todos falassem a mesma língua?'
+date: '2024-12-18'
+coverImage: 'images/the-cleveland-museum-of-art-axm7m_45_zk-unsplash-scaled.jpg'
 ---
 
 Opa!
@@ -29,7 +29,7 @@ https://www.youtube.com/watch?v=VFOrGkAvjAE
 
 Esse filme trouxe um misto de reflexão e paz. Se quiser que faço uma resenha me responda esse e-mail. Mas vamos o que interessa.
 
-* * *
+---
 
 Já imaginou se todos pudessem falar a mesma língua? Navegadores, celulares e tecnologias assistivas seriam beneficiados.
 
@@ -47,7 +47,9 @@ O documento vem escrito da seguinte forma:
 
 ```html
 <!DOCTYPE html>
-<html lang="en">...</html>
+<html lang="en">
+  ...
+</html>
 ```
 
 E cá pra nós, aposto que você nunca percebeu isso ou se importou, não é mesmo? Mas ai que mora o perigo jovem padawan.
@@ -80,7 +82,9 @@ A correção é bem trivial, mas ajuda a todos. Faça isso:
 
 ```html
 <!DOCTYPE html>
-<html lang="pt-br">...</html>
+<html lang="pt-br">
+  ...
+</html>
 ```
 
 **Para fixar:  

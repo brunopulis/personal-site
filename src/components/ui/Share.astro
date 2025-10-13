@@ -1,44 +1,44 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components'
 
-const { tweetText, currentUrl } = Astro.props;
+const { tweetText, currentUrl } = Astro.props
 
 const shareLinks = [
   {
-    name: "Email",
-    icon: "email",
+    name: 'Email',
+    icon: 'email',
     href: `mailto:?subject=${tweetText}&body=${currentUrl}`,
   },
   {
-    name: "Twitter",
-    icon: "twitter",
+    name: 'Twitter',
+    icon: 'twitter',
     href: `https://twitter.com/intent/tweet?text=${tweetText}&url=${currentUrl}`,
   },
   {
-    name: "Facebook",
-    icon: "facebook",
+    name: 'Facebook',
+    icon: 'facebook',
     href: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
   },
   {
-    name: "Threads",
-    icon: "threads",
-    href: `https://www.threads.net/share?text=${tweetText}&url=${currentUrl}`
+    name: 'Threads',
+    icon: 'threads',
+    href: `https://www.threads.net/share?text=${tweetText}&url=${currentUrl}`,
   },
   {
-    name: "Mastodon",
-    icon: "mastodon",
+    name: 'Mastodon',
+    icon: 'mastodon',
     href: `https://mastodon.social/share?text=${tweetText}&url=${currentUrl}`,
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
+    name: 'LinkedIn',
+    icon: 'linkedin',
     href: `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${tweetText}`,
-  }
-];
+  },
+]
 ---
 
 <div class="flex items-center gap-5 text-lg" role="group" aria-label="Share on social media">
-  <span class="text-base font-bold text-blacktext dark:text-white">Share </span>
+  <span class="text-blacktext text-base font-bold dark:text-white">Share </span>
   {
     shareLinks.map((link) => (
       <a

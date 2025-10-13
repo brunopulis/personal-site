@@ -11,13 +11,16 @@ import books from '@/data/books.json'
 const livrosPorAno = Object.entries(
   books
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .reduce((acc, book) => {
-      const year = new Date(book.date).getFullYear();
-      acc[year] = acc[year] || [];
-      acc[year].push(book);
-      return acc;
-    }, {} as Record<string, typeof books[0][]>)
-).sort((a, b) => Number(b[0]) - Number(a[0]));
+    .reduce(
+      (acc, book) => {
+        const year = new Date(book.date).getFullYear()
+        acc[year] = acc[year] || []
+        acc[year].push(book)
+        return acc
+      },
+      {} as Record<string, (typeof books)[0][]>,
+    ),
+).sort((a, b) => Number(b[0]) - Number(a[0]))
 ---
 
 <Layout title="Minha Biblioteca - Bruno Pulis" description="Livros que li ao longo dos anos">
@@ -47,42 +50,44 @@ const livrosPorAno = Object.entries(
     </section>
 
     <!-- Filtros -->
-        <!-- Filtros -->
+    <!-- Filtros -->
     <section class="mx-auto max-w-7xl px-6 py-12">
       <div class="space-y-12">
         <!-- Agrupar livros por ano e renderizar usando Astro syntax -->
-        {livrosPorAno.map(([year, booksInYear]) => (
-          <div class="space-y-6">
-            <h2 class="text-2xl font-bold text-gray-800">Lidos em {year}</h2>
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {booksInYear.map((book) => (
-                <article class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
-                  <img src={book.cover} alt={book.title} class="h-72 w-full object-cover" />
-                  <div class="p-6">
-                    <h3 class="mb-1 text-xl font-semibold">{book.title}</h3>
-                    <p class="mb-2 text-sm text-gray-600">por {book.author}</p>
-                    <p class="mb-4 text-sm text-gray-700">{book.description}</p>
-                    <blockquote class="mb-4 border-l-4 border-red-500 pl-3 text-gray-600 italic">
-                      "{book.quotes}"
-                    </blockquote>
-                    <div class="flex items-center gap-2">
-                      {Array.from({ length: book.rating }).map(() => (
-                        <Star class="h-4 w-4 text-yellow-500" aria-hidden="true" />
-                      ))}
+        {
+          livrosPorAno.map(([year, booksInYear]) => (
+            <div class="space-y-6">
+              <h2 class="text-2xl font-bold text-gray-800">Lidos em {year}</h2>
+              <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                {booksInYear.map((book) => (
+                  <article class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+                    <img src={book.cover} alt={book.title} class="h-72 w-full object-cover" />
+                    <div class="p-6">
+                      <h3 class="mb-1 text-xl font-semibold">{book.title}</h3>
+                      <p class="mb-2 text-sm text-gray-600">por {book.author}</p>
+                      <p class="mb-4 text-sm text-gray-700">{book.description}</p>
+                      <blockquote class="mb-4 border-l-4 border-red-500 pl-3 text-gray-600 italic">
+                        "{book.quotes}"
+                      </blockquote>
+                      <div class="flex items-center gap-2">
+                        {Array.from({ length: book.rating }).map(() => (
+                          <Star class="h-4 w-4 text-yellow-500" aria-hidden="true" />
+                        ))}
+                      </div>
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {book.tags.map((tag) => (
+                          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">{tag}</span>
+                        ))}
+                      </div>
                     </div>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                      {book.tags.map((tag) => (
-                        <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-  </main>
-  <Footer />
-</Layout>
+          ))
+        }
+      </div>
+      <Footer />
+    </section>
+  </main></Layout
+>

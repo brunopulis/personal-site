@@ -8,6 +8,7 @@ metadata:
 tags:
   - teologia
 ---
+
 A maldade tem suas faces conhecidas e desconhecidas.
 E tão estranho,
 tão absurdo

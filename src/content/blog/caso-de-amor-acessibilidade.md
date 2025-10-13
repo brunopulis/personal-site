@@ -6,6 +6,7 @@ canonical: https://brunopulis.com/caso-de-amor-acessibilidade/
 tags:
   - acessibilidade
 ---
+
 ![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](images/stormtropper.avif)
 
 Aos que me conhecem sabem que eu sou defensor de uma **Web inclusiva** e não exclusiva, por isso luto pela Acessibilidade Web no Brasil.

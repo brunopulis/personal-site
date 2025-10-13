@@ -1,7 +1,7 @@
 ---
-issue: "35"
-title: "Indicações Prime Day"
-date: "2024-07-19"
+issue: '35'
+title: 'Indicações Prime Day'
+date: '2024-07-19'
 ---
 
 **18 de julho de 2024,**
@@ -16,7 +16,7 @@ Obrigado pelos nossos leitores; atingimos os 288 leitores esta semana.
 
 Espero que seja útil; divirtam-se!
 
-* * *
+---
 
 Esta semana vou aproveitar o Prime Day e recomendar alguns títulos interessantes que podem te ajudar.
 
@@ -28,7 +28,7 @@ Vamos lá?
 4. [Psicologia Financeira](https://amzn.to/4bR7iOH): li ele ano passado, um dos melhores livros sobre finanças me ajudou a ver o dinheiro de uma forma completamente diferente;
 5. [Box Trilogia Senhor dos Anéis](https://amzn.to/3LtOzOd): como um bom nerd de respeito, sou obrigado a indicar essa belezura. Uma edição de 2019 com acabamento perfeito e um super desconto.
 
-* * *
+---
 
 ## **Dump Cerebral**
 
