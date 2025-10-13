@@ -1,10 +1,9 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header.astro'
-import HeroSection from '@/components/layout/HeroSection.astro'
 import Footer from '@/components/layout/Footer.astro'
-
-import { Image } from 'astro:assets'
 
 import magraDeVerdade from '@/assets/projects/magra-de-verdade.webp'
 import bibliotecaDaRevolucao from '@/assets/projects/biblioteca-da-revolucao.webp'
@@ -106,8 +105,8 @@ const projects = projectsData.projects
         {/* Stats */}
         <div class="mt-12 grid gap-6 md:grid-cols-4">
           <div class="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
-            <div class="mb-2 text-3xl font-bold">50+</div>
-            <div class="text-sm text-gray-300">Projetos concluídos</div>
+            <span class="mb-2 text-3xl font-bold">50+</span>
+            <span class="text-sm text-gray-300">Projetos concluídos</span>
           </div>
           <div class="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
             <div class="mb-2 text-3xl font-bold">100%</div>
@@ -128,20 +127,6 @@ const projects = projectsData.projects
     {/* Filtros e Busca */}
     <section class="sticky top-[73px] z-40 border-b border-gray-200 bg-gray-50">
       <div class="mx-auto max-w-6xl px-6 py-6">
-        {/* Busca */}
-        <div class="mb-6">
-          <div class="relative max-w-md">
-            <Search class="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2 transform text-gray-400" />
-            <input
-              type="text"
-              placeholder="Buscar projetos, tecnologias..."
-              value={busca}
-              onChange={(e) => setBusca(e.target.value)}
-              class="w-full rounded-lg border border-gray-300 py-3 pr-4 pl-10 focus:border-transparent focus:ring-2 focus:ring-red-500"
-            />
-          </div>
-        </div>
-
         {/* Categorias */}
         <div class="flex items-center gap-3 overflow-x-auto pb-2">
           <Filter class="h-5 w-5 flex-shrink-0 text-gray-500" />
@@ -149,7 +134,6 @@ const projects = projectsData.projects
             categorias.map((categoria) => (
               <button
                 key={categoria.id}
-                onClick={() => setFiltroAtivo(categoria.id)}
                 class={`rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition ${
                   filtroAtivo === categoria.id
                     ? 'bg-red-600 text-white'
