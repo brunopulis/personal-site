@@ -1,8 +1,9 @@
 ---
 title: Caminhos para uma web inclusiva
 publishDate: 2014-02-03
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
+
 Sou um defensor da acessibilidade digital em sua na totalidade. Devemos tornar nossas ferramentas inclusivas a qualquer tipo de público.
 Isto devido ao convívio e determinação de alguns profissionais da acessibilidade, como:
 

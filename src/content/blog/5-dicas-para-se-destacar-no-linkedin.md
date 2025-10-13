@@ -2,10 +2,11 @@
 title: Como construir um LinkedIn campeão
 publishDate: 2021-04-25
 draft: false
-category: "Carreira"
-tags: ["carreira"]
+category: 'Carreira'
+tags: ['carreira']
 ---
-* * *
+
+---
 
 O **LinkedIn** talvez seja a maior rede social corporativa da atualidade. A plataforma cresce exponencialmente e agrega bons recursos.
 
@@ -15,7 +16,7 @@ Nesse artigo, vou compartilhar 5 dicas que podem melhor seu posicionamento na re
 
 Vamos lá?
 
-* * *
+---
 
 O primeiro passo para criar um perfil campeão no LinkedIn é usar o [Social Selling Index](https://business.linkedin.com/sales-solutions/social-selling/the-social-selling-index-ssi).
 
@@ -37,7 +38,7 @@ Cada usuário na rede tem uma pontuação, a partir dela, seu posicionamento é 
 
 Para utilizá-lo basta selecionar o botão **“Get your score free”**, conforme a imagem abaixo:
 
-![Ferramenta do Linkedin que avalia suas estatísticas. Nela existe um botão com o rótulo &quot;Get your score free&quot;](./images/ssi-linkedin.png)
+![Ferramenta do Linkedin que avalia suas estatísticas. Nela existe um botão com o rótulo "Get your score free"](./images/ssi-linkedin.png)
 
 O resultado do meu _score_, no momento da escrita desse artigo, foi:
 
@@ -71,7 +72,7 @@ Ele gera diversos formatos para fotos de perfil, o resultado é como, por exempl
 
 Percebo duas vantagens nesse serviço, Além de ser gratuito irá deixar sua foto na rede muito mais apresentável e profissional.
 
-* * *
+---
 
 ## Resumo profissional
 

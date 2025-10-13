@@ -1,7 +1,7 @@
 ---
-title: "Review: TDC BH 19"
+title: 'Review: TDC BH 19'
 publishDate: 2019-06-17
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/review-tdc-bh-19/
 ---
 

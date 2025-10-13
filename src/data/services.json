@@ -2,7 +2,7 @@
   {
     "title": "Mentoria",
     "description": "Para profissionais que desejam aprender de forma, prática e clara.",
-  "icon": "Search",
+    "icon": "Search",
     "deliveries": [
       "Diagnóstico inicial e definição de objetivos claros;",
       "Sessões individuais ou em grupo, com foco prático;",
@@ -14,7 +14,7 @@
   {
     "title": "Auditoria de Acessibilidade",
     "description": "Análise completa da acessibilidade do seu site seguindo padrões WCAG.",
-  "icon": "ShieldCheck",
+    "icon": "ShieldCheck",
     "deliveries": [
       "Avaliação técnica detalhada;",
       "Identificação de barreiras;",
@@ -27,49 +27,29 @@
   {
     "title": "Remediação de documentos",
     "description": "Adaptação de documentos digitais para garantir total acessibilidade.",
-  "icon": "Monitor",
-    "deliveries": [
-      "PDFs acessíveis;",
-      "Documentos Office;",
-      "Apresentações inclusivas;",
-      "Material didático."
-    ],
+    "icon": "Monitor",
+    "deliveries": ["PDFs acessíveis;", "Documentos Office;", "Apresentações inclusivas;", "Material didático."],
     "link": "/servicos/remediacao-de-documentos",
     "linkText": "Conheça a remediação"
   },
   {
     "title": "Remediação de Sites",
     "description": "Correção de problemas de acessibilidade em sites e aplicações existentes.",
-    "deliveries": [
-      "Correção de código;",
-      "Melhorias de UX;",
-      "Otimização de performance;",
-      "Testes de validação."
-    ],
+    "deliveries": ["Correção de código;", "Melhorias de UX;", "Otimização de performance;", "Testes de validação."],
     "link": "/servicos/palestras-treinamentos",
     "linkText": "Contrate minhas palestras"
   },
   {
     "title": "Palestras",
     "description": "Apresentações inspiradoras sobre acessibilidade digital e inclusão.",
-    "deliveries": [
-      "Palestras personalizadas;",
-      "Temas atuais;",
-      "Engajamento do público;",
-      "Inspiração para ação."
-    ],
+    "deliveries": ["Palestras personalizadas;", "Temas atuais;", "Engajamento do público;", "Inspiração para ação."],
     "link": "/servicos/palestras-treinamentos",
     "linkText": "Contrate minhas palestras"
   },
   {
     "title": "Treinamentos",
     "description": "Capacitação de equipes em desenvolvimento acessível e design inclusivo.",
-    "deliveries": [
-      "Workshops práticos;",
-      "Treinamento personalizado;",
-      "Material didático;",
-      "Certificação."
-    ],
+    "deliveries": ["Workshops práticos;", "Treinamento personalizado;", "Material didático;", "Certificação."],
     "link": "/servicos/palestras-treinamentos",
     "linkText": "Contrate minhas palestras"
   }

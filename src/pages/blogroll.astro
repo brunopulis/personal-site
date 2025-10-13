@@ -1,12 +1,12 @@
 ---
 import { ExternalLink, RssIcon } from '@lucide/astro'
 
-import Layout from "@/layouts/Layout.astro"
-import Header from "@/components/layout/Header.astro"
-import HeroSection from "@/components/layout/HeroSection.astro"
-import Footer from "@/components/layout/Footer.astro"
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
+import Footer from '@/components/layout/Footer.astro'
 
-import blogrolls from "@/data/blogroll.json"
+import blogrolls from '@/data/blogroll.json'
 
 // ## Acessibilidade
 
@@ -58,68 +58,66 @@ import blogrolls from "@/data/blogroll.json"
 ---
 
 <Layout title="Blogroll - Bruno Pulis">
-	<Header />
-	<main>
-		<HeroSection title="Blogroll" description="Blogs que valem a pena dar uma olhada" />
+  <Header />
+  <main>
+    <HeroSection title="Blogroll" description="Blogs que valem a pena dar uma olhada" />
 
-		<section class="bg-white">
-			<div class="container-custom py-8">
-				<section>
-					<div class="container">
-						{
-							// Agrupa blogs por categoria
-							Object.entries(
-								blogrolls.reduce((acc, blog) => {
-									acc[blog.category] = acc[blog.category] || [];
-									acc[blog.category].push(blog);
-									return acc;
-								}, {})
-							)
-							.sort(([a], [b]) => a.localeCompare(b))
-							.map(([category, blogs]) => (
-								<div class="mb-12">
-									<h2 class="mb-6 text-2xl font-bold text-blood-red-800">{category}</h2>
-									<div class="grid gap-8 md:grid-cols-3">
-										{blogs.map((blogroll) => (
-											<article class="bg-gray-100 border border-gray-200 p-6">
-												<h3 class="mb-2 text-xl font-semibold text-blood-red-800">
-													{blogroll.name}
-												</h3>
-												<p class="text-errie-black-900">{blogroll.description}</p>
-												<ul class="flex py-4">
-													<li class="inline-flex">
-														<a
-															href={blogroll.rss}
-															target="_blank"
-															rel="noopener noreferrer"
-															class="text-blood-red-800 inline-flex items-center gap-2 font-semibold underline underline-offset-8"
-														>
-															Assinar RSS
-															<RssIcon class="h-4 w-4" />
-														</a>
-													</li>
-													<li class="ml-2 inline-flex">
-														<a
-															href={blogroll.url}
-															target="_blank"
-															rel="noopener noreferrer"
-															class="text-blood-red-800 inline-flex items-center gap-2 font-semibold underline underline-offset-8"
-														>
-															Site
-															<ExternalLink class="h-4 w-4" />
-														</a>
-													</li>
-												</ul>
-											</article>
-										))}
-									</div>
-								</div>
-							))
-						}
-					</div>
-				</section>
-			</div>
-		</section>
-	</main>
-	<Footer />
+    <section class="bg-white">
+      <div class="container-custom py-8">
+        <section>
+          <div class="container">
+            {
+              // Agrupa blogs por categoria
+              Object.entries(
+                blogrolls.reduce((acc, blog) => {
+                  acc[blog.category] = acc[blog.category] || []
+                  acc[blog.category].push(blog)
+                  return acc
+                }, {}),
+              )
+                .sort(([a], [b]) => a.localeCompare(b))
+                .map(([category, blogs]) => (
+                  <div class="mb-12">
+                    <h2 class="text-blood-red-800 mb-6 text-2xl font-bold">{category}</h2>
+                    <div class="grid gap-8 md:grid-cols-3">
+                      {blogs.map((blogroll) => (
+                        <article class="border border-gray-200 bg-gray-100 p-6">
+                          <h3 class="text-blood-red-800 mb-2 text-xl font-semibold">{blogroll.name}</h3>
+                          <p class="text-errie-black-900">{blogroll.description}</p>
+                          <ul class="flex py-4">
+                            <li class="inline-flex">
+                              <a
+                                href={blogroll.rss}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-blood-red-800 inline-flex items-center gap-2 font-semibold underline underline-offset-8"
+                              >
+                                Assinar RSS
+                                <RssIcon class="h-4 w-4" />
+                              </a>
+                            </li>
+                            <li class="ml-2 inline-flex">
+                              <a
+                                href={blogroll.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-blood-red-800 inline-flex items-center gap-2 font-semibold underline underline-offset-8"
+                              >
+                                Site
+                                <ExternalLink class="h-4 w-4" />
+                              </a>
+                            </li>
+                          </ul>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                ))
+            }
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>

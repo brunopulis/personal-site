@@ -1,7 +1,7 @@
 ---
 title: DevFest BH 2017
 publishDate: 2017-11-20
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/review-devfest-bh-2017/
 ---
 
@@ -19,7 +19,7 @@ As palestras foram divididas em três ambientes e cada apresentadora ficou respo
 
 A minha palestra foi na última trilha contando com dois monitores e um projetor, não tive nenhum problema técnico para a apresentação do tema, o que eu mais gostei foi a presença de duas pessoas surdas e uma com baixa visão que puderam atestar o preço da falta de acessibilidade em nossos produtos.
 
-* * *
+---
 
 ## Estamos juntos (we are together)
 

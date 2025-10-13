@@ -1,63 +1,60 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import Footer from "@/components/layout/Footer.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
 
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 
-const allNotes = await getCollection('notes');
+const allNotes = await getCollection('notes')
 
 const sortedNotes = allNotes.sort((a, b) => {
-  return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime();
-});
+  return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
+})
 ---
 
 <Layout title="Notas - Bruno Pulis">
   <Header />
-  <HeroSection
-    title="Notas"
-    description="Minhas notas pessoais"
-  />
+  <HeroSection title="Notas" description="Minhas notas pessoais" />
   <main>
-    <section class="py-16 bg-white h-entry">
+    <section class="h-entry bg-white py-16">
       <div class="container-custom mx-auto">
         <div class="mx-auto">
           <div class="">
             <div class="">
               <div class="prose prose-lg max-w-none">
-                {sortedNotes.length > 0 ? (sortedNotes.map((note) => (
-                  <blockquote class="bg-gray-100 rounded-lg border  mb-4 p-5 ">
-                    {note.body && (
-                      <p class="note-excerpt">{note.body}</p>
-                    )}
+                {
+                  sortedNotes.length > 0 ? (
+                    sortedNotes.map((note) => (
+                      <blockquote class="mb-4 rounded-lg border bg-gray-100 p-5">
+                        {note.body && <p class="note-excerpt">{note.body}</p>}
 
-                    <hr class="my-4 h-0.5 border-t-0 bg-neutral-50" />
-                    <footer class="note-footer">
-                      {note.data.date && (
-
-                      <p class="note-date text-left">
-                        {new Date(note.data.date).toLocaleDateString('pt-BR', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
-                      </p>
-                    )}
-                    </footer>
-                  </blockquote>
-                ))
-
-              ) : (
-                <div class="empty-state">
-                  <p>Nenhuma nota encontrada. Adicione suas notas na pasta content/notes.</p>
-                </div>
-              )}
+                        <hr class="my-4 h-0.5 border-t-0 bg-neutral-50" />
+                        <footer class="note-footer">
+                          {note.data.date && (
+                            <p class="note-date text-left">
+                              {new Date(note.data.date).toLocaleDateString('pt-BR', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                              })}
+                            </p>
+                          )}
+                        </footer>
+                      </blockquote>
+                    ))
+                  ) : (
+                    <div class="empty-state">
+                      <p>Nenhuma nota encontrada. Adicione suas notas na pasta content/notes.</p>
+                    </div>
+                  )
+                }
               </div>
             </div>
+          </div>
         </div>
       </div>
     </section>
-  </main>
-  <Footer />
-</Layout>
+    <Footer />
+  </main></Layout
+>

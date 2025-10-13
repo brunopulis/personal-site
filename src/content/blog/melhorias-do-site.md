@@ -1,11 +1,12 @@
 ---
 title: Melhorias do meu site
 publishDate: 2024-07-18
-category: "Pessoal"
+category: 'Pessoal'
 url: https://brunopulis.com/melhorias-do-site/
 tags:
   - pessoal
 ---
+
 Não é segredo para ninguém que acompanha esse site/blog que mudava constantemente.  
 Era uma tentativa de deixar o mais acessível e otimizado possível, só que acabei caindo em uma espiral de mudanças sem sentido.
 

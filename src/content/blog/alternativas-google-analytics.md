@@ -2,9 +2,10 @@
 title: Alternativas ao Google Analytics
 publishDate: 2024-05-09
 draft: false
-category: "Frontend"
-tags: ["web analytics", "tools"]
+category: 'Frontend'
+tags: ['web analytics', 'tools']
 ---
+
 Decidi documentar as mudanças que estou fazendo no meu site. A ideia é simplificá-lo ao máximo, não quero depender de recursos complexos e sem sentido. Tenho percebido como o desenvolvimento web se tornou complexo. Parece que vamos acumulando tantas coisas que, no final, perdemos o prazer de ter um site para chamar de seu. Por isso, esse site muda tanto, é um laboratório ao ar livre. Experimento as minhas ideias e deixo elas fluírem.
 
 ## Introdução
@@ -16,7 +17,7 @@ Sempre quando crio um site, uma das primeiras coisas é configurar o Google Anal
 - Páginas mais visitadas;
 - Palavras-chave.
 
-Seria lindo se o Analytics tivesse essa visão mais minimalista de resultados, infelizmente em sua configuração padrão não é. Confesso, fico muito perdido em vários _widgets,_ gráficos e dados. Desde então, comecei a procurar algumas alternativas para substituí-lo. A minha sensação usando o Google Analytics era: **usar um canhão para matar um formiga**.
+Seria lindo se o Analytics tivesse essa visão mais minimalista de resultados, infelizmente em sua configuração padrão não é. Confesso, fico muito perdido em vários *widgets,* gráficos e dados. Desde então, comecei a procurar algumas alternativas para substituí-lo. A minha sensação usando o Google Analytics era: **usar um canhão para matar um formiga**.
 
 ## Quais métricas realmente preciso?
 

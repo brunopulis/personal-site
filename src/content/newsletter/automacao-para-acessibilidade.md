@@ -1,7 +1,7 @@
 ---
-issue: "27"
-title: "Setup de automação para acessibilidade - parte 1"
-date: "2024-04-11"
+issue: '27'
+title: 'Setup de automação para acessibilidade - parte 1'
+date: '2024-04-11'
 ---
 
 Essa seria somente uma carta, mas decidi dividir em 3 partes.
@@ -10,7 +10,7 @@ No final dessas três cartas você vai conseguir montar um processo de teste de 
 
 Hoje vamos explorar um tipo de teste que é ignorado por muitos, mas essencial para a garantia da qualidade: os **testes estáticos**.
 
-* * *
+---
 
 ## Antes, um contexto
 
@@ -64,7 +64,7 @@ No nosso contexto, recomendo usar o [axe Accessibility Linter](https://marketpla
 
 O objetivo desse cara é simples: te dedurar se você escrever HTML errado. Ele funciona para:
 
--  _React_ (JSX);
+-  *React* (JSX);
 
 - React Native;
 

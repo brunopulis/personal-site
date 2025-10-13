@@ -1,24 +1,17 @@
 ---
-import { Image } from "astro:assets";
-import me from "@/assets/me.webp";
+import { Image } from 'astro:assets'
+import me from '@/assets/me.webp'
 ---
 
-<section class="px-6 py-12 lg:px-20 bg-gray-100">
+<section class="bg-gray-100 px-6 py-12 lg:px-20">
   <div class="mx-auto max-w-4xl">
-    <div class="bg-white text-card-foreground flex flex-col gap-6 rounded-xl border p-8">
+    <div class="text-card-foreground flex flex-col gap-6 rounded-xl border bg-white p-8">
       <div class="flex items-center gap-6">
         <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full">
-          <Image
-            src={me}
-            alt="Bruno Pulis"
-            width={64}
-            height={64}
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
+          <Image src={me} alt="Bruno Pulis" width={64} height={64} class="h-full w-full object-cover" loading="lazy" />
         </div>
         <div class="flex-1">
-          <h3 class="mb-2 text-xl font-semibold text-blood-red-800">Bruno Pulis</h3>
+          <h3 class="text-blood-red-800 mb-2 text-xl font-semibold">Bruno Pulis</h3>
           <p class="mb-4 leading-relaxed text-gray-600">
             Designer e desenvolvedor frontend com mais de 6 anos de experiência criando produtos digitais. Especialista
             em React, TypeScript e Design Systems. Apaixonado por compartilhar conhecimento e ajudar outros

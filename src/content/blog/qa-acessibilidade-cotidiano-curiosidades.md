@@ -1,7 +1,7 @@
 ---
-title: "QA de acessibilidade: cotidiano e curiosidades"
+title: 'QA de acessibilidade: cotidiano e curiosidades'
 publishDate: 2021-08-22
-category: "Qualidade de Software"
+category: 'Qualidade de Software'
 url: https://brunopulis.com/qa-acessibilidade-cotidiano-curiosidades/
 ---
 
@@ -13,7 +13,7 @@ Neste artigo, irei mostrar os desafios, oportunidades e curiosidades que enfrent
 
 Além disso, vou dar algumas dicas bônus, vamos lá?
 
-* * *
+---
 
 ## **Quais as diferenças de um QA de acessibilidade?**
 

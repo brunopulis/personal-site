@@ -1,7 +1,7 @@
 ---
 title: Para que serve o atributo lang no HTML?
 publishDate: 2020-01-14
-category: "Frontend"
+category: 'Frontend'
 url: https://brunopulis.com/usando-o-atributo-lang-corretamente/
 ---
 
@@ -43,7 +43,7 @@ Usando o idioma para o documento inteiro:
 
 ```html
 <!-- um documento HTML em espanhol -->
-<html lang="es">
+<html lang="es"></html>
 ```
 
 Usando para partes do documento:
@@ -77,7 +77,7 @@ Uma página produzida na Alemanha e escrita em HTML inclui conteúdo em alemão 
 
 ```html
 <!-- um documento HTML com conteúdo em alemão -->
-<html lang="de">
+<html lang="de"></html>
 ```
 
 ### Idiomas em partes

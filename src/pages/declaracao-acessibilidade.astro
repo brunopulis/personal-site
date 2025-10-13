@@ -1,8 +1,8 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import Footer from "@/components/layout/Footer.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import Footer from '@/components/layout/Footer.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
 ---
 
 <Layout title="Declaração de Acessibilidade - Bruno Pulis">
@@ -14,20 +14,30 @@ import HeroSection from "@/components/layout/HeroSection.astro";
     />
 
     <section class="py-16">
-      <div class="max-w-3xl mx-auto ">
-        <article class="max-w-3xl mx-auto prose prose-lg">
-          <h2 class="text-5xl mb-6">Introdução</h2>
+      <div class="mx-auto max-w-3xl">
+        <article class="prose prose-lg mx-auto max-w-3xl">
+          <h2 class="mb-6 text-5xl">Introdução</h2>
           <p>
-            Esta declaração de acessibilidade aplica-se a [URL do site]. Em [Nome da organização], estamos comprometidos em garantir acessibilidade digital para pessoas de todas as habilidades. Acreditamos que todos devem ter igual acesso à informação e funcionalidade na web, independentemente de limitações físicas ou tecnológicas. A acessibilidade é um valor fundamental em nosso compromisso de proporcionar uma experiência de usuário inclusiva.
+            Esta declaração de acessibilidade aplica-se a [URL do site]. Em [Nome da organização], estamos comprometidos
+            em garantir acessibilidade digital para pessoas de todas as habilidades. Acreditamos que todos devem ter
+            igual acesso à informação e funcionalidade na web, independentemente de limitações físicas ou tecnológicas.
+            A acessibilidade é um valor fundamental em nosso compromisso de proporcionar uma experiência de usuário
+            inclusiva.
           </p>
 
           <h2 class="my-5">O que estou fazendo?</h2>
           <p class="mb-3">
-            Para tornar o site acessível, utilizei à <abbr title="Diretrizes de Acessibilidade de Conteúdo Web">WCAG 2.1</abbr>.
-            Elas explicam como tornar e manter o conteúdo da web mais acessível para todos e como manter sua simplicidade de uso.
+            Para tornar o site acessível, utilizei à <abbr title="Diretrizes de Acessibilidade de Conteúdo Web"
+              >WCAG 2.1</abbr
+            >. Elas explicam como tornar e manter o conteúdo da web mais acessível para todos e como manter sua
+            simplicidade de uso.
           </p>
 
-          <p class="mb-3">As diretrizes possuem três níveis de acessibilidade (A, AA e AAA). Escolhi para meu site o <strong>nível AA</strong>.</p>
+          <p class="mb-3">
+            As diretrizes possuem três níveis de acessibilidade (A, AA e AAA). Escolhi para meu site o <strong
+              >nível AA</strong
+            >.
+          </p>
           <p class="mb-3">
             Escolhi esse nível, pois se trata de um nível intermediário e cobre diversos aspectos da acessibilidade web.
             Contudo, a escolha não invalida o uso de alguns critérios de sucesso do nível AAA.
@@ -36,7 +46,7 @@ import HeroSection from "@/components/layout/HeroSection.astro";
           <h3 class="my-5">Trabalho a fazer</h3>
           <p class="mb-3">Tenho vários planos para o site, mas um dos primeiros itens para realizar serão:</p>
 
-          <ul class="list-disc list-inside mb-3">
+          <ul class="mb-3 list-inside list-disc">
             <li>Dark mode;</li>
             <li>Remove dependências de CSS.</li>
           </ul>
@@ -44,15 +54,34 @@ import HeroSection from "@/components/layout/HeroSection.astro";
           <h3 class="my-5">O que é acessibilidade?</h3>
           <p class="mb-3">A Iniciativa Internacional de Acessibilidade Digital (WAI) define a Acessibilidade como:</p>
           <blockquote class="mb-3">
-            <p>Acessibilidade, significa que pessoas com deficiência podem usar a web. Mais especificamente, que possam perceber, compreender, navegar e interagir online e podem contribuir na web. Ela também beneficia outras pessoas, especialmente idosos cujas habilidades mudam com a idade.</p>
+            <p>
+              Acessibilidade, significa que pessoas com deficiência podem usar a web. Mais especificamente, que possam
+              perceber, compreender, navegar e interagir online e podem contribuir na web. Ela também beneficia outras
+              pessoas, especialmente idosos cujas habilidades mudam com a idade.
+            </p>
           </blockquote>
 
           <p class="mb-3">
-            Para se aprofundar, te convido a ler os artigos: <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" class="underline underline-offset-4 hover:text-blood-red" rel="noopener"> e introdução dos conceitos de acessibilidade</a> e <a class="underline underline-offset-4 hover:text-blood-red" href="https://brunopulis.com/introducao-acessibilidade-web/">acessibilidade Web: como começar do jeito certo</a>.
+            Para se aprofundar, te convido a ler os artigos: <a
+              href="https://www.w3.org/WAI/fundamentals/accessibility-intro/"
+              class="hover:text-blood-red underline underline-offset-4"
+              rel="noopener"
+            >
+              e introdução dos conceitos de acessibilidade</a
+            > e <a
+              class="hover:text-blood-red underline underline-offset-4"
+              href="https://brunopulis.com/introducao-acessibilidade-web/"
+              >acessibilidade Web: como começar do jeito certo</a
+            >.
           </p>
 
           <h3 class="my-5">Encontrou alguma barreira de acesso?</h3>
-          <p class="mb-3">Caso você encontre alguma barreira de acesso, <a href="mailto:hello@brunopulis.com" class="underline underline-offset-4 hover:text-blood-red">entre em contato imediatamente</a>.</p>
+          <p class="mb-3">
+            Caso você encontre alguma barreira de acesso, <a
+              href="mailto:hello@brunopulis.com"
+              class="hover:text-blood-red underline underline-offset-4">entre em contato imediatamente</a
+            >.
+          </p>
           <p class="mb-3">Monitoro constantemente o nível de conformidade para cumprir os critérios de sucesso.</p>
           <p class="mb-3">Essa declaração é um compromisso público e um documento vivo, está em constante evolução.</p>
         </article>

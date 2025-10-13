@@ -1,8 +1,8 @@
 ---
-issue: "21"
-title: "O que o Pokémon me ensinou sobre acessibilidade"
-date: "2024-02-29"
-coverImage: "pokemon.jpg"
+issue: '21'
+title: 'O que o Pokémon me ensinou sobre acessibilidade'
+date: '2024-02-29'
+coverImage: 'pokemon.jpg'
 ---
 
 Pulis Letters - Edição #21  
@@ -20,7 +20,7 @@ Lembrei de um roteiro de vídeo que nunca foi publicado.
 
 Vamos lá.
 
-* * *
+---
 
 Em dezembro de 1997 a série Pokémon, lançava um episódio que ficaria marcado na sua história.
 
@@ -53,9 +53,9 @@ Mais de 150 pessoas foram internadas e duas pessoas permaneceram hospitalizadas 
 Outras tiveram convulsões, enquanto assistiam às reportagens que exibiam alguns trechos.
 
 > **Dados importantes**
-> 
+>
 > A série parou de ser exibida durante 4 meses e quase foi cancelada e as ações da Nintendo caíram 5% na bolsa de valores.
-> 
+>
 > Uma fração das 685 crianças tratadas foram diagnosticadas com epilepsia fotossensível.
 
 A culpada por essa bagunça toda foi as luzes estroboscópicas.
@@ -109,7 +109,7 @@ Para evitar que aconteça, use a técnica:
 
 - [G19: Garantir que nenhum componente do conteúdo pisque mais de três vezes em qualquer segundo](https://www.w3.org/WAI/WCAG21/Techniques/general/G19).
 
-* * *
+---
 
 ## Qual a lição que tiro disso?
 
@@ -122,5 +122,5 @@ Projetar ignorando essas regras pode trazer danos materiais e físicos.
 Uma frase ilustra a lição que aprendi:
 
 > _**Estamos criando deficiências se não estivermos criando uma web para todos.**_
-> 
+>
 > via @emplums no Twitter

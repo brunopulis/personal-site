@@ -1,7 +1,7 @@
 ---
-issue: "35"
-title: "Por que foquei em acessibilidade?"
-date: "2024-07-13"
+issue: '35'
+title: 'Por que foquei em acessibilidade?'
+date: '2024-07-13'
 ---
 
 Olá, aqui é o Pulis com a edição 35.
@@ -41,4 +41,4 @@ Só eu sei o que já passei e ainda passo, mas quer saber?
 **Vale a pena lutar por aquilo que acredito.**
 
 > > **_Meu conselho para você é: lute com todas suas forças por aquilo que crê.  
-> > _****_E tenha certeza, seus esforços não serão em vão._**
+> > _\*\***_E tenha certeza, seus esforços não serão em vão._\*\*

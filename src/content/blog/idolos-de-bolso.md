@@ -1,9 +1,9 @@
 ---
 title: Ídolos de bolso
 publishDate: 2016-09-05
-category: "Teologia"
+category: 'Teologia'
 canonicalUrl: https://brunopulis.com/idolos-de-bolso/
-tags: ["teologia"]
+tags: ['teologia']
 ---
 
 Neste estudo, iremos abordar como o avanço da tecnologia trouxe grandes benefícios e malefícios para a humanidade e como podemos combate-los e vencer o mal que é depender estritamente de algo que deveria ser uma ferramenta, um meio e não um fim.
@@ -68,7 +68,7 @@ O cérebro passa a agir como se não mais precisasse memorizar certas informaç�
 
 Os conceitos parecem que mudaram, segundo o sociólogo polonês Zygmunt Bauman as pessoas não sabem mais a diferença de comunidade e rede.
 
-_Comunidade: comunidade precede a você. Você nasce em uma comunidade._ _Rede: Ao contrário de comunidade, a rede é feita e mantida viva por duas atividades diferentes: conectar e desconectar._
+*Comunidade: comunidade precede a você. Você nasce em uma comunidade.* *Rede: Ao contrário de comunidade, a rede é feita e mantida viva por duas atividades diferentes: conectar e desconectar.*
 
 Constatando isso concluímos biblicamente que:
 

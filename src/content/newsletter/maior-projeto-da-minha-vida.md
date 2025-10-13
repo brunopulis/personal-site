@@ -1,7 +1,7 @@
 ---
-issue: "01"
-title: "Maior projeto da minha vida"
-date: "2023-11-14"
+issue: '01'
+title: 'Maior projeto da minha vida'
+date: '2023-11-14'
 ---
 
 _**14 de Novembro, 2023.**_
@@ -22,7 +22,7 @@ A partir de então, a Mari me chamou no privado e começou a me contar que era i
 
 Esse assunto foi o pontapé para ficarmos conversando por horas a fio, todos os dias. Eu em BH e ela em Petrópolis, pouco tempo depois disse que iria visitá-la.
 
-Na cara e coragem fui, **6****h e 30min** de viagem. Lembro que chegando na rodoviária de lá estava muito frio. Mal sabia que ia sofrer por muitos meses esse frio 😂
+Na cara e coragem fui, **6\*\***h e 30min\*\* de viagem. Lembro que chegando na rodoviária de lá estava muito frio. Mal sabia que ia sofrer por muitos meses esse frio 😂
 
 Pouco tempo depois começamos a namorar e bom... Aqui estamos completando quase 1 mês de casados ❤
 
@@ -30,7 +30,7 @@ E hoje ambos trabalhamos com aquilo que nos uniu: **a acessibilidade**.
 
 ## O início do planejamento
 
-Começamos a pensar no casamento e **definimos uma data**, depois começamos a refletir: _**"como vamos nos organizar para casar num prazo de um ano?"**_
+Começamos a pensar no casamento e **definimos uma data**, depois começamos a refletir: ***"como vamos nos organizar para casar num prazo de um ano?"***
 
 Tínhamos alguns desafios pela frente:
 
@@ -70,7 +70,7 @@ Dessa forma, tínhamos uma visão macro do projeto.
 
 Usamos o [Todoist para gerenciar as tarefas do casamento](https://todoist.com/pt-BR).
 
-Criei um projeto chamado **Casamento** e usamos um _checklist_ de um portal de casamentos, listamos detalhadamente todas as tarefas que tínhamos à frente.
+Criei um projeto chamado **Casamento** e usamos um *checklist* de um portal de casamentos, listamos detalhadamente todas as tarefas que tínhamos à frente.
 
 Isso que me ajudou bastante para ter uma visão prolongada do projeto e das ações que precisava realizar mês a mês.
 

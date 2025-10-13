@@ -2,9 +2,8 @@
 title: A teologia por trás do Pokémon Go
 publishDate: 2016-08-13
 draft: false
-category: "Teologia"
+category: 'Teologia'
 ---
-
 
 “Eu temo o dia em que a tecnologia ultrapasse nossa interação humana, e o mundo terá uma geração de idiotas. — Albert Einstein”
 
@@ -29,7 +28,7 @@ Após ser lançado no Brasil, iniciou-se uma teoria conspiratória sobre o jogo 
 Me espanta que muitos estão tão preocupados com o jogo e tanta ênfase nisso.
 Pensei na hora que ouvi isso: “Sério que pessoas estão discutindo isso?”
 
-* * *
+---
 
 ## **Prós do Jogo**
 
@@ -39,7 +38,7 @@ Pelo mais cômico que possa parecer, ele tem ajudado pessoas que sofrem de depre
 
 Exemplos como esse print que vi no Facebook:
 
-![Relato de uma pessoa com depressão que conseguiu sair de casa por causa do jogo. Hoje eu andei 2,45km no meu bairro por causa de Pokémon GO. Eu sou uma pessoa que tem depressäo e ansiedade - em alguns dias é dificil ter animo at pra sair da cama. E hoje, por causa de Pokémon GO, eu levantei e sai de casa por vontade propri coisa que näo acontecia hå vårios meses. Pense nisso antes de chamar quem curte Pokémon GO de &quot;alienados&quot;. Esse jogo faz um bem danado pra algumas pessoas. ](images/pokemon-go.png)
+![Relato de uma pessoa com depressão que conseguiu sair de casa por causa do jogo. Hoje eu andei 2,45km no meu bairro por causa de Pokémon GO. Eu sou uma pessoa que tem depressäo e ansiedade - em alguns dias é dificil ter animo at pra sair da cama. E hoje, por causa de Pokémon GO, eu levantei e sai de casa por vontade propri coisa que näo acontecia hå vårios meses. Pense nisso antes de chamar quem curte Pokémon GO de "alienados". Esse jogo faz um bem danado pra algumas pessoas. ](images/pokemon-go.png)
 
 Partindo do pressuposto que o jogo realmente é do, **coisa ruim**, ele iria querer promover alguma coisa boa para pessoas com problemas?
 

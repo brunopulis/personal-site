@@ -1,8 +1,8 @@
 ---
-issue: "44"
-title: "Como fazer conexões certas"
-date: "2024-11-21"
-coverImage: "1888883-scaled-e1732138229256.jpg"
+issue: '44'
+title: 'Como fazer conexões certas'
+date: '2024-11-21'
+coverImage: '1888883-scaled-e1732138229256.jpg'
 ---
 
 Os links são um dos pilares fundamentais da web desde a sua criação por Tim Berns-Lee no CERN em 1989. São conhecidos também como hiperlinks e revolucionaram como interagimos com os conteúdos na web.
@@ -29,7 +29,7 @@ Nas próximas seções, vamos explorar:
 
 Vamos lá!?
 
-* * *
+---
 
 ## Como criar links?
 
@@ -52,7 +52,7 @@ Ele pode receber diversos atributos como: `download`, `href`, `hreflang`, `ping`
 Sua estrutura básica é formada como no código abaixo:
 
 ```markup
-<a href="contato.html">Fale conosco</a> 
+<a href="contato.html">Fale conosco</a>
 ```
 
 Esse exemplo não possui nenhum problema, todos os elementos necessários estão presentes.
@@ -62,7 +62,7 @@ Mas nem tudo são flores, é muito comum vermos exemplos, como:
 ```markup
 <a href="<https://twitter.com/obrunopulis>">
   <i class="fa fa-twitter"></i>
-<a> 
+<a>
 ```
 
 Esse tipo de abordagem pode dificultar bastante a experiência do usuário.
@@ -78,7 +78,7 @@ Para garantir a acessibilidade um link, devemos seguir os dois critérios da WCA
 
 - [2.4.9 Finalidade do Link (apenas link) Nível AAA](https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-link-only).
 
-* * *
+---
 
 Vamos imaginar um exemplo, uma sessão de um blog contendo as três últimas postagens.  
 Cada uma com um link de **“Leia o texto”**, qual o problema com essa abordagem?
