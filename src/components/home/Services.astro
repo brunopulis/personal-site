@@ -1,51 +1,51 @@
 ---
-
 const services = [
   {
-    title: "Mentoria e Consultoria",
-    description: "Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.",
+    title: 'Mentoria e Consultoria',
+    description: 'Ofereço palestras e workshops sobre acessibilidade, desenvolvimento e qualidade.',
   },
   {
-    title: "Auditoria de Acessibilidade",
-    description: "Analisamos seu site, aplicativo ou documento digital, identificando barreiras e oferecendo soluções práticas.",
+    title: 'Auditoria de Acessibilidade',
+    description:
+      'Analisamos seu site, aplicativo ou documento digital, identificando barreiras e oferecendo soluções práticas.',
   },
   {
-    title: "Palestras e Treinamentos",
-    description: "Levamos conhecimento acessível para empresas e eventos.",
+    title: 'Palestras e Treinamentos',
+    description: 'Levamos conhecimento acessível para empresas e eventos.',
   },
-];
+]
 ---
 
 <section class="py-12" id="skills">
   <div class="container mx-auto px-4">
-    <div class="mb-8 space-y-4 flex flex-col items-center">
-      <h2 class="text-2xl font-semibold text-blood-red tracking-tight sm:text-3xl">Meus Serviços</h2>
-      <p class="max-w-3xl text-muted-foreground">Descubra como posso te ajudar a transformar sua presença digital</p>
+    <div class="mb-8 flex flex-col items-center space-y-4">
+      <h2 class="text-blood-red text-2xl font-semibold tracking-tight sm:text-3xl">Meus Serviços</h2>
+      <p class="text-muted-foreground max-w-3xl">Descubra como posso te ajudar a transformar sua presença digital</p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
-        services.map(service => {
-           <article class="card">
-            <div class="card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pb-3 pt-4 text-center">
-              <h3 class="card__title">
-                {service.title}
-              </h3>
+        services.map((service) => {
+          ;<article class="card">
+            <div class="card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-4 pb-3 text-center">
+              <h3 class="card__title">{service.title}</h3>
             </div>
 
             <div class="px-6 pt-2 pb-3">
-              <p class="text-sm text-muted-foreground text-center">{service.description}</p>
+              <p class="text-muted-foreground text-center text-sm">{service.description}</p>
             </div>
           </article>
         })
       }
     </div>
 
-    <div class="mt-10 flex justify-center items-center">
-      <a href="/servicos" class="text-lg font-semibold text-blood-red underline hover:no-underline focus-visible:outline-offset-2 focus-visible:outline-white">
+    <div class="mt-10 flex items-center justify-center">
+      <a
+        href="/servicos"
+        class="text-blood-red text-lg font-semibold underline hover:no-underline focus-visible:outline-offset-2 focus-visible:outline-white"
+      >
         Veja todos os serviços
       </a>
     </div>
   </div>
 </section>
-

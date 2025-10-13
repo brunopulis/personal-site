@@ -1,7 +1,7 @@
 ---
-issue: "18"
-title: "Como funciona um leitor de telas?"
-date: "2024-02-06"
+issue: '18'
+title: 'Como funciona um leitor de telas?'
+date: '2024-02-06'
 ---
 
 Pulis Letters - Edição #18  
@@ -29,7 +29,7 @@ A realidade é bem diferente, pessoas cegas ou com baixa visão usam computador 
 
 - Navegam na internet.
 
-* * *
+---
 
 ## O que são leitores de tela?
 
@@ -66,13 +66,13 @@ Por quê isso importa? Um leitor de telas não fica restrito a pessoas com defi
 
 Os leitores de tela, usam as API's de acessibilidade do sistema operacional para analisar e ler a interface para o usuário.
 
-No exemplo acima, quando um leitor lê um documento HTML, ele analisa _accessibility tree_, ela é semelhante a árvore do DOM.
+No exemplo acima, quando um leitor lê um documento HTML, ele analisa *accessibility tree*, ela é semelhante a árvore do DOM.
 
 Mas nem tudo são flores, cada sistema operacional fornece uma API de acessibilidade específica.
 
 Isso me lembra a famosa **browser wars**. Sua leitura pode ser diferente entre sistemas operacionais e navegadores.
 
-> **Por quê isso importa?** _Escrever um HTML semântico contribui para uma leitura mais limpa e concisa. Já um HTML mau escrito, traz muitos problemas._
+> **Por quê isso importa?** *Escrever um HTML semântico contribui para uma leitura mais limpa e concisa. Já um HTML mau escrito, traz muitos problemas.*
 
 Para diminuir esses problemas os fornecedores de leitores de tela recomendam navegadores mais compatíveis.
 
@@ -112,7 +112,7 @@ O NVDA possuí diversos atalhos para esse tipo de navegação, irei listar os at
 
 Você pode conferir todos os atalhos [na lista de atalhos do NVDA](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts).
 
-* * *
+---
 
 ## Sou desenvolvedor, porque devo me importar?
 

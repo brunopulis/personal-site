@@ -1,7 +1,7 @@
 ---
-issue: "26"
-title: "Vou te dar o mapa da mina!"
-date: "2024-04-04"
+issue: '26'
+title: 'Vou te dar o mapa da mina!'
+date: '2024-04-04'
 ---
 
 Quarta-feira, 03 de Abril de 2024
@@ -38,11 +38,11 @@ Eu gosto de alguns patterns, vou te mostrar alguns:
 
 - [Accordion Pattern (Sections With Show/Hide Functionality)](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/);
 
-- [Breadcrumb Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/\)).
+- [Breadcrumb Pattern](<https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/)>).
 
 Estou te entregando a faca e o queijo na mão!
 
-Então da próxima vez que for criar uma modal, que tal, dar uma olhada nesse pattern já validado e implementar no seu _framework_ ou _lib_ preferida?
+Então da próxima vez que for criar uma modal, que tal, dar uma olhada nesse pattern já validado e implementar no seu _framework_ ou *lib* preferida?
 
 Na carta anterior, comentei sobre um curso de WCAG por e-mail.  
 Minha ideia por traz disso é simples: te mostrar que pode ser mais fácil do que parece.
@@ -54,7 +54,7 @@ Me responda com as suas impressões.
 
 Criei [uma sessão de consultoria gratuita](https://cal.com/brunopulis/descoberta?nxtPuser=brunopulis), bora bater um papo?
 
-* * *
+---
 
 Agora vamos a uma curadoria de links que garimpei durante a semana
 

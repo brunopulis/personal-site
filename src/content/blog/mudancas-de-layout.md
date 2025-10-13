@@ -3,6 +3,7 @@ title: Mudanças de layout
 publishDate: 2024-03-19
 category: Pessoal
 ---
+
 Há tempos não estou satisfeito com a aparência visual do meu site. Já pensei e pesquisei diversas referências mas sempre empacava na mesma coisa **perfeccionismo.**
 
 O perfeccionismo em certos aspectos podem ajudar, mas na grande parte do tempo atrapalha muito.

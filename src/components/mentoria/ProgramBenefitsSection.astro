@@ -1,0 +1,107 @@
+---
+import {
+  Bug,
+  Target,
+  Users,
+  Clock,
+  Shield,
+  Gift,
+  Accessibility,
+  LucideAccessibility,
+  Notebook,
+  Computer,
+  Cog,
+  Brain,
+} from '@lucide/astro'
+
+const iconComponents = {
+  Bug,
+  Target,
+  Users,
+  Clock,
+  Shield,
+  Gift,
+  Accessibility,
+  LucideAccessibility,
+  Notebook,
+  Computer,
+  Cog,
+  Brain,
+}
+
+const benefits = [
+  {
+    icon: 'LucideAccessibility',
+    title: 'WCAG na prática',
+    description: 'Aplique as diretrizes de acessibilidade em projetos reais, sem complicação e direto ao ponto.',
+  },
+  {
+    icon: 'Target',
+    title: 'WAI-ARIA',
+    description: 'Descubra como usar os atributos da maneira correta, para tornar componentes dinâmicos acessíveis.',
+  },
+  {
+    icon: 'Computer',
+    title: 'Tecnologias assistivas',
+    description: 'Entenda como os leitores de tela funcionam e leem seu site e aplique boas práticas.',
+  },
+  {
+    icon: 'Cog',
+    title: 'Ferramentas de testes',
+    description: 'Descubra as principais ferramentas de teste de acessibilidade.',
+  },
+  {
+    icon: 'Bug',
+    title: 'Resolução de problemas conhecidos',
+    description: 'Conte com mentoria personalizada e suporte técnico durante toda sua jornada.',
+  },
+  {
+    icon: 'Brain',
+    title: 'Mindset acessível',
+    description: 'Cultive uma cultura de inclusão no seu projeto e veja como a acessibilidade impulsiona a inovação.',
+  },
+]
+---
+
+<section class="bg-gray-100 py-16 md:py-24" id="programa" aria-labelledby="program-benefits-heading">
+  <div class="container mx-auto px-6">
+    <div class="mb-16 text-center">
+      <span class="bg-bloodRed/20 text-bloodRed mb-4 inline-block rounded-full px-4 py-1 text-sm font-medium">
+        Como funciona
+      </span>
+      <h2 id="program-benefits-heading" class="text-errieBlack mb-6 text-3xl font-bold md:text-4xl">
+        O que você irá aprender?
+      </h2>
+      <p class="text-errieBlack/80 mx-auto max-w-3xl text-lg md:text-xl">
+        Um programa estruturado para impulsionar sua carreira e desenvolver expertise em acessibilidade web.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        benefits.map((benefit) => {
+          const IconComponent = iconComponents[benefit.icon]
+
+          return (
+            <div class="border-bloodRed/20 hover:border-bloodRed/50 rounded-lg border bg-white p-8 transition-all duration-300">
+              <div class="bg-bloodRed/10 mb-6 flex h-16 w-16 items-center justify-center rounded-lg">
+                <IconComponent aria-hidden="true" class="text-blood-red-800 h-8 w-8" />
+              </div>
+              <h3 class="text-bloodRed mb-3 text-xl font-bold">{benefit.title}</h3>
+              <p class="text-errieBlack/80">{benefit.description}</p>
+            </div>
+          )
+        })
+      }
+    </div>
+
+    <div class="mt-16 text-center">
+      <a
+        href="#inscricao"
+        class="inline-block font-semibold text-blood-red-800 transition-colors hover:underline hover:underline-offset-8"
+      >
+        Quero fazer parte do programa
+      </a>
+    </div>
+  </div>
+</section>

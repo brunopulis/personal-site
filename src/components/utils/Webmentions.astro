@@ -1,30 +1,30 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 
 interface AuthorProps {
-  name: string;
-  photo: string;
-  url: string;
+  name: string
+  photo: string
+  url: string
 }
 
 interface WebmentionProps {
-  author: AuthorProps;
-  "wm-received": string;
-  "wm-property": string;
+  author: AuthorProps
+  'wm-received': string
+  'wm-property': string
 }
 
 interface Props {
-  webmentions: WebmentionProps[];
+  webmentions: WebmentionProps[]
 }
 
-const { webmentions } = Astro.props;
+const { webmentions } = Astro.props
 
 const showDate = (webmention: string) =>
   new Date(webmention).toLocaleDateString(undefined, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 ---
 
 {
@@ -35,32 +35,25 @@ const showDate = (webmention: string) =>
         {webmentions.map((webmention: WebmentionProps) => (
           <li>
             <div class="avatar-and-author">
-              {webmention.author.photo ? (
-                <Image
-                  alt=""
-                  height="50"
-                  src={webmention.author.photo}
-                  width="50"
-                />
-              ) : null}
+              {webmention.author.photo ? <Image alt="" height="50" src={webmention.author.photo} width="50" /> : null}
               <a href={webmention.author.url} rel="author">
                 {webmention.author.name}
               </a>
             </div>
             <div class="information">
-              {webmention["wm-property"] === "like-of" ? (
+              {webmention['wm-property'] === 'like-of' ? (
                 <p>
                   Liked em
-                  <time aria-hidden="true" datetime={webmention["wm-received"]}>
-                    {showDate(webmention["wm-received"])}
+                  <time aria-hidden="true" datetime={webmention['wm-received']}>
+                    {showDate(webmention['wm-received'])}
                   </time>
                 </p>
               ) : null}
-              {webmention["wm-property"] === "repost-of" ? (
+              {webmention['wm-property'] === 'repost-of' ? (
                 <p>
                   Repostado em
-                  <time aria-hidden="true" datetime={webmention["wm-received"]}>
-                    {showDate(webmention["wm-received"])}
+                  <time aria-hidden="true" datetime={webmention['wm-received']}>
+                    {showDate(webmention['wm-received'])}
                   </time>
                 </p>
               ) : null}
@@ -74,13 +67,13 @@ const showDate = (webmention: string) =>
 
 <style>
   section {
-    border-radius: 10px;
     margin-top: var(--space-l);
+    border-radius: 10px;
   }
 
   h2 {
-    font-size: var(--step-2);
     margin-top: var(--space-s);
+    font-size: var(--step-2);
   }
 
   h3 {
@@ -91,14 +84,14 @@ const showDate = (webmention: string) =>
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-size: var(--step-0);
     gap: var(--space-xs);
     margin-top: var(--space-xs);
+    font-size: var(--step-0);
   }
 
   a {
-    font-size: var(--step-0);
     width: fit-content;
+    font-size: var(--step-0);
   }
 
   ul {
@@ -109,20 +102,20 @@ const showDate = (webmention: string) =>
   }
 
   li {
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: var(--space-xs);
-    list-style-type: none;
+    border-radius: 10px;
     padding: var(--space-xs);
     width: fit-content;
+    list-style-type: none;
   }
 
   .avatar-and-author {
-    align-items: center;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: var(--space-xs);
     width: fit-content;
   }
@@ -134,9 +127,9 @@ const showDate = (webmention: string) =>
   }
 
   img {
-    border-radius: 50%;
     margin: 0;
-    max-height: 40px;
+    border-radius: 50%;
     max-width: 40px;
+    max-height: 40px;
   }
 </style>

@@ -1,12 +1,13 @@
 ---
-title: "Afinal, o quê significa A11y?"
+title: 'Afinal, o quê significa A11y?'
 publishDate: 2021-08-26
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/o-que-significa-a11y/
 ---
+
 Talvez você já tenha visto pessoas utilizando o termo a11y ou até mesmo a hashtag **#a11y** e não compreendeu a correlação dele com acessibilidade. Este termo refere-se a palavra inglesa _accessibility_.
 
-Os dois caracteres do meio são o número um, não ” _L”_ s minúsculos . Diga como “A-um-um-Y” ou “A-onze-Y”. Pode ser pronunciado também como, _ally_ ou **aliado** em português.
+Os dois caracteres do meio são o número um, não ” *L”* s minúsculos . Diga como “A-um-um-Y” ou “A-onze-Y”. Pode ser pronunciado também como, _ally_ ou **aliado** em português.
 
 ## Qual o sentido e significado de A11y?
 

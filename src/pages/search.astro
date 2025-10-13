@@ -1,35 +1,28 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import Footer from "@/components/layout/Footer.astro";
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
+import Footer from '@/components/layout/Footer.astro'
 
-export const prerender = true;
+export const prerender = true
 ---
 
-<Layout
-  title="Pesquisar - Bruno Pulis"
-  description="Pesquise em todo o conteúdo do site"
->
+<Layout title="Pesquisar - Bruno Pulis" description="Pesquise em todo o conteúdo do site">
   <Header />
   <main id="main-content">
-    <HeroSection
-      title="Pesquisa"
-      description="Use palavras-chave, frases ou perguntas."
-    />
+    <HeroSection title="Pesquisa" description="Use palavras-chave, frases ou perguntas." />
     <section class="bg-white py-16 dark:bg-gray-800">
       <div class="container-custom mx-auto">
         <div>
-					<label for="search">Search the Blog</label>
-					<span>Enter a search term or phrase to search the blog.</span>
-				</div>
-			  <div id="search"></div>
-
+          <label for="search">Search the Blog</label>
+          <span>Enter a search term or phrase to search the blog.</span>
+        </div>
+        <div id="search"></div>
       </div>
       <p id="searchReadout"></p>
-			<section aria-label="Search Results">
-				<ul id="searchResults"></ul>
-			</section>
+      <section aria-label="Search Results">
+        <ul id="searchResults"></ul>
+      </section>
     </section>
   </main>
 

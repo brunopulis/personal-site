@@ -1,7 +1,7 @@
 ---
-issue: "16"
-title: "Anatomia do elemento button"
-date: "2024-01-29"
+issue: '16'
+title: 'Anatomia do elemento button'
+date: '2024-01-29'
 ---
 
 Nessa carta quero te mostrar como garantir a acessibilidade em um dos componentes mais usados na web: o **<button>**.
@@ -10,7 +10,7 @@ Vamos ao que interessa.
 
 ## **Anatomia do componente**
 
-O botão é um _widget_ que permite os usuários realizarem uma **ação** ou **evento**, como por exemplo:
+O botão é um *widget* que permite os usuários realizarem uma **ação** ou **evento**, como por exemplo:
 
 - Enviar um formulário;
 
@@ -20,9 +20,9 @@ O botão é um _widget_ que permite os usuários realizarem uma **ação** o
 
 Além do botão comum, a WAI ARIA 2 dá suporte a outros tipos:
 
-1. Botão de alternância _(toggle button);_
+1. Botão de alternância *(toggle button);*
 
-3. Botão de menu.
+2. Botão de menu.
 
 ## **Botão de alternância (toggle button)**
 

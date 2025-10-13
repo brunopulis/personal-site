@@ -1,26 +1,26 @@
 ---
 title: Vocação ou serviço?
 publishDate: 2016-06-08
-category: "Teologia"
+category: 'Teologia'
 url: https://brunopulis.com/vocacao-ou-servico/
 ---
 
 Muitos têm o prazer de “servir” na casa de Deus, mas será que estão com a motivação correta? Diante daquele que tudo pode e tudo vê?
 
-* * *
+---
 
-Esse ciclo na Faculdade tive uma matéria sobre Missão Integral que abordou sobre ser _vocacionado ou cumprir um serviço._
+Esse ciclo na Faculdade tive uma matéria sobre Missão Integral que abordou sobre ser *vocacionado ou cumprir um serviço.*
 
 Existe uma diferença entre **ser-fazer (vocação)** e **fazer-ser (ativismo)**, ficou complicado?  
 Rs eu explico.
 
 ## Vocação
 
-Todos entendemos que _ser vocacionado tem a ver com o chamado de Deus e seus dons para participar da Missão de Deus_ na terra, é uma relação de pré-disposição natural. Eu faço algo, pois necessito, não porque almejo uma posição perante a comunidade local.
+Todos entendemos que *ser vocacionado tem a ver com o chamado de Deus e seus dons para participar da Missão de Deus* na terra, é uma relação de pré-disposição natural. Eu faço algo, pois necessito, não porque almejo uma posição perante a comunidade local.
 
 ## Ativismo religioso
 
-Em contrapartida, o _ativismo religioso_ inicia-se por incrível que pareça com uma boa intenção no coração, mas logo me recordo daquele ditado popular:
+Em contrapartida, o *ativismo religioso* inicia-se por incrível que pareça com uma boa intenção no coração, mas logo me recordo daquele ditado popular:
 
 > De boa intenção o inferno está cheio.
 > Dito Popular

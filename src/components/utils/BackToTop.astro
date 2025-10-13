@@ -1,31 +1,19 @@
 <aside aria-label="Utilities">
   <a aria-label="Back to top" href="#start" id="back-to-top">
-    <svg
-      aria-hidden="true"
-      height="48"
-      viewBox="0 -960 960 960"
-      width="48"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        class="dark"
-        d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"
-      ></path>
-      <path
-        class="light"
-        d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"
-      ></path>
+    <svg aria-hidden="true" height="48" viewBox="0 -960 960 960" width="48" xmlns="http://www.w3.org/2000/svg">
+      <path class="dark" d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
+      <path class="light" d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"></path>
     </svg>
   </a>
 </aside>
 
 <style>
   a {
-    bottom: var(--space-xs);
-    height: 48px;
     position: fixed;
     right: var(--space-xs);
+    bottom: var(--space-xs);
     width: 48px;
+    height: 48px;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -48,11 +36,11 @@
 </style>
 
 <script>
-  const backToTopLink = document.getElementById("back-to-top");
+  const backToTopLink = document.getElementById('back-to-top')
 
   const toggleBackToTopVisibility = () => {
-    backToTopLink!.style.display = window.scrollY > 0 ? "block" : "none";
-  };
+    backToTopLink!.style.display = window.scrollY > 0 ? 'block' : 'none'
+  }
 
-  window.addEventListener("scroll", toggleBackToTopVisibility);
+  window.addEventListener('scroll', toggleBackToTopVisibility)
 </script>

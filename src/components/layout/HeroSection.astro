@@ -1,33 +1,29 @@
 ---
 interface Props {
-  title: string;
-  highlightText?: string;
-  description?: string;
+  title: string
+  highlightText?: string
+  description?: string
 }
 
-const { title, highlightText, description } = Astro.props;
+const { title, highlightText, description } = Astro.props
 
 // Split the title to insert the highlighted text if provided
-let titleStart = title;
-let titleEnd = "";
+let titleStart = title
+let titleEnd = ''
 
 if (highlightText) {
-  const titleParts = title.split(highlightText);
+  const titleParts = title.split(highlightText)
   if (titleParts.length > 1) {
-    titleStart = titleParts[0];
-    titleEnd = titleParts[1];
+    titleStart = titleParts[0]
+    titleEnd = titleParts[1]
   }
 }
 ---
 
-<section
-  class="bg-blood-red-800 relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20"
->
-  <div class="container-custom px-4 relative z-10">
+<section class="bg-blood-red-800 relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
+  <div class="container-custom relative z-10 px-4">
     <div class="max-w-3xl px-4">
-      <h1
-        class="p-name animate-slide-down mb-4 text-3xl text-white md:mb-6 md:text-4xl lg:text-5xl"
-      >
+      <h1 class="p-name animate-slide-down mb-4 text-3xl text-white md:mb-6 md:text-4xl lg:text-5xl">
         {
           highlightText ? (
             <>
@@ -40,10 +36,7 @@ if (highlightText) {
           )
         }
       </h1>
-      <p
-        class="animate-slide-up mb-6 text-lg text-white md:mb-8 md:text-xl"
-        style="animation-delay: 200ms"
-      >
+      <p class="animate-slide-up mb-6 text-lg text-white md:mb-8 md:text-xl" style="animation-delay: 200ms">
         {description}
       </p>
     </div>

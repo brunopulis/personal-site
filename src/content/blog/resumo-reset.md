@@ -1,7 +1,7 @@
 ---
-title: "Reset: Vivendo no ritmo da graça em uma cultura estressada"
+title: 'Reset: Vivendo no ritmo da graça em uma cultura estressada'
 publishDate: 2022-10-15
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/resumo-reset/
 ---
 
@@ -45,13 +45,13 @@ Várias ideias mudaram ao longo da leitura, irei sintetizar as principais em tó
 
 > _Cuidar de si mesmo é o primeiro passo para cuidar dos outros, por amor ao próximo como a ti mesmo_
 
-* * *
+---
 
 ### Sobre a nossa identidade em Cristo
 
 > Se você tiver a resposta errada à “pergunta” quem sou eu, terá consequências profundas, prolongadas e abrangentes. É por isso que recuperar a nossa identidade verdadeira, pensar corretamente a nosso próprio respeito, é um dos principais componentes de reconfigurar nossa vida, voltará a pista certa e viver uma vida pautada pela graça.
 
-* * *
+---
 
 ### Sobre nossos fracassos
 

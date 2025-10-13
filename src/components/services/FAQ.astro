@@ -1,0 +1,33 @@
+---
+import { ArrowRight } from '@lucide/astro'
+
+import faqs from '@/data/faq.json';
+---
+
+<section class="bg-gray-50 py-24" aria-labelledby="faq-title">
+  <div class="mx-auto max-w-4xl px-6">
+    <div class="mb-16 text-center">
+      <h2 class="mb-4 text-4xl font-bold text-errie-black-900" id="faq-title">Perguntas Frequentes</h2>
+      <p class="text-xl text-errie-black-900">Ainda com dúvidas? Aqui estão as respostas mais comuns</p>
+    </div>
+
+    <div class="space-y-6">
+      {
+        faqs.map(faq => (
+          <article class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 class="mb-3 text-lg font-bold text-errie-black-900">{faq.question}</h3>
+            <p class="leading-relaxed text-errie-black-900">{faq.answer}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="mb-4 text-errie-black-900">Não encontrou sua dúvida?</p>
+      <a href="/contato" class="inline-flex items-center gap-2 font-semibold text-blood-red-800 hover:underline hover:underline-offset-8">
+        Me manda uma mensagem
+        <ArrowRight class="h-4 w-4" />
+      </a>
+    </div>
+  </div>
+</section>

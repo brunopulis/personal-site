@@ -1,7 +1,7 @@
 ---
-issue: "33"
-title: "A IA zoou a WCAG e eu concordo"
-date: "2024-05-21"
+issue: '33'
+title: 'A IA zoou a WCAG e eu concordo'
+date: '2024-05-21'
 ---
 
 Opa, algumas semanas que não apareço por aqui. Não tive um bloqueio criativo ou algo do tipo.
@@ -14,11 +14,11 @@ Não podemos parar!
 
 Vamos ao que interessa!
 
-* * *
+---
 
 Semana passada, estava conversando com minha esposa sobre a relação da IA com acessibilidade.
 
-Brinquei com ela, _**“amor pede para o chat GPT fazer uma piada com a WCAG”**_.
+Brinquei com ela, ***“amor pede para o chat GPT fazer uma piada com a WCAG”***.
 
 Não é que o danado, criou uma que ri demais, foi a seguinte:
 
@@ -83,48 +83,37 @@ Ela possui grandes semelhanças e diferenças com as versões anteriores.
 Na versão preliminar que pode ser alterada ainda, existem:
 
 - **Diretrizes**
-    - Soluções para problemas de acessibilidade;
-    
-    - Mais **granular** do que as diretrizes das WCAG 2;
-    
-    - Cada diretriz tem resultados.
+  - Soluções para problemas de acessibilidade;
+  - Mais **granular** do que as diretrizes das WCAG 2;
+  - Cada diretriz tem resultados.
 
 - **Resultados**
-    - Declarações verificáveis;
-    
-    - Semelhante aos **critérios de sucesso** das WCAG 2;
-    
-    - Focados em resultados esperados do que os meios técnicos para alcançá-los.
+  - Declarações verificáveis;
+  - Semelhante aos **critérios de sucesso** das WCAG 2;
+  - Focados em resultados esperados do que os meios técnicos para alcançá-los.
 
 - **Afirmações**
-    - Afirmação formal de um fato, atribuída a uma pessoa ou organização
-    
-    - As asserções nas WCAG 3 afirmam que uma organização concluiu um procedimento que pode melhorar a acessibilidade
-    
-    - Exemplos de procedimentos incluem testes de usabilidade, testes de tecnologia assistiva e revisões de linguagem simples
-    
-    - As asserções são usadas quando os resultados da mesma usabilidade seriam muito diferentes entre os testadores
+  - Afirmação formal de um fato, atribuída a uma pessoa ou organização
+  - As asserções nas WCAG 3 afirmam que uma organização concluiu um procedimento que pode melhorar a acessibilidade
+  - Exemplos de procedimentos incluem testes de usabilidade, testes de tecnologia assistiva e revisões de linguagem simples
+  - As asserções são usadas quando os resultados da mesma usabilidade seriam muito diferentes entre os testadores
 
 ## Material de apoio
 
 Os materiais de apoio sofrerão grandes mudanças também, eles incluirão:
 
 - **Métodos**
-    - Maneiras específicas de tecnologia para alcançar um resultado
-    
-    - Testes para o resultado
-    
-    - Semelhante às **Técnicas** das WCAG 2
+  - Maneiras específicas de tecnologia para alcançar um resultado
+  - Testes para o resultado
+  - Semelhante às **Técnicas** das WCAG 2
 
 - **Documentos de Como fazer**
-    - Explicam mais sobre cada diretriz, por exemplo, como ela aborda as necessidades de acessibilidade;
-    
-    - Informações para designers, desenvolvedores, pessoas iniciantes em acessibilidade;
-    
-    - Semelhante aos documentos **Understanding** das WCAG 2.
+  - Explicam mais sobre cada diretriz, por exemplo, como ela aborda as necessidades de acessibilidade;
+  - Informações para designers, desenvolvedores, pessoas iniciantes em acessibilidade;
+  - Semelhante aos documentos **Understanding** das WCAG 2.
 
 - **Categorias de necessidades funcionais**
-    - Lista categorizada de necessidades de pessoas com deficiências.
+  - Lista categorizada de necessidades de pessoas com deficiências.
 
 Nunca estive tão ansioso para uma nova versão da WCAG sair, isso irá dar um salto gigantesco na compreensão e utilidade do documento.
 

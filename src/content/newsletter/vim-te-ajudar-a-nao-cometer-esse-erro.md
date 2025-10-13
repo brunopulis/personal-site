@@ -1,8 +1,8 @@
 ---
-issue: "20"
-title: "Vim te ajudar a não cometer esse erro"
-date: "2024-02-22"
-coverImage: ""
+issue: '20'
+title: 'Vim te ajudar a não cometer esse erro'
+date: '2024-02-22'
+coverImage: ''
 ---
 
 Pulis Letters - Edição #20
@@ -25,7 +25,7 @@ Fiquei constrangido, porque experimentei o que pessoas com deficiência passam t
 
 Isso mexeu comigo!
 
-* * *
+---
 
 ## Como tudo começou
 
@@ -33,7 +33,7 @@ Iniciei a faculdade em 2007 e tive meu primeiro contato com HTML.
 
 Lembro-me, como se fosse ontem. O professor deu um exercício para **escrever código no caderno**, na época odiei, hoje sou grato.
 
-Obrigado professor que esqueci o nome! Por causa da repetição, acabei decorando quase todas _tags_.
+Obrigado professor que esqueci o nome! Por causa da repetição, acabei decorando quase todas *tags*.
 
 E por incrível que pareça, isso me ajudou.
 
@@ -58,7 +58,7 @@ Já usei vários, o Emmet me ajuda muito, com ele minha rotina é assim:
 
 - Digitar: **html:5**, pra mágica acontecer;
 
-- Deixar o _autocomplete_ finalizar o trabalho;
+- Deixar o *autocomplete* finalizar o trabalho;
 
 - Pronto estrutura HTML feita.
 

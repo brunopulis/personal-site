@@ -1,22 +1,20 @@
 ---
-import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions'
 
-import BackToTop from "@/components/utils/BackToTop.astro";
-import BasicScripts from "@/components/BasicScripts.astro";
-import "@fontsource-variable/source-sans-3";
+import BackToTop from '@/components/utils/BackToTop.astro'
+import BasicScripts from '@/components/BasicScripts.astro'
+import '@fontsource-variable/source-sans-3'
 
-import "@/styles/global.css";
-import "@/styles/transitions.css";
+import '@/styles/global.css'
+import '@/styles/transitions.css'
 
 export interface Props {
-  title: string;
-  description?: string;
+  title: string
+  description?: string
 }
 
-const {
-  title,
-  description = "Modern SaaS landing page template with responsive design and modular sections.",
-} = Astro.props;
+const { title, description = 'Modern SaaS landing page template with responsive design and modular sections.' } =
+  Astro.props
 ---
 
 <!doctype html>
