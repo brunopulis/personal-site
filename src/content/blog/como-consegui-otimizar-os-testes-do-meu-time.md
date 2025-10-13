@@ -1,11 +1,12 @@
 ---
-title: "PHPUnit: como otimizar a performance dos testes"
+title: 'PHPUnit: como otimizar a performance dos testes'
 publishDate: 2020-04-30
-category: "Qualidade"
+category: 'Qualidade'
 url: https://brunopulis.com/como-consegui-otimizar-os-testes-do-meu-time/
 tags:
   - qualidade-de-software
 ---
+
 Testes são uma das partes mais importantes na concepção de um produto digital. Através deles obtemos garantia que determinada funcionalidade cumpre com os requisitos e atende ao cliente de maneira satisfatória.
 
 Para alcançar esse objetivo devemos ter em mente que a entrega dos testes deve ser a mais rápida possível. Com na pirâmide de testes, os unitários são rápidos, baratos e fáceis de implementar.

@@ -1,11 +1,12 @@
 ---
 title: 4 dicas imperdíveis para palestrantes
 publishDate: 2022-01-22
-category: "Carreira"
+category: 'Carreira'
 url: https://brunopulis.com/dicas-para-palestrantes/
 tags:
   - carreira
 ---
+
 Me recordo como se fosse hoje, uma das primeiras apresentações que fiz. Foi no DevInCompany, uma ação promovida pela comunidade de desenvolvedores de Minas Gerais, o [Minas Dev](https://minasdev.org/).
 
 O intuito era simples, levar para as empresas as tendências e boas práticas que o mercado aplicava e almejava no momento.

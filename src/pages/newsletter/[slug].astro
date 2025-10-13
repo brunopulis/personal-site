@@ -1,86 +1,79 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Header from "@/components/layout/Header.astro"
-import HeroSection from "@/components/layout/HeroSection.astro"
-import Footer from "@/components/layout/Footer.astro"
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
+import Footer from '@/components/layout/Footer.astro'
 
-import { getCollection, render } from "astro:content"
-import Newsletter from "@/components/Newsletter.astro"
+import { getCollection, render } from 'astro:content'
+import Newsletter from '@/components/Newsletter.astro'
 
-import { Twitter } from "@lucide/astro"
+import { Twitter } from '@lucide/astro'
 
 // Gera as rotas para todos os letters
 export async function getStaticPaths() {
-	const letters = await getCollection("newsletter")
+  const letters = await getCollection('newsletter')
 
-	return letters.map((letter) => ({
-		params: { slug: letter.id }, // mantém apenas o ID do letter
-		props: { letter }
-	}))
+  return letters.map((letter) => ({
+    params: { slug: letter.id }, // mantém apenas o ID do letter
+    props: { letter },
+  }))
 }
 
 const { letter } = Astro.props
 const { Content } = await render(letter)
 
 // Formata a data para pt-BR
-const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
-	year: "numeric",
-	month: "long",
-	day: "numeric"
+const formattedDate = new Date(letter.data.date).toLocaleDateString('pt-BR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
 })
 ---
 
 <Layout title={`${letter.data.title} - Newsletter`}>
-	<Header />
-	<main id="main-content">
-		<HeroSection title={letter.data.title} />
-		<div class="container-custom py-8">
-			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-				<div class="lg:col-span-2">
-					<article class="pb-16 md:pb-24">
-						<div class="container mx-auto">
-							<div class="mb-6 flex items-center">
-								<time class="text-gray-600 dark:text-gray-400">{formattedDate}</time>
-							</div>
-							{
-								letter.data.coverImage && (
-									<img
-										src={letter.data.coverImage}
-										alt={letter.data.title}
-										class="mb-10 h-auto w-full rounded-xl object-cover"
-										style="max-height: 500px;"
-									/>
-								)
-							}
+  <Header />
+  <main id="main-content">
+    <HeroSection title={letter.data.title} />
+    <div class="container-custom py-8">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div class="lg:col-span-2">
+          <article class="pb-16 md:pb-24">
+            <div class="container mx-auto">
+              <div class="mb-6 flex items-center">
+                <time class="text-gray-600 dark:text-gray-400">{formattedDate}</time>
+              </div>
+              {
+                letter.data.coverImage && (
+                  <img
+                    src={letter.data.coverImage}
+                    alt={letter.data.title}
+                    class="mb-10 h-auto w-full rounded-xl object-cover"
+                    style="max-height: 500px;"
+                  />
+                )
+              }
 
-							<div class="prose prose-lg dark:prose-invert max-w-none py-4">
-								<Content class="py-4" />
-							</div>
+              <div class="prose prose-lg dark:prose-invert max-w-none py-4">
+                <Content class="py-4" />
+              </div>
 
-							<div class="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
-								<h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
-									Compartilhar artigo
-								</h2>
-								<div class="flex space-x-4">
-									<a
-										href="#"
-										target="_blank"
-										rel="noopener noreferrer"
-										aria-label="Compartilhar no Twitter"
-									>
-										<Twitter />
-									</a>
-								</div>
-							</div>
-						</div>
-					</article>
-				</div>
+              <div class="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
+                <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Compartilhar artigo</h2>
+                <div class="flex space-x-4">
+                  <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Twitter">
+                    <Twitter />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
 
-				<div class="lg:col-span-1">
-					<Newsletter />
-				</div>
-			</div>
-		</div>
-	</main>
-	<Footer />
+        <div class="lg:col-span-1">
+          <Newsletter />
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
 </Layout>

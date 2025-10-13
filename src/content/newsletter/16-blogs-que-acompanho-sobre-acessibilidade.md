@@ -1,7 +1,7 @@
 ---
-issue: "37"
-title: "16 blogs que acompanho sobre acessibilidade"
-date: "2024-08-02"
+issue: '37'
+title: '16 blogs que acompanho sobre acessibilidade'
+date: '2024-08-02'
 ---
 
 Essa semana teve coisas muito legais.
@@ -16,7 +16,7 @@ Confesso que fiquei chocado, a ficha ainda não caiu…
 
 Mas vamos, ao que interessa…
 
-* * *
+---
 
 Vou compartilhar com vocês algumas referências com ótimos conteúdos voltados para frontend e acessibilidade. A maioria deles tem RSS, é uma ótima alternativa para fica por dentro do mundo da acessibilidade.
 
@@ -37,7 +37,7 @@ Vou compartilhar com vocês algumas referências com ótimos conteúdos voltados
 15. [https://webaim.org/blog/](https://webaim.org/blog/)
 16. [https://www.a11y-collective.com/blog/](https://www.a11y-collective.com/blog/)
 
-* * *
+---
 
 ## Um pedido de ajuda
 

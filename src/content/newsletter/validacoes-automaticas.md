@@ -1,7 +1,7 @@
 ---
-issue: "23"
-title: "Não confie 100% em validações automáticas"
-date: "2024-03-14"
+issue: '23'
+title: 'Não confie 100% em validações automáticas'
+date: '2024-03-14'
 ---
 
 Pulis Letters - Edição #23  
@@ -18,7 +18,7 @@ Bom, eu sou curioso.
 
 Fui checar o site pra surpresa de zero pessoas, tinha um monte bugs. 😥
 
-* * *
+---
 
 ## O que é o Lighthouse?
 
@@ -44,7 +44,7 @@ Vou te explicar porquê.
 
 Sim! Todas validações tem fundamento técnico e fazem sentido, mas quando o assunto é acessibilidade não podemos nos limitar só na validação automática.
 
-> **Para fixar:** você que está aprendendo ou até mesmo começando com acessibilidade, não caia na _fake news_ que uma IA ou alguma ferramenta vai resolver **todos os problemas de acessibilidade**.
+> **Para fixar:** você que está aprendendo ou até mesmo começando com acessibilidade, não caia na *fake news* que uma IA ou alguma ferramenta vai resolver **todos os problemas de acessibilidade**.
 
 Fuja com todas as suas forças desse tipo de abordagem. Acessibilidade diz a respeito de uma coisa que poucos sabem bem: HTML.
 

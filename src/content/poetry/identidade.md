@@ -8,6 +8,7 @@ metadata:
 tags:
   - pessoal
 ---
+
 E quando perdemos a identidade e somos apenas cópias dos outros?
 
 Enquanto estou escrevendo este texto escuto a música [Quem sou eu?](https://open.spotify.com/track/2F1KQZSg0Wyt4IdDxIA3uF) do Estevão Queiroga. Aconselho vocês ouvirem esse músico descobri ele no show do Loop Session Friends em Belo Horizonte.
@@ -28,7 +29,7 @@ Um pai de família que via sua vida escoada pela enchente?
 A água veio e levou tudo embora…
 
 Situações como essas, nos ensina uma coisa _ter esperança
-_Há momentos que não necessita de conselhos meu caros,
+\_Há momentos que não necessita de conselhos meu caros,
 Mas de ouvidos abertos para ouvir histórias.
 
 Então ouça com cuidado o que o corpo quer falar,

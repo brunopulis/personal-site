@@ -1,7 +1,7 @@
 ---
 title: Conhecendo o Web Accessibility Initiative
 publishDate: 2021-11-17
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/web-accessibility-initiative/
 ---
 
@@ -42,7 +42,7 @@ Conta com uma visão ampla de como implementar e os passos que podem ser tomadas
 
 Às vezes, é bem difícil encontrar um conteúdo de qualidade sobre acessibilidade. Nessa sessão temos excelente recursos que irão ajudar a desenvolver soluções acessíveis.
 
-Em contrapartida, essa sessão não se destina somente para programadores e designers. Existem recursos para redatores e _copywriter_s também.
+Em contrapartida, essa sessão não se destina somente para programadores e designers. Existem recursos para redatores e \_copywriter_s também.
 
 Além disso, conta com diversos tutoriais para melhorar a acessibilidade das páginas, como:
 
@@ -91,6 +91,6 @@ Acesse o site da Web Accessibility Initiative e descubra mais sobre o que eles f
 
 ## Referências
 
-- [https://pt.wikipedia.org/wiki/Tim\_Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee)
+- [https://pt.wikipedia.org/wiki/Tim_Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee)
 - [The history of the Web – W3C Wiki](https://www.w3.org/wiki/The_history_of_the_Web#The_creation_of_World_Wide_Web)
 - [About W3C WAI | Web Accessibility Initiative (WAI) | W3C](https://www.w3.org/WAI/about/)

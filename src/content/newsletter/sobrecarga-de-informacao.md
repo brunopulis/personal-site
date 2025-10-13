@@ -1,7 +1,7 @@
 ---
-issue: "12"
-title: "Como lidar com a sobrecarga de informação"
-date: "2024-01-17"
+issue: '12'
+title: 'Como lidar com a sobrecarga de informação'
+date: '2024-01-17'
 ---
 
 **17 de Janeiro de 2024.**
@@ -13,7 +13,7 @@ Ontem o bom filho retornou a casa 🐱‍🏍
 
 Mas vamos ao que interessa...
 
-* * *
+---
 
 Você já teve uma sensação de **exaustão mental** no final do seu dia?
 Não tinha forças para pensar ou fazer nada?

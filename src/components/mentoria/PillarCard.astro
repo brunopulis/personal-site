@@ -1,0 +1,30 @@
+---
+interface PillarCard {
+  letter: string
+  title: string
+  description: string
+}
+
+const { letter, title, description } = Astro.props;
+---
+
+<article
+  class="border-gray/20 hover:border-vistaBlue/50 flex h-full flex-col rounded-lg border bg-white p-8 transition-all duration-300"
+  aria-labelledby={`pillar-${letter}-title`}
+>
+  <div class="mb-6 flex items-center">
+    <div>
+      <div class="flex items-center">
+        <span class="bg-blood-red-800 mr-2 flex h-8 w-8 items-center justify-center rounded-full font-bold text-white">
+          {letter}
+        </span>
+        <h3 id={`pillar-${letter}-title`} class="text-errieBlack text-xl font-bold">
+          {title}
+        </h3>
+      </div>
+    </div>
+  </div>
+  <p class="text-errieBlack/90 flex-grow">
+    {description}
+  </p>
+</article>

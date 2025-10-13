@@ -18,8 +18,8 @@ const moviesPerYear = Object.entries(
         acc[year].push(book)
         return acc
       },
-      {} as Record<string, (typeof books)[0][]>
-    )
+      {} as Record<string, (typeof books)[0][]>,
+    ),
 ).sort((a, b) => Number(b[0]) - Number(a[0]))
 ---
 
@@ -35,11 +35,12 @@ const moviesPerYear = Object.entries(
       <div class="mx-auto max-w-7xl px-6 py-20">
         <div class="max-w-3xl">
           <div class="mb-6 flex items-center gap-3">
-            <Film class="w-12 h-12 text-white" />
+            <Film class="h-12 w-12 text-white" />
             <h1 class="text-5xl font-bold text-white">Meus Filmes</h1>
           </div>
           <p class="mb-8 text-xl leading-relaxed text-white">
-            Cinema é arte que me emociona, me faz pensar e me inspira. De ficção científica a animações da Pixar, aqui está o que tenho assistido e amado.
+            Cinema é arte que me emociona, me faz pensar e me inspira. De ficção científica a animações da Pixar, aqui
+            está o que tenho assistido e amado.
           </p>
           <p class="text-lg text-white">
             <strong>Por que compartilho isso?</strong>

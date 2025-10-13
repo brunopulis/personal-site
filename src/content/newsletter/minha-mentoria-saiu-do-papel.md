@@ -1,7 +1,7 @@
 ---
-issue: "38"
-title: "Minha mentoria saiu do papel"
-date: "2024-08-22"
+issue: '38'
+title: 'Minha mentoria saiu do papel'
+date: '2024-08-22'
 ---
 
 Faz duas semanas que ando meio sumido.
@@ -17,7 +17,7 @@ Também conheci algumas pessoas que só "conhecia" virtualmente. Vou escrever um
 
 Mas vamos ao que interessa...
 
-* * *
+---
 
 Finalmente lancei meu programa de Mentoria de Acessibilidade Digital.
 

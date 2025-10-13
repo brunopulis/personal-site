@@ -406,193 +406,193 @@ function toISOString(dateString: string) {
   <Footer />
 </Layout>
 
-  <script>
-    function blogPage() {
-      const artigos = [
-        {
-          id: 1,
-          titulo: 'Uma doença chamada conteúdo curto',
-          slug: 'doenca-conteudo-curto',
-          categoria: 'pessoal',
-          resumo:
-            'Como o conteúdo curto nos viciou e quais são as alternativas para sair dessa loucura. Uma reflexão sobre como consumimos informação na era dos reels e shorts.',
-          imagem: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop',
-          data: '1 de outubro de 2024',
-          tempoLeitura: '8 min',
-          tags: ['Reflexão', 'Digital', 'Produtividade'],
-          destaque: true,
-          visualizacoes: 2340,
-        },
-        {
-          id: 2,
-          titulo: 'Meus aplicativos de 2024',
-          slug: 'apps-2024',
-          categoria: 'pessoal',
-          resumo:
-            'Confira os aplicativos que mais usei em 2024 e por que eles melhoraram minha produtividade e bem-estar.',
-          imagem: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop',
-          data: '30 de dezembro de 2024',
-          tempoLeitura: '6 min',
-          tags: ['Apps', 'Produtividade', 'Tech'],
-          destaque: false,
-          visualizacoes: 1823,
-        },
-        {
-          id: 3,
-          titulo: '5 tags HTML que ajudam na acessibilidade',
-          slug: '5-tags-acessibilidade',
-          categoria: 'acessibilidade',
-          resumo:
-            'Tags HTML semânticas que fazem toda a diferença para usuários de leitores de tela e melhoram a experiência de todos.',
-          imagem: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=400&fit=crop',
-          data: '29 de setembro de 2024',
-          tempoLeitura: '10 min',
-          tags: ['HTML', 'Web', 'WCAG'],
-          destaque: false,
-          visualizacoes: 3421,
-        },
-        {
-          id: 4,
-          titulo: 'Acessibilidade como missão cristã',
-          slug: 'acessibilidade-missao',
-          categoria: 'teologia',
-          resumo:
-            'Por que criar uma web acessível é, para mim, uma extensão da minha fé e do chamado ao amor ao próximo.',
-          imagem: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&h=400&fit=crop',
-          data: '15 de setembro de 2024',
-          tempoLeitura: '12 min',
-          tags: ['Fé', 'Propósito', 'Missão'],
-          destaque: false,
-          visualizacoes: 1564,
-        },
-        {
-          id: 5,
-          titulo: 'Como implementar navegação por teclado em React',
-          slug: 'navegacao-teclado-react',
-          categoria: 'acessibilidade',
-          resumo:
-            'Um guia prático e completo sobre como garantir que seus componentes React sejam totalmente navegáveis por teclado.',
-          imagem: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop',
-          data: '10 de agosto de 2024',
-          tempoLeitura: '15 min',
-          tags: ['React', 'Keyboard', 'Tutorial'],
-          destaque: false,
-          visualizacoes: 4521,
-        },
-        {
-          id: 6,
-          titulo: 'Por que parei de usar redes sociais',
-          slug: 'parei-redes-sociais',
-          categoria: 'pessoal',
-          resumo:
-            'Minha experiência de 6 meses longe do Twitter, Instagram e outras plataformas. O que mudou na minha vida e saúde mental.',
-          imagem: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop',
-          data: '5 de julho de 2024',
-          tempoLeitura: '9 min',
-          tags: ['Minimalismo Digital', 'Saúde Mental', 'Reflexão'],
-          destaque: false,
-          visualizacoes: 2876,
-        },
-        {
-          id: 7,
-          titulo: 'ARIA: quando usar e quando NÃO usar',
-          slug: 'aria-quando-usar',
-          categoria: 'acessibilidade',
-          resumo:
-            'ARIA é poderoso mas pode ser perigoso. Aprenda quando é necessário e quando você está piorando a acessibilidade.',
-          imagem: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop',
-          data: '20 de junho de 2024',
-          tempoLeitura: '13 min',
-          tags: ['ARIA', 'Semântica', 'Boas Práticas'],
-          destaque: false,
-          visualizacoes: 5234,
-        },
-        {
-          id: 8,
-          titulo: 'Lições de 10 anos trabalhando com web',
-          slug: 'licoes-10-anos-web',
-          categoria: 'carreira',
-          resumo:
-            'O que aprendi em uma década criando para a web. Os erros, as vitórias, e as lições que me tornaram quem sou hoje.',
-          imagem: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop',
-          data: '1 de maio de 2024',
-          tempoLeitura: '11 min',
-          tags: ['Carreira', 'Aprendizados', 'Experiência'],
-          destaque: false,
-          visualizacoes: 1987,
-        },
-        {
-          id: 9,
-          titulo: 'Contraste de cores: além do básico',
-          slug: 'contraste-cores',
-          categoria: 'design',
-          resumo:
-            'Contraste não é só preto no branco. Entenda as nuances, como testar corretamente, e por que isso importa tanto.',
-          imagem: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=400&fit=crop',
-          data: '12 de abril de 2024',
-          tempoLeitura: '7 min',
-          tags: ['Design', 'Cores', 'WCAG'],
-          destaque: false,
-          visualizacoes: 3102,
-        },
-      ]
+<script>
+  function blogPage() {
+    const artigos = [
+      {
+        id: 1,
+        titulo: 'Uma doença chamada conteúdo curto',
+        slug: 'doenca-conteudo-curto',
+        categoria: 'pessoal',
+        resumo:
+          'Como o conteúdo curto nos viciou e quais são as alternativas para sair dessa loucura. Uma reflexão sobre como consumimos informação na era dos reels e shorts.',
+        imagem: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop',
+        data: '1 de outubro de 2024',
+        tempoLeitura: '8 min',
+        tags: ['Reflexão', 'Digital', 'Produtividade'],
+        destaque: true,
+        visualizacoes: 2340,
+      },
+      {
+        id: 2,
+        titulo: 'Meus aplicativos de 2024',
+        slug: 'apps-2024',
+        categoria: 'pessoal',
+        resumo:
+          'Confira os aplicativos que mais usei em 2024 e por que eles melhoraram minha produtividade e bem-estar.',
+        imagem: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=400&fit=crop',
+        data: '30 de dezembro de 2024',
+        tempoLeitura: '6 min',
+        tags: ['Apps', 'Produtividade', 'Tech'],
+        destaque: false,
+        visualizacoes: 1823,
+      },
+      {
+        id: 3,
+        titulo: '5 tags HTML que ajudam na acessibilidade',
+        slug: '5-tags-acessibilidade',
+        categoria: 'acessibilidade',
+        resumo:
+          'Tags HTML semânticas que fazem toda a diferença para usuários de leitores de tela e melhoram a experiência de todos.',
+        imagem: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=400&fit=crop',
+        data: '29 de setembro de 2024',
+        tempoLeitura: '10 min',
+        tags: ['HTML', 'Web', 'WCAG'],
+        destaque: false,
+        visualizacoes: 3421,
+      },
+      {
+        id: 4,
+        titulo: 'Acessibilidade como missão cristã',
+        slug: 'acessibilidade-missao',
+        categoria: 'teologia',
+        resumo:
+          'Por que criar uma web acessível é, para mim, uma extensão da minha fé e do chamado ao amor ao próximo.',
+        imagem: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&h=400&fit=crop',
+        data: '15 de setembro de 2024',
+        tempoLeitura: '12 min',
+        tags: ['Fé', 'Propósito', 'Missão'],
+        destaque: false,
+        visualizacoes: 1564,
+      },
+      {
+        id: 5,
+        titulo: 'Como implementar navegação por teclado em React',
+        slug: 'navegacao-teclado-react',
+        categoria: 'acessibilidade',
+        resumo:
+          'Um guia prático e completo sobre como garantir que seus componentes React sejam totalmente navegáveis por teclado.',
+        imagem: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop',
+        data: '10 de agosto de 2024',
+        tempoLeitura: '15 min',
+        tags: ['React', 'Keyboard', 'Tutorial'],
+        destaque: false,
+        visualizacoes: 4521,
+      },
+      {
+        id: 6,
+        titulo: 'Por que parei de usar redes sociais',
+        slug: 'parei-redes-sociais',
+        categoria: 'pessoal',
+        resumo:
+          'Minha experiência de 6 meses longe do Twitter, Instagram e outras plataformas. O que mudou na minha vida e saúde mental.',
+        imagem: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop',
+        data: '5 de julho de 2024',
+        tempoLeitura: '9 min',
+        tags: ['Minimalismo Digital', 'Saúde Mental', 'Reflexão'],
+        destaque: false,
+        visualizacoes: 2876,
+      },
+      {
+        id: 7,
+        titulo: 'ARIA: quando usar e quando NÃO usar',
+        slug: 'aria-quando-usar',
+        categoria: 'acessibilidade',
+        resumo:
+          'ARIA é poderoso mas pode ser perigoso. Aprenda quando é necessário e quando você está piorando a acessibilidade.',
+        imagem: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop',
+        data: '20 de junho de 2024',
+        tempoLeitura: '13 min',
+        tags: ['ARIA', 'Semântica', 'Boas Práticas'],
+        destaque: false,
+        visualizacoes: 5234,
+      },
+      {
+        id: 8,
+        titulo: 'Lições de 10 anos trabalhando com web',
+        slug: 'licoes-10-anos-web',
+        categoria: 'carreira',
+        resumo:
+          'O que aprendi em uma década criando para a web. Os erros, as vitórias, e as lições que me tornaram quem sou hoje.',
+        imagem: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop',
+        data: '1 de maio de 2024',
+        tempoLeitura: '11 min',
+        tags: ['Carreira', 'Aprendizados', 'Experiência'],
+        destaque: false,
+        visualizacoes: 1987,
+      },
+      {
+        id: 9,
+        titulo: 'Contraste de cores: além do básico',
+        slug: 'contraste-cores',
+        categoria: 'design',
+        resumo:
+          'Contraste não é só preto no branco. Entenda as nuances, como testar corretamente, e por que isso importa tanto.',
+        imagem: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=400&fit=crop',
+        data: '12 de abril de 2024',
+        tempoLeitura: '7 min',
+        tags: ['Design', 'Cores', 'WCAG'],
+        destaque: false,
+        visualizacoes: 3102,
+      },
+    ]
 
-      const categorias = [
-        { id: 'todos', nome: 'Todos os artigos', icon: '📚', count: artigos.length },
-        {
-          id: 'acessibilidade',
-          nome: 'Acessibilidade',
-          icon: '♿',
-          count: artigos.filter((a) => a.categoria === 'acessibilidade').length,
-        },
-        { id: 'pessoal', nome: 'Pessoal', icon: '💭', count: artigos.filter((a) => a.categoria === 'pessoal').length },
-        {
-          id: 'teologia',
-          nome: 'Teologia',
-          icon: '✝️',
-          count: artigos.filter((a) => a.categoria === 'teologia').length,
-        },
-        {
-          id: 'carreira',
-          nome: 'Carreira',
-          icon: '💼',
-          count: artigos.filter((a) => a.categoria === 'carreira').length,
-        },
-        { id: 'design', nome: 'Design', icon: '🎨', count: artigos.filter((a) => a.categoria === 'design').length },
-      ]
+    const categorias = [
+      { id: 'todos', nome: 'Todos os artigos', icon: '📚', count: artigos.length },
+      {
+        id: 'acessibilidade',
+        nome: 'Acessibilidade',
+        icon: '♿',
+        count: artigos.filter((a) => a.categoria === 'acessibilidade').length,
+      },
+      { id: 'pessoal', nome: 'Pessoal', icon: '💭', count: artigos.filter((a) => a.categoria === 'pessoal').length },
+      {
+        id: 'teologia',
+        nome: 'Teologia',
+        icon: '✝️',
+        count: artigos.filter((a) => a.categoria === 'teologia').length,
+      },
+      {
+        id: 'carreira',
+        nome: 'Carreira',
+        icon: '💼',
+        count: artigos.filter((a) => a.categoria === 'carreira').length,
+      },
+      { id: 'design', nome: 'Design', icon: '🎨', count: artigos.filter((a) => a.categoria === 'design').length },
+    ]
 
-      return {
-        artigos,
-        categorias,
-        categoriaAtiva: 'todos',
-        busca: '',
-        // retorna array filtrado dinamicamente
-        artigosFiltrados() {
-          const busca = (this.busca || '').toLowerCase().trim()
-          return this.artigos.filter((artigo) => {
-            const matchCategoria = this.categoriaAtiva === 'todos' || artigo.categoria === this.categoriaAtiva
-            const matchBusca =
-              !busca ||
-              artigo.titulo.toLowerCase().includes(busca) ||
-              artigo.resumo.toLowerCase().includes(busca) ||
-              (artigo.tags || []).some((t) => t.toLowerCase().includes(busca))
-            return matchCategoria && matchBusca
-          })
-        },
-        artigoDestaque() {
-          return this.artigos.find((a) => a.destaque) || null
-        },
-        artigosMaisLidos() {
-          return [...this.artigos].sort((a, b) => b.visualizacoes - a.visualizacoes).slice(0, 3)
-        },
-        avgLeitura() {
-          // extrai número de 'tempoLeitura' (ex: '8 min')
-          const total = this.artigos.reduce((acc, a) => acc + (parseInt(a.tempoLeitura, 10) || 0), 0)
-          return Math.round(total / this.artigos.length) || 0
-        },
-        formatNumber(n) {
-          return n.toLocaleString()
-        },
-      }
+    return {
+      artigos,
+      categorias,
+      categoriaAtiva: 'todos',
+      busca: '',
+      // retorna array filtrado dinamicamente
+      artigosFiltrados() {
+        const busca = (this.busca || '').toLowerCase().trim()
+        return this.artigos.filter((artigo) => {
+          const matchCategoria = this.categoriaAtiva === 'todos' || artigo.categoria === this.categoriaAtiva
+          const matchBusca =
+            !busca ||
+            artigo.titulo.toLowerCase().includes(busca) ||
+            artigo.resumo.toLowerCase().includes(busca) ||
+            (artigo.tags || []).some((t) => t.toLowerCase().includes(busca))
+          return matchCategoria && matchBusca
+        })
+      },
+      artigoDestaque() {
+        return this.artigos.find((a) => a.destaque) || null
+      },
+      artigosMaisLidos() {
+        return [...this.artigos].sort((a, b) => b.visualizacoes - a.visualizacoes).slice(0, 3)
+      },
+      avgLeitura() {
+        // extrai número de 'tempoLeitura' (ex: '8 min')
+        const total = this.artigos.reduce((acc, a) => acc + (parseInt(a.tempoLeitura, 10) || 0), 0)
+        return Math.round(total / this.artigos.length) || 0
+      },
+      formatNumber(n) {
+        return n.toLocaleString()
+      },
     }
-  </script>
+  }
+</script>

@@ -1,6 +1,6 @@
 ---
-title: "Política de Privacidade"
-date: "2022-05-22"
+title: 'Política de Privacidade'
+date: '2022-05-22'
 ---
 
 ## **1\. Introdução**
@@ -45,11 +45,11 @@ Cookies são pequenos arquivos de texto enviados e armazenados no seu computador
 
 ### **3.4 Como usamos cookies?**
 
-Quando você acessa o nosso site, nós, incluindo as empresas que contratamos para acompanhar como nosso site é usado, podemos colocar pequenos arquivos de dados chamados “cookies” no seu computador. Enviamos um “cookie da sessão” para o seu computador quando você acessa nosso site, entra em sua conta ou acessa os produtos e/ou serviços comercializados pelo pela empresa ****Bruno Pulis Consultoria e Treinamentos****.
+Quando você acessa o nosso site, nós, incluindo as empresas que contratamos para acompanhar como nosso site é usado, podemos colocar pequenos arquivos de dados chamados “cookies” no seu computador. Enviamos um “cookie da sessão” para o seu computador quando você acessa nosso site, entra em sua conta ou acessa os produtos e/ou serviços comercializados pelo pela empresa \***\*Bruno Pulis Consultoria e Treinamentos\*\***.
 
 Esse tipo de cookie nos ajuda a reconhecê-lo caso você visite várias páginas em nosso site durante a mesma sessão, para que não precisemos solicitar suas informações e/ou senha em todas as páginas. Depois que você sair ou fechar o seu navegador, esse cookie irá expirar e deixará de ter efeito. Também usamos cookies de maior duração para outras finalidades, como, por exemplo, para exibir o seu endereço de e-mail em um formulário de cadastro ou acesso, para que você não precise digitar novamente o endereço de e-mail sempre que quiser fazer um cadastro ou acesso em algum dos nossos serviços ou produtos. Codificamos nossos cookies para que apenas nós possamos interpretar as informações armazenadas neles. Você está livre para recusar nossos cookies caso o seu navegador permita, mas isso pode interferir no uso do nosso site. Nós e nossos prestadores de serviço também usam cookies para personalizar nossos serviços e/ou produtos, conteúdo e publicidade, avaliar a eficiência das promoções e promover confiança e segurança.
 
-Você pode encontrar cookies de terceiros ao acessar os serviços ou ao adquirir os produtos da empresa ****Bruno Pulis Consultoria e Treinamentos**** em determinados sites que não estão sob nosso controle.
+Você pode encontrar cookies de terceiros ao acessar os serviços ou ao adquirir os produtos da empresa \***\*Bruno Pulis Consultoria e Treinamentos\*\*** em determinados sites que não estão sob nosso controle.
 
 – Quais as categorias e a finalidade dos cookies?
 

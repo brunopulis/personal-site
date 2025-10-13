@@ -1,0 +1,16 @@
+---
+import { ChevronDown, ChevronUp } from '@lucide/astro'
+
+interface FAQItemProps {
+  question: string
+  answer: string
+  index: number
+}
+
+const { question, answer, index } = Astro.props;
+---
+
+<article class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm" id={`faq` + index}>
+  <h3 class="mb-3 text-lg font-bold text-errie-black-900">{question}</h3>
+  <p class="leading-relaxed text-errie-black-900">{answer}</p>
+</article>

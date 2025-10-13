@@ -1,11 +1,12 @@
 ---
-title: "GitHub Profile: dicas para se destacar"
+title: 'GitHub Profile: dicas para se destacar'
 publishDate: 2024-07-07
-category: "Carreira"
+category: 'Carreira'
 url: https://brunopulis.com/github-profile-dicas-para-se-destacar/
 tags:
   - carreira
 ---
+
 Que o [GitHub](https://github.com) é extremamente importante para a carreira de um desenvolvedor, todos nós sabemos. Mas o que faz um perfil ser relevante e competitivo na rede?
 
 Nesse artigo, te apresento o GitHub Profile, uma ferramenta que pode te ajudar a dar o destaque necessário no seu perfil.

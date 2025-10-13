@@ -1,0 +1,31 @@
+---
+import CTAButton from '@/components/mentoria/CTAButton.astro'
+---
+
+<section class="bg-blood-red-800 relative pt-32 pb-20 text-white md:pt-40 md:pb-28" aria-labelledby="hero-heading">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-0 right-0 left-0 h-[500px] bg-gradient-to-b from-[#849CDB]/10 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="text-blood-red-800 mb-6 inline-block rounded-full bg-white px-4 py-1 text-sm font-bold">
+        Mentoria de Acessibilidade Web
+      </span>
+
+      <h1 class="mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl" id="hero-heading">
+        Se destaque no mercado
+      </h1>
+
+      <p class="mb-8 text-xl text-white md:text-2xl">
+        Aprenda as técnicas e padrões para criar sites inclusivos e acessíveis através da metodologia
+        <span class="font-bold text-[#849CDB]"> BASE</span>.
+      </p>
+
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <CTAButton href="#inscricao" primary>Quero me inscrever</CTAButton>
+        <CTAButton href="#pilares">Conhecer a metodologia</CTAButton>
+      </div>
+    </div>
+  </div>
+</section>

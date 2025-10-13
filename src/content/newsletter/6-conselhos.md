@@ -1,7 +1,7 @@
 ---
-issue: "19"
-title: "6 Conselhos que gostaria de ter recebido"
-date: "2024-02-15"
+issue: '19'
+title: '6 Conselhos que gostaria de ter recebido'
+date: '2024-02-15'
 ---
 
 Pulis Letters - Edição #19
@@ -10,7 +10,7 @@ Tempo de leitura: 7 minutos
 Estou muito feliz, ontem várias pessoas se inscreveram nas minhas cartas.
 Se você está chegando hoje, puxa uma cadeira e sinta-se em casa.
 
-Já comentei, em edições anteriores, que estou lendo e revendo _Game of Thrones_.
+Já comentei, em edições anteriores, que estou lendo e revendo *Game of Thrones*.
 
 Ontem, estava lendo o livro e uma frase do Tyrion me chamou atenção:
 
@@ -40,11 +40,11 @@ Sou de uma época que tudo era mais difícil, por volta de 2010 escrevi meus pri
 
 - JS Vanilla.
 
-Não existia a separação de _frontend_ e _backend_, éramos chamados de webmasters.
+Não existia a separação de *frontend* e *backend*, éramos chamados de webmasters.
 
 ![Capa de um livro de Dreamwever com o título Dreamweaver CSS for Dummies](images/dreamweaver-239x300.webp)
 
-Eu nem imaginava que ia acontecer uma evolução brutal no HTML, CSS e JS. Nessa época os primeiros _grid systems_ apareciam, meu primeiro foi o [960gs](https://960.gs/).
+Eu nem imaginava que ia acontecer uma evolução brutal no HTML, CSS e JS. Nessa época os primeiros *grid systems* apareciam, meu primeiro foi o [960gs](https://960.gs/).
 
 Tenho que confessar, sou saudosista. Gosto da ideia de fazer software bem artesanal. Mas entendendo, que a tecnologia evoluiu e os desafios também.
 
@@ -64,9 +64,9 @@ Se começasse hoje, ia aprender bem o tripé da web:
 
 - JS.
 
-**Dica de ouro:** _Estude pela [MDN](https://developer.mozilla.org/)  e fuja da W3Schools, existem muitos exemplos ruins por lá. A W3Schools não tem ligação com a W3C._
+**Dica de ouro:** *Estude pela [MDN](https://developer.mozilla.org/)  e fuja da W3Schools, existem muitos exemplos ruins por lá. A W3Schools não tem ligação com a W3C.*
 
-Um bom start também são os _roadmaps_ que a comunidade desenvolve.
+Um bom start também são os *roadmaps* que a comunidade desenvolve.
 
 ## 2\. Tenha um mentor
 
@@ -128,7 +128,7 @@ Ter um conhecimento sólido nisso, fará você se destacar na multidão. Pode pa
 ## 4\. Aprenda acessibilidade
 
 Papo reto, acessibilidade é muito importante por uma série de razões.
-Uma delas é escrever um código cheio de gambiarra, pode impossibilitar o acesso para mais de 45 milhões de pessoas no seu site ou _app_.
+Uma delas é escrever um código cheio de gambiarra, pode impossibilitar o acesso para mais de 45 milhões de pessoas no seu site ou *app*.
 
 A escrita do HTML correto, está intimamente ligada com a acessibilidade.
 

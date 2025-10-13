@@ -1,8 +1,8 @@
 ---
-issue: "45"
-title: "Vida vazia, saudade sua"
-date: "2024-12-12"
-coverImage: "buttons-scaled.jpg"
+issue: '45'
+title: 'Vida vazia, saudade sua'
+date: '2024-12-12'
+coverImage: 'buttons-scaled.jpg'
 ---
 
 Olá,
@@ -13,7 +13,7 @@ Confesso, aquilo me intrigou e coloquei para assistir, foi uma experiência inte
 
 Mas, vamos ao que interessa
 
-* * *
+---
 
 Os botões são um dos elementos mais importantes do HTML. Sem eles não poderíamos:
 
@@ -31,8 +31,8 @@ Essas características são levadas em consideração e lidas pelo leitor de tel
 
 > **Para memorizar**: tecnologias assistivas leem os elementos HTML e extraem suas propriedades. Sem as propriedades corretas, o feedback pode ficar comprometido.
 
-Imagine comigo o cenário, você precisa implementar uma janela modal com um botão de fechar.  
-  
+Imagine comigo o cenário, você precisa implementar uma janela modal com um botão de fechar.
+
 O código produzido foi:
 
 ```html

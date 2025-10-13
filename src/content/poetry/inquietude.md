@@ -8,13 +8,14 @@ metadata:
 tags:
   - teologia
 ---
+
 E quando tudo fica meio bagunçado e você sem saber para onde correr?
 
 Enquanto escrevo essas poucas linhas [ouço essa canção](https://www.youtube.com/watch?v=5J1zIX10dqE), aconselho a você ouvir, me traz uma sensação de solitude, aconchego e descanso.
 
 O tema da vez é: **inquietude**
 
-Segundo o dicionário, inquietude é: _estado de quem demonstra falta de sossego; que não consegue repousar; sem tranquilidade; nervosismo._
+Segundo o dicionário, inquietude é: *estado de quem demonstra falta de sossego; que não consegue repousar; sem tranquilidade; nervosismo.*
 
 Quem nunca teve certa inquietude na vida?
 Difícil falar, não é mesmo?
