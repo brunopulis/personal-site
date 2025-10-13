@@ -49,230 +49,110 @@ const iconMap = {
 // https://claude.ai/public/artifacts/5757f761-fc49-4bfc-b9af-736740afd31a
 
 const servicos = [
-  {
-    id: 'mentoria',
-    title: 'Mentoria',
-    icone: Users,
-    tagline: 'Trabalho com você, não só para você',
-    description:
-      'Não adianta só entregar um relatório. Eu trabalho lado a lado com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.',
-    ideal:
-      'Para equipes que querem aprender fazendo, empresas que precisam de acompanhamento contínuo, ou profissionais que querem se especializar em acessibilidade.',
-    duracao: '1-6 meses',
-    investimento: 'R$ 1.497',
-    url: '/servicos/mentoria',
-    cor: 'red',
-    badge: '🔥 Mais procurado',
-    oqueinclui: [
-      'Reuniões semanais de 1-2 horas',
-      'Revisão de código e design em tempo real',
-      'Acesso direto via Slack/WhatsApp',
-      'Documentação personalizada para seu projeto',
-      'Treinamento prático da equipe',
-      'Acompanhamento de implementação',
-    ],
-    processo: [
-      'Diagnóstico inicial do projeto e equipe',
-      'Definição de objetivos e roadmap',
-      'Sessões práticas semanais',
-      'Revisões e ajustes contínuos',
-      'Entrega de documentação final',
-    ],
-    resultados: [
-      'Equipe capacitada para criar produtos acessíveis',
-      'Redução de 70% em bugs de acessibilidade',
-      'Processos internos estabelecidos',
-      'Cultura de acessibilidade implementada',
-    ],
-  },
-  {
-    id: 'auditoria',
-    title: 'Auditoria de Acessibilidade',
-    icone: FileText,
-    tagline: 'Descubra EXATAMENTE o que precisa ser corrigido',
-    description:
-      'Analiso seu site, app ou documento e te mostro exatamente o que precisa melhorar - e por quê isso importa para seus usuários.',
-    ideal:
-      'Para empresas que precisam saber a situação atual, que enfrentam requisitos legais, ou que querem priorizar investimentos em acessibilidade.',
-    duracao: '2-4 semanas',
-    investimento: 'A partir de R$ 5.000',
-    cor: 'blue',
-    badge: '⭐ Começo ideal',
-    oqueinclui: [
-      'Auditoria completa baseada em WCAG 2.1/2.2',
-      'Testes com leitores de tela (NVDA, JAWS, VoiceOver)',
-      'Testes de navegação por teclado',
-      'Análise de contraste de cores',
-      'Relatório detalhado com prints e vídeos',
-      'Planilha de problemas priorizados por impacto',
-      'Reunião de apresentação dos resultados',
-      'Recomendações práticas de correção',
-    ],
-    processo: [
-      'Kickoff: definição de escopo e páginas prioritárias',
-      'Auditoria técnica e testes com usuários simulados',
-      'Elaboração do relatório detalhado',
-      'Apresentação dos resultados e recomendações',
-      'Suporte pós-auditoria (2 semanas)',
-    ],
-    resultados: [
-      'Mapa completo de problemas de acessibilidade',
-      'Roadmap priorizado de correções',
-      'Documentação para desenvolvedores',
-      'Clareza sobre investimento necessário',
-    ],
-  },
-  {
-    id: 'auditoria',
-    title: 'Auditoria de Acessibilidade',
-    icone: FileText,
-    tagline: 'Descubra EXATAMENTE o que precisa ser corrigido',
-    description:
-      'Analiso seu site, app ou documento e te mostro exatamente o que precisa melhorar - e por quê isso importa para seus usuários.',
-    ideal:
-      'Para empresas que precisam saber a situação atual, que enfrentam requisitos legais, ou que querem priorizar investimentos em acessibilidade.',
-    duracao: '2-4 semanas',
-    investimento: 'A partir de R$ 5.000',
-    cor: 'blue',
-    badge: '⭐ Começo ideal',
-    oqueinclui: [
-      'Auditoria completa baseada em WCAG 2.1/2.2',
-      'Testes com leitores de tela (NVDA, JAWS, VoiceOver)',
-      'Testes de navegação por teclado',
-      'Análise de contraste de cores',
-      'Relatório detalhado com prints e vídeos',
-      'Planilha de problemas priorizados por impacto',
-      'Reunião de apresentação dos resultados',
-      'Recomendações práticas de correção',
-    ],
-    processo: [
-      'Kickoff: definição de escopo e páginas prioritárias',
-      'Auditoria técnica e testes com usuários simulados',
-      'Elaboração do relatório detalhado',
-      'Apresentação dos resultados e recomendações',
-      'Suporte pós-auditoria (2 semanas)',
-    ],
-    resultados: [
-      'Mapa completo de problemas de acessibilidade',
-      'Roadmap priorizado de correções',
-      'Documentação para desenvolvedores',
-      'Clareza sobre investimento necessário',
-    ],
-  },
-  {
-    id: 'palestras',
-    title: 'Palestras e Treinamentos',
-    icone: MessageCircle,
-    tagline: 'Acessibilidade sem jargões complicados',
-    description:
-      'Levo conhecimento acessível para empresas e eventos. Explico conceitos complexos de forma simples e prática.',
-    ideal:
-      'Para eventos, empresas que querem sensibilizar equipes, ou organizações que precisam de treinamento inicial em acessibilidade.',
-    duracao: '1-8 horas',
-    investimento: 'A partir de R$ 2.000',
-    cor: 'purple',
-    badge: '💡 Inspirador',
-    oqueinclui: [
-      'Palestra personalizada para seu contexto',
-      'Material didático em formato acessível',
-      'Demonstrações práticas ao vivo',
-      'Sessão de perguntas e respostas',
-      'Certificados de participação',
-      'Gravação da palestra (opcional)',
-    ],
-    temas: [
-      'Introdução à Acessibilidade Web (WCAG)',
-      'Acessibilidade em React/Vue/Angular',
-      'Design Inclusivo na Prática',
-      'Como testar acessibilidade',
-      'Acessibilidade e SEO',
-      'Cases reais de implementação',
-      'Acessibilidade em Design Systems',
-    ],
-    formatos: [
-      'Palestra: 1h (keynote, conferências)',
-      'Workshop: 3-4h (hands-on, prático)',
-      'Treinamento: 8h (curso completo)',
-      'Webinar: 1-2h (remoto, interativo)',
-    ],
-  },
     {
-    id: 'auditoria',
-    title: 'Auditoria de Acessibilidade',
-    icone: FileText,
-    tagline: 'Descubra EXATAMENTE o que precisa ser corrigido',
-    description:
-      'Analiso seu site, app ou documento e te mostro exatamente o que precisa melhorar - e por quê isso importa para seus usuários.',
-    ideal:
-      'Para empresas que precisam saber a situação atual, que enfrentam requisitos legais, ou que querem priorizar investimentos em acessibilidade.',
-    duracao: '2-4 semanas',
-    investimento: 'A partir de R$ 5.000',
-    cor: 'blue',
-    badge: '⭐ Começo ideal',
-    oqueinclui: [
-      'Auditoria completa baseada em WCAG 2.1/2.2',
-      'Testes com leitores de tela (NVDA, JAWS, VoiceOver)',
-      'Testes de navegação por teclado',
-      'Análise de contraste de cores',
-      'Relatório detalhado com prints e vídeos',
-      'Planilha de problemas priorizados por impacto',
-      'Reunião de apresentação dos resultados',
-      'Recomendações práticas de correção',
-    ],
-    processo: [
-      'Kickoff: definição de escopo e páginas prioritárias',
-      'Auditoria técnica e testes com usuários simulados',
-      'Elaboração do relatório detalhado',
-      'Apresentação dos resultados e recomendações',
-      'Suporte pós-auditoria (2 semanas)',
-    ],
-    resultados: [
-      'Mapa completo de problemas de acessibilidade',
-      'Roadmap priorizado de correções',
-      'Documentação para desenvolvedores',
-      'Clareza sobre investimento necessário',
-    ],
-  },
-  {
-    id: 'remediacao',
-    title: 'Remediação de Sites e Apps',
-    icone: Code,
-    tagline: 'Corrijo o que está quebrado',
-    description:
-      'Pego seu site ou app inacessível e faço as correções necessárias no código. Trabalho direto na implementação.',
-    ideal:
-      'Para empresas que já sabem o que precisa ser corrigido mas não têm capacidade técnica interna, ou que precisam de resultados rápidos.',
-    duracao: '1-3 meses',
-    investimento: 'Sob consulta',
-    cor: 'green',
-    badge: '🚀 Resultados rápidos',
-    oqueinclui: [
-      'Análise do código-fonte atual',
-      'Correção de problemas identificados',
-      'Refatoração de componentes inacessíveis',
-      'Implementação de ARIA correto',
-      'Ajustes de HTML semântico',
-      'Testes durante implementação',
-      'Documentação do que foi alterado',
-      'Treinamento básico da equipe',
-    ],
-    tecnologias: [
-      'HTML/CSS/JavaScript puro',
-      'React, Vue.js, Angular',
-      'WordPress, Elementor',
-      'Gatsby, Next.js, Astro',
-      'Tailwind CSS, Bootstrap',
-      'Web Components',
-      'E outras tecnologias sob consulta',
-    ],
-    alertas: [
-      'Necessário acesso ao código-fonte',
-      'Prazo depende da complexidade do projeto',
-      'Pode exigir refatoração significativa',
-      'Ideal combinar com mentoria da equipe',
-    ],
-  },
-]
+      id: 'mentoria',
+      title: 'Mentoria',
+      icone: Users,
+      tagline: 'Aprenda fazendo, com acompanhamento contínuo',
+      descricao: 'Trabalho lado a lado com você ou sua equipe para desenvolver habilidades em acessibilidade. Não é só teoria - é prática real no seu projeto.',
+      duracao: '2 meses',
+      investimento: 'A partir de R$ 1.497,00',
+      cor: 'red',
+      badge: 'Mais procurado',
+      oqueinclui: [
+        'Reuniões semanais de 1-2 horas',
+        'Revisão de código e design em tempo real',
+        'Acesso direto via Slack/WhatsApp',
+        'Documentação personalizada para seu projeto'
+      ]
+    },
+    {
+      id: 'auditoria',
+      title: 'Auditoria de Sites',
+      icone: FileText,
+      tagline: 'Descubra exatamente o que precisa melhorar',
+      descricao: 'Analiso seu site e te mostro todos os problemas de acessibilidade, com priorização clara e recomendações práticas de correção.',
+      duracao: '2-4 semanas',
+      investimento: 'A partir de R$ 2.500',
+      cor: 'blue',
+      badge: 'Começo ideal',
+      oqueinclui: [
+        'Auditoria completa baseada em WCAG 2.1/2.2',
+        'Testes com leitores de tela e navegação por teclado',
+        'Relatório detalhado com prints e vídeos',
+        'Planilha de problemas priorizados por impacto'
+      ]
+    },
+    {
+      id: 'palestras',
+      title: 'Palestras e Treinamentos',
+      icone: MessageCircle,
+      tagline: 'Conhecimento acessível para sua equipe',
+      descricao: 'Levo acessibilidade para empresas e eventos de forma simples e prática. Sem jargões complicados, com foco em aplicação real.',
+      duracao: '1-8 horas',
+      investimento: 'A partir de R$ 850,00',
+      cor: 'purple',
+      badge: 'Inspirador',
+      oqueinclui: [
+        'Palestra personalizada para seu contexto',
+        'Material didático em formato acessível',
+        'Demonstrações práticas ao vivo',
+        'Sessão de perguntas e respostas'
+      ]
+    },
+    {
+      id: 'remediacao-docs',
+      title: 'Remediação de Documentos',
+      icone: FileText,
+      tagline: 'PDFs e documentos verdadeiramente acessíveis',
+      descricao: 'Transformo seus documentos (PDFs, Word, PowerPoint) em versões acessíveis que atendem aos padrões.',
+      duracao: '1-4 semanas',
+      investimento: 'A partir de R$ 60,00',
+      cor: 'orange',
+      badge: 'Essencial',
+      oqueinclui: [
+        'Remediação do arquivo com tags adequadas',
+        'Relatório de avaliação',
+        'Estruturação semântica de documentos',
+        'Ajuste de ordem de leitura',
+        'Descrição de imagens e gráficos'
+      ]
+    },
+    {
+      id: 'remediacao-sites',
+      title: 'Remediação de Sites',
+      icone: Code,
+      tagline: 'Corrijo o código para torná-lo acessível',
+      descricao: 'Pego seu site inacessível e implemento todas as correções necessárias no código. Trabalho direto na implementação técnica.',
+      duracao: '1-3 meses',
+      investimento: 'Sob consulta',
+      cor: 'green',
+      badge: 'Mão na massa',
+      oqueinclui: [
+        'Correção de problemas identificados',
+        'Refatoração de componentes inacessíveis',
+        'Implementação de ARIA correto',
+        'Documentação do que foi alterado'
+      ]
+    },
+    {
+      id: 'consultoria',
+      title: 'Consultoria',
+      icone: Target,
+      tagline: 'Orientação estratégica para decisões certas',
+      descricao: 'Ajudo sua empresa a definir estratégias de acessibilidade, criar políticas internas e tomar decisões informadas sobre investimentos.',
+      duracao: 'Flexível',
+      investimento: 'A partir de R$ 2.000',
+      cor: 'indigo',
+      badge: 'Estratégico',
+      oqueinclui: [
+        'Análise de maturidade em acessibilidade',
+        'Definição de roadmap e prioridades',
+        'Criação de políticas e processos',
+        'Orientação sobre fornecedores e ferramentas'
+      ]
+    }
+  ];
 ---
 
 <Layout title="Serviços - Bruno Pulis">
@@ -280,7 +160,7 @@ const servicos = [
 
   <main id="main-content">
     {/* Hero */}
-    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 py-12 text-white">
+    <section class="relative overflow-hidden bg-blood-red-800 py-12 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -383,28 +263,18 @@ const servicos = [
               );
             })}
           </div>
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {
-            servicos.map((servico) => (
-              <ServiceCard
+          <!-- <ServiceCard
                 title={servico.title}
                 description={servico.description}
                 deliveries={servico.deliveries}
                 link={servico.link}
                 linkText={servico.linkText}
-              />
-            ))
-          }
+              /> -->
         </div>
       </div>
     </section>
 
-    {/* Pacotes */}
     <Packages />
-
-    {/* FAQ */}
     <FAQ />
 
     <section class="bg-gray-900 py-20 text-white">
