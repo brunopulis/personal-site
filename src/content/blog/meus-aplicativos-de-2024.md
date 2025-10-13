@@ -1,13 +1,13 @@
 ---
 title: Meus aplicativos de 2024
 publishDate: 2024-12-31
-image: "/src/assets/images/blog/social-midia-scaled.jpg"
-imageAlt: "Capa do artigo: Meus aplicativos de 2024"
-category: "Pessoal"
+image: '/src/assets/images/blog/social-midia-scaled.jpg'
+imageAlt: 'Capa do artigo: Meus aplicativos de 2024'
+category: 'Pessoal'
 tags:
   - Pessoal
   - Apps
-excerpt: "Confira os aplicativos que mais usei em 2024."
+excerpt: 'Confira os aplicativos que mais usei em 2024.'
 draft: false
 ---
 
@@ -17,7 +17,7 @@ Resolvi fazer essa lista para vocês, não vou encher linguiça, mas vou ser dir
 
 Vamos lá
 
-* * *
+---
 
 - **Serviço de E-mail:** [Proton](https://proton.me) e [Google Workspace](https://workspace.google.com/intl/pt-BR/)
 - **Notas:** Obsidian e Notion

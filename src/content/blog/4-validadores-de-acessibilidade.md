@@ -3,7 +3,7 @@ title: 4 validadores de acessibilidade que recomendo
 publishDate: 2014-02-19
 draft: false
 category: Acessibilidade
-tags: ["validadores"]
+tags: ['validadores']
 ---
 
 ## Introdução

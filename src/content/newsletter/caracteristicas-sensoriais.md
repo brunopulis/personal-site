@@ -1,8 +1,8 @@
 ---
-issue: "41"
-title: "Teclados, celulares, interfones e acessibilidade"
-date: "2024-11-01"
-coverImage: "42.png"
+issue: '41'
+title: 'Teclados, celulares, interfones e acessibilidade'
+date: '2024-11-01'
+coverImage: '42.png'
 ---
 
 Olá pessoal,
@@ -37,7 +37,7 @@ Já pensou nisso?
 
 Eles possuem essas **características**, para as pessoas se orientarem através da **localização espacial**.
 
-* * *
+---
 
 ## **Um exemplo real**
 
@@ -48,9 +48,9 @@ Nesse exemplo, temos um problema de orientação e localização.
 Pessoas cegas e com baixa visão podem não ser capazes de entender instruções se dependerem apenas de uma **descrição da forma** e/ou **localização do conteúdo**.
 
 > **Para fixar**
-> 
+>
 > Devemos fornecer informações adicionais e instruções que não sejam somente a **forma** e/ou **localização**.
-> 
+>
 > Isso permitirá que os usuários entendam as instruções, mesmo que não consigam perceber sua forma e/ou localização.
 
 ## **Uma possível solução**
@@ -65,6 +65,6 @@ Seria da seguinte forma:
 
 A instrução usa **posicionamento** e **cor** para identificar o ícone; ela não depende dessas características sensoriais, uma vez que também se refere para o rótulo e por isso, cumpre o critério.
 
-* * *
+---
 
 **O que você achou dessa edição? Adoraria sua opinião.**

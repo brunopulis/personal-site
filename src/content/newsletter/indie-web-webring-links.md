@@ -1,7 +1,7 @@
 ---
-issue: "25"
-title: "Indie Web, Webring, RSS e links"
-date: "2024-03-28"
+issue: '25'
+title: 'Indie Web, Webring, RSS e links'
+date: '2024-03-28'
 ---
 
 Pulis Letters - Edição #25  
@@ -62,7 +62,7 @@ Estou num [webring de profissionais de acessibilidade](https://a11y-webring.clu
 
 O RSS é um dos padrões mais interessantes, basta usar um cliente e adicionar o RSS e pronto você recebe os artigos dos seus sites preferidos.
 
-Já usei muito o falecido Google Reader, porém, hoje eu uso o [NewsBlur](https://www.newsblur.com/), uma alternativa _open source_ e robusta.
+Já usei muito o falecido Google Reader, porém, hoje eu uso o [NewsBlur](https://www.newsblur.com/), uma alternativa *open source* e robusta.
 
 Reparei que ando muito saudosista com a web antiga, as coisas eram mais legais.
 

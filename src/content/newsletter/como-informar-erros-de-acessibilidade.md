@@ -1,7 +1,7 @@
 ---
-issue: "14"
-title: "Como informar erros de acessibilidade?"
-date: "2024-01-21"
+issue: '14'
+title: 'Como informar erros de acessibilidade?'
+date: '2024-01-21'
 ---
 
 Hoje foi dia de comemoração por aqui, casa cheia, familiares, bolo, salgadinho.
@@ -66,7 +66,7 @@ Mostre as vantagens que a empresa teria se o site dela fosse acessível. Você p
 
 - Posicionamento no Google;
 
-- Aumento de _marketshare_;
+- Aumento de *marketshare*;
 
 - Autonomia das pessoas com deficiência;
 

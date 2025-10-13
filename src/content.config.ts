@@ -1,5 +1,5 @@
-import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
+import { defineCollection, z } from 'astro:content'
+import { glob } from 'astro/loaders'
 
 const seoSchema = z.object({
   title: z.string().min(5).max(120).optional(),
@@ -10,12 +10,12 @@ const seoSchema = z.object({
       alt: z.string().optional(),
     })
     .optional(),
-  pageType: z.enum(["website", "article"]).default("website"),
-});
+  pageType: z.enum(['website', 'article']).default('website'),
+})
 
 // 3. Define your collection(s)
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog/" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog/' }),
   schema: z.object({
     title: z.string(),
     location: z.string().optional(),
@@ -34,19 +34,19 @@ const blog = defineCollection({
     readingTime: z.number().optional(),
     url: z.string().optional(),
     canonicalUrl: z.string().optional(),
-    seo: seoSchema.optional()
+    seo: seoSchema.optional(),
   }),
-});
+})
 
 const notes = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/notes" }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/notes' }),
   schema: z.object({
     date: z.string().date(),
   }),
-});
+})
 
 const newsletter = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/newsletter" }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/newsletter' }),
   schema: z.object({
     issue: z.string(),
     title: z.string(),
@@ -54,10 +54,10 @@ const newsletter = defineCollection({
     coverImage: z.string().optional(),
     date: z.string().date(),
   }),
-});
+})
 
 export const collections = {
   blog,
   newsletter,
   notes,
-};
+}

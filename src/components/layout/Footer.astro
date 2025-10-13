@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets'
 import pulisLogo from '@/assets/horizontal/white.svg'
 
-
 import writtenByHuman from '@/assets/images/written-by-human.svg'
 import config from '@/data/site.config.json'
 ---
@@ -137,20 +136,42 @@ import config from '@/data/site.config.json'
       <div class="flex flex-row space-x-5">
         <ul class="flex space-x-2">
           <li class="social__item">
-            <a href="/sitemap-index.xml" rel="alternate" type="application/rss+xml" class="text-sm text-white underline-offset-8 hover:underline"> RSS </a>
+            <a
+              href="/sitemap-index.xml"
+              rel="alternate"
+              type="application/rss+xml"
+              class="text-sm text-white underline-offset-8 hover:underline"
+            >
+              RSS
+            </a>
           </li>
           <li class="social__item">
-            <a href={config.socialMidia.github} target="_blank" rel="me noopener noreferrer" class="text-sm text-white underline-offset-8 hover:underline">
+            <a
+              href={config.socialMidia.github}
+              target="_blank"
+              rel="me noopener noreferrer"
+              class="text-sm text-white underline-offset-8 hover:underline"
+            >
               GitHub
             </a>
           </li>
           <li class="social__item">
-            <a href={config.socialMidia.youtube} target="_blank" rel="me noopener noreferrer" class="text-sm text-white underline-offset-8 hover:underline">
+            <a
+              href={config.socialMidia.youtube}
+              target="_blank"
+              rel="me noopener noreferrer"
+              class="text-sm text-white underline-offset-8 hover:underline"
+            >
               YouTube
             </a>
           </li>
           <li class="social__item">
-            <a href={config.socialMidia.linkedin} target="_blank" rel="me noopener noreferrer" class="text-sm text-white underline-offset-8 hover:underline">
+            <a
+              href={config.socialMidia.linkedin}
+              target="_blank"
+              rel="me noopener noreferrer"
+              class="text-sm text-white underline-offset-8 hover:underline"
+            >
               LinkedIn
             </a>
           </li>

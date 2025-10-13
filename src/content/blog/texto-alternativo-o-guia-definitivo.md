@@ -1,14 +1,15 @@
 ---
-title: "Texto alternativo: o guia definitivo"
+title: 'Texto alternativo: o guia definitivo'
 publishDate: 2021-09-26
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/texto-alternativo-o-guia-definitivo/
 tags:
   - texto alternativo
 ---
+
 Esta publicação contém tudo o que você precisa saber sobre texto alternativo! Quando usá-los e como desenhá-los perfeitamente. Por mim, Daniel, um desenvolvedor web com deficiência visual que usa um leitor de tela no meu dia-a-dia.
 
-* * *
+---
 
 Texto postado originalmente em [https://axesslab.com/alt-texts/](https://axesslab.com/alt-texts/) escrito por [Daniel Göransson](https://twitter.com/danielgoransson), adaptado e traduzido por Bruno Pulis.
 
@@ -34,7 +35,7 @@ Não ajuda muito, não é?
 
 Aqui estão algumas falhas comuns de texto alternativo que encontro:
 
-- “cropped\_img32\_900px.png” ou “1521591232.jpg” — o nome dos arquivos, provavelmente porque a imagem não tem o atributo alt definido.
+- “cropped_img32_900px.png” ou “1521591232.jpg” — o nome dos arquivos, provavelmente porque a imagem não tem o atributo alt definido.
 - “ — em todas as imagens do artigo, provavelmente para melhorar o ranking de busca (SEO).
 - “Fotografa: Emma Lee” — provavelmente porque o editor da redação não sabe para que serve um texto alternativo
 
@@ -208,7 +209,7 @@ Eu classificaria a maioria das imagens em que você coloca texto como decorativ
 
 ![Página inicial do Netflix com texto no topo de uma imagem de fundo mostrando capas de filmes.](images/netflix.png)
 
-* * *
+---
 
 ## Casos especiais
 
@@ -229,7 +230,7 @@ Na minha opinião, isso é um pouco detalhado. Muito barulho! Como meu leitor de
 Existem dois caminhos principais para adicionar um SVG a uma página HTML.
 
 1. Dentro de um elemento img.
-    Nesse caso, basta adicionar um texto alternativo como de costume:
+   Nesse caso, basta adicionar um texto alternativo como de costume:
 
 ```html
 <img src="dog.svg" alt="Cachorro brincando na grama." />

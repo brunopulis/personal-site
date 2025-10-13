@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section id="contact" class="section bg-gray-50 dark:bg-gray-800/50">
@@ -6,17 +7,11 @@
     <div class="grid gap-12 md:grid-cols-2">
       <div class="slide-up">
         <div class="card border border-gray-200 p-6 dark:border-gray-700">
-          <h3 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
-            Envie sua mensagem
-          </h3>
+          <h3 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Envie sua mensagem</h3>
 
-          <form
-            x-data="{ name: '', email: '', message: '', submitted: false, errors: {} }"
-          >
+          <form x-data="{ name: '', email: '', message: '', submitted: false, errors: {} }">
             <div class="mb-4">
-              <label
-                for="name"
-                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
+              <label for="name" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
                 >Nome</label
               >
               <input
@@ -26,18 +21,11 @@
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu nome"
               />
-              <p
-                class="mt-1 text-sm text-red-500"
-                x-show="errors.name"
-                x-text="errors.name"
-              >
-              </p>
+              <p class="mt-1 text-sm text-red-500" x-show="errors.name" x-text="errors.name"></p>
             </div>
 
             <div class="mb-4">
-              <label
-                for="email"
-                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
+              <label for="email" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
                 >Email</label
               >
               <input
@@ -47,18 +35,11 @@
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu email"
               />
-              <p
-                class="mt-1 text-sm text-red-500"
-                x-show="errors.email"
-                x-text="errors.email"
-              >
-              </p>
+              <p class="mt-1 text-sm text-red-500" x-show="errors.email" x-text="errors.email"></p>
             </div>
 
             <div class="mb-4">
-              <label
-                for="subject"
-                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
+              <label for="subject" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
                 >Assunto</label
               >
               <input
@@ -70,18 +51,11 @@
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu assunto"
               />
-              <p
-                class="mt-1 text-sm text-red-500"
-                x-show="errors.subject"
-                x-text="errors.subject"
-              >
-              </p>
+              <p class="mt-1 text-sm text-red-500" x-show="errors.subject" x-text="errors.subject"></p>
             </div>
 
             <div class="mb-6">
-              <label
-                for="message"
-                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
+              <label for="message" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
                 >Mensagem</label
               >
               <textarea
@@ -90,28 +64,14 @@
                 rows="5"
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Sua mensagem"></textarea>
-              <p
-                class="mt-1 text-sm text-red-700"
-                x-show="errors.message"
-                x-text="errors.message"
-              >
-              </p>
+              <p class="mt-1 text-sm text-red-700" x-show="errors.message" x-text="errors.message"></p>
             </div>
 
             <div x-show="!submitted">
-              <button
-                type="submit"
-                class="btn-primary text-white w-full"
-              >
-                Enviar
-              </button>
+              <button type="submit" class="btn-primary w-full text-white"> Enviar </button>
             </div>
 
-            <div
-              class="bg-primary-50 dark:bg-primary-900/30 rounded-lg p-6 text-center"
-              x-show="submitted"
-              x-cloak
-            >
+            <div class="bg-primary-50 dark:bg-primary-900/30 rounded-lg p-6 text-center" x-show="submitted" x-cloak>
               <svg
                 class="text-primary-500 mx-auto mb-4 h-12 w-12"
                 fill="none"
@@ -125,14 +85,9 @@
                   stroke-width="2"
                   d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <h3
-                class="mb-2 text-xl font-semibold text-gray-900 dark:text-white"
-              >
-                Message Sent!
-              </h3>
+              <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Message Sent!</h3>
               <p class="text-gray-600 dark:text-gray-300">
-                Thank you for reaching out. We'll get back to you as soon as
-                possible.
+                Thank you for reaching out. We'll get back to you as soon as possible.
               </p>
             </div>
           </form>
@@ -148,6 +103,6 @@
   const params = new URLSearchParams(window.location.search.substring(1))
   const subject = params.get('subject')
 
-  const subjectInput = document.querySelector('#subject');
-  subjectInput.value = subject;
+  const subjectInput = document.querySelector('#subject')
+  subjectInput.value = subject
 </script>

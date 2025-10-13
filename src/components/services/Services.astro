@@ -1,155 +1,144 @@
 ---
 import {
-	FileText,
-	FilePlus,
-	FileSearch,
-	FileCheck,
-	ClipboardList,
-	Microscope,
-	Wrench,
-	CheckCircle
+  FileText,
+  FilePlus,
+  FileSearch,
+  FileCheck,
+  ClipboardList,
+  Microscope,
+  Wrench,
+  CheckCircle,
 } from '@lucide/astro'
 
 const iconComponents = {
-	FileText,
-	FilePlus,
-	FileSearch,
-	FileCheck,
-	ClipboardList,
-	Microscope,
-	Wrench,
-	CheckCircle
+  FileText,
+  FilePlus,
+  FileSearch,
+  FileCheck,
+  ClipboardList,
+  Microscope,
+  Wrench,
+  CheckCircle,
 }
 
 const services = [
-	{
-		icon: 'FileText',
-		title: 'Remediação de Documentos',
-		description:
-			'Transformamos seus documentos existentes para que sejam totalmente acessíveis, permitindo que pessoas com deficiência possam acessar todas as informações.'
-	},
-	{
-		icon: 'FileSearch',
-		title: 'Auditoria de Acessibilidade',
-		description:
-			'Analisamos seus documentos atuais e fornecemos um relatório detalhado sobre os problemas de acessibilidade encontrados.'
-	},
-	{
-		icon: 'FilePlus',
-		title: 'Criação de Modelos Acessíveis',
-		description:
-			'Desenvolvemos modelos de documentos personalizados e acessíveis que sua equipe pode usar para criar novos conteúdos.'
-	},
-	{
-		icon: 'FileCheck',
-		title: 'Certificação de Conformidade',
-		description:
-			'Emitimos certificados comprovando que seus documentos estão em conformidade com as diretrizes de acessibilidade.'
-	}
+  {
+    icon: 'FileText',
+    title: 'Remediação de Documentos',
+    description:
+      'Transformamos seus documentos existentes para que sejam totalmente acessíveis, permitindo que pessoas com deficiência possam acessar todas as informações.',
+  },
+  {
+    icon: 'FileSearch',
+    title: 'Auditoria de Acessibilidade',
+    description:
+      'Analisamos seus documentos atuais e fornecemos um relatório detalhado sobre os problemas de acessibilidade encontrados.',
+  },
+  {
+    icon: 'FilePlus',
+    title: 'Criação de Modelos Acessíveis',
+    description:
+      'Desenvolvemos modelos de documentos personalizados e acessíveis que sua equipe pode usar para criar novos conteúdos.',
+  },
+  {
+    icon: 'FileCheck',
+    title: 'Certificação de Conformidade',
+    description:
+      'Emitimos certificados comprovando que seus documentos estão em conformidade com as diretrizes de acessibilidade.',
+  },
 ]
 
 const process = [
-	{
-		icon: 'ClipboardList',
-		title: 'Avaliação Inicial',
-		description:
-			'Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.'
-	},
-	{
-		icon: 'Microscope',
-		title: 'Diagnóstico',
-		description:
-			'Elaboração de um relatório completo indicando os pontos que necessitam de remediação.'
-	},
-	{
-		icon: 'Wrench',
-		title: 'Remediação',
-		description:
-			'Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.'
-	},
-	{
-		icon: 'CheckCircle',
-		title: 'Validação',
-		description:
-			'Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.'
-	}
+  {
+    icon: 'ClipboardList',
+    title: 'Avaliação Inicial',
+    description:
+      'Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.',
+  },
+  {
+    icon: 'Microscope',
+    title: 'Diagnóstico',
+    description: 'Elaboração de um relatório completo indicando os pontos que necessitam de remediação.',
+  },
+  {
+    icon: 'Wrench',
+    title: 'Remediação',
+    description:
+      'Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.',
+  },
+  {
+    icon: 'CheckCircle',
+    title: 'Validação',
+    description: 'Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.',
+  },
 ]
 ---
 
 <section class="bg-white py-16" id="services">
-	<div class="container mx-auto px-4">
-		<div class="mb-16">
-			<h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
-				Nossos Serviços de Remediação
-			</h2>
-			<p class="max-w-3xl text-xl text-gray-600">
-				Oferecemos serviços completos para tornar todos os seus documentos acessíveis e em
-				conformidade com as diretrizes de acessibilidade.
-			</p>
-		</div>
+  <div class="container mx-auto px-4">
+    <div class="mb-16">
+      <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">Nossos Serviços de Remediação</h2>
+      <p class="max-w-3xl text-xl text-gray-600">
+        Oferecemos serviços completos para tornar todos os seus documentos acessíveis e em conformidade com as
+        diretrizes de acessibilidade.
+      </p>
+    </div>
 
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-			{
-				services.map((service) => {
-					const IconComponent = iconComponents[service.icon]
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {
+        services.map((service) => {
+          const IconComponent = iconComponents[service.icon]
 
-					return (
-						<>
-							<div
-								class="mx-auto rounded-lg border border-gray-100 bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-lg"
-							>
-								<div class="mx-auto text-center">
-									<IconComponent
-										aria-hidden="true"
-										class="h-9 w-9 text-blue-600 text-center dark:text-blue-400"
-									/>
-									<h3 class="mb-3 text-xl font-bold text-gray-800">{service.title}</h3>
-									<p class="text-gray-600">{service.description}</p>
-								</div>
-							</div>
-						</>
-					)
-				})
-			}
-		</div>
-	</div>
+          return (
+            <>
+              <div class="mx-auto rounded-lg border border-gray-100 bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-lg">
+                <div class="mx-auto text-center">
+                  <IconComponent aria-hidden="true" class="h-9 w-9 text-center text-blue-600 dark:text-blue-400" />
+                  <h3 class="mb-3 text-xl font-bold text-gray-800">{service.title}</h3>
+                  <p class="text-gray-600">{service.description}</p>
+                </div>
+              </div>
+            </>
+          )
+        })
+      }
+    </div>
+  </div>
 </section>
 
 <section>
-	<div class="rounded-xl bg-gray-50 p-8 md:p-12">
+  <div class="rounded-xl bg-gray-50 p-8 md:p-12">
     <div class="container mx-auto px-4">
       <div class="mb-12 text-center">
         <h2 class="mb-4 text-3xl font-bold text-gray-800">Processo de Remediação</h2>
         <p class="mx-auto max-w-3xl text-xl text-gray-600">
-          Nossa metodologia garante que seus documentos sejam transformados com a máxima qualidade e
-          atenção aos detalhes.
+          Nossa metodologia garante que seus documentos sejam transformados com a máxima qualidade e atenção aos
+          detalhes.
         </p>
       </div>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-		{
-		  process.map((step) => {
-			const IconComponent = iconComponents[step.icon]
+        {
+          process.map((step) => {
+            const IconComponent = iconComponents[step.icon]
 
-			return (
-			  <>
-				{/* Use fragment as root and assign key here */}
-				<div
-				  class="mx-auto rounded-lg border border-gray-100 bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-lg"
-				>
-				  <div class="flex flex-col items-center text-center">
-					<IconComponent
-					  aria-hidden="true"
-					  class="h-9 w-9 text-blue-600 rounded-full mb-4 text-center dark:text-blue-400"
-					/>
-					<h3 class="mb-3 text-xl font-bold text-gray-800">{step.title}</h3>
-					<p class="text-gray-600">{step.description}</p>
-				  </div>
-				</div>
-			  </>
-			)
-		  })
-		}
+            return (
+              <>
+                {/* Use fragment as root and assign key here */}
+                <div class="mx-auto rounded-lg border border-gray-100 bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-lg">
+                  <div class="flex flex-col items-center text-center">
+                    <IconComponent
+                      aria-hidden="true"
+                      class="mb-4 h-9 w-9 rounded-full text-center text-blue-600 dark:text-blue-400"
+                    />
+                    <h3 class="mb-3 text-xl font-bold text-gray-800">{step.title}</h3>
+                    <p class="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              </>
+            )
+          })
+        }
       </div>
     </div>
-	</div>
+  </div>
 </section>

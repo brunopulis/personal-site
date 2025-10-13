@@ -1,9 +1,8 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import Footer from "@/components/layout/Footer.astro";
-
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
+import Footer from '@/components/layout/Footer.astro'
 ---
 
 <Layout title="Livro de Visitas - Bruno Pulis">
@@ -17,12 +16,12 @@ import Footer from "@/components/layout/Footer.astro";
     <div>
       <form method="POST" class="box" id="guestbook">
         <fieldset>
-          <legend class="font-bold mb-5 font-2xl">Deixe seu comentário</legend>
+          <legend class="font-2xl mb-5 font-bold">Deixe seu comentário</legend>
           <div class="mb-5">
-            <label for="author" class="font-bold mb-5">Nome</label>
+            <label for="author" class="mb-5 font-bold">Nome</label>
             <input
               type="text"
-              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white px-6 py-3 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               id="author"
               name="author"
               placeholder="Put in your fullname."
@@ -30,10 +29,10 @@ import Footer from "@/components/layout/Footer.astro";
           </div>
 
           <div class="mb-5">
-            <label for="author" class="font-bold mb-5">Website</label>
+            <label for="author" class="mb-5 font-bold">Website</label>
             <input
               type="url"
-              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white px-6 py-3 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               id="author"
               name="author"
               placeholder="Put in your fullname."
@@ -41,11 +40,11 @@ import Footer from "@/components/layout/Footer.astro";
           </div>
 
           <div class="mb-5">
-            <label for="content" class="font-bold mb-5">Mensagem</label>
+            <label for="content" class="mb-5 font-bold">Mensagem</label>
             <textarea
               rows="4"
               id="content"
-              class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white px-6 py-3 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               name="content"></textarea>
           </div>
 
@@ -55,7 +54,7 @@ import Footer from "@/components/layout/Footer.astro";
 
           <button
             type="submit"
-            class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none"
+            class="hover:shadow-form rounded-md bg-[#6A64F1] px-8 py-3 text-base font-semibold text-white outline-none"
             >Leave your mark</button
           >
         </fieldset>
@@ -64,6 +63,3 @@ import Footer from "@/components/layout/Footer.astro";
   </main>
   <Footer />
 </Layout>
-
-
-

@@ -1,36 +1,45 @@
 ---
-interface Props {
+interface ServiceCard {
+  id: string
   title: string
+  tagline: string
   description: string
-  deliveries?: string[]
-  link?: string
-  linkText?: string
+  duracao: string
+  investimento: string
+  badge?: string,
+  deliveries: string[],
+  link: string,
+  linkText: string
 }
 
-const { title, description, deliveries = [], link, linkText = 'Saiba mais' } = Astro.props
+const {
+  id,
+  title,
+  tagline,
+  description,
+  duracao,
+  investimento,
+  badge,
+  deliveries = [], link, linkText = 'Saiba mais' } = Astro.props
 ---
 
-<article class="rounded-xl border-0 border-gray-200 bg-gray-50 p-6 shadow-sm transition-shadow hover:shadow-lg flex flex-col h-full">
-  <h3 class="text-xl font-semibold text-blood-red-800 mb-3">{title}</h3>
+<article
+  class="flex h-full flex-col rounded-xl border-0 border-gray-200 bg-gray-50 p-6 shadow-sm transition-shadow hover:shadow-lg"
+>
+  <h3 class="text-blood-red-800 mb-3 text-xl font-semibold">{title}</h3>
   <p class="text-errie-black-900 mb-6">
     {description}
   </p>
 
-  <ul class="space-y-3 my-6 list-disc">
-    {
-      deliveries.map(item => (
-        <li class="flex items-center gap-2 text-errie-black-900">
-          {item}
-        </li>
-      ))
-    }
+  <ul class="my-6 list-disc space-y-3">
+    {deliveries.map((item) => <li class="text-errie-black-900 flex items-center gap-2">{item}</li>)}
   </ul>
   {
     link && (
       <div class="mt-auto flex flex-col gap-3 sm:flex-row">
         <a
           href={link}
-          class="text-blood-red-800 text-xl font-semibold transition-colors underline underline-offset-4 hover:no-underline"
+          class="text-blood-red-800 text-xl font-semibold underline underline-offset-4 transition-colors hover:no-underline"
         >
           {linkText}
         </a>

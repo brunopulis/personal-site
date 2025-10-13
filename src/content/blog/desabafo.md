@@ -1,11 +1,12 @@
 ---
 title: Desabafo
 publishDate: 2016-06-26
-category: "Poesia"
+category: 'Poesia'
 url: https://brunopulis.com/desabafo/
 tags:
   - pessoal
 ---
+
 Minha alma anda cansada das impiedades,
 e da falta da piedade da Igreja aos cansados e pobres…
 

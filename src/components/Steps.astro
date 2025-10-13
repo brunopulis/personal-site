@@ -8,7 +8,7 @@ import {
   Microscope,
   Wrench,
   CheckCircle,
-} from "@lucide/astro";
+} from '@lucide/astro'
 
 const iconComponents = {
   FileText,
@@ -19,34 +19,32 @@ const iconComponents = {
   Microscope,
   Wrench,
   CheckCircle,
-};
+}
 
 const process = [
   {
-    icon: "ClipboardList",
-    title: "Avaliação Inicial",
+    icon: 'ClipboardList',
+    title: 'Avaliação Inicial',
     description:
-      "Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.",
+      'Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.',
   },
   {
-    icon: "Microscope",
-    title: "Diagnóstico",
-    description:
-      "Elaboração de um relatório completo indicando os pontos que necessitam de remediação.",
+    icon: 'Microscope',
+    title: 'Diagnóstico',
+    description: 'Elaboração de um relatório completo indicando os pontos que necessitam de remediação.',
   },
   {
-    icon: "Wrench",
-    title: "Remediação",
+    icon: 'Wrench',
+    title: 'Remediação',
     description:
-      "Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.",
+      'Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.',
   },
   {
-    icon: "CheckCircle",
-    title: "Validação",
-    description:
-      "Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.",
+    icon: 'CheckCircle',
+    title: 'Validação',
+    description: 'Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.',
   },
-];
+]
 ---
 
 <section class="bg-gray-100 px-6 py-20 lg:px-20">
@@ -54,17 +52,15 @@ const process = [
     <h2 class="mb-6 text-3xl font-bold text-gray-900">Como trabalho</h2>
     <div class="grid gap-12 md:grid-cols-4">
       {
-        process.map(service => {
-          const IconComponent = iconComponents[service.icon];
+        process.map((service) => {
+          const IconComponent = iconComponents[service.icon]
           return (
             <article class="">
               <IconComponent class="mb-4 h-10 w-10 text-red-950" />
-              <h3 class="mb-2 text-xl font-bold text-red-950">
-                {service.title}
-              </h3>
+              <h3 class="mb-2 text-xl font-bold text-red-950">{service.title}</h3>
               <p class="text-gray-900">{service.description}</p>
             </article>
-          );
+          )
         })
       }
     </div>

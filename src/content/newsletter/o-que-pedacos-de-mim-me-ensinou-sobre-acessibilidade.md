@@ -1,8 +1,8 @@
 ---
-issue: "36"
-title: "O que Pedaços de mim me ensinou sobre acessibilidade"
-date: "2024-07-25"
-coverImage: "i7985nbY1DJUJLUn8giPqt-e1730222522972.webp"
+issue: '36'
+title: 'O que Pedaços de mim me ensinou sobre acessibilidade'
+date: '2024-07-25'
+coverImage: 'i7985nbY1DJUJLUn8giPqt-e1730222522972.webp'
 ---
 
 Ontem depois do trabalho assisti dois episódios da série **Pedaço de Mim**, nunca tinha ouvido falar dela.
@@ -54,7 +54,7 @@ Essa realidade pode mudar, se eu e você tomarmos uma **atitude hoje**!
 
 Estou aqui para te ajudar a aprender acessibilidade e construir um mundo melhor para cada um.
 
-Até a próxima edição.  
-  
+Até a próxima edição.
+
 SDG,  
 Pulis.
