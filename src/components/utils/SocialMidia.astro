@@ -1,0 +1,45 @@
+---
+import config from '@/data/site.config.json'
+---
+<ul class="flex space-x-2">
+  <li class="social__item">
+    <a
+      href="/sitemap-index.xml"
+      rel="alternate"
+      type="application/rss+xml"
+      class="text-sm text-white underline-offset-8 hover:underline"
+    >
+      RSS
+    </a>
+  </li>
+  <li class="social__item">
+    <a
+      href={config.socialMidia.github}
+      target="_blank"
+      rel="me noopener noreferrer"
+      class="text-sm text-white underline-offset-8 hover:underline"
+    >
+      GitHub
+    </a>
+  </li>
+  <li class="social__item">
+    <a
+      href={config.socialMidia.youtube}
+      target="_blank"
+      rel="me noopener noreferrer"
+      class="text-sm text-white underline-offset-8 hover:underline"
+    >
+      YouTube
+    </a>
+  </li>
+  <li class="social__item">
+    <a
+      href={config.socialMidia.linkedin}
+      target="_blank"
+      rel="me noopener noreferrer"
+      class="text-sm text-white underline-offset-8 hover:underline"
+    >
+      LinkedIn
+    </a>
+  </li>
+</ul>

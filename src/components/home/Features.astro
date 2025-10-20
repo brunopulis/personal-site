@@ -11,12 +11,10 @@ const icons = { Users, Code, MessageCircle };
 const features = [
   {
     title: "Mentoria",
-    description: "Não adianta só entregar um relatório. Eu trabalho COM você ou sua equipe para implementar acessibilidade de verdade no dia a dia.",
+    description: "Não adianta só entregar um relatório. Eu trabalho com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.",
     icon: "Users",
     imageUrl: mentoria,
-    chipClass: "inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4",
-    chip: "Mais procurado",
-    url: "/servicos/mentorias-consultorias",
+    url: "/servicos/mentoria",
   },
   {
     title: "Auditoria",
@@ -24,19 +22,15 @@ const features = [
       "Analiso seu site ou documento e te mostro exatamente o que precisa melhorar (e por quê isso importa para seus usuários).",
     icon: "Code",
     imageUrl: auditoria,
-    chipClass: "inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4",
-    chip: "Começo ideal",
     url: "/servicos/auditoria-de-acessibilidade",
   },
   {
-    title: "Palestras e Treinamentos",
+    title: "Palestras",
     description:
       "Levo acessibilidade para empresas e eventos de forma prática, sem jargões complicados.",
     icon: "MessageCircle",
     imageUrl: palestras,
-    chipClass: "inline-block bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full mb-4",
-    chip: "Inspirador",
-    url: "/servicos/palestras-treinamentos",
+    url: "/servicos/palestras",
   }
 ];
 ---
@@ -72,12 +66,9 @@ const features = [
                 {feature.title}
               </h3>
             </div>
-            <p class="text-errie-black-600 mb-4">
+            <p class="text-errie-black-900 mb-4">
               {feature.description}
             </p>
-            <span class={feature.chipClass}>
-              {feature.chip}
-            </span>
             <a href={feature.url} class="text-blood-red-800 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
               Saber mais
               <ArrowRight class="w-4 h-4" />
