@@ -1,42 +1,21 @@
 ---
 interface Props {
   title: string
-  highlightText?: string
   description?: string
 }
 
-const { title, highlightText, description } = Astro.props
-
-// Split the title to insert the highlighted text if provided
-let titleStart = title
-let titleEnd = ''
-
-if (highlightText) {
-  const titleParts = title.split(highlightText)
-  if (titleParts.length > 1) {
-    titleStart = titleParts[0]
-    titleEnd = titleParts[1]
-  }
-}
+const { title, description } = Astro.props
 ---
 
-<section class="bg-blood-red-800 relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
-  <div class="container-custom relative z-10 px-4">
-    <div class="max-w-3xl px-4">
-      <h1 class="p-name animate-slide-down mb-4 text-3xl text-white md:mb-6 md:text-4xl lg:text-5xl">
-        {
-          highlightText ? (
-            <>
-              {titleStart}
-              <span class="text-white">{highlightText}</span>
-              {titleEnd}
-            </>
-          ) : (
-            title
-          )
-        }
-      </h1>
-      <p class="animate-slide-up mb-6 text-lg text-white md:mb-8 md:text-xl" style="animation-delay: 200ms">
+<section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+    <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+  </div>
+  <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <div>
+      <h1 class="mb-6 text-5xl leading-tight font-bold">{title}</h1>
+      <p class="mb-6 text-2xl font-light text-white">
         {description}
       </p>
     </div>
