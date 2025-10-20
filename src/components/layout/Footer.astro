@@ -2,8 +2,10 @@
 import { Image } from 'astro:assets'
 import pulisLogo from '@/assets/horizontal/white.svg'
 
+import Webring from '@/components/utils/Webring.astro'
+import SocialMidia from '@/components/utils/SocialMidia.astro'
+
 import writtenByHuman from '@/assets/images/written-by-human.svg'
-import config from '@/data/site.config.json'
 ---
 
 <footer class="bg-gray-900 pt-16 pb-8 text-white">
@@ -32,7 +34,7 @@ import config from '@/data/site.config.json'
             <a href="/servicos" class="text-white underline-offset-8 transition-colors hover:underline">Serviços</a>
           </li>
           <li>
-            <a href="/explore" class="text-white underline-offset-8 transition-colors hover:underline">Explore</a>
+            <a href="/newsletter" class="text-white underline-offset-8 transition-colors hover:underline">Newsletter</a>
           </li>
         </ul>
       </div>
@@ -41,26 +43,23 @@ import config from '@/data/site.config.json'
         <h3 class="mb-4 text-lg font-bold">Pessoal</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/sobre" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
-              >Livro de Visitas</a
+            <a href="/guestbook" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
+              >Livro de Visita</a
             >
           </li>
           <li>
-            <a href="/servicos" class="text-white underline-offset-8 transition-colors hover:underline">Blogroll</a>
+            <a href="/blogroll" class="text-white underline-offset-8 transition-colors hover:underline">Blogroll</a>
           </li>
           <li>
-            <a href="/sobre" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
-              >Biblioteca</a
+            <a href="/biblioteca" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
+              >Minha Biblioteca</a
             >
           </li>
           <li>
-            <a href="/projetos" class="text-white underline-offset-8 transition-colors hover:underline">Filmes</a>
+            <a href="/filmes" class="text-white underline-offset-8 transition-colors hover:underline">Meus Filmes</a>
           </li>
           <li>
-            <a href="/servicos" class="text-white underline-offset-8 transition-colors hover:underline">Notas</a>
-          </li>
-          <li>
-            <a href="/explore" class="text-white underline-offset-8 transition-colors hover:underline">Now</a>
+            <a href="/notas" class="text-white underline-offset-8 transition-colors hover:underline">Minhas Notas</a>
           </li>
         </ul>
       </div>
@@ -97,85 +96,9 @@ import config from '@/data/site.config.json'
   </div>
   <div class="container-custom">
     <div class="mt-5 flex flex-col justify-between gap-3 md:flex-row">
-      <ul class="flex flex-col gap-3 space-x-2 sm:justify-between md:flex-row">
-        <li class="social__item">
-          <a
-            rel="external"
-            class="text-sm text-white underline-offset-8 hover:underline"
-            href="https://a11y-webring.club/">a11y-webring.club</a
-          >
-        </li>
-        <li class="social__item">
-          <a
-            rel="external"
-            class="text-sm text-white underline-offset-8 hover:underline"
-            href="https://a11y-webring.club/prev"
-          >
-            site anterior
-          </a>
-        </li>
-        <li class="social__item">
-          <a
-            rel="external"
-            class="text-sm text-white underline-offset-8 hover:underline"
-            href="https://a11y-webring.club/random"
-          >
-            site aleatório
-          </a>
-        </li>
-        <li class="social__item">
-          <a
-            rel="external"
-            class="text-sm text-white underline-offset-8 hover:underline"
-            href="https://a11y-webring.club/next"
-          >
-            próximo site
-          </a>
-        </li>
-      </ul>
+      <Webring />
       <div class="flex flex-row space-x-5">
-        <ul class="flex space-x-2">
-          <li class="social__item">
-            <a
-              href="/sitemap-index.xml"
-              rel="alternate"
-              type="application/rss+xml"
-              class="text-sm text-white underline-offset-8 hover:underline"
-            >
-              RSS
-            </a>
-          </li>
-          <li class="social__item">
-            <a
-              href={config.socialMidia.github}
-              target="_blank"
-              rel="me noopener noreferrer"
-              class="text-sm text-white underline-offset-8 hover:underline"
-            >
-              GitHub
-            </a>
-          </li>
-          <li class="social__item">
-            <a
-              href={config.socialMidia.youtube}
-              target="_blank"
-              rel="me noopener noreferrer"
-              class="text-sm text-white underline-offset-8 hover:underline"
-            >
-              YouTube
-            </a>
-          </li>
-          <li class="social__item">
-            <a
-              href={config.socialMidia.linkedin}
-              target="_blank"
-              rel="me noopener noreferrer"
-              class="text-sm text-white underline-offset-8 hover:underline"
-            >
-              LinkedIn
-            </a>
-          </li>
-        </ul>
+        <SocialMidia />
         <Image src={writtenByHuman} width={88} height={30} loading="lazy" alt="Conteúdo escrito por um humano" />
       </div>
     </div>

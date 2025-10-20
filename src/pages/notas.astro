@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header.astro'
 import Footer from '@/components/layout/Footer.astro'
 import HeroSection from '@/components/layout/HeroSection.astro'
 
+import { Clock, Share2, MoreHorizontal } from '@lucide/astro'
 import { getCollection } from 'astro:content'
 
 const allNotes = await getCollection('notes')
@@ -15,46 +16,66 @@ const sortedNotes = allNotes.sort((a, b) => {
 
 <Layout title="Notas - Bruno Pulis">
   <Header />
-  <HeroSection title="Notas" description="Minhas notas pessoais" />
-  <main>
-    <section class="h-entry bg-white py-16">
+  <main id="main-content">
+    <HeroSection title="Notas" description="Pensamentos rápidos, dicas práticas e reflexões sobre qualquer coisa." />
+    <section class="h-entry bg-gray-50 py-16">
       <div class="container-custom mx-auto">
         <div class="mx-auto">
-          <div class="">
-            <div class="">
-              <div class="prose prose-lg max-w-none">
-                {
-                  sortedNotes.length > 0 ? (
-                    sortedNotes.map((note) => (
-                      <blockquote class="mb-4 rounded-lg border bg-gray-100 p-5">
-                        {note.body && <p class="note-excerpt">{note.body}</p>}
-
-                        <hr class="my-4 h-0.5 border-t-0 bg-neutral-50" />
-                        <footer class="note-footer">
-                          {note.data.date && (
-                            <p class="note-date text-left">
-                              {new Date(note.data.date).toLocaleDateString('pt-BR', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                              })}
-                            </p>
-                          )}
-                        </footer>
-                      </blockquote>
-                    ))
-                  ) : (
-                    <div class="empty-state">
-                      <p>Nenhuma nota encontrada. Adicione suas notas na pasta content/notes.</p>
+          <div class="prose prose-lg max-w-none">
+            {
+              sortedNotes.length > 0 ? (
+                sortedNotes.map((note) => (
+                  <article class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
+                    {/* Header */}
+                    <div class="mb-4 flex items-start justify-between">
+                      <div class="flex items-center gap-3">
+                        <div>
+                          <div class="font-bold text-gray-900">Bruno Pulis</div>
+                          <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <Clock class="h-3 w-3" />
+                            {new Date(note.data.date).toLocaleDateString('pt-BR', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric',
+                            })}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  )
-                }
-              </div>
-            </div>
+
+                    {/* Conteúdo */}
+                    <div class="mb-4">
+                      {note.body && <p class="leading-relaxed whitespace-pre-line text-gray-800">{note.body}</p>}
+                    </div>
+
+                    {/* Tag */}
+                    <div class="mb-4">
+                      <span
+                        class={`font-semibold} inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs`}
+                      >
+                        #{note.tag}
+                      </span>
+                    </div>
+
+                    {/* Actions */}
+                    <div class="flex items-center gap-6 border-t border-gray-100 pt-4">
+                      <button class="flex items-center gap-2 text-sm font-medium text-gray-600 transition hover:text-green-600">
+                        <Share2 class="h-5 w-5" />
+                        <span class="hidden sm:inline">Compartilhar</span>
+                      </button>
+                    </div>
+                  </article>
+                ))
+              ) : (
+                <div class="empty-state">
+                  <p>Nenhuma note encontrada.</p>
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
     </section>
-    <Footer />
-  </main></Layout
->
+  </main>
+  <Footer />
+</Layout>
