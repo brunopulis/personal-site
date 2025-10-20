@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header.astro'
 import Packages from '@/components/services/Packages.astro'
+import CTASection from '@/components/CTA.astro'
 import Footer from '@/components/layout/Footer.astro'
 
 import {
@@ -379,7 +380,7 @@ const faq = [
             etapas.map((etapa, index) => {
               const Icon = etapa.icone
               return (
-                <div key={index} class="relative">
+                <div class="relative">
                   {index < etapas.length - 1 && <div class="absolute top-20 bottom-0 left-8 -mb-8 w-0.5 bg-gray-200" />}
 
                   <div class="flex gap-6">
@@ -404,8 +405,8 @@ const faq = [
                       <div class="mt-6">
                         <h4 class="mb-3 text-sm font-bold text-gray-900">O que faço nesta etapa:</h4>
                         <ul class="grid gap-2 md:grid-cols-2">
-                          {etapa.atividades.map((atividade, i) => (
-                            <li key={i} class="flex items-start gap-2">
+                          {etapa.atividades.map((atividade) => (
+                            <li class="flex items-start gap-2">
                               <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
                               <span class="text-sm text-gray-700">{atividade}</span>
                             </li>
@@ -431,13 +432,10 @@ const faq = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {
-            oqueBusco.map((categoria, index) => {
+            oqueBusco.map((categoria) => {
               const Icon = categoria.icone
               return (
-                <div
-                  key={index}
-                  class="rounded-xl border-2 border-gray-200 bg-white p-6 transition hover:border-blue-400 hover:shadow-lg"
-                >
+                <div class="rounded-xl border-2 border-gray-200 bg-white p-6 transition hover:border-blue-400 hover:shadow-lg">
                   <div class="mb-4 flex items-center gap-3">
                     <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
                       <Icon class="h-5 w-5 text-blue-600" />
@@ -445,8 +443,8 @@ const faq = [
                     <h3 class="font-bold text-gray-900">{categoria.categoria}</h3>
                   </div>
                   <ul class="space-y-2">
-                    {categoria.itens.map((item, i) => (
-                      <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                    {categoria.itens.map((item) => (
+                      <li class="flex items-start gap-2 text-sm text-gray-700">
                         <span class="text-blue-600">•</span>
                         <span>{item}</span>
                       </li>
@@ -469,7 +467,7 @@ const faq = [
 
         <div class="grid gap-4 md:grid-cols-3">
           {
-            ferramentas.map((ferramenta, index) => (
+            ferramentas.map((ferramenta) => (
               <div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
                 <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100">
                   <Zap class="h-5 w-5 text-purple-600" />
@@ -512,31 +510,18 @@ const faq = [
       </div>
     </section>
 
-    {/* CTA Final */}
-    <section class="bg-gray-900 py-20 text-white">
-      <div class="mx-auto max-w-4xl px-6 text-center">
-        <FileText class="mx-auto mb-6 h-16 w-16 opacity-90" />
-        <h2 class="mb-4 text-4xl font-bold">Pronto para descobrir o que precisa melhorar?</h2>
-        <p class="mx-auto mb-8 max-w-2xl text-xl text-blue-100">
-          Vamos agendar uma conversa sem compromisso. Te explico o processo em detalhes e tiramos todas as suas dúvidas.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a
-            href="/contato"
-            class="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-semibold text-blue-600 transition hover:bg-blue-50"
-          >
-            Solicitar orçamento
-            <ArrowRight class="h-5 w-5" />
-          </a>
-          <a
-            href="/projetos"
-            class="inline-flex items-center gap-2 rounded-lg border border-blue-500 bg-blue-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-blue-600"
-          >
-            Ver projetos anteriores
-          </a>
-        </div>
-      </div>
-    </section>
+    <CTASection
+      title="Pronto para descobrir o que precisa melhorar?"
+      description="Vamos agendar uma conversa sem compromisso. Te explico o processo em detalhes e tiramos todas as suas dúvidas."
+      primaryButton={{
+        text: 'Solicitar orçamento',
+        url: '/contato',
+      }}
+      secondaryButton={{
+        text: 'Ver projetos anteriores',
+        url: '/projetos',
+      }}
+    />
   </main>
   <Footer />
 </Layout>
