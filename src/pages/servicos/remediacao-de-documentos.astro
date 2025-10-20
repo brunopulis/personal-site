@@ -6,9 +6,14 @@ import Footer from '@/components/layout/Footer.astro'
 import {
   Settings,
   Users,
+  AlertCircle,
+  Package,
+  Clock,
   Award,
   FileText,
   Eye,
+  Zap,
+  Target,
   Download,
   Phone,
   Shield,
@@ -17,75 +22,271 @@ import {
   ArrowRight,
 } from '@lucide/astro'
 
-const packages = [
+const tiposDocumento = [
   {
-    name: 'Pacote Essencial',
-    description: 'Ideal para sites institucionais simples',
-    price: 'R$ 1.500',
-    duration: '5 dias úteis',
-    features: [
-      'Auditoria de até 10 páginas',
-      'Relatório técnico completo',
-      'Suporte por 30 dias',
-      'Orientações de implementação',
+    id: 'pdf',
+    nome: 'PDF',
+    icone: FileText,
+    cor: 'red',
+    extensoes: '.pdf',
+    problemas: [
+      'PDFs escaneados (imagens sem texto)',
+      'Falta de tags estruturais',
+      'Sem ordem de leitura lógica',
+      'Tabelas sem estrutura',
+      'Formulários inacessíveis',
+      'Sem textos alternativos em imagens',
+      'Links não descritivos',
     ],
-    popular: false,
+    solucoes: [
+      'OCR para extrair texto de imagens',
+      'Adição de tags estruturais (headings, listas)',
+      'Definição de ordem de leitura',
+      'Estruturação de tabelas',
+      'Campos de formulário acessíveis',
+      'Textos alternativos em todas as imagens',
+      'Links descritivos',
+      'Marcadores de idioma',
+      'Metadados completos',
+    ],
   },
   {
-    name: 'Pacote Profissional',
-    description: 'Ideal para e-commerce e sites complexos',
-    price: 'R$ 4.500',
-    duration: '15 dias úteis',
-    features: [
-      'Auditoria de até 25 páginas',
-      'Implementação das correções',
-      'Relatório executivo + técnico',
-      'Suporte por 60 dias',
-      'Certificado de conformidade',
+    id: 'word',
+    nome: 'Word/PowerPoint',
+    icone: FileText,
+    cor: 'blue',
+    extensoes: '.docx, .pptx',
+    problemas: [
+      'Estrutura de headings incorreta',
+      'Textos como imagens',
+      'Tabelas complexas sem estrutura',
+      'Cores sem contraste adequado',
+      'Listas não estruturadas',
+      'Sem textos alternativos',
+      'Ordem de leitura confusa (PPT)',
     ],
-    popular: true,
+    solucoes: [
+      'Uso correto de estilos de heading',
+      'Conversão de imagens de texto em texto real',
+      'Estruturação adequada de tabelas',
+      'Ajuste de cores para contraste WCAG AA',
+      'Formatação de listas estruturadas',
+      'Textos alternativos em imagens',
+      'Ordem de leitura lógica',
+      'Verificação com checkers nativos',
+    ],
   },
   {
-    name: 'Pacote Completo',
-    description: 'Ideal para empresas que querem suporte contínuo',
-    price: 'R$ 8.500',
-    duration: '20 dias úteis',
-    features: [
-      'Auditoria ilimitada',
-      'Implementação completa',
-      'Consultoria por 6 meses',
-      'Treinamento da equipe',
-      'Certificação oficial',
-      'Selo de acessibilidade',
+    id: 'excel',
+    nome: 'Excel',
+    icone: FileText,
+    cor: 'green',
+    extensoes: '.xlsx',
+    problemas: [
+      'Planilhas sem estrutura clara',
+      'Múltiplas tabelas em uma sheet',
+      'Células mescladas excessivas',
+      'Sem cabeçalhos de coluna/linha',
+      'Cores como única forma de informação',
+      'Fórmulas sem contexto',
+      'Gráficos sem descrição',
     ],
-    popular: false,
+    solucoes: [
+      'Estruturação clara de dados',
+      'Separação de tabelas em sheets',
+      'Redução de células mescladas',
+      'Definição de cabeçalhos',
+      'Informação não dependente só de cor',
+      'Nomes descritivos para ranges',
+      'Textos alternativos em gráficos',
+      'Instruções claras de uso',
+    ],
   },
 ]
 
-const testimonials = [
+const pacotes = [
   {
-    name: 'Maria Santos',
-    position: 'Proprietária - Loja Virtual MariModa',
-    text: 'Nunca imaginei que tornar nosso site acessível seria tão importante para os negócios. Além da questão legal, ganhamos muitos clientes novos!',
-    rating: 5,
+    nome: 'Básico',
+    preco: 'R$ 150',
+    unidade: 'por documento',
+    ideal: 'Documentos simples (até 20 páginas)',
+    cor: 'blue',
+    inclui: [
+      'Conversão para formato acessível',
+      'Estruturação básica',
+      'Textos alternativos em imagens',
+      'Ordem de leitura correta',
+      'Metadados básicos',
+      'Teste com leitor de tela',
+      'Entrega em 3-5 dias úteis',
+    ],
+    exemplos: 'Folhetos, apresentações simples, relatórios curtos',
   },
   {
-    name: 'João Silva',
-    position: 'Sócio-diretor - Clínica Bem Estar',
-    text: 'O atendimento foi excepcional. Explicaram tudo de forma clara e o resultado superou nossas expectativas. Recomendo!',
-    rating: 5,
+    nome: 'Professional',
+    preco: 'R$ 300',
+    unidade: 'por documento',
+    ideal: 'Documentos médios (20-50 páginas)',
+    cor: 'red',
+    destaque: true,
+    inclui: [
+      'Tudo do pacote Básico',
+      'Estruturação avançada de tabelas',
+      'Formulários acessíveis',
+      'Links descritivos',
+      'Múltiplos idiomas',
+      'Sumário navegável',
+      'Relatório de conformidade',
+      'Entrega em 5-7 dias úteis',
+    ],
+    exemplos: 'Manuais, documentos técnicos, relatórios anuais',
   },
   {
-    name: 'Ana Costa',
-    position: 'Gerente de Marketing - TechSolutions',
-    text: 'Investimento que se pagou rapidamente. Nosso site ficou mais rápido e profissional. Valeu cada centavo!',
-    rating: 5,
+    nome: 'Enterprise',
+    preco: 'Sob consulta',
+    unidade: '',
+    ideal: 'Documentos complexos ou em lote',
+    cor: 'purple',
+    inclui: [
+      'Tudo do pacote Professional',
+      'Remediação em lote (desconto progressivo)',
+      'Documentos altamente complexos',
+      'Múltiplos formatos',
+      'Treinamento de equipe',
+      'Templates acessíveis',
+      'Processo documentado',
+      'Suporte contínuo',
+    ],
+    exemplos: 'Bibliotecas de documentos, manuais extensos, séries de relatórios',
+  },
+]
+
+const processo = [
+  {
+    numero: 1,
+    titulo: 'Análise Inicial',
+    duracao: '1 dia',
+    icone: Eye,
+    descricao: 'Avalio o estado atual do documento e identifico todos os problemas',
+    atividades: [
+      'Abertura e análise do documento original',
+      'Identificação de problemas de acessibilidade',
+      'Verificação de estrutura e conteúdo',
+      'Estimativa de esforço e prazo',
+      'Comunicação de achados ao cliente',
+    ],
   },
   {
-    name: 'Carlos Oliveira',
-    position: 'Proprietário - Distribuidora Oliveira',
-    text: 'Equipe super qualificada e preços justos. Fizeram todo o trabalho sem interferir na nossa rotina.',
-    rating: 5,
+    numero: 2,
+    titulo: 'Remediação',
+    duracao: '2-5 dias',
+    icone: Zap,
+    descricao: 'Corrijo todos os problemas encontrados seguindo padrões WCAG',
+    atividades: [
+      'Reestruturação do documento',
+      'Adição de tags e estrutura',
+      'Inclusão de textos alternativos',
+      'Correção de ordem de leitura',
+      'Ajuste de cores e contrastes',
+      'Estruturação de tabelas',
+      'Criação de sumário navegável',
+    ],
+  },
+  {
+    numero: 3,
+    titulo: 'Validação',
+    duracao: '1 dia',
+    icone: Shield,
+    descricao: 'Testo o documento com ferramentas e leitores de tela',
+    atividades: [
+      'Testes com PAC (PDF Accessibility Checker)',
+      'Validação com Adobe Acrobat Pro',
+      'Testes com NVDA e JAWS',
+      'Verificação de navegação por teclado',
+      'Validação de formulários (se aplicável)',
+      'Checklist de conformidade WCAG',
+    ],
+  },
+  {
+    numero: 4,
+    titulo: 'Entrega',
+    duracao: '1 dia',
+    icone: Download,
+    descricao: 'Entrego o documento remediado com relatório de conformidade',
+    atividades: [
+      'Documento final em formato acessível',
+      'Relatório de remediação',
+      'Checklist de conformidade',
+      'Instruções de uso (se necessário)',
+      'Revisão final com cliente',
+      'Ajustes se necessário',
+    ],
+  },
+]
+
+const ferramentas = [
+  { nome: 'Adobe Acrobat Pro', uso: 'Remediação de PDFs' },
+  { nome: 'PAC (PDF Accessibility Checker)', uso: 'Validação de PDFs' },
+  { nome: 'Microsoft Office', uso: 'Remediação de Word/Excel/PPT' },
+  { nome: 'NVDA', uso: 'Testes com leitor de tela' },
+  { nome: 'JAWS', uso: 'Testes com leitor de tela' },
+  { nome: 'ABBYY FineReader', uso: 'OCR para PDFs escaneados' },
+  { nome: 'CommonLook', uso: 'Remediação avançada de PDFs' },
+]
+
+const faq = [
+  {
+    pergunta: 'Qual a diferença entre PDF acessível e PDF comum?',
+    resposta:
+      'PDF comum é apenas uma imagem do documento. PDF acessível tem estrutura, tags, ordem de leitura definida, e pode ser navegado por leitores de tela. É a diferença entre uma foto de um livro e um livro digital de verdade.',
+  },
+  {
+    pergunta: 'Vocês trabalham com qualquer idioma?',
+    resposta:
+      'Sim! Posso remediar documentos em qualquer idioma. Para idiomas que não domino, foco na estrutura técnica (que é universal) e sigo as instruções fornecidas para textos alternativos.',
+  },
+  {
+    pergunta: 'E se o documento for muito antigo ou de má qualidade?',
+    resposta:
+      'Depende. PDFs escaneados de baixa qualidade podem ser difíceis de remediar (OCR pode falhar). Nestes casos, pode ser mais eficiente reconstruir o documento do zero. Avalio caso a caso.',
+  },
+  {
+    pergunta: 'Quanto tempo leva?',
+    resposta:
+      'Documentos simples: 3-5 dias. Médios: 5-7 dias. Complexos: 1-3 semanas. Lotes grandes: negociamos prazos. Urgências podem ter custo adicional.',
+  },
+  {
+    pergunta: 'Posso aprender a fazer eu mesmo?',
+    resposta:
+      'Sim! Ofereço treinamento para equipes que precisam remediar documentos regularmente. Ensino o processo, ferramentas e boas práticas. Mais eficiente para quem tem volume grande.',
+  },
+  {
+    pergunta: 'Garantem conformidade legal?',
+    resposta:
+      'Garanto conformidade técnica com WCAG 2.1/2.2 nível AA. Forneço relatório detalhado que pode ser usado como documentação. Porém, não sou advogado e não posso garantir conformidade legal específica.',
+  },
+]
+
+const beneficios = [
+  {
+    icone: Shield,
+    titulo: 'Conformidade Legal',
+    descricao: 'Evite processos e multas. Muitos setores têm obrigação legal de fornecer documentos acessíveis.',
+  },
+  {
+    icone: Users,
+    titulo: 'Alcance Maior',
+    descricao: 'Pessoas com deficiência visual, dislexia, ou outras dificuldades poderão acessar seu conteúdo.',
+  },
+  {
+    icone: Award,
+    titulo: 'Imagem Positiva',
+    descricao: 'Demonstre compromisso com inclusão e responsabilidade social.',
+  },
+  {
+    icone: Target,
+    titulo: 'Melhor Usabilidade',
+    descricao: 'Documentos acessíveis são mais organizados e fáceis de navegar para todos.',
   },
 ]
 ---
@@ -93,113 +294,305 @@ const testimonials = [
 <Layout title="Remediação de documentos - Bruno Pulis">
   <Header />
   <main>
-    <section class="bg-blood-red-800 relative overflow-hidden py-16">
-      <div class="container-custom relative z-10 px-4">
-        <div class="max-w-3xl px-4">
-          <h1 class="mb-6 text-5xl leading-tight font-bold text-white md:text-6xl">Documentos acessíveis, agora</h1>
-          <p class="mb-8 text-xl leading-relaxed text-white md:text-2xl">
+    <section class="bg-gradient-to-br from-green-900 via-green-800 to-green-900 py-20 text-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <div class="mb-6 inline-block rounded-full bg-green-700 px-4 py-2 text-sm font-semibold text-green-100">
+            📄 Documentos acessíveis para todos
+          </div>
+          <h1 class="mb-6 text-5xl leading-tight font-bold">Remediação de Documentos</h1>
+          <p class="mb-6 text-2xl text-green-100">
             Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e em conformidade com a <abbr
               title="Web Content Accessibility Guidelines 2.2">WCAG 2.2</abbr
             > e <abbr title="PDF/Universal Accessibility">PDF/UA</abbr>.
           </p>
-          <a
-            href="#contato"
-            class="text-blood-red-800 hover:bg-blood-red-800/90 focus:ring-blood-red-bg-blood-red-800 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus:ring-2 focus:ring-offset-2"
-          >
-            Solicitar avaliação gratuita
-          </a>
-          <p class="pt-8 text-sm text-white">Em poucos dias, seus arquivos prontos para todos.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="entregamos" class="bg-gray-100 px-6 py-20">
-      <div class="container-custom">
-        <div class="mx-auto max-w-6xl">
-          <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">O que entregamos</h2>
-          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {
-              [
-                'Remediação completa de PDF, Word e PowerPoint',
-                'Textos alternativos para imagens e gráficos',
-                'Navegação por teclado e leitores de tela',
-                'Relatório antes e depois com recomendações',
-              ].map((item, idx) => (
-                <div key={idx} class="flex items-start gap-3">
-                  <CheckCircle class="text-blood-red-800 mt-1 h-6 w-6 flex-shrink-0" />
-                  <p class="text-errie-black-900">{item}</p>
-                </div>
-              ))
-            }
+          <p class="mb-8 text-xl leading-relaxed text-green-200">
+            Seu documento está excluindo pessoas? PDFs escaneados, tabelas mal estruturadas, falta de textos
+            alternativos - corrijo tudo isso seguindo padrões WCAG 2.1/2.2.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#pacotes"
+              class="rounded-lg bg-white px-8 py-4 font-semibold text-green-900 transition hover:bg-green-50"
+            >
+              Ver preços
+            </a>
+            <a
+              href="#tipos"
+              class="rounded-lg border border-green-600 bg-green-700 px-8 py-4 font-semibold text-white transition hover:bg-green-600"
+            >
+              Tipos de documento
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="problema" class="px-6 py-20">
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">Documentos inacessíveis excluem e custam caro</h2>
-        <p class="text-xl leading-relaxed text-gray-600">
-          Um único PDF inacessível pode barrar contratos, gerar denúncias e comprometer sua marca.
-        </p>
-      </div>
-    </section>
-
-    <section id="solucao" class="bg-gray-50 px-6 py-20">
-      <div class="mx-auto max-w-6xl">
+    {/* Por que documentos acessíveis importam */}
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Eu corrijo isso pra você</h2>
-          <p class="text-xl text-gray-600">Remediação técnica com foco em usabilidade e conformidade.</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que documentos acessíveis importam</h2>
+          <p class="text-xl text-gray-600">Não é apenas sobre cumprir leis - é sobre incluir pessoas</p>
         </div>
 
-        <div class="grid gap-12 md:grid-cols-2">
-          <div>
-            <h3 class="mb-6 text-2xl font-bold text-gray-900">O que incluímos</h3>
-            <ul class="space-y-4">
-              {
-                [
-                  'Estrutura semântica e hierarquia de títulos',
-                  'Textos alternativos e descrições',
-                  'Marcação correta de tabelas e listas',
-                  'Validação com PAC, Acrobat e leitores de tela',
-                ].map((item, idx) => (
-                  <li key={idx} class="flex items-start gap-3">
-                    <CheckCircle class="text-blood-red-800 mt-0.5 h-5 w-5 flex-shrink-0" />
-                    <span class="text-gray-700">{item}</span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="mb-6 text-2xl font-bold text-gray-900">Processo simplificado</h3>
-            <div class="space-y-6">
-              {
-                [
-                  { num: '01', text: 'Diagnóstico' },
-                  { num: '02', text: 'Correção' },
-                  { num: '03', text: 'Testes' },
-                  { num: '04', text: 'Relatório' },
-                ].map((step, idx) => (
-                  <div key={idx} class="flex items-center gap-4">
-                    <span class="text-blood-red-800 text-3xl font-bold">{step.num}</span>
-                    <span class="text-lg text-gray-700">{step.text}</span>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {
+            beneficios.map((beneficio, index) => {
+              const Icon = beneficio.icone
+              return (
+                <div
+                  key={index}
+                  class="rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-white p-6"
+                >
+                  <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-600">
+                    <Icon class="h-6 w-6 text-white" />
                   </div>
-                ))
-              }
-            </div>
-          </div>
+                  <h3 class="mb-2 text-lg font-bold text-gray-900">{beneficio.titulo}</h3>
+                  <p class="text-sm text-gray-700">{beneficio.descricao}</p>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </section>
 
-    <section id="beneficios" class="px-6 py-20">
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">Mais que acessibilidade é respeito</h2>
-        <p class="text-xl leading-relaxed text-gray-600">
-          Documentos acessíveis demonstram empatia e profissionalismo. Você não só cumpre uma norma, faz o certo.
-        </p>
+    {/* Tipos de Documentos */}
+    <section id="tipos" class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Tipos de documentos que remedio</h2>
+          <p class="text-xl text-gray-600">Cada formato tem seus desafios específicos</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          {
+            tiposDocumento.map((tipo) => {
+              const Icon = tipo.icone
+              const cores = {
+                red: {
+                  bg: 'bg-red-100',
+                  text: 'text-red-600',
+                  border: 'border-red-200',
+                  hover: 'hover:border-red-400',
+                },
+                blue: {
+                  bg: 'bg-blue-100',
+                  text: 'text-blue-600',
+                  border: 'border-blue-200',
+                  hover: 'hover:border-blue-400',
+                },
+                green: {
+                  bg: 'bg-green-100',
+                  text: 'text-green-600',
+                  border: 'border-green-200',
+                  hover: 'hover:border-green-400',
+                },
+                purple: {
+                  bg: 'bg-purple-100',
+                  text: 'text-purple-600',
+                  border: 'border-purple-200',
+                  hover: 'hover:border-purple-400',
+                },
+              }
+              const cor = cores[tipo.cor]
+
+              return (
+                <div
+                  key={tipo.id}
+                  class={`rounded-2xl border-2 bg-white p-8 ${cor.border} ${cor.hover} transition hover:shadow-lg`}
+                >
+                  <div class="mb-6 flex items-center gap-3">
+                    <div class={`h-12 w-12 ${cor.bg} flex items-center justify-center rounded-xl`}>
+                      <Icon class={`h-6 w-6 ${cor.text}`} />
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold text-gray-900">{tipo.nome}</h3>
+                      <p class="text-sm text-gray-600">{tipo.extensoes}</p>
+                    </div>
+                  </div>
+
+                  <div class="mb-6">
+                    <h4 class="mb-3 flex items-center gap-2 text-sm font-bold text-gray-900">
+                      <AlertCircle class="h-4 w-4 text-orange-600" />
+                      Problemas comuns:
+                    </h4>
+                    <ul class="space-y-2">
+                      {tipo.problemas.slice(0, 5).map((problema, i) => (
+                        <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                          <span class="mt-1 text-orange-600">•</span>
+                          <span>{problema}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="mb-3 flex items-center gap-2 text-sm font-bold text-gray-900">
+                      <CheckCircle class="h-4 w-4 text-green-600" />O que faço:
+                    </h4>
+                    <ul class="space-y-2">
+                      {tipo.solucoes.slice(0, 5).map((solucao, i) => (
+                        <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                          <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                          <span>{solucao}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* Pacotes */}
+    <section id="pacotes" class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Pacotes e Preços</h2>
+          <p class="text-xl text-gray-600">Preços transparentes por documento</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          {
+            pacotes.map((pacote, index) => (
+              <div
+                key={index}
+                class={`rounded-2xl p-8 transition ${
+                  pacote.destaque
+                    ? 'scale-105 transform border-4 border-red-400 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-2xl'
+                    : 'border-2 border-gray-200 bg-white hover:border-green-400 hover:shadow-lg'
+                }`}
+              >
+                {pacote.destaque && (
+                  <div class="mb-4 inline-block rounded-full bg-white px-3 py-1 text-xs font-bold text-red-600">
+                    ⭐ MAIS COMUM
+                  </div>
+                )}
+
+                <h3 class={`mb-2 text-2xl font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
+                  {pacote.nome}
+                </h3>
+
+                <div class={`mb-1 text-4xl font-bold ${pacote.destaque ? 'text-white' : 'text-green-600'}`}>
+                  {pacote.preco}
+                </div>
+                <div class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>{pacote.unidade}</div>
+
+                <p class={`mb-6 ${pacote.destaque ? 'text-red-50' : 'text-gray-700'}`}>{pacote.ideal}</p>
+
+                <div class="mb-6">
+                  <h4 class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
+                    ✓ Inclui:
+                  </h4>
+                  <ul class="space-y-2">
+                    {pacote.inclui.map((item, i) => (
+                      <li key={i} class="flex items-start gap-2">
+                        <CheckCircle
+                          class={`mt-0.5 h-4 w-4 flex-shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
+                        />
+                        <span class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class={`mb-6 rounded-lg p-3 text-xs ${pacote.destaque ? 'bg-white/10' : 'bg-gray-50'}`}>
+                  <strong>Exemplos:</strong> {pacote.exemplos}
+                </div>
+
+                <a
+                  href="/contato"
+                  class={`block w-full rounded-lg px-6 py-3 text-center font-semibold transition ${
+                    pacote.destaque
+                      ? 'bg-white text-red-600 hover:bg-red-50'
+                      : 'bg-green-600 text-white hover:bg-green-700'
+                  }`}
+                >
+                  Solicitar orçamento
+                </a>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-12 rounded-2xl border-2 border-blue-200 bg-blue-50 p-8 text-center">
+          <Package class="mx-auto mb-4 h-12 w-12 text-blue-600" />
+          <h3 class="mb-3 text-2xl font-bold text-gray-900">Precisa remediar vários documentos?</h3>
+          <p class="mx-auto mb-6 max-w-2xl text-gray-700">
+            Ofereço <strong>descontos progressivos</strong> para lotes: 10+ documentos (10% off), 50+ documentos (20% off),
+            100+ documentos (30% off). Entre em contato para orçamento personalizado.
+          </p>
+          <a
+            href="/contato"
+            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+          >
+            Solicitar orçamento em lote
+            <ArrowRight class="h-5 w-5" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* Processo */}
+    <section class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Como funciona o processo</h2>
+          <p class="text-xl text-gray-600">Do documento inacessível ao acessível em 4 etapas</p>
+        </div>
+
+        <div class="space-y-8">
+          {
+            processo.map((etapa, index) => {
+              const Icon = etapa.icone
+              return (
+                <div key={index} class="relative">
+                  {index < processo.length - 1 && (
+                    <div class="absolute top-20 bottom-0 left-8 -mb-8 w-0.5 bg-gray-200" />
+                  )}
+
+                  <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                      <div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-2xl font-bold text-white shadow-lg">
+                        {etapa.numero}
+                      </div>
+                    </div>
+
+                    <div class="flex-1 rounded-xl border-2 border-gray-200 bg-white p-8 transition hover:border-green-400">
+                      <div class="mb-4 flex items-start justify-between">
+                        <div>
+                          <h3 class="mb-2 text-2xl font-bold text-gray-900">{etapa.titulo}</h3>
+                          <p class="text-gray-600">{etapa.descricao}</p>
+                        </div>
+                        <div class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm whitespace-nowrap text-gray-600">
+                          <Clock class="h-4 w-4" />
+                          {etapa.duracao}
+                        </div>
+                      </div>
+
+                      <div class="mt-6">
+                        <h4 class="mb-3 text-sm font-bold text-gray-900">O que faço:</h4>
+                        <ul class="grid gap-2 md:grid-cols-2">
+                          {etapa.atividades.map((atividade, i) => (
+                            <li key={i} class="flex items-start gap-2">
+                              <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                              <span class="text-sm text-gray-700">{atividade}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     </section>
 
@@ -253,83 +646,6 @@ const testimonials = [
       </div>
     </section>
 
-    <section id="investimento" class="bg-gray-50 px-6 py-20">
-      <div class="mx-auto max-w-6xl">
-        <h2 class="mb-6 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-          Quanto custa tornar seus documentos acessíveis?
-        </h2>
-        <p class="mx-auto mb-12 max-w-3xl text-center text-lg text-gray-600">
-          Cada projeto é avaliado conforme volume e complexidade dos arquivos. O diagnóstico inicial é <strong
-            >gratuito</strong
-          > — você recebe um relatório com recomendações antes de investir.
-        </p>
-
-        <div class="mb-12 grid gap-6 md:grid-cols-3">
-          {
-            [
-              {
-                title: 'Pacote Essencial',
-                description: 'Até 5 documentos simples',
-                highlighted: false,
-              },
-              {
-                title: 'Pacote Profissional',
-                description: 'Até 20 documentos com gráficos e tabelas',
-                highlighted: true,
-              },
-              {
-                title: 'Pacote Corporativo',
-                description: 'Grandes volumes e relatórios técnicos',
-                highlighted: false,
-              },
-            ].map((pack, idx) => (
-              <div
-                key={idx}
-                class={`rounded-2xl p-8 ${
-                  pack.highlighted ? 'scale-105 transform bg-gray-900 text-white' : 'border border-gray-200 bg-white'
-                }`}
-              >
-                <h3 class={`mb-3 text-2xl font-bold ${pack.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                  {pack.title}
-                </h3>
-                <p class={pack.highlighted ? 'text-gray-300' : 'text-gray-600'}>{pack.description}</p>
-              </div>
-            ))
-          }
-        </div>
-
-        <div class="text-center">
-          <a
-            href="#contato"
-            class="inline-block transform rounded-full bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all hover:scale-105 hover:bg-gray-800"
-          >
-            Solicitar diagnóstico gratuito
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="autoridade" class="px-6 py-20">
-      <div class="mx-auto max-w-4xl">
-        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">Por que escolher meu serviço</h2>
-        <div class="grid gap-6 md:grid-cols-2">
-          {
-            [
-              '+15 anos em acessibilidade e qualidade digital',
-              'Testes reais com NVDA e JAWS',
-              'Relatório "antes e depois" em todos os projetos',
-              'Clientes do setor público e privado',
-            ].map((item, idx) => (
-              <div key={idx} class="flex items-start gap-3 rounded-xl bg-gray-50 p-6">
-                <Award class="mt-1 h-6 w-6 flex-shrink-0 text-gray-900" />
-                <p class="text-gray-700">{item}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
     <section id="cta-final" class="bg-gray-900 px-6 py-20 text-white">
       <div class="mx-auto max-w-4xl text-center">
         <h2 class="mb-6 text-3xl font-bold md:text-4xl">Seus documentos merecem ser acessíveis</h2>
@@ -342,55 +658,6 @@ const testimonials = [
         >
           Solicitar diagnóstico agora
         </a>
-      </div>
-    </section>
-
-    <section id="contato" class="px-6 py-20">
-      <div class="mx-auto max-w-2xl">
-        <h2 class="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">Solicitar Avaliação Gratuita</h2>
-        <form class="space-y-6">
-          <div>
-            <label htmlFor="nome" class="mb-2 block text-sm font-medium text-gray-700"> Nome </label>
-            <input
-              type="text"
-              id="nome"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="Seu nome"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" class="mb-2 block text-sm font-medium text-gray-700"> Email </label>
-            <input
-              type="email"
-              id="email"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="seu@email.com"
-            />
-          </div>
-          <div>
-            <label htmlFor="empresa" class="mb-2 block text-sm font-medium text-gray-700"> Empresa (opcional) </label>
-            <input
-              type="text"
-              id="empresa"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="Nome da empresa"
-            />
-          </div>
-          <div>
-            <label htmlFor="mensagem" class="mb-2 block text-sm font-medium text-gray-700"> Mensagem </label>
-            <textarea
-              id="mensagem"
-              rows={4}
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="Conte um pouco sobre seus documentos e necessidades..."></textarea>
-          </div>
-          <button
-            type="submit"
-            class="w-full transform rounded-full bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all hover:scale-105 hover:bg-gray-800"
-          >
-            Enviar solicitação
-          </button>
-        </form>
       </div>
     </section>
   </main>

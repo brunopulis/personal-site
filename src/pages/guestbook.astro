@@ -1,0 +1,153 @@
+---
+import { Star, Send, Mail, User, Calendar , MessageCircle } from '@lucide/astro'
+
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header.astro'
+import HeroSection from '@/components/layout/HeroSection.astro'
+import Footer from '@/components/layout/Footer.astro'
+
+ const mensagens = [
+    {
+      id: 1,
+      nome: 'Maria Silva',
+      mensagem: 'Participei do workshop de acessibilidade e foi transformador! Aprendi técnicas práticas que já estou aplicando no meu trabalho. Obrigada, Bruno!',
+      data: '10 de outubro de 2025',
+      destaque: true
+    },
+    {
+      id: 2,
+      nome: 'João Santos',
+      mensagem: 'A auditoria que o Bruno fez no nosso site foi extremamente detalhada. O relatório veio com exemplos práticos e priorização clara. Recomendo!',
+      data: '8 de outubro de 2025',
+      destaque: false
+    },
+    {
+      id: 3,
+      nome: 'Ana Costa',
+      mensagem: 'Palestra incrível! Consegui entender conceitos de WCAG que antes pareciam super complicados. A didática do Bruno é excelente.',
+      data: '5 de outubro de 2025',
+      destaque: true
+    },
+    {
+      id: 4,
+      nome: 'Carlos Mendes',
+      mensagem: 'Trabalhar com o Bruno na mentoria foi essencial para nossa equipe. Ele não só ensina, mas acompanha a implementação. Nosso site melhorou 200%!',
+      data: '2 de outubro de 2025',
+      destaque: false
+    },
+    {
+      id: 5,
+      nome: 'Beatriz Lima',
+      mensagem: 'A remediação dos nossos documentos PDF foi impecável. Agora sim nossos materiais são verdadeiramente acessíveis. Valeu demais!',
+      data: '28 de setembro de 2025',
+      destaque: false
+    },
+    {
+      id: 6,
+      nome: 'Rafael Oliveira',
+      mensagem: 'Consultoria estratégica que fez toda diferença. O Bruno nos ajudou a criar um roadmap realista de acessibilidade para os próximos 2 anos.',
+      data: '25 de setembro de 2025',
+      destaque: true
+    }
+  ];
+---
+
+<Layout title="Livro de visitas - Bruno Pulis">
+  <Header />
+  <main id="main-content">
+    <HeroSection
+      title="Livro de visitas"
+      description="Deixe sua mensagem, conte sua experiência ou simplesmente diga oi! Adoro ler os recados de quem passa por aqui." />
+
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-2xl px-6">
+        <div class="rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 p-8 shadow-lg">
+          <div class="mb-6 flex items-center gap-3">
+            <h2 class="text-2xl font-bold text-gray-900">Deixe sua mensagem</h2>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <label for="nome" class="mb-2 block text-sm font-bold text-errie-black-900"> Seu nome * </label>
+              <input
+                id="nome"
+                type="text"
+                placeholder="Como você se chama?"
+                class="w-full rounded-lg border bg-white border-gray-300 py-3 pr-4 pl-5 focus:border-transparent focus:ring-2 focus:ring-red-500"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="mb-2 block text-sm font-bold text-errie-black-900"> E-mail (opcional) </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="seu@email.com"
+                class="w-full rounded-lg bg-white border border-gray-300 py-3 pr-4 pl-5 focus:border-transparent focus:ring-2 focus:ring-red-500"
+              />
+              <p class="mt-1 text-xs text-errie-black-900">Seu e-mail não será exibido publicamente</p>
+            </div>
+
+            <div>
+              <label for="mensagem" class="mb-2 block text-sm font-bold text-errie-black-900"> Sua mensagem * </label>
+              <textarea
+                id="mensagem"
+                rows="5"
+                placeholder="Conte sua experiência, deixe um feedback, ou simplesmente diga oi! 👋"
+                class="w-full resize-none rounded-lg bg-white border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-red-500"
+              ></textarea>
+            </div>
+
+            <button
+              class="flex w-full items-center justify-center gap-2 rounded-lg bg-blood-red-800 px-6 py-4 font-bold text-white shadow-lg transition hover:bg-red-700 hover:shadow-xl"
+            >
+              Enviar mensagem
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-50 py-16">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="mb-12 text-center">
+          <h2 class="mb-2 text-3xl font-bold text-gray-900">Mensagens recentes</h2>
+          <p class="text-gray-600">
+            {mensagens.length} pessoas já deixaram sua marca por aqui ❤️
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {
+            mensagens.map((msg) => (
+              <div
+                key={msg.id}
+                class={`rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md ${
+                  msg.destaque
+                    ? 'border-2 border-yellow-200 bg-gradient-to-br from-yellow-50 to-white'
+                    : 'border border-gray-200'
+                }`}
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                      <h3 class="font-bold text-gray-900">{msg.nome}</h3>
+                    </div>
+
+                    <p class="text-errie-black-900 leading-relaxed mb-3">{msg.mensagem}</p>
+
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                      <Calendar class="w-4 h-4" />
+                      <span>{msg.data}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
