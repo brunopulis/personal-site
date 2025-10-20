@@ -1,4 +1,5 @@
 ---
+import site from '@/data/site.config.json'
 import type { GetStaticPathsOptions, Page } from 'astro'
 import { type CollectionEntry, getCollection } from 'astro:content'
 
@@ -16,7 +17,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     return new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()
   })
 
-  return paginate(sortedPosts, { pageSize: 12 })
+  return paginate(sortedPosts, { pageSize: 6 })
 }
 
 type Props = { page: Page<CollectionEntry<'blog'>> }
@@ -42,116 +43,22 @@ function toISOString(dateString: string) {
 
 <Layout title="Blog - Bruno Pulis" description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software">
   <Header />
-
-  <main>
-    <section class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="max-w-3xl">
-          <h1 class="mb-6 text-5xl font-bold text-gray-900">Coisas que tenho pensado</h1>
-          <p class="text-xl leading-relaxed text-gray-700">
-            Escrevo sobre acessibilidade, tecnologia, teologia, produtividade e tudo que me faz refletir. Nem tudo é
-            técnico, às vezes é só sobre a vida.
+  <main id="main-content">
+    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+        <div>
+          <h1 class="mb-6 text-5xl leading-tight font-bold">Coisas que tenho pensado</h1>
+          <p class="text-xl leading-relaxed font-light text-white">
+            Escrevo sobre acessibilidade, tecnologia, teologia, produtividade.
           </p>
+          <p class="text-xl leading-relaxed font-light text-white">Nem tudo é técnico, às vezes é só sobre a vida.</p>
         </div>
       </div>
     </section>
-
-    <template x-if="artigoDestaque()">
-      <section class="bg-white py-16">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="mb-8 flex items-center gap-2">
-            <!-- TrendingUp icon (simple svg) -->
-            <svg
-              class="h-6 w-6 text-red-600"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8"></path></svg
-            >
-            <h2 class="text-2xl font-bold text-gray-900">Em destaque</h2>
-          </div>
-
-          <a :href="'/blog/' + artigoDestaque().slug" class="group block">
-            <div
-              class="grid gap-8 overflow-hidden rounded-2xl border-2 border-red-200 bg-gradient-to-br from-red-50 to-orange-50 transition hover:border-red-400 md:grid-cols-2"
-            >
-              <div class="h-80 overflow-hidden md:h-auto">
-                <img
-                  :src="artigoDestaque().imagem"
-                  :alt="artigoDestaque().titulo"
-                  class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <div class="flex flex-col justify-center p-8">
-                <div class="mb-4 inline-block w-fit rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white">
-                  🔥 DESTAQUE
-                </div>
-                <h3
-                  class="mb-4 text-3xl font-bold text-gray-900 transition group-hover:text-red-600"
-                  x-text="artigoDestaque().titulo"
-                >
-                </h3>
-                <p class="mb-6 leading-relaxed text-gray-700" x-text="artigoDestaque().resumo"></p>
-
-                <div class="mb-6 flex items-center gap-4 text-sm text-gray-600">
-                  <div class="flex items-center gap-2">
-                    <!-- Calendar icon -->
-                    <svg
-                      class="h-4 w-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      ><path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      ></path></svg
-                    >
-                    <span x-text="artigoDestaque().data"></span>
-                  </div>
-
-                  <div class="flex items-center gap-2">
-                    <!-- Clock icon -->
-                    <svg
-                      class="h-4 w-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      ><circle cx="12" cy="12" r="9" stroke-width="2"></circle><path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 7v5l3 3"></path></svg
-                    >
-                    <span x-text="artigoDestaque().tempoLeitura + ' de leitura'"></span>
-                  </div>
-                </div>
-
-                <div class="flex items-center gap-2 font-semibold text-red-600 transition-all group-hover:gap-3">
-                  Ler artigo completo
-                  <!-- ArrowRight icon -->
-                  <svg
-                    class="h-5 w-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"
-                    ></path></svg
-                  >
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </section>
-    </template>
 
     <!-- Filtros e Busca -->
     <section class="border-y border-gray-200 bg-gray-50">
@@ -198,6 +105,89 @@ function toISOString(dateString: string) {
             </div>
 
             <div class="space-y-8">
+              {
+                posts.map((post) => (
+                  <a href={'/blog/' + post.id} class="u-url group block">
+                    <article class="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:border-blue-400 hover:shadow-lg">
+                      <div class="md:flex">
+                        <div class="h-64 overflow-hidden md:h-auto md:w-2/5">
+                          <img
+                            src={post.data.image}
+                            alt={post.data.imageAlt}
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                          />
+                      </div>
+                      <div class="p-6 md:w-3/5">
+                        <div class="mb-3 flex items-center gap-2">
+                          <span
+                            class="rounded-full px-3 py-1 text-xs font-semibold"
+                            :class="artigo.categoria === 'acessibilidade' ? 'bg-green-100 text-green-700' : artigo.categoria === 'pessoal' ? 'bg-purple-100 text-purple-700' : artigo.categoria === 'teologia' ? 'bg-blue-100 text-blue-700' : artigo.categoria === 'carreira' ? 'bg-orange-100 text-orange-700' : 'bg-pink-100 text-pink-700'"
+                          >
+                            <span x-text="(categorias.find(c=>c.id===artigo.categoria) || {}).icon"></span>
+                            <span class="ml-1" x-text="artigo.categoria"></span>
+                          </span>
+                        </div>
+
+                        <h3
+                          class="mb-3 text-2xl font-bold text-gray-900 transition group-hover:text-blue-600"
+                          x-text="artigo.titulo"
+                        >
+                        </h3>
+                        <p class="mb-4 line-clamp-2 leading-relaxed text-gray-700" x-text="artigo.resumo"></p>
+
+                        <div class="mb-4 flex items-center gap-4 text-sm text-gray-600">
+                          <div class="flex items-center gap-2">
+                            <!-- calendar -->
+                            <svg
+                              class="h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                              ></path></svg
+                            >
+                            <span x-text="artigo.data"></span>
+                          </div>
+
+                          <div class="flex items-center gap-2">
+                            <!-- clock -->
+                            <svg
+                              class="h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              ><circle cx="12" cy="12" r="9" stroke-width="2"></circle><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 7v5l3 3"></path></svg
+                            >
+                            <span x-text="artigo.tempoLeitura"></span>
+                          </div>
+                      <div class="group relative mt-3">
+                        <h3 class="text-errie-black-900 text-2xl leading-6 font-semibold group-hover:underline group-hover:underline-offset-4">
+                          {post.data.title}
+                        </h3>
+                        <div class="text-errie-black-900 mt-5 flex items-center gap-x-2 text-sm">
+                          <time
+                            datetime={toISOString(String(post.data.publishDate))}
+                            class="dt-published text-errie-black-900 text-sm"
+                          >
+                            {formatDate(post.data.publishDate)}
+                          </time>
+                        </div>
+                        <p class="text-errie-black-900 mt-5 line-clamp-2 text-xl leading-6">{post.data.excerpt}</p>
+                      </div>
+                    </article>
+                  </a>
+                ))
+              }
               <template x-for="artigo in artigosFiltrados()" :key="artigo.id">
                 <a :href="'/blog/' + artigo.slug" class="group block">
                   <article
@@ -280,9 +270,9 @@ function toISOString(dateString: string) {
           </div>
 
           <!-- Sidebar -->
-          <div class="space-y-8">
+          <aside class="space-y-8">
             <!-- Mais Lidos -->
-            <div class="rounded-xl border-2 border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50 p-6">
+            <div class="rounded-xl border border-gray-200 bg-white p-6">
               <h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-gray-900">
                 <!-- TrendingUp svg -->
                 <svg
@@ -322,12 +312,16 @@ function toISOString(dateString: string) {
             </div>
 
             <!-- Newsletter -->
-            <div class="rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 p-6 text-white">
+            <div class="rounded-xl border border-gray-200 bg-white p-6">
               <h3 class="mb-3 text-xl font-bold">📬 Newsletter</h3>
-              <p class="mb-4 text-sm text-blue-100">Receba os novos artigos direto no seu email. Sem spam, prometo.</p>
+              <p class="text-errie-black-900 mb-4 text-sm">
+                Receba os novos artigos direto no seu email. Sem spam, prometo.
+              </p>
               <a
-                href="/newsletter"
-                class="block w-full rounded-lg bg-white px-4 py-3 text-center font-semibold text-blue-600 transition hover:bg-blue-50"
+                href={site.socialMidia.substack}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-blood-red-800 block w-full rounded-lg px-4 py-3 text-center font-semibold text-blue-600 transition hover:bg-blue-50"
               >
                 Assinar newsletter
               </a>
@@ -364,7 +358,7 @@ function toISOString(dateString: string) {
                 </template>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

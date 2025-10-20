@@ -88,38 +88,20 @@ const projects = projectsData.projects
 <Layout title="Projetos - Bruno Pulis">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-blood-red-800 text-white">
+    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
       </div>
-      <div class="mx-auto max-w-7xl px-6 py-20">
-        <div class="max-w-3xl">
-          <h1 class="mb-6 text-5xl font-bold">Projetos que transformam barreiras em pontes</h1>
-          <p class="text-xl leading-relaxed text-gray-300">
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+        <div>
+          <h1 class="mb-6 text-5xl leading-tight font-bold">
+            Projetos que transformam barreiras em pontes
+          </h1>
+          <p class="mb-6 text-2xl font-light text-white">
             Cada projeto aqui representa pessoas reais que agora podem acessar conteúdo que antes era impossível. Não
             são apenas sites - são vidas impactadas.
           </p>
-        </div>
-
-        {/* Stats */}
-        <div class="mt-12 grid gap-6 md:grid-cols-4">
-          <div class="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
-            <span class="mb-2 text-3xl font-bold">50+</span>
-            <span class="text-sm text-gray-300">Projetos concluídos</span>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
-            <div class="mb-2 text-3xl font-bold">100%</div>
-            <div class="text-sm text-gray-300">Taxa de aprovação</div>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
-            <div class="mb-2 text-3xl font-bold">25+</div>
-            <div class="text-sm text-gray-300">Clientes satisfeitos</div>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
-            <div class="mb-2 text-3xl font-bold">∞</div>
-            <div class="text-sm text-gray-300">Vidas impactadas</div>
-          </div>
         </div>
       </div>
     </section>
