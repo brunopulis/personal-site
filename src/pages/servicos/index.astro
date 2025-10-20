@@ -201,10 +201,7 @@ const servicos = [
             servicos.map((servico) => {
               const Icon = servico.icone
               return (
-                <article
-                  key={servico.id}
-                  class="rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl"
-                >
+                <article class="rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl">
                   {/* Header do Card */}
                   <div class="mb-6 flex items-start gap-4">
                     <div class="flex-1">
@@ -235,8 +232,8 @@ const servicos = [
                   <div class="mb-6">
                     <h4 class="mb-3 text-sm font-bold tracking-wide text-gray-900">O que você recebe</h4>
                     <ul class="space-y-2">
-                      {servico.oqueinclui.slice(0, 4).map((item, i) => (
-                        <li key={i} class="flex items-start gap-2">
+                      {servico.oqueinclui.slice(0, 4).map((item) => (
+                        <li class="flex items-start gap-2">
                           <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" aria-hidden="true" />
                           <span class="text-sm text-gray-700">{item}</span>
                         </li>
