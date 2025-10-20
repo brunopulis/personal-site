@@ -1,0 +1,666 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: 'public/images'
+public_folder: '/images'
+
+collections:
+  # ========================================
+  # COLLECTION: POSTS
+  # ========================================
+  - name: 'blog'
+    label: 'Blog Post'
+    folder: 'src/content/blog'
+    create: true
+    delete: true
+    fields:
+      - name: "title"
+        widget: "string"
+        label: "Post Title"
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+      - label: "Author"
+        name: "author"
+        widget: "string"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        fields:
+          - { label: Source, name: src, widget: image, i18n: "duplicate" }
+          - { label: Alt Text, name: alt, widget: s }
+      - label: "Snippet"
+        name: "snippet"
+        widget: "text"
+      - label: "Publish Date"
+        name: "publishDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Tutorials", "News", "Reviews", "Frameworks"]
+      - name: "body"
+        widget: "markdown"
+        label: "Post Body"
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'string' }
+      - { label: 'Category', name: 'category', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          allow_add: true,
+          allow_delete: true,
+          collapsed: false,
+          field: { label: 'Tag', name: 'tag', widget: 'string' },
+        }
+      - { label: 'Image', name: 'image', widget: 'string' }
+      - { label: 'Publish Date', name: 'publishDate', widget: 'datetime', required: false }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Content', name: 'body', widget: 'markdown' }
+  backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  # ========================================
+  # COLLECTION: POSTS
+  # ========================================
+  - name: "posts"
+    label: "Posts do Blog"
+    label_singular: "Post"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "Data de Publicação"
+        name: "date"
+        widget: "datetime"
+        default: ""
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss"
+        required: true
+
+      - label: "Autor"
+        name: "author"
+        widget: "string"
+        required: true
+        default: "Seu Nome"
+
+      - label: "Descrição/Resumo"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Resumo do post para SEO e preview"
+
+      - label: "Imagem Destaque"
+        name: "featured_image"
+        widget: "image"
+        required: false
+        media_folder: "/static/images/posts"
+        public_folder: "/images/posts"
+
+      - label: "Conteúdo"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+      - label: "Categorias"
+        name: "categories"
+        widget: "list"
+        required: false
+        field:
+          label: "Categoria"
+          name: "category"
+          widget: "select"
+          options:
+            - "Tecnologia"
+            - "Design"
+            - "Desenvolvimento"
+            - "Tutorial"
+            - "Opinião"
+            - "Notícias"
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+
+      - label: "Publicado"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Desmarque para manter como rascunho"
+
+      - label: "Destaque"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Marcar como post em destaque"
+
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - label: "Meta Title"
+            name: "meta_title"
+            widget: "string"
+            required: false
+          - label: "Meta Description"
+            name: "meta_description"
+            widget: "text"
+            required: false
+          - label: "Keywords"
+            name: "keywords"
+            widget: "list"
+            required: false
+
+  # ========================================
+  # COLLECTION: NOTAS
+  # ========================================
+  - name: "notas"
+    label: "Notas Pessoais"
+    label_singular: "Nota"
+    folder: "content/notes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        required: false
+
+      - label: "Data"
+        name: "date"
+        widget: "datetime"
+        default: ""
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss"
+        required: true
+
+      - label: "Conteúdo"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        required: false
+        options:
+          - label: "📝 Pessoal"
+            value: "pessoal"
+          - label: "💼 Trabalho"
+            value: "trabalho"
+          - label: "📚 Estudos"
+            value: "estudos"
+          - label: "💡 Ideias"
+            value: "ideias"
+          - label: "🚀 Projetos"
+            value: "projetos"
+          - label: "⏰ Lembretes"
+            value: "lembretes"
+          - label: "📖 Anotações"
+            value: "anotacoes"
+        default: "pessoal"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+
+      - label: "⭐ Favorito"
+        name: "favorite"
+        widget: "boolean"
+        default: false
+        required: false
+
+      - label: "📦 Arquivada"
+        name: "archived"
+        widget: "boolean"
+        default: false
+        required: false
+
+      - label: "Imagens"
+        name: "images"
+        widget: "list"
+        required: false
+        field:
+          label: "Imagem"
+          name: "image"
+          widget: "image"
+          media_folder: "/static/images/notas"
+          public_folder: "/images/notas"
+
+      - label: "Links"
+        name: "links"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Título"
+            name: "title"
+            widget: "string"
+          - label: "URL"
+            name: "url"
+            widget: "string"
+
+  # ========================================
+  # COLLECTION: BLOGROLL
+  # ========================================
+  - name: "blogroll"
+    label: "Blogroll"
+    label_singular: "Link"
+    folder: "content/blogroll"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Nome do Site/Blog"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "URL"
+        name: "url"
+        widget: "string"
+        required: true
+        hint: "URL completa (https://exemplo.com)"
+
+      - label: "Descrição"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Breve descrição do site/blog"
+
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        required: true
+        options:
+          - label: "🎨 Design"
+            value: "design"
+          - label: "💻 Desenvolvimento"
+            value: "desenvolvimento"
+          - label: "📱 Tecnologia"
+            value: "tecnologia"
+          - label: "✍️ Escrita"
+            value: "escrita"
+          - label: "🎯 Produtividade"
+            value: "produtividade"
+          - label: "🎓 Educação"
+            value: "educacao"
+          - label: "🎮 Entretenimento"
+            value: "entretenimento"
+          - label: "📰 Notícias"
+            value: "noticias"
+          - label: "🌐 Geral"
+            value: "geral"
+
+      - label: "Logo/Avatar"
+        name: "logo"
+        widget: "image"
+        required: false
+        media_folder: "public/images/blogroll"
+        public_folder: "/images/blogroll"
+        hint: "Favicon ou logo do site"
+
+      - label: "Feed RSS"
+        name: "rss_feed"
+        widget: "string"
+        required: false
+        hint: "URL do feed RSS (se disponível)"
+
+      - label: "Autor/Responsável"
+        name: "author"
+        widget: "string"
+        required: false
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+
+      - label: "⭐ Destacar"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Marcar como favorito/destaque"
+
+      - label: "✅ Ativo"
+        name: "active"
+        widget: "boolean"
+        default: true
+        required: false
+        hint: "Site ainda está ativo?"
+
+      - label: "Ordem de Exibição"
+        name: "order"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Número menor = aparece primeiro"
+
+      - label: "Data de Adição"
+        name: "date_added"
+        widget: "datetime"
+        default: ""
+        format: "YYYY-MM-DD"
+        required: false
+
+      - label: "Redes Sociais"
+        name: "social"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - label: "Twitter/X"
+            name: "twitter"
+            widget: "string"
+            required: false
+          - label: "GitHub"
+            name: "github"
+            widget: "string"
+            required: false
+          - label: "LinkedIn"
+            name: "linkedin"
+            widget: "string"
+            required: false
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            required: false
+
+  # ========================================
+  # COLLECTION: MOVIES
+  # ========================================
+  - name: "movies"
+    label: "Filmes"
+    label_singular: "Filme"
+    folder: "content/movies"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Título do Filme"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "Título Original"
+        name: "original_title"
+        widget: "string"
+        required: false
+        hint: "Título no idioma original (se diferente)"
+
+      - label: "Ano de Lançamento"
+        name: "year"
+        widget: "number"
+        required: true
+        value_type: "int"
+        min: 1900
+        max: 2030
+
+      - label: "Diretor(es)"
+        name: "director"
+        widget: "list"
+        required: true
+        field:
+          label: "Diretor"
+          name: "name"
+          widget: "string"
+
+      - label: "Elenco Principal"
+        name: "cast"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Ator/Atriz"
+            name: "actor"
+            widget: "string"
+          - label: "Personagem"
+            name: "character"
+            widget: "string"
+            required: false
+
+      - label: "Sinopse"
+        name: "synopsis"
+        widget: "text"
+        required: true
+
+      - label: "Resenha/Comentários"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Suas impressões e análise do filme"
+
+      - label: "Gêneros"
+        name: "genres"
+        widget: "list"
+        required: true
+        field:
+          label: "Gênero"
+          name: "genre"
+          widget: "select"
+          options:
+            - "Ação"
+            - "Animação"
+            - "Aventura"
+            - "Comédia"
+            - "Crime"
+            - "Documentário"
+            - "Drama"
+            - "Fantasia"
+            - "Ficção Científica"
+            - "Guerra"
+            - "Horror"
+            - "Musical"
+            - "Romance"
+            - "Suspense"
+            - "Western"
+
+      - label: "Poster"
+        name: "poster"
+        widget: "image"
+        required: false
+        media_folder: "/static/images/movies"
+        public_folder: "/images/movies"
+
+      - label: "⭐ Avaliação"
+        name: "rating"
+        widget: "select"
+        required: false
+        options:
+          - label: "⭐ 1/5"
+            value: "1"
+          - label: "⭐⭐ 2/5"
+            value: "2"
+          - label: "⭐⭐⭐ 3/5"
+            value: "3"
+          - label: "⭐⭐⭐⭐ 4/5"
+            value: "4"
+          - label: "⭐⭐⭐⭐⭐ 5/5"
+            value: "5"
+
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        required: true
+        default: "assistido"
+        options:
+          - label: "✅ Assistido"
+            value: "assistido"
+          - label: "📺 Assistindo"
+            value: "assistindo"
+          - label: "📝 Quero Assistir"
+            value: "quero_assistir"
+          - label: "❌ Abandonado"
+            value: "abandonado"
+
+      - label: "Data Assistida"
+        name: "watched_date"
+        widget: "datetime"
+        required: false
+        format: "YYYY-MM-DD"
+        hint: "Quando você assistiu o filme"
+
+      - label: "Duração (minutos)"
+        name: "runtime"
+        widget: "number"
+        required: false
+        value_type: "int"
+        hint: "Duração em minutos"
+
+      - label: "Idioma Original"
+        name: "language"
+        widget: "string"
+        required: false
+        default: "Inglês"
+
+      - label: "País de Origem"
+        name: "country"
+        widget: "list"
+        required: false
+        field:
+          label: "País"
+          name: "name"
+          widget: "string"
+
+      - label: "IMDb ID"
+        name: "imdb_id"
+        widget: "string"
+        required: false
+        hint: "ex: tt0111161"
+
+      - label: "Trailer URL"
+        name: "trailer_url"
+        widget: "string"
+        required: false
+        hint: "Link do YouTube ou outro serviço"
+
+      - label: "❤️ Favorito"
+        name: "favorite"
+        widget: "boolean"
+        default: false
+        required: false
+
+      - label: "🏆 Prêmios"
+        name: "awards"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Nome do Prêmio"
+            name: "award"
+            widget: "string"
+          - label: "Categoria"
+            name: "category"
+            widget: "string"
+            required: false
+          - label: "Ano"
+            name: "year"
+            widget: "number"
+            required: false
+
+      - label: "Onde Assistir"
+        name: "streaming"
+        widget: "list"
+        required: false
+        field:
+          label: "Plataforma"
+          name: "platform"
+          widget: "select"
+          options:
+            - "Netflix"
+            - "Amazon Prime"
+            - "Disney+"
+            - "HBO Max"
+            - "Apple TV+"
+            - "Paramount+"
+            - "Globoplay"
+            - "Star+"
+            - "Outro"
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field:
+          label: "Tag"
+          name: "tag"
+          widget: "string"
+
+      - label: "Observações Extras"
+        name: "notes"
+        widget: "text"
+        required: false
+
+  # ========================================
+  # COLLECTION: PÁGINAS
+  # ========================================
+  - name: "pages"
+    label: "Páginas"
+    label_singular: "Página"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "URL/Slug"
+        name: "slug"
+        widget: "string"
+        required: true
+        hint: "ex: sobre, contato, portfolio"
+
+      - label: "Conteúdo"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+      - label: "Data de Atualização"
+        name: "date"
+        widget: "datetime"
+        default: ""
+        format: "YYYY-MM-DD"
+        required: false
