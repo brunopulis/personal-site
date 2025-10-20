@@ -25,6 +25,7 @@ import Header from '@/components/layout/Header.astro'
 import HeroSection from '@/components/layout/HeroSection.astro'
 import TalksList from '@/components/speaking/TalksList.astro'
 import TypeTalks from '@/components/speaking/TypeTalks.astro'
+import CTASection from '@/components/CTA.astro'
 import PricingSpeaking from '@/components/speaking/PricingSpeaking.astro'
 import Footer from '@/components/layout/Footer.astro'
 
@@ -325,7 +326,7 @@ const faq = [
       <div class="mx-auto max-w-7xl px-6">
         <div class="max-w-3xl">
           <h1 class="mb-6 text-5xl leading-tight font-bold">Palestras</h1>
-          <p class="mb-6 text-2xl text-purple-100">Acessibilidade sem jargões complicados</p>
+          <p class="mb-6 text-2xl text-white">Acessibilidade sem jargões complicados</p>
           <p class="mb-8 text-xl leading-relaxed text-white">
             Levo conhecimento prático sobre acessibilidade para empresas e eventos. Explico conceitos complexos de forma
             simples, com demonstrações ao vivo e exemplos reais.
@@ -333,13 +334,13 @@ const faq = [
           <div class="flex gap-4">
             <a
               href="#formatos"
-              class="font-semibold text-white underline transition hover:no-underline hover:underline-offset-8"
+              class="font-semibold text-white underline underline-offset-8 transition hover:no-underline hover:underline-offset-8"
             >
               Ver formatos
             </a>
             <a
               href="#temas"
-              class="rounded-lg border border-purple-600 bg-purple-700 px-8 py-4 font-semibold text-white transition hover:bg-purple-600"
+              class="font-semibold text-white underline underline-offset-8 transition hover:no-underline hover:underline-offset-8"
             >
               Temas disponíveis
             </a>
@@ -405,7 +406,6 @@ const faq = [
               const Icon = formato.icone
               return (
                 <div
-                  key={formato.id}
                   class={`rounded-2xl p-8 transition ${
                     formato.destaque
                       ? 'scale-105 transform border-4 border-blue-400 bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-2xl'
@@ -648,35 +648,19 @@ const faq = [
       </div>
     </section>
 
-    <section class="bg-gradient-to-br from-purple-600 to-blue-600 py-20 text-white">
-      <div class="mx-auto max-w-4xl px-6 text-center">
-        <Coffee class="mx-auto mb-6 h-16 w-16 opacity-90" />
-        <h2 class="mb-4 text-4xl font-bold">Vamos levar acessibilidade para sua empresa?</h2>
-        <p class="mx-auto mb-8 max-w-2xl text-xl text-purple-100">
-          Entre em contato para conversarmos sobre suas necessidades. Podemos criar algo totalmente personalizado para
-          sua equipe ou evento.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a
-            href="/contato"
-            class="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition hover:bg-purple-50"
-          >
-            Solicitar orçamento
-            <ArrowRight class="h-5 w-5" />
-          </a>
-          <a
-            href="/servicos"
-            class="inline-flex items-center gap-2 rounded-lg border border-purple-500 bg-purple-700 px-8 py-4 text-lg font-semibold text-white transition hover:bg-purple-600"
-          >
-            Ver outros serviços
-          </a>
-        </div>
-        <p class="mt-6 text-sm text-purple-200">
-          Respondo em até 24h • Orçamento sem compromisso • Presencial ou remoto
-        </p>
-      </div>
-    </section>
+    <CTASection
+      icon={Coffee}
+      title="Vamos levar acessibilidade para sua empresa?"
+      description="Entre em contato para conversarmos sobre suas necessidades. Podemos criar algo totalmente personalizado para sua equipe ou evento."
+      primaryButton={{
+        text: 'Solicitar orçamento',
+        url: '/contato',
+      }}
+      secondaryButton={{
+        text: 'Ver outros serviços',
+        url: '/servicos',
+      }}
+    />
   </main>
 </Layout>
-
 <Footer />
