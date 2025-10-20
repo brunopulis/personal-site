@@ -81,7 +81,7 @@ import blogrolls from '@/data/blogroll.json'
                     <h2 class="text-blood-red-800 mb-6 text-2xl font-bold">{category}</h2>
                     <div class="grid gap-8 md:grid-cols-3">
                       {blogs.map((blogroll) => (
-                        <article class="border border-gray-200 bg-gray-100 p-6">
+                        <article class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
                           <h3 class="text-blood-red-800 mb-2 text-xl font-semibold">{blogroll.name}</h3>
                           <p class="text-errie-black-900">{blogroll.description}</p>
                           <ul class="flex py-4">
