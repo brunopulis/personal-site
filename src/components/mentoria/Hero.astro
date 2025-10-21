@@ -2,9 +2,13 @@
 import CTAButton from '@/components/mentoria/CTAButton.astro'
 ---
 
-<section class="bg-blood-red-800 relative pt-32 pb-20 text-white md:pt-40 md:pb-28" aria-labelledby="hero-heading">
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-0 right-0 left-0 h-[500px] bg-gradient-to-b from-[#849CDB]/10 to-transparent"></div>
+<section
+  class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
+  aria-labelledby="hero-heading"
+>
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+    <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
   </div>
 
   <div class="relative z-10 container mx-auto px-6">
@@ -23,17 +27,9 @@ import CTAButton from '@/components/mentoria/CTAButton.astro'
       </p>
 
       <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a
-          href="#inscricao"
-          class="text-white underline underline-offset-8 hover:no-underline"
-        >
-          Quero me inscrever
-        </a>
+        <a href="#inscricao" class="text-white underline underline-offset-8 hover:no-underline"> Quero me inscrever </a>
 
-        <a
-          href="#pilares"
-          class="text-white underline underline-offset-8 hover:no-underline"
-        >
+        <a href="#pilares" class="text-white underline underline-offset-8 hover:no-underline">
           Conhecer a metodologia
         </a>
       </div>

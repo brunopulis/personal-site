@@ -29,7 +29,7 @@ Além da organização e produtividade, precisamos de uma forma de armazenar nos
 
 - Fácil de usar;
 
-Para dar um ***upgrade*** nesse aspecto, podemos usar um conceito pouco explorado (ainda) no Brasil: o **PKM**.
+Para dar um **_upgrade_** nesse aspecto, podemos usar um conceito pouco explorado (ainda) no Brasil: o **PKM**.
 
 PKM é sigla (mais uma pra decorar, malditos americanos) para *Personal Knowledge Management* ou **Gestão de conhecimento pessoal**.
 

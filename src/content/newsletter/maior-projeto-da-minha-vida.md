@@ -30,7 +30,7 @@ E hoje ambos trabalhamos com aquilo que nos uniu: **a acessibilidade**.
 
 ## O início do planejamento
 
-Começamos a pensar no casamento e **definimos uma data**, depois começamos a refletir: ***"como vamos nos organizar para casar num prazo de um ano?"***
+Começamos a pensar no casamento e **definimos uma data**, depois começamos a refletir: **_"como vamos nos organizar para casar num prazo de um ano?"_**
 
 Tínhamos alguns desafios pela frente:
 

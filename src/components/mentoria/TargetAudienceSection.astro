@@ -37,28 +37,29 @@ const audiences = [
         Para quem é a <span class="text-vistaBlue">mentoria</span>?
       </h2>
       <p class="mx-auto max-w-3xl text-lg text-white md:text-xl">
-        Um programa desenvolvido  para profissionais que desejam aprender acessibilidade
-        na prática.
+        Um programa desenvolvido para profissionais que desejam aprender acessibilidade na prática.
       </p>
     </div>
 
     <div class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-      {audiences.map(audience => {
-        return (
-          <div class="bg-gray-100 p-8 rounded-lg border border-blood-red-800/20">
-            <h3 class="text-2xl font-bold text-errieBlack mb-4">{audience.title}</h3>
-            <p class="text-errieBlack/80 mb-6">{audience.description}</p>
-            <ul class="space-y-3">
-              {audience.benefits.map(benefit => (
-                <li class="flex items-center text-errieBlack/90">
-                  <div class="w-1.5 h-1.5 bg-blood-red-800 rounded-full mr-3" />
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )
-      })}
+      {
+        audiences.map((audience) => {
+          return (
+            <div class="border-blood-red-800/20 rounded-lg border bg-gray-100 p-8">
+              <h3 class="text-errieBlack mb-4 text-2xl font-bold">{audience.title}</h3>
+              <p class="text-errieBlack/80 mb-6">{audience.description}</p>
+              <ul class="space-y-3">
+                {audience.benefits.map((benefit) => (
+                  <li class="text-errieBlack/90 flex items-center">
+                    <div class="bg-blood-red-800 mr-3 h-1.5 w-1.5 rounded-full" />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        })
+      }
     </div>
   </div>
 </section>
