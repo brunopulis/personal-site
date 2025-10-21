@@ -1,24 +1,11 @@
 ---
+
 ---
 
 <form id="guestbook-form" class="space-y-4">
-  <input
-    type="text"
-    id="name"
-    placeholder="Seu nome"
-    class="w-full p-2 border rounded-md"
-    required
-  />
-  <textarea
-    id="message"
-    placeholder="Deixe sua mensagem..."
-    class="w-full p-2 border rounded-md"
-    required
-  ></textarea>
-  <button
-    type="submit"
-    class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-  >
+  <input type="text" id="name" placeholder="Seu nome" class="w-full rounded-md border p-2" required />
+  <textarea id="message" placeholder="Deixe sua mensagem..." class="w-full rounded-md border p-2" required></textarea>
+  <button type="submit" class="rounded-md bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
     Enviar
   </button>
 </form>
@@ -35,7 +22,7 @@
     const res = await fetch('/.netlify/functions/add-message', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, message })
+      body: JSON.stringify({ name, message }),
     })
 
     if (res.ok) {

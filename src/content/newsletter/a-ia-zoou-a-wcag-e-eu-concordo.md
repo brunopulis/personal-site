@@ -18,7 +18,7 @@ Vamos ao que interessa!
 
 Semana passada, estava conversando com minha esposa sobre a relação da IA com acessibilidade.
 
-Brinquei com ela, ***“amor pede para o chat GPT fazer uma piada com a WCAG”***.
+Brinquei com ela, **_“amor pede para o chat GPT fazer uma piada com a WCAG”_**.
 
 Não é que o danado, criou uma que ri demais, foi a seguinte:
 

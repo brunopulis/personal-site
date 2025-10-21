@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets"
-import { ArrowRight } from "@lucide/astro"
-import me from "@/assets/palestras.png"
+import { Image } from 'astro:assets'
+import { ArrowRight } from '@lucide/astro'
+import me from '@/assets/palestras.png'
 ---
 
 <section class="bg-gray-900 py-16 md:py-24" id="mentor" aria-labelledby="mentor-heading">
@@ -33,23 +33,18 @@ import me from "@/assets/palestras.png"
 
           <a
             href="#inscricao"
-            class="text-white text-center font-semibold transition-all duration-300 hover:underline hover:underline-offset-8"
+            class="text-center font-semibold text-white transition-all duration-300 hover:underline hover:underline-offset-8"
           >
             Aplicar para mentoria
 
-            <ArrowRight class="inline-block h-6 w-6 ml-2" aria-hidden="true" />
+            <ArrowRight class="ml-2 inline-block h-6 w-6" aria-hidden="true" />
           </a>
         </div>
       </div>
 
       <div class="relative">
         <div class="aspect-[3/4] overflow-hidden rounded-lg">
-          <Image
-            src={me}
-            alt="Bruno Pulis"
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
+          <Image src={me} alt="Bruno Pulis" class="h-full w-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>
