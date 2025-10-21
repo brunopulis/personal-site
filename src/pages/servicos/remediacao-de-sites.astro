@@ -4,7 +4,6 @@ import Header from '@/components/layout/Header.astro'
 import Footer from '@/components/layout/Footer.astro'
 
 import {
-  Settings,
   Users,
   AlertCircle,
   Award,
@@ -12,8 +11,6 @@ import {
   Eye,
   Code,
   Clock,
-  Download,
-  Phone,
   Zap,
   Shield,
   Target,
@@ -21,14 +18,6 @@ import {
   CheckCircle,
   ArrowRight,
 } from '@lucide/astro'
-
-const iconComponents = {
-  Users,
-  Code,
-  Eye,
-  FileText,
-  Award,
-}
 
 const tecnologias = [
   {
@@ -430,13 +419,10 @@ const requisitos = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {
-            diferenciais.map((diferencial, index) => {
+            diferenciais.map((diferencial) => {
               const Icon = diferencial.icone
               return (
-                <div
-                  key={index}
-                  class="rounded-2xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6"
-                >
+                <div class="rounded-2xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6">
                   <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600">
                     <Icon class="h-6 w-6 text-white" />
                   </div>
@@ -459,11 +445,8 @@ const requisitos = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {
-            tecnologias.map((tech, index) => (
-              <div
-                key={index}
-                class="rounded-2xl border-2 border-gray-200 bg-white p-6 transition hover:border-indigo-400 hover:shadow-lg"
-              >
+            tecnologias.map((tech) => (
+              <div class="rounded-2xl border-2 border-gray-200 bg-white p-6 transition hover:border-indigo-400 hover:shadow-lg">
                 <div class="mb-4 flex items-center gap-3">
                   <div class="text-4xl">{tech.icone}</div>
                   <div>
@@ -489,8 +472,8 @@ const requisitos = [
                   <div>
                     <h4 class="mb-2 text-xs font-bold text-gray-600">Problemas comuns:</h4>
                     <ul class="space-y-1">
-                      {tech.problemas.slice(0, 3).map((problema, i) => (
-                        <li key={i} class="flex items-start gap-1 text-xs text-gray-700">
+                      {tech.problemas.slice(0, 3).map((problema) => (
+                        <li class="flex items-start gap-1 text-xs text-gray-700">
                           <AlertCircle class="mt-0.5 h-3 w-3 flex-shrink-0 text-orange-500" />
                           <span>{problema}</span>
                         </li>
@@ -501,8 +484,8 @@ const requisitos = [
                   <div>
                     <h4 class="mb-2 text-xs font-bold text-gray-600">Como resolvo:</h4>
                     <ul class="space-y-1">
-                      {tech.solucoes.slice(0, 3).map((solucao, i) => (
-                        <li key={i} class="flex items-start gap-1 text-xs text-gray-700">
+                      {tech.solucoes.slice(0, 3).map((solucao) => (
+                        <li class="flex items-start gap-1 text-xs text-gray-700">
                           <CheckCircle class="mt-0.5 h-3 w-3 flex-shrink-0 text-green-500" />
                           <span>{solucao}</span>
                         </li>
@@ -542,8 +525,8 @@ const requisitos = [
 
         <div class="space-y-8">
           {
-            exemplos.map((exemplo, index) => (
-              <div key={index} class="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-8">
+            exemplos.map((exemplo) => (
+              <div class="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-8">
                 <div class="grid gap-6 md:grid-cols-3">
                   <div>
                     <h4 class="mb-2 text-sm font-bold text-red-600">❌ PROBLEMA</h4>
@@ -625,8 +608,8 @@ const requisitos = [
                       <div class="mt-6">
                         <h4 class="mb-3 text-sm font-bold text-gray-900">Atividades:</h4>
                         <ul class="grid gap-2 md:grid-cols-2">
-                          {etapa.atividades.map((atividade, i) => (
-                            <li key={i} class="flex items-start gap-2">
+                          {etapa.atividades.map((atividade) => (
+                            <li class="flex items-start gap-2">
                               <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
                               <span class="text-sm text-gray-700">{atividade}</span>
                             </li>
@@ -655,7 +638,6 @@ const requisitos = [
           {
             pacotes.map((pacote) => (
               <div
-                key={pacote.id}
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
                     ? 'scale-105 transform border-4 border-red-400 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-2xl'
@@ -685,8 +667,8 @@ const requisitos = [
                     ✓ O que inclui:
                   </h4>
                   <ul class="space-y-2">
-                    {pacote.inclui.map((item, i) => (
-                      <li key={i} class="flex items-start gap-2">
+                    {pacote.inclui.map((item) => (
+                      <li class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 flex-shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
                         />
@@ -695,19 +677,6 @@ const requisitos = [
                     ))}
                   </ul>
                 </div>
-
-                {pacote.bonus && (
-                  <div class="mb-6 rounded-lg bg-white/10 p-4">
-                    <h4 class="mb-2 text-sm font-bold text-white">🎁 Bônus inclusos:</h4>
-                    <ul class="space-y-1">
-                      {pacote.bonus.map((item, i) => (
-                        <li key={i} class="flex items-center gap-2 text-sm text-white">
-                          <span>•</span> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
 
                 <div class="mb-6 border-t border-white/20 pt-4">
                   <div class="mb-1 text-xs text-gray-500">
@@ -750,8 +719,8 @@ const requisitos = [
 
         <div class="space-y-6">
           {
-            faq.map((item, index) => (
-              <div key={index} class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            faq.map((item) => (
+              <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
                 <p class="leading-relaxed text-gray-700">{item.resposta}</p>
               </div>

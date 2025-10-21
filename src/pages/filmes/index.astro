@@ -19,8 +19,8 @@ const moviesPerYear = Object.entries(
         acc[year].push(book)
         return acc
       },
-      {} as Record<string, (typeof books)[0][]>
-    )
+      {} as Record<string, (typeof books)[0][]>,
+    ),
 ).sort((a, b) => Number(b[0]) - Number(a[0]))
 ---
 

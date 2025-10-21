@@ -1,250 +1,440 @@
 ---
+import config from '@/data/site.config.json'
+
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header.astro'
+import CTASection from '@/components/CTA.astro'
 import Footer from '@/components/layout/Footer.astro'
 
-import {
-  Settings,
-  Users,
-  Award,
-  FileText,
-  Eye,
-  Download,
-  Phone,
-  Shield,
-  TrendingUp,
-  CheckCircle,
-  ArrowRight,
-} from '@lucide/astro'
+import { ArrowRight, Award, Code, Target, MessageCircle, Clock, CheckCircle, Heart, Coffee } from '@lucide/astro'
 
-const packages = [
+const planos = [
   {
-    name: 'Pacote Essencial',
-    description: 'Ideal para sites institucionais simples',
-    price: 'R$ 1.500',
-    duration: '5 dias úteis',
-    features: [
-      'Auditoria de até 10 páginas',
-      'Relatório técnico completo',
-      'Suporte por 30 dias',
-      'Orientações de implementação',
+    nome: 'Consultoria Pontual',
+    preco: 'R$ 500',
+    unidade: 'por sessão',
+    duracao: '1-2 horas',
+    ideal: 'Dúvidas específicas ou validação de decisões',
+    cor: 'blue',
+    inclui: [
+      'Sessão de 1-2 horas',
+      'Análise de problema específico',
+      'Recomendações práticas',
+      'Material de apoio',
+      'Follow-up por email (7 dias)',
+      'Ideal para: decisões pontuais, validação de abordagem',
     ],
-    popular: false,
+    exemplos: [
+      'Validar arquitetura de componente',
+      'Revisar implementação específica',
+      'Orientação sobre ferramenta',
+      'Segunda opinião técnica',
+    ],
   },
   {
-    name: 'Pacote Profissional',
-    description: 'Ideal para e-commerce e sites complexos',
-    price: 'R$ 4.500',
-    duration: '15 dias úteis',
-    features: [
-      'Auditoria de até 25 páginas',
-      'Implementação das correções',
-      'Relatório executivo + técnico',
-      'Suporte por 60 dias',
-      'Certificado de conformidade',
+    nome: 'Consultoria Mensal',
+    preco: 'R$ 3.000',
+    unidade: 'por mês',
+    duracao: 'Contrato mensal',
+    ideal: 'Acompanhamento contínuo e suporte recorrente',
+    cor: 'green',
+    destaque: true,
+    inclui: [
+      '4 sessões de 1h (1 por semana)',
+      'Acesso direto via Slack/WhatsApp',
+      'Revisão de código ilimitada',
+      'Priorização de roadmap',
+      'Material e recursos personalizados',
+      'Documentação de decisões',
+      'Suporte assíncrono incluído',
+      'Ideal para: equipes implementando acessibilidade',
     ],
-    popular: true,
+    exemplos: [
+      'Acompanhamento de implementação',
+      'Revisões semanais de progresso',
+      'Dúvidas do dia a dia',
+      'Construção de Design System acessível',
+    ],
   },
   {
-    name: 'Pacote Completo',
-    description: 'Ideal para empresas que querem suporte contínuo',
-    price: 'R$ 8.500',
-    duration: '20 dias úteis',
-    features: [
-      'Auditoria ilimitada',
-      'Implementação completa',
-      'Consultoria por 6 meses',
-      'Treinamento da equipe',
-      'Certificação oficial',
-      'Selo de acessibilidade',
+    nome: 'Consultoria Estratégica',
+    preco: 'R$ 8.000',
+    unidade: 'por mês',
+    duracao: 'Contrato trimestral',
+    ideal: 'Transformação organizacional e cultura de acessibilidade',
+    cor: 'purple',
+    inclui: [
+      'Tudo da Mentoria Mensal',
+      'Reuniões com liderança',
+      'Roadmap estratégico completo',
+      'Processos e workflows documentados',
+      'Treinamento de múltiplas equipes',
+      'KPIs e métricas de acessibilidade',
+      'Suporte prioritário',
+      'Mínimo 3 meses de contrato',
+      'Ideal para: empresas implementando cultura de a11y',
     ],
-    popular: false,
+    exemplos: [
+      'Implementação de governança',
+      'Treinamento organizacional',
+      'Processos de QA acessível',
+      'Transformação cultural',
+    ],
   },
 ]
 
-const testimonials = [
+const oqueFaco = [
   {
-    name: 'Maria Santos',
-    position: 'Proprietária - Loja Virtual MariModa',
-    text: 'Nunca imaginei que tornar nosso site acessível seria tão importante para os negócios. Além da questão legal, ganhamos muitos clientes novos!',
-    rating: 5,
+    icone: Code,
+    titulo: 'Revisão de Código',
+    descricao:
+      'Analiso seu código (componentes, páginas, fluxos) e dou feedback específico sobre como melhorar a acessibilidade.',
+    exemplos: ['Pull request reviews', 'Pair programming', 'Code walkthrough'],
   },
   {
-    name: 'João Silva',
-    position: 'Sócio-diretor - Clínica Bem Estar',
-    text: 'O atendimento foi excepcional. Explicaram tudo de forma clara e o resultado superou nossas expectativas. Recomendo!',
-    rating: 5,
+    icone: Target,
+    titulo: 'Direcionamento Estratégico',
+    descricao:
+      'Ajudo a priorizar o que corrigir primeiro, definir roadmap realista e estabelecer processos sustentáveis.',
+    exemplos: ['Roadmap de implementação', 'Priorização de backlog', 'Definição de processos'],
   },
   {
-    name: 'Ana Costa',
-    position: 'Gerente de Marketing - TechSolutions',
-    text: 'Investimento que se pagou rapidamente. Nosso site ficou mais rápido e profissional. Valeu cada centavo!',
-    rating: 5,
+    icone: MessageCircle,
+    titulo: 'Suporte Contínuo',
+    descricao: 'Disponível para tirar dúvidas, validar decisões e desbloquear problemas que surgem no dia a dia.',
+    exemplos: ['Slack/WhatsApp', 'Respostas em até 24h', 'Videochamadas quando necessário'],
   },
   {
-    name: 'Carlos Oliveira',
-    position: 'Proprietário - Distribuidora Oliveira',
-    text: 'Equipe super qualificada e preços justos. Fizeram todo o trabalho sem interferir na nossa rotina.',
-    rating: 5,
+    icone: Award,
+    titulo: 'Capacitação da Equipe',
+    descricao: 'Ensino sua equipe a "pescar" - transferência de conhecimento para autonomia futura.',
+    exemplos: ['Sessões educativas', 'Documentação interna', 'Boas práticas'],
+  },
+]
+
+const processo = [
+  {
+    numero: 1,
+    titulo: 'Diagnóstico Inicial',
+    duracao: '1 semana',
+    atividades: [
+      'Reunião de kickoff (1-2h)',
+      'Entendimento do contexto atual',
+      'Análise de produtos/projetos',
+      'Identificação de gaps',
+      'Definição de objetivos',
+      'Alinhamento de expectativas',
+    ],
+  },
+  {
+    numero: 2,
+    titulo: 'Planejamento',
+    duracao: '3-5 dias',
+    atividades: [
+      'Criação de roadmap personalizado',
+      'Priorização de ações',
+      'Definição de milestones',
+      'Setup de comunicação',
+      'Cronograma de sessões',
+      'Definição de entregáveis',
+    ],
+  },
+  {
+    numero: 3,
+    titulo: 'Execução',
+    duracao: 'Contínuo',
+    atividades: [
+      'Sessões semanais programadas',
+      'Revisões de código',
+      'Suporte assíncrono',
+      'Resolução de dúvidas',
+      'Validação de implementações',
+      'Ajustes de rota quando necessário',
+    ],
+  },
+  {
+    numero: 4,
+    titulo: 'Avaliação',
+    duracao: 'Mensal',
+    atividades: [
+      'Revisão de progresso',
+      'Métricas e KPIs',
+      'Feedback mútuo',
+      'Ajuste de objetivos',
+      'Planejamento do próximo ciclo',
+      'Documentação de aprendizados',
+    ],
+  },
+]
+
+const casosDeUso = [
+  {
+    titulo: 'Startup construindo MVP',
+    situacao: 'Time pequeno precisa construir produto acessível desde o início mas não sabe por onde começar.',
+    solucao:
+      'Mentoria Mensal para estabelecer bases sólidas, revisar componentes principais e criar cultura desde cedo.',
+    resultado: 'MVP aprovado em WCAG AA, equipe capacitada, processos estabelecidos.',
+  },
+  {
+    titulo: 'E-commerce refatorando plataforma',
+    situacao: 'Empresa grande refazendo plataforma e quer garantir acessibilidade, mas equipe não tem experiência.',
+    solucao: 'Consultoria Estratégica (6 meses) - acompanhamento de toda refatoração, treinamento de múltiplas squads.',
+    resultado: 'Plataforma 100% acessível, 3 squads treinadas, Design System acessível criado.',
+  },
+  {
+    titulo: 'Agência revisando projeto',
+    situacao: 'Agência entregando projeto para cliente que exige conformidade, precisa validação técnica.',
+    solucao: 'Mentoria Pontual (3 sessões) para revisar implementação crítica e validar antes da entrega.',
+    resultado: 'Cliente satisfeito, projeto aprovado, agência aprendeu para próximos projetos.',
+  },
+]
+
+const diferenciais = [
+  {
+    titulo: 'Prático, não teórico',
+    descricao:
+      'Trabalho no SEU código, no SEU contexto. Não é consultoria genérica de slides - é mão na massa com você.',
+  },
+  {
+    titulo: 'Adaptado ao seu ritmo',
+    descricao:
+      'Não forço velocidade. Trabalhamos no seu ritmo, respeitando capacidade da equipe e prioridades do negócio.',
+  },
+  {
+    titulo: 'Transparência total',
+    descricao: 'Documentação aberta, decisões explicadas, sem caixa preta. Você entende o porquê de cada recomendação.',
+  },
+  {
+    titulo: 'Foco em autonomia',
+    descricao: 'Objetivo é que vocês não precisem mais de mim. Ensino para que a equipe seja autossuficiente.',
+  },
+]
+
+const faq = [
+  {
+    pergunta: 'Qual a diferença entre mentoria e consultoria?',
+    resposta:
+      'Mentoria é mais focada em capacitação técnica da equipe, hands-on no código. Consultoria Estratégica é mais ampla - inclui processos, governança, múltiplas equipes e transformação organizacional. Ambas incluem acompanhamento contínuo.',
+  },
+  {
+    pergunta: 'Preciso ter código pronto para começar?',
+    resposta:
+      'Não! Posso começar desde a fase de planejamento/design. Inclusive, é melhor envolver acessibilidade cedo. Mas também ajudo com código legado e refatorações.',
+  },
+  {
+    pergunta: 'Trabalha com equipes remotas?',
+    resposta:
+      'Sim! 100% remoto funciona perfeitamente. Uso Slack/WhatsApp para assíncrono e Zoom/Meet para sessões síncronas. Tenho experiência com times distribuídos.',
+  },
+  {
+    pergunta: 'E se eu não souber ainda o que preciso?',
+    resposta:
+      'Normal! Começamos com uma sessão de diagnóstico (incluída no primeiro mês) onde mapeamos suas necessidades e definimos o melhor caminho juntos.',
+  },
+  {
+    pergunta: 'Posso cancelar a qualquer momento?',
+    resposta:
+      'Mentoria Mensal: sim, com aviso prévio de 30 dias. Consultoria Estratégica: contrato mínimo de 3 meses, depois pode cancelar com 30 dias de aviso.',
+  },
+  {
+    pergunta: 'Fornece material e documentação?',
+    resposta:
+      'Sim! Tudo que criamos juntos fica documentado - decisões, boas práticas, guias internos. Você fica com todo o material para referência futura.',
   },
 ]
 ---
 
-<Layout title="Remediação de documentos - Bruno Pulis">
+<Layout title="Consultoria - Bruno Pulis">
   <Header />
-  <main>
-    <section class="bg-blood-red-800 relative overflow-hidden py-16">
-      <div class="container-custom relative z-10 px-4">
-        <div class="max-w-3xl px-4">
-          <h1 class="mb-6 text-5xl leading-tight font-bold text-white md:text-6xl">Documentos acessíveis, agora</h1>
-          <p class="mb-8 text-xl leading-relaxed text-white md:text-2xl">
-            Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e em conformidade com a <abbr
-              title="Web Content Accessibility Guidelines 2.2">WCAG 2.2</abbr
-            > e <abbr title="PDF/Universal Accessibility">PDF/UA</abbr>.
+  <main id="main-content">
+    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <h1 class="mb-6 text-5xl leading-tight font-bold">Consultoria</h1>
+          <p class="mb-6 text-2xl text-white">Trabalho com você, não só para você</p>
+          <p class="mb-8 text-xl leading-relaxed text-white">
+            Não adianta só entregar um relatório. Eu trabalho lado a lado com você ou sua equipe para implementar
+            acessibilidade de verdade no dia a dia. Acompanhamento contínuo, suporte real, resultados práticos.
           </p>
-          <a
-            href="#contato"
-            class="text-blood-red-800 hover:bg-blood-red-800/90 focus:ring-blood-red-bg-blood-red-800 inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus:ring-2 focus:ring-offset-2"
-          >
-            Solicitar avaliação gratuita
-          </a>
-          <p class="pt-8 text-sm text-white">Em poucos dias, seus arquivos prontos para todos.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="entregamos" class="bg-gray-100 px-6 py-20">
-      <div class="container-custom">
-        <div class="mx-auto max-w-6xl">
-          <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">O que entregamos</h2>
-          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {
-              [
-                'Remediação completa de PDF, Word e PowerPoint',
-                'Textos alternativos para imagens e gráficos',
-                'Navegação por teclado e leitores de tela',
-                'Relatório antes e depois com recomendações',
-              ].map((item, idx) => (
-                <div key={idx} class="flex items-start gap-3">
-                  <CheckCircle class="text-blood-red-800 mt-1 h-6 w-6 flex-shrink-0" />
-                  <p class="text-errie-black-900">{item}</p>
-                </div>
-              ))
-            }
+          <div class="flex gap-4">
+            <a
+              href="#planos"
+              class="font-semibold text-white underline underline-offset-8 transition hover:no-underline hover:underline-offset-8"
+            >
+              Conheça os planos
+            </a>
+            <a
+              href="#como-funciona"
+              class="font-semibold text-white underline underline-offset-8 transition hover:no-underline hover:underline-offset-8"
+            >
+              Como funciona
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="problema" class="px-6 py-20">
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">Documentos inacessíveis excluem e custam caro</h2>
-        <p class="text-xl leading-relaxed text-gray-600">
-          Um único PDF inacessível pode barrar contratos, gerar denúncias e comprometer sua marca.
-        </p>
-      </div>
-    </section>
-
-    <section id="solucao" class="bg-gray-50 px-6 py-20">
-      <div class="mx-auto max-w-6xl">
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Eu corrijo isso pra você</h2>
-          <p class="text-xl text-gray-600">Remediação técnica com foco em usabilidade e conformidade.</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">O que faço na prática</h2>
+          <p class="text-xl text-gray-600">Muito além de "dar conselhos"</p>
         </div>
 
-        <div class="grid gap-12 md:grid-cols-2">
-          <div>
-            <h3 class="mb-6 text-2xl font-bold text-gray-900">O que incluímos</h3>
-            <ul class="space-y-4">
-              {
-                [
-                  'Estrutura semântica e hierarquia de títulos',
-                  'Textos alternativos e descrições',
-                  'Marcação correta de tabelas e listas',
-                  'Validação com PAC, Acrobat e leitores de tela',
-                ].map((item, idx) => (
-                  <li key={idx} class="flex items-start gap-3">
-                    <CheckCircle class="text-blood-red-800 mt-0.5 h-5 w-5 flex-shrink-0" />
-                    <span class="text-gray-700">{item}</span>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="mb-6 text-2xl font-bold text-gray-900">Processo simplificado</h3>
-            <div class="space-y-6">
-              {
-                [
-                  { num: '01', text: 'Diagnóstico' },
-                  { num: '02', text: 'Correção' },
-                  { num: '03', text: 'Testes' },
-                  { num: '04', text: 'Relatório' },
-                ].map((step, idx) => (
-                  <div key={idx} class="flex items-center gap-4">
-                    <span class="text-blood-red-800 text-3xl font-bold">{step.num}</span>
-                    <span class="text-lg text-gray-700">{step.text}</span>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="beneficios" class="px-6 py-20">
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">Mais que acessibilidade é respeito</h2>
-        <p class="text-xl leading-relaxed text-gray-600">
-          Documentos acessíveis demonstram empatia e profissionalismo. Você não só cumpre uma norma, faz o certo.
-        </p>
-      </div>
-    </section>
-
-    <section id="clientes" class="bg-gray-50 px-6 py-20">
-      <div class="mx-auto max-w-6xl">
-        <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">Quem já confia neste trabalho</h2>
-        <p class="mb-12 text-center text-gray-600">
-          Empresas, órgãos públicos e instituições de ensino já garantem acessibilidade com minha ajuda.
-        </p>
-        <div class="grid grid-cols-2 items-center justify-items-center gap-8 opacity-60 md:grid-cols-3">
-          <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <Users class="h-8 w-8 text-gray-400" />
-          </div>
-          <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <Shield class="h-8 w-8 text-gray-400" />
-          </div>
-          <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <TrendingUp class="h-8 w-8 text-gray-400" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="depoimentos" class="px-6 py-20">
-      <div class="mx-auto max-w-6xl">
-        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">O que dizem os clientes</h2>
         <div class="grid gap-8 md:grid-cols-2">
           {
-            [
-              {
-                text: 'Depois da remediação, nossos relatórios ficaram inclusivos e sem erros. Excelente trabalho!',
-                author: 'Paula Andrade',
-                role: 'Analista de Qualidade',
-              },
-              {
-                text: 'Economizamos tempo e eliminamos retrabalho. O resultado ficou impecável.',
-                author: 'Rafael Gomes',
-                role: 'Designer de Produto',
-              },
-            ].map((testimonial, idx) => (
-              <div key={idx} class="rounded-2xl bg-gray-50 p-8">
-                <p class="mb-6 text-lg leading-relaxed text-gray-700">"{testimonial.text}"</p>
+            oqueFaco.map((item) => {
+              const Icon = item.icone
+              return (
+                <div class="border-blood-red-800 rounded-2xl border-2 bg-white p-8">
+                  <div class="bg-blood-red-800 mb-6 flex h-14 w-14 items-center justify-center rounded-xl">
+                    <Icon class="h-7 w-7 text-white" />
+                  </div>
+                  <h3 class="mb-3 text-2xl font-bold text-gray-900">{item.titulo}</h3>
+                  <p class="mb-4 leading-relaxed text-gray-700">{item.descricao}</p>
+                  <div class="flex flex-wrap gap-2">
+                    {item.exemplos.map((exemplo, i) => (
+                      <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+                        {exemplo}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Planos de Mentoria e Consultoria</h2>
+          <p class="text-xl text-gray-600">Do pontual ao estratégico</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          {
+            planos.map((plano) => (
+              <div
+                class={`rounded-2xl p-8 transition ${
+                  plano.destaque
+                    ? 'scale-105 transform border-4 border-green-400 bg-gradient-to-br from-green-600 to-green-700 text-white shadow-2xl'
+                    : 'border-2 border-gray-200 bg-white hover:border-emerald-400 hover:shadow-lg'
+                }`}
+              >
+                {plano.destaque && (
+                  <div class="mb-4 inline-block rounded-full bg-white px-3 py-1 text-xs font-bold text-green-600">
+                    ⭐ MAIS COMUM
+                  </div>
+                )}
+
+                <h3 class={`mb-2 text-2xl font-bold ${plano.destaque ? 'text-white' : 'text-gray-900'}`}>
+                  {plano.nome}
+                </h3>
+
+                <div class={`mb-1 text-4xl font-bold ${plano.destaque ? 'text-white' : 'text-emerald-600'}`}>
+                  {plano.preco}
+                </div>
+                <div class={`mb-4 text-sm ${plano.destaque ? 'text-green-100' : 'text-gray-600'}`}>{plano.unidade}</div>
+
+                <p class={`mb-6 ${plano.destaque ? 'text-green-50' : 'text-gray-700'}`}>{plano.ideal}</p>
+
+                <div class="mb-6">
+                  <h4 class={`mb-3 text-sm font-bold ${plano.destaque ? 'text-white' : 'text-gray-900'}`}>✓ Inclui:</h4>
+                  <ul class="space-y-2">
+                    {plano.inclui.map((item, i) => (
+                      <li class="flex items-start gap-2">
+                        <CheckCircle
+                          class={`mt-0.5 h-4 w-4 flex-shrink-0 ${plano.destaque ? 'text-white' : 'text-green-600'}`}
+                        />
+                        <span class={`text-sm ${plano.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class={`mb-6 rounded-lg p-3 text-xs ${plano.destaque ? 'bg-white/10' : 'bg-gray-50'}`}>
+                  <strong>Exemplos de uso:</strong>
+                  <ul class="mt-2 space-y-1">
+                    {plano.exemplos.map((exemplo, i) => (
+                      <li>• {exemplo}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href="/contato"
+                  class={`block w-full rounded-lg px-6 py-3 text-center font-semibold transition ${
+                    plano.destaque
+                      ? 'bg-white text-green-600 hover:bg-green-50'
+                      : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                  }`}
+                >
+                  Contratar {plano.nome}
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Como funciona o processo</h2>
+          <p class="text-xl text-gray-600">Do primeiro contato à autonomia da equipe</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {
+            processo.map((etapa) => (
+              <div class="rounded-2xl border-2 border-gray-200 bg-gray-50 p-6">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-xl font-bold text-white">
+                  {etapa.numero}
+                </div>
+                <h3 class="mb-2 text-xl font-bold text-gray-900">{etapa.titulo}</h3>
+                <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
+                  <Clock class="h-4 w-4" />
+                  {etapa.duracao}
+                </div>
+                <ul class="space-y-2">
+                  {etapa.atividades.map((atividade, i) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <span class="text-emerald-600">•</span>
+                      <span>{atividade}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que trabalhar comigo</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {
+            diferenciais.map((diferencial) => (
+              <div class="flex gap-4 rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-600">
+                  <Heart class="h-6 w-6 text-white" />
+                </div>
                 <div>
-                  <p class="font-semibold text-gray-900">{testimonial.author}</p>
-                  <p class="text-sm text-gray-500">{testimonial.role}</p>
+                  <h3 class="mb-2 font-bold text-gray-900">{diferencial.titulo}</h3>
+                  <p class="text-sm text-gray-700">{diferencial.descricao}</p>
                 </div>
               </div>
             ))
@@ -253,76 +443,19 @@ const testimonials = [
       </div>
     </section>
 
-    <section id="investimento" class="bg-gray-50 px-6 py-20">
-      <div class="mx-auto max-w-6xl">
-        <h2 class="mb-6 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-          Quanto custa tornar seus documentos acessíveis?
-        </h2>
-        <p class="mx-auto mb-12 max-w-3xl text-center text-lg text-gray-600">
-          Cada projeto é avaliado conforme volume e complexidade dos arquivos. O diagnóstico inicial é <strong
-            >gratuito</strong
-          > — você recebe um relatório com recomendações antes de investir.
-        </p>
-
-        <div class="mb-12 grid gap-6 md:grid-cols-3">
-          {
-            [
-              {
-                title: 'Pacote Essencial',
-                description: 'Até 5 documentos simples',
-                highlighted: false,
-              },
-              {
-                title: 'Pacote Profissional',
-                description: 'Até 20 documentos com gráficos e tabelas',
-                highlighted: true,
-              },
-              {
-                title: 'Pacote Corporativo',
-                description: 'Grandes volumes e relatórios técnicos',
-                highlighted: false,
-              },
-            ].map((pack, idx) => (
-              <div
-                key={idx}
-                class={`rounded-2xl p-8 ${
-                  pack.highlighted ? 'scale-105 transform bg-gray-900 text-white' : 'border border-gray-200 bg-white'
-                }`}
-              >
-                <h3 class={`mb-3 text-2xl font-bold ${pack.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                  {pack.title}
-                </h3>
-                <p class={pack.highlighted ? 'text-gray-300' : 'text-gray-600'}>{pack.description}</p>
-              </div>
-            ))
-          }
+    {/* FAQ */}
+    <section class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="mb-12 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">Perguntas Frequentes</h2>
         </div>
 
-        <div class="text-center">
-          <a
-            href="#contato"
-            class="inline-block transform rounded-full bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all hover:scale-105 hover:bg-gray-800"
-          >
-            Solicitar diagnóstico gratuito
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="autoridade" class="px-6 py-20">
-      <div class="mx-auto max-w-4xl">
-        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">Por que escolher meu serviço</h2>
-        <div class="grid gap-6 md:grid-cols-2">
+        <div class="space-y-6">
           {
-            [
-              '+15 anos em acessibilidade e qualidade digital',
-              'Testes reais com NVDA e JAWS',
-              'Relatório "antes e depois" em todos os projetos',
-              'Clientes do setor público e privado',
-            ].map((item, idx) => (
-              <div key={idx} class="flex items-start gap-3 rounded-xl bg-gray-50 p-6">
-                <Award class="mt-1 h-6 w-6 flex-shrink-0 text-gray-900" />
-                <p class="text-gray-700">{item}</p>
+            faq.map((item) => (
+              <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
+                <p class="leading-relaxed text-gray-700">{item.resposta}</p>
               </div>
             ))
           }
@@ -330,69 +463,15 @@ const testimonials = [
       </div>
     </section>
 
-    <section id="cta-final" class="bg-gray-900 px-6 py-20 text-white">
-      <div class="mx-auto max-w-4xl text-center">
-        <h2 class="mb-6 text-3xl font-bold md:text-4xl">Seus documentos merecem ser acessíveis</h2>
-        <p class="mb-8 text-xl text-gray-300">
-          Envie seus arquivos e receba uma avaliação gratuita com recomendações práticas.
-        </p>
-        <a
-          href="#contato"
-          class="inline-block transform rounded-full bg-white px-8 py-4 text-lg font-medium text-gray-900 transition-all hover:scale-105 hover:bg-gray-100"
-        >
-          Solicitar diagnóstico agora
-        </a>
-      </div>
-    </section>
-
-    <section id="contato" class="px-6 py-20">
-      <div class="mx-auto max-w-2xl">
-        <h2 class="mb-8 text-center text-3xl font-bold text-gray-900 md:text-4xl">Solicitar Avaliação Gratuita</h2>
-        <form class="space-y-6">
-          <div>
-            <label htmlFor="nome" class="mb-2 block text-sm font-medium text-gray-700"> Nome </label>
-            <input
-              type="text"
-              id="nome"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="Seu nome"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" class="mb-2 block text-sm font-medium text-gray-700"> Email </label>
-            <input
-              type="email"
-              id="email"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="seu@email.com"
-            />
-          </div>
-          <div>
-            <label htmlFor="empresa" class="mb-2 block text-sm font-medium text-gray-700"> Empresa (opcional) </label>
-            <input
-              type="text"
-              id="empresa"
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="Nome da empresa"
-            />
-          </div>
-          <div>
-            <label htmlFor="mensagem" class="mb-2 block text-sm font-medium text-gray-700"> Mensagem </label>
-            <textarea
-              id="mensagem"
-              rows={4}
-              class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-gray-900 focus:outline-none"
-              placeholder="Conte um pouco sobre seus documentos e necessidades..."></textarea>
-          </div>
-          <button
-            type="submit"
-            class="w-full transform rounded-full bg-gray-900 px-8 py-4 text-lg font-medium text-white transition-all hover:scale-105 hover:bg-gray-800"
-          >
-            Enviar solicitação
-          </button>
-        </form>
-      </div>
-    </section>
+    <CTASection
+      icon={Coffee}
+      title="Vamos trabalhar juntos?"
+      description="Agende uma conversa gratuita de 30 minutos. Vamos entender suas necessidades e ver se faz sentido trabalharmos juntos. Sem compromisso, sem pressão."
+      primaryButton={{
+        text: 'Agendar conversa gratuita',
+        url: config.socialMidia.cal,
+      }}
+    />
   </main>
   <Footer />
 </Layout>
