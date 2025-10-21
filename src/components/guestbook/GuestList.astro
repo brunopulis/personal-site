@@ -1,8 +1,9 @@
 ---
+
 ---
 
 <div id="guest-list" class="mt-8 space-y-4">
-  <p class="text-gray-500 text-center">Carregando mensagens...</p>
+  <p class="text-center text-gray-500">Carregando mensagens...</p>
 </div>
 
 <script>
@@ -16,13 +17,17 @@
       return
     }
 
-    container.innerHTML = data.map(msg => `
+    container.innerHTML = data
+      .map(
+        (msg) => `
       <div class="border border-gray-200 rounded-lg p-4 shadow-sm bg-gray-50 dark:bg-gray-800">
         <p class="font-semibold">${msg.name}</p>
         <p class="text-gray-700 dark:text-gray-300 mt-1">${msg.message}</p>
         <p class="text-xs text-gray-500 mt-2">${new Date(msg.created_at).toLocaleString('pt-BR')}</p>
       </div>
-    `).join('')
+    `,
+      )
+      .join('')
   }
 
   document.addEventListener('DOMContentLoaded', loadMessages)

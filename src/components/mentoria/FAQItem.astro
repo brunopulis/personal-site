@@ -7,10 +7,10 @@ interface FAQItemProps {
   index: number
 }
 
-const { question, answer, index } = Astro.props;
+const { question, answer, index } = Astro.props
 ---
 
 <article class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm" id={`faq` + index}>
-  <h3 class="mb-3 text-lg font-bold text-errie-black-900">{question}</h3>
-  <p class="leading-relaxed text-errie-black-900">{answer}</p>
+  <h3 class="text-errie-black-900 mb-3 text-lg font-bold">{question}</h3>
+  <p class="text-errie-black-900 leading-relaxed">{answer}</p>
 </article>
