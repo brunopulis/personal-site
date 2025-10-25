@@ -26,7 +26,7 @@ collections:
         required: true
 
       - label: 'Data de Publicação'
-        name: 'date'
+        name: 'publishDate'
         widget: 'datetime'
         default: ''
         date_format: 'DD/MM/YYYY'
