@@ -22,7 +22,7 @@ const blog = defineCollection({
     country: z.string().optional(),
     category: z.string().optional(),
     excerpt: z.string().optional(),
-    publishDate: z.date().optional(),
+    publishDate: z.coerce.date(),
     publishedAt: z.array(z.string()).optional(),
     reply: z.string().optional(),
     modifiedDate: z.date().optional(),
@@ -52,7 +52,7 @@ const newsletter = defineCollection({
     title: z.string(),
     category: z.string().optional(),
     coverImage: z.string().optional(),
-    date: z.string().date(),
+    date: z.coerce.date(),
   }),
 })
 
