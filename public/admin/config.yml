@@ -12,7 +12,7 @@ collections:
   - name: 'posts'
     label: 'Posts do Blog'
     label_singular: 'Post'
-    folder: 'content/posts'
+    folder: 'content/blog'
     create: true
     slug: '{{slug}}'
     editor:
@@ -120,7 +120,7 @@ collections:
   - name: 'notas'
     label: 'Notas Pessoais'
     label_singular: 'Nota'
-    folder: 'content/notas'
+    folder: 'content/notes'
     create: true
     slug: '{{year}}-{{month}}-{{day}}'
     editor:
