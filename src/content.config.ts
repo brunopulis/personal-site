@@ -41,7 +41,7 @@ const blog = defineCollection({
 const notes = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/notes' }),
   schema: z.object({
-    date: z.iso.date(),
+    date: z.coerce.date(),
   }),
 })
 
