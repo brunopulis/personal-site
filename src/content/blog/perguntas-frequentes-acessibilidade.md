@@ -1,5 +1,7 @@
 ---
 title: 11 Perguntas frequentes sobre acessibilidade
+image: ''
+imageAlt: ''
 publishDate: 2023-11-22
 category: 'Acessibilidade'
 location: 'Belo Horizonte'

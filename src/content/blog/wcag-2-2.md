@@ -1,5 +1,7 @@
 ---
 title: Novidades da WCAG 2.2
+image: '/src/assets/images/blog/wcag22.webp'
+imageAlt: ''
 publishDate: 2023-07-22
 category: 'Acessibilidade'
 url: https://brunopulis.com/wcag-2-2/

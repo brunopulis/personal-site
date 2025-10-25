@@ -1,5 +1,7 @@
 ---
 title: Caminhos para uma web inclusiva
+image: ''
+imageAlt: ''
 publishDate: 2014-02-03
 category: 'Acessibilidade'
 ---

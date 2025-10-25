@@ -1,5 +1,7 @@
 ---
 title: 8 Princípios da Qualidade de Software
+image: ''
+imageAlt: ''
 publishDate: 2021-01-05
 draft: false
 category: 'Qualidade'

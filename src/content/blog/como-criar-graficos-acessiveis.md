@@ -1,11 +1,14 @@
 ---
 title: Como criar gráficos acessíveis
+image: ''
+imageAlt: ''
 publishDate: 2022-06-23
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/como-criar-graficos-acessiveis/
 tags:
   - acessibilidade
 ---
+
 Gráficos, mapas e infográficos estão presentes em nossas vidas, mas é quando essas informações não estão acessíveis?
 
 Pessoas com deficiência, não conseguem compreender eles devido a falta de acessibilidade.
@@ -125,15 +128,19 @@ Outra técnica interessante é utilizar o atributo **_aria-describedby_**, ele �
 Também pode ser usado uma sequência de ids ou somente um. Ele não está limitado a controles de formulários. Pode ser usado em contextos globais dentro de um documento HTML.
 
 ```html
-<img src="grafico.png" aria-describedby="description" alt="Representação dos erros mais comuns da WCAG 2.1 nas Home pages mais famosas"  />
+<img
+  src="grafico.png"
+  aria-describedby="description"
+  alt="Representação dos erros mais comuns da WCAG 2.1 nas Home pages mais famosas"
+/>
 
 <div id="description">
   <h2>Taxa de falhas de baixo contraste em porcentagem por ano</h2>
   <ul>
-     <li>Em 2019: 85.3%</li>
-     <li>Em 2020: 86.3%</li>
-     <li>Em 2021: 86.4%</li>
-     <li>Em 2022: 83.9%</li>
+    <li>Em 2019: 85.3%</li>
+    <li>Em 2020: 86.3%</li>
+    <li>Em 2021: 86.4%</li>
+    <li>Em 2022: 83.9%</li>
   </ul>
 </div>
 ```
@@ -153,20 +160,12 @@ Me conte nos comentários as dificuldades que já teve nesse tema.
 ## Referências
 
 - [https://accessibility.psu.edu/images/charts/](https://accessibility.psu.edu/images/charts/)
-- [https://www.w3.org/TR/WCAG21/#text-alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives
-    )
-- [https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html
-    )
-- [https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content
-    )
-- [https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html
-    )
-- [https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples
-    )
-- [https://www.w3.org/WAI/WCAG21/Techniques/general/G73](https://www.w3.org/WAI/WCAG21/Techniques/general/G73
-    )
-- [https://webaim.org/projects/million/](https://webaim.org/projects/million/
-    )
-- [https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby
-    )
+- [https://www.w3.org/TR/WCAG21/#text-alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives)
+- [https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html)
+- [https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=111#non-text-content)
+- [https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
+- [https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html#examples)
+- [https://www.w3.org/WAI/WCAG21/Techniques/general/G73](https://www.w3.org/WAI/WCAG21/Techniques/general/G73)
+- [https://webaim.org/projects/million/](https://webaim.org/projects/million/)
+- [https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)
 - [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)

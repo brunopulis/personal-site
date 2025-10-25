@@ -1,5 +1,7 @@
 ---
 title: 'Review: Node School BH 17'
+image: ''
+imageAlt: ''
 publishDate: 2017-11-15
 category: 'Indicações'
 url: https://brunopulis.com/review-node-school-bh-17/
