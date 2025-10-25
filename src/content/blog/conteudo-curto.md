@@ -1,6 +1,4 @@
 ---
-layout: '@/layouts/PostLayout.astro'
-schema: '../../components/common/head/schemas/BlogPosting.astro'
 title: 'Uma doença chamada conteúdo curto'
 publishDate: 2024-10-02
 category: 'Pessoal'
