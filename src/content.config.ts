@@ -33,7 +33,7 @@ const blog = defineCollection({
     imageAlt: z.string().optional(),
     readingTime: z.number().optional(),
     url: z.string().optional(),
-    canonicalUrl: z.string(),
+    canonicalUrl: z.string().optional(),
     seo: seoSchema.optional(),
   }),
 })
