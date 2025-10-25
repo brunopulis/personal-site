@@ -1,5 +1,7 @@
 ---
 title: Vocação ou serviço?
+image: '/src/assets/images/blog/vocacao-servico.png'
+imageAlt: ''
 publishDate: 2016-06-08
 category: 'Teologia'
 url: https://brunopulis.com/vocacao-ou-servico/

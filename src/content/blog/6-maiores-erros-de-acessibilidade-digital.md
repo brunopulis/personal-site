@@ -1,9 +1,12 @@
 ---
 title: 6 maiores erros de acessibilidade digital
+image: ''
+imageAlt: ''
 publishDate: 2020-09-02
 draft: false
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
+
 A web é um prato cheio de erros de acessibilidade, infelizmente. Hoje, vamos discutir os **6 maiores erros de acessibilidade digital,** suas implicações e barreiras de acesso e o melhor, como corrigir-los de maneira prática e objetiva. Vamos lá!
 
 ## 1\. Texto com baixo contraste
@@ -54,9 +57,21 @@ De forma prática a correção desse erro é uma das mais **banais**, basta pree
 Ex:
 
 ```html
-`<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>img</span> <span class="token attr-name">src<span class="token punctuation attr-equals">="</span>/imagens/duck.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt<span class="token punctuation attr-equals">="</span>Pato de borracha amarelo olhando fixamente<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>`
-
-MarkupCopy
+`<span class="token tag"
+  ><span class="token tag"><span class="token punctuation"><</span>img</span>
+  <span class="token attr-name"
+    >src<span class="token punctuation attr-equals">="</span>/imagens/duck.png<span class="token punctuation"
+      >"</span
+    ></span
+  >
+  <span class="token attr-name"
+    >alt<span class="token punctuation attr-equals">="</span>Pato de borracha amarelo olhando fixamente<span
+      class="token punctuation"
+      >"</span
+    ></span
+  >
+  <span class="token punctuation">/></span></span
+>` MarkupCopy
 ```
 
 Traduzi [um guia super completo de como escrever um texto alternativo](https://brunopulis.com/texto-alternativo-o-guia-definitivo/).
@@ -123,7 +138,7 @@ Uma das coisas que percebo muito com formulários é o uso inadequado do placeho
 
 ```html
 <form>
-   <input type="email" placeholder="insira o seu melhor e-mail" />
+  <input type="email" placeholder="insira o seu melhor e-mail" />
 </form>
 ```
 
@@ -156,7 +171,7 @@ O exemplo a seguir, demonstra o problema de um botão sem informação textual.
 ```html
 <button type="submit">
   <svg id="search" viewBox="0 0 16 16.9">
-     <path d="..."></path>
+    <path d="..."></path>
   </svg>
 </button>
 ```
@@ -165,9 +180,9 @@ Qualquer validador de acessibilidade notificará a inconsistência da violação
 
 ```html
 <button type="submit">
-  <svg id="search" role="img" aria-describedby="searchIcon" viewBox="0 0 16 16.9" >
-     <title id="searchIcon">Search</title>
-     <path d="..."></path>
+  <svg id="search" role="img" aria-describedby="searchIcon" viewBox="0 0 16 16.9">
+    <title id="searchIcon">Search</title>
+    <path d="..."></path>
   </svg>
 </button>
 ```
@@ -186,7 +201,9 @@ Além dessa confusão, ele descumpre a recomendação [3.1.1 – Idioma da pági
 
 ```html
 <!DOCTYPE html>
-<html lang="pt-br"> ... </html>
+<html lang="pt-br">
+  ...
+</html>
 ```
 
 Você também pode, [explorar mais sobre o atributo lang](https://brunopulis.com/usando-o-atributo-lang-corretamente/) em outro artigo que escrevi.

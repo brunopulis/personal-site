@@ -1,9 +1,9 @@
 ---
 title: O que é blogroll?
+image: '/src/assets/images/blog/blogroll.png'
+imageAlt: 'Ilustração: blogroll'
 publishDate: 2024-09-12
 category: 'Pessoal'
-image: '/src/assets/images/blogroll.png'
-imageAlt: 'Ilustração: blogroll'
 url: https://brunopulis.com/o-que-blogroll/
 tags:
   - indie web

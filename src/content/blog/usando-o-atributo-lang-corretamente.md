@@ -1,5 +1,7 @@
 ---
 title: Para que serve o atributo lang no HTML?
+image: ''
+imageAlt: ''
 publishDate: 2020-01-14
 category: 'Frontend'
 url: https://brunopulis.com/usando-o-atributo-lang-corretamente/

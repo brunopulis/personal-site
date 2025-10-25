@@ -1,5 +1,7 @@
 ---
 title: 21 qualidades de um bom QA
+image: ''
+imageAlt: ''
 publishDate: 2018-01-19
 draft: false
 category: 'Qualidade'
