@@ -229,7 +229,7 @@ collections:
   - name: 'blogroll'
     label: 'Blogroll'
     label_singular: 'Link'
-    folder: 'content/blogroll'
+    folder: 'src/content/blogroll'
     create: true
     slug: '{{slug}}'
     editor:
@@ -356,12 +356,173 @@ collections:
             required: false
 
   # ========================================
+  # COLLECTION: BOOKSHELF
+  # ========================================
+  - name: 'books'
+    label: 'Meus Livros'
+    label_singular: 'Livro'
+    folder: 'src/content/books'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - label: 'Título do Livro'
+        name: 'title'
+        widget: 'string'
+        required: true
+
+      - label: 'Descrição/Resumo'
+        name: 'description'
+        widget: 'string'
+        hint: 'Breve resumo do livro'
+
+      - label: 'Autor(es)'
+        name: 'author'
+        widget: 'list'
+        required: true
+        field:
+          label: 'Autor'
+          name: 'name'
+          widget: 'string'
+
+      - label: 'Ano de Publicação'
+        name: 'publishDate'
+        widget: 'datetime'
+        default: ''
+        date_format: 'DD/MM/YYYY'
+        time_format: 'HH:mm'
+        format: 'YYYY-MM-DD HH:mm:ss'
+        required: true
+
+      - label: 'Ano de Lançamento'
+        name: 'year'
+        widget: 'number'
+        required: true
+        value_type: 'int'
+        min: 1900
+        max: 2030
+
+      - label: 'Resenha'
+        name: 'body'
+        widget: 'markdown'
+        required: false
+        hint: 'Suas impressões e análise do livro'
+
+      - label: 'Citações Favoritas'
+        name: 'body'
+        widget: 'markdown'
+        required: false
+        hint: 'Suas citações preferidas'
+
+      - label: 'Categoria'
+        name: 'category'
+        widget: 'list'
+        required: true
+        field:
+          label: 'Categoria'
+          name: 'category'
+          widget: 'select'
+          options:
+            - 'Ficção'
+            - 'Não Ficção'
+            - 'Técnicos'
+            - 'Negócios'
+            - 'Finanças e investimentos'
+            - 'Empreendedorismo'
+            - 'Produtividade'
+            - 'Autoajuda'
+            - 'Filosofia'
+            - 'Religião'
+            - 'Teologia'
+            - 'Política'
+            - 'Educação'
+            - 'Música'
+            - 'Arte'
+            - 'Humor'
+            - 'Poesia'
+            - 'Quadrinhos'
+
+      - label: 'Capa do Livro'
+        name: 'cover'
+        widget: 'image'
+        required: false
+        media_folder: '/static/images/books'
+        public_folder: '/images/books'
+
+      - label: '⭐ Avaliação'
+        name: 'rating'
+        widget: 'select'
+        required: false
+        options:
+          - label: '⭐ 1 de 5'
+            value: '1'
+          - label: '⭐⭐ 2 de 5'
+            value: '2'
+          - label: '⭐⭐⭐ 3 de 5'
+            value: '3'
+          - label: '⭐⭐⭐⭐ 4 de 5'
+            value: '4'
+          - label: '⭐⭐⭐⭐⭐ 5 de 5'
+            value: '5'
+
+      - label: 'Status'
+        name: 'status'
+        widget: 'select'
+        required: true
+        default: 'to_read'
+        options:
+          - label: 'Quero Ler'
+            value: 'to_read'
+          - label: 'Lido'
+            value: 'read'
+          - label: 'Lendo'
+            value: 'reading'
+          - label: 'Abandonado'
+            value: 'abandoned'
+
+      - label: 'Data de leitura'
+        name: 'reading_date'
+        widget: 'datetime'
+        required: false
+        format: 'YYYY-MM-DD'
+        hint: 'Quando você leu o livro'
+
+      - label: 'Número de Páginas'
+        name: 'pages'
+        widget: 'number'
+        required: false
+        value_type: 'int'
+        hint: 'Total de páginas do livro'
+
+      - label: 'Recomendado por:'
+        name: 'recommended_for'
+        widget: 'string'
+        required: false
+        hint: 'Quem te recomendou esse livro?'
+
+      - label: 'Onde Comprar/Encontrar'
+        name: 'purchase_link'
+        widget: 'string'
+        required: false
+        hint: 'Link para comprar ou encontrar o livro'
+
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        required: false
+        field:
+          label: 'Tag'
+          name: 'tag'
+          widget: 'string'
+
+  # ========================================
   # COLLECTION: MOVIES
   # ========================================
   - name: 'movies'
     label: 'Filmes'
     label_singular: 'Filme'
-    folder: 'content/movies'
+    folder: 'src/content/movies'
     create: true
     slug: '{{slug}}'
     editor:
