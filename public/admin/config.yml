@@ -31,7 +31,7 @@ collections:
         default: ''
         date_format: 'DD/MM/YYYY'
         time_format: 'HH:mm'
-        format: 'YYYY-MM-DD HH:mm:ss'
+        format: 'YYYY-MM-DD'
         required: true
 
       - label: 'Autor'
