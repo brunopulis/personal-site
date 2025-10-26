@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import Newsletter from "@/components/Newsletter.astro";
-import site from "@/data/site.config.json";
-import Layout from "@/layouts/Layout.astro";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import HeroSection from "@components/layout/HeroSection.astro";
+import Footer from "@components/layout/Footer.astro";
+
+import site from "@data/site.config.json";
 
 const letters = await getCollection("newsletter");
 const sortedPosts = letters.sort((a, b) => {
@@ -33,7 +34,7 @@ function toISOString(dateString: string) {
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
   <Header />
-  <main>
+  <main id="main-content">
     <HeroSection
       title="Filtro Digital"
       description="Semanalmente, filtramos o que realmente importa em acessibilidade, qualidade de software e organização digital"
@@ -89,5 +90,5 @@ function toISOString(dateString: string) {
       </div>
     </div>
   </main>
+  <Footer />
 </Layout>
-<Footer />

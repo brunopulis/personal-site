@@ -2,11 +2,12 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import { CalendarIcon, ClockIcon } from "@lucide/astro";
-import Author from "@/components/blog/Author.astro";
-import BackBlog from "@/components/blog/BackBlog.astro";
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import Layout from "@/layouts/Layout.astro";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import Author from "@components/blog/Author.astro";
+import BackBlog from "@components/blog/BackBlog.astro";
+import Footer from "@components/layout/Footer.astro";
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
@@ -44,7 +45,7 @@ const isoDate = new Date(publishDateString).toISOString();
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
   <Header />
-  <main>
+  <main id="main-content">
     <div class="min-h-screen bg-white">
       <BackBlog />
 

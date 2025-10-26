@@ -6,7 +6,6 @@ import {
 	Clock,
 	Code,
 	Coffee,
-	GraduationCap,
 	Lightbulb,
 	MessageCircle,
 	Star,
@@ -15,17 +14,11 @@ import {
 	Video,
 	Zap,
 } from "@lucide/astro";
-import speaking from "@/assets/palestra.webp";
-import CTASection from "@/components/CTA.astro";
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import PricingSpeaking from "@/components/speaking/PricingSpeaking.astro";
-import TalksList from "@/components/speaking/TalksList.astro";
-import TypeTalks from "@/components/speaking/TypeTalks.astro";
-import config from "@/data/site.config.json";
-import testimonials from "@/data/testimonials.json";
-import Layout from "@/layouts/Layout.astro";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import CTASection from "@components/CTA.astro";
+import Footer from "@components/layout/Footer.astro";
 
 const formatos = [
 	{
@@ -322,8 +315,8 @@ const faq = [
 
 <Layout title="Palestras - Bruno Pulis">
   <Header />
-  <main>
-    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
+  <main id="main-content">
+    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -362,7 +355,7 @@ const faq = [
         </div>
 
         <div class="grid gap-8 md:grid-cols-3">
-          <div class="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-8">
+          <div class="rounded-2xl border-2 border-blue-200 bg-linear-to-br from-blue-50 to-white p-8">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600">
               <Code class="h-7 w-7 text-white" />
             </div>
@@ -373,7 +366,7 @@ const faq = [
             </p>
           </div>
 
-          <div class="rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white p-8">
+          <div class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-8">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-600">
               <Users class="h-7 w-7 text-white" />
             </div>
@@ -384,7 +377,7 @@ const faq = [
             </p>
           </div>
 
-          <div class="rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-white p-8">
+          <div class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-8">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-600">
               <Award class="h-7 w-7 text-white" />
             </div>
@@ -413,7 +406,7 @@ const faq = [
                 <div
                   class={`rounded-2xl p-8 transition ${
                     formato.destaque
-                      ? 'scale-105 transform border-4 border-blue-400 bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-2xl'
+                      ? 'scale-105 transform border-4 border-blue-400 bg-linear-to-br from-blue-600 to-blue-700 text-white shadow-2xl'
                       : 'border-2 border-gray-200 bg-white hover:border-purple-400 hover:shadow-lg'
                   }`}
                 >
@@ -427,7 +420,7 @@ const faq = [
                     <div
                       class={`h-12 w-12 ${formato.destaque ? 'bg-white/20' : 'bg-purple-100'} flex items-center justify-center rounded-lg`}
                     >
-                      <Icon class={`h-6 w-6 ${formato.destaque ? 'text-white' : 'text-purple-600'}`} />
+                      <Icon class={`h-6 w-6 ${formato.destaque ? 'text-white' : 'text-purple-600'}`} aria-hidden="true" />
                     </div>
                     <h3 class={`text-2xl font-bold ${formato.destaque ? 'text-white' : 'text-gray-900'}`}>
                       {formato.nome}
@@ -444,11 +437,11 @@ const faq = [
                     class={`mb-6 grid grid-cols-2 gap-3 text-sm ${formato.destaque ? 'text-blue-50' : 'text-gray-600'}`}
                   >
                     <div>
-                      <Clock class="mr-1 inline h-4 w-4" />
+                      <Clock class="mr-1 inline h-4 w-4" aria-hidden="true" />
                       {formato.duracao}
                     </div>
                     <div>
-                      <Users class="mr-1 inline h-4 w-4" />
+                      <Users class="mr-1 inline h-4 w-4" aria-hidden="true" />
                       {formato.participantes}
                     </div>
                   </div>
@@ -459,9 +452,10 @@ const faq = [
                     </h4>
                     <ul class="space-y-2">
                       {formato.inclui.map((item, i) => (
-                        <li key={i} class="flex items-start gap-2">
+                        <li class="flex items-start gap-2">
                           <CheckCircle
                             class={`mt-0.5 h-4 w-4 flex-shrink-0 ${formato.destaque ? 'text-white' : 'text-green-600'}`}
+                            aria-hidden="true"
                           />
                           <span class={`text-sm ${formato.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
                         </li>
@@ -506,18 +500,17 @@ const faq = [
               }
 
               return (
-                <div key={index}>
+                <div>
                   <div class="mb-6 flex items-center gap-3">
                     <div class={`h-10 w-10 ${corClasses[categoria.cor]} flex items-center justify-center rounded-lg`}>
-                      <Icon class="h-6 w-6" />
+                      <Icon class="h-6 w-6" aria-hidden="true" />
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900">{categoria.categoria}</h3>
                   </div>
 
                   <div class="grid gap-6 md:grid-cols-2">
-                    {categoria.topicos.map((topico, i) => (
+                    {categoria.topicos.map((topico) => (
                       <div
-                        key={i}
                         class="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition hover:border-purple-400 hover:shadow-lg"
                       >
                         <div class="mb-3 flex items-start justify-between">
@@ -538,15 +531,15 @@ const faq = [
                         <p class="mb-4 text-sm text-gray-700">{topico.descricao}</p>
 
                         <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
-                          <Clock class="h-4 w-4" />
+                          <Clock class="h-4 w-4" aria-hidden="true" />
                           <span>{topico.duracao}</span>
                         </div>
 
                         <div class="rounded-lg border border-gray-200 bg-white p-4">
                           <div class="mb-2 text-xs font-semibold text-gray-600">Tópicos abordados:</div>
                           <div class="flex flex-wrap gap-2">
-                            {topico.topicos.map((t, idx) => (
-                              <span key={idx} class="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700">
+                            {topico.topicos.map((t) => (
+                              <span class="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700">
                                 {t}
                               </span>
                             ))}
@@ -562,7 +555,7 @@ const faq = [
         </div>
 
         <div
-          class="mt-12 rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50 p-8 text-center"
+          class="mt-12 rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-blue-50 p-8 text-center"
         >
           <Zap class="mx-auto mb-4 h-12 w-12 text-purple-600" />
           <h3 class="mb-3 text-2xl font-bold text-gray-900">Não encontrou o tema que precisa?</h3>
@@ -575,7 +568,7 @@ const faq = [
             class="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-8 py-4 font-semibold text-white transition hover:bg-purple-700"
           >
             Solicitar tema customizado
-            <ArrowRight class="h-5 w-5" />
+            <ArrowRight class="h-5 w-5" aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -589,8 +582,8 @@ const faq = [
 
         <div class="space-y-6">
           {
-            faq.map((item, index) => (
-              <div key={index} class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            faq.map((item) => (
+              <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
                 <p class="leading-relaxed text-gray-700">{item.resposta}</p>
               </div>
@@ -602,7 +595,7 @@ const faq = [
           <p class="mb-4 text-gray-600">Ainda tem dúvidas?</p>
           <a href="/contato" class="inline-flex items-center gap-2 font-semibold text-purple-600 hover:text-purple-700">
             Entre em contato
-            <ArrowRight class="h-4 w-4" />
+            <ArrowRight class="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -611,9 +604,8 @@ const faq = [
     <section class="mb-4 text-3xl font-bold text-gray-900">Já palestrei para</section>
     <div class="grid grid-cols-3 gap-8 md:grid-cols-6">
       {
-        clientes.map((cliente, index) => (
+        clientes.map((cliente) => (
           <div
-            key={index}
             class="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6"
           >
             <div class="mb-2 text-4xl">{cliente.logo}</div>
@@ -633,12 +625,11 @@ const faq = [
           {
             depoimentos.map((depoimento, index) => (
               <div
-                key={index}
-                class="rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white p-6"
+                class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-6"
               >
                 <div class="mb-4 flex gap-1">
                   {[...Array(depoimento.avaliacao)].map((_, i) => (
-                    <Star key={i} class="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} class="h-5 w-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   ))}
                 </div>
                 <p class="mb-4 text-gray-700 italic">"{depoimento.texto}"</p>
