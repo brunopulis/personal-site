@@ -1,6 +1,6 @@
 ---
 title: Meus aplicativos de 2024
-image: '/src/assets/images/blog/social-midia-scaled.jpg'
+image: '/src/assets/images/blog/meus-apps.png'
 imageAlt: 'Capa do artigo: Meus aplicativos de 2024'
 publishDate: 2024-12-31
 category: 'Pessoal'

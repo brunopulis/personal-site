@@ -6,6 +6,6 @@ const options = {
 describe('Home Page', options, () => {
   it('should load the home page successfully', () => {
     cy.visit('/');
-    cy.contains('h1', 'Olá, sou o Bruno Pulis'); // Adjust this to match actual content
+    cy.contains('h1', 'Olá, sou o Bruno Pulis');
   });
 });
