@@ -1,14 +1,16 @@
 ---
 import { Image } from 'astro:assets'
-import pulisLogo from '@/assets/horizontal/blood.svg'
+import pulisLogo from '@/assets/images/horizontal/blood.svg'
 import { Menu, X } from '@lucide/astro'
 import SkipLink from '@/components/utils/SkipLink.astro'
 
 const { pathname } = Astro.url
 ---
 
-<div class="bg-errie-black-900 py-3 text-center text-white" style="font-size: .85rem;">
-  Este site está sendo refatorado. Se algo parecer quebrado é por esse motivo.
+<div class="bg-errie-black-900 py-3">
+  <p class="text-center text-[.85rem] text-white">
+    Este site está sendo refatorado. Se algo parecer quebrado é por esse motivo.
+  </p>
 </div>
 
 <header x-data="{ open: false }" class="w-full bg-white/90 py-4 backdrop-blur-xs transition-colors duration-300">
