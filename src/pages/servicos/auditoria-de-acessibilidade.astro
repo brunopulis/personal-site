@@ -1,291 +1,298 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import Packages from '@/components/services/Packages.astro'
-import CTASection from '@/components/CTA.astro'
-import Footer from '@/components/layout/Footer.astro'
-
 import {
-  Settings,
-  Users,
-  Award,
-  AlertCircle,
-  Zap,
-  Clock,
-  Target,
-  FileText,
-  Eye,
-  Code,
-  Download,
-  Phone,
-  Shield,
-  CheckCircle,
-  ArrowRight,
-} from '@lucide/astro'
+	AlertCircle,
+	ArrowRight,
+	Award,
+	CheckCircle,
+	Clock,
+	Code,
+	Download,
+	Eye,
+	FileText,
+	Phone,
+	Settings,
+	Shield,
+	Target,
+	Users,
+	Zap,
+} from "@lucide/astro";
+import CTASection from "@/components/CTA.astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import Packages from "@/components/services/Packages.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const pacotes = [
-  {
-    nome: 'Starter',
-    preco: 'R$ 5.000',
-    ideal: 'Sites pequenos e MVPs',
-    descricao: 'Perfeito para quem está começando e precisa de um diagnóstico inicial',
-    cor: 'blue',
-    inclui: [
-      'Auditoria de até 5 páginas',
-      'Relatório simplificado em PDF',
-      'Lista priorizada de problemas',
-      'Recomendações de correção',
-      '1 reunião de apresentação (1h)',
-      'Suporte por email (7 dias)',
-      'Prazo: 1-2 semanas',
-    ],
-    exemplo: '5 páginas (ex: Home, Sobre, Serviços, Contato, Blog)',
-    tempo: '1-2 semanas',
-  },
-  {
-    nome: 'Professional',
-    preco: 'R$ 12.000',
-    ideal: 'Projetos médios e empresas',
-    descricao: 'O mais completo e recomendado para a maioria dos casos',
-    destaque: true,
-    cor: 'red',
-    inclui: [
-      'Auditoria de até 15 páginas',
-      'Relatório completo detalhado',
-      'Planilha Excel com todos os issues',
-      'Prints e vídeos dos problemas',
-      'Roadmap priorizado por impacto',
-      'Recomendações técnicas específicas',
-      '2 reuniões (apresentação + dúvidas)',
-      'Suporte por email/WhatsApp (30 dias)',
-      'Revisão pós-correções (opcional)',
-      'Prazo: 2-3 semanas',
-    ],
-    bonus: ['Documento de boas práticas', 'Checklist de QA acessível', 'Templates de testes'],
-    exemplo: '15 páginas (site completo ou app com funcionalidades principais)',
-    tempo: '2-3 semanas',
-  },
-  {
-    nome: 'Enterprise',
-    preco: 'Sob consulta',
-    ideal: 'Grandes projetos e plataformas',
-    descricao: 'Solução customizada para necessidades complexas',
-    cor: 'purple',
-    inclui: [
-      'Auditoria completa do sistema',
-      'Múltiplos produtos/plataformas',
-      'Testes com usuários reais (PcD)',
-      'Análise de fluxos complexos',
-      'Documentação técnica completa',
-      'Treinamento da equipe incluído',
-      'Acompanhamento de implementação',
-      'Reuniões ilimitadas',
-      'Suporte prioritário (90 dias)',
-      'SLA de resposta garantido',
-      'Contrato anual disponível',
-    ],
-    exemplo: 'Sistema completo (20+ páginas, apps, dashboards)',
-    tempo: '4-6 semanas',
-  },
-]
+	{
+		nome: "Starter",
+		preco: "R$ 5.000",
+		ideal: "Sites pequenos e MVPs",
+		descricao:
+			"Perfeito para quem está começando e precisa de um diagnóstico inicial",
+		cor: "blue",
+		inclui: [
+			"Auditoria de até 5 páginas",
+			"Relatório simplificado em PDF",
+			"Lista priorizada de problemas",
+			"Recomendações de correção",
+			"1 reunião de apresentação (1h)",
+			"Suporte por email (7 dias)",
+			"Prazo: 1-2 semanas",
+		],
+		exemplo: "5 páginas (ex: Home, Sobre, Serviços, Contato, Blog)",
+		tempo: "1-2 semanas",
+	},
+	{
+		nome: "Professional",
+		preco: "R$ 12.000",
+		ideal: "Projetos médios e empresas",
+		descricao: "O mais completo e recomendado para a maioria dos casos",
+		destaque: true,
+		cor: "red",
+		inclui: [
+			"Auditoria de até 15 páginas",
+			"Relatório completo detalhado",
+			"Planilha Excel com todos os issues",
+			"Prints e vídeos dos problemas",
+			"Roadmap priorizado por impacto",
+			"Recomendações técnicas específicas",
+			"2 reuniões (apresentação + dúvidas)",
+			"Suporte por email/WhatsApp (30 dias)",
+			"Revisão pós-correções (opcional)",
+			"Prazo: 2-3 semanas",
+		],
+		bonus: [
+			"Documento de boas práticas",
+			"Checklist de QA acessível",
+			"Templates de testes",
+		],
+		exemplo: "15 páginas (site completo ou app com funcionalidades principais)",
+		tempo: "2-3 semanas",
+	},
+	{
+		nome: "Enterprise",
+		preco: "Sob consulta",
+		ideal: "Grandes projetos e plataformas",
+		descricao: "Solução customizada para necessidades complexas",
+		cor: "purple",
+		inclui: [
+			"Auditoria completa do sistema",
+			"Múltiplos produtos/plataformas",
+			"Testes com usuários reais (PcD)",
+			"Análise de fluxos complexos",
+			"Documentação técnica completa",
+			"Treinamento da equipe incluído",
+			"Acompanhamento de implementação",
+			"Reuniões ilimitadas",
+			"Suporte prioritário (90 dias)",
+			"SLA de resposta garantido",
+			"Contrato anual disponível",
+		],
+		exemplo: "Sistema completo (20+ páginas, apps, dashboards)",
+		tempo: "4-6 semanas",
+	},
+];
 
 const etapas = [
-  {
-    numero: 1,
-    nome: 'Kickoff',
-    duracao: '1-2 dias',
-    icone: Shield,
-    descricao: 'Reunião inicial para entender seu projeto, objetivos e definir escopo',
-    atividades: [
-      'Reunião de alinhamento (1h)',
-      'Definição de páginas/fluxos prioritários',
-      'Coleta de credenciais de acesso (se necessário)',
-      'Definição de personas e casos de uso',
-      'Alinhamento de expectativas e cronograma',
-    ],
-  },
-  {
-    numero: 2,
-    nome: 'Auditoria Técnica',
-    duracao: '5-10 dias',
-    icone: Code,
-    descricao: 'Análise profunda de código, estrutura e conformidade WCAG',
-    atividades: [
-      'Análise de código HTML/CSS/JavaScript',
-      'Verificação de semântica e ARIA',
-      'Testes automatizados (Axe, Wave, Lighthouse)',
-      'Validação de contraste de cores',
-      'Verificação de estrutura de headings',
-      'Análise de formulários e validações',
-      'Teste de navegação por teclado',
-      'Documentação de cada problema encontrado',
-    ],
-  },
-  {
-    numero: 3,
-    nome: 'Testes com Tecnologias Assistivas',
-    duracao: '3-5 dias',
-    icone: Eye,
-    descricao: 'Simulação de uso real com leitores de tela e outras ferramentas',
-    atividades: [
-      'Testes com NVDA (Windows)',
-      'Testes com JAWS (Windows)',
-      'Testes com VoiceOver (macOS/iOS)',
-      'Testes com TalkBack (Android)',
-      'Navegação apenas por teclado',
-      'Testes com zoom (até 200%)',
-      'Gravação de vídeos dos problemas',
-      'Documentação de experiência do usuário',
-    ],
-  },
-  {
-    numero: 4,
-    nome: 'Elaboração do Relatório',
-    duracao: '3-5 dias',
-    icone: FileText,
-    descricao: 'Compilação de todos os achados em documentação clara e acionável',
-    atividades: [
-      'Categorização dos problemas por severidade',
-      'Priorização por impacto no usuário',
-      'Criação de prints e vídeos explicativos',
-      'Redação de recomendações específicas',
-      'Sugestões de código para correção',
-      'Criação de planilha Excel detalhada',
-      'Montagem do relatório final em PDF',
-      'Roadmap de implementação sugerido',
-    ],
-  },
-  {
-    numero: 5,
-    nome: 'Apresentação e Suporte',
-    duracao: '1-2 dias',
-    icone: Award,
-    descricao: 'Entrega dos resultados e acompanhamento pós-auditoria',
-    atividades: [
-      'Reunião de apresentação dos resultados',
-      'Explicação de cada problema encontrado',
-      'Priorização conjunta das correções',
-      'Esclarecimento de dúvidas técnicas',
-      'Orientações sobre próximos passos',
-      'Suporte contínuo por email/WhatsApp',
-      'Revisão opcional após correções',
-    ],
-  },
-]
+	{
+		numero: 1,
+		nome: "Kickoff",
+		duracao: "1-2 dias",
+		icone: Shield,
+		descricao:
+			"Reunião inicial para entender seu projeto, objetivos e definir escopo",
+		atividades: [
+			"Reunião de alinhamento (1h)",
+			"Definição de páginas/fluxos prioritários",
+			"Coleta de credenciais de acesso (se necessário)",
+			"Definição de personas e casos de uso",
+			"Alinhamento de expectativas e cronograma",
+		],
+	},
+	{
+		numero: 2,
+		nome: "Auditoria Técnica",
+		duracao: "5-10 dias",
+		icone: Code,
+		descricao: "Análise profunda de código, estrutura e conformidade WCAG",
+		atividades: [
+			"Análise de código HTML/CSS/JavaScript",
+			"Verificação de semântica e ARIA",
+			"Testes automatizados (Axe, Wave, Lighthouse)",
+			"Validação de contraste de cores",
+			"Verificação de estrutura de headings",
+			"Análise de formulários e validações",
+			"Teste de navegação por teclado",
+			"Documentação de cada problema encontrado",
+		],
+	},
+	{
+		numero: 3,
+		nome: "Testes com Tecnologias Assistivas",
+		duracao: "3-5 dias",
+		icone: Eye,
+		descricao:
+			"Simulação de uso real com leitores de tela e outras ferramentas",
+		atividades: [
+			"Testes com NVDA (Windows)",
+			"Testes com JAWS (Windows)",
+			"Testes com VoiceOver (macOS/iOS)",
+			"Testes com TalkBack (Android)",
+			"Navegação apenas por teclado",
+			"Testes com zoom (até 200%)",
+			"Gravação de vídeos dos problemas",
+			"Documentação de experiência do usuário",
+		],
+	},
+	{
+		numero: 4,
+		nome: "Elaboração do Relatório",
+		duracao: "3-5 dias",
+		icone: FileText,
+		descricao:
+			"Compilação de todos os achados em documentação clara e acionável",
+		atividades: [
+			"Categorização dos problemas por severidade",
+			"Priorização por impacto no usuário",
+			"Criação de prints e vídeos explicativos",
+			"Redação de recomendações específicas",
+			"Sugestões de código para correção",
+			"Criação de planilha Excel detalhada",
+			"Montagem do relatório final em PDF",
+			"Roadmap de implementação sugerido",
+		],
+	},
+	{
+		numero: 5,
+		nome: "Apresentação e Suporte",
+		duracao: "1-2 dias",
+		icone: Award,
+		descricao: "Entrega dos resultados e acompanhamento pós-auditoria",
+		atividades: [
+			"Reunião de apresentação dos resultados",
+			"Explicação de cada problema encontrado",
+			"Priorização conjunta das correções",
+			"Esclarecimento de dúvidas técnicas",
+			"Orientações sobre próximos passos",
+			"Suporte contínuo por email/WhatsApp",
+			"Revisão opcional após correções",
+		],
+	},
+];
 
 const oqueBusco = [
-  {
-    categoria: 'Estrutura e Semântica',
-    icone: Code,
-    itens: [
-      'HTML semântico correto',
-      'Uso apropriado de landmarks (header, nav, main, footer)',
-      'Estrutura de headings (h1-h6) hierárquica',
-      'Uso correto de listas (ul, ol)',
-      'Elementos interativos acessíveis',
-    ],
-  },
-  {
-    categoria: 'ARIA e Acessibilidade',
-    icone: Shield,
-    itens: [
-      'Atributos ARIA corretos (quando necessário)',
-      'Roles apropriados',
-      'Labels e descriptions em elementos',
-      'Live regions para conteúdo dinâmico',
-      'Estados e propriedades ARIA',
-    ],
-  },
-  {
-    categoria: 'Navegação e Interação',
-    icone: Target,
-    itens: [
-      'Navegação completa por teclado',
-      'Ordem de foco lógica (tab order)',
-      'Indicadores de foco visíveis',
-      'Skip links funcionais',
-      'Atalhos de teclado documentados',
-    ],
-  },
-  {
-    categoria: 'Conteúdo e Mídia',
-    icone: Eye,
-    itens: [
-      'Textos alternativos em imagens',
-      'Transcrições de áudio',
-      'Legendas em vídeos',
-      'Descrições de áudio (quando aplicável)',
-      'Conteúdo de links descritivo',
-    ],
-  },
-  {
-    categoria: 'Design Visual',
-    icone: Award,
-    itens: [
-      'Contraste de cores adequado (WCAG AA ou AAA)',
-      'Tamanho de fonte legível',
-      'Espaçamento entre elementos clicáveis',
-      'Zoom até 200% sem perda de funcionalidade',
-      'Informação não dependente apenas de cor',
-    ],
-  },
-  {
-    categoria: 'Formulários',
-    icone: CheckCircle,
-    itens: [
-      'Labels associados aos inputs',
-      'Mensagens de erro claras',
-      'Validação acessível',
-      'Instruções visíveis',
-      'Campos obrigatórios identificados',
-    ],
-  },
-]
+	{
+		categoria: "Estrutura e Semântica",
+		icone: Code,
+		itens: [
+			"HTML semântico correto",
+			"Uso apropriado de landmarks (header, nav, main, footer)",
+			"Estrutura de headings (h1-h6) hierárquica",
+			"Uso correto de listas (ul, ol)",
+			"Elementos interativos acessíveis",
+		],
+	},
+	{
+		categoria: "ARIA e Acessibilidade",
+		icone: Shield,
+		itens: [
+			"Atributos ARIA corretos (quando necessário)",
+			"Roles apropriados",
+			"Labels e descriptions em elementos",
+			"Live regions para conteúdo dinâmico",
+			"Estados e propriedades ARIA",
+		],
+	},
+	{
+		categoria: "Navegação e Interação",
+		icone: Target,
+		itens: [
+			"Navegação completa por teclado",
+			"Ordem de foco lógica (tab order)",
+			"Indicadores de foco visíveis",
+			"Skip links funcionais",
+			"Atalhos de teclado documentados",
+		],
+	},
+	{
+		categoria: "Conteúdo e Mídia",
+		icone: Eye,
+		itens: [
+			"Textos alternativos em imagens",
+			"Transcrições de áudio",
+			"Legendas em vídeos",
+			"Descrições de áudio (quando aplicável)",
+			"Conteúdo de links descritivo",
+		],
+	},
+	{
+		categoria: "Design Visual",
+		icone: Award,
+		itens: [
+			"Contraste de cores adequado (WCAG AA ou AAA)",
+			"Tamanho de fonte legível",
+			"Espaçamento entre elementos clicáveis",
+			"Zoom até 200% sem perda de funcionalidade",
+			"Informação não dependente apenas de cor",
+		],
+	},
+	{
+		categoria: "Formulários",
+		icone: CheckCircle,
+		itens: [
+			"Labels associados aos inputs",
+			"Mensagens de erro claras",
+			"Validação acessível",
+			"Instruções visíveis",
+			"Campos obrigatórios identificados",
+		],
+	},
+];
 
 const ferramentas = [
-  { nome: 'Axe DevTools', uso: 'Testes automatizados' },
-  { nome: 'WAVE', uso: 'Análise visual de problemas' },
-  { nome: 'Lighthouse', uso: 'Score de acessibilidade' },
-  { nome: 'NVDA', uso: 'Leitor de tela (Windows)' },
-  { nome: 'JAWS', uso: 'Leitor de tela (Windows)' },
-  { nome: 'VoiceOver', uso: 'Leitor de tela (Mac/iOS)' },
-  { nome: 'TalkBack', uso: 'Leitor de tela (Android)' },
-  { nome: 'Colour Contrast Analyser', uso: 'Análise de contraste' },
-  { nome: 'HeadingsMap', uso: 'Verificação de estrutura' },
-]
+	{ nome: "Axe DevTools", uso: "Testes automatizados" },
+	{ nome: "WAVE", uso: "Análise visual de problemas" },
+	{ nome: "Lighthouse", uso: "Score de acessibilidade" },
+	{ nome: "NVDA", uso: "Leitor de tela (Windows)" },
+	{ nome: "JAWS", uso: "Leitor de tela (Windows)" },
+	{ nome: "VoiceOver", uso: "Leitor de tela (Mac/iOS)" },
+	{ nome: "TalkBack", uso: "Leitor de tela (Android)" },
+	{ nome: "Colour Contrast Analyser", uso: "Análise de contraste" },
+	{ nome: "HeadingsMap", uso: "Verificação de estrutura" },
+];
 
 const faq = [
-  {
-    pergunta: 'Qual padrão/guideline você segue?',
-    resposta:
-      'Trabalho baseado nas WCAG 2.1 e 2.2 (Web Content Accessibility Guidelines), níveis A e AA. Para projetos específicos, posso focar em AAA ou em outras diretrizes como Section 508 ou EN 301 549.',
-  },
-  {
-    pergunta: 'Quanto tempo leva uma auditoria?',
-    resposta:
-      'Depende do pacote: Starter (1-2 semanas), Professional (2-3 semanas), Enterprise (4-6 semanas). O prazo começa após o kickoff e recebimento de todos os acessos necessários.',
-  },
-  {
-    pergunta: 'O que recebo no final?',
-    resposta:
-      'Relatório em PDF com todos os problemas encontrados, planilha Excel com detalhamento técnico, prints/vídeos explicativos, roadmap de correções priorizadas e acesso a mim para dúvidas durante o período de suporte.',
-  },
-  {
-    pergunta: 'Você implementa as correções?',
-    resposta:
-      'A auditoria não inclui implementação. Porém, ofereço o serviço de remediação separadamente, ou posso fazer mentoria da sua equipe para que eles implementem. Podemos conversar sobre a melhor opção.',
-  },
-  {
-    pergunta: 'E se meu projeto for muito grande?',
-    resposta:
-      'Para projetos grandes, fazemos auditoria em fases. Começamos pelas páginas/fluxos mais críticos e vamos expandindo. O pacote Enterprise é flexível e customizável para estas situações.',
-  },
-  {
-    pergunta: 'Garante conformidade legal?',
-    resposta:
-      'Forneço análise técnica baseada em padrões internacionais. Não sou advogado, então não posso garantir conformidade legal específica. Mas o relatório pode ser usado como documentação para demonstrar esforços de acessibilidade.',
-  },
-]
+	{
+		pergunta: "Qual padrão/guideline você segue?",
+		resposta:
+			"Trabalho baseado nas WCAG 2.1 e 2.2 (Web Content Accessibility Guidelines), níveis A e AA. Para projetos específicos, posso focar em AAA ou em outras diretrizes como Section 508 ou EN 301 549.",
+	},
+	{
+		pergunta: "Quanto tempo leva uma auditoria?",
+		resposta:
+			"Depende do pacote: Starter (1-2 semanas), Professional (2-3 semanas), Enterprise (4-6 semanas). O prazo começa após o kickoff e recebimento de todos os acessos necessários.",
+	},
+	{
+		pergunta: "O que recebo no final?",
+		resposta:
+			"Relatório em PDF com todos os problemas encontrados, planilha Excel com detalhamento técnico, prints/vídeos explicativos, roadmap de correções priorizadas e acesso a mim para dúvidas durante o período de suporte.",
+	},
+	{
+		pergunta: "Você implementa as correções?",
+		resposta:
+			"A auditoria não inclui implementação. Porém, ofereço o serviço de remediação separadamente, ou posso fazer mentoria da sua equipe para que eles implementem. Podemos conversar sobre a melhor opção.",
+	},
+	{
+		pergunta: "E se meu projeto for muito grande?",
+		resposta:
+			"Para projetos grandes, fazemos auditoria em fases. Começamos pelas páginas/fluxos mais críticos e vamos expandindo. O pacote Enterprise é flexível e customizável para estas situações.",
+	},
+	{
+		pergunta: "Garante conformidade legal?",
+		resposta:
+			"Forneço análise técnica baseada em padrões internacionais. Não sou advogado, então não posso garantir conformidade legal específica. Mas o relatório pode ser usado como documentação para demonstrar esforços de acessibilidade.",
+	},
+];
 ---
 
 <Layout title="Auditoria de Acessibilidade - Bruno Pulis">

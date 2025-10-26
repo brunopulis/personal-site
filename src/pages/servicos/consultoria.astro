@@ -1,247 +1,275 @@
 ---
-import config from '@/data/site.config.json'
-
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import CTASection from '@/components/CTA.astro'
-import Footer from '@/components/layout/Footer.astro'
-
-import { ArrowRight, Award, Code, Target, MessageCircle, Clock, CheckCircle, Heart, Coffee } from '@lucide/astro'
+import {
+	ArrowRight,
+	Award,
+	CheckCircle,
+	Clock,
+	Code,
+	Coffee,
+	Heart,
+	MessageCircle,
+	Target,
+} from "@lucide/astro";
+import CTASection from "@/components/CTA.astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import config from "@/data/site.config.json";
+import Layout from "@/layouts/Layout.astro";
 
 const planos = [
-  {
-    nome: 'Consultoria Pontual',
-    preco: 'R$ 500',
-    unidade: 'por sessão',
-    duracao: '1-2 horas',
-    ideal: 'Dúvidas específicas ou validação de decisões',
-    cor: 'blue',
-    inclui: [
-      'Sessão de 1-2 horas',
-      'Análise de problema específico',
-      'Recomendações práticas',
-      'Material de apoio',
-      'Follow-up por email (7 dias)',
-      'Ideal para: decisões pontuais, validação de abordagem',
-    ],
-    exemplos: [
-      'Validar arquitetura de componente',
-      'Revisar implementação específica',
-      'Orientação sobre ferramenta',
-      'Segunda opinião técnica',
-    ],
-  },
-  {
-    nome: 'Consultoria Mensal',
-    preco: 'R$ 3.000',
-    unidade: 'por mês',
-    duracao: 'Contrato mensal',
-    ideal: 'Acompanhamento contínuo e suporte recorrente',
-    cor: 'green',
-    destaque: true,
-    inclui: [
-      '4 sessões de 1h (1 por semana)',
-      'Acesso direto via Slack/WhatsApp',
-      'Revisão de código ilimitada',
-      'Priorização de roadmap',
-      'Material e recursos personalizados',
-      'Documentação de decisões',
-      'Suporte assíncrono incluído',
-      'Ideal para: equipes implementando acessibilidade',
-    ],
-    exemplos: [
-      'Acompanhamento de implementação',
-      'Revisões semanais de progresso',
-      'Dúvidas do dia a dia',
-      'Construção de Design System acessível',
-    ],
-  },
-  {
-    nome: 'Consultoria Estratégica',
-    preco: 'R$ 8.000',
-    unidade: 'por mês',
-    duracao: 'Contrato trimestral',
-    ideal: 'Transformação organizacional e cultura de acessibilidade',
-    cor: 'purple',
-    inclui: [
-      'Tudo da Mentoria Mensal',
-      'Reuniões com liderança',
-      'Roadmap estratégico completo',
-      'Processos e workflows documentados',
-      'Treinamento de múltiplas equipes',
-      'KPIs e métricas de acessibilidade',
-      'Suporte prioritário',
-      'Mínimo 3 meses de contrato',
-      'Ideal para: empresas implementando cultura de a11y',
-    ],
-    exemplos: [
-      'Implementação de governança',
-      'Treinamento organizacional',
-      'Processos de QA acessível',
-      'Transformação cultural',
-    ],
-  },
-]
+	{
+		nome: "Consultoria Pontual",
+		preco: "R$ 500",
+		unidade: "por sessão",
+		duracao: "1-2 horas",
+		ideal: "Dúvidas específicas ou validação de decisões",
+		cor: "blue",
+		inclui: [
+			"Sessão de 1-2 horas",
+			"Análise de problema específico",
+			"Recomendações práticas",
+			"Material de apoio",
+			"Follow-up por email (7 dias)",
+			"Ideal para: decisões pontuais, validação de abordagem",
+		],
+		exemplos: [
+			"Validar arquitetura de componente",
+			"Revisar implementação específica",
+			"Orientação sobre ferramenta",
+			"Segunda opinião técnica",
+		],
+	},
+	{
+		nome: "Consultoria Mensal",
+		preco: "R$ 3.000",
+		unidade: "por mês",
+		duracao: "Contrato mensal",
+		ideal: "Acompanhamento contínuo e suporte recorrente",
+		cor: "green",
+		destaque: true,
+		inclui: [
+			"4 sessões de 1h (1 por semana)",
+			"Acesso direto via Slack/WhatsApp",
+			"Revisão de código ilimitada",
+			"Priorização de roadmap",
+			"Material e recursos personalizados",
+			"Documentação de decisões",
+			"Suporte assíncrono incluído",
+			"Ideal para: equipes implementando acessibilidade",
+		],
+		exemplos: [
+			"Acompanhamento de implementação",
+			"Revisões semanais de progresso",
+			"Dúvidas do dia a dia",
+			"Construção de Design System acessível",
+		],
+	},
+	{
+		nome: "Consultoria Estratégica",
+		preco: "R$ 8.000",
+		unidade: "por mês",
+		duracao: "Contrato trimestral",
+		ideal: "Transformação organizacional e cultura de acessibilidade",
+		cor: "purple",
+		inclui: [
+			"Tudo da Mentoria Mensal",
+			"Reuniões com liderança",
+			"Roadmap estratégico completo",
+			"Processos e workflows documentados",
+			"Treinamento de múltiplas equipes",
+			"KPIs e métricas de acessibilidade",
+			"Suporte prioritário",
+			"Mínimo 3 meses de contrato",
+			"Ideal para: empresas implementando cultura de a11y",
+		],
+		exemplos: [
+			"Implementação de governança",
+			"Treinamento organizacional",
+			"Processos de QA acessível",
+			"Transformação cultural",
+		],
+	},
+];
 
 const oqueFaco = [
-  {
-    icone: Code,
-    titulo: 'Revisão de Código',
-    descricao:
-      'Analiso seu código (componentes, páginas, fluxos) e dou feedback específico sobre como melhorar a acessibilidade.',
-    exemplos: ['Pull request reviews', 'Pair programming', 'Code walkthrough'],
-  },
-  {
-    icone: Target,
-    titulo: 'Direcionamento Estratégico',
-    descricao:
-      'Ajudo a priorizar o que corrigir primeiro, definir roadmap realista e estabelecer processos sustentáveis.',
-    exemplos: ['Roadmap de implementação', 'Priorização de backlog', 'Definição de processos'],
-  },
-  {
-    icone: MessageCircle,
-    titulo: 'Suporte Contínuo',
-    descricao: 'Disponível para tirar dúvidas, validar decisões e desbloquear problemas que surgem no dia a dia.',
-    exemplos: ['Slack/WhatsApp', 'Respostas em até 24h', 'Videochamadas quando necessário'],
-  },
-  {
-    icone: Award,
-    titulo: 'Capacitação da Equipe',
-    descricao: 'Ensino sua equipe a "pescar" - transferência de conhecimento para autonomia futura.',
-    exemplos: ['Sessões educativas', 'Documentação interna', 'Boas práticas'],
-  },
-]
+	{
+		icone: Code,
+		titulo: "Revisão de Código",
+		descricao:
+			"Analiso seu código (componentes, páginas, fluxos) e dou feedback específico sobre como melhorar a acessibilidade.",
+		exemplos: ["Pull request reviews", "Pair programming", "Code walkthrough"],
+	},
+	{
+		icone: Target,
+		titulo: "Direcionamento Estratégico",
+		descricao:
+			"Ajudo a priorizar o que corrigir primeiro, definir roadmap realista e estabelecer processos sustentáveis.",
+		exemplos: [
+			"Roadmap de implementação",
+			"Priorização de backlog",
+			"Definição de processos",
+		],
+	},
+	{
+		icone: MessageCircle,
+		titulo: "Suporte Contínuo",
+		descricao:
+			"Disponível para tirar dúvidas, validar decisões e desbloquear problemas que surgem no dia a dia.",
+		exemplos: [
+			"Slack/WhatsApp",
+			"Respostas em até 24h",
+			"Videochamadas quando necessário",
+		],
+	},
+	{
+		icone: Award,
+		titulo: "Capacitação da Equipe",
+		descricao:
+			'Ensino sua equipe a "pescar" - transferência de conhecimento para autonomia futura.',
+		exemplos: ["Sessões educativas", "Documentação interna", "Boas práticas"],
+	},
+];
 
 const processo = [
-  {
-    numero: 1,
-    titulo: 'Diagnóstico Inicial',
-    duracao: '1 semana',
-    atividades: [
-      'Reunião de kickoff (1-2h)',
-      'Entendimento do contexto atual',
-      'Análise de produtos/projetos',
-      'Identificação de gaps',
-      'Definição de objetivos',
-      'Alinhamento de expectativas',
-    ],
-  },
-  {
-    numero: 2,
-    titulo: 'Planejamento',
-    duracao: '3-5 dias',
-    atividades: [
-      'Criação de roadmap personalizado',
-      'Priorização de ações',
-      'Definição de milestones',
-      'Setup de comunicação',
-      'Cronograma de sessões',
-      'Definição de entregáveis',
-    ],
-  },
-  {
-    numero: 3,
-    titulo: 'Execução',
-    duracao: 'Contínuo',
-    atividades: [
-      'Sessões semanais programadas',
-      'Revisões de código',
-      'Suporte assíncrono',
-      'Resolução de dúvidas',
-      'Validação de implementações',
-      'Ajustes de rota quando necessário',
-    ],
-  },
-  {
-    numero: 4,
-    titulo: 'Avaliação',
-    duracao: 'Mensal',
-    atividades: [
-      'Revisão de progresso',
-      'Métricas e KPIs',
-      'Feedback mútuo',
-      'Ajuste de objetivos',
-      'Planejamento do próximo ciclo',
-      'Documentação de aprendizados',
-    ],
-  },
-]
+	{
+		numero: 1,
+		titulo: "Diagnóstico Inicial",
+		duracao: "1 semana",
+		atividades: [
+			"Reunião de kickoff (1-2h)",
+			"Entendimento do contexto atual",
+			"Análise de produtos/projetos",
+			"Identificação de gaps",
+			"Definição de objetivos",
+			"Alinhamento de expectativas",
+		],
+	},
+	{
+		numero: 2,
+		titulo: "Planejamento",
+		duracao: "3-5 dias",
+		atividades: [
+			"Criação de roadmap personalizado",
+			"Priorização de ações",
+			"Definição de milestones",
+			"Setup de comunicação",
+			"Cronograma de sessões",
+			"Definição de entregáveis",
+		],
+	},
+	{
+		numero: 3,
+		titulo: "Execução",
+		duracao: "Contínuo",
+		atividades: [
+			"Sessões semanais programadas",
+			"Revisões de código",
+			"Suporte assíncrono",
+			"Resolução de dúvidas",
+			"Validação de implementações",
+			"Ajustes de rota quando necessário",
+		],
+	},
+	{
+		numero: 4,
+		titulo: "Avaliação",
+		duracao: "Mensal",
+		atividades: [
+			"Revisão de progresso",
+			"Métricas e KPIs",
+			"Feedback mútuo",
+			"Ajuste de objetivos",
+			"Planejamento do próximo ciclo",
+			"Documentação de aprendizados",
+		],
+	},
+];
 
 const casosDeUso = [
-  {
-    titulo: 'Startup construindo MVP',
-    situacao: 'Time pequeno precisa construir produto acessível desde o início mas não sabe por onde começar.',
-    solucao:
-      'Mentoria Mensal para estabelecer bases sólidas, revisar componentes principais e criar cultura desde cedo.',
-    resultado: 'MVP aprovado em WCAG AA, equipe capacitada, processos estabelecidos.',
-  },
-  {
-    titulo: 'E-commerce refatorando plataforma',
-    situacao: 'Empresa grande refazendo plataforma e quer garantir acessibilidade, mas equipe não tem experiência.',
-    solucao: 'Consultoria Estratégica (6 meses) - acompanhamento de toda refatoração, treinamento de múltiplas squads.',
-    resultado: 'Plataforma 100% acessível, 3 squads treinadas, Design System acessível criado.',
-  },
-  {
-    titulo: 'Agência revisando projeto',
-    situacao: 'Agência entregando projeto para cliente que exige conformidade, precisa validação técnica.',
-    solucao: 'Mentoria Pontual (3 sessões) para revisar implementação crítica e validar antes da entrega.',
-    resultado: 'Cliente satisfeito, projeto aprovado, agência aprendeu para próximos projetos.',
-  },
-]
+	{
+		titulo: "Startup construindo MVP",
+		situacao:
+			"Time pequeno precisa construir produto acessível desde o início mas não sabe por onde começar.",
+		solucao:
+			"Mentoria Mensal para estabelecer bases sólidas, revisar componentes principais e criar cultura desde cedo.",
+		resultado:
+			"MVP aprovado em WCAG AA, equipe capacitada, processos estabelecidos.",
+	},
+	{
+		titulo: "E-commerce refatorando plataforma",
+		situacao:
+			"Empresa grande refazendo plataforma e quer garantir acessibilidade, mas equipe não tem experiência.",
+		solucao:
+			"Consultoria Estratégica (6 meses) - acompanhamento de toda refatoração, treinamento de múltiplas squads.",
+		resultado:
+			"Plataforma 100% acessível, 3 squads treinadas, Design System acessível criado.",
+	},
+	{
+		titulo: "Agência revisando projeto",
+		situacao:
+			"Agência entregando projeto para cliente que exige conformidade, precisa validação técnica.",
+		solucao:
+			"Mentoria Pontual (3 sessões) para revisar implementação crítica e validar antes da entrega.",
+		resultado:
+			"Cliente satisfeito, projeto aprovado, agência aprendeu para próximos projetos.",
+	},
+];
 
 const diferenciais = [
-  {
-    titulo: 'Prático, não teórico',
-    descricao:
-      'Trabalho no SEU código, no SEU contexto. Não é consultoria genérica de slides - é mão na massa com você.',
-  },
-  {
-    titulo: 'Adaptado ao seu ritmo',
-    descricao:
-      'Não forço velocidade. Trabalhamos no seu ritmo, respeitando capacidade da equipe e prioridades do negócio.',
-  },
-  {
-    titulo: 'Transparência total',
-    descricao: 'Documentação aberta, decisões explicadas, sem caixa preta. Você entende o porquê de cada recomendação.',
-  },
-  {
-    titulo: 'Foco em autonomia',
-    descricao: 'Objetivo é que vocês não precisem mais de mim. Ensino para que a equipe seja autossuficiente.',
-  },
-]
+	{
+		titulo: "Prático, não teórico",
+		descricao:
+			"Trabalho no SEU código, no SEU contexto. Não é consultoria genérica de slides - é mão na massa com você.",
+	},
+	{
+		titulo: "Adaptado ao seu ritmo",
+		descricao:
+			"Não forço velocidade. Trabalhamos no seu ritmo, respeitando capacidade da equipe e prioridades do negócio.",
+	},
+	{
+		titulo: "Transparência total",
+		descricao:
+			"Documentação aberta, decisões explicadas, sem caixa preta. Você entende o porquê de cada recomendação.",
+	},
+	{
+		titulo: "Foco em autonomia",
+		descricao:
+			"Objetivo é que vocês não precisem mais de mim. Ensino para que a equipe seja autossuficiente.",
+	},
+];
 
 const faq = [
-  {
-    pergunta: 'Qual a diferença entre mentoria e consultoria?',
-    resposta:
-      'Mentoria é mais focada em capacitação técnica da equipe, hands-on no código. Consultoria Estratégica é mais ampla - inclui processos, governança, múltiplas equipes e transformação organizacional. Ambas incluem acompanhamento contínuo.',
-  },
-  {
-    pergunta: 'Preciso ter código pronto para começar?',
-    resposta:
-      'Não! Posso começar desde a fase de planejamento/design. Inclusive, é melhor envolver acessibilidade cedo. Mas também ajudo com código legado e refatorações.',
-  },
-  {
-    pergunta: 'Trabalha com equipes remotas?',
-    resposta:
-      'Sim! 100% remoto funciona perfeitamente. Uso Slack/WhatsApp para assíncrono e Zoom/Meet para sessões síncronas. Tenho experiência com times distribuídos.',
-  },
-  {
-    pergunta: 'E se eu não souber ainda o que preciso?',
-    resposta:
-      'Normal! Começamos com uma sessão de diagnóstico (incluída no primeiro mês) onde mapeamos suas necessidades e definimos o melhor caminho juntos.',
-  },
-  {
-    pergunta: 'Posso cancelar a qualquer momento?',
-    resposta:
-      'Mentoria Mensal: sim, com aviso prévio de 30 dias. Consultoria Estratégica: contrato mínimo de 3 meses, depois pode cancelar com 30 dias de aviso.',
-  },
-  {
-    pergunta: 'Fornece material e documentação?',
-    resposta:
-      'Sim! Tudo que criamos juntos fica documentado - decisões, boas práticas, guias internos. Você fica com todo o material para referência futura.',
-  },
-]
+	{
+		pergunta: "Qual a diferença entre mentoria e consultoria?",
+		resposta:
+			"Mentoria é mais focada em capacitação técnica da equipe, hands-on no código. Consultoria Estratégica é mais ampla - inclui processos, governança, múltiplas equipes e transformação organizacional. Ambas incluem acompanhamento contínuo.",
+	},
+	{
+		pergunta: "Preciso ter código pronto para começar?",
+		resposta:
+			"Não! Posso começar desde a fase de planejamento/design. Inclusive, é melhor envolver acessibilidade cedo. Mas também ajudo com código legado e refatorações.",
+	},
+	{
+		pergunta: "Trabalha com equipes remotas?",
+		resposta:
+			"Sim! 100% remoto funciona perfeitamente. Uso Slack/WhatsApp para assíncrono e Zoom/Meet para sessões síncronas. Tenho experiência com times distribuídos.",
+	},
+	{
+		pergunta: "E se eu não souber ainda o que preciso?",
+		resposta:
+			"Normal! Começamos com uma sessão de diagnóstico (incluída no primeiro mês) onde mapeamos suas necessidades e definimos o melhor caminho juntos.",
+	},
+	{
+		pergunta: "Posso cancelar a qualquer momento?",
+		resposta:
+			"Mentoria Mensal: sim, com aviso prévio de 30 dias. Consultoria Estratégica: contrato mínimo de 3 meses, depois pode cancelar com 30 dias de aviso.",
+	},
+	{
+		pergunta: "Fornece material e documentação?",
+		resposta:
+			"Sim! Tudo que criamos juntos fica documentado - decisões, boas práticas, guias internos. Você fica com todo o material para referência futura.",
+	},
+];
 ---
 
 <Layout title="Consultoria - Bruno Pulis">
