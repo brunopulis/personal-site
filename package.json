@@ -7,7 +7,7 @@
 		"astro": "astro",
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "astro build --remote",
 		"preview": "astro build && astro preview",
 		"sync": "astro sync",
 		"check": "astro check",
