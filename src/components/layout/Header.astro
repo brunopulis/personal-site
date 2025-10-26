@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import { Menu, X } from "@lucide/astro";
-import pulisLogo from "@/assets/images/horizontal/blood.svg";
-import SkipLink from "@/components/utils/SkipLink.astro";
+
+import pulisLogo from "@assets/images/horizontal/blood.svg";
+import SkipLink from "@components/utils/SkipLink.astro";
 
 const { pathname } = Astro.url;
 ---
@@ -16,7 +17,7 @@ const { pathname } = Astro.url;
 <header x-data="{ open: false }" class="w-full bg-white/90 py-4 backdrop-blur-xs transition-colors duration-300">
   <SkipLink />
   <div class="container-custom flex items-center justify-between">
-    <div class="flex-shrink-0">
+    <div class="shrink-0">
       <a href="/" class="" aria-label="Ir para página inicial">
         <Image src={pulisLogo} class="h6- w-auto" alt="Bruno Pulis" loading="eager" />
       </a>

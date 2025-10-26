@@ -1,6 +1,6 @@
 ---
 import { ExternalLink } from "@lucide/astro";
-import personalProjects from "@/data/personal-projects.json";
+import personalProjects from "@data/personal-projects.json";
 
 const { personProjects } = personalProjects;
 ---
@@ -43,7 +43,7 @@ const { personProjects } = personalProjects;
               class="text-errie-black inline-flex items-center gap-2 font-semibold underline-offset-8 transition-colors hover:underline"
             >
               Ver projeto
-              <ExternalLink class="h-4 w-4" />
+              <ExternalLink class="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         ))
