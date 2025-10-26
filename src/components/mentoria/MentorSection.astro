@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
+
 import { ArrowRight } from "@lucide/astro";
-import me from "@/assets/palestras.png";
+import me from "@assets/palestras.png";
 ---
 
 <section class="bg-gray-900 py-16 md:py-24" id="mentor" aria-labelledby="mentor-heading">
@@ -43,7 +44,7 @@ import me from "@/assets/palestras.png";
       </div>
 
       <div class="relative">
-        <div class="aspect-[3/4] overflow-hidden rounded-lg">
+        <div class="aspect-3/4 overflow-hidden rounded-lg">
           <Image src={me} alt="Bruno Pulis" class="h-full w-full object-cover" loading="lazy" />
         </div>
       </div>
