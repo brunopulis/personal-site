@@ -1,7 +1,7 @@
 {
 	"projects": [
 		{
-			"image": "@/assets/projects/magra-de-verdade.webp",
+			"image": "@assets/projects/magra-de-verdade.webp",
 			"title": "Magra de Verdade",
 			"service": "Desenvolvimento web",
 			"description": "Página de Vendas",
@@ -15,7 +15,7 @@
 			]
 		},
 		{
-			"image": "@/assets/projects/biblioteca-da-revolucao.webp",
+			"image": "@assets/projects/biblioteca-da-revolucao.webp",
 			"title": "Biblioteca da Revolução",
 			"service": "Desenvolvimento web",
 			"description": "Página de Vendas",
@@ -29,7 +29,7 @@
 			]
 		},
 		{
-			"image": "@/assets/projects/henrique-noal.webp",
+			"image": "@assets/projects/henrique-noal.webp",
 			"title": "Henrique Noal",
 			"service": "Desenvolvimento web",
 			"description": "Página de Vendas",
@@ -43,7 +43,7 @@
 			]
 		},
 		{
-			"image": "@/assets/projects/forja-comercial.webp",
+			"image": "@assets/projects/forja-comercial.webp",
 			"title": "Forja Comercial",
 			"description": "Página de Vendas",
 			"featured": false,
@@ -56,7 +56,7 @@
 			]
 		},
 		{
-			"image": "@/assets/projects/henriquenoal.png",
+			"image": "@assets/projects/henriquenoal.png",
 			"title": "Vista Ser",
 			"description": "Página de espera",
 			"featured": false,
@@ -69,7 +69,7 @@
 			]
 		},
 		{
-			"image": "@/assets/projects/henriquenoal.png",
+			"image": "@assets/projects/henriquenoal.png",
 			"title": "Raphael Bessa",
 			"description": "Landing Page",
 			"featured": false,

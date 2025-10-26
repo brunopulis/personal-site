@@ -1,13 +1,14 @@
 ---
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import HeroSection from "@/components/layout/HeroSection.astro";
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+
+import Header from "@components/layout/Header.astro";
+import HeroSection from "@components/layout/HeroSection.astro";
+import Footer from "@components/layout/Footer.astro";
 ---
 
 <Layout title="Uso de IA - Bruno Pulis">
   <Header />
-  <main>
+  <main id="main-content">
     <HeroSection title="Uso de IA" />
     <section class="py-16">
       <div class="container-custom max-3xl mx-auto">
