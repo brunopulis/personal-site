@@ -27,6 +27,8 @@ const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
 	month: "long",
 	day: "numeric",
 });
+
+export const prerender = true;
 ---
 
 <Layout title={`${letter.data.title} - Newsletter`}>

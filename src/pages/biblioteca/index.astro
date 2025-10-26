@@ -19,6 +19,8 @@ const livrosPorAno = Object.entries(
 			{} as Record<string, (typeof books)[0][]>,
 		),
 ).sort((a, b) => Number(b[0]) - Number(a[0]));
+
+export const prerender = true;
 ---
 
 <Layout title="Minha Biblioteca - Bruno Pulis" description="Livros que li ao longo dos anos">
