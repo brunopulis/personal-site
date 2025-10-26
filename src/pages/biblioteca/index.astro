@@ -1,9 +1,10 @@
 ---
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import MediaCard from "@/components/MediaCard.astro";
-import books from "@/data/books.json";
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import MediaCard from "@components/MediaCard.astro";
+import Footer from "@components/layout/Footer.astro";
+
+import books from "@data/books.json";
 
 const livrosPorAno = Object.entries(
 	books
@@ -23,7 +24,6 @@ const livrosPorAno = Object.entries(
 <Layout title="Minha Biblioteca - Bruno Pulis" description="Livros que li ao longo dos anos">
   <Header />
   <main id="main-content">
-    <!-- Hero -->
     <section class="bg-blood-red-800 relative overflow-hidden text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
@@ -47,7 +47,6 @@ const livrosPorAno = Object.entries(
     </section>
     <section class="mx-auto max-w-7xl px-6 py-12">
       <div class="space-y-12">
-        <!-- Agrupar livros por ano e renderizar usando Astro syntax -->
         {
           livrosPorAno.map(([year, booksInYear]) => (
             <div class="space-y-6">

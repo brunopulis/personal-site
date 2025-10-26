@@ -1,11 +1,12 @@
 ---
-// https://claude.ai/public/artifacts/a3658293-f2ff-4904-a92c-0d697d7207a4
-import { Film, Star } from "@lucide/astro";
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import MediaCard from "@/components/MediaCard.astro";
-import movies from "@/data/movies.json";
-import Layout from "@/layouts/Layout.astro";
+import { Film } from "@lucide/astro";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import MediaCard from "@components/MediaCard.astro";
+import Footer from "@components/layout/Footer.astro";
+
+import movies from "@data/movies.json";
 
 const moviesPerYear = Object.entries(
 	movies
@@ -25,8 +26,7 @@ const moviesPerYear = Object.entries(
 <Layout title="Meus Filmes - Bruno Pulis" description="Livros que li ao longo dos anos">
   <Header />
   <main id="main-content">
-    <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -34,7 +34,7 @@ const moviesPerYear = Object.entries(
       <div class="mx-auto max-w-7xl px-6 py-20">
         <div class="max-w-3xl">
           <div class="mb-6 flex items-center gap-3">
-            <Film class="h-12 w-12 text-white" />
+            <Film class="h-12 w-12 text-white" aria-hidden="true" />
             <h1 class="text-5xl font-bold text-white">Meus Filmes</h1>
           </div>
           <p class="mb-8 text-xl leading-relaxed text-white">

@@ -1,13 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import { ExternalLink } from "@lucide/astro";
-import bibliotecaDaRevolucao from "@/assets/projects/biblioteca-da-revolucao.webp";
-import forja from "@/assets/projects/forja-comercial.webp";
-import henriqueNoal from "@/assets/projects/henrique-noal.webp";
-import magraDeVerdade from "@/assets/projects/magra-de-verdade.webp";
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import Layout from "@/layouts/Layout.astro";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+
+import bibliotecaDaRevolucao from "@assets/projects/biblioteca-da-revolucao.webp";
+import forja from "@assets/projects/forja-comercial.webp";
+import henriqueNoal from "@assets/projects/henrique-noal.webp";
+import magraDeVerdade from "@assets/projects/magra-de-verdade.webp";
 
 const projectsData = {
 	projects: [
@@ -86,7 +88,7 @@ const projects = projectsData.projects;
 <Layout title="Projetos - Bruno Pulis">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
+    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
