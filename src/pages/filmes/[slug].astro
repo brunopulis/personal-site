@@ -1,31 +1,30 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import HeroSection from '@/components/layout/HeroSection.astro'
-import Footer from '@/components/layout/Footer.astro'
-
-import { getCollection, render } from 'astro:content'
-import Newsletter from '@/components/Newsletter.astro'
+import { getCollection, render } from "astro:content";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import HeroSection from "@/components/layout/HeroSection.astro";
+import Newsletter from "@/components/Newsletter.astro";
+import Layout from "@/layouts/Layout.astro";
 
 // Gera as rotas para todos os letters
 export async function getStaticPaths() {
-  const letters = await getCollection('newsletter')
+	const letters = await getCollection("newsletter");
 
-  return letters.map((letter) => ({
-    params: { slug: letter.id }, // mantém apenas o ID do letter
-    props: { letter },
-  }))
+	return letters.map((letter) => ({
+		params: { slug: letter.id }, // mantém apenas o ID do letter
+		props: { letter },
+	}));
 }
 
-const { letter } = Astro.props
-const { Content } = await render(letter)
+const { letter } = Astro.props;
+const { Content } = await render(letter);
 
 // Formata a data para pt-BR
-const formattedDate = new Date(letter.data.date).toLocaleDateString('pt-BR', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-})
+const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
 ---
 
 <Layout title={`${letter.data.title} - Blog`}>

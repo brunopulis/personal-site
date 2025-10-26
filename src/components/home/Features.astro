@@ -1,37 +1,43 @@
 ---
-import { Users, ArrowRight, Code,MessageCircle, PersonStanding } from "@lucide/astro";
 import { Image } from "astro:assets";
-
-import mentoria  from "@/assets/images/site/mentoria.webp";
+import {
+	ArrowRight,
+	Code,
+	MessageCircle,
+	PersonStanding,
+	Users,
+} from "@lucide/astro";
 import auditoria from "@/assets/images/site/auditoria.webp";
-import palestras  from "@/assets/images/site/palestras.webp";
+import mentoria from "@/assets/images/site/mentoria.webp";
+import palestras from "@/assets/images/site/palestras.webp";
 
 const icons = { Users, Code, MessageCircle };
 
 const features = [
-  {
-    title: "Mentoria",
-    description: "Não adianta só entregar um relatório. Eu trabalho com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.",
-    icon: "Users",
-    imageUrl: mentoria,
-    url: "/servicos/mentoria",
-  },
-  {
-    title: "Auditoria",
-    description:
-      "Analiso seu site ou documento e te mostro exatamente o que precisa melhorar (e por quê isso importa para seus usuários).",
-    icon: "Code",
-    imageUrl: auditoria,
-    url: "/servicos/auditoria-de-acessibilidade",
-  },
-  {
-    title: "Palestras",
-    description:
-      "Levo acessibilidade para empresas e eventos de forma prática, sem jargões complicados.",
-    icon: "MessageCircle",
-    imageUrl: palestras,
-    url: "/servicos/palestras",
-  }
+	{
+		title: "Mentoria",
+		description:
+			"Não adianta só entregar um relatório. Eu trabalho com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.",
+		icon: "Users",
+		imageUrl: mentoria,
+		url: "/servicos/mentoria",
+	},
+	{
+		title: "Auditoria",
+		description:
+			"Analiso seu site ou documento e te mostro exatamente o que precisa melhorar (e por quê isso importa para seus usuários).",
+		icon: "Code",
+		imageUrl: auditoria,
+		url: "/servicos/auditoria-de-acessibilidade",
+	},
+	{
+		title: "Palestras",
+		description:
+			"Levo acessibilidade para empresas e eventos de forma prática, sem jargões complicados.",
+		icon: "MessageCircle",
+		imageUrl: palestras,
+		url: "/servicos/palestras",
+	},
 ];
 ---
 

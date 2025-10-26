@@ -1,22 +1,22 @@
 ---
 interface Props {
-  title: string
-  highlightText?: string
-  timestamp?: string
+	title: string;
+	highlightText?: string;
+	timestamp?: string;
 }
 
-const { title, highlightText, timestamp } = Astro.props
+const { title, highlightText, timestamp } = Astro.props;
 
 // Split the title to insert the highlighted text if provided
-let titleStart = title
-let titleEnd = ''
+let titleStart = title;
+let titleEnd = "";
 
 if (highlightText) {
-  const titleParts = title.split(highlightText)
-  if (titleParts.length > 1) {
-    titleStart = titleParts[0]
-    titleEnd = titleParts[1]
-  }
+	const titleParts = title.split(highlightText);
+	if (titleParts.length > 1) {
+		titleStart = titleParts[0];
+		titleEnd = titleParts[1];
+	}
 }
 ---
 

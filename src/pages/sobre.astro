@@ -1,31 +1,29 @@
 ---
+import { Image } from "astro:assets";
 import {
-  ArrowRight,
-  MapPin,
-  Calendar,
-  Code,
-  Award,
-  ExternalLink,
-  Lightbulb,
-  Heart,
-  Users,
-  Church,
-  Sparkles,
-  Guitar,
-  Target,
-  BookOpen,
-  Film,
-  Zap,
-} from '@lucide/astro'
+	ArrowRight,
+	Award,
+	BookOpen,
+	Calendar,
+	Church,
+	Code,
+	ExternalLink,
+	Film,
+	Guitar,
+	Heart,
+	Lightbulb,
+	MapPin,
+	Sparkles,
+	Target,
+	Users,
+	Zap,
+} from "@lucide/astro";
+import me from "@/assets/me.webp";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import Layout from "@/layouts/Layout.astro";
 
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import Footer from '@/components/layout/Footer.astro'
-
-import { Image } from 'astro:assets'
-import me from '@/assets/me.webp'
-
-const title = 'Sobre — Bruno Pulis'
+const title = "Sobre — Bruno Pulis";
 ---
 
 <Layout title={title}>

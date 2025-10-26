@@ -1,121 +1,121 @@
 [
-  {
-    "name": "Reinaldo Ferraz",
-    "url": "https://reinaldoferraz.com.br",
-    "rss": "https://rsspress.me/coryd",
-    "description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
-    "category": "Acessibilidade"
-  },
-  {
-    "name": "Sara Souedian",
-    "url": "http://sarasoueidan.com/",
-    "rss": "https://www.sarasoueidan.com/blog/index.xml",
-    "description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
-    "category": "Acessibilidade"
-  },
-  {
-    "name": "Cory Dransfeldt",
-    "url": "https://coryd.dev",
-    "rss": "https://rsspress.me/coryd",
-    "description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
-    "category": "Web"
-  },
-  {
-    "name": "Keenan",
-    "url": "https://gkeenan.co/avgb",
-    "rss": "https://gkeenan.co/avgb?format=rss",
-    "description": "A very smart and handsome friend who has an incredible way with words.",
-    "category": "Pessoal"
-  },
-  {
-    "name": "David Daaaaaarnes",
-    "url": "https://darn.es",
-    "rss": "https://darn.es/rss.xml",
-    "description": "Dave posts about front end web things including lots of web component things.",
-    "category": "Front-end"
-  },
-  {
-    "name": "Adam Newbold",
-    "url": "https://notes.neatnik.net",
-    "rss": "https://notes.neatnik.net/rss.xml",
-    "description": "The creator of omg.lol who has to write more stuff if I list him here.",
-    "category": "Web"
-  },
-  {
-    "name": "Zoe Aubert",
-    "url": "https://zoeaubert.me",
-    "rss": "https://zoeaubert.me/rss.xml",
-    "description": "My friend and colleague who posts about all sorts including type systems, Warhammer, and Lego.",
-    "category": "Diversos"
-  },
-  {
-    "name": "Sophie Koonin",
-    "url": "https://localghost.dev",
-    "rss": "https://localghost.dev/rss.xml",
-    "description": "A developer who has an incredible website (check out the early 00s theme) and brings back the fun of the web.",
-    "category": "Web"
-  },
-  {
-    "name": "Martin Feld",
-    "url": "https://loungeruminator.net",
-    "rss": "https://loungeruminator.net/rss/",
-    "description": "One third of Hemispheric Views, Martin posts sporadically but they're always bangers.",
-    "category": "Pessoal"
-  },
-  {
-    "name": "Joe Steel",
-    "url": "https://joe-steel.com",
-    "rss": "https://joe-steel.com/rss",
-    "description": "Joe is a VFX artist and blogs about various media things, most notable about how terrible the Apple TV is (it is terrible).",
-    "category": "Mídia"
-  },
-  {
-    "name": "Lewis Dale",
-    "url": "https://lewisdale.dev",
-    "rss": "https://lewisdale.dev/rss/",
-    "description": "Lewis is a fellow UK-based developer posting about development things as well as cycling.",
-    "category": "Desenvolvimento"
-  },
-  {
-    "name": "Wade Urry",
-    "url": "https://www.iwader.co.uk",
-    "rss": "https://iwader.co.uk/rss.xml",
-    "description": "A friend and colleague posting about programming-related things and the occasional recipe.",
-    "category": "Programação"
-  },
-  {
-    "name": "fLaMEd",
-    "url": "https://flamedfury.com",
-    "rss": "https://flamedfury.com/rss.xml/",
-    "description": "Posts about the open web and related topics and just look at that website. So good.",
-    "category": "Web"
-  },
-  {
-    "name": "Matt Birchler",
-    "url": "https://birchtree.me",
-    "rss": "https://birchtree.me/rss/",
-    "description": "Matt is a blogger and YouTuber posting thoughtful things about technology, media, and everything in between.",
-    "category": "Tecnologia"
-  },
-  {
-    "name": "Andrew Canion",
-    "url": "https://canion.blog",
-    "rss": "https://canion.blog/categories/article/rss.xml",
-    "description": "One third of Hemispheric Views, Andrew posts about spreadsheets. And probably other things too.",
-    "category": "Diversos"
-  },
-  {
-    "name": "Zach Leatherman",
-    "url": "https://www.zachleat.com",
-    "rss": "https://www.zachleat.com/web/rss",
-    "description": "The creator of Eleventy who posts excellent articles about Eleventy, web components, and everything in between.",
-    "category": "CSS"
-  },
-  {
-    "name": "Marty Day",
-    "url": "https://www.blast-o-rama.com",
-    "rss": "https://www.blast-o-rama.com/rss/",
-    "description": "Marty is great at finding interesting articles and videos. Gorgeous website.",
-    "category": "Mídia"
-  }
+	{
+		"name": "Reinaldo Ferraz",
+		"url": "https://reinaldoferraz.com.br",
+		"rss": "https://rsspress.me/coryd",
+		"description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
+		"category": "Acessibilidade"
+	},
+	{
+		"name": "Sara Souedian",
+		"url": "http://sarasoueidan.com/",
+		"rss": "https://www.sarasoueidan.com/blog/index.xml",
+		"description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
+		"category": "Acessibilidade"
+	},
+	{
+		"name": "Cory Dransfeldt",
+		"url": "https://coryd.dev",
+		"rss": "https://rsspress.me/coryd",
+		"description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
+		"category": "Web"
+	},
+	{
+		"name": "Keenan",
+		"url": "https://gkeenan.co/avgb",
+		"rss": "https://gkeenan.co/avgb?format=rss",
+		"description": "A very smart and handsome friend who has an incredible way with words.",
+		"category": "Pessoal"
+	},
+	{
+		"name": "David Daaaaaarnes",
+		"url": "https://darn.es",
+		"rss": "https://darn.es/rss.xml",
+		"description": "Dave posts about front end web things including lots of web component things.",
+		"category": "Front-end"
+	},
+	{
+		"name": "Adam Newbold",
+		"url": "https://notes.neatnik.net",
+		"rss": "https://notes.neatnik.net/rss.xml",
+		"description": "The creator of omg.lol who has to write more stuff if I list him here.",
+		"category": "Web"
+	},
+	{
+		"name": "Zoe Aubert",
+		"url": "https://zoeaubert.me",
+		"rss": "https://zoeaubert.me/rss.xml",
+		"description": "My friend and colleague who posts about all sorts including type systems, Warhammer, and Lego.",
+		"category": "Diversos"
+	},
+	{
+		"name": "Sophie Koonin",
+		"url": "https://localghost.dev",
+		"rss": "https://localghost.dev/rss.xml",
+		"description": "A developer who has an incredible website (check out the early 00s theme) and brings back the fun of the web.",
+		"category": "Web"
+	},
+	{
+		"name": "Martin Feld",
+		"url": "https://loungeruminator.net",
+		"rss": "https://loungeruminator.net/rss/",
+		"description": "One third of Hemispheric Views, Martin posts sporadically but they're always bangers.",
+		"category": "Pessoal"
+	},
+	{
+		"name": "Joe Steel",
+		"url": "https://joe-steel.com",
+		"rss": "https://joe-steel.com/rss",
+		"description": "Joe is a VFX artist and blogs about various media things, most notable about how terrible the Apple TV is (it is terrible).",
+		"category": "Mídia"
+	},
+	{
+		"name": "Lewis Dale",
+		"url": "https://lewisdale.dev",
+		"rss": "https://lewisdale.dev/rss/",
+		"description": "Lewis is a fellow UK-based developer posting about development things as well as cycling.",
+		"category": "Desenvolvimento"
+	},
+	{
+		"name": "Wade Urry",
+		"url": "https://www.iwader.co.uk",
+		"rss": "https://iwader.co.uk/rss.xml",
+		"description": "A friend and colleague posting about programming-related things and the occasional recipe.",
+		"category": "Programação"
+	},
+	{
+		"name": "fLaMEd",
+		"url": "https://flamedfury.com",
+		"rss": "https://flamedfury.com/rss.xml/",
+		"description": "Posts about the open web and related topics and just look at that website. So good.",
+		"category": "Web"
+	},
+	{
+		"name": "Matt Birchler",
+		"url": "https://birchtree.me",
+		"rss": "https://birchtree.me/rss/",
+		"description": "Matt is a blogger and YouTuber posting thoughtful things about technology, media, and everything in between.",
+		"category": "Tecnologia"
+	},
+	{
+		"name": "Andrew Canion",
+		"url": "https://canion.blog",
+		"rss": "https://canion.blog/categories/article/rss.xml",
+		"description": "One third of Hemispheric Views, Andrew posts about spreadsheets. And probably other things too.",
+		"category": "Diversos"
+	},
+	{
+		"name": "Zach Leatherman",
+		"url": "https://www.zachleat.com",
+		"rss": "https://www.zachleat.com/web/rss",
+		"description": "The creator of Eleventy who posts excellent articles about Eleventy, web components, and everything in between.",
+		"category": "CSS"
+	},
+	{
+		"name": "Marty Day",
+		"url": "https://www.blast-o-rama.com",
+		"rss": "https://www.blast-o-rama.com/rss/",
+		"description": "Marty is great at finding interesting articles and videos. Gorgeous website.",
+		"category": "Mídia"
+	}
 ]

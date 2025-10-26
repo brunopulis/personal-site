@@ -1,17 +1,18 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import Footer from '@/components/layout/Footer.astro'
-import HeroSection from '@/components/layout/HeroSection.astro'
+import { getCollection } from "astro:content";
+import { Clock, MoreHorizontal, Share2 } from "@lucide/astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import HeroSection from "@/components/layout/HeroSection.astro";
+import Layout from "@/layouts/Layout.astro";
 
-import { Clock, Share2, MoreHorizontal } from '@lucide/astro'
-import { getCollection } from 'astro:content'
-
-const allNotes = await getCollection('notes')
+const allNotes = await getCollection("notes");
 
 const sortedNotes = allNotes.sort((a, b) => {
-  return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
-})
+	return (
+		new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
+	);
+});
 ---
 
 <Layout title="Notas - Bruno Pulis">

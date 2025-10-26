@@ -1,24 +1,23 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import MediaCard from '@/components/MediaCard.astro'
-import Footer from '@/components/layout/Footer.astro'
-
-import books from '@/data/books.json'
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import MediaCard from "@/components/MediaCard.astro";
+import books from "@/data/books.json";
+import Layout from "@/layouts/Layout.astro";
 
 const livrosPorAno = Object.entries(
-  books
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .reduce(
-      (acc, book) => {
-        const year = new Date(book.date).getFullYear()
-        acc[year] = acc[year] || []
-        acc[year].push(book)
-        return acc
-      },
-      {} as Record<string, (typeof books)[0][]>
-    )
-).sort((a, b) => Number(b[0]) - Number(a[0]))
+	books
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.reduce(
+			(acc, book) => {
+				const year = new Date(book.date).getFullYear();
+				acc[year] = acc[year] || [];
+				acc[year].push(book);
+				return acc;
+			},
+			{} as Record<string, (typeof books)[0][]>,
+		),
+).sort((a, b) => Number(b[0]) - Number(a[0]));
 ---
 
 <Layout title="Minha Biblioteca - Bruno Pulis" description="Livros que li ao longo dos anos">
