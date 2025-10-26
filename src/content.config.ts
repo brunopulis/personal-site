@@ -1,4 +1,4 @@
-import { blog, books, newsletter, notes } from "@/content/schemas";
+import { blog, books, newsletter, notes } from "@content/schemas";
 
 export const collections = {
 	blog,

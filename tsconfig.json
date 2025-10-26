@@ -16,6 +16,12 @@
 			"@utils/*": [
 				"utils/*"
 			],
+			"@data/*": [
+				"data/*"
+			],
+			"@scripts/*": [
+				"scripts/*"
+			],
 			"@components/*": [
 				"components/*"
 			],
