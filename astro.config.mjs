@@ -12,6 +12,8 @@ import mdx from '@astrojs/mdx'
 import umami from '@yeskunall/astro-umami'
 import robotsTxt from 'astro-robots-txt'
 
+import db from '@astrojs/db';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -64,6 +66,7 @@ export default defineConfig({
         },
       ],
     }),
+    db(),
   ],
   image: {
     responsiveStyles: true,
