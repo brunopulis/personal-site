@@ -1,5 +1,7 @@
 ---
 title: 'Arrume sua cama: Pequenas coisas que podem mudar a sua vida'
+image: '/src/assets/images/blog/cover-arrume-sua-cama.jpg'
+imageAlt: ''
 publishDate: 2023-06-27
 category: 'Indicações'
 tags: ['livros', 'review', 'desenvolvimento pessoal']

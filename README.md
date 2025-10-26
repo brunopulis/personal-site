@@ -1,4 +1,6 @@
-# Astro Sassify Template
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e6475c7-21bb-4f96-bc1a-9180373a0aa1/deploy-status)](https://app.netlify.com/projects/brunopulis/deploys)
+
+# Personal Site
 
 A modern, responsive Astro template with Tailwind CSS and Alpine.js integration. This template provides a solid foundation for building fast, SEO-friendly websites with a clean design system.
 

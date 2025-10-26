@@ -1,5 +1,7 @@
 ---
 title: Conhecendo o Web Accessibility Initiative
+image: ''
+imageAlt: ''
 publishDate: 2021-11-17
 category: 'Acessibilidade'
 url: https://brunopulis.com/web-accessibility-initiative/

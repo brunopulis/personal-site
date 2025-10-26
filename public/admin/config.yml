@@ -4,7 +4,8 @@ backend:
   squash_merges: true
 
 publish_mode: editorial_workflow
-media_folder: 'static/images'
+
+media_folder: 'src/assets/images'
 public_folder: '/images'
 
 collections:
@@ -31,7 +32,7 @@ collections:
         default: ''
         date_format: 'DD/MM/YYYY'
         time_format: 'HH:mm'
-        format: 'YYYY-MM-DD'
+        format: 'YYYY-MM-DD HH:mm:ss'
         required: true
 
       - label: 'Autor'

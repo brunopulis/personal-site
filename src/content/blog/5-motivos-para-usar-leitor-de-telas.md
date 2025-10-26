@@ -1,5 +1,7 @@
 ---
 title: 5 motivos para testar acessibilidade com leitor de telas
+image: ''
+imageAlt: ''
 publishDate: 2022-04-04
 draft: false
 category: 'Acessibilidade'

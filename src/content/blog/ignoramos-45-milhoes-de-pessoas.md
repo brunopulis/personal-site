@@ -1,5 +1,7 @@
 ---
 title: Ignoramos 45 milhões de pessoas
+image: ''
+imageAlt: ''
 publishDate: 2014-12-18
 category: 'Acessibilidade'
 url: https://brunopulis.com/ignoramos-45-milhoes-de-pessoas/

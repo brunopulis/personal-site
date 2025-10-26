@@ -1,7 +1,8 @@
 ---
 title: 'Acessibilidade e critérios de aceite: o quê eles tem um comum?'
+image: ''
+imageAlt: ''
 publishDate: 2021-04-25
-draft: false
 category: 'Acessibilidade'
 ---
 

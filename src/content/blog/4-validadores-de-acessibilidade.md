@@ -1,7 +1,8 @@
 ---
 title: 4 validadores de acessibilidade que recomendo
+image: '/src/assets/images/blog/validadores-acessibilidade.png'
+imageAlt: ''
 publishDate: 2014-02-19
-draft: false
 category: Acessibilidade
 tags: ['validadores']
 ---

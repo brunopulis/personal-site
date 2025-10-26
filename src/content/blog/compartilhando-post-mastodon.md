@@ -1,6 +1,8 @@
 ---
 title: Compartilhando post no Mastodon
 publishDate: 2024-09-23
+image: '/src/assets/images/blog/mastodon.jpg'
+imageAlt: 'Capa do artigo: Meus aplicativos de 2024'
 category: 'Pessoal'
 tags:
   - fediverso

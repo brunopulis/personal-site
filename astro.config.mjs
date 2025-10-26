@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
-// import db from "@astrojs/db";
+
+import db from "@astrojs/db";
+import netlify from '@astrojs/netlify'
 import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
@@ -12,19 +14,10 @@ import mdx from '@astrojs/mdx'
 import umami from '@yeskunall/astro-umami'
 import robotsTxt from 'astro-robots-txt'
 
-// https://astro.build/config
 export default defineConfig({
-  output: 'static',
-  site: 'https://brunopulis.com',
-  build: {
-    assets: 'assets',
-  },
-  compressHTML: true,
-  vite: {
-    plugins: [tailwindcss()],
-  },
   integrations: [
     react(),
+    db(),
     icon(),
     alpinejs(),
     sitemap(),
@@ -64,7 +57,18 @@ export default defineConfig({
         },
       ],
     }),
+
   ],
+  adapter: netlify(),
+  output: 'server',
+  site: 'https://brunopulis.com',
+  build: {
+    assets: 'assets',
+  },
+  compressHTML: true,
+  vite: {
+    plugins: [tailwindcss()],
+  },
   image: {
     responsiveStyles: true,
   },

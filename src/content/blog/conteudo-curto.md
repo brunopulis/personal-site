@@ -2,6 +2,7 @@
 title: 'Uma doença chamada conteúdo curto'
 publishDate: 2024-10-02
 category: 'Pessoal'
+image: '/src/assets/images/blog/social-midia-scaled.jpg'
 imageAlt: 'Capa do artigo: Uma doença chamada conteúdo curto'
 author: 'Pulis'
 excerpt: 'Como o conteúdo curto nos viciou e quais são as alternativas para sair dessa loucura.'

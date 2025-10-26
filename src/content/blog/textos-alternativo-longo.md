@@ -1,7 +1,9 @@
 ---
 title: Como criar texto alternativo longo
+image: ''
+imageAlt: ''
 publishDate: 2024-03-25
-category: "Frontend"
+category: 'Frontend'
 url: https://brunopulis.com/textos-alternativo-longo/
 ---
 
@@ -73,11 +75,11 @@ Dessa forma, pensei que poderia usar uma descrição sucinta no atributo ALT e u
 Ao invés de colocar um texto alternativo extremamente grande no atributo ALT eu irei fazer da seguinte forma:
 
 ```html
-<picture> 
+<picture>
    <source srcset="./images/couple.webp" type="image/webp"    <source srcset="./images/couple.jpg" type="image/jpeg">    <img src="/images/couple.jpg" alt="Bruno e Mari fazendo careta para a câmera." aria-describedby=”desc1”>
 </picture>
 <div class="visually-hidden id="desc1">
-<p>Bruno é um homem branco, olhos escuros, usa gorro preto de lã e óculos de grau com armação preta arredondada e barba grande escura, está de casaco de zíper cinza escuro. Mariana é uma mulher branca, cabelos castanho claro longos, está com os olhos fechados apertados, está usando casaco preto e gola de lã cinza. Os dois estão com os rostos colados fazendo bico pra foto.</p> 
+<p>Bruno é um homem branco, olhos escuros, usa gorro preto de lã e óculos de grau com armação preta arredondada e barba grande escura, está de casaco de zíper cinza escuro. Mariana é uma mulher branca, cabelos castanho claro longos, está com os olhos fechados apertados, está usando casaco preto e gola de lã cinza. Os dois estão com os rostos colados fazendo bico pra foto.</p>
 </div>
 ```
 

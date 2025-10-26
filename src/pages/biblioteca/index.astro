@@ -1,7 +1,4 @@
 ---
-// https://claude.ai/public/artifacts/a3658293-f2ff-4904-a92c-0d697d7207a4
-import { Star } from '@lucide/astro'
-
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header.astro'
 import MediaCard from '@/components/MediaCard.astro'
@@ -19,8 +16,8 @@ const livrosPorAno = Object.entries(
         acc[year].push(book)
         return acc
       },
-      {} as Record<string, (typeof books)[0][]>,
-    ),
+      {} as Record<string, (typeof books)[0][]>
+    )
 ).sort((a, b) => Number(b[0]) - Number(a[0]))
 ---
 
