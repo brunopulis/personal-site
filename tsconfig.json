@@ -16,8 +16,14 @@
 			"@utils/*": [
 				"utils/*"
 			],
+			"@content/*": [
+				"content/*"
+			],
 			"@data/*": [
 				"data/*"
+			],
+			"@styles/*": [
+				"styles/*"
 			],
 			"@scripts/*": [
 				"scripts/*"
