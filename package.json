@@ -32,7 +32,6 @@
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource/source-sans-3": "^5.2.9",
 		"@philnash/astro-pagination": "^0.5.0",
-		"@supabase/supabase-js": "^2.76.0",
 		"@yeskunall/astro-umami": "^0.0.7",
 		"alpinejs": "^3.15.0",
 		"astro": "^5.14.5",
