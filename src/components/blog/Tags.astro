@@ -1,25 +1,25 @@
 ---
-import { MapPinned, Tags } from '@lucide/astro'
+import { MapPinned, Tags } from "@lucide/astro";
 
 interface Location {
-  locality: string
-  country: string
+	locality: string;
+	country: string;
 }
 
 interface Props {
-  tags?: string[]
-  location?: Location
-  publishedAt?: string[]
-  reply?: string
+	tags?: string[];
+	location?: Location;
+	publishedAt?: string[];
+	reply?: string;
 }
 
-const { tags = [], location, publishedAt = [], reply } = Astro.props
+const { tags = [], location, publishedAt = [], reply } = Astro.props;
 
 function slugify(str: string) {
-  return str
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
+	return str
+		.toLowerCase()
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
 }
 ---
 

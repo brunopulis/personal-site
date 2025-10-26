@@ -1,58 +1,58 @@
 ---
-import { ArrowRight } from '@lucide/astro'
-import TestimonialCard from '@/components/mentoria/TestimonialCard.astro'
+import { ArrowRight } from "@lucide/astro";
+import TestimonialCard from "@/components/mentoria/TestimonialCard.astro";
 
 const testimonials = [
-  {
-    name: 'Murilo Messias',
-    role: 'Frontend Developer',
-    image: '/src/assets/images/murilo.webp',
-    content:
-      'A mentoria com o Bruno foi extremamente valiosa para meu desenvolvimento profissiona e pessoal. Ele compartilhou conhecimentos aprofundados sobre testes de acessibilidade, desmistificando os conceitos da WCAG de uma forma clara e prática. As explicações detalhadas me permitiram implementar princípios de acessibilidade de maneira concreta em meus projetos de frontend, melhorando significativamente a qualidade e inclusividade das interfaces que desenvolvo. Os insights fornecidos não ficaram apenas no campo teórico, mas se traduziram em aplicações diretas no meu dia a dia como desenvolvedor.',
-  },
-  {
-    name: 'Cínthia Ferraz',
-    role: 'Analista de Testes de Software',
-    image: '/src/assets/images/cinthia.webp',
-    content:
-      'A mentoria com o Bruno foi muito enriquecedora. Ele abordou vários conhecimentos sobre testes de acessibilidade, explicou os conceito da WCAG e como aplicá-los de forma que eu consegui utilizar no dia-a-dia. Foi uma experiência muito boa que valeu muito à pena.',
-  },
-  {
-    name: 'Rosana Maria',
-    role: 'Analista de Testes',
-    image: '/src/assets/images/rosana.jpeg',
-    content:
-      'Já vinha acompanhando sobre o tema, pois acho extremamente importante conhecermos e com a mentoria tive um melhor entendimento, além de verificar na prática como realmente funciona. Grata pela mentoria, super indico.',
-  },
-  {
-    name: 'Pricila Ventura',
-    role: 'Product Designer',
-    image: '/src/assets/images/pricila.webp',
-    content:
-      'A mentoria superou minhas expectativas. Bruno Pulis é uma pessoa extremamente atenciosa e tem domínio sobre o que fala. Para mim que sou iniciante, no assunto de acessibilidade, foi uma experiência muito rica. Só tenho que agradecer por todo conhecimento compartilhado! 🙏🏽',
-  },
-  {
-    name: 'Daniela Capassi',
-    role: 'Analista de Qualidade em Acessibilidade Digital',
-    image: '/src/assets/images/daniela.webp',
-    content:
-      'A mentoria superou minhas expectativas. Bruno Pulis é uma pessoa extremamente atenciosa e tem domínio sobre o que fala. Para mim que sou iniciante, no assunto de acessibilidade, foi uma experiência muito rica. Só tenho que agradecer por todo conhecimento compartilhado! 🙏🏽',
-  },
-  {
-    name: 'Joana Voloski',
-    role: 'Product Designer',
-    image: '/src/assets/images/joana.webp',
-    content:
-      'Ter essa mentoria foi muito importante para mim, que já trabalho com acessibilidade. Me deu visões diferentes e interessantes de como realizar meu trabalho. As vezes estamos tão imersos numa solução, que uma visão externa pode nos dar outras perspectivas. Foi uma conversa muito rica, adorei',
-  },
-  {
-    name: 'Welita Mendes',
-    role: 'QA Enginner',
-    image: '/src/assets/images/welita.jpeg',
-    content:
-      'Eu conheci o Pulis através de indicação de amigos do Curso do Júlio de Lima, estava estudando sobre acessibilidade e pensando como eu poderia aplicar. Todo tempo ele foi atencioso e tirando todas as minhas dúvidas. Só tenho que agradecer pela dedicação e comprometimento.',
-  },
-]
+	{
+		name: "Murilo Messias",
+		role: "Frontend Developer",
+		image: "/src/assets/images/murilo.webp",
+		content:
+			"A mentoria com o Bruno foi extremamente valiosa para meu desenvolvimento profissiona e pessoal. Ele compartilhou conhecimentos aprofundados sobre testes de acessibilidade, desmistificando os conceitos da WCAG de uma forma clara e prática. As explicações detalhadas me permitiram implementar princípios de acessibilidade de maneira concreta em meus projetos de frontend, melhorando significativamente a qualidade e inclusividade das interfaces que desenvolvo. Os insights fornecidos não ficaram apenas no campo teórico, mas se traduziram em aplicações diretas no meu dia a dia como desenvolvedor.",
+	},
+	{
+		name: "Cínthia Ferraz",
+		role: "Analista de Testes de Software",
+		image: "/src/assets/images/cinthia.webp",
+		content:
+			"A mentoria com o Bruno foi muito enriquecedora. Ele abordou vários conhecimentos sobre testes de acessibilidade, explicou os conceito da WCAG e como aplicá-los de forma que eu consegui utilizar no dia-a-dia. Foi uma experiência muito boa que valeu muito à pena.",
+	},
+	{
+		name: "Rosana Maria",
+		role: "Analista de Testes",
+		image: "/src/assets/images/rosana.jpeg",
+		content:
+			"Já vinha acompanhando sobre o tema, pois acho extremamente importante conhecermos e com a mentoria tive um melhor entendimento, além de verificar na prática como realmente funciona. Grata pela mentoria, super indico.",
+	},
+	{
+		name: "Pricila Ventura",
+		role: "Product Designer",
+		image: "/src/assets/images/pricila.webp",
+		content:
+			"A mentoria superou minhas expectativas. Bruno Pulis é uma pessoa extremamente atenciosa e tem domínio sobre o que fala. Para mim que sou iniciante, no assunto de acessibilidade, foi uma experiência muito rica. Só tenho que agradecer por todo conhecimento compartilhado! 🙏🏽",
+	},
+	{
+		name: "Daniela Capassi",
+		role: "Analista de Qualidade em Acessibilidade Digital",
+		image: "/src/assets/images/daniela.webp",
+		content:
+			"A mentoria superou minhas expectativas. Bruno Pulis é uma pessoa extremamente atenciosa e tem domínio sobre o que fala. Para mim que sou iniciante, no assunto de acessibilidade, foi uma experiência muito rica. Só tenho que agradecer por todo conhecimento compartilhado! 🙏🏽",
+	},
+	{
+		name: "Joana Voloski",
+		role: "Product Designer",
+		image: "/src/assets/images/joana.webp",
+		content:
+			"Ter essa mentoria foi muito importante para mim, que já trabalho com acessibilidade. Me deu visões diferentes e interessantes de como realizar meu trabalho. As vezes estamos tão imersos numa solução, que uma visão externa pode nos dar outras perspectivas. Foi uma conversa muito rica, adorei",
+	},
+	{
+		name: "Welita Mendes",
+		role: "QA Enginner",
+		image: "/src/assets/images/welita.jpeg",
+		content:
+			"Eu conheci o Pulis através de indicação de amigos do Curso do Júlio de Lima, estava estudando sobre acessibilidade e pensando como eu poderia aplicar. Todo tempo ele foi atencioso e tirando todas as minhas dúvidas. Só tenho que agradecer pela dedicação e comprometimento.",
+	},
+];
 ---
 
 <section class="bg-gray-100 py-16 md:py-24" aria-labelledby="testimonials-heading">

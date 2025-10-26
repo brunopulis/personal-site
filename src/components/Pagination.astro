@@ -1,17 +1,17 @@
 ---
-import { ChevronRight, ChevronLeft } from '@lucide/astro'
+import { ChevronLeft, ChevronRight } from "@lucide/astro";
 
 interface Props {
-  currentPage: number
-  lastPage: number
-  prevUrl: string | undefined
-  nextUrl: string | undefined
+	currentPage: number;
+	lastPage: number;
+	prevUrl: string | undefined;
+	nextUrl: string | undefined;
 }
 
-const { currentPage, lastPage, prevUrl, nextUrl } = Astro.props
+const { currentPage, lastPage, prevUrl, nextUrl } = Astro.props;
 
-const isPrevDisabled = !prevUrl
-const isNextDisabled = !nextUrl
+const isPrevDisabled = !prevUrl;
+const isNextDisabled = !nextUrl;
 ---
 
 <nav aria-label="Paginação" class="pagination">

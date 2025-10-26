@@ -1,12 +1,12 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import site from '@/data/site.config.json'
+import type { CollectionEntry } from "astro:content";
+import site from "@/data/site.config.json";
 
 interface Props {
-  tags: [string, number][]
+	tags: [string, number][];
 }
 
-const { tags } = Astro.props
+const { tags } = Astro.props;
 ---
 
 <aside class="space-y-8">

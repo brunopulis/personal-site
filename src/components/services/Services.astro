@@ -1,77 +1,79 @@
 ---
 import {
-  FileText,
-  FilePlus,
-  FileSearch,
-  FileCheck,
-  ClipboardList,
-  Microscope,
-  Wrench,
-  CheckCircle,
-} from '@lucide/astro'
+	CheckCircle,
+	ClipboardList,
+	FileCheck,
+	FilePlus,
+	FileSearch,
+	FileText,
+	Microscope,
+	Wrench,
+} from "@lucide/astro";
 
 const iconComponents = {
-  FileText,
-  FilePlus,
-  FileSearch,
-  FileCheck,
-  ClipboardList,
-  Microscope,
-  Wrench,
-  CheckCircle,
-}
+	FileText,
+	FilePlus,
+	FileSearch,
+	FileCheck,
+	ClipboardList,
+	Microscope,
+	Wrench,
+	CheckCircle,
+};
 
 const services = [
-  {
-    icon: 'FileText',
-    title: 'Remediação de Documentos',
-    description:
-      'Transformamos seus documentos existentes para que sejam totalmente acessíveis, permitindo que pessoas com deficiência possam acessar todas as informações.',
-  },
-  {
-    icon: 'FileSearch',
-    title: 'Auditoria de Acessibilidade',
-    description:
-      'Analisamos seus documentos atuais e fornecemos um relatório detalhado sobre os problemas de acessibilidade encontrados.',
-  },
-  {
-    icon: 'FilePlus',
-    title: 'Criação de Modelos Acessíveis',
-    description:
-      'Desenvolvemos modelos de documentos personalizados e acessíveis que sua equipe pode usar para criar novos conteúdos.',
-  },
-  {
-    icon: 'FileCheck',
-    title: 'Certificação de Conformidade',
-    description:
-      'Emitimos certificados comprovando que seus documentos estão em conformidade com as diretrizes de acessibilidade.',
-  },
-]
+	{
+		icon: "FileText",
+		title: "Remediação de Documentos",
+		description:
+			"Transformamos seus documentos existentes para que sejam totalmente acessíveis, permitindo que pessoas com deficiência possam acessar todas as informações.",
+	},
+	{
+		icon: "FileSearch",
+		title: "Auditoria de Acessibilidade",
+		description:
+			"Analisamos seus documentos atuais e fornecemos um relatório detalhado sobre os problemas de acessibilidade encontrados.",
+	},
+	{
+		icon: "FilePlus",
+		title: "Criação de Modelos Acessíveis",
+		description:
+			"Desenvolvemos modelos de documentos personalizados e acessíveis que sua equipe pode usar para criar novos conteúdos.",
+	},
+	{
+		icon: "FileCheck",
+		title: "Certificação de Conformidade",
+		description:
+			"Emitimos certificados comprovando que seus documentos estão em conformidade com as diretrizes de acessibilidade.",
+	},
+];
 
 const process = [
-  {
-    icon: 'ClipboardList',
-    title: 'Avaliação Inicial',
-    description:
-      'Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.',
-  },
-  {
-    icon: 'Microscope',
-    title: 'Diagnóstico',
-    description: 'Elaboração de um relatório completo indicando os pontos que necessitam de remediação.',
-  },
-  {
-    icon: 'Wrench',
-    title: 'Remediação',
-    description:
-      'Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.',
-  },
-  {
-    icon: 'CheckCircle',
-    title: 'Validação',
-    description: 'Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.',
-  },
-]
+	{
+		icon: "ClipboardList",
+		title: "Avaliação Inicial",
+		description:
+			"Análise detalhada do documento original para identificar todos os elementos que precisam ser adaptados.",
+	},
+	{
+		icon: "Microscope",
+		title: "Diagnóstico",
+		description:
+			"Elaboração de um relatório completo indicando os pontos que necessitam de remediação.",
+	},
+	{
+		icon: "Wrench",
+		title: "Remediação",
+		description:
+			"Aplicação das técnicas de acessibilidade, incluindo tags, descrições alternativas e estruturação adequada.",
+	},
+	{
+		icon: "CheckCircle",
+		title: "Validação",
+		description:
+			"Testes rigorosos com diferentes tecnologias assistivas para garantir total acessibilidade.",
+	},
+];
 ---
 
 <section class="bg-white py-16" id="services">
