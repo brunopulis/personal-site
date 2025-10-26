@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import { ArrowRight, BookOpen, Code } from "@lucide/astro";
-import me from "@/assets/images/me.webp";
-import AvailabilityBanner from "@/components/AvailabilityBanner.astro";
+import me from "@assets/images/me.webp";
+import AvailabilityBanner from "@components/AvailabilityBanner.astro";
 ---
 
 <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
@@ -47,27 +47,5 @@ import AvailabilityBanner from "@/components/AvailabilityBanner.astro";
         loading="eager"
       />
     </div>
-  </div>
-</section>
-<section class="border-y border-amber-100 bg-amber-50">
-  <div class="mx-auto max-w-7xl px-6 py-6">
-    <ul class="flex flex-wrap items-center justify-between gap-4 text-sm">
-      <li class="flex items-center gap-2">
-        <BookOpen class="h-4 w-4 text-amber-600" aria-hidden="true" />
-        <span class="text-gray-700">Lendo:</span>
-        <span class="font-medium text-gray-900">Crônicas de Olam Vol 3</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <Code class="h-4 w-4 text-amber-600" aria-hidden="true" />
-        <span class="text-gray-700">Trabalhando em:</span>
-        <span class="font-medium text-gray-900">Auditoria para startup de acessibilidade</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <a href="/now" class="text-errie-black-900 flex items-center gap-1 font-medium hover:underline">
-          Ver tudo que estou fazendo agora
-          <ArrowRight class="h-3 w-3" aria-hidden="true" />
-        </a>
-      </li>
-    </ul>
   </div>
 </section>

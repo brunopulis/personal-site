@@ -17,9 +17,10 @@ import {
 	Users,
 	Zap,
 } from "@lucide/astro";
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import Layout from "@/layouts/Layout.astro";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
 
 const tiposDocumento = [
 	{
@@ -297,8 +298,12 @@ const beneficios = [
 
 <Layout title="Remediação de documentos - Bruno Pulis">
   <Header />
-  <main>
-    <section class="bg-gradient-to-br from-green-900 via-green-800 to-green-900 py-20 text-white">
+  <main id="main-content">
+    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+      </div>
       <div class="mx-auto max-w-7xl px-6">
         <div class="max-w-3xl">
           <div class="mb-6 inline-block rounded-full bg-green-700 px-4 py-2 text-sm font-semibold text-green-100">
@@ -346,11 +351,10 @@ const beneficios = [
               const Icon = beneficio.icone
               return (
                 <div
-                  key={index}
-                  class="rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-white p-6"
+                  class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-6"
                 >
                   <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-600">
-                    <Icon class="h-6 w-6 text-white" />
+                    <Icon class="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   <h3 class="mb-2 text-lg font-bold text-gray-900">{beneficio.titulo}</h3>
                   <p class="text-sm text-gray-700">{beneficio.descricao}</p>
@@ -465,7 +469,6 @@ const beneficios = [
           {
             pacotes.map((pacote, index) => (
               <div
-                key={index}
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
                     ? 'scale-105 transform border-4 border-red-400 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-2xl'
@@ -498,6 +501,7 @@ const beneficios = [
                       <li key={i} class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 flex-shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
+                          aria-hidden="true"
                         />
                         <span class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
                       </li>
@@ -536,7 +540,7 @@ const beneficios = [
             class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
           >
             Solicitar orçamento em lote
-            <ArrowRight class="h-5 w-5" />
+            <ArrowRight class="h-5 w-5" aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -555,7 +559,7 @@ const beneficios = [
             processo.map((etapa, index) => {
               const Icon = etapa.icone
               return (
-                <div key={index} class="relative">
+                <div class="relative">
                   {index < processo.length - 1 && (
                     <div class="absolute top-20 bottom-0 left-8 -mb-8 w-0.5 bg-gray-200" />
                   )}
@@ -574,7 +578,7 @@ const beneficios = [
                           <p class="text-gray-600">{etapa.descricao}</p>
                         </div>
                         <div class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm whitespace-nowrap text-gray-600">
-                          <Clock class="h-4 w-4" />
+                          <Clock class="h-4 w-4" aria-hidden="true" />
                           {etapa.duracao}
                         </div>
                       </div>
@@ -584,7 +588,7 @@ const beneficios = [
                         <ul class="grid gap-2 md:grid-cols-2">
                           {etapa.atividades.map((atividade, i) => (
                             <li key={i} class="flex items-start gap-2">
-                              <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                              <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" aria-hidden="true" />
                               <span class="text-sm text-gray-700">{atividade}</span>
                             </li>
                           ))}
@@ -608,13 +612,13 @@ const beneficios = [
         </p>
         <div class="grid grid-cols-2 items-center justify-items-center gap-8 opacity-60 md:grid-cols-3">
           <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <Users class="h-8 w-8 text-gray-400" />
+            <Users class="h-8 w-8 text-gray-400" aria-hidden="true" />
           </div>
           <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <Shield class="h-8 w-8 text-gray-400" />
+            <Shield class="h-8 w-8 text-gray-400" aria-hidden="true"/>
           </div>
           <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <TrendingUp class="h-8 w-8 text-gray-400" />
+            <TrendingUp class="h-8 w-8 text-gray-400" aria-hidden="true" />
           </div>
         </div>
       </div>
@@ -637,7 +641,7 @@ const beneficios = [
                 role: 'Designer de Produto',
               },
             ].map((testimonial, idx) => (
-              <div key={idx} class="rounded-2xl bg-gray-50 p-8">
+              <div class="rounded-2xl bg-gray-50 p-8">
                 <p class="mb-6 text-lg leading-relaxed text-gray-700">"{testimonial.text}"</p>
                 <div>
                   <p class="font-semibold text-gray-900">{testimonial.author}</p>

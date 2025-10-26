@@ -1,7 +1,3 @@
----
-
----
-
 <section id="contact" class="section bg-gray-50 dark:bg-gray-800/50">
   <div class="container mx-auto px-5">
     <div class="grid gap-12 md:grid-cols-2">
@@ -98,11 +94,3 @@
     </div>
   </div>
 </section>
-
-<script is:inline>
-  const params = new URLSearchParams(window.location.search.substring(1))
-  const subject = params.get('subject')
-
-  const subjectInput = document.querySelector('#subject')
-  subjectInput.value = subject
-</script>

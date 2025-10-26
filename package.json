@@ -7,11 +7,10 @@
 		"astro": "astro",
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "astro build --remote",
 		"preview": "astro build && astro preview",
 		"sync": "astro sync",
 		"check": "astro check",
-
 		"new-post": "node scripts/new-post.js",
 		"lint": "biome lint .",
 		"lint:fix": "biome lint --write .",
@@ -33,7 +32,6 @@
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource/source-sans-3": "^5.2.9",
 		"@philnash/astro-pagination": "^0.5.0",
-		"@supabase/supabase-js": "^2.76.0",
 		"@yeskunall/astro-umami": "^0.0.7",
 		"alpinejs": "^3.15.0",
 		"astro": "^5.14.5",
@@ -52,30 +50,20 @@
 		"@eslint/eslintrc": "^3.3.1",
 		"@eslint/js": "^9.36.0",
 		"@hbsnow/rehype-sectionize": "^1.0.7",
-		"@iconify-json/fa6-brands": "^1.2.6",
-		"@iconify-json/fa6-solid": "^1.2.4",
 		"@lucide/astro": "^0.548.0",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.16",
 		"astro-compress": "^2.3.8",
 		"astro-eslint-parser": "^1.2.2",
 		"axe-core": "^4.11.0",
-		"commitizen": "^4.3.1",
 		"cypress": "^15.5.0",
 		"cypress-axe": "^1.7.0",
-		"cz-conventional-changelog": "^3.3.0",
-		"husky": "^9.1.7",
 		"lint-staged": "^16.2.1",
 		"pagefind": "^1.4.0",
 		"prettier-plugin-css-order": "^2.1.2",
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"sanitize-html": "^2.17.0",
 		"svgo": "^4.0.0"
-	},
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,md,mdx,json}": [

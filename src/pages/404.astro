@@ -1,22 +1,22 @@
 ---
-import Footer from "@/components/layout/Footer.astro";
-import Header from "@/components/layout/Header.astro";
-import Layout from "@/layouts/Layout.astro";
+import Footer from "@components/layout/Footer.astro";
+import Header from "@components/layout/Header.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Page Not Found - Sassify">
+<Layout title="Página não encontrada - Bruno Pulis">
   <Header />
-  <main>
+  <main id="main-content">
     <section class="py-20 md:py-32">
       <div class="container mx-auto text-center">
         <h1 class="text-primary-600 dark:text-primary-400 mb-8 text-9xl font-bold">404</h1>
-        <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">Page Not Found</h2>
+        <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">Página não encontrada</h2>
         <p class="mx-auto mb-8 max-w-2xl text-xl text-gray-600 dark:text-gray-300">
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          A página que você está procurando não existe ou foi movida.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="/" class="btn-primary"> Return Home </a>
-          <a href="/contact" class="btn-secondary"> Contact Support </a>
+          <a href="/" class="btn-primary">Voltar para a página inicial</a>
+          <a href="/contato" class="btn-secondary"> Contatar Suporte </a>
         </div>
       </div>
     </section>
