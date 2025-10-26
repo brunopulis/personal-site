@@ -1,9 +1,11 @@
 ---
 title: 5 tags que ajudam na acessibilidade
+image: ''
+imageAlt: ''
 publishDate: 2024-09-30
-draft: false
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
+
 ## Introdução
 
 Acessibilidade é um tema que nós desenvolvedores esquecemos, porém, é extremamente importante. Por isso, saber acessibilidade pode ser um grande diferencial.
@@ -33,7 +35,7 @@ Quando usamos o **`<header>`** como navegação principal não é necessário in
 ```html
 <header>
   <h1>Título da Página Principal</h1>
-  <img src="minha-logo.png" alt="Sua logo">
+  <img src="minha-logo.png" alt="Sua logo" />
 </header>
 ```
 
@@ -91,10 +93,7 @@ Um exemplo de uso correto do `<main>`:
 
   <article>
     <h2>Vermelho delicioso</h2>
-    <p>
-      Estas maçãs vermelhas brilhantes são as mais comumente encontradas em
-      muitos supermercados.
-    </p>
+    <p>Estas maçãs vermelhas brilhantes são as mais comumente encontradas em muitos supermercados.</p>
     <p>...</p>
     <p>...</p>
   </article>

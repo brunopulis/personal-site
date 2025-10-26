@@ -1,5 +1,7 @@
 ---
 title: DevFest BH 2017
+image: ''
+imageAlt: ''
 publishDate: 2017-11-20
 category: 'Indicações'
 url: https://brunopulis.com/review-devfest-bh-2017/

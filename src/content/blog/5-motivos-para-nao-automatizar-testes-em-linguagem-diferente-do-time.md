@@ -1,5 +1,7 @@
 ---
 title: 5 motivos para não automatizar testes em linguagem diferente do time
+image: ''
+imageAlt: ''
 excerpt: Descobertas com automacao de software
 publishDate: 2020-11-16
 category: 'Qualidade'

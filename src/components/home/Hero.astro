@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import { BookOpen, Code, ArrowRight } from '@lucide/astro'
 import AvailabilityBanner from '@/components/AvailabilityBanner.astro'
-import me from '@/assets/me.webp'
+import me from '@/assets/images/me.webp'
 ---
 
 <section class="relative overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white">
@@ -13,9 +13,7 @@ import me from '@/assets/me.webp'
   <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
     <div>
       <AvailabilityBanner isAvailable={false} />
-      <h1 class="mb-6 text-5xl leading-tight font-bold">
-        Olá, eu sou o<br />Bruno Pulis
-      </h1>
+      <h1 class="mb-6 text-5xl leading-tight font-bold">Olá, sou o Bruno Pulis</h1>
       <p class="mb-6 text-2xl font-light text-white">Faço a web funcionar para todo mundo, não só para alguns</p>
 
       <p class="mb-8 text-lg leading-relaxed text-white opacity-90">

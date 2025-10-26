@@ -1,5 +1,7 @@
 ---
 title: O método Bullet Journal
+image: '/src/assets/images/blog/bullet'
+imageAlt: 'Ilustração: blogroll'
 publishDate: 2023-07-25
 category: 'Indicações'
 url: https://brunopulis.com/o-metodo-bullet-journal/

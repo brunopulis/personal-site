@@ -1,5 +1,7 @@
 ---
 title: Resenha Acessibilidade na Web
+image: '/src/assets/images/blog/acessibilidade-na-web.webp'
+imageAlt: ''
 publishDate: 2020-07-19
 category: 'Indicações'
 url: https://brunopulis.com/review-acessibilidade-web/

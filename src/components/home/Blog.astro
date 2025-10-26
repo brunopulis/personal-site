@@ -37,8 +37,6 @@ function formatDate(date?: string | number | Date) {
 
   return formatter.format(new Date(date))
 }
-
-// toISOString removed (not needed here)
 ---
 
 <section id="blog" class="bg-gray-900 py-24 text-white">
@@ -50,7 +48,6 @@ function formatDate(date?: string | number | Date) {
       </p>
     </div>
 
-    {/* Artigo em Destaque (dinâmico) */}
     {
       featured && (
         <div class="mb-12 overflow-hidden rounded-2xl bg-gradient-to-br from-red-900 to-red-950 transition hover:scale-[1.02] hover:transform">
@@ -61,10 +58,9 @@ function formatDate(date?: string | number | Date) {
                 alt={getPostImageAlt(featured)}
                 class="h-full w-full object-cover"
                 loading="lazy"
+                width="552"
+                height="260"
               />
-              <span class="absolute top-4 left-4 rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white uppercase">
-                Destaque
-              </span>
             </div>
             <div class="flex flex-col justify-center p-8 md:p-12">
               <div class="mb-4 flex items-center gap-3">

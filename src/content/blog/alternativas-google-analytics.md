@@ -1,7 +1,8 @@
 ---
 title: Alternativas ao Google Analytics
+image: ''
+imageAlt: ''
 publishDate: 2024-05-09
-draft: false
 category: 'Frontend'
 tags: ['web analytics', 'tools']
 ---

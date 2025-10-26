@@ -1,5 +1,7 @@
 ---
 title: Desabafo
+image: ''
+imageAlt: ''
 publishDate: 2016-06-26
 category: 'Poesia'
 url: https://brunopulis.com/desabafo/
