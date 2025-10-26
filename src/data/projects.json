@@ -1,85 +1,85 @@
 {
-  "projects": [
-    {
-      "image": "@/assets/projects/magra-de-verdade.webp",
-      "title": "Magra de Verdade",
-      "service": "Desenvolvimento web",
-      "description": "Página de Vendas",
-      "featured": true,
-      "techs": ["WordPress", "Elementor", "A11y"],
-      "demo": [
-        {
-          "url": "https://magradeverdade.com/",
-          "label": "LinkedIn"
-        }
-      ]
-    },
-    {
-      "image": "@/assets/projects/biblioteca-da-revolucao.webp",
-      "title": "Biblioteca da Revolução",
-      "service": "Desenvolvimento web",
-      "description": "Página de Vendas",
-      "featured": false,
-      "techs": ["WordPress", "Elementor", "A11y"],
-      "demo": [
-        {
-          "url": "https://serqsabe.com.br",
-          "label": "LinkedIn"
-        }
-      ]
-    },
-    {
-      "image": "@/assets/projects/henrique-noal.webp",
-      "title": "Henrique Noal",
-      "service": "Desenvolvimento web",
-      "description": "Página de Vendas",
-      "featured": false,
-      "techs": ["Astro", "TailwindCSS", "A11y"],
-      "demo": [
-        {
-          "url": "https://henriquenoal.netlify.app/",
-          "label": "LinkedIn"
-        }
-      ]
-    },
-    {
-      "image": "@/assets/projects/forja-comercial.webp",
-      "title": "Forja Comercial",
-      "description": "Página de Vendas",
-      "featured": false,
-      "techs": ["WordPress", "Elementor", "A11y"],
-      "demo": [
-        {
-          "url": "https://joaokioshi.com",
-          "label": "LinkedIn"
-        }
-      ]
-    },
-    {
-      "image": "@/assets/projects/henriquenoal.png",
-      "title": "Vista Ser",
-      "description": "Página de espera",
-      "featured": false,
-      "techs": ["Astro", "TailwindCSS", "A11y"],
-      "demo": [
-        {
-          "url": "https://vistaser.com",
-          "label": "LinkedIn"
-        }
-      ]
-    },
-    {
-      "image": "@/assets/projects/henriquenoal.png",
-      "title": "Raphael Bessa",
-      "description": "Landing Page",
-      "featured": false,
-      "techs": ["Advocacia", "TailwindCSS", "A11y"],
-      "demo": [
-        {
-          "url": "https://raphaelbessa.com.br",
-          "label": "LinkedIn"
-        }
-      ]
-    }
-  ]
+	"projects": [
+		{
+			"image": "@/assets/projects/magra-de-verdade.webp",
+			"title": "Magra de Verdade",
+			"service": "Desenvolvimento web",
+			"description": "Página de Vendas",
+			"featured": true,
+			"techs": ["WordPress", "Elementor", "A11y"],
+			"demo": [
+				{
+					"url": "https://magradeverdade.com/",
+					"label": "LinkedIn"
+				}
+			]
+		},
+		{
+			"image": "@/assets/projects/biblioteca-da-revolucao.webp",
+			"title": "Biblioteca da Revolução",
+			"service": "Desenvolvimento web",
+			"description": "Página de Vendas",
+			"featured": false,
+			"techs": ["WordPress", "Elementor", "A11y"],
+			"demo": [
+				{
+					"url": "https://serqsabe.com.br",
+					"label": "LinkedIn"
+				}
+			]
+		},
+		{
+			"image": "@/assets/projects/henrique-noal.webp",
+			"title": "Henrique Noal",
+			"service": "Desenvolvimento web",
+			"description": "Página de Vendas",
+			"featured": false,
+			"techs": ["Astro", "TailwindCSS", "A11y"],
+			"demo": [
+				{
+					"url": "https://henriquenoal.netlify.app/",
+					"label": "LinkedIn"
+				}
+			]
+		},
+		{
+			"image": "@/assets/projects/forja-comercial.webp",
+			"title": "Forja Comercial",
+			"description": "Página de Vendas",
+			"featured": false,
+			"techs": ["WordPress", "Elementor", "A11y"],
+			"demo": [
+				{
+					"url": "https://joaokioshi.com",
+					"label": "LinkedIn"
+				}
+			]
+		},
+		{
+			"image": "@/assets/projects/henriquenoal.png",
+			"title": "Vista Ser",
+			"description": "Página de espera",
+			"featured": false,
+			"techs": ["Astro", "TailwindCSS", "A11y"],
+			"demo": [
+				{
+					"url": "https://vistaser.com",
+					"label": "LinkedIn"
+				}
+			]
+		},
+		{
+			"image": "@/assets/projects/henriquenoal.png",
+			"title": "Raphael Bessa",
+			"description": "Landing Page",
+			"featured": false,
+			"techs": ["Advocacia", "TailwindCSS", "A11y"],
+			"demo": [
+				{
+					"url": "https://raphaelbessa.com.br",
+					"label": "LinkedIn"
+				}
+			]
+		}
+	]
 }

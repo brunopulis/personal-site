@@ -1,48 +1,62 @@
 ---
-import { BookUser, Check, FileBadge, HandHeart, Headset, Presentation, Users } from '@lucide/astro'
+import {
+	BookUser,
+	Check,
+	FileBadge,
+	HandHeart,
+	Headset,
+	Presentation,
+	Users,
+} from "@lucide/astro";
 
 const iconComponents = {
-  BookUser,
-  Check,
-  FileBadge,
-  HandHeart,
-  Headset,
-  Presentation,
-  Users,
-}
+	BookUser,
+	Check,
+	FileBadge,
+	HandHeart,
+	Headset,
+	Presentation,
+	Users,
+};
 
 const benefits = [
-  {
-    icon: 'Users',
-    title: 'Comunidade exclusiva',
-    description: 'Acesso vitalício a nossa comunidade para trocar experiências, aprender e se inspirar.',
-  },
-  {
-    icon: 'Presentation',
-    title: 'Plano de ensino personalizado',
-    description: 'Conteúdo adaptado para suas metas, garantindo um plano exclusivo que promove seu avanço.',
-  },
-  {
-    icon: 'BookUser',
-    title: 'Materiais acessíveis',
-    description: 'Recursos inclusivos, como vídeos com legendas e documentos acessíveis.',
-  },
-  {
-    icon: 'Headset',
-    title: 'Suporte dedicado',
-    description: 'Acesso direto comigo por WhatsApp em horário comercial de segunda a sábado.',
-  },
-  {
-    icon: 'HandHeart',
-    title: 'Compromisso social',
-    description: 'Doamos 5% do valor da mentoria para a Associação de Cegos Louis Braille.',
-  },
-  {
-    icon: 'FileBadge',
-    title: 'Certificado',
-    description: 'Você receberá um certificado de conclusão, comprovando suas habilidades.',
-  },
-]
+	{
+		icon: "Users",
+		title: "Comunidade exclusiva",
+		description:
+			"Acesso vitalício a nossa comunidade para trocar experiências, aprender e se inspirar.",
+	},
+	{
+		icon: "Presentation",
+		title: "Plano de ensino personalizado",
+		description:
+			"Conteúdo adaptado para suas metas, garantindo um plano exclusivo que promove seu avanço.",
+	},
+	{
+		icon: "BookUser",
+		title: "Materiais acessíveis",
+		description:
+			"Recursos inclusivos, como vídeos com legendas e documentos acessíveis.",
+	},
+	{
+		icon: "Headset",
+		title: "Suporte dedicado",
+		description:
+			"Acesso direto comigo por WhatsApp em horário comercial de segunda a sábado.",
+	},
+	{
+		icon: "HandHeart",
+		title: "Compromisso social",
+		description:
+			"Doamos 5% do valor da mentoria para a Associação de Cegos Louis Braille.",
+	},
+	{
+		icon: "FileBadge",
+		title: "Certificado",
+		description:
+			"Você receberá um certificado de conclusão, comprovando suas habilidades.",
+	},
+];
 ---
 
 <section class="bg-bloodRed py-16 md:py-24" id="benefits" aria-labelledby="benefits-heading">

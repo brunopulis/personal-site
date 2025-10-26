@@ -1,27 +1,27 @@
-import { defineCollection, z } from 'astro:content'
-import { glob } from 'astro/loaders'
-import { seoSchema } from './seo'
+import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
+import { seoSchema } from "./seo";
 
 export const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog/' }),
-  schema: z.object({
-    title: z.string(),
-    excerpt: z.string().optional(),
-    location: z.string().optional(),
-    country: z.string().optional(),
-    category: z.string().optional(),
-    publishDate: z.coerce.date(),
-    modifiedDate: z.date().optional(),
-    publishedAt: z.array(z.string()).optional(),
-    draft: z.boolean().default(false),
-    isFeatured: z.boolean().default(false),
-    tags: z.array(z.string()).default([]),
-    reply: z.string().optional(),
-    readingTime: z.number().optional(),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
-    url: z.string().optional(),
-    canonicalUrl: z.string().optional(),
-    seo: seoSchema.optional(),
-  }),
-})
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog/" }),
+	schema: z.object({
+		title: z.string(),
+		excerpt: z.string().optional(),
+		location: z.string().optional(),
+		country: z.string().optional(),
+		category: z.string().optional(),
+		publishDate: z.coerce.date(),
+		modifiedDate: z.date().optional(),
+		publishedAt: z.array(z.string()).optional(),
+		draft: z.boolean().default(false),
+		isFeatured: z.boolean().default(false),
+		tags: z.array(z.string()).default([]),
+		reply: z.string().optional(),
+		readingTime: z.number().optional(),
+		image: z.string().optional(),
+		imageAlt: z.string().optional(),
+		url: z.string().optional(),
+		canonicalUrl: z.string().optional(),
+		seo: seoSchema.optional(),
+	}),
+});
