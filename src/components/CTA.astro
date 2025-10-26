@@ -1,27 +1,27 @@
 ---
-import { FileText, ArrowRight } from '@lucide/astro'
+import { ArrowRight, FileText } from "@lucide/astro";
 
 interface Props {
-  title: string
-  description: string
-  primaryButton: {
-    text: string
-    url: string
-  }
-  secondaryButton?: {
-    text: string
-    url: string
-  }
-  icon?: any // Permite passar qualquer ícone do lucide
+	title: string;
+	description: string;
+	primaryButton: {
+		text: string;
+		url: string;
+	};
+	secondaryButton?: {
+		text: string;
+		url: string;
+	};
+	icon?: any; // Permite passar qualquer ícone do lucide
 }
 
 const {
-  title,
-  description,
-  primaryButton,
-  secondaryButton,
-  icon: Icon = FileText, // FileText como ícone padrão
-} = Astro.props
+	title,
+	description,
+	primaryButton,
+	secondaryButton,
+	icon: Icon = FileText, // FileText como ícone padrão
+} = Astro.props;
 ---
 
 <aside class="bg-gray-900 py-20 text-white">

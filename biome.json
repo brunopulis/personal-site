@@ -11,5 +11,18 @@
 			"!**/dist",
 			"!**/.yarn"
 		]
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [
+			"node_modules",
+			"dist",
+			".astro",
+			"build",
+			"*.min.js",
+			"*.min.css",
+			"src/styles/global.css",
+			"src/styles/tailwind.css"
+		]
 	}
 }

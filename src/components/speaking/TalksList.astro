@@ -1,26 +1,26 @@
 ---
-import { talks } from '@/data/talks.json'
+import { talks } from "@/data/talks.json";
 
 // Validar se talks é um array antes de filtrar
-const talksList = Array.isArray(talks) ? talks : []
+const talksList = Array.isArray(talks) ? talks : [];
 
 // Separar palestras futuras e passadas com validação
 const upcomingTalks = talksList
-  .filter((talk) => talk?.isUpcoming)
-  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+	.filter((talk) => talk?.isUpcoming)
+	.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
 const pastTalks = talksList
-  .filter((talk) => !talk?.isUpcoming)
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+	.filter((talk) => !talk?.isUpcoming)
+	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Função para formatar data
 const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('pt-BR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
-}
+	return new Date(date).toLocaleDateString("pt-BR", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
+};
 ---
 
 <section id="talks">

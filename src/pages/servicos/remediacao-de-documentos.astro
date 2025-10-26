@@ -1,294 +1,298 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import Footer from '@/components/layout/Footer.astro'
-
 import {
-  Settings,
-  Users,
-  AlertCircle,
-  Package,
-  Clock,
-  Award,
-  FileText,
-  Eye,
-  Zap,
-  Target,
-  Download,
-  Phone,
-  Shield,
-  TrendingUp,
-  CheckCircle,
-  ArrowRight,
-} from '@lucide/astro'
+	AlertCircle,
+	ArrowRight,
+	Award,
+	CheckCircle,
+	Clock,
+	Download,
+	Eye,
+	FileText,
+	Package,
+	Phone,
+	Settings,
+	Shield,
+	Target,
+	TrendingUp,
+	Users,
+	Zap,
+} from "@lucide/astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const tiposDocumento = [
-  {
-    id: 'pdf',
-    nome: 'PDF',
-    icone: FileText,
-    cor: 'red',
-    extensoes: '.pdf',
-    problemas: [
-      'PDFs escaneados (imagens sem texto)',
-      'Falta de tags estruturais',
-      'Sem ordem de leitura lógica',
-      'Tabelas sem estrutura',
-      'Formulários inacessíveis',
-      'Sem textos alternativos em imagens',
-      'Links não descritivos',
-    ],
-    solucoes: [
-      'OCR para extrair texto de imagens',
-      'Adição de tags estruturais (headings, listas)',
-      'Definição de ordem de leitura',
-      'Estruturação de tabelas',
-      'Campos de formulário acessíveis',
-      'Textos alternativos em todas as imagens',
-      'Links descritivos',
-      'Marcadores de idioma',
-      'Metadados completos',
-    ],
-  },
-  {
-    id: 'word',
-    nome: 'Word/PowerPoint',
-    icone: FileText,
-    cor: 'blue',
-    extensoes: '.docx, .pptx',
-    problemas: [
-      'Estrutura de headings incorreta',
-      'Textos como imagens',
-      'Tabelas complexas sem estrutura',
-      'Cores sem contraste adequado',
-      'Listas não estruturadas',
-      'Sem textos alternativos',
-      'Ordem de leitura confusa (PPT)',
-    ],
-    solucoes: [
-      'Uso correto de estilos de heading',
-      'Conversão de imagens de texto em texto real',
-      'Estruturação adequada de tabelas',
-      'Ajuste de cores para contraste WCAG AA',
-      'Formatação de listas estruturadas',
-      'Textos alternativos em imagens',
-      'Ordem de leitura lógica',
-      'Verificação com checkers nativos',
-    ],
-  },
-  {
-    id: 'excel',
-    nome: 'Excel',
-    icone: FileText,
-    cor: 'green',
-    extensoes: '.xlsx',
-    problemas: [
-      'Planilhas sem estrutura clara',
-      'Múltiplas tabelas em uma sheet',
-      'Células mescladas excessivas',
-      'Sem cabeçalhos de coluna/linha',
-      'Cores como única forma de informação',
-      'Fórmulas sem contexto',
-      'Gráficos sem descrição',
-    ],
-    solucoes: [
-      'Estruturação clara de dados',
-      'Separação de tabelas em sheets',
-      'Redução de células mescladas',
-      'Definição de cabeçalhos',
-      'Informação não dependente só de cor',
-      'Nomes descritivos para ranges',
-      'Textos alternativos em gráficos',
-      'Instruções claras de uso',
-    ],
-  },
-]
+	{
+		id: "pdf",
+		nome: "PDF",
+		icone: FileText,
+		cor: "red",
+		extensoes: ".pdf",
+		problemas: [
+			"PDFs escaneados (imagens sem texto)",
+			"Falta de tags estruturais",
+			"Sem ordem de leitura lógica",
+			"Tabelas sem estrutura",
+			"Formulários inacessíveis",
+			"Sem textos alternativos em imagens",
+			"Links não descritivos",
+		],
+		solucoes: [
+			"OCR para extrair texto de imagens",
+			"Adição de tags estruturais (headings, listas)",
+			"Definição de ordem de leitura",
+			"Estruturação de tabelas",
+			"Campos de formulário acessíveis",
+			"Textos alternativos em todas as imagens",
+			"Links descritivos",
+			"Marcadores de idioma",
+			"Metadados completos",
+		],
+	},
+	{
+		id: "word",
+		nome: "Word/PowerPoint",
+		icone: FileText,
+		cor: "blue",
+		extensoes: ".docx, .pptx",
+		problemas: [
+			"Estrutura de headings incorreta",
+			"Textos como imagens",
+			"Tabelas complexas sem estrutura",
+			"Cores sem contraste adequado",
+			"Listas não estruturadas",
+			"Sem textos alternativos",
+			"Ordem de leitura confusa (PPT)",
+		],
+		solucoes: [
+			"Uso correto de estilos de heading",
+			"Conversão de imagens de texto em texto real",
+			"Estruturação adequada de tabelas",
+			"Ajuste de cores para contraste WCAG AA",
+			"Formatação de listas estruturadas",
+			"Textos alternativos em imagens",
+			"Ordem de leitura lógica",
+			"Verificação com checkers nativos",
+		],
+	},
+	{
+		id: "excel",
+		nome: "Excel",
+		icone: FileText,
+		cor: "green",
+		extensoes: ".xlsx",
+		problemas: [
+			"Planilhas sem estrutura clara",
+			"Múltiplas tabelas em uma sheet",
+			"Células mescladas excessivas",
+			"Sem cabeçalhos de coluna/linha",
+			"Cores como única forma de informação",
+			"Fórmulas sem contexto",
+			"Gráficos sem descrição",
+		],
+		solucoes: [
+			"Estruturação clara de dados",
+			"Separação de tabelas em sheets",
+			"Redução de células mescladas",
+			"Definição de cabeçalhos",
+			"Informação não dependente só de cor",
+			"Nomes descritivos para ranges",
+			"Textos alternativos em gráficos",
+			"Instruções claras de uso",
+		],
+	},
+];
 
 const pacotes = [
-  {
-    nome: 'Básico',
-    preco: 'R$ 150',
-    unidade: 'por documento',
-    ideal: 'Documentos simples (até 20 páginas)',
-    cor: 'blue',
-    inclui: [
-      'Conversão para formato acessível',
-      'Estruturação básica',
-      'Textos alternativos em imagens',
-      'Ordem de leitura correta',
-      'Metadados básicos',
-      'Teste com leitor de tela',
-      'Entrega em 3-5 dias úteis',
-    ],
-    exemplos: 'Folhetos, apresentações simples, relatórios curtos',
-  },
-  {
-    nome: 'Professional',
-    preco: 'R$ 300',
-    unidade: 'por documento',
-    ideal: 'Documentos médios (20-50 páginas)',
-    cor: 'red',
-    destaque: true,
-    inclui: [
-      'Tudo do pacote Básico',
-      'Estruturação avançada de tabelas',
-      'Formulários acessíveis',
-      'Links descritivos',
-      'Múltiplos idiomas',
-      'Sumário navegável',
-      'Relatório de conformidade',
-      'Entrega em 5-7 dias úteis',
-    ],
-    exemplos: 'Manuais, documentos técnicos, relatórios anuais',
-  },
-  {
-    nome: 'Enterprise',
-    preco: 'Sob consulta',
-    unidade: '',
-    ideal: 'Documentos complexos ou em lote',
-    cor: 'purple',
-    inclui: [
-      'Tudo do pacote Professional',
-      'Remediação em lote (desconto progressivo)',
-      'Documentos altamente complexos',
-      'Múltiplos formatos',
-      'Treinamento de equipe',
-      'Templates acessíveis',
-      'Processo documentado',
-      'Suporte contínuo',
-    ],
-    exemplos: 'Bibliotecas de documentos, manuais extensos, séries de relatórios',
-  },
-]
+	{
+		nome: "Básico",
+		preco: "R$ 150",
+		unidade: "por documento",
+		ideal: "Documentos simples (até 20 páginas)",
+		cor: "blue",
+		inclui: [
+			"Conversão para formato acessível",
+			"Estruturação básica",
+			"Textos alternativos em imagens",
+			"Ordem de leitura correta",
+			"Metadados básicos",
+			"Teste com leitor de tela",
+			"Entrega em 3-5 dias úteis",
+		],
+		exemplos: "Folhetos, apresentações simples, relatórios curtos",
+	},
+	{
+		nome: "Professional",
+		preco: "R$ 300",
+		unidade: "por documento",
+		ideal: "Documentos médios (20-50 páginas)",
+		cor: "red",
+		destaque: true,
+		inclui: [
+			"Tudo do pacote Básico",
+			"Estruturação avançada de tabelas",
+			"Formulários acessíveis",
+			"Links descritivos",
+			"Múltiplos idiomas",
+			"Sumário navegável",
+			"Relatório de conformidade",
+			"Entrega em 5-7 dias úteis",
+		],
+		exemplos: "Manuais, documentos técnicos, relatórios anuais",
+	},
+	{
+		nome: "Enterprise",
+		preco: "Sob consulta",
+		unidade: "",
+		ideal: "Documentos complexos ou em lote",
+		cor: "purple",
+		inclui: [
+			"Tudo do pacote Professional",
+			"Remediação em lote (desconto progressivo)",
+			"Documentos altamente complexos",
+			"Múltiplos formatos",
+			"Treinamento de equipe",
+			"Templates acessíveis",
+			"Processo documentado",
+			"Suporte contínuo",
+		],
+		exemplos:
+			"Bibliotecas de documentos, manuais extensos, séries de relatórios",
+	},
+];
 
 const processo = [
-  {
-    numero: 1,
-    titulo: 'Análise Inicial',
-    duracao: '1 dia',
-    icone: Eye,
-    descricao: 'Avalio o estado atual do documento e identifico todos os problemas',
-    atividades: [
-      'Abertura e análise do documento original',
-      'Identificação de problemas de acessibilidade',
-      'Verificação de estrutura e conteúdo',
-      'Estimativa de esforço e prazo',
-      'Comunicação de achados ao cliente',
-    ],
-  },
-  {
-    numero: 2,
-    titulo: 'Remediação',
-    duracao: '2-5 dias',
-    icone: Zap,
-    descricao: 'Corrijo todos os problemas encontrados seguindo padrões WCAG',
-    atividades: [
-      'Reestruturação do documento',
-      'Adição de tags e estrutura',
-      'Inclusão de textos alternativos',
-      'Correção de ordem de leitura',
-      'Ajuste de cores e contrastes',
-      'Estruturação de tabelas',
-      'Criação de sumário navegável',
-    ],
-  },
-  {
-    numero: 3,
-    titulo: 'Validação',
-    duracao: '1 dia',
-    icone: Shield,
-    descricao: 'Testo o documento com ferramentas e leitores de tela',
-    atividades: [
-      'Testes com PAC (PDF Accessibility Checker)',
-      'Validação com Adobe Acrobat Pro',
-      'Testes com NVDA e JAWS',
-      'Verificação de navegação por teclado',
-      'Validação de formulários (se aplicável)',
-      'Checklist de conformidade WCAG',
-    ],
-  },
-  {
-    numero: 4,
-    titulo: 'Entrega',
-    duracao: '1 dia',
-    icone: Download,
-    descricao: 'Entrego o documento remediado com relatório de conformidade',
-    atividades: [
-      'Documento final em formato acessível',
-      'Relatório de remediação',
-      'Checklist de conformidade',
-      'Instruções de uso (se necessário)',
-      'Revisão final com cliente',
-      'Ajustes se necessário',
-    ],
-  },
-]
+	{
+		numero: 1,
+		titulo: "Análise Inicial",
+		duracao: "1 dia",
+		icone: Eye,
+		descricao:
+			"Avalio o estado atual do documento e identifico todos os problemas",
+		atividades: [
+			"Abertura e análise do documento original",
+			"Identificação de problemas de acessibilidade",
+			"Verificação de estrutura e conteúdo",
+			"Estimativa de esforço e prazo",
+			"Comunicação de achados ao cliente",
+		],
+	},
+	{
+		numero: 2,
+		titulo: "Remediação",
+		duracao: "2-5 dias",
+		icone: Zap,
+		descricao: "Corrijo todos os problemas encontrados seguindo padrões WCAG",
+		atividades: [
+			"Reestruturação do documento",
+			"Adição de tags e estrutura",
+			"Inclusão de textos alternativos",
+			"Correção de ordem de leitura",
+			"Ajuste de cores e contrastes",
+			"Estruturação de tabelas",
+			"Criação de sumário navegável",
+		],
+	},
+	{
+		numero: 3,
+		titulo: "Validação",
+		duracao: "1 dia",
+		icone: Shield,
+		descricao: "Testo o documento com ferramentas e leitores de tela",
+		atividades: [
+			"Testes com PAC (PDF Accessibility Checker)",
+			"Validação com Adobe Acrobat Pro",
+			"Testes com NVDA e JAWS",
+			"Verificação de navegação por teclado",
+			"Validação de formulários (se aplicável)",
+			"Checklist de conformidade WCAG",
+		],
+	},
+	{
+		numero: 4,
+		titulo: "Entrega",
+		duracao: "1 dia",
+		icone: Download,
+		descricao: "Entrego o documento remediado com relatório de conformidade",
+		atividades: [
+			"Documento final em formato acessível",
+			"Relatório de remediação",
+			"Checklist de conformidade",
+			"Instruções de uso (se necessário)",
+			"Revisão final com cliente",
+			"Ajustes se necessário",
+		],
+	},
+];
 
 const ferramentas = [
-  { nome: 'Adobe Acrobat Pro', uso: 'Remediação de PDFs' },
-  { nome: 'PAC (PDF Accessibility Checker)', uso: 'Validação de PDFs' },
-  { nome: 'Microsoft Office', uso: 'Remediação de Word/Excel/PPT' },
-  { nome: 'NVDA', uso: 'Testes com leitor de tela' },
-  { nome: 'JAWS', uso: 'Testes com leitor de tela' },
-  { nome: 'ABBYY FineReader', uso: 'OCR para PDFs escaneados' },
-  { nome: 'CommonLook', uso: 'Remediação avançada de PDFs' },
-]
+	{ nome: "Adobe Acrobat Pro", uso: "Remediação de PDFs" },
+	{ nome: "PAC (PDF Accessibility Checker)", uso: "Validação de PDFs" },
+	{ nome: "Microsoft Office", uso: "Remediação de Word/Excel/PPT" },
+	{ nome: "NVDA", uso: "Testes com leitor de tela" },
+	{ nome: "JAWS", uso: "Testes com leitor de tela" },
+	{ nome: "ABBYY FineReader", uso: "OCR para PDFs escaneados" },
+	{ nome: "CommonLook", uso: "Remediação avançada de PDFs" },
+];
 
 const faq = [
-  {
-    pergunta: 'Qual a diferença entre PDF acessível e PDF comum?',
-    resposta:
-      'PDF comum é apenas uma imagem do documento. PDF acessível tem estrutura, tags, ordem de leitura definida, e pode ser navegado por leitores de tela. É a diferença entre uma foto de um livro e um livro digital de verdade.',
-  },
-  {
-    pergunta: 'Vocês trabalham com qualquer idioma?',
-    resposta:
-      'Sim! Posso remediar documentos em qualquer idioma. Para idiomas que não domino, foco na estrutura técnica (que é universal) e sigo as instruções fornecidas para textos alternativos.',
-  },
-  {
-    pergunta: 'E se o documento for muito antigo ou de má qualidade?',
-    resposta:
-      'Depende. PDFs escaneados de baixa qualidade podem ser difíceis de remediar (OCR pode falhar). Nestes casos, pode ser mais eficiente reconstruir o documento do zero. Avalio caso a caso.',
-  },
-  {
-    pergunta: 'Quanto tempo leva?',
-    resposta:
-      'Documentos simples: 3-5 dias. Médios: 5-7 dias. Complexos: 1-3 semanas. Lotes grandes: negociamos prazos. Urgências podem ter custo adicional.',
-  },
-  {
-    pergunta: 'Posso aprender a fazer eu mesmo?',
-    resposta:
-      'Sim! Ofereço treinamento para equipes que precisam remediar documentos regularmente. Ensino o processo, ferramentas e boas práticas. Mais eficiente para quem tem volume grande.',
-  },
-  {
-    pergunta: 'Garantem conformidade legal?',
-    resposta:
-      'Garanto conformidade técnica com WCAG 2.1/2.2 nível AA. Forneço relatório detalhado que pode ser usado como documentação. Porém, não sou advogado e não posso garantir conformidade legal específica.',
-  },
-]
+	{
+		pergunta: "Qual a diferença entre PDF acessível e PDF comum?",
+		resposta:
+			"PDF comum é apenas uma imagem do documento. PDF acessível tem estrutura, tags, ordem de leitura definida, e pode ser navegado por leitores de tela. É a diferença entre uma foto de um livro e um livro digital de verdade.",
+	},
+	{
+		pergunta: "Vocês trabalham com qualquer idioma?",
+		resposta:
+			"Sim! Posso remediar documentos em qualquer idioma. Para idiomas que não domino, foco na estrutura técnica (que é universal) e sigo as instruções fornecidas para textos alternativos.",
+	},
+	{
+		pergunta: "E se o documento for muito antigo ou de má qualidade?",
+		resposta:
+			"Depende. PDFs escaneados de baixa qualidade podem ser difíceis de remediar (OCR pode falhar). Nestes casos, pode ser mais eficiente reconstruir o documento do zero. Avalio caso a caso.",
+	},
+	{
+		pergunta: "Quanto tempo leva?",
+		resposta:
+			"Documentos simples: 3-5 dias. Médios: 5-7 dias. Complexos: 1-3 semanas. Lotes grandes: negociamos prazos. Urgências podem ter custo adicional.",
+	},
+	{
+		pergunta: "Posso aprender a fazer eu mesmo?",
+		resposta:
+			"Sim! Ofereço treinamento para equipes que precisam remediar documentos regularmente. Ensino o processo, ferramentas e boas práticas. Mais eficiente para quem tem volume grande.",
+	},
+	{
+		pergunta: "Garantem conformidade legal?",
+		resposta:
+			"Garanto conformidade técnica com WCAG 2.1/2.2 nível AA. Forneço relatório detalhado que pode ser usado como documentação. Porém, não sou advogado e não posso garantir conformidade legal específica.",
+	},
+];
 
 const beneficios = [
-  {
-    icone: Shield,
-    titulo: 'Conformidade Legal',
-    descricao: 'Evite processos e multas. Muitos setores têm obrigação legal de fornecer documentos acessíveis.',
-  },
-  {
-    icone: Users,
-    titulo: 'Alcance Maior',
-    descricao: 'Pessoas com deficiência visual, dislexia, ou outras dificuldades poderão acessar seu conteúdo.',
-  },
-  {
-    icone: Award,
-    titulo: 'Imagem Positiva',
-    descricao: 'Demonstre compromisso com inclusão e responsabilidade social.',
-  },
-  {
-    icone: Target,
-    titulo: 'Melhor Usabilidade',
-    descricao: 'Documentos acessíveis são mais organizados e fáceis de navegar para todos.',
-  },
-]
+	{
+		icone: Shield,
+		titulo: "Conformidade Legal",
+		descricao:
+			"Evite processos e multas. Muitos setores têm obrigação legal de fornecer documentos acessíveis.",
+	},
+	{
+		icone: Users,
+		titulo: "Alcance Maior",
+		descricao:
+			"Pessoas com deficiência visual, dislexia, ou outras dificuldades poderão acessar seu conteúdo.",
+	},
+	{
+		icone: Award,
+		titulo: "Imagem Positiva",
+		descricao: "Demonstre compromisso com inclusão e responsabilidade social.",
+	},
+	{
+		icone: Target,
+		titulo: "Melhor Usabilidade",
+		descricao:
+			"Documentos acessíveis são mais organizados e fáceis de navegar para todos.",
+	},
+];
 ---
 
 <Layout title="Remediação de documentos - Bruno Pulis">

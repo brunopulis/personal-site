@@ -1,27 +1,25 @@
 ---
 // https://claude.ai/public/artifacts/a3658293-f2ff-4904-a92c-0d697d7207a4
-import { Star, Film } from '@lucide/astro'
-
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import MediaCard from '@/components/MediaCard.astro'
-import Footer from '@/components/layout/Footer.astro'
-
-import movies from '@/data/movies.json'
+import { Film, Star } from "@lucide/astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import MediaCard from "@/components/MediaCard.astro";
+import movies from "@/data/movies.json";
+import Layout from "@/layouts/Layout.astro";
 
 const moviesPerYear = Object.entries(
-  movies
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .reduce(
-      (acc, book) => {
-        const year = new Date(book.date).getFullYear()
-        acc[year] = acc[year] || []
-        acc[year].push(book)
-        return acc
-      },
-      {} as Record<string, (typeof books)[0][]>,
-    ),
-).sort((a, b) => Number(b[0]) - Number(a[0]))
+	movies
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.reduce(
+			(acc, book) => {
+				const year = new Date(book.date).getFullYear();
+				acc[year] = acc[year] || [];
+				acc[year].push(book);
+				return acc;
+			},
+			{} as Record<string, (typeof books)[0][]>,
+		),
+).sort((a, b) => Number(b[0]) - Number(a[0]));
 ---
 
 <Layout title="Meus Filmes - Bruno Pulis" description="Livros que li ao longo dos anos">

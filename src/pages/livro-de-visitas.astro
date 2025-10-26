@@ -1,57 +1,59 @@
 ---
-import { db, GuestBook } from 'astro:db'
-import { Blog, Client, Comment, Author, CheckResult } from '@cedx/akismet'
+import { db, GuestBook } from "astro:db";
+import { Author, Blog, CheckResult, Client, Comment } from "@cedx/akismet";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import HeroSection from "@/components/layout/HeroSection.astro";
+import Layout from "@/layouts/Layout.astro";
 
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import HeroSection from '@/components/layout/HeroSection.astro'
-import Footer from '@/components/layout/Footer.astro'
+let successMessage = "";
+let errorMessage = "";
 
-let successMessage = ''
-let errorMessage = ''
+if (Astro.request.method === "POST") {
+	const blog = new Blog({ url: "https://www.brunopulis.com/" });
+	const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
 
-if (Astro.request.method === 'POST') {
-  const blog = new Blog({ url: 'https://www.brunopulis.com/' })
-  const client = new Client(import.meta.env.AKISMET_TOKEN, blog)
+	const formData = await Astro.request.formData();
+	const author = formData.get("author")?.toString() || "Anônimo";
+	const content = formData.get("content")?.toString() || "";
+	const special = formData.get("special");
 
-  const formData = await Astro.request.formData()
-  const author = formData.get('author')?.toString() || 'Anônimo'
-  const content = formData.get('content')?.toString() || ''
-  const special = formData.get('special')
+	if (!special) {
+		try {
+			const isValid = await client.verifyKey();
 
-  if (!special) {
-    try {
-      const isValid = await client.verifyKey()
+			if (isValid) {
+				const commentAuthor = new Author({ name: author });
+				const comment = new Comment({
+					author: commentAuthor,
+					content,
+				});
 
-      if (isValid) {
-        const commentAuthor = new Author({ name: author })
-        const comment = new Comment({
-          author: commentAuthor,
-          content,
-        })
+				const result = await client.checkComment(comment);
 
-        const result = await client.checkComment(comment)
-
-        if (result === CheckResult.ham) {
-          await db.insert(GuestBook).values({ author, content })
-          return Astro.redirect('/livro-de-visitas')
-        } else {
-          errorMessage = 'Desculpe, não foi possível publicar seu comentário.'
-        }
-      }
-    } catch (error) {
-      handleError(error)
-      errorMessage = 'Ocorreu um erro ao processar sua mensagem.'
-    }
-  }
+				if (result === CheckResult.ham) {
+					await db.insert(GuestBook).values({ author, content });
+					return Astro.redirect("/livro-de-visitas");
+				} else {
+					errorMessage = "Desculpe, não foi possível publicar seu comentário.";
+				}
+			}
+		} catch (error) {
+			handleError(error);
+			errorMessage = "Ocorreu um erro ao processar sua mensagem.";
+		}
+	}
 }
 
 function handleError(error: unknown) {
-  const message = error instanceof Error ? error.message : String(error)
-  console.error(`Erro: ${message}`)
+	const message = error instanceof Error ? error.message : String(error);
+	console.error(`Erro: ${message}`);
 }
 
-const entries = await db.select().from(GuestBook).orderBy(GuestBook.createdAt, 'desc')
+const entries = await db
+	.select()
+	.from(GuestBook)
+	.orderBy(GuestBook.createdAt, "desc");
 ---
 
 <Layout title="Livro de visitas - Bruno Pulis">

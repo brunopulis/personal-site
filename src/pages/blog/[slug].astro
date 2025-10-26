@@ -1,43 +1,42 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content'
+import { type CollectionEntry, getCollection, render } from "astro:content";
 
-import { CalendarIcon, ClockIcon } from '@lucide/astro'
-
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import BackBlog from '@/components/blog/BackBlog.astro'
-import Author from '@/components/blog/Author.astro'
-import Footer from '@/components/layout/Footer.astro'
+import { CalendarIcon, ClockIcon } from "@lucide/astro";
+import Author from "@/components/blog/Author.astro";
+import BackBlog from "@/components/blog/BackBlog.astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import Layout from "@/layouts/Layout.astro";
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
-  const posts = await getCollection('blog')
+	const posts = await getCollection("blog");
 
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }))
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}));
 }
 
 type Props = {
-  post: CollectionEntry<'blog'>
-  prevPost: CollectionEntry<'blog'>
-  nextPost: CollectionEntry<'blog'>
-}
+	post: CollectionEntry<"blog">;
+	prevPost: CollectionEntry<"blog">;
+	nextPost: CollectionEntry<"blog">;
+};
 
 // Receber o post das props
-const { post } = Astro.props
-const { Content } = await render(post)
+const { post } = Astro.props;
+const { Content } = await render(post);
 
 // Formatar data para pt-BR
-const publishDateString = String(post.data.publishDate)
-const formattedDate = new Date(publishDateString).toLocaleDateString('pt-BR', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-})
+const publishDateString = String(post.data.publishDate);
+const formattedDate = new Date(publishDateString).toLocaleDateString("pt-BR", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
 
-const isoDate = new Date(publishDateString).toISOString()
+const isoDate = new Date(publishDateString).toISOString();
 ---
 
 <Layout

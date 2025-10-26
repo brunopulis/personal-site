@@ -1,379 +1,392 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/layout/Header.astro'
-import Footer from '@/components/layout/Footer.astro'
-
 import {
-  Users,
-  AlertCircle,
-  Award,
-  FileText,
-  Eye,
-  Code,
-  Clock,
-  Zap,
-  Shield,
-  Target,
-  TrendingUp,
-  CheckCircle,
-  ArrowRight,
-} from '@lucide/astro'
+	AlertCircle,
+	ArrowRight,
+	Award,
+	CheckCircle,
+	Clock,
+	Code,
+	Eye,
+	FileText,
+	Shield,
+	Target,
+	TrendingUp,
+	Users,
+	Zap,
+} from "@lucide/astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const tecnologias = [
-  {
-    nome: 'React',
-    icone: '⚛️',
-    cor: 'blue',
-    nivel: 'Especialista',
-    experiencia: '5+ anos',
-    problemas: [
-      'Componentes sem gerenciamento de foco',
-      'Estados não anunciados a leitores de tela',
-      'Rotas sem atualização de título',
-      'Modais sem trap de foco',
-      'Formulários sem validação acessível',
-    ],
-    solucoes: [
-      'Hooks customizados para acessibilidade',
-      'Gerenciamento correto de foco',
-      'Live regions para atualizações',
-      'Rotas com anúncio de mudança',
-      'Componentes acessíveis reutilizáveis',
-    ],
-  },
-  {
-    nome: 'Vue.js',
-    icone: '💚',
-    cor: 'green',
-    nivel: 'Avançado',
-    experiencia: '3+ anos',
-    problemas: [
-      'Diretivas v-if/v-show sem contexto',
-      'Transições sem anúncio',
-      'Componentes sem ARIA',
-      'Eventos apenas com mouse',
-    ],
-    solucoes: [
-      'Composables para acessibilidade',
-      'Transições com live regions',
-      'Mixins acessíveis',
-      'Eventos de teclado completos',
-    ],
-  },
-  {
-    nome: 'WordPress',
-    icone: '📝',
-    cor: 'purple',
-    nivel: 'Especialista',
-    experiencia: '8+ anos',
-    problemas: [
-      'Temas não acessíveis',
-      'Plugins incompatíveis',
-      'Menus sem estrutura',
-      'Formulários Contact Form 7 inacessíveis',
-    ],
-    solucoes: [
-      'Correção de temas existentes',
-      'Criação de child themes acessíveis',
-      'Customização de plugins',
-      'Formulários acessíveis',
-    ],
-  },
-  {
-    nome: 'HTML/CSS/JS',
-    icone: '🌐',
-    cor: 'orange',
-    nivel: 'Especialista',
-    experiencia: '15+ anos',
-    problemas: [
-      'HTML não semântico',
-      'CSS dependente de cor',
-      'JavaScript sem fallbacks',
-      'Navegação por teclado quebrada',
-    ],
-    solucoes: [
-      'Refatoração para HTML semântico',
-      'CSS com foco visível',
-      'Progressive enhancement',
-      'Navegação por teclado completa',
-    ],
-  },
-  {
-    nome: 'Next.js/Gatsby/Astro',
-    icone: '⚡',
-    cor: 'red',
-    nivel: 'Avançado',
-    experiencia: '3+ anos',
-    problemas: [
-      'SSR/SSG sem acessibilidade',
-      'Navegação client-side problemática',
-      'Hydration quebrando foco',
-      'Imagens sem otimização acessível',
-    ],
-    solucoes: [
-      'Rotas acessíveis',
-      'Gerenciamento de foco em navegação',
-      'Componentes hidratados acessíveis',
-      'Imagens otimizadas com alt',
-    ],
-  },
-  {
-    nome: 'Angular',
-    icone: '🅰️',
-    cor: 'red',
-    nivel: 'Intermediário',
-    experiencia: '2+ anos',
-    problemas: ['Material Design sem customização', 'Rotas sem anúncio', 'Diretivas sem acessibilidade'],
-    solucoes: ['Customização do Angular Material', 'Rotas com anúncios', 'Diretivas acessíveis'],
-  },
-]
+	{
+		nome: "React",
+		icone: "⚛️",
+		cor: "blue",
+		nivel: "Especialista",
+		experiencia: "5+ anos",
+		problemas: [
+			"Componentes sem gerenciamento de foco",
+			"Estados não anunciados a leitores de tela",
+			"Rotas sem atualização de título",
+			"Modais sem trap de foco",
+			"Formulários sem validação acessível",
+		],
+		solucoes: [
+			"Hooks customizados para acessibilidade",
+			"Gerenciamento correto de foco",
+			"Live regions para atualizações",
+			"Rotas com anúncio de mudança",
+			"Componentes acessíveis reutilizáveis",
+		],
+	},
+	{
+		nome: "Vue.js",
+		icone: "💚",
+		cor: "green",
+		nivel: "Avançado",
+		experiencia: "3+ anos",
+		problemas: [
+			"Diretivas v-if/v-show sem contexto",
+			"Transições sem anúncio",
+			"Componentes sem ARIA",
+			"Eventos apenas com mouse",
+		],
+		solucoes: [
+			"Composables para acessibilidade",
+			"Transições com live regions",
+			"Mixins acessíveis",
+			"Eventos de teclado completos",
+		],
+	},
+	{
+		nome: "WordPress",
+		icone: "📝",
+		cor: "purple",
+		nivel: "Especialista",
+		experiencia: "8+ anos",
+		problemas: [
+			"Temas não acessíveis",
+			"Plugins incompatíveis",
+			"Menus sem estrutura",
+			"Formulários Contact Form 7 inacessíveis",
+		],
+		solucoes: [
+			"Correção de temas existentes",
+			"Criação de child themes acessíveis",
+			"Customização de plugins",
+			"Formulários acessíveis",
+		],
+	},
+	{
+		nome: "HTML/CSS/JS",
+		icone: "🌐",
+		cor: "orange",
+		nivel: "Especialista",
+		experiencia: "15+ anos",
+		problemas: [
+			"HTML não semântico",
+			"CSS dependente de cor",
+			"JavaScript sem fallbacks",
+			"Navegação por teclado quebrada",
+		],
+		solucoes: [
+			"Refatoração para HTML semântico",
+			"CSS com foco visível",
+			"Progressive enhancement",
+			"Navegação por teclado completa",
+		],
+	},
+	{
+		nome: "Next.js/Gatsby/Astro",
+		icone: "⚡",
+		cor: "red",
+		nivel: "Avançado",
+		experiencia: "3+ anos",
+		problemas: [
+			"SSR/SSG sem acessibilidade",
+			"Navegação client-side problemática",
+			"Hydration quebrando foco",
+			"Imagens sem otimização acessível",
+		],
+		solucoes: [
+			"Rotas acessíveis",
+			"Gerenciamento de foco em navegação",
+			"Componentes hidratados acessíveis",
+			"Imagens otimizadas com alt",
+		],
+	},
+	{
+		nome: "Angular",
+		icone: "🅰️",
+		cor: "red",
+		nivel: "Intermediário",
+		experiencia: "2+ anos",
+		problemas: [
+			"Material Design sem customização",
+			"Rotas sem anúncio",
+			"Diretivas sem acessibilidade",
+		],
+		solucoes: [
+			"Customização do Angular Material",
+			"Rotas com anúncios",
+			"Diretivas acessíveis",
+		],
+	},
+];
 
 const processo = [
-  {
-    numero: 1,
-    titulo: 'Análise Inicial',
-    duracao: '3-5 dias',
-    icone: Eye,
-    cor: 'blue',
-    descricao: 'Auditoria completa para identificar todos os problemas',
-    atividades: [
-      'Acesso ao código-fonte e ambiente',
-      'Auditoria técnica automatizada',
-      'Testes manuais com leitores de tela',
-      'Navegação por teclado completa',
-      'Documentação de todos os issues',
-      'Priorização por impacto',
-      'Estimativa de esforço e prazo',
-      'Apresentação ao cliente',
-    ],
-  },
-  {
-    numero: 2,
-    titulo: 'Planejamento',
-    duracao: '1-2 dias',
-    icone: Target,
-    cor: 'purple',
-    descricao: 'Roadmap de correções priorizadas',
-    atividades: [
-      'Definição de escopo e prioridades',
-      'Criação de branches no Git',
-      'Setup de ambiente de desenvolvimento',
-      'Definição de milestones',
-      'Cronograma detalhado',
-      'Alinhamento com equipe cliente',
-    ],
-  },
-  {
-    numero: 3,
-    titulo: 'Implementação',
-    duracao: '2-8 semanas',
-    icone: Code,
-    cor: 'green',
-    descricao: 'Correção hands-on dos problemas identificados',
-    atividades: [
-      'Refatoração de componentes',
-      'Implementação de HTML semântico',
-      'Adição de ARIA quando necessário',
-      'Correção de navegação por teclado',
-      'Ajuste de contrastes de cores',
-      'Implementação de skip links',
-      'Correção de formulários',
-      'Testes contínuos durante desenvolvimento',
-    ],
-  },
-  {
-    numero: 4,
-    titulo: 'Testes e QA',
-    duracao: '1-2 semanas',
-    icone: Shield,
-    cor: 'orange',
-    descricao: 'Validação completa de todas as correções',
-    atividades: [
-      'Testes com ferramentas automatizadas',
-      'Testes com NVDA, JAWS, VoiceOver',
-      'Navegação completa por teclado',
-      'Testes em diferentes navegadores',
-      'Validação mobile',
-      'Checklist de conformidade WCAG',
-      'Correção de bugs encontrados',
-      'Documentação de melhorias',
-    ],
-  },
-  {
-    numero: 5,
-    titulo: 'Deploy e Documentação',
-    duracao: '2-3 dias',
-    icone: Award,
-    cor: 'red',
-    descricao: 'Entrega e transferência de conhecimento',
-    atividades: [
-      'Code review final',
-      'Merge para produção',
-      'Deploy em homologação',
-      'Testes em produção',
-      'Documentação técnica completa',
-      'Guia de manutenção',
-      'Treinamento da equipe',
-      'Suporte pós-deploy',
-    ],
-  },
-]
+	{
+		numero: 1,
+		titulo: "Análise Inicial",
+		duracao: "3-5 dias",
+		icone: Eye,
+		cor: "blue",
+		descricao: "Auditoria completa para identificar todos os problemas",
+		atividades: [
+			"Acesso ao código-fonte e ambiente",
+			"Auditoria técnica automatizada",
+			"Testes manuais com leitores de tela",
+			"Navegação por teclado completa",
+			"Documentação de todos os issues",
+			"Priorização por impacto",
+			"Estimativa de esforço e prazo",
+			"Apresentação ao cliente",
+		],
+	},
+	{
+		numero: 2,
+		titulo: "Planejamento",
+		duracao: "1-2 dias",
+		icone: Target,
+		cor: "purple",
+		descricao: "Roadmap de correções priorizadas",
+		atividades: [
+			"Definição de escopo e prioridades",
+			"Criação de branches no Git",
+			"Setup de ambiente de desenvolvimento",
+			"Definição de milestones",
+			"Cronograma detalhado",
+			"Alinhamento com equipe cliente",
+		],
+	},
+	{
+		numero: 3,
+		titulo: "Implementação",
+		duracao: "2-8 semanas",
+		icone: Code,
+		cor: "green",
+		descricao: "Correção hands-on dos problemas identificados",
+		atividades: [
+			"Refatoração de componentes",
+			"Implementação de HTML semântico",
+			"Adição de ARIA quando necessário",
+			"Correção de navegação por teclado",
+			"Ajuste de contrastes de cores",
+			"Implementação de skip links",
+			"Correção de formulários",
+			"Testes contínuos durante desenvolvimento",
+		],
+	},
+	{
+		numero: 4,
+		titulo: "Testes e QA",
+		duracao: "1-2 semanas",
+		icone: Shield,
+		cor: "orange",
+		descricao: "Validação completa de todas as correções",
+		atividades: [
+			"Testes com ferramentas automatizadas",
+			"Testes com NVDA, JAWS, VoiceOver",
+			"Navegação completa por teclado",
+			"Testes em diferentes navegadores",
+			"Validação mobile",
+			"Checklist de conformidade WCAG",
+			"Correção de bugs encontrados",
+			"Documentação de melhorias",
+		],
+	},
+	{
+		numero: 5,
+		titulo: "Deploy e Documentação",
+		duracao: "2-3 dias",
+		icone: Award,
+		cor: "red",
+		descricao: "Entrega e transferência de conhecimento",
+		atividades: [
+			"Code review final",
+			"Merge para produção",
+			"Deploy em homologação",
+			"Testes em produção",
+			"Documentação técnica completa",
+			"Guia de manutenção",
+			"Treinamento da equipe",
+			"Suporte pós-deploy",
+		],
+	},
+];
 
 const pacotes = [
-  {
-    nome: 'Correções Pontuais',
-    preco: 'R$ 5.000',
-    duracao: '1-2 semanas',
-    ideal: 'Até 20 issues identificados',
-    cor: 'blue',
-    inclui: [
-      'Correção de problemas específicos',
-      'Testes das correções',
-      'Documentação do que foi alterado',
-      'Pull request organizado',
-      'Suporte por 15 dias',
-      'Ideal para: sites pequenos, correções urgentes',
-    ],
-  },
-  {
-    nome: 'Remediação Completa',
-    preco: 'R$ 15.000',
-    duracao: '1-2 meses',
-    ideal: 'Sites médios com múltiplos problemas',
-    cor: 'green',
-    destaque: true,
-    inclui: [
-      'Auditoria completa incluída',
-      'Correção de todos os issues',
-      'Refatoração de componentes',
-      'Testes extensivos',
-      'Documentação completa',
-      'Treinamento básico da equipe',
-      'Suporte por 30 dias',
-      'Ideal para: sites corporativos, e-commerce',
-    ],
-  },
-  {
-    nome: 'Projeto Enterprise',
-    preco: 'Sob consulta',
-    duracao: '2-6 meses',
-    ideal: 'Sistemas complexos e aplicações grandes',
-    cor: 'purple',
-    inclui: [
-      'Tudo do pacote Completo',
-      'Múltiplas plataformas/produtos',
-      'Design System acessível',
-      'Treinamento completo da equipe',
-      'Mentoria contínua',
-      'Processos e documentação',
-      'Suporte estendido (90 dias)',
-      'Ideal para: grandes empresas, SaaS',
-    ],
-  },
-]
+	{
+		nome: "Correções Pontuais",
+		preco: "R$ 5.000",
+		duracao: "1-2 semanas",
+		ideal: "Até 20 issues identificados",
+		cor: "blue",
+		inclui: [
+			"Correção de problemas específicos",
+			"Testes das correções",
+			"Documentação do que foi alterado",
+			"Pull request organizado",
+			"Suporte por 15 dias",
+			"Ideal para: sites pequenos, correções urgentes",
+		],
+	},
+	{
+		nome: "Remediação Completa",
+		preco: "R$ 15.000",
+		duracao: "1-2 meses",
+		ideal: "Sites médios com múltiplos problemas",
+		cor: "green",
+		destaque: true,
+		inclui: [
+			"Auditoria completa incluída",
+			"Correção de todos os issues",
+			"Refatoração de componentes",
+			"Testes extensivos",
+			"Documentação completa",
+			"Treinamento básico da equipe",
+			"Suporte por 30 dias",
+			"Ideal para: sites corporativos, e-commerce",
+		],
+	},
+	{
+		nome: "Projeto Enterprise",
+		preco: "Sob consulta",
+		duracao: "2-6 meses",
+		ideal: "Sistemas complexos e aplicações grandes",
+		cor: "purple",
+		inclui: [
+			"Tudo do pacote Completo",
+			"Múltiplas plataformas/produtos",
+			"Design System acessível",
+			"Treinamento completo da equipe",
+			"Mentoria contínua",
+			"Processos e documentação",
+			"Suporte estendido (90 dias)",
+			"Ideal para: grandes empresas, SaaS",
+		],
+	},
+];
 
 const exemplos = [
-  {
-    problema: 'Sistema de agendamento médico com 127 violações',
-    solucao: 'Remediação completa de todos os componentes, foco em formulários e navegação',
-    resultado: '0 violações, NPS aumentou 40%, processo judicial evitado',
-    tempo: '4 meses',
-    tecnologia: 'React + TypeScript',
-  },
-  {
-    problema: 'E-commerce com checkout inacessível',
-    solucao: 'Refatoração do fluxo de compra, formulários acessíveis, validação clara',
-    resultado: 'Conversão aumentou 15%, pessoas com deficiência conseguem comprar',
-    tempo: '2 meses',
-    tecnologia: 'Vue.js + Nuxt',
-  },
-  {
-    problema: 'Portal WordPress com tema inacessível',
-    solucao: 'Criação de child theme acessível, correção de menus e formulários',
-    resultado: 'Aprovado em WCAG AA, conformidade legal alcançada',
-    tempo: '6 semanas',
-    tecnologia: 'WordPress + PHP',
-  },
-]
+	{
+		problema: "Sistema de agendamento médico com 127 violações",
+		solucao:
+			"Remediação completa de todos os componentes, foco em formulários e navegação",
+		resultado: "0 violações, NPS aumentou 40%, processo judicial evitado",
+		tempo: "4 meses",
+		tecnologia: "React + TypeScript",
+	},
+	{
+		problema: "E-commerce com checkout inacessível",
+		solucao:
+			"Refatoração do fluxo de compra, formulários acessíveis, validação clara",
+		resultado:
+			"Conversão aumentou 15%, pessoas com deficiência conseguem comprar",
+		tempo: "2 meses",
+		tecnologia: "Vue.js + Nuxt",
+	},
+	{
+		problema: "Portal WordPress com tema inacessível",
+		solucao:
+			"Criação de child theme acessível, correção de menus e formulários",
+		resultado: "Aprovado em WCAG AA, conformidade legal alcançada",
+		tempo: "6 semanas",
+		tecnologia: "WordPress + PHP",
+	},
+];
 
 const diferenciais = [
-  {
-    icone: Code,
-    titulo: 'Trabalho no código real',
-    descricao:
-      'Não apenas aponto problemas - eu corrijo. Faço pull requests, refatoro componentes, implemento soluções.',
-  },
-  {
-    icone: Shield,
-    titulo: 'Testes rigorosos',
-    descricao:
-      'Não confio só em ferramentas automatizadas. Testo manualmente com leitores de tela e navegação por teclado.',
-  },
-  {
-    icone: TrendingUp,
-    titulo: 'Transferência de conhecimento',
-    descricao: 'Documento tudo e treino sua equipe. O objetivo é que vocês mantenham a qualidade depois.',
-  },
-  {
-    icone: Zap,
-    titulo: 'Resultados mensuráveis',
-    descricao: 'Antes e depois com números claros. Violações corrigidas, score Lighthouse, conformidade WCAG.',
-  },
-]
+	{
+		icone: Code,
+		titulo: "Trabalho no código real",
+		descricao:
+			"Não apenas aponto problemas - eu corrijo. Faço pull requests, refatoro componentes, implemento soluções.",
+	},
+	{
+		icone: Shield,
+		titulo: "Testes rigorosos",
+		descricao:
+			"Não confio só em ferramentas automatizadas. Testo manualmente com leitores de tela e navegação por teclado.",
+	},
+	{
+		icone: TrendingUp,
+		titulo: "Transferência de conhecimento",
+		descricao:
+			"Documento tudo e treino sua equipe. O objetivo é que vocês mantenham a qualidade depois.",
+	},
+	{
+		icone: Zap,
+		titulo: "Resultados mensuráveis",
+		descricao:
+			"Antes e depois com números claros. Violações corrigidas, score Lighthouse, conformidade WCAG.",
+	},
+];
 
 const faq = [
-  {
-    pergunta: 'Preciso dar acesso ao código?',
-    resposta:
-      'Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.',
-  },
-  {
-    pergunta: 'E se meu código for muito antigo/bagunçado?',
-    resposta:
-      'Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.',
-  },
-  {
-    pergunta: 'Quanto tempo leva?',
-    resposta:
-      'Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.',
-  },
-  {
-    pergunta: 'Trabalha com qualquer tecnologia?',
-    resposta:
-      'Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.',
-  },
-  {
-    pergunta: 'E depois que você terminar?',
-    resposta:
-      'Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.',
-  },
-  {
-    pergunta: 'Garante que não haverá novos problemas?',
-    resposta:
-      'Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.',
-  },
-]
+	{
+		pergunta: "Preciso dar acesso ao código?",
+		resposta:
+			"Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.",
+	},
+	{
+		pergunta: "E se meu código for muito antigo/bagunçado?",
+		resposta:
+			"Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.",
+	},
+	{
+		pergunta: "Quanto tempo leva?",
+		resposta:
+			"Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.",
+	},
+	{
+		pergunta: "Trabalha com qualquer tecnologia?",
+		resposta:
+			"Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.",
+	},
+	{
+		pergunta: "E depois que você terminar?",
+		resposta:
+			"Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.",
+	},
+	{
+		pergunta: "Garante que não haverá novos problemas?",
+		resposta:
+			"Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.",
+	},
+];
 
 const requisitos = [
-  {
-    titulo: 'Acesso necessário',
-    itens: [
-      'Repositório Git (read/write)',
-      'Ambiente de desenvolvimento',
-      'Documentação técnica existente',
-      'Credenciais de teste (se aplicável)',
-    ],
-  },
-  {
-    titulo: 'O que facilita',
-    itens: [
-      'Testes automatizados existentes',
-      'CI/CD configurado',
-      'Design system documentado',
-      'Comunicação direta com devs',
-    ],
-  },
-]
+	{
+		titulo: "Acesso necessário",
+		itens: [
+			"Repositório Git (read/write)",
+			"Ambiente de desenvolvimento",
+			"Documentação técnica existente",
+			"Credenciais de teste (se aplicável)",
+		],
+	},
+	{
+		titulo: "O que facilita",
+		itens: [
+			"Testes automatizados existentes",
+			"CI/CD configurado",
+			"Design system documentado",
+			"Comunicação direta com devs",
+		],
+	},
+];
 ---
 
 <Layout title="Remediação de documentos - Bruno Pulis">
