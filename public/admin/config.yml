@@ -2,7 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: 'static/images'
+publish_mode: editorial_workflow
+
+media_folder: 'src/assets/images'
 public_folder: '/images'
 
 collections:
@@ -36,7 +38,7 @@ collections:
         name: 'author'
         widget: 'string'
         required: true
-        default: 'Seu Nome'
+        default: 'Bruno Pulis'
 
       - label: 'Descrição/Resumo'
         name: 'description'
