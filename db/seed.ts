@@ -1,6 +1,18 @@
-import { db } from 'astro:db';
+import { db, GuestBook } from 'astro:db';
 
-// https://astro.build/db/seed
 export default async function seed() {
-	// TODO
+  await db.insert(Guestbook).values([
+    {
+      id: 1,
+      name: 'João Silva',
+      message: 'Ótimo site! Parabéns pelo trabalho.',
+      createdAt: new Date('2024-01-15')
+    },
+    {
+      id: 2,
+      name: 'Maria Santos',
+      message: 'Adorei visitar seu site, muito inspirador!',
+      createdAt: new Date('2024-01-16')
+    }
+  ]);
 }
