@@ -7,7 +7,6 @@ categories:
   - Opinião
 tags:
   - Diversão
-featured: true
 seo:
   meta_title: Dez fatos inúteis sobre mim
   keywords: []

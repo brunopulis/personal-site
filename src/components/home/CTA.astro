@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import { Coffee } from "@lucide/astro";
+
 import me from "@assets/images/me.webp";
 ---
 
-<section class="bg-linear-to-br from-red-50 to-orange-50 py-24">
+<section class="bg-gray-900 py-24">
   <div class="mx-auto max-w-4xl px-6 text-center">
     <div class="mb-8">
       <Image
@@ -15,12 +15,12 @@ import me from "@assets/images/me.webp";
       />
     </div>
 
-    <h2 class="mb-4 text-4xl font-bold text-gray-900">
-      Vamos tomar um café virtual? <span aria-hidden="true">☕</span>
+    <h2 class="mb-4 text-4xl font-bold text-white">
+      Vamos tomar um café? <span aria-hidden="true">☕</span>
     </h2>
 
-    <p class="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
-      Se você quer tornar seu produto mais acessível (seja por obrigação legal ou porque faz sentido), vamos conversar
+    <p class="mx-auto mb-8 max-w-2xl text-xl text-white">
+      Se você quer tornar seu produto mais acessível, vamos conversar
       sem compromisso.
     </p>
 
@@ -29,14 +29,13 @@ import me from "@assets/images/me.webp";
         href="https://cal.com/brunopulis/consultoria-gratuita"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-blood-red-800 hover:bg-blood-red-500 flex items-center gap-2 rounded-lg px-8 py-4 text-lg font-semibold text-white transition"
+        class="flex items-center text-lg font-semibold text-white transition underline underline-offset-8 hover:no-underline"
       >
-        <Coffee class="h-5 w-5" aria-hidden="true" />
         Agendar conversa
       </a>
       <a
         href="/servicos"
-        class="rounded-lg border border-gray-200 bg-white px-8 py-4 text-lg font-semibold text-gray-900 transition hover:bg-gray-50"
+        class="flex items-center text-lg font-semibold text-white transition underline underline-offset-8 hover:no-underline"
       >
         Ver meus serviços
       </a>
