@@ -1,12 +1,9 @@
 // @ts-check
-
 import alpinejs from "@astrojs/alpinejs";
 
 import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
-import netlify from "@astrojs/netlify";
 import partytown from "@astrojs/partytown";
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import umami from "@yeskunall/astro-umami";
@@ -17,7 +14,6 @@ import robotsTxt from "astro-robots-txt";
 
 export default defineConfig({
 	integrations: [
-		react(),
 		db(),
 		icon(),
 		alpinejs(),
@@ -59,15 +55,20 @@ export default defineConfig({
 			],
 		}),
 	],
-	adapter: netlify(),
-	output: "server",
+	output: "static",
 	site: "https://brunopulis.com",
 	build: {
+		format: 'file',
 		assets: "assets",
 	},
 	compressHTML: true,
 	vite: {
 		plugins: [tailwindcss()],
+		server: {
+      fs: {
+        strict: false
+      }
+    }
 	},
 	image: {
 		responsiveStyles: true,
