@@ -39,3 +39,4 @@ pnpm-debug.log*
 # Biome editor settings
 .biome/
 node_modules
+.vercel
