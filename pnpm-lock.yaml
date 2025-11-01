@@ -100,8 +100,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7
       '@lucide/astro':
-        specifier: ^0.548.0
-        version: 0.548.0(astro@5.15.3(@types/node@24.9.2)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.52.5)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
+        specifier: ^0.552.0
+        version: 0.552.0(astro@5.15.3(@types/node@24.9.2)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.52.5)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
       '@tailwindcss/typography':
         specifier: ^0.5.19
         version: 0.5.19(tailwindcss@4.1.16)
@@ -1567,8 +1567,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@lucide/astro@0.548.0':
-    resolution: {integrity: sha512-rWrZckDneFBC12/fDkHlk6Ug+HJihPyaa5PGTMlYurRlYQAcaSskmAJCzOihdzw7Dn7RvpmswwzCgE+wMLqTjw==}
+  '@lucide/astro@0.552.0':
+    resolution: {integrity: sha512-nPO3RPor+3eOeom+KDmNGDSLYec5DYn5jc085FNNqIpUkl6kH8wnxZhtd53aGJleYrUt3/xIbwLxsrU1cm6epg==}
     peerDependencies:
       astro: ^4 || ^5
 
@@ -9525,7 +9525,7 @@ snapshots:
   '@libsql/win32-x64-msvc@0.5.22':
     optional: true
 
-  '@lucide/astro@0.548.0(astro@5.15.3(@types/node@24.9.2)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.52.5)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))':
+  '@lucide/astro@0.552.0(astro@5.15.3(@types/node@24.9.2)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.52.5)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))':
     dependencies:
       astro: 5.15.3(@types/node@24.9.2)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.52.5)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1)
 
