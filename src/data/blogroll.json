@@ -1,19 +1,5 @@
 [
 	{
-		"name": "Reinaldo Ferraz",
-		"url": "https://reinaldoferraz.com.br",
-		"rss": "https://rsspress.me/coryd",
-		"description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
-		"category": "Acessibilidade"
-	},
-	{
-		"name": "Sara Souedian",
-		"url": "http://sarasoueidan.com/",
-		"rss": "https://www.sarasoueidan.com/blog/index.xml",
-		"description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
-		"category": "Acessibilidade"
-	},
-	{
 		"name": "Cory Dransfeldt",
 		"url": "https://coryd.dev",
 		"rss": "https://rsspress.me/coryd",
