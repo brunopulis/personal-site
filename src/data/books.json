@@ -1,22 +1,5 @@
 [
 	{
-		"id": 1,
-		"title": "Heróis da Fé",
-		"author": "Orlando Boyer",
-		"category": "biografia",
-		"status": "lido",
-		"rating": 5,
-		"cover": "https://m.media-amazon.com/images/I/61in1JIozJL._SL1000_.jpg",
-		"description": "Uma coletânea de biografias inspiradoras de grandes homens e mulheres de fé que marcaram a história do cristianismo.",
-		"thoughts": "Um livro inspirador que mostra como a fé genuína pode transformar vidas e impactar gerações.",
-		"quotes": "A fé é a vitória que vence o mundo.",
-		"readingYear": "2018",
-		"recommendBy": "Pastor da igreja",
-		"tags": ["Cristianismo", "Biografia", "História", "Fé"],
-		"url": "https://amzn.to/4kLA8Fi",
-		"date": "2018-12-07"
-	},
-	{
 		"id": 2,
 		"title": "What Is The Trinity? (Crucial Questions, #10)",
 		"author": "R.C. Sproul",

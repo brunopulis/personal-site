@@ -4,7 +4,10 @@ export const BlogrollCollection: Collection = {
   name: "blogroll",
   label: "Blogroll",
   path: "src/content/blogroll",
-  format: "mdx",
+  match: {
+    include: '*',
+  },
+  format: "md",
   ui: {
     filename: {
       slugify: (values) => {
@@ -33,7 +36,6 @@ export const BlogrollCollection: Collection = {
       type: "string",
       name: "description",
       label: "Descrição",
-      required: true,
       ui: {
         component: "textarea",
         description: "Breve descrição do site/blog",
@@ -45,24 +47,18 @@ export const BlogrollCollection: Collection = {
       label: "Categoria",
       required: true,
       options: [
-        { value: "design", label: "🎨 Design" },
-        { value: "desenvolvimento", label: "💻 Desenvolvimento" },
-        { value: "tecnologia", label: "📱 Tecnologia" },
-        { value: "escrita", label: "✍️ Escrita" },
-        { value: "produtividade", label: "🎯 Produtividade" },
-        { value: "educacao", label: "🎓 Educação" },
-        { value: "entretenimento", label: "🎮 Entretenimento" },
-        { value: "noticias", label: "📰 Notícias" },
-        { value: "geral", label: "🌐 Geral" },
+        { value: "acessibilidade", label: "Acessibilidade" },
+        { value: "desenvolvimento", label: "Desenvolvimento" },
+        { value: "design", label: "Design" },
+        { value: "educacao", label: "Educação" },
+        { value: "entretenimento", label: "Entretenimento" },
+        { value: "escrita", label: "Escrita" },
+        { value: "geral", label: "Geral" },
+        { value: "tecnologia", label: "Tecnologia" },
+        { value: "teologia", label: "Teologia" },
+        { value: "produtividade", label: "Produtividade" },
+        { value: "noticias", label: "Notícias" },
       ],
-    },
-    {
-      type: "image",
-      name: "logo",
-      label: "Logo/Avatar",
-      ui: {
-        description: "Favicon ou logo do site",
-      },
     },
     {
       type: "string",
@@ -70,19 +66,6 @@ export const BlogrollCollection: Collection = {
       label: "Feed RSS",
       ui: {
         description: "URL do feed RSS (se disponível)",
-      },
-    },
-    {
-      type: "string",
-      name: "author",
-      label: "Autor/Responsável",
-    },
-    {
-      type: "number",
-      name: "order",
-      label: "Ordem de Exibição",
-      ui: {
-        description: "Número menor = aparece primeiro",
       },
     },
     {

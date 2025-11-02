@@ -1,13 +1,13 @@
 // @ts-check
+import { defineConfig } from "astro/config";
 import alpinejs from "@astrojs/alpinejs";
-
 import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import umami from "@yeskunall/astro-umami";
-import { defineConfig } from "astro/config";
+import vercel from '@astrojs/vercel/static';
 import compress from "astro-compress";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
@@ -57,6 +57,7 @@ export default defineConfig({
 	],
 	output: "static",
 	site: "https://brunopulis.com",
+	adapter: vercel(),
 	build: {
 		format: 'file',
 		assets: "assets",
