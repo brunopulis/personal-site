@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
-import { Calendar } from "@lucide/astro";
+import { ArrowRight } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
 import Layout from "@layouts/Layout.astro";
@@ -75,51 +74,36 @@ export const prerender = true;
         <div class="grid gap-8 lg:grid-cols-3">
           <div class="lg:col-span-2">
             <div class="space-y-8">
-              {
-                posts.map((post) => (
-                  <a href={'/blog/' + post.id} class="u-url group block">
-                    <article class="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:border-blue-400 hover:shadow-lg">
-                      <div class="md:flex">
-                        <div class="h-64 overflow-hidden md:h-auto md:w-2/5">
-                          <img
-                            src={post.data.image}
-                            alt={post.data.imageAlt}
-                            loading="lazy"
-                            decoding="async"
-                            width="323"
-                            height="242"
-                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                          />
-                      </div>
-                      <div class="p-6 md:w-3/5">
-                        <div class="mb-3 flex items-center gap-2">
-                          <span
-                            class="group flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm transition hover:bg-blood-red-800 hover:text-white"
-                          >
-                            <span class="ml-1">{post.data.category}</span>
-                          </span>
-                        </div>
-
-                        <div class="mb-4 flex items-center gap-4 text-sm text-gray-600">
-                      <div class="group relative mt-3">
-                        <h3 class="text-errie-black-900 text-2xl leading-6 font-semibold group-hover:underline group-hover:underline-offset-4">
+              <ul>
+                {
+                posts.map((post, index) => (
+                    <li class="py-4">
+                      <h3 class="mb-4 text-3xl font-bold">
+                        <a href={'/blog/' + post.id} class="u-url group block">
                           {post.data.title}
-                        </h3>
-                        <div class="text-errie-black-900 mt-5 flex items-center gap-x-2 text-sm">
-                          <Calendar class="h-4 w-4" aria-hidden="true" />
-                          <time
-                            datetime={toISOString(String(post.data.publishDate))}
-                            class="dt-published text-errie-black-900 text-sm"
-                          >
-                            {formatDate(String(post.data.publishDate))}
-                          </time>
-                        </div>
-                        <p class="text-errie-black-900 mt-5 line-clamp-2 text-xl leading-6">{post.data.excerpt}</p>
-                      </div>
-                    </article>
-                  </a>
-                ))
-              }
+                        </a>
+                      </h3>
+                      <p class="text-xl font-light my-4 flex items-center gap-4">
+                        <time class="font-display text-errie-black-900">
+                          Publicado em:
+                          {formatDate(post.data.publishDate)}
+                        </time>
+                      </p>
+                      <p class="mb-6 text-2xl font-light text-errie-black-900">
+                        {post.data.excerpt}
+                      </p>
+                      <a
+                        href={'/blog/' + post.id}
+                        aria-labelledby={`post-${index}`}
+                        class="flex items-center gap-2 font-semibold text-errie-black-900 underline underline-offset-8 transition hover:no-underline"
+                      >
+                        Ler artigo completo
+                        <ArrowRight class="h-3 w-3" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
 
             <Pagination
@@ -129,7 +113,6 @@ export const prerender = true;
               nextUrl={page.url.next}
             />
           </div>
-
           <BlogSidebar tags={tags} />
         </div>
       </div>

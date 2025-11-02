@@ -1,181 +1,21 @@
 ---
 import {
-	AlertCircle,
 	ArrowRight,
 	Award,
 	CheckCircle,
-	Clock,
 	Code,
 	Eye,
-	FileText,
 	Shield,
 	Target,
-	Zap,
 } from "@lucide/astro";
 
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/layout/Header.astro";
-import Packages from "@components/services/Packages.astro";
+import AuditionA11y from "@components/services/auditoria-a11y/AuditionA11y.astro";
+import Packages from "@components/services/auditoria-a11y/Packages.astro";
+import ServicesSteps from "@components/services/auditoria-a11y/ServicesSteps.astro";
 import CTASection from "@components/CTA.astro";
 import Footer from "@components/layout/Footer.astro";
-
-const pacotes = [
-	{
-		nome: "Starter",
-		preco: "R$ 5.000",
-		ideal: "Sites pequenos e MVPs",
-		descricao:
-			"Perfeito para quem está começando e precisa de um diagnóstico inicial",
-		cor: "blue",
-		inclui: [
-			"Auditoria de até 5 páginas",
-			"Relatório simplificado em PDF",
-			"Lista priorizada de problemas",
-			"Recomendações de correção",
-			"1 reunião de apresentação (1h)",
-			"Suporte por email (7 dias)",
-			"Prazo: 1-2 semanas",
-		],
-		exemplo: "5 páginas (ex: Home, Sobre, Serviços, Contato, Blog)",
-		tempo: "1-2 semanas",
-	},
-	{
-		nome: "Professional",
-		preco: "R$ 12.000",
-		ideal: "Projetos médios e empresas",
-		descricao: "O mais completo e recomendado para a maioria dos casos",
-		destaque: true,
-		cor: "red",
-		inclui: [
-			"Auditoria de até 15 páginas",
-			"Relatório completo detalhado",
-			"Planilha Excel com todos os issues",
-			"Prints e vídeos dos problemas",
-			"Roadmap priorizado por impacto",
-			"Recomendações técnicas específicas",
-			"2 reuniões (apresentação + dúvidas)",
-			"Suporte por email/WhatsApp (30 dias)",
-			"Revisão pós-correções (opcional)",
-			"Prazo: 2-3 semanas",
-		],
-		bonus: [
-			"Documento de boas práticas",
-			"Checklist de QA acessível",
-			"Templates de testes",
-		],
-		exemplo: "15 páginas (site completo ou app com funcionalidades principais)",
-		tempo: "2-3 semanas",
-	},
-	{
-		nome: "Enterprise",
-		preco: "Sob consulta",
-		ideal: "Grandes projetos e plataformas",
-		descricao: "Solução customizada para necessidades complexas",
-		cor: "purple",
-		inclui: [
-			"Auditoria completa do sistema",
-			"Múltiplos produtos/plataformas",
-			"Testes com usuários reais (PcD)",
-			"Análise de fluxos complexos",
-			"Documentação técnica completa",
-			"Treinamento da equipe incluído",
-			"Acompanhamento de implementação",
-			"Reuniões ilimitadas",
-			"Suporte prioritário (90 dias)",
-			"SLA de resposta garantido",
-			"Contrato anual disponível",
-		],
-		exemplo: "Sistema completo (20+ páginas, apps, dashboards)",
-		tempo: "4-6 semanas",
-	},
-];
-
-const etapas = [
-	{
-		numero: 1,
-		nome: "Kickoff",
-		duracao: "1-2 dias",
-		icone: Shield,
-		descricao:
-			"Reunião inicial para entender seu projeto, objetivos e definir escopo",
-		atividades: [
-			"Reunião de alinhamento (1h)",
-			"Definição de páginas/fluxos prioritários",
-			"Coleta de credenciais de acesso (se necessário)",
-			"Definição de personas e casos de uso",
-			"Alinhamento de expectativas e cronograma",
-		],
-	},
-	{
-		numero: 2,
-		nome: "Auditoria Técnica",
-		duracao: "5-10 dias",
-		icone: Code,
-		descricao: "Análise profunda de código, estrutura e conformidade WCAG",
-		atividades: [
-			"Análise de código HTML/CSS/JavaScript",
-			"Verificação de semântica e ARIA",
-			"Testes automatizados (Axe, Wave, Lighthouse)",
-			"Validação de contraste de cores",
-			"Verificação de estrutura de headings",
-			"Análise de formulários e validações",
-			"Teste de navegação por teclado",
-			"Documentação de cada problema encontrado",
-		],
-	},
-	{
-		numero: 3,
-		nome: "Testes com Tecnologias Assistivas",
-		duracao: "3-5 dias",
-		icone: Eye,
-		descricao:
-			"Simulação de uso real com leitores de tela e outras ferramentas",
-		atividades: [
-			"Testes com NVDA (Windows)",
-			"Testes com JAWS (Windows)",
-			"Testes com VoiceOver (macOS/iOS)",
-			"Testes com TalkBack (Android)",
-			"Navegação apenas por teclado",
-			"Testes com zoom (até 200%)",
-			"Gravação de vídeos dos problemas",
-			"Documentação de experiência do usuário",
-		],
-	},
-	{
-		numero: 4,
-		nome: "Elaboração do Relatório",
-		duracao: "3-5 dias",
-		icone: FileText,
-		descricao:
-			"Compilação de todos os achados em documentação clara e acionável",
-		atividades: [
-			"Categorização dos problemas por severidade",
-			"Priorização por impacto no usuário",
-			"Criação de prints e vídeos explicativos",
-			"Redação de recomendações específicas",
-			"Sugestões de código para correção",
-			"Criação de planilha Excel detalhada",
-			"Montagem do relatório final em PDF",
-			"Roadmap de implementação sugerido",
-		],
-	},
-	{
-		numero: 5,
-		nome: "Apresentação e Suporte",
-		duracao: "1-2 dias",
-		icone: Award,
-		descricao: "Entrega dos resultados e acompanhamento pós-auditoria",
-		atividades: [
-			"Reunião de apresentação dos resultados",
-			"Explicação de cada problema encontrado",
-			"Priorização conjunta das correções",
-			"Esclarecimento de dúvidas técnicas",
-			"Orientações sobre próximos passos",
-			"Suporte contínuo por email/WhatsApp",
-			"Revisão opcional após correções",
-		],
-	},
-];
 
 const oqueBusco = [
 	{
@@ -246,18 +86,6 @@ const oqueBusco = [
 	},
 ];
 
-const ferramentas = [
-	{ nome: "Axe DevTools", uso: "Testes automatizados" },
-	{ nome: "WAVE", uso: "Análise visual de problemas" },
-	{ nome: "Lighthouse", uso: "Score de acessibilidade" },
-	{ nome: "NVDA", uso: "Leitor de tela (Windows)" },
-	{ nome: "JAWS", uso: "Leitor de tela (Windows)" },
-	{ nome: "VoiceOver", uso: "Leitor de tela (Mac/iOS)" },
-	{ nome: "TalkBack", uso: "Leitor de tela (Android)" },
-	{ nome: "Colour Contrast Analyser", uso: "Análise de contraste" },
-	{ nome: "HeadingsMap", uso: "Verificação de estrutura" },
-];
-
 const faq = [
 	{
 		pergunta: "Qual padrão/guideline você segue?",
@@ -295,7 +123,7 @@ const faq = [
 <Layout title="Auditoria de Acessibilidade - Bruno Pulis">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-lienar-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
+    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -310,13 +138,13 @@ const faq = [
           </p>
           <div class="flex gap-4">
             <a
-              href="#pacotes"
+              href="#packages"
               class="font-semibold text-white underline underline-offset-8 transition hover:no-underline"
             >
               Ver pacotes
             </a>
             <a
-              href="#etapas"
+              href="#steps"
               class="font-semibold text-white underline underline-offset-8 transition hover:no-underline"
             >
               Como funciona
@@ -326,106 +154,9 @@ const faq = [
       </div>
     </section>
 
-    <section class="bg-white py-20">
-      <div class="mx-auto max-w-6xl px-6">
-        <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que fazer uma auditoria?</h2>
-          <p class="mx-auto max-w-3xl text-xl text-gray-600">Você não pode corrigir o que não sabe que está quebrado</p>
-        </div>
-
-        <div class="grid gap-8 md:grid-cols-3">
-          <div class="rounded-2xl border-2 border-red-200 bg-lienar-to-br from-red-50 to-white p-8">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-600">
-              <AlertCircle class="h-7 w-7 text-white" aria-hidden="true" />
-            </div>
-            <h3 class="mb-4 text-2xl font-bold text-gray-900">Evite processos</h3>
-            <p class="text-gray-700">
-              Sites inacessíveis podem gerar processos judiciais. Uma auditoria documenta seus esforços e mostra o
-              caminho para conformidade legal.
-            </p>
-          </div>
-
-          <div class="rounded-2xl border-2 border-green-200 bg-lienar-to-br from-green-50 to-white p-8">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-600">
-              <Zap class="h-7 w-7 text-white" />
-            </div>
-            <h3 class="mb-4 text-2xl font-bold text-gray-900">Aumente seu alcance</h3>
-            <p class="text-gray-700">
-              15% da população tem alguma deficiência. Um site acessível alcança mais pessoas, aumenta conversões e
-              melhora SEO.
-            </p>
-          </div>
-
-          <div class="rounded-2xl border-2 border-blue-200 bg-lienar-to-br from-blue-50 to-white p-8">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600">
-              <Target class="h-7 w-7 text-white" />
-            </div>
-            <h3 class="mb-4 text-2xl font-bold text-gray-900">Priorize investimentos</h3>
-            <p class="text-gray-700">
-              Saiba exatamente onde investir. O relatório prioriza problemas por impacto, permitindo corrigir o mais
-              crítico primeiro.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+		<AuditionA11y />
+		<ServicesSteps />
     <Packages />
-
-    <section id="etapas" class="bg-white py-20">
-      <div class="mx-auto max-w-6xl px-6">
-        <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Como funciona a auditoria</h2>
-          <p class="text-xl text-gray-600">Processo transparente em 5 etapas</p>
-        </div>
-
-        <div class="space-y-8">
-          {
-            etapas.map((etapa, index) => {
-              const Icon = etapa.icone
-              return (
-                <div class="relative">
-                  {index < etapas.length - 1 && <div class="absolute top-20 bottom-0 left-8 -mb-8 w-0.5 bg-gray-200" />}
-
-                  <div class="flex gap-6">
-                    <div class="flex-shrink-0">
-                      <div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-xl bg-lienar-to-br from-blue-500 to-blue-600 text-2xl font-bold text-white shadow-lg">
-                        {etapa.numero}
-                      </div>
-                    </div>
-
-                    <div class="flex-1 rounded-xl border-2 border-gray-200 bg-white p-8 transition hover:border-blue-400">
-                      <div class="mb-4 flex items-start justify-between">
-                        <div>
-                          <h3 class="mb-2 text-2xl font-bold text-gray-900">{etapa.nome}</h3>
-                          <p class="text-gray-600">{etapa.descricao}</p>
-                        </div>
-                        <div class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm whitespace-nowrap text-gray-600">
-                          <Clock class="h-4 w-4" aria-hidden="true" />
-                          {etapa.duracao}
-                        </div>
-                      </div>
-
-                      <div class="mt-6">
-                        <h4 class="mb-3 text-sm font-bold text-gray-900">O que faço nesta etapa:</h4>
-                        <ul class="grid gap-2 md:grid-cols-2">
-                          {etapa.atividades.map((atividade) => (
-                            <li class="flex items-start gap-2">
-                              <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" aria-hidden="true" />
-                              <span class="text-sm text-gray-700">{atividade}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            })
-          }
-        </div>
-      </div>
-    </section>
 
     <section class="bg-gray-50 py-20">
       <div class="mx-auto max-w-6xl px-6">
@@ -462,32 +193,7 @@ const faq = [
       </div>
     </section>
 
-    <section class="bg-white py-20">
-      <div class="mx-auto max-w-6xl px-6">
-        <div class="mb-12 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900">Ferramentas que utilizo</h2>
-          <p class="text-gray-600">Combinação de testes automatizados e manuais para análise completa</p>
-        </div>
-
-        <div class="grid gap-4 md:grid-cols-3">
-          {
-            ferramentas.map((ferramenta) => (
-              <div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100">
-                  <Zap class="h-5 w-5 text-purple-600" />
-                </div>
-                <div class="flex-1">
-                  <div class="text-sm font-semibold text-gray-900">{ferramenta.nome}</div>
-                  <div class="text-xs text-gray-600">{ferramenta.uso}</div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-gray-50 py-20">
+    <section class="py-20">
       <div class="mx-auto max-w-4xl px-6">
         <div class="mb-12 text-center">
           <h2 class="mb-4 text-3xl font-bold text-gray-900">Perguntas Frequentes</h2>
