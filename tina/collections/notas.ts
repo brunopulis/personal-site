@@ -1,15 +1,9 @@
 import type { Collection } from "tinacms";
 
-export const BlogCollection: Collection = {
-  name: "post",
-  label: "Blog",
-  path: "src/content/blog",
-  defaultItem: () => {
-    return {
-      title: 'Novo Post',
-      author: 'Pulis'
-    };
-  },
+export const NotasCollection: Collection = {
+  name: "note",
+  label: "Notas",
+  path: "src/content/notes",
   match: {
     include: '*',
   },
@@ -17,7 +11,8 @@ export const BlogCollection: Collection = {
   ui: {
     filename: {
       slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
+        const date = new Date(values?.date || Date.now());
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
       },
     },
   },
@@ -43,7 +38,7 @@ export const BlogCollection: Collection = {
       type: "string",
       name: "author",
       label: "Autor",
-      required: true,
+      required: true
     },
     {
       type: "string",
