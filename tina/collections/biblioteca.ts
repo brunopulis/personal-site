@@ -5,18 +5,22 @@ export const BibliotecaCollection: Collection = {
   label: "Meus Livros",
   path: "src/content/biblioteca",
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
   defaultItem: () => {
     return {
-      status: 'Quero Ler'
+      title: "Novo Livro",
+      status: ["quero_ler"], // garantir array
+      tags: [],
+      category: [],
+      rating: "3",
     };
   },
   ui: {
     filename: {
       slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
+        return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },
   },
@@ -41,7 +45,6 @@ export const BibliotecaCollection: Collection = {
       type: "string",
       name: "author",
       label: "Autor(es)",
-      list: true,
       required: true,
     },
     {
@@ -50,15 +53,9 @@ export const BibliotecaCollection: Collection = {
       label: "Data de Publicação",
       required: true,
       ui: {
-        dateFormat: 'DD/MM/YYYY',
-        timeFormat: 'HH:mm',
+        dateFormat: "DD/MM/YYYY",
+        timeFormat: "HH:mm",
       },
-    },
-    {
-      type: "number",
-      name: "year",
-      label: "Ano de Lançamento",
-      required: true,
     },
     {
       type: "rich-text",
@@ -76,24 +73,24 @@ export const BibliotecaCollection: Collection = {
       list: true,
       required: true,
       options: [
-        { value: "ficcao", label: "Ficção" },
-        { value: "nao-ficcao", label: "Não Ficção" },
-        { value: "tecnicos", label: "Técnicos" },
-        { value: "negocios", label: "Negócios" },
-        { value: "financas", label: "Finanças e investimentos" },
-        { value: "empreendedorismo", label: "Empreendedorismo" },
-        { value: "produtividade", label: "Produtividade" },
-        { value: "autoajuda", label: "Autoajuda" },
-        { value: "filosofia", label: "Filosofia" },
-        { value: "religiao", label: "Religião" },
-        { value: "teologia", label: "Teologia" },
-        { value: "politica", label: "Política" },
-        { value: "educacao", label: "Educação" },
-        { value: "musica", label: "Música" },
-        { value: "arte", label: "Arte" },
-        { value: "humor", label: "Humor" },
-        { value: "poesia", label: "Poesia" },
-        { value: "quadrinhos", label: "Quadrinhos" },
+        { value: "Ficção", label: "Ficção" },
+        { value: "Não Ficção", label: "Não Ficção" },
+        { value: "Técnicos", label: "Técnicos" },
+        { value: "Negócios", label: "Negócios" },
+        { value: "Finanças e investimentos", label: "Finanças e investimentos" },
+        { value: "Empreendedorismo", label: "Empreendedorismo" },
+        { value: "Produtividade", label: "Produtividade" },
+        { value: "Autoajuda", label: "Autoajuda" },
+        { value: "Filosofia", label: "Filosofia" },
+        { value: "Religiao", label: "Religião" },
+        { value: "Teologia", label: "Teologia" },
+        { value: "Politica", label: "Política" },
+        { value: "Educacao", label: "Educação" },
+        { value: "Música", label: "Música" },
+        { value: "Arte", label: "Arte" },
+        { value: "Humor", label: "Humor" },
+        { value: "Poesia", label: "Poesia" },
+        { value: "Quadrinhos", label: "Quadrinhos" },
       ],
     },
     {
@@ -120,10 +117,10 @@ export const BibliotecaCollection: Collection = {
       required: true,
       list: true,
       options: [
-        { value: "to_read", label: "Quero Ler" },
-        { value: "read", label: "Lido" },
-        { value: "reading", label: "Lendo" },
-        { value: "abandoned", label: "Abandonado" },
+        { value: "quero_ler", label: "Quero ler" },
+        { value: "lido", label: "Lido" },
+        { value: "lendo", label: "Lendo" },
+        { value: "abandonado", label: "Abandonado" },
       ],
     },
     {
@@ -131,7 +128,7 @@ export const BibliotecaCollection: Collection = {
       name: "reading_date",
       label: "Data de leitura",
       ui: {
-        dateFormat: 'DD/MM/YYYY',
+        dateFormat: "DD/MM/YYYY",
         description: "Quando você leu o livro",
       },
     },
@@ -164,6 +161,9 @@ export const BibliotecaCollection: Collection = {
       name: "tags",
       label: "Tags",
       list: true,
+      ui: {
+        component: "tags",
+      },
     },
   ],
-}
+};

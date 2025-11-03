@@ -1,18 +1,23 @@
 import type { Collection } from "tinacms";
 
-export const NewsletterCollection : Collection =       {
+export const NewsletterCollection: Collection = {
   name: "newsletter",
   label: "Newsletter",
   path: "src/content/newsletter",
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
+  defaultItem: () => ({
+    title: "Nova Newsletter",
+    issue: "1",
+    body: "",
+  }),
   fields: [
     {
       type: "string",
       name: "title",
-      label: "Title",
+      label: "Título",
       isTitle: true,
       required: true,
     },
@@ -25,13 +30,13 @@ export const NewsletterCollection : Collection =       {
     {
       type: "image",
       name: "coverImage",
-      label: "Hero",
+      label: "Imagem de Capa",
     },
     {
       type: "rich-text",
       name: "body",
-      label: "Body",
+      label: "Conteúdo",
       isBody: true,
     },
   ],
-}
+};

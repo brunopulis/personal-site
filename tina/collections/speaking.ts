@@ -1,18 +1,24 @@
 import type { Collection } from "tinacms";
 
-export const SpeakingCollection : Collection = {
+export const SpeakingCollection: Collection = {
   name: "speaking",
   label: "Palestras",
   path: "src/content/speaking",
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
+  defaultItem: () => ({
+    title: "Nova Palestra",
+    issue: "",
+    coverImage: "",
+    body: "",
+  }),
   fields: [
     {
       type: "string",
       name: "title",
-      label: "Title",
+      label: "Título",
       isTitle: true,
       required: true,
     },
@@ -25,13 +31,13 @@ export const SpeakingCollection : Collection = {
     {
       type: "image",
       name: "coverImage",
-      label: "Hero",
+      label: "Imagem Capa",
     },
     {
       type: "rich-text",
       name: "body",
-      label: "Body",
+      label: "Conteúdo",
       isBody: true,
     },
   ],
-}
+};

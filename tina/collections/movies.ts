@@ -1,22 +1,29 @@
 import type { Collection } from "tinacms";
 
-export const MoviesCollection : Collection =       {
+export const MoviesCollection: Collection = {
   name: "movie",
   label: "Meus Filmes",
   path: "src/content/movies",
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
-  defaultItem: () => {
-    return {
-      status: '📝 Quero Assistir'
-    };
-  },
+  defaultItem: () => ({
+    title: "Novo filme",
+    publishDate: new Date().toISOString(),
+    status: "quero_assistir",
+    favorite: false,
+    rating:  "3",
+    description: "",
+    body: "",
+    tags: [],
+    draft: false,
+    featured: false,
+  }),
   ui: {
     filename: {
-      slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
+      slugify: values => {
+        return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },
   },
@@ -27,54 +34,6 @@ export const MoviesCollection : Collection =       {
       label: "Título do Filme",
       isTitle: true,
       required: true,
-    },
-    {
-      type: "string",
-      name: "original_title",
-      label: "Título Original",
-      ui: {
-        description: "Título no idioma original (se diferente)",
-      },
-    },
-    {
-      type: "number",
-      name: "year",
-      label: "Ano de Lançamento",
-      required: true,
-    },
-    {
-      type: "string",
-      name: "director",
-      label: "Diretor(es)",
-      list: true,
-      required: true,
-    },
-    {
-      type: "object",
-      name: "cast",
-      label: "Elenco Principal",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          name: "actor",
-          label: "Ator/Atriz",
-        },
-        {
-          type: "string",
-          name: "character",
-          label: "Personagem",
-        },
-      ],
-    },
-    {
-      type: "string",
-      name: "synopsis",
-      label: "Sinopse",
-      required: true,
-      ui: {
-        component: "textarea",
-      },
     },
     {
       type: "rich-text",
@@ -91,6 +50,9 @@ export const MoviesCollection : Collection =       {
       label: "Gêneros",
       list: true,
       required: true,
+      ui: {
+        component: "list",
+      },
       options: [
         { value: "acao", label: "Ação" },
         { value: "animacao", label: "Animação" },
@@ -131,12 +93,11 @@ export const MoviesCollection : Collection =       {
       name: "status",
       label: "Status",
       required: true,
-      list: true,
       options: [
-        { value: "assistido", label: "✅ Assistido" },
-        { value: "assistindo", label: "📺 Assistindo" },
-        { value: "quero_assistir", label: "📝 Quero Assistir" },
-        { value: "abandonado", label: "❌ Abandonado" },
+        { value: "assistido", label: "Assistido" },
+        { value: "assistindo", label: "Assistindo" },
+        { value: "quero_assistir", label: "uero Assistir" },
+        { value: "abandonado", label: "Abandonado" },
       ],
     },
     {
@@ -144,28 +105,9 @@ export const MoviesCollection : Collection =       {
       name: "watched_date",
       label: "Data Assistida",
       ui: {
-        dateFormat: 'DD/MM/YYYY',
+        dateFormat: "DD/MM/YYYY",
         description: "Quando você assistiu o filme",
       },
-    },
-    {
-      type: "number",
-      name: "runtime",
-      label: "Duração (minutos)",
-      ui: {
-        description: "Duração em minutos",
-      },
-    },
-    {
-      type: "string",
-      name: "language",
-      label: "Idioma Original",
-    },
-    {
-      type: "string",
-      name: "country",
-      label: "País de Origem",
-      list: true,
     },
     {
       type: "boolean",
@@ -177,6 +119,9 @@ export const MoviesCollection : Collection =       {
       name: "streaming",
       label: "Onde Assistir",
       list: true,
+      ui: {
+        component: "list",
+      },
       options: [
         { value: "netflix", label: "Netflix" },
         { value: "amazon-prime", label: "Amazon Prime" },
@@ -194,6 +139,9 @@ export const MoviesCollection : Collection =       {
       name: "tags",
       label: "Tags",
       list: true,
+      ui: {
+        component: "tags",
+      },
     },
     {
       type: "string",
@@ -204,4 +152,4 @@ export const MoviesCollection : Collection =       {
       },
     },
   ],
-}
+};
