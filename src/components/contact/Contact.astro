@@ -3,13 +3,18 @@
     <div class="grid gap-12 md:grid-cols-2">
       <div class="slide-up">
         <div class="card border border-gray-200 p-6 dark:border-gray-700">
-          <h3 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Envie sua mensagem</h3>
+          <h3 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
+            Envie sua mensagem
+          </h3>
 
           <form x-data="{ name: '', email: '', message: '', submitted: false, errors: {} }">
             <div class="mb-4">
-              <label for="name" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
-                >Nome</label
+              <label
+                for="name"
+                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
               >
+                Nome
+              </label>
               <input
                 type="text"
                 id="name"
@@ -21,9 +26,12 @@
             </div>
 
             <div class="mb-4">
-              <label for="email" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
-                >Email</label
+              <label
+                for="email"
+                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
               >
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -35,9 +43,12 @@
             </div>
 
             <div class="mb-4">
-              <label for="subject" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
-                >Assunto</label
+              <label
+                for="subject"
+                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
               >
+                Assunto
+              </label>
               <input
                 type="text"
                 id="subject"
@@ -47,27 +58,46 @@
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu assunto"
               />
-              <p class="mt-1 text-sm text-red-500" x-show="errors.subject" x-text="errors.subject"></p>
+              <p
+                class="mt-1 text-sm text-red-500"
+                x-show="errors.subject"
+                x-text="errors.subject"
+              ></p>
             </div>
 
             <div class="mb-6">
-              <label for="message" class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
-                >Mensagem</label
+              <label
+                for="message"
+                class="mb-1 block cursor-pointer text-sm font-bold text-gray-700 dark:text-gray-300"
               >
+                Mensagem
+              </label>
               <textarea
                 id="message"
                 x-model="message"
                 rows="5"
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                placeholder="Sua mensagem"></textarea>
-              <p class="mt-1 text-sm text-red-700" x-show="errors.message" x-text="errors.message"></p>
+                placeholder="Sua mensagem"
+              ></textarea>
+              <p
+                class="mt-1 text-sm text-red-700"
+                x-show="errors.message"
+                x-text="errors.message"
+              ></p>
             </div>
 
             <div x-show="!submitted">
-              <button type="submit" class="btn-primary w-full text-white"> Enviar </button>
+              <button type="submit" class="btn-primary w-full text-white">
+                {" "}
+                Enviar{" "}
+              </button>
             </div>
 
-            <div class="bg-primary-50 dark:bg-primary-900/30 rounded-lg p-6 text-center" x-show="submitted" x-cloak>
+            <div
+              class="bg-primary-50 dark:bg-primary-900/30 rounded-lg p-6 text-center"
+              x-show="submitted"
+              x-cloak
+            >
               <svg
                 class="text-primary-500 mx-auto mb-4 h-12 w-12"
                 fill="none"
@@ -79,9 +109,12 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
               </svg>
-              <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Message Sent!</h3>
+              <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+                Message Sent!
+              </h3>
               <p class="text-gray-600 dark:text-gray-300">
                 Thank you for reaching out. We'll get back to you as soon as possible.
               </p>
@@ -93,4 +126,4 @@
       <div class="slide-up" style="animation-delay: 150ms"></div>
     </div>
   </div>
-</section>
+</section>;
