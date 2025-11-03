@@ -1,7 +1,7 @@
 ---
-issue: '02'
-title: '9 invenções que irão te surpreender'
-date: '2023-11-19'
+issue: "02"
+title: "9 invenções que irão te surpreender"
+date: "2023-11-19"
 ---
 
 _**19 de Novembro de 2023**_ Recentemente li um artigo da revista Time, nele foram listados as melhores invenções acessíveis de 2023. Essa lista contém 200 invenções para 2023, mas me chamou a atenção a categoria de **acessibilidade**. Na carta de hoje irei aprofundar em cada invenção voltada para esse tema.

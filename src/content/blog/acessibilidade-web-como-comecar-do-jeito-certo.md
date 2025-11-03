@@ -1,5 +1,5 @@
 ---
-title: 'Acessibilidade Web: como começar do jeito certo'
+title: "Acessibilidade Web: como começar do jeito certo"
 publishDate: 2023-02-13
 category: Acessibilidade
 canonical: https://brunopulis.com/introducao-acessibilidade-web/

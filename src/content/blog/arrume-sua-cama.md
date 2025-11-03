@@ -1,10 +1,10 @@
 ---
-title: 'Arrume sua cama: Pequenas coisas que podem mudar a sua vida'
-image: '/src/assets/images/blog/cover-arrume-sua-cama.jpg'
-imageAlt: ''
+title: "Arrume sua cama: Pequenas coisas que podem mudar a sua vida"
+image: "/src/assets/images/blog/cover-arrume-sua-cama.jpg"
+imageAlt: ""
 publishDate: 2023-06-27
-category: 'Indicações'
-tags: ['livros', 'review', 'desenvolvimento pessoal']
+category: "Indicações"
+tags: ["livros", "review", "desenvolvimento pessoal"]
 ---
 
 Arrume sua cama é um best-seller do Almirante William H. McRaven, com 10 princípios ele deve uma carreira de sucesso na marinha americana ao longo de mais de 30 anos.

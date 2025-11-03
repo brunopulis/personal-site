@@ -1,10 +1,10 @@
 ---
 title: 10 dicas de acessibilidade para desenvolvedores
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2023-05-18
-category: 'Fronted'
-tags: ['WCAG']
+category: "Fronted"
+tags: ["WCAG"]
 ---
 
 Você sabia que a web pode ser um lugar incrível para todos, independentemente de suas habilidades ou deficiências? Vamos explorar as **10** **dicas de acessibilidade** que você pode incluir para tornar a web um lugar melhor para todos.

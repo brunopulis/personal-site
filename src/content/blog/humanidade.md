@@ -1,6 +1,6 @@
 ---
 title: Humanidade
-date: 2016-06-14
+publishDate: 2016-06-14
 metadata:
   categories:
     - Pessoal

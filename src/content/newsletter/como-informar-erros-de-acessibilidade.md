@@ -1,7 +1,7 @@
 ---
-issue: '14'
-title: 'Como informar erros de acessibilidade?'
-date: '2024-01-21'
+issue: "14"
+title: "Como informar erros de acessibilidade?"
+date: "2024-01-21"
 ---
 
 Hoje foi dia de comemoração por aqui, casa cheia, familiares, bolo, salgadinho.

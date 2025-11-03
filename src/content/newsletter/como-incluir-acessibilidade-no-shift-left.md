@@ -1,7 +1,7 @@
 ---
-issue: '11'
-title: 'Como incluir acessibilidade no Shift Left'
-date: '2024-01-15'
+issue: "11"
+title: "Como incluir acessibilidade no Shift Left"
+date: "2024-01-15"
 ---
 
 ![Imagem gerada com o Bing Create, prompt: teste automatizado.](images/1705342283447-1024x576.png) _Imagem gerada com o Bing Create, prompt: teste automatizado._\[/caption\]
@@ -63,14 +63,14 @@ Um exemplo de um componente `<img>` sem o atributo ALT inserido.
 /**
  * @jest-environment jsdom
  */
-const { axe, toHaveNoViolations } = require('jest-axe')
-expect.extend(toHaveNoViolations)
-it('deve demonstrar o uso do matchesr', async () => {
-  const render = () => '<img src="#"/>'
+const { axe, toHaveNoViolations } = require("jest-axe");
+expect.extend(toHaveNoViolations);
+it("deve demonstrar o uso do matchesr", async () => {
+  const render = () => '<img src="#"/>';
   // pass anything that outputs html to axe
-  const html = render()
-  expect(await axe(html)).toHaveNoViolations()
-})
+  const html = render();
+  expect(await axe(html)).toHaveNoViolations();
+});
 ```
 
 O resultado da asserção seria:

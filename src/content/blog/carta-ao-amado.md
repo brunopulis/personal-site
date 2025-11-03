@@ -1,6 +1,6 @@
 ---
 title: Carta ao amado
-date: 2016-07-07
+publishDate: 2016-07-07
 metadata:
   categories:
     - Teologia
