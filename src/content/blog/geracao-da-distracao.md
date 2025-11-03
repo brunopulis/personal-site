@@ -1,11 +1,11 @@
 ---
 title: Geração da distração
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2016-03-07
-category: 'Teologia'
+category: "Teologia"
 canonicalUrl: https://brunopulis.com/geracao-da-distracao/
-tags: ['teologia']
+tags: ["teologia"]
 ---
 
 Nesse estudo vamos abordar um tópico onde todos nós somos vítimas a **distração.**

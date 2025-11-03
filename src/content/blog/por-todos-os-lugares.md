@@ -1,6 +1,6 @@
 ---
 title: Por todos os lugares
-date: 2016-07-15
+publishDate: 2016-07-15
 metadata:
   categories:
     - Teologia

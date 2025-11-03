@@ -1,13 +1,13 @@
 ---
 title: 11 Perguntas frequentes sobre acessibilidade
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2023-11-22
-category: 'Acessibilidade'
-location: 'Belo Horizonte'
+category: "Acessibilidade"
+location: "Belo Horizonte"
 tags:
-  - 'dúvidas'
-country: 'Brazil'
+  - "dúvidas"
+country: "Brazil"
 url: https://brunopulis.com/perguntas-frequentes-acessibilidade/
 ---
 

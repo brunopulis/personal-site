@@ -1,6 +1,6 @@
 ---
 title: Inquietude
-date: 2016-06-16
+publishDate: 2016-06-16
 metadata:
   categories:
     - Teologia

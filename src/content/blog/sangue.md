@@ -1,6 +1,6 @@
 ---
 title: Sangue
-date: 2016-09-06
+publishDate: 2016-09-06
 metadata:
   categories:
     - Pessoal

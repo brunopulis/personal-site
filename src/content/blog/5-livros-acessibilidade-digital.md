@@ -1,10 +1,10 @@
 ---
 title: 5 livros de acessibilidade digital
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2021-07-01
-category: 'Indicações'
-tags: ['livros']
+category: "Indicações"
+tags: ["livros"]
 ---
 
 Recentemente a acessibilidade digital ganhou os holofotes devido a pandemia. Entretanto, ainda é um assunto muito imaturo para profissionais do meio digital.

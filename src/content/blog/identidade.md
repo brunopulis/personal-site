@@ -1,6 +1,6 @@
 ---
 title: Identidade
-date: 2016-07-17
+publishDate: 2016-07-17
 metadata:
   categories:
     - Pessoal

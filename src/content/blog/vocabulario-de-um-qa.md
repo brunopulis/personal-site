@@ -1,9 +1,9 @@
 ---
 title: Vocabulário de um QA
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2020-08-18
-category: 'Qualidade'
+category: "Qualidade"
 url: https://brunopulis.com/vocabulario-de-um-qa/
 ---
 

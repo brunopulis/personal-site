@@ -1,8 +1,8 @@
 ---
-issue: '20'
-title: 'Vim te ajudar a não cometer esse erro'
-date: '2024-02-22'
-coverImage: ''
+issue: "20"
+title: "Vim te ajudar a não cometer esse erro"
+date: "2024-02-22"
+coverImage: ""
 ---
 
 Pulis Letters - Edição #20
