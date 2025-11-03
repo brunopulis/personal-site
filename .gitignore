@@ -4,6 +4,7 @@ dist/
 
 # dependencies
 node_modules/
+TODO.todo
 
 # logs
 npm-debug.log*
