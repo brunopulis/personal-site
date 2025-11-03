@@ -1,6 +1,6 @@
 ---
-title: 'Política de Privacidade'
-date: '2022-05-22'
+title: "Política de Privacidade"
+date: "2022-05-22"
 ---
 
 ## **1\. Introdução**

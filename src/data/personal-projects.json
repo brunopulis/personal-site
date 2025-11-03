@@ -1,34 +1,34 @@
 {
-	"personProjects": [
-		{
-			"title": "Awesome A11y",
-			"description": "Lista com recursos sobre acessibilidade.",
-			"link": "https://github.com/brunopulis/awesome-a11y"
-		},
-		{
-			"title": "QA Brasil",
-			"description": "Comunidade de QA's Brasileiros.",
-			"link": "https://github.com/qa-brasil"
-		},
-		{
-			"title": "Awesome Cypress",
-			"description": "Lista com recursos sobre Cypress e automação de testes.",
-			"link": "https://github.com/brunopulis/awesome-cypress"
-		},
-		{
-			"title": "Game of Thrones Quotes",
-			"description": "Lista com recursos sobre Cypress e automação de testes.",
-			"link": "https://github.com/brunopulis/got-quotes"
-		},
-		{
-			"title": "Nasa Experiments",
-			"description": "Lista com recursos sobre Cypress e automação de testes.",
-			"link": "https://github.com/brunopulis/nasa-experiments"
-		},
-		{
-			"title": "Star Wars Fun",
-			"description": "Lista com recursos sobre Cypress e automação de testes.",
-			"link": "https://github.com/brunopulis/starwarsfun"
-		}
-	]
+  "personProjects": [
+    {
+      "title": "Awesome A11y",
+      "description": "Lista com recursos sobre acessibilidade.",
+      "link": "https://github.com/brunopulis/awesome-a11y"
+    },
+    {
+      "title": "QA Brasil",
+      "description": "Comunidade de QA's Brasileiros.",
+      "link": "https://github.com/qa-brasil"
+    },
+    {
+      "title": "Awesome Cypress",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/awesome-cypress"
+    },
+    {
+      "title": "Game of Thrones Quotes",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/got-quotes"
+    },
+    {
+      "title": "Nasa Experiments",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/nasa-experiments"
+    },
+    {
+      "title": "Star Wars Fun",
+      "description": "Lista com recursos sobre Cypress e automação de testes.",
+      "link": "https://github.com/brunopulis/starwarsfun"
+    }
+  ]
 }
