@@ -1,12 +1,17 @@
 ---
+import CTASection from "@components/CTA.astro";
+import Footer from "@components/layout/Footer.astro";
+import { Header } from "@components/layout/Header.astro";
+import site from "@data/site.config.json";
+import Layout from "@layouts/Layout.astro";
 import {
 	AlertCircle,
 	ArrowRight,
 	BookOpen,
 	CheckCircle,
-	Coffee,
 	Clock,
 	Code,
+	Coffee,
 	GraduationCap,
 	MessageCircle,
 	Monitor,
@@ -17,13 +22,6 @@ import {
 	Target,
 	Zap,
 } from "@lucide/astro";
-
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
-import CTASection from "@components/CTA.astro";
-
-import site from "@data/site.config.json";
 
 const iconMap = {
 	ShieldCheck,

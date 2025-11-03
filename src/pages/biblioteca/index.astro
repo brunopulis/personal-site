@@ -1,10 +1,10 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Footer from "@components/layout/Footer.astro";
 import Header from "@components/layout/Header.astro";
 import MediaCard from "@components/MediaCard.astro";
-import Footer from "@components/layout/Footer.astro";
-
 import books from "@data/books.json";
+// biome-ignore-all lint/correctness/noUnusedImports
+import Layout from "@layouts/Layout.astro";
 
 const livrosPorAno = Object.entries(
 	books
