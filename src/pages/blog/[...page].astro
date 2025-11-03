@@ -3,11 +3,11 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { ArrowRight } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
+import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
 import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
-import Footer from "@components/layout/Footer.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 import { getAllTags } from "@utils/getAllTags";
 
@@ -53,23 +53,23 @@ export const prerender = true;
 <Layout title="Blog - Bruno Pulis" description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
-        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
-      </div>
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <section id="hero" aria-labelledby="hero-section">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
         <div>
-          <h1 class="mb-6 text-5xl leading-tight font-bold">Coisas que tenho pensado</h1>
-          <p class="text-xl leading-relaxed font-light text-white">
+          <h1 class="mb-6 text-5xl leading-tight font-bold" id="hero-section">
+            Coisas que tenho pensado
+          </h1>
+          <p class="text-xl leading-relaxed font-light text-errie-black-900">
             Escrevo sobre acessibilidade, tecnologia, teologia, produtividade.
           </p>
-          <p class="text-xl leading-relaxed font-light text-white">Nem tudo é técnico, às vezes é só sobre a vida.</p>
+          <p class="text-xl leading-relaxed font-light text-errie-black-900">
+            Nem tudo é técnico, às vezes é só sobre a vida.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="bg-white py-16">
+    <section class="py-16">
       <div class="mx-auto max-w-7xl px-6">
         <div class="grid gap-8 lg:grid-cols-3">
           <div class="lg:col-span-2">

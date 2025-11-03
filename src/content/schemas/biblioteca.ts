@@ -30,13 +30,12 @@ export const biblioteca = defineCollection({
         "Quadrinhos",
       ])
     ),
-
     rating: z.enum(["1", "2", "3", "4", "5"]).optional(),
     status: z.enum(["Quero ler", "Lido", "Lendo", "Abandonado"]),
     cover: z.string().optional(),
     pages: z.number().int().optional(),
     recommended_for: z.string().optional(),
     purchase_link: z.string().url().optional(),
-    tags: z.array(z.object({ tag: z.string().min(1) })).optional(),
+    tags: z.array(z.string()),
   }),
 });

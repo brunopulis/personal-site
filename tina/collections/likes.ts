@@ -10,9 +10,9 @@ export const LikesCollection: Collection = {
   format: "md",
   ui: {
     filename: {
-      slugify: (values) => {
+      slugify: values => {
         const date = new Date(values?.date || Date.now());
-        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
       },
     },
   },

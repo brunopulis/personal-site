@@ -12,7 +12,7 @@
       "@styles/*": ["styles/*"],
       "@scripts/*": ["scripts/*"],
       "@components/*": ["components/*"],
-      "@layouts/*": ["layouts/*"],
+      "@layout/*": ["layout/*"],
       "@assets/*": ["assets/*"],
       "@pages/*": ["pages/*"]
     },

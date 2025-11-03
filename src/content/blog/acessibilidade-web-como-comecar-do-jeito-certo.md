@@ -70,8 +70,6 @@ Por isso a acessibilidade deve ser pensando no início do projeto para evitar re
 
 ### Descreve suas imagens
 
-![Carinha sorridente amarela utilizando um óculos escuros pretos. Ela exemplifica o uso do texto alternativo em imagens](./alternative-text.jpg)
-
 Imagens são um dos elementos mais utilizados para transmitir informação na web. Dessa forma, devemos permitir que pessoas com deficiência visual possam compreender a informação da mesma maneira que nós.
 
 Para deixarmos as imagens acessíveis devemos utilizar o atributo `alt` nas imagens. Ele permite que a imagem forneça um texto alternativo equivalente a sua representação visual.
@@ -81,8 +79,6 @@ Assim, os não-visuais conseguem compreender o conteúdo da mesma forma.
 Você pode conferir o [Guia Definitivo de texto alternativo](https://brunopulis.com/texto-alternativo-o-guia-definitivo/) que traduzi, nele contém dicas e informações valiosas sobre descrição de imagens.
 
 ### Navegação do conteúdo
-
-![Teclado de um iMac, com as teclas mais baixas. Sua estrutura é prata e as teclas brancas. ](../images/keyboard.jpg)
 
 **Foto de [Clay Banks](https://unsplash.com/pt-br/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) na [Unsplash](https://unsplash.com/pt-br/fotografias/PXaQXThG1FY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)**
 
@@ -98,8 +94,6 @@ Todos esses tipos de navegação conseguimos contemplar quando projetamos pensan
 O que devemos ter em mente: todos os recursos disponíveis via teclado devem estar disponíveis para o teclado.
 
 ### Evite o baixo contraste
-
-![Existem 6 círculos na imagem conteúdo números ao centro de cada círculo. Devido ao daltonismo algum deles não são exibidos. Isso exemplifica o uso correto de contraste](./daltonismo.jpg)
 
 Contraste é o campeão quando se trata de problemas de acessibilidade. Para garantir um bom contraste podemos utilizar ferramentas como o **Color Contrast Analyzer**.
 
@@ -123,8 +117,6 @@ Nesse sentido, gravei um vídeo usando o Accesible Colors. Ele é uma alternativ
 
 ### Defina rótulos para os formulários
 
-![Formulário HTML que possuí os campos de: primeiro nome, último nome, data de nascimento, email e telefone celular. Existem dois botões um para enviar e outro para limpar o formulário](./html-form.webp)
-
 [**Foto de TutorialBrain**](https://www.tutorialbrain.com/html_tutorial/html_forms/)
 
 Um leitor de telas necessita que os _inputs_ de um forrmulário estejam atrelados a um rótulo.
@@ -144,8 +136,6 @@ Pode parecer extremamente trivial, entretanto, é bem comum vermos formulários 
 Minha dica é adota hoje mesmo o uso dos atributos corretos para uma melhor navegação nos seus formulários.
 
 ### Defina o idioma da sua página
-
-![Headings](./headings.webp)
 
 Talvez esse seja o defeito mais ignorado de acessibilidade. O atributo **lang**, é um aliado extremamente poderoso, contudo poucas pessoas utilizam ele da maneira correta.
 

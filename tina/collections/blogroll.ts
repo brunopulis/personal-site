@@ -10,7 +10,7 @@ export const BlogrollCollection: Collection = {
   format: "md",
   ui: {
     filename: {
-      slugify: (values) => {
+      slugify: values => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },

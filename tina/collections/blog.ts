@@ -25,7 +25,7 @@ export const BlogCollection: Collection = {
   format: "md",
   ui: {
     filename: {
-      slugify: (values) => {
+      slugify: values => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },
@@ -108,7 +108,7 @@ export const BlogCollection: Collection = {
       label: "Rascunho",
       ui: {
         description: "Marque para manter como rascunho",
-      }
+      },
     },
     {
       type: "object",

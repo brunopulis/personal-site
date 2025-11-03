@@ -34,10 +34,6 @@ Você pode alterar a tecla modificadora do NVDA, por exemplo, uso o Caps Lock no
 
 ## Navegando por títulos
 
-![Ilustração das letras do alfabeto, representando a navegaçã por títulos](./headings.webp)
-
-[](https://www.freepik.com/free-vector/switches-concept-illustration_16159878.htm#page=2&query=on%20off&position=10&from_view=search)[Imagem por rawpixel.com](https://www.freepik.com/free-vector/alphabets-hand-drawn-doodle-style-set_13313402.htm#query=alphabet&position=23&from_view=search) em Freepik
-
 Títulos, são estruturas simples, entretanto, existem muitos erros relacionado a eles.
 
 Recomendamos usá-los pois, fornecem uma organização textual e semântica, além de contribuir o SEO.
@@ -45,10 +41,6 @@ Recomendamos usá-los pois, fornecem uma organização textual e semântica, al�
 Para navegar por títulos use a tecla \`H\`, o leitor de telas irá verbalizar da seguinte forma: **“Portal de notícias, título nível 1”.**
 
 ## Descobrindo links pela página
-
-![Ilustração de um cursor mouse conectando com outros recursos na rede](./links.webp)
-
-[](https://www.freepik.com/free-vector/illustration-social-media-concept_2806723.htm#query=connection&position=8&from_view=search)[Imagem por rawpixel.com](https://www.freepik.com/free-vector/illustration-social-media-concept_2806723.htm#query=connection&position=8&from_view=search) em Freepik
 
 Hiperlinks tem um papel crucial na web, eles são a base da internet.
 
@@ -60,10 +52,6 @@ Ao ler o conteúdo o leitor traz a seguinte informação **“Relatório de vend
 
 ## Navegando por botões
 
-![Diversos botões de redes sociais](../images/buttons.webp)
-
-[Imagem por starline](https://www.freepik.com/free-vector/abstract-watercolor-social-media-lower-third-collection_6558666.htm#query=buttons&position=24&from_view=search) em Freepik
-
 A navegação por botões infelizmente é uma das mais problemáticas.
 
 Em contrapartida, os problemas são simples de corrigir. Para navegarmos pelos botões devemos usar a tecla de atalho <kbd>B</kbd>.
@@ -71,8 +59,6 @@ Em contrapartida, os problemas são simples de corrigir. Para navegarmos pelos b
 Semelhantemente os links, iremos navegar em todos os botões declarados na página.
 
 ## Navegando por listas
-
-![Ilustração de uma lista de tarefas ao lado um avatar de uma mulher segurando a lista e no outro lado outra mulher segurando um lápis e marcando os itens da lista](../images/lists.webp)
 
 [Imagem por starline](https://www.freepik.com/free-vector/abstract-watercolor-social-media-lower-third-collection_6558666.htm#query=buttons&position=24&from_view=search) em Freepik
 

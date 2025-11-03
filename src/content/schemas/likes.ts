@@ -4,7 +4,7 @@ export const likes = defineCollection({
   schema: z.object({
     title: z.string(),
     publishDate: z.coerce.date(),
-    url: z.string(),
+    url: z.string().optional(),
     tags: z.array(z.string()).default([]),
   }),
 });

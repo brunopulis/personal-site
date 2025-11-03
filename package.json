@@ -11,9 +11,8 @@
     "preview": "astro preview",
     "start": "astro dev",
     "sync": "astro sync",
-    "new-post": "node scripts/new-post.js",
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.astro",
-    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.astro --fix",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
     "format": "prettier --write ."
   },
   "dependencies": {
