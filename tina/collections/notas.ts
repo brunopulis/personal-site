@@ -5,14 +5,27 @@ export const NotasCollection: Collection = {
   label: "Notas",
   path: "src/content/notes",
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
+  defaultItem: () => ({
+    title: "Nova Nota",
+    publishDate: new Date().toISOString(),
+    description: "",
+    body: "",
+    categories: ["Pessoal"],
+    tags: [],
+    draft: false,
+    featured: false,
+  }),
   ui: {
     filename: {
       slugify: (values) => {
-        const date = new Date(values?.date || Date.now());
-        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        const date = new Date(values?.publishDate || Date.now());
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
+          2,
+          "0"
+        )}-${String(date.getDate()).padStart(2, "0")}`;
       },
     },
   },
@@ -30,15 +43,9 @@ export const NotasCollection: Collection = {
       label: "Data de Publicação",
       required: true,
       ui: {
-        dateFormat: 'DD/MM/YYYY',
-        timeFormat: 'HH:mm',
+        dateFormat: "DD/MM/YYYY",
+        timeFormat: "HH:mm",
       },
-    },
-    {
-      type: "string",
-      name: "author",
-      label: "Autor",
-      required: true
     },
     {
       type: "string",
@@ -68,12 +75,13 @@ export const NotasCollection: Collection = {
       label: "Categorias",
       list: true,
       options: [
-        { value: "tecnologia", label: "Tecnologia" },
-        { value: "design", label: "Design" },
-        { value: "desenvolvimento", label: "Desenvolvimento" },
-        { value: "tutorial", label: "Tutorial" },
-        { value: "opiniao", label: "Opinião" },
-        { value: "noticias", label: "Notícias" },
+        { value: "pessoal", label: "Pessoal" },
+        { value: "trabalho", label: "Trabalho" },
+        { value: "estudos", label: "Estudos" },
+        { value: "ideias", label: "Ideias" },
+        { value: "projetos", label: "Projetos" },
+        { value: "lembretes", label: "Lembretes" },
+        { value: "anotacoes", label: "Anotações" },
       ],
     },
     {
@@ -82,47 +90,5 @@ export const NotasCollection: Collection = {
       label: "Tags",
       list: true,
     },
-    {
-      type: "boolean",
-      name: "draft",
-      label: "Rascunho",
-      ui: {
-        description: "Marque para manter como rascunho",
-      },
-    },
-    {
-      type: "boolean",
-      name: "featured",
-      label: "Destaque",
-      ui: {
-        description: "Marcar como post em destaque",
-      },
-    },
-    {
-      type: "object",
-      name: "seo",
-      label: "SEO",
-      fields: [
-        {
-          type: "string",
-          name: "meta_title",
-          label: "Meta Title",
-        },
-        {
-          type: "string",
-          name: "meta_description",
-          label: "Meta Description",
-          ui: {
-            component: "textarea",
-          },
-        },
-        {
-          type: "string",
-          name: "keywords",
-          label: "Keywords",
-          list: true,
-        },
-      ],
-    },
-  ]
-}
+  ],
+};

@@ -5,15 +5,20 @@ export const BlogrollCollection: Collection = {
   label: "Blogroll",
   path: "src/content/blogroll",
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
   ui: {
     filename: {
       slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
+        return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },
+  },
+  defaultItem: () => {
+    return {
+      category: "geral", // valor padrão
+    };
   },
   fields: [
     {
@@ -73,8 +78,8 @@ export const BlogrollCollection: Collection = {
       name: "date_added",
       label: "Data de Adição",
       ui: {
-        dateFormat: 'DD/MM/YYYY',
+        dateFormat: "DD/MM/YYYY",
       },
     },
   ],
-}
+};

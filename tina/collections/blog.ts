@@ -6,18 +6,27 @@ export const BlogCollection: Collection = {
   path: "src/content/blog",
   defaultItem: () => {
     return {
-      title: 'Novo Post',
-      author: 'Pulis'
+      title: "Novo Post",
+      author: "Pulis",
+      seo: {
+        meta_title: "",
+        meta_description: "",
+        keywords: [],
+      },
+      tags: [],
+      categories: [],
+      draft: false,
+      featured: false,
     };
   },
   match: {
-    include: '*',
+    include: "*",
   },
   format: "md",
   ui: {
     filename: {
       slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
+        return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },
   },
@@ -35,8 +44,8 @@ export const BlogCollection: Collection = {
       label: "Data de Publicação",
       required: true,
       ui: {
-        dateFormat: 'DD/MM/YYYY',
-        timeFormat: 'HH:mm',
+        dateFormat: "DD/MM/YYYY",
+        timeFormat: "HH:mm",
       },
     },
     {
@@ -72,6 +81,9 @@ export const BlogCollection: Collection = {
       name: "categories",
       label: "Categorias",
       list: true,
+      ui: {
+        component: "list",
+      },
       options: [
         { value: "tecnologia", label: "Tecnologia" },
         { value: "design", label: "Design" },
@@ -86,6 +98,9 @@ export const BlogCollection: Collection = {
       name: "tags",
       label: "Tags",
       list: true,
+      ui: {
+        component: "tags",
+      },
     },
     {
       type: "boolean",
@@ -93,15 +108,7 @@ export const BlogCollection: Collection = {
       label: "Rascunho",
       ui: {
         description: "Marque para manter como rascunho",
-      },
-    },
-    {
-      type: "boolean",
-      name: "featured",
-      label: "Destaque",
-      ui: {
-        description: "Marcar como post em destaque",
-      },
+      }
     },
     {
       type: "object",
@@ -129,5 +136,5 @@ export const BlogCollection: Collection = {
         },
       ],
     },
-  ]
-}
+  ],
+};

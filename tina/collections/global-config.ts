@@ -33,7 +33,7 @@ export const GlobalConfigCollection: Collection = {
           required: true,
           type: "string",
           ui: {
-            defaultValue: "Your name here"
+            defaultValue: "Your name here",
           },
         },
         // Add more settings here...
@@ -45,9 +45,9 @@ export const GlobalConfigCollection: Collection = {
       type: "object",
       list: true,
       ui: {
-        itemProps: (item) => {
+        itemProps: item => {
           return {
-            label: item.title
+            label: item.title,
           };
         },
       },
@@ -56,16 +56,15 @@ export const GlobalConfigCollection: Collection = {
           name: "title",
           label: "Title of Nav Item",
           type: "string",
-          required: true
+          required: true,
         },
         {
           name: "link",
           label: "Path of the Nav Item",
           type: "string",
-          required: true
-
-        }
-      ]
+          required: true,
+        },
+      ],
     },
     {
       name: "contactLinks",
@@ -73,35 +72,35 @@ export const GlobalConfigCollection: Collection = {
       type: "object",
       list: true,
       ui: {
-        itemProps: (item) => {
+        itemProps: item => {
           return {
-            label: item.title
-          }
+            label: item.title,
+          };
         },
       },
       fields: [
         {
           name: "title",
           label: "Title",
-          type: "string"
+          type: "string",
         },
         {
           name: "link",
           label: "Link",
-          type: "string"
+          type: "string",
         },
         {
           name: "icon",
           label: "Icon",
           type: "string",
           ui: {
-            //@ts-ignore
-            component: IconComponent
-          }
-        }
+            //@ts-expect-error
+            component: IconComponent,
+          },
+        },
       ],
-    }
+    },
 
     // Add other config fields here...
-  ]
-}
+  ],
+};
