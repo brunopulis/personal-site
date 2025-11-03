@@ -19,7 +19,7 @@ export const BibliotecaCollection: Collection = {
   },
   ui: {
     filename: {
-      slugify: (values) => {
+      slugify: values => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
       },
     },

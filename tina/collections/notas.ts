@@ -20,7 +20,7 @@ export const NotasCollection: Collection = {
   }),
   ui: {
     filename: {
-      slugify: (values) => {
+      slugify: values => {
         const date = new Date(values?.publishDate || Date.now());
         return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
           2,

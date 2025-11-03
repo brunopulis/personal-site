@@ -13,7 +13,7 @@ export const MoviesCollection: Collection = {
     publishDate: new Date().toISOString(),
     status: "quero_assistir",
     favorite: false,
-    rating:  "3",
+    rating: "3",
     description: "",
     body: "",
     tags: [],

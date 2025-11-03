@@ -13,27 +13,24 @@ const features = [
 		title: "Mentoria",
 		description:
 			"Não adianta só entregar um relatório. Eu trabalho com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.",
-		icon: "Users",
 		url: "/servicos/mentoria",
 	},
 	{
 		title: "Auditoria",
 		description:
 			"Analiso seu site ou documento e te mostro exatamente o que precisa melhorar (e por quê isso importa para seus usuários).",
-		icon: "Code",
 		url: "/servicos/auditoria-de-acessibilidade",
 	},
 	{
 		title: "Palestras",
 		description:
 			"Levo acessibilidade para empresas e eventos de forma prática, sem jargões complicados.",
-		icon: "MessageCircle",
 		url: "/servicos/palestras",
 	},
 ];
 ---
 
-<section class="py-24 bg-gray-100">
+<section class="py-24">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-4xl font-bold text-gray-900 mb-4">
@@ -47,11 +44,8 @@ const features = [
     <div class="grid md:grid-cols-3 gap-8">
       {
         features.map((feature) => (
-          <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition group">
+          <article class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition group">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                {icons[feature.icon] && <icons[feature.icon] class="h-5 w-5" aria-hidden="true" />}
-              </div>
               <h3 class="text-2xl font-bold text-gray-900">
                 {feature.title}
               </h3>
@@ -59,11 +53,11 @@ const features = [
             <p class="text-errie-black-900 mb-4">
               {feature.description}
             </p>
-            <a href={feature.url} class="text-blood-red-800 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+            <a href={feature.url} aria-label={`Saber mais sobre: ${feature.title}`} class="text-blood-red-800 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
               Saber mais
               <ArrowRight class="w-4 h-4" aria-hidden="true" />
             </a>
-          </div>
+          </article>
         ))
       }
     </div>

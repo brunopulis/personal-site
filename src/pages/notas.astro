@@ -2,10 +2,10 @@
 import { getCollection } from "astro:content";
 import { Clock, Share2 } from "@lucide/astro";
 
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
-import HeroSection from "@components/layout/HeroSection.astro";
-import Footer from "@components/layout/Footer.astro";
+import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
+import HeroSection from "@components/layouts/HeroSection.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 const allNotes = await getCollection("notes");
 
@@ -28,7 +28,6 @@ const sortedNotes = allNotes.sort((a, b) => {
               sortedNotes.length > 0 ? (
                 sortedNotes.map((note) => (
                   <article class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
-                    {/* Header */}
                     <div class="mb-4 flex items-start justify-between">
                       <div class="flex items-center gap-3">
                         <div>
@@ -45,12 +44,10 @@ const sortedNotes = allNotes.sort((a, b) => {
                       </div>
                     </div>
 
-                    {/* Conteúdo */}
                     <div class="mb-4">
                       {note.body && <p class="leading-relaxed whitespace-pre-line text-gray-800">{note.body}</p>}
                     </div>
 
-                    {/* Tag */}
                     <div class="mb-4">
                       <span
                         class={`font-semibold} inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs`}
@@ -58,8 +55,6 @@ const sortedNotes = allNotes.sort((a, b) => {
                         #{note.tag}
                       </span>
                     </div>
-
-                    {/* Actions */}
                     <div class="flex items-center gap-6 border-t border-gray-100 pt-4">
                       <button class="flex items-center gap-2 text-sm font-medium text-gray-600 transition hover:text-green-600">
                         <Share2 class="h-5 w-5" />
