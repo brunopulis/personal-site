@@ -10,13 +10,12 @@
 		"preview": "astro preview",
 		"start": "astro dev",
 		"sync": "astro sync",
-		"check": "astro check",
 		"new-post": "node scripts/new-post.js",
 		"lint": "biome lint .",
 		"lint:fix": "biome lint --write .",
 		"format": "biome format .",
 		"format:fix": "biome format --write .",
-		"check:biome": "biome check .",
+		"check": "biome check .",
 		"check:fix": "biome check --write ."
 	},
 	"dependencies": {
@@ -26,9 +25,11 @@
 		"@astrojs/mdx": "^4.3.9",
 		"@astrojs/rss": "^4.0.12",
 		"@astrojs/sitemap": "^3.6.0",
+		"@astrojs/vercel": "^9.0.0",
 		"@cedx/akismet": "^17.1.0",
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource/source-sans-3": "^5.2.9",
+		"@lucide/astro": "^0.552.0",
 		"@philnash/astro-pagination": "^0.5.0",
 		"@tanstack/react-virtual": "^3.13.12",
 		"@yeskunall/astro-umami": "^0.0.7",
@@ -42,19 +43,13 @@
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
 		"react-icons": "^5.5.0",
-		"static": "link:@astrojs/vercel/static",
 		"tailwindcss": "^4.1.13",
 		"tinacms": "^2.9.0",
 		"typescript": "^5.9.2"
 	},
 	"packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd",
 	"devDependencies": {
-		"@astrojs/partytown": "^2.1.4",
-		"@biomejs/biome": "2.3.2",
-		"@eslint/eslintrc": "^3.3.1",
-		"@eslint/js": "^9.36.0",
 		"@hbsnow/rehype-sectionize": "^1.0.7",
-		"@lucide/astro": "^0.552.0",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.16",
 		"@tinacms/cli": "^1.11.0",
@@ -68,8 +63,7 @@
 		"pagefind": "^1.4.0",
 		"prettier-plugin-css-order": "^2.1.2",
 		"prettier-plugin-tailwindcss": "^0.7.1",
-		"sanitize-html": "^2.17.0",
-		"svgo": "^4.0.0"
+		"sanitize-html": "^2.17.0"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,md,mdx,json}": [
