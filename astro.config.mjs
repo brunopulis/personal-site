@@ -57,9 +57,10 @@ export default defineConfig({
     }),
   ],
   build: {
-    format: "file",
-    assets: "assets",
+    format: "directory",
+    assets: "_astro",
   },
+  trailingSlash: 'ignore',
   compressHTML: true,
   vite: {
     plugins: [tailwindcss()],
