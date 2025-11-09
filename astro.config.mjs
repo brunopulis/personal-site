@@ -18,7 +18,7 @@ import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  adapter: vercel({ static: true }),
+  adapter: vercel(),
   output: "static",
   site: "https://brunopulis.com",
   markdown: {
