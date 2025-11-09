@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { ArrowRight } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
-import Layout from "@layout/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import Header from "@components/layouts/Header.astro";
 import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
@@ -71,7 +71,7 @@ export const prerender = true;
           <p class="text-xl leading-relaxed font-light text-errie-black-900">
             Nem tudo é técnico, às vezes é só sobre a vida.
           </p>
-          
+         <TagFilter allTags={allTags} />
         </div>
       </div>
     </section>
