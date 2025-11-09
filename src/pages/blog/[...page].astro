@@ -9,6 +9,8 @@ import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
 import Footer from "@components/layouts/Footer.astro";
 
+import TagFilter from "@components/TagFilter.astro";
+
 import { getAllTags } from "@utils/getAllTags";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -31,6 +33,10 @@ type Props = { page: Page<CollectionEntry<"blog">> };
 const { page } = Astro.props;
 const posts = page.data;
 const tags = getAllTags(posts);
+
+const allTags = [...new Set(
+  posts.flatMap(post => post.data.tags || [])
+)].sort();
 
 function formatDate(date: string | number | Date) {
 	const formatter = new Intl.DateTimeFormat("pt-BR", {
@@ -65,6 +71,7 @@ export const prerender = true;
           <p class="text-xl leading-relaxed font-light text-errie-black-900">
             Nem tudo é técnico, às vezes é só sobre a vida.
           </p>
+          
         </div>
       </div>
     </section>
@@ -76,8 +83,8 @@ export const prerender = true;
             <div class="space-y-8">
               <ul>
                 {
-                posts.map((post, index) => (
-                    <li class="py-4">
+                  posts.map((post, index) => (
+                    <li class="py-4" data-tags={post.data.tags?.join(',')}>
                       <h3 class="mb-4 text-3xl font-bold">
                         <a href={'/blog/' + post.id} class="u-url group block">
                           {post.data.title}
@@ -92,6 +99,13 @@ export const prerender = true;
                       <p class="mb-6 text-2xl font-light text-errie-black-900">
                         {post.data.excerpt}
                       </p>
+                      {post.data.tags && (
+                        <div class="post-tags">
+                          {post.data.tags.map((tag: string) => (
+                            <span class="tag-badge">{tag}</span>
+                          ))}
+                        </div>
+                      )}
                       <a
                         href={'/blog/' + post.id}
                         aria-labelledby={`post-${index}`}
