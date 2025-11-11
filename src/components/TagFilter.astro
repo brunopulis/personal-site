@@ -1,0 +1,87 @@
+---
+interface Props {
+  allTags: string[];
+}
+
+const { allTags } = Astro.props;
+---
+
+<div class="tag-filter-container">
+  <div class="tags-wrapper">
+    <button class="tag-btn active" data-tag="all">
+      Todos
+    </button>
+    {allTags.map((tag) => (
+      <button class="tag-btn" data-tag={tag}>
+        {tag}
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .tag-filter-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tag-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #dee2e6;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .tag-btn:hover {
+    border-color: #495057;
+    transform: translateY(-2px);
+  }
+
+  .tag-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+</style>
+
+<script>
+  function initTagFilter() {
+    const tagButtons = document.querySelectorAll('.tag-btn');
+    const postItems = document.querySelectorAll('.post-item');
+
+    tagButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedTag = button.getAttribute('data-tag');
+
+        tagButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        postItems.forEach(post => {
+          const postTags = post.getAttribute('data-tags')?.split(',') || [];
+
+          if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+            post.style.display = 'block';
+            post.style.animation = 'fadeIn 0.3s ease';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initTagFilter);
+  document.addEventListener('astro:page-load', initTagFilter);
+</script>
