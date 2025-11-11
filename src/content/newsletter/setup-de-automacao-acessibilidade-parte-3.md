@@ -1,7 +1,7 @@
 ---
-issue: '29'
-title: 'Setup de automação para acessibilidade parte 3'
-date: '2024-04-25'
+issue: "29"
+title: "Setup de automação para acessibilidade parte 3"
+date: "2024-04-25"
 ---
 
 Chegamos ao fim do nosso setup!
@@ -135,9 +135,9 @@ Precisamos informar ao Cypress que vamos usar as dependências instaladas, por i
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import 'cypress-axe'
-import 'axe-core'
+import "./commands";
+import "cypress-axe";
+import "axe-core";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -148,17 +148,17 @@ Para nosso experimente escolhi o site da Prefeitura de Belo Horizonte.
 Dentro da pasta e2e, vou criar um novo teste chamado **`home.cy.js`**, seu script será:
 
 ```javascript
-describe('Accessibility Tests', () => {
+describe("Accessibility Tests", () => {
   beforeEach(() => {
-    cy.visit('https://prefeitura.pbh.gov.br/')
-  })
+    cy.visit("https://prefeitura.pbh.gov.br/");
+  });
 
-  it('Should pass accessibility tests', () => {
-    cy.injectAxe() // Inject axe-core into the page
+  it("Should pass accessibility tests", () => {
+    cy.injectAxe(); // Inject axe-core into the page
     // Run accessibility tests on the page
-    cy.checkA11y()
-  })
-})
+    cy.checkA11y();
+  });
+});
 ```
 
 Simples assim!

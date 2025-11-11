@@ -4,6 +4,7 @@ dist/
 
 # dependencies
 node_modules/
+TODO.todo
 
 # logs
 npm-debug.log*
@@ -39,3 +40,4 @@ pnpm-debug.log*
 # Biome editor settings
 .biome/
 node_modules
+.vercel

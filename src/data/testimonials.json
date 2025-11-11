@@ -1,64 +1,64 @@
 {
-	"testimonials": [
-		{
-			"content": "Top! Mostrou como é importante a acessibilidade na web e várias ferramentas que ajudam os desenvolvedores a criarem sites com mais acessibilidade, ainda mais que há poucos sites que são acessíveis para pessoas com alguma deficiência.",
-			"author": "Allan Stanichescki",
-			"position": "Head de desenvolvimento - Elleven",
-			"type": "talk"
-		},
-		{
-			"content": "Gostei muito do tema abordado, foi de suma importancia para o nosso dia a dia.",
-			"author": "Thais Martins",
-			"position": "Produção Audiovisual - Grupo DLS",
-			"type": "talk"
-		},
-		{
-			"content": "A palestra com o Bruno foi muito enriquecedora, pois abriu nossas mentes para questões de acessibilidade que podem transformar tanto a funcionalidade das plataformas digitais quanto a rotina de pessoas com deficiências que exigem ferramentas comunicacionais específicas.",
-			"author": "Jéssica Martins",
-			"position": "Jornalista - Grupo DLS",
-			"type": "talk"
-		},
-		{
-			"content": "Achei a palestra muito esclarecedora. Por mais que tivemos pouco tempo para discutir de um assunto tão amplo, você conseguiu instigar em nós o desejo de melhora e aprimoramento. Obrigado!",
-			"author": "Pedro Bernardi",
-			"position": "Desenvolvedor - Elleven",
-			"type": "talk"
-		},
-		{
-			"content": "Excelente profissional, me ajudou a deixar minha landing page pronta para vendas e deu todo suporte na parte operacional de coisas que eu nem o havia contratado. Quando o assunto for sistemas, landing page, segurança no digital, acessibilidade, super recomendo.",
-			"author": "João Kioshi",
-			"position": "Mentor em Vendas",
-			"type": "sites"
-		},
-		{
-			"content": "O Bruno possui um conhecimento enorme e uma facilidade em ensinar de forma fácil quais ferramentas e metodologias podem ser utilizadas para garantir uma aplicação inclusiva e acessível. Além de tudo isso, ele é uma pessoa sensacional, solícito, humilde e competente.",
-			"author": "Bruce Rocha",
-			"position": "Operations Director",
-			"type": "coworkers"
-		},
-		{
-			"content": "Excelente! Trabalho rápido e eficiente.",
-			"author": "Mone de França",
-			"position": "Empreendedora",
-			"type": "sites"
-		},
-		{
-			"content": "Responsabilidade, competência e preço justo. Recomendo!",
-			"author": "Rapahel Bessa",
-			"position": "Advogado",
-			"type": "sites"
-		},
-		{
-			"content": "É uma pessoa que entende muito do processo de desenvolvimento de software em diferentes áreas. O que o torna diferente de muitos profissionais. É uma das maiores referências em acessibilidade digital no Brasil.",
-			"author": "Victoria Raupp Krupp",
-			"position": "Operations Director",
-			"type": "coworkers"
-		},
-		{
-			"content": "O Bruno Pulis é um profissional ético, comprometido e muito atencioso. Tive a oportunidade de discutir com ele sobre o desenvolvimento do site da minha empresa e fiquei impressionada com a sua dedicação em cada reunião, disposição em cada atendimento e pela sua facilidade para compartilhar seu conhecimento conforme a necessidade e as dúvidas do cliente leigo na área. Um profissional sensacional ao qual serei sempre grata.",
-			"author": "Profa Dra Yara Miranda",
-			"position": "Operations Director",
-			"type": "sites"
-		}
-	]
+  "testimonials": [
+    {
+      "content": "Top! Mostrou como é importante a acessibilidade na web e várias ferramentas que ajudam os desenvolvedores a criarem sites com mais acessibilidade, ainda mais que há poucos sites que são acessíveis para pessoas com alguma deficiência.",
+      "author": "Allan Stanichescki",
+      "position": "Head de desenvolvimento - Elleven",
+      "type": "talk"
+    },
+    {
+      "content": "Gostei muito do tema abordado, foi de suma importancia para o nosso dia a dia.",
+      "author": "Thais Martins",
+      "position": "Produção Audiovisual - Grupo DLS",
+      "type": "talk"
+    },
+    {
+      "content": "A palestra com o Bruno foi muito enriquecedora, pois abriu nossas mentes para questões de acessibilidade que podem transformar tanto a funcionalidade das plataformas digitais quanto a rotina de pessoas com deficiências que exigem ferramentas comunicacionais específicas.",
+      "author": "Jéssica Martins",
+      "position": "Jornalista - Grupo DLS",
+      "type": "talk"
+    },
+    {
+      "content": "Achei a palestra muito esclarecedora. Por mais que tivemos pouco tempo para discutir de um assunto tão amplo, você conseguiu instigar em nós o desejo de melhora e aprimoramento. Obrigado!",
+      "author": "Pedro Bernardi",
+      "position": "Desenvolvedor - Elleven",
+      "type": "talk"
+    },
+    {
+      "content": "Excelente profissional, me ajudou a deixar minha landing page pronta para vendas e deu todo suporte na parte operacional de coisas que eu nem o havia contratado. Quando o assunto for sistemas, landing page, segurança no digital, acessibilidade, super recomendo.",
+      "author": "João Kioshi",
+      "position": "Mentor em Vendas",
+      "type": "sites"
+    },
+    {
+      "content": "O Bruno possui um conhecimento enorme e uma facilidade em ensinar de forma fácil quais ferramentas e metodologias podem ser utilizadas para garantir uma aplicação inclusiva e acessível. Além de tudo isso, ele é uma pessoa sensacional, solícito, humilde e competente.",
+      "author": "Bruce Rocha",
+      "position": "Operations Director",
+      "type": "coworkers"
+    },
+    {
+      "content": "Excelente! Trabalho rápido e eficiente.",
+      "author": "Mone de França",
+      "position": "Empreendedora",
+      "type": "sites"
+    },
+    {
+      "content": "Responsabilidade, competência e preço justo. Recomendo!",
+      "author": "Rapahel Bessa",
+      "position": "Advogado",
+      "type": "sites"
+    },
+    {
+      "content": "É uma pessoa que entende muito do processo de desenvolvimento de software em diferentes áreas. O que o torna diferente de muitos profissionais. É uma das maiores referências em acessibilidade digital no Brasil.",
+      "author": "Victoria Raupp Krupp",
+      "position": "Operations Director",
+      "type": "coworkers"
+    },
+    {
+      "content": "O Bruno Pulis é um profissional ético, comprometido e muito atencioso. Tive a oportunidade de discutir com ele sobre o desenvolvimento do site da minha empresa e fiquei impressionada com a sua dedicação em cada reunião, disposição em cada atendimento e pela sua facilidade para compartilhar seu conhecimento conforme a necessidade e as dúvidas do cliente leigo na área. Um profissional sensacional ao qual serei sempre grata.",
+      "author": "Profa Dra Yara Miranda",
+      "position": "Operations Director",
+      "type": "sites"
+    }
+  ]
 }

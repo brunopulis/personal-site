@@ -1,8 +1,23 @@
-import { blog, books, newsletter, notes } from "@content/schemas";
+import {
+  biblioteca,
+  blog,
+  blogrolls,
+  bookmarks,
+  likes,
+  movies,
+  newsletter,
+  notes,
+  speaking,
+} from "@content/schemas";
 
 export const collections = {
-	blog,
-	books,
-	notes,
-	newsletter,
+  blog,
+  blogrolls,
+  biblioteca,
+  bookmarks,
+  likes,
+  movies,
+  notes,
+  newsletter,
+  speaking,
 };

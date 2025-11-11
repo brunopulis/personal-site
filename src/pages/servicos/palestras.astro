@@ -16,9 +16,9 @@ import {
 } from "@lucide/astro";
 
 import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
+import Header from "@components/layouts/Header.astro";
 import CTASection from "@components/CTA.astro";
-import Footer from "@components/layout/Footer.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 const formatos = [
 	{
@@ -451,10 +451,10 @@ const faq = [
                       ✓ Inclui:
                     </h4>
                     <ul class="space-y-2">
-                      {formato.inclui.map((item, i) => (
+                      {formato.inclui.map((item) => (
                         <li class="flex items-start gap-2">
                           <CheckCircle
-                            class={`mt-0.5 h-4 w-4 flex-shrink-0 ${formato.destaque ? 'text-white' : 'text-green-600'}`}
+                            class={`mt-0.5 h-4 w-4 shrink-0 ${formato.destaque ? 'text-white' : 'text-green-600'}`}
                             aria-hidden="true"
                           />
                           <span class={`text-sm ${formato.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
@@ -490,7 +490,7 @@ const faq = [
 
         <div class="space-y-12">
           {
-            temas.map((categoria, index) => {
+            temas.map((categoria) => {
               const Icon = categoria.icone
               const corClasses = {
                 yellow: 'bg-yellow-100 text-yellow-600',
@@ -623,13 +623,13 @@ const faq = [
 
         <div class="grid gap-8 md:grid-cols-3">
           {
-            depoimentos.map((depoimento, index) => (
+            depoimentos.map((depoimento) => (
               <div
                 class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-6"
               >
                 <div class="mb-4 flex gap-1">
                   {[...Array(depoimento.avaliacao)].map((_, i) => (
-                    <Star key={i} class="h-5 w-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                    <Star class="h-5 w-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   ))}
                 </div>
                 <p class="mb-4 text-gray-700 italic">"{depoimento.texto}"</p>

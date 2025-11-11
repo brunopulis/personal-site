@@ -1,4 +1,10 @@
 ---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/layouts/Header.astro";
+import CTASection from "@components/CTA.astro";
+import Footer from "@components/layouts/Footer.astro";
+import site from "@data/site.config.json";
+
 import {
 	AlertCircle,
 	ArrowRight,
@@ -6,8 +12,7 @@ import {
 	CheckCircle,
 	Clock,
 	Code,
-	ExternalLink,
-	FileText,
+	Coffee,
 	GraduationCap,
 	MessageCircle,
 	Monitor,
@@ -16,15 +21,8 @@ import {
 	ShieldCheck,
 	Star,
 	Target,
-	Users,
 	Zap,
 } from "@lucide/astro";
-
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
-
-import site from "@data/site.config.json";
 
 const iconMap = {
 	ShieldCheck,
@@ -43,44 +41,24 @@ const iconMap = {
 	Star,
 };
 
-const servicos = [
+const services = [
 	{
 		id: "mentoria",
 		title: "Mentoria",
-		icone: Users,
 		tagline: "Aprenda fazendo, com acompanhamento contínuo",
 		descricao:
 			"Trabalho lado a lado com você ou sua equipe para desenvolver habilidades em acessibilidade. Não é só teoria - é prática real no seu projeto.",
-		duracao: "2 meses",
 		url: "/servicos/mentoria",
-		investimento: "A partir de R$ 1.497,00",
-		cor: "red",
 		badge: "Mais procurado",
-		oqueinclui: [
-			"Reuniões semanais de 1-2 horas",
-			"Revisão de código e design em tempo real",
-			"Acesso direto via Slack/WhatsApp",
-			"Documentação personalizada para seu projeto",
-		],
 	},
 	{
 		id: "auditoria",
 		title: "Auditoria de Acessibilidade",
-		icone: FileText,
 		tagline: "Descubra exatamente o que precisa melhorar",
 		descricao:
 			"Analiso seu site e te mostro todos os problemas de acessibilidade, com priorização clara e recomendações práticas de correção.",
-		duracao: "2-4 semanas",
 		url: "/servicos/auditoria-de-acessibilidade",
-		investimento: "A partir de R$ 2.500",
-		cor: "blue",
 		badge: "Começo ideal",
-		oqueinclui: [
-			"Auditoria completa baseada em WCAG 2.1/2.2",
-			"Testes com leitores de tela e navegação por teclado",
-			"Relatório detalhado com prints e vídeos",
-			"Planilha de problemas priorizados por impacto",
-		],
 	},
 	{
 		id: "palestras",
@@ -89,10 +67,7 @@ const servicos = [
 		tagline: "Conhecimento acessível para sua equipe",
 		descricao:
 			"Levo acessibilidade para empresas e eventos de forma simples e prática. Sem jargões complicados, com foco em aplicação real.",
-		duracao: "1-8 horas",
 		url: "/servicos/palestras",
-		investimento: "A partir de R$ 850,00",
-		cor: "purple",
 		badge: "Inspirador",
 		oqueinclui: [
 			"Palestra personalizada para seu contexto",
@@ -104,60 +79,29 @@ const servicos = [
 	{
 		id: "remediacao-docs",
 		title: "Remediação de Documentos",
-		icone: FileText,
 		tagline: "PDFs e documentos verdadeiramente acessíveis",
 		descricao:
 			"Transformo seus documentos (PDFs, Word, PowerPoint) em versões acessíveis que atendem aos padrões.",
-		duracao: "1-4 semanas",
 		url: "/servicos/remediacao-de-documentos",
-		investimento: "A partir de R$ 60,00",
-		cor: "orange",
 		badge: "Essencial",
-		oqueinclui: [
-			"Remediação do arquivo com tags adequadas",
-			"Relatório de avaliação",
-			"Estruturação semântica de documentos",
-			"Ajuste de ordem de leitura",
-			"Descrição de imagens e gráficos",
-		],
 	},
 	{
 		id: "remediacao-sites",
 		title: "Remediação de Sites",
-		icone: Code,
 		tagline: "Corrijo o código para torná-lo acessível",
 		descricao:
 			"Pego seu site inacessível e implemento todas as correções necessárias no código. Trabalho direto na implementação técnica.",
-		duracao: "1-3 meses",
 		url: "/servicos/remediacao-de-sites",
-		investimento: "Sob consulta",
-		cor: "green",
 		badge: "Mão na massa",
-		oqueinclui: [
-			"Correção de problemas identificados",
-			"Refatoração de componentes inacessíveis",
-			"Implementação de ARIA correto",
-			"Documentação do que foi alterado",
-		],
 	},
 	{
 		id: "consultoria",
 		title: "Consultoria",
-		icone: Target,
 		tagline: "Orientação estratégica para decisões certas",
 		descricao:
 			"Ajudo sua empresa a definir estratégias de acessibilidade, criar políticas internas e tomar decisões informadas sobre investimentos.",
-		duracao: "Flexível",
 		url: "/servicos/consultoria",
-		investimento: "A partir de R$ 2.000",
-		cor: "indigo",
 		badge: "Estratégico",
-		oqueinclui: [
-			"Análise de maturidade em acessibilidade",
-			"Definição de roadmap e prioridades",
-			"Criação de políticas e processos",
-			"Orientação sobre fornecedores e ferramentas",
-		],
 	},
 ];
 ---
@@ -166,19 +110,14 @@ const servicos = [
   <Header />
 
   <main id="main-content">
-    {/* Hero */}
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
-        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
-      </div>
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <section id="hero" aria-labelledby="hero-section">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
         <div>
-          <h1 class="mb-6 text-5xl leading-tight font-bold">Serviços</h1>
-          <p class="text-xl leading-relaxed font-light text-white">
+          <h1 class="mb-6 text-5xl leading-tight font-bold text-errie-black-900">Serviços</h1>
+          <p class="text-xl leading-relaxed font-light text-errie-black-900">
             Ofereço seis formas principais de serviços e trabalhos.
           </p>
-          <p class="mb-8 text-xl leading-relaxed font-light text-white">
+          <p class="mb-8 text-xl leading-relaxed font-light text-errie-black-900">
             Vamos conversar sem compromisso e descobrir juntos.
           </p>
         </div>
@@ -196,53 +135,22 @@ const servicos = [
 
         <div class="grid gap-8 lg:grid-cols-3">
           {
-            servicos.map((servico) => {
-              const Icon = servico.icone
+            services.map((service) => {
               return (
                 <article class="rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl">
-                  {/* Header do Card */}
-                  <div class="mb-6 flex items-start gap-4">
+                  <header role="banner" class="mb-6 flex items-start gap-4">
                     <div class="flex-1">
                       <span class="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
-                        {servico.badge}
+                        {service.badge}
                       </span>
-                      <h3 class="mt-2 mb-1 text-2xl font-bold text-gray-900">{servico.title}</h3>
-                      <p class="text-base text-gray-600 italic">{servico.tagline}</p>
+                      <h3 class="mt-2 mb-1 text-2xl font-bold text-gray-900">{service.title}</h3>
+                      <p class="text-base text-gray-600 italic">{service.tagline}</p>
                     </div>
-                  </div>
-
-                  {/* Descrição */}
-                  <p class="mb-6 leading-relaxed text-gray-700">{servico.descricao}</p>
-
-                  {/* Info Rápida */}
-                  <div class="mb-6 flex flex-wrap gap-4 border-b border-gray-200 pb-6 text-sm text-gray-600">
-                    <div class="flex items-center gap-2">
-                      <Clock class="h-4 w-4" />
-                      <span>{servico.duracao}</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <Target class="h-4 w-4" aria-hidden="true" />
-                      <span>{servico.investimento}</span>
-                    </div>
-                  </div>
-
-                  {/* Principais Benefícios */}
-                  <div class="mb-6">
-                    <h4 class="mb-3 text-sm font-bold tracking-wide text-gray-900">O que você recebe</h4>
-                    <ul class="space-y-2">
-                      {servico.oqueinclui.slice(0, 4).map((item) => (
-                        <li class="flex items-start gap-2">
-                          <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" aria-hidden="true" />
-                          <span class="text-sm text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* CTA */}
+                  </header>
+                  <p class="mb-6 leading-relaxed text-gray-700">{service.descricao}</p>
                   <div class="flex">
                     <a
-                      href={servico.url}
+                      href={service.url}
                       class="text-blood-red-800 text-sm font-semibold transition hover:underline hover:underline-offset-8"
                     >
                       Saiba mais
@@ -256,21 +164,19 @@ const servicos = [
         </div>
       </div>
     </section>
-    <section class="bg-gray-900 py-20 text-white">
-      <div class="mx-auto max-w-4xl px-6 text-center">
-        <h2 class="mb-4 text-4xl font-bold">Pronto para começar?</h2>
-        <p class="mx-auto mb-8 max-w-2xl text-xl text-white">Vamos conversar sem compromisso sobre seu projeto.</p>
-        <a
-          href={site.socialMidia.cal}
-          target="_blank"
-          rel="noreferrer noopener"
-          class="focus-visible:border-ring focus-visible:ring-wh bg-blood-red-800 hover:bg-blood-red-800/90 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md px-8 py-4 text-sm font-medium whitespace-nowrap text-white transition-all focus-visible:ring-[5px]"
-        >
-          Agendar conversa gratuita
-          <ExternalLink class="h-5 w-5" aria-hidden="true" />
-        </a>
-      </div>
-    </section>
+		<CTASection
+      icon={Coffee}
+      title="Pronto para começar?"
+      description="Vamos conversar sem compromisso sobre seu projeto."
+      primaryButton={{
+        text: 'Agendar conversa gratuita',
+        url: site.socialMidia.cal,
+      }}
+      secondaryButton={{
+        text: 'Ver outros serviços',
+        url: '/servicos',
+      }}
+    />
   </main>
 </Layout>
 <Footer />

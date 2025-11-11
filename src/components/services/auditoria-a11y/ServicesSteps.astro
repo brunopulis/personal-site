@@ -1,0 +1,146 @@
+---
+import {
+	Award,
+	CheckCircle,
+	Clock,
+	Code,
+	Eye,
+	FileText,
+	Shield,
+
+} from "@lucide/astro";
+
+const etapas = [
+	{
+		lang: "en",
+		nome: "Kickoff",
+		duracao: "1-2 dias",
+		icone: Shield,
+		descricao:
+			"Reunião inicial para entender seu projeto, objetivos e definir escopo",
+		atividades: [
+			"Reunião de alinhamento (1h)",
+			"Definição de páginas/fluxos prioritários",
+			"Coleta de credenciais de acesso (se necessário)",
+			"Definição de personas e casos de uso",
+			"Alinhamento de expectativas e cronograma",
+		],
+	},
+	{
+		numero: 2,
+		nome: "Auditoria Técnica",
+		duracao: "5-10 dias",
+		icone: Code,
+		descricao: "Análise profunda de código, estrutura e conformidade WCAG",
+		atividades: [
+			"Análise de código HTML/CSS/JavaScript",
+			"Verificação de semântica e ARIA",
+			"Testes automatizados (Axe, Wave, Lighthouse)",
+			"Validação de contraste de cores",
+			"Verificação de estrutura de headings",
+			"Análise de formulários e validações",
+			"Teste de navegação por teclado",
+			"Documentação de cada problema encontrado",
+		],
+	},
+	{
+		numero: 3,
+		nome: "Testes com Tecnologias Assistivas",
+		duracao: "3-5 dias",
+		icone: Eye,
+		descricao:
+			"Simulação de uso real com leitores de tela e outras ferramentas",
+		atividades: [
+			"Testes com NVDA (Windows)",
+			"Testes com JAWS (Windows)",
+			"Testes com VoiceOver (macOS/iOS)",
+			"Testes com TalkBack (Android)",
+			"Navegação apenas por teclado",
+			"Testes com zoom (até 200%)",
+			"Gravação de vídeos dos problemas",
+			"Documentação de experiência do usuário",
+		],
+	},
+	{
+		numero: 4,
+		nome: "Elaboração do Relatório",
+		duracao: "3-5 dias",
+		icone: FileText,
+		descricao:
+			"Compilação de todos os achados em documentação clara e acionável",
+		atividades: [
+			"Categorização dos problemas por severidade",
+			"Priorização por impacto no usuário",
+			"Criação de prints e vídeos explicativos",
+			"Redação de recomendações específicas",
+			"Sugestões de código para correção",
+			"Criação de planilha Excel detalhada",
+			"Montagem do relatório final em PDF",
+			"Roadmap de implementação sugerido",
+		],
+	},
+	{
+		numero: 5,
+		nome: "Apresentação e Suporte",
+		duracao: "1-2 dias",
+		icone: Award,
+		descricao: "Entrega dos resultados e acompanhamento pós-auditoria",
+		atividades: [
+			"Reunião de apresentação dos resultados",
+			"Explicação de cada problema encontrado",
+			"Priorização conjunta das correções",
+			"Esclarecimento de dúvidas técnicas",
+			"Orientações sobre próximos passos",
+			"Suporte contínuo por email/WhatsApp",
+			"Revisão opcional após correções",
+		],
+	},
+];
+---
+
+<section class="bg-gray-50  py-20" id="steps" aria-labelledby="steps-section">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mb-16 text-center">
+      <h2 class="mb-4 text-4xl font-bold text-gray-900" id="steps-section">Como funciona a auditoria</h2>
+      <p class="text-xl text-gray-600">Processo transparente em 5 etapas</p>
+    </div>
+
+    <div class="space-y-8">
+      {
+        etapas.map((etapa, index) => {
+          const Icon = etapa.icone
+          return (
+            <div class="relative">
+              <div class="flex gap-6">
+                <article class="flex-1 rounded-xl border-2 border-gray-200 bg-white p-8 transition hover:border-blue-400">
+                  <div class="mb-4 flex items-start justify-between">
+                    <div>
+                      <h3 class="mb-2 text-2xl font-bold text-gray-900" lang={etapa.lang || ''}>{etapa.nome}</h3>
+                      <p class="text-gray-600">{etapa.descricao}</p>
+                    </div>
+                    <div class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm whitespace-nowrap text-gray-600">
+                      <Clock class="h-4 w-4" aria-hidden="true" />
+                      {etapa.duracao}
+                    </div>
+                  </div>
+
+                  <div class="mt-6">
+                    <h4 class="mb-3 text-sm font-bold text-gray-900">O que faço nesta etapa:</h4>
+                    <ul class="grid gap-2 md:grid-cols-2">
+                      {etapa.atividades.map((atividade) => (
+                        <li class="flex items-start gap-2">
+                          <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
+                          <span class="text-sm text-gray-700">{atividade}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
+</section>
