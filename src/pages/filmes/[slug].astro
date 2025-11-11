@@ -4,9 +4,8 @@ import Footer from "@components/layouts/Footer.astro";
 import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
 import Newsletter from "@components/Newsletter.astro";
-import Layout from "@layouts/Layout.astro";
+import Layout from "@layout/Layout.astro";
 
-// Gera as rotas para todos os letters
 export async function getStaticPaths() {
 	const letters = await getCollection("newsletter");
 
@@ -19,7 +18,6 @@ export async function getStaticPaths() {
 const { letter } = Astro.props;
 const { Content } = await render(letter);
 
-// Formata a data para pt-BR
 const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
 	year: "numeric",
 	month: "long",
