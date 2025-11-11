@@ -1,9 +1,9 @@
 ---
 title: Primeiros passos com Flutter
-image: '/src/assets/images/blog/flutter.jpeg'
-imageAlt: ''
+image: "/src/assets/images/blog/flutter.jpeg"
+imageAlt: ""
 publishDate: 2021-11-16
-category: 'Frontend'
+category: "Frontend"
 url: https://brunopulis.com/primeiros-passos-com-flutter/
 ---
 

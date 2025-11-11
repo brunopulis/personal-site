@@ -1,7 +1,7 @@
 ---
-issue: '06'
-title: 'Olhe para cima'
-date: '2023-12-20'
+issue: "06"
+title: "Olhe para cima"
+date: "2023-12-20"
 ---
 
 Ontem estava bem cansado. Íamos assistir um episódio de Game of Thrones, mas não deu. Estou numa saga de apresentar conteúdos de fantasia para minha esposa.

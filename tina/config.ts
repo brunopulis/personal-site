@@ -1,14 +1,18 @@
 import { defineConfig } from "tinacms";
+import { BlogCollection } from "./collections/blog";
+import { BlogrollCollection } from "./collections/blogroll";
+import { NotasCollection } from "./collections/notas";
+import { BibliotecaCollection } from "./collections/biblioteca";
+import { MoviesCollection } from "./collections/movies";
+import { NewsletterCollection } from "./collections/newsletter";
+import { SpeakingCollection } from "./collections/speaking";
 
 const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
+  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID || "",
+  clientId: process.env.PUBLIC_TINA_CLIENT_ID || "",
   token: process.env.TINA_TOKEN,
 
   build: {
@@ -21,49 +25,15 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
-      {
-        name: "post",
-        label: "Posts",
-        path: "src/content/blog",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
-      },
-      {
-        name: "book",
-        label: "Books",
-        path: "src/content/books",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
-      },
+      BlogCollection,
+      NotasCollection,
+      BlogrollCollection,
+      BibliotecaCollection,
+      MoviesCollection,
+      NewsletterCollection,
+      SpeakingCollection,
     ],
   },
 });

@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 import { ExternalLink } from "@lucide/astro";
 
 import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
+import Header from "@components/layouts/Header.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 import bibliotecaDaRevolucao from "@assets/images/projects/biblioteca-da-revolucao.webp";
 import forja from "@assets/images/projects/forja-comercial.webp";
@@ -88,15 +88,13 @@ const projects = projectsData.projects;
 <Layout title="Projetos - Bruno Pulis">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
-        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
-      </div>
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <section id="hero" aria-labelledby="hero-section">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
         <div>
-          <h1 class="mb-6 text-5xl leading-tight font-bold">Projetos que transformam barreiras em pontes</h1>
-          <p class="mb-6 text-2xl font-light text-white">
+          <h1 class="mb-6 text-5xl text-errie-black-900 leading-tight font-bold" id="hero-section">
+            Projetos que transformam barreiras em pontes
+          </h1>
+          <p class="mb-6 text-2xl font-light text-errie-black-900">
             Cada projeto aqui representa pessoas reais que agora podem acessar conteúdo que antes era impossível. Não
             são apenas sites - são vidas impactadas.
           </p>
@@ -133,7 +131,7 @@ const projects = projectsData.projects;
                       href={project.demo[0].url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="focus-visible:border-ring focus-visible:ring-ring/50 text-blood-red-800 hover:bg-accent hover:text-accent-foreground flex inline-flex h-8 items-center font-medium"
+                      class="focus-visible:border-ring focus-visible:ring-ring/50 text-blood-red-800 hover:bg-accent hover:text-accent-foreground inline-flex h-8 items-center font-medium"
                     >
                       Acessar projeto
                       <ExternalLink class="ml-1 h-4 w-4" />

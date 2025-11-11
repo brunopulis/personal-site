@@ -65,9 +65,11 @@ const { allTags } = Astro.props;
       button.addEventListener('click', () => {
         const selectedTag = button.getAttribute('data-tag');
 
+        // Atualiza botões ativos
         tagButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
 
+        // Filtra posts
         postItems.forEach(post => {
           const postTags = post.getAttribute('data-tags')?.split(',') || [];
 

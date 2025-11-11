@@ -1,7 +1,7 @@
 ---
-issue: '03'
-title: 'A vida precisa ser corrida?'
-date: '2023-12-11'
+issue: "03"
+title: "A vida precisa ser corrida?"
+date: "2023-12-11"
 ---
 
 Escrevo essa carta enquanto faço cardio são aproximadamente 6:50 da manhã. Uma das habilidades que desenvolvi ao longo da vida **é observar**. Fazer cardio ao ar livre é um bom exercício para essa habilidade. Uma pista de corrida é o local perfeito para notar alguns comportamentos, como:
