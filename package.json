@@ -28,7 +28,7 @@
     "@eslint/migrate-config": "^1.6.1",
     "@fontsource-variable/source-sans-3": "^5.2.9",
     "@fontsource/source-sans-3": "^5.2.9",
-    "@lucide/astro": "^0.552.0",
+    "@lucide/astro": "^0.553.0",
     "@philnash/astro-pagination": "^0.5.0",
     "@tanstack/react-virtual": "^3.13.12",
     "@yeskunall/astro-umami": "^0.0.7",
