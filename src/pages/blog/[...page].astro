@@ -1,11 +1,11 @@
 ---
-import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 import { Calendar } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/layout/Header.astro";
+import TagFilter from "@components/TagFilter.astro";
 import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
 import Footer from "@components/layout/Footer.astro";
@@ -32,6 +32,10 @@ type Props = { page: Page<CollectionEntry<"blog">> };
 const { page } = Astro.props;
 const posts = page.data;
 const tags = getAllTags(posts);
+
+const allTags = [...new Set(
+  posts.flatMap(post => post.data.tags || [])
+)].sort();
 
 function formatDate(date: string | number | Date) {
 	const formatter = new Intl.DateTimeFormat("pt-BR", {
