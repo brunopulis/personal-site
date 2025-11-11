@@ -6,87 +6,171 @@ interface Props {
 const { allTags } = Astro.props;
 ---
 
-<div class="tag-filter-container">
-  <div class="tags-wrapper">
-    <button class="tag-btn active" data-tag="all">
-      Todos
-    </button>
-    {allTags.map((tag) => (
-      <button class="tag-btn" data-tag={tag}>
-        {tag}
-      </button>
-    ))}
+<div class="filter-container">
+  <button class="filter-toggle" id="filterToggle">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M3 4h18M3 12h12M3 20h6" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span>Filtro</span>
+    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="dropdown-menu" id="dropdownMenu">
+    <div class="dropdown-content">
+      <h3>Categorias</h3>
+      <div class="tags-list">
+        {allTags.map((tag) => (
+          <a href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`} class="tag-link">
+            {tag}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
   </div>
 </div>
 
 <style>
-  .tag-filter-container {
+  .filter-container {
+    position: relative;
+    display: inline-block;
     margin: 2rem 0;
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 8px;
   }
 
-  .tags-wrapper {
+  .filter-toggle {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .tag-btn {
-    padding: 0.5rem 1rem;
-    border: 2px solid #dee2e6;
-    background: white;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-  }
-
-  .tag-btn:hover {
-    border-color: #495057;
-    transform: translateY(-2px);
-  }
-
-  .tag-btn.active {
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
     background: #007bff;
     color: white;
-    border-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  }
+
+  .filter-toggle:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  }
+
+  .chevron {
+    transition: transform 0.3s ease;
+  }
+
+  .filter-toggle.active .chevron {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    min-width: 280px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-content {
+    padding: 1.5rem;
+  }
+
+  .dropdown-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #212529;
+  }
+
+  .tags-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tag-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .tag-link:hover {
+    background: #e9ecef;
+    color: #007bff;
+    transform: translateX(4px);
+  }
+
+  .tag-link svg {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .tag-link:hover svg {
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .dropdown-menu {
+      min-width: 260px;
+    }
   }
 </style>
 
 <script>
-  function initTagFilter() {
-    const tagButtons = document.querySelectorAll('.tag-btn');
-    const postItems = document.querySelectorAll('.post-item');
+  function initFilterDropdown() {
+    const toggle = document.getElementById('filterToggle');
+    const menu = document.getElementById('dropdownMenu');
 
-    tagButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const selectedTag = button.getAttribute('data-tag');
+    if (!toggle || !menu) return;
 
-        // Atualiza botões ativos
-        tagButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
 
-        // Filtra posts
-        postItems.forEach(post => {
-          const postTags = post.getAttribute('data-tags')?.split(',') || [];
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+      }
+    });
 
-          if (selectedTag === 'all' || postTags.includes(selectedTag)) {
-            post.style.display = 'block';
-            post.style.animation = 'fadeIn 0.3s ease';
-          } else {
-            post.style.display = 'none';
-          }
-        });
-      });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+      }
     });
   }
 
-  // Inicializa quando o DOM carregar
-  document.addEventListener('DOMContentLoaded', initTagFilter);
-
-  // Reinicializa após navegação (para SPAs)
-  document.addEventListener('astro:page-load', initTagFilter);
+  document.addEventListener('DOMContentLoaded', initFilterDropdown);
+  document.addEventListener('astro:page-load', initFilterDropdown);
 </script>

@@ -22,12 +22,13 @@
     "@astrojs/mdx": "^4.3.9",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/ts-plugin": "^1.10.5",
     "@astrojs/vercel": "^9.0.0",
     "@cedx/akismet": "^17.1.0",
     "@eslint/migrate-config": "^1.6.1",
     "@fontsource-variable/source-sans-3": "^5.2.9",
     "@fontsource/source-sans-3": "^5.2.9",
-    "@lucide/astro": "^0.552.0",
+    "@lucide/astro": "^0.553.0",
     "@philnash/astro-pagination": "^0.5.0",
     "@tanstack/react-virtual": "^3.13.12",
     "@yeskunall/astro-umami": "^0.0.7",
@@ -45,7 +46,7 @@
     "tinacms": "^2.9.0",
     "typescript": "^5.9.2"
   },
-  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd",
+  "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40",
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.1",

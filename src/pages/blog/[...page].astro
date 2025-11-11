@@ -3,13 +3,13 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { ArrowRight } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
-import Layout from "@layouts/Layout.astro";
+import Layout from "@layout/Layout.astro";
+
 import Header from "@components/layouts/Header.astro";
+import TagFilter from "@components/TagFilter.astro";
 import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
 import Footer from "@components/layouts/Footer.astro";
-
-import TagFilter from "@components/TagFilter.astro";
 
 import { getAllTags } from "@utils/getAllTags";
 
@@ -46,11 +46,6 @@ function formatDate(date: string | number | Date) {
 	});
 
 	return formatter.format(new Date(date));
-}
-
-function toISOString(dateString: string) {
-	const date = new Date(dateString);
-	return date.toISOString();
 }
 
 export const prerender = true;
@@ -107,7 +102,7 @@ export const prerender = true;
                         </div>
                       )}
                       <a
-                        href={'/blog/' + post.id}
+                        href={`/blog/${post.slug}`}
                         aria-labelledby={`post-${index}`}
                         class="flex items-center gap-2 font-semibold text-errie-black-900 underline underline-offset-8 transition hover:no-underline"
                       >
