@@ -81,7 +81,7 @@ export const prerender = true;
                   posts.map((post, index) => (
                     <li class="py-4" data-tags={post.data.tags?.join(',')}>
                       <h3 class="mb-4 text-3xl font-bold">
-                        <a href={'/blog/' + post.id} class="u-url group block">
+                        <a href={`/blog/${post.slug}`} class="u-url group block">
                           {post.data.title}
                         </a>
                       </h3>
