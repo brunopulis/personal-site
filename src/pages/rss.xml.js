@@ -1,16 +1,20 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import config from "@content/config/config.json";
 
 export async function GET(context) {
   const posts = await getCollection("blog");
+
   return rss({
-    title: config.seo.title,
-    description: config.seo.description,
+    stylesheet: `/rss-styles.xsl`,
+    title: "Meu blog",
+    description: "Escrevo sobre acessibilidade, tecnologia, teologia, produtividade. Nem tudo é técnico, às vezes é só sobre a vida.",
     site: context.site,
     items: posts.map(post => ({
-      ...post.data,
-      link: `/blog/${post.id}/`,
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      description: post.data.description,
+      link: `/blog/${post.slug}/`,
     })),
+    customData: `<language>pt-br</language>`,
   });
 }
