@@ -8,9 +8,9 @@ import SkipLink from "@components/utils/SkipLink.astro";
 const { pathname } = Astro.url;
 ---
 
-<header x-data="{ open: false }" class="w-full py-4 backdrop-blur-xs transition-colors duration-300">
-  <SkipLink />
-  <div class="container-custom flex items-center justify-between">
+<SkipLink />
+<header x-data="{ open: false }" class="wrapper region | repel | page-header">
+  <div class="l-container">
     <div class="shrink-0">
       <a href="/" class="" aria-label="Ir para página inicial">
         <Image src={pulisLogo} class="h6- w-auto" alt="Bruno Pulis" loading="eager" />
@@ -22,9 +22,9 @@ const { pathname } = Astro.url;
           <a
             href="/sobre"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900  hover:text-blood-red-800 underline-offset-8 hover:underline ${
-              pathname === '/sobre'
-                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
-                : ''
+              pathname === "/sobre"
+                ? " text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active"
+                : ""
             }`}>Sobre</a
           >
         </li>
@@ -32,9 +32,9 @@ const { pathname } = Astro.url;
           <a
             href="/projetos"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline   ${
-              pathname === '/projetos'
-                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
-                : ''
+              pathname === "/projetos"
+                ? " text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active"
+                : ""
             }`}>Projetos</a
           >
         </li>
@@ -42,9 +42,9 @@ const { pathname } = Astro.url;
           <a
             href="/servicos"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === '/servicos'
-                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
-                : ''
+              pathname === "/servicos"
+                ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active"
+                : ""
             }`}>Serviços</a
           >
         </li>
@@ -52,9 +52,9 @@ const { pathname } = Astro.url;
           <a
             href="/blog"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === '/blog'
-                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
-                : ''
+              pathname === "/blog"
+                ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active"
+                : ""
             }`}>Blog</a
           >
         </li>
@@ -62,9 +62,9 @@ const { pathname } = Astro.url;
           <a
             href="/newsletter"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === '/newsletter'
-                ? ' text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active'
-                : ''
+              pathname === "/newsletter"
+                ? " text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active"
+                : ""
             }`}>Newsletter</a
           >
         </li>
@@ -72,9 +72,9 @@ const { pathname } = Astro.url;
           <a
             href="/contato"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline  ${
-              pathname === '/contato'
-                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
-                : ''
+              pathname === "/contato"
+                ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active"
+                : ""
             }`}>Contato</a
           >
         </li>
@@ -95,24 +95,53 @@ const { pathname } = Astro.url;
   </div>
 
   <!-- Mobile menu -->
-  <nav id="mobile-menu" x-show="open" x-transition class="inset-0 z-50 bg-white/95 p-6 backdrop-blur-lg md:hidden">
-    <button @click="open = false" aria-label="Fechar menu" class="text-errie-black-900 absolute top-4 right-4">
+  <nav
+    id="mobile-menu"
+    x-show="open"
+    x-transition
+    class="inset-0 z-50 bg-white/95 p-6 backdrop-blur-lg md:hidden"
+  >
+    <button
+      @click="open = false"
+      aria-label="Fechar menu"
+      class="text-errie-black-900 absolute top-4 right-4"
+    >
       <X class="h-4 w-4" aria-hidden="true" />
     </button>
     <ul class="mt-12 flex flex-col gap-6 text-lg font-medium">
-      <li><a href="/sobre" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Sobre</a></li>
       <li>
-        <a href="/projetos" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Projetos</a>
+        <a href="/sobre" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2"
+          >Sobre</a
+        >
       </li>
       <li>
-        <a href="/servicos" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Serviços</a>
+        <a
+          href="/projetos"
+          class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Projetos</a
+        >
       </li>
-      <li><a href="/blog" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Blog</a></li>
       <li>
-        <a href="/newsletter" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Newsletter</a>
+        <a
+          href="/servicos"
+          class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Serviços</a
+        >
       </li>
       <li>
-        <a href="/contato" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Contato</a>
+        <a href="/blog" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2"
+          >Blog</a
+        >
+      </li>
+      <li>
+        <a
+          href="/newsletter"
+          class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Newsletter</a
+        >
+      </li>
+      <li>
+        <a
+          href="/contato"
+          class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Contato</a
+        >
       </li>
     </ul>
   </nav>

@@ -74,7 +74,7 @@ function toISOString(dateString: string) {
                   </div>
                   <div class="flex-1">
                     <h2 class="text-xl font-semibold text-gray-900 transition-colors group-hover:text-red-950">
-                      <a href={'/newsletter/' + letter.id} class="block">
+                      <a href={`/newsletter/${letter.slug}`} class="block">
                         {letter.data.title}
                       </a>
                     </h2>

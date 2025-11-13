@@ -1,22 +1,22 @@
 ---
 import { Image } from "astro:assets";
 
-import pulisLogo from "@assets/images/horizontal/white.svg";
+import pulisLogo from "@assets/images/horizontal/blood.svg";
 import writtenByHuman from "@assets/images/written-by-human.svg";
 import SocialMidia from "@components/utils/SocialMidia.astro";
 import Webring from "@components/utils/Webring.astro";
 ---
 
-<footer class="bg-gray-900 pt-16 pb-8 text-white">
-  <div class="container-custom">
+<footer class="pt-16 pb-8">
+  <div class="wrapper">
     <div class="mb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <div class="md:col-span-2 lg:col-span-2">
         <a href="/" class="mb-6 flex items-center" aria-label="Go to homepage">
           <img src={pulisLogo.src} alt="" loading="lazy" />
         </a>
-        <p class="mb-6 max-w-md text-white">
-          Desenvolvedor e engenheiro de acessibilidade, apaixonado por criar experiências digitais excepcionais que
-          conectam pessoas e transformam negócios.
+        <p class="mb-6 max-w-md">
+          Desenvolvedor e engenheiro de acessibilidade, apaixonado por criar experiências digitais
+          excepcionais que conectam pessoas e transformam negócios.
         </p>
       </div>
       <div>
@@ -24,16 +24,16 @@ import Webring from "@components/utils/Webring.astro";
         <h3 class="mb-4 text-lg font-semibold">Trabalho</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/sobre" class="text-white underline-offset-8 transition-colors hover:underline">Sobre</a>
+            <a href="/sobre" class="">Sobre</a>
           </li>
           <li>
-            <a href="/projetos" class="text-white underline-offset-8 transition-colors hover:underline">Projetos</a>
+            <a href="/projetos" class="">Projetos</a>
           </li>
           <li>
-            <a href="/servicos" class="text-white underline-offset-8 transition-colors hover:underline">Serviços</a>
+            <a href="/servicos" class="">Serviços</a>
           </li>
           <li>
-            <a href="/newsletter" class="text-white underline-offset-8 transition-colors hover:underline">Newsletter</a>
+            <a href="/newsletter" class="">Newsletter</a>
           </li>
         </ul>
       </div>
@@ -42,18 +42,16 @@ import Webring from "@components/utils/Webring.astro";
         <h3 class="mb-4 text-lg font-bold">Pessoal</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/blogroll" class="text-white underline-offset-8 transition-colors hover:underline">Blogroll</a>
+            <a href="/blogroll" class="">Blogroll</a>
           </li>
           <li>
-            <a href="/biblioteca" class="font-normal text-white underline-offset-8 transition-colors hover:underline"
-              >Minha Biblioteca</a
-            >
+            <a href="/biblioteca" class="font-normal">Minha Biblioteca</a>
           </li>
           <li>
-            <a href="/filmes" class="text-white underline-offset-8 transition-colors hover:underline">Meus Filmes</a>
+            <a href="/filmes" class="">Meus Filmes</a>
           </li>
           <li>
-            <a href="/notas" class="text-white underline-offset-8 transition-colors hover:underline">Minhas Notas</a>
+            <a href="/notas" class="">Minhas Notas</a>
           </li>
         </ul>
       </div>
@@ -61,27 +59,26 @@ import Webring from "@components/utils/Webring.astro";
 
     <div class="mt-8 border-t border-gray-800 pt-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-        <p class="mb-4 text-sm text-white underline-offset-8 hover:underline md:mb-0">
+        <p class="mb-4 text-sm underline-offset-8 hover:underline md:mb-0">
           Feito com <span role="img" aria-label="amor">❤️</span> em BH. Conteúdo licenciado por
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer" class=""> CC-BY-SA </a>
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            rel="noopener noreferrer"
+            class=""
+          >
+            CC-BY-SA
+          </a>
         </p>
         <div class="flex flex-col space-x-6 md:flex-row">
           <ul class="flex gap-2">
             <li>
-              <a
-                href="/declaracao-acessibilidade"
-                class="text-sm text-white underline-offset-8 transition-colors hover:underline"
-                >Declaração de Acessibilidade</a
-              >
+              <a href="/declaracao-acessibilidade" class="text-sm">Declaração de Acessibilidade</a>
             </li>
             <li>
-              <a href="/now" class="text-sm text-white underline-offset-8 transition-colors hover:underline" lang="en"
-                >Now</a
-              >
+              <a href="/now" class="text-sm" lang="en">Now</a>
             </li>
             <li>
-              <a href="/ia" class="text-sm text-white underline-offset-8 transition-colors hover:underline">Uso de IA</a
-              >
+              <a href="/ia" class="text-sm">Uso de IA</a>
             </li>
           </ul>
         </div>
@@ -93,7 +90,13 @@ import Webring from "@components/utils/Webring.astro";
       <Webring />
       <div class="flex flex-row space-x-5">
         <SocialMidia />
-        <Image src={writtenByHuman} width={88} height={30} loading="lazy" alt="Conteúdo escrito por um humano" />
+        <Image
+          src={writtenByHuman}
+          width={88}
+          height={30}
+          loading="lazy"
+          alt="Conteúdo escrito por um humano"
+        />
       </div>
     </div>
   </div>

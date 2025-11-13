@@ -1,28 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import {
-	ArrowRight,
-	Award,
-	BookOpen,
-	Calendar,
-	Church,
-	Code,
-	ExternalLink,
-	Film,
-	Guitar,
-	Heart,
-	Lightbulb,
-	MapPin,
-	Target,
-	Users,
-	Zap,
-} from "@lucide/astro";
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
+
+import { ArrowRight, ExternalLink } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
 import Header from "@components/layouts/Header.astro";
 import Footer from "@components/layouts/Footer.astro";
-
-import me from "@assets/images/me.webp";
 
 const title = "Sobre — Bruno Pulis";
 ---
@@ -30,58 +14,41 @@ const title = "Sobre — Bruno Pulis";
 <Layout title={title}>
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-12 text-white">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
-        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
-      </div>
+    <div class="l-container">
+      <section>
+        <Breadcrumbs separatorAriaHidden={false}>
+          <svg
+            slot="separator"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </Breadcrumbs>
 
-      <div class="relative mx-auto max-w-5xl px-6 py-20">
-        <div class="mb-12 text-center">
-          <div class="mb-6 inline-block">
-            <Image
-              src={me}
-              alt="Bruno Pulis"
-              class="mx-auto h-32 w-32 rounded-full border-4 border-white/20 object-cover shadow-2xl"
-              loading="eager"
-            />
-          </div>
+        <h1>Sobre</h1>
+        <p>
+          Sou apaixonado por criar uma web que funciona para todo mundo. Também sou marido, pai,
+          cristão, leitor compulsivo e eterno aprendiz.
+        </p>
+      </section>
 
-          <h1 class="mb-4 text-5xl font-bold">Olá, eu sou Bruno Pulis</h1>
-          <p class="mx-auto max-w-3xl text-2xl leading-relaxed font-light text-white">
-            Apaixonado por criar uma web que funciona para todo mundo. Também sou marido, pai, cristão, leitor
-            compulsivo e eterno aprendiz.
-          </p>
-        </div>
-
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <div class="rounded-xl border border-white/10 bg-white p-4 text-center backdrop-blur-sm">
-            <MapPin class="text-blood-red-800 mx-auto mb-2 h-6 w-6" aria-hidden="true" />
-            <p class="text-errie-black-900 text-sm">Localização</p>
-            <p class="text-errie-black-900 font-semibold">Belo Horizonte, MG</p>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white p-4 text-center backdrop-blur-sm">
-            <Calendar class="text-blood-red-800 mx-auto mb-2 h-6 w-6" aria-hidden="true" />
-            <p class="text-errie-black-900 text-sm">Experiência</p>
-            <p class="text-errie-black-900 font-semibold">15+ anos</p>
-          </div>
-          <div class="rounded-xl border border-white/10 bg-white p-4 text-center backdrop-blur-sm">
-            <Award class="text-blood-red-800 mx-auto mb-2 h-6 w-6" aria-hidden="true" />
-            <p class="text-errie-black-900 text-sm">Especialidade</p>
-            <p class="text-errie-black-900 font-semibold">Acessibilidade Web</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-12">
-      <div class="mx-auto max-w-5xl px-6">
-        <h2 class="text-errie-black-900 mb-8 text-4xl font-bold">Como cheguei até aqui</h2>
+      <section>
+        <h2>Como cheguei até aqui</h2>
         <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
-          Sou consultor de <strong>acessibilidade digital</strong> e desenvolvedor front-end em Belo Horizonte.
+          Sou consultor de <strong>acessibilidade digital</strong> e desenvolvedor front-end em Belo
+          Horizonte.
         </p>
         <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
-          Mas, antes de tudo, sou alguém que acredita que tecnologia boa é a que <strong>inclui pessoas</strong>.
+          Mas, antes de tudo, sou alguém que acredita que tecnologia boa é a que <strong
+            >inclui pessoas</strong
+          >.
         </p>
         <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
           Escrevo, dou palestras, treinamentos e mentorias, tudo com propósito:
@@ -89,202 +56,158 @@ const title = "Sobre — Bruno Pulis";
         </p>
         <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
           Atualmente, atuo como <strong>Especialista de Testes em Acessibilidade</strong> na
-          <a href="https://br.nttdata.com/" target="_blank" class="underline" rel="noopener noreferral">
+          <a
+            href="https://br.nttdata.com/"
+            target="_blank"
+            class="underline"
+            rel="noopener noreferral"
+          >
             NTT Data Brasil
             <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" /></a
           >.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section class="py-6">
-      <div class="mx-auto max-w-5xl px-6">
-        <h2 class="text-errie-black-900 mb-8 text-4xl font-bold">Minha história <span aria-hidden="true">🌱</span></h2>
+      <section>
+        <h2>Minha história</h2>
+        <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
+          Minha jornada não começou com código. Em 2006, eu servia hambúrguer no Burger King. Dois
+          anos depois, estava montando computadores. Em 2010, me formei em Sistemas para Internet e
+          comecei a viver daquilo que me fascinava: a web.
+        </p>
+        <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
+          Passei por agências, startups e produtos digitais. Em 2015, criei o Awesome A11y, um
+          repositório de recursos sobre acessibilidade. Em 2017, entrei para a área de qualidade de
+          software. E em 2021, dei um passo decisivo: acessibilidade se tornou meu foco principal.
+        </p>
+        <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
+          Desde então, cada projeto que faço é um lembrete do porquê comecei:
+          <strong>criar uma internet onde todo mundo possa participar.</strong>
+        </p>
+      </section>
+      <section>
+        <h2>
+          Open Source e comunidade <span aria-hidden="true">💻</span>
+        </h2>
+        <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
+          Sempre gostei de compartilhar o que aprendo.
+        </p>
+        <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
+          Sou co-fundador do <a
+            href="https://minasdev.org"
+            target="_blank"
+            class="text-blood-red-800 underline"
+            rel="noopener noreferral"
+            >Minas Dev <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" /></a
+          >
+          e já organizei diversos meetups e eventos em Belo Horizonte.
+        </p>
 
-        <div class="mb-12">
-          <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
-            Minha jornada não começou com código. Em 2006, eu servia hambúrguer no Burger King. Dois anos depois, estava
-            montando computadores. Em 2010, me formei em Sistemas para Internet e comecei a viver daquilo que me
-            fascinava: a web.
-          </p>
-          <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
-            Passei por agências, startups e produtos digitais. Em 2015, criei o Awesome A11y, um repositório de recursos
-            sobre acessibilidade. Em 2017, entrei para a área de qualidade de software. E em 2021, dei um passo
-            decisivo: acessibilidade se tornou meu foco principal.
-          </p>
-          <p class="text-errie-black-900 mb-2 text-lg leading-relaxed">
-            Desde então, cada projeto que faço é um lembrete do porquê comecei:
-            <strong>criar uma internet onde todo mundo possa participar.</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-6">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mb-8">
-          <h2 class="text-errie-black-900 mb-4 text-4xl font-bold">
-            Open Source e comunidade <span aria-hidden="true">💻</span>
-          </h2>
-        </div>
-
-        <div class="mb-6">
-          <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">Sempre gostei de compartilhar o que aprendo.</p>
-          <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-            Sou co-fundador do <a
-              href="https://minasdev.org"
+        <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
+          Mantenho alguns projetos como:
+        </p>
+        <ul class="mb-4 list-inside list-disc space-y-2">
+          <li>
+            <a
+              href="https://github.com/brunopulis/awesome-a11y"
               target="_blank"
-              class="text-blood-red-800 underline"
-              rel="noopener noreferral">Minas Dev <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" /></a
+              rel="noopener noreferrer"
+              class="text-blood-red-800 font-semibold underline transition hover:bg-red-50"
+              lang="en"
             >
-            e já organizei diversos meetups e eventos em Belo Horizonte.
-          </p>
+              Awesome A11y
+              <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/brunopulis/awesome-cypress"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blood-red-800 font-semibold underline transition hover:bg-red-50"
+              lang="en"
+            >
+              Awesome Cypress
+              <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" />
+            </a>
+          </li>
+        </ul>
 
-          <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">Mantenho alguns projetos como:</p>
-          <ul class="mb-4 list-inside list-disc space-y-2">
-            <li>
-              <a
-                href="https://github.com/brunopulis/awesome-a11y"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blood-red-800 font-semibold underline transition hover:bg-red-50"
-                lang="en"
-              >
-                Awesome A11y
-                <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/brunopulis/awesome-cypress"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blood-red-800 font-semibold underline transition hover:bg-red-50"
-                lang="en"
-              >
-                Awesome Cypress
-                <ExternalLink class="inline-block h-4 w-4" aria-hidden="true" />
-              </a>
-            </li>
-          </ul>
+        <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
+          A comunidade me deu muito: amizades, oportunidades e propósito.
+        </p>
+        <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
+          Por isso, sigo contribuindo com projetos open source e conteúdos sobre acessibilidade e
+          qualidade de software.
+        </p>
+      </section>
+      <section>
+        <h2>O que me guia</h2>
+        <p class="text-xl text-gray-600">Estes são os princípios que orientam a minha vida:</p>
 
-          <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-            A comunidade me deu muito: amizades, oportunidades e propósito.
-          </p>
-          <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-            Por isso, sigo contribuindo com projetos open source e conteúdos sobre acessibilidade e qualidade de
-            software.
-          </p>
-        </div>
-      </div>
-    </section>
+        <h3>Fé e trabalho andam juntos</h3>
+        <ul>
+          <li>Sou cristão e isso molda como enxergo o trabalho e o mundo;</li>
+          <li>
+            Criar uma web acessível é uma extensão do chamado bíblico ao <em>amor ao próximo</em>;
+          </li>
+          <li>Meu foco é através da tecnologia dar autonomia no mundo digital.</li>
+        </ul>
 
-    <section class="bg-gray-50 py-24">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mb-16 text-center">
-          <h2 class="text-errie-black-900 mb-4 text-4xl font-bold">
-            O que me guia
-          </h2>
-          <p class="text-xl text-gray-600">
-            Estes são os princípios que orientam meu trabalho
-          </p>
-        </div>
+        <h3>Inclusão acima de tudo</h3>
+        <ul>
+          <li>
+            Acredito que tecnologia deve servir a todos. Cada decisão que tomo passa pelo filtro:
+            Isso funciona para todo mundo?
+          </li>
+          <li>É sobre criar um mundo digital onde qualquer ser humano tenha dignidade.</li>
+        </ul>
 
-        <article class="border-light-gray-200 mb-12 rounded-2xl border-2 bg-white p-8">
-          <div class="flex items-start gap-4">
-            <div>
-              <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Fé e trabalho andam juntos</h3>
-              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-                Sou cristão e isso molda como enxergo o trabalho e o mundo.
-              </p>
-              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-                Criar uma web acessível é uma extensão do chamado bíblico ao <em>amor ao próximo</em>.
-              </p>
-              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-                Quando Jesus curava pessoas com deficiência, Ele dizia: vocês têm valor.
-              </p>
-              <p class="text-errie-black-900 mb-4 text-lg leading-relaxed">
-                Meu trabalho é fazer o mesmo no mundo digital.
-              </p>
-            </div>
-          </div>
-        </article>
+        <h3>Educação, não julgamento</h3>
+        <p class="text-errie-black-900 mb-4 leading-relaxed">
+          Eu já fui o desenvolvedor que criava sites inacessíveis. Então nunca julgo. Meu trabalho é
+          educar, explicar o porquê.
+        </p>
+        <p class="text-sm text-gray-600 italic">
+          A maioria quer fazer o certo - só precisa de orientação.
+        </p>
 
-        <div class="grid gap-6 md:grid-cols-2">
-          <article class="border-light-gray-200 rounded-2xl border bg-white p-8 shadow-sm transition hover:shadow-xl">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-red-100">
-              <Heart class="h-7 w-7 text-red-600" aria-hidden="true" />
-            </div>
-            <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Inclusão acima de tudo</h3>
-            <p class="text-errie-black-900 mb-4 leading-relaxed">
-              Acredito que tecnologia deve servir a todos. Cada decisão que tomo passa pelo filtro: Isso funciona para
-              todo mundo?
-            </p>
-            <p class="text-sm text-gray-600 italic">
-              É sobre criar um mundo digital onde qualquer ser humano tenha dignidade.
-            </p>
-          </article>
+        <h3>Qualidade sem desculpas</h3>
+        <p class="text-errie-black-900 mb-4 leading-relaxed">
+          Já ouvi todas as desculpas. Mas se você tem tempo para construir, tem tempo para construir
+          CERTO.
+        </p>
+        <p class="text-sm text-gray-600 italic">
+          Não aceito bom o suficiente quando exclui pessoas.
+        </p>
 
-          <article class="border-light-gray-200 rounded-2xl border-2 bg-white p-8 shadow-sm transition hover:shadow-xl">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100">
-              <Users class="h-7 w-7 text-blue-600" aria-hidden="true" />
-            </div>
-            <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Educação, não julgamento</h3>
-            <p class="text-errie-black-900 mb-4 leading-relaxed">
-              Eu já fui o desenvolvedor que criava sites inacessíveis. Então nunca julgo. Meu trabalho é educar,
-              explicar o porquê.
-            </p>
-            <p class="text-sm text-gray-600 italic">A maioria quer fazer o certo - só precisa de orientação.</p>
-          </article>
+        <h3>Pragmatismo com propósito</h3>
+        <p class="text-errie-black-900 mb-4 leading-relaxed">
+          Acessibilidade perfeita não existe. Prefiro 80% de progresso real do que 100% de idealismo
+          paralisante.
+        </p>
+        <p class="text-sm text-gray-600 italic">
+          Meu objetivo é melhorar vidas, não ganhar prêmios.
+        </p>
+      </section>
 
-          <article class="border-light-gray-200 rounded-2xl border-2 bg-white p-8 shadow-sm transition hover:shadow-xl">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100">
-              <Church class="h-7 w-7 text-purple-600" aria-hidden="true" />
-            </div>
-            <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Qualidade sem desculpas</h3>
-            <p class="text-errie-black-900 mb-4 leading-relaxed">
-              Já ouvi todas as desculpas. Mas se você tem tempo para construir, tem tempo para construir CERTO.
-            </p>
-            <p class="text-sm text-gray-600 italic">Não aceito bom o suficiente quando exclui pessoas.</p>
-          </article>
+      <section>
+        <h2 class="text-errie-black-900 mb-4 text-4xl font-bold">Além do código</h2>
+        <p class="text-xl text-gray-600">Sou mais do que minha profissão</p>
 
-          <article class="border-light-gray-200 rounded-2xl border-2 bg-white p-8 shadow-sm transition hover:shadow-xl">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-100">
-              <Target class="h-7 w-7 text-green-600" aria-hidden="true" />
-            </div>
-            <h3 class="text-errie-black-900 mb-4 text-2xl font-bold">Pragmatismo com propósito</h3>
-            <p class="text-errie-black-900 mb-4 leading-relaxed">
-              Acessibilidade perfeita não existe. Prefiro 80% de progresso real do que 100% de idealismo paralisante.
-            </p>
-            <p class="text-sm text-gray-600 italic">Meu objetivo é melhorar vidas, não ganhar prêmios.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24">
-      <div class="mx-auto max-w-5xl px-6">
-        <div class="mb-16 text-center">
-          <h2 class="text-errie-black-900 mb-4 text-4xl font-bold">Além do código</h2>
-          <p class="text-xl text-gray-600">Sou mais do que minha profissão</p>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <article
-            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
-          >
-            <Heart class="text-blood-red-800 mb-4 h-10 w-10" aria-hidden="true" />
+        <ul>
+          <li>
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Família primeiro</h3>
-            <p class="text-errie-black-900 mb-4 text-sm">Marido e pai. Minha família é meu porquê em tudo.</p>
+            <p class="text-errie-black-900 mb-4 text-sm">
+              Marido e pai. Minha família é meu porquê em tudo.
+            </p>
             <p class="text-blood-red-800 text-sm italic">(Por isso tenho limites de horário)</p>
-          </article>
-          <article
-            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
-          >
-            <BookOpen class="text-blood-red-800 mb-4 h-10 w-10" />
+          </li>
+          <li>
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Leitor compulsivo</h3>
             <p class="text-errie-black-900 mb-4 text-sm">
-              Leio de tudo: teologia, ficção científica, biografias. Atualmente em 3 livros simultaneamente.
+              Leio de tudo: teologia, ficção científica, biografias. Atualmente em 3 livros
+              simultaneamente.
             </p>
             <a
               href="/biblioteca"
@@ -292,12 +215,8 @@ const title = "Sobre — Bruno Pulis";
             >
               Ver biblioteca <ArrowRight class="h-3 w-3" />
             </a>
-          </article>
-
-          <div
-            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
-          >
-            <Film class="text-blood-red-800 mb-4 h-10 w-10" aria-hidden="true" />
+          </li>
+          <li>
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Cinéfilo casual</h3>
             <p class="text-errie-black-900 mb-4 text-sm">
               Favoritos: ficção científica pensativa, dramas históricos, e qualquer coisa da Pixar.
@@ -308,12 +227,8 @@ const title = "Sobre — Bruno Pulis";
             >
               Ver filmes <ArrowRight class="h-3 w-3" aria-hidden="true" />
             </a>
-          </div>
-
-          <div
-            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
-          >
-            <Church class="text-blood-red-800 mb-4 h-10 w-10" />
+          </li>
+          <li>
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Estudante de teologia</h3>
             <p class="text-errie-black-900 mb-4 text-sm">
               Fascinado por questões de fé e como a Bíblia se conecta com a vida moderna.
@@ -324,12 +239,8 @@ const title = "Sobre — Bruno Pulis";
             >
               Ler reflexões <ArrowRight class="h-3 w-3" />
             </a>
-          </div>
-
-          <article
-            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
-          >
-            <Zap class="text-blood-red-800 mb-4 h-10 w-10" />
+          </li>
+          <li>
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Nerd de produtividade</h3>
             <p class="text-errie-black-900 mb-4 text-sm">
               Sistemas, apps, métodos. Atualmente: GTD + Obsidian + analog journaling.
@@ -340,113 +251,24 @@ const title = "Sobre — Bruno Pulis";
             >
               Ver setup <ArrowRight class="h-3 w-3" />
             </a>
-          </article>
-
-          <article
-            class="border-light-gray-200 hover:border-blood-red-800 rounded-2xl border-2 bg-white p-6 transition hover:shadow-lg"
-          >
-            <Guitar class="text-blood-red-800 mb-4 h-10 w-10" />
+          </li>
+          <li>
             <h3 class="text-errie-black-900 mb-3 text-xl font-bold">Violonista</h3>
             <p class="text-errie-black-900 mb-4 text-sm">
               Apaixonado por violão flamenco, instrumental, chorinho e clássico.
             </p>
-          </article>
-        </div>
-      </div>
-    </section>
+          </li>
+        </ul>
+      </section>
 
-    <section class="bg-gray-50 py-24">
-      <div class="mx-auto max-w-5xl px-6">
-        <div>
-          <div class="mb-6 flex items-center gap-3">
-            <h2 class="text-errie-black-900 text-4xl font-bold">O que estou fazendo agora</h2>
-          </div>
-
-          <p class="text-errie-black-900 mb-8">
-            Atualizado em Janeiro 2025. Um snapshot do que ocupa minha atenção neste momento.
-          </p>
-          <p class="text-errie-black-900 mb-8">Para ver a lista completa visite a página.</p>
-
-          <div class="grid gap-6 md:grid-cols-2">
-            <div class="rounded-xl bg-white p-6 shadow-sm">
-              <h3 class="text-errie-black-900 mb-4 flex items-center gap-2 text-xl font-bold">
-                <Code class="h-5 w-5 text-red-600" />
-                No trabalho
-              </h3>
-              <ul class="text-errie-black-900 space-y-2 text-sm">
-                <li class="flex gap-2">
-                  <span class="text-red-600">•</span><span>Auditoria para startup de saúde</span>
-                </li>
-                <li class="flex gap-2">
-                  <span class="text-red-600">•</span><span>Mentoria com time de devs</span>
-                </li>
-                <li class="flex gap-2">
-                  <span class="text-red-600">•</span><span>Escrevendo sobre IA e a11y</span>
-                </li>
-                <li class="flex gap-2">
-                  <span class="text-red-600">•</span><span>Preparando palestra sobre React</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="rounded-xl bg-white p-6 shadow-sm">
-              <h3 class="text-errie-black-900 mb-4 flex items-center gap-2 text-xl font-bold">
-                <Lightbulb class="h-5 w-5 text-blue-600" />
-                Aprendendo
-              </h3>
-              <ul class="text-errie-black-900 space-y-2 text-sm">
-                <li class="flex gap-2">
-                  <span class="text-blue-600">•</span><span>IA e acessibilidade web</span>
-                </li>
-                <li class="flex gap-2">
-                  <span class="text-blue-600">•</span><span>Testes automatizados (Axe, Pa11y)</span>
-                </li>
-                <li class="flex gap-2">
-                  <span class="text-blue-600">•</span><span>Grego bíblico (projeto pessoal)</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="rounded-xl bg-white p-6 shadow-sm">
-              <h3 class="text-errie-black-900 mb-4 flex items-center gap-2 text-xl font-bold">
-                <BookOpen class="text-blood-red-800 h-5 w-5" />
-                Lendo
-              </h3>
-              <ul class="text-errie-black-900 space-y-2 text-sm">
-                <li>📖 Accessibility for Everyone</li>
-                <li>✝️ Teologia Sistemática</li>
-                <li>📚 Duna (releitura)</li>
-              </ul>
-            </div>
-
-            <div class="rounded-xl bg-white p-6 shadow-sm">
-              <h3 class="text-errie-black-900 mb-4 flex items-center gap-2 text-xl font-bold">
-                <Heart class="h-5 w-5 text-pink-600" />
-                Vida pessoal
-              </h3>
-              <ul class="text-errie-black-900 space-y-2 text-sm">
-                <li class="flex gap-2"><span class="text-pink-600">•</span><span>Tempo com família</span></li>
-                <li class="flex gap-2">
-                  <span class="text-pink-600">•</span><span>Rotina de exercícios</span>
-                </li>
-                <li class="flex gap-2">
-                  <span class="text-pink-600">•</span><span>Experimentando Aeropress</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-8 rounded-xl bg-gray-100 p-6">
-            <h4 class="text-errie-black-900 mb-3 font-bold">O que NÃO estou fazendo</h4>
-            <ul class="text-errie-black-900 space-y-2 text-sm">
-              <li>• Projetos de remediação (focando em auditoria e mentoria)</li>
-              <li>• Redes sociais (pausa intencional)</li>
-              <li>• Séries (escolhi ler mais)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section>
+        <h2>O que estou fazendo agora</h2>
+        <p>
+          Mantenho uma <a href="/now">sobre o que estou fazendo agora</a>, que mostra minhas
+          prioridades nesse momento.
+        </p>
+      </section>
+    </div>
   </main>
   <Footer />
 </Layout>
