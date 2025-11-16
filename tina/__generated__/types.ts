@@ -364,12 +364,9 @@ export type PostConnection = Connection & {
 
 export type Note = Node & Document & {
   __typename?: 'Note';
-  title: Scalars['String']['output'];
-  publishDate: Scalars['String']['output'];
-  description: Scalars['String']['output'];
+  pubDate: Scalars['String']['output'];
   featured_image?: Maybe<Scalars['String']['output']>;
   body: Scalars['JSON']['output'];
-  categories?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -377,12 +374,9 @@ export type Note = Node & Document & {
 };
 
 export type NoteFilter = {
-  title?: InputMaybe<StringFilter>;
-  publishDate?: InputMaybe<DatetimeFilter>;
-  description?: InputMaybe<StringFilter>;
+  pubDate?: InputMaybe<DatetimeFilter>;
   featured_image?: InputMaybe<ImageFilter>;
   body?: InputMaybe<RichTextFilter>;
-  categories?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
 };
 
@@ -783,12 +777,9 @@ export type PostMutation = {
 };
 
 export type NoteMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  publishDate?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
+  pubDate?: InputMaybe<Scalars['String']['input']>;
   featured_image?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
@@ -848,7 +839,7 @@ export type SpeakingMutation = {
 
 export type PostPartsFragment = { __typename: 'Post', title: string, publishDate: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
 
-export type NotePartsFragment = { __typename: 'Note', title: string, publishDate: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null };
+export type NotePartsFragment = { __typename: 'Note', pubDate: string, featured_image?: string | null, body: any, tags?: Array<string | null> | null };
 
 export type BlogrollPartsFragment = { __typename: 'Blogroll', title: string, url: string, description?: string | null, category: string, rss_feed?: string | null, date_added?: string | null };
 
@@ -884,7 +875,7 @@ export type NoteQueryVariables = Exact<{
 }>;
 
 
-export type NoteQuery = { __typename?: 'Query', note: { __typename: 'Note', id: string, title: string, publishDate: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type NoteQuery = { __typename?: 'Query', note: { __typename: 'Note', id: string, pubDate: string, featured_image?: string | null, body: any, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type NoteConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -896,7 +887,7 @@ export type NoteConnectionQueryVariables = Exact<{
 }>;
 
 
-export type NoteConnectionQuery = { __typename?: 'Query', noteConnection: { __typename?: 'NoteConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NoteConnectionEdges', cursor: string, node?: { __typename: 'Note', id: string, title: string, publishDate: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type NoteConnectionQuery = { __typename?: 'Query', noteConnection: { __typename?: 'NoteConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NoteConnectionEdges', cursor: string, node?: { __typename: 'Note', id: string, pubDate: string, featured_image?: string | null, body: any, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type BlogrollQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1016,12 +1007,9 @@ export const PostPartsFragmentDoc = gql`
 export const NotePartsFragmentDoc = gql`
     fragment NoteParts on Note {
   __typename
-  title
-  publishDate
-  description
+  pubDate
   featured_image
   body
-  categories
   tags
 }
     `;

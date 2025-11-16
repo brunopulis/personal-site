@@ -19,12 +19,9 @@ fragment PostParts on Post {
 
 fragment NoteParts on Note {
   __typename
-  title
-  publishDate
-  description
+  pubDate
   featured_image
   body
-  categories
   tags
 }
 
