@@ -1,0 +1,58 @@
+---
+import packages from "@data/packages.json";
+---
+
+<section class="bg-white py-24" id="packages" aria-labbeledby="packages-section">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mb-16 text-center">
+      <h2 class="text-errie-black-900 mb-4 text-4xl font-bold" id="packages-section">
+        Pacotes de Auditoria
+      </h2>
+      <p class="text-errie-black-900 text-xl">
+        Precisa de uma auditoria? Veja os pacotes prontos
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      {
+        packages.map((item) => (
+          <article
+            class={`rounded-2xl p-8 ${
+              item.featured
+                ? 'bg-blood-red-800 scale-105 transform text-white shadow-2xl'
+                : 'border-2 border-gray-200 bg-gray-50'
+            }`}
+          >
+            {item.featured && (
+              <div class="text-blood-red-800 mb-4 inline-block rounded-full bg-white px-3 py-1 text-xs font-bold">
+                <p class="uppercase">Mais contratado</p>
+              </div>
+            )}
+            <h3 class={`mb-2 text-2xl font-bold ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>
+              {item.name}
+            </h3>
+            <p class={`mb-2 text-4xl font-bold ${item.featured ? 'text-white' : 'text-blood-red-800'}`}>{item.price}</p>
+            <p class={`mb-6 text-sm ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>{item.ideal}</p>
+            <ul class="mb-8 list-disc space-y-3">
+              {item.advantages.map((advantage) => (
+                <li class="flex items-start gap-2">
+                  <span class={`text-sm ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>{advantage}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contato"
+              class={`block w-full rounded-lg px-6 py-3 text-center font-semibold transition ${
+                item.featured
+                  ? 'text-blood-red-800 bg-white hover:bg-gray-100'
+                  : 'bg-blood-red-800 hover:bg-blood-red-900 text-white'
+              }`}
+            >
+              Contratar
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

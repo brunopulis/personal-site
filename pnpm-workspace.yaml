@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - cypress
+  - esbuild
+  - sharp
+
+onlyBuiltDependencies:
+  - better-sqlite3

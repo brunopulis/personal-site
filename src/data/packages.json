@@ -1,40 +1,40 @@
 [
-	{
-		"name": "Auditoria bronze",
-		"price": "R$ 2.800",
-		"ideal": "Pequenos projetos",
-		"advantages": [
-			"Auditoria de até 8 páginas",
-			"Relatório simplificado",
-			"Recomendações de correção",
-			"1 reunião de apresentação"
-		]
-	},
-	{
-		"name": "Auditoria prata",
-		"price": "R$ 3.500",
-		"ideal": "Projetos médios",
-		"featured": true,
-		"advantages": [
-			"Auditoria de até 15 páginas",
-			"Relatório completo detalhado",
-			"Planilha priorizada de issues",
-			"2 reuniões (apresentação + dúvidas)",
-			"Suporte de 30 dias pós-entrega",
-			"Testes com usuários reais (opcional)"
-		]
-	},
-	{
-		"name": "Auditoria ouro",
-		"price": "Sob consulta",
-		"ideal": "Grandes projetos",
-		"advantages": [
-			"Auditoria completa do sistema",
-			"Múltiplos produtos/plataformas",
-			"Mentoria da equipe incluída",
-			"Acompanhamento de implementação",
-			"SLA de resposta garantido",
-			"Contrato anual disponível"
-		]
-	}
+  {
+    "name": "Auditoria bronze",
+    "price": "R$ 2.800",
+    "ideal": "Pequenos projetos",
+    "advantages": [
+      "Auditoria de até 8 páginas",
+      "Relatório simplificado",
+      "Recomendações de correção",
+      "1 reunião de apresentação"
+    ]
+  },
+  {
+    "name": "Auditoria prata",
+    "price": "R$ 3.500",
+    "ideal": "Projetos médios",
+    "featured": true,
+    "advantages": [
+      "Auditoria de até 15 páginas",
+      "Relatório completo detalhado",
+      "Planilha priorizada de issues",
+      "2 reuniões (apresentação + dúvidas)",
+      "Suporte de 30 dias pós-entrega",
+      "Testes com usuários reais (opcional)"
+    ]
+  },
+  {
+    "name": "Auditoria ouro",
+    "price": "Sob consulta",
+    "ideal": "Grandes projetos",
+    "advantages": [
+      "Auditoria completa do sistema",
+      "Múltiplos produtos/plataformas",
+      "Mentoria da equipe incluída",
+      "Acompanhamento de implementação",
+      "SLA de resposta garantido",
+      "Contrato anual disponível"
+    ]
+  }
 ]

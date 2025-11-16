@@ -3,18 +3,18 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 
 import { CalendarIcon, ClockIcon } from "@lucide/astro";
 
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
+import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
 import Author from "@components/blog/Author.astro";
 import BackBlog from "@components/blog/BackBlog.astro";
-import Footer from "@components/layout/Footer.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
 
 	return posts.map((post) => ({
-		params: { slug: post.id },
+		params: { slug: post.slug },
 		props: { post },
 	}));
 }

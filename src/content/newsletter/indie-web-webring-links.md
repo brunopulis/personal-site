@@ -1,7 +1,7 @@
 ---
-issue: '25'
-title: 'Indie Web, Webring, RSS e links'
-date: '2024-03-28'
+issue: "25"
+title: "Indie Web, Webring, RSS e links"
+date: "2024-03-28"
 ---
 
 Pulis Letters - Edição #25  

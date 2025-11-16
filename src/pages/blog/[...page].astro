@@ -1,14 +1,15 @@
 ---
-import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
-import { Calendar } from "@lucide/astro";
+import { ArrowRight, RSS } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
+import Layout from "@layout/Layout.astro";
+
+import Header from "@components/layouts/Header.astro";
+import TagFilter from "@components/TagFilter.astro";
 import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
-import Footer from "@components/layout/Footer.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 import { getAllTags } from "@utils/getAllTags";
 
@@ -33,6 +34,10 @@ const { page } = Astro.props;
 const posts = page.data;
 const tags = getAllTags(posts);
 
+const allTags = [...new Set(
+  posts.flatMap(post => post.data.tags || [])
+)].sort();
+
 function formatDate(date: string | number | Date) {
 	const formatter = new Intl.DateTimeFormat("pt-BR", {
 		year: "numeric",
@@ -43,83 +48,82 @@ function formatDate(date: string | number | Date) {
 	return formatter.format(new Date(date));
 }
 
-function toISOString(dateString: string) {
-	const date = new Date(dateString);
-	return date.toISOString();
-}
-
 export const prerender = true;
 ---
 
 <Layout title="Blog - Bruno Pulis" description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
-        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
-      </div>
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <section id="hero" aria-labelledby="hero-section">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
         <div>
-          <h1 class="mb-6 text-5xl leading-tight font-bold">Coisas que tenho pensado</h1>
-          <p class="text-xl leading-relaxed font-light text-white">
+          <h1 class="mb-6 text-5xl leading-tight font-bold" id="hero-section">
+            Coisas que tenho pensado
+          </h1>
+          <p class="text-xl leading-relaxed font-light text-errie-black-900">
             Escrevo sobre acessibilidade, tecnologia, teologia, produtividade.
           </p>
-          <p class="text-xl leading-relaxed font-light text-white">Nem tudo é técnico, às vezes é só sobre a vida.</p>
+          <p class="text-xl leading-relaxed font-light text-errie-black-900">
+            Nem tudo é técnico, às vezes é só sobre a vida.
+          </p>
+
+          <ul>
+            <li>
+              <a href="#">
+                <RSS class="h-4 w-4 ml-2" aria-hidden="true" />
+                <span lang="en">RSS Feed</span>
+              </a>
+            </li>
+            <li></li>
+            <li></li>
+          </ul>
+         <TagFilter allTags={allTags} />
         </div>
       </div>
     </section>
 
-    <section class="bg-white py-16">
+    <section class="py-16">
       <div class="mx-auto max-w-7xl px-6">
         <div class="grid gap-8 lg:grid-cols-3">
           <div class="lg:col-span-2">
             <div class="space-y-8">
-              {
-                posts.map((post) => (
-                  <a href={'/blog/' + post.id} class="u-url group block">
-                    <article class="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:border-blue-400 hover:shadow-lg">
-                      <div class="md:flex">
-                        <div class="h-64 overflow-hidden md:h-auto md:w-2/5">
-                          <img
-                            src={post.data.image}
-                            alt={post.data.imageAlt}
-                            loading="lazy"
-                            decoding="async"
-                            width="323"
-                            height="242"
-                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                          />
-                      </div>
-                      <div class="p-6 md:w-3/5">
-                        <div class="mb-3 flex items-center gap-2">
-                          <span
-                            class="group flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm transition hover:bg-blood-red-800 hover:text-white"
-                          >
-                            <span class="ml-1">{post.data.category}</span>
-                          </span>
-                        </div>
-
-                        <div class="mb-4 flex items-center gap-4 text-sm text-gray-600">
-                      <div class="group relative mt-3">
-                        <h3 class="text-errie-black-900 text-2xl leading-6 font-semibold group-hover:underline group-hover:underline-offset-4">
+              <ul>
+                {
+                  posts.map((post, index) => (
+                    <li class="py-4" data-tags={post.data.tags?.join(',')}>
+                      <h3 class="mb-4 text-3xl font-bold">
+                        <a href={`/blog/${post.slug}`} class="u-url group block">
                           {post.data.title}
-                        </h3>
-                        <div class="text-errie-black-900 mt-5 flex items-center gap-x-2 text-sm">
-                          <Calendar class="h-4 w-4" aria-hidden="true" />
-                          <time
-                            datetime={toISOString(String(post.data.publishDate))}
-                            class="dt-published text-errie-black-900 text-sm"
-                          >
-                            {formatDate(String(post.data.publishDate))}
-                          </time>
+                        </a>
+                      </h3>
+                      <p class="text-xl font-light my-4 flex items-center gap-4">
+                        <time class="font-display text-errie-black-900">
+                          Publicado em:
+                          {formatDate(post.data.publishDate)}
+                        </time>
+                      </p>
+                      <p class="mb-6 text-2xl font-light text-errie-black-900">
+                        {post.data.excerpt}
+                      </p>
+                      {post.data.tags && (
+                        <div class="post-tags">
+                          {post.data.tags.map((tag: string) => (
+                            <span class="tag-badge">{tag}</span>
+                          ))}
                         </div>
-                        <p class="text-errie-black-900 mt-5 line-clamp-2 text-xl leading-6">{post.data.excerpt}</p>
-                      </div>
-                    </article>
-                  </a>
-                ))
-              }
+                      )}
+                      <a
+                        href={`/blog/${post.slug}`}
+                        aria-labelledby={`post-${index}`}
+                        class="flex items-center gap-2 font-semibold text-errie-black-900 underline underline-offset-8 transition hover:no-underline"
+                      >
+                        Ler artigo completo
+                        <ArrowRight class="h-3 w-3" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
             </div>
 
             <Pagination
@@ -129,7 +133,6 @@ export const prerender = true;
               nextUrl={page.url.next}
             />
           </div>
-
           <BlogSidebar tags={tags} />
         </div>
       </div>

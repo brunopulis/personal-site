@@ -138,4 +138,8 @@ This file is in BETA. Please test and contribute to the discussion:
       </body>
     </html>
   </xsl:template>
+<<<<<<< HEAD
 </xsl:stylesheet>
+=======
+</xsl:stylesheet>
+>>>>>>> main
