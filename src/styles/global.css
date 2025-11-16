@@ -1,6 +1,21 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@import './tokens/color.css';
+
+/* Reset Layer */
+@import './layers/reset.css' layer(reset);
+
+
+/* Composition Layer */
+@import './layers/composition/stack.css' layer(composition);
+
+/* Utility Layer */
+
+/* Blocks Layer */
+@import './layers/blocks/button.css' layer(blocks);
+
+/* Exceptions Layer */
 :root {
   --grid-max-width: 90rem;
   --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.5625rem + 2.5vw, 2.5rem));
@@ -254,6 +269,10 @@
       opacity: 1;
     }
   }
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
 }
 
 /*
