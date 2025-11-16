@@ -7,11 +7,11 @@ import Header from "@components/layout/Header.astro";
 import HeroSection from "@components/layout/HeroSection.astro";
 import Footer from "@components/layout/Footer.astro";
 
-const allNotes = await getCollection("notes");
+const notes = await getCollection("notes");
 
-const sortedNotes = allNotes.sort((a, b) => {
+const sortedNotes = notes.sort((a, b) => {
 	return (
-		new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
+		new Date(b.data.pubDate || 0).getTime() - new Date(a.data.pubDate || 0).getTime()
 	);
 });
 ---
@@ -35,7 +35,7 @@ const sortedNotes = allNotes.sort((a, b) => {
                           <div class="font-bold text-gray-900">Bruno Pulis</div>
                           <div class="flex items-center gap-2 text-sm text-gray-500">
                             <Clock class="h-3 w-3" />
-                            {new Date(note.data.date).toLocaleDateString('pt-BR', {
+                            {new Date(note.data.pubDate).toLocaleDateString('pt-BR', {
                               year: 'numeric',
                               month: 'long',
                               day: 'numeric',
