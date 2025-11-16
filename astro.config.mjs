@@ -1,11 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import alpinejs from '@astrojs/alpinejs';
 import db from '@astrojs/db';
 import mdx from '@astrojs/mdx';
+// @ts-ignore
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+// @ts-ignore
 import umami from '@yeskunall/astro-umami';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
@@ -28,12 +29,11 @@ export default defineConfig({
   },
   integrations: [
     db(),
-    icon(),
-    alpinejs(),
-    sitemap(),
     mdx(),
-    compress(),
+    sitemap(),
     umami({ id: '88ff3bbf-61c5-4303-bea2-f0da4f5dbb53' }),
+    compress(),
+    icon(),
     robotsTxt(),
   ],
   build: {
@@ -47,7 +47,7 @@ export default defineConfig({
       alias: {
         '@': path.resolve(__dirname, './src'),
         '@components': path.resolve(__dirname, './src/components'),
-        '@layouts': path.resolve(__dirname, './src/layouts'),
+        '@layouts': path.resolve(__dirname, './src/layout'),
         '@assets': path.resolve(__dirname, './src/assets'),
         '@scripts': path.resolve(__dirname, './src/scripts'),
         '@styles': path.resolve(__dirname, './src/styles'),
