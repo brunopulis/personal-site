@@ -2,36 +2,51 @@
   "name": "brunopulis",
   "type": "module",
   "version": "0.0.1",
-  "private": true,
+  "description": "Bruno Pulis - Personal Website",
+  "author": "Bruno Pulis",
+  "license": "CC0-1.0",
+  "homepage": "https://brunopulis.com",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/brunopulis/personal-site"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.21.0",
   "scripts": {
-    "astro": "astro",
-    "dev": "concurrently \"pnpm astro dev\" \"pnpm tinacms dev\"",
+    "dev": "concurrently \"pnpm:dev:*\"",
     "dev:astro": "astro dev",
     "dev:tina": "tinacms dev",
-    "build": "tinacms build && astro build",
+    "build": "pnpm run build:tina && pnpm run build:astro",
+    "build:tina": "tinacms build",
+    "build:astro": "astro check && astro build",
     "preview": "astro preview",
     "start": "astro dev",
     "sync": "astro sync",
-    "lint": "eslint . --ext .js,.ts,.astro",
+    "clean": "rm -rf .astro dist node_modules/.vite",
+    "type-check": "astro check",
+    "lint": "pnpm run lint:astro && pnpm run lint:ts",
+    "lint:astro": "eslint . --ext .astro",
+    "lint:ts": "eslint . --ext .js,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write \"**/*.{js,ts,astro,md,mdx,json}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,astro,md,mdx,json}\"",
+    "test": "echo \"Error: no tests yet\" && exit 0",
+    "test:a11y": "cypress run --spec \"cypress/e2e/a11y/**/*\"",
+    "prepare": "husky install || true",
+    "audit": "pnpm audit --audit-level=moderate",
+    "audit:fix": "pnpm audit --fix"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.9",
     "@astrojs/check": "^0.9.4",
-    "@astrojs/db": "^0.18.2",
     "@astrojs/mdx": "^4.3.9",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/ts-plugin": "^1.10.5",
     "@astrojs/vercel": "^9.0.0",
-    "@cedx/akismet": "^17.1.0",
-    "@eslint/migrate-config": "^1.6.1",
     "@fontsource-variable/source-sans-3": "^5.2.9",
-    "@fontsource/source-sans-3": "^5.2.9",
     "@lucide/astro": "^0.553.0",
-    "@philnash/astro-pagination": "^0.5.0",
-    "@tanstack/react-virtual": "^3.13.12",
     "@yeskunall/astro-umami": "^0.0.7",
     "alpinejs": "^3.15.1",
     "astro": "^5.15.3",
@@ -39,22 +54,21 @@
     "astro-icon": "^1.1.5",
     "astro-robots-txt": "^1.0.0",
     "astro-social-share": "^2.2.0",
-    "inquirer": "^12.9.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-icons": "^5.5.0",
-    "tailwindcss": "^4.1.13",
-    "tinacms": "^2.9.0",
-    "typescript": "^5.9.2"
+    "tinacms": "^2.9.0"
   },
-  "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40",
   "devDependencies": {
+    "@astrojs/alpinejs": "^0.4.9",
+    "@astrojs/db": "^0.18.2",
+    "@astrojs/ts-plugin": "^1.10.5",
+    "@cedx/akismet": "^17.1.0",
     "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.39.0",
     "@hbsnow/rehype-sectionize": "^1.0.7",
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.16",
+    "@philnash/astro-pagination": "^0.5.0",
+    "@tanstack/react-virtual": "^3.13.12",
     "@tinacms/cli": "^1.11.0",
     "@types/node": "^24.10.1",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
@@ -71,17 +85,35 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.5.0",
+    "husky": "^9.0.0",
     "lint-staged": "^16.2.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-abbr": "^2.0.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-link-attributes": "^4.0.1",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-prism": "^3.0.1",
     "pagefind": "^1.4.0",
     "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-tailwindcss": "^0.7.1",
     "sanitize-html": "^2.17.0",
+    "typescript": "^5.9.2",
     "typescript-eslint": "^8.46.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,mdx,json}": [
-      "prettier --plugin-search-dir=. --write"
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.astro": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx,json,yml,yaml}": [
+      "prettier --write"
     ]
   }
 }

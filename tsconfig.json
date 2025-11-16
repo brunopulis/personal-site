@@ -3,11 +3,6 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      },
-    ],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -15,13 +10,18 @@
       "@layout/*": ["src/layout/*"],
       "@assets/*": ["src/assets/*"],
       "@scripts/*": ["src/scripts/*"],
-      "@styles/*": ["src/styles/*"],
+      "@css/*": ["src/css/*"],
       "@lib/*": ["src/lib/*"],
       "@utils/*": ["src/utils/*"],
       "@content/*": ["src/content/*"],
       "@data/*": ["src/data/*"],
       "@pages/*": ["src/pages/*"]
     },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
     "strictNullChecks": true,
     "allowJs": true
   }
