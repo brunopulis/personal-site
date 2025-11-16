@@ -1,0 +1,19 @@
+---
+import { MAIN_NAV_LINKS, CONTACT_LINK } from '@data/nav.ts';
+---
+
+<nav class="header__nav">
+  <ul class="cluster">
+    {
+      MAIN_NAV_LINKS.map((link) => (
+        <li>
+          <a href={link.href}>{link.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<a href={CONTACT_LINK.href} class="button button--primary">
+  {CONTACT_LINK.title}
+</a>
