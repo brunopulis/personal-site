@@ -9,19 +9,14 @@ export const NotasCollection: Collection = {
   },
   format: "md",
   defaultItem: () => ({
-    title: "Nova Nota",
-    publishDate: new Date().toISOString(),
-    description: "",
+    pubDate: new Date().toISOString(),
     body: "",
-    categories: ["Pessoal"],
     tags: [],
-    draft: false,
-    featured: false,
   }),
   ui: {
     filename: {
       slugify: values => {
-        const date = new Date(values?.publishDate || Date.now());
+        const date = new Date(values?.pubDate || Date.now());
         return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
           2,
           "0"
@@ -31,30 +26,13 @@ export const NotasCollection: Collection = {
   },
   fields: [
     {
-      type: "string",
-      name: "title",
-      label: "Título",
-      isTitle: true,
-      required: true,
-    },
-    {
       type: "datetime",
-      name: "publishDate",
+      name: "pubDate",
       label: "Data de Publicação",
       required: true,
       ui: {
         dateFormat: "DD/MM/YYYY",
         timeFormat: "HH:mm",
-      },
-    },
-    {
-      type: "string",
-      name: "description",
-      label: "Descrição/Resumo",
-      required: true,
-      ui: {
-        component: "textarea",
-        description: "Resumo do post para SEO e preview",
       },
     },
     {
@@ -71,8 +49,8 @@ export const NotasCollection: Collection = {
     },
     {
       type: "string",
-      name: "categories",
-      label: "Categorias",
+      name: "tags",
+      label: "Tags",
       list: true,
       options: [
         { value: "pessoal", label: "Pessoal" },
@@ -83,12 +61,6 @@ export const NotasCollection: Collection = {
         { value: "lembretes", label: "Lembretes" },
         { value: "anotacoes", label: "Anotações" },
       ],
-    },
-    {
-      type: "string",
-      name: "tags",
-      label: "Tags",
-      list: true,
     },
   ],
 };

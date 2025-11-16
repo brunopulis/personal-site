@@ -1,5 +1,8 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import RSS from "@components/utils/head/RSS.astro";
+import Webmentions from "@components/utils/head/Webmentions.astro";
+import Preconnect from "@components/utils/head/Preconnect.astro";
 import BasicScripts from "@components/BasicScripts.astro";
 import BackToTop from "@components/utils/BackToTop.astro";
 import "@fontsource-variable/source-sans-3";
@@ -30,17 +33,9 @@ const { title, description = "Bruno Pulis - Engenheiro de Acessibilidade" } =
     <meta name="description" content={description} />
     <title>{title}</title>
 
-    <!-- Webmention -->
-    <link rel="alternate" type="application/rss+xml" title="Meu Blog" href="/rss.xml" />
-    <link rel="webmention" href="https://webmention.io/brunopulis.com/webmention" />
-    <link rel="pingback" href="https://webmention.io/brunopulis.com/xmlrpc" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
+    <RSS />
+    <Webmentions />
+    <Preconnect />
     <ClientRouter />
   </head>
   <body class="antialiased">

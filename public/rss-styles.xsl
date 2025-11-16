@@ -115,10 +115,10 @@ This file is in BETA. Please test and contribute to the discussion:
               <xsl:attribute name="href">
                 <xsl:value-of select="/rss/channel/link"/>
               </xsl:attribute>
-              Visite meu site &#x2192;
+              Visit Website &#x2192;
             </a>
           </header>
-          <h2>Últimos artigos</h2>
+          <h2>Recent Items</h2>
           <xsl:for-each select="/rss/channel/item">
             <div class="pb-5">
               <h3 class="mb-0">
@@ -130,7 +130,7 @@ This file is in BETA. Please test and contribute to the discussion:
                 </a>
               </h3>
               <small class="text-gray">
-                Publicado em: <xsl:value-of select="pubDate" />
+                Published: <xsl:value-of select="pubDate" />
               </small>
             </div>
           </xsl:for-each>
