@@ -1,0 +1,21 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section id="hero" aria-labellledby="hero-section">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+    <div>
+      <h1 class="mb-6 text-5xl leading-tight font-bold text-errie-black-900" id="hero-section">
+        {title}
+      </h1>
+      <p class="mb-6 text-2xl font-light text-errie-black-900">
+        {description}
+      </p>
+    </div>
+  </div>
+</section>

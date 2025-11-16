@@ -1,7 +1,7 @@
 ---
-issue: '07'
-title: '6 verdades sobre acessibilidade'
-date: '2024-01-01'
+issue: "07"
+title: "6 verdades sobre acessibilidade"
+date: "2024-01-01"
 ---
 
 Tempo de leitura: 2 minutos.

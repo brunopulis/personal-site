@@ -1,8 +1,8 @@
 ---
-issue: '44'
-title: 'Como fazer conexões certas'
-date: '2024-11-21'
-coverImage: '1888883-scaled-e1732138229256.jpg'
+issue: "44"
+title: "Como fazer conexões certas"
+date: "2024-11-21"
+coverImage: "1888883-scaled-e1732138229256.jpg"
 ---
 
 Os links são um dos pilares fundamentais da web desde a sua criação por Tim Berns-Lee no CERN em 1989. São conhecidos também como hiperlinks e revolucionaram como interagimos com os conteúdos na web.

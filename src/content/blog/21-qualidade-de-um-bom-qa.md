@@ -1,10 +1,10 @@
 ---
 title: 21 qualidades de um bom QA
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2018-01-19
 draft: false
-category: 'Qualidade'
+category: "Qualidade"
 ---
 
 [Post traduzido](http://tryqa.com/software-tester/) e adaptado por [Bruno Pulis](https://github.com/brunopulis) e escrito originalmente por [Try QA](http://tryqa.com/).

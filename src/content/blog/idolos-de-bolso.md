@@ -1,11 +1,11 @@
 ---
 title: Ídolos de bolso
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2016-09-05
-category: 'Teologia'
+category: "Teologia"
 canonicalUrl: https://brunopulis.com/idolos-de-bolso/
-tags: ['teologia']
+tags: ["teologia"]
 ---
 
 Neste estudo, iremos abordar como o avanço da tecnologia trouxe grandes benefícios e malefícios para a humanidade e como podemos combate-los e vencer o mal que é depender estritamente de algo que deveria ser uma ferramenta, um meio e não um fim.

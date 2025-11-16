@@ -1,7 +1,7 @@
 ---
 title: Mudanças de layout
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2024-03-19
 category: Pessoal
 ---
