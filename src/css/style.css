@@ -1,39 +1,19 @@
-/* Settings (Design Tokens/ Variables) */
-@import './tokens/breakpoints.css';
-@import './tokens/color.css';
-@import './tokens/spacing.css';
-@import './tokens/typography.css';
+@layer reset, tokens, base, composition, utility, block, exception;
 
-/* Global layer */
-@layer global {
-  @import './global/reset.css';
-  @import './global/global-styles.css';
-  @import './global/fonts.css';
+/* Global */
+@import './global/reset.css' layer(reset);
+@import './global/tokens.css' layer(tokens);
+@import './global/base.css' layer(base);
 
-  /* debugging */
-  @import './tests/*.css';
-}
+/* Composition */
+@import './composition/index.css' layer(composition);
 
-/* Composition layer */
-@layer composition {
-  @import './composition/cluster.css';
-  @import './composition/flow.css';
-  @import './composition/grid.css';
-  @import './composition/repel.css';
-  @import './composition/sidebar.css';
-  @import './composition/stack.css';
-  @import './composition/wrapper.css';
-}
+/* Utilities */
+@import './utilities/index.css' layer(utility);
 
-@layer utilities {
-  @import './utilities/visually-hidden.css';
-  @import './utilities/region.css';
-}
+/* Blocks */
+@import './blocks/index.css' layer(block);
 
-@layer blocks {
-  @import './blocks/button.css';
-}
+/* Exceptions */
+@import './exceptions/index.css' layer(exception);
 
-@layer exceptions {
-  @import './exceptions/exception.css';
-}

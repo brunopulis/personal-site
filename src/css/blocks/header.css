@@ -1,0 +1,178 @@
+/* COMPOSITION LAYER - Layout estrutural */
+@layer composition {
+  /* Wrapper limita largura do header */
+  .header .wrapper {
+    max-width: var(--container-max, 1280px);
+    margin-inline: auto;
+    padding-inline: var(--container-padding, var(--space-md));
+  }
+
+  /* Header Grid - Logo à esquerda, Nav à direita */
+  .header__grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+  }
+
+  /* Remover flow do header__grid (conflita com flex) */
+  .header__grid.flow {
+    display: flex; /* Sobrescreve o flow */
+  }
+
+  .header__grid.flow > * + * {
+    margin-block-start: 0; /* Remove espaçamento vertical do flow */
+  }
+}
+
+/* BLOCK LAYER - Componente Header */
+@layer block {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky, 200);
+    background-color: var(--color-bg, #ffffff);
+    border-block-end: var(--border-width, 1px) solid var(--color-border, #e5e7eb);
+    padding-block: var(--space-md, 1.5rem);
+  }
+
+  /* Logo */
+  .header__logo {
+    display: block;
+    flex-shrink: 0; /* Não encolhe */
+  }
+
+  .header__logo img {
+    display: block;
+    height: clamp(2rem, 1.5rem + 1vw, 2.5rem);
+    width: auto;
+  }
+
+  /* Tagline e Byline - esconder em mobile */
+  .header__tagline,
+  .header__byline {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .header__tagline,
+    .header__byline {
+      display: block;
+      font-size: var(--font-size-sm, 0.875rem);
+      color: var(--color-text-muted, #6b7280);
+    }
+  }
+
+  /* HR - esconder */
+  .header__grid hr {
+    display: none;
+  }
+
+  /* Navigation */
+  .header__nav {
+    margin-inline-start: auto; /* Empurra para direita */
+  }
+
+  .header__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Links do nav */
+  .nav__link {
+    display: block;
+    padding: var(--space-xs, 0.75rem) var(--space-sm, 1rem);
+    color: var(--color-text, #1f2937);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium, 500);
+    border-radius: var(--border-radius-sm, 0.25rem);
+    transition: all var(--transition-fast, 150ms ease-in-out);
+  }
+
+  .nav__link:hover,
+  .nav__link[aria-current="page"] {
+    color: var(--color-primary, #ef4444);
+    background-color: var(--color-bg-secondary, #f9fafb);
+  }
+
+  /* Navegação Mobile */
+  @media (max-width: 768px) {
+    .header__nav {
+      position: fixed;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--color-bg, #ffffff);
+      border-block-start: var(--border-width, 1px) solid var(--color-border, #e5e7eb);
+      padding: var(--space-md, 1.5rem);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--transition-base, 250ms ease-in-out);
+    }
+
+    .header__nav[data-open="true"] {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .header__nav .cluster {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-2xs, 0.5rem);
+    }
+
+    .nav__link {
+      padding: var(--space-sm, 1rem);
+    }
+  }
+}
+
+/* UTILITY LAYER - Ajustes cluster */
+@layer utility {
+  .header__nav .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs, 0.5rem);
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* EXCEPTION LAYER - Casos especiais */
+@layer exception {
+  /* Remove classes Tailwind conflitantes se existirem */
+  .header__nav .cluster li a {
+    /* Reset para garantir consistência */
+    all: unset;
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Reaplica estilos do nav__link */
+  .header__nav .cluster li a {
+    padding: var(--space-xs, 0.75rem) var(--space-sm, 1rem);
+    color: var(--color-text, #1f2937);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium, 500);
+    border-radius: var(--border-radius-sm, 0.25rem);
+    transition: all var(--transition-fast, 150ms ease-in-out);
+  }
+
+  .header__nav .cluster li a:hover,
+  .header__nav .cluster li a[aria-current="page"] {
+    color: var(--color-primary, #ef4444);
+    background-color: var(--color-bg-secondary, #f9fafb);
+  }
+
+  /* Print */
+  @media print {
+    .header {
+      position: static;
+      border: none;
+    }
+  }
+}
