@@ -1,0 +1,111 @@
+---
+import { Share2 } from "@lucide/astro";
+
+interface Props {
+  title: string;
+  text: string;
+  url: string;
+  class?: string;
+}
+
+const { title, text, url, class: className = "" } = Astro.props;
+---
+
+<button 
+  class={`share-button flex items-center gap-2 text-sm font-medium text-gray-600 transition hover:text-green-600 ${className}`}
+  data-title={title}
+  data-text={text}
+  data-url={url}
+>
+  <Share2 class="h-5 w-5" aria-hidden="true" />
+  <span class="hidden sm:inline">Compartilhar</span>
+</button>
+
+<script>
+  function initShareButtons() {
+    const shareButtons = document.querySelectorAll('.share-button');
+    
+    shareButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const title = button.getAttribute('data-title') || '';
+        const text = button.getAttribute('data-text') || '';
+        const url = button.getAttribute('data-url') || '';
+        
+        // Formatar o texto para compartilhar no Fediverso
+        const shareText = `${text}\n\n${url}`;
+        
+        // Verificar se o navegador suporta Web Share API
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: title,
+              text: shareText,
+            });
+            console.log('Compartilhado com sucesso!');
+          } catch (err) {
+            // Usuário cancelou ou erro ocorreu
+            if (err instanceof Error && err.name !== 'AbortError') {
+              console.error('Erro ao compartilhar:', err);
+              fallbackShare(shareText);
+            }
+          }
+        } else {
+          // Fallback para navegadores que não suportam Web Share API
+          fallbackShare(shareText);
+        }
+      });
+    });
+  }
+  
+  function fallbackShare(text: string) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        showNotification('Texto copiado para a área de transferência! Cole no seu app do Fediverso.');
+      }).catch(err => {
+        console.error('Erro ao copiar:', err);
+        showNotification('Erro ao copiar texto', true);
+      });
+    } else {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showNotification('Texto copiado para a área de transferência!');
+      } catch (err) {
+        console.error('Erro ao copiar:', err);
+        showNotification('Erro ao copiar texto', true);
+      }
+      document.body.removeChild(textArea);
+    }
+  }
+  
+  function showNotification(message: string, isError = false) {
+    const toast = document.createElement('div');
+    toast.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white transition-opacity duration-300 ${
+      isError ? 'bg-red-600' : 'bg-green-600'
+    }`;
+    toast.textContent = message;
+    toast.style.opacity = '0';
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+      toast.style.opacity = '1';
+    }, 10);
+    
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(toast);
+      }, 300);
+    }, 3000);
+  }
+  
+
+  document.addEventListener('DOMContentLoaded', initShareButtons);
+  document.addEventListener('astro:page-load', initShareButtons);
+</script>

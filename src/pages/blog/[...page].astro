@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import { ArrowRight, RSS } from "@lucide/astro";
+import { ArrowRight, Rss } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 
 import Layout from "@layout/Layout.astro";
@@ -70,7 +70,7 @@ export const prerender = true;
           <ul>
             <li>
               <a href="#">
-                <RSS class="h-4 w-4 ml-2" aria-hidden="true" />
+                <Rss class="h-4 w-4 ml-2" aria-hidden="true" />
                 <span lang="en">RSS Feed</span>
               </a>
             </li>
