@@ -1,15 +1,15 @@
 ---
-import { Image } from "astro:assets";
-import { Menu, X } from "@lucide/astro";
+import { Image } from 'astro:assets';
+import { Menu, X } from '@lucide/astro';
 
-import pulisLogo from "@assets/images/horizontal/blood.svg";
-import SkipLink from "@components/utils/SkipLink.astro";
+import pulisLogo from '@assets/images/horizontal/blood.svg';
+import SkipLink from '@components/utils/SkipLink.astro';
 
 const { pathname } = Astro.url;
 ---
 
 <SkipLink />
-<header x-data="{ open: false }" class="wrapper region | repel | page-header">
+<header class="wrapper region | repel | page-header">
   <div class="l-container">
     <div class="shrink-0">
       <a href="/" class="" aria-label="Ir para página inicial">
@@ -22,9 +22,9 @@ const { pathname } = Astro.url;
           <a
             href="/sobre"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900  hover:text-blood-red-800 underline-offset-8 hover:underline ${
-              pathname === "/sobre"
-                ? " text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active"
-                : ""
+              pathname === '/sobre'
+                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
+                : ''
             }`}>Sobre</a
           >
         </li>
@@ -32,9 +32,9 @@ const { pathname } = Astro.url;
           <a
             href="/projetos"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline   ${
-              pathname === "/projetos"
-                ? " text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active"
-                : ""
+              pathname === '/projetos'
+                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
+                : ''
             }`}>Projetos</a
           >
         </li>
@@ -42,9 +42,9 @@ const { pathname } = Astro.url;
           <a
             href="/servicos"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === "/servicos"
-                ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active"
-                : ""
+              pathname === '/servicos'
+                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
+                : ''
             }`}>Serviços</a
           >
         </li>
@@ -52,9 +52,9 @@ const { pathname } = Astro.url;
           <a
             href="/blog"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === "/blog"
-                ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active"
-                : ""
+              pathname === '/blog'
+                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
+                : ''
             }`}>Blog</a
           >
         </li>
@@ -62,9 +62,9 @@ const { pathname } = Astro.url;
           <a
             href="/newsletter"
             class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === "/newsletter"
-                ? " text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active"
-                : ""
+              pathname === '/newsletter'
+                ? ' text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active'
+                : ''
             }`}>Newsletter</a
           >
         </li>
@@ -72,9 +72,9 @@ const { pathname } = Astro.url;
           <a
             href="/contato"
             class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline  ${
-              pathname === "/contato"
-                ? " text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active"
-                : ""
+              pathname === '/contato'
+                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
+                : ''
             }`}>Contato</a
           >
         </li>

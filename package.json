@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "description": "Bruno Pulis - Personal Website",
   "author": "Bruno Pulis",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "homepage": "https://brunopulis.com",
   "repository": {
     "type": "git",
-    "directory": "https://github.com/brunopulis/personal-site"
+    "url": "https://github.com/brunopulis/personal-site"
   },
   "engines": {
     "node": ">=20.0.0",
@@ -35,9 +35,7 @@
     "format:check": "prettier --check \"**/*.{js,ts,astro,md,mdx,json}\"",
     "test": "echo \"Error: no tests yet\" && exit 0",
     "test:a11y": "cypress run --spec \"cypress/e2e/a11y/**/*\"",
-    "prepare": "husky install || true",
-    "audit": "pnpm audit --audit-level=moderate",
-    "audit:fix": "pnpm audit --fix"
+    "prepare": "husky install || true"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -96,9 +94,13 @@
     "markdown-it-mark": "^4.0.0",
     "markdown-it-prism": "^3.0.1",
     "pagefind": "^1.4.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
+    "postcss-import-ext-glob": "^2.1.1",
+    "postcss-js": "^5.0.1",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-css-order": "^2.1.2",
     "sanitize-html": "^2.17.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.46.2"

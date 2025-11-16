@@ -1,20 +1,20 @@
 ---
-import { Breadcrumbs } from "astro-breadcrumbs";
-import "astro-breadcrumbs/breadcrumbs.css";
+import { Breadcrumbs } from 'astro-breadcrumbs';
+import 'astro-breadcrumbs/breadcrumbs.css';
 
-import { ArrowRight, ExternalLink } from "@lucide/astro";
+import { ArrowRight, ExternalLink } from '@lucide/astro';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import Header from '@components/layouts/Header.astro';
+import Footer from '@components/layouts/Footer.astro';
 
-const title = "Sobre — Bruno Pulis";
+const title = 'Sobre — Bruno Pulis';
 ---
 
 <Layout title={title}>
   <Header />
   <main id="main-content">
-    <div class="l-container">
+    <div class="wrapper">
       <section>
         <Breadcrumbs separatorAriaHidden={false}>
           <svg

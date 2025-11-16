@@ -8,7 +8,7 @@ import {
   newsletter,
   notes,
   speaking,
-} from "@content/schemas";
+} from '@content/schemas';
 
 export const collections = {
   blog,
