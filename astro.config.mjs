@@ -80,12 +80,51 @@ export default defineConfig({
     },
     plugins: [tailwindcss()],
     server: {
+      hmr: {
+        timeout: 180000, // Aumentado para 180 segundos (3 minutos)
+        overlay: false, // Desabilita overlay de erro que pode travar
+      },
+      watch: {
+        usePolling: false,
+        ignored: [
+          '**/node_modules/**', 
+          '**/.git/**', 
+          '**/dist/**',
+          '**/.astro/**', // Ignora cache do Astro
+          '**/tina/**' // Ignora arquivos do TinaCMS
+        ]
+      },
       fs: {
         strict: false,
       },
+      // Aumenta limite de memória para assets
+      middlewareMode: false,
+    },
+    // Otimizações de build e dependências
+    optimizeDeps: {
+      force: true, // Força rebuild das dependências
+      include: [
+        '@astrojs/alpinejs',
+        'alpinejs',
+      ],
+      exclude: [
+        '@astrojs/db',
+        'astro:db',
+      ],
     },
     ssr: {
       noExternal: ["@astrojs/vercel"], // garante compatibilidade no SSR
+    },
+    // Configurações de cache
+    cacheDir: 'node_modules/.vite',
+    // Limita processamento paralelo para evitar sobrecarga de memória
+    build: {
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: undefined, // Desabilita chunking manual para dev
+        },
+      },
     },
   },
   image: {
