@@ -9,8 +9,6 @@ import {
 	Eye,
 	FileText,
 	Package,
-	Phone,
-	Settings,
 	Shield,
 	Target,
 	TrendingUp,
@@ -18,9 +16,9 @@ import {
 	Zap,
 } from "@lucide/astro";
 
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
+import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
+import Footer from "@components/layouts/Footer.astro";
 
 const tiposDocumento = [
 	{
@@ -443,7 +441,7 @@ const beneficios = [
                     <ul class="space-y-2">
                       {tipo.solucoes.slice(0, 5).map((solucao, i) => (
                         <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
-                          <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                          <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                           <span>{solucao}</span>
                         </li>
                       ))}
@@ -471,7 +469,7 @@ const beneficios = [
               <div
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
-                    ? 'scale-105 transform border-4 border-red-400 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-2xl'
+                    ? 'scale-105 transform border-4 border-red-400 bg-linear-to-br from-red-600 to-red-700 text-white shadow-2xl'
                     : 'border-2 border-gray-200 bg-white hover:border-green-400 hover:shadow-lg'
                 }`}
               >
@@ -500,7 +498,7 @@ const beneficios = [
                     {pacote.inclui.map((item, i) => (
                       <li key={i} class="flex items-start gap-2">
                         <CheckCircle
-                          class={`mt-0.5 h-4 w-4 flex-shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
+                          class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
                           aria-hidden="true"
                         />
                         <span class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
@@ -565,8 +563,8 @@ const beneficios = [
                   )}
 
                   <div class="flex gap-6">
-                    <div class="flex-shrink-0">
-                      <div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 text-2xl font-bold text-white shadow-lg">
+                    <div class="shrink-0">
+                      <div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-xl bg-linear-to-br from-green-500 to-green-600 text-2xl font-bold text-white shadow-lg">
                         {etapa.numero}
                       </div>
                     </div>
@@ -586,9 +584,9 @@ const beneficios = [
                       <div class="mt-6">
                         <h4 class="mb-3 text-sm font-bold text-gray-900">O que faço:</h4>
                         <ul class="grid gap-2 md:grid-cols-2">
-                          {etapa.atividades.map((atividade, i) => (
-                            <li key={i} class="flex items-start gap-2">
-                              <CheckCircle class="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" aria-hidden="true" />
+                          {etapa.atividades.map((atividade) => (
+                            <li class="flex items-start gap-2">
+                              <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
                               <span class="text-sm text-gray-700">{atividade}</span>
                             </li>
                           ))}

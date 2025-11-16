@@ -1,7 +1,7 @@
 ---
-issue: '28'
-title: 'Setup de automação de acessibilidade - parte 2'
-date: '2024-04-22'
+issue: "28"
+title: "Setup de automação de acessibilidade - parte 2"
+date: "2024-04-22"
 ---
 
 Dando sequência em nosso setup de automação, vamos falar sobre os **testes unitários**.

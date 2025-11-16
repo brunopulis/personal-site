@@ -2,12 +2,12 @@
 import { db, GuestBook } from "astro:db";
 import { Author, Blog, CheckResult, Client, Comment } from "@cedx/akismet";
 
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/layout/Header.astro";
-import HeroSection from "@components/layout/HeroSection.astro";
-import Footer from "@components/layout/Footer.astro";
+import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
+import HeroSection from "@components/layouts/HeroSection.astro";
+import Footer from "@components/layouts/Footer.astro";
 
-let successMessage = "";
+const successMessage = "";
 let errorMessage = "";
 
 if (Astro.request.method === "POST") {

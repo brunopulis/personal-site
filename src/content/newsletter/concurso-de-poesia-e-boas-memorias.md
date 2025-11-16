@@ -1,7 +1,7 @@
 ---
-issue: '10'
-title: 'Concurso de poesia e boas memórias'
-date: '2024-01-13'
+issue: "10"
+title: "Concurso de poesia e boas memórias"
+date: "2024-01-13"
 ---
 
 **Belo Horizonte, 13 de Janeiro de 2024.**

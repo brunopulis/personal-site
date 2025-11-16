@@ -1,9 +1,9 @@
 ---
 title: 5 tags que ajudam na acessibilidade
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2024-09-30
-category: 'Acessibilidade'
+category: "Acessibilidade"
 ---
 
 ## Introdução
@@ -93,7 +93,9 @@ Um exemplo de uso correto do `<main>`:
 
   <article>
     <h2>Vermelho delicioso</h2>
-    <p>Estas maçãs vermelhas brilhantes são as mais comumente encontradas em muitos supermercados.</p>
+    <p>
+      Estas maçãs vermelhas brilhantes são as mais comumente encontradas em muitos supermercados.
+    </p>
     <p>...</p>
     <p>...</p>
   </article>
