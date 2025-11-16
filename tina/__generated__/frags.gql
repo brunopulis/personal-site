@@ -1,0 +1,88 @@
+fragment PostParts on Post {
+  __typename
+  title
+  publishDate
+  author
+  description
+  featured_image
+  body
+  categories
+  tags
+  draft
+  seo {
+    __typename
+    meta_title
+    meta_description
+    keywords
+  }
+}
+
+fragment NoteParts on Note {
+  __typename
+  title
+  publishDate
+  description
+  featured_image
+  body
+  categories
+  tags
+}
+
+fragment BlogrollParts on Blogroll {
+  __typename
+  title
+  url
+  description
+  category
+  rss_feed
+  date_added
+}
+
+fragment BookParts on Book {
+  __typename
+  title
+  description
+  author
+  publishDate
+  body
+  category
+  cover
+  rating
+  status
+  reading_date
+  pages
+  recommended_for
+  purchase_link
+  tags
+}
+
+fragment MovieParts on Movie {
+  __typename
+  title
+  body
+  genres
+  poster
+  rating
+  status
+  watched_date
+  favorite
+  streaming
+  tags
+  notes
+}
+
+fragment NewsletterParts on Newsletter {
+  __typename
+  title
+  issue
+  coverImage
+  body
+}
+
+fragment SpeakingParts on Speaking {
+  __typename
+  title
+  issue
+  coverImage
+  body
+}
