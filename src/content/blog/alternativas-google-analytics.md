@@ -1,10 +1,10 @@
 ---
 title: Alternativas ao Google Analytics
-image: ''
-imageAlt: ''
+image: ""
+imageAlt: ""
 publishDate: 2024-05-09
-category: 'Frontend'
-tags: ['web analytics', 'tools']
+category: "Frontend"
+tags: ["web analytics", "tools"]
 ---
 
 Decidi documentar as mudanças que estou fazendo no meu site. A ideia é simplificá-lo ao máximo, não quero depender de recursos complexos e sem sentido. Tenho percebido como o desenvolvimento web se tornou complexo. Parece que vamos acumulando tantas coisas que, no final, perdemos o prazer de ter um site para chamar de seu. Por isso, esse site muda tanto, é um laboratório ao ar livre. Experimento as minhas ideias e deixo elas fluírem.

@@ -1,7 +1,7 @@
 ---
-issue: '31'
-title: 'Pedido de ajuda!'
-date: '2024-05-09'
+issue: "31"
+title: "Pedido de ajuda!"
+date: "2024-05-09"
 ---
 
 **Quarta-feira, 8 de maio de 2024.**

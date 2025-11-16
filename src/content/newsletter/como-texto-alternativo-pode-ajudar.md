@@ -1,8 +1,8 @@
 ---
-issue: '43'
-title: 'Uma imagem vale mais que mil palavras'
-date: '2024-11-14'
-coverImage: 'MB-421-scaled.jpg'
+issue: "43"
+title: "Uma imagem vale mais que mil palavras"
+date: "2024-11-14"
+coverImage: "MB-421-scaled.jpg"
 ---
 
 Ontem, recebemos os álbuns do nosso casamento. Por contrato receberíamos dois, um pequeno e outro grande.
@@ -131,7 +131,10 @@ Sua descrição deve informar as características principais da imagem.
 Uma imagem em um site fornece um link para uma newsletter gratuita. A imagem contém o texto "Newsletter gratuita. Receba receitas, notícias e muito mais. Saiba mais." O texto alternativo corresponde ao texto na imagem.
 
 ```html
-<img src="newsletter.gif" alt="Newsletter gratuita. Receba receitas, notícias e muito mais. Saiba mais." />
+<img
+  src="newsletter.gif"
+  alt="Newsletter gratuita. Receba receitas, notícias e muito mais. Saiba mais."
+/>
 ```
 
 ### Descrições longas
@@ -145,10 +148,11 @@ Uma fotografia do quadro “Uma noite estrelada de Van Gogh”. Esse exemplo uti
 ```html
 <img src="noite-estrelada.jpg" alt="A noite estrela, Van Gogh 1889" aria-describedby="p1" />
 <p id="p1">
-  A imagem é uma representação vibrante e dinâmica de uma noite estrelada, onde o céu parece vivo, com redemoinhos de
-  luz e estrelas brilhantes contrastando com uma vila calma e silenciosa abaixo. A combinação de cores intensas e
-  movimento transmite uma sensação de energia pulsante e introspecção, como se capturasse a grandiosidade e o mistério
-  do universo junto com a quietude da humanidade.
+  A imagem é uma representação vibrante e dinâmica de uma noite estrelada, onde o céu parece vivo,
+  com redemoinhos de luz e estrelas brilhantes contrastando com uma vila calma e silenciosa abaixo.
+  A combinação de cores intensas e movimento transmite uma sensação de energia pulsante e
+  introspecção, como se capturasse a grandiosidade e o mistério do universo junto com a quietude da
+  humanidade.
 </p>
 ```
 

@@ -1,16 +1,16 @@
 <script is:inline>
-  document.addEventListener('astro:page-load', () => {
-    const pageWrapper = document.getElementById('page-wrapper')
+  document.addEventListener("astro:page-load", () => {
+    const pageWrapper = document.getElementById("page-wrapper");
     if (pageWrapper) {
-      pageWrapper.classList.add('page-loaded')
+      pageWrapper.classList.add("page-loaded");
     }
-  })
+  });
 
-  document.addEventListener('astro:before-swap', () => {
-    const pageWrapper = document.getElementById('page-wrapper')
+  document.addEventListener("astro:before-swap", () => {
+    const pageWrapper = document.getElementById("page-wrapper");
     if (pageWrapper) {
-      pageWrapper.classList.remove('page-loaded')
+      pageWrapper.classList.remove("page-loaded");
     }
-  })
+  });
 </script>
 <script src="@scripts/transitions.js"></script>
