@@ -191,12 +191,9 @@ type PostConnection implements Connection {
 }
 
 type Note implements Node & Document {
-  title: String!
-  publishDate: String!
-  description: String!
+  pubDate: String!
   featured_image: String
   body: JSON!
-  categories: [String]
   tags: [String]
   id: ID!
   _sys: SystemInfo!
@@ -204,12 +201,9 @@ type Note implements Node & Document {
 }
 
 input NoteFilter {
-  title: StringFilter
-  publishDate: DatetimeFilter
-  description: StringFilter
+  pubDate: DatetimeFilter
   featured_image: ImageFilter
   body: RichTextFilter
-  categories: StringFilter
   tags: StringFilter
 }
 
@@ -475,12 +469,9 @@ input PostMutation {
 }
 
 input NoteMutation {
-  title: String
-  publishDate: String
-  description: String
+  pubDate: String
   featured_image: String
   body: JSON
-  categories: [String]
   tags: [String]
 }
 
