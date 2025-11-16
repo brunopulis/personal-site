@@ -1,0 +1,117 @@
+---
+import Layout from '@layout/Layout.astro';
+
+import { getCollection } from 'astro:content';
+
+// 1. Coleta e Organiza os Dados
+// Obtém todos os posts da coleção 'blog'
+const allPosts = await getCollection('blog');
+
+// Cria um mapa para armazenar a contagem de posts por tag
+const tagsCount = new Map();
+
+allPosts.forEach((post) => {
+  // Assume que as tags estão em post.data.tags, que é um array
+  const tags = post.data.tags || [];
+
+  tags.forEach((tag) => {
+    const tagName = tag.toLowerCase(); // Normaliza para evitar duplicidade (e.g., 'Astro' e 'astro')
+    tagsCount.set(tagName, (tagsCount.get(tagName) || 0) + 1);
+  });
+});
+
+// Converte o mapa em um array de objetos para fácil iteração e ordenação
+const sortedTags = Array.from(tagsCount, ([name, count]) => ({
+  name,
+  count,
+})).sort((a, b) => b.count - a.count); // Ordena por popularidade (do mais usado para o menos usado)
+
+// Título da página
+const pageTitle = 'Todas as Tags do Blog';
+---
+
+<Layout title={pageTitle}>
+  <div class="wrapper">
+    <article>
+      <header>
+        <h1 class="page-header">{pageTitle}</h1>
+        <p class="tag-intro">
+          Encontre conteúdo por assunto. Tags ordenadas por popularidade.
+        </p>
+      </header>
+
+      <div class="tags-grid">
+        {
+          sortedTags.map((tag) => (
+            <a href={`/tags/${tag.name}`} class="tag-card">
+              <span class="tag-name">#{tag.name}</span>
+              <span class="tag-count">
+                ({tag.count} {tag.count === 1 ? 'Post' : 'Posts'})
+              </span>
+            </a>
+          ))
+        }
+      </div>
+
+      {
+        sortedTags.length === 0 && (
+          <p class="no-tags-message">
+            Nenhuma tag encontrada. Publique seu primeiro post!
+          </p>
+        )
+      }
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+
+  .tag-intro {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+  }
+
+  .tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaçamento entre os cartões de tags */
+  }
+
+  .tag-card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #34495e;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+    background-color: #f7f9fb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .tag-card:hover {
+    background-color: #ecf0f1;
+    border-color: #00bcd4;
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+  }
+
+  .tag-name {
+    font-weight: bold;
+    color: #00bcd4; /* Cor de destaque para o nome da tag */
+  }
+
+  .tag-count {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+  }
+</style>

@@ -1,64 +1,61 @@
 ---
-import { db, GuestBook } from "astro:db";
-import { Author, Blog, CheckResult, Client, Comment } from "@cedx/akismet";
+import { db, GuestBook } from 'astro:db';
+import { Author, Blog, CheckResult, Client, Comment } from '@cedx/akismet';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import HeroSection from '@components/layouts/HeroSection.astro';
 
-const successMessage = "";
-let errorMessage = "";
+const successMessage = '';
+let errorMessage = '';
 
-if (Astro.request.method === "POST") {
-	const blog = new Blog({ url: "https://www.brunopulis.com/" });
-	const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
+if (Astro.request.method === 'POST') {
+  const blog = new Blog({ url: 'https://www.brunopulis.com/' });
+  const client = new Client(import.meta.env.AKISMET_TOKEN, blog);
 
-	const formData = await Astro.request.formData();
-	const author = formData.get("author")?.toString() || "Anônimo";
-	const content = formData.get("content")?.toString() || "";
-	const special = formData.get("special");
+  const formData = await Astro.request.formData();
+  const author = formData.get('author')?.toString() || 'Anônimo';
+  const content = formData.get('content')?.toString() || '';
+  const special = formData.get('special');
 
-	if (!special) {
-		try {
-			const isValid = await client.verifyKey();
+  if (!special) {
+    try {
+      const isValid = await client.verifyKey();
 
-			if (isValid) {
-				const commentAuthor = new Author({ name: author });
-				const comment = new Comment({
-					author: commentAuthor,
-					content,
-				});
+      if (isValid) {
+        const commentAuthor = new Author({ name: author });
+        const comment = new Comment({
+          author: commentAuthor,
+          content,
+        });
 
-				const result = await client.checkComment(comment);
+        const result = await client.checkComment(comment);
 
-				if (result === CheckResult.ham) {
-					await db.insert(GuestBook).values({ author, content });
-					return Astro.redirect("/livro-de-visitas");
-				} else {
-					errorMessage = "Desculpe, não foi possível publicar seu comentário.";
-				}
-			}
-		} catch (error) {
-			handleError(error);
-			errorMessage = "Ocorreu um erro ao processar sua mensagem.";
-		}
-	}
+        if (result === CheckResult.ham) {
+          await db.insert(GuestBook).values({ author, content });
+          return Astro.redirect('/livro-de-visitas');
+        } else {
+          errorMessage = 'Desculpe, não foi possível publicar seu comentário.';
+        }
+      }
+    } catch (error) {
+      handleError(error);
+      errorMessage = 'Ocorreu um erro ao processar sua mensagem.';
+    }
+  }
 }
 
 function handleError(error: unknown) {
-	const message = error instanceof Error ? error.message : String(error);
-	console.error(`Erro: ${message}`);
+  const message = error instanceof Error ? error.message : String(error);
+  console.error(`Erro: ${message}`);
 }
 
 const entries = await db
-	.select()
-	.from(GuestBook)
-	.orderBy(GuestBook.createdAt, "desc");
+  .select()
+  .from(GuestBook)
+  .orderBy(GuestBook.createdAt, 'desc');
 ---
 
 <Layout title="Livro de visitas - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <HeroSection
       title="Livro de visitas"
@@ -67,14 +64,21 @@ const entries = await db
 
     <section class="bg-white py-16">
       <div class="mx-auto max-w-2xl px-6">
-        <div class="rounded-2xl border border-gray-200 bg-linear-to-br from-gray-50 to-gray-100 p-8 shadow-lg">
+        <div
+          class="rounded-2xl border border-gray-200 bg-linear-to-br from-gray-50 to-gray-100 p-8 shadow-lg"
+        >
           <div class="mb-6 flex items-center gap-3">
             <h2 class="text-2xl font-bold text-gray-900">Deixe sua mensagem</h2>
           </div>
           <form method="POST">
             <div class="space-y-6">
               <div>
-                <label for="nome" class="text-errie-black-900 mb-2 block text-sm font-bold"> Seu nome * </label>
+                <label
+                  for="nome"
+                  class="text-errie-black-900 mb-2 block text-sm font-bold"
+                >
+                  Seu nome *
+                </label>
                 <input
                   id="nome"
                   type="text"
@@ -91,7 +95,12 @@ const entries = await db
               </div>
 
               <div>
-                <label for="email" class="text-errie-black-900 mb-2 block text-sm font-bold"> E-mail (opcional) </label>
+                <label
+                  for="email"
+                  class="text-errie-black-900 mb-2 block text-sm font-bold"
+                >
+                  E-mail (opcional)
+                </label>
                 <input
                   id="email"
                   type="email"
@@ -99,11 +108,18 @@ const entries = await db
                   placeholder="seu@email.com"
                   class="w-full rounded-lg border border-gray-300 bg-white py-3 pr-4 pl-5 focus:border-transparent focus:ring-2 focus:ring-red-500"
                 />
-                <p class="text-errie-black-900 mt-1 text-xs">Seu e-mail não será exibido publicamente</p>
+                <p class="text-errie-black-900 mt-1 text-xs">
+                  Seu e-mail não será exibido publicamente
+                </p>
               </div>
 
               <div>
-                <label for="mensagem" class="text-errie-black-900 mb-2 block text-sm font-bold"> Sua mensagem * </label>
+                <label
+                  for="mensagem"
+                  class="text-errie-black-900 mb-2 block text-sm font-bold"
+                >
+                  Sua mensagem *
+                </label>
                 <textarea
                   id="mensagem"
                   rows="5"
@@ -127,7 +143,9 @@ const entries = await db
     <section class="bg-gray-50 py-16">
       <div class="mx-auto max-w-4xl px-6">
         <div class="mb-12 text-center">
-          <h2 class="mb-2 text-3xl font-bold text-gray-900">Mensagens recentes</h2>
+          <h2 class="mb-2 text-3xl font-bold text-gray-900">
+            Mensagens recentes
+          </h2>
           <p class="text-gray-600">
             {entries.length} pessoas já deixaram sua marca por aqui ❤️
           </p>
@@ -143,10 +161,14 @@ const entries = await db
                       <h3 class="font-bold text-gray-900">{entry.author}</h3>
                     </div>
 
-                    <p class="text-errie-black-900 mb-3 leading-relaxed">{entry.content}</p>
+                    <p class="text-errie-black-900 mb-3 leading-relaxed">
+                      {entry.content}
+                    </p>
 
                     <div class="flex items-center gap-2 text-sm text-gray-500">
-                      <span>{new Date(entry.createdAt).toLocaleDateString('pt-BR')}</span>
+                      <span>
+                        {new Date(entry.createdAt).toLocaleDateString('pt-BR')}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -157,5 +179,4 @@ const entries = await db
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

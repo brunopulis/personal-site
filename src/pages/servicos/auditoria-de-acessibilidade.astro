@@ -1,124 +1,126 @@
 ---
-import {
-	ArrowRight,
-} from "@lucide/astro";
+import { ArrowRight } from '@lucide/astro';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import AuditionA11y from "@components/services/auditoria-a11y/AuditionA11y.astro";
-import Packages from "@components/services/auditoria-a11y/Packages.astro";
-import ServicesSteps from "@components/services/auditoria-a11y/ServicesSteps.astro";
-import CTASection from "@components/CTA.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import AuditionA11y from '@components/services/auditoria-a11y/AuditionA11y.astro';
+import Packages from '@components/services/auditoria-a11y/Packages.astro';
+import ServicesSteps from '@components/services/auditoria-a11y/ServicesSteps.astro';
+import CTASection from '@components/CTA.astro';
 
 const oqueBusco = [
-	{
-		categoria: "Estrutura e Semântica",
-		itens: [
-			"HTML semântico correto",
-			"Uso apropriado de landmarks (header, nav, main, footer)",
-			"Estrutura de headings (h1-h6) hierárquica",
-			"Uso correto de listas (ul, ol)",
-			"Elementos interativos acessíveis",
-		],
-	},
-	{
-		categoria: "ARIA e Acessibilidade",
-		itens: [
-			"Atributos ARIA corretos (quando necessário)",
-			"Roles apropriados",
-			"Labels e descriptions em elementos",
-			"Live regions para conteúdo dinâmico",
-			"Estados e propriedades ARIA",
-		],
-	},
-	{
-		categoria: "Navegação e Interação",
-		itens: [
-			"Navegação completa por teclado",
-			"Ordem de foco lógica (tab order)",
-			"Indicadores de foco visíveis",
-			"Skip links funcionais",
-			"Atalhos de teclado documentados",
-		],
-	},
-	{
-		categoria: "Conteúdo e Mídia",
-		itens: [
-			"Textos alternativos em imagens",
-			"Transcrições de áudio",
-			"Legendas em vídeos",
-			"Descrições de áudio (quando aplicável)",
-			"Conteúdo de links descritivo",
-		],
-	},
-	{
-		categoria: "Design Visual",
-		itens: [
-			"Contraste de cores adequado (WCAG AA ou AAA)",
-			"Tamanho de fonte legível",
-			"Espaçamento entre elementos clicáveis",
-			"Zoom até 200% sem perda de funcionalidade",
-			"Informação não dependente apenas de cor",
-		],
-	},
-	{
-		categoria: "Formulários",
-		itens: [
-			"Labels associados aos inputs",
-			"Mensagens de erro claras",
-			"Validação acessível",
-			"Instruções visíveis",
-			"Campos obrigatórios identificados",
-		],
-	},
+  {
+    categoria: 'Estrutura e Semântica',
+    itens: [
+      'HTML semântico correto',
+      'Uso apropriado de landmarks (header, nav, main, footer)',
+      'Estrutura de headings (h1-h6) hierárquica',
+      'Uso correto de listas (ul, ol)',
+      'Elementos interativos acessíveis',
+    ],
+  },
+  {
+    categoria: 'ARIA e Acessibilidade',
+    itens: [
+      'Atributos ARIA corretos (quando necessário)',
+      'Roles apropriados',
+      'Labels e descriptions em elementos',
+      'Live regions para conteúdo dinâmico',
+      'Estados e propriedades ARIA',
+    ],
+  },
+  {
+    categoria: 'Navegação e Interação',
+    itens: [
+      'Navegação completa por teclado',
+      'Ordem de foco lógica (tab order)',
+      'Indicadores de foco visíveis',
+      'Skip links funcionais',
+      'Atalhos de teclado documentados',
+    ],
+  },
+  {
+    categoria: 'Conteúdo e Mídia',
+    itens: [
+      'Textos alternativos em imagens',
+      'Transcrições de áudio',
+      'Legendas em vídeos',
+      'Descrições de áudio (quando aplicável)',
+      'Conteúdo de links descritivo',
+    ],
+  },
+  {
+    categoria: 'Design Visual',
+    itens: [
+      'Contraste de cores adequado (WCAG AA ou AAA)',
+      'Tamanho de fonte legível',
+      'Espaçamento entre elementos clicáveis',
+      'Zoom até 200% sem perda de funcionalidade',
+      'Informação não dependente apenas de cor',
+    ],
+  },
+  {
+    categoria: 'Formulários',
+    itens: [
+      'Labels associados aos inputs',
+      'Mensagens de erro claras',
+      'Validação acessível',
+      'Instruções visíveis',
+      'Campos obrigatórios identificados',
+    ],
+  },
 ];
 
 const faq = [
-	{
-		pergunta: "Qual padrão/guideline você segue?",
-		resposta:
-			"Trabalho baseado nas WCAG 2.1 e 2.2 (Web Content Accessibility Guidelines), níveis A e AA. Para projetos específicos, posso focar em AAA ou em outras diretrizes como Section 508 ou EN 301 549.",
-	},
-	{
-		pergunta: "Quanto tempo leva uma auditoria?",
-		resposta:
-			"Depende do pacote: Starter (1-2 semanas), Professional (2-3 semanas), Enterprise (4-6 semanas). O prazo começa após o kickoff e recebimento de todos os acessos necessários.",
-	},
-	{
-		pergunta: "O que recebo no final?",
-		resposta:
-			"Relatório em PDF com todos os problemas encontrados, planilha Excel com detalhamento técnico, prints/vídeos explicativos, roadmap de correções priorizadas e acesso a mim para dúvidas durante o período de suporte.",
-	},
-	{
-		pergunta: "Você implementa as correções?",
-		resposta:
-			"A auditoria não inclui implementação. Porém, ofereço o serviço de remediação separadamente, ou posso fazer mentoria da sua equipe para que eles implementem. Podemos conversar sobre a melhor opção.",
-	},
-	{
-		pergunta: "E se meu projeto for muito grande?",
-		resposta:
-			"Para projetos grandes, fazemos auditoria em fases. Começamos pelas páginas/fluxos mais críticos e vamos expandindo. O pacote Enterprise é flexível e customizável para estas situações.",
-	},
-	{
-		pergunta: "Garante conformidade legal?",
-		resposta:
-			"Forneço análise técnica baseada em padrões internacionais. Não sou advogado, então não posso garantir conformidade legal específica. Mas o relatório pode ser usado como documentação para demonstrar esforços de acessibilidade.",
-	},
+  {
+    pergunta: 'Qual padrão/guideline você segue?',
+    resposta:
+      'Trabalho baseado nas WCAG 2.1 e 2.2 (Web Content Accessibility Guidelines), níveis A e AA. Para projetos específicos, posso focar em AAA ou em outras diretrizes como Section 508 ou EN 301 549.',
+  },
+  {
+    pergunta: 'Quanto tempo leva uma auditoria?',
+    resposta:
+      'Depende do pacote: Starter (1-2 semanas), Professional (2-3 semanas), Enterprise (4-6 semanas). O prazo começa após o kickoff e recebimento de todos os acessos necessários.',
+  },
+  {
+    pergunta: 'O que recebo no final?',
+    resposta:
+      'Relatório em PDF com todos os problemas encontrados, planilha Excel com detalhamento técnico, prints/vídeos explicativos, roadmap de correções priorizadas e acesso a mim para dúvidas durante o período de suporte.',
+  },
+  {
+    pergunta: 'Você implementa as correções?',
+    resposta:
+      'A auditoria não inclui implementação. Porém, ofereço o serviço de remediação separadamente, ou posso fazer mentoria da sua equipe para que eles implementem. Podemos conversar sobre a melhor opção.',
+  },
+  {
+    pergunta: 'E se meu projeto for muito grande?',
+    resposta:
+      'Para projetos grandes, fazemos auditoria em fases. Começamos pelas páginas/fluxos mais críticos e vamos expandindo. O pacote Enterprise é flexível e customizável para estas situações.',
+  },
+  {
+    pergunta: 'Garante conformidade legal?',
+    resposta:
+      'Forneço análise técnica baseada em padrões internacionais. Não sou advogado, então não posso garantir conformidade legal específica. Mas o relatório pode ser usado como documentação para demonstrar esforços de acessibilidade.',
+  },
 ];
 ---
 
 <Layout title="Auditoria de Acessibilidade - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <section class="hero-section" id="hero">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+      <div
+        class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2"
+      >
         <div class="max-w-4xl">
-          <h1 class="mb-6 text-5xl leading-tight font-bold">Auditoria de Acessibilidade</h1>
-          <p class="mb-6 text-2xl">Descubra exatamente o que precisa ser corrigido</p>
+          <h1 class="mb-6 text-5xl leading-tight font-bold">
+            Auditoria de Acessibilidade
+          </h1>
+          <p class="mb-6 text-2xl">
+            Descubra exatamente o que precisa ser corrigido
+          </p>
           <p class="mb-8 text-xl leading-relaxed">
-            Analiso seu site, app ou documento e te mostro exatamente o que precisa melhorar - e por quê isso importa
-            para seus usuários. Relatório completo, priorizado e acionável.
+            Analiso seu site, app ou documento e te mostro exatamente o que
+            precisa melhorar - e por quê isso importa para seus usuários.
+            Relatório completo, priorizado e acionável.
           </p>
           <div class="flex gap-4">
             <a
@@ -138,21 +140,25 @@ const faq = [
       </div>
     </section>
 
-		<AuditionA11y />
-		<ServicesSteps />
+    <AuditionA11y />
+    <ServicesSteps />
     <Packages />
 
     <section class="bg-gray-50 py-20">
       <div class="mx-auto max-w-4xl px-6">
         <div class="mb-12 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900">Perguntas Frequentes</h2>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">
+            Perguntas Frequentes
+          </h2>
         </div>
 
         <div class="space-y-6">
           {
             faq.map((item, index) => (
               <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
+                <h3 class="mb-3 text-lg font-bold text-gray-900">
+                  {item.pergunta}
+                </h3>
                 <p class="leading-relaxed text-gray-700">{item.resposta}</p>
               </div>
             ))
@@ -161,7 +167,10 @@ const faq = [
 
         <div class="mt-12 text-center">
           <p class="mb-4 text-gray-600">Ainda tem dúvidas?</p>
-          <a href="/contato" class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700">
+          <a
+            href="/contato"
+            class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
+          >
             Entre em contato
             <ArrowRight class="h-4 w-4" aria-hidden="true" />
           </a>
@@ -182,5 +191,4 @@ const faq = [
       }}
     />
   </main>
-  <Footer />
 </Layout>

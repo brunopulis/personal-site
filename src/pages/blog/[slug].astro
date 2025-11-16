@@ -1,28 +1,25 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 
-import { CalendarIcon, ClockIcon } from "@lucide/astro";
+import { CalendarIcon, ClockIcon } from '@lucide/astro';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Author from "@components/blog/Author.astro";
-import BackBlog from "@components/blog/BackBlog.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import Author from '@components/blog/Author.astro';
+import BackBlog from '@components/blog/BackBlog.astro';
 
-// Gerar rotas para todos os posts
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
+  const posts = await getCollection('blog');
 
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: { post },
-	}));
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 type Props = {
-	post: CollectionEntry<"blog">;
-	prevPost: CollectionEntry<"blog">;
-	nextPost: CollectionEntry<"blog">;
+  post: CollectionEntry<'blog'>;
+  prevPost: CollectionEntry<'blog'>;
+  nextPost: CollectionEntry<'blog'>;
 };
 
 // Receber o post das props
@@ -31,10 +28,10 @@ const { Content } = await render(post);
 
 // Formatar data para pt-BR
 const publishDateString = String(post.data.publishDate);
-const formattedDate = new Date(publishDateString).toLocaleDateString("pt-BR", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
+const formattedDate = new Date(publishDateString).toLocaleDateString('pt-BR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
 });
 
 const isoDate = new Date(publishDateString).toISOString();
@@ -46,9 +43,8 @@ export const prerender = true;
   title={`${post.data.title} + "Bruno Pulis"`}
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
-  <Header />
   <main id="main-content">
-    <div class="min-h-screen bg-white">
+    <div class="wrapper">
       <BackBlog />
 
       <header class="bg-white px-6 py-12 lg:px-20">
@@ -61,12 +57,16 @@ export const prerender = true;
             </span>
           </div>
 
-          <h1 class="text-errie-black-900 mb-6 text-4xl leading-tight font-bold lg:text-5xl">
+          <h1
+            class="text-errie-black-900 mb-6 text-4xl leading-tight font-bold lg:text-5xl"
+          >
             {post.data.title}
           </h1>
           <p>{post.data.excerpt}</p>
 
-          <div class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base">
+          <div
+            class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base"
+          >
             <div class="flex items-center gap-2">
               <CalendarIcon class="h-4 w-4" aria-hidden="true" />
               <time datetime={isoDate}>{formattedDate}</time>
@@ -87,5 +87,4 @@ export const prerender = true;
       <Author />
     </div>
   </main>
-  <Footer />
 </Layout>

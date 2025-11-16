@@ -1,412 +1,425 @@
 ---
 import {
-	AlertCircle,
-	ArrowRight,
-	Award,
-	CheckCircle,
-	Clock,
-	Code,
-	Eye,
-	FileText,
-	Shield,
-	Target,
-	TrendingUp,
-	Zap,
-} from "@lucide/astro";
+  AlertCircle,
+  ArrowRight,
+  Award,
+  CheckCircle,
+  Clock,
+  Code,
+  Eye,
+  FileText,
+  Shield,
+  Target,
+  TrendingUp,
+  Zap,
+} from '@lucide/astro';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
 
 const tecnologias = [
-	{
-		nome: "React",
-		icone: "⚛️",
-		cor: "blue",
-		nivel: "Especialista",
-		experiencia: "5+ anos",
-		problemas: [
-			"Componentes sem gerenciamento de foco",
-			"Estados não anunciados a leitores de tela",
-			"Rotas sem atualização de título",
-			"Modais sem trap de foco",
-			"Formulários sem validação acessível",
-		],
-		solucoes: [
-			"Hooks customizados para acessibilidade",
-			"Gerenciamento correto de foco",
-			"Live regions para atualizações",
-			"Rotas com anúncio de mudança",
-			"Componentes acessíveis reutilizáveis",
-		],
-	},
-	{
-		nome: "Vue.js",
-		icone: "💚",
-		cor: "green",
-		nivel: "Avançado",
-		experiencia: "3+ anos",
-		problemas: [
-			"Diretivas v-if/v-show sem contexto",
-			"Transições sem anúncio",
-			"Componentes sem ARIA",
-			"Eventos apenas com mouse",
-		],
-		solucoes: [
-			"Composables para acessibilidade",
-			"Transições com live regions",
-			"Mixins acessíveis",
-			"Eventos de teclado completos",
-		],
-	},
-	{
-		nome: "WordPress",
-		icone: "📝",
-		cor: "purple",
-		nivel: "Especialista",
-		experiencia: "8+ anos",
-		problemas: [
-			"Temas não acessíveis",
-			"Plugins incompatíveis",
-			"Menus sem estrutura",
-			"Formulários Contact Form 7 inacessíveis",
-		],
-		solucoes: [
-			"Correção de temas existentes",
-			"Criação de child themes acessíveis",
-			"Customização de plugins",
-			"Formulários acessíveis",
-		],
-	},
-	{
-		nome: "HTML/CSS/JS",
-		icone: "🌐",
-		cor: "orange",
-		nivel: "Especialista",
-		experiencia: "15+ anos",
-		problemas: [
-			"HTML não semântico",
-			"CSS dependente de cor",
-			"JavaScript sem fallbacks",
-			"Navegação por teclado quebrada",
-		],
-		solucoes: [
-			"Refatoração para HTML semântico",
-			"CSS com foco visível",
-			"Progressive enhancement",
-			"Navegação por teclado completa",
-		],
-	},
-	{
-		nome: "Next.js/Gatsby/Astro",
-		icone: "⚡",
-		cor: "red",
-		nivel: "Avançado",
-		experiencia: "3+ anos",
-		problemas: [
-			"SSR/SSG sem acessibilidade",
-			"Navegação client-side problemática",
-			"Hydration quebrando foco",
-			"Imagens sem otimização acessível",
-		],
-		solucoes: [
-			"Rotas acessíveis",
-			"Gerenciamento de foco em navegação",
-			"Componentes hidratados acessíveis",
-			"Imagens otimizadas com alt",
-		],
-	},
-	{
-		nome: "Angular",
-		icone: "🅰️",
-		cor: "red",
-		nivel: "Intermediário",
-		experiencia: "2+ anos",
-		problemas: [
-			"Material Design sem customização",
-			"Rotas sem anúncio",
-			"Diretivas sem acessibilidade",
-		],
-		solucoes: [
-			"Customização do Angular Material",
-			"Rotas com anúncios",
-			"Diretivas acessíveis",
-		],
-	},
+  {
+    nome: 'React',
+    icone: '⚛️',
+    cor: 'blue',
+    nivel: 'Especialista',
+    experiencia: '5+ anos',
+    problemas: [
+      'Componentes sem gerenciamento de foco',
+      'Estados não anunciados a leitores de tela',
+      'Rotas sem atualização de título',
+      'Modais sem trap de foco',
+      'Formulários sem validação acessível',
+    ],
+    solucoes: [
+      'Hooks customizados para acessibilidade',
+      'Gerenciamento correto de foco',
+      'Live regions para atualizações',
+      'Rotas com anúncio de mudança',
+      'Componentes acessíveis reutilizáveis',
+    ],
+  },
+  {
+    nome: 'Vue.js',
+    icone: '💚',
+    cor: 'green',
+    nivel: 'Avançado',
+    experiencia: '3+ anos',
+    problemas: [
+      'Diretivas v-if/v-show sem contexto',
+      'Transições sem anúncio',
+      'Componentes sem ARIA',
+      'Eventos apenas com mouse',
+    ],
+    solucoes: [
+      'Composables para acessibilidade',
+      'Transições com live regions',
+      'Mixins acessíveis',
+      'Eventos de teclado completos',
+    ],
+  },
+  {
+    nome: 'WordPress',
+    icone: '📝',
+    cor: 'purple',
+    nivel: 'Especialista',
+    experiencia: '8+ anos',
+    problemas: [
+      'Temas não acessíveis',
+      'Plugins incompatíveis',
+      'Menus sem estrutura',
+      'Formulários Contact Form 7 inacessíveis',
+    ],
+    solucoes: [
+      'Correção de temas existentes',
+      'Criação de child themes acessíveis',
+      'Customização de plugins',
+      'Formulários acessíveis',
+    ],
+  },
+  {
+    nome: 'HTML/CSS/JS',
+    icone: '🌐',
+    cor: 'orange',
+    nivel: 'Especialista',
+    experiencia: '15+ anos',
+    problemas: [
+      'HTML não semântico',
+      'CSS dependente de cor',
+      'JavaScript sem fallbacks',
+      'Navegação por teclado quebrada',
+    ],
+    solucoes: [
+      'Refatoração para HTML semântico',
+      'CSS com foco visível',
+      'Progressive enhancement',
+      'Navegação por teclado completa',
+    ],
+  },
+  {
+    nome: 'Next.js/Gatsby/Astro',
+    icone: '⚡',
+    cor: 'red',
+    nivel: 'Avançado',
+    experiencia: '3+ anos',
+    problemas: [
+      'SSR/SSG sem acessibilidade',
+      'Navegação client-side problemática',
+      'Hydration quebrando foco',
+      'Imagens sem otimização acessível',
+    ],
+    solucoes: [
+      'Rotas acessíveis',
+      'Gerenciamento de foco em navegação',
+      'Componentes hidratados acessíveis',
+      'Imagens otimizadas com alt',
+    ],
+  },
+  {
+    nome: 'Angular',
+    icone: '🅰️',
+    cor: 'red',
+    nivel: 'Intermediário',
+    experiencia: '2+ anos',
+    problemas: [
+      'Material Design sem customização',
+      'Rotas sem anúncio',
+      'Diretivas sem acessibilidade',
+    ],
+    solucoes: [
+      'Customização do Angular Material',
+      'Rotas com anúncios',
+      'Diretivas acessíveis',
+    ],
+  },
 ];
 
 const processo = [
-	{
-		numero: 1,
-		titulo: "Análise Inicial",
-		duracao: "3-5 dias",
-		icone: Eye,
-		cor: "blue",
-		descricao: "Auditoria completa para identificar todos os problemas",
-		atividades: [
-			"Acesso ao código-fonte e ambiente",
-			"Auditoria técnica automatizada",
-			"Testes manuais com leitores de tela",
-			"Navegação por teclado completa",
-			"Documentação de todos os issues",
-			"Priorização por impacto",
-			"Estimativa de esforço e prazo",
-			"Apresentação ao cliente",
-		],
-	},
-	{
-		numero: 2,
-		titulo: "Planejamento",
-		duracao: "1-2 dias",
-		icone: Target,
-		cor: "purple",
-		descricao: "Roadmap de correções priorizadas",
-		atividades: [
-			"Definição de escopo e prioridades",
-			"Criação de branches no Git",
-			"Setup de ambiente de desenvolvimento",
-			"Definição de milestones",
-			"Cronograma detalhado",
-			"Alinhamento com equipe cliente",
-		],
-	},
-	{
-		numero: 3,
-		titulo: "Implementação",
-		duracao: "2-8 semanas",
-		icone: Code,
-		cor: "green",
-		descricao: "Correção hands-on dos problemas identificados",
-		atividades: [
-			"Refatoração de componentes",
-			"Implementação de HTML semântico",
-			"Adição de ARIA quando necessário",
-			"Correção de navegação por teclado",
-			"Ajuste de contrastes de cores",
-			"Implementação de skip links",
-			"Correção de formulários",
-			"Testes contínuos durante desenvolvimento",
-		],
-	},
-	{
-		numero: 4,
-		titulo: "Testes e QA",
-		duracao: "1-2 semanas",
-		icone: Shield,
-		cor: "orange",
-		descricao: "Validação completa de todas as correções",
-		atividades: [
-			"Testes com ferramentas automatizadas",
-			"Testes com NVDA, JAWS, VoiceOver",
-			"Navegação completa por teclado",
-			"Testes em diferentes navegadores",
-			"Validação mobile",
-			"Checklist de conformidade WCAG",
-			"Correção de bugs encontrados",
-			"Documentação de melhorias",
-		],
-	},
-	{
-		numero: 5,
-		titulo: "Deploy e Documentação",
-		duracao: "2-3 dias",
-		icone: Award,
-		cor: "red",
-		descricao: "Entrega e transferência de conhecimento",
-		atividades: [
-			"Code review final",
-			"Merge para produção",
-			"Deploy em homologação",
-			"Testes em produção",
-			"Documentação técnica completa",
-			"Guia de manutenção",
-			"Treinamento da equipe",
-			"Suporte pós-deploy",
-		],
-	},
+  {
+    numero: 1,
+    titulo: 'Análise Inicial',
+    duracao: '3-5 dias',
+    icone: Eye,
+    cor: 'blue',
+    descricao: 'Auditoria completa para identificar todos os problemas',
+    atividades: [
+      'Acesso ao código-fonte e ambiente',
+      'Auditoria técnica automatizada',
+      'Testes manuais com leitores de tela',
+      'Navegação por teclado completa',
+      'Documentação de todos os issues',
+      'Priorização por impacto',
+      'Estimativa de esforço e prazo',
+      'Apresentação ao cliente',
+    ],
+  },
+  {
+    numero: 2,
+    titulo: 'Planejamento',
+    duracao: '1-2 dias',
+    icone: Target,
+    cor: 'purple',
+    descricao: 'Roadmap de correções priorizadas',
+    atividades: [
+      'Definição de escopo e prioridades',
+      'Criação de branches no Git',
+      'Setup de ambiente de desenvolvimento',
+      'Definição de milestones',
+      'Cronograma detalhado',
+      'Alinhamento com equipe cliente',
+    ],
+  },
+  {
+    numero: 3,
+    titulo: 'Implementação',
+    duracao: '2-8 semanas',
+    icone: Code,
+    cor: 'green',
+    descricao: 'Correção hands-on dos problemas identificados',
+    atividades: [
+      'Refatoração de componentes',
+      'Implementação de HTML semântico',
+      'Adição de ARIA quando necessário',
+      'Correção de navegação por teclado',
+      'Ajuste de contrastes de cores',
+      'Implementação de skip links',
+      'Correção de formulários',
+      'Testes contínuos durante desenvolvimento',
+    ],
+  },
+  {
+    numero: 4,
+    titulo: 'Testes e QA',
+    duracao: '1-2 semanas',
+    icone: Shield,
+    cor: 'orange',
+    descricao: 'Validação completa de todas as correções',
+    atividades: [
+      'Testes com ferramentas automatizadas',
+      'Testes com NVDA, JAWS, VoiceOver',
+      'Navegação completa por teclado',
+      'Testes em diferentes navegadores',
+      'Validação mobile',
+      'Checklist de conformidade WCAG',
+      'Correção de bugs encontrados',
+      'Documentação de melhorias',
+    ],
+  },
+  {
+    numero: 5,
+    titulo: 'Deploy e Documentação',
+    duracao: '2-3 dias',
+    icone: Award,
+    cor: 'red',
+    descricao: 'Entrega e transferência de conhecimento',
+    atividades: [
+      'Code review final',
+      'Merge para produção',
+      'Deploy em homologação',
+      'Testes em produção',
+      'Documentação técnica completa',
+      'Guia de manutenção',
+      'Treinamento da equipe',
+      'Suporte pós-deploy',
+    ],
+  },
 ];
 
 const pacotes = [
-	{
-		nome: "Correções Pontuais",
-		preco: "R$ 5.000",
-		duracao: "1-2 semanas",
-		ideal: "Até 20 issues identificados",
-		cor: "blue",
-		inclui: [
-			"Correção de problemas específicos",
-			"Testes das correções",
-			"Documentação do que foi alterado",
-			"Pull request organizado",
-			"Suporte por 15 dias",
-			"Ideal para: sites pequenos, correções urgentes",
-		],
-	},
-	{
-		nome: "Remediação Completa",
-		preco: "R$ 15.000",
-		duracao: "1-2 meses",
-		ideal: "Sites médios com múltiplos problemas",
-		cor: "green",
-		destaque: true,
-		inclui: [
-			"Auditoria completa incluída",
-			"Correção de todos os issues",
-			"Refatoração de componentes",
-			"Testes extensivos",
-			"Documentação completa",
-			"Treinamento básico da equipe",
-			"Suporte por 30 dias",
-			"Ideal para: sites corporativos, e-commerce",
-		],
-	},
-	{
-		nome: "Projeto Enterprise",
-		preco: "Sob consulta",
-		duracao: "2-6 meses",
-		ideal: "Sistemas complexos e aplicações grandes",
-		cor: "purple",
-		inclui: [
-			"Tudo do pacote Completo",
-			"Múltiplas plataformas/produtos",
-			"Design System acessível",
-			"Treinamento completo da equipe",
-			"Mentoria contínua",
-			"Processos e documentação",
-			"Suporte estendido (90 dias)",
-			"Ideal para: grandes empresas, SaaS",
-		],
-	},
+  {
+    nome: 'Correções Pontuais',
+    preco: 'R$ 5.000',
+    duracao: '1-2 semanas',
+    ideal: 'Até 20 issues identificados',
+    cor: 'blue',
+    inclui: [
+      'Correção de problemas específicos',
+      'Testes das correções',
+      'Documentação do que foi alterado',
+      'Pull request organizado',
+      'Suporte por 15 dias',
+      'Ideal para: sites pequenos, correções urgentes',
+    ],
+  },
+  {
+    nome: 'Remediação Completa',
+    preco: 'R$ 15.000',
+    duracao: '1-2 meses',
+    ideal: 'Sites médios com múltiplos problemas',
+    cor: 'green',
+    destaque: true,
+    inclui: [
+      'Auditoria completa incluída',
+      'Correção de todos os issues',
+      'Refatoração de componentes',
+      'Testes extensivos',
+      'Documentação completa',
+      'Treinamento básico da equipe',
+      'Suporte por 30 dias',
+      'Ideal para: sites corporativos, e-commerce',
+    ],
+  },
+  {
+    nome: 'Projeto Enterprise',
+    preco: 'Sob consulta',
+    duracao: '2-6 meses',
+    ideal: 'Sistemas complexos e aplicações grandes',
+    cor: 'purple',
+    inclui: [
+      'Tudo do pacote Completo',
+      'Múltiplas plataformas/produtos',
+      'Design System acessível',
+      'Treinamento completo da equipe',
+      'Mentoria contínua',
+      'Processos e documentação',
+      'Suporte estendido (90 dias)',
+      'Ideal para: grandes empresas, SaaS',
+    ],
+  },
 ];
 
 const exemplos = [
-	{
-		problema: "Sistema de agendamento médico com 127 violações",
-		solucao:
-			"Remediação completa de todos os componentes, foco em formulários e navegação",
-		resultado: "0 violações, NPS aumentou 40%, processo judicial evitado",
-		tempo: "4 meses",
-		tecnologia: "React + TypeScript",
-	},
-	{
-		problema: "E-commerce com checkout inacessível",
-		solucao:
-			"Refatoração do fluxo de compra, formulários acessíveis, validação clara",
-		resultado:
-			"Conversão aumentou 15%, pessoas com deficiência conseguem comprar",
-		tempo: "2 meses",
-		tecnologia: "Vue.js + Nuxt",
-	},
-	{
-		problema: "Portal WordPress com tema inacessível",
-		solucao:
-			"Criação de child theme acessível, correção de menus e formulários",
-		resultado: "Aprovado em WCAG AA, conformidade legal alcançada",
-		tempo: "6 semanas",
-		tecnologia: "WordPress + PHP",
-	},
+  {
+    problema: 'Sistema de agendamento médico com 127 violações',
+    solucao:
+      'Remediação completa de todos os componentes, foco em formulários e navegação',
+    resultado: '0 violações, NPS aumentou 40%, processo judicial evitado',
+    tempo: '4 meses',
+    tecnologia: 'React + TypeScript',
+  },
+  {
+    problema: 'E-commerce com checkout inacessível',
+    solucao:
+      'Refatoração do fluxo de compra, formulários acessíveis, validação clara',
+    resultado:
+      'Conversão aumentou 15%, pessoas com deficiência conseguem comprar',
+    tempo: '2 meses',
+    tecnologia: 'Vue.js + Nuxt',
+  },
+  {
+    problema: 'Portal WordPress com tema inacessível',
+    solucao:
+      'Criação de child theme acessível, correção de menus e formulários',
+    resultado: 'Aprovado em WCAG AA, conformidade legal alcançada',
+    tempo: '6 semanas',
+    tecnologia: 'WordPress + PHP',
+  },
 ];
 
 const diferenciais = [
-	{
-		icone: Code,
-		titulo: "Trabalho no código real",
-		descricao:
-			"Não apenas aponto problemas - eu corrijo. Faço pull requests, refatoro componentes, implemento soluções.",
-	},
-	{
-		icone: Shield,
-		titulo: "Testes rigorosos",
-		descricao:
-			"Não confio só em ferramentas automatizadas. Testo manualmente com leitores de tela e navegação por teclado.",
-	},
-	{
-		icone: TrendingUp,
-		titulo: "Transferência de conhecimento",
-		descricao:
-			"Documento tudo e treino sua equipe. O objetivo é que vocês mantenham a qualidade depois.",
-	},
-	{
-		icone: Zap,
-		titulo: "Resultados mensuráveis",
-		descricao:
-			"Antes e depois com números claros. Violações corrigidas, score Lighthouse, conformidade WCAG.",
-	},
+  {
+    icone: Code,
+    titulo: 'Trabalho no código real',
+    descricao:
+      'Não apenas aponto problemas - eu corrijo. Faço pull requests, refatoro componentes, implemento soluções.',
+  },
+  {
+    icone: Shield,
+    titulo: 'Testes rigorosos',
+    descricao:
+      'Não confio só em ferramentas automatizadas. Testo manualmente com leitores de tela e navegação por teclado.',
+  },
+  {
+    icone: TrendingUp,
+    titulo: 'Transferência de conhecimento',
+    descricao:
+      'Documento tudo e treino sua equipe. O objetivo é que vocês mantenham a qualidade depois.',
+  },
+  {
+    icone: Zap,
+    titulo: 'Resultados mensuráveis',
+    descricao:
+      'Antes e depois com números claros. Violações corrigidas, score Lighthouse, conformidade WCAG.',
+  },
 ];
 
 const faq = [
-	{
-		pergunta: "Preciso dar acesso ao código?",
-		resposta:
-			"Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.",
-	},
-	{
-		pergunta: "E se meu código for muito antigo/bagunçado?",
-		resposta:
-			"Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.",
-	},
-	{
-		pergunta: "Quanto tempo leva?",
-		resposta:
-			"Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.",
-	},
-	{
-		pergunta: "Trabalha com qualquer tecnologia?",
-		resposta:
-			"Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.",
-	},
-	{
-		pergunta: "E depois que você terminar?",
-		resposta:
-			"Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.",
-	},
-	{
-		pergunta: "Garante que não haverá novos problemas?",
-		resposta:
-			"Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.",
-	},
+  {
+    pergunta: 'Preciso dar acesso ao código?',
+    resposta:
+      'Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.',
+  },
+  {
+    pergunta: 'E se meu código for muito antigo/bagunçado?',
+    resposta:
+      'Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.',
+  },
+  {
+    pergunta: 'Quanto tempo leva?',
+    resposta:
+      'Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.',
+  },
+  {
+    pergunta: 'Trabalha com qualquer tecnologia?',
+    resposta:
+      'Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.',
+  },
+  {
+    pergunta: 'E depois que você terminar?',
+    resposta:
+      'Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.',
+  },
+  {
+    pergunta: 'Garante que não haverá novos problemas?',
+    resposta:
+      'Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.',
+  },
 ];
 
 const requisitos = [
-	{
-		titulo: "Acesso necessário",
-		itens: [
-			"Repositório Git (read/write)",
-			"Ambiente de desenvolvimento",
-			"Documentação técnica existente",
-			"Credenciais de teste (se aplicável)",
-		],
-	},
-	{
-		titulo: "O que facilita",
-		itens: [
-			"Testes automatizados existentes",
-			"CI/CD configurado",
-			"Design system documentado",
-			"Comunicação direta com devs",
-		],
-	},
+  {
+    titulo: 'Acesso necessário',
+    itens: [
+      'Repositório Git (read/write)',
+      'Ambiente de desenvolvimento',
+      'Documentação técnica existente',
+      'Credenciais de teste (se aplicável)',
+    ],
+  },
+  {
+    titulo: 'O que facilita',
+    itens: [
+      'Testes automatizados existentes',
+      'CI/CD configurado',
+      'Design system documentado',
+      'Comunicação direta com devs',
+    ],
+  },
 ];
 ---
 
 <Layout title="Remediação de documentos - Bruno Pulis">
-  <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
-			<div class="absolute inset-0 opacity-10">
-				<div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
-				<div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
-			</div>
+    <section
+      class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"
+        >
+        </div>
+      </div>
       <div class="mx-auto max-w-7xl px-6">
         <div class="max-w-3xl">
-          <div class="mb-6 inline-block rounded-full bg-indigo-700 px-4 py-2 text-sm font-semibold text-indigo-100">
+          <div
+            class="mb-6 inline-block rounded-full bg-indigo-700 px-4 py-2 text-sm font-semibold text-indigo-100"
+          >
             🚀 Corrijo o que está quebrado
           </div>
-          <h1 class="mb-6 text-5xl leading-tight font-bold">Remediação de Sites e Apps</h1>
-          <p class="mb-6 text-2xl text-indigo-100">Coloco a mão no código e corrijo os problemas de acessibilidade</p>
+          <h1 class="mb-6 text-5xl leading-tight font-bold">
+            Remediação de Sites e Apps
+          </h1>
+          <p class="mb-6 text-2xl text-indigo-100">
+            Coloco a mão no código e corrijo os problemas de acessibilidade
+          </p>
           <p class="mb-8 text-xl leading-relaxed text-indigo-200">
-            Seu site tem problemas de acessibilidade mas você não tem capacidade técnica interna para corrigir? Eu faço
-            isso. Trabalho direto no código, refatoro componentes, implemento soluções e entrego resultados mensuráveis.
+            Seu site tem problemas de acessibilidade mas você não tem capacidade
+            técnica interna para corrigir? Eu faço isso. Trabalho direto no
+            código, refatoro componentes, implemento soluções e entrego
+            resultados mensuráveis.
           </p>
           <div class="flex gap-4">
             <a
@@ -430,23 +443,29 @@ const requisitos = [
     <section class="bg-white py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que escolher remediação?</h2>
-          <p class="text-xl text-gray-600">Quando você precisa de resultados rápidos e tangíveis</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Por que escolher remediação?
+          </h2>
+          <p class="text-xl text-gray-600">
+            Quando você precisa de resultados rápidos e tangíveis
+          </p>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {
             diferenciais.map((diferencial) => {
-              const Icon = diferencial.icone
+              const Icon = diferencial.icone;
               return (
                 <div class="rounded-2xl border-2 border-indigo-200 bg-linear-to-br from-indigo-50 to-white p-6">
                   <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600">
                     <Icon class="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  <h3 class="mb-2 text-lg font-bold text-gray-900">{diferencial.titulo}</h3>
+                  <h3 class="mb-2 text-lg font-bold text-gray-900">
+                    {diferencial.titulo}
+                  </h3>
                   <p class="text-sm text-gray-700">{diferencial.descricao}</p>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -456,8 +475,12 @@ const requisitos = [
     <section id="tecnologias" class="bg-gray-50 py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Tecnologias que domino</h2>
-          <p class="text-xl text-gray-600">15 anos de experiência em desenvolvimento web</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Tecnologias que domino
+          </h2>
+          <p class="text-xl text-gray-600">
+            15 anos de experiência em desenvolvimento web
+          </p>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -487,11 +510,16 @@ const requisitos = [
 
                 <div class="space-y-4">
                   <div>
-                    <h4 class="mb-2 text-xs font-bold text-gray-600">Problemas comuns:</h4>
+                    <h4 class="mb-2 text-xs font-bold text-gray-600">
+                      Problemas comuns:
+                    </h4>
                     <ul class="space-y-1">
                       {tech.problemas.slice(0, 3).map((problema) => (
                         <li class="flex items-start gap-1 text-xs text-gray-700">
-                          <AlertCircle class="mt-0.5 h-3 w-3 shrink-0 text-orange-500" aria-hidden="true" />
+                          <AlertCircle
+                            class="mt-0.5 h-3 w-3 shrink-0 text-orange-500"
+                            aria-hidden="true"
+                          />
                           <span>{problema}</span>
                         </li>
                       ))}
@@ -499,11 +527,16 @@ const requisitos = [
                   </div>
 
                   <div>
-                    <h4 class="mb-2 text-xs font-bold text-gray-600">Como resolvo:</h4>
+                    <h4 class="mb-2 text-xs font-bold text-gray-600">
+                      Como resolvo:
+                    </h4>
                     <ul class="space-y-1">
                       {tech.solucoes.slice(0, 3).map((solucao) => (
                         <li class="flex items-start gap-1 text-xs text-gray-700">
-                          <CheckCircle class="mt-0.5 h-3 w-3 shrink-0 text-green-500" aria-hidden="true" />
+                          <CheckCircle
+                            class="mt-0.5 h-3 w-3 shrink-0 text-green-500"
+                            aria-hidden="true"
+                          />
                           <span>{solucao}</span>
                         </li>
                       ))}
@@ -515,12 +548,17 @@ const requisitos = [
           }
         </div>
 
-        <div class="mt-12 rounded-2xl border-2 border-amber-200 bg-amber-50 p-8 text-center">
+        <div
+          class="mt-12 rounded-2xl border-2 border-amber-200 bg-amber-50 p-8 text-center"
+        >
           <AlertCircle class="mx-auto mb-4 h-12 w-12 text-amber-600" />
-          <h3 class="mb-3 text-2xl font-bold text-gray-900">Sua tecnologia não está aqui?</h3>
+          <h3 class="mb-3 text-2xl font-bold text-gray-900">
+            Sua tecnologia não está aqui?
+          </h3>
           <p class="mx-auto mb-6 max-w-2xl text-gray-700">
-            Posso avaliar caso a caso. Se eu não dominar a tecnologia, sou honesto e indico profissionais qualificados.
-            Não aceito projetos que não consigo entregar com qualidade.
+            Posso avaliar caso a caso. Se eu não dominar a tecnologia, sou
+            honesto e indico profissionais qualificados. Não aceito projetos que
+            não consigo entregar com qualidade.
           </p>
           <a
             href="/contato"
@@ -536,8 +574,12 @@ const requisitos = [
     <section class="bg-white py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Casos de sucesso</h2>
-          <p class="text-xl text-gray-600">Projetos reais com resultados mensuráveis</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Casos de sucesso
+          </h2>
+          <p class="text-xl text-gray-600">
+            Projetos reais com resultados mensuráveis
+          </p>
         </div>
 
         <div class="space-y-8">
@@ -546,15 +588,21 @@ const requisitos = [
               <div class="rounded-2xl border-2 border-blue-200 bg-linear-to-br from-blue-50 to-white p-8">
                 <div class="grid gap-6 md:grid-cols-3">
                   <div>
-                    <h4 class="mb-2 text-sm font-bold text-red-600">❌ PROBLEMA</h4>
+                    <h4 class="mb-2 text-sm font-bold text-red-600">
+                      ❌ PROBLEMA
+                    </h4>
                     <p class="font-medium text-gray-900">{exemplo.problema}</p>
                   </div>
                   <div>
-                    <h4 class="mb-2 text-sm font-bold text-blue-600">🔧 SOLUÇÃO</h4>
+                    <h4 class="mb-2 text-sm font-bold text-blue-600">
+                      🔧 SOLUÇÃO
+                    </h4>
                     <p class="text-gray-700">{exemplo.solucao}</p>
                   </div>
                   <div>
-                    <h4 class="mb-2 text-sm font-bold text-green-600">✅ RESULTADO</h4>
+                    <h4 class="mb-2 text-sm font-bold text-green-600">
+                      ✅ RESULTADO
+                    </h4>
                     <p class="mb-3 text-gray-700">{exemplo.resultado}</p>
                     <div class="flex items-center gap-4 text-xs text-gray-600">
                       <div class="flex items-center gap-1">
@@ -579,21 +627,25 @@ const requisitos = [
     <section class="bg-gray-50 py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Como funciona o processo</h2>
-          <p class="text-xl text-gray-600">Do código quebrado ao acessível em 5 etapas</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Como funciona o processo
+          </h2>
+          <p class="text-xl text-gray-600">
+            Do código quebrado ao acessível em 5 etapas
+          </p>
         </div>
 
         <div class="space-y-8">
           {
             processo.map((etapa, index) => {
-              const Icon = etapa.icone
+              const Icon = etapa.icone;
               const cores = {
                 blue: 'from-blue-500 to-blue-600',
                 purple: 'from-purple-500 to-purple-600',
                 green: 'from-green-500 to-green-600',
                 orange: 'from-orange-500 to-orange-600',
                 red: 'from-red-500 to-red-600',
-              }
+              };
 
               return (
                 <div class="relative">
@@ -613,7 +665,9 @@ const requisitos = [
                     <div class="flex-1 rounded-xl border-2 border-gray-200 bg-white p-8 transition hover:border-indigo-400">
                       <div class="mb-4 flex items-start justify-between">
                         <div>
-                          <h3 class="mb-2 text-2xl font-bold text-gray-900">{etapa.titulo}</h3>
+                          <h3 class="mb-2 text-2xl font-bold text-gray-900">
+                            {etapa.titulo}
+                          </h3>
                           <p class="text-gray-600">{etapa.descricao}</p>
                         </div>
                         <div class="flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-sm whitespace-nowrap text-gray-600">
@@ -623,12 +677,19 @@ const requisitos = [
                       </div>
 
                       <div class="mt-6">
-                        <h4 class="mb-3 text-sm font-bold text-gray-900">Atividades:</h4>
+                        <h4 class="mb-3 text-sm font-bold text-gray-900">
+                          Atividades:
+                        </h4>
                         <ul class="grid gap-2 md:grid-cols-2">
                           {etapa.atividades.map((atividade) => (
                             <li class="flex items-start gap-2">
-                              <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
-                              <span class="text-sm text-gray-700">{atividade}</span>
+                              <CheckCircle
+                                class="mt-0.5 h-4 w-4 shrink-0 text-green-600"
+                                aria-hidden="true"
+                              />
+                              <span class="text-sm text-gray-700">
+                                {atividade}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -636,7 +697,7 @@ const requisitos = [
                     </div>
                   </div>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -647,8 +708,12 @@ const requisitos = [
     <section id="pacotes" class="bg-gray-50 py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Escolha seu pacote</h2>
-          <p class="text-xl text-gray-600">Soluções para diferentes necessidades e orçamentos</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Escolha seu pacote
+          </h2>
+          <p class="text-xl text-gray-600">
+            Soluções para diferentes necessidades e orçamentos
+          </p>
         </div>
 
         <div class="grid gap-8 md:grid-cols-3">
@@ -667,20 +732,34 @@ const requisitos = [
                   </div>
                 )}
 
-                <h3 class={`mb-2 text-2xl font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
+                <h3
+                  class={`mb-2 text-2xl font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}
+                >
                   {pacote.nome}
                 </h3>
 
-                <div class={`mb-2 text-4xl font-bold ${pacote.destaque ? 'text-white' : `text-${pacote.cor}-600`}`}>
+                <div
+                  class={`mb-2 text-4xl font-bold ${pacote.destaque ? 'text-white' : `text-${pacote.cor}-600`}`}
+                >
                   {pacote.preco}
                 </div>
 
-                <p class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>{pacote.ideal}</p>
+                <p
+                  class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}
+                >
+                  {pacote.ideal}
+                </p>
 
-                <p class={`mb-6 ${pacote.destaque ? 'text-red-50' : 'text-gray-700'}`}>{pacote.descricao}</p>
+                <p
+                  class={`mb-6 ${pacote.destaque ? 'text-red-50' : 'text-gray-700'}`}
+                >
+                  {pacote.descricao}
+                </p>
 
                 <div class="mb-6">
-                  <h4 class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
+                  <h4
+                    class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}
+                  >
                     ✓ O que inclui:
                   </h4>
                   <ul class="space-y-2">
@@ -688,9 +767,13 @@ const requisitos = [
                       <li class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
-													aria-hidden="true"
+                          aria-hidden="true"
                         />
-                        <span class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
+                        <span
+                          class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}
+                        >
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -708,7 +791,9 @@ const requisitos = [
                 <a
                   href="/contato"
                   class={`block w-full rounded-lg px-6 py-4 text-center font-semibold transition ${
-                    pacote.destaque ? 'bg-white text-red-600 hover:bg-red-50' : 'bg-red-600 text-white hover:bg-red-700'
+                    pacote.destaque
+                      ? 'bg-white text-red-600 hover:bg-red-50'
+                      : 'bg-red-600 text-white hover:bg-red-700'
                   }`}
                 >
                   Contratar {pacote.nome}
@@ -719,8 +804,13 @@ const requisitos = [
         </div>
 
         <div class="mt-12 text-center">
-          <p class="mb-4 text-gray-600">Não tem certeza qual pacote escolher?</p>
-          <a href="/contato" class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700">
+          <p class="mb-4 text-gray-600">
+            Não tem certeza qual pacote escolher?
+          </p>
+          <a
+            href="/contato"
+            class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
+          >
             Vamos conversar e eu te ajudo a decidir
             <ArrowRight class="h-4 w-4" aria-hidden="true" />
           </a>
@@ -732,14 +822,18 @@ const requisitos = [
     <section class="bg-gray-50 py-20">
       <div class="mx-auto max-w-4xl px-6">
         <div class="mb-12 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900">Perguntas Frequentes</h2>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">
+            Perguntas Frequentes
+          </h2>
         </div>
 
         <div class="space-y-6">
           {
             faq.map((item) => (
               <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
+                <h3 class="mb-3 text-lg font-bold text-gray-900">
+                  {item.pergunta}
+                </h3>
                 <p class="leading-relaxed text-gray-700">{item.resposta}</p>
               </div>
             ))
@@ -748,7 +842,10 @@ const requisitos = [
 
         <div class="mt-12 text-center">
           <p class="mb-4 text-gray-600">Ainda tem dúvidas?</p>
-          <a href="/contato" class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700">
+          <a
+            href="/contato"
+            class="inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700"
+          >
             Entre em contato
             <ArrowRight class="h-4 w-4" aria-hidden="true" />
           </a>
@@ -759,10 +856,16 @@ const requisitos = [
     {/* CTA Final */}
     <section class="bg-gray-900 py-20 text-white">
       <div class="mx-auto max-w-4xl px-6 text-center">
-        <FileText class="mx-auto mb-6 h-16 w-16 opacity-90" aria-hidden="true" />
-        <h2 class="mb-4 text-4xl font-bold">Pronto para descobrir o que precisa melhorar?</h2>
+        <FileText
+          class="mx-auto mb-6 h-16 w-16 opacity-90"
+          aria-hidden="true"
+        />
+        <h2 class="mb-4 text-4xl font-bold">
+          Pronto para descobrir o que precisa melhorar?
+        </h2>
         <p class="mx-auto mb-8 max-w-2xl text-xl text-white">
-          Vamos agendar uma conversa sem compromisso. Te explico o processo em detalhes e tiramos todas as suas dúvidas.
+          Vamos agendar uma conversa sem compromisso. Te explico o processo em
+          detalhes e tiramos todas as suas dúvidas.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
@@ -782,5 +885,4 @@ const requisitos = [
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

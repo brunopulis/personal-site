@@ -1,320 +1,317 @@
 ---
 import {
-	ArrowRight,
-	Award,
-	CheckCircle,
-	Clock,
-	Code,
-	Coffee,
-	Lightbulb,
-	MessageCircle,
-	Star,
-	Target,
-	Users,
-	Video,
-	Zap,
-} from "@lucide/astro";
+  ArrowRight,
+  Award,
+  CheckCircle,
+  Clock,
+  Code,
+  Coffee,
+  Lightbulb,
+  MessageCircle,
+  Star,
+  Target,
+  Users,
+  Video,
+  Zap,
+} from '@lucide/astro';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import CTASection from "@components/CTA.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import CTASection from '@components/CTA.astro';
 
 const formatos = [
-	{
-		id: "palestra",
-		nome: "Palestra",
-		duracao: "45-60 minutos",
-		preco: "A partir de R$ 2.000",
-		ideal: "Eventos, conferências, keynotes",
-		descricao: "Apresentação inspiradora e educativa para grandes audiências",
-		icone: MessageCircle,
-		cor: "purple",
-		participantes: "50-500 pessoas",
-		formato: "Presencial ou remoto",
-		inclui: [
-			"Apresentação personalizada",
-			"Material de apoio em PDF acessível",
-			"Sessão de perguntas e respostas",
-			"Gravação (se remoto)",
-			"Certificados digitais de participação",
-			"Follow-up por email (7 dias)",
-		],
-		estrutura: [
-			"Abertura e apresentação (5min)",
-			"Contextualização do tema (10min)",
-			"Conteúdo principal (30-40min)",
-			"Demonstrações práticas (5min)",
-			"Q&A e encerramento (10min)",
-		],
-	},
-	{
-		id: "workshop",
-		nome: "Workshop",
-		duracao: "3-4 horas",
-		preco: "A partir de R$ 4.000",
-		ideal: "Empresas, equipes, times de desenvolvimento",
-		descricao: "Treinamento prático e hands-on com exercícios reais",
-		icone: Code,
-		cor: "blue",
-		destaque: true,
-		participantes: "10-30 pessoas",
-		formato: "Presencial ou remoto",
-		inclui: [
-			"Apostila completa e acessível",
-			"Exercícios práticos guiados",
-			"Repositório no GitHub com exemplos",
-			"Checklist de implementação",
-			"Certificados de participação",
-			"Material de referência",
-			"Suporte por email (15 dias)",
-			"Revisão de código (1 sessão)",
-		],
-		estrutura: [
-			"Parte teórica (1h)",
-			"Demonstrações ao vivo (30min)",
-			"Exercícios práticos em grupo (1h30min)",
-			"Revisão e boas práticas (30min)",
-			"Q&A e próximos passos (30min)",
-		],
-	},
+  {
+    id: 'palestra',
+    nome: 'Palestra',
+    duracao: '45-60 minutos',
+    preco: 'A partir de R$ 2.000',
+    ideal: 'Eventos, conferências, keynotes',
+    descricao: 'Apresentação inspiradora e educativa para grandes audiências',
+    icone: MessageCircle,
+    cor: 'purple',
+    participantes: '50-500 pessoas',
+    formato: 'Presencial ou remoto',
+    inclui: [
+      'Apresentação personalizada',
+      'Material de apoio em PDF acessível',
+      'Sessão de perguntas e respostas',
+      'Gravação (se remoto)',
+      'Certificados digitais de participação',
+      'Follow-up por email (7 dias)',
+    ],
+    estrutura: [
+      'Abertura e apresentação (5min)',
+      'Contextualização do tema (10min)',
+      'Conteúdo principal (30-40min)',
+      'Demonstrações práticas (5min)',
+      'Q&A e encerramento (10min)',
+    ],
+  },
+  {
+    id: 'workshop',
+    nome: 'Workshop',
+    duracao: '3-4 horas',
+    preco: 'A partir de R$ 4.000',
+    ideal: 'Empresas, equipes, times de desenvolvimento',
+    descricao: 'Treinamento prático e hands-on com exercícios reais',
+    icone: Code,
+    cor: 'blue',
+    destaque: true,
+    participantes: '10-30 pessoas',
+    formato: 'Presencial ou remoto',
+    inclui: [
+      'Apostila completa e acessível',
+      'Exercícios práticos guiados',
+      'Repositório no GitHub com exemplos',
+      'Checklist de implementação',
+      'Certificados de participação',
+      'Material de referência',
+      'Suporte por email (15 dias)',
+      'Revisão de código (1 sessão)',
+    ],
+    estrutura: [
+      'Parte teórica (1h)',
+      'Demonstrações ao vivo (30min)',
+      'Exercícios práticos em grupo (1h30min)',
+      'Revisão e boas práticas (30min)',
+      'Q&A e próximos passos (30min)',
+    ],
+  },
 
-	{
-		id: "webinar",
-		nome: "Webinar",
-		duracao: "1-2 horas",
-		preco: "A partir de R$ 1.500",
-		ideal: "Eventos online, lives, webinars",
-		descricao: "Apresentação online interativa e acessível",
-		icone: Video,
-		cor: "red",
-		participantes: "Ilimitado",
-		formato: "Remoto (Zoom, Teams, Google Meet)",
-		inclui: [
-			"Apresentação online ao vivo",
-			"Chat interativo",
-			"Enquetes e perguntas",
-			"Gravação disponibilizada",
-			"Material de apoio digital",
-			"Certificados digitais",
-		],
-		estrutura: [
-			"Apresentação do tema (40-60min)",
-			"Demonstrações práticas (20min)",
-			"Q&A ao vivo (20-30min)",
-			"Recursos e próximos passos (10min)",
-		],
-	},
+  {
+    id: 'webinar',
+    nome: 'Webinar',
+    duracao: '1-2 horas',
+    preco: 'A partir de R$ 1.500',
+    ideal: 'Eventos online, lives, webinars',
+    descricao: 'Apresentação online interativa e acessível',
+    icone: Video,
+    cor: 'red',
+    participantes: 'Ilimitado',
+    formato: 'Remoto (Zoom, Teams, Google Meet)',
+    inclui: [
+      'Apresentação online ao vivo',
+      'Chat interativo',
+      'Enquetes e perguntas',
+      'Gravação disponibilizada',
+      'Material de apoio digital',
+      'Certificados digitais',
+    ],
+    estrutura: [
+      'Apresentação do tema (40-60min)',
+      'Demonstrações práticas (20min)',
+      'Q&A ao vivo (20-30min)',
+      'Recursos e próximos passos (10min)',
+    ],
+  },
 ];
 
 const temas = [
-	{
-		categoria: "Introdução",
-		icone: Lightbulb,
-		cor: "yellow",
-		topicos: [
-			{
-				titulo: "Introdução à Acessibilidade Web",
-				nivel: "Iniciante",
-				duracao: "1-4h",
-				descricao:
-					"Entenda os princípios fundamentais, WCAG, e por que acessibilidade importa.",
-				topicos: [
-					"O que é acessibilidade",
-					"WCAG 2.1/2.2 explicado",
-					"Barreiras comuns",
-					"Benefícios de negócio",
-					"Por onde começar",
-				],
-			},
-			{
-				titulo: "Acessibilidade para Designers",
-				nivel: "Iniciante",
-				duracao: "2-4h",
-				descricao: "Como criar designs inclusivos desde o início do projeto.",
-				topicos: [
-					"Contraste de cores",
-					"Tipografia legível",
-					"Tamanhos de toque",
-					"Feedback visual",
-					"Design de formulários",
-				],
-			},
-		],
-	},
-	{
-		categoria: "Técnico",
-		icone: Code,
-		cor: "blue",
-		topicos: [
-			{
-				titulo: "HTML Semântico e ARIA",
-				nivel: "Intermediário",
-				duracao: "3-4h",
-				descricao:
-					"Domine a estrutura semântica e quando usar ARIA corretamente.",
-				topicos: [
-					"Elementos semânticos",
-					"Landmarks",
-					"ARIA quando necessário",
-					"Roles e properties",
-					"Estados e live regions",
-				],
-			},
-			{
-				titulo: "Acessibilidade em React/Vue/Angular",
-				nivel: "Intermediário",
-				duracao: "3-8h",
-				descricao:
-					"Implemente acessibilidade em aplicações JavaScript modernas.",
-				topicos: [
-					"Componentes acessíveis",
-					"Gerenciamento de foco",
-					"Rotas acessíveis",
-					"Bibliotecas e ferramentas",
-					"Testes automatizados",
-				],
-			},
-		],
-	},
-	{
-		categoria: "Prático",
-		icone: Target,
-		cor: "green",
-		topicos: [
-			{
-				titulo: "Como Testar Acessibilidade",
-				nivel: "Intermediário",
-				duracao: "3-4h",
-				descricao:
-					"Aprenda a testar com ferramentas automatizadas e leitores de tela.",
-				topicos: [
-					"Ferramentas automatizadas",
-					"Testes manuais",
-					"Leitores de tela",
-					"Navegação por teclado",
-					"Checklist de QA",
-				],
-			},
-			{
-				titulo: "Correção de Sites Inacessíveis",
-				nivel: "Avançado",
-				duracao: "4-8h",
-				descricao: "Identifique e corrija problemas em projetos reais.",
-				topicos: [
-					"Auditoria prática",
-					"Priorização de issues",
-					"Correções comuns",
-					"Refatoração",
-					"Testes de validação",
-				],
-			},
-		],
-	},
-	{
-		categoria: "Estratégico",
-		icone: Award,
-		cor: "purple",
-		topicos: [
-			{
-				titulo: "Acessibilidade em Design Systems",
-				nivel: "Avançado",
-				duracao: "4-8h",
-				descricao:
-					"Construa componentes reutilizáveis com acessibilidade embutida.",
-				topicos: [
-					"Documentação acessível",
-					"Componentes base",
-					"Tokens e variáveis",
-					"Testes automatizados",
-					"Manutenção",
-				],
-			},
-			{
-				titulo: "Implementando Cultura de Acessibilidade",
-				nivel: "Todos",
-				duracao: "2-4h",
-				descricao: "Transforme acessibilidade em prioridade organizacional.",
-				topicos: [
-					"Buy-in de liderança",
-					"Processos e workflows",
-					"Treinamento contínuo",
-					"Métricas e KPIs",
-					"Casos de sucesso",
-				],
-			},
-		],
-	},
+  {
+    categoria: 'Introdução',
+    icone: Lightbulb,
+    cor: 'yellow',
+    topicos: [
+      {
+        titulo: 'Introdução à Acessibilidade Web',
+        nivel: 'Iniciante',
+        duracao: '1-4h',
+        descricao:
+          'Entenda os princípios fundamentais, WCAG, e por que acessibilidade importa.',
+        topicos: [
+          'O que é acessibilidade',
+          'WCAG 2.1/2.2 explicado',
+          'Barreiras comuns',
+          'Benefícios de negócio',
+          'Por onde começar',
+        ],
+      },
+      {
+        titulo: 'Acessibilidade para Designers',
+        nivel: 'Iniciante',
+        duracao: '2-4h',
+        descricao: 'Como criar designs inclusivos desde o início do projeto.',
+        topicos: [
+          'Contraste de cores',
+          'Tipografia legível',
+          'Tamanhos de toque',
+          'Feedback visual',
+          'Design de formulários',
+        ],
+      },
+    ],
+  },
+  {
+    categoria: 'Técnico',
+    icone: Code,
+    cor: 'blue',
+    topicos: [
+      {
+        titulo: 'HTML Semântico e ARIA',
+        nivel: 'Intermediário',
+        duracao: '3-4h',
+        descricao:
+          'Domine a estrutura semântica e quando usar ARIA corretamente.',
+        topicos: [
+          'Elementos semânticos',
+          'Landmarks',
+          'ARIA quando necessário',
+          'Roles e properties',
+          'Estados e live regions',
+        ],
+      },
+      {
+        titulo: 'Acessibilidade em React/Vue/Angular',
+        nivel: 'Intermediário',
+        duracao: '3-8h',
+        descricao:
+          'Implemente acessibilidade em aplicações JavaScript modernas.',
+        topicos: [
+          'Componentes acessíveis',
+          'Gerenciamento de foco',
+          'Rotas acessíveis',
+          'Bibliotecas e ferramentas',
+          'Testes automatizados',
+        ],
+      },
+    ],
+  },
+  {
+    categoria: 'Prático',
+    icone: Target,
+    cor: 'green',
+    topicos: [
+      {
+        titulo: 'Como Testar Acessibilidade',
+        nivel: 'Intermediário',
+        duracao: '3-4h',
+        descricao:
+          'Aprenda a testar com ferramentas automatizadas e leitores de tela.',
+        topicos: [
+          'Ferramentas automatizadas',
+          'Testes manuais',
+          'Leitores de tela',
+          'Navegação por teclado',
+          'Checklist de QA',
+        ],
+      },
+      {
+        titulo: 'Correção de Sites Inacessíveis',
+        nivel: 'Avançado',
+        duracao: '4-8h',
+        descricao: 'Identifique e corrija problemas em projetos reais.',
+        topicos: [
+          'Auditoria prática',
+          'Priorização de issues',
+          'Correções comuns',
+          'Refatoração',
+          'Testes de validação',
+        ],
+      },
+    ],
+  },
+  {
+    categoria: 'Estratégico',
+    icone: Award,
+    cor: 'purple',
+    topicos: [
+      {
+        titulo: 'Acessibilidade em Design Systems',
+        nivel: 'Avançado',
+        duracao: '4-8h',
+        descricao:
+          'Construa componentes reutilizáveis com acessibilidade embutida.',
+        topicos: [
+          'Documentação acessível',
+          'Componentes base',
+          'Tokens e variáveis',
+          'Testes automatizados',
+          'Manutenção',
+        ],
+      },
+      {
+        titulo: 'Implementando Cultura de Acessibilidade',
+        nivel: 'Todos',
+        duracao: '2-4h',
+        descricao: 'Transforme acessibilidade em prioridade organizacional.',
+        topicos: [
+          'Buy-in de liderança',
+          'Processos e workflows',
+          'Treinamento contínuo',
+          'Métricas e KPIs',
+          'Casos de sucesso',
+        ],
+      },
+    ],
+  },
 ];
 
 const clientes = [
-	{ nome: "Reponte", logo: "🏢" },
-	{ nome: "Estacio", logo: "🎓" },
-	{ nome: "Eleven", logo: "⚡" },
-	{ nome: "UNIBH", logo: "📚" },
-	{ nome: "Grupo Mídia", logo: "📱" },
-	{ nome: "Cemear", logo: "🏥" },
+  { nome: 'Reponte', logo: '🏢' },
+  { nome: 'Estacio', logo: '🎓' },
+  { nome: 'Eleven', logo: '⚡' },
+  { nome: 'UNIBH', logo: '📚' },
+  { nome: 'Grupo Mídia', logo: '📱' },
+  { nome: 'Cemear', logo: '🏥' },
 ];
 
 const depoimentos = [
-	{
-		texto:
-			"O Bruno possui um conhecimento enorme e uma facilidade em ensinar de forma fácil quais ferramentas e metodologias podem ser utilizadas.",
-		autor: "Bruce Rocha",
-		cargo: "Operations Director",
-		avaliacao: 5,
-	},
-	{
-		texto:
-			"Palestra incrível! Conseguiu explicar conceitos complexos de forma simples. Toda a equipe saiu inspirada.",
-		autor: "Victoria Krupp",
-		cargo: "Tech Lead",
-		avaliacao: 5,
-	},
-	{
-		texto:
-			"Workshop prático e objetivo. Em 4 horas aprendemos mais do que em semanas de pesquisa por conta própria.",
-		autor: "João Kioshi",
-		cargo: "Frontend Developer",
-		avaliacao: 5,
-	},
+  {
+    texto:
+      'O Bruno possui um conhecimento enorme e uma facilidade em ensinar de forma fácil quais ferramentas e metodologias podem ser utilizadas.',
+    autor: 'Bruce Rocha',
+    cargo: 'Operations Director',
+    avaliacao: 5,
+  },
+  {
+    texto:
+      'Palestra incrível! Conseguiu explicar conceitos complexos de forma simples. Toda a equipe saiu inspirada.',
+    autor: 'Victoria Krupp',
+    cargo: 'Tech Lead',
+    avaliacao: 5,
+  },
+  {
+    texto:
+      'Workshop prático e objetivo. Em 4 horas aprendemos mais do que em semanas de pesquisa por conta própria.',
+    autor: 'João Kioshi',
+    cargo: 'Frontend Developer',
+    avaliacao: 5,
+  },
 ];
 
 const faq = [
-	{
-		pergunta: "Qual formato é melhor para minha empresa?",
-		resposta:
-			"Depende do objetivo: Palestra (sensibilização geral, eventos), Workshop (prático, equipes técnicas), Treinamento (capacitação profunda), Webinar (alcance amplo online). Posso te ajudar a escolher.",
-	},
-	{
-		pergunta: "Você adapta o conteúdo para minha realidade?",
-		resposta:
-			"Sim! Todas as apresentações são personalizadas. Uso exemplos do seu setor, falo sobre suas tecnologias, e adapto o nível técnico para sua audiência.",
-	},
-	{
-		pergunta: "Preciso de equipamento técnico?",
-		resposta:
-			"Para presencial: projetor/TV, microfone (eventos grandes), wifi (workshops). Para remoto: você fornece o link da plataforma (Zoom, Teams, Meet). Eu cuido do resto.",
-	},
-	{
-		pergunta: "Emite nota fiscal?",
-		resposta: "Sim, emito nota fiscal como MEI para todos os serviços.",
-	},
-	{
-		pergunta: "Viaja para outros estados?",
-		resposta:
-			"Sim! Para eventos presenciais, adicione custos de viagem (passagem + hospedagem). Para webinars e workshops remotos, não há custo adicional.",
-	},
-	{
-		pergunta: "Tem desconto para múltiplas sessões?",
-		resposta:
-			"Sim! Se você quer fazer várias palestras/workshops ao longo do ano, posso oferecer pacotes com desconto. Vamos conversar sobre suas necessidades.",
-	},
+  {
+    pergunta: 'Qual formato é melhor para minha empresa?',
+    resposta:
+      'Depende do objetivo: Palestra (sensibilização geral, eventos), Workshop (prático, equipes técnicas), Treinamento (capacitação profunda), Webinar (alcance amplo online). Posso te ajudar a escolher.',
+  },
+  {
+    pergunta: 'Você adapta o conteúdo para minha realidade?',
+    resposta:
+      'Sim! Todas as apresentações são personalizadas. Uso exemplos do seu setor, falo sobre suas tecnologias, e adapto o nível técnico para sua audiência.',
+  },
+  {
+    pergunta: 'Preciso de equipamento técnico?',
+    resposta:
+      'Para presencial: projetor/TV, microfone (eventos grandes), wifi (workshops). Para remoto: você fornece o link da plataforma (Zoom, Teams, Meet). Eu cuido do resto.',
+  },
+  {
+    pergunta: 'Emite nota fiscal?',
+    resposta: 'Sim, emito nota fiscal como MEI para todos os serviços.',
+  },
+  {
+    pergunta: 'Viaja para outros estados?',
+    resposta:
+      'Sim! Para eventos presenciais, adicione custos de viagem (passagem + hospedagem). Para webinars e workshops remotos, não há custo adicional.',
+  },
+  {
+    pergunta: 'Tem desconto para múltiplas sessões?',
+    resposta:
+      'Sim! Se você quer fazer várias palestras/workshops ao longo do ano, posso oferecer pacotes com desconto. Vamos conversar sobre suas necessidades.',
+  },
 ];
 ---
 
 <Layout title="Palestras - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <section class="hero-section" id="hero">
       <div class="l-container">
@@ -322,8 +319,9 @@ const faq = [
           <h1 class="mb-6 text-5xl leading-tight font-bold">Palestras</h1>
           <p class="mb-6 text-2xl">Acessibilidade sem jargões complicados</p>
           <p class="mb-8 text-xl leading-relaxed">
-            Levo conhecimento prático sobre acessibilidade para empresas e eventos. Explico conceitos complexos de forma
-            simples, com demonstrações ao vivo e exemplos reais.
+            Levo conhecimento prático sobre acessibilidade para empresas e
+            eventos. Explico conceitos complexos de forma simples, com
+            demonstrações ao vivo e exemplos reais.
           </p>
           <div class="flex gap-4">
             <a
@@ -346,41 +344,65 @@ const faq = [
     <section class="bg-white py-20">
       <div class="l-container">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que me contratar?</h2>
-          <p class="text-xl text-gray-600">Não é só teoria - é experiência real de quem faz todo dia</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Por que me contratar?
+          </h2>
+          <p class="text-xl text-gray-600">
+            Não é só teoria - é experiência real de quem faz todo dia
+          </p>
         </div>
 
         <div class="grid gap-8 md:grid-cols-3">
-          <div class="rounded-2xl border-2 border-blue-200 bg-linear-to-br from-blue-50 to-white p-8">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600">
+          <div
+            class="rounded-2xl border-2 border-blue-200 bg-linear-to-br from-blue-50 to-white p-8"
+          >
+            <div
+              class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600"
+            >
               <Code class="h-7 w-7 text-white" />
             </div>
-            <h3 class="mb-4 text-2xl font-bold text-gray-900">Prático, não teórico</h3>
+            <h3 class="mb-4 text-2xl font-bold text-gray-900">
+              Prático, não teórico
+            </h3>
             <p class="text-gray-700">
-              Mostro código real, problemas reais, soluções reais. Nada de slides cheios de texto - demonstrações ao
-              vivo e exemplos que você pode usar amanhã.
+              Mostro código real, problemas reais, soluções reais. Nada de
+              slides cheios de texto - demonstrações ao vivo e exemplos que você
+              pode usar amanhã.
             </p>
           </div>
 
-          <div class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-8">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-600">
+          <div
+            class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-8"
+          >
+            <div
+              class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-600"
+            >
               <Users class="h-7 w-7 text-white" />
             </div>
-            <h3 class="mb-4 text-2xl font-bold text-gray-900">Linguagem acessível</h3>
+            <h3 class="mb-4 text-2xl font-bold text-gray-900">
+              Linguagem acessível
+            </h3>
             <p class="text-gray-700">
-              Explico conceitos complexos de forma simples. Sem jargões desnecessários. Se sua equipe não é técnica,
-              adapto. Se é avançada, aprofundo.
+              Explico conceitos complexos de forma simples. Sem jargões
+              desnecessários. Se sua equipe não é técnica, adapto. Se é
+              avançada, aprofundo.
             </p>
           </div>
 
-          <div class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-8">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-600">
+          <div
+            class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-8"
+          >
+            <div
+              class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-green-600"
+            >
               <Award class="h-7 w-7 text-white" />
             </div>
-            <h3 class="mb-4 text-2xl font-bold text-gray-900">Experiência comprovada</h3>
+            <h3 class="mb-4 text-2xl font-bold text-gray-900">
+              Experiência comprovada
+            </h3>
             <p class="text-gray-700">
-              15 anos de experiência, 50+ projetos entregues, dezenas de palestras dadas. Não é teoria de livro - é
-              aprendizado de batalha.
+              15 anos de experiência, 50+ projetos entregues, dezenas de
+              palestras dadas. Não é teoria de livro - é aprendizado de batalha.
             </p>
           </div>
         </div>
@@ -390,14 +412,18 @@ const faq = [
     <section id="formatos" class="bg-gray-50 py-20">
       <div class="l-container">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Escolha o formato ideal</h2>
-          <p class="text-xl text-gray-600">Do inspiracional ao técnico profundo</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Escolha o formato ideal
+          </h2>
+          <p class="text-xl text-gray-600">
+            Do inspiracional ao técnico profundo
+          </p>
         </div>
 
         <div class="grid gap-8 md:grid-cols-3">
           {
             formatos.map((formato) => {
-              const Icon = formato.icone
+              const Icon = formato.icone;
               return (
                 <div
                   class={`rounded-2xl p-8 transition ${
@@ -416,18 +442,29 @@ const faq = [
                     <div
                       class={`h-12 w-12 ${formato.destaque ? 'bg-white/20' : 'bg-purple-100'} flex items-center justify-center rounded-lg`}
                     >
-                      <Icon class={`h-6 w-6 ${formato.destaque ? 'text-white' : 'text-purple-600'}`} aria-hidden="true" />
+                      <Icon
+                        class={`h-6 w-6 ${formato.destaque ? 'text-white' : 'text-purple-600'}`}
+                        aria-hidden="true"
+                      />
                     </div>
-                    <h3 class={`text-2xl font-bold ${formato.destaque ? 'text-white' : 'text-gray-900'}`}>
+                    <h3
+                      class={`text-2xl font-bold ${formato.destaque ? 'text-white' : 'text-gray-900'}`}
+                    >
                       {formato.nome}
                     </h3>
                   </div>
 
-                  <div class={`mb-2 text-3xl font-bold ${formato.destaque ? 'text-white' : 'text-purple-600'}`}>
+                  <div
+                    class={`mb-2 text-3xl font-bold ${formato.destaque ? 'text-white' : 'text-purple-600'}`}
+                  >
                     {formato.preco}
                   </div>
 
-                  <p class={`mb-4 ${formato.destaque ? 'text-blue-100' : 'text-gray-700'}`}>{formato.descricao}</p>
+                  <p
+                    class={`mb-4 ${formato.destaque ? 'text-blue-100' : 'text-gray-700'}`}
+                  >
+                    {formato.descricao}
+                  </p>
 
                   <div
                     class={`mb-6 grid grid-cols-2 gap-3 text-sm ${formato.destaque ? 'text-blue-50' : 'text-gray-600'}`}
@@ -443,7 +480,9 @@ const faq = [
                   </div>
 
                   <div class="mb-6">
-                    <h4 class={`mb-3 text-sm font-bold ${formato.destaque ? 'text-white' : 'text-gray-900'}`}>
+                    <h4
+                      class={`mb-3 text-sm font-bold ${formato.destaque ? 'text-white' : 'text-gray-900'}`}
+                    >
                       ✓ Inclui:
                     </h4>
                     <ul class="space-y-2">
@@ -453,7 +492,11 @@ const faq = [
                             class={`mt-0.5 h-4 w-4 shrink-0 ${formato.destaque ? 'text-white' : 'text-green-600'}`}
                             aria-hidden="true"
                           />
-                          <span class={`text-sm ${formato.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
+                          <span
+                            class={`text-sm ${formato.destaque ? 'text-white' : 'text-gray-700'}`}
+                          >
+                            {item}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -470,7 +513,7 @@ const faq = [
                     Solicitar {formato.nome}
                   </a>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -480,37 +523,45 @@ const faq = [
     <section id="temas" class="bg-white py-20">
       <div class="l-container">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Temas Disponíveis</h2>
-          <p class="text-xl text-gray-600">Do básico ao avançado - personalizável para sua necessidade</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Temas Disponíveis
+          </h2>
+          <p class="text-xl text-gray-600">
+            Do básico ao avançado - personalizável para sua necessidade
+          </p>
         </div>
 
         <div class="space-y-12">
           {
             temas.map((categoria) => {
-              const Icon = categoria.icone
+              const Icon = categoria.icone;
               const corClasses = {
                 yellow: 'bg-yellow-100 text-yellow-600',
                 blue: 'bg-blue-100 text-blue-600',
                 green: 'bg-green-100 text-green-600',
                 purple: 'bg-purple-100 text-purple-600',
-              }
+              };
 
               return (
                 <div>
                   <div class="mb-6 flex items-center gap-3">
-                    <div class={`h-10 w-10 ${corClasses[categoria.cor]} flex items-center justify-center rounded-lg`}>
+                    <div
+                      class={`h-10 w-10 ${corClasses[categoria.cor]} flex items-center justify-center rounded-lg`}
+                    >
                       <Icon class="h-6 w-6" aria-hidden="true" />
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900">{categoria.categoria}</h3>
+                    <h3 class="text-2xl font-bold text-gray-900">
+                      {categoria.categoria}
+                    </h3>
                   </div>
 
                   <div class="grid gap-6 md:grid-cols-2">
                     {categoria.topicos.map((topico) => (
-                      <div
-                        class="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition hover:border-purple-400 hover:shadow-lg"
-                      >
+                      <div class="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition hover:border-purple-400 hover:shadow-lg">
                         <div class="mb-3 flex items-start justify-between">
-                          <h4 class="flex-1 text-xl font-bold text-gray-900">{topico.titulo}</h4>
+                          <h4 class="flex-1 text-xl font-bold text-gray-900">
+                            {topico.titulo}
+                          </h4>
                           <span
                             class={`ml-2 rounded-full px-3 py-1 text-xs font-bold whitespace-nowrap ${
                               topico.nivel === 'Iniciante'
@@ -524,7 +575,9 @@ const faq = [
                           </span>
                         </div>
 
-                        <p class="mb-4 text-sm text-gray-700">{topico.descricao}</p>
+                        <p class="mb-4 text-sm text-gray-700">
+                          {topico.descricao}
+                        </p>
 
                         <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
                           <Clock class="h-4 w-4" aria-hidden="true" />
@@ -532,7 +585,9 @@ const faq = [
                         </div>
 
                         <div class="rounded-lg border border-gray-200 bg-white p-4">
-                          <div class="mb-2 text-xs font-semibold text-gray-600">Tópicos abordados:</div>
+                          <div class="mb-2 text-xs font-semibold text-gray-600">
+                            Tópicos abordados:
+                          </div>
                           <div class="flex flex-wrap gap-2">
                             {topico.topicos.map((t) => (
                               <span class="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700">
@@ -545,7 +600,7 @@ const faq = [
                     ))}
                   </div>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -554,10 +609,13 @@ const faq = [
           class="mt-12 rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-blue-50 p-8 text-center"
         >
           <Zap class="mx-auto mb-4 h-12 w-12 text-purple-600" />
-          <h3 class="mb-3 text-2xl font-bold text-gray-900">Não encontrou o tema que precisa?</h3>
+          <h3 class="mb-3 text-2xl font-bold text-gray-900">
+            Não encontrou o tema que precisa?
+          </h3>
           <p class="mx-auto mb-6 max-w-2xl text-gray-700">
-            Posso criar uma palestra/workshop personalizado sobre qualquer aspecto de acessibilidade web. Me conte o que
-            você precisa e vamos montar juntos.
+            Posso criar uma palestra/workshop personalizado sobre qualquer
+            aspecto de acessibilidade web. Me conte o que você precisa e vamos
+            montar juntos.
           </p>
           <a
             href="/contato"
@@ -573,14 +631,18 @@ const faq = [
     <section class="bg-gray-50 py-16">
       <div class="l-container">
         <div class="mb-12 text-center">
-          <h2 class="mb-4 text-3xl font-bold text-gray-900">Perguntas Frequentes</h2>
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">
+            Perguntas Frequentes
+          </h2>
         </div>
 
         <div class="space-y-6">
           {
             faq.map((item) => (
               <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
+                <h3 class="mb-3 text-lg font-bold text-gray-900">
+                  {item.pergunta}
+                </h3>
                 <p class="leading-relaxed text-gray-700">{item.resposta}</p>
               </div>
             ))
@@ -589,7 +651,10 @@ const faq = [
 
         <div class="mt-12 text-center">
           <p class="mb-4 text-gray-600">Ainda tem dúvidas?</p>
-          <a href="/contato" class="inline-flex items-center gap-2 font-semibold text-purple-600 hover:text-purple-700">
+          <a
+            href="/contato"
+            class="inline-flex items-center gap-2 font-semibold text-purple-600 hover:text-purple-700"
+          >
             Entre em contato
             <ArrowRight class="h-4 w-4" aria-hidden="true" />
           </a>
@@ -597,15 +662,17 @@ const faq = [
       </div>
     </section>
 
-    <section class="mb-4 text-3xl font-bold text-gray-900">Já palestrei para</section>
+    <section class="mb-4 text-3xl font-bold text-gray-900">
+      Já palestrei para
+    </section>
     <div class="grid grid-cols-3 gap-8 md:grid-cols-6">
       {
         clientes.map((cliente) => (
-          <div
-            class="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6"
-          >
+          <div class="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-white p-6">
             <div class="mb-2 text-4xl">{cliente.logo}</div>
-            <div class="text-sm font-semibold text-gray-700">{cliente.nome}</div>
+            <div class="text-sm font-semibold text-gray-700">
+              {cliente.nome}
+            </div>
           </div>
         ))
       }
@@ -614,18 +681,21 @@ const faq = [
     <section class="bg-white py-20">
       <div class="l-container">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">O que dizem sobre as palestras</h2>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            O que dizem sobre as palestras
+          </h2>
         </div>
 
         <div class="grid gap-8 md:grid-cols-3">
           {
             depoimentos.map((depoimento) => (
-              <div
-                class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-6"
-              >
+              <div class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-6">
                 <div class="mb-4 flex gap-1">
                   {[...Array(depoimento.avaliacao)].map((_, i) => (
-                    <Star class="h-5 w-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                    <Star
+                      class="h-5 w-5 fill-yellow-400 text-yellow-400"
+                      aria-hidden="true"
+                    />
                   ))}
                 </div>
                 <p class="mb-4 text-gray-700 italic">"{depoimento.texto}"</p>
@@ -655,4 +725,3 @@ const faq = [
     />
   </main>
 </Layout>
-<Footer />

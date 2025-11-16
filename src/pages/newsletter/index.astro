@@ -1,31 +1,28 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import HeroSection from '@components/layouts/HeroSection.astro';
+import site from '@data/site.config.json';
 
-import site from "@data/site.config.json";
-
-const letters = await getCollection("newsletter");
+const letters = await getCollection('newsletter');
 const sortedPosts = letters.sort((a, b) => {
-	return (
-		new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
-	);
+  return (
+    new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
+  );
 });
 
 function formatDate(date: Date, locale: Intl.LocalesArgument) {
-	return new Intl.DateTimeFormat(locale, {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	}).format(date);
+  return new Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
 }
 
 function toISOString(dateString: string) {
-	const date = new Date(dateString);
-	return date.toISOString();
+  const date = new Date(dateString);
+  return date.toISOString();
 }
 ---
 
@@ -33,7 +30,6 @@ function toISOString(dateString: string) {
   title="Newsletter - Bruno Pulis"
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
-  <Header />
   <main id="main-content">
     <HeroSection
       title="Filtro Digital"
@@ -42,13 +38,15 @@ function toISOString(dateString: string) {
     <div class="container-custom py-8">
       <section class="mb-8">
         <p class="text-errie-black-900 mb-8 text-lg leading-relaxed">
-          Junte-se a mais de 300 pessoas na minha lista de e-mails que tenha <strong>acesso exclusivo</strong> a atualizações
-          e novos conteúdos antes que eles sejam divulgados publicamente.
+          Junte-se a mais de 300 pessoas na minha lista de e-mails que tenha <strong
+            >acesso exclusivo</strong
+          > a atualizações e novos conteúdos antes que eles sejam divulgados publicamente.
         </p>
 
         <p class="text-errie-black-900 mb-8 text-lg leading-relaxed">
-          Você receberá tutoriais, guias, ponto de vista, conteúdo exclusivo dos bastidores, descontos em produtos e
-          insights práticos sobre acessibilidade para aplicar hoje mesmo no seu trabalho.
+          Você receberá tutoriais, guias, ponto de vista, conteúdo exclusivo dos
+          bastidores, descontos em produtos e insights práticos sobre
+          acessibilidade para aplicar hoje mesmo no seu trabalho.
         </p>
 
         <a
@@ -62,14 +60,18 @@ function toISOString(dateString: string) {
       </section>
 
       <div class="grid grid-cols-1 gap-8">
-        <h2 class="title-font my-5 text-3xl font-medium sm:text-4xl">Edições anteriores</h2>
+        <h2 class="title-font my-5 text-3xl font-medium sm:text-4xl">
+          Edições anteriores
+        </h2>
         <div class="mb-5">
           {
             sortedPosts.map((letter) => (
               <div class="group cursor-pointer border-b border-gray-300 py-4">
                 <div class="flex items-start gap-4">
                   <div class="flex flex-col items-center">
-                    <span class="text-brand-500 text-lg font-medium">#{letter.data.issue}</span>
+                    <span class="text-brand-500 text-lg font-medium">
+                      #{letter.data.issue}
+                    </span>
                     <div class="bg-brand-500 mt-1 h-1 w-12" />
                   </div>
                   <div class="flex-1">
@@ -78,7 +80,10 @@ function toISOString(dateString: string) {
                         {letter.data.title}
                       </a>
                     </h2>
-                    <time class="text-errie-black-900 mt-1 text-sm" datetime={toISOString(String(letter.data.date))}>
+                    <time
+                      class="text-errie-black-900 mt-1 text-sm"
+                      datetime={toISOString(String(letter.data.date))}
+                    >
                       {formatDate(new Date(letter.data.date), 'pt-BR')}
                     </time>
                   </div>
@@ -90,5 +95,4 @@ function toISOString(dateString: string) {
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>

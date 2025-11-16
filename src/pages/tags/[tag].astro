@@ -1,0 +1,139 @@
+---
+import Layout from '@layout/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const uniqueTags = new Set();
+
+  allPosts.forEach((post) => {
+    (post.data.tags || []).forEach((tag) => {
+      uniqueTags.add(tag.toLowerCase());
+    });
+  });
+
+  return Array.from(uniqueTags).map((tag) => ({
+    params: { tag: tag },
+    props: { tag: tag },
+  }));
+}
+
+const { tag } = Astro.props;
+const allPosts = await getCollection('blog');
+
+const filteredPosts = allPosts
+  .filter((post) =>
+    (post.data.tags || []).map((t) => t.toLowerCase()).includes(tag)
+  )
+  .sort(
+    (a, b) =>
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+
+const pageTitle = `Posts com a Tag: #${tag}`;
+---
+
+<Layout title={pageTitle}>
+  <article class="tag-detail-container">
+    <header>
+      <h1 class="detail-header">
+        Posts com a Tag: <span class="tag-highlight">#{tag}</span>
+      </h1>
+      <p class="post-count-info">{filteredPosts.length} posts encontrados.</p>
+    </header>
+
+    <div class="posts-list">
+      {
+        filteredPosts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="post-link-card">
+            <h2>{post.data.title}</h2>
+            <p class="post-date">
+              {new Date(post.data.publishDate).toLocaleDateString('pt-BR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </p>
+
+            <div class="post-tags">
+              {(post.data.tags || []).map((t) => (
+                <span class="small-tag">#{t}</span>
+              ))}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .tag-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .detail-header {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tag-highlight {
+    color: #00bcd4;
+  }
+
+  .post-count-info {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+  }
+
+  .posts-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .post-link-card {
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .post-link-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #00bcd4;
+  }
+
+  .post-link-card h2 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+
+  .post-date {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    margin-bottom: 1rem;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .small-tag {
+    font-size: 0.8rem;
+    background-color: #e4f4f7;
+    color: #00bcd4;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+</style>

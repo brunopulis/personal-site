@@ -1,15 +1,12 @@
 ---
-import { Mail, Smartphone, Rss, Linkedin, Coffee} from "@lucide/astro";
-import site from "@data/site.config.json";
+import { Mail, Smartphone, Rss, Linkedin, Coffee } from '@lucide/astro';
+import site from '@data/site.config.json';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import HeroSection from '@components/layouts/HeroSection.astro';
 ---
 
 <Layout title="Contato - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <HeroSection
       title="Contato"
@@ -18,18 +15,22 @@ import Footer from "@components/layouts/Footer.astro";
 
     <section aria-labelledby="contact-methods-title">
       <div class="l-container">
-        <h2 id="contact-methods-title" class="mb-3 text-4xl font-bold text-gray-900">
+        <h2
+          id="contact-methods-title"
+          class="mb-3 text-4xl font-bold text-gray-900"
+        >
           Bruno Pulis
         </h2>
         <p>Engenheiro de Acessibilidade</p>
         <ul class="mt-6">
           <li class="flex items-center gap-2 mb-3">
             <Mail class="h-4 w-4" aria-hidden="true" />
-            
+
             <a
               href="mailto:hello@brunopulis"
               class="text-blood-red-800 hover:text-blood-red-800/80 focus:ring-blood-red-text-blood-red-800 rounded-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-              aria-label="Entrar em contato via Email: hello@brunopulis.com">{site.contact.email}</a
+              aria-label="Entrar em contato via Email: hello@brunopulis.com"
+              >{site.contact.email}</a
             >
           </li>
           <li class="flex items-center gap-2 mb-3">
@@ -53,7 +54,8 @@ import Footer from "@components/layouts/Footer.astro";
             <a
               href={site.socialMidia.linkedin}
               class="text-blood-red-800 hover:text-blood-red-800/80 focus:ring-blood-red-text-blood-red-800 rounded-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-              aria-label="Entrar em contato via LinkedIn: /in/brunopulis">/in/brunopulis</a
+              aria-label="Entrar em contato via LinkedIn: /in/brunopulis"
+              >/in/brunopulis</a
             >
           </li>
           <li class="flex items-center gap-2 mb-3">
@@ -61,12 +63,12 @@ import Footer from "@components/layouts/Footer.astro";
             <a
               href="https://ko-fi.com/brunopulis"
               class="text-blood-red-800 hover:text-blood-red-800/80 focus:ring-blood-red-text-blood-red-800 rounded-sm font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none"
-              aria-label="Entrar em contato via LinkedIn: /in/brunopulis">Compre um café</a
+              aria-label="Entrar em contato via LinkedIn: /in/brunopulis"
+              >Compre um café</a
             >
           </li>
         </ul>
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

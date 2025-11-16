@@ -1,25 +1,25 @@
 ---
-import { getCollection } from "astro:content";
-import { Clock, Share2 } from "@lucide/astro";
+import { getCollection } from 'astro:content';
+import { Clock, Share2 } from '@lucide/astro';
 
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
+import Layout from '@layout/Layout.astro';
+import HeroSection from '@components/layouts/HeroSection.astro';
 
-const allNotes = await getCollection("notes");
+const allNotes = await getCollection('notes');
 
 const sortedNotes = allNotes.sort((a, b) => {
-	return (
-		new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
-	);
+  return (
+    new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
+  );
 });
 ---
 
 <Layout title="Notas - Bruno Pulis">
-  <Header />
   <main id="main-content">
-    <HeroSection title="Notas" description="Pensamentos rápidos, dicas práticas e reflexões sobre qualquer coisa." />
+    <HeroSection
+      title="Notas"
+      description="Pensamentos rápidos, dicas práticas e reflexões sobre qualquer coisa."
+    />
     <section class="h-entry bg-gray-50 py-16">
       <div class="container-custom mx-auto">
         <div class="mx-auto">
@@ -34,18 +34,25 @@ const sortedNotes = allNotes.sort((a, b) => {
                           <div class="font-bold text-gray-900">Bruno Pulis</div>
                           <div class="flex items-center gap-2 text-sm text-gray-500">
                             <Clock class="h-3 w-3" />
-                            {new Date(note.data.date).toLocaleDateString('pt-BR', {
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric',
-                            })}
+                            {new Date(note.data.date).toLocaleDateString(
+                              'pt-BR',
+                              {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                              }
+                            )}
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="mb-4">
-                      {note.body && <p class="leading-relaxed whitespace-pre-line text-gray-800">{note.body}</p>}
+                      {note.body && (
+                        <p class="leading-relaxed whitespace-pre-line text-gray-800">
+                          {note.body}
+                        </p>
+                      )}
                     </div>
 
                     <div class="mb-4">
@@ -74,5 +81,4 @@ const sortedNotes = allNotes.sort((a, b) => {
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

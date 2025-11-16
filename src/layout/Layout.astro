@@ -1,18 +1,21 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+
+import Header from '@/components/layouts/Header.astro';
 import BasicScripts from '@components/BasicScripts.astro';
 import BackToTop from '@components/utils/BackToTop.astro';
+import Footer from '@/components/layouts/Footer.astro';
 import '@fontsource-variable/source-sans-3';
 
 import '@css/style.css';
-import '@css/transitions.css';
 
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'Bruno Pulis - Engenheiro de Acessibilidade' } = Astro.props;
+const { title, description = 'Bruno Pulis - Engenheiro de Acessibilidade' } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -30,8 +33,16 @@ const { title, description = 'Bruno Pulis - Engenheiro de Acessibilidade' } = As
     <title>{title}</title>
 
     <!-- Webmention -->
-    <link rel="alternate" type="application/rss+xml" title="Meu Blog" href="/rss.xml" />
-    <link rel="webmention" href="https://webmention.io/brunopulis.com/webmention" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Meu Blog"
+      href="/rss.xml"
+    />
+    <link
+      rel="webmention"
+      href="https://webmention.io/brunopulis.com/webmention"
+    />
     <link rel="pingback" href="https://webmention.io/brunopulis.com/xmlrpc" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,7 +54,9 @@ const { title, description = 'Bruno Pulis - Engenheiro de Acessibilidade' } = As
     <ClientRouter />
   </head>
   <body>
+    <Header />
     <slot />
+    <Footer />
     <BackToTop />
     <BasicScripts />
   </body>
