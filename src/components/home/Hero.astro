@@ -1,32 +1,35 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
-import me from "@assets/images/me.webp";
+import me from '@assets/images/me.webp';
 ---
 
-<section id="hero" aria-labelledby="hero-section">
-  <div class="wrapper">  
-  <div data-layout="50%" class="grid">
-    <div>
-      <h1 class="mb-6 text-5xl leading-tight font-bold" id="hero-section">
-        Olá, sou o Bruno Pulis
-      </h1>
-      <p class="mb-6 text-2xl font-light">Faço a web funcionar para todos.</p>
+<section class="hero" id="hero" aria-labelledby="hero-section">
+  <div class="wrapper">
+    <div data-layout="50-50" class="grid">
+      <div class="hero__content">
+        <h1 class="hero__title" id="hero-section">Olá, sou o Bruno Pulis</h1>
+        <p class="mb-6 text-2xl font-light">Faço a web funcionar para todos.</p>
 
-      <p class="mb-8 text-lg leading-relaxed">
-        Acredito que tecnologia boa é tecnologia que inclui. Nos últimos 15 anos, tenho ajudado
-        pessoas e empresas a criar experiências digitais que funcionam para todos.
-      </p>
+        <p class="mb-8 text-lg leading-relaxed">
+          Acredito que tecnologia boa é tecnologia que inclui. Nos últimos 15
+          anos, tenho ajudado pessoas e empresas a criar experiências digitais
+          que funcionam para todos.
+        </p>
+
+        <a href="/sobre" class="button button--primary"
+          >Conheca minha historia</a
+        >
+      </div>
+
+      <figure class="hero__figure | align-right">
+        <Image
+          src={me}
+          alt="Bruno Pulis"
+          class="mx-auto h-80 w-80 rounded-2xl border-4 border-white/20 object-cover shadow-2xl"
+          loading="eager"
+        />
+      </figure>
     </div>
-
-    <figure>
-      <Image
-        src={me}
-        alt="Bruno Pulis"
-        class="mx-auto h-80 w-80 rounded-2xl border-4 border-white/20 object-cover shadow-2xl"
-        loading="eager"
-      />
-    </figure>
-  </div>
   </div>
 </section>

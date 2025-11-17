@@ -1,13 +1,13 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
-import pulisLogo from "@assets/images/horizontal/blood.svg";
-import writtenByHuman from "@assets/images/written-by-human.svg";
-import SocialMidia from "@components/utils/SocialMidia.astro";
-import Webring from "@components/utils/Webring.astro";
+import pulisLogo from '@assets/images/horizontal/blood.svg';
+import writtenByHuman from '@assets/images/written-by-human.svg';
+import SocialMidia from '@components/utils/SocialMidia.astro';
+import Webring from '@components/utils/Webring.astro';
 ---
 
-<footer class="pt-16 pb-8">
+<footer class="pt-16 pb-8" id="footer">
   <div class="wrapper">
     <div class="mb-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <div class="md:col-span-2 lg:col-span-2">
@@ -15,8 +15,9 @@ import Webring from "@components/utils/Webring.astro";
           <img src={pulisLogo.src} alt="" loading="lazy" />
         </a>
         <p class="mb-6 max-w-md">
-          Desenvolvedor e engenheiro de acessibilidade, apaixonado por criar experiências digitais
-          excepcionais que conectam pessoas e transformam negócios.
+          Desenvolvedor e engenheiro de acessibilidade, apaixonado por criar
+          experiências digitais excepcionais que conectam pessoas e transformam
+          negócios.
         </p>
       </div>
       <div>
@@ -60,7 +61,8 @@ import Webring from "@components/utils/Webring.astro";
     <div class="mt-8 border-t border-gray-800 pt-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between">
         <p class="mb-4 text-sm underline-offset-8 hover:underline md:mb-0">
-          Feito com <span role="img" aria-label="amor">❤️</span> em BH. Conteúdo licenciado por
+          Feito com <span role="img" aria-label="amor">❤️</span> em BH. Conteúdo
+          licenciado por
           <a
             href="https://creativecommons.org/licenses/by-sa/4.0/"
             rel="noopener noreferrer"
@@ -72,7 +74,9 @@ import Webring from "@components/utils/Webring.astro";
         <div class="flex flex-col space-x-6 md:flex-row">
           <ul class="flex gap-2">
             <li>
-              <a href="/declaracao-acessibilidade" class="text-sm">Declaração de Acessibilidade</a>
+              <a href="/declaracao-acessibilidade" class="text-sm"
+                >Declaração de Acessibilidade</a
+              >
             </li>
             <li>
               <a href="/now" class="text-sm" lang="en">Now</a>

@@ -1,38 +1,38 @@
 ---
-import { ArrowRight, Code, MessageCircle, Users } from "@lucide/astro";
+import { ArrowRight, Code, MessageCircle, Users } from '@lucide/astro';
 
 const icons = { Users, Code, MessageCircle };
 
 const features = [
   {
-    title: "Mentoria",
+    title: 'Mentoria',
     description:
-      "Não adianta só entregar um relatório. Eu trabalho com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.",
-    url: "/servicos/mentoria",
+      'Não adianta só entregar um relatório. Eu trabalho com você ou sua equipe para implementar acessibilidade de verdade no dia a dia.',
+    url: '/servicos/mentoria',
   },
   {
-    title: "Auditoria",
+    title: 'Auditoria',
     description:
-      "Analiso seu site ou documento e te mostro exatamente o que precisa melhorar (e por quê isso importa para seus usuários).",
-    url: "/servicos/auditoria-de-acessibilidade",
+      'Analiso seu site ou documento e te mostro exatamente o que precisa melhorar (e por quê isso importa para seus usuários).',
+    url: '/servicos/auditoria-de-acessibilidade',
   },
   {
-    title: "Palestras",
+    title: 'Palestras',
     description:
-      "Levo acessibilidade para empresas e eventos de forma prática, sem jargões complicados.",
-    url: "/servicos/palestras",
+      'Levo acessibilidade para empresas e eventos de forma prática, sem jargões complicados.',
+    url: '/servicos/palestras',
   },
 ];
 ---
 
 <section>
   <div class="wrapper">
-    <h2>Como posso te ajudar</h2>
+    <h2 class="title">Como posso te ajudar</h2>
     <p>Três formas principais de trabalharmos juntos</p>
 
-    <div data-layout="33%" class="grid">
+    <div data-layout="thirds" class="grid">
       {
-        features.map(feature => (
+        features.map((feature) => (
           <article class="card | shadow">
             <div class="flex items-center gap-3 mb-4">
               <h3 class="text-2xl font-bold text-gray-900">{feature.title}</h3>

@@ -3,11 +3,13 @@ import { MAIN_NAV_LINKS, CONTACT_LINK } from '@data/nav.ts';
 ---
 
 <nav class="header__nav">
-  <ul class="cluster">
+  <ul class="header__list | cluster">
     {
       MAIN_NAV_LINKS.map((link) => (
-        <li>
-          <a href={link.href}>{link.title}</a>
+        <li class="header__item">
+          <a href={link.href} class="header__link">
+            {link.title}
+          </a>
         </li>
       ))
     }
