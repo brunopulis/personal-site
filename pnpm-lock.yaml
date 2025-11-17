@@ -114,6 +114,9 @@ importers:
       cypress-axe:
         specifier: ^1.7.0
         version: 1.7.0(axe-core@4.11.0)(cypress@15.6.0)
+      dayjs:
+        specifier: ^1.11.19
+        version: 1.11.19
       eslint:
         specifier: ^9.39.0
         version: 9.39.1(jiti@1.21.7)
