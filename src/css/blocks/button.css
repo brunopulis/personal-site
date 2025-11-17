@@ -9,7 +9,7 @@
     padding: var(--space-xs) var(--space-s);
     text-align: center;
     text-decoration: none;
-    --button-background-color: var( --theme-button-background-color, var(--color-accent) );
+    --button-background-color: var( --theme-button-background-color, var(--color-blood-red-800) );
     --button-border-color: var(--theme-button-border-color, var(--color-black));
     --button-box-shadow: 0 0 0 0 var(--button-border-color);
     --button-color: var(--theme-button-color, var(--color-black));
@@ -19,7 +19,7 @@
     border: solid var(--border-m) var(--button-border-color);
     border-radius: var(--border-radius);
     box-shadow: var(--button-box-shadow);
-    color: var(--button-color);
+    color: var(--color-white);
     font-family: var(--font-family);
     font-size: 85%;
     font-weight: var(--font-weight-bold);

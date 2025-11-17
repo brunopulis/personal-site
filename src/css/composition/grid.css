@@ -30,10 +30,10 @@ to change how empty grid tracks are handled */
 
 :where(.grid)[data-layout='50-50'] {
   --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(16rem, 50vw, 28rem);
+  grid-template-columns: 1fr 1fr;
 }
 
 :where(.grid)[data-layout='thirds'] {
   --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(16rem, 33%, 30rem);
+  grid-template-columns: 1fr 1fr 1fr;
 }
