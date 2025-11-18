@@ -5,7 +5,10 @@ import { CalendarIcon, ClockIcon } from '@lucide/astro';
 
 import Layout from '@layout/Layout.astro';
 import Author from '@components/blog/Author.astro';
+import EmailReplyButton from '@/components/EmailReplyButton.astro';
 import BackBlog from '@components/blog/BackBlog.astro';
+
+import { formatDate, formatTimestamp } from '@/filters/date';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -26,15 +29,8 @@ type Props = {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-// Formatar data para pt-BR
-const publishDateString = String(post.data.publishDate);
-const formattedDate = new Date(publishDateString).toLocaleDateString('pt-BR', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
-
-const isoDate = new Date(publishDateString).toISOString();
+const postTitle = post.data.title;
+const postUrl = Astro.url.href;
 
 export const prerender = true;
 ---
@@ -57,11 +53,13 @@ export const prerender = true;
             </span>
           </div>
 
-          <h1
-            class="text-errie-black-900 mb-6 text-4xl leading-tight font-bold lg:text-5xl"
-          >
-            {post.data.title}
-          </h1>
+          <h1 class="title">{post.data.title}</h1>
+
+          <div class="post-meta">
+            <time datetime={formatTimestamp(post.data.publishDate)}>
+              {formatDate(post.data.publishDate)}
+            </time>
+          </div>
           <p>{post.data.excerpt}</p>
 
           <div
@@ -69,7 +67,6 @@ export const prerender = true;
           >
             <div class="flex items-center gap-2">
               <CalendarIcon class="h-4 w-4" aria-hidden="true" />
-              <time datetime={isoDate}>{formattedDate}</time>
             </div>
 
             <div class="flex items-center gap-2">
@@ -84,6 +81,11 @@ export const prerender = true;
           <Content />
         </div>
       </article>
+      <EmailReplyButton
+        postTitle={postTitle}
+        postUrl={postUrl}
+        style="button"
+      />
       <Author />
     </div>
   </main>
