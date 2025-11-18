@@ -20,7 +20,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.9",
     "@astrojs/check": "^0.9.4",
     "@astrojs/db": "^0.18.2",
     "@astrojs/mdx": "^4.3.9",
