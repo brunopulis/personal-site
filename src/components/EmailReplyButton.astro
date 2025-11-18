@@ -1,0 +1,205 @@
+---
+interface Props {
+  postTitle?: string;
+  postUrl?: string;
+  email?: string;
+  style?: 'simple | button | inline';
+}
+
+const {
+  postTitle,
+  postUrl,
+  email = 'brunopulis@protonmail.com',
+  style,
+} = Astro.props;
+
+const subject = encodeURIComponent(`Re: ${postTitle}`);
+const body = encodeURIComponent(
+  `Olá! Li seu post "${postTitle}" e gostaria de comentar:\n\n${postUrl}\n\n`
+);
+const mailToLink = `mailto:${email}?subject=${subject}&body=${body}`;
+---
+
+{
+  style === 'simple' && (
+    <div class="email-reply-simple">
+      <p>
+        <span aria-hidden="true">💌</span> Gostou deste post?
+        <a href={mailToLink} class="reply-link">
+          Responda por email
+        </a>
+      </p>
+    </div>
+  )
+}
+
+{
+  style === 'button' && (
+    <div class="email-reply-button">
+      <a href={mailToLink} class="reply-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </svg>
+        Responder por email
+      </a>
+    </div>
+  )
+}
+
+{
+  style === 'inline' && (
+    <div class="email-reply-inline">
+      <p>
+        Tem algo a dizer sobre este post?
+        <a href={mailToLink} class="reply-link-inline">
+          Me envie um email
+        </a>
+        e vamos conversar!
+      </p>
+    </div>
+  )
+}
+
+<style>
+  /* Estilo Simple - Inspirado no niqwithq */
+  .email-reply-simple {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #0066cc;
+    border-radius: 4px;
+  }
+
+  .email-reply-simple p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .reply-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .reply-link:hover {
+    border-bottom-color: #0066cc;
+  }
+
+  /* Estilo Button - Inspirado no kevquirk */
+  .email-reply-button {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .reply-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s;
+    border: 2px solid #0066cc;
+  }
+
+  .reply-btn:hover {
+    background: #0052a3;
+    border-color: #0052a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+  }
+
+  .reply-btn svg {
+    flex-shrink: 0;
+  }
+
+  /* Estilo Inline - Mais discreto */
+  .email-reply-inline {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .email-reply-inline p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+  }
+
+  .reply-link-inline {
+    color: #0066cc;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .reply-link-inline:hover {
+    color: #0052a3;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .email-reply-simple {
+      background: #1a1a1a;
+      border-left-color: #4d94ff;
+    }
+
+    .email-reply-simple p {
+      color: #e0e0e0;
+    }
+
+    .reply-link {
+      color: #4d94ff;
+    }
+
+    .reply-link:hover {
+      border-bottom-color: #4d94ff;
+    }
+
+    .reply-btn {
+      background: #4d94ff;
+      border-color: #4d94ff;
+    }
+
+    .reply-btn:hover {
+      background: #3d7dd6;
+      border-color: #3d7dd6;
+      box-shadow: 0 4px 8px rgba(77, 148, 255, 0.3);
+    }
+
+    .email-reply-inline {
+      border-color: #333;
+    }
+
+    .email-reply-inline p {
+      color: #b0b0b0;
+    }
+
+    .reply-link-inline {
+      color: #4d94ff;
+    }
+
+    .reply-link-inline:hover {
+      color: #3d7dd6;
+    }
+  }
+</style>
