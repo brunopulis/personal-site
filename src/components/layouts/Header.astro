@@ -1,132 +1,107 @@
 ---
 import { Image } from "astro:assets";
-import { Menu, X } from "@lucide/astro";
+
 
 import pulisLogo from "@assets/images/horizontal/blood.svg";
 import SkipLink from "@components/utils/SkipLink.astro";
 
-const { pathname } = Astro.url;
 ---
 
-<header x-data="{ open: false }" class="w-full py-4 backdrop-blur-xs transition-colors duration-300">
-  <SkipLink />
-  <div class="container-custom flex items-center justify-between">
-    <div class="shrink-0">
+<SkipLink />
+<header class="header">
+  <div class="wrapper">
+    <div class="header__logo">
       <a href="/" class="" aria-label="Ir para página inicial">
-        <Image src={pulisLogo} class="h6- w-auto" alt="Bruno Pulis" loading="eager" />
+        <Image src={pulisLogo} class="w-auto" alt="Bruno Pulis" loading="eager" />
       </a>
     </div>
-    <nav class="hidden items-center space-x-8 md:flex" aria-label="Navegação principal">
-      <ul class="space-x-5 text-lg font-medium md:flex">
-        <li class="main-nav__item">
-          <a
-            href="/sobre"
-            class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900  hover:text-blood-red-800 underline-offset-8 hover:underline ${
-              pathname === '/sobre'
-                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
-                : ''
-            }`}>Sobre</a
-          >
-        </li>
-        <li class="main-nav__item">
-          <a
-            href="/projetos"
-            class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline   ${
-              pathname === '/projetos'
-                ? ' text-blood-red focus:ring-blood-red-800  hover:text-blood-red-800 transition-colors--active'
-                : ''
-            }`}>Projetos</a
-          >
-        </li>
-        <li class="main-nav__item">
-          <a
-            href="/servicos"
-            class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === '/servicos'
-                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
-                : ''
-            }`}>Serviços</a
-          >
-        </li>
-        <li class="main-nav__item">
-          <a
-            href="/blog"
-            class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === '/blog'
-                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
-                : ''
-            }`}>Blog</a
-          >
-        </li>
-        <li class="main-nav__item">
-          <a
-            href="/newsletter"
-            class={`text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline font-medium transition-colors${
-              pathname === '/newsletter'
-                ? ' text-errie-black-900 hover:text-blood-red-800font-medium transition-colors--active'
-                : ''
-            }`}>Newsletter</a
-          >
-        </li>
-        <li class="main-nav__item">
-          <a
-            href="/contato"
-            class={`transition-colors font-medium focus:outline-2 rounded-sm px-1 py-1 text-errie-black-900 hover:text-blood-red-800 underline-offset-8 hover:underline  ${
-              pathname === '/contato'
-                ? ' text-errie-black-900 hover:text-blood-red-800 font-medium transition-colors--active'
-                : ''
-            }`}>Contato</a
-          >
-        </li>
+    <nav class="header__nav" aria-label="Navegação principal">
+      <ul class="header__list">
+        <li class="header__item"><a href="/sobre" class="header__link">Sobre</a></li>
+        <li class="header__item"><a href="/projetos" class="header__link">Projetos</a></li>
+        <li class="header__item"><a href="/servicos" class="header__link">Serviços</a></li>
+        <li class="header__item"><a href="/blog" class="header__link">Blog</a></li>
+        <li class="header__item"><a href="/newsletter" class="header__link">Newsletter</a></li>
+        <li class="header__item"><a href="/contato" class="header__link">Contato</a></li>
       </ul>
     </nav>
-
-    <div class="md:hidden">
-      <button
-        @click="open = !open"
-        :aria-expanded="open"
-        aria-controls="mobile-menu"
-        aria-label="Abrir menu"
-        class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 inline-flex size-9 shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus:ring-2 focus:ring-offset-2 focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-      >
-        <Menu class="h-6 w-6" aria-hidden="true" />
-      </button>
-    </div>
   </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" x-show="open" x-transition class="inset-0 z-50 bg-white/95 p-6 backdrop-blur-lg md:hidden">
-    <button @click="open = false" aria-label="Fechar menu" class="text-errie-black-900 absolute top-4 right-4">
-      <X class="h-4 w-4" aria-hidden="true" />
-    </button>
-    <ul class="mt-12 flex flex-col gap-6 text-lg font-medium">
-      <li><a href="/sobre" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Sobre</a></li>
-      <li>
-        <a href="/projetos" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Projetos</a>
-      </li>
-      <li>
-        <a href="/servicos" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Serviços</a>
-      </li>
-      <li><a href="/blog" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Blog</a></li>
-      <li>
-        <a href="/newsletter" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Newsletter</a>
-      </li>
-      <li>
-        <a href="/contato" class="hover:bg-blood-red-100 text-errie-black-900 block rounded px-4 py-2">Contato</a>
-      </li>
-    </ul>
-  </nav>
 </header>
 
 <style>
-  /* Add hover animation to the logo */
-  header a:hover svg {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
   }
 
-  /* Hide Alpine.js elements before Alpine loads */
-  [x-cloak] {
-    display: none !important;
+  .header {
+    padding: 1.5rem;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__list {
+    display: flex;
+  }
+
+  .header__item {
+    gap: 1rem;
+  }
+
+  .header__link {
+    color: var(--color-errie-black-900);
+    padding: 0.25rem;
+  }
+
+  .header__link:focus,
+  .header__link:hover {
+    color: var(--color-blood-red-800);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
+  .header__link::focus-visible {
+    border: solid dotted;
+  }
+
+  @media(max-width: 991px) {
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header__nav {
+      width: 100%;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    .header__list {
+      gap: 1rem;
+      display: flex;
+    }
+  }
+
+  @media(max-width: 480px) {
+    .wrapper {
+      align-items: flex-start;
+    }
+
+    .header__nav {
+      align-items: flex-start;
+    }
+
+    .header__list {
+      gap: 1rem;
+      display: flex;
+      margin: 1rem 0;
+      flex-direction: column;
+    }
   }
 </style>
