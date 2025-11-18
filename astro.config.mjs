@@ -1,6 +1,4 @@
 // @ts-check
-
-import alpinejs from "@astrojs/alpinejs";
 import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -27,11 +25,10 @@ export default defineConfig({
   integrations: [
     db(),
     icon(),
-    alpinejs(),
     sitemap(),
     mdx(),
     compress(),
-    umami({ id: "f1cb7c07-2efc-4997-9dd3-d3198f0faa0c" }),
+    umami({ id: "88ff3bbf-61c5-4303-bea2-f0da4f5dbb53" }),
     robotsTxt({
       policy: [
         {
