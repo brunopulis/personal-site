@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@astrojs/alpinejs':
-        specifier: ^0.4.9
-        version: 0.4.9(@types/alpinejs@3.13.11)(alpinejs@3.15.2)
       '@astrojs/check':
         specifier: ^0.9.4
         version: 0.9.5(prettier@3.6.2)(typescript@5.9.3)
@@ -228,12 +225,6 @@ packages:
     peerDependencies:
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  '@astrojs/alpinejs@0.4.9':
-    resolution: {integrity: sha512-fvKBAugn7yIngEKfdk6vL3ZlcVKtQvFXCZznG28OikGanKN5W+PkRPIdKaW/0gThRU2FyCemgzyHgyFjsH8dTA==}
-    peerDependencies:
-      '@types/alpinejs': ^3.0.0
-      alpinejs: ^3.0.0
 
   '@astrojs/check@0.9.5':
     resolution: {integrity: sha512-88vc8n2eJ1Oua74yXSGo/8ABMeypfQPGEzuoAx2awL9Ju8cE6tZ2Rz9jVx5hIExHK5gKVhpxfZj4WXm7e32g1w==}
@@ -2673,9 +2664,6 @@ packages:
 
   '@types/acorn@4.0.6':
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
-
-  '@types/alpinejs@3.13.11':
-    resolution: {integrity: sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA==}
 
   '@types/codemirror@0.0.90':
     resolution: {integrity: sha512-8Z9+tSg27NPRGubbUPUCrt5DDG/OWzLph5BvcDykwR5D7RyZh5mhHG0uS1ePKV1YFCA+/cwc4Ey2AJAEFfV3IA==}
@@ -9278,11 +9266,6 @@ snapshots:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
 
-  '@astrojs/alpinejs@0.4.9(@types/alpinejs@3.13.11)(alpinejs@3.15.2)':
-    dependencies:
-      '@types/alpinejs': 3.13.11
-      alpinejs: 3.15.2
-
   '@astrojs/check@0.9.5(prettier@3.6.2)(typescript@5.9.3)':
     dependencies:
       '@astrojs/language-server': 2.16.0(prettier@3.6.2)(typescript@5.9.3)
@@ -11941,8 +11924,6 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.8
 
-  '@types/alpinejs@3.13.11': {}
-
   '@types/codemirror@0.0.90':
     dependencies:
       '@types/tern': 0.23.9
@@ -13606,7 +13587,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.9.3
