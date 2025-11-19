@@ -1,21 +1,18 @@
 ---
-import Layout from "@layout/Layout.astro";
 
-import Header from "@components/layouts/Header.astro";
+import Layout from "@layout/Layout.astro";
 import Hero from "@components/home/Hero.astro";
 import About from "@components/home/About.astro";
 import Features from "@components/home/Features.astro";
 import Testimonials from "@components/home/Testimonials.astro";
 import Blog from "@components/home/Blog.astro";
 import CTA from "@components/home/CTA.astro";
-import Footer from "@components/layouts/Footer.astro";
 ---
 
 <Layout
   title="Bruno Pulis - Engenheiro de Acessibilidade"
   description="Bruno Pulis - Mentor e engenheiro de acessibilidade web, desenvolvendo uma web para todos"
 >
-  <Header />
   <main id="main-content">
     <Hero />
     <About />
@@ -24,5 +21,4 @@ import Footer from "@components/layouts/Footer.astro";
     <Blog />
     <CTA />
   </main>
-  <Footer />
 </Layout>

@@ -16,6 +16,17 @@ import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  i18n: {
+    defaultLocale: 'pt-BR',
+    locales: ['pt-BR', 'en'],
+    routing: {
+      prefixDefaultLocale: false, // false = /sobre, true = /pt-BR/sobre
+      redirectToDefaultLocale: true
+    },
+    fallback: {
+      en: 'pt-BR'
+    }
+  },
   adapter: vercel(),
   output: "static",
   site: "https://brunopulis.com",
@@ -69,6 +80,7 @@ export default defineConfig({
       alias: {
         '@': path.resolve(__dirname, './src'),
         '@components': path.resolve(__dirname, './src/components'),
+        '@layout/': path.resolve(__dirname, './src/layout'),
         '@layouts': path.resolve(__dirname, './src/layouts'),
         '@assets': path.resolve(__dirname, './src/assets'),
         '@scripts': path.resolve(__dirname, './src/scripts'),

@@ -1,321 +1,274 @@
 ---
 import {
-	AlertCircle,
-	ArrowRight,
-	Award,
-	CheckCircle,
-	Clock,
-	Download,
-	Eye,
-	FileText,
-	Package,
-	Shield,
-	Target,
-	TrendingUp,
-	Users,
-	Zap,
+  AlertCircle,
+  ArrowRight,
+  Award,
+  CheckCircle,
+  Clock,
+  Download,
+  Eye,
+  FileText,
+  Package,
+  Shield,
+  Target,
+  TrendingUp,
+  Users,
+  Zap,
 } from "@lucide/astro";
-
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 const tiposDocumento = [
-	{
-		id: "pdf",
-		nome: "PDF",
-		icone: FileText,
-		cor: "red",
-		extensoes: ".pdf",
-		problemas: [
-			"PDFs escaneados (imagens sem texto)",
-			"Falta de tags estruturais",
-			"Sem ordem de leitura lógica",
-			"Tabelas sem estrutura",
-			"Formulários inacessíveis",
-			"Sem textos alternativos em imagens",
-			"Links não descritivos",
-		],
-		solucoes: [
-			"OCR para extrair texto de imagens",
-			"Adição de tags estruturais (headings, listas)",
-			"Definição de ordem de leitura",
-			"Estruturação de tabelas",
-			"Campos de formulário acessíveis",
-			"Textos alternativos em todas as imagens",
-			"Links descritivos",
-			"Marcadores de idioma",
-			"Metadados completos",
-		],
-	},
-	{
-		id: "word",
-		nome: "Word/PowerPoint",
-		icone: FileText,
-		cor: "blue",
-		extensoes: ".docx, .pptx",
-		problemas: [
-			"Estrutura de headings incorreta",
-			"Textos como imagens",
-			"Tabelas complexas sem estrutura",
-			"Cores sem contraste adequado",
-			"Listas não estruturadas",
-			"Sem textos alternativos",
-			"Ordem de leitura confusa (PPT)",
-		],
-		solucoes: [
-			"Uso correto de estilos de heading",
-			"Conversão de imagens de texto em texto real",
-			"Estruturação adequada de tabelas",
-			"Ajuste de cores para contraste WCAG AA",
-			"Formatação de listas estruturadas",
-			"Textos alternativos em imagens",
-			"Ordem de leitura lógica",
-			"Verificação com checkers nativos",
-		],
-	},
-	{
-		id: "excel",
-		nome: "Excel",
-		icone: FileText,
-		cor: "green",
-		extensoes: ".xlsx",
-		problemas: [
-			"Planilhas sem estrutura clara",
-			"Múltiplas tabelas em uma sheet",
-			"Células mescladas excessivas",
-			"Sem cabeçalhos de coluna/linha",
-			"Cores como única forma de informação",
-			"Fórmulas sem contexto",
-			"Gráficos sem descrição",
-		],
-		solucoes: [
-			"Estruturação clara de dados",
-			"Separação de tabelas em sheets",
-			"Redução de células mescladas",
-			"Definição de cabeçalhos",
-			"Informação não dependente só de cor",
-			"Nomes descritivos para ranges",
-			"Textos alternativos em gráficos",
-			"Instruções claras de uso",
-		],
-	},
+  {
+    id: "pdf",
+    nome: "PDF",
+    icone: FileText,
+    cor: "red",
+    extensoes: ".pdf",
+    problemas: [
+      "PDFs escaneados (imagens sem texto)",
+      "Falta de tags estruturais",
+      "Sem ordem de leitura l\u00F3gica",
+      "Tabelas sem estrutura",
+      "Formul\u00E1rios inacess\u00EDveis",
+      "Sem textos alternativos em imagens",
+      "Links n\u00E3o descritivos",
+    ],
+    solucoes: [
+      "OCR para extrair texto de imagens",
+      "Adi\u00E7\u00E3o de tags estruturais (headings, listas)",
+      "Defini\u00E7\u00E3o de ordem de leitura",
+      "Estrutura\u00E7\u00E3o de tabelas",
+      "Campos de formul\u00E1rio acess\u00EDveis",
+      "Textos alternativos em todas as imagens",
+      "Links descritivos",
+      "Marcadores de idioma",
+      "Metadados completos",
+    ],
+  },
+  {
+    id: "word",
+    nome: "Word/PowerPoint",
+    icone: FileText,
+    cor: "blue",
+    extensoes: ".docx, .pptx",
+    problemas: [
+      "Estrutura de headings incorreta",
+      "Textos como imagens",
+      "Tabelas complexas sem estrutura",
+      "Cores sem contraste adequado",
+      "Listas n\u00E3o estruturadas",
+      "Sem textos alternativos",
+      "Ordem de leitura confusa (PPT)",
+    ],
+    solucoes: [
+      "Uso correto de estilos de heading",
+      "Convers\u00E3o de imagens de texto em texto real",
+      "Estrutura\u00E7\u00E3o adequada de tabelas",
+      "Ajuste de cores para contraste WCAG AA",
+      "Formata\u00E7\u00E3o de listas estruturadas",
+      "Textos alternativos em imagens",
+      "Ordem de leitura l\u00F3gica",
+      "Verifica\u00E7\u00E3o com checkers nativos",
+    ],
+  },
+  {
+    id: "excel",
+    nome: "Excel",
+    icone: FileText,
+    cor: "green",
+    extensoes: ".xlsx",
+    problemas: [
+      "Planilhas sem estrutura clara",
+      "M\u00FAltiplas tabelas em uma sheet",
+      "C\u00E9lulas mescladas excessivas",
+      "Sem cabe\u00E7alhos de coluna/linha",
+      "Cores como \u00FAnica forma de informa\u00E7\u00E3o",
+      "F\u00F3rmulas sem contexto",
+      "Gr\u00E1ficos sem descri\u00E7\u00E3o",
+    ],
+    solucoes: [
+      "Estrutura\u00E7\u00E3o clara de dados",
+      "Separa\u00E7\u00E3o de tabelas em sheets",
+      "Redu\u00E7\u00E3o de c\u00E9lulas mescladas",
+      "Defini\u00E7\u00E3o de cabe\u00E7alhos",
+      "Informa\u00E7\u00E3o n\u00E3o dependente s\u00F3 de cor",
+      "Nomes descritivos para ranges",
+      "Textos alternativos em gr\u00E1ficos",
+      "Instru\u00E7\u00F5es claras de uso",
+    ],
+  },
 ];
-
 const pacotes = [
-	{
-		nome: "Básico",
-		preco: "R$ 150",
-		unidade: "por documento",
-		ideal: "Documentos simples (até 20 páginas)",
-		cor: "blue",
-		inclui: [
-			"Conversão para formato acessível",
-			"Estruturação básica",
-			"Textos alternativos em imagens",
-			"Ordem de leitura correta",
-			"Metadados básicos",
-			"Teste com leitor de tela",
-			"Entrega em 3-5 dias úteis",
-		],
-		exemplos: "Folhetos, apresentações simples, relatórios curtos",
-	},
-	{
-		nome: "Professional",
-		preco: "R$ 300",
-		unidade: "por documento",
-		ideal: "Documentos médios (20-50 páginas)",
-		cor: "red",
-		destaque: true,
-		inclui: [
-			"Tudo do pacote Básico",
-			"Estruturação avançada de tabelas",
-			"Formulários acessíveis",
-			"Links descritivos",
-			"Múltiplos idiomas",
-			"Sumário navegável",
-			"Relatório de conformidade",
-			"Entrega em 5-7 dias úteis",
-		],
-		exemplos: "Manuais, documentos técnicos, relatórios anuais",
-	},
-	{
-		nome: "Enterprise",
-		preco: "Sob consulta",
-		unidade: "",
-		ideal: "Documentos complexos ou em lote",
-		cor: "purple",
-		inclui: [
-			"Tudo do pacote Professional",
-			"Remediação em lote (desconto progressivo)",
-			"Documentos altamente complexos",
-			"Múltiplos formatos",
-			"Treinamento de equipe",
-			"Templates acessíveis",
-			"Processo documentado",
-			"Suporte contínuo",
-		],
-		exemplos:
-			"Bibliotecas de documentos, manuais extensos, séries de relatórios",
-	},
+  {
+    nome: "B\u00E1sico",
+    preco: "R$ 150",
+    unidade: "por documento",
+    ideal: "Documentos simples (at\u00E9 20 p\u00E1ginas)",
+    cor: "blue",
+    inclui: [
+      "Convers\u00E3o para formato acess\u00EDvel",
+      "Estrutura\u00E7\u00E3o b\u00E1sica",
+      "Textos alternativos em imagens",
+      "Ordem de leitura correta",
+      "Metadados b\u00E1sicos",
+      "Teste com leitor de tela",
+      "Entrega em 3-5 dias \u00FAteis",
+    ],
+    exemplos: "Folhetos, apresenta\u00E7\u00F5es simples, relat\u00F3rios curtos",
+  },
+  {
+    nome: "Professional",
+    preco: "R$ 300",
+    unidade: "por documento",
+    ideal: "Documentos m\u00E9dios (20-50 p\u00E1ginas)",
+    cor: "red",
+    destaque: true,
+    inclui: [
+      "Tudo do pacote B\u00E1sico",
+      "Estrutura\u00E7\u00E3o avan\u00E7ada de tabelas",
+      "Formul\u00E1rios acess\u00EDveis",
+      "Links descritivos",
+      "M\u00FAltiplos idiomas",
+      "Sum\u00E1rio naveg\u00E1vel",
+      "Relat\u00F3rio de conformidade",
+      "Entrega em 5-7 dias \u00FAteis",
+    ],
+    exemplos: "Manuais, documentos t\u00E9cnicos, relat\u00F3rios anuais",
+  },
+  {
+    nome: "Enterprise",
+    preco: "Sob consulta",
+    unidade: "",
+    ideal: "Documentos complexos ou em lote",
+    cor: "purple",
+    inclui: [
+      "Tudo do pacote Professional",
+      "Remedia\u00E7\u00E3o em lote (desconto progressivo)",
+      "Documentos altamente complexos",
+      "M\u00FAltiplos formatos",
+      "Treinamento de equipe",
+      "Templates acess\u00EDveis",
+      "Processo documentado",
+      "Suporte cont\u00EDnuo",
+    ],
+    exemplos: "Bibliotecas de documentos, manuais extensos, s\u00E9ries de relat\u00F3rios",
+  },
 ];
-
 const processo = [
-	{
-		numero: 1,
-		titulo: "Análise Inicial",
-		duracao: "1 dia",
-		icone: Eye,
-		descricao:
-			"Avalio o estado atual do documento e identifico todos os problemas",
-		atividades: [
-			"Abertura e análise do documento original",
-			"Identificação de problemas de acessibilidade",
-			"Verificação de estrutura e conteúdo",
-			"Estimativa de esforço e prazo",
-			"Comunicação de achados ao cliente",
-		],
-	},
-	{
-		numero: 2,
-		titulo: "Remediação",
-		duracao: "2-5 dias",
-		icone: Zap,
-		descricao: "Corrijo todos os problemas encontrados seguindo padrões WCAG",
-		atividades: [
-			"Reestruturação do documento",
-			"Adição de tags e estrutura",
-			"Inclusão de textos alternativos",
-			"Correção de ordem de leitura",
-			"Ajuste de cores e contrastes",
-			"Estruturação de tabelas",
-			"Criação de sumário navegável",
-		],
-	},
-	{
-		numero: 3,
-		titulo: "Validação",
-		duracao: "1 dia",
-		icone: Shield,
-		descricao: "Testo o documento com ferramentas e leitores de tela",
-		atividades: [
-			"Testes com PAC (PDF Accessibility Checker)",
-			"Validação com Adobe Acrobat Pro",
-			"Testes com NVDA e JAWS",
-			"Verificação de navegação por teclado",
-			"Validação de formulários (se aplicável)",
-			"Checklist de conformidade WCAG",
-		],
-	},
-	{
-		numero: 4,
-		titulo: "Entrega",
-		duracao: "1 dia",
-		icone: Download,
-		descricao: "Entrego o documento remediado com relatório de conformidade",
-		atividades: [
-			"Documento final em formato acessível",
-			"Relatório de remediação",
-			"Checklist de conformidade",
-			"Instruções de uso (se necessário)",
-			"Revisão final com cliente",
-			"Ajustes se necessário",
-		],
-	},
-];
-
-const ferramentas = [
-	{ nome: "Adobe Acrobat Pro", uso: "Remediação de PDFs" },
-	{ nome: "PAC (PDF Accessibility Checker)", uso: "Validação de PDFs" },
-	{ nome: "Microsoft Office", uso: "Remediação de Word/Excel/PPT" },
-	{ nome: "NVDA", uso: "Testes com leitor de tela" },
-	{ nome: "JAWS", uso: "Testes com leitor de tela" },
-	{ nome: "ABBYY FineReader", uso: "OCR para PDFs escaneados" },
-	{ nome: "CommonLook", uso: "Remediação avançada de PDFs" },
-];
-
-const faq = [
-	{
-		pergunta: "Qual a diferença entre PDF acessível e PDF comum?",
-		resposta:
-			"PDF comum é apenas uma imagem do documento. PDF acessível tem estrutura, tags, ordem de leitura definida, e pode ser navegado por leitores de tela. É a diferença entre uma foto de um livro e um livro digital de verdade.",
-	},
-	{
-		pergunta: "Vocês trabalham com qualquer idioma?",
-		resposta:
-			"Sim! Posso remediar documentos em qualquer idioma. Para idiomas que não domino, foco na estrutura técnica (que é universal) e sigo as instruções fornecidas para textos alternativos.",
-	},
-	{
-		pergunta: "E se o documento for muito antigo ou de má qualidade?",
-		resposta:
-			"Depende. PDFs escaneados de baixa qualidade podem ser difíceis de remediar (OCR pode falhar). Nestes casos, pode ser mais eficiente reconstruir o documento do zero. Avalio caso a caso.",
-	},
-	{
-		pergunta: "Quanto tempo leva?",
-		resposta:
-			"Documentos simples: 3-5 dias. Médios: 5-7 dias. Complexos: 1-3 semanas. Lotes grandes: negociamos prazos. Urgências podem ter custo adicional.",
-	},
-	{
-		pergunta: "Posso aprender a fazer eu mesmo?",
-		resposta:
-			"Sim! Ofereço treinamento para equipes que precisam remediar documentos regularmente. Ensino o processo, ferramentas e boas práticas. Mais eficiente para quem tem volume grande.",
-	},
-	{
-		pergunta: "Garantem conformidade legal?",
-		resposta:
-			"Garanto conformidade técnica com WCAG 2.1/2.2 nível AA. Forneço relatório detalhado que pode ser usado como documentação. Porém, não sou advogado e não posso garantir conformidade legal específica.",
-	},
+  {
+    numero: 1,
+    titulo: "An\u00E1lise Inicial",
+    duracao: "1 dia",
+    icone: Eye,
+    descricao: "Avalio o estado atual do documento e identifico todos os problemas",
+    atividades: [
+      "Abertura e an\u00E1lise do documento original",
+      "Identifica\u00E7\u00E3o de problemas de acessibilidade",
+      "Verifica\u00E7\u00E3o de estrutura e conte\u00FAdo",
+      "Estimativa de esfor\u00E7o e prazo",
+      "Comunica\u00E7\u00E3o de achados ao cliente",
+    ],
+  },
+  {
+    numero: 2,
+    titulo: "Remedia\u00E7\u00E3o",
+    duracao: "2-5 dias",
+    icone: Zap,
+    descricao: "Corrijo todos os problemas encontrados seguindo padr\u00F5es WCAG",
+    atividades: [
+      "Reestrutura\u00E7\u00E3o do documento",
+      "Adi\u00E7\u00E3o de tags e estrutura",
+      "Inclus\u00E3o de textos alternativos",
+      "Corre\u00E7\u00E3o de ordem de leitura",
+      "Ajuste de cores e contrastes",
+      "Estrutura\u00E7\u00E3o de tabelas",
+      "Cria\u00E7\u00E3o de sum\u00E1rio naveg\u00E1vel",
+    ],
+  },
+  {
+    numero: 3,
+    titulo: "Valida\u00E7\u00E3o",
+    duracao: "1 dia",
+    icone: Shield,
+    descricao: "Testo o documento com ferramentas e leitores de tela",
+    atividades: [
+      "Testes com PAC (PDF Accessibility Checker)",
+      "Valida\u00E7\u00E3o com Adobe Acrobat Pro",
+      "Testes com NVDA e JAWS",
+      "Verifica\u00E7\u00E3o de navega\u00E7\u00E3o por teclado",
+      "Valida\u00E7\u00E3o de formul\u00E1rios (se aplic\u00E1vel)",
+      "Checklist de conformidade WCAG",
+    ],
+  },
+  {
+    numero: 4,
+    titulo: "Entrega",
+    duracao: "1 dia",
+    icone: Download,
+    descricao: "Entrego o documento remediado com relat\u00F3rio de conformidade",
+    atividades: [
+      "Documento final em formato acess\u00EDvel",
+      "Relat\u00F3rio de remedia\u00E7\u00E3o",
+      "Checklist de conformidade",
+      "Instru\u00E7\u00F5es de uso (se necess\u00E1rio)",
+      "Revis\u00E3o final com cliente",
+      "Ajustes se necess\u00E1rio",
+    ],
+  },
 ];
 
 const beneficios = [
-	{
-		icone: Shield,
-		titulo: "Conformidade Legal",
-		descricao:
-			"Evite processos e multas. Muitos setores têm obrigação legal de fornecer documentos acessíveis.",
-	},
-	{
-		icone: Users,
-		titulo: "Alcance Maior",
-		descricao:
-			"Pessoas com deficiência visual, dislexia, ou outras dificuldades poderão acessar seu conteúdo.",
-	},
-	{
-		icone: Award,
-		titulo: "Imagem Positiva",
-		descricao: "Demonstre compromisso com inclusão e responsabilidade social.",
-	},
-	{
-		icone: Target,
-		titulo: "Melhor Usabilidade",
-		descricao:
-			"Documentos acessíveis são mais organizados e fáceis de navegar para todos.",
-	},
+  {
+    icone: Shield,
+    titulo: "Conformidade Legal",
+    descricao:
+      "Evite processos e multas. Muitos setores t\u00EAm obriga\u00E7\u00E3o legal de fornecer documentos acess\u00EDveis.",
+  },
+  {
+    icone: Users,
+    titulo: "Alcance Maior",
+    descricao:
+      "Pessoas com defici\u00EAncia visual, dislexia, ou outras dificuldades poder\u00E3o acessar seu conte\u00FAdo.",
+  },
+  {
+    icone: Award,
+    titulo: "Imagem Positiva",
+    descricao: "Demonstre compromisso com inclus\u00E3o e responsabilidade social.",
+  },
+  {
+    icone: Target,
+    titulo: "Melhor Usabilidade",
+    descricao:
+      "Documentos acess\u00EDveis s\u00E3o mais organizados e f\u00E1ceis de navegar para todos.",
+  },
 ];
 ---
 
 <Layout title="Remediação de documentos - Bruno Pulis">
-  <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
+    <section
+      class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
+    >
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
       </div>
       <div class="mx-auto max-w-7xl px-6">
         <div class="max-w-3xl">
-          <div class="mb-6 inline-block rounded-full bg-green-700 px-4 py-2 text-sm font-semibold text-green-100">
+          <div
+            class="mb-6 inline-block rounded-full bg-green-700 px-4 py-2 text-sm font-semibold text-green-100"
+          >
             📄 Documentos acessíveis para todos
           </div>
           <h1 class="mb-6 text-5xl leading-tight font-bold">Remediação de Documentos</h1>
           <p class="mb-6 text-2xl text-green-100">
-            Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e em conformidade com a <abbr
-              title="Web Content Accessibility Guidelines 2.2">WCAG 2.2</abbr
+            Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e em
+            conformidade com a <abbr title="Web Content Accessibility Guidelines 2.2">WCAG 2.2</abbr
             > e <abbr title="PDF/Universal Accessibility">PDF/UA</abbr>.
           </p>
           <p class="mb-8 text-xl leading-relaxed text-green-200">
-            Seu documento está excluindo pessoas? PDFs escaneados, tabelas mal estruturadas, falta de textos
-            alternativos - corrijo tudo isso seguindo padrões WCAG 2.1/2.2.
+            Seu documento está excluindo pessoas? PDFs escaneados, tabelas mal estruturadas, falta
+            de textos alternativos - corrijo tudo isso seguindo padrões WCAG 2.1/2.2.
           </p>
           <div class="flex gap-4">
             <a
@@ -339,25 +292,27 @@ const beneficios = [
     <section class="bg-white py-20">
       <div class="mx-auto max-w-6xl px-6">
         <div class="mb-16 text-center">
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que documentos acessíveis importam</h2>
-          <p class="text-xl text-gray-600">Não é apenas sobre cumprir leis - é sobre incluir pessoas</p>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">
+            Por que documentos acessíveis importam
+          </h2>
+          <p class="text-xl text-gray-600">
+            Não é apenas sobre cumprir leis - é sobre incluir pessoas
+          </p>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {
-            beneficios.map((beneficio, index) => {
-              const Icon = beneficio.icone
+            beneficios.map((beneficio) => {
+              const Icon = beneficio.icone;
               return (
-                <div
-                  class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-6"
-                >
+                <div class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-6">
                   <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-600">
                     <Icon class="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   <h3 class="mb-2 text-lg font-bold text-gray-900">{beneficio.titulo}</h3>
                   <p class="text-sm text-gray-700">{beneficio.descricao}</p>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -374,39 +329,38 @@ const beneficios = [
 
         <div class="grid gap-8 md:grid-cols-3">
           {
-            tiposDocumento.map((tipo) => {
-              const Icon = tipo.icone
+            tiposDocumento.map(tipo => {
+              const Icon = tipo.icone;
               const cores = {
                 red: {
-                  bg: 'bg-red-100',
-                  text: 'text-red-600',
-                  border: 'border-red-200',
-                  hover: 'hover:border-red-400',
+                  bg: "bg-red-100",
+                  text: "text-red-600",
+                  border: "border-red-200",
+                  hover: "hover:border-red-400",
                 },
                 blue: {
-                  bg: 'bg-blue-100',
-                  text: 'text-blue-600',
-                  border: 'border-blue-200',
-                  hover: 'hover:border-blue-400',
+                  bg: "bg-blue-100",
+                  text: "text-blue-600",
+                  border: "border-blue-200",
+                  hover: "hover:border-blue-400",
                 },
                 green: {
-                  bg: 'bg-green-100',
-                  text: 'text-green-600',
-                  border: 'border-green-200',
-                  hover: 'hover:border-green-400',
+                  bg: "bg-green-100",
+                  text: "text-green-600",
+                  border: "border-green-200",
+                  hover: "hover:border-green-400",
                 },
                 purple: {
-                  bg: 'bg-purple-100',
-                  text: 'text-purple-600',
-                  border: 'border-purple-200',
-                  hover: 'hover:border-purple-400',
+                  bg: "bg-purple-100",
+                  text: "text-purple-600",
+                  border: "border-purple-200",
+                  hover: "hover:border-purple-400",
                 },
-              }
-              const cor = cores[tipo.cor]
+              };
+              const cor = cores[tipo.cor];
 
               return (
                 <div
-                  key={tipo.id}
                   class={`rounded-2xl border-2 bg-white p-8 ${cor.border} ${cor.hover} transition hover:shadow-lg`}
                 >
                   <div class="mb-6 flex items-center gap-3">
@@ -425,8 +379,8 @@ const beneficios = [
                       Problemas comuns:
                     </h4>
                     <ul class="space-y-2">
-                      {tipo.problemas.slice(0, 5).map((problema, i) => (
-                        <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                      {tipo.problemas.slice(0, 5).map((problema) => (
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
                           <span class="mt-1 text-orange-600">•</span>
                           <span>{problema}</span>
                         </li>
@@ -439,8 +393,8 @@ const beneficios = [
                       <CheckCircle class="h-4 w-4 text-green-600" />O que faço:
                     </h4>
                     <ul class="space-y-2">
-                      {tipo.solucoes.slice(0, 5).map((solucao, i) => (
-                        <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                      {tipo.solucoes.slice(0, 5).map((solucao) => (
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
                           <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                           <span>{solucao}</span>
                         </li>
@@ -448,7 +402,7 @@ const beneficios = [
                     </ul>
                   </div>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -465,12 +419,12 @@ const beneficios = [
 
         <div class="grid gap-8 md:grid-cols-3">
           {
-            pacotes.map((pacote, index) => (
+            pacotes.map((pacote) => (
               <div
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
-                    ? 'scale-105 transform border-4 border-red-400 bg-linear-to-br from-red-600 to-red-700 text-white shadow-2xl'
-                    : 'border-2 border-gray-200 bg-white hover:border-green-400 hover:shadow-lg'
+                    ? "scale-105 transform border-4 border-red-400 bg-linear-to-br from-red-600 to-red-700 text-white shadow-2xl"
+                    : "border-2 border-gray-200 bg-white hover:border-green-400 hover:shadow-lg"
                 }`}
               >
                 {pacote.destaque && (
@@ -479,35 +433,49 @@ const beneficios = [
                   </div>
                 )}
 
-                <h3 class={`mb-2 text-2xl font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
+                <h3
+                  class={`mb-2 text-2xl font-bold ${pacote.destaque ? "text-white" : "text-gray-900"}`}
+                >
                   {pacote.nome}
                 </h3>
 
-                <div class={`mb-1 text-4xl font-bold ${pacote.destaque ? 'text-white' : 'text-green-600'}`}>
+                <div
+                  class={`mb-1 text-4xl font-bold ${pacote.destaque ? "text-white" : "text-green-600"}`}
+                >
                   {pacote.preco}
                 </div>
-                <div class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>{pacote.unidade}</div>
+                <div class={`mb-4 text-sm ${pacote.destaque ? "text-red-100" : "text-gray-600"}`}>
+                  {pacote.unidade}
+                </div>
 
-                <p class={`mb-6 ${pacote.destaque ? 'text-red-50' : 'text-gray-700'}`}>{pacote.ideal}</p>
+                <p class={`mb-6 ${pacote.destaque ? "text-red-50" : "text-gray-700"}`}>
+                  {pacote.ideal}
+                </p>
 
                 <div class="mb-6">
-                  <h4 class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
+                  <h4
+                    class={`mb-3 text-sm font-bold ${pacote.destaque ? "text-white" : "text-gray-900"}`}
+                  >
                     ✓ Inclui:
                   </h4>
                   <ul class="space-y-2">
-                    {pacote.inclui.map((item, i) => (
-                      <li key={i} class="flex items-start gap-2">
+                    {pacote.inclui.map((item) => (
+                      <li class="flex items-start gap-2">
                         <CheckCircle
-                          class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
+                          class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? "text-white" : "text-green-600"}`}
                           aria-hidden="true"
                         />
-                        <span class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
+                        <span class={`text-sm ${pacote.destaque ? "text-white" : "text-gray-700"}`}>
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div class={`mb-6 rounded-lg p-3 text-xs ${pacote.destaque ? 'bg-white/10' : 'bg-gray-50'}`}>
+                <div
+                  class={`mb-6 rounded-lg p-3 text-xs ${pacote.destaque ? "bg-white/10" : "bg-gray-50"}`}
+                >
                   <strong>Exemplos:</strong> {pacote.exemplos}
                 </div>
 
@@ -515,8 +483,8 @@ const beneficios = [
                   href="/contato"
                   class={`block w-full rounded-lg px-6 py-3 text-center font-semibold transition ${
                     pacote.destaque
-                      ? 'bg-white text-red-600 hover:bg-red-50'
-                      : 'bg-green-600 text-white hover:bg-green-700'
+                      ? "bg-white text-red-600 hover:bg-red-50"
+                      : "bg-green-600 text-white hover:bg-green-700"
                   }`}
                 >
                   Solicitar orçamento
@@ -530,8 +498,8 @@ const beneficios = [
           <Package class="mx-auto mb-4 h-12 w-12 text-blue-600" />
           <h3 class="mb-3 text-2xl font-bold text-gray-900">Precisa remediar vários documentos?</h3>
           <p class="mx-auto mb-6 max-w-2xl text-gray-700">
-            Ofereço <strong>descontos progressivos</strong> para lotes: 10+ documentos (10% off), 50+ documentos (20% off),
-            100+ documentos (30% off). Entre em contato para orçamento personalizado.
+            Ofereço <strong>descontos progressivos</strong> para lotes: 10+ documentos (10% off), 50+
+            documentos (20% off), 100+ documentos (30% off). Entre em contato para orçamento personalizado.
           </p>
           <a
             href="/contato"
@@ -555,7 +523,6 @@ const beneficios = [
         <div class="space-y-8">
           {
             processo.map((etapa, index) => {
-              const Icon = etapa.icone
               return (
                 <div class="relative">
                   {index < processo.length - 1 && (
@@ -584,9 +551,12 @@ const beneficios = [
                       <div class="mt-6">
                         <h4 class="mb-3 text-sm font-bold text-gray-900">O que faço:</h4>
                         <ul class="grid gap-2 md:grid-cols-2">
-                          {etapa.atividades.map((atividade) => (
+                          {etapa.atividades.map(atividade => (
                             <li class="flex items-start gap-2">
-                              <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
+                              <CheckCircle
+                                class="mt-0.5 h-4 w-4 shrink-0 text-green-600"
+                                aria-hidden="true"
+                              />
                               <span class="text-sm text-gray-700">{atividade}</span>
                             </li>
                           ))}
@@ -595,7 +565,7 @@ const beneficios = [
                     </div>
                   </div>
                 </div>
-              )
+              );
             })
           }
         </div>
@@ -604,16 +574,21 @@ const beneficios = [
 
     <section id="clientes" class="bg-gray-50 px-6 py-20">
       <div class="mx-auto max-w-6xl">
-        <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">Quem já confia neste trabalho</h2>
+        <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+          Quem já confia neste trabalho
+        </h2>
         <p class="mb-12 text-center text-gray-600">
-          Empresas, órgãos públicos e instituições de ensino já garantem acessibilidade com minha ajuda.
+          Empresas, órgãos públicos e instituições de ensino já garantem acessibilidade com minha
+          ajuda.
         </p>
-        <div class="grid grid-cols-2 items-center justify-items-center gap-8 opacity-60 md:grid-cols-3">
+        <div
+          class="grid grid-cols-2 items-center justify-items-center gap-8 opacity-60 md:grid-cols-3"
+        >
           <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
             <Users class="h-8 w-8 text-gray-400" aria-hidden="true" />
           </div>
           <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
-            <Shield class="h-8 w-8 text-gray-400" aria-hidden="true"/>
+            <Shield class="h-8 w-8 text-gray-400" aria-hidden="true" />
           </div>
           <div class="flex h-16 w-32 items-center justify-center rounded bg-gray-200">
             <TrendingUp class="h-8 w-8 text-gray-400" aria-hidden="true" />
@@ -624,21 +599,23 @@ const beneficios = [
 
     <section id="depoimentos" class="px-6 py-20">
       <div class="mx-auto max-w-6xl">
-        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">O que dizem os clientes</h2>
+        <h2 class="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
+          O que dizem os clientes
+        </h2>
         <div class="grid gap-8 md:grid-cols-2">
           {
             [
               {
-                text: 'Depois da remediação, nossos relatórios ficaram inclusivos e sem erros. Excelente trabalho!',
-                author: 'Paula Andrade',
-                role: 'Analista de Qualidade',
+                text: "Depois da remediação, nossos relatórios ficaram inclusivos e sem erros. Excelente trabalho!",
+                author: "Paula Andrade",
+                role: "Analista de Qualidade",
               },
               {
-                text: 'Economizamos tempo e eliminamos retrabalho. O resultado ficou impecável.',
-                author: 'Rafael Gomes',
-                role: 'Designer de Produto',
+                text: "Economizamos tempo e eliminamos retrabalho. O resultado ficou impecável.",
+                author: "Rafael Gomes",
+                role: "Designer de Produto",
               },
-            ].map((testimonial, idx) => (
+            ].map((testimonial) => (
               <div class="rounded-2xl bg-gray-50 p-8">
                 <p class="mb-6 text-lg leading-relaxed text-gray-700">"{testimonial.text}"</p>
                 <div>
@@ -667,5 +644,4 @@ const beneficios = [
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

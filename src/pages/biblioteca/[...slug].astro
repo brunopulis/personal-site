@@ -1,36 +1,30 @@
 ---
 import { getCollection, render } from "astro:content";
-import Footer from "@components/layouts/Footer.astro";
-import Header from "@components/layouts/Header.astro";
+
 import HeroSection from "@components/layouts/HeroSection.astro";
 import Newsletter from "@components/Newsletter.astro";
 import Layout from "@layout/Layout.astro";
 
 // Gera as rotas para todos os letters
 export async function getStaticPaths() {
-	const letters = await getCollection("newsletter");
-
-	return letters.map((letter) => ({
-		params: { slug: letter.id }, // mantém apenas o ID do letter
-		props: { letter },
-	}));
+  const letters = await getCollection("newsletter");
+  return letters.map(letter => ({
+    params: { slug: letter.id },
+    props: { letter },
+  }));
 }
-
 const { letter } = Astro.props;
 const { Content } = await render(letter);
-
 // Formata a data para pt-BR
 const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 });
-
 export const prerender = true;
 ---
 
 <Layout title={`${letter.data.title} - Blog`}>
-  <Header />
   <main id="main-content">
     <HeroSection title={letter.data.title} />
     <div class="container mx-auto px-5 md:p-8">
@@ -43,7 +37,12 @@ export const prerender = true;
                   href="/newsletter"
                   class="inline-flex items-center text-gray-600 transition-colors hover:text-red-950"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="mr-2 h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
                     <path
                       fill-rule="evenodd"
                       d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
@@ -78,7 +77,9 @@ export const prerender = true;
               </div>
 
               <div class="mt-12 border-t border-gray-200 pt-8 dark:border-gray-700">
-                <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Compartilhar artigo</h2>
+                <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">
+                  Compartilhar artigo
+                </h2>
                 <div class="flex space-x-4">
                   <a
                     href="#"
@@ -105,5 +106,4 @@ export const prerender = true;
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>
