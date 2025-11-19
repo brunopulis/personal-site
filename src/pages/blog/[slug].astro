@@ -4,12 +4,10 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import { CalendarIcon, ClockIcon } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import BuyMeCoffee from "@components/BuyMeCoffee.astro";
 import ShareButton from "@/components/ShareButton.astro";
 import EmailReplyButton from "@/components/EmailReplyButton.astro";
 import BackBlog from "@components/blog/BackBlog.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
@@ -51,7 +49,6 @@ export const prerender = true;
   title={`${post.data.title} + "Bruno Pulis"`}
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
-  <Header />
   <main id="main-content">
     <div class="min-h-screen bg-white">
       <BackBlog />
@@ -118,7 +115,6 @@ export const prerender = true;
       </article>
     </div>
   </main>
-  <Footer />
 </Layout>
 
 <script define:vars={{ postTitle, postUrl }}>

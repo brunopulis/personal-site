@@ -15,8 +15,6 @@ import {
 } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 const tecnologias = [
 	{
@@ -366,31 +364,9 @@ const faq = [
 			"Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.",
 	},
 ];
-
-const requisitos = [
-	{
-		titulo: "Acesso necessário",
-		itens: [
-			"Repositório Git (read/write)",
-			"Ambiente de desenvolvimento",
-			"Documentação técnica existente",
-			"Credenciais de teste (se aplicável)",
-		],
-	},
-	{
-		titulo: "O que facilita",
-		itens: [
-			"Testes automatizados existentes",
-			"CI/CD configurado",
-			"Design system documentado",
-			"Comunicação direta com devs",
-		],
-	},
-];
 ---
 
 <Layout title="Remediação de documentos - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
 			<div class="absolute inset-0 opacity-10">
@@ -586,7 +562,6 @@ const requisitos = [
         <div class="space-y-8">
           {
             processo.map((etapa, index) => {
-              const Icon = etapa.icone
               const cores = {
                 blue: 'from-blue-500 to-blue-600',
                 purple: 'from-purple-500 to-purple-600',
@@ -674,10 +649,7 @@ const requisitos = [
                 <div class={`mb-2 text-4xl font-bold ${pacote.destaque ? 'text-white' : `text-${pacote.cor}-600`}`}>
                   {pacote.preco}
                 </div>
-
                 <p class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>{pacote.ideal}</p>
-
-                <p class={`mb-6 ${pacote.destaque ? 'text-red-50' : 'text-gray-700'}`}>{pacote.descricao}</p>
 
                 <div class="mb-6">
                   <h4 class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}>
@@ -694,15 +666,6 @@ const requisitos = [
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div class="mb-6 border-t border-white/20 pt-4">
-                  <div class="mb-1 text-xs text-gray-500">
-                    <strong>Exemplo:</strong> {pacote.exemploPaginas}
-                  </div>
-                  <div class="text-xs text-gray-500">
-                    <strong>Prazo:</strong> {pacote.tempoEntrega}
-                  </div>
                 </div>
 
                 <a
@@ -782,5 +745,4 @@ const requisitos = [
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

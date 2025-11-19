@@ -1,7 +1,5 @@
 ---
 import Layout from "@layout/Layout.astro";
-import Footer from "@components/layouts/Footer.astro";
-import Header from "@components/layouts/Header.astro";
 import MediaCard from "@components/MediaCard.astro";
 import books from "@data/books.json";
 
@@ -23,7 +21,6 @@ export const prerender = true;
 ---
 
 <Layout title="Minha Biblioteca - Bruno Pulis" description="Livros que li ao longo dos anos">
-  <Header />
   <main id="main-content">
     <section id="hero" aria-labelledby="hero-section">
       <div class="mx-auto max-w-7xl px-6 py-20">
@@ -67,5 +64,4 @@ export const prerender = true;
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

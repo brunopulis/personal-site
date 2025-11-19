@@ -2,9 +2,8 @@
 import { getCollection } from "astro:content";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
+
 
 import site from "@data/site.config.json";
 
@@ -33,7 +32,6 @@ function toISOString(dateString: string) {
   title="Newsletter - Bruno Pulis"
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
-  <Header />
   <main id="main-content">
     <HeroSection
       title="Filtro Digital"
@@ -90,5 +88,4 @@ function toISOString(dateString: string) {
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>

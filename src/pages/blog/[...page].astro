@@ -5,11 +5,9 @@ import type { GetStaticPathsOptions, Page } from "astro";
 
 import Layout from "@layout/Layout.astro";
 
-import Header from "@components/layouts/Header.astro";
 import TagFilter from "@components/TagFilter.astro";
 import BlogSidebar from "@components/BlogSidebar.astro";
 import Pagination from "@components/Pagination.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 import { getAllTags } from "@utils/getAllTags";
 
@@ -52,7 +50,6 @@ export const prerender = true;
 ---
 
 <Layout title="Blog - Bruno Pulis" description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software">
-  <Header />
   <main id="main-content">
     <section id="hero" aria-labelledby="hero-section">
       <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
@@ -138,6 +135,5 @@ export const prerender = true;
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
 
