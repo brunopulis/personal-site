@@ -1,45 +1,13 @@
 ---
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import CTASection from "@components/CTA.astro";
-import Footer from "@components/layouts/Footer.astro";
 import site from "@data/site.config.json";
 
 import {
-	AlertCircle,
 	ArrowRight,
-	BookOpen,
-	CheckCircle,
-	Clock,
-	Code,
 	Coffee,
-	GraduationCap,
 	MessageCircle,
-	Monitor,
-	Package,
-	Search,
-	ShieldCheck,
-	Star,
-	Target,
-	Zap,
 } from "@lucide/astro";
-
-const iconMap = {
-	ShieldCheck,
-	Search,
-	Code,
-	Monitor,
-	BookOpen,
-	ArrowRight,
-	Clock,
-	Target,
-	Package,
-	CheckCircle,
-	Zap,
-	GraduationCap,
-	AlertCircle,
-	Star,
-};
 
 const services = [
 	{
@@ -107,8 +75,6 @@ const services = [
 ---
 
 <Layout title="Serviços - Bruno Pulis">
-  <Header />
-
   <main id="main-content">
     <section id="hero" aria-labelledby="hero-section">
       <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
@@ -179,4 +145,3 @@ const services = [
     />
   </main>
 </Layout>
-<Footer />
