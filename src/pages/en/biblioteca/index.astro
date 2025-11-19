@@ -1,12 +1,9 @@
 ---
-
 import Layout from "@layout/Layout.astro";
 import Footer from "@components/layouts/Footer.astro";
 import Header from "@components/layouts/Header.astro";
 import MediaCard from "@components/MediaCard.astro";
 import books from "@data/books.json";
-
-changeLanguage("pt-br");
 
 const livrosPorAno = Object.entries(books
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
