@@ -3,10 +3,8 @@ import { getCollection } from "astro:content";
 import { Clock } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
 import ShareButton from "@components/ShareButton.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 const notes = await getCollection("notes");
 
@@ -29,7 +27,6 @@ const notesWithContent = await Promise.all(
 ---
 
 <Layout title="Notas - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <HeroSection title="Notas" description="Pensamentos rápidos, dicas práticas e reflexões sobre qualquer coisa." />
     <section class="h-entry bg-gray-50 py-16">
@@ -90,5 +87,4 @@ const notesWithContent = await Promise.all(
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
