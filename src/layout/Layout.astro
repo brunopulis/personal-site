@@ -1,48 +1,92 @@
 ---
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import { getAllLocalizedPaths } from '@i18n/routes';
+import type { Language, RouteKey } from '@i18n/translations';
 import { ClientRouter } from "astro:transitions";
+
+// Componentes
+import Navigation from '@components/Navigation.astro';
+import Footer from '@components/layouts/Footer.astro';
+import SkipLink from '@components/utils/SkipLink.astro';
+import BackToTop from '@components/utils/BackToTop.astro';
+import BasicScripts from '@components/BasicScripts.astro';
+
+// Head
 import RSS from "@components/utils/head/RSS.astro";
-import Header from "@/components/layouts/Header.astro";
-import Footer from "@/components/layouts/Footer.astro";
 import Webmentions from "@components/utils/head/Webmentions.astro";
 import Preconnect from "@components/utils/head/Preconnect.astro";
-import BasicScripts from "@components/BasicScripts.astro";
-import BackToTop from "@components/utils/BackToTop.astro";
+
+// Estilos e fonts
 import "@fontsource-variable/source-sans-3";
-
 import "@styles/global.css";
-import "@styles/transitions.css";
 
-export interface Props {
-	title: string;
-	description?: string;
+interface Props {
+  title: string;
+  description: string;
+  routeKey?: RouteKey;
 }
 
-const { title, description = "Bruno Pulis - Engenheiro de Acessibilidade" } =
-	Astro.props;
+const { title, description, routeKey } = Astro.props;
+
+// Detecta o idioma a partir da URL
+const lang = getLanguageFromPath(Astro.url.pathname) as Language;
+const t = useTranslations(lang);
+
+// Gera tags hreflang para SEO multiidioma
+const hreflangs = routeKey ? getAllLocalizedPaths(routeKey) : [];
 ---
 
 <!doctype html>
-<html lang="pt-br">
+<html lang={lang.replace('-', '_')}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- SEO -->
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    
+    <!-- hreflang para SEO multiidioma -->
+    {hreflangs.map(({ lang: hrefLang, path }) => (
+      <link 
+        rel="alternate" 
+        hreflang={hrefLang.replace('-', '_')} 
+        href={`${Astro.url.origin}${path}`} 
+      />
+    ))}
+    <link rel="canonical" href={Astro.url} />
 
+    <!-- Componentes do Head -->
     <RSS />
     <Webmentions />
     <Preconnect />
+    
+    <!-- Transições Astro -->
     <ClientRouter />
   </head>
+  
   <body class="antialiased">
-    <Header />
-    <slot />
+    <!-- Skip Link para acessibilidade -->
+    <SkipLink />
+
+    <!-- Navegação -->
+    <header class="header sticky top-0 z-50 bg-white shadow-sm">
+      <nav class="wrapper">
+        <Navigation currentLang={lang} currentRoute={routeKey} />
+      </nav>
+    </header>
+
+    <main class="main-wrapper">
+      <slot />
+    </main>
     <Footer />
     <BackToTop />
     <BasicScripts />
