@@ -7,7 +7,7 @@ import MediaCard from "@components/MediaCard.astro";
 import Footer from "@components/layouts/Footer.astro";
 import movies from "@data/movies.json";
 
-changeLanguage("pt-br");
+
 
 const moviesPerYear = Object.entries(movies
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

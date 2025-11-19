@@ -1,25 +1,29 @@
 ---
+
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import { CalendarIcon, ClockIcon } from "@lucide/astro";
-
 import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
 import BuyMeCoffee from "@components/BuyMeCoffee.astro";
 import ShareButton from "@/components/ShareButton.astro";
 import EmailReplyButton from "@/components/EmailReplyButton.astro";
 import BackBlog from "@components/blog/BackBlog.astro";
+import Footer from "@components/layouts/Footer.astro";
+
+
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map(post => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
 }
 type Props = {
-  post: CollectionEntry<"blog">;
-  prevPost: CollectionEntry<"blog">;
-  nextPost: CollectionEntry<"blog">;
+    post: CollectionEntry<"blog">;
+    prevPost: CollectionEntry<"blog">;
+    nextPost: CollectionEntry<"blog">;
 };
 // Receber o post das props
 const { post } = Astro.props;
@@ -27,9 +31,9 @@ const { Content } = await render(post);
 // Formatar data para pt-BR
 const publishDateString = String(post.data.publishDate);
 const formattedDate = new Date(publishDateString).toLocaleDateString("pt-BR", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
 });
 const isoDate = new Date(publishDateString).toISOString();
 const postTitle = post.data.title;
@@ -41,6 +45,7 @@ export const prerender = true;
   title={`${post.data.title} + "Bruno Pulis"`}
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
+  <Header />
   <main id="main-content">
     <div class="min-h-screen bg-white">
       <BackBlog />
@@ -60,9 +65,7 @@ export const prerender = true;
           </h1>
           <p>{post.data.excerpt}</p>
 
-          <div
-            class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base"
-          >
+          <div class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base">
             <div class="flex items-center gap-2">
               <CalendarIcon class="h-4 w-4" aria-hidden="true" />
               <time datetime={isoDate}>{formattedDate}</time>
@@ -80,26 +83,28 @@ export const prerender = true;
           <Content />
 
           <!-- Tags -->
-          {
-            post.data.tags && post.data.tags.length > 0 && (
-              <div class="mb-6">
-                <div class="flex flex-wrap gap-2">
-                  {post.data.tags.map((tag: string) => (
-                    <a
-                      href={`/blog/tags/${tag.toLowerCase()}`}
-                      class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
-                    >
-                      #{tag}
-                    </a>
-                  ))}
-                </div>
+          {post.data.tags && post.data.tags.length > 0 && (
+            <div class="mb-6">
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag: string) => (
+                  <a
+                    href={`/blog/tags/${tag.toLowerCase()}`}
+                    class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
+                  >
+                    #{tag}
+                  </a>
+                ))}
               </div>
-            )
-          }
+            </div>
+          )}
 
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <ShareButton style="button" />
-            <EmailReplyButton postTitle={postTitle} postUrl={postUrl} style="button" />
+            <EmailReplyButton 
+              postTitle={postTitle}
+              postUrl={postUrl}
+              style="button"
+            />
           </div>
 
           <BuyMeCoffee variant="compact" />
@@ -107,14 +112,15 @@ export const prerender = true;
       </article>
     </div>
   </main>
+  <Footer />
 </Layout>
 
 <script define:vars={{ postTitle, postUrl }}>
-  document.addEventListener("DOMContentLoaded", () => {
-    const shareButton = document.getElementById("share-button");
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareButton = document.getElementById('share-button');
+    
     if (shareButton) {
-      shareButton.addEventListener("click", async () => {
+      shareButton.addEventListener('click', async () => {
         // Verifica se a API Web Share está disponível
         if (navigator.share) {
           try {
@@ -124,8 +130,8 @@ export const prerender = true;
             });
           } catch (err) {
             // Usuário cancelou ou erro ocorreu
-            if (err.name !== "AbortError") {
-              console.error("Erro ao compartilhar:", err);
+            if (err.name !== 'AbortError') {
+              console.error('Erro ao compartilhar:', err);
               fallbackCopyToClipboard();
             }
           }
@@ -135,25 +141,21 @@ export const prerender = true;
         }
       });
     }
-
+    
     function fallbackCopyToClipboard() {
-      navigator.clipboard
-        .writeText(postUrl)
-        .then(() => {
-          // Feedback visual
-          const button = document.getElementById("share-button");
-          const originalText = button.innerHTML;
-          button.innerHTML =
-            '<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Link copiado!';
-
-          setTimeout(() => {
-            button.innerHTML = originalText;
-          }, 2000);
-        })
-        .catch(err => {
-          console.error("Erro ao copiar:", err);
-          alert("Não foi possível copiar o link. Por favor, copie manualmente: " + postUrl);
-        });
+      navigator.clipboard.writeText(postUrl).then(() => {
+        // Feedback visual
+        const button = document.getElementById('share-button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Link copiado!';
+        
+        setTimeout(() => {
+          button.innerHTML = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Erro ao copiar:', err);
+        alert('Não foi possível copiar o link. Por favor, copie manualmente: ' + postUrl);
+      });
     }
   });
 </script>
