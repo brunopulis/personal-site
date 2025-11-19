@@ -1,6 +1,8 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import RSS from "@components/utils/head/RSS.astro";
+import Header from "@/components/layouts/Header.astro";
+import Footer from "@/components/layouts/Footer.astro";
 import Webmentions from "@components/utils/head/Webmentions.astro";
 import Preconnect from "@components/utils/head/Preconnect.astro";
 import BasicScripts from "@components/BasicScripts.astro";
@@ -39,7 +41,9 @@ const { title, description = "Bruno Pulis - Engenheiro de Acessibilidade" } =
     <ClientRouter />
   </head>
   <body class="antialiased">
+    <Header />
     <slot />
+    <Footer />
     <BackToTop />
     <BasicScripts />
   </body>
