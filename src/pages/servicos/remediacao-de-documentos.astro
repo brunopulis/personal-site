@@ -421,18 +421,16 @@ const beneficios = [
                   hover: 'hover:border-purple-400',
                 },
               };
-              const cor = cores[tipo.cor];
 
               return (
                 <div
-                  key={tipo.id}
-                  class={`rounded-2xl border-2 bg-white p-8 ${cor.border} ${cor.hover} transition hover:shadow-lg`}
+                  class={`rounded-2xl border-2 bg-white p-8 transition hover:shadow-lg`}
                 >
                   <div class="mb-6 flex items-center gap-3">
                     <div
-                      class={`h-12 w-12 ${cor.bg} flex items-center justify-center rounded-xl`}
+                      class={`h-12 w-12 flex items-center justify-center rounded-xl`}
                     >
-                      <Icon class={`h-6 w-6 ${cor.text}`} />
+                      <Icon class={`h-6 w-6`} />
                     </div>
                     <div>
                       <h3 class="text-2xl font-bold text-gray-900">
@@ -448,11 +446,8 @@ const beneficios = [
                       Problemas comuns:
                     </h4>
                     <ul class="space-y-2">
-                      {tipo.problemas.slice(0, 5).map((problema, i) => (
-                        <li
-                          key={i}
-                          class="flex items-start gap-2 text-sm text-gray-700"
-                        >
+                      {tipo.problemas.slice(0, 5).map((problema) => (
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
                           <span class="mt-1 text-orange-600">•</span>
                           <span>{problema}</span>
                         </li>
@@ -465,11 +460,8 @@ const beneficios = [
                       <CheckCircle class="h-4 w-4 text-green-600" />O que faço:
                     </h4>
                     <ul class="space-y-2">
-                      {tipo.solucoes.slice(0, 5).map((solucao, i) => (
-                        <li
-                          key={i}
-                          class="flex items-start gap-2 text-sm text-gray-700"
-                        >
+                      {tipo.solucoes.slice(0, 5).map((solucao) => (
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
                           <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                           <span>{solucao}</span>
                         </li>
@@ -498,7 +490,7 @@ const beneficios = [
 
         <div class="grid gap-8 md:grid-cols-3">
           {
-            pacotes.map((pacote, index) => (
+            pacotes.map((pacote) => (
               <div
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
@@ -542,8 +534,8 @@ const beneficios = [
                     ✓ Inclui:
                   </h4>
                   <ul class="space-y-2">
-                    {pacote.inclui.map((item, i) => (
-                      <li key={i} class="flex items-start gap-2">
+                    {pacote.inclui.map((item) => (
+                      <li class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
                           aria-hidden="true"
@@ -726,7 +718,7 @@ const beneficios = [
                 author: 'Rafael Gomes',
                 role: 'Designer de Produto',
               },
-            ].map((testimonial, idx) => (
+            ].map((testimonial) => (
               <div class="rounded-2xl bg-gray-50 p-8">
                 <p class="mb-6 text-lg leading-relaxed text-gray-700">
                   "{testimonial.text}"

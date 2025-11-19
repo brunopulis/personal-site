@@ -1,7 +1,7 @@
 ---
-issue: "23"
-title: "Não confie 100% em validações automáticas"
-date: "2024-03-14"
+issue: '23'
+title: 'Não confie 100% em validações automáticas'
+date: '2024-03-14'
 ---
 
 Pulis Letters - Edição #23  

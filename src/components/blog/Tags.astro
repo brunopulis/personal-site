@@ -1,46 +1,57 @@
 ---
-import { MapPinned, Tags } from "@lucide/astro";
+import { MapPinned, Tags } from '@lucide/astro';
 
 interface Location {
-	locality: string;
-	country: string;
+  locality: string;
+  country: string;
 }
 
 interface Props {
-	tags?: string[];
-	location?: Location;
-	publishedAt?: string[];
-	reply?: string;
+  tags?: string[];
+  location?: Location;
+  publishedAt?: string[];
+  reply?: string;
 }
 
 const { tags = [], location, publishedAt = [], reply } = Astro.props;
 
 function slugify(str: string) {
-	return str
-		.toLowerCase()
-		.replace(/\s+/g, "-")
-		.replace(/[^a-z0-9-]/g, "");
+  return str
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
 }
 ---
 
 <footer>
-  <ul class="my-2 overflow-hidden rounded-xl border border-gray-50 bg-gray-50" role="list">
-    <li class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2">
+  <ul
+    class="my-2 overflow-hidden rounded-xl border border-gray-50 bg-gray-50"
+    role="list"
+  >
+    <li
+      class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2"
+    >
       {
         location && (
           <div class="flex items-center gap-2 text-sm text-gray-600">
             <span class="flex items-center gap-1 font-semibold">
-              <MapPinned class="text-blood-red-800 h-6 w-6" aria-hidden="true" />
+              <MapPinned
+                class="text-blood-red-800 h-6 w-6"
+                aria-hidden="true"
+              />
               Onde:
             </span>
             <span class="p-location h-adr">
-              <span class="p-locality">{location.locality}</span>,<span class="p-country">{location.country}</span>
+              <span class="p-locality">{location.locality}</span>,
+              <span class="p-country">{location.country}</span>
             </span>
           </div>
         )
       }
     </li>
-    <li class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2">
+    <li
+      class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2"
+    >
       {
         tags.length > 0 && (
           <div>
@@ -59,7 +70,9 @@ function slugify(str: string) {
         )
       }
     </li>
-    <li class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2">
+    <li
+      class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2"
+    >
       {
         publishedAt.length > 0 && (
           <div>
@@ -98,16 +111,20 @@ function slugify(str: string) {
         <a
           class="u-syndication text-blue-700 hover:underline"
           rel="noopener noreferrer"
-          href="https://fosstodon.org/@hacdias/114964919259561217">fosstodon.org</a
+          href="https://fosstodon.org/@hacdias/114964919259561217"
+          >fosstodon.org</a
         >,
         <a
           class="u-syndication text-blue-700 hover:underline"
           rel="noopener noreferrer"
-          href="https://bsky.app/profile/hacdias.com/post/3lvipskdies27">bsky.app</a
+          href="https://bsky.app/profile/hacdias.com/post/3lvipskdies27"
+          >bsky.app</a
         >
       </span>
     </li>
-    <li class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2">
+    <li
+      class="text-errie-black-900 grid grid-cols-[6rem_auto] items-center gap-2 p-2"
+    >
       <strong class="flex items-center gap-2">
         <img
           draggable="false"
@@ -122,14 +139,20 @@ function slugify(str: string) {
           href="mailto:mail@hacdias.com?subject=Re: IndieWeb%20Carnival%3a%20Colors"
           rel="noopener noreferrer">E-Mail</a
         >,
-        <a class="text-blue-700 hover:underline" href="https://fosstodon.org/@hacdias" rel="noopener noreferrer"
-          >Mastodon</a
+        <a
+          class="text-blue-700 hover:underline"
+          href="https://fosstodon.org/@hacdias"
+          rel="noopener noreferrer">Mastodon</a
         >,
-        <a class="text-blue-700 hover:underline" href="https://bsky.app/profile/hacdias.com" rel="noopener noreferrer"
-          >Bluesky</a
+        <a
+          class="text-blue-700 hover:underline"
+          href="https://bsky.app/profile/hacdias.com"
+          rel="noopener noreferrer">Bluesky</a
         >,
-        <a class="text-blue-700 hover:underline" href="https://indieweb.org/Webmention" rel="noopener noreferrer"
-          >Webmentions</a
+        <a
+          class="text-blue-700 hover:underline"
+          href="https://indieweb.org/Webmention"
+          rel="noopener noreferrer">Webmentions</a
         >
       </span>
     </li>

@@ -8,12 +8,30 @@ const { allTags } = Astro.props;
 
 <div class="filter-container">
   <button class="filter-toggle" id="filterToggle">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M3 4h18M3 12h12M3 20h6" stroke-width="2" stroke-linecap="round"/>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path d="M3 4h18M3 12h12M3 20h6" stroke-width="2" stroke-linecap="round"
+      ></path>
     </svg>
     <span>Filtro</span>
-    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg
+      class="chevron"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
     </svg>
   </button>
 
@@ -21,14 +39,30 @@ const { allTags } = Astro.props;
     <div class="dropdown-content">
       <h3>Categorias</h3>
       <div class="tags-list">
-        {allTags.map((tag) => (
-          <a href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`} class="tag-link">
-            {tag}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        ))}
+        {
+          allTags.map((tag) => (
+            <a
+              href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+              class="tag-link"
+            >
+              {tag}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  d="M9 18l6-6-6-6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -157,7 +191,10 @@ const { allTags } = Astro.props;
     });
 
     document.addEventListener('click', (e) => {
-      if (!toggle.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+      if (
+        !toggle.contains(e.target as Node) &&
+        !menu.contains(e.target as Node)
+      ) {
         toggle.classList.remove('active');
         menu.classList.remove('active');
       }

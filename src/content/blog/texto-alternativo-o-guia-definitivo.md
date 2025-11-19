@@ -1,9 +1,9 @@
 ---
-title: "Texto alternativo: o guia definitivo"
-image: ""
-imageAlt: ""
+title: 'Texto alternativo: o guia definitivo'
+image: ''
+imageAlt: ''
 publishDate: 2021-09-26
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/texto-alternativo-o-guia-definitivo/
 tags:
   - texto alternativo

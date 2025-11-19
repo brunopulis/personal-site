@@ -1,7 +1,7 @@
 ---
-issue: "22"
-title: "Construindo em público"
-date: "2024-03-07"
+issue: '22'
+title: 'Construindo em público'
+date: '2024-03-07'
 ---
 
 Pulis Letters - Edição #22

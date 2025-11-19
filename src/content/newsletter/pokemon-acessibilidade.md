@@ -1,8 +1,8 @@
 ---
-issue: "21"
-title: "O que o Pokémon me ensinou sobre acessibilidade"
-date: "2024-02-29"
-coverImage: "pokemon.jpg"
+issue: '21'
+title: 'O que o Pokémon me ensinou sobre acessibilidade'
+date: '2024-02-29'
+coverImage: 'pokemon.jpg'
 ---
 
 Pulis Letters - Edição #21  

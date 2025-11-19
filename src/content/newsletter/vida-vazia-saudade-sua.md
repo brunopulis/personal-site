@@ -1,8 +1,8 @@
 ---
-issue: "45"
-title: "Vida vazia, saudade sua"
-date: "2024-12-12"
-coverImage: "buttons-scaled.jpg"
+issue: '45'
+title: 'Vida vazia, saudade sua'
+date: '2024-12-12'
+coverImage: 'buttons-scaled.jpg'
 ---
 
 Olá,

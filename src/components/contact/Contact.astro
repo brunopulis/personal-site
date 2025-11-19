@@ -7,7 +7,9 @@
             Envie sua mensagem
           </h3>
 
-          <form x-data="{ name: '', email: '', message: '', submitted: false, errors: {} }">
+          <form
+            x-data="{ name: '', email: '', message: '', submitted: false, errors: {} }"
+          >
             <div class="mb-4">
               <label
                 for="name"
@@ -22,7 +24,12 @@
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu nome"
               />
-              <p class="mt-1 text-sm text-red-500" x-show="errors.name" x-text="errors.name"></p>
+              <p
+                class="mt-1 text-sm text-red-500"
+                x-show="errors.name"
+                x-text="errors.name"
+              >
+              </p>
             </div>
 
             <div class="mb-4">
@@ -39,7 +46,12 @@
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
                 placeholder="Seu email"
               />
-              <p class="mt-1 text-sm text-red-500" x-show="errors.email" x-text="errors.email"></p>
+              <p
+                class="mt-1 text-sm text-red-500"
+                x-show="errors.email"
+                x-text="errors.email"
+              >
+              </p>
             </div>
 
             <div class="mb-4">
@@ -62,7 +74,8 @@
                 class="mt-1 text-sm text-red-500"
                 x-show="errors.subject"
                 x-text="errors.subject"
-              ></p>
+              >
+              </p>
             </div>
 
             <div class="mb-6">
@@ -77,19 +90,19 @@
                 x-model="message"
                 rows="5"
                 class="focus:ring-primary-500 dark:focus:ring-primary-400 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:ring-2 focus:outline-hidden dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-                placeholder="Sua mensagem"
-              ></textarea>
+                placeholder="Sua mensagem"></textarea>
               <p
                 class="mt-1 text-sm text-red-700"
                 x-show="errors.message"
                 x-text="errors.message"
-              ></p>
+              >
+              </p>
             </div>
 
             <div x-show="!submitted">
               <button type="submit" class="btn-primary w-full text-white">
-                {" "}
-                Enviar{" "}
+                {' '}
+                Enviar{' '}
               </button>
             </div>
 
@@ -109,14 +122,16 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
-              <h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+              <h3
+                class="mb-2 text-xl font-semibold text-gray-900 dark:text-white"
+              >
                 Message Sent!
               </h3>
               <p class="text-gray-600 dark:text-gray-300">
-                Thank you for reaching out. We'll get back to you as soon as possible.
+                Thank you for reaching out. We'll get back to you as soon as
+                possible.
               </p>
             </div>
           </form>

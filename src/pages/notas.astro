@@ -1,17 +1,30 @@
 ---
 import { getCollection } from 'astro:content';
-import { Clock, Share2 } from '@lucide/astro';
+import { Clock } from '@lucide/astro';
 
 import Layout from '@layout/Layout.astro';
+import ShareButton from '@components/ShareButton.astro';
 import HeroSection from '@components/layouts/HeroSection.astro';
 
 const allNotes = await getCollection('notes');
 
 const sortedNotes = allNotes.sort((a, b) => {
   return (
-    new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime()
+    new Date(b.data.pubDate || 0).getTime() -
+    new Date(a.data.pubDate || 0).getTime()
   );
 });
+
+// Renderizar o conteúdo de cada nota
+const notesWithContent = await Promise.all(
+  sortedNotes.map(async (note) => {
+    const { Content } = await note.render();
+    return {
+      note,
+      Content,
+    };
+  })
+);
 ---
 
 <Layout title="Notas - Bruno Pulis">
@@ -25,8 +38,8 @@ const sortedNotes = allNotes.sort((a, b) => {
         <div class="mx-auto">
           <div class="prose prose-lg max-w-none">
             {
-              sortedNotes.length > 0 ? (
-                sortedNotes.map((note) => (
+              notesWithContent.length > 0 ? (
+                notesWithContent.map(({ note, Content }) => (
                   <article class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
                     <div class="mb-4 flex items-start justify-between">
                       <div class="flex items-center gap-3">
@@ -55,24 +68,27 @@ const sortedNotes = allNotes.sort((a, b) => {
                       )}
                     </div>
 
-                    <div class="mb-4">
-                      <span
-                        class={`font-semibold} inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs`}
-                      >
-                        #{note.tag}
-                      </span>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                      {note.data.tags &&
+                        note.data.tags.map((tag: string) => (
+                          <span class="inline-flex items-center gap-1 rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                            #{tag}
+                          </span>
+                        ))}
                     </div>
+
                     <div class="flex items-center gap-6 border-t border-gray-100 pt-4">
-                      <button class="flex items-center gap-2 text-sm font-medium text-gray-600 transition hover:text-green-600">
-                        <Share2 class="h-5 w-5" />
-                        <span class="hidden sm:inline">Compartilhar</span>
-                      </button>
+                      <ShareButton
+                        title={`Nota de Bruno Pulis - ${new Date(note.data.pubDate).toLocaleDateString('pt-BR')}`}
+                        text={note.body}
+                        url={`${Astro.site}notes/${note.slug}`}
+                      />
                     </div>
                   </article>
                 ))
               ) : (
                 <div class="empty-state">
-                  <p>Nenhuma note encontrada.</p>
+                  <p>Nenhuma nota encontrada.</p>
                 </div>
               )
             }

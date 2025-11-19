@@ -6,14 +6,14 @@ description: >-
 author: Orlando Boyer
 publishDate: 1996-02-01T00:00:00.000Z
 year: 1998
-category: ["Teologia"]
+category: ['Teologia']
 cover: /herois-da-fe.jpg
-rating: "5"
-status: "Quero ler"
+rating: '5'
+status: 'Quero ler'
 reading_date: 2018-12-07T00:00:00.000Z
 pages: 241
-purchase_link: "https://amzn.to/4kLA8Fi"
-tags: ["Cristianismo", "História"]
+purchase_link: 'https://amzn.to/4kLA8Fi'
+tags: ['Cristianismo', 'História']
 ---
 
 > A fé é a vitória que vence o mundo.

@@ -1,5 +1,5 @@
 ---
-title: "Acessibilidade Web: como começar do jeito certo"
+title: 'Acessibilidade Web: como começar do jeito certo'
 publishDate: 2023-02-13
 category: Acessibilidade
 canonical: https://brunopulis.com/introducao-acessibilidade-web/
@@ -126,7 +126,8 @@ Esse rótulo deve representar o propósito do input.
 Para resolver esse problema é extremamente simples, confira o trecho de código abaixo:
 
 ```html
-<label for="firstName">First Name</label> <input type="text" name="firstName" id="firstName" />
+<label for="firstName">First Name</label>
+<input type="text" name="firstName" id="firstName" />
 ```
 
 Com o uso do atributo `for`, criamos um vínculo entre a **label** e o **input.** Dessa forma, quando o leitor de telas navegar pelo campo irá identificar corretamente qual é o seu objetivo de preenchimento.

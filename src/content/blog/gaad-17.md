@@ -1,9 +1,9 @@
 ---
-title: "GAAD: Global Accessibility Awareness Day 17"
-image: "/src/assets/images/blog/gaad.jpeg"
-imageAlt: ""
+title: 'GAAD: Global Accessibility Awareness Day 17'
+image: '/src/assets/images/blog/gaad.jpeg'
+imageAlt: ''
 publishDate: 2017-09-11
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/gaad-17/
 tags:
   - indicacoes

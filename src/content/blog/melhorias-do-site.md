@@ -1,9 +1,9 @@
 ---
 title: Melhorias do meu site
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2024-07-18
-category: "Pessoal"
+category: 'Pessoal'
 url: https://brunopulis.com/melhorias-do-site/
 tags:
   - pessoal

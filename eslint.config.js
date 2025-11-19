@@ -17,6 +17,10 @@ export default [
       '*.config.{js,mjs,cjs,ts}',
       'pnpm-lock.yaml',
       '.tina/**',
+      'tina/__generated__/**',
+      'cypress.config.ts',
+      'pa11y.config.js',
+      'eslint.config.js',
     ],
   },
 
@@ -106,6 +110,7 @@ export default [
     rules: {
       'arrow-body-style': 'off',
       'prefer-arrow-callback': 'off',
+      'no-console': 'off',
       indent: 'off',
       'linebreak-style': 'off',
       quotes: 'off',

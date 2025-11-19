@@ -1,8 +1,8 @@
 ---
-issue: "40"
-title: "Você realmente sabe HTML?"
-date: "2024-10-03"
-coverImage: "9AuaVHzkkoKiVF3Ehrf9N9.jpeg"
+issue: '40'
+title: 'Você realmente sabe HTML?'
+date: '2024-10-03'
+coverImage: '9AuaVHzkkoKiVF3Ehrf9N9.jpeg'
 ---
 
 Essa pergunta parece trivial, mas acredite poucas pessoas sabem HTML de fato.

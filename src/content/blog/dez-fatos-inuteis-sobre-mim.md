@@ -2,7 +2,7 @@
 title: Dez fatos inúteis sobre mim
 publishDate: 2025-10-25
 author: Bruno Pulis
-description: "Descubra fatos inúteis sobre mim e quem sabe você não descubra algo curioso. "
+description: 'Descubra fatos inúteis sobre mim e quem sabe você não descubra algo curioso. '
 categories:
   - Opinião
 tags:

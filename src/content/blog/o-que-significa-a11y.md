@@ -1,9 +1,9 @@
 ---
-title: "Afinal, o quê significa A11y?"
-image: ""
-imageAlt: ""
+title: 'Afinal, o quê significa A11y?'
+image: ''
+imageAlt: ''
 publishDate: 2021-08-26
-category: "Acessibilidade"
+category: 'Acessibilidade'
 url: https://brunopulis.com/o-que-significa-a11y/
 ---
 

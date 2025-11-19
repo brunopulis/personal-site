@@ -656,7 +656,7 @@ const requisitos = [
                   <div class="flex gap-6">
                     <div class="shrink-0">
                       <div
-                        class={`h-16 w-16 bg-linear-to-br ${cores[etapa.cor]} relative z-10 flex items-center justify-center rounded-xl text-2xl font-bold text-white shadow-lg`}
+                        class={`h-16 w-16 bg-linear-to-br relative z-10 flex items-center justify-center rounded-xl text-2xl font-bold text-white shadow-lg`}
                       >
                         {etapa.numero}
                       </div>
@@ -750,12 +750,6 @@ const requisitos = [
                   {pacote.ideal}
                 </p>
 
-                <p
-                  class={`mb-6 ${pacote.destaque ? 'text-red-50' : 'text-gray-700'}`}
-                >
-                  {pacote.descricao}
-                </p>
-
                 <div class="mb-6">
                   <h4
                     class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}
@@ -777,15 +771,6 @@ const requisitos = [
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div class="mb-6 border-t border-white/20 pt-4">
-                  <div class="mb-1 text-xs text-gray-500">
-                    <strong>Exemplo:</strong> {pacote.exemploPaginas}
-                  </div>
-                  <div class="text-xs text-gray-500">
-                    <strong>Prazo:</strong> {pacote.tempoEntrega}
-                  </div>
                 </div>
 
                 <a

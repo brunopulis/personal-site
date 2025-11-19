@@ -1,8 +1,8 @@
 ---
-issue: "43"
-title: "Uma imagem vale mais que mil palavras"
-date: "2024-11-14"
-coverImage: "MB-421-scaled.jpg"
+issue: '43'
+title: 'Uma imagem vale mais que mil palavras'
+date: '2024-11-14'
+coverImage: 'MB-421-scaled.jpg'
 ---
 
 Ontem, recebemos os álbuns do nosso casamento. Por contrato receberíamos dois, um pequeno e outro grande.
@@ -113,7 +113,9 @@ Convertendo para código HTML ficaria:
 
 ```html
 <img src="alerta.png" alt="" />
-<p>Proteja-se! Confira sempre se seu boleto vem com seu nome, telefone e endereço</p>
+<p>
+  Proteja-se! Confira sempre se seu boleto vem com seu nome, telefone e endereço
+</p>
 ```
 
 > Para fixar
@@ -146,12 +148,17 @@ A técnica que descrevo a seguir é utilizada quando precisamos fazer descriçõ
 Uma fotografia do quadro “Uma noite estrelada de Van Gogh”. Esse exemplo utiliza o atributo  `aria-describedby` e demonstra como pode ser aplicado a uma imagem para fornecer uma descrição longa, onde essa descrição de texto está na mesma página da imagem.
 
 ```html
-<img src="noite-estrelada.jpg" alt="A noite estrela, Van Gogh 1889" aria-describedby="p1" />
+<img
+  src="noite-estrelada.jpg"
+  alt="A noite estrela, Van Gogh 1889"
+  aria-describedby="p1"
+/>
 <p id="p1">
-  A imagem é uma representação vibrante e dinâmica de uma noite estrelada, onde o céu parece vivo,
-  com redemoinhos de luz e estrelas brilhantes contrastando com uma vila calma e silenciosa abaixo.
-  A combinação de cores intensas e movimento transmite uma sensação de energia pulsante e
-  introspecção, como se capturasse a grandiosidade e o mistério do universo junto com a quietude da
+  A imagem é uma representação vibrante e dinâmica de uma noite estrelada, onde
+  o céu parece vivo, com redemoinhos de luz e estrelas brilhantes contrastando
+  com uma vila calma e silenciosa abaixo. A combinação de cores intensas e
+  movimento transmite uma sensação de energia pulsante e introspecção, como se
+  capturasse a grandiosidade e o mistério do universo junto com a quietude da
   humanidade.
 </p>
 ```

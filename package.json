@@ -23,6 +23,10 @@
     "build:tina": "tinacms build",
     "build:astro": "astro check && astro build",
     "preview": "astro preview",
+    "a11y": "pa11y-ci",
+    "a11y:report": "node test-a11y.mjs",
+    "a11y:dev": "npm run dev & sleep 5 && npm run a11y:report",
+    "a11y:build": "npm run build && npm run preview & sleep 5 && npm run a11y:report",
     "start": "astro dev",
     "sync": "astro sync",
     "clean": "rm -rf .astro dist node_modules/.vite",
@@ -61,13 +65,16 @@
     "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.39.0",
+    "@eslint/migrate-config": "^2.0.0",
     "@hbsnow/rehype-sectionize": "^1.0.7",
     "@philnash/astro-pagination": "^0.5.0",
     "@tanstack/react-virtual": "^3.13.12",
     "@tinacms/cli": "^1.11.0",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^24.10.1",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
+    "alpinejs": "^3.15.2",
     "astro-compress": "^2.3.8",
     "astro-eslint-parser": "^1.2.2",
     "axe-core": "^4.11.0",
@@ -78,6 +85,7 @@
     "eslint": "^9.39.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.4.0",
+    "eslint-plugin-cypress": "^5.2.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
@@ -105,16 +113,8 @@
     "typescript-eslint": "^8.46.2"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.astro": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx,json,yml,yaml}": [
-      "prettier --write"
-    ]
+    "*.{js,ts,tsx}": "eslint --fix --max-warnings=0 --cache",
+    "*.astro": "eslint --fix --max-warnings=0 --cache",
+    "*.{md,mdx,json,yml,yaml}": "prettier --write --cache"
   }
 }

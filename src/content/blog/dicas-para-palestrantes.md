@@ -1,9 +1,9 @@
 ---
 title: 4 dicas imperdíveis para palestrantes
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2022-01-22
-category: "Carreira"
+category: 'Carreira'
 url: https://brunopulis.com/dicas-para-palestrantes/
 tags:
   - carreira
