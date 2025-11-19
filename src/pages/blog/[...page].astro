@@ -2,7 +2,6 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import { ArrowRight, Rss } from "@lucide/astro";
 import type { GetStaticPathsOptions, Page } from "astro";
-
 import Layout from "@layout/Layout.astro";
 
 import TagFilter from "@components/TagFilter.astro";
@@ -12,40 +11,31 @@ import Pagination from "@components/Pagination.astro";
 import { getAllTags } from "@utils/getAllTags";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-	const posts = await getCollection("blog", ({ data }) => {
-		return data.draft !== true;
-	});
-
-	const sortedPosts = posts.sort((a, b) => {
-		return (
-			new Date(b.data.publishDate).valueOf() -
-			new Date(a.data.publishDate).valueOf()
-		);
-	});
-
-	return paginate(sortedPosts, { pageSize: 6 });
+  const posts = await getCollection("blog", ({ data }) => {
+    return data.draft !== true;
+  });
+  const sortedPosts = posts.sort((a, b) => {
+    return new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf();
+  });
+  return paginate(sortedPosts, { pageSize: 6 });
 }
 
-type Props = { page: Page<CollectionEntry<"blog">> };
+type Props = {
+  page: Page<CollectionEntry<"blog">>;
+};
 
 const { page } = Astro.props;
 const posts = page.data;
 const tags = getAllTags(posts);
-
-const allTags = [...new Set(
-  posts.flatMap(post => post.data.tags || [])
-)].sort();
-
+const allTags = [...new Set(posts.flatMap(post => post.data.tags || []))].sort();
 function formatDate(date: string | number | Date) {
-	const formatter = new Intl.DateTimeFormat("pt-BR", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
-
-	return formatter.format(new Date(date));
+  const formatter = new Intl.DateTimeFormat("pt-BR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return formatter.format(new Date(date));
 }
-
 export const prerender = true;
 ---
 
@@ -74,7 +64,7 @@ export const prerender = true;
             <li></li>
             <li></li>
           </ul>
-         <TagFilter allTags={allTags} />
+          <TagFilter allTags={allTags} />
         </div>
       </div>
     </section>
@@ -87,7 +77,7 @@ export const prerender = true;
               <ul>
                 {
                   posts.map((post, index) => (
-                    <li class="py-4" data-tags={post.data.tags?.join(',')}>
+                    <li class="py-4" data-tags={post.data.tags?.join(",")}>
                       <h3 class="mb-4 text-3xl font-bold">
                         <a href={`/blog/${post.slug}`} class="u-url group block">
                           {post.data.title}
@@ -136,4 +126,3 @@ export const prerender = true;
     </section>
   </main>
 </Layout>
-

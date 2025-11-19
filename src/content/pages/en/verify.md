@@ -1,15 +1,17 @@
 ---
 title: "Verifique minha identidade"
 date: "2025-11-18"
-layout: "../layout/MarkdownPostLayout.astro"
+description: ""
+lang: "en"
+routeKey: "verify"
 ---
 
 
-Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui, por favor, [me avise](https://brunopulis.com/contato).
+If you find an account that appears to be mine but is not listed here, please [let me know](https://brunopulis.com/contato).
 
-## Redes ativas
+## Active networks
 
-### Fediverso:
+### Fediverse:
 
 - @robb@social.lol
 - @echofeedamplify@beep.town
@@ -38,7 +40,7 @@ I can be contacted at robb@omg.lol
 Emails I send will come from desk@ this domain.
 EchoFeed emails will come from help@ or hello@.
 
-## Redes inativas
+## Inactive Networks
 
 These are me, but I don't actively use them.
 
@@ -63,7 +65,7 @@ TikTok
 Snapchat
 Pixelfed (why?)
 
-## Meus domínios 
+## My domains 
 
 - rknight.me
 - 7622.me

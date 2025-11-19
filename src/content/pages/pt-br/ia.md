@@ -1,7 +1,9 @@
 ---
 title: "/ia"
+description: ""
+lang: "pt-br"
+routeKey: "ia"
 date: "2025-11-18"
-layout: "../layout/MarkdownPostLayout.astro"
 ---
 
 ## Uso de IA

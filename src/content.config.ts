@@ -1,4 +1,5 @@
 import {
+  pages,
   biblioteca,
   blog,
   blogrolls,
@@ -11,6 +12,7 @@ import {
 } from "@content/schemas";
 
 export const collections = {
+  pages,
   blog,
   blogrolls,
   biblioteca,

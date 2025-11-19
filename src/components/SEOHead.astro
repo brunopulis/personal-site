@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  currentLocale: string;
+  currentPath: string;
+}
+
+const { title, description, currentLocale, currentPath } = Astro.props;
+const baseUrl = Astro.site || 'https://brunopulis.com';
+
+// Remove barra inicial se existir
+const cleanPath = currentPath.startsWith('/') ? currentPath.slice(1) : currentPath;
+
+// Gera URLs alternativas para cada idioma
+const locales = {
+  'pt-BR': '',  // Sem prefixo para idioma padrão
+  'en': '/en',
+  'es': '/es'
+};
+
+const alternateUrls = Object.entries(locales).map(([locale, prefix]) => ({
+  locale,
+  url: `${baseUrl}${prefix}${cleanPath ? `/${cleanPath}` : ''}`
+}));
+---
+
+<!-- Meta tags básicas -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content={description}>
+<title>{title}</title>
+
+<!-- Tags hreflang para SEO multilíngue -->
+{alternateUrls.map(({ locale, url }) => (
+  <link rel="alternate" hreflang={locale} href={url} />
+))}
+
+<!-- x-default aponta para o idioma padrão -->
+<link 
+  rel="alternate" 
+  hreflang="x-default" 
+  href={`${baseUrl}${cleanPath ? `/${cleanPath}` : ''}`} 
+/>
+
+<!-- Canonical URL -->
+<link 
+  rel="canonical" 
+  href={`${baseUrl}${locales[currentLocale]}${cleanPath ? `/${cleanPath}` : ''}`} 
+/>
+
+<!-- Open Graph -->
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:locale" content={currentLocale.replace('-', '_')}>
+<meta property="og:url" content={`${baseUrl}${locales[currentLocale]}${cleanPath ? `/${cleanPath}` : ''}`}>
+
+<!-- Language tag no HTML -->
+<html lang={currentLocale}></html>
