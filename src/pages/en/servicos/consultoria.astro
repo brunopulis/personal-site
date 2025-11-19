@@ -1,0 +1,471 @@
+---
+
+import { Award, CheckCircle, Clock, Code, Coffee, Heart, MessageCircle, Target, } from "@lucide/astro";
+import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
+import CTASection from "@components/CTA.astro";
+import Footer from "@components/layouts/Footer.astro";
+import config from "@data/site.config.json";
+
+
+
+const planos = [
+    {
+        nome: "Consultoria Pontual",
+        preco: "R$ 500",
+        unidade: "por sess\u00E3o",
+        duracao: "1-2 horas",
+        ideal: "D\u00FAvidas espec\u00EDficas ou valida\u00E7\u00E3o de decis\u00F5es",
+        cor: "blue",
+        inclui: [
+            "Sess\u00E3o de 1-2 horas",
+            "An\u00E1lise de problema espec\u00EDfico",
+            "Recomenda\u00E7\u00F5es pr\u00E1ticas",
+            "Material de apoio",
+            "Follow-up por email (7 dias)",
+            "Ideal para: decis\u00F5es pontuais, valida\u00E7\u00E3o de abordagem",
+        ],
+        exemplos: [
+            "Validar arquitetura de componente",
+            "Revisar implementa\u00E7\u00E3o espec\u00EDfica",
+            "Orienta\u00E7\u00E3o sobre ferramenta",
+            "Segunda opini\u00E3o t\u00E9cnica",
+        ],
+    },
+    {
+        nome: "Consultoria Mensal",
+        preco: "R$ 3.000",
+        unidade: "por m\u00EAs",
+        duracao: "Contrato mensal",
+        ideal: "Acompanhamento cont\u00EDnuo e suporte recorrente",
+        cor: "green",
+        destaque: true,
+        inclui: [
+            "4 sess\u00F5es de 1h (1 por semana)",
+            "Acesso direto via Slack/WhatsApp",
+            "Revis\u00E3o de c\u00F3digo ilimitada",
+            "Prioriza\u00E7\u00E3o de roadmap",
+            "Material e recursos personalizados",
+            "Documenta\u00E7\u00E3o de decis\u00F5es",
+            "Suporte ass\u00EDncrono inclu\u00EDdo",
+            "Ideal para: equipes implementando acessibilidade",
+        ],
+        exemplos: [
+            "Acompanhamento de implementa\u00E7\u00E3o",
+            "Revis\u00F5es semanais de progresso",
+            "D\u00FAvidas do dia a dia",
+            "Constru\u00E7\u00E3o de Design System acess\u00EDvel",
+        ],
+    },
+    {
+        nome: "Consultoria Estrat\u00E9gica",
+        preco: "R$ 8.000",
+        unidade: "por m\u00EAs",
+        duracao: "Contrato trimestral",
+        ideal: "Transforma\u00E7\u00E3o organizacional e cultura de acessibilidade",
+        cor: "purple",
+        inclui: [
+            "Tudo da Mentoria Mensal",
+            "Reuni\u00F5es com lideran\u00E7a",
+            "Roadmap estrat\u00E9gico completo",
+            "Processos e workflows documentados",
+            "Treinamento de m\u00FAltiplas equipes",
+            "KPIs e m\u00E9tricas de acessibilidade",
+            "Suporte priorit\u00E1rio",
+            "M\u00EDnimo 3 meses de contrato",
+            "Ideal para: empresas implementando cultura de a11y",
+        ],
+        exemplos: [
+            "Implementa\u00E7\u00E3o de governan\u00E7a",
+            "Treinamento organizacional",
+            "Processos de QA acess\u00EDvel",
+            "Transforma\u00E7\u00E3o cultural",
+        ],
+    },
+];
+const oqueFaco = [
+    {
+        icone: Code,
+        titulo: "Revis\u00E3o de C\u00F3digo",
+        descricao: "Analiso seu c\u00F3digo (componentes, p\u00E1ginas, fluxos) e dou feedback espec\u00EDfico sobre como melhorar a acessibilidade.",
+        exemplos: ["Pull request reviews", "Pair programming", "Code walkthrough"],
+    },
+    {
+        icone: Target,
+        titulo: "Direcionamento Estrat\u00E9gico",
+        descricao: "Ajudo a priorizar o que corrigir primeiro, definir roadmap realista e estabelecer processos sustent\u00E1veis.",
+        exemplos: [
+            "Roadmap de implementa\u00E7\u00E3o",
+            "Prioriza\u00E7\u00E3o de backlog",
+            "Defini\u00E7\u00E3o de processos",
+        ],
+    },
+    {
+        icone: MessageCircle,
+        titulo: "Suporte Cont\u00EDnuo",
+        descricao: "Dispon\u00EDvel para tirar d\u00FAvidas, validar decis\u00F5es e desbloquear problemas que surgem no dia a dia.",
+        exemplos: [
+            "Slack/WhatsApp",
+            "Respostas em at\u00E9 24h",
+            "Videochamadas quando necess\u00E1rio",
+        ],
+    },
+    {
+        icone: Award,
+        titulo: "Capacita\u00E7\u00E3o da Equipe",
+        descricao: "Ensino sua equipe a \"pescar\" - transfer\u00EAncia de conhecimento para autonomia futura.",
+        exemplos: ["Sess\u00F5es educativas", "Documenta\u00E7\u00E3o interna", "Boas pr\u00E1ticas"],
+    },
+];
+const processo = [
+    {
+        numero: 1,
+        titulo: "Diagn\u00F3stico Inicial",
+        duracao: "1 semana",
+        atividades: [
+            "Reuni\u00E3o de kickoff (1-2h)",
+            "Entendimento do contexto atual",
+            "An\u00E1lise de produtos/projetos",
+            "Identifica\u00E7\u00E3o de gaps",
+            "Defini\u00E7\u00E3o de objetivos",
+            "Alinhamento de expectativas",
+        ],
+    },
+    {
+        numero: 2,
+        titulo: "Planejamento",
+        duracao: "3-5 dias",
+        atividades: [
+            "Cria\u00E7\u00E3o de roadmap personalizado",
+            "Prioriza\u00E7\u00E3o de a\u00E7\u00F5es",
+            "Defini\u00E7\u00E3o de milestones",
+            "Setup de comunica\u00E7\u00E3o",
+            "Cronograma de sess\u00F5es",
+            "Defini\u00E7\u00E3o de entreg\u00E1veis",
+        ],
+    },
+    {
+        numero: 3,
+        titulo: "Execu\u00E7\u00E3o",
+        duracao: "Cont\u00EDnuo",
+        atividades: [
+            "Sess\u00F5es semanais programadas",
+            "Revis\u00F5es de c\u00F3digo",
+            "Suporte ass\u00EDncrono",
+            "Resolu\u00E7\u00E3o de d\u00FAvidas",
+            "Valida\u00E7\u00E3o de implementa\u00E7\u00F5es",
+            "Ajustes de rota quando necess\u00E1rio",
+        ],
+    },
+    {
+        numero: 4,
+        titulo: "Avalia\u00E7\u00E3o",
+        duracao: "Mensal",
+        atividades: [
+            "Revis\u00E3o de progresso",
+            "M\u00E9tricas e KPIs",
+            "Feedback m\u00FAtuo",
+            "Ajuste de objetivos",
+            "Planejamento do pr\u00F3ximo ciclo",
+            "Documenta\u00E7\u00E3o de aprendizados",
+        ],
+    },
+];
+const casosDeUso = [
+    {
+        titulo: "Startup construindo MVP",
+        situacao: "Time pequeno precisa construir produto acess\u00EDvel desde o in\u00EDcio mas n\u00E3o sabe por onde come\u00E7ar.",
+        solucao: "Mentoria Mensal para estabelecer bases s\u00F3lidas, revisar componentes principais e criar cultura desde cedo.",
+        resultado: "MVP aprovado em WCAG AA, equipe capacitada, processos estabelecidos.",
+    },
+    {
+        titulo: "E-commerce refatorando plataforma",
+        situacao: "Empresa grande refazendo plataforma e quer garantir acessibilidade, mas equipe n\u00E3o tem experi\u00EAncia.",
+        solucao: "Consultoria Estrat\u00E9gica (6 meses) - acompanhamento de toda refatora\u00E7\u00E3o, treinamento de m\u00FAltiplas squads.",
+        resultado: "Plataforma 100% acess\u00EDvel, 3 squads treinadas, Design System acess\u00EDvel criado.",
+    },
+    {
+        titulo: "Ag\u00EAncia revisando projeto",
+        situacao: "Ag\u00EAncia entregando projeto para cliente que exige conformidade, precisa valida\u00E7\u00E3o t\u00E9cnica.",
+        solucao: "Mentoria Pontual (3 sess\u00F5es) para revisar implementa\u00E7\u00E3o cr\u00EDtica e validar antes da entrega.",
+        resultado: "Cliente satisfeito, projeto aprovado, ag\u00EAncia aprendeu para pr\u00F3ximos projetos.",
+    },
+];
+const diferenciais = [
+    {
+        titulo: "Pr\u00E1tico, n\u00E3o te\u00F3rico",
+        descricao: "Trabalho no SEU c\u00F3digo, no SEU contexto. N\u00E3o \u00E9 consultoria gen\u00E9rica de slides - \u00E9 m\u00E3o na massa com voc\u00EA.",
+    },
+    {
+        titulo: "Adaptado ao seu ritmo",
+        descricao: "N\u00E3o for\u00E7o velocidade. Trabalhamos no seu ritmo, respeitando capacidade da equipe e prioridades do neg\u00F3cio.",
+    },
+    {
+        titulo: "Transpar\u00EAncia total",
+        descricao: "Documenta\u00E7\u00E3o aberta, decis\u00F5es explicadas, sem caixa preta. Voc\u00EA entende o porqu\u00EA de cada recomenda\u00E7\u00E3o.",
+    },
+    {
+        titulo: "Foco em autonomia",
+        descricao: "Objetivo \u00E9 que voc\u00EAs n\u00E3o precisem mais de mim. Ensino para que a equipe seja autossuficiente.",
+    },
+];
+const faq = [
+    {
+        pergunta: "Qual a diferen\u00E7a entre mentoria e consultoria?",
+        resposta: "Mentoria \u00E9 mais focada em capacita\u00E7\u00E3o t\u00E9cnica da equipe, hands-on no c\u00F3digo. Consultoria Estrat\u00E9gica \u00E9 mais ampla - inclui processos, governan\u00E7a, m\u00FAltiplas equipes e transforma\u00E7\u00E3o organizacional. Ambas incluem acompanhamento cont\u00EDnuo.",
+    },
+    {
+        pergunta: "Preciso ter c\u00F3digo pronto para come\u00E7ar?",
+        resposta: "N\u00E3o! Posso come\u00E7ar desde a fase de planejamento/design. Inclusive, \u00E9 melhor envolver acessibilidade cedo. Mas tamb\u00E9m ajudo com c\u00F3digo legado e refatora\u00E7\u00F5es.",
+    },
+    {
+        pergunta: "Trabalha com equipes remotas?",
+        resposta: "Sim! 100% remoto funciona perfeitamente. Uso Slack/WhatsApp para ass\u00EDncrono e Zoom/Meet para sess\u00F5es s\u00EDncronas. Tenho experi\u00EAncia com times distribu\u00EDdos.",
+    },
+    {
+        pergunta: "E se eu n\u00E3o souber ainda o que preciso?",
+        resposta: "Normal! Come\u00E7amos com uma sess\u00E3o de diagn\u00F3stico (inclu\u00EDda no primeiro m\u00EAs) onde mapeamos suas necessidades e definimos o melhor caminho juntos.",
+    },
+    {
+        pergunta: "Posso cancelar a qualquer momento?",
+        resposta: "Mentoria Mensal: sim, com aviso pr\u00E9vio de 30 dias. Consultoria Estrat\u00E9gica: contrato m\u00EDnimo de 3 meses, depois pode cancelar com 30 dias de aviso.",
+    },
+    {
+        pergunta: "Fornece material e documenta\u00E7\u00E3o?",
+        resposta: "Sim! Tudo que criamos juntos fica documentado - decis\u00F5es, boas pr\u00E1ticas, guias internos. Voc\u00EA fica com todo o material para refer\u00EAncia futura.",
+    },
+];
+---
+
+<Layout title="Consultoria - Bruno Pulis">
+  <Header />
+  <main id="main-content">
+    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
+        <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl">
+          <h1 class="mb-6 text-5xl leading-tight font-bold">Consultoria</h1>
+          <p class="mb-6 text-2xl text-white">Trabalho com você, não só para você</p>
+          <p class="mb-8 text-xl leading-relaxed text-white">
+            Não adianta só entregar um relatório. Eu trabalho lado a lado com você ou sua equipe para implementar
+            acessibilidade de verdade no dia a dia. Acompanhamento contínuo, suporte real, resultados práticos.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#planos"
+              class="font-semibold text-white underline underline-offset-8 transition hover:no-underline hover:underline-offset-8"
+            >
+              Conheça os planos
+            </a>
+            <a
+              href="#como-funciona"
+              class="font-semibold text-white underline underline-offset-8 transition hover:no-underline hover:underline-offset-8"
+            >
+              Como funciona
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">O que faço na prática</h2>
+          <p class="text-xl text-gray-600">Muito além de "dar conselhos"</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          {
+            oqueFaco.map((item) => {
+              const Icon = item.icone
+              return (
+                <div class="border-blood-red-800 rounded-2xl border-2 bg-white p-8">
+                  <div class="bg-blood-red-800 mb-6 flex h-14 w-14 items-center justify-center rounded-xl">
+                    <Icon class="h-7 w-7 text-white" aria-hidden="true" />
+                  </div>
+                  <h3 class="mb-3 text-2xl font-bold text-gray-900">{item.titulo}</h3>
+                  <p class="mb-4 leading-relaxed text-gray-700">{item.descricao}</p>
+                  <div class="flex flex-wrap gap-2">
+                    {item.exemplos.map((exemplo, i) => (
+                      <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+                        {exemplo}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Planos de Mentoria e Consultoria</h2>
+          <p class="text-xl text-gray-600">Do pontual ao estratégico</p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          {
+            planos.map((plano) => (
+              <div
+                class={`rounded-2xl p-8 transition ${
+                  plano.destaque
+                    ? 'scale-105 transform border-4 border-green-400 bg-linear-to-br from-green-600 to-green-700 text-white shadow-2xl'
+                    : 'border-2 border-gray-200 bg-white hover:border-emerald-400 hover:shadow-lg'
+                }`}
+              >
+                {plano.destaque && (
+                  <div class="mb-4 inline-block rounded-full bg-white px-3 py-1 text-xs font-bold text-green-600">
+                    ⭐ MAIS COMUM
+                  </div>
+                )}
+
+                <h3 class={`mb-2 text-2xl font-bold ${plano.destaque ? 'text-white' : 'text-gray-900'}`}>
+                  {plano.nome}
+                </h3>
+
+                <div class={`mb-1 text-4xl font-bold ${plano.destaque ? 'text-white' : 'text-emerald-600'}`}>
+                  {plano.preco}
+                </div>
+                <div class={`mb-4 text-sm ${plano.destaque ? 'text-green-100' : 'text-gray-600'}`}>{plano.unidade}</div>
+
+                <p class={`mb-6 ${plano.destaque ? 'text-green-50' : 'text-gray-700'}`}>{plano.ideal}</p>
+
+                <div class="mb-6">
+                  <h4 class={`mb-3 text-sm font-bold ${plano.destaque ? 'text-white' : 'text-gray-900'}`}>✓ Inclui:</h4>
+                  <ul class="space-y-2">
+                    {plano.inclui.map((item, i) => (
+                      <li class="flex items-start gap-2">
+                        <CheckCircle
+                          class={`mt-0.5 h-4 w-4 shrink-0 ${plano.destaque ? 'text-white' : 'text-green-600'}`}
+													aria-hidden="true"
+                        />
+                        <span class={`text-sm ${plano.destaque ? 'text-white' : 'text-gray-700'}`}>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class={`mb-6 rounded-lg p-3 text-xs ${plano.destaque ? 'bg-white/10' : 'bg-gray-50'}`}>
+                  <strong>Exemplos de uso:</strong>
+                  <ul class="mt-2 space-y-1">
+                    {plano.exemplos.map((exemplo, i) => (
+                      <li>• {exemplo}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href="/contato"
+                  class={`block w-full rounded-lg px-6 py-3 text-center font-semibold transition ${
+                    plano.destaque
+                      ? 'bg-white text-green-600 hover:bg-green-50'
+                      : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                  }`}
+                >
+                  Contratar {plano.nome}
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Como funciona o processo</h2>
+          <p class="text-xl text-gray-600">Do primeiro contato à autonomia da equipe</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {
+            processo.map((etapa) => (
+              <div class="rounded-2xl border-2 border-gray-200 bg-gray-50 p-6">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-xl font-bold text-white">
+                  {etapa.numero}
+                </div>
+                <h3 class="mb-2 text-xl font-bold text-gray-900">{etapa.titulo}</h3>
+                <div class="mb-4 flex items-center gap-2 text-sm text-gray-600">
+                  <Clock class="h-4 w-4" />
+                  {etapa.duracao}
+                </div>
+                <ul class="space-y-2">
+                  {etapa.atividades.map((atividade, i) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <span class="text-emerald-600">•</span>
+                      <span>{atividade}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">Por que trabalhar comigo</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {
+            diferenciais.map((diferencial) => (
+              <div class="flex gap-4 rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-emerald-600">
+                  <Heart class="h-6 w-6 text-white" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 class="mb-2 font-bold text-gray-900">{diferencial.titulo}</h3>
+                  <p class="text-sm text-gray-700">{diferencial.descricao}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="mb-12 text-center">
+          <h2 class="mb-4 text-3xl font-bold text-gray-900">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="space-y-6">
+          {
+            faq.map((item) => (
+              <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
+                <p class="leading-relaxed text-gray-700">{item.resposta}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      icon={Coffee}
+      title="Vamos trabalhar juntos?"
+      description="Agende uma conversa gratuita de 30 minutos. Vamos entender suas necessidades e ver se faz sentido trabalharmos juntos. Sem compromisso, sem pressão."
+      primaryButton={{
+        text: 'Agendar conversa gratuita',
+        url: config.socialMidia.cal,
+      }}
+    />
+  </main>
+  <Footer />
+</Layout>

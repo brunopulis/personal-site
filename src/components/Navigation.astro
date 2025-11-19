@@ -1,0 +1,231 @@
+---
+import { useTranslations } from '@i18n/utils';
+import { getLocalizedPath } from '@i18n/routes';
+import { languages } from '@i18n/translations';
+import type { Language } from '@i18n/translations';
+import type { RouteKey } from '@i18n/routes';
+
+import { Image } from "astro:assets";
+import pulisLogo from "@assets/images/horizontal/blood.svg";
+
+interface Props {
+  currentLang: Language;
+  currentRoute?: RouteKey;
+}
+
+const { currentLang, currentRoute } = Astro.props;
+const t = useTranslations(currentLang);
+
+const navItems: Array<{ key: string; routeKey: RouteKey }> = [
+  { key: 'nav.about', routeKey: 'about' },
+  { key: 'nav.projects', routeKey: 'projects' },
+  { key: 'nav.services', routeKey: 'services' },
+  { key: 'nav.blog', routeKey: 'blog' },
+  { key: 'nav.newsletter', routeKey: 'newsletter' },
+  { key: 'nav.contact', routeKey: 'contact' },
+];
+
+function isActiveRoute(routeKey: RouteKey): boolean {
+  return currentRoute === routeKey;
+}
+
+function getLanguageSwitchUrl(targetLang: Language): string {
+  const routeKey = currentRoute || 'index';
+  return getLocalizedPath(routeKey, targetLang);
+}
+---
+
+<header class="header">
+  <div class="header__wrapper">
+    <!-- Logo -->
+    <div class="header__logo">
+      <a href={getLocalizedPath('index', currentLang)}  class="header__logo-link"  aria-label="Ir para página inicial">
+        <Image src={pulisLogo} class="w-auto" alt="Bruno Pulis" loading="eager" />
+      </a>
+    </div>
+   
+    <!-- Navegação Principal -->
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__list">
+        {navItems.map(({ key, routeKey }) => {
+          const isActive = isActiveRoute(routeKey);
+          return (
+            <li class="header__item">
+              <a
+                href={getLocalizedPath(routeKey, currentLang)}
+                class={`header__link ${isActive ? 'header__link--active' : ''}`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {t(key as any)}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    <!-- Seletor de Idioma -->
+    <div class="header__language-switcher" aria-label="Selecione o idioma">
+      {Object.entries(languages).map(([langCode, langData]) => (
+        <a
+          href={getLanguageSwitchUrl(langCode as Language)}
+          class={`header__lang-link ${
+            currentLang === langCode ? 'header__lang-link--active' : ''
+          }`}
+          aria-label={`Switch to ${langData.label}`}
+          aria-current={currentLang === langCode ? 'language' : undefined}
+        >
+          {langCode.toUpperCase()}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .header__wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Logo */
+
+  /* Navegação */
+  .header__nav {
+    flex: 1;
+  }
+
+  .header__list {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+  }
+
+  .header__item {
+    margin: 0;
+  }
+
+  .header__link {
+    display: inline-block;
+    color: var(--color-errie-black-900, #0a0e27);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .header__link:hover {
+    color: var(--color-blood-red-800, #8b0000);
+    background-color: rgba(139, 0, 0, 0.05);
+  }
+
+  .header__link:focus-visible {
+    outline: 2px solid var(--color-blood-red-800, #8b0000);
+    outline-offset: 2px;
+  }
+
+  .header__link--active {
+    color: var(--color-blood-red-800, #8b0000);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-blood-red-800, #8b0000);
+  }
+
+  /* Seletor de Idioma */
+  .header__language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .header__lang-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    border-radius: 0.375rem;
+    background-color: transparent;
+    color: var(--color-errie-black-900, #0a0e27);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .header__lang-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color-blood-red-800, #8b0000);
+  }
+
+  .header__lang-link:focus-visible {
+    outline: 2px solid var(--color-blood-red-800, #8b0000);
+    outline-offset: 2px;
+  }
+
+  .header__lang-link--active {
+    background-color: var(--color-blood-red-800, #8b0000);
+    color: white;
+    border-color: var(--color-blood-red-800, #8b0000);
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .header__wrapper {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .header__list {
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .header__link {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header__wrapper {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .header__nav {
+      order: 2;
+    }
+
+    .header__list {
+      flex-direction: column;
+    }
+
+    .header__language-switcher {
+      order: 3;
+      border-left: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1rem 0 0 0;
+      margin-top: 1rem;
+    }
+  }
+</style>

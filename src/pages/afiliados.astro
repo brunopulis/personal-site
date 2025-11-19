@@ -1,14 +1,11 @@
 ---
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
 
+import HeroSection from "@components/layouts/HeroSection.astro";
 import config from "@data/site.config.json";
 ---
 
 <Layout title="Links de afiliados - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <HeroSection
       title="Afiliados"
@@ -18,67 +15,91 @@ import config from "@data/site.config.json";
       <div class="container mx-auto px-5">
         <div class="mb-12 grid items-center gap-12 md:grid-cols-2">
           <div>
-            <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Sobre o palestrante</h2>
+            <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+              Sobre o palestrante
+            </h2>
             <p class="mb-6 leading-relaxed text-gray-700">
-              Bruno Pulis é um defensor apaixonado da acessibilidade na Web e das práticas recomendadas de
-              desenvolvimento de front-end. Com mais de uma década de experiência na criação de experiências digitais
-              inclusivas, Bruno se tornou uma voz reconhecida na comunidade de acessibilidade.
+              Bruno Pulis é um defensor apaixonado da acessibilidade na Web e das práticas
+              recomendadas de desenvolvimento de front-end. Com mais de uma década de experiência na
+              criação de experiências digitais inclusivas, Bruno se tornou uma voz reconhecida na
+              comunidade de acessibilidade.
             </p>
 
             <p class="mb-6 leading-relaxed text-gray-700">
-              Por meio de palestras e workshops envolventes, Bruno compartilha insights práticos que capacitam
-              desenvolvedores e designers a criar aplicativos mais acessíveis e fáceis de usar. Sua abordagem combina
-              conhecimento técnico com uma profunda compreensão das necessidades do usuário.
+              Por meio de palestras e workshops envolventes, Bruno compartilha insights práticos que
+              capacitam desenvolvedores e designers a criar aplicativos mais acessíveis e fáceis de
+              usar. Sua abordagem combina conhecimento técnico com uma profunda compreensão das
+              necessidades do usuário.
             </p>
           </div>
         </div>
 
         <div class="mb-12">
-          <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Informações para divulgação</h2>
+          <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+            Informações para divulgação
+          </h2>
           <p class="mb-4 text-gray-600">
-            Para facilitar a divulgação do seu evento, post promocional aqui está as minhas informações relevantes.
+            Para facilitar a divulgação do seu evento, post promocional aqui está as minhas
+            informações relevantes.
           </p>
           <details class="mb-4">
             <summary>Mini biografia</summary>
             <p class="my-2">
-              Bruno Pulis é desenvolvedor de software especialista em acessibilidade web, formado pela Faculdade
-              Pitágoras, com 15 anos de experiência.
+              Bruno Pulis é desenvolvedor de software especialista em acessibilidade web, formado
+              pela Faculdade Pitágoras, com 15 anos de experiência.
             </p>
             <p class="my-5">
-              Apaixonado por acessibilidade, criou o Awesome A11y, também é co-fundador do Minas Dev. Curioso. Viciado
-              em Star Wars e café. Acredita que a web é um local democrático e diverso onde todos podem usufruir dos
-              seus benefícios e troca de conhecimentos.
+              Apaixonado por acessibilidade, criou o Awesome A11y, também é co-fundador do Minas
+              Dev. Curioso. Viciado em Star Wars e café. Acredita que a web é um local democrático e
+              diverso onde todos podem usufruir dos seus benefícios e troca de conhecimentos.
             </p>
           </details>
 
           <details class="mb-4">
             <summary>Biografia completa</summary>
             <p>
-              Bruno Pulis conheceu acessibilidade digital na Faculdade através de conversas informais com um dos seus
-              professores. Através de pesquisas na internet e fóruns aprofundou seus conhecimentos. Curioso por
-              natureza, começou a fazer uma curadoria de conteúdos relacionados ao tema e criou o famoso <a
+              Bruno Pulis conheceu acessibilidade digital na Faculdade através de conversas
+              informais com um dos seus professores. Através de pesquisas na internet e fóruns
+              aprofundou seus conhecimentos. Curioso por natureza, começou a fazer uma curadoria de
+              conteúdos relacionados ao tema e criou o famoso <a
                 href="https://github.com/brunopulis/awesome-a11y"
                 rel="noopener">Awesome A11y</a
-              >, um projeto <em>open source </em>que concentra todos os seus estudos.<br />Desde do início de sua
-              carreira tinha um objetivo: ajudar as pessoas a aplicarem a acessibilidade no cotidiano e desmistificar a
-              sua complexidade, compartilha conteúdo desde 2013 e se tornou uma das referências nacionais do
-              assunto.&nbsp;<br />Hoje, ajuda desenvolvedores, analistas de qualidade e designers com a <a
+              >, um projeto <em>open source </em>que concentra todos os seus estudos.<br />Desde do
+              início de sua carreira tinha um objetivo: ajudar as pessoas a aplicarem a
+              acessibilidade no cotidiano e desmistificar a sua complexidade, compartilha conteúdo
+              desde 2013 e se tornou uma das referências nacionais do assunto.&nbsp;<br />Hoje,
+              ajuda desenvolvedores, analistas de qualidade e designers com a <a
                 href="https://mentoria.brunopulis.com">Mentoria Acessibilidade Já</a
               >.
             </p>
           </details>
 
           <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Avatar</h2>
-          <p class="mb-6 leading-relaxed text-gray-700">Você pode baixar meu avatar diretamente por aqui.</p>
+          <p class="mb-6 leading-relaxed text-gray-700">
+            Você pode baixar meu avatar diretamente por aqui.
+          </p>
 
           <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">Links</h2>
           <ul class="list-disc space-y-2 pl-6 text-gray-700">
-            <li><a href={config.socialMidia.bluesky} class="underline hover:no-underline">Bluesky</a></li>
-            <li><a href={config.socialMidia.speakerdeck} class="underline hover:no-underline">Speaker Deck</a></li>
-            <li><a href={config.socialMidia.linkedin} class="underline hover:no-underline">LinkedIn</a></li>
             <li>
-              <a href={config.socialMidia.instagram} class="underline hover:no-underline">Instagram</a>
-              <li><a href={config.socialMidia.github} class="underline hover:no-underline"></a>GitHub</li>
+              <a href={config.socialMidia.bluesky} class="underline hover:no-underline">Bluesky</a>
+            </li>
+            <li>
+              <a href={config.socialMidia.speakerdeck} class="underline hover:no-underline"
+                >Speaker Deck</a
+              >
+            </li>
+            <li>
+              <a href={config.socialMidia.linkedin} class="underline hover:no-underline">LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href={config.socialMidia.instagram} class="underline hover:no-underline"
+                >Instagram</a
+              >
+              <li>
+                <a href={config.socialMidia.github} class="underline hover:no-underline"></a>GitHub
+              </li>
             </li>
           </ul>
         </div>
@@ -97,5 +118,4 @@ import config from "@data/site.config.json";
       </section>
     </section>
   </main>
-  <Footer />
 </Layout>

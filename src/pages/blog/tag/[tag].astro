@@ -1,36 +1,26 @@
 ---
-import { getCollection } from 'astro:content';
-
+import { getCollection } from "astro:content";
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-
   // Cria um mapa de tags únicas
-  const tags = [...new Set(
-    posts.flatMap(post => post.data.tags || [])
-  )];
-
+  const tags = [...new Set(posts.flatMap(post => post.data.tags || []))];
   return tags.map(tag => ({
     params: {
-      tag: tag.toLowerCase().replace(/\s+/g, '-')
+      tag: tag.toLowerCase().replace(/\s+/g, "-"),
     },
     props: {
       tag,
-      posts: posts.filter(post =>
-        post.data.tags?.includes(tag)
-      )
-    }
+      posts: posts.filter(post => post.data.tags?.includes(tag)),
+    },
   }));
 }
-
 const { tag, posts } = Astro.props;
-
 // Ordena posts por data
-const sortedPosts = posts.sort((a, b) =>
-  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 ---
 
@@ -49,149 +39,150 @@ const sortedPosts = posts.sort((a, b) =>
           {tag}
         </h2>
         <p class="post-count">
-          Total de {sortedPosts.length} {sortedPosts.length === 1 ? 'postagem' : 'postagens'}:
-          {sortedPosts.length} {sortedPosts.length === 1 ? 'artigo' : 'artigos'}
+          Total de {sortedPosts.length}
+          {sortedPosts.length === 1 ? "postagem" : "postagens"}:
+          {sortedPosts.length}
+          {sortedPosts.length === 1 ? "artigo" : "artigos"}
         </p>
       </div>
     </section>
-  <header class="page-header">
-      
-    </header>
+    <header class="page-header"></header>
 
     <div class="posts-grid">
-      {sortedPosts.map((post) => (
-        <article class="post-item">
-          <h2>
-            <a href={`/blog/${post.slug}`}>
-              {post.data.title}
-            </a>
-          </h2>
-          <time>{new Date(post.data.date).toLocaleDateString('pt-BR')}</time>
+      {
+        sortedPosts.map(post => (
+          <article class="post-item">
+            <h2>
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <time>{new Date(post.data.date).toLocaleDateString("pt-BR")}</time>
 
-          {post.data.tags && post.data.tags.length > 0 && (
-            <div class="post-tags">
-              {post.data.tags.map((postTag: string) => (
-                <a
-                  href={`/blog/tag/${postTag.toLowerCase().replace(/\s+/g, '-')}`}
-                  class={`tag-badge ${postTag === tag ? 'active' : ''}`}
-                >
-                  {postTag}
-                </a>
-              ))}
-            </div>
-          )}
-        </article>
-      ))}
+            {post.data.tags && post.data.tags.length > 0 && (
+              <div class="post-tags">
+                {post.data.tags.map((postTag: string) => (
+                  <a
+                    href={`/blog/tag/${postTag.toLowerCase().replace(/\s+/g, "-")}`}
+                    class={`tag-badge ${postTag === tag ? "active" : ""}`}
+                  >
+                    {postTag}
+                  </a>
+                ))}
+              </div>
+            )}
+          </article>
+        ))
+      }
     </div>
+  </main>
 </Layout>
 
 <style>
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
-    .breadcrumb {
-      margin-bottom: 2rem;
-    }
+  .breadcrumb {
+    margin-bottom: 2rem;
+  }
 
-    .breadcrumb a {
-      color: #6c757d;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
+  .breadcrumb a {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
 
-    .breadcrumb a:hover {
-      color: #007bff;
-    }
+  .breadcrumb a:hover {
+    color: #007bff;
+  }
 
-    .page-header {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 2px solid #e9ecef;
-    }
+  .page-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e9ecef;
+  }
 
-    .page-header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-    .tag-icon {
-      color: #007bff;
-      font-weight: bold;
-    }
+  .tag-icon {
+    color: #007bff;
+    font-weight: bold;
+  }
 
-    .post-count {
-      color: #6c757d;
-      font-size: 1rem;
-      margin: 0;
-    }
+  .post-count {
+    color: #6c757d;
+    font-size: 1rem;
+    margin: 0;
+  }
 
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
 
-    .post-item {
-      padding: 1.5rem;
-      border: 1px solid #e9ecef;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
+  .post-item {
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
 
-    .post-item:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transform: translateY(-4px);
-    }
+  .post-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
 
-    .post-item h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+  .post-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-    .post-item a {
-      color: #212529;
-      text-decoration: none;
-    }
+  .post-item a {
+    color: #212529;
+    text-decoration: none;
+  }
 
-    .post-item h2 a:hover {
-      color: #007bff;
-    }
+  .post-item h2 a:hover {
+    color: #007bff;
+  }
 
-    time {
-      color: #6c757d;
-      font-size: 0.9rem;
-    }
+  time {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
 
-    .post-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
 
-    .tag-badge {
-      padding: 0.25rem 0.75rem;
-      background: #e9ecef;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      color: #495057;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
+  .tag-badge {
+    padding: 0.25rem 0.75rem;
+    background: #e9ecef;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #495057;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
 
-    .tag-badge:hover {
-      background: #dee2e6;
-    }
+  .tag-badge:hover {
+    background: #dee2e6;
+  }
 
-    .tag-badge.active {
-      background: #007bff;
-      color: white;
-    }
-  </style>
+  .tag-badge.active {
+    background: #007bff;
+    color: white;
+  }
+</style>

@@ -1,46 +1,21 @@
 ---
-import { ExternalLink } from "@lucide/astro";
 
+import { ExternalLink } from "@lucide/astro";
 import { getCollection } from "astro:content";
 
 const blogroll = await getCollection("blogroll");
 const grouped = blogroll.reduce((acc, item) => {
-  const cat = item.data.category || "Outros";
-  acc[cat] = acc[cat] || [];
-  acc[cat].push(item);
-  return acc;
+    const cat = item.data.category || "Outros";
+    acc[cat] = acc[cat] || [];
+    acc[cat].push(item);
+    return acc;
 }, {});
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
-
-
-// ## Acessibilidade
-// - [The A11Y Project](https://www.a11yproject.com/)
-// - [Bogdan Lazar](https://bogdanlazar.com/)
-// ## Frontend
-// - [Piccalilli](https://piccalil.li/)
-// - [Sia Karamalegos](https://sia.codes/)
-// - [Localghost](https://localghost.dev)
-// - [Manuel Matuzovic](https://matuzo.at/)
-// ## Indie Web
-// - [Kevin Quirk](https://kevquirk.com/)
-// - [Bogroll.org](https://blogroll.org/)
-// ## Qualidade de Software
-// - [Talking about Testing](https://talkingabouttesting.com/)
-// ## Artes
-// ## Espiritualidade
-// - [Lecionário](https://lecionario.com)
-// - [Voltemos ao Evangelho](https://voltemosaoevangelho.com/blog/)
-// ## Web Standards
-// - [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
-// - [Cascading Style Sheets (CSS)](https://www.w3.org/groups/wg/css/publications/#rec)
 ---
 
 <Layout title="Blogroll - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <HeroSection title="Blogroll" description="Blogs que valem a pena dar uma olhada" />
 
@@ -97,5 +72,4 @@ import Footer from "@components/layouts/Footer.astro";
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
