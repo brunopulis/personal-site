@@ -16,9 +16,7 @@ import {
 } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import CTASection from "@components/CTA.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 const formatos = [
 	{
@@ -314,7 +312,6 @@ const faq = [
 ---
 
 <Layout title="Palestras - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
       <div class="absolute inset-0 opacity-10">
@@ -628,7 +625,7 @@ const faq = [
                 class="rounded-2xl border-2 border-purple-200 bg-linear-to-br from-purple-50 to-white p-6"
               >
                 <div class="mb-4 flex gap-1">
-                  {[...Array(depoimento.avaliacao)].map((_, i) => (
+                  {[...Array(depoimento.avaliacao)].map(() => (
                     <Star class="h-5 w-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   ))}
                 </div>
@@ -659,4 +656,3 @@ const faq = [
     />
   </main>
 </Layout>
-<Footer />

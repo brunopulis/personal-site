@@ -3,10 +3,8 @@ import { getCollection, render } from "astro:content";
 import { Twitter } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
 import Newsletter from "@components/Newsletter.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 // Gera as rotas para todos os letters
 export async function getStaticPaths() {
@@ -32,7 +30,6 @@ export const prerender = true;
 ---
 
 <Layout title={`${letter.data.title} - Newsletter`}>
-  <Header />
   <main id="main-content">
     <HeroSection title={letter.data.title} />
     <div class="container-custom py-8">
@@ -76,5 +73,4 @@ export const prerender = true;
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>

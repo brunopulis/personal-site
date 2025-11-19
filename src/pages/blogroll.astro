@@ -12,9 +12,7 @@ const grouped = blogroll.reduce((acc, item) => {
 }, {});
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 
 // ## Acessibilidade
@@ -40,7 +38,6 @@ import Footer from "@components/layouts/Footer.astro";
 ---
 
 <Layout title="Blogroll - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <HeroSection title="Blogroll" description="Blogs que valem a pena dar uma olhada" />
 
@@ -97,5 +94,4 @@ import Footer from "@components/layouts/Footer.astro";
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

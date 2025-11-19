@@ -19,16 +19,12 @@ import {
 } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
-
 import me from "@assets/images/me.webp";
 
 const title = "Sobre — Bruno Pulis";
 ---
 
 <Layout title={title}>
-  <Header />
   <main id="main-content">
     <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-12 text-white">
       <div class="absolute inset-0 opacity-10">
@@ -448,5 +444,4 @@ const title = "Sobre — Bruno Pulis";
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

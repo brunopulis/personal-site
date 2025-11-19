@@ -11,10 +11,7 @@ import {
 } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
 import CTASection from "@components/CTA.astro";
-import Footer from "@components/layouts/Footer.astro";
-
 import config from "@data/site.config.json";
 
 const planos = [
@@ -186,36 +183,6 @@ const processo = [
 	},
 ];
 
-const casosDeUso = [
-	{
-		titulo: "Startup construindo MVP",
-		situacao:
-			"Time pequeno precisa construir produto acessível desde o início mas não sabe por onde começar.",
-		solucao:
-			"Mentoria Mensal para estabelecer bases sólidas, revisar componentes principais e criar cultura desde cedo.",
-		resultado:
-			"MVP aprovado em WCAG AA, equipe capacitada, processos estabelecidos.",
-	},
-	{
-		titulo: "E-commerce refatorando plataforma",
-		situacao:
-			"Empresa grande refazendo plataforma e quer garantir acessibilidade, mas equipe não tem experiência.",
-		solucao:
-			"Consultoria Estratégica (6 meses) - acompanhamento de toda refatoração, treinamento de múltiplas squads.",
-		resultado:
-			"Plataforma 100% acessível, 3 squads treinadas, Design System acessível criado.",
-	},
-	{
-		titulo: "Agência revisando projeto",
-		situacao:
-			"Agência entregando projeto para cliente que exige conformidade, precisa validação técnica.",
-		solucao:
-			"Mentoria Pontual (3 sessões) para revisar implementação crítica e validar antes da entrega.",
-		resultado:
-			"Cliente satisfeito, projeto aprovado, agência aprendeu para próximos projetos.",
-	},
-];
-
 const diferenciais = [
 	{
 		titulo: "Prático, não teórico",
@@ -274,7 +241,6 @@ const faq = [
 ---
 
 <Layout title="Consultoria - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
       <div class="absolute inset-0 opacity-10">
@@ -326,7 +292,7 @@ const faq = [
                   <h3 class="mb-3 text-2xl font-bold text-gray-900">{item.titulo}</h3>
                   <p class="mb-4 leading-relaxed text-gray-700">{item.descricao}</p>
                   <div class="flex flex-wrap gap-2">
-                    {item.exemplos.map((exemplo, i) => (
+                    {item.exemplos.map((exemplo) => (
                       <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
                         {exemplo}
                       </span>
@@ -377,7 +343,7 @@ const faq = [
                 <div class="mb-6">
                   <h4 class={`mb-3 text-sm font-bold ${plano.destaque ? 'text-white' : 'text-gray-900'}`}>✓ Inclui:</h4>
                   <ul class="space-y-2">
-                    {plano.inclui.map((item, i) => (
+                    {plano.inclui.map((item) => (
                       <li class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 shrink-0 ${plano.destaque ? 'text-white' : 'text-green-600'}`}
@@ -392,7 +358,7 @@ const faq = [
                 <div class={`mb-6 rounded-lg p-3 text-xs ${plano.destaque ? 'bg-white/10' : 'bg-gray-50'}`}>
                   <strong>Exemplos de uso:</strong>
                   <ul class="mt-2 space-y-1">
-                    {plano.exemplos.map((exemplo, i) => (
+                    {plano.exemplos.map((exemplo) => (
                       <li>• {exemplo}</li>
                     ))}
                   </ul>
@@ -435,7 +401,7 @@ const faq = [
                   {etapa.duracao}
                 </div>
                 <ul class="space-y-2">
-                  {etapa.atividades.map((atividade, i) => (
+                  {etapa.atividades.map((atividade) => (
                     <li class="flex items-start gap-2 text-sm text-gray-700">
                       <span class="text-emerald-600">•</span>
                       <span>{atividade}</span>
@@ -503,5 +469,4 @@ const faq = [
       }}
     />
   </main>
-  <Footer />
 </Layout>

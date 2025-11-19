@@ -17,8 +17,6 @@ import {
 } from "@lucide/astro";
 
 import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
 
 const tiposDocumento = [
 	{
@@ -224,49 +222,6 @@ const processo = [
 	},
 ];
 
-const ferramentas = [
-	{ nome: "Adobe Acrobat Pro", uso: "Remediação de PDFs" },
-	{ nome: "PAC (PDF Accessibility Checker)", uso: "Validação de PDFs" },
-	{ nome: "Microsoft Office", uso: "Remediação de Word/Excel/PPT" },
-	{ nome: "NVDA", uso: "Testes com leitor de tela" },
-	{ nome: "JAWS", uso: "Testes com leitor de tela" },
-	{ nome: "ABBYY FineReader", uso: "OCR para PDFs escaneados" },
-	{ nome: "CommonLook", uso: "Remediação avançada de PDFs" },
-];
-
-const faq = [
-	{
-		pergunta: "Qual a diferença entre PDF acessível e PDF comum?",
-		resposta:
-			"PDF comum é apenas uma imagem do documento. PDF acessível tem estrutura, tags, ordem de leitura definida, e pode ser navegado por leitores de tela. É a diferença entre uma foto de um livro e um livro digital de verdade.",
-	},
-	{
-		pergunta: "Vocês trabalham com qualquer idioma?",
-		resposta:
-			"Sim! Posso remediar documentos em qualquer idioma. Para idiomas que não domino, foco na estrutura técnica (que é universal) e sigo as instruções fornecidas para textos alternativos.",
-	},
-	{
-		pergunta: "E se o documento for muito antigo ou de má qualidade?",
-		resposta:
-			"Depende. PDFs escaneados de baixa qualidade podem ser difíceis de remediar (OCR pode falhar). Nestes casos, pode ser mais eficiente reconstruir o documento do zero. Avalio caso a caso.",
-	},
-	{
-		pergunta: "Quanto tempo leva?",
-		resposta:
-			"Documentos simples: 3-5 dias. Médios: 5-7 dias. Complexos: 1-3 semanas. Lotes grandes: negociamos prazos. Urgências podem ter custo adicional.",
-	},
-	{
-		pergunta: "Posso aprender a fazer eu mesmo?",
-		resposta:
-			"Sim! Ofereço treinamento para equipes que precisam remediar documentos regularmente. Ensino o processo, ferramentas e boas práticas. Mais eficiente para quem tem volume grande.",
-	},
-	{
-		pergunta: "Garantem conformidade legal?",
-		resposta:
-			"Garanto conformidade técnica com WCAG 2.1/2.2 nível AA. Forneço relatório detalhado que pode ser usado como documentação. Porém, não sou advogado e não posso garantir conformidade legal específica.",
-	},
-];
-
 const beneficios = [
 	{
 		icone: Shield,
@@ -295,7 +250,6 @@ const beneficios = [
 ---
 
 <Layout title="Remediação de documentos - Bruno Pulis">
-  <Header />
   <main id="main-content">
     <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white">
       <div class="absolute inset-0 opacity-10">
@@ -345,7 +299,7 @@ const beneficios = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {
-            beneficios.map((beneficio, index) => {
+            beneficios.map((beneficio) => {
               const Icon = beneficio.icone
               return (
                 <div
@@ -406,7 +360,6 @@ const beneficios = [
 
               return (
                 <div
-                  key={tipo.id}
                   class={`rounded-2xl border-2 bg-white p-8 ${cor.border} ${cor.hover} transition hover:shadow-lg`}
                 >
                   <div class="mb-6 flex items-center gap-3">
@@ -425,8 +378,8 @@ const beneficios = [
                       Problemas comuns:
                     </h4>
                     <ul class="space-y-2">
-                      {tipo.problemas.slice(0, 5).map((problema, i) => (
-                        <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                      {tipo.problemas.slice(0, 5).map((problema) => (
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
                           <span class="mt-1 text-orange-600">•</span>
                           <span>{problema}</span>
                         </li>
@@ -439,8 +392,8 @@ const beneficios = [
                       <CheckCircle class="h-4 w-4 text-green-600" />O que faço:
                     </h4>
                     <ul class="space-y-2">
-                      {tipo.solucoes.slice(0, 5).map((solucao, i) => (
-                        <li key={i} class="flex items-start gap-2 text-sm text-gray-700">
+                      {tipo.solucoes.slice(0, 5).map((solucao) => (
+                        <li class="flex items-start gap-2 text-sm text-gray-700">
                           <CheckCircle class="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
                           <span>{solucao}</span>
                         </li>
@@ -465,7 +418,7 @@ const beneficios = [
 
         <div class="grid gap-8 md:grid-cols-3">
           {
-            pacotes.map((pacote, index) => (
+            pacotes.map((pacote) => (
               <div
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
@@ -495,8 +448,8 @@ const beneficios = [
                     ✓ Inclui:
                   </h4>
                   <ul class="space-y-2">
-                    {pacote.inclui.map((item, i) => (
-                      <li key={i} class="flex items-start gap-2">
+                    {pacote.inclui.map((item) => (
+                      <li class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
                           aria-hidden="true"
@@ -555,7 +508,6 @@ const beneficios = [
         <div class="space-y-8">
           {
             processo.map((etapa, index) => {
-              const Icon = etapa.icone
               return (
                 <div class="relative">
                   {index < processo.length - 1 && (
@@ -638,7 +590,7 @@ const beneficios = [
                 author: 'Rafael Gomes',
                 role: 'Designer de Produto',
               },
-            ].map((testimonial, idx) => (
+            ].map((testimonial) => (
               <div class="rounded-2xl bg-gray-50 p-8">
                 <p class="mb-6 text-lg leading-relaxed text-gray-700">"{testimonial.text}"</p>
                 <div>
@@ -667,5 +619,4 @@ const beneficios = [
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
