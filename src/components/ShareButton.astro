@@ -8,6 +8,7 @@ interface Props {
   style?: 'simple | button | inline';
 }
 
+const { style = 'button' } = Astro.props;
 const { title, text, url, style} = Astro.props;
 ---
 
