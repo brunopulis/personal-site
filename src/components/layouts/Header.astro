@@ -1,9 +1,12 @@
 ---
+import Navigation from '@components/Navigation.astro';
+import LanguagePicker from '@components/LanguagePicker.astro';
 import { Image } from "astro:assets";
-
 
 import pulisLogo from "@assets/images/horizontal/blood.svg";
 import SkipLink from "@components/utils/SkipLink.astro";
+
+const { currentLocale } = Astro;
 ---
 
 <SkipLink />
@@ -14,93 +17,9 @@ import SkipLink from "@components/utils/SkipLink.astro";
         <Image src={pulisLogo} class="w-auto" alt="Bruno Pulis" loading="eager" />
       </a>
     </div>
-    <nav class="header__nav" aria-label="Navegação principal">
-      <ul class="header__list">
-        <li class="header__item"><a href="/sobre" class="header__link">Sobre</a></li>
-        <li class="header__item"><a href="/projetos" class="header__link">Projetos</a></li>
-        <li class="header__item"><a href="/servicos" class="header__link">Serviços</a></li>
-        <li class="header__item"><a href="/blog" class="header__link">Blog</a></li>
-        <li class="header__item"><a href="/newsletter" class="header__link">Newsletter</a></li>
-        <li class="header__item"><a href="/contato" class="header__link">Contato</a></li>
-      </ul>
-    </nav>
+
+    <Navigation currentLocale={currentLocale} />
+    <LanguagePicker />
   </div>
 </header>
 
-<style>
-  .wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .header {
-    padding: 1.5rem;
-  }
-
-  .header__nav {
-    display: flex;
-    align-items: center;
-  }
-
-  .header__list {
-    display: flex;
-  }
-
-  .header__item {
-    gap: 1rem;
-  }
-
-  .header__link {
-    color: var(--color-errie-black-900);
-    padding: 0.25rem;
-  }
-
-  .header__link:focus,
-  .header__link:hover {
-    color: var(--color-blood-red-800);
-    text-decoration: underline;
-    text-underline-offset: 8px;
-  }
-
-  .header__link::focus-visible {
-    border: solid dotted;
-  }
-
-  @media(max-width: 991px) {
-    .wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .header__nav {
-      width: 100%;
-      gap: 1rem;
-      flex-direction: column;
-    }
-
-    .header__list {
-      gap: 1rem;
-      display: flex;
-    }
-  }
-
-  @media(max-width: 480px) {
-    .wrapper {
-      align-items: flex-start;
-    }
-
-    .header__nav {
-      align-items: flex-start;
-    }
-
-    .header__list {
-      gap: 1rem;
-      display: flex;
-      margin: 1rem 0;
-      flex-direction: column;
-    }
-  }
-</style>
