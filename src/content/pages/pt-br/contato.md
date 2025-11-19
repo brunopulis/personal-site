@@ -1,7 +1,9 @@
 ---
 title: "Contato"
+description: ""
+lang: "pt-br"
+routeKey: "contato"
 date: "2025-11-18"
-layout: "../layout/MarkdownPostLayout.astro"
 ---
 
 É assim que você pode entrar em contato comigo.

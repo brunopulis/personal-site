@@ -1,39 +1,33 @@
 ---
-import { getCollection } from 'astro:content';
 
+import { getCollection } from "astro:content";
 import Layout from "@layout/Layout.astro";
+import Header from "@components/layouts/Header.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
 
+
+
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-
-  // Cria um mapa de tags únicas
-  const tags = [...new Set(
-    posts.flatMap(post => post.data.tags || [])
-  )];
-
-  return tags.map(tag => ({
-    params: {
-      tag: tag.toLowerCase().replace(/\s+/g, '-')
-    },
-    props: {
-      tag,
-      posts: posts.filter(post =>
-        post.data.tags?.includes(tag)
-      )
-    }
-  }));
+    const posts = await getCollection("blog");
+    // Cria um mapa de tags únicas
+    const tags = [...new Set(posts.flatMap(post => post.data.tags || []))];
+    return tags.map(tag => ({
+        params: {
+            tag: tag.toLowerCase().replace(/\s+/g, "-")
+        },
+        props: {
+            tag,
+            posts: posts.filter(post => post.data.tags?.includes(tag))
+        }
+    }));
 }
-
 const { tag, posts } = Astro.props;
-
 // Ordena posts por data
-const sortedPosts = posts.sort((a, b) =>
-  new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
-);
+const sortedPosts = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <Layout title="" description="">
+  <Header />
   <main id="main-content">
     <HeroSection
       title="Tags"
@@ -52,7 +46,9 @@ const sortedPosts = posts.sort((a, b) =>
         </p>
       </div>
     </section>
-
+  <header class="page-header">
+      
+    </header>
 
     <div class="posts-grid">
       {sortedPosts.map((post) => (

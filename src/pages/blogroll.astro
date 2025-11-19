@@ -1,14 +1,14 @@
 ---
-import { ExternalLink } from "@lucide/astro";
 
+import { ExternalLink } from "@lucide/astro";
 import { getCollection } from "astro:content";
 
 const blogroll = await getCollection("blogroll");
 const grouped = blogroll.reduce((acc, item) => {
-  const cat = item.data.category || "Outros";
-  acc[cat] = acc[cat] || [];
-  acc[cat].push(item);
-  return acc;
+    const cat = item.data.category || "Outros";
+    acc[cat] = acc[cat] || [];
+    acc[cat].push(item);
+    return acc;
 }, {});
 
 import Layout from "@layout/Layout.astro";

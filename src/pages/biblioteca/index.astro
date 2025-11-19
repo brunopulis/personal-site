@@ -3,20 +3,14 @@ import Layout from "@layout/Layout.astro";
 import MediaCard from "@components/MediaCard.astro";
 import books from "@data/books.json";
 
-const livrosPorAno = Object.entries(
-	books
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-		.reduce(
-			(acc, book) => {
-				const year = new Date(book.date).getFullYear();
-				acc[year] = acc[year] || [];
-				acc[year].push(book);
-				return acc;
-			},
-			{} as Record<string, (typeof books)[0][]>,
-		),
-).sort((a, b) => Number(b[0]) - Number(a[0]));
-
+const livrosPorAno = Object.entries(books
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .reduce((acc, book) => {
+    const year = new Date(book.date).getFullYear();
+    acc[year] = acc[year] || [];
+    acc[year].push(book);
+    return acc;
+}, {} as Record<string, (typeof books)[0][]>)).sort((a, b) => Number(b[0]) - Number(a[0]));
 export const prerender = true;
 ---
 

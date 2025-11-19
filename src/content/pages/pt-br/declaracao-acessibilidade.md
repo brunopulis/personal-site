@@ -1,7 +1,9 @@
 ---
 title: "Declaração de Acessibilidade"
+description: ""
+lang: "pt-br"
+routeKey: "declaracao-acessibilidade"
 date: "2025-11-18"
-layout: "../layout/MarkdownPostLayout.astro"
 ---
 
 > Este documento descreve os recursos de acessibilidade e o suporte fornecidos pelo nosso site. Certifique-se de preencher os detalhes do seu próprio site e verificar as diretrizes WCAG 2.2 AA.

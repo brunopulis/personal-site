@@ -1,7 +1,9 @@
 ---
-title: "/now"
+title: "O que estou fazendo agora"
 date: "2025-11-18"
-layout: "../layout/MarkdownPostLayout.astro"
+description: ""
+lang: "pt-br"
+routeKey: "agora"
 ---
 
 ## O que estou fazendo agora 
