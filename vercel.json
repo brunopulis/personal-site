@@ -1,4 +1,29 @@
 {
+  "rewrites": [
+    {
+      "source": "/.well-known/webfinger",
+      "destination": "https://fed.brid.gy/.well-known/webfinger"
+    },
+    {
+      "source": "/.well-known/host-meta",
+      "destination": "https://fed.brid.gy/.well-known/host-meta"
+    },
+    {
+      "source": "/.well-known/host-meta.json",
+      "destination": "https://fed.brid.gy/.well-known/host-meta.json"
+    }
+  ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/.well-known/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ]
 }
