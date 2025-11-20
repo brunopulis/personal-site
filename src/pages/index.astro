@@ -21,6 +21,27 @@ const streams = validStreamItems
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 4);
 
+const enrichedStream = await Promise.all(
+  streams.map(async (item) => {
+    if (item.data.bookSlug) {
+      const livros = await getCollection('biblioteca');
+      const livro = livros.find(l => l.slug === item.data.bookSlug);
+      return { ...item, linkedContent: livro };
+    }
+    if (item.data.filmSlug) {
+      const filmes = await getCollection('movies');
+      const filme = filmes.find(f => f.slug === item.data.filmSlug);
+      return { ...item, linkedContent: filme };
+    }
+    if (item.data.musicSlug) {
+      const musicas = await getCollection('musics');
+      const musica = musicas.find(m => m.slug === item.data.musicSlug);
+      return { ...item, linkedContent: musica };
+    }
+    return { ...item, linkedContent: null };
+  })
+);
+
 const iconMap = {
   book: '📚',
   music: '🎵',

@@ -46,11 +46,15 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    
+
     <!-- SEO -->
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- RSS Microformats e rel=me -->
+    <RSS />
+    <Webmentions />
     
     <!-- hreflang para SEO multiidioma -->
     {hreflangs.map(({ lang: hrefLang, path }) => (
@@ -63,19 +67,12 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
     <link rel="canonical" href={Astro.url} />
 
     <!-- Componentes do Head -->
-    <RSS />
-    <Webmentions />
     <Preconnect />
-    
-    <!-- Transições Astro -->
     <ClientRouter />
   </head>
   
   <body class="antialiased">
-    <!-- Skip Link para acessibilidade -->
     <SkipLink />
-
-    <!-- Navegação -->
     <header class="header sticky top-0 z-50 bg-white shadow-sm">
       <nav class="wrapper">
         <Navigation currentLang={lang} currentRoute={routeKey} />
