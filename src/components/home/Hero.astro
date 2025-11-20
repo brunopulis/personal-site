@@ -1,13 +1,16 @@
 ---
+import type { Language, RouteKey } from '@i18n/index';
+
 import { Image } from "astro:assets";
 import me from "@assets/images/me.jpeg";
 
-// 1. Define a Interface das Props
 interface Props {
   t: (key: string) => string;
+  currentLang: Language; 
+  getLocalizedPath: (routeKey: RouteKey, lang: Language) => string; 
 }
 
-const { t } = Astro.props;
+const { t, currentLang, getLocalizedPath } = Astro.props;
 ---
 
 <section class="text-errie-black-900" id="hero" aria-labelledby="hero-section">
@@ -21,8 +24,8 @@ const { t } = Astro.props;
         
 
       <ul class="hero__links" role="list">
-        <li><a href="/about">{t("home.about_link")}</a></li>
-        <li><a href="/now">{t("home.about_now")}</a></li>
+        <li><a href={getLocalizedPath('about', currentLang)}>{t("home.about_link")}</a></li>
+        <li><a href={getLocalizedPath('now', currentLang)}>{t("home.about_now")}</a></li>
       </ul>
     </div>
 

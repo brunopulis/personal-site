@@ -42,14 +42,20 @@ export function useTranslations(lang: Language) {
  * getLocalizedPath('index', 'pt-br') // returns '/'
  * getLocalizedPath('index', 'en') // returns '/en'
  */
-export function getLocalizedPath(routeKey: RouteKey, lang: Language): string { 
+export function getLocalizedPath(routeKey: RouteKey, lang: Language): string {
   const path = routes[lang]?.[routeKey] ?? routes["pt-br"][routeKey];
 
   if (lang === "pt-br") {
     return path ? `/${path}` : "/";
   }
 
-  return path ? `/${lang}/${path}` : `/${lang}`;
+  if (routeKey === 'index') {
+    return `/${lang}`; 
+  }
+
+  // Rota Normal (ex: 'now', 'about'): retorna /prefixo/caminho
+  // Como 'path' não deve ser vazio para rotas não-index, podemos garantir a estrutura:
+  return `/${lang}/${path}`;
 }
 
 /**

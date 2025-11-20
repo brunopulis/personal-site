@@ -1,11 +1,10 @@
 ---
-import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import { getLanguageFromPath, useTranslations, getLocalizedPath } from '@i18n/utils';
 import type { Language } from '@i18n/index'; 
+import Layout from '@layout/Layout.astro';
+import Hero from '@components/home/Hero.astro';
 
 import { getCollection } from "astro:content";
-
-import Layout from "@layout/Layout.astro";
-import Hero from "@components/home/Hero.astro";
 
 const blogPosts = await getCollection('blog');
 const streamItems = await getCollection('stream');
@@ -43,75 +42,95 @@ function formatRelativeDate(date: Date): string {
 }
 
 const lang = getLanguageFromPath(Astro.url.pathname) as Language;
-const t = useTranslations(lang); 
+const t = useTranslations(lang);
 ---
 
 <Layout
   title="Bruno Pulis - Engenheiro de Acessibilidade"
   description="Bruno Pulis - Mentor e engenheiro de acessibilidade web, desenvolvendo uma web para todos"
-  currentLocale="pt-br"
+  currentLocale="en"
 >
   <main id="main-content">
-    <Hero t={t} />
+    <Hero 
+      t={t}
+      currentLang={lang}
+      getLocalizedPath={getLocalizedPath} 
+    />
     <!-- Recent Activity -->
     <section class="mb-20" aria-labbeledby="recent-title">
-      <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-semibold text-gray-900" id="recent-title">Recentemente</h2>
-        <a href="/fluxo" class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
-          ver tudo →
-        </a>
-      </div>
+      <div class="wrapper mx-auto max-w-7xl px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900" id="recent-title">Recentemente</h2>
+          <a href="/fluxo" class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+            ver tudo →
+          </a>
+        </div>
 
-      <div class="space-y-4">
-        {recentStream.map((item) => (
-          <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
-            <div class="flex gap-4">
-              <div class="flex-shrink-0 text-2xl">
-                {iconMap[item.data.type] || '📝'}
-              </div>
-              <div class="flex-1">
-                <p class="text-gray-900 font-medium mb-1">{item.data.title}</p>
-                {item.data.detail && (
-                  <p class="text-gray-600 text-sm mb-2">{item.data.detail}</p>
-                )}
-                <p class="text-gray-400 text-xs">{formatRelativeDate(item.data.date)}</p>
+        <div class="space-y-4">
+          {recentStream.map((item) => (
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 text-2xl">
+                  {iconMap[item.data.type] || '📝'}
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-900 font-medium mb-1">{item.data.title}</p>
+                  {item.data.detail && (
+                    <p class="text-gray-600 text-sm mb-2">{item.data.detail}</p>
+                  )}
+                  <p class="text-gray-400 text-xs">{formatRelativeDate(item.data.pubDate)}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
     </section>
 
     <!-- Blog Posts -->
     <section class="mb-20">
-      <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-semibold text-gray-900">Escrevendo</h2>
-        <a href="/escrevendo" class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
-          todos os artigos →
-        </a>
-      </div>
-      <div class="space-y-6">
-        {recentBlogPosts.map((post) => (
-          <article class="border-b border-gray-200 pb-6 last:border-0">
-            <a href={`/blog/${post.slug}`}>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600">
-                {post.data.title}
-              </h3>
-            </a>
-            {post.data.excerpt && (
-              <p class="text-gray-600 mb-3">{post.data.excerpt}</p>
-            )}
-            <div class="flex gap-3 text-sm text-gray-500">
-              <time>
-                {post.data.publishDate}
-              </time>
-            </div>
-          </article>
-        ))}
+      <div class="wrapper mx-auto max-w-7xl px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900">Escrevendo</h2>
+          <a href="/escrevendo" class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+            todos os artigos →
+          </a>
+        </div>
+        <div class="space-y-6">
+          {recentBlogPosts.map((post) => (
+            <article class="border-b border-gray-200 pb-6 last:border-0">
+              <a href={`/blog/${post.slug}`}>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600">
+                  {post.data.title}
+                </h3>
+              </a>
+              {post.data.excerpt && (
+                <p class="text-gray-600 mb-3">{post.data.excerpt}</p>
+              )}
+              <div class="flex gap-3 text-sm text-gray-500">
+                <time datetime={post.data.publishDate.toISOString()}>
+                  {post.data.publishDate.toLocaleDateString('pt-BR', { 
+                    day: 'numeric', 
+                    month: 'short', 
+                    year: 'numeric' 
+                  })}
+                </time>
+                {post.data.readTime && (
+                  <>
+                    <span>•</span>
+                    <span>{post.data.readTime}</span>
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
 
     <!-- Work Section -->
     <section class="mb-20">
+      <div class="wrapper mx-auto max-w-7xl px-6">
       <div class="bg-blue-50 border border-blue-100 rounded-lg p-8">
         <h2 class="text-2xl font-semibold text-gray-900 mb-4">Trabalhando</h2>
         <p class="text-gray-700 mb-6 leading-relaxed">
@@ -122,19 +141,22 @@ const t = useTranslations(lang);
           saiba como posso ajudar →
         </a>
       </div>
+      </div>
     </section>
 
     <!-- Newsletter CTA -->
     <section class="mb-12">
-      <div class="bg-gray-100 rounded-lg p-8 text-center">
-        <div class="text-4xl mb-4">✉️</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Newsletter</h3>
-        <p class="text-gray-600 mb-4">
-          Receba artigos sobre acessibilidade e tecnologia direto no seu email
-        </p>
-        <a href="/newsletter" class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-          Assinar
-        </a>
+      <div class="wrapper mx-auto max-w-7xl">
+        <div class="bg-gray-100 rounded-lg p-8 text-center">
+          <div class="text-4xl mb-4">✉️</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Newsletter</h3>
+          <p class="text-gray-600 mb-4">
+            Receba artigos sobre acessibilidade e tecnologia direto no seu email
+          </p>
+          <a href="/newsletter" class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+            Assinar
+          </a>
+        </div>
       </div>
     </section>
   </main>
