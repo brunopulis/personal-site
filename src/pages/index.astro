@@ -1,31 +1,160 @@
 ---
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import type { Language } from '@i18n/index'; 
+
+import { getCollection } from "astro:content";
 
 import Layout from "@layout/Layout.astro";
 import Hero from "@components/home/Hero.astro";
-import About from "@components/home/About.astro";
-import Features from "@components/home/Features.astro";
-import Testimonials from "@components/home/Testimonials.astro";
-import Blog from "@components/home/Blog.astro";
-import CTA from "@components/home/CTA.astro";
 
-// Detecta o idioma e obtém as traduções
-const lang = getLanguageFromPath(Astro.url.pathname);
-// eslint-disable-next-line no-unused-vars
-const t = useTranslations(lang);
+const blogPosts = await getCollection('blog');
+const streamItems = await getCollection('stream');
+
+const recentBlogPosts = blogPosts
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const recentStream = streamItems
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 4);
+
+const iconMap = {
+  book: '📚',
+  music: '🎵',
+  film: '🎬',
+  podcast: '🎧',
+  concert: '🎤',
+  link: '🔗',
+  note: '💭',
+  post: '✍️'
+};
+
+// Função para formatar data relativa
+function formatRelativeDate(date: Date): string {
+  const now = new Date();
+  const diff = now.getTime() - date.getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  
+  if (days === 0) return 'hoje';
+  if (days === 1) return 'ontem';
+  if (days < 7) return `${days} dias atrás`;
+  if (days < 30) return `${Math.floor(days / 7)} semanas atrás`;
+  return date.toLocaleDateString('pt-BR');
+}
+
+const lang = getLanguageFromPath(Astro.url.pathname) as Language;
+const t = useTranslations(lang); 
 ---
 
 <Layout
-  title={t("home.title")}
-  description={t("home.description")}
-  routeKey=""
+  title="Bruno Pulis - Engenheiro de Acessibilidade"
+  description="Bruno Pulis - Mentor e engenheiro de acessibilidade web, desenvolvendo uma web para todos"
+  currentLocale="pt-br"
 >
   <main id="main-content">
-    <Hero />
-    <About />
-    <Features />
-    <Testimonials />
-    <Blog />
-    <CTA />
+    <Hero t={t} />
+    <!-- Recent Activity -->
+    <section class="mb-20" aria-labbeledby="recent-title">
+      <div class="wrapper mx-auto max-w-7xl px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900" id="recent-title">Recentemente</h2>
+          <a href="/fluxo" class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+            ver tudo →
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          {recentStream.map((item) => (
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 text-2xl">
+                  {iconMap[item.data.type] || '📝'}
+                </div>
+                <div class="flex-1">
+                  <p class="text-gray-900 font-medium mb-1">{item.data.title}</p>
+                  {item.data.detail && (
+                    <p class="text-gray-600 text-sm mb-2">{item.data.detail}</p>
+                  )}
+                  <p class="text-gray-400 text-xs">{formatRelativeDate(item.data.pubDate)}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="mb-20">
+      <div class="wrapper mx-auto max-w-7xl px-6">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-semibold text-gray-900">Escrevendo</h2>
+          <a href="/escrevendo" class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1">
+            todos os artigos →
+          </a>
+        </div>
+        <div class="space-y-6">
+          {recentBlogPosts.map((post) => (
+            <article class="border-b border-gray-200 pb-6 last:border-0">
+              <a href={`/blog/${post.slug}`}>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600">
+                  {post.data.title}
+                </h3>
+              </a>
+              {post.data.excerpt && (
+                <p class="text-gray-600 mb-3">{post.data.excerpt}</p>
+              )}
+              <div class="flex gap-3 text-sm text-gray-500">
+                <time datetime={post.data.publishDate.toISOString()}>
+                  {post.data.publishDate.toLocaleDateString('pt-BR', { 
+                    day: 'numeric', 
+                    month: 'short', 
+                    year: 'numeric' 
+                  })}
+                </time>
+                {post.data.readTime && (
+                  <>
+                    <span>•</span>
+                    <span>{post.data.readTime}</span>
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="mb-20">
+      <div class="wrapper mx-auto max-w-7xl px-6">
+      <div class="bg-blue-50 border border-blue-100 rounded-lg p-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Trabalhando</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Ajudo empresas e produtos a serem mais acessíveis através de consultoria, 
+          auditorias e treinamentos em acessibilidade web.
+        </p>
+        <a href="/servicos" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
+          saiba como posso ajudar →
+        </a>
+      </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="mb-12">
+      <div class="wrapper mx-auto max-w-7xl">
+        <div class="bg-gray-100 rounded-lg p-8 text-center">
+          <div class="text-4xl mb-4">✉️</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Newsletter</h3>
+          <p class="text-gray-600 mb-4">
+            Receba artigos sobre acessibilidade e tecnologia direto no seu email
+          </p>
+          <a href="/newsletter" class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+            Assinar
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
