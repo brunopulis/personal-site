@@ -1,11 +1,10 @@
 ---
-import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import { getLanguageFromPath, useTranslations, getLocalizedPath } from '@i18n/utils';
 import type { Language } from '@i18n/index'; 
+import Layout from '@layout/Layout.astro';
+import Hero from '@components/home/Hero.astro';
 
 import { getCollection } from "astro:content";
-
-import Layout from "@layout/Layout.astro";
-import Hero from "@components/home/Hero.astro";
 
 const blogPosts = await getCollection('blog');
 const streamItems = await getCollection('stream');
@@ -43,7 +42,7 @@ function formatRelativeDate(date: Date): string {
 }
 
 const lang = getLanguageFromPath(Astro.url.pathname) as Language;
-const t = useTranslations(lang); 
+const t = useTranslations(lang);
 ---
 
 <Layout
@@ -52,7 +51,12 @@ const t = useTranslations(lang);
   currentLocale="pt-br"
 >
   <main id="main-content">
-    <Hero t={t} />
+    <Hero 
+      t={t}
+      currentLang={lang}
+      getLocalizedPath={getLocalizedPath} 
+    />
+
     <!-- Recent Activity -->
     <section class="mb-20" aria-labbeledby="recent-title">
       <div class="wrapper mx-auto max-w-7xl px-6">

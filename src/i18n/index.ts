@@ -1,8 +1,8 @@
 import { ptBrNavigation } from "./locales/pt-br/navigation"; 
 import { enNavigation } from "./locales/en/navigation";
 
-import { ptBrHome } from "@i18n/locales/pt-br/home"; 
-import { enHome } from "@i18n/locales/en/home";
+import { ptBrHome } from "./locales/pt-br/home"; 
+import { enHome } from "./locales/en/home";
 
 
 export const languages = {
