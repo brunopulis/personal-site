@@ -1,8 +1,6 @@
 ---
-import { useTranslations } from '@i18n/utils';
-import { getLocalizedPath } from '@i18n/routes';
-import { languages } from '@i18n/translations';
-import type { Language } from '@i18n/translations';
+import { useTranslations, getLocalizedPath, languages } from '@i18n/utils'; 
+import type { Language, TranslationKey } from '@i18n/index'; 
 import type { RouteKey } from '@i18n/routes';
 
 import { Image } from "astro:assets";
@@ -18,10 +16,10 @@ const t = useTranslations(currentLang);
 
 const navItems: Array<{ key: string; routeKey: RouteKey }> = [
   { key: 'nav.about', routeKey: 'about' },
-  { key: 'nav.projects', routeKey: 'projects' },
-  { key: 'nav.services', routeKey: 'services' },
+  { key: 'nav.now', routeKey: 'now' },
   { key: 'nav.blog', routeKey: 'blog' },
-  { key: 'nav.newsletter', routeKey: 'newsletter' },
+  { key: 'nav.stream', routeKey: 'stream' },
+  { key: 'nav.work', routeKey: 'work' },
   { key: 'nav.contact', routeKey: 'contact' },
 ];
 
