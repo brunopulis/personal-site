@@ -29,7 +29,11 @@ const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
 
-<Layout title={title}>
+<Layout
+  title={t("about.title")}
+  description={t("about.description")}
+  routeKey="sobre"
+>
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-12 text-white"

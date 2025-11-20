@@ -1,4 +1,5 @@
 ---
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
 
 import Layout from "@layout/Layout.astro";
 import Hero from "@components/home/Hero.astro";
@@ -7,11 +8,17 @@ import Features from "@components/home/Features.astro";
 import Testimonials from "@components/home/Testimonials.astro";
 import Blog from "@components/home/Blog.astro";
 import CTA from "@components/home/CTA.astro";
+
+// Detecta o idioma e obtém as traduções
+const lang = getLanguageFromPath(Astro.url.pathname);
+// eslint-disable-next-line no-unused-vars
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Bruno Pulis - Engenheiro de Acessibilidade"
-  description="Bruno Pulis - Mentor e engenheiro de acessibilidade web, desenvolvendo uma web para todos"
+  title={t("home.title")}
+  description={t("home.description")}
+  routeKey=""
 >
   <main id="main-content">
     <Hero />

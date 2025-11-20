@@ -1,14 +1,12 @@
 ---
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+
 import { ArrowRight, Award, CheckCircle, Code, Eye, Shield, Target } from "@lucide/astro";
 import Layout from "@layout/Layout.astro";
 import AuditionA11y from "@components/services/auditoria-a11y/AuditionA11y.astro";
 import Packages from "@components/services/auditoria-a11y/Packages.astro";
 import ServicesSteps from "@components/services/auditoria-a11y/ServicesSteps.astro";
 import CTASection from "@components/CTA.astro";
-<<<<<<< HEAD
-
-=======
->>>>>>> 1.0.2
 
 const oqueBusco = [
   {
@@ -110,13 +108,17 @@ const faq = [
       "Forne\u00E7o an\u00E1lise t\u00E9cnica baseada em padr\u00F5es internacionais. N\u00E3o sou advogado, ent\u00E3o n\u00E3o posso garantir conformidade legal espec\u00EDfica. Mas o relat\u00F3rio pode ser usado como documenta\u00E7\u00E3o para demonstrar esfor\u00E7os de acessibilidade.",
   },
 ];
+
+// Detecta o idioma e obtém as traduções
+const lang = getLanguageFromPath(Astro.url.pathname);
+// eslint-disable-next-line no-unused-vars
+const t = useTranslations(lang);
 ---
 
-<<<<<<< HEAD
-<Layout title="Auditoria de Acessibilidade - Bruno Pulis">
-=======
-<Layout title="Auditoria de Acessibilidade | Bruno Pulis">
->>>>>>> 1.0.2
+<Layout
+  title={t("auditoria.title")}
+  description={t("auditoria.description")}
+  routeKey="auditoria-acessibilidade">
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"

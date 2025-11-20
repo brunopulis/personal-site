@@ -1,4 +1,6 @@
 ---
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+
 import { getCollection } from "astro:content";
 import Layout from "@layout/Layout.astro";
 import HeroSection from "@components/layouts/HeroSection.astro";
@@ -19,11 +21,17 @@ function toISOString(dateString: string) {
   const date = new Date(dateString);
   return date.toISOString();
 }
+
+// Detecta o idioma e obtém as traduções
+const lang = getLanguageFromPath(Astro.url.pathname);
+// eslint-disable-next-line no-unused-vars
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Newsletter - Bruno Pulis"
-  description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
+  title={t("newsletter.title")}
+  description={t("newsletter.description")}
+  routeKey="newsletter"
 >
   <main id="main-content">
     <HeroSection
