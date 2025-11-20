@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const options = {
   viewportHeight: 1240,
   viewportWidth: 1024,

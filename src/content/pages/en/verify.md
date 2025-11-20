@@ -6,7 +6,6 @@ lang: "en"
 routeKey: "verify"
 ---
 
-
 If you find an account that appears to be mine but is not listed here, please [let me know](https://brunopulis.com/contato).
 
 ## Active networks
@@ -65,7 +64,7 @@ TikTok
 Snapchat
 Pixelfed (why?)
 
-## My domains 
+## My domains
 
 - rknight.me
 - 7622.me

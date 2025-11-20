@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import fs from "fs";
 import inquirer from "inquirer";
 import path from "path";
@@ -169,7 +170,7 @@ Escreva suas impressões sobre o filme...
   }
 
   fs.writeFileSync(filePath, template, "utf8");
-  console.log(`✅ ${type} criado em: ${filePath}`);
+  console.warn(`✅ ${type} criado em: ${filePath}`);
 }
 
 run();

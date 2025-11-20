@@ -9,7 +9,6 @@ import Navigation from '@components/Navigation.astro';
 import Footer from '@components/layouts/Footer.astro';
 import SkipLink from '@components/utils/SkipLink.astro';
 import BackToTop from '@components/utils/BackToTop.astro';
-import BasicScripts from '@components/BasicScripts.astro';
 
 // Head
 import RSS from "@components/utils/head/RSS.astro";
@@ -23,17 +22,14 @@ import "@styles/global.css";
 interface Props {
   title: string;
   description: string;
-  routeKey?: RouteKey;
+  currentLocale: string;
+  routeKey: string;
 }
 
-const { title, description, routeKey } = Astro.props;
-
-// Detecta o idioma a partir da URL
-const lang = getLanguageFromPath(Astro.url.pathname) as Language;
-const t = useTranslations(lang);
-
-// Gera tags hreflang para SEO multiidioma
-const hreflangs = routeKey ? getAllLocalizedPaths(routeKey) : [];
+const { title, description, currentLocale, routeKey } = Astro.props;
+const baseUrl = Astro.site || 'https://brunopulis.com.br';
+const alternateUrls = getAllLocalizedPaths(routeKey);
+const t = useTranslations(currentLocale);
 ---
 
 <!doctype html>
@@ -89,6 +85,5 @@ const hreflangs = routeKey ? getAllLocalizedPaths(routeKey) : [];
     </main>
     <Footer />
     <BackToTop />
-    <BasicScripts />
   </body>
 </html>

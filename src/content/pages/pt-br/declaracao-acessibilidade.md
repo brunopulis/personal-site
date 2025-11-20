@@ -24,8 +24,8 @@ Escolhi esse nível, pois se trata de um nível intermediário e cobre diversos 
 
 Tenho vários planos para o site, mas um dos primeiros itens para realizar serão:
 
-*   Dark mode;
-*   Remove dependências de CSS.
+- Dark mode;
+- Remove dependências de CSS.
 
 ### O que é acessibilidade?
 
