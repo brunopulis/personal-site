@@ -1,37 +1,20 @@
-import {
-  translations,
+import { 
+  translations, 
   defaultLanguage,
-  type Language,
+  languages, 
+  type Language, 
   type TranslationKey,
-} from "@i18n/translations";
+} from "./index";
 
-/**
- * Detecta o idioma a partir da URL
- * @param pathname - O pathname da URL
- * @returns O idioma detectado ou o idioma padrão
- */
-export function getLanguageFromPath(pathname: string): Language {
-  const segments = pathname.split("/").filter(Boolean);
-  const firstSegment = segments[0];
+import { routes, type RouteKey } from "./routes";
 
-  // Verifica se o primeiro segmento é um código de idioma válido
-  if (firstSegment === "en") {
-    return "en";
-  }
+export { translations, defaultLanguage, languages, Language, TranslationKey, RouteKey, routes };
 
-  // Padrão é português (Brasil)
-  return "pt-br";
-}
-
-/**
- * Hook para traduzir chaves
- * Retorna uma função que traduz chaves para o idioma especificado
- * @param lang - O idioma
- * @returns Função t(key) para traduzir
- *
- * @example
- * const t = useTranslations('pt-br');
- * console.log(t('nav.about')); // 'Sobre'
+/*/**
+ * 
+ * 
+ * @param lang 
+ * @returns 
  */
 export function useTranslations(lang: Language) {
   return function t(key: TranslationKey): string {
@@ -48,17 +31,81 @@ export function useTranslations(lang: Language) {
 }
 
 /**
- * Valida se um idioma é suportado
- * @param lang - O código do idioma
- * @returns true se o idioma é suportado
+ * Gera o caminho localizado para uma rota
+ * @param routeKey - Chave da rota (ex: 'about', 'projects')
+ * @param lang - Idioma (ex: 'pt-br', 'en')
+ * @returns Caminho completo localizado
+ *
+ * @example
+ * getLocalizedPath('about', 'pt-br') // returns '/sobre'
+ * getLocalizedPath('about', 'en') // returns '/en/about'
+ * getLocalizedPath('index', 'pt-br') // returns '/'
+ * getLocalizedPath('index', 'en') // returns '/en'
  */
-export function isValidLanguage(lang: unknown): lang is Language {
-  return lang === "pt-br" || lang === "en";
+export function getLocalizedPath(routeKey: RouteKey, lang: Language): string { 
+  const path = routes[lang]?.[routeKey] ?? routes["pt-br"][routeKey];
+
+  if (lang === "pt-br") {
+    return path ? `/${path}` : "/";
+  }
+
+  return path ? `/${lang}/${path}` : `/${lang}`;
 }
 
 /**
- * Retorna o idioma padrão
+ * 
+ * 
+ * @param pathname 
+ * @returns 
  */
-export function getDefaultLanguage(): Language {
+export function getLanguageFromPath(pathname: string): Language {
+  const segments = pathname.split("/").filter(Boolean);
+  const firstSegment = segments[0];
+
+  if (firstSegment === "en") {
+    return "en";
+  }
+
   return defaultLanguage;
+}
+
+/**
+ * Retorna todas as variações localizadas de uma rota
+ * Útil para gerar tags hreflang
+ * @param routeKey - Chave da rota
+ * @returns Array com todos os caminhos localizados
+ */
+export function getAllLocalizedPaths(routeKey: RouteKey) {
+  return Object.keys(routes).map(lang => ({
+    lang: lang as Language,
+    path: getLocalizedPath(routeKey, lang as Language),
+  }));
+}
+
+/**
+ * Extrai a chave da rota a partir do pathname
+ * @param pathname - O pathname da URL
+ * @param lang - Idioma detectado
+ * @returns A chave da rota encontrada ou 'index'
+ */
+export function getRouteKeyFromPath(pathname: string, lang: Language): RouteKey {
+  // Remove barras no início e fim
+  let cleanPath = pathname.replace(/^\/|\/$/g, "");
+
+  // Remove prefixo de idioma se existir
+  if (lang !== "pt-br" && cleanPath.startsWith(lang)) {
+    cleanPath = cleanPath.replace(`${lang}/`, "").replace(lang, "");
+  }
+
+  // Se o caminho está vazio, é a página inicial
+  if (!cleanPath) {
+    return "index";
+  }
+
+  // Busca a chave correspondente
+  const routeEntries = Object.entries(routes[lang]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const found = routeEntries.find(([_, value]) => value === cleanPath);
+
+  return (found?.[0] as RouteKey) || "index";
 }

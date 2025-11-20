@@ -1,6 +1,9 @@
-import { ptBrAbout } from "@i18n/locales/pt-br/about";
+import { ptBrNavigation } from "./locales/pt-br/navigation"; 
+import { enNavigation } from "./locales/en/navigation";
 
-import { enAbout } from "@i18n/locales/en/about";
+import { ptBrHome } from "@i18n/locales/pt-br/home"; 
+import { enHome } from "@i18n/locales/en/home";
+
 
 export const languages = {
   "pt-br": {
@@ -19,12 +22,16 @@ export const defaultLanguage = "pt-br";
 
 export const translations = {
   "pt-br": {
-    ...ptBrAbout,
+    ...ptBrNavigation,
+    ...ptBrHome
   },
   en: {
-    ...enAbout,
+    ...enNavigation,
+    ...enHome
   },
 } as const;
 
 export type Language = keyof typeof languages;
 export type TranslationKey = keyof (typeof translations)["pt-br"];
+
+export { useTranslations, getLanguageFromPath } from './utils';
