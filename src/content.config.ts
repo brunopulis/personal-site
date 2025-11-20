@@ -8,6 +8,7 @@ import {
   movies,
   newsletter,
   notes,
+  stream,
   speaking,
 } from "@content/schemas";
 
@@ -20,6 +21,7 @@ export const collections = {
   likes,
   movies,
   notes,
+  stream,
   newsletter,
   speaking,
 };
