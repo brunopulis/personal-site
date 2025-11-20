@@ -326,40 +326,40 @@ const diferenciais = [
   },
 ];
 const faq = [
-  {
-    pergunta: "Preciso dar acesso ao c\u00F3digo?",
-    resposta:
-      "Sim, preciso de acesso ao reposit\u00F3rio (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necess\u00E1rio. Trabalho em branches separadas e fa\u00E7o pull requests para revis\u00E3o.",
-  },
-  {
-    pergunta: "E se meu c\u00F3digo for muito antigo/bagun\u00E7ado?",
-    resposta:
-      "J\u00E1 trabalhei com c\u00F3digo legado de todo tipo. Posso refatorar o necess\u00E1rio, mas sempre conversamos sobre o trade-off entre refatora\u00E7\u00E3o completa vs. corre\u00E7\u00F5es pontuais.",
-  },
-  {
-    pergunta: "Quanto tempo leva?",
-    resposta:
-      "Depende da complexidade. Sites pequenos: 1-2 semanas. M\u00E9dios: 1-2 meses. Grandes/complexos: 2-6 meses. Ap\u00F3s auditoria inicial, dou estimativa precisa.",
-  },
-  {
-    pergunta: "Trabalha com qualquer tecnologia?",
-    resposta:
-      "Minha especialidade \u00E9 React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se n\u00E3o dominar, indico profissionais.",
-  },
-  {
-    pergunta: "E depois que voc\u00EA terminar?",
-    resposta:
-      "Ofere\u00E7o suporte p\u00F3s-entrega e treino sua equipe para manter a qualidade. Tamb\u00E9m posso fazer mentorias cont\u00EDnuas ou auditorias peri\u00F3dicas.",
-  },
-  {
-    pergunta: "Garante que n\u00E3o haver\u00E1 novos problemas?",
-    resposta:
-      "Garanto que o que eu entregar estar\u00E1 conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento \u00E9 essencial.",
-  },
+	{
+		pergunta: "Preciso dar acesso ao código?",
+		resposta:
+			"Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.",
+	},
+	{
+		pergunta: "E se meu código for muito antigo/bagunçado?",
+		resposta:
+			"Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.",
+	},
+	{
+		pergunta: "Quanto tempo leva?",
+		resposta:
+			"Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.",
+	},
+	{
+		pergunta: "Trabalha com qualquer tecnologia?",
+		resposta:
+			"Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.",
+	},
+	{
+		pergunta: "E depois que você terminar?",
+		resposta:
+			"Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.",
+	},
+	{
+		pergunta: "Garante que não haverá novos problemas?",
+		resposta:
+			"Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.",
+	},
 ];
 ---
 
-<Layout title="Remediação de documentos - Bruno Pulis">
+<Layout title="Remediação de documentos - Bruno Pulis" description="">
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
@@ -662,10 +662,7 @@ const faq = [
                 >
                   {pacote.preco}
                 </div>
-
-                <p class={`mb-4 text-sm ${pacote.destaque ? "text-red-100" : "text-gray-600"}`}>
-                  {pacote.ideal}
-                </p>
+                <p class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>{pacote.ideal}</p>
 
                 <div class="mb-6">
                   <h4

@@ -1,6 +1,4 @@
 ---
-import Layout from "@layout/Layout.astro";
-
 import {
   Award,
   CheckCircle,
@@ -12,6 +10,7 @@ import {
   Target,
 } from "@lucide/astro";
 
+import Layout from "@layout/Layout.astro";
 import CTASection from "@components/CTA.astro";
 import config from "@data/site.config.json";
 
@@ -128,58 +127,58 @@ const oqueFaco = [
   },
 ];
 const processo = [
-  {
-    numero: 1,
-    titulo: "Diagn\u00F3stico Inicial",
-    duracao: "1 semana",
-    atividades: [
-      "Reuni\u00E3o de kickoff (1-2h)",
-      "Entendimento do contexto atual",
-      "An\u00E1lise de produtos/projetos",
-      "Identifica\u00E7\u00E3o de gaps",
-      "Defini\u00E7\u00E3o de objetivos",
-      "Alinhamento de expectativas",
-    ],
-  },
-  {
-    numero: 2,
-    titulo: "Planejamento",
-    duracao: "3-5 dias",
-    atividades: [
-      "Cria\u00E7\u00E3o de roadmap personalizado",
-      "Prioriza\u00E7\u00E3o de a\u00E7\u00F5es",
-      "Defini\u00E7\u00E3o de milestones",
-      "Setup de comunica\u00E7\u00E3o",
-      "Cronograma de sess\u00F5es",
-      "Defini\u00E7\u00E3o de entreg\u00E1veis",
-    ],
-  },
-  {
-    numero: 3,
-    titulo: "Execu\u00E7\u00E3o",
-    duracao: "Cont\u00EDnuo",
-    atividades: [
-      "Sess\u00F5es semanais programadas",
-      "Revis\u00F5es de c\u00F3digo",
-      "Suporte ass\u00EDncrono",
-      "Resolu\u00E7\u00E3o de d\u00FAvidas",
-      "Valida\u00E7\u00E3o de implementa\u00E7\u00F5es",
-      "Ajustes de rota quando necess\u00E1rio",
-    ],
-  },
-  {
-    numero: 4,
-    titulo: "Avalia\u00E7\u00E3o",
-    duracao: "Mensal",
-    atividades: [
-      "Revis\u00E3o de progresso",
-      "M\u00E9tricas e KPIs",
-      "Feedback m\u00FAtuo",
-      "Ajuste de objetivos",
-      "Planejamento do pr\u00F3ximo ciclo",
-      "Documenta\u00E7\u00E3o de aprendizados",
-    ],
-  },
+	{
+		numero: 1,
+		titulo: "Diagnóstico Inicial",
+		duracao: "1 semana",
+		atividades: [
+			"Reunião de kickoff (1-2h)",
+			"Entendimento do contexto atual",
+			"Análise de produtos/projetos",
+			"Identificação de gaps",
+			"Definição de objetivos",
+			"Alinhamento de expectativas",
+		],
+	},
+	{
+		numero: 2,
+		titulo: "Planejamento",
+		duracao: "3-5 dias",
+		atividades: [
+			"Criação de roadmap personalizado",
+			"Priorização de ações",
+			"Definição de milestones",
+			"Setup de comunicação",
+			"Cronograma de sessões",
+			"Definição de entregáveis",
+		],
+	},
+	{
+		numero: 3,
+		titulo: "Execução",
+		duracao: "Contínuo",
+		atividades: [
+			"Sessões semanais programadas",
+			"Revisões de código",
+			"Suporte assíncrono",
+			"Resolução de dúvidas",
+			"Validação de implementações",
+			"Ajustes de rota quando necessário",
+		],
+	},
+	{
+		numero: 4,
+		titulo: "Avaliação",
+		duracao: "Mensal",
+		atividades: [
+			"Revisão de progresso",
+			"Métricas e KPIs",
+			"Feedback mútuo",
+			"Ajuste de objetivos",
+			"Planejamento do próximo ciclo",
+			"Documentação de aprendizados",
+		],
+	},
 ];
 
 const diferenciais = [
@@ -239,7 +238,7 @@ const faq = [
 ];
 ---
 
-<Layout title="Consultoria | Bruno Pulis">
+<Layout title="Consultoria - Bruno Pulis" description="">
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
