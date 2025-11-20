@@ -13,7 +13,11 @@ const recentBlogPosts = blogPosts
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .slice(0, 3);
 
-const recentStream = streamItems
+const validStreamItems = streamItems.filter(
+  (item) => item.data.pubDate && item.data.pubDate instanceof Date
+);
+
+const streams = validStreamItems
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 4);
 
@@ -30,9 +34,17 @@ const iconMap = {
 
 // Função para formatar data relativa
 function formatRelativeDate(date: Date): string {
+  // 🛑 ADICIONAR CHECAGEM DE SEGURANÇA
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    // Se a data for inválida ou não for um objeto Date
+    return 'Data inválida'; 
+  }
+  
   const now = new Date();
   const diff = now.getTime() - date.getTime();
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  
+  // ... (restante da lógica)
   
   if (days === 0) return 'hoje';
   if (days === 1) return 'ontem';
@@ -68,7 +80,7 @@ const t = useTranslations(lang);
         </div>
 
         <div class="space-y-4">
-          {recentStream.map((item) => (
+          {streams.map((item) => (
             <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-gray-300 transition-colors">
               <div class="flex gap-4">
                 <div class="flex-shrink-0 text-2xl">
@@ -154,7 +166,7 @@ const t = useTranslations(lang);
           <p class="text-gray-600 mb-4">
             Receba artigos sobre acessibilidade e tecnologia direto no seu email
           </p>
-          <a href="/newsletter" class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+          <a href="https://brunopulis.substack.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
             Assinar
           </a>
         </div>
