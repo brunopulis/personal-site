@@ -5,6 +5,7 @@ export * from "./biblioteca";
 export * from "./bookmarks";
 export * from "./likes";
 export * from "./movies";
+export * from "./music";
 export * from "./newsletter";
 export * from "./notes";
 export * from "./stream";
