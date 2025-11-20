@@ -246,8 +246,7 @@ const beneficios = [
 ];
 
 // Detecta o idioma e obtém as traduções
-const lang = getLanguageFromPath(Astro.url.pathname);
-// eslint-disable-next-line no-unused-vars
+const lang = getLanguageFromPath(Astro.url.pathname); 
 const t = useTranslations(lang);
 ---
 

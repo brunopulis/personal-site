@@ -1,31 +1,95 @@
-<form class="space-y-4" id="guestbook-form">
-  <input type="text" id="name" placeholder="Seu nome" class="w-full rounded-md border p-2" required />
-  <textarea id="message" placeholder="Deixe sua mensagem..." class="w-full rounded-md border p-2" required></textarea>
-  <button type="submit" class="rounded-md bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
-    Enviar
-  </button>
-</form>
+---
+import { actions } from "astro:actions";
+
+const result = Astro.getActionResult(actions.guestbook.create);
+---
+
+<div
+  class="rounded-2xl border border-gray-200 bg-linear-to-br from-gray-50 to-gray-100 p-8 shadow-lg"
+>
+  <div class="mb-6 flex items-center gap-3">
+    <h2 class="text-2xl font-bold text-gray-900">Leave your message</h2>
+  </div>
+
+  <form method="POST" action={actions.guestbook.create}>
+    <div class="space-y-6">
+      <div>
+        <label for="author" class="text-errie-black-900 mb-2 block text-sm font-bold">
+          Your name *
+        </label>
+        <input
+          id="author"
+          type="text"
+          name="author"
+          placeholder="What's your name?"
+          required
+          class="w-full rounded-lg border border-gray-300 bg-white py-3 pr-4 pl-5 focus:border-transparent focus:ring-2 focus:ring-red-500"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="text-errie-black-900 mb-2 block text-sm font-bold">
+          Email (optional)
+        </label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          class="w-full rounded-lg border border-gray-300 bg-white py-3 pr-4 pl-5 focus:border-transparent focus:ring-2 focus:ring-red-500"
+        />
+        <p class="text-errie-black-900 mt-1 text-xs">Your email will not be displayed publicly</p>
+      </div>
+
+      <div>
+        <label for="content" class="text-errie-black-900 mb-2 block text-sm font-bold">
+          Your message *
+        </label>
+        <textarea
+          id="content"
+          rows="5"
+          name="content"
+          placeholder="Share your experience, leave feedback, or just say hi! 👋"
+          required
+          class="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-red-500"
+        ></textarea>
+      </div>
+
+      {
+        result?.error && (
+          <div class="rounded-lg bg-red-50 border border-red-200 p-4">
+            <p class="text-red-600 text-sm">Error: {result.error.message}</p>
+          </div>
+        )
+      }
+
+      {
+        result?.data?.success && (
+          <div class="rounded-lg bg-green-50 border border-green-200 p-4">
+            <p class="text-green-600 text-sm">Message sent successfully! 🎉</p>
+          </div>
+        )
+      }
+
+      <button
+        type="submit"
+        class="bg-blood-red-800 flex w-full items-center justify-center gap-2 rounded-lg px-6 py-4 font-bold text-white shadow-lg transition hover:bg-red-700 hover:shadow-xl"
+      >
+        Send message
+      </button>
+    </div>
+  </form>
+</div>
 
 <script>
-  const form = document.getElementById("guestbook-form");
-
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    const name = form.name.value.trim();
-    const message = form.message.value.trim();
-    if (!name || !message) return;
-
-    const res = await fetch("/.netlify/functions/add-message", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, message }),
-    });
-
-    if (res.ok) {
-      form.reset();
-      document.dispatchEvent(new CustomEvent("guestbookUpdated"));
-    } else {
-      alert("Erro ao enviar mensagem 😢");
+  // Reload the page after successful form submission to show the new comment
+  document.addEventListener("DOMContentLoaded", () => {
+    const successMessage = document.querySelector(".text-green-600");
+    if (successMessage) {
+      // Wait a moment to show the success message, then reload
+      setTimeout(() => {
+        window.location.href = "/guestbook";
+      }, 1500);
     }
   });
 </script>

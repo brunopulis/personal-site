@@ -291,7 +291,7 @@ const faq = [
                   <h3 class="mb-3 text-2xl font-bold text-gray-900">{item.titulo}</h3>
                   <p class="mb-4 leading-relaxed text-gray-700">{item.descricao}</p>
                   <div class="flex flex-wrap gap-2">
-                    {item.exemplos.map((exemplo, i) => (
+                    {item.exemplos.map((exemplo) => (
                       <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
                         {exemplo}
                       </span>
@@ -354,7 +354,7 @@ const faq = [
                     ✓ Inclui:
                   </h4>
                   <ul class="space-y-2">
-                    {plano.inclui.map((item, i) => (
+                    {plano.inclui.map((item) => (
                       <li class="flex items-start gap-2">
                         <CheckCircle
                           class={`mt-0.5 h-4 w-4 shrink-0 ${plano.destaque ? "text-white" : "text-green-600"}`}
@@ -373,7 +373,7 @@ const faq = [
                 >
                   <strong>Exemplos de uso:</strong>
                   <ul class="mt-2 space-y-1">
-                    {plano.exemplos.map((exemplo, i) => (
+                    {plano.exemplos.map((exemplo) => (
                       <li>• {exemplo}</li>
                     ))}
                   </ul>
@@ -416,7 +416,7 @@ const faq = [
                   {etapa.duracao}
                 </div>
                 <ul class="space-y-2">
-                  {etapa.atividades.map((atividade, i) => (
+                  {etapa.atividades.map((atividade) => (
                     <li class="flex items-start gap-2 text-sm text-gray-700">
                       <span class="text-emerald-600">•</span>
                       <span>{atividade}</span>

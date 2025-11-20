@@ -13,24 +13,24 @@ var BlogCollection = {
       seo: {
         meta_title: "",
         meta_description: "",
-        keywords: [],
+        keywords: []
       },
       tags: [],
       categories: [],
       draft: false,
-      featured: false,
+      featured: false
     };
   },
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   ui: {
     filename: {
-      slugify: values => {
+      slugify: (values) => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
-      },
-    },
+      }
+    }
   },
   fields: [
     {
@@ -38,7 +38,7 @@ var BlogCollection = {
       name: "title",
       label: "T\xEDtulo",
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: "datetime",
@@ -47,14 +47,14 @@ var BlogCollection = {
       required: true,
       ui: {
         dateFormat: "DD/MM/YYYY",
-        timeFormat: "HH:mm",
-      },
+        timeFormat: "HH:mm"
+      }
     },
     {
       type: "string",
       name: "author",
       label: "Autor",
-      required: true,
+      required: true
     },
     {
       type: "string",
@@ -63,20 +63,20 @@ var BlogCollection = {
       required: true,
       ui: {
         component: "textarea",
-        description: "Resumo do post para SEO e preview",
-      },
+        description: "Resumo do post para SEO e preview"
+      }
     },
     {
       type: "image",
       name: "featured_image",
-      label: "Imagem Destaque",
+      label: "Imagem Destaque"
     },
     {
       type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true,
-      required: true,
+      required: true
     },
     {
       type: "string",
@@ -84,7 +84,7 @@ var BlogCollection = {
       label: "Categorias",
       list: true,
       ui: {
-        component: "list",
+        component: "list"
       },
       options: [
         { value: "tecnologia", label: "Tecnologia" },
@@ -92,8 +92,8 @@ var BlogCollection = {
         { value: "desenvolvimento", label: "Desenvolvimento" },
         { value: "tutorial", label: "Tutorial" },
         { value: "opiniao", label: "Opini\xE3o" },
-        { value: "noticias", label: "Not\xEDcias" },
-      ],
+        { value: "noticias", label: "Not\xEDcias" }
+      ]
     },
     {
       type: "string",
@@ -101,16 +101,16 @@ var BlogCollection = {
       label: "Tags",
       list: true,
       ui: {
-        component: "tags",
-      },
+        component: "tags"
+      }
     },
     {
       type: "boolean",
       name: "draft",
       label: "Rascunho",
       ui: {
-        description: "Marque para manter como rascunho",
-      },
+        description: "Marque para manter como rascunho"
+      }
     },
     {
       type: "object",
@@ -120,25 +120,25 @@ var BlogCollection = {
         {
           type: "string",
           name: "meta_title",
-          label: "Meta Title",
+          label: "Meta Title"
         },
         {
           type: "string",
           name: "meta_description",
           label: "Meta Description",
           ui: {
-            component: "textarea",
-          },
+            component: "textarea"
+          }
         },
         {
           type: "string",
           name: "keywords",
           label: "Keywords",
-          list: true,
-        },
-      ],
-    },
-  ],
+          list: true
+        }
+      ]
+    }
+  ]
 };
 
 // tina/collections/blogroll.ts
@@ -147,19 +147,19 @@ var BlogrollCollection = {
   label: "Blogroll",
   path: "src/content/blogroll",
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   ui: {
     filename: {
-      slugify: values => {
+      slugify: (values) => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
-      },
-    },
+      }
+    }
   },
   defaultItem: () => {
     return {
-      category: "geral",
+      category: "geral"
       // valor padrão
     };
   },
@@ -169,7 +169,7 @@ var BlogrollCollection = {
       name: "title",
       label: "Nome do Site/Blog",
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: "string",
@@ -177,8 +177,8 @@ var BlogrollCollection = {
       label: "URL",
       required: true,
       ui: {
-        description: "URL completa (https://exemplo.com)",
-      },
+        description: "URL completa (https://exemplo.com)"
+      }
     },
     {
       type: "string",
@@ -186,8 +186,8 @@ var BlogrollCollection = {
       label: "Descri\xE7\xE3o",
       ui: {
         component: "textarea",
-        description: "Breve descri\xE7\xE3o do site/blog",
-      },
+        description: "Breve descri\xE7\xE3o do site/blog"
+      }
     },
     {
       type: "string",
@@ -205,26 +205,26 @@ var BlogrollCollection = {
         { value: "tecnologia", label: "Tecnologia" },
         { value: "teologia", label: "Teologia" },
         { value: "produtividade", label: "Produtividade" },
-        { value: "noticias", label: "Not\xEDcias" },
-      ],
+        { value: "noticias", label: "Not\xEDcias" }
+      ]
     },
     {
       type: "string",
       name: "rss_feed",
       label: "Feed RSS",
       ui: {
-        description: "URL do feed RSS (se dispon\xEDvel)",
-      },
+        description: "URL do feed RSS (se dispon\xEDvel)"
+      }
     },
     {
       type: "datetime",
       name: "date_added",
       label: "Data de Adi\xE7\xE3o",
       ui: {
-        dateFormat: "DD/MM/YYYY",
-      },
-    },
-  ],
+        dateFormat: "DD/MM/YYYY"
+      }
+    }
+  ]
 };
 
 // tina/collections/notas.ts
@@ -233,24 +233,24 @@ var NotasCollection = {
   label: "Notas",
   path: "src/content/notes",
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   defaultItem: () => ({
-    pubDate: /* @__PURE__ */ new Date().toISOString(),
+    pubDate: (/* @__PURE__ */ new Date()).toISOString(),
     body: "",
-    tags: [],
+    tags: []
   }),
   ui: {
     filename: {
-      slugify: values => {
+      slugify: (values) => {
         const date = new Date(values?.pubDate || Date.now());
         return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
           2,
           "0"
         )}-${String(date.getDate()).padStart(2, "0")}`;
-      },
-    },
+      }
+    }
   },
   fields: [
     {
@@ -260,20 +260,20 @@ var NotasCollection = {
       required: true,
       ui: {
         dateFormat: "DD/MM/YYYY",
-        timeFormat: "HH:mm",
-      },
+        timeFormat: "HH:mm"
+      }
     },
     {
       type: "image",
       name: "featured_image",
-      label: "Imagem Destaque",
+      label: "Imagem Destaque"
     },
     {
       type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true,
-      required: true,
+      required: true
     },
     {
       type: "string",
@@ -287,10 +287,10 @@ var NotasCollection = {
         { value: "ideias", label: "Ideias" },
         { value: "projetos", label: "Projetos" },
         { value: "lembretes", label: "Lembretes" },
-        { value: "anotacoes", label: "Anota\xE7\xF5es" },
-      ],
-    },
-  ],
+        { value: "anotacoes", label: "Anota\xE7\xF5es" }
+      ]
+    }
+  ]
 };
 
 // tina/collections/biblioteca.ts
@@ -299,7 +299,7 @@ var BibliotecaCollection = {
   label: "Meus Livros",
   path: "src/content/biblioteca",
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   defaultItem: () => {
@@ -309,15 +309,15 @@ var BibliotecaCollection = {
       // garantir array
       tags: [],
       category: [],
-      rating: "3",
+      rating: "3"
     };
   },
   ui: {
     filename: {
-      slugify: values => {
+      slugify: (values) => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
-      },
-    },
+      }
+    }
   },
   fields: [
     {
@@ -325,7 +325,7 @@ var BibliotecaCollection = {
       name: "title",
       label: "T\xEDtulo do Livro",
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: "string",
@@ -333,14 +333,14 @@ var BibliotecaCollection = {
       label: "Descri\xE7\xE3o/Resumo",
       ui: {
         component: "textarea",
-        description: "Breve resumo do livro",
-      },
+        description: "Breve resumo do livro"
+      }
     },
     {
       type: "string",
       name: "author",
       label: "Autor(es)",
-      required: true,
+      required: true
     },
     {
       type: "datetime",
@@ -349,8 +349,8 @@ var BibliotecaCollection = {
       required: true,
       ui: {
         dateFormat: "DD/MM/YYYY",
-        timeFormat: "HH:mm",
-      },
+        timeFormat: "HH:mm"
+      }
     },
     {
       type: "rich-text",
@@ -358,8 +358,8 @@ var BibliotecaCollection = {
       label: "Resenha e Cita\xE7\xF5es",
       isBody: true,
       ui: {
-        description: "Suas impress\xF5es, an\xE1lise e cita\xE7\xF5es favoritas",
-      },
+        description: "Suas impress\xF5es, an\xE1lise e cita\xE7\xF5es favoritas"
+      }
     },
     {
       type: "string",
@@ -385,13 +385,13 @@ var BibliotecaCollection = {
         { value: "Arte", label: "Arte" },
         { value: "Humor", label: "Humor" },
         { value: "Poesia", label: "Poesia" },
-        { value: "Quadrinhos", label: "Quadrinhos" },
-      ],
+        { value: "Quadrinhos", label: "Quadrinhos" }
+      ]
     },
     {
       type: "image",
       name: "cover",
-      label: "Capa do Livro",
+      label: "Capa do Livro"
     },
     {
       type: "string",
@@ -402,8 +402,8 @@ var BibliotecaCollection = {
         { value: "2", label: "\u2B50\u2B50 2 de 5" },
         { value: "3", label: "\u2B50\u2B50\u2B50 3 de 5" },
         { value: "4", label: "\u2B50\u2B50\u2B50\u2B50 4 de 5" },
-        { value: "5", label: "\u2B50\u2B50\u2B50\u2B50\u2B50 5 de 5" },
-      ],
+        { value: "5", label: "\u2B50\u2B50\u2B50\u2B50\u2B50 5 de 5" }
+      ]
     },
     {
       type: "string",
@@ -415,8 +415,8 @@ var BibliotecaCollection = {
         { value: "quero_ler", label: "Quero ler" },
         { value: "lido", label: "Lido" },
         { value: "lendo", label: "Lendo" },
-        { value: "abandonado", label: "Abandonado" },
-      ],
+        { value: "abandonado", label: "Abandonado" }
+      ]
     },
     {
       type: "datetime",
@@ -424,32 +424,32 @@ var BibliotecaCollection = {
       label: "Data de leitura",
       ui: {
         dateFormat: "DD/MM/YYYY",
-        description: "Quando voc\xEA leu o livro",
-      },
+        description: "Quando voc\xEA leu o livro"
+      }
     },
     {
       type: "number",
       name: "pages",
       label: "N\xFAmero de P\xE1ginas",
       ui: {
-        description: "Total de p\xE1ginas do livro",
-      },
+        description: "Total de p\xE1ginas do livro"
+      }
     },
     {
       type: "string",
       name: "recommended_for",
       label: "Recomendado por:",
       ui: {
-        description: "Quem te recomendou esse livro?",
-      },
+        description: "Quem te recomendou esse livro?"
+      }
     },
     {
       type: "string",
       name: "purchase_link",
       label: "Onde Comprar/Encontrar",
       ui: {
-        description: "Link para comprar ou encontrar o livro",
-      },
+        description: "Link para comprar ou encontrar o livro"
+      }
     },
     {
       type: "string",
@@ -457,10 +457,10 @@ var BibliotecaCollection = {
       label: "Tags",
       list: true,
       ui: {
-        component: "tags",
-      },
-    },
-  ],
+        component: "tags"
+      }
+    }
+  ]
 };
 
 // tina/collections/movies.ts
@@ -469,12 +469,12 @@ var MoviesCollection = {
   label: "Meus Filmes",
   path: "src/content/movies",
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   defaultItem: () => ({
     title: "Novo filme",
-    publishDate: /* @__PURE__ */ new Date().toISOString(),
+    publishDate: (/* @__PURE__ */ new Date()).toISOString(),
     status: "quero_assistir",
     favorite: false,
     rating: "3",
@@ -482,14 +482,14 @@ var MoviesCollection = {
     body: "",
     tags: [],
     draft: false,
-    featured: false,
+    featured: false
   }),
   ui: {
     filename: {
-      slugify: values => {
+      slugify: (values) => {
         return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
-      },
-    },
+      }
+    }
   },
   fields: [
     {
@@ -497,7 +497,7 @@ var MoviesCollection = {
       name: "title",
       label: "T\xEDtulo do Filme",
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: "rich-text",
@@ -505,8 +505,8 @@ var MoviesCollection = {
       label: "Resenha/Coment\xE1rios",
       isBody: true,
       ui: {
-        description: "Suas impress\xF5es e an\xE1lise do filme",
-      },
+        description: "Suas impress\xF5es e an\xE1lise do filme"
+      }
     },
     {
       type: "string",
@@ -515,7 +515,7 @@ var MoviesCollection = {
       list: true,
       required: true,
       ui: {
-        component: "list",
+        component: "list"
       },
       options: [
         { value: "acao", label: "A\xE7\xE3o" },
@@ -532,13 +532,13 @@ var MoviesCollection = {
         { value: "musical", label: "Musical" },
         { value: "romance", label: "Romance" },
         { value: "suspense", label: "Suspense" },
-        { value: "western", label: "Western" },
-      ],
+        { value: "western", label: "Western" }
+      ]
     },
     {
       type: "image",
       name: "poster",
-      label: "Poster",
+      label: "Poster"
     },
     {
       type: "string",
@@ -549,8 +549,8 @@ var MoviesCollection = {
         { value: "2", label: "\u2B50\u2B50 2 de 5" },
         { value: "3", label: "\u2B50\u2B50\u2B50 3 de 5" },
         { value: "4", label: "\u2B50\u2B50\u2B50\u2B50 4 de 5" },
-        { value: "5", label: "\u2B50\u2B50\u2B50\u2B50\u2B50 5 de 5" },
-      ],
+        { value: "5", label: "\u2B50\u2B50\u2B50\u2B50\u2B50 5 de 5" }
+      ]
     },
     {
       type: "string",
@@ -561,8 +561,8 @@ var MoviesCollection = {
         { value: "assistido", label: "Assistido" },
         { value: "assistindo", label: "Assistindo" },
         { value: "quero_assistir", label: "uero Assistir" },
-        { value: "abandonado", label: "Abandonado" },
-      ],
+        { value: "abandonado", label: "Abandonado" }
+      ]
     },
     {
       type: "datetime",
@@ -570,13 +570,13 @@ var MoviesCollection = {
       label: "Data Assistida",
       ui: {
         dateFormat: "DD/MM/YYYY",
-        description: "Quando voc\xEA assistiu o filme",
-      },
+        description: "Quando voc\xEA assistiu o filme"
+      }
     },
     {
       type: "boolean",
       name: "favorite",
-      label: "\u2764\uFE0F Favorito",
+      label: "\u2764\uFE0F Favorito"
     },
     {
       type: "string",
@@ -584,7 +584,7 @@ var MoviesCollection = {
       label: "Onde Assistir",
       list: true,
       ui: {
-        component: "list",
+        component: "list"
       },
       options: [
         { value: "netflix", label: "Netflix" },
@@ -595,8 +595,8 @@ var MoviesCollection = {
         { value: "paramount-plus", label: "Paramount+" },
         { value: "globoplay", label: "Globoplay" },
         { value: "star-plus", label: "Star+" },
-        { value: "outro", label: "Outro" },
-      ],
+        { value: "outro", label: "Outro" }
+      ]
     },
     {
       type: "string",
@@ -604,18 +604,18 @@ var MoviesCollection = {
       label: "Tags",
       list: true,
       ui: {
-        component: "tags",
-      },
+        component: "tags"
+      }
     },
     {
       type: "string",
       name: "notes",
       label: "Observa\xE7\xF5es Extras",
       ui: {
-        component: "textarea",
-      },
-    },
-  ],
+        component: "textarea"
+      }
+    }
+  ]
 };
 
 // tina/collections/newsletter.ts
@@ -624,13 +624,13 @@ var NewsletterCollection = {
   label: "Newsletter",
   path: "src/content/newsletter",
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   defaultItem: () => ({
     title: "Nova Newsletter",
     issue: "1",
-    body: "",
+    body: ""
   }),
   fields: [
     {
@@ -638,26 +638,26 @@ var NewsletterCollection = {
       name: "title",
       label: "T\xEDtulo",
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: "string",
       name: "issue",
       label: "Edi\xE7\xE3o",
-      required: true,
+      required: true
     },
     {
       type: "image",
       name: "coverImage",
-      label: "Imagem de Capa",
+      label: "Imagem de Capa"
     },
     {
       type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true,
-    },
-  ],
+      isBody: true
+    }
+  ]
 };
 
 // tina/collections/speaking.ts
@@ -666,14 +666,14 @@ var SpeakingCollection = {
   label: "Palestras",
   path: "src/content/speaking",
   match: {
-    include: "*",
+    include: "*"
   },
   format: "md",
   defaultItem: () => ({
     title: "Nova Palestra",
     issue: "",
     coverImage: "",
-    body: "",
+    body: ""
   }),
   fields: [
     {
@@ -681,44 +681,43 @@ var SpeakingCollection = {
       name: "title",
       label: "T\xEDtulo",
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: "string",
       name: "issue",
       label: "Edi\xE7\xE3o",
-      required: true,
+      required: true
     },
     {
       type: "image",
       name: "coverImage",
-      label: "Imagem Capa",
+      label: "Imagem Capa"
     },
     {
       type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true,
-    },
-  ],
+      isBody: true
+    }
+  ]
 };
 
 // tina/config.ts
-var branch =
-  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 var config_default = defineConfig({
   branch,
   clientId: process.env.PUBLIC_TINA_CLIENT_ID || "",
   token: process.env.TINA_TOKEN,
   build: {
     outputFolder: "admin",
-    publicFolder: "public",
+    publicFolder: "public"
   },
   media: {
     tina: {
       mediaRoot: "",
-      publicFolder: "public",
-    },
+      publicFolder: "public"
+    }
   },
   schema: {
     collections: [
@@ -728,8 +727,10 @@ var config_default = defineConfig({
       BibliotecaCollection,
       MoviesCollection,
       NewsletterCollection,
-      SpeakingCollection,
-    ],
-  },
+      SpeakingCollection
+    ]
+  }
 });
-export { config_default as default };
+export {
+  config_default as default
+};

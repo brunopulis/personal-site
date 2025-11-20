@@ -24,8 +24,7 @@ import Layout from "@layout/Layout.astro";
 import me from "@assets/images/me.webp";
 
 // Detecta o idioma e obtém as traduções
-const lang = getLanguageFromPath(Astro.url.pathname);
-// eslint-disable-next-line no-unused-vars
+const lang = getLanguageFromPath(Astro.url.pathname); 
 const t = useTranslations(lang);
 ---
 
@@ -33,6 +32,7 @@ const t = useTranslations(lang);
   title={t("about.title")}
   description={t("about.description")}
   routeKey="sobre"
+  currentLocale='pt-br'
 >
   <main id="main-content">
     <section

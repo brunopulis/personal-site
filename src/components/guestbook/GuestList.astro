@@ -1,31 +1,37 @@
-<div id="guest-list" class="mt-8 space-y-4">
-  <p class="text-center text-gray-500">Carregando mensagens...</p>
-</div>
+---
+interface Entry {
+  id: number;
+  author: string;
+  email: string | null;
+  content: string;
+  createdAt: string;
+}
 
-<script>
-  async function loadMessages() {
-    const res = await fetch("/.netlify/functions/get-messages");
-    const data = await res.json();
-    const container = document.getElementById("guest-list");
+interface Props {
+  entries: Entry[];
+}
 
-    if (!data || data.length === 0) {
-      container.innerHTML = `<p class="text-center text-gray-500">Nenhuma mensagem ainda 😄</p>`;
-      return;
-    }
+const { entries } = Astro.props;
+---
 
-    container.innerHTML = data
-      .map(
-        msg => `
-      <div class="border border-gray-200 rounded-lg p-4 shadow-sm bg-gray-50 dark:bg-gray-800">
-        <p class="font-semibold">${msg.name}</p>
-        <p class="text-gray-700 dark:text-gray-300 mt-1">${msg.message}</p>
-        <p class="text-xs text-gray-500 mt-2">${new Date(msg.created_at).toLocaleString("pt-BR")}</p>
+<div class="space-y-6">
+  {
+    entries.map(entry => (
+      <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
+        <div class="flex items-start gap-4">
+          <div class="flex-1">
+            <div class="mb-2 flex items-center gap-3">
+              <h3 class="font-bold text-gray-900">{entry.author}</h3>
+            </div>
+
+            <p class="text-errie-black-900 mb-3 leading-relaxed">{entry.content}</p>
+
+            <div class="flex items-center gap-2 text-sm text-gray-500">
+              <span>{new Date(entry.createdAt).toLocaleDateString("en-US")}</span>
+            </div>
+          </div>
+        </div>
       </div>
-    `
-      )
-      .join("");
+    ))
   }
-
-  document.addEventListener("DOMContentLoaded", loadMessages);
-  document.addEventListener("guestbookUpdated", loadMessages);
-</script>
+</div>
