@@ -1,5 +1,5 @@
 ---
-import Layout from "@layout/Layout.astro";
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
 
 import {
   Award,
@@ -12,10 +12,8 @@ import {
   Target,
 } from "@lucide/astro";
 
-<<<<<<< HEAD
+
 import Layout from "@layout/Layout.astro";
-=======
->>>>>>> 1.0.2
 import CTASection from "@components/CTA.astro";
 import config from "@data/site.config.json";
 
@@ -132,7 +130,6 @@ const oqueFaco = [
   },
 ];
 const processo = [
-<<<<<<< HEAD
 	{
 		numero: 1,
 		titulo: "Diagnóstico Inicial",
@@ -185,60 +182,6 @@ const processo = [
 			"Documentação de aprendizados",
 		],
 	},
-=======
-  {
-    numero: 1,
-    titulo: "Diagn\u00F3stico Inicial",
-    duracao: "1 semana",
-    atividades: [
-      "Reuni\u00E3o de kickoff (1-2h)",
-      "Entendimento do contexto atual",
-      "An\u00E1lise de produtos/projetos",
-      "Identifica\u00E7\u00E3o de gaps",
-      "Defini\u00E7\u00E3o de objetivos",
-      "Alinhamento de expectativas",
-    ],
-  },
-  {
-    numero: 2,
-    titulo: "Planejamento",
-    duracao: "3-5 dias",
-    atividades: [
-      "Cria\u00E7\u00E3o de roadmap personalizado",
-      "Prioriza\u00E7\u00E3o de a\u00E7\u00F5es",
-      "Defini\u00E7\u00E3o de milestones",
-      "Setup de comunica\u00E7\u00E3o",
-      "Cronograma de sess\u00F5es",
-      "Defini\u00E7\u00E3o de entreg\u00E1veis",
-    ],
-  },
-  {
-    numero: 3,
-    titulo: "Execu\u00E7\u00E3o",
-    duracao: "Cont\u00EDnuo",
-    atividades: [
-      "Sess\u00F5es semanais programadas",
-      "Revis\u00F5es de c\u00F3digo",
-      "Suporte ass\u00EDncrono",
-      "Resolu\u00E7\u00E3o de d\u00FAvidas",
-      "Valida\u00E7\u00E3o de implementa\u00E7\u00F5es",
-      "Ajustes de rota quando necess\u00E1rio",
-    ],
-  },
-  {
-    numero: 4,
-    titulo: "Avalia\u00E7\u00E3o",
-    duracao: "Mensal",
-    atividades: [
-      "Revis\u00E3o de progresso",
-      "M\u00E9tricas e KPIs",
-      "Feedback m\u00FAtuo",
-      "Ajuste de objetivos",
-      "Planejamento do pr\u00F3ximo ciclo",
-      "Documenta\u00E7\u00E3o de aprendizados",
-    ],
-  },
->>>>>>> 1.0.2
 ];
 
 const diferenciais = [
@@ -296,13 +239,18 @@ const faq = [
       "Sim! Tudo que criamos juntos fica documentado - decis\u00F5es, boas pr\u00E1ticas, guias internos. Voc\u00EA fica com todo o material para refer\u00EAncia futura.",
   },
 ];
+
+// Detecta o idioma e obtém as traduções
+const lang = getLanguageFromPath(Astro.url.pathname);
+// eslint-disable-next-line no-unused-vars
+const t = useTranslations(lang);
 ---
 
-<<<<<<< HEAD
-<Layout title="Consultoria - Bruno Pulis">
-=======
-<Layout title="Consultoria | Bruno Pulis">
->>>>>>> 1.0.2
+<Layout
+  title={t("consultoria.title")}
+  description={t("consultoria.description")}
+  routeKey="consultoria"
+>
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
