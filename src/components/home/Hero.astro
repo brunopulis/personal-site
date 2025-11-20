@@ -1,23 +1,29 @@
 ---
 import { Image } from "astro:assets";
+import me from "@assets/images/me.jpeg";
 
-import me from "@assets/images/me.webp";
+// 1. Define a Interface das Props
+interface Props {
+  t: (key: string) => string;
+}
+
+const { t } = Astro.props;
 ---
 
 <section class="text-errie-black-900" id="hero" aria-labelledby="hero-section">
-  <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
+  <div class="wrapper mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
     <div>
-      <h1 class="mb-6 text-5xl leading-tight font-bold" id="hero-section">
-        Olá, sou o Bruno Pulis
-      </h1>
+      <h1 class="mb-6 text-5xl leading-tight font-bold" id="hero-section" set:html={t("home.greetings")}></h1>
       <p class="mb-6 text-2xl font-light">
-        Faço a web funcionar para todos.
+        {t("home.about_me")}
       </p>
+      <p class="mb-8 text-lg leading-relaxed" set:html={t("home.objective")}></p>
+        
 
-      <p class="mb-8 text-lg leading-relaxed">
-        Acredito que tecnologia boa é tecnologia que inclui. Nos últimos 15 anos, tenho ajudado pessoas e empresas a criar
-        experiências digitais que funcionam para todos.
-      </p>
+      <ul class="hero__links" role="list">
+        <li><a href="/about">{t("home.about_link")}</a></li>
+        <li><a href="/now">{t("home.about_now")}</a></li>
+      </ul>
     </div>
 
     <figure>
