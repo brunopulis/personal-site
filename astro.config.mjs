@@ -10,22 +10,22 @@ import compress from "astro-compress";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 
-import { fileURLToPath } from 'url';
-import path from 'path';
+import { fileURLToPath } from "url";
+import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   i18n: {
-    defaultLocale: 'pt-BR',
-    locales: ['pt-BR', 'en'],
+    defaultLocale: "pt-BR",
+    locales: ["pt-BR", "en"],
     routing: {
       prefixDefaultLocale: false, // false = /sobre, true = /pt-BR/sobre
-      redirectToDefaultLocale: true
+      redirectToDefaultLocale: true,
     },
     fallback: {
-      en: 'pt-BR'
-    }
+      en: "pt-BR",
+    },
   },
   adapter: vercel(),
   output: "static",
@@ -73,19 +73,19 @@ export default defineConfig({
     format: "directory",
     assets: "_astro",
   },
-  trailingSlash: 'ignore',
+  trailingSlash: "ignore",
   compressHTML: true,
   vite: {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
-        '@components': path.resolve(__dirname, './src/components'),
-        '@layout/': path.resolve(__dirname, './src/layout'),
-        '@layouts': path.resolve(__dirname, './src/layouts'),
-        '@assets': path.resolve(__dirname, './src/assets'),
-        '@scripts': path.resolve(__dirname, './src/scripts'),
-        '@styles': path.resolve(__dirname, './src/styles')
-      }
+        "@": path.resolve(__dirname, "./src"),
+        "@components": path.resolve(__dirname, "./src/components"),
+        "@layout/": path.resolve(__dirname, "./src/layout"),
+        "@layouts": path.resolve(__dirname, "./src/layouts"),
+        "@assets": path.resolve(__dirname, "./src/assets"),
+        "@scripts": path.resolve(__dirname, "./src/scripts"),
+        "@styles": path.resolve(__dirname, "./src/styles"),
+      },
     },
     plugins: [tailwindcss()],
     server: {

@@ -57,6 +57,17 @@ export default [
     },
   },
   {
-    ignores: ["dist/", "node_modules/", ".astro/", "build/", "*.config.js", "*.config.mjs"],
+    ignores: [
+      "dist/",
+      ".pnpm-store/**",
+      "astro-tina-directive",
+      "tina/**",
+      "node_modules/",
+      ".astro/",
+      "build/",
+      "*.config.js",
+      "*.config.mjs",
+      "test-a11y.mjs",
+    ],
   },
 ];

@@ -24,8 +24,8 @@ I chose this level because it is an intermediate level and covers several aspect
 
 I have several plans for the website, but one of the first items to be implemented will be:
 
-*   Dark mode;
-*   Remove CSS dependencies.
+- Dark mode;
+- Remove CSS dependencies.
 
 ### What is accessibility?
 

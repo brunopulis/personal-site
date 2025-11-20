@@ -1,4 +1,9 @@
-import { translations, defaultLanguage, type Language, type TranslationKey } from '@i18n/translations';
+import {
+  translations,
+  defaultLanguage,
+  type Language,
+  type TranslationKey,
+} from "@i18n/translations";
 
 /**
  * Detecta o idioma a partir da URL
@@ -6,16 +11,16 @@ import { translations, defaultLanguage, type Language, type TranslationKey } fro
  * @returns O idioma detectado ou o idioma padrão
  */
 export function getLanguageFromPath(pathname: string): Language {
-  const segments = pathname.split('/').filter(Boolean);
+  const segments = pathname.split("/").filter(Boolean);
   const firstSegment = segments[0];
 
   // Verifica se o primeiro segmento é um código de idioma válido
-  if (firstSegment === 'en') {
-    return 'en';
+  if (firstSegment === "en") {
+    return "en";
   }
 
   // Padrão é português (Brasil)
-  return 'pt-br';
+  return "pt-br";
 }
 
 /**
@@ -23,7 +28,7 @@ export function getLanguageFromPath(pathname: string): Language {
  * Retorna uma função que traduz chaves para o idioma especificado
  * @param lang - O idioma
  * @returns Função t(key) para traduzir
- * 
+ *
  * @example
  * const t = useTranslations('pt-br');
  * console.log(t('nav.about')); // 'Sobre'
@@ -48,7 +53,7 @@ export function useTranslations(lang: Language) {
  * @returns true se o idioma é suportado
  */
 export function isValidLanguage(lang: unknown): lang is Language {
-  return lang === 'pt-br' || lang === 'en';
+  return lang === "pt-br" || lang === "en";
 }
 
 /**

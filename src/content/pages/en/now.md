@@ -10,7 +10,7 @@ Hello there!
 
 > Last update: November 18, 2025.
 
-This page was inspired by the work of [Derek Sivers](https://sive.rs), which you can check out at [nownownow](https://nownownow.com). 
+This page was inspired by the work of [Derek Sivers](https://sive.rs), which you can check out at [nownownow](https://nownownow.com).
 
 The goal is to show what I am currently focused on.
 This site has undergone recent updates and is a work in progress.

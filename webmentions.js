@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // webmentions.js
 import fs from "fs";
 import https from "https";

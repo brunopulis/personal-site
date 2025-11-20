@@ -1,17 +1,17 @@
-import pa11y from 'pa11y';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import pa11y from "pa11y";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configure as URLs do seu site aqui
 const urls = [
-  'http://localhost:4321/',
-  'http://localhost:4321/sobre',
-  'http://localhost:4321/contato',
-  'http://localhost:4321/blog',
+  "http://localhost:4321/",
+  "http://localhost:4321/sobre",
+  "http://localhost:4321/contato",
+  "http://localhost:4321/blog",
 ];
 
 // Configurações do Pa11y
@@ -19,55 +19,59 @@ const pa11yOptions = {
   timeout: 10000,
   wait: 1000,
   chromeLaunchConfig: {
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   },
-  standard: 'WCAG2AA',
-  runners: ['axe', 'htmlcs'],
+  standard: "WCAG2AA",
+  runners: ["axe", "htmlcs"],
   includeNotices: false,
   includeWarnings: true,
 };
 
 async function runTests() {
-  console.log('🔍 Iniciando testes de acessibilidade...\n');
-  
+  console.log("🔍 Iniciando testes de acessibilidade...\n");
+
   const results = [];
   let totalIssues = 0;
   let totalErrors = 0;
   let totalWarnings = 0;
-  
+
   for (const url of urls) {
     console.log(`Testing ${url}...`);
     try {
       const result = await pa11y(url, pa11yOptions);
-      
-      const errors = result.issues.filter(issue => issue.type === 'error');
-      const warnings = result.issues.filter(issue => issue.type === 'warning');
-      const notices = result.issues.filter(issue => issue.type === 'notice');
-      
+
+      const errors = result.issues.filter(issue => issue.type === "error");
+      const warnings = result.issues.filter(issue => issue.type === "warning");
+      const notices = result.issues.filter(issue => issue.type === "notice");
+
       totalIssues += result.issues.length;
       totalErrors += errors.length;
       totalWarnings += warnings.length;
-      
-      results.push({ 
-        url, 
+
+      results.push({
+        url,
         result,
         errors: errors.length,
         warnings: warnings.length,
-        notices: notices.length
+        notices: notices.length,
       });
-      
-      console.log(`  ✓ Encontrados: ${result.issues.length} problemas (${errors.length} erros, ${warnings.length} avisos)`);
+
+      console.log(
+        `  ✓ Encontrados: ${result.issues.length} problemas (${errors.length} erros, ${warnings.length} avisos)`
+      );
     } catch (error) {
       console.error(`  ✗ Erro ao testar ${url}:`, error.message);
       results.push({ url, error: error.message });
     }
   }
-  
-  console.log(`\n📊 Total: ${totalIssues} problemas (${totalErrors} erros, ${totalWarnings} avisos)\n`);
-  
+
+  console.log(
+    `\n📊 Total: ${totalIssues} problemas (${totalErrors} erros, ${totalWarnings} avisos)\n`
+  );
+
   // Gerar relatório HTML
   generateHTMLReport(results, totalIssues, totalErrors, totalWarnings);
-  
+
   // Se houver erros, retornar código de saída 1
   if (totalErrors > 0) {
     process.exit(1);
@@ -75,14 +79,14 @@ async function runTests() {
 }
 
 function generateHTMLReport(results, totalIssues, totalErrors, totalWarnings) {
-  const reportDir = path.join(__dirname, 'reports');
-  
+  const reportDir = path.join(__dirname, "reports");
+
   if (!fs.existsSync(reportDir)) {
     fs.mkdirSync(reportDir, { recursive: true });
   }
-  
-  const timestamp = new Date().toLocaleString('pt-BR');
-  
+
+  const timestamp = new Date().toLocaleString("pt-BR");
+
   let htmlReport = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -326,23 +330,24 @@ function generateHTMLReport(results, totalIssues, totalErrors, totalWarnings) {
     </div>`;
       continue;
     }
-    
+
     const { url, result, errors, warnings, notices } = item;
-    
+
     htmlReport += `
     <div class="url-section">
       <div class="url-header">
         <h2>${url}</h2>
         <div class="url-stats">
-          ${errors > 0 ? `<span class="stat error">● ${errors} erros</span>` : ''}
-          ${warnings > 0 ? `<span class="stat warning">● ${warnings} avisos</span>` : ''}
-          ${result.issues.length === 0 ? '<span class="stat success">✓ Nenhum problema encontrado</span>' : ''}
+          ${errors > 0 ? `<span class="stat error">● ${errors} erros</span>` : ""}
+          ${warnings > 0 ? `<span class="stat warning">● ${warnings} avisos</span>` : ""}
+          ${result.issues.length === 0 ? '<span class="stat success">✓ Nenhum problema encontrado</span>' : ""}
         </div>
       </div>
       <div class="issues-list">`;
-    
+
     if (result.issues.length === 0) {
-      htmlReport += '<div class="success-message">Nenhum problema de acessibilidade encontrado!</div>';
+      htmlReport +=
+        '<div class="success-message">Nenhum problema de acessibilidade encontrado!</div>';
     } else {
       result.issues.forEach(issue => {
         htmlReport += `
@@ -351,17 +356,17 @@ function generateHTMLReport(results, totalIssues, totalErrors, totalWarnings) {
           <div class="issue-message">${issue.message}</div>
           <div class="issue-details">
             <div class="issue-code">Código: ${issue.code}</div>
-            <div class="issue-selector">Seletor: ${issue.selector || 'N/A'}</div>
+            <div class="issue-selector">Seletor: ${issue.selector || "N/A"}</div>
           </div>
         </div>`;
       });
     }
-    
+
     htmlReport += `
       </div>
     </div>`;
   }
-  
+
   htmlReport += `
     <footer>
       <p>Relatório gerado com Pa11y | Padrão: WCAG 2.1 AA</p>
@@ -369,15 +374,15 @@ function generateHTMLReport(results, totalIssues, totalErrors, totalWarnings) {
   </div>
 </body>
 </html>`;
-  
-  const reportPath = path.join(reportDir, 'a11y-report.html');
+
+  const reportPath = path.join(reportDir, "a11y-report.html");
   fs.writeFileSync(reportPath, htmlReport);
-  
+
   console.log(`✓ Relatório HTML gerado: ${reportPath}`);
   console.log(`  Abra com: xdg-open ${reportPath}\n`);
 }
 
 runTests().catch(error => {
-  console.error('Erro fatal:', error);
+  console.error("Erro fatal:", error);
   process.exit(1);
 });
