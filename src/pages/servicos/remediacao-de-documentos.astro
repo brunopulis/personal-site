@@ -155,66 +155,67 @@ const pacotes = [
   },
 ];
 const processo = [
-  {
-    numero: 1,
-    titulo: "An\u00E1lise Inicial",
-    duracao: "1 dia",
-    icone: Eye,
-    descricao: "Avalio o estado atual do documento e identifico todos os problemas",
-    atividades: [
-      "Abertura e an\u00E1lise do documento original",
-      "Identifica\u00E7\u00E3o de problemas de acessibilidade",
-      "Verifica\u00E7\u00E3o de estrutura e conte\u00FAdo",
-      "Estimativa de esfor\u00E7o e prazo",
-      "Comunica\u00E7\u00E3o de achados ao cliente",
-    ],
-  },
-  {
-    numero: 2,
-    titulo: "Remedia\u00E7\u00E3o",
-    duracao: "2-5 dias",
-    icone: Zap,
-    descricao: "Corrijo todos os problemas encontrados seguindo padr\u00F5es WCAG",
-    atividades: [
-      "Reestrutura\u00E7\u00E3o do documento",
-      "Adi\u00E7\u00E3o de tags e estrutura",
-      "Inclus\u00E3o de textos alternativos",
-      "Corre\u00E7\u00E3o de ordem de leitura",
-      "Ajuste de cores e contrastes",
-      "Estrutura\u00E7\u00E3o de tabelas",
-      "Cria\u00E7\u00E3o de sum\u00E1rio naveg\u00E1vel",
-    ],
-  },
-  {
-    numero: 3,
-    titulo: "Valida\u00E7\u00E3o",
-    duracao: "1 dia",
-    icone: Shield,
-    descricao: "Testo o documento com ferramentas e leitores de tela",
-    atividades: [
-      "Testes com PAC (PDF Accessibility Checker)",
-      "Valida\u00E7\u00E3o com Adobe Acrobat Pro",
-      "Testes com NVDA e JAWS",
-      "Verifica\u00E7\u00E3o de navega\u00E7\u00E3o por teclado",
-      "Valida\u00E7\u00E3o de formul\u00E1rios (se aplic\u00E1vel)",
-      "Checklist de conformidade WCAG",
-    ],
-  },
-  {
-    numero: 4,
-    titulo: "Entrega",
-    duracao: "1 dia",
-    icone: Download,
-    descricao: "Entrego o documento remediado com relat\u00F3rio de conformidade",
-    atividades: [
-      "Documento final em formato acess\u00EDvel",
-      "Relat\u00F3rio de remedia\u00E7\u00E3o",
-      "Checklist de conformidade",
-      "Instru\u00E7\u00F5es de uso (se necess\u00E1rio)",
-      "Revis\u00E3o final com cliente",
-      "Ajustes se necess\u00E1rio",
-    ],
-  },
+	{
+		numero: 1,
+		titulo: "Análise Inicial",
+		duracao: "1 dia",
+		icone: Eye,
+		descricao:
+			"Avalio o estado atual do documento e identifico todos os problemas",
+		atividades: [
+			"Abertura e análise do documento original",
+			"Identificação de problemas de acessibilidade",
+			"Verificação de estrutura e conteúdo",
+			"Estimativa de esforço e prazo",
+			"Comunicação de achados ao cliente",
+		],
+	},
+	{
+		numero: 2,
+		titulo: "Remediação",
+		duracao: "2-5 dias",
+		icone: Zap,
+		descricao: "Corrijo todos os problemas encontrados seguindo padrões WCAG",
+		atividades: [
+			"Reestruturação do documento",
+			"Adição de tags e estrutura",
+			"Inclusão de textos alternativos",
+			"Correção de ordem de leitura",
+			"Ajuste de cores e contrastes",
+			"Estruturação de tabelas",
+			"Criação de sumário navegável",
+		],
+	},
+	{
+		numero: 3,
+		titulo: "Validação",
+		duracao: "1 dia",
+		icone: Shield,
+		descricao: "Testo o documento com ferramentas e leitores de tela",
+		atividades: [
+			"Testes com PAC (PDF Accessibility Checker)",
+			"Validação com Adobe Acrobat Pro",
+			"Testes com NVDA e JAWS",
+			"Verificação de navegação por teclado",
+			"Validação de formulários (se aplicável)",
+			"Checklist de conformidade WCAG",
+		],
+	},
+	{
+		numero: 4,
+		titulo: "Entrega",
+		duracao: "1 dia",
+		icone: Download,
+		descricao: "Entrego o documento remediado com relatório de conformidade",
+		atividades: [
+			"Documento final em formato acessível",
+			"Relatório de remediação",
+			"Checklist de conformidade",
+			"Instruções de uso (se necessário)",
+			"Revisão final com cliente",
+			"Ajustes se necessário",
+		],
+	},
 ];
 
 const beneficios = [
@@ -244,7 +245,7 @@ const beneficios = [
 ];
 ---
 
-<Layout title="Remediação de documentos - Bruno Pulis">
+<Layout title="Remediação de documentos - Bruno Pulis" description="">
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-20 text-white"
@@ -303,7 +304,7 @@ const beneficios = [
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {
             beneficios.map((beneficio) => {
-              const Icon = beneficio.icone;
+              const Icon = beneficio.icone
               return (
                 <div class="rounded-2xl border-2 border-green-200 bg-linear-to-br from-green-50 to-white p-6">
                   <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-600">

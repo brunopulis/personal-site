@@ -19,13 +19,12 @@ export async function getStaticPaths() {
 }
 const { tag, posts } = Astro.props;
 // Ordena posts por data
-const sortedPosts = posts.sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+const sortedPosts = posts.sort((a, b) =>
+  new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
 );
 ---
 
 <Layout title="" description="">
-  <Header />
   <main id="main-content">
     <HeroSection
       title="Tags"
@@ -46,7 +45,6 @@ const sortedPosts = posts.sort(
         </p>
       </div>
     </section>
-    <header class="page-header"></header>
 
     <div class="posts-grid">
       {
@@ -55,7 +53,7 @@ const sortedPosts = posts.sort(
             <h2>
               <a href={`/blog/${post.slug}`}>{post.data.title}</a>
             </h2>
-            <time>{new Date(post.data.date).toLocaleDateString("pt-BR")}</time>
+            <time>{new Date(post.data.publishDate).toLocaleDateString("pt-BR")}</time>
 
             {post.data.tags && post.data.tags.length > 0 && (
               <div class="post-tags">

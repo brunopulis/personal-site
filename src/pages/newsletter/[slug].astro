@@ -1,5 +1,4 @@
 ---
-
 import { getCollection, render } from "astro:content";
 import { Twitter } from "@lucide/astro";
 import Layout from "@layout/Layout.astro";
@@ -25,7 +24,7 @@ const formattedDate = new Date(letter.data.date).toLocaleDateString("pt-BR", {
 export const prerender = true;
 ---
 
-<Layout title={`${letter.data.title} | Newsletter`}>
+<Layout title={`${letter.data.title} - Newsletter`}>
   <main id="main-content">
     <HeroSection title={letter.data.title} />
     <div class="container-custom py-8">
