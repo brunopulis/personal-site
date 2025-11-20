@@ -1,8 +1,15 @@
 ---
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
 import { getAllLocalizedPaths } from '@i18n/routes';
-import type { Language, RouteKey } from '@i18n/translations';
+import type { Language } from '@i18n/translations';
 import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title: string;
+  description: string;
+  currentLocale: string;
+  routeKey: string;
+}
 
 // Componentes
 import Navigation from '@components/Navigation.astro';
@@ -15,25 +22,20 @@ import RSS from "@components/utils/head/RSS.astro";
 import Webmentions from "@components/utils/head/Webmentions.astro";
 import Preconnect from "@components/utils/head/Preconnect.astro";
 
-// Estilos e fonts
 import "@fontsource-variable/source-sans-3";
 import "@styles/global.css";
 
-interface Props {
-  title: string;
-  description: string;
-  currentLocale: string;
-  routeKey: string;
-}
 
-const { title, description, currentLocale, routeKey } = Astro.props;
-const baseUrl = Astro.site || 'https://brunopulis.com.br';
+const { title, description, routeKey } = Astro.props;
 const alternateUrls = getAllLocalizedPaths(routeKey);
-const t = useTranslations(currentLocale);
+
+const hreflangs = alternateUrls;
+
+const lang = getLanguageFromPath(Astro.url.pathname) as Language;
 ---
 
 <!doctype html>
-<html lang={lang.replace('-', '_')}>
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

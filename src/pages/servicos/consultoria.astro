@@ -91,6 +91,7 @@ const planos = [
     ],
   },
 ];
+
 const oqueFaco = [
   {
     icone: Code,
@@ -129,6 +130,7 @@ const oqueFaco = [
     exemplos: ["Sess\u00F5es educativas", "Documenta\u00E7\u00E3o interna", "Boas pr\u00E1ticas"],
   },
 ];
+
 const processo = [
 	{
 		numero: 1,
@@ -242,7 +244,7 @@ const faq = [
 
 // Detecta o idioma e obtém as traduções
 const lang = getLanguageFromPath(Astro.url.pathname);
-// eslint-disable-next-line no-unused-vars
+ 
 const t = useTranslations(lang);
 ---
 
@@ -250,6 +252,7 @@ const t = useTranslations(lang);
   title={t("consultoria.title")}
   description={t("consultoria.description")}
   routeKey="consultoria"
+  currentLocale='pt-br'
 >
   <main id="main-content">
     <section
