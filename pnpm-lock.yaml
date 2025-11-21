@@ -44,6 +44,9 @@ importers:
       '@tanstack/react-virtual':
         specifier: ^3.13.12
         version: 3.13.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@vercel/speed-insights':
+        specifier: ^1.2.0
+        version: 1.2.0(react@19.2.0)
       '@yeskunall/astro-umami':
         specifier: ^0.0.7
         version: 0.0.7(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
@@ -71,6 +74,9 @@ importers:
       dompurify:
         specifier: 3.2.4
         version: 3.2.4
+      pnpm:
+        specifier: ^10.23.0
+        version: 10.23.0
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -2902,6 +2908,29 @@ packages:
 
   '@vercel/routing-utils@5.3.0':
     resolution: {integrity: sha512-gKsPSGc/hBMSHiAXTjTcbSa9egy7wCogrLctx8bJUS21w2OppWzrd5ZqUMqvnrfdKzLMpGIJ2bZMxBQ9xjGkaA==}
+
+  '@vercel/speed-insights@1.2.0':
+    resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@vitejs/plugin-react@3.1.0':
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
@@ -6728,6 +6757,11 @@ packages:
 
   pkg-types@2.3.0:
     resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
+
+  pnpm@10.23.0:
+    resolution: {integrity: sha512-IcTlaYACrel+Tv6Li0qJqN48haN5GflX56DzDzj7xbvdBZgP/ikXmy+25uaRJC4JjZRdFgF3LK0P71+2QR4qSw==}
+    engines: {node: '>=18.12'}
+    hasBin: true
 
   popmotion@11.0.3:
     resolution: {integrity: sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA==}
@@ -11777,6 +11811,10 @@ snapshots:
     optionalDependencies:
       ajv: 6.12.6
 
+  '@vercel/speed-insights@1.2.0(react@19.2.0)':
+    optionalDependencies:
+      react: 19.2.0
+
   '@vitejs/plugin-react@3.1.0(vite@4.5.14(@types/node@24.10.1)(lightningcss@1.29.3)(terser@5.39.0))':
     dependencies:
       '@babel/core': 7.28.5
@@ -16739,6 +16777,8 @@ snapshots:
       confbox: 0.2.2
       exsolve: 1.0.8
       pathe: 2.0.3
+
+  pnpm@10.23.0: {}
 
   popmotion@11.0.3:
     dependencies:
