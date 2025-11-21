@@ -1,41 +1,51 @@
 ---
 import type { Language, RouteKey } from '@i18n/index';
 
-import { Image } from "astro:assets";
-import me from "@assets/images/me.jpeg";
+import { Image } from 'astro:assets';
+import me from '@assets/images/me.jpeg';
 
 interface Props {
   t: (key: string) => string;
-  currentLang: Language; 
-  getLocalizedPath: (routeKey: RouteKey, lang: Language) => string; 
+  currentLang: Language;
+  getLocalizedPath: (routeKey: RouteKey, lang: Language) => string;
 }
 
 const { t, currentLang, getLocalizedPath } = Astro.props;
 ---
 
-<section class="text-errie-black-900" id="hero" aria-labelledby="hero-section">
-  <div class="wrapper mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2">
-    <div>
-      <h1 class="mb-6 text-5xl leading-tight font-bold" id="hero-section" set:html={t("home.greetings")}></h1>
-      <p class="mb-6 text-2xl font-light">
-        {t("home.about_me")}
-      </p>
-      <p class="mb-8 text-lg leading-relaxed" set:html={t("home.objective")}></p>
-        
+<section class="hero" id="hero" aria-labelledby="hero-section">
+  <div class="wrapper">
+    <div data-layout="50-50" class="grid">
+      <div class="hero__content">
+        <h1
+          class="hero__title"
+          id="hero-section"
+          set:html={t('home.greetings')}
+        />
+        <p>{t('home.about_me')}</p>
+        <p set:html={t('home.objective')} />
 
-      <ul class="hero__links" role="list">
-        <li><a href={getLocalizedPath('about', currentLang)}>{t("home.about_link")}</a></li>
-        <li><a href={getLocalizedPath('now', currentLang)}>{t("home.about_now")}</a></li>
-      </ul>
+        <ul class="hero__list" role="list">
+          <li class="hero__item">
+            <a href={getLocalizedPath('about', currentLang)} class="hero__link">
+              {t('home.about_link')}
+            </a>
+          </li>
+          <li class="hero__item">
+            <a href={getLocalizedPath('now', currentLang)} class="hero__link">
+              {t('home.about_now')}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <figure>
+        <Image
+          src={me}
+          alt="Bruno Pulis"
+          class="mx-auto h-80 w-80 rounded-2xl border-4 border-white/20 object-cover shadow-2xl"
+          loading="eager"
+        />
+      </figure>
     </div>
-
-    <figure>
-      <Image
-        src={me}
-        alt="Bruno Pulis"
-        class="mx-auto h-80 w-80 rounded-2xl border-4 border-white/20 object-cover shadow-2xl"
-        loading="eager"
-      />
-    </figure>
   </div>
 </section>

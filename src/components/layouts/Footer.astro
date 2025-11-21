@@ -1,99 +1,113 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
-import human from "@assets/images/buttons/human.svg";
-import mastodon from "@assets/images/buttons/mastodon.gif";
-import peoplePledge from "@assets/images/buttons/people-pledge.png";
-import indieweb from "@assets/images/buttons/indieweb.png";
-import faithTech from "@assets/images/buttons/faith-tech.png";
-import wcagAA from "@assets/images/buttons/wcag-aa.png";
-import coffeePowered from "@assets/images/buttons/coffee-powered.png";
-import webStandards from "@assets/images/buttons/web-standards.png";
-import webmentions from "@assets/images/buttons/webmentions.png";
-import microformats from "@assets/images/buttons/microformats.png";
+import human from '@assets/images/buttons/human.svg';
+import mastodon from '@assets/images/buttons/mastodon.gif';
+import peoplePledge from '@assets/images/buttons/people-pledge.png';
+import indieweb from '@assets/images/buttons/indieweb.png';
+import faithTech from '@assets/images/buttons/faith-tech.png';
+import wcagAA from '@assets/images/buttons/wcag-aa.png';
+import coffeePowered from '@assets/images/buttons/coffee-powered.png';
+import webStandards from '@assets/images/buttons/web-standards.png';
+import webmentions from '@assets/images/buttons/webmentions.png';
+import microformats from '@assets/images/buttons/microformats.png';
 
-import validCSS from "@assets/images/buttons/valid-css.gif";
-import validHtml from "@assets/images/buttons/valid-html5.gif";
-import rssFeed from "@assets/images/buttons/valid-rss.png";
-import obsidianUser from "@assets/images/buttons/obsidian-user.png";
-import creativeCommons from "@assets/images/buttons/cc.png";
+import validCSS from '@assets/images/buttons/valid-css.gif';
+import validHtml from '@assets/images/buttons/valid-html5.gif';
+import rssFeed from '@assets/images/buttons/valid-rss.png';
+import obsidianUser from '@assets/images/buttons/obsidian-user.png';
+import creativeCommons from '@assets/images/buttons/cc.png';
 ---
 
-<footer class="bg-white border-t border-gray-200 mt-20">
-  <div class="max-w-5xl mx-auto px-6 py-12">
+<footer class="footer">
+  <div class="wrapper flow">
     <!-- Bio -->
     <div class="mb-12 text-center max-w-2xl mx-auto">
       <p class="text-gray-700 leading-relaxed">
-        Desenvolvedor e engenheiro de acessibilidade, apaixonado por criar experiências digitais
-        excepcionais que conectam pessoas e transformam negócios.
+        Desenvolvedor e engenheiro de acessibilidade, apaixonado por criar
+        experiências digitais excepcionais que conectam pessoas e transformam
+        negócios.
       </p>
     </div>
 
-    <!-- Links organizados em colunas -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      <!-- Coluna 1: Trabalho -->
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Trabalho</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/sobre" class="text-gray-600 hover:text-gray-900">Sobre</a></li>
-          <li><a href="/projetos" class="text-gray-600 hover:text-gray-900">Projetos</a></li>
-          <li><a href="/servicos" class="text-gray-600 hover:text-gray-900">Serviços</a></li>
-          <li><a href="/newsletter" class="text-gray-600 hover:text-gray-900">Newsletter</a></li>
+    <div class="footer__columns | grid" data-layout="sidebar">
+      <div class="footer__column | flow">
+        <h3 class="footer__heading | text-step-0">Trabalho</h3>
+        <ul class="footer__list | flow" role="list">
+          <li><a href="/sobre" class="footer__link">Sobre</a></li>
+          <li><a href="/projetos" class="footer__link">Projetos</a></li>
+          <li><a href="/servicos" class="footer__link">Serviços</a></li>
+          <li><a href="/newsletter" class="footer__link">Newsletter</a></li>
         </ul>
       </div>
 
-      <!-- Coluna 2: Pessoal -->
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Pessoal</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/blogroll" class="text-gray-600 hover:text-gray-900">Blogroll</a></li>
-          <li><a href="/livros" class="text-gray-600 hover:text-gray-900">Minha Biblioteca</a></li>
-          <li><a href="/filmes" class="text-gray-600 hover:text-gray-900">Meus Filmes</a></li>
-          <li><a href="/notas" class="text-gray-600 hover:text-gray-900">Minhas Notas</a></li>
-        </ul>
-      </div>
-
-      <!-- Coluna 3: Meta -->
-      <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Meta</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/agora" class="text-gray-600 hover:text-gray-900">Now</a></li>
+      <div class="footer__column | flow">
+        <h3 class="footer__heading | text-step-0">Pessoal</h3>
+        <ul class="footer__list | flow" role="list">
+          <li><a href="/blogroll" class="footer__link">Blogroll</a></li>
           <li>
-            <a href="/acessibilidade" class="text-gray-600 hover:text-gray-900"
+            <a href="/livros" class="footer__link">Minha Biblioteca</a>
+          </li>
+          <li>
+            <a href="/filmes" class="footer__link">Meus Filmes</a>
+          </li>
+          <li>
+            <a href="/notas" class="footer__link">Minhas Notas</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__column | flow">
+        <h3 class="footer__heading | text-step-0">Meta</h3>
+        <ul class="footer__list | flow" role="list">
+          <li>
+            <a href="/agora" class="footer__link">Now</a>
+          </li>
+          <li>
+            <a href="/acessibilidade" class="footer__link"
               >Declaração de Acessibilidade</a
             >
           </li>
-          <li><a href="/uso-ia" class="text-gray-600 hover:text-gray-900">Uso de IA</a></li>
-          <li><a href="/feed.xml" class="text-gray-600 hover:text-gray-900">RSS</a></li>
-          <li><a href="/pgp" class="text-gray-600 hover:text-gray-900">Chave PGP</a></li>
+          <li>
+            <a href="/uso-ia" class="footer__link">Uso de IA</a>
+          </li>
+          <li>
+            <a href="/feed.xml" class="footer__link">RSS</a>
+          </li>
+          <li>
+            <a href="/pgp" class="footer__link">Chave PGP</a>
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- a11y Webring -->
-    <div class="mb-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
-      <div class="flex items-center justify-center gap-4 text-sm">
-        <span class="text-gray-600">Membro do</span>
-        <a href="https://a11y-webring.club" class="font-semibold text-gray-900 hover:text-blue-600">
+    <div class="webring | cluster">
+      <div class="webring__content | cluster" data-layout="cluster">
+        <span class="color-secondary">Membro do</span>
+        <a href="https://a11y-webring.club" class="webring__link">
           a11y-webring.club
         </a>
-        <span class="text-gray-400">•</span>
-        <a href="https://a11y-webring.club/prev" class="text-gray-600 hover:text-gray-900"
+        <span class="color-tertiary">•</span>
+        <a href="https://a11y-webring.club/prev" class="webring__nav"
           >← anterior</a
         >
-        <a href="https://a11y-webring.club/random" class="text-gray-600 hover:text-gray-900"
+        <a href="https://a11y-webring.club/random" class="webring__nav"
           >aleatório</a
         >
-        <a href="https://a11y-webring.club/next" class="text-gray-600 hover:text-gray-900"
+        <a href="https://a11y-webring.club/next" class="webring__nav"
           >próximo →</a
         >
       </div>
     </div>
 
     <!-- 88x31 Buttons Section -->
-    <div class="mb-8">
-      <h3 class="text-sm font-semibold text-gray-900 mb-4 text-center">Badges & Buttons</h3>
-      <ul class="flex flex-wrap justify-center gap-2">
+    <div class="buttons-section | flow">
+      <h3 class="buttons-section__title | text-step--1 text-center">
+        Badges & Buttons
+      </h3>
+
+      <ul class="footer__badge | grid" role="list">
         <li>
           <img
             src={validHtml.src}
@@ -139,7 +153,6 @@ import creativeCommons from "@assets/images/buttons/cc.png";
               width="88"
               height="32"
               loading="lazy"
-              
             />
           </a>
         </li>
@@ -153,7 +166,6 @@ import creativeCommons from "@assets/images/buttons/cc.png";
             class="pixelated"
           />
         </li>
-
         <li>
           <img
             src={peoplePledge.src}
@@ -175,7 +187,10 @@ import creativeCommons from "@assets/images/buttons/cc.png";
           />
         </li>
         <li>
-          <a href="https://mastodon.social/@brunopulis@mastodon.social" rel="me">
+          <a
+            href="https://mastodon.social/@brunopulis@mastodon.social"
+            rel="me"
+          >
             <img
               src={mastodon.src}
               alt="Accessibility Engineer"
@@ -187,7 +202,11 @@ import creativeCommons from "@assets/images/buttons/cc.png";
           </a>
         </li>
         <li>
-          <a href="https://indieweb.org" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://indieweb.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               src={indieweb.src}
               alt="Parte da Indie web"
@@ -249,10 +268,23 @@ import creativeCommons from "@assets/images/buttons/cc.png";
           />
         </li>
         <li>
-          <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">
+          <a
+            href="https://archiveready.com/check?url=https://brunopulis.com/"
+            title="Website Archivability Testing"
+            ><img
+              src="https://archiveready.com/img/archiveready-badge.png"
+              alt=""
+            /></a
+          >
+        </li>
+        <li>
+          <a
+            href="http://creativecommons.org/licenses/by-sa/4.0/"
+            rel="nofollow"
+          >
             <img
               src={creativeCommons.src}
-              alt="CC BY-SA 4.0" 
+              alt="CC BY-SA 4.0"
               width="88"
               height="31"
               loading="lazy"
@@ -264,56 +296,82 @@ import creativeCommons from "@assets/images/buttons/cc.png";
     </div>
 
     <!-- Social Links -->
-    <div class="mb-8">
-      <div class="flex justify-center gap-6">
-        <a
-          href="https://github.com/brunopulis"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-600 hover:text-gray-900"
-          aria-label="GitHub"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              fill-rule="evenodd"
-              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </a>
-        <a
-          href="https://youtube.com/@brunopulis"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-600 hover:text-gray-900"
-          aria-label="YouTube"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="https://linkedin.com/in/brunopulis"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-gray-600 hover:text-gray-900"
-          aria-label="LinkedIn"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-            ></path>
-          </svg>
-        </a>
-      </div>
+    <div class="social | cluster">
+      <ul class="footer__list | flow" role="list">
+        <li>
+          <a
+            href="https://github.com/brunopulis"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+            aria-label="GitHub"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://youtube.com/@brunopulis"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+            aria-label="YouTube"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              ></path>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://linkedin.com/in/brunopulis"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+            aria-label="LinkedIn"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              ></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
 
     <!-- Copyright & License -->
-    <div class="text-center text-sm text-gray-600 border-t border-gray-200 pt-8">
-      <p class="mb-2">Feito com ❤️ em BH</p>
+    <div class="footer__copyright | text-center text-step--1">
+      <p>Feito com <span role="img" aria-label="amor">❤️</span> em BH</p>
       <p>
-        © 2012 <a href="https://brunopulis.com/sobre" class="text-blue-600 hover:text-blue-700">Bruno Pulis</a> • Conteúdo licenciado por <a
+        © 2012 <a
+          href="https://brunopulis.com/sobre"
+          class="text-blue-600 hover:text-blue-700">Bruno Pulis</a
+        > • Conteúdo licenciado por <a
           href="https://creativecommons.org/licenses/by-sa/4.0/"
           class="text-blue-600 hover:text-blue-700"
           target="_blank"
@@ -323,16 +381,3 @@ import creativeCommons from "@assets/images/buttons/cc.png";
     </div>
   </div>
 </footer>
-
-<style>
-  /* Estilo pixelado para os botões 88x31 */
-  .pixelated {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-  }
-
-  footer a {
-    transition: color 0.2s ease;
-  }
-</style>
