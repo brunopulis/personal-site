@@ -1,8 +1,12 @@
 ---
-import { getLanguageFromPath, useTranslations, getAllLocalizedPaths } from '@i18n/utils';
+import {
+  getLanguageFromPath,
+  useTranslations,
+  getAllLocalizedPaths,
+} from '@i18n/utils';
 import type { Language } from '@i18n/index';
 
-import { ClientRouter } from "astro:transitions";
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -12,19 +16,19 @@ interface Props {
 }
 
 // Componentes
+import Header from '@components/layouts/Header.astro';
 import Navigation from '@components/Navigation.astro';
 import Footer from '@components/layouts/Footer.astro';
 import SkipLink from '@components/utils/SkipLink.astro';
 import BackToTop from '@components/utils/BackToTop.astro';
 
 // Head
-import RSS from "@components/utils/head/RSS.astro";
-import Webmentions from "@components/utils/head/Webmentions.astro";
-import Preconnect from "@components/utils/head/Preconnect.astro";
+import RSS from '@components/utils/head/RSS.astro';
+import Webmentions from '@components/utils/head/Webmentions.astro';
+import Preconnect from '@components/utils/head/Preconnect.astro';
 
-import "@fontsource-variable/source-sans-3";
-import "@styles/style.css";
-
+import '@fontsource-variable/source-sans-3';
+import '@styles/style.css';
 
 const { title, description, routeKey } = Astro.props;
 const alternateUrls = getAllLocalizedPaths(routeKey);
@@ -39,7 +43,7 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -55,30 +59,27 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
     <!-- RSS Microformats e rel=me -->
     <RSS />
     <Webmentions />
-    
+
     <!-- hreflang para SEO multiidioma -->
-    {hreflangs.map(({ lang: hrefLang, path }) => (
-      <link 
-        rel="alternate" 
-        hreflang={hrefLang.replace('-', '_')} 
-        href={`${Astro.url.origin}${path}`} 
-      />
-    ))}
+    {
+      hreflangs.map(({ lang: hrefLang, path }) => (
+        <link
+          rel="alternate"
+          hreflang={hrefLang.replace('-', '_')}
+          href={`${Astro.url.origin}${path}`}
+        />
+      ))
+    }
     <link rel="canonical" href={Astro.url} />
 
     <!-- Componentes do Head -->
     <Preconnect />
     <ClientRouter />
   </head>
-  
+
   <body class="antialiased">
     <SkipLink />
-    <header class="header sticky top-0 z-50 bg-white shadow-sm">
-      <nav class="wrapper">
-        <Navigation currentLang={lang} currentRoute={routeKey} />
-      </nav>
-    </header>
-
+    <Navigation currentLang={lang} currentRoute={routeKey} />
     <main class="main-wrapper">
       <slot />
     </main>

@@ -1,25 +1,26 @@
 ---
 import Navigation from '@components/Navigation.astro';
 import LanguagePicker from '@components/LanguagePicker.astro';
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 
-import pulisLogo from "@assets/images/horizontal/blood.svg";
-import SkipLink from "@components/utils/SkipLink.astro";
+import pulisLogo from '@assets/images/horizontal/blood.svg';
 
-const { currentLocale } = Astro;
+const { currentLocale } = Astro.props;
 ---
 
-<SkipLink />
 <header class="header">
   <div class="wrapper">
     <div class="header__logo">
       <a href="/" class="" aria-label="Ir para página inicial">
-        <Image src={pulisLogo} class="w-auto" alt="Bruno Pulis" loading="eager" />
+        <Image
+          src={pulisLogo}
+          class="w-auto"
+          alt="Bruno Pulis"
+          loading="eager"
+        />
       </a>
     </div>
 
     <Navigation currentLocale={currentLocale} />
-    <LanguagePicker />
   </div>
 </header>
-
