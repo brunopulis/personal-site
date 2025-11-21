@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // import db from '@astrojs/db';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
@@ -9,6 +9,8 @@ import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
 import robotsTxt from 'astro-robots-txt';
+
+import remarkExternalLinks from './src/plugins/remark-external-links.mjs';
 
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -32,6 +34,7 @@ export default defineConfig({
   site: 'https://brunopulis.com',
   markdown: {
     syntaxHighlight: 'prism',
+    remarkPlugins: [remarkExternalLinks],
   },
   integrations: [
     icon(),
@@ -40,34 +43,7 @@ export default defineConfig({
     mdx(),
     compress(),
     umami({ id: '88ff3bbf-61c5-4303-bea2-f0da4f5dbb53' }),
-    robotsTxt({
-      policy: [
-        {
-          userAgent: 'CCBot',
-          disallow: '/',
-        },
-        {
-          userAgent: 'ChatGPT-User',
-          disallow: '/',
-        },
-        {
-          userAgent: 'GPTBot',
-          disallow: '/',
-        },
-        {
-          userAgent: 'Google-Extended',
-          disallow: '/',
-        },
-        {
-          userAgent: 'Omgilibot',
-          disallow: '/',
-        },
-        {
-          userAgent: 'FacebookBot',
-          disallow: '/',
-        },
-      ],
-    }),
+    robotsTxt(),
   ],
   build: {
     format: 'directory',

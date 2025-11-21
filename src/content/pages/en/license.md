@@ -27,3 +27,12 @@ You are free to:
 - **Other rights**: This license does not cover image, privacy, or moral rights. Check if you need additional permissions.
 
 You can consult all the rules applied [in this license](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Attribution Example
+
+```html
+<p>
+  Credit to <a href="https://brunopulis.com">Bruno Pulis</a> for the original
+  work.
+</p>
+```

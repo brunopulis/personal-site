@@ -27,3 +27,12 @@ Você tem liberdade para:
 - **Outros direitos**: Esta licença não cobre direitos de imagem, privacidade ou moral. Verifique se precisa de permissões extras.
 
 Voce pode consultar todas regras aplicadas [nessa licenca](https://creativecommons.org/licenses/by-sa/4.0/)
+
+## Exemplo de Atribuição
+
+```html
+<p>
+  Crédito a <a href="https://brunopulis.com">Bruno Pulis</a> pelo trabalho
+  original.
+</p>
+```
