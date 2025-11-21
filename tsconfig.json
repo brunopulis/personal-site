@@ -16,7 +16,7 @@
       "@layout/*": ["src/layout/*"],
       "@assets/*": ["src/assets/*"],
       "@scripts/*": ["src/scripts/*"],
-      "@styles/*": ["src/styles/*"],
+      "@styles/*": ["src/css/*"],
       "@lib/*": ["src/lib/*"],
       "@utils/*": ["src/utils/*"],
       "@content/*": ["src/content/*"],

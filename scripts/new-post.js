@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+ 
 import fs from "fs";
 import inquirer from "inquirer";
 import path from "path";
