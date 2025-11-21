@@ -1,9 +1,9 @@
 ---
-title: "/licenca"
-description: "Licenca de uso do conteudo do meu site"
+title: "Licenca de uso"
+date: "2025-11-18"
+description: ""
 lang: "pt-br"
-routeKey: "licenca"
-date: "2025-11-20"
+routeKey: "termos"
 ---
 
 ## Você tem o direito de:

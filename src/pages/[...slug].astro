@@ -1,10 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getLanguageFromPath, useTranslations } from '@i18n/utils';
-import type { Language } from '@i18n/translations';
-
 import Layout from '@layout/Layout.astro';
-
 
 /**
  * Gera rotas estáticas para todas as páginas em inglês (en)
@@ -16,12 +12,10 @@ import Layout from '@layout/Layout.astro';
  * - contact.md → /en/contact
  */
 export async function getStaticPaths() {
-  // Busca todas as páginas em inglês
-  const pages = await getCollection('pages', ({ data }) => data.lang === 'en');
+  const pages = await getCollection('pages', ({ data }) => data.lang === 'pt-br');  
   
   return pages.map(page => {
-    // Remove a extensão .md do ID para criar o slug
-    const slug = page.id.replace('.md', '');
+    const slug = page.id.replace(/^pt-br\//, '').replace(/\.md$/, '');
     
     return {
       params: { slug },
@@ -38,14 +32,14 @@ const { page } = Astro.props;
 const { Content } = await page.render();
 
 // Detecta o idioma a partir da URL
-const lang = getLanguageFromPath(Astro.url.pathname) as Language;
-const t = useTranslations(lang);
+const currentLocale = 'pt-br';
 ---
 
 <Layout
   title={page.data.title}
   description={page.data.description}
   routeKey={page.data.routeKey}
+  currentLocale={currentLocale}
 >
   <main id="main-content" class="min-h-screen">
     <article class="mx-auto max-w-4xl px-6 py-16">
