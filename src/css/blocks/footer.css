@@ -1,0 +1,212 @@
+/* =========================
+     COMPOSITION (Layout)
+     ========================= */
+
+/* Flow - espaçamento vertical entre elementos */
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+/* Grid - layout de colunas */
+.grid {
+  display: grid;
+  gap: var(--gutter, 1.5rem);
+}
+
+@media (min-width: 48em) {
+  .grid[data-layout='sidebar'] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Cluster - agrupamento horizontal com quebra */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--cluster-space, 1rem);
+}
+
+/* =========================
+     UTILITIES (Utilidades)
+     ========================= */
+
+.text-center {
+  text-align: center;
+}
+
+.text-step-0 {
+  font-size: var(--step-0, 1rem);
+}
+
+.text-step--1 {
+  font-size: var(--step--1, 0.875rem);
+}
+
+.color-secondary {
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.color-tertiary {
+  color: var(--color-text-tertiary, #9ca3af);
+}
+
+/* =========================
+     BLOCKS (Componentes)
+     ========================= */
+
+/* Footer */
+.footer {
+  margin-block-start: var(--space-2xl, clamp(3rem, 6vw, 5rem));
+  border-block-start: 1px solid var(--color-border, #e5e7eb);
+  background-color: var(--color-bg-subtle, #fff);
+}
+
+/* Footer Bio */
+.footer__bio {
+  margin-inline: auto;
+  max-inline-size: 42rem;
+  --flow-space: var(--space-l, 2rem);
+}
+
+.footer__bio p {
+  color: var(--color-text, #374151);
+  line-height: 1.6;
+}
+
+/* Footer Columns */
+.footer__columns {
+  --flow-space: var(--space-l, 2rem);
+}
+
+.footer__column {
+  --flow-space: var(--space-s, 1rem);
+}
+
+.footer__heading {
+  color: var(--color-text-emphasis, #111827);
+  font-weight: 600;
+}
+
+.footer__list {
+  padding: 0;
+  list-style: none;
+  --flow-space: var(--space-2xs, 0.5rem);
+}
+
+.footer__link {
+  transition: color 0.2s ease;
+  color: var(--color-text-secondary, #6b7280);
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--color-text-emphasis, #111827);
+}
+
+/* Webring */
+.webring {
+  --flow-space: var(--space-m, 1.5rem);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: var(--radius-md, 0.5rem);
+  background-color: var(--color-bg-muted, #f9fafb);
+  padding: var(--space-m, 1rem);
+}
+
+.webring__content {
+  --cluster-space: var(--space-s, 1rem);
+  font-size: var(--step--1, 0.875rem);
+}
+
+.webring__link {
+  color: var(--color-text-emphasis, #111827);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.webring__link:hover {
+  color: var(--color-primary, #2563eb);
+}
+
+.webring__nav {
+  color: var(--color-text-secondary, #6b7280);
+  text-decoration: none;
+}
+
+.webring__nav:hover {
+  color: var(--color-text-emphasis, #111827);
+}
+
+/* Buttons Section */
+.buttons-section {
+  --flow-space: var(--space-m, 1.5rem);
+}
+
+.buttons-section__title {
+  color: var(--color-text-emphasis, #111827);
+  font-weight: 600;
+}
+
+.buttons-section .cluster {
+  --cluster-space: var(--space-2xs, 0.5rem);
+}
+
+/* Social Links */
+.social {
+  --flow-space: var(--space-m, 1.5rem);
+}
+
+.social__links {
+  --cluster-space: var(--space-l, 1.5rem);
+}
+
+.social__link {
+  transition: color 0.2s ease;
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.social__link:hover {
+  color: var(--color-text-emphasis, #111827);
+}
+
+.social__link svg {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.footer__badge {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  grid-gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Copyright */
+.footer__copyright {
+  --flow-space: var(--space-m, 1.5rem);
+  border-block-start: 1px solid var(--color-border, #e5e7eb);
+  padding-block-start: var(--space-l, 2rem);
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.footer__copyright p + p {
+  margin-block-start: var(--space-2xs, 0.5rem);
+}
+
+/* =========================
+     EXCEPTIONS (Exceções)
+     ========================= */
+
+/* Estilo pixelado para botões 88x31 */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Remove list markers em listas dentro de flow */
+[role='list'] {
+  list-style: none;
+}
