@@ -9,7 +9,7 @@ export const prerender = false;
 
 const q = Astro.url.searchParams.get('q') ?? undefined;
 
-const currentLocale = 'en';
+const currentLocale = 'pt-br';
 const lang = getLanguageFromPath(Astro.url.pathname) as Language;
 const t = useTranslations(lang);
 
