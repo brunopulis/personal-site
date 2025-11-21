@@ -21,7 +21,7 @@ export function useTranslations(lang: Language) {
     const translation = translations[lang]?.[key];
 
     if (!translation) {
-      // eslint-disable-next-line no-undef
+       
       console.warn(`Translation key "${key}" not found for language "${lang}"`);
       return key;
     }
@@ -110,7 +110,7 @@ export function getRouteKeyFromPath(pathname: string, lang: Language): RouteKey 
 
   // Busca a chave correspondente
   const routeEntries = Object.entries(routes[lang]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   const found = routeEntries.find(([_, value]) => value === cleanPath);
 
   return (found?.[0] as RouteKey) || "index";
