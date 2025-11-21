@@ -1,4 +1,6 @@
 ---
+import { SpeedInsights } from '@vercel/speed-insights/astro';
+
 import {
   getLanguageFromPath,
   useTranslations,
@@ -84,5 +86,6 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
     </main>
     <Footer />
     <BackToTop />
+    <SpeedInsights />
   </body>
 </html>
