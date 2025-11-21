@@ -1,28 +1,40 @@
-import { 
-  translations, 
+import {
+  translations,
   defaultLanguage,
-  languages, 
-  type Language, 
+  languages,
+  type Language,
   type TranslationKey,
-} from "./index";
+} from './index';
 
-import { routes, type RouteKey } from "./routes";
+import { routes, type RouteKey } from './routes';
 
-export { translations, defaultLanguage, languages, Language, TranslationKey, RouteKey, routes };
+export {
+  translations,
+  defaultLanguage,
+  languages,
+  Language,
+  TranslationKey,
+  RouteKey,
+  routes,
+};
 
-/*/**
- * 
- * 
- * @param lang 
- * @returns 
+/**
+ * Hook para obter traduções com fallback seguro
+ *
+ * @param lang - Idioma (pt-br, en, etc)
+ * @returns Função t para acessar traduções
  */
-export function useTranslations(lang: Language) {
+export function useTranslations(lang?: Language | undefined) {
+  // Fallback para português-brasil se idioma não for fornecido
+  const resolvedLang: Language = lang || 'pt-br';
+
   return function t(key: TranslationKey): string {
-    const translation = translations[lang]?.[key];
+    const translation = translations[resolvedLang]?.[key];
 
     if (!translation) {
-       
-      console.warn(`Translation key "${key}" not found for language "${lang}"`);
+      console.warn(
+        `Translation key "${key}" not found for language "${resolvedLang}"`
+      );
       return key;
     }
 
@@ -43,14 +55,14 @@ export function useTranslations(lang: Language) {
  * getLocalizedPath('index', 'en') // returns '/en'
  */
 export function getLocalizedPath(routeKey: RouteKey, lang: Language): string {
-  const path = routes[lang]?.[routeKey] ?? routes["pt-br"][routeKey];
+  const path = routes[lang]?.[routeKey] ?? routes['pt-br'][routeKey];
 
-  if (lang === "pt-br") {
-    return path ? `/${path}` : "/";
+  if (lang === 'pt-br') {
+    return path ? `/${path}` : '/';
   }
 
   if (routeKey === 'index') {
-    return `/${lang}`; 
+    return `/${lang}`;
   }
 
   // Rota Normal (ex: 'now', 'about'): retorna /prefixo/caminho
@@ -59,17 +71,17 @@ export function getLocalizedPath(routeKey: RouteKey, lang: Language): string {
 }
 
 /**
- * 
- * 
- * @param pathname 
- * @returns 
+ *
+ *
+ * @param pathname
+ * @returns
  */
 export function getLanguageFromPath(pathname: string): Language {
-  const segments = pathname.split("/").filter(Boolean);
+  const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0];
 
-  if (firstSegment === "en") {
-    return "en";
+  if (firstSegment === 'en') {
+    return 'en';
   }
 
   return defaultLanguage;
@@ -82,7 +94,7 @@ export function getLanguageFromPath(pathname: string): Language {
  * @returns Array com todos os caminhos localizados
  */
 export function getAllLocalizedPaths(routeKey: RouteKey) {
-  return Object.keys(routes).map(lang => ({
+  return Object.keys(routes).map((lang) => ({
     lang: lang as Language,
     path: getLocalizedPath(routeKey, lang as Language),
   }));
@@ -94,24 +106,27 @@ export function getAllLocalizedPaths(routeKey: RouteKey) {
  * @param lang - Idioma detectado
  * @returns A chave da rota encontrada ou 'index'
  */
-export function getRouteKeyFromPath(pathname: string, lang: Language): RouteKey {
+export function getRouteKeyFromPath(
+  pathname: string,
+  lang: Language
+): RouteKey {
   // Remove barras no início e fim
-  let cleanPath = pathname.replace(/^\/|\/$/g, "");
+  let cleanPath = pathname.replace(/^\/|\/$/g, '');
 
   // Remove prefixo de idioma se existir
-  if (lang !== "pt-br" && cleanPath.startsWith(lang)) {
-    cleanPath = cleanPath.replace(`${lang}/`, "").replace(lang, "");
+  if (lang !== 'pt-br' && cleanPath.startsWith(lang)) {
+    cleanPath = cleanPath.replace(`${lang}/`, '').replace(lang, '');
   }
 
   // Se o caminho está vazio, é a página inicial
   if (!cleanPath) {
-    return "index";
+    return 'index';
   }
 
   // Busca a chave correspondente
   const routeEntries = Object.entries(routes[lang]);
-   
+
   const found = routeEntries.find(([_, value]) => value === cleanPath);
 
-  return (found?.[0] as RouteKey) || "index";
+  return (found?.[0] as RouteKey) || 'index';
 }
