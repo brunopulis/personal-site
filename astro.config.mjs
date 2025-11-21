@@ -3,7 +3,6 @@ import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
-import tailwindcss from "@tailwindcss/vite";
 import umami from "@yeskunall/astro-umami";
 import { defineConfig } from "astro/config";
 import compress from "astro-compress";
@@ -84,10 +83,10 @@ export default defineConfig({
         "@layouts": path.resolve(__dirname, "./src/layouts"),
         "@assets": path.resolve(__dirname, "./src/assets"),
         "@scripts": path.resolve(__dirname, "./src/scripts"),
-        "@styles": path.resolve(__dirname, "./src/styles"),
+        "@styles": path.resolve(__dirname, "./src/css"),
       },
     },
-    plugins: [tailwindcss()],
+    plugins: [],
     server: {
       fs: {
         strict: false,
