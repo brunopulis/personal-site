@@ -1,12 +1,12 @@
-.external {
+.external-link {
   word-wrap: break-word;
-  color: #3366bb;
+  color: var(--color-blood-red-800, #610404);
   word-break: break-all;
 }
 
 a[href ^="https://"]
 {
-  background: url('/external.svg') center right no-repeat;
+  background: url('/images/external.svg') center right no-repeat;
   padding-right: 1em;
 }
 
