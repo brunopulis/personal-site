@@ -1,8 +1,8 @@
 ---
-title: "/license"
+title: "License"
 description: "Licenca de uso do conteudo do meu site"
 lang: "en"
-routeKey: "licenca"
+routeKey: "terms"
 date: "2025-11-20"
 ---
 
