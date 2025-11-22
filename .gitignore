@@ -35,10 +35,9 @@ pnpm-debug.log*
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
-# Local Netlify folder
-.netlify
+
 
 # Biome editor settings
-.biome/
-node_modules
 .vercel
+
+TODO.todo
