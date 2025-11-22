@@ -81,7 +81,7 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
   <body class="antialiased">
     <SkipLink />
     <Navigation currentLang={lang} currentRoute={routeKey} />
-    <main class="main-wrapper">
+    <main class="main-wrapper" id="main-content">
       <slot />
     </main>
     <Footer />
