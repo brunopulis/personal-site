@@ -4,7 +4,7 @@
   word-break: break-all;
 }
 
-a[href ^="https://"]
+a[href ^="https://"].external-link
 {
   background: url('/images/external.svg') center right no-repeat;
   padding-right: 1em;
