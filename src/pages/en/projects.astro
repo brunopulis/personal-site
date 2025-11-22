@@ -1,79 +1,79 @@
 ---
-import { Image } from "astro:assets";
-import { ExternalLink } from "@lucide/astro";
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import Footer from "@components/layouts/Footer.astro";
-import bibliotecaDaRevolucao from "@assets/images/projects/biblioteca-da-revolucao.webp";
-import forja from "@assets/images/projects/forja-comercial.webp";
-import henriqueNoal from "@assets/images/projects/henrique-noal.webp";
-import magraDeVerdade from "@assets/images/projects/magra-de-verdade.webp";
+import bibliotecaDaRevolucao from '@assets/images/projects/biblioteca-da-revolucao.webp';
+import forja from '@assets/images/projects/forja-comercial.webp';
+import henriqueNoal from '@assets/images/projects/henrique-noal.webp';
+import magraDeVerdade from '@assets/images/projects/magra-de-verdade.webp';
+import Footer from '@components/layouts/Footer.astro';
+import Header from '@components/layouts/Header.astro';
+import Layout from '@layout/Layout.astro';
+import { ExternalLink } from '@lucide/astro';
+import { Image } from 'astro:assets';
 
 const projectsData = {
   projects: [
     {
       image: magraDeVerdade,
-      title: "Magra de Verdade",
-      year: "2025",
-      service: "Desenvolvimento web",
-      description: "P\u00E1gina de Vendas",
-      techs: ["WordPress", "Elementor", "Acessibilidade"],
+      title: 'Magra de Verdade',
+      year: '2025',
+      service: 'Desenvolvimento web',
+      description: 'P\u00E1gina de Vendas',
+      techs: ['WordPress', 'Elementor', 'Acessibilidade'],
       demo: [
         {
-          url: "https://magradeverdade.com/",
-          label: "LinkedIn",
+          url: 'https://magradeverdade.com/',
+          label: 'LinkedIn',
         },
       ],
     },
     {
       image: magraDeVerdade,
-      title: "Reponto - Recrutamento e Sele\u00E7\u00E3o",
-      year: "2025",
-      service: "Desenvolvimento web",
-      description: "Site institucional",
-      techs: ["WordPress", "Bootstrap", "Acessibilidade"],
+      title: 'Reponto - Recrutamento e Sele\u00E7\u00E3o',
+      year: '2025',
+      service: 'Desenvolvimento web',
+      description: 'Site institucional',
+      techs: ['WordPress', 'Bootstrap', 'Acessibilidade'],
       demo: [
         {
-          url: "https://magradeverdade.com/",
-          label: "LinkedIn",
+          url: 'https://magradeverdade.com/',
+          label: 'LinkedIn',
         },
       ],
     },
     {
       image: bibliotecaDaRevolucao,
-      title: "Biblioteca da Revolu\u00E7\u00E3o",
-      service: "Desenvolvimento web",
-      description: "P\u00E1gina de Vendas",
-      techs: ["WordPress", "Elementor", "Acessibilidade"],
+      title: 'Biblioteca da Revolu\u00E7\u00E3o',
+      service: 'Desenvolvimento web',
+      description: 'P\u00E1gina de Vendas',
+      techs: ['WordPress', 'Elementor', 'Acessibilidade'],
       demo: [
         {
-          url: "https://serqsabe.com.br",
-          label: "LinkedIn",
+          url: 'https://serqsabe.com.br',
+          label: 'LinkedIn',
         },
       ],
     },
     {
       image: henriqueNoal,
-      title: "Henrique Noal",
-      service: "Desenvolvimento web",
-      description: "P\u00E1gina de Vendas",
-      techs: ["Astro", "TailwindCSS", "Acessibilidade"],
+      title: 'Henrique Noal',
+      service: 'Desenvolvimento web',
+      description: 'P\u00E1gina de Vendas',
+      techs: ['Astro', 'TailwindCSS', 'Acessibilidade'],
       demo: [
         {
-          url: "https://henriquenoal.netlify.app/",
-          label: "LinkedIn",
+          url: 'https://henriquenoal.netlify.app/',
+          label: 'LinkedIn',
         },
       ],
     },
     {
       image: forja,
-      title: "Forja Comercial",
-      description: "P\u00E1gina de Vendas",
-      techs: ["WordPress", "Elementor", "Acessibilidade"],
+      title: 'Forja Comercial',
+      description: 'P\u00E1gina de Vendas',
+      techs: ['WordPress', 'Elementor', 'Acessibilidade'],
       demo: [
         {
-          url: "https://joaokioshi.com",
-          label: "LinkedIn",
+          url: 'https://joaokioshi.com',
+          label: 'LinkedIn',
         },
       ],
     },
@@ -104,7 +104,7 @@ const projects = projectsData.projects;
         <h2 class="mb-16 text-center text-4xl font-bold text-gray-900">Todos os Projetos</h2>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {
-            projects.slice(0, 6).map(project => (
+            projects.slice(0, 6).map((project) => (
               <div class="text-card-foreground group flex flex-col gap-6 overflow-hidden rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-lg">
                 <div class="h-48 overflow-hidden">
                   <Image
@@ -119,7 +119,7 @@ const projects = projectsData.projects;
                   </h3>
                   <p class="mb-4 line-clamp-3 text-sm text-gray-600">{project.description}</p>
                   <div class="mb-4 flex flex-wrap gap-1">
-                    {project.techs.map(tech => (
+                    {project.techs.map((tech) => (
                       <span class="text-blood-red-800 inline-flex w-fit items-center justify-center gap-1 rounded-md border border-gray-600 bg-white px-2 py-0.5 text-xs font-medium">
                         {tech}
                       </span>

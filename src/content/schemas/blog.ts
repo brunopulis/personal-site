@@ -1,5 +1,6 @@
-import { defineCollection, z } from "astro:content";
-import { seoSchema } from "./seo";
+import { defineCollection, z } from 'astro:content';
+
+import { seoSchema } from './seo';
 
 export const blog = defineCollection({
   schema: z.object({

@@ -11,11 +11,7 @@ export default {
   useTabs: false,
   printWidth: 100,
 
-  plugins: [
-    'prettier-plugin-astro',
-    'prettier-plugin-css-order',
-    '@trivago/prettier-plugin-sort-imports',
-  ],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-css-order'],
 
   overrides: [
     {
@@ -32,20 +28,4 @@ export default {
       },
     },
   ],
-  iimportOrder: [
-    '^astro', // Astro
-    '^@astro', // Astro packages
-    '^@?\\w', // Externos
-    '^@/components', // Components
-    '^@/layouts', // Layouts
-    '^@/utils', // Utils
-    '^@/config', // Config
-    '^@/i18n', // i18n
-    '^@/types', // Types
-    '^@/', // Outros alias
-    '^[./]', // Relativos
-  ],
-  importOrderSeparateGroups: true,
-  importOrderGroupNamespaceSpecifiers: true,
-  importOrderCombineTypeAndValueImports: true,
 };

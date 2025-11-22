@@ -1,9 +1,9 @@
 ---
-title: "Contato"
-description: ""
-lang: "pt-br"
-routeKey: "contato"
-date: "2025-11-18"
+title: 'Contato'
+description: ''
+lang: 'pt-br'
+routeKey: 'contato'
+date: '2025-11-18'
 ---
 
 É assim que você pode entrar em contato comigo.

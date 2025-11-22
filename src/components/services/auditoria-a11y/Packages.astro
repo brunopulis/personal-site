@@ -1,5 +1,5 @@
 ---
-import packages from "@data/packages.json";
+import packages from '@data/packages.json';
 ---
 
 <section class="bg-white py-24" id="packages" aria-labbeledby="packages-section">
@@ -8,9 +8,7 @@ import packages from "@data/packages.json";
       <h2 class="text-errie-black-900 mb-4 text-4xl font-bold" id="packages-section">
         Pacotes de Auditoria
       </h2>
-      <p class="text-errie-black-900 text-xl">
-        Precisa de uma auditoria? Veja os pacotes prontos
-      </p>
+      <p class="text-errie-black-900 text-xl">Precisa de uma auditoria? Veja os pacotes prontos</p>
     </div>
 
     <div class="grid gap-8 md:grid-cols-3">
@@ -28,15 +26,25 @@ import packages from "@data/packages.json";
                 <p class="uppercase">Mais contratado</p>
               </div>
             )}
-            <h3 class={`mb-2 text-2xl font-bold ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>
+            <h3
+              class={`mb-2 text-2xl font-bold ${item.featured ? 'text-white' : 'text-errie-black-900'}`}
+            >
               {item.name}
             </h3>
-            <p class={`mb-2 text-4xl font-bold ${item.featured ? 'text-white' : 'text-blood-red-800'}`}>{item.price}</p>
-            <p class={`mb-6 text-sm ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>{item.ideal}</p>
+            <p
+              class={`mb-2 text-4xl font-bold ${item.featured ? 'text-white' : 'text-blood-red-800'}`}
+            >
+              {item.price}
+            </p>
+            <p class={`mb-6 text-sm ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>
+              {item.ideal}
+            </p>
             <ul class="mb-8 list-disc space-y-3">
               {item.advantages.map((advantage) => (
                 <li class="flex items-start gap-2">
-                  <span class={`text-sm ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>{advantage}</span>
+                  <span class={`text-sm ${item.featured ? 'text-white' : 'text-errie-black-900'}`}>
+                    {advantage}
+                  </span>
                 </li>
               ))}
             </ul>

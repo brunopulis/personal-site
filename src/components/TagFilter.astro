@@ -9,11 +9,18 @@ const { allTags } = Astro.props;
 <div class="filter-container">
   <button class="filter-toggle" id="filterToggle">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M3 4h18M3 12h12M3 20h6" stroke-width="2" stroke-linecap="round"/>
+      <path d="M3 4h18M3 12h12M3 20h6" stroke-width="2" stroke-linecap="round"></path>
     </svg>
     <span>Filtro</span>
-    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg
+      class="chevron"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+    >
+      <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
   </button>
 
@@ -21,14 +28,21 @@ const { allTags } = Astro.props;
     <div class="dropdown-content">
       <h3>Categorias</h3>
       <div class="tags-list">
-        {allTags.map((tag) => (
-          <a href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`} class="tag-link">
-            {tag}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        ))}
+        {
+          allTags.map((tag) => (
+            <a href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`} class="tag-link">
+              {tag}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path
+                  d="M9 18l6-6-6-6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -36,8 +50,8 @@ const { allTags } = Astro.props;
 
 <style>
   .filter-container {
-    position: relative;
     display: inline-block;
+    position: relative;
     margin: 2rem 0;
   }
 
@@ -45,22 +59,22 @@ const { allTags } = Astro.props;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    background: #007bff;
-    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    background: #007bff;
+    padding: 0.75rem 1.25rem;
+    color: white;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    font-size: 1rem;
   }
 
   .filter-toggle:hover {
-    background: #0056b3;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    background: #0056b3;
   }
 
   .chevron {
@@ -75,21 +89,21 @@ const { allTags } = Astro.props;
     position: absolute;
     top: calc(100% + 0.5rem);
     left: 0;
-    min-width: 280px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    visibility: hidden;
     transform: translateY(-10px);
-    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    background: white;
+    min-width: 280px;
   }
 
   .dropdown-menu.active {
-    opacity: 1;
-    visibility: visible;
     transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
   }
 
   .dropdown-content {
@@ -98,8 +112,8 @@ const { allTags } = Astro.props;
 
   .dropdown-content h3 {
     margin: 0 0 1rem 0;
-    font-size: 1.1rem;
     color: #212529;
+    font-size: 1.1rem;
   }
 
   .tags-list {
@@ -110,21 +124,21 @@ const { allTags } = Astro.props;
 
   .tag-link {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1rem;
-    background: #f8f9fa;
+    align-items: center;
+    transition: all 0.2s ease;
     border-radius: 6px;
-    text-decoration: none;
+    background: #f8f9fa;
+    padding: 0.75rem 1rem;
     color: #495057;
     font-weight: 500;
-    transition: all 0.2s ease;
+    text-decoration: none;
   }
 
   .tag-link:hover {
+    transform: translateX(4px);
     background: #e9ecef;
     color: #007bff;
-    transform: translateX(4px);
   }
 
   .tag-link svg {

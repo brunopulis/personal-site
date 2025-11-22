@@ -1,4 +1,4 @@
-import { column, defineDb, defineTable, sql } from "astro:db";
+import { column, defineDb, defineTable, sql } from 'astro:db';
 
 export const GuestBook = defineTable({
   columns: {

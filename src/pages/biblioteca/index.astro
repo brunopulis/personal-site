@@ -1,9 +1,8 @@
 ---
-import { getLanguageFromPath, useTranslations } from '@i18n/utils';
-
-import Layout from '@layout/Layout.astro';
 import MediaCard from '@components/MediaCard.astro';
 import books from '@data/books.json';
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import Layout from '@layout/Layout.astro';
 
 export const prerender = true;
 
@@ -29,33 +28,24 @@ const t = useTranslations(lang);
 // Dados da página
 const pageData = {
   title: 'Minha Biblioteca',
-  description:
-    'Livros que estão moldando minha forma de pensar, trabalhar e viver.',
+  description: 'Livros que estão moldando minha forma de pensar, trabalhar e viver.',
   routeKey: 'books',
 };
 ---
 
-<Layout
-  title={pageData.title}
-  description={pageData.description}
-  routeKey={pageData.routeKey}
->
+<Layout title={pageData.title} description={pageData.description} routeKey={pageData.routeKey}>
   <main id="main-content">
     <section id="hero" aria-labelledby="hero-section">
       <div class="mx-auto max-w-7xl px-6 py-20">
         <div class="max-w-3xl">
           <div class="mb-6 flex items-center gap-3">
-            <h1
-              class="text-5xl font-bold text-errie-black-900"
-              id="hero-section"
-            >
+            <h1 class="text-5xl font-bold text-errie-black-900" id="hero-section">
               Minha Biblioteca
             </h1>
           </div>
           <p class="mb-8 text-xl leading-relaxed text-errie-black-900">
-            Livros que estão moldando minha forma de pensar, trabalhar e viver.
-            Leio de tudo: de acessibilidade web a teologia, de ficção científica
-            a produtividade.
+            Livros que estão moldando minha forma de pensar, trabalhar e viver. Leio de tudo: de
+            acessibilidade web a teologia, de ficção científica a produtividade.
           </p>
           <p class="text-lg text-errie-black-900">
             <strong>Por que compartilho isso?</strong>
@@ -70,9 +60,7 @@ const pageData = {
         {
           livrosPorAno.map(([year, booksInYear]) => (
             <div class="space-y-6">
-              <h2 class="text-blood-red-800 text-2xl font-bold">
-                Lidos em {year}
-              </h2>
+              <h2 class="text-blood-red-800 text-2xl font-bold">Lidos em {year}</h2>
               <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {booksInYear.map((book) => (
                   <MediaCard

@@ -1,10 +1,9 @@
 ---
-import { useTranslations, getLocalizedPath, languages } from '@i18n/utils';
+import pulisLogo from '@assets/images/horizontal/blood.svg';
 import type { Language, TranslationKey } from '@i18n/index';
 import type { RouteKey } from '@i18n/routes';
-
+import { getLocalizedPath, languages, useTranslations } from '@i18n/utils';
 import { Image } from 'astro:assets';
-import pulisLogo from '@assets/images/horizontal/blood.svg';
 
 interface Props {
   currentLang: Language;
@@ -43,12 +42,7 @@ function getLanguageSwitchUrl(targetLang: Language): string {
         class="header__logo-link"
         aria-label="Ir para página inicial"
       >
-        <Image
-          src={pulisLogo}
-          class="w-auto"
-          alt="Bruno Pulis"
-          loading="eager"
-        />
+        <Image src={pulisLogo} class="w-auto" alt="Bruno Pulis" loading="eager" />
       </a>
     </div>
 

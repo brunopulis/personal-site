@@ -1,9 +1,9 @@
 ---
-title: "/now"
-date: "2025-11-18"
-description: ""
-lang: "en"
-routeKey: "now"
+title: '/now'
+date: '2025-11-18'
+description: ''
+lang: 'en'
+routeKey: 'now'
 ---
 
 Hello there!

@@ -1,19 +1,20 @@
 import js from '@eslint/js';
-import globals from 'globals';
 import astroParser from 'astro-eslint-parser';
 import astroPlugin from 'eslint-plugin-astro';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default [
   {
-    ignores: [
-      'node_modules',
-      'dist',
-      'tina/',
-      '.astro',
-      'build',
-      'astro-tina-directive/',
-    ],
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
+    rules: {
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+    },
+    ignores: ['node_modules', 'dist', 'tina/', '.astro', 'build', 'astro-tina-directive/'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -42,10 +43,7 @@ export default [
       parser: tseslint.parser,
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { argsIgnorePattern: '^_' },
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
   },
 ];

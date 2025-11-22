@@ -31,8 +31,5 @@ You can consult all the rules applied [in this license](https://creativecommons.
 ## Attribution Example
 
 ```html
-<p>
-  Credit to <a href="https://brunopulis.com">Bruno Pulis</a> for the original
-  work.
-</p>
+<p>Credit to <a href="https://brunopulis.com">Bruno Pulis</a> for the original work.</p>
 ```

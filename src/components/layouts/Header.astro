@@ -1,8 +1,7 @@
 ---
+import pulisLogo from '@assets/images/horizontal/blood.svg';
 import Navigation from '@components/Navigation.astro';
 import { Image } from 'astro:assets';
-
-import pulisLogo from '@assets/images/horizontal/blood.svg';
 
 const { currentLocale } = Astro.props;
 ---
@@ -11,12 +10,7 @@ const { currentLocale } = Astro.props;
   <div class="wrapper">
     <div class="header__logo">
       <a href="/" class="" aria-label="Ir para página inicial">
-        <Image
-          src={pulisLogo}
-          class="w-auto"
-          alt="Bruno Pulis"
-          loading="eager"
-        />
+        <Image src={pulisLogo} class="w-auto" alt="Bruno Pulis" loading="eager" />
       </a>
     </div>
 

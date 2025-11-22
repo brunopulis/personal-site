@@ -1,32 +1,34 @@
 ---
-import { Star } from "@lucide/astro";
+import { Star } from '@lucide/astro';
 
 interface Props {
-	title: string;
-	author?: string[];
-	director?: string;
-	cover: string;
-	description: string;
-	quotes?: string[];
-	rating: number;
-	tags: string[];
-	imageHeight?: string;
+  title: string;
+  author?: string[];
+  director?: string;
+  cover: string;
+  description: string;
+  quotes?: string[];
+  rating: number;
+  tags: string[];
+  imageHeight?: string;
 }
 
 const {
-	title,
-	author,
-	director,
-	cover,
-	description,
-	quotes,
-	rating,
-	tags,
-	imageHeight = "h-72", // altura padrão, pode ser sobrescrita
+  title,
+  author,
+  director,
+  cover,
+  description,
+  quotes,
+  rating,
+  tags,
+  imageHeight = 'h-72', // altura padrão, pode ser sobrescrita
 } = Astro.props;
 ---
 
-<article class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md">
+<article
+  class="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition hover:shadow-md"
+>
   <img src={cover} alt={`Capa de ${title}`} class={`w-full object-cover ${imageHeight}`} />
 
   <div class="p-6">
@@ -38,7 +40,9 @@ const {
 
     {
       quotes && quotes.length > 0 && (
-        <blockquote class="mb-4 border-l-4 border-red-500 pl-3 text-gray-600 italic">"{quotes[0]}"</blockquote>
+        <blockquote class="mb-4 border-l-4 border-red-500 pl-3 text-gray-600 italic">
+          "{quotes[0]}"
+        </blockquote>
       )
     }
 
@@ -51,7 +55,11 @@ const {
     </div>
 
     <div class="mt-4 flex flex-wrap gap-2">
-      {tags.map((tag) => <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">{tag}</span>)}
+      {
+        tags.map((tag) => (
+          <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">{tag}</span>
+        ))
+      }
     </div>
   </div>
 </article>

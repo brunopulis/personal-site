@@ -1,10 +1,10 @@
 ---
 title: Acessibilidade para iniciantes
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2021-05-19
 draft: false
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
 
 ## **Importante**

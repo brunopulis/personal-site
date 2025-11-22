@@ -1,20 +1,19 @@
 ---
+import HeroSection from '@components/layouts/HeroSection.astro';
+import site from '@data/site.config.json';
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import Layout from '@layout/Layout.astro';
+import { getCollection } from 'astro:content';
 
-import { getCollection } from "astro:content";
-import Layout from "@layout/Layout.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import site from "@data/site.config.json";
-
-const letters = await getCollection("newsletter");
+const letters = await getCollection('newsletter');
 const sortedPosts = letters.sort((a, b) => {
   return new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime();
 });
 function formatDate(date: Date, locale: Intl.LocalesArgument) {
   return new Intl.DateTimeFormat(locale, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   }).format(date);
 }
 function toISOString(dateString: string) {
@@ -24,13 +23,13 @@ function toISOString(dateString: string) {
 
 // Detecta o idioma e obtém as traduções
 const lang = getLanguageFromPath(Astro.url.pathname);
- 
+
 const t = useTranslations(lang);
 ---
 
 <Layout
-  title={t("newsletter.title")}
-  description={t("newsletter.description")}
+  title={t('newsletter.title')}
+  description={t('newsletter.description')}
   routeKey="newsletter"
 >
   <main id="main-content">
@@ -66,7 +65,7 @@ const t = useTranslations(lang);
         <h2 class="title-font my-5 text-3xl font-medium sm:text-4xl">Edições anteriores</h2>
         <div class="mb-5">
           {
-            sortedPosts.map(letter => (
+            sortedPosts.map((letter) => (
               <div class="group cursor-pointer border-b border-gray-300 py-4">
                 <div class="flex items-start gap-4">
                   <div class="flex flex-col items-center">
@@ -75,7 +74,7 @@ const t = useTranslations(lang);
                   </div>
                   <div class="flex-1">
                     <h2 class="text-xl font-semibold text-gray-900 transition-colors group-hover:text-red-950">
-                      <a href={"/newsletter/" + letter.id} class="block">
+                      <a href={'/newsletter/' + letter.id} class="block">
                         {letter.data.title}
                       </a>
                     </h2>
@@ -83,7 +82,7 @@ const t = useTranslations(lang);
                       class="text-errie-black-900 mt-1 text-sm"
                       datetime={toISOString(String(letter.data.date))}
                     >
-                      {formatDate(new Date(letter.data.date), "pt-BR")}
+                      {formatDate(new Date(letter.data.date), 'pt-BR')}
                     </time>
                   </div>
                 </div>

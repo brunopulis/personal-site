@@ -1,29 +1,29 @@
 @font-face {
-  font-family: 'Source Sans 3';
   font-style: normal;
-  font-display: swap;
   font-weight: 400;
   src:
-    local(), 
+    local(),
     url('/assets/fonts/source/source-sans-regular.woff2') format('woff2');
+  font-family: 'Source Sans 3';
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Source Sans 3';
   font-style: normal;
-  font-display: swap;
   font-weight: 700;
   src:
-    local(), 
+    local(),
     url('/assets/fonts/source/source-sans-bold.woff2') format('woff2');
+  font-family: 'Source Sans 3';
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Source Sans 3';
   font-style: black;
-  font-display: swap;
   font-weight: 900;
   src:
-    local(), 
+    local(),
     url('/assets/fonts/source/source-sans-black.woff2') format('woff2');
+  font-family: 'Source Sans 3';
+  font-display: swap;
 }

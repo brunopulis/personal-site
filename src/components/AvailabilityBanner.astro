@@ -1,16 +1,16 @@
 ---
 interface Props {
-	isAvailable: boolean;
-	message?: string;
+  isAvailable: boolean;
+  message?: string;
 }
 
 const { isAvailable, message } = Astro.props;
 
 const defaultMessage = isAvailable
-	? "Disponível para novos projetos"
-	: "Indisponível para novos projetos";
+  ? 'Disponível para novos projetos'
+  : 'Indisponível para novos projetos';
 
-const bgColor = isAvailable ? "bg-green-500" : "bg-blood-red-800";
+const bgColor = isAvailable ? 'bg-green-500' : 'bg-blood-red-800';
 ---
 
 <div

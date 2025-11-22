@@ -1,8 +1,8 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const books = await getCollection("biblioteca");
+  const books = await getCollection('biblioteca');
 
   // Ordenar por data de leitura mais recente
   const sortedBooks = books.sort((a, b) => {
@@ -10,21 +10,21 @@ export async function GET(context) {
   });
 
   return rss({
-    stylesheet: "/rss-styles.xsl",
-    title: "Biblioteca - Bruno Pulis",
-    description: "Livros que li, estou lendo e quero ler",
+    stylesheet: '/rss-styles.xsl',
+    title: 'Biblioteca - Bruno Pulis',
+    description: 'Livros que li, estou lendo e quero ler',
     site: context.site,
 
-    items: sortedBooks.map(book => {
+    items: sortedBooks.map((book) => {
       // Emoji baseado no status
       const statusEmoji = {
-        Lido: "✅",
-        Lendo: "📖",
-        "Quero ler": "📚",
-        Abandonado: "⏸️",
+        Lido: '✅',
+        Lendo: '📖',
+        'Quero ler': '📚',
+        Abandonado: '⏸️',
       };
 
-      const emoji = statusEmoji[book.data.status] || "📕";
+      const emoji = statusEmoji[book.data.status] || '📕';
 
       // Construir descrição rica do livro
       const parts = [];
@@ -36,8 +36,8 @@ export async function GET(context) {
       parts.push(`<strong>Autor:</strong> ${book.data.author}`);
 
       // Adicionar avaliação se existir (apenas para livros lidos)
-      if (book.data.rating && book.data.status === "Lido") {
-        const stars = "⭐".repeat(parseInt(book.data.rating));
+      if (book.data.rating && book.data.status === 'Lido') {
+        const stars = '⭐'.repeat(parseInt(book.data.rating));
         parts.push(`<strong>Avaliação:</strong> ${stars} (${book.data.rating}/5)`);
       }
 
@@ -53,7 +53,7 @@ export async function GET(context) {
 
       // Adicionar categorias
       if (book.data.category && book.data.category.length > 0) {
-        parts.push(`<strong>Categorias:</strong> ${book.data.category.join(", ")}`);
+        parts.push(`<strong>Categorias:</strong> ${book.data.category.join(', ')}`);
       }
 
       // Adicionar citações se existirem
@@ -76,7 +76,7 @@ export async function GET(context) {
         parts.push(`<a href="${book.data.purchase_link}">🛒 Comprar este livro</a>`);
       }
 
-      const description = parts.join("<br/><br/>");
+      const description = parts.join('<br/><br/>');
 
       return {
         title: `${emoji} ${book.data.title} - ${book.data.author}`,
@@ -99,9 +99,9 @@ export async function GET(context) {
     `,
 
     xmlns: {
-      atom: "http://www.w3.org/2005/Atom",
-      content: "http://purl.org/rss/1.0/modules/content/",
-      dc: "http://purl.org/dc/elements/1.1/",
+      atom: 'http://www.w3.org/2005/Atom',
+      content: 'http://purl.org/rss/1.0/modules/content/',
+      dc: 'http://purl.org/dc/elements/1.1/',
     },
   });
 }

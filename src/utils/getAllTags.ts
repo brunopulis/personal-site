@@ -1,9 +1,9 @@
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from 'astro:content';
 
-export function getAllTags(posts: CollectionEntry<"blog">[]) {
+export function getAllTags(posts: CollectionEntry<'blog'>[]) {
   const tagCount = new Map<string, number>();
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     post.data.tags?.forEach((tag: string) => {
       tagCount.set(tag, (tagCount.get(tag) || 0) + 1);
     });

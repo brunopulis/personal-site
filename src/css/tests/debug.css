@@ -59,7 +59,9 @@ ol[class*='breadcrumb']:not(:is(nav[aria-label], nav[aria-labelledby]) ol) {
   --error-undiscoverable-breadcrumbs: 'It looks like you have provided breadcrumb navigation outside a labeled `<nav>` landmark';
 }
 #body
-  :not(:is(header, nav, main, aside, footer)):not(:is(header, nav, main, aside, footer) *):not(.skip-link) {
+  :not(:is(header, nav, main, aside, footer)):not(:is(header, nav, main, aside, footer) *):not(
+    .skip-link
+  ) {
   outline: var(--error-outline);
   --error-content-outside-landmark: 'You have some content that is not inside a landmark (header, nav, main, aside, or footer)';
 }

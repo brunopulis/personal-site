@@ -70,9 +70,7 @@ function buildTree(urls) {
 
     parts.forEach((part, index) => {
       const isLast = index === parts.length - 1;
-      let existingPath = currentLevel.children.find(
-        (child) => child.name === part
-      );
+      let existingPath = currentLevel.children.find((child) => child.name === part);
 
       if (existingPath) {
         currentLevel = existingPath;

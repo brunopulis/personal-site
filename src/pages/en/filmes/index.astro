@@ -1,28 +1,32 @@
 ---
+import Footer from '@components/layouts/Footer.astro';
+import Header from '@components/layouts/Header.astro';
+import MediaCard from '@components/MediaCard.astro';
+import movies from '@data/movies.json';
+import Layout from '@layout/Layout.astro';
+import { Film } from '@lucide/astro';
 
-import { Film } from "@lucide/astro";
-import Layout from "@layout/Layout.astro";
-import Header from "@components/layouts/Header.astro";
-import MediaCard from "@components/MediaCard.astro";
-import Footer from "@components/layouts/Footer.astro";
-import movies from "@data/movies.json";
-
-
-
-const moviesPerYear = Object.entries(movies
+const moviesPerYear = Object.entries(
+  movies
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .reduce((acc, book) => {
-    const year = new Date(book.date).getFullYear();
-    acc[year] = acc[year] || [];
-    acc[year].push(book);
-    return acc;
-}, {} as Record<string, (typeof books)[0][]>)).sort((a, b) => Number(b[0]) - Number(a[0]));
+    .reduce(
+      (acc, book) => {
+        const year = new Date(book.date).getFullYear();
+        acc[year] = acc[year] || [];
+        acc[year].push(book);
+        return acc;
+      },
+      {} as Record<string, (typeof books)[0][]>
+    )
+).sort((a, b) => Number(b[0]) - Number(a[0]));
 ---
 
 <Layout title="Meus Filmes - Bruno Pulis" description="Livros que li ao longo dos anos">
   <Header />
   <main id="main-content">
-    <section class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white">
+    <section
+      class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 text-white"
+    >
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-white blur-3xl"></div>
         <div class="absolute right-10 bottom-20 h-96 w-96 rounded-full bg-red-400 blur-3xl"></div>
@@ -34,8 +38,8 @@ const moviesPerYear = Object.entries(movies
             <h1 class="text-5xl font-bold text-white">Meus Filmes</h1>
           </div>
           <p class="mb-8 text-xl leading-relaxed text-white">
-            Cinema é arte que me emociona, me faz pensar e me inspira. De ficção científica a animações da Pixar, aqui
-            está o que tenho assistido e amado.
+            Cinema é arte que me emociona, me faz pensar e me inspira. De ficção científica a
+            animações da Pixar, aqui está o que tenho assistido e amado.
           </p>
           <p class="text-lg text-white">
             <strong>Por que compartilho isso?</strong>

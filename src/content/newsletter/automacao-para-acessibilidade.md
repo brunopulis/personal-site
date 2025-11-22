@@ -1,7 +1,7 @@
 ---
-issue: "27"
-title: "Setup de automação para acessibilidade - parte 1"
-date: "2024-04-11"
+issue: '27'
+title: 'Setup de automação para acessibilidade - parte 1'
+date: '2024-04-11'
 ---
 
 Essa seria somente uma carta, mas decidi dividir em 3 partes.

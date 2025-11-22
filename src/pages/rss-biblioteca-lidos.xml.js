@@ -1,23 +1,23 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const books = await getCollection("biblioteca");
+  const books = await getCollection('biblioteca');
 
   // Filtrar apenas livros lidos e ordenar por data de leitura mais recente
   const readBooks = books
-    .filter(book => book.data.status === "Lido")
+    .filter((book) => book.data.status === 'Lido')
     .sort((a, b) => {
       return new Date(b.data.reading_date).getTime() - new Date(a.data.reading_date).getTime();
     });
 
   return rss({
-    stylesheet: "rss-styles.xsl",
-    title: "Biblioteca - Bruno Pulis",
-    description: "Livros que li, estou lendo e recomendações de leitura",
+    stylesheet: 'rss-styles.xsl',
+    title: 'Biblioteca - Bruno Pulis',
+    description: 'Livros que li, estou lendo e recomendações de leitura',
     site: context.site,
 
-    items: readBooks.map(book => {
+    items: readBooks.map((book) => {
       // Construir descrição rica do livro
       const parts = [];
 
@@ -26,7 +26,7 @@ export async function GET(context) {
 
       // Adicionar avaliação se existir
       if (book.data.rating) {
-        const stars = "⭐".repeat(parseInt(book.data.rating));
+        const stars = '⭐'.repeat(parseInt(book.data.rating));
         parts.push(`${stars} (${book.data.rating}/5)`);
       }
 
@@ -37,7 +37,7 @@ export async function GET(context) {
 
       // Adicionar categorias
       if (book.data.category && book.data.category.length > 0) {
-        parts.push(`<br/><br/><strong>Categorias:</strong> ${book.data.category.join(", ")}`);
+        parts.push(`<br/><br/><strong>Categorias:</strong> ${book.data.category.join(', ')}`);
       }
 
       // Adicionar citações se existirem
@@ -60,7 +60,7 @@ export async function GET(context) {
         parts.push(`<br/><br/><a href="${book.data.purchase_link}">📖 Comprar este livro</a>`);
       }
 
-      const description = parts.join("<br/>");
+      const description = parts.join('<br/>');
 
       return {
         title: `${book.data.title} - ${book.data.author}`,
@@ -81,8 +81,8 @@ export async function GET(context) {
     `,
 
     xmlns: {
-      atom: "http://www.w3.org/2005/Atom",
-      content: "http://purl.org/rss/1.0/modules/content/",
+      atom: 'http://www.w3.org/2005/Atom',
+      content: 'http://purl.org/rss/1.0/modules/content/',
     },
   });
 }

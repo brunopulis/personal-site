@@ -1,8 +1,7 @@
 ---
-import type { Language, RouteKey } from '@i18n/index';
-
-import { Image } from 'astro:assets';
 import me from '@assets/images/me.jpeg';
+import type { Language, RouteKey } from '@i18n/index';
+import { Image } from 'astro:assets';
 
 interface Props {
   t: (key: string) => string;
@@ -17,11 +16,7 @@ const { t, currentLang, getLocalizedPath } = Astro.props;
   <div class="wrapper">
     <div data-layout="50-50" class="grid">
       <div class="hero__content">
-        <h1
-          class="hero__title"
-          id="hero-section"
-          set:html={t('home.greetings')}
-        />
+        <h1 class="hero__title" id="hero-section" set:html={t('home.greetings')} />
         <p>{t('home.about_me')}</p>
         <p set:html={t('home.objective')} />
 

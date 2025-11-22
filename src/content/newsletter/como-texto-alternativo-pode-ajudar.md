@@ -1,8 +1,8 @@
 ---
-issue: "43"
-title: "Uma imagem vale mais que mil palavras"
-date: "2024-11-14"
-coverImage: "MB-421-scaled.jpg"
+issue: '43'
+title: 'Uma imagem vale mais que mil palavras'
+date: '2024-11-14'
+coverImage: 'MB-421-scaled.jpg'
 ---
 
 Ontem, recebemos os álbuns do nosso casamento. Por contrato receberíamos dois, um pequeno e outro grande.

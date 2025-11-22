@@ -6,12 +6,7 @@ interface Props {
   style?: 'simple | button | inline';
 }
 
-const {
-  postTitle,
-  postUrl,
-  email = 'brunopulis@protonmail.com',
-  style,
-} = Astro.props;
+const { postTitle, postUrl, email = 'brunopulis@protonmail.com', style } = Astro.props;
 
 const subject = encodeURIComponent(`Re: ${postTitle}`);
 const body = encodeURIComponent(
@@ -75,24 +70,24 @@ const mailToLink = `mailto:${email}?subject=${subject}&body=${body}`;
   /* Estilo Simple - Inspirado no niqwithq */
   .email-reply-simple {
     margin: 2rem 0;
-    padding: 1.5rem;
-    background: #f8f9fa;
     border-left: 4px solid #0066cc;
     border-radius: 4px;
+    background: #f8f9fa;
+    padding: 1.5rem;
   }
 
   .email-reply-simple p {
     margin: 0;
-    font-size: 1rem;
     color: #333;
+    font-size: 1rem;
   }
 
   .reply-link {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 2px solid transparent;
     transition: border-color 0.2s;
+    border-bottom: 2px solid transparent;
+    color: #0066cc;
+    font-weight: 500;
+    text-decoration: none;
   }
 
   .reply-link:hover {
@@ -109,22 +104,22 @@ const mailToLink = `mailto:${email}?subject=${subject}&body=${body}`;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: #0066cc;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 1rem;
     transition: all 0.2s;
     border: 2px solid #0066cc;
+    border-radius: 6px;
+    background: #0066cc;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
   }
 
   .reply-btn:hover {
-    background: #0052a3;
-    border-color: #0052a3;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+    border-color: #0052a3;
+    background: #0052a3;
   }
 
   .reply-btn svg {
@@ -134,22 +129,22 @@ const mailToLink = `mailto:${email}?subject=${subject}&body=${body}`;
   /* Estilo Inline - Mais discreto */
   .email-reply-inline {
     margin: 2rem 0;
-    padding: 1rem 0;
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 0;
   }
 
   .email-reply-inline p {
     margin: 0;
-    font-size: 0.95rem;
     color: #666;
+    font-size: 0.95rem;
     text-align: center;
   }
 
   .reply-link-inline {
     color: #0066cc;
-    text-decoration: underline;
     font-weight: 500;
+    text-decoration: underline;
   }
 
   .reply-link-inline:hover {
@@ -159,8 +154,8 @@ const mailToLink = `mailto:${email}?subject=${subject}&body=${body}`;
   /* Dark mode support */
   @media (prefers-color-scheme: dark) {
     .email-reply-simple {
-      background: #1a1a1a;
       border-left-color: #4d94ff;
+      background: #1a1a1a;
     }
 
     .email-reply-simple p {
@@ -176,14 +171,14 @@ const mailToLink = `mailto:${email}?subject=${subject}&body=${body}`;
     }
 
     .reply-btn {
-      background: #4d94ff;
       border-color: #4d94ff;
+      background: #4d94ff;
     }
 
     .reply-btn:hover {
-      background: #3d7dd6;
-      border-color: #3d7dd6;
       box-shadow: 0 4px 8px rgba(77, 148, 255, 0.3);
+      border-color: #3d7dd6;
+      background: #3d7dd6;
     }
 
     .email-reply-inline {

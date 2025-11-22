@@ -1,18 +1,18 @@
 ---
-import { getCollection } from "astro:content";
-import { Clock } from "@lucide/astro";
-import Layout from "@layout/Layout.astro";
-import HeroSection from "@components/layouts/HeroSection.astro";
-import ShareButton from "@components/ShareButton.astro";
+import HeroSection from '@components/layouts/HeroSection.astro';
+import ShareButton from '@components/ShareButton.astro';
+import Layout from '@layout/Layout.astro';
+import { Clock } from '@lucide/astro';
+import { getCollection } from 'astro:content';
 
-const notes = await getCollection("notes");
+const notes = await getCollection('notes');
 const sortedNotes = notes.sort((a, b) => {
   return new Date(b.data.pubDate || 0).getTime() - new Date(a.data.pubDate || 0).getTime();
 });
 
 // Renderizar o conteúdo de cada nota
 const notesWithContent = await Promise.all(
-  sortedNotes.map(async note => {
+  sortedNotes.map(async (note) => {
     const { Content } = await note.render();
     return {
       note,
@@ -42,10 +42,10 @@ const notesWithContent = await Promise.all(
                           <div class="font-bold text-gray-900">Bruno Pulis</div>
                           <div class="flex items-center gap-2 text-sm text-gray-500">
                             <Clock class="h-3 w-3" />
-                            {new Date(note.data.pubDate).toLocaleDateString("pt-BR", {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
+                            {new Date(note.data.pubDate).toLocaleDateString('pt-BR', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric',
                             })}
                           </div>
                         </div>
@@ -67,7 +67,7 @@ const notesWithContent = await Promise.all(
 
                     <div class="flex items-center gap-6 border-t border-gray-100 pt-4">
                       <ShareButton
-                        title={`Nota de Bruno Pulis - ${new Date(note.data.pubDate).toLocaleDateString("pt-BR")}`}
+                        title={`Nota de Bruno Pulis - ${new Date(note.data.pubDate).toLocaleDateString('pt-BR')}`}
                         text={note.body}
                         url={`${Astro.site}notes/${note.slug}`}
                       />

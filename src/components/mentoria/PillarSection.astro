@@ -1,31 +1,31 @@
 ---
-import PillarCard from "@components/mentoria/PillarCard.astro";
+import PillarCard from '@components/mentoria/PillarCard.astro';
 
 const pillars = [
-	{
-		letter: "B",
-		title: "Bases Técnicas",
-		description:
-			"Fundamentos da WCAG e sua aplicação prática, HTML semântico e WAI-ARIA, funcionamento dos leitores de tela.",
-	},
-	{
-		letter: "A",
-		title: "Atitude Inclusiva",
-		description:
-			"Desenvolvimento de empatia como habilidade técnica, acessibilidade como cultura, não apenas checklist, design pensando na diversidade de usuários.",
-	},
-	{
-		letter: "S",
-		title: "Soluções Práticas",
-		description:
-			"Ferramentas de teste (axe, Lighthouse, NVDA), técnicas de contraste e navegação, implementação de componentes acessíveis.",
-	},
-	{
-		letter: "E",
-		title: "Execução com Propósito",
-		description:
-			"Aplicação em projetos reais, refatoração acessível, auditoria de código e interfaces.",
-	},
+  {
+    letter: 'B',
+    title: 'Bases Técnicas',
+    description:
+      'Fundamentos da WCAG e sua aplicação prática, HTML semântico e WAI-ARIA, funcionamento dos leitores de tela.',
+  },
+  {
+    letter: 'A',
+    title: 'Atitude Inclusiva',
+    description:
+      'Desenvolvimento de empatia como habilidade técnica, acessibilidade como cultura, não apenas checklist, design pensando na diversidade de usuários.',
+  },
+  {
+    letter: 'S',
+    title: 'Soluções Práticas',
+    description:
+      'Ferramentas de teste (axe, Lighthouse, NVDA), técnicas de contraste e navegação, implementação de componentes acessíveis.',
+  },
+  {
+    letter: 'E',
+    title: 'Execução com Propósito',
+    description:
+      'Aplicação em projetos reais, refatoração acessível, auditoria de código e interfaces.',
+  },
 ];
 ---
 
@@ -36,15 +36,17 @@ const pillars = [
 >
   <div class="container mx-auto px-6">
     <div class="mb-16 text-center">
-      <span class="bg-blood-red-800 mb-4 inline-block rounded-full px-4 py-1 text-sm font-medium text-white">
+      <span
+        class="bg-blood-red-800 mb-4 inline-block rounded-full px-4 py-1 text-sm font-medium text-white"
+      >
         Metodologia Exclusiva
       </span>
       <h2 id="pillar-heading" class="text-errieBlack mb-6 text-3xl font-bold md:text-4xl">
         A Metodologia <span class="text-bloodRed">BASE</span>
       </h2>
       <p class="text-errieBlack mx-auto max-w-3xl text-lg md:text-xl">
-        Uma abordagem completa que une teoria e prática para formar profissionais capacitados em criar experiências
-        digitais acessíveis.
+        Uma abordagem completa que une teoria e prática para formar profissionais capacitados em
+        criar experiências digitais acessíveis.
       </p>
     </div>
 
@@ -54,7 +56,8 @@ const pillars = [
           <PillarCard
             letter={pillar.letter}
             title={pillar.title}
-            description={pillar.description} />
+            description={pillar.description}
+          />
         ))
       }
     </div>

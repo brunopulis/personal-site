@@ -1,4 +1,5 @@
 ---
+import Layout from '@layout/Layout.astro';
 import {
   AlertCircle,
   ArrowRight,
@@ -12,350 +13,349 @@ import {
   Target,
   TrendingUp,
   Zap,
-} from "@lucide/astro";
-import Layout from "@layout/Layout.astro";
+} from '@lucide/astro';
 
 const tecnologias = [
   {
-    nome: "React",
-    icone: "\u269B\uFE0F",
-    cor: "blue",
-    nivel: "Especialista",
-    experiencia: "5+ anos",
+    nome: 'React',
+    icone: '\u269B\uFE0F',
+    cor: 'blue',
+    nivel: 'Especialista',
+    experiencia: '5+ anos',
     problemas: [
-      "Componentes sem gerenciamento de foco",
-      "Estados n\u00E3o anunciados a leitores de tela",
-      "Rotas sem atualiza\u00E7\u00E3o de t\u00EDtulo",
-      "Modais sem trap de foco",
-      "Formul\u00E1rios sem valida\u00E7\u00E3o acess\u00EDvel",
+      'Componentes sem gerenciamento de foco',
+      'Estados n\u00E3o anunciados a leitores de tela',
+      'Rotas sem atualiza\u00E7\u00E3o de t\u00EDtulo',
+      'Modais sem trap de foco',
+      'Formul\u00E1rios sem valida\u00E7\u00E3o acess\u00EDvel',
     ],
     solucoes: [
-      "Hooks customizados para acessibilidade",
-      "Gerenciamento correto de foco",
-      "Live regions para atualiza\u00E7\u00F5es",
-      "Rotas com an\u00FAncio de mudan\u00E7a",
-      "Componentes acess\u00EDveis reutiliz\u00E1veis",
+      'Hooks customizados para acessibilidade',
+      'Gerenciamento correto de foco',
+      'Live regions para atualiza\u00E7\u00F5es',
+      'Rotas com an\u00FAncio de mudan\u00E7a',
+      'Componentes acess\u00EDveis reutiliz\u00E1veis',
     ],
   },
   {
-    nome: "Vue.js",
-    icone: "\uD83D\uDC9A",
-    cor: "green",
-    nivel: "Avan\u00E7ado",
-    experiencia: "3+ anos",
+    nome: 'Vue.js',
+    icone: '\uD83D\uDC9A',
+    cor: 'green',
+    nivel: 'Avan\u00E7ado',
+    experiencia: '3+ anos',
     problemas: [
-      "Diretivas v-if/v-show sem contexto",
-      "Transi\u00E7\u00F5es sem an\u00FAncio",
-      "Componentes sem ARIA",
-      "Eventos apenas com mouse",
+      'Diretivas v-if/v-show sem contexto',
+      'Transi\u00E7\u00F5es sem an\u00FAncio',
+      'Componentes sem ARIA',
+      'Eventos apenas com mouse',
     ],
     solucoes: [
-      "Composables para acessibilidade",
-      "Transi\u00E7\u00F5es com live regions",
-      "Mixins acess\u00EDveis",
-      "Eventos de teclado completos",
+      'Composables para acessibilidade',
+      'Transi\u00E7\u00F5es com live regions',
+      'Mixins acess\u00EDveis',
+      'Eventos de teclado completos',
     ],
   },
   {
-    nome: "WordPress",
-    icone: "\uD83D\uDCDD",
-    cor: "purple",
-    nivel: "Especialista",
-    experiencia: "8+ anos",
+    nome: 'WordPress',
+    icone: '\uD83D\uDCDD',
+    cor: 'purple',
+    nivel: 'Especialista',
+    experiencia: '8+ anos',
     problemas: [
-      "Temas n\u00E3o acess\u00EDveis",
-      "Plugins incompat\u00EDveis",
-      "Menus sem estrutura",
-      "Formul\u00E1rios Contact Form 7 inacess\u00EDveis",
+      'Temas n\u00E3o acess\u00EDveis',
+      'Plugins incompat\u00EDveis',
+      'Menus sem estrutura',
+      'Formul\u00E1rios Contact Form 7 inacess\u00EDveis',
     ],
     solucoes: [
-      "Corre\u00E7\u00E3o de temas existentes",
-      "Cria\u00E7\u00E3o de child themes acess\u00EDveis",
-      "Customiza\u00E7\u00E3o de plugins",
-      "Formul\u00E1rios acess\u00EDveis",
+      'Corre\u00E7\u00E3o de temas existentes',
+      'Cria\u00E7\u00E3o de child themes acess\u00EDveis',
+      'Customiza\u00E7\u00E3o de plugins',
+      'Formul\u00E1rios acess\u00EDveis',
     ],
   },
   {
-    nome: "HTML/CSS/JS",
-    icone: "\uD83C\uDF10",
-    cor: "orange",
-    nivel: "Especialista",
-    experiencia: "15+ anos",
+    nome: 'HTML/CSS/JS',
+    icone: '\uD83C\uDF10',
+    cor: 'orange',
+    nivel: 'Especialista',
+    experiencia: '15+ anos',
     problemas: [
-      "HTML n\u00E3o sem\u00E2ntico",
-      "CSS dependente de cor",
-      "JavaScript sem fallbacks",
-      "Navega\u00E7\u00E3o por teclado quebrada",
+      'HTML n\u00E3o sem\u00E2ntico',
+      'CSS dependente de cor',
+      'JavaScript sem fallbacks',
+      'Navega\u00E7\u00E3o por teclado quebrada',
     ],
     solucoes: [
-      "Refatora\u00E7\u00E3o para HTML sem\u00E2ntico",
-      "CSS com foco vis\u00EDvel",
-      "Progressive enhancement",
-      "Navega\u00E7\u00E3o por teclado completa",
+      'Refatora\u00E7\u00E3o para HTML sem\u00E2ntico',
+      'CSS com foco vis\u00EDvel',
+      'Progressive enhancement',
+      'Navega\u00E7\u00E3o por teclado completa',
     ],
   },
   {
-    nome: "Next.js/Gatsby/Astro",
-    icone: "\u26A1",
-    cor: "red",
-    nivel: "Avan\u00E7ado",
-    experiencia: "3+ anos",
+    nome: 'Next.js/Gatsby/Astro',
+    icone: '\u26A1',
+    cor: 'red',
+    nivel: 'Avan\u00E7ado',
+    experiencia: '3+ anos',
     problemas: [
-      "SSR/SSG sem acessibilidade",
-      "Navega\u00E7\u00E3o client-side problem\u00E1tica",
-      "Hydration quebrando foco",
-      "Imagens sem otimiza\u00E7\u00E3o acess\u00EDvel",
+      'SSR/SSG sem acessibilidade',
+      'Navega\u00E7\u00E3o client-side problem\u00E1tica',
+      'Hydration quebrando foco',
+      'Imagens sem otimiza\u00E7\u00E3o acess\u00EDvel',
     ],
     solucoes: [
-      "Rotas acess\u00EDveis",
-      "Gerenciamento de foco em navega\u00E7\u00E3o",
-      "Componentes hidratados acess\u00EDveis",
-      "Imagens otimizadas com alt",
+      'Rotas acess\u00EDveis',
+      'Gerenciamento de foco em navega\u00E7\u00E3o',
+      'Componentes hidratados acess\u00EDveis',
+      'Imagens otimizadas com alt',
     ],
   },
   {
-    nome: "Angular",
-    icone: "\uD83C\uDD70\uFE0F",
-    cor: "red",
-    nivel: "Intermedi\u00E1rio",
-    experiencia: "2+ anos",
+    nome: 'Angular',
+    icone: '\uD83C\uDD70\uFE0F',
+    cor: 'red',
+    nivel: 'Intermedi\u00E1rio',
+    experiencia: '2+ anos',
     problemas: [
-      "Material Design sem customiza\u00E7\u00E3o",
-      "Rotas sem an\u00FAncio",
-      "Diretivas sem acessibilidade",
+      'Material Design sem customiza\u00E7\u00E3o',
+      'Rotas sem an\u00FAncio',
+      'Diretivas sem acessibilidade',
     ],
     solucoes: [
-      "Customiza\u00E7\u00E3o do Angular Material",
-      "Rotas com an\u00FAncios",
-      "Diretivas acess\u00EDveis",
+      'Customiza\u00E7\u00E3o do Angular Material',
+      'Rotas com an\u00FAncios',
+      'Diretivas acess\u00EDveis',
     ],
   },
 ];
 const processo = [
   {
     numero: 1,
-    titulo: "An\u00E1lise Inicial",
-    duracao: "3-5 dias",
+    titulo: 'An\u00E1lise Inicial',
+    duracao: '3-5 dias',
     icone: Eye,
-    cor: "blue",
-    descricao: "Auditoria completa para identificar todos os problemas",
+    cor: 'blue',
+    descricao: 'Auditoria completa para identificar todos os problemas',
     atividades: [
-      "Acesso ao c\u00F3digo-fonte e ambiente",
-      "Auditoria t\u00E9cnica automatizada",
-      "Testes manuais com leitores de tela",
-      "Navega\u00E7\u00E3o por teclado completa",
-      "Documenta\u00E7\u00E3o de todos os issues",
-      "Prioriza\u00E7\u00E3o por impacto",
-      "Estimativa de esfor\u00E7o e prazo",
-      "Apresenta\u00E7\u00E3o ao cliente",
+      'Acesso ao c\u00F3digo-fonte e ambiente',
+      'Auditoria t\u00E9cnica automatizada',
+      'Testes manuais com leitores de tela',
+      'Navega\u00E7\u00E3o por teclado completa',
+      'Documenta\u00E7\u00E3o de todos os issues',
+      'Prioriza\u00E7\u00E3o por impacto',
+      'Estimativa de esfor\u00E7o e prazo',
+      'Apresenta\u00E7\u00E3o ao cliente',
     ],
   },
   {
     numero: 2,
-    titulo: "Planejamento",
-    duracao: "1-2 dias",
+    titulo: 'Planejamento',
+    duracao: '1-2 dias',
     icone: Target,
-    cor: "purple",
-    descricao: "Roadmap de corre\u00E7\u00F5es priorizadas",
+    cor: 'purple',
+    descricao: 'Roadmap de corre\u00E7\u00F5es priorizadas',
     atividades: [
-      "Defini\u00E7\u00E3o de escopo e prioridades",
-      "Cria\u00E7\u00E3o de branches no Git",
-      "Setup de ambiente de desenvolvimento",
-      "Defini\u00E7\u00E3o de milestones",
-      "Cronograma detalhado",
-      "Alinhamento com equipe cliente",
+      'Defini\u00E7\u00E3o de escopo e prioridades',
+      'Cria\u00E7\u00E3o de branches no Git',
+      'Setup de ambiente de desenvolvimento',
+      'Defini\u00E7\u00E3o de milestones',
+      'Cronograma detalhado',
+      'Alinhamento com equipe cliente',
     ],
   },
   {
     numero: 3,
-    titulo: "Implementa\u00E7\u00E3o",
-    duracao: "2-8 semanas",
+    titulo: 'Implementa\u00E7\u00E3o',
+    duracao: '2-8 semanas',
     icone: Code,
-    cor: "green",
-    descricao: "Corre\u00E7\u00E3o hands-on dos problemas identificados",
+    cor: 'green',
+    descricao: 'Corre\u00E7\u00E3o hands-on dos problemas identificados',
     atividades: [
-      "Refatora\u00E7\u00E3o de componentes",
-      "Implementa\u00E7\u00E3o de HTML sem\u00E2ntico",
-      "Adi\u00E7\u00E3o de ARIA quando necess\u00E1rio",
-      "Corre\u00E7\u00E3o de navega\u00E7\u00E3o por teclado",
-      "Ajuste de contrastes de cores",
-      "Implementa\u00E7\u00E3o de skip links",
-      "Corre\u00E7\u00E3o de formul\u00E1rios",
-      "Testes cont\u00EDnuos durante desenvolvimento",
+      'Refatora\u00E7\u00E3o de componentes',
+      'Implementa\u00E7\u00E3o de HTML sem\u00E2ntico',
+      'Adi\u00E7\u00E3o de ARIA quando necess\u00E1rio',
+      'Corre\u00E7\u00E3o de navega\u00E7\u00E3o por teclado',
+      'Ajuste de contrastes de cores',
+      'Implementa\u00E7\u00E3o de skip links',
+      'Corre\u00E7\u00E3o de formul\u00E1rios',
+      'Testes cont\u00EDnuos durante desenvolvimento',
     ],
   },
   {
     numero: 4,
-    titulo: "Testes e QA",
-    duracao: "1-2 semanas",
+    titulo: 'Testes e QA',
+    duracao: '1-2 semanas',
     icone: Shield,
-    cor: "orange",
-    descricao: "Valida\u00E7\u00E3o completa de todas as corre\u00E7\u00F5es",
+    cor: 'orange',
+    descricao: 'Valida\u00E7\u00E3o completa de todas as corre\u00E7\u00F5es',
     atividades: [
-      "Testes com ferramentas automatizadas",
-      "Testes com NVDA, JAWS, VoiceOver",
-      "Navega\u00E7\u00E3o completa por teclado",
-      "Testes em diferentes navegadores",
-      "Valida\u00E7\u00E3o mobile",
-      "Checklist de conformidade WCAG",
-      "Corre\u00E7\u00E3o de bugs encontrados",
-      "Documenta\u00E7\u00E3o de melhorias",
+      'Testes com ferramentas automatizadas',
+      'Testes com NVDA, JAWS, VoiceOver',
+      'Navega\u00E7\u00E3o completa por teclado',
+      'Testes em diferentes navegadores',
+      'Valida\u00E7\u00E3o mobile',
+      'Checklist de conformidade WCAG',
+      'Corre\u00E7\u00E3o de bugs encontrados',
+      'Documenta\u00E7\u00E3o de melhorias',
     ],
   },
   {
     numero: 5,
-    titulo: "Deploy e Documenta\u00E7\u00E3o",
-    duracao: "2-3 dias",
+    titulo: 'Deploy e Documenta\u00E7\u00E3o',
+    duracao: '2-3 dias',
     icone: Award,
-    cor: "red",
-    descricao: "Entrega e transfer\u00EAncia de conhecimento",
+    cor: 'red',
+    descricao: 'Entrega e transfer\u00EAncia de conhecimento',
     atividades: [
-      "Code review final",
-      "Merge para produ\u00E7\u00E3o",
-      "Deploy em homologa\u00E7\u00E3o",
-      "Testes em produ\u00E7\u00E3o",
-      "Documenta\u00E7\u00E3o t\u00E9cnica completa",
-      "Guia de manuten\u00E7\u00E3o",
-      "Treinamento da equipe",
-      "Suporte p\u00F3s-deploy",
+      'Code review final',
+      'Merge para produ\u00E7\u00E3o',
+      'Deploy em homologa\u00E7\u00E3o',
+      'Testes em produ\u00E7\u00E3o',
+      'Documenta\u00E7\u00E3o t\u00E9cnica completa',
+      'Guia de manuten\u00E7\u00E3o',
+      'Treinamento da equipe',
+      'Suporte p\u00F3s-deploy',
     ],
   },
 ];
 const pacotes = [
   {
-    nome: "Corre\u00E7\u00F5es Pontuais",
-    preco: "R$ 5.000",
-    duracao: "1-2 semanas",
-    ideal: "At\u00E9 20 issues identificados",
-    cor: "blue",
+    nome: 'Corre\u00E7\u00F5es Pontuais',
+    preco: 'R$ 5.000',
+    duracao: '1-2 semanas',
+    ideal: 'At\u00E9 20 issues identificados',
+    cor: 'blue',
     inclui: [
-      "Corre\u00E7\u00E3o de problemas espec\u00EDficos",
-      "Testes das corre\u00E7\u00F5es",
-      "Documenta\u00E7\u00E3o do que foi alterado",
-      "Pull request organizado",
-      "Suporte por 15 dias",
-      "Ideal para: sites pequenos, corre\u00E7\u00F5es urgentes",
+      'Corre\u00E7\u00E3o de problemas espec\u00EDficos',
+      'Testes das corre\u00E7\u00F5es',
+      'Documenta\u00E7\u00E3o do que foi alterado',
+      'Pull request organizado',
+      'Suporte por 15 dias',
+      'Ideal para: sites pequenos, corre\u00E7\u00F5es urgentes',
     ],
   },
   {
-    nome: "Remedia\u00E7\u00E3o Completa",
-    preco: "R$ 15.000",
-    duracao: "1-2 meses",
-    ideal: "Sites m\u00E9dios com m\u00FAltiplos problemas",
-    cor: "green",
+    nome: 'Remedia\u00E7\u00E3o Completa',
+    preco: 'R$ 15.000',
+    duracao: '1-2 meses',
+    ideal: 'Sites m\u00E9dios com m\u00FAltiplos problemas',
+    cor: 'green',
     destaque: true,
     inclui: [
-      "Auditoria completa inclu\u00EDda",
-      "Corre\u00E7\u00E3o de todos os issues",
-      "Refatora\u00E7\u00E3o de componentes",
-      "Testes extensivos",
-      "Documenta\u00E7\u00E3o completa",
-      "Treinamento b\u00E1sico da equipe",
-      "Suporte por 30 dias",
-      "Ideal para: sites corporativos, e-commerce",
+      'Auditoria completa inclu\u00EDda',
+      'Corre\u00E7\u00E3o de todos os issues',
+      'Refatora\u00E7\u00E3o de componentes',
+      'Testes extensivos',
+      'Documenta\u00E7\u00E3o completa',
+      'Treinamento b\u00E1sico da equipe',
+      'Suporte por 30 dias',
+      'Ideal para: sites corporativos, e-commerce',
     ],
   },
   {
-    nome: "Projeto Enterprise",
-    preco: "Sob consulta",
-    duracao: "2-6 meses",
-    ideal: "Sistemas complexos e aplica\u00E7\u00F5es grandes",
-    cor: "purple",
+    nome: 'Projeto Enterprise',
+    preco: 'Sob consulta',
+    duracao: '2-6 meses',
+    ideal: 'Sistemas complexos e aplica\u00E7\u00F5es grandes',
+    cor: 'purple',
     inclui: [
-      "Tudo do pacote Completo",
-      "M\u00FAltiplas plataformas/produtos",
-      "Design System acess\u00EDvel",
-      "Treinamento completo da equipe",
-      "Mentoria cont\u00EDnua",
-      "Processos e documenta\u00E7\u00E3o",
-      "Suporte estendido (90 dias)",
-      "Ideal para: grandes empresas, SaaS",
+      'Tudo do pacote Completo',
+      'M\u00FAltiplas plataformas/produtos',
+      'Design System acess\u00EDvel',
+      'Treinamento completo da equipe',
+      'Mentoria cont\u00EDnua',
+      'Processos e documenta\u00E7\u00E3o',
+      'Suporte estendido (90 dias)',
+      'Ideal para: grandes empresas, SaaS',
     ],
   },
 ];
 const exemplos = [
   {
-    problema: "Sistema de agendamento m\u00E9dico com 127 viola\u00E7\u00F5es",
+    problema: 'Sistema de agendamento m\u00E9dico com 127 viola\u00E7\u00F5es',
     solucao:
-      "Remedia\u00E7\u00E3o completa de todos os componentes, foco em formul\u00E1rios e navega\u00E7\u00E3o",
-    resultado: "0 viola\u00E7\u00F5es, NPS aumentou 40%, processo judicial evitado",
-    tempo: "4 meses",
-    tecnologia: "React + TypeScript",
+      'Remedia\u00E7\u00E3o completa de todos os componentes, foco em formul\u00E1rios e navega\u00E7\u00E3o',
+    resultado: '0 viola\u00E7\u00F5es, NPS aumentou 40%, processo judicial evitado',
+    tempo: '4 meses',
+    tecnologia: 'React + TypeScript',
   },
   {
-    problema: "E-commerce com checkout inacess\u00EDvel",
+    problema: 'E-commerce com checkout inacess\u00EDvel',
     solucao:
-      "Refatora\u00E7\u00E3o do fluxo de compra, formul\u00E1rios acess\u00EDveis, valida\u00E7\u00E3o clara",
-    resultado: "Convers\u00E3o aumentou 15%, pessoas com defici\u00EAncia conseguem comprar",
-    tempo: "2 meses",
-    tecnologia: "Vue.js + Nuxt",
+      'Refatora\u00E7\u00E3o do fluxo de compra, formul\u00E1rios acess\u00EDveis, valida\u00E7\u00E3o clara',
+    resultado: 'Convers\u00E3o aumentou 15%, pessoas com defici\u00EAncia conseguem comprar',
+    tempo: '2 meses',
+    tecnologia: 'Vue.js + Nuxt',
   },
   {
-    problema: "Portal WordPress com tema inacess\u00EDvel",
+    problema: 'Portal WordPress com tema inacess\u00EDvel',
     solucao:
-      "Cria\u00E7\u00E3o de child theme acess\u00EDvel, corre\u00E7\u00E3o de menus e formul\u00E1rios",
-    resultado: "Aprovado em WCAG AA, conformidade legal alcan\u00E7ada",
-    tempo: "6 semanas",
-    tecnologia: "WordPress + PHP",
+      'Cria\u00E7\u00E3o de child theme acess\u00EDvel, corre\u00E7\u00E3o de menus e formul\u00E1rios',
+    resultado: 'Aprovado em WCAG AA, conformidade legal alcan\u00E7ada',
+    tempo: '6 semanas',
+    tecnologia: 'WordPress + PHP',
   },
 ];
 const diferenciais = [
   {
     icone: Code,
-    titulo: "Trabalho no c\u00F3digo real",
+    titulo: 'Trabalho no c\u00F3digo real',
     descricao:
-      "N\u00E3o apenas aponto problemas - eu corrijo. Fa\u00E7o pull requests, refatoro componentes, implemento solu\u00E7\u00F5es.",
+      'N\u00E3o apenas aponto problemas - eu corrijo. Fa\u00E7o pull requests, refatoro componentes, implemento solu\u00E7\u00F5es.',
   },
   {
     icone: Shield,
-    titulo: "Testes rigorosos",
+    titulo: 'Testes rigorosos',
     descricao:
-      "N\u00E3o confio s\u00F3 em ferramentas automatizadas. Testo manualmente com leitores de tela e navega\u00E7\u00E3o por teclado.",
+      'N\u00E3o confio s\u00F3 em ferramentas automatizadas. Testo manualmente com leitores de tela e navega\u00E7\u00E3o por teclado.',
   },
   {
     icone: TrendingUp,
-    titulo: "Transfer\u00EAncia de conhecimento",
+    titulo: 'Transfer\u00EAncia de conhecimento',
     descricao:
-      "Documento tudo e treino sua equipe. O objetivo \u00E9 que voc\u00EAs mantenham a qualidade depois.",
+      'Documento tudo e treino sua equipe. O objetivo \u00E9 que voc\u00EAs mantenham a qualidade depois.',
   },
   {
     icone: Zap,
-    titulo: "Resultados mensur\u00E1veis",
+    titulo: 'Resultados mensur\u00E1veis',
     descricao:
-      "Antes e depois com n\u00FAmeros claros. Viola\u00E7\u00F5es corrigidas, score Lighthouse, conformidade WCAG.",
+      'Antes e depois com n\u00FAmeros claros. Viola\u00E7\u00F5es corrigidas, score Lighthouse, conformidade WCAG.',
   },
 ];
 const faq = [
-	{
-		pergunta: "Preciso dar acesso ao código?",
-		resposta:
-			"Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.",
-	},
-	{
-		pergunta: "E se meu código for muito antigo/bagunçado?",
-		resposta:
-			"Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.",
-	},
-	{
-		pergunta: "Quanto tempo leva?",
-		resposta:
-			"Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.",
-	},
-	{
-		pergunta: "Trabalha com qualquer tecnologia?",
-		resposta:
-			"Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.",
-	},
-	{
-		pergunta: "E depois que você terminar?",
-		resposta:
-			"Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.",
-	},
-	{
-		pergunta: "Garante que não haverá novos problemas?",
-		resposta:
-			"Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.",
-	},
+  {
+    pergunta: 'Preciso dar acesso ao código?',
+    resposta:
+      'Sim, preciso de acesso ao repositório (GitHub, GitLab, etc.) e ambiente de desenvolvimento. Posso assinar NDA se necessário. Trabalho em branches separadas e faço pull requests para revisão.',
+  },
+  {
+    pergunta: 'E se meu código for muito antigo/bagunçado?',
+    resposta:
+      'Já trabalhei com código legado de todo tipo. Posso refatorar o necessário, mas sempre conversamos sobre o trade-off entre refatoração completa vs. correções pontuais.',
+  },
+  {
+    pergunta: 'Quanto tempo leva?',
+    resposta:
+      'Depende da complexidade. Sites pequenos: 1-2 semanas. Médios: 1-2 meses. Grandes/complexos: 2-6 meses. Após auditoria inicial, dou estimativa precisa.',
+  },
+  {
+    pergunta: 'Trabalha com qualquer tecnologia?',
+    resposta:
+      'Minha especialidade é React, Vue, WordPress e JavaScript em geral. Para outras tecnologias (Angular, Svelte, etc.), avalio caso a caso. Se não dominar, indico profissionais.',
+  },
+  {
+    pergunta: 'E depois que você terminar?',
+    resposta:
+      'Ofereço suporte pós-entrega e treino sua equipe para manter a qualidade. Também posso fazer mentorias contínuas ou auditorias periódicas.',
+  },
+  {
+    pergunta: 'Garante que não haverá novos problemas?',
+    resposta:
+      'Garanto que o que eu entregar estará conforme. Mas se sua equipe continuar desenvolvendo sem cuidado, novos problemas podem surgir. Por isso o treinamento é essencial.',
+  },
 ];
 ---
 
@@ -412,7 +412,7 @@ const faq = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {
-            diferenciais.map(diferencial => {
+            diferenciais.map((diferencial) => {
               const Icon = diferencial.icone;
               return (
                 <div class="rounded-2xl border-2 border-indigo-200 bg-linear-to-br from-indigo-50 to-white p-6">
@@ -438,7 +438,7 @@ const faq = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {
-            tecnologias.map(tech => (
+            tecnologias.map((tech) => (
               <div class="rounded-2xl border-2 border-gray-200 bg-white p-6 transition hover:border-indigo-400 hover:shadow-lg">
                 <div class="mb-4 flex items-center gap-3">
                   <div class="text-4xl">{tech.icone}</div>
@@ -447,11 +447,11 @@ const faq = [
                     <div class="flex items-center gap-2 text-sm">
                       <span
                         class={`rounded-full px-2 py-0.5 text-xs font-bold ${
-                          tech.nivel === "Especialista"
-                            ? "bg-green-100 text-green-700"
-                            : tech.nivel === "Avançado"
-                              ? "bg-blue-100 text-blue-700"
-                              : "bg-gray-100 text-gray-700"
+                          tech.nivel === 'Especialista'
+                            ? 'bg-green-100 text-green-700'
+                            : tech.nivel === 'Avançado'
+                              ? 'bg-blue-100 text-blue-700'
+                              : 'bg-gray-100 text-gray-700'
                         }`}
                       >
                         {tech.nivel}
@@ -465,7 +465,7 @@ const faq = [
                   <div>
                     <h4 class="mb-2 text-xs font-bold text-gray-600">Problemas comuns:</h4>
                     <ul class="space-y-1">
-                      {tech.problemas.slice(0, 3).map(problema => (
+                      {tech.problemas.slice(0, 3).map((problema) => (
                         <li class="flex items-start gap-1 text-xs text-gray-700">
                           <AlertCircle
                             class="mt-0.5 h-3 w-3 shrink-0 text-orange-500"
@@ -480,7 +480,7 @@ const faq = [
                   <div>
                     <h4 class="mb-2 text-xs font-bold text-gray-600">Como resolvo:</h4>
                     <ul class="space-y-1">
-                      {tech.solucoes.slice(0, 3).map(solucao => (
+                      {tech.solucoes.slice(0, 3).map((solucao) => (
                         <li class="flex items-start gap-1 text-xs text-gray-700">
                           <CheckCircle
                             class="mt-0.5 h-3 w-3 shrink-0 text-green-500"
@@ -524,7 +524,7 @@ const faq = [
 
         <div class="space-y-8">
           {
-            exemplos.map(exemplo => (
+            exemplos.map((exemplo) => (
               <div class="rounded-2xl border-2 border-blue-200 bg-linear-to-br from-blue-50 to-white p-8">
                 <div class="grid gap-6 md:grid-cols-3">
                   <div>
@@ -569,11 +569,11 @@ const faq = [
           {
             processo.map((etapa, index) => {
               const cores = {
-                blue: "from-blue-500 to-blue-600",
-                purple: "from-purple-500 to-purple-600",
-                green: "from-green-500 to-green-600",
-                orange: "from-orange-500 to-orange-600",
-                red: "from-red-500 to-red-600",
+                blue: 'from-blue-500 to-blue-600',
+                purple: 'from-purple-500 to-purple-600',
+                green: 'from-green-500 to-green-600',
+                orange: 'from-orange-500 to-orange-600',
+                red: 'from-red-500 to-red-600',
               };
 
               return (
@@ -606,7 +606,7 @@ const faq = [
                       <div class="mt-6">
                         <h4 class="mb-3 text-sm font-bold text-gray-900">Atividades:</h4>
                         <ul class="grid gap-2 md:grid-cols-2">
-                          {etapa.atividades.map(atividade => (
+                          {etapa.atividades.map((atividade) => (
                             <li class="flex items-start gap-2">
                               <CheckCircle
                                 class="mt-0.5 h-4 w-4 shrink-0 text-green-600"
@@ -637,12 +637,12 @@ const faq = [
 
         <div class="grid gap-8 md:grid-cols-3">
           {
-            pacotes.map(pacote => (
+            pacotes.map((pacote) => (
               <div
                 class={`rounded-2xl p-8 transition ${
                   pacote.destaque
-                    ? "scale-105 transform border-4 border-red-400 bg-linear-to-br from-red-600 to-red-700 text-white shadow-2xl"
-                    : "border-2 border-gray-200 bg-white hover:border-blue-400 hover:shadow-lg"
+                    ? 'scale-105 transform border-4 border-red-400 bg-linear-to-br from-red-600 to-red-700 text-white shadow-2xl'
+                    : 'border-2 border-gray-200 bg-white hover:border-blue-400 hover:shadow-lg'
                 }`}
               >
                 {pacote.destaque && (
@@ -652,32 +652,34 @@ const faq = [
                 )}
 
                 <h3
-                  class={`mb-2 text-2xl font-bold ${pacote.destaque ? "text-white" : "text-gray-900"}`}
+                  class={`mb-2 text-2xl font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}
                 >
                   {pacote.nome}
                 </h3>
 
                 <div
-                  class={`mb-2 text-4xl font-bold ${pacote.destaque ? "text-white" : `text-${pacote.cor}-600`}`}
+                  class={`mb-2 text-4xl font-bold ${pacote.destaque ? 'text-white' : `text-${pacote.cor}-600`}`}
                 >
                   {pacote.preco}
                 </div>
-                <p class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>{pacote.ideal}</p>
+                <p class={`mb-4 text-sm ${pacote.destaque ? 'text-red-100' : 'text-gray-600'}`}>
+                  {pacote.ideal}
+                </p>
 
                 <div class="mb-6">
                   <h4
-                    class={`mb-3 text-sm font-bold ${pacote.destaque ? "text-white" : "text-gray-900"}`}
+                    class={`mb-3 text-sm font-bold ${pacote.destaque ? 'text-white' : 'text-gray-900'}`}
                   >
                     ✓ O que inclui:
                   </h4>
                   <ul class="space-y-2">
-                    {pacote.inclui.map(item => (
+                    {pacote.inclui.map((item) => (
                       <li class="flex items-start gap-2">
                         <CheckCircle
-                          class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? "text-white" : "text-green-600"}`}
+                          class={`mt-0.5 h-4 w-4 shrink-0 ${pacote.destaque ? 'text-white' : 'text-green-600'}`}
                           aria-hidden="true"
                         />
-                        <span class={`text-sm ${pacote.destaque ? "text-white" : "text-gray-700"}`}>
+                        <span class={`text-sm ${pacote.destaque ? 'text-white' : 'text-gray-700'}`}>
                           {item}
                         </span>
                       </li>
@@ -689,8 +691,8 @@ const faq = [
                   href="/contato"
                   class={`block w-full rounded-lg px-6 py-4 text-center font-semibold transition ${
                     pacote.destaque
-                      ? "bg-white text-red-600 hover:bg-red-50"
-                      : "bg-red-600 text-white hover:bg-red-700"
+                      ? 'bg-white text-red-600 hover:bg-red-50'
+                      : 'bg-red-600 text-white hover:bg-red-700'
                   }`}
                 >
                   Contratar {pacote.nome}
@@ -722,7 +724,7 @@ const faq = [
 
         <div class="space-y-6">
           {
-            faq.map(item => (
+            faq.map((item) => (
               <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
                 <h3 class="mb-3 text-lg font-bold text-gray-900">{item.pergunta}</h3>
                 <p class="leading-relaxed text-gray-700">{item.resposta}</p>

@@ -1,7 +1,7 @@
 ---
-issue: "35"
-title: "Indicações Prime Day"
-date: "2024-07-19"
+issue: '35'
+title: 'Indicações Prime Day'
+date: '2024-07-19'
 ---
 
 **18 de julho de 2024,**

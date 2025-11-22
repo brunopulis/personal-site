@@ -13,9 +13,7 @@ const { t } = Astro.props;
       SUPPORT_PLATFORMS.map((platform) => (
         <a href={platform.url} class="support-card" data-platform={platform.id}>
           <div class="card-icon">{platform.icon}</div>
-          <h3 class="card-title">
-            {t(`support.platforms.${platform.id}.name`)}
-          </h3>
+          <h3 class="card-title">{t(`support.platforms.${platform.id}.name`)}</h3>
           <p class="card-desc">{t(`support.platforms.${platform.id}.desc`)}</p>
         </a>
       ))
@@ -26,11 +24,7 @@ const { t } = Astro.props;
   <div class="info-box">
     <h2 class="info-title">{t('support.why-title')}</h2>
     <ul class="reasons-list">
-      {
-        SUPPORT_REASONS.map((reason) => (
-          <li>{t(`support.reasons.${reason}`)}</li>
-        ))
-      }
+      {SUPPORT_REASONS.map((reason) => <li>{t(`support.reasons.${reason}`)}</li>)}
     </ul>
   </div>
 </div>

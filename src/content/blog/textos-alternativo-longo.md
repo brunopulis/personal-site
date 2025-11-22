@@ -1,9 +1,9 @@
 ---
 title: Como criar texto alternativo longo
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2024-03-25
-category: "Frontend"
+category: 'Frontend'
 url: https://brunopulis.com/textos-alternativo-longo/
 ---
 

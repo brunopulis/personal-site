@@ -1,11 +1,9 @@
 export const enSupport = {
   'support.title': 'Support my work',
-  'support.headline':
-    'Your contributions help keep this project active and innovative',
+  'support.headline': 'Your contributions help keep this project active and innovative',
   'support.why-title': 'Why support?',
   'support.supporters-title': 'Special thanks to our supporters',
-  'support.footer':
-    'Every contribution, no matter how small, makes a difference!',
+  'support.footer': 'Every contribution, no matter how small, makes a difference!',
 
   'support.reasons.content': 'Contribute to keeping quality content',
   'support.reasons.opensource': 'Support open source project development',

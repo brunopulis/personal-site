@@ -1,9 +1,9 @@
 ---
-title: "Reset: Vivendo no ritmo da graça em uma cultura estressada"
-image: "/src/assets/images/blog/reset.jpg"
-imageAlt: ""
+title: 'Reset: Vivendo no ritmo da graça em uma cultura estressada'
+image: '/src/assets/images/blog/reset.jpg'
+imageAlt: ''
 publishDate: 2022-10-15
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/resumo-reset/
 ---
 

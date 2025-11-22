@@ -1,9 +1,9 @@
 ---
-title: "WordPress vs. Eleventy: Qual é a melhor opção para o seu blog?"
-image: ""
-imageAlt: ""
+title: 'WordPress vs. Eleventy: Qual é a melhor opção para o seu blog?'
+image: ''
+imageAlt: ''
 publishDate: 2022-02-02
-category: "Frontend"
+category: 'Frontend'
 url: https://brunopulis.com/migrando-para-o-eleventy/
 tags:
   - desenvolvimento-web

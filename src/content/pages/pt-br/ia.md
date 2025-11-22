@@ -1,9 +1,9 @@
 ---
-title: "/ia"
-description: ""
-lang: "pt-br"
-routeKey: "ia"
-date: "2025-11-18"
+title: '/ia'
+description: ''
+lang: 'pt-br'
+routeKey: 'ia'
+date: '2025-11-18'
 ---
 
 ## Uso de IA

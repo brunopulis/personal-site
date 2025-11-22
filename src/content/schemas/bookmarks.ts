@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 export const bookmarks = defineCollection({
   schema: z.object({

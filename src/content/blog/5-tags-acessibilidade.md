@@ -1,9 +1,9 @@
 ---
 title: 5 tags que ajudam na acessibilidade
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2024-09-30
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
 
 ## Introdução

@@ -1,8 +1,8 @@
 ---
-issue: "41"
-title: "Teclados, celulares, interfones e acessibilidade"
-date: "2024-11-01"
-coverImage: "42.png"
+issue: '41'
+title: 'Teclados, celulares, interfones e acessibilidade'
+date: '2024-11-01'
+coverImage: '42.png'
 ---
 
 Olá pessoal,
