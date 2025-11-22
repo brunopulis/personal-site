@@ -75,7 +75,9 @@ const lang = getLanguageFromPath(Astro.url.pathname) as Language;
     <SkipLink />
     <Navigation currentLang={lang} currentRoute={routeKey} />
     <main class="main-wrapper" id="main-content">
-      <slot />
+      <div class="wrapper" style="--flow-space:var(--space-s-m);--region-space:var(--space-m-l);">
+        <slot />
+      </div>
     </main>
     <Footer />
     <BackToTop />

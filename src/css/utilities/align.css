@@ -5,3 +5,23 @@
 .mx-auto {
   margin-inline: auto !important;
 }
+
+.text-normal {
+  font-weight: 400;
+}
+
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

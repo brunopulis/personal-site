@@ -14,7 +14,6 @@ import rssFeed from '@assets/images/buttons/valid-rss.png';
 import wcagAA from '@assets/images/buttons/wcag-aa.png';
 import webStandards from '@assets/images/buttons/web-standards.png';
 import webmentions from '@assets/images/buttons/webmentions.png';
-import { Image } from 'astro:assets';
 ---
 
 <footer class="footer">
@@ -142,24 +141,16 @@ import { Image } from 'astro:assets';
           </a>
         </li>
         <li>
-          <img
-            src={webStandards.src}
-            alt="Accessibility Engineer"
-            width="88"
-            height="31"
-            loading="lazy"
-            class="pixelated"
-          />
-        </li>
-        <li>
-          <img
-            src={peoplePledge.src}
-            alt="Accessibility Engineer"
-            width="88"
-            height="31"
-            loading="lazy"
-            class="pixelated"
-          />
+          <a href="https://peoplepledge.org/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={peoplePledge.src}
+              alt="Accessibility Engineer"
+              width="88"
+              height="31"
+              loading="lazy"
+              class="pixelated"
+            />
+          </a>
         </li>
         <li>
           <img

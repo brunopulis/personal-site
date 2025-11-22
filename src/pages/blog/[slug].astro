@@ -8,7 +8,6 @@ import { type CollectionEntry, getCollection, render } from 'astro:content';
 import EmailReplyButton from '@/components/EmailReplyButton.astro';
 import ShareButton from '@/components/ShareButton.astro';
 
-// Gerar rotas para todos os posts
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
@@ -21,19 +20,21 @@ type Props = {
   prevPost: CollectionEntry<'blog'>;
   nextPost: CollectionEntry<'blog'>;
 };
-// Receber o post das props
+
 const { post } = Astro.props;
 const { Content } = await render(post);
-// Formatar data para pt-BR
+
 const publishDateString = String(post.data.publishDate);
 const formattedDate = new Date(publishDateString).toLocaleDateString('pt-BR', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
+
 const isoDate = new Date(publishDateString).toISOString();
 const postTitle = post.data.title;
 const postUrl = Astro.url.href;
+
 export const prerender = true;
 ---
 
@@ -41,73 +42,214 @@ export const prerender = true;
   title={`${post.data.title} + "Bruno Pulis"`}
   description="Artigos sobre desenvolvimento, acessibilidade e qualidade de software"
 >
-  <main id="main-content">
-    <div class="min-h-screen bg-white">
-      <BackBlog />
+  <div class="wrapper">
+    <BackBlog />
 
-      <header class="bg-white px-6 py-12 lg:px-20">
-        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div class="mb-4">
-            <span
-              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 bg-blood-red-800 mb-4 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
-            >
-              {post.data.category}
-            </span>
-          </div>
-
-          <h1 class="text-errie-black-900 mb-6 text-4xl leading-tight font-bold lg:text-5xl">
-            {post.data.title}
-          </h1>
-          <p>{post.data.excerpt}</p>
-
-          <div
-            class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base"
+    <header class="bg-white px-6 py-12 lg:px-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-4">
+          <span
+            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [a&]:hover:bg-primary/90 bg-blood-red-800 mb-4 inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white transition-[color,box-shadow] focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3"
           >
-            <div class="flex items-center gap-2">
-              <CalendarIcon class="h-4 w-4" aria-hidden="true" />
-              <time datetime={isoDate}>{formattedDate}</time>
-            </div>
+            {post.data.category}
+          </span>
+        </div>
 
-            <div class="flex items-center gap-2">
-              <ClockIcon class="h-4 w-4" aria-hidden="true" />
-              <span>8 min de leitura</span>
-            </div>
+        <h1 class="title p-name">
+          {post.data.title}
+        </h1>
+        <p class="p-summary">{post.data.excerpt}</p>
+
+        <div
+          class="text-blood-red-800 mb-6 flex flex-wrap items-center gap-6 text-sm font-medium lg:text-base"
+        >
+          <div class="flex items-center gap-2">
+            <CalendarIcon class="h-4 w-4" aria-hidden="true" />
+            <time class="dt-published" datetime={isoDate}>{formattedDate}</time>
           </div>
         </div>
-      </header>
-      <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-        <div class="prose prose-lg max-w-none">
-          <Content />
+      </div>
+    </header>
+    <article class="h-entry">
+      <div class="prose prose-lg max-w-none">
+        <Content />
 
-          <!-- Tags -->
-          {
-            post.data.tags && post.data.tags.length > 0 && (
-              <div class="mb-6">
-                <div class="flex flex-wrap gap-2">
-                  {post.data.tags.map((tag: string) => (
-                    <a
-                      href={`/blog/tags/${tag.toLowerCase()}`}
-                      class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
-                    >
-                      #{tag}
-                    </a>
-                  ))}
-                </div>
+        <!-- Tags -->
+        {
+          post.data.tags && post.data.tags.length > 0 && (
+            <div class="mb-6">
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag: string) => (
+                  <a href={`/blog/tags/${tag.toLowerCase()}`} class="">
+                    #{tag}
+                  </a>
+                ))}
               </div>
-            )
-          }
+            </div>
+          )
+        }
 
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <ShareButton style="button" />
-            <EmailReplyButton postTitle={postTitle} postUrl={postUrl} style="button" />
+        <section class="container card responses-card">
+          <details>
+            <summary>Veja como responder</summary>
+          </details>
+
+          <div class="details-wrapper">
+            <section class="comment-details">
+              <ShareButton style="button" />
+            </section>
+            <section class="comment-details">
+              <h3>Respond from another site</h3>
+              <p>
+                Responses are collected from posts on other sites. Have you posted somewhere that
+                links to this page? If so, share the link!
+              </p>
+              <form
+                id="manual-webmention"
+                action="https://webmention.io/brunopulis.com/webmention"
+                method="post"
+              >
+                <input
+                  type="url"
+                  name="source"
+                  placeholder="https://www.example.com/post-name"
+                  aria-label="URL"
+                />
+                <input
+                  type="hidden"
+                  name="target"
+                  value="https://www.ciccarello.me/es/publicaciones/2025/05/04/9f6a8/"
+                />
+                <input type="submit" name="submit" value="Share link" />
+              </form>
+            </section>
+            <section class="comment-details">
+              <h3>Respond via email</h3>
+              <p>
+                If you'd prefer to message me directly, send an email. If you'd also like your
+                message to be visible on the site I can add it as a comment.
+              </p>
+              <a
+                href="mailto:anthony@ciccarello.me?subject=RE%3A+Photo+Post+on+ciccarello.me&body=In+response+to%3A+https%3A%2F%2Fwww.ciccarello.me%2Fes%2Fpublicaciones%2F2025%2F05%2F04%2F9f6a8%2F"
+                class="btn-link mention-action">Reply via Email</a
+              >
+              <EmailReplyButton postTitle={postTitle} postUrl={postUrl} style="button" />
+            </section>
           </div>
+        </section>
 
-          <BuyMeCoffee variant="compact" />
-        </div>
-      </article>
-    </div>
-  </main>
+        <BuyMeCoffee variant="default" />
+      </div>
+    </article>
+  </div>
 </Layout>
+
+<style>
+  .responses-card {
+    margin: auto;
+    padding: 1rem;
+    line-height: 1.2em;
+  }
+
+  #webmentions .comments {
+    max-height: 20em;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  #webmentions h2 {
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+  }
+
+  #webmentions .reacts li {
+    display: inline;
+    padding-right: 0.25rem;
+  }
+
+  #webmentions .reacts img {
+    margin: 3px -1ex 1px 0;
+  }
+
+  #webmentions ul {
+    margin: 0;
+    padding: 0.5rem 0 1rem;
+    list-style-type: none;
+  }
+
+  #webmentions .comments li {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+
+  #webmentions a.reaction {
+    position: relative;
+    margin-right: 1ex;
+    letter-spacing: -1ex;
+    text-decoration: none;
+    text-shadow: 0 0 3px #fff;
+  }
+
+  #webmentions a.reaction img {
+    margin-right: -1ex;
+    border-radius: 25%;
+    max-height: 1.3em;
+  }
+
+  #webmentions a.reaction sub {
+    font-size: 50%;
+  }
+
+  #webmentions .comments li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #webmentions .comments li .text {
+    color: #555;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  #webmentions .comments li .name {
+    color: #111;
+  }
+
+  #webmentions a.source {
+    margin-left: 0.5rem;
+  }
+
+  .details-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .comment-details {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 25%;
+    flex-direction: column;
+  }
+
+  .email-details {
+    flex-grow: 1;
+    flex-basis: 25%;
+  }
+
+  .mention-action {
+    margin-top: auto;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 40em) {
+    .details-wrapper {
+      display: block;
+    }
+  }
+</style>
 
 <script define:vars={{ postTitle, postUrl }}>
   document.addEventListener('DOMContentLoaded', () => {

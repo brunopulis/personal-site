@@ -1,0 +1,77 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  streams: CollectionEntry<'stream'>[];
+}
+
+const { streams } = Astro.props;
+
+const iconMap: Record<string, string> = {
+  book: '📚',
+  music: '🎵',
+  film: '🎬',
+  podcast: '🎧',
+  concert: '🎤',
+  link: '🔗',
+  note: '💭',
+  post: '✍️',
+};
+
+function formatRelativeDate(date: Date): string {
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    return 'Data inválida';
+  }
+
+  const now = new Date();
+  const diff = now.getTime() - date.getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  if (days === 0) return 'hoje';
+  if (days === 1) return 'ontem';
+  if (days < 7) return `${days} dias atrás`;
+  if (days < 30) return `${Math.floor(days / 7)} semanas atrás`;
+  return date.toLocaleDateString('pt-BR');
+}
+---
+
+<div class="grid" data-layout="stream">
+  {
+    streams.map((item) => (
+      <article class="card | stream__item">
+        <div class="flow">
+          <span class="stream__item-icon" aria-hidden="true">
+            {iconMap[item.data.type] || '📝'}
+          </span>
+          <div class="stream__item-content">
+            <h3 class="stream__item-title">{item.data.title}</h3>
+            <p>{item.data.detail}</p>
+            <time class="dt-published stream__item-date" datetime={item.data.pubDate.toISOString()}>
+              {formatRelativeDate(item.data.pubDate)}
+            </time>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
+<a href="/stream">Ver todos</a>
+
+<style>
+  .stream__item {
+    border-radius: 8px;
+    background: var(--card-background);
+    padding: 20px;
+  }
+
+  .stream__item-icon {
+    color: var(--color-border);
+    font-size: 1.5rem;
+  }
+
+  .stream__item-date {
+    margin-top: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+</style>

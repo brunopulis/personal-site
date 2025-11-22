@@ -12,35 +12,41 @@ interface Props {
 const { t, currentLang, getLocalizedPath } = Astro.props;
 ---
 
-<section class="hero" id="hero" aria-labelledby="hero-section">
-  <div class="wrapper">
-    <div data-layout="50-50" class="grid">
-      <div class="hero__content">
-        <h1 class="hero__title" id="hero-section" set:html={t('home.greetings')} />
-        <p>{t('home.about_me')}</p>
-        <p set:html={t('home.objective')} />
+<section
+  class="hero"
+  id="hero"
+  aria-labelledby="hero-section"
+  style="--region-space:var(--space-m-l);"
+>
+  <div data-layout="50-50" class="grid">
+    <div class="hero__content" style="--flow-space:var(--space-s-m);">
+      <h1 class="hero__title heading-xxl" id="hero-section" set:html={t('home.greetings')} />
+      <p>{t('home.about_me')}</p>
+      <p set:html={t('home.objective')} />
 
-        <ul class="hero__list" role="list">
-          <li class="hero__item">
-            <a href={getLocalizedPath('about', currentLang)} class="hero__link">
-              {t('home.about_link')}
-            </a>
-          </li>
-          <li class="hero__item">
-            <a href={getLocalizedPath('now', currentLang)} class="hero__link">
-              {t('home.about_now')}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <figure>
-        <Image
-          src={me}
-          alt="Bruno Pulis"
-          class="u-photo mx-auto h-80 w-80 rounded-2xl border-4 border-white/20 object-cover shadow-2xl"
-          loading="eager"
-        />
-      </figure>
+      <ul class="hero__list" role="list">
+        <li class="hero__item">
+          <a href={getLocalizedPath('about', currentLang)} class="hero__link">
+            {t('home.about_link')}
+          </a>
+        </li>
+        <li class="hero__item">
+          <a href={getLocalizedPath('now', currentLang)} class="hero__link">
+            {t('home.about_now')}
+          </a>
+        </li>
+      </ul>
     </div>
+    <figure class="hero__image wide | color-brand region flow | text-right" style="height:auto;">
+      <Image
+        src={me}
+        alt="Bruno Pulis"
+        class="u-photo"
+        width={256}
+        style="border-radius: 50%;"
+        height={256}
+        loading="eager"
+      />
+    </figure>
   </div>
 </section>

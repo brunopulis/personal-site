@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import StreamList from './StreamList.astro';
+
+interface Props {
+  streams: CollectionEntry<'stream'>[];
+}
+
+const { streams } = Astro.props;
+---
+
+<section class="region flow" aria-labelledby="stream-title">
+  <div class="flow">
+    <h2 class="title" id="stream-title">Recentemente</h2>
+    <StreamList streams={streams} />
+  </div>
+</section>

@@ -45,7 +45,7 @@
   --color-bg-secondary: #f9fafb;
   --color-bg-tertiary: #f3f4f6;
 
-  --color-border: #e5e7eb;
+  --color-border: var(--color-light-silver-500);
   --color-border-dark: #d1d5db;
 
   --color-success: #10b981;

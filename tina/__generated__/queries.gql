@@ -16,14 +16,7 @@ query post($relativePath: String!) {
   }
 }
 
-query postConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: PostFilter
-) {
+query postConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PostFilter) {
   postConnection(
     before: $before
     after: $after
@@ -78,14 +71,7 @@ query note($relativePath: String!) {
   }
 }
 
-query noteConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: NoteFilter
-) {
+query noteConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: NoteFilter) {
   noteConnection(
     before: $before
     after: $after
@@ -140,14 +126,7 @@ query blogroll($relativePath: String!) {
   }
 }
 
-query blogrollConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: BlogrollFilter
-) {
+query blogrollConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: BlogrollFilter) {
   blogrollConnection(
     before: $before
     after: $after
@@ -202,14 +181,7 @@ query book($relativePath: String!) {
   }
 }
 
-query bookConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: BookFilter
-) {
+query bookConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: BookFilter) {
   bookConnection(
     before: $before
     after: $after
@@ -264,14 +236,7 @@ query movie($relativePath: String!) {
   }
 }
 
-query movieConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: MovieFilter
-) {
+query movieConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: MovieFilter) {
   movieConnection(
     before: $before
     after: $after
@@ -326,14 +291,7 @@ query newsletter($relativePath: String!) {
   }
 }
 
-query newsletterConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: NewsletterFilter
-) {
+query newsletterConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: NewsletterFilter) {
   newsletterConnection(
     before: $before
     after: $after
@@ -388,14 +346,7 @@ query speaking($relativePath: String!) {
   }
 }
 
-query speakingConnection(
-  $before: String
-  $after: String
-  $first: Float
-  $last: Float
-  $sort: String
-  $filter: SpeakingFilter
-) {
+query speakingConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: SpeakingFilter) {
   speakingConnection(
     before: $before
     after: $after
