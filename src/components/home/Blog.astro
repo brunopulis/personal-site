@@ -1,27 +1,26 @@
 ---
-import { getCollection } from "astro:content";
-import { ArrowRight } from "@lucide/astro";
+import { ArrowRight } from '@lucide/astro';
+import { getCollection } from 'astro:content';
 
-const posts = await getCollection("blog");
+const posts = await getCollection('blog');
 
 // Ordenar por data mais recente
 const sorted = posts.sort(
-	(a, b) =>
-		(b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0),
+  (a, b) => (b.data.publishDate?.getTime() ?? 0) - (a.data.publishDate?.getTime() ?? 0)
 );
 
 const gridPosts = sorted.slice(1, 6);
 
 function formatDate(date?: string | number | Date) {
-	if (!date) return "";
+  if (!date) return '';
 
-	const formatter = new Intl.DateTimeFormat("pt-BR", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+  const formatter = new Intl.DateTimeFormat('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
-	return formatter.format(new Date(date));
+  return formatter.format(new Date(date));
 }
 ---
 
@@ -38,16 +37,16 @@ function formatDate(date?: string | number | Date) {
       {
         gridPosts.map((post, index) => (
           <li class="py-4">
-            <h3 class="mb-4 text-3xl font-bold" id={`post-${index}`}>{post.data.title}</h3>
+            <h3 class="mb-4 text-3xl font-bold" id={`post-${index}`}>
+              {post.data.title}
+            </h3>
             <p class="text-xl font-light my-4 flex items-center gap-4">
               <time class="font-display text-errie-black-900">
                 Publicado em:
                 {formatDate(post.data.publishDate)}
               </time>
             </p>
-            <p class="mb-6 text-2xl font-light text-errie-black-900">
-              {post.data.excerpt}
-            </p>
+            <p class="mb-6 text-2xl font-light text-errie-black-900">{post.data.excerpt}</p>
             <a
               href={'/blog/' + post.slug}
               aria-labelledby={`post-${index}`}

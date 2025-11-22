@@ -12,12 +12,12 @@
   .stack > * + * {
     margin-block-start: var(--stack-space, 1.5rem);
   }
-  
-  .stack[data-gap="small"] {
+
+  .stack[data-gap='small'] {
     --stack-space: 0.5rem;
   }
-  
-  .stack[data-gap="large"] {
+
+  .stack[data-gap='large'] {
     --stack-space: 3rem;
   }
 }

@@ -1,22 +1,13 @@
 import {
-  translations,
   defaultLanguage,
-  languages,
   type Language,
-  type TranslationKey,
-} from './index';
-
-import { routes, type RouteKey } from './routes';
-
-export {
-  translations,
-  defaultLanguage,
   languages,
-  Language,
-  TranslationKey,
-  RouteKey,
-  routes,
-};
+  type TranslationKey,
+  translations,
+} from './index';
+import { type RouteKey, routes } from './routes';
+
+export { defaultLanguage, Language, languages, RouteKey, routes, TranslationKey, translations };
 
 /**
  * Hook para obter traduções com fallback seguro
@@ -32,9 +23,7 @@ export function useTranslations(lang?: Language | undefined) {
     const translation = translations[resolvedLang]?.[key];
 
     if (!translation) {
-      console.warn(
-        `Translation key "${key}" not found for language "${resolvedLang}"`
-      );
+      console.warn(`Translation key "${key}" not found for language "${resolvedLang}"`);
       return key;
     }
 
@@ -106,10 +95,7 @@ export function getAllLocalizedPaths(routeKey: RouteKey) {
  * @param lang - Idioma detectado
  * @returns A chave da rota encontrada ou 'index'
  */
-export function getRouteKeyFromPath(
-  pathname: string,
-  lang: Language
-): RouteKey {
+export function getRouteKeyFromPath(pathname: string, lang: Language): RouteKey {
   // Remove barras no início e fim
   let cleanPath = pathname.replace(/^\/|\/$/g, '');
 

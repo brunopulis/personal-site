@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from 'astro:content';
 
 export const seoSchema = z.object({
   title: z.string().min(5).max(120).optional(),
@@ -9,5 +9,5 @@ export const seoSchema = z.object({
       alt: z.string().optional(),
     })
     .optional(),
-  pageType: z.enum(["website", "article"]).default("website"),
+  pageType: z.enum(['website', 'article']).default('website'),
 });

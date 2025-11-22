@@ -31,8 +31,5 @@ Voce pode consultar todas regras aplicadas [nessa licenca](https://creativecommo
 ## Exemplo de Atribuição
 
 ```html
-<p>
-  Crédito a <a href="https://brunopulis.com">Bruno Pulis</a> pelo trabalho
-  original.
-</p>
+<p>Crédito a <a href="https://brunopulis.com">Bruno Pulis</a> pelo trabalho original.</p>
 ```

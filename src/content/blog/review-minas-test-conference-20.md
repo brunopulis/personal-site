@@ -1,9 +1,9 @@
 ---
 title: Minas Test Conference 20
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2020-08-22
-category: "Indicações"
+category: 'Indicações'
 url: https://brunopulis.com/review-minas-test-conference-20/
 ---
 

@@ -1,27 +1,21 @@
 ---
-import { FileText } from "@lucide/astro";
+import { FileText } from '@lucide/astro';
 
 interface Props {
-	title: string;
-	description: string;
-	primaryButton: {
-		text: string;
-		url: string;
-	};
-	secondaryButton?: {
-		text: string;
-		url: string;
-	};
-	icon?: any;
+  title: string;
+  description: string;
+  primaryButton: {
+    text: string;
+    url: string;
+  };
+  secondaryButton?: {
+    text: string;
+    url: string;
+  };
+  icon?: any;
 }
 
-const {
-	title,
-	description,
-	primaryButton,
-	secondaryButton,
-	icon: Icon = FileText,
-} = Astro.props;
+const { title, description, primaryButton, secondaryButton, icon: Icon = FileText } = Astro.props;
 ---
 
 <aside class="bg-gray-900 py-20 text-white">

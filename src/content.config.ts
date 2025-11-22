@@ -1,5 +1,4 @@
 import {
-  pages,
   biblioteca,
   blog,
   blogrolls,
@@ -8,9 +7,10 @@ import {
   movies,
   newsletter,
   notes,
-  stream,
+  pages,
   speaking,
-} from "@content/schemas";
+  stream,
+} from '@content/schemas';
 
 export const collections = {
   pages,

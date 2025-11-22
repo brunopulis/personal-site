@@ -1,57 +1,57 @@
-import type { Collection } from "tinacms";
+import type { Collection } from 'tinacms';
 
 export const LikesCollection: Collection = {
-  name: "like",
-  label: "Likes",
-  path: "src/content/likes",
+  name: 'like',
+  label: 'Likes',
+  path: 'src/content/likes',
   match: {
-    include: "*",
+    include: '*',
   },
-  format: "md",
+  format: 'md',
   ui: {
     filename: {
-      slugify: values => {
+      slugify: (values) => {
         const date = new Date(values?.date || Date.now());
-        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
       },
     },
   },
   fields: [
     {
-      type: "string",
-      name: "title",
-      label: "Título",
+      type: 'string',
+      name: 'title',
+      label: 'Título',
       isTitle: true,
       required: true,
     },
     {
-      type: "datetime",
-      name: "publishDate",
-      label: "Data",
+      type: 'datetime',
+      name: 'publishDate',
+      label: 'Data',
       required: true,
       ui: {
-        dateFormat: "DD/MM/YYYY",
+        dateFormat: 'DD/MM/YYYY',
       },
     },
     {
-      type: "string",
-      name: "url",
-      label: "URL",
+      type: 'string',
+      name: 'url',
+      label: 'URL',
       required: true,
     },
     {
-      type: "rich-text",
-      name: "body",
-      label: "Comentário/Observação",
+      type: 'rich-text',
+      name: 'body',
+      label: 'Comentário/Observação',
       isBody: true,
     },
     {
-      type: "string",
-      name: "tags",
-      label: "Tags",
+      type: 'string',
+      name: 'tags',
+      label: 'Tags',
       list: true,
       ui: {
-        component: "tags",
+        component: 'tags',
       },
     },
   ],

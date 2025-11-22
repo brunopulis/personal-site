@@ -1,8 +1,8 @@
 ---
-issue: "44"
-title: "2 formas de escrever formulários acessíveis"
-date: "2024-11-28"
-coverImage: "a-close-up-shot-of-a-hand-holding-a-vintage-compass-against-a-natural-background.-841286-scaled.jpg"
+issue: '44'
+title: '2 formas de escrever formulários acessíveis'
+date: '2024-11-28'
+coverImage: 'a-close-up-shot-of-a-hand-holding-a-vintage-compass-against-a-natural-background.-841286-scaled.jpg'
 ---
 
 Fiz um teste essa semana que me deixou puto, uma tela simples com mais de 18 erros de acessibilidade. Fiquei pensando "como uma criatura conseguiu fazer isso".

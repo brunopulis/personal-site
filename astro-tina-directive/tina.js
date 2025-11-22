@@ -12,6 +12,6 @@ export default async (load, options, el) => {
     const hydrate = await load();
     await hydrate();
   } catch (error) {
-    console.error("An error occurred in the Tina client directive:", error);
+    console.error('An error occurred in the Tina client directive:', error);
   }
 };

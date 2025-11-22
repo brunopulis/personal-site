@@ -3,21 +3,23 @@ const { currentLocale } = Astro;
 const currentPath = Astro.url.pathname.replace(`/${currentLocale}`, '').replace(/^\//, '') || '';
 
 const languages = {
-  'pt': 'Português',
-  'en': 'English',
+  pt: 'Português',
+  en: 'English',
 };
 ---
 
 <div class="language-picker">
-  {Object.entries(languages).map(([lang, label]) => (
-    <a 
-      href={lang === 'pt' ? `/${currentPath}` : `/${lang}/${currentPath}`}
-      class={currentLocale === lang ? 'active' : ''}
-      aria-label={`Switch to ${label}`}
-    >
-      {label}
-    </a>
-  ))}
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <a
+        href={lang === 'pt' ? `/${currentPath}` : `/${lang}/${currentPath}`}
+        class={currentLocale === lang ? 'active' : ''}
+        aria-label={`Switch to ${label}`}
+      >
+        {label}
+      </a>
+    ))
+  }
 </div>
 
 <style>
@@ -25,19 +27,19 @@ const languages = {
     display: flex;
     gap: 1rem;
   }
-  
+
   .language-picker a {
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: #333;
-    border-radius: 4px;
     transition: background-color 0.2s;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
   }
-  
+
   .language-picker a:hover {
     background-color: #f0f0f0;
   }
-  
+
   .language-picker a.active {
     background-color: #007bff;
     color: white;

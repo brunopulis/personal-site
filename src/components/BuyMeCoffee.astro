@@ -8,81 +8,82 @@ const { variant = 'default', username = 'brunopulis' } = Astro.props;
 const buyMeCoffeeUrl = `https://www.ko-fi.com/${username}`;
 ---
 
-{variant === 'default' && (
-  <div class="my-8 rounded-lg border-2 border-blood-red-800 bg-gradient-to-br from-amber-50 to-orange-50 p-6 shadow-sm transition-shadow hover:shadow-md">
-    <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-      <div class="flex-shrink-0">
-        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-blood-red-800 text-3xl shadow-lg">
-          ☕
+{
+  variant === 'default' && (
+    <div class="my-8 rounded-lg border-2 border-blood-red-800 bg-gradient-to-br from-amber-50 to-orange-50 p-6 shadow-sm transition-shadow hover:shadow-md">
+      <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+        <div class="flex-shrink-0">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-blood-red-800 text-3xl shadow-lg">
+            ☕
+          </div>
+        </div>
+
+        <div class="flex-1">
+          <h3 class="mb-2 text-lg font-bold text-errie-black-900">Gostou deste conteúdo?</h3>
+          <p class="text-sm text-gray-700 sm:text-base">
+            Se você gostou deste post ou de algum dos meus projetos, considere me pagar um café 💖
+          </p>
+        </div>
+
+        <div class="flex-shrink-0">
+          <a
+            href={buyMeCoffeeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-lg bg-blood-red-800 px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-blood-red-900 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
+          >
+            <span>☕</span>
+            <span>Pagar um Café</span>
+          </a>
         </div>
       </div>
-      
-      <div class="flex-1">
-        <h3 class="mb-2 text-lg font-bold text-errie-black-900">
-          Gostou deste conteúdo?
-        </h3>
-        <p class="text-sm text-gray-700 sm:text-base">
-          Se você gostou deste post ou de algum dos meus projetos, considere me pagar um café 💖
-        </p>
-      </div>
-      
-      <div class="flex-shrink-0">
+    </div>
+  )
+}
+
+{
+  variant === 'compact' && (
+    <div class="my-6 rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">☕</span>
+          <p class="text-sm font-medium text-gray-700">Gostou do conteúdo? Me pague um café 💖</p>
+        </div>
         <a
           href={buyMeCoffeeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-lg bg-blood-red-800 px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-blood-red-900 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
+          class="whitespace-nowrap rounded-md bg-blood-red-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blood-red-900 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
         >
-          <span>☕</span>
-          <span>Pagar um Café</span>
+          Apoiar
         </a>
       </div>
     </div>
-  </div>
-)}
+  )
+}
 
-{variant === 'compact' && (
-  <div class="my-6 rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-    <div class="flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <span class="text-2xl">☕</span>
-        <p class="text-sm font-medium text-gray-700">
-          Gostou do conteúdo? Me pague um café 💖
-        </p>
-      </div>
+{
+  variant === 'inline' && (
+    <div class="my-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-blood-red-800 bg-amber-50 px-4 py-2 text-sm">
+      <span class="font-medium text-gray-700">Se você gostou deste post ou dos meus projetos</span>
       <a
         href={buyMeCoffeeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="whitespace-nowrap rounded-md bg-blood-red-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blood-red-900 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
+        class="inline-flex items-center gap-1 font-semibold text-blood-red-800 underline decoration-2 underline-offset-2 transition-colors hover:text-blood-red-900 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
       >
-        Apoiar
+        <span>me pague um café</span>
+        <span>☕💖</span>
       </a>
     </div>
-  </div>
-)}
-
-{variant === 'inline' && (
-  <div class="my-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-blood-red-800 bg-amber-50 px-4 py-2 text-sm">
-    <span class="font-medium text-gray-700">
-      Se você gostou deste post ou dos meus projetos
-    </span>
-    <a
-      href={buyMeCoffeeUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-1 font-semibold text-blood-red-800 underline decoration-2 underline-offset-2 transition-colors hover:text-blood-red-900 focus:outline-none focus:ring-2 focus:ring-blood-red-800 focus:ring-offset-2"
-    >
-      <span>me pague um café</span>
-      <span>☕💖</span>
-    </a>
-  </div>
-)}
+  )
+}
 
 <style>
   /* Animação suave para o emoji de café */
   @keyframes coffee-steam {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {

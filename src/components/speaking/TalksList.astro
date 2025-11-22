@@ -1,25 +1,25 @@
 ---
-import { talks } from "@data/talks.json";
+import { talks } from '@data/talks.json';
 
 // Validar se talks é um array antes de filtrar
 const talksList = Array.isArray(talks) ? talks : [];
 
 // Separar palestras futuras e passadas com validação
 const upcomingTalks = talksList
-	.filter((talk) => talk?.isUpcoming)
-	.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  .filter((talk) => talk?.isUpcoming)
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
 const pastTalks = talksList
-	.filter((talk) => !talk?.isUpcoming)
-	.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  .filter((talk) => !talk?.isUpcoming)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Função para formatar data
 const formatDate = (date: string) => {
-	return new Date(date).toLocaleDateString("pt-BR", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+  return new Date(date).toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 };
 ---
 
@@ -28,8 +28,8 @@ const formatDate = (date: string) => {
     <div>
       <h2>Palestras</h2>
       <p>
-        Descubra minhas palestras anteriores e futuras sobre acessibilidade da Web, desenvolvimento front-end e
-        qualidade de software.
+        Descubra minhas palestras anteriores e futuras sobre acessibilidade da Web, desenvolvimento
+        front-end e qualidade de software.
       </p>
     </div>
 
@@ -57,7 +57,8 @@ const formatDate = (date: string) => {
             <div class="">
               <h3 class="mb-4 text-2xl font-bold text-gray-900">Sem palestras agendadas</h3>
               <p class="mb-6 text-gray-900">
-                No momento não existem palestras agendadas. Gostaria de me convidar para falar no seu evento?
+                No momento não existem palestras agendadas. Gostaria de me convidar para falar no
+                seu evento?
               </p>
               <a
                 href="/contact/?subject=Quero uma palestra"

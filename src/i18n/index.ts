@@ -1,11 +1,9 @@
-import { ptBrNavigation } from './locales/pt-br/navigation';
-import { enNavigation } from './locales/en/navigation';
-
-import { ptBrHome } from './locales/pt-br/home';
 import { enHome } from './locales/en/home';
-
-import { ptBrSupport } from './locales/pt-br/support';
+import { enNavigation } from './locales/en/navigation';
 import { enSupport } from './locales/en/support';
+import { ptBrHome } from './locales/pt-br/home';
+import { ptBrNavigation } from './locales/pt-br/navigation';
+import { ptBrSupport } from './locales/pt-br/support';
 
 export const languages = {
   'pt-br': {
@@ -38,4 +36,4 @@ export const translations = {
 export type Language = keyof typeof languages;
 export type TranslationKey = keyof (typeof translations)['pt-br'];
 
-export { useTranslations, getLanguageFromPath } from './utils';
+export { getLanguageFromPath, useTranslations } from './utils';

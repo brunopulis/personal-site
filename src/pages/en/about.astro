@@ -1,8 +1,7 @@
 ---
+import me from '@assets/images/me.jpeg';
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
-import { Image } from 'astro:assets';
-
-
+import Layout from '@layout/Layout.astro';
 import {
   ArrowRight,
   Award,
@@ -19,19 +18,14 @@ import {
   Target,
   Users,
   Zap,
-} from "@lucide/astro";
-import Layout from "@layout/Layout.astro";
-import me from "@assets/images/me.jpeg";
+} from '@lucide/astro';
+import { Image } from 'astro:assets';
 
 const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
 
-<Layout
-  title={t("about.title")}
-  description={t("about.description")}
-  routeKey="about"
->
+<Layout title={t('about.title')} description={t('about.description')} routeKey="about">
   <main id="main-content">
     <section
       class="relative overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-950 py-12 text-white"

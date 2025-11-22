@@ -1,7 +1,7 @@
 ---
-issue: "33"
-title: "A IA zoou a WCAG e eu concordo"
-date: "2024-05-21"
+issue: '33'
+title: 'A IA zoou a WCAG e eu concordo'
+date: '2024-05-21'
 ---
 
 Opa, algumas semanas que não apareço por aqui. Não tive um bloqueio criativo ou algo do tipo.

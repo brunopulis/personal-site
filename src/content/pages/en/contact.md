@@ -1,9 +1,9 @@
 ---
-title: "Contact"
-description: ""
-lang: "en"
-routeKey: "contact"
-date: "2025-11-18"
+title: 'Contact'
+description: ''
+lang: 'en'
+routeKey: 'contact'
+date: '2025-11-18'
 ---
 
 This is how you can contact me.

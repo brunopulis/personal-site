@@ -1,8 +1,8 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const movies = await getCollection("movies");
+  const movies = await getCollection('movies');
 
   // Ordenar por data mais recente
   const sortedMovies = movies.sort((a, b) => {
@@ -12,21 +12,21 @@ export async function GET(context) {
   });
 
   return rss({
-    stylesheet: "/rss-styles.xsl",
-    title: "Filmes - Bruno Pulis",
-    description: "Filmes que assisti, estou planejando assistir e minhas opiniões",
+    stylesheet: '/rss-styles.xsl',
+    title: 'Filmes - Bruno Pulis',
+    description: 'Filmes que assisti, estou planejando assistir e minhas opiniões',
     site: context.site,
 
-    items: sortedMovies.map(movie => {
+    items: sortedMovies.map((movie) => {
       // Emoji baseado no status
       const statusEmoji = {
-        assistido: "✅",
-        "não assistido": "⏳",
-        planejado: "📋",
+        assistido: '✅',
+        'não assistido': '⏳',
+        planejado: '📋',
       };
 
-      const emoji = statusEmoji[movie.data.status] || "🎬";
-      const statusLabel = movie.data.status || "não definido";
+      const emoji = statusEmoji[movie.data.status] || '🎬';
+      const statusLabel = movie.data.status || 'não definido';
 
       // Construir descrição rica do filme
       const parts = [];
@@ -37,10 +37,10 @@ export async function GET(context) {
       );
 
       // Adicionar avaliação se existir (apenas para filmes assistidos)
-      if (movie.data.rating !== undefined && movie.data.status === "assistido") {
+      if (movie.data.rating !== undefined && movie.data.status === 'assistido') {
         const fullStars = Math.floor(movie.data.rating);
         const hasHalfStar = movie.data.rating % 1 !== 0;
-        const stars = "⭐".repeat(fullStars) + (hasHalfStar ? "½" : "");
+        const stars = '⭐'.repeat(fullStars) + (hasHalfStar ? '½' : '');
         parts.push(`<strong>Avaliação:</strong> ${stars} (${movie.data.rating}/5)`);
       }
 
@@ -50,7 +50,7 @@ export async function GET(context) {
       }
 
       // Adicionar ano assistido (apenas para assistidos)
-      if (movie.data.attendedYear && movie.data.status === "assistido") {
+      if (movie.data.attendedYear && movie.data.status === 'assistido') {
         parts.push(`<strong>Assistido em:</strong> ${movie.data.attendedYear}`);
       }
 
@@ -71,7 +71,7 @@ export async function GET(context) {
 
       // Adicionar tags se existirem
       if (movie.data.tags && movie.data.tags.length > 0) {
-        parts.push(`<strong>Tags:</strong> ${movie.data.tags.join(", ")}`);
+        parts.push(`<strong>Tags:</strong> ${movie.data.tags.join(', ')}`);
       }
 
       // Adicionar link para mais informações
@@ -79,7 +79,7 @@ export async function GET(context) {
         parts.push(`<a href="${movie.data.url}">🔗 Mais informações sobre o filme</a>`);
       }
 
-      const description = parts.join("<br/><br/>");
+      const description = parts.join('<br/><br/>');
 
       // Data de publicação
       const pubDate =
@@ -108,9 +108,9 @@ export async function GET(context) {
     `,
 
     xmlns: {
-      atom: "http://www.w3.org/2005/Atom",
-      content: "http://purl.org/rss/1.0/modules/content/",
-      dc: "http://purl.org/dc/elements/1.1/",
+      atom: 'http://www.w3.org/2005/Atom',
+      content: 'http://purl.org/rss/1.0/modules/content/',
+      dc: 'http://purl.org/dc/elements/1.1/',
     },
   });
 }

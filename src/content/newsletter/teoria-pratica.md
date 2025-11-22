@@ -1,7 +1,7 @@
 ---
-issue: "39"
-title: "Teoria e Prática: no que focar?"
-date: "2024-09-06"
+issue: '39'
+title: 'Teoria e Prática: no que focar?'
+date: '2024-09-06'
 ---
 
 **05 de setembro,**

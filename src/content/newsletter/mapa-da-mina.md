@@ -1,7 +1,7 @@
 ---
-issue: "26"
-title: "Vou te dar o mapa da mina!"
-date: "2024-04-04"
+issue: '26'
+title: 'Vou te dar o mapa da mina!'
+date: '2024-04-04'
 ---
 
 Quarta-feira, 03 de Abril de 2024

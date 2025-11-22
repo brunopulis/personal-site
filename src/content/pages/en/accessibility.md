@@ -1,9 +1,9 @@
 ---
-title: "Accessibility Statement"
-description: ""
-lang: "en"
-routeKey: "accessibility"
-date: "2025-11-18"
+title: 'Accessibility Statement'
+description: ''
+lang: 'en'
+routeKey: 'accessibility'
+date: '2025-11-18'
 ---
 
 > This document describes the accessibility features and support provided by our website. Be sure to fill in the details of your own website and check the WCAG 2.2 AA guidelines.

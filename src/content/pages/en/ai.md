@@ -1,9 +1,9 @@
 ---
-title: "Who I use AI?"
-description: ""
-lang: "en"
-routeKey: "ai"
-date: "2025-11-18"
+title: 'Who I use AI?'
+description: ''
+lang: 'en'
+routeKey: 'ai'
+date: '2025-11-18'
 ---
 
 ## Who uses AI?

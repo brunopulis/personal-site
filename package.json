@@ -72,6 +72,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.4.0",
     "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "inquirer": "^13.0.1",
@@ -88,9 +89,6 @@
     "typescript-eslint": "^8.47.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{js,jsx,ts,tsx,astro}": ["eslint --fix", "prettier --write"]
   }
 }

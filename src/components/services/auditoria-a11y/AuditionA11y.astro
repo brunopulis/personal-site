@@ -1,19 +1,19 @@
 ---
 const audits = [
   {
-    title: "Evite processos judiciais",
+    title: 'Evite processos judiciais',
     description:
-      "Sites inacessíveis podem gerar processos judiciais. Uma auditoria documenta seus esforços e mostra o caminho para conformidade legal.",
+      'Sites inacessíveis podem gerar processos judiciais. Uma auditoria documenta seus esforços e mostra o caminho para conformidade legal.',
   },
   {
-    title: "Aumente seu alcance",
+    title: 'Aumente seu alcance',
     description:
-      "15% da população tem alguma deficiência. Um site acessível alcança mais pessoas, aumenta conversões e melhora SEO.",
+      '15% da população tem alguma deficiência. Um site acessível alcança mais pessoas, aumenta conversões e melhora SEO.',
   },
   {
-    title: "Priorize investimentos",
+    title: 'Priorize investimentos',
     description:
-      "Saiba exatamente onde investir. O relatório prioriza problemas por impacto, permitindo corrigir o mais crítico primeiro.",
+      'Saiba exatamente onde investir. O relatório prioriza problemas por impacto, permitindo corrigir o mais crítico primeiro.',
   },
 ];
 console.log(audits);
@@ -30,7 +30,7 @@ console.log(audits);
 
     <div class="grid gap-8 md:grid-cols-3">
       {
-        audits.map(audit => (
+        audits.map((audit) => (
           <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition group">
             <h3 class="mb-4 text-2xl font-bold text-gray-900">{audit.title}</h3>
             <p class="text-gray-700">{audit.description}</p>

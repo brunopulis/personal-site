@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { wrapFieldsWithMeta } from "tinacms";
-import * as tb from "react-icons/tb";
-import { useVirtualizer } from "@tanstack/react-virtual";
+import { useVirtualizer } from '@tanstack/react-virtual';
+import React, { useEffect, useRef, useState } from 'react';
+import * as tb from 'react-icons/tb';
+import { wrapFieldsWithMeta } from 'tinacms';
 
-const IconComponent = wrapFieldsWithMeta(props => {
-  const [searchQuery, setSearchQuery] = useState("");
+const IconComponent = wrapFieldsWithMeta((props) => {
+  const [searchQuery, setSearchQuery] = useState('');
   const [containerWidth, setContainerWidth] = useState(0);
   const iconName = props.input.value as unknown as keyof typeof tb;
 
@@ -13,7 +13,7 @@ const IconComponent = wrapFieldsWithMeta(props => {
 
   const parentRef = useRef<HTMLDivElement>(null);
 
-  const filteredIcons = Object.keys(tb).filter(iconKey =>
+  const filteredIcons = Object.keys(tb).filter((iconKey) =>
     iconKey.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -35,8 +35,8 @@ const IconComponent = wrapFieldsWithMeta(props => {
       }
     };
     updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
   const handleIconSelect = (name: keyof typeof tb) => {
@@ -45,22 +45,22 @@ const IconComponent = wrapFieldsWithMeta(props => {
 
   return (
     <div>
-      <div style={{ marginBottom: "1rem" }}>
-        <strong>Selected Icon:</strong>{" "}
-        {iconName ? React.createElement(tb[iconName], { size: 24 }) : "None"}
+      <div style={{ marginBottom: '1rem' }}>
+        <strong>Selected Icon:</strong>{' '}
+        {iconName ? React.createElement(tb[iconName], { size: 24 }) : 'None'}
       </div>
 
-      <div style={{ marginBottom: "1rem" }}>
+      <div style={{ marginBottom: '1rem' }}>
         <input
           type="text"
           placeholder="Search icons..."
           value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
+          onChange={(e) => setSearchQuery(e.target.value)}
           style={{
-            width: "100%",
-            padding: "8px",
-            border: "1px solid #ddd",
-            borderRadius: "4px",
+            width: '100%',
+            padding: '8px',
+            border: '1px solid #ddd',
+            borderRadius: '4px',
           }}
         />
       </div>
@@ -68,21 +68,21 @@ const IconComponent = wrapFieldsWithMeta(props => {
       <div
         ref={parentRef}
         style={{
-          maxHeight: "300px",
-          overflowY: "auto",
-          border: "1px solid #ddd",
-          padding: "10px",
-          borderRadius: "4px",
-          position: "relative",
+          maxHeight: '300px',
+          overflowY: 'auto',
+          border: '1px solid #ddd',
+          padding: '10px',
+          borderRadius: '4px',
+          position: 'relative',
         }}
       >
         <div
           style={{
             height: `${rowVirtualizer.getTotalSize()}px`,
-            position: "relative",
+            position: 'relative',
           }}
         >
-          {rowVirtualizer.getVirtualItems().map(virtualRow => {
+          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
             const startIndex = virtualRow.index * itemsPerRow;
             const endIndex = Math.min(startIndex + itemsPerRow, filteredIcons.length);
 
@@ -90,14 +90,14 @@ const IconComponent = wrapFieldsWithMeta(props => {
               <div
                 key={virtualRow.key}
                 style={{
-                  position: "absolute",
+                  position: 'absolute',
                   top: `${virtualRow.start}px`,
                   left: 0,
-                  display: "flex",
+                  display: 'flex',
                   gap: `${gapSize}px`,
                 }}
               >
-                {filteredIcons.slice(startIndex, endIndex).map(iconKey => {
+                {filteredIcons.slice(startIndex, endIndex).map((iconKey) => {
                   const Icon = tb[iconKey as keyof typeof tb];
                   const isSelected = iconKey === iconName;
                   return (
@@ -105,16 +105,16 @@ const IconComponent = wrapFieldsWithMeta(props => {
                       key={iconKey}
                       onClick={() => handleIconSelect(iconKey as keyof typeof tb)}
                       style={{
-                        cursor: "pointer",
-                        padding: "5px",
-                        border: isSelected ? "2px solid blue" : "2px solid transparent",
-                        borderRadius: "4px",
-                        textAlign: "center",
+                        cursor: 'pointer',
+                        padding: '5px',
+                        border: isSelected ? '2px solid blue' : '2px solid transparent',
+                        borderRadius: '4px',
+                        textAlign: 'center',
                         width: `${iconSize}px`,
                         height: `${iconSize}px`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                       }}
                     >
                       <Icon size={24} />

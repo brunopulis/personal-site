@@ -1,7 +1,7 @@
 ---
+import me from '@assets/images/me.jpeg';
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
-import { Image } from 'astro:assets';
-
+import Layout from '@layout/Layout.astro';
 import {
   ArrowRight,
   Award,
@@ -18,21 +18,19 @@ import {
   Target,
   Users,
   Zap,
-} from "@lucide/astro";
-
-import Layout from "@layout/Layout.astro";
-import me from "@assets/images/me.jpeg";
+} from '@lucide/astro';
+import { Image } from 'astro:assets';
 
 // Detecta o idioma e obtém as traduções
-const lang = getLanguageFromPath(Astro.url.pathname); 
+const lang = getLanguageFromPath(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
 
 <Layout
-  title={t("about.title")}
-  description={t("about.description")}
+  title={t('about.title')}
+  description={t('about.description')}
   routeKey="sobre"
-  currentLocale='pt-br'
+  currentLocale="pt-br"
 >
   <main id="main-content">
     <section

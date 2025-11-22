@@ -1,8 +1,8 @@
 ---
 interface PillarCard {
-	letter: string;
-	title: string;
-	description: string;
+  letter: string;
+  title: string;
+  description: string;
 }
 
 const { letter, title, description } = Astro.props;
@@ -15,7 +15,9 @@ const { letter, title, description } = Astro.props;
   <div class="mb-6 flex items-center">
     <div>
       <div class="flex items-center">
-        <span class="bg-blood-red-800 mr-2 flex h-8 w-8 items-center justify-center rounded-full font-bold text-white">
+        <span
+          class="bg-blood-red-800 mr-2 flex h-8 w-8 items-center justify-center rounded-full font-bold text-white"
+        >
           {letter}
         </span>
         <h3 id={`pillar-${letter}-title`} class="text-errieBlack text-xl font-bold">

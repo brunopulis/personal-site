@@ -1,84 +1,84 @@
-import type { Collection } from "tinacms";
+import type { Collection } from 'tinacms';
 
 export const BlogrollCollection: Collection = {
-  name: "blogroll",
-  label: "Blogroll",
-  path: "src/content/blogroll",
+  name: 'blogroll',
+  label: 'Blogroll',
+  path: 'src/content/blogroll',
   match: {
-    include: "*",
+    include: '*',
   },
-  format: "md",
+  format: 'md',
   ui: {
     filename: {
-      slugify: values => {
-        return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
+      slugify: (values) => {
+        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
       },
     },
   },
   defaultItem: () => {
     return {
-      category: "geral", // valor padrão
+      category: 'geral', // valor padrão
     };
   },
   fields: [
     {
-      type: "string",
-      name: "title",
-      label: "Nome do Site/Blog",
+      type: 'string',
+      name: 'title',
+      label: 'Nome do Site/Blog',
       isTitle: true,
       required: true,
     },
     {
-      type: "string",
-      name: "url",
-      label: "URL",
+      type: 'string',
+      name: 'url',
+      label: 'URL',
       required: true,
       ui: {
-        description: "URL completa (https://exemplo.com)",
+        description: 'URL completa (https://exemplo.com)',
       },
     },
     {
-      type: "string",
-      name: "description",
-      label: "Descrição",
+      type: 'string',
+      name: 'description',
+      label: 'Descrição',
       ui: {
-        component: "textarea",
-        description: "Breve descrição do site/blog",
+        component: 'textarea',
+        description: 'Breve descrição do site/blog',
       },
     },
     {
-      type: "string",
-      name: "category",
-      label: "Categoria",
+      type: 'string',
+      name: 'category',
+      label: 'Categoria',
       required: true,
       options: [
-        { value: "acessibilidade", label: "Acessibilidade" },
-        { value: "desenvolvimento", label: "Desenvolvimento" },
-        { value: "design", label: "Design" },
-        { value: "educacao", label: "Educação" },
-        { value: "entretenimento", label: "Entretenimento" },
-        { value: "escrita", label: "Escrita" },
-        { value: "geral", label: "Geral" },
-        { value: "tecnologia", label: "Tecnologia" },
-        { value: "teologia", label: "Teologia" },
-        { value: "produtividade", label: "Produtividade" },
-        { value: "noticias", label: "Notícias" },
+        { value: 'acessibilidade', label: 'Acessibilidade' },
+        { value: 'desenvolvimento', label: 'Desenvolvimento' },
+        { value: 'design', label: 'Design' },
+        { value: 'educacao', label: 'Educação' },
+        { value: 'entretenimento', label: 'Entretenimento' },
+        { value: 'escrita', label: 'Escrita' },
+        { value: 'geral', label: 'Geral' },
+        { value: 'tecnologia', label: 'Tecnologia' },
+        { value: 'teologia', label: 'Teologia' },
+        { value: 'produtividade', label: 'Produtividade' },
+        { value: 'noticias', label: 'Notícias' },
       ],
     },
     {
-      type: "string",
-      name: "rss_feed",
-      label: "Feed RSS",
+      type: 'string',
+      name: 'rss_feed',
+      label: 'Feed RSS',
       ui: {
-        description: "URL do feed RSS (se disponível)",
+        description: 'URL do feed RSS (se disponível)',
       },
     },
     {
-      type: "datetime",
-      name: "date_added",
-      label: "Data de Adição",
+      type: 'datetime',
+      name: 'date_added',
+      label: 'Data de Adição',
       ui: {
-        dateFormat: "DD/MM/YYYY",
+        dateFormat: 'DD/MM/YYYY',
       },
     },
   ],

@@ -18,7 +18,7 @@ Can be any acceptable flexbox alignment value.
 :where(.cluster) {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, var(--space-s-l));
   justify-content: var(--cluster-horizontal-alignment, flex-start);
   align-items: var(--cluster-vertical-alignment, center);
+  gap: var(--gutter, var(--space-s-l));
 }

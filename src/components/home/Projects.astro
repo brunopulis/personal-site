@@ -1,38 +1,37 @@
 ---
-import { Image } from "astro:assets";
-import { ArrowRight, ExternalLink } from "@lucide/astro";
-
-import bibliotecaDaRevolucao from "@assets/images/projects/biblioteca-da-revolucao.webp";
-import henriqueNoal from "@assets/images/projects/henrique-noal.webp";
-import magraDeVerdade from "@assets/images/projects/magra-de-verdade.webp";
+import bibliotecaDaRevolucao from '@assets/images/projects/biblioteca-da-revolucao.webp';
+import henriqueNoal from '@assets/images/projects/henrique-noal.webp';
+import magraDeVerdade from '@assets/images/projects/magra-de-verdade.webp';
+import { ArrowRight, ExternalLink } from '@lucide/astro';
+import { Image } from 'astro:assets';
 
 const projectsData = {
-	projects: [
-		{
-			title: "Magra de Verdade",
-			description:
-				"Tornei esta página de vendas totalmente acessível, permitindo que pessoas com deficiência visual pudessem conhecer o produto.",
-			tags: ["WordPress", "Elementor", "WCAG AA"],
-			image: magraDeVerdade,
-			url: "https://magradeverdade.com/",
-		},
-		{
-			title: "Biblioteca da Revolução",
-			description:
-				"Redesign completo focando em leitores de tela e navegação simplificada para um público diverso.",
-			tags: ["WordPress", "A11y", "Design"],
-			image: bibliotecaDaRevolucao,
-			url: "https://bibliotecadarevolucao.com.br/",
-		},
-		{
-			title: "Henrique Noal",
-			description:
-				"Landing page moderna com performance e acessibilidade desde o início do projeto.",
-			tags: ["Astro", "Tailwind", "A11y"],
-			image: henriqueNoal,
-			url: "https://henriquenoal.com.br/",
-		},
-	],
+  projects: [
+    {
+      title: 'Magra de Verdade',
+      description:
+        'Tornei esta página de vendas totalmente acessível, permitindo que pessoas com deficiência visual pudessem conhecer o produto.',
+      tags: ['WordPress', 'Elementor', 'WCAG AA'],
+      image: magraDeVerdade,
+      url: 'https://magradeverdade.com/',
+    },
+    {
+      title: 'Biblioteca da Revolução',
+      description:
+        'Redesign completo focando em leitores de tela e navegação simplificada para um público diverso.',
+      tags: ['WordPress', 'A11y', 'Design'],
+      image: bibliotecaDaRevolucao,
+      url: 'https://bibliotecadarevolucao.com.br/',
+    },
+    {
+      title: 'Henrique Noal',
+      description:
+        'Landing page moderna com performance e acessibilidade desde o início do projeto.',
+      tags: ['Astro', 'Tailwind', 'A11y'],
+      image: henriqueNoal,
+      url: 'https://henriquenoal.com.br/',
+    },
+  ],
 };
 
 const projects = projectsData.projects;

@@ -1,7 +1,7 @@
 ---
-issue: "01"
-title: "Maior projeto da minha vida"
-date: "2023-11-14"
+issue: '01'
+title: 'Maior projeto da minha vida'
+date: '2023-11-14'
 ---
 
 _**14 de Novembro, 2023.**_

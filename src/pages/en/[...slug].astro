@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import type { Language } from '@i18n/index';
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
 import Layout from '@layout/Layout.astro';
-import type { Language } from '@i18n/index';
+import { getCollection } from 'astro:content';
 
 /**
  * Gera rotas estáticas para todas as páginas em português (pt-br)
@@ -48,11 +48,7 @@ const currentLocale = 'en';
       <h1 class="title">
         {page.data.title}
       </h1>
-      {
-        page.data.description && (
-          <p class="text-xl text-gray-600">{page.data.description}</p>
-        )
-      }
+      {page.data.description && <p class="text-xl text-gray-600">{page.data.description}</p>}
     </header>
 
     <!-- Conteúdo do Markdown renderizado -->

@@ -1,41 +1,41 @@
-import type { Collection } from "tinacms";
+import type { Collection } from 'tinacms';
 
 export const NewsletterCollection: Collection = {
-  name: "newsletter",
-  label: "Newsletter",
-  path: "src/content/newsletter",
+  name: 'newsletter',
+  label: 'Newsletter',
+  path: 'src/content/newsletter',
   match: {
-    include: "*",
+    include: '*',
   },
-  format: "md",
+  format: 'md',
   defaultItem: () => ({
-    title: "Nova Newsletter",
-    issue: "1",
-    body: "",
+    title: 'Nova Newsletter',
+    issue: '1',
+    body: '',
   }),
   fields: [
     {
-      type: "string",
-      name: "title",
-      label: "Título",
+      type: 'string',
+      name: 'title',
+      label: 'Título',
       isTitle: true,
       required: true,
     },
     {
-      type: "string",
-      name: "issue",
-      label: "Edição",
+      type: 'string',
+      name: 'issue',
+      label: 'Edição',
       required: true,
     },
     {
-      type: "image",
-      name: "coverImage",
-      label: "Imagem de Capa",
+      type: 'image',
+      name: 'coverImage',
+      label: 'Imagem de Capa',
     },
     {
-      type: "rich-text",
-      name: "body",
-      label: "Conteúdo",
+      type: 'rich-text',
+      name: 'body',
+      label: 'Conteúdo',
       isBody: true,
     },
   ],

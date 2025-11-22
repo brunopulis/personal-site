@@ -1,35 +1,35 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
-import { CalendarIcon, ClockIcon } from "@lucide/astro";
+import BackBlog from '@components/blog/BackBlog.astro';
+import BuyMeCoffee from '@components/BuyMeCoffee.astro';
+import Layout from '@layout/Layout.astro';
+import { CalendarIcon, ClockIcon } from '@lucide/astro';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 
-import Layout from "@layout/Layout.astro";
-import BuyMeCoffee from "@components/BuyMeCoffee.astro";
-import ShareButton from "@/components/ShareButton.astro";
-import EmailReplyButton from "@/components/EmailReplyButton.astro";
-import BackBlog from "@components/blog/BackBlog.astro";
+import EmailReplyButton from '@/components/EmailReplyButton.astro';
+import ShareButton from '@/components/ShareButton.astro';
 
 // Gerar rotas para todos os posts
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map(post => ({
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
 }
 type Props = {
-  post: CollectionEntry<"blog">;
-  prevPost: CollectionEntry<"blog">;
-  nextPost: CollectionEntry<"blog">;
+  post: CollectionEntry<'blog'>;
+  prevPost: CollectionEntry<'blog'>;
+  nextPost: CollectionEntry<'blog'>;
 };
 // Receber o post das props
 const { post } = Astro.props;
 const { Content } = await render(post);
 // Formatar data para pt-BR
 const publishDateString = String(post.data.publishDate);
-const formattedDate = new Date(publishDateString).toLocaleDateString("pt-BR", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+const formattedDate = new Date(publishDateString).toLocaleDateString('pt-BR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
 });
 const isoDate = new Date(publishDateString).toISOString();
 const postTitle = post.data.title;
@@ -110,11 +110,11 @@ export const prerender = true;
 </Layout>
 
 <script define:vars={{ postTitle, postUrl }}>
-  document.addEventListener("DOMContentLoaded", () => {
-    const shareButton = document.getElementById("share-button");
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareButton = document.getElementById('share-button');
 
     if (shareButton) {
-      shareButton.addEventListener("click", async () => {
+      shareButton.addEventListener('click', async () => {
         // Verifica se a API Web Share está disponível
         if (navigator.share) {
           try {
@@ -124,8 +124,8 @@ export const prerender = true;
             });
           } catch (err) {
             // Usuário cancelou ou erro ocorreu
-            if (err.name !== "AbortError") {
-              console.error("Erro ao compartilhar:", err);
+            if (err.name !== 'AbortError') {
+              console.error('Erro ao compartilhar:', err);
               fallbackCopyToClipboard();
             }
           }
@@ -141,7 +141,7 @@ export const prerender = true;
         .writeText(postUrl)
         .then(() => {
           // Feedback visual
-          const button = document.getElementById("share-button");
+          const button = document.getElementById('share-button');
           const originalText = button.innerHTML;
           button.innerHTML =
             '<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Link copiado!';
@@ -150,9 +150,9 @@ export const prerender = true;
             button.innerHTML = originalText;
           }, 2000);
         })
-        .catch(err => {
-          console.error("Erro ao copiar:", err);
-          alert("Não foi possível copiar o link. Por favor, copie manualmente: " + postUrl);
+        .catch((err) => {
+          console.error('Erro ao copiar:', err);
+          alert('Não foi possível copiar o link. Por favor, copie manualmente: ' + postUrl);
         });
     }
   });

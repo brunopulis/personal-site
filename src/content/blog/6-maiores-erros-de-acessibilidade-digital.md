@@ -1,10 +1,10 @@
 ---
 title: 6 maiores erros de acessibilidade digital
-image: ""
-imageAlt: ""
+image: ''
+imageAlt: ''
 publishDate: 2020-09-02
 draft: false
-category: "Acessibilidade"
+category: 'Acessibilidade'
 ---
 
 A web é um prato cheio de erros de acessibilidade, infelizmente. Hoje, vamos discutir os **6 maiores erros de acessibilidade digital,** suas implicações e barreiras de acesso e o melhor, como corrigir-los de maneira prática e objetiva. Vamos lá!

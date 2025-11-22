@@ -1,8 +1,8 @@
 ---
-import site from "@data/site.config.json";
+import site from '@data/site.config.json';
 
 interface Props {
-	tags: [string, number][];
+  tags: [string, number][];
 }
 
 const { tags } = Astro.props;
@@ -13,7 +13,9 @@ const { tags } = Astro.props;
     <h3 class="mb-3 text-xl font-bold">
       Newsletter <span aria-hidden="true">📬</span>
     </h3>
-    <p class="text-errie-black-900 mb-4 text-sm">Receba os novos artigos direto no seu email. Sem spam, prometo.</p>
+    <p class="text-errie-black-900 mb-4 text-sm">
+      Receba os novos artigos direto no seu email. Sem spam, prometo.
+    </p>
     <a
       href={site.socialMidia.substack}
       target="_blank"
@@ -34,8 +36,8 @@ const { tags } = Astro.props;
       {
         tags.map(([tag, count]) => {
           // Calcula o tamanho da fonte baseado na contagem
-          const size = count > 5 ? 'text-lg' : count > 3 ? 'text-base' : 'text-sm'
-          const weight = count > 5 ? 'font-bold' : count > 3 ? 'font-semibold' : 'font-medium'
+          const size = count > 5 ? 'text-lg' : count > 3 ? 'text-base' : 'text-sm';
+          const weight = count > 5 ? 'font-bold' : count > 3 ? 'font-semibold' : 'font-medium';
 
           return (
             <a
@@ -50,7 +52,7 @@ const { tags } = Astro.props;
               <span>{tag}</span>
               <span class="text-xs text-gray-500 group-hover:text-white">({count})</span>
             </a>
-          )
+          );
         })
       }
     </div>

@@ -1,9 +1,9 @@
 ---
-title: "Verifique minha identidade"
-date: "2025-11-18"
-description: ""
-lang: "pt-br"
-routeKey: "verify"
+title: 'Verifique minha identidade'
+date: '2025-11-18'
+description: ''
+lang: 'pt-br'
+routeKey: 'verify'
 ---
 
 Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui, por favor, [me avise](https://brunopulis.com/contato).

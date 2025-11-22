@@ -1,16 +1,15 @@
 // src/pages/rss-blogrolls.xml.js
 // Versão organizada mostrando a categoria no título
-
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const blogrolls = await getCollection("blogrolls");
+  const blogrolls = await getCollection('blogrolls');
 
   // Ordenar por categoria e depois por data
   const sortedBlogrolls = blogrolls.sort((a, b) => {
     // Primeiro por categoria
-    const catCompare = (a.data.category || "").localeCompare(b.data.category || "");
+    const catCompare = (a.data.category || '').localeCompare(b.data.category || '');
     if (catCompare !== 0) return catCompare;
 
     // Depois por data
@@ -20,39 +19,39 @@ export async function GET(context) {
   });
 
   return rss({
-    stylesheet: "/rss-styles.xsl",
-    title: "Blogroll - Bruno Pulis",
-    description: "Sites, blogs e feeds que acompanho e recomendo, organizados por categoria",
+    stylesheet: '/rss-styles.xsl',
+    title: 'Blogroll - Bruno Pulis',
+    description: 'Sites, blogs e feeds que acompanho e recomendo, organizados por categoria',
     site: context.site,
 
-    items: sortedBlogrolls.map(link => {
+    items: sortedBlogrolls.map((link) => {
       // Emoji baseado na categoria
       const categoryEmojis = {
-        Tecnologia: "💻",
-        Design: "🎨",
-        Acessibilidade: "♿",
-        Desenvolvimento: "⚙️",
-        Frontend: "🎯",
-        Backend: "🔧",
-        DevOps: "🚀",
-        Pessoal: "👤",
-        Blog: "📝",
-        Notícias: "📰",
-        Podcast: "🎙️",
-        Vídeo: "📹",
-        Newsletter: "📬",
-        Fotografia: "📷",
-        Escrita: "✍️",
-        Música: "🎵",
+        Tecnologia: '💻',
+        Design: '🎨',
+        Acessibilidade: '♿',
+        Desenvolvimento: '⚙️',
+        Frontend: '🎯',
+        Backend: '🔧',
+        DevOps: '🚀',
+        Pessoal: '👤',
+        Blog: '📝',
+        Notícias: '📰',
+        Podcast: '🎙️',
+        Vídeo: '📹',
+        Newsletter: '📬',
+        Fotografia: '📷',
+        Escrita: '✍️',
+        Música: '🎵',
       };
 
-      const emoji = categoryEmojis[link.data.category] || "🔗";
+      const emoji = categoryEmojis[link.data.category] || '🔗';
 
       // Construir descrição rica
       const parts = [];
 
       // Header com categoria
-      parts.push(`<h3>${emoji} ${link.data.category || "Links"}</h3>`);
+      parts.push(`<h3>${emoji} ${link.data.category || 'Links'}</h3>`);
 
       // Descrição
       if (link.data.description) {
@@ -69,15 +68,15 @@ export async function GET(context) {
       }
 
       if (link.data.date_added) {
-        const formattedDate = new Date(link.data.date_added).toLocaleDateString("pt-BR", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
+        const formattedDate = new Date(link.data.date_added).toLocaleDateString('pt-BR', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
         });
         info.push(`<strong>📅 Adicionado:</strong> ${formattedDate}`);
       }
 
-      parts.push(info.join("<br/>"));
+      parts.push(info.join('<br/>'));
 
       // Dica de uso
       if (link.data.rss_feed) {
@@ -86,10 +85,10 @@ export async function GET(context) {
         );
       }
 
-      const description = parts.join("<br/><br/>");
+      const description = parts.join('<br/><br/>');
 
       return {
-        title: `${emoji} ${link.data.title} [${link.data.category || "Link"}]`,
+        title: `${emoji} ${link.data.title} [${link.data.category || 'Link'}]`,
         pubDate: link.data.date_added || new Date(),
         description: description,
         link: link.data.url,
@@ -114,9 +113,9 @@ export async function GET(context) {
     `,
 
     xmlns: {
-      atom: "http://www.w3.org/2005/Atom",
-      content: "http://purl.org/rss/1.0/modules/content/",
-      dc: "http://purl.org/dc/elements/1.1/",
+      atom: 'http://www.w3.org/2005/Atom',
+      content: 'http://purl.org/rss/1.0/modules/content/',
+      dc: 'http://purl.org/dc/elements/1.1/',
     },
   });
 }

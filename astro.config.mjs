@@ -2,18 +2,17 @@
 // import db from '@astrojs/db';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import pagefind from 'astro-pagefind';
 import vercel from '@astrojs/vercel';
 import umami from '@yeskunall/astro-umami';
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
+import pagefind from 'astro-pagefind';
 import robotsTxt from 'astro-robots-txt';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 import remarkExternalLinks from './src/plugins/remark-external-links.mjs';
-
-import { fileURLToPath } from 'url';
-import path from 'path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

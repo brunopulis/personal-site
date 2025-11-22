@@ -1,11 +1,11 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 export const movies = defineCollection({
   schema: z.object({
     id: z.number(),
     title: z.string(),
     category: z.string(), // exemplo: drama, ação, comédia
-    status: z.enum(["assistido", "não assistido", "planejado"]).optional(),
+    status: z.enum(['assistido', 'não assistido', 'planejado']).optional(),
     rating: z.number().min(0).max(5).optional(), // nota de 0 a 5
     poster: z.string().url().optional(),
     description: z.string().optional(),

@@ -1,109 +1,109 @@
 ---
-import { ArrowRight, Award, CheckCircle, Code, Eye, Shield, Target } from "@lucide/astro";
-import Layout from "@layout/Layout.astro";
-import AuditionA11y from "@components/services/auditoria-a11y/AuditionA11y.astro";
-import Packages from "@components/services/auditoria-a11y/Packages.astro";
-import ServicesSteps from "@components/services/auditoria-a11y/ServicesSteps.astro";
-import CTASection from "@components/CTA.astro";
+import CTASection from '@components/CTA.astro';
+import AuditionA11y from '@components/services/auditoria-a11y/AuditionA11y.astro';
+import Packages from '@components/services/auditoria-a11y/Packages.astro';
+import ServicesSteps from '@components/services/auditoria-a11y/ServicesSteps.astro';
+import Layout from '@layout/Layout.astro';
+import { ArrowRight, Award, CheckCircle, Code, Eye, Shield, Target } from '@lucide/astro';
 
 const oqueBusco = [
   {
-    categoria: "Estrutura e Sem\u00E2ntica",
+    categoria: 'Estrutura e Sem\u00E2ntica',
     icone: Code,
     itens: [
-      "HTML sem\u00E2ntico correto",
-      "Uso apropriado de landmarks (header, nav, main, footer)",
-      "Estrutura de headings (h1-h6) hier\u00E1rquica",
-      "Uso correto de listas (ul, ol)",
-      "Elementos interativos acess\u00EDveis",
+      'HTML sem\u00E2ntico correto',
+      'Uso apropriado de landmarks (header, nav, main, footer)',
+      'Estrutura de headings (h1-h6) hier\u00E1rquica',
+      'Uso correto de listas (ul, ol)',
+      'Elementos interativos acess\u00EDveis',
     ],
   },
   {
-    categoria: "ARIA e Acessibilidade",
+    categoria: 'ARIA e Acessibilidade',
     icone: Shield,
     itens: [
-      "Atributos ARIA corretos (quando necess\u00E1rio)",
-      "Roles apropriados",
-      "Labels e descriptions em elementos",
-      "Live regions para conte\u00FAdo din\u00E2mico",
-      "Estados e propriedades ARIA",
+      'Atributos ARIA corretos (quando necess\u00E1rio)',
+      'Roles apropriados',
+      'Labels e descriptions em elementos',
+      'Live regions para conte\u00FAdo din\u00E2mico',
+      'Estados e propriedades ARIA',
     ],
   },
   {
-    categoria: "Navega\u00E7\u00E3o e Intera\u00E7\u00E3o",
+    categoria: 'Navega\u00E7\u00E3o e Intera\u00E7\u00E3o',
     icone: Target,
     itens: [
-      "Navega\u00E7\u00E3o completa por teclado",
-      "Ordem de foco l\u00F3gica (tab order)",
-      "Indicadores de foco vis\u00EDveis",
-      "Skip links funcionais",
-      "Atalhos de teclado documentados",
+      'Navega\u00E7\u00E3o completa por teclado',
+      'Ordem de foco l\u00F3gica (tab order)',
+      'Indicadores de foco vis\u00EDveis',
+      'Skip links funcionais',
+      'Atalhos de teclado documentados',
     ],
   },
   {
-    categoria: "Conte\u00FAdo e M\u00EDdia",
+    categoria: 'Conte\u00FAdo e M\u00EDdia',
     icone: Eye,
     itens: [
-      "Textos alternativos em imagens",
-      "Transcri\u00E7\u00F5es de \u00E1udio",
-      "Legendas em v\u00EDdeos",
-      "Descri\u00E7\u00F5es de \u00E1udio (quando aplic\u00E1vel)",
-      "Conte\u00FAdo de links descritivo",
+      'Textos alternativos em imagens',
+      'Transcri\u00E7\u00F5es de \u00E1udio',
+      'Legendas em v\u00EDdeos',
+      'Descri\u00E7\u00F5es de \u00E1udio (quando aplic\u00E1vel)',
+      'Conte\u00FAdo de links descritivo',
     ],
   },
   {
-    categoria: "Design Visual",
+    categoria: 'Design Visual',
     icone: Award,
     itens: [
-      "Contraste de cores adequado (WCAG AA ou AAA)",
-      "Tamanho de fonte leg\u00EDvel",
-      "Espa\u00E7amento entre elementos clic\u00E1veis",
-      "Zoom at\u00E9 200% sem perda de funcionalidade",
-      "Informa\u00E7\u00E3o n\u00E3o dependente apenas de cor",
+      'Contraste de cores adequado (WCAG AA ou AAA)',
+      'Tamanho de fonte leg\u00EDvel',
+      'Espa\u00E7amento entre elementos clic\u00E1veis',
+      'Zoom at\u00E9 200% sem perda de funcionalidade',
+      'Informa\u00E7\u00E3o n\u00E3o dependente apenas de cor',
     ],
   },
   {
-    categoria: "Formul\u00E1rios",
+    categoria: 'Formul\u00E1rios',
     icone: CheckCircle,
     itens: [
-      "Labels associados aos inputs",
-      "Mensagens de erro claras",
-      "Valida\u00E7\u00E3o acess\u00EDvel",
-      "Instru\u00E7\u00F5es vis\u00EDveis",
-      "Campos obrigat\u00F3rios identificados",
+      'Labels associados aos inputs',
+      'Mensagens de erro claras',
+      'Valida\u00E7\u00E3o acess\u00EDvel',
+      'Instru\u00E7\u00F5es vis\u00EDveis',
+      'Campos obrigat\u00F3rios identificados',
     ],
   },
 ];
 const faq = [
   {
-    pergunta: "Qual padr\u00E3o/guideline voc\u00EA segue?",
+    pergunta: 'Qual padr\u00E3o/guideline voc\u00EA segue?',
     resposta:
-      "Trabalho baseado nas WCAG 2.1 e 2.2 (Web Content Accessibility Guidelines), n\u00EDveis A e AA. Para projetos espec\u00EDficos, posso focar em AAA ou em outras diretrizes como Section 508 ou EN 301 549.",
+      'Trabalho baseado nas WCAG 2.1 e 2.2 (Web Content Accessibility Guidelines), n\u00EDveis A e AA. Para projetos espec\u00EDficos, posso focar em AAA ou em outras diretrizes como Section 508 ou EN 301 549.',
   },
   {
-    pergunta: "Quanto tempo leva uma auditoria?",
+    pergunta: 'Quanto tempo leva uma auditoria?',
     resposta:
-      "Depende do pacote: Starter (1-2 semanas), Professional (2-3 semanas), Enterprise (4-6 semanas). O prazo come\u00E7a ap\u00F3s o kickoff e recebimento de todos os acessos necess\u00E1rios.",
+      'Depende do pacote: Starter (1-2 semanas), Professional (2-3 semanas), Enterprise (4-6 semanas). O prazo come\u00E7a ap\u00F3s o kickoff e recebimento de todos os acessos necess\u00E1rios.',
   },
   {
-    pergunta: "O que recebo no final?",
+    pergunta: 'O que recebo no final?',
     resposta:
-      "Relat\u00F3rio em PDF com todos os problemas encontrados, planilha Excel com detalhamento t\u00E9cnico, prints/v\u00EDdeos explicativos, roadmap de corre\u00E7\u00F5es priorizadas e acesso a mim para d\u00FAvidas durante o per\u00EDodo de suporte.",
+      'Relat\u00F3rio em PDF com todos os problemas encontrados, planilha Excel com detalhamento t\u00E9cnico, prints/v\u00EDdeos explicativos, roadmap de corre\u00E7\u00F5es priorizadas e acesso a mim para d\u00FAvidas durante o per\u00EDodo de suporte.',
   },
   {
-    pergunta: "Voc\u00EA implementa as corre\u00E7\u00F5es?",
+    pergunta: 'Voc\u00EA implementa as corre\u00E7\u00F5es?',
     resposta:
-      "A auditoria n\u00E3o inclui implementa\u00E7\u00E3o. Por\u00E9m, ofere\u00E7o o servi\u00E7o de remedia\u00E7\u00E3o separadamente, ou posso fazer mentoria da sua equipe para que eles implementem. Podemos conversar sobre a melhor op\u00E7\u00E3o.",
+      'A auditoria n\u00E3o inclui implementa\u00E7\u00E3o. Por\u00E9m, ofere\u00E7o o servi\u00E7o de remedia\u00E7\u00E3o separadamente, ou posso fazer mentoria da sua equipe para que eles implementem. Podemos conversar sobre a melhor op\u00E7\u00E3o.',
   },
   {
-    pergunta: "E se meu projeto for muito grande?",
+    pergunta: 'E se meu projeto for muito grande?',
     resposta:
-      "Para projetos grandes, fazemos auditoria em fases. Come\u00E7amos pelas p\u00E1ginas/fluxos mais cr\u00EDticos e vamos expandindo. O pacote Enterprise \u00E9 flex\u00EDvel e customiz\u00E1vel para estas situa\u00E7\u00F5es.",
+      'Para projetos grandes, fazemos auditoria em fases. Come\u00E7amos pelas p\u00E1ginas/fluxos mais cr\u00EDticos e vamos expandindo. O pacote Enterprise \u00E9 flex\u00EDvel e customiz\u00E1vel para estas situa\u00E7\u00F5es.',
   },
   {
-    pergunta: "Garante conformidade legal?",
+    pergunta: 'Garante conformidade legal?',
     resposta:
-      "Forne\u00E7o an\u00E1lise t\u00E9cnica baseada em padr\u00F5es internacionais. N\u00E3o sou advogado, ent\u00E3o n\u00E3o posso garantir conformidade legal espec\u00EDfica. Mas o relat\u00F3rio pode ser usado como documenta\u00E7\u00E3o para demonstrar esfor\u00E7os de acessibilidade.",
+      'Forne\u00E7o an\u00E1lise t\u00E9cnica baseada em padr\u00F5es internacionais. N\u00E3o sou advogado, ent\u00E3o n\u00E3o posso garantir conformidade legal espec\u00EDfica. Mas o relat\u00F3rio pode ser usado como documenta\u00E7\u00E3o para demonstrar esfor\u00E7os de acessibilidade.',
   },
 ];
 ---
@@ -156,7 +156,7 @@ const faq = [
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {
-            oqueBusco.map(categoria => {
+            oqueBusco.map((categoria) => {
               const Icon = categoria.icone;
               return (
                 <div class="rounded-xl border-2 border-gray-200 bg-white p-6 transition hover:border-blue-400 hover:shadow-lg">
@@ -167,7 +167,7 @@ const faq = [
                     <h3 class="font-bold text-gray-900">{categoria.categoria}</h3>
                   </div>
                   <ul class="space-y-2">
-                    {categoria.itens.map(item => (
+                    {categoria.itens.map((item) => (
                       <li class="flex items-start gap-2 text-sm text-gray-700">
                         <span class="text-blue-600">•</span>
                         <span>{item}</span>
@@ -216,12 +216,12 @@ const faq = [
       title="Pronto para descobrir o que precisa melhorar?"
       description="Vamos agendar uma conversa sem compromisso. Te explico o processo em detalhes e tiramos todas as suas dúvidas."
       primaryButton={{
-        text: "Solicitar orçamento",
-        url: "/contato",
+        text: 'Solicitar orçamento',
+        url: '/contato',
       }}
       secondaryButton={{
-        text: "Ver projetos anteriores",
-        url: "/projetos",
+        text: 'Ver projetos anteriores',
+        url: '/projetos',
       }}
     />
   </main>

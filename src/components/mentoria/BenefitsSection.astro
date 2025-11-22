@@ -1,5 +1,5 @@
 ---
-import { BookUser, Check, FileBadge, HandHeart, Headset, Presentation, Users } from "@lucide/astro";
+import { BookUser, Check, FileBadge, HandHeart, Headset, Presentation, Users } from '@lucide/astro';
 
 const iconComponents = {
   BookUser,
@@ -13,36 +13,36 @@ const iconComponents = {
 
 const benefits = [
   {
-    icon: "Users",
-    title: "Comunidade exclusiva",
+    icon: 'Users',
+    title: 'Comunidade exclusiva',
     description:
-      "Acesso vitalício a nossa comunidade para trocar experiências, aprender e se inspirar.",
+      'Acesso vitalício a nossa comunidade para trocar experiências, aprender e se inspirar.',
   },
   {
-    icon: "Presentation",
-    title: "Plano de ensino personalizado",
+    icon: 'Presentation',
+    title: 'Plano de ensino personalizado',
     description:
-      "Conteúdo adaptado para suas metas, garantindo um plano exclusivo que promove seu avanço.",
+      'Conteúdo adaptado para suas metas, garantindo um plano exclusivo que promove seu avanço.',
   },
   {
-    icon: "BookUser",
-    title: "Materiais acessíveis",
-    description: "Recursos inclusivos, como vídeos com legendas e documentos acessíveis.",
+    icon: 'BookUser',
+    title: 'Materiais acessíveis',
+    description: 'Recursos inclusivos, como vídeos com legendas e documentos acessíveis.',
   },
   {
-    icon: "Headset",
-    title: "Suporte dedicado",
-    description: "Acesso direto comigo por WhatsApp em horário comercial de segunda a sábado.",
+    icon: 'Headset',
+    title: 'Suporte dedicado',
+    description: 'Acesso direto comigo por WhatsApp em horário comercial de segunda a sábado.',
   },
   {
-    icon: "HandHeart",
-    title: "Compromisso social",
-    description: "Doamos 5% do valor da mentoria para a Associação de Cegos Louis Braille.",
+    icon: 'HandHeart',
+    title: 'Compromisso social',
+    description: 'Doamos 5% do valor da mentoria para a Associação de Cegos Louis Braille.',
   },
   {
-    icon: "FileBadge",
-    title: "Certificado",
-    description: "Você receberá um certificado de conclusão, comprovando suas habilidades.",
+    icon: 'FileBadge',
+    title: 'Certificado',
+    description: 'Você receberá um certificado de conclusão, comprovando suas habilidades.',
   },
 ];
 ---
@@ -65,7 +65,7 @@ const benefits = [
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
-        benefits.map(benefit => {
+        benefits.map((benefit) => {
           const IconComponent = iconComponents[benefit.icon];
 
           return (

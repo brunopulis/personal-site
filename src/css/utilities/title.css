@@ -1,6 +1,6 @@
 .title {
-  font-size: var(--font-size-4xl);
   border-bottom: solid var(--border-m) var(--color-errie-black-900);
-  min-width: 100%;
   padding-bottom: var(--space-xxs);
+  min-width: 100%;
+  font-size: var(--font-size-4xl);
 }

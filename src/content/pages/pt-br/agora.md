@@ -1,9 +1,9 @@
 ---
-title: "O que estou fazendo agora"
-date: "2025-11-18"
-description: ""
-lang: "pt-br"
-routeKey: "agora"
+title: 'O que estou fazendo agora'
+date: '2025-11-18'
+description: ''
+lang: 'pt-br'
+routeKey: 'agora'
 ---
 
 ## O que estou fazendo agora

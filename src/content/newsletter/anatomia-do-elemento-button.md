@@ -1,7 +1,7 @@
 ---
-issue: "16"
-title: "Anatomia do elemento button"
-date: "2024-01-29"
+issue: '16'
+title: 'Anatomia do elemento button'
+date: '2024-01-29'
 ---
 
 Nessa carta quero te mostrar como garantir a acessibilidade em um dos componentes mais usados na web: o **<button>**.

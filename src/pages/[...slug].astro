@@ -1,6 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layout/Layout.astro';
+import { getCollection } from 'astro:content';
 
 /**
  * Gera rotas estáticas para todas as páginas em inglês (en)
@@ -8,10 +8,7 @@ import Layout from '@layout/Layout.astro';
  *
  */
 export async function getStaticPaths() {
-  const pages = await getCollection(
-    'pages',
-    ({ data }) => data.lang === 'pt-br'
-  );
+  const pages = await getCollection('pages', ({ data }) => data.lang === 'pt-br');
 
   return pages.map((page) => {
     const slug = page.id.replace(/^pt-br\//, '').replace(/\.md$/, '');
@@ -46,11 +43,7 @@ const currentLocale = 'pt-br';
       <h1 class="title">
         {page.data.title}
       </h1>
-      {
-        page.data.description && (
-          <p class="text-xl text-gray-600">{page.data.description}</p>
-        )
-      }
+      {page.data.description && <p class="text-xl text-gray-600">{page.data.description}</p>}
     </header>
 
     <!-- Conteúdo do Markdown renderizado -->

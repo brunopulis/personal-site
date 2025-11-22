@@ -1,5 +1,5 @@
-import pa11y from 'pa11y';
 import fs from 'fs';
+import pa11y from 'pa11y';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -41,9 +41,7 @@ async function runTests() {
       const result = await pa11y(url, pa11yOptions);
 
       const errors = result.issues.filter((issue) => issue.type === 'error');
-      const warnings = result.issues.filter(
-        (issue) => issue.type === 'warning'
-      );
+      const warnings = result.issues.filter((issue) => issue.type === 'warning');
       const notices = result.issues.filter((issue) => issue.type === 'notice');
 
       totalIssues += result.issues.length;
@@ -333,7 +331,6 @@ function generateHTMLReport(results, totalIssues, totalErrors, totalWarnings) {
       continue;
     }
 
-    // eslint-disable-next-line no-unused-vars
     const { url, result, errors, warnings, notices } = item;
 
     htmlReport += `

@@ -1,94 +1,78 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3e6475c7-21bb-4f96-bc1a-9180373a0aa1/deploy-status)](https://app.netlify.com/projects/brunopulis/deploys)
+[![Liberapay](https://img.shields.io/liberapay/goal/brunopulis.svg?logo=liberapay)](https://liberapay.com/brunopulis/)
+![Accessibility Matters](https://img.shields.io/badge/a11y-matters-blue)
+[![Licença CC BY-SA 4.0](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![WCAG 2.2 AA Compliance](https://img.shields.io/badge/WCAG_2.2-AA-success.svg)](https://www.w3.org/WAI/WCAG22/quickref/)
 
-# Personal Site
+# Site Pessoal | Bruno Pulis
 
-A modern, responsive Astro template with Tailwind CSS and Alpine.js integration. This template provides a solid foundation for building fast, SEO-friendly websites with a clean design system.
+## Especialista em QA & Acessibilidade
 
-## 🚀 Features
+---
 
-- [Astro](https://astro.build/) - The web framework for content-driven websites
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Alpine.js](https://alpinejs.dev/) - Lightweight JavaScript framework for interactivity
-- Responsive design system with custom color palette
-- Dark mode support
-- Smooth page transitions
-- Performance optimized
-- SEO-friendly
+## 💡 Sobre o Projeto
 
-## 📦 Project Structure
+Este repositório contém o código-fonte do meu site pessoal e blog técnico. O objetivo principal é compartilhar conhecimento sobre **Garantia de Qualidade (QA)**, **Automação de Testes** e, especialmente, **Acessibilidade Digital**.
 
-```text
-/
-├── public/             # Static assets
-│   └── favicon.svg
-├── src/
-│   ├── assets/         # Images and other assets
-│   ├── components/     # Reusable UI components
-│   ├── layouts/        # Page layouts
-│   ├── pages/          # Page routes
-│   ├── scripts/        # JavaScript utilities
-│   └── styles/         # Global styles
-│       ├── global.css
-│       └── transitions.css
-├── astro.config.mjs    # Astro configuration
-├── tailwind.config.mjs # Tailwind CSS configuration
-└── package.json        # Project dependencies
-```
+O projeto reflete meus pilares de trabalho: ser **performático**, **acessível** e **livre de rastreadores**.
 
-## 🧞 Commands
+### Foco em Qualidade (QA) e Acessibilidade (WCAG)
 
-All commands are run from the root of the project, from a terminal:
+Como especialista em QA, este site é o meu portfólio de boas práticas:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Rastreamento Zero:** 100% livre de cookies e scripts de rastreamento de terceiros (Analytics).
+- **Performance:** Construído com um Gerador de Site Estático (SSG) para velocidades de carregamento ultrarrápidas.
+- **Conformidade:** Projetado e testado para atender ou exceder as diretrizes **WCAG 2.2 Nível AA**, garantindo o uso efetivo por leitores de tela (NVDA, VoiceOver) e outras tecnologias assistivas.
+- **CI/CD:** Os testes de acessibilidade e links quebrados são executados automaticamente no pipeline de Integração Contínua.
 
-## 🎨 Customization
+---
 
-### Colors
+## 🛠️ Tech Stack (Colophon)
 
-The template includes a custom color palette defined in `tailwind.config.mjs`:
+Este projeto utiliza as seguintes tecnologias (substitua pelos seus dados):
 
-- Primary: Purple-based color scheme
-- Secondary: Slate-based color scheme
-- Accent: Lime-based color scheme
-- Warning: Yellow-based color scheme
+- **Gerador de Site Estático (SSG):** [Insira o nome, ex: Hugo, Jekyll, Next.js]
+- **Linguagens Base:** HTML5 (Semântico), CSS, [Insira a linguagem de script, ex: JavaScript]
+- **Hospedagem:** [Insira o nome, ex: Netlify, Vercel, GitHub Pages]
+- **Deployment:** GitHub Actions
+- **Ferramentas de QA:** [Insira o nome, ex: Axe DevTools, Lighthouse, cypress-axe]
 
-You can customize these colors by editing the `tailwind.config.mjs` file.
+---
 
-### Typography
+## 🚀 Como Contribuir (Desenvolvimento Local)
 
-The template uses the following font families:
+Embora este seja um site pessoal, sinta-se à vontade para explorar e sugerir melhorias.
 
-- Sans: Inter (with system fallbacks)
-- Display: Lexend (with system fallbacks)
+Para rodar o site localmente, siga estes passos (os comandos podem variar dependendo do seu SSG):
 
-### Animations
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/brunopulis/personal-site.git](https://github.com/brunopulis/personal-site.git)
+    cd personal-site
+    ```
+2.  **Instale as dependências:**
+    ```bash
+    # Exemplo para Node.js/NPM ou Ruby/Bundler, substitua pelo seu gerenciador
+    npm install
+    ```
+3.  **Inicie o servidor de desenvolvimento:**
+    `bash
+    # Exemplo
+    npm run dev
+    # ou
+    [nome_do_ssg] server
+    `O site estará disponível em`http://localhost:[porta]`.
 
-Custom animations are included:
+---
 
-- Fade In
-- Slide Up
-- Slide Down
+## 🤝 Contato
 
-## 🚀 Getting Started
+Você pode se conectar comigo via:
 
-1. Clone this repository
-2. Install dependencies with `npm install` or `pnpm install`
-3. Start the development server with `npm run dev` or `pnpm dev`
-4. Visit `http://localhost:4321` to see your site
+- **LinkedIn:** [https://linkedin.com/in/pulis](https://linkedin.com/in/pulis)
+- **E-mail:** brunopulis@protonmail.com
 
-## 📝 License
+---
 
-MIT
+## 📜 Licença
 
-## 👀 Learn More
-
-- [Astro Documentation](https://docs.astro.build)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Alpine.js Documentation](https://alpinejs.dev/start-here)
+Este projeto está licenciado sob a **Licença CC BY-SA 4.0**. Sinta-se à vontade para inspecionar, aprender e reutilizar o código conforme as regras da licença.

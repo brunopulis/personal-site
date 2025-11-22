@@ -1,25 +1,25 @@
 ---
-import { MapPinned, Tags } from "@lucide/astro";
+import { MapPinned, Tags } from '@lucide/astro';
 
 interface Location {
-	locality: string;
-	country: string;
+  locality: string;
+  country: string;
 }
 
 interface Props {
-	tags?: string[];
-	location?: Location;
-	publishedAt?: string[];
-	reply?: string;
+  tags?: string[];
+  location?: Location;
+  publishedAt?: string[];
+  reply?: string;
 }
 
 const { tags = [], location, publishedAt = [], reply } = Astro.props;
 
 function slugify(str: string) {
-	return str
-		.toLowerCase()
-		.replace(/\s+/g, "-")
-		.replace(/[^a-z0-9-]/g, "");
+  return str
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
 }
 ---
 
@@ -34,7 +34,8 @@ function slugify(str: string) {
               Onde:
             </span>
             <span class="p-location h-adr">
-              <span class="p-locality">{location.locality}</span>,<span class="p-country">{location.country}</span>
+              <span class="p-locality">{location.locality}</span>,
+              <span class="p-country">{location.country}</span>
             </span>
           </div>
         )
@@ -122,14 +123,20 @@ function slugify(str: string) {
           href="mailto:mail@hacdias.com?subject=Re: IndieWeb%20Carnival%3a%20Colors"
           rel="noopener noreferrer">E-Mail</a
         >,
-        <a class="text-blue-700 hover:underline" href="https://fosstodon.org/@hacdias" rel="noopener noreferrer"
-          >Mastodon</a
+        <a
+          class="text-blue-700 hover:underline"
+          href="https://fosstodon.org/@hacdias"
+          rel="noopener noreferrer">Mastodon</a
         >,
-        <a class="text-blue-700 hover:underline" href="https://bsky.app/profile/hacdias.com" rel="noopener noreferrer"
-          >Bluesky</a
+        <a
+          class="text-blue-700 hover:underline"
+          href="https://bsky.app/profile/hacdias.com"
+          rel="noopener noreferrer">Bluesky</a
         >,
-        <a class="text-blue-700 hover:underline" href="https://indieweb.org/Webmention" rel="noopener noreferrer"
-          >Webmentions</a
+        <a
+          class="text-blue-700 hover:underline"
+          href="https://indieweb.org/Webmention"
+          rel="noopener noreferrer">Webmentions</a
         >
       </span>
     </li>
