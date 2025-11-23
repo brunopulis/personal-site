@@ -39,8 +39,8 @@ importers:
         specifier: ^5.2.9
         version: 5.2.9
       '@lucide/astro':
-        specifier: ^0.553.0
-        version: 0.553.0(astro@5.15.9(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
+        specifier: ^0.554.0
+        version: 0.554.0(astro@5.15.9(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
       '@philnash/astro-pagination':
         specifier: ^0.5.0
         version: 0.5.0(astro@5.15.9(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
@@ -1000,8 +1000,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/plugin-helpers@6.0.0':
-    resolution: {integrity: sha512-Z7P89vViJvQakRyMbq/JF2iPLruRFOwOB6IXsuSvV/BptuuEd7fsGPuEf8bdjjDxUY0pJZnFN8oC7jIQ8p9GKA==}
+  '@graphql-codegen/plugin-helpers@6.1.0':
+    resolution: {integrity: sha512-JJypehWTcty9kxKiqH7TQOetkGdOYjY78RHlI+23qB59cV2wxjFFVf8l7kmuXS4cpGVUNfIjFhVr7A1W7JMtdA==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -1660,8 +1660,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@lucide/astro@0.553.0':
-    resolution: {integrity: sha512-yiHpOKGBPOy+pmZfkQmZcFAETU8FvkqWdoLCboSZGuZ1zgwFHGxBmr/brmk5PxVFOUnImzsRFGzAX2O2A88hmQ==}
+  '@lucide/astro@0.554.0':
+    resolution: {integrity: sha512-OKDxbkluX4+keoX2mwORwhGEyqbSyLb1kwmaAx9KpknCFJihTzKWxw7qJ00wdlwRC3TDa+c4HbTG68Cb0R5IbQ==}
     peerDependencies:
       astro: ^4 || ^5
 
@@ -10090,7 +10090,7 @@ snapshots:
       lodash: 4.17.21
       tslib: 2.6.3
 
-  '@graphql-codegen/plugin-helpers@6.0.0(graphql@15.8.0)':
+  '@graphql-codegen/plugin-helpers@6.1.0(graphql@15.8.0)':
     dependencies:
       '@graphql-tools/utils': 10.10.3(graphql@15.8.0)
       change-case-all: 1.0.15
@@ -10750,7 +10750,7 @@ snapshots:
   '@libsql/win32-x64-msvc@0.5.22':
     optional: true
 
-  '@lucide/astro@0.553.0(astro@5.15.9(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))':
+  '@lucide/astro@0.554.0(astro@5.15.9(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))':
     dependencies:
       astro: 5.15.9(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1)
 
@@ -11730,7 +11730,7 @@ snapshots:
   '@tinacms/cli@1.12.2(@codemirror/language@6.0.0)(@types/hoist-non-react-statics@3.3.7(@types/react@19.2.2))(@types/node@24.10.1)(@types/react@19.2.2)(abstract-level@1.0.4)(immer@10.2.0)(lightningcss@1.30.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(rollup@4.53.3)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(sucrase@3.35.0)(terser@5.39.0)(use-sync-external-store@1.6.0(react@19.2.0))(yaml@2.8.1)':
     dependencies:
       '@graphql-codegen/core': 2.6.8(graphql@15.8.0)
-      '@graphql-codegen/plugin-helpers': 6.0.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 6.1.0(graphql@15.8.0)
       '@graphql-codegen/typescript': 4.1.6(graphql@15.8.0)
       '@graphql-codegen/typescript-operations': 4.6.1(graphql@15.8.0)
       '@graphql-codegen/visitor-plugin-common': 4.1.2(graphql@15.8.0)
