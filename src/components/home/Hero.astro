@@ -12,12 +12,7 @@ interface Props {
 const { t, currentLang, getLocalizedPath } = Astro.props;
 ---
 
-<section
-  class="hero"
-  id="hero"
-  aria-labelledby="hero-section"
-  style="--region-space:var(--space-m-l);"
->
+<section class="hero" id="hero" aria-labelledby="hero-section">
   <div data-layout="50-50" class="grid">
     <div class="hero__content" style="--flow-space:var(--space-s-m);">
       <h1 class="hero__title heading-xxl" id="hero-section" set:html={t('home.greetings')} />

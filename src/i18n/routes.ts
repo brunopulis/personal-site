@@ -12,6 +12,8 @@ export const routes = {
     now: 'agora',
     newsletter: 'newsletter',
     contact: 'contato',
+    stream: 'fluxo',
+    support: 'apoie',
   },
   en: {
     index: '',
@@ -22,6 +24,8 @@ export const routes = {
     now: 'now',
     newsletter: 'newsletter',
     contact: 'contact',
+    stream: 'stream',
+    support: 'support',
   },
 } as const;
 

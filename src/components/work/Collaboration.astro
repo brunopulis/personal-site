@@ -1,0 +1,100 @@
+---
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+
+// Detecta o idioma e obtém as traduções
+const lang = getLanguageFromPath(Astro.url.pathname);
+
+const t = useTranslations(lang);
+---
+
+<section class="services | flow">
+  <h2 class="title text-step-2">Formas de colaborar</h2>
+
+  <div class="services-grid | grid" data-layout="thirds">
+    <!-- Mentoria -->
+    <article class="card service-card | flow">
+      <div class="service-card__icon">🎯</div>
+      <h3 class="text-step-1">
+        <a href="/trabalho/mentoria">Mentoria</a>
+      </h3>
+      <p>
+        Sessões individuais ou em grupo para desenvolvedores e designers que querem aprofundar
+        conhecimento em acessibilidade. Foco em casos reais e aplicação prática.
+      </p>
+      <div class="service-card__meta">
+        <span class="badge">Sessões de 1-2h</span>
+        <span class="badge">Online</span>
+      </div>
+    </article>
+
+    <!-- Auditoria -->
+    <article class="card service-card | flow">
+      <div class="service-card__icon">🔍</div>
+      <h3 class="text-step-1">Auditoria de Acessibilidade</h3>
+      <p>
+        Análise técnica completa do seu site ou aplicação. Você recebe um relatório detalhado com
+        problemas identificados, priorização e sugestões de correção com exemplos de código.
+      </p>
+      <div class="service-card__metacard">
+        <span class="badge">WCAG 2.1/2.2</span>
+        <span class="badge">Relatório detalhado</span>
+      </div>
+    </article>
+
+    <!-- Remediação de Sites -->
+    <article class="card service-card | flow">
+      <div class="service-card__icon">🛠️</div>
+      <h3 class="text-step-1">Remediação de Sites</h3>
+      <p>
+        Coloco a mão no código para corrigir problemas de acessibilidade. Trabalho diretamente com
+        sua equipe ou de forma independente, dependendo da necessidade.
+      </p>
+      <div class="service-card__meta">
+        <span class="badge">Hands-on</span>
+        <span class="badge">Pull Requests</span>
+      </div>
+    </article>
+
+    <!-- Remediação de Documentos -->
+    <article class="card service-card | flow">
+      <div class="service-card__icon">📄</div>
+      <h3 class="text-step-1">Remediação de Documentos</h3>
+      <p>
+        PDFs, apresentações, planilhas e outros documentos acessíveis. Garanto que seus materiais
+        possam ser utilizados por pessoas com tecnologias assistivas.
+      </p>
+      <div class="service-card__meta">
+        <span class="badge">PDF/A</span>
+        <span class="badge">Office</span>
+      </div>
+    </article>
+
+    <!-- Palestras -->
+    <article class="card service-card | flow">
+      <div class="service-card__icon">🎤</div>
+      <h3 class="text-step-1">Palestras e Workshops</h3>
+      <p>
+        Apresentações sobre acessibilidade para eventos, empresas e comunidades. Posso adaptar o
+        conteúdo para diferentes níveis de conhecimento técnico.
+      </p>
+      <div class="service-card__meta">
+        <span class="badge">Presencial/Online</span>
+        <span class="badge">Customizável</span>
+      </div>
+    </article>
+
+    <!-- Consultoria -->
+    <article class="card service-card | flow">
+      <div class="service-card__icon">💡</div>
+      <h3 class="text-step-1">Consultoria Estratégica</h3>
+      <p>
+        Ajudo a estruturar processos, escolher ferramentas e criar uma cultura de acessibilidade na
+        sua organização. Ideal para empresas começando a jornada.
+      </p>
+      <div class="service-card__meta">
+        <span class="badge">Processos</span>
+        <span class="badge">Cultura</span>
+      </div>
+    </article>
+  </div>
+</section>

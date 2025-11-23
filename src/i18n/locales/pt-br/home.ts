@@ -4,4 +4,13 @@ export const ptBrHome = {
   'home.objective': `Escrevo sobre <strong>acessibilidade digital</strong>, <strong>teologia</strong>, <strong>tecnologia</strong> e compartilho o que ando consumindo e aprendendo.`,
   'home.about_link': 'sobre',
   'home.about_now': 'agora',
+  'home.stream.title': 'Recentemente',
+  'home.stream.view_all': 'ver tudo →',
+  'home.stream.invalid_date': 'Data inválida',
+  'home.stream.today': 'hoje',
+  'home.stream.yesterday': 'ontem',
+  'home.stream.days_ago': 'dias atrás',
+  'home.stream.weeks_ago': 'semanas atrás',
+  'home.writing.title': 'Escrevendo',
+  'home.writing.view_all': 'ver tudo →',
 };

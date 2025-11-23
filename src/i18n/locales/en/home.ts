@@ -4,4 +4,13 @@ export const enHome = {
   'home.objective': `I write about <strong>digital accessibility</strong>, <strong>theology</strong>, <strong>technology</strong>, and share what I've been consuming and learning.`,
   'home.about_link': 'about',
   'home.about_now': 'now',
+  'home.stream.title': 'Recently',
+  'home.stream.view_all': 'view all →',
+  'home.stream.invalid_date': 'Invalid date',
+  'home.stream.today': 'today',
+  'home.stream.yesterday': 'yesterday',
+  'home.stream.days_ago': 'days ago',
+  'home.stream.weeks_ago': 'weeks ago',
+  'home.writing.title': 'Writing',
+  'home.writing.view_all': 'view all →',
 };

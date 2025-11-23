@@ -1,7 +1,6 @@
 ---
 import SupportCards from '@components/SupportCards.astro';
 import Supporters from '@components/Supporters.astro';
-import type { Language } from '@i18n/index';
 import { getLanguageFromPath, useTranslations } from '@i18n/utils';
 import Layout from '@layout/Layout.astro';
 
@@ -13,34 +12,23 @@ const t = useTranslations(lang);
   title="Bruno Pulis - Engenheiro de Acessibilidade"
   description="Bruno Pulis - Mentor e engenheiro de acessibilidade web, desenvolvendo uma web para todos"
   currentLocale="pt-br"
+  routeKey="support"
 >
-  <div class="wrapper">
-    <div class="stack stack-xl">
-      <div class="stack">
-        <h1 class="title">{t('support.title')}</h1>
-        <p class="subheading">
-          {t('support.headline')}
-        </p>
-      </div>
-
-      <SupportCards t={t} />
+  <div class="stack stack-xl">
+    <div class="stack">
+      <h1 class="title">{t('support.title')}</h1>
+      <p class="subheading">
+        {t('support.headline')}
+      </p>
     </div>
 
-    <div class="info-box">
-      <h2 class="info-box-title text-center">Por que apoiar?</h2>
-      <ul class="info-list">
-        <li>Contribua para manter conteúdo de qualidade</li>
-        <li>Apoie o desenvolvimento de projetos open source</li>
-        <li>Ajude a manter servidores e ferramentas funcionando</li>
-        <li>Receba meu apoio e gratidão sincera</li>
-      </ul>
-    </div>
+    <SupportCards t={t} />
+  </div>
 
-    <Supporters />
+  <Supporters />
 
-    <div class="text-center mt-2xl">
-      <p class="text-alt">Todo apoio, por menor que seja, faz diferença! 💜</p>
-    </div>
+  <div class="mt-2xl">
+    <p class="text-alt">Todo apoio, por menor que seja, faz diferença! 💜</p>
   </div>
 </Layout>
 
@@ -71,25 +59,6 @@ const t = useTranslations(lang);
     --font-size-lg: 1.25rem;
     --font-size-xl: 1.5rem;
     --font-size-2xl: 2rem;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
-    min-height: 100vh;
-    color: var(--color-text);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    font-family: var(--font-family);
   }
 
   /* Composition */

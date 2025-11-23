@@ -40,4 +40,5 @@ export const translations = {
 export type Language = keyof typeof languages;
 export type TranslationKey = keyof (typeof translations)['pt-br'];
 
+export type { RouteKey } from './routes';
 export { getLanguageFromPath, useTranslations } from './utils';
