@@ -39,8 +39,8 @@ importers:
         specifier: ^5.2.9
         version: 5.2.9
       '@lucide/astro':
-        specifier: ^0.553.0
-        version: 0.553.0(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
+        specifier: ^0.554.0
+        version: 0.554.0(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
       '@philnash/astro-pagination':
         specifier: ^0.5.0
         version: 0.5.0(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))
@@ -1660,8 +1660,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@lucide/astro@0.553.0':
-    resolution: {integrity: sha512-yiHpOKGBPOy+pmZfkQmZcFAETU8FvkqWdoLCboSZGuZ1zgwFHGxBmr/brmk5PxVFOUnImzsRFGzAX2O2A88hmQ==}
+  '@lucide/astro@0.554.0':
+    resolution: {integrity: sha512-OKDxbkluX4+keoX2mwORwhGEyqbSyLb1kwmaAx9KpknCFJihTzKWxw7qJ00wdlwRC3TDa+c4HbTG68Cb0R5IbQ==}
     peerDependencies:
       astro: ^4 || ^5
 
@@ -10762,7 +10762,7 @@ snapshots:
   '@libsql/win32-x64-msvc@0.5.22':
     optional: true
 
-  '@lucide/astro@0.553.0(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))':
+  '@lucide/astro@0.554.0(astro@5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1))':
     dependencies:
       astro: 5.16.0(@types/node@24.10.1)(@vercel/functions@2.2.13)(jiti@1.21.7)(lightningcss@1.30.2)(rollup@4.53.3)(terser@5.39.0)(typescript@5.9.3)(yaml@2.8.1)
 
