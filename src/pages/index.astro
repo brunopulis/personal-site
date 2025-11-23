@@ -1,5 +1,8 @@
 ---
 import Hero from '@components/home/Hero.astro';
+import Newsletter from '@components/home/Newsletter.astro';
+import Work from '@components/home/Work.astro';
+import Writing from '@components/home/Writing.astro';
 import Stream from '@components/stream/Stream.astro';
 import type { Language } from '@i18n/index';
 import { getLanguageFromPath, getLocalizedPath, useTranslations } from '@i18n/utils';
@@ -11,10 +14,10 @@ const streamItems = await getCollection('stream');
 
 const recentBlogPosts = blogPosts
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-  .slice(0, 3);
+  .slice(0, 4);
 
 const validStreamItems = streamItems.filter(
-  (item) => item.data.pubDate && item.data.pubDate instanceof Date
+  (item) => item.id.startsWith('pt-br/') && item.data.pubDate && item.data.pubDate instanceof Date
 );
 
 const streams = validStreamItems
@@ -32,81 +35,8 @@ const t = useTranslations(lang);
   routeKey="index"
 >
   <Hero t={t} currentLang={lang} getLocalizedPath={getLocalizedPath} />
-
-  <Stream streams={streams} />
-
-  <section class="section">
-    <div class="wrapper mx-auto max-w-7xl px-6">
-      <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-semibold text-gray-900">Escrevendo</h2>
-        <a
-          href="/escrevendo"
-          class="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1"
-        >
-          todos os artigos →
-        </a>
-      </div>
-      <div class="space-y-6">
-        {
-          recentBlogPosts.map((post) => (
-            <article class="border-b border-gray-200 pb-6 last:border-0">
-              <a href={`/blog/${post.slug}`}>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2 hover:text-blue-600">
-                  {post.data.title}
-                </h3>
-              </a>
-              {post.data.excerpt && <p class="text-gray-600 mb-3">{post.data.excerpt}</p>}
-              <div class="flex gap-3 text-sm text-gray-500">
-                <time datetime={post.data.publishDate.toISOString()}>
-                  {post.data.publishDate.toLocaleDateString('pt-BR', {
-                    day: 'numeric',
-                    month: 'short',
-                    year: 'numeric',
-                  })}
-                </time>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="mb-20">
-    <div class="wrapper mx-auto max-w-7xl px-6">
-      <div class="bg-blue-50 border border-blue-100 rounded-lg p-8">
-        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Trabalhando</h2>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-          Ajudo empresas e produtos a serem mais acessíveis através de consultoria, auditorias e
-          treinamentos em acessibilidade web.
-        </p>
-        <a
-          href="/servicos"
-          class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
-        >
-          saiba como posso ajudar →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="mb-12">
-    <div class="wrapper mx-auto max-w-7xl">
-      <div class="bg-gray-100 rounded-lg p-8 text-center">
-        <div class="text-4xl mb-4">✉️</div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Newsletter</h3>
-        <p class="text-gray-600 mb-4">
-          Receba artigos sobre acessibilidade e tecnologia direto no seu email
-        </p>
-        <a
-          href="https://brunopulis.substack.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors"
-        >
-          Assinar
-        </a>
-      </div>
-    </div>
-  </section>
+  <Stream streams={streams} t={t} locale={lang} />
+  <Writing posts={recentBlogPosts} t={t} locale={lang} />
+  <Work />
+  <Newsletter />
 </Layout>

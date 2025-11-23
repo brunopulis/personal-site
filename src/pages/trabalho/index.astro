@@ -1,0 +1,38 @@
+---
+import { getLanguageFromPath, useTranslations } from '@i18n/utils';
+import Layout from '@layout/Layout.astro';
+
+import Approach from '@/components/work/Approach.astro';
+import Collaboration from '@/components/work/Collaboration.astro';
+import CTA from '@/components/work/CTA.astro';
+import FAQ from '@/components/work/FAQ.astro';
+import Testimonials from '@/components/work/Testimonials.astro';
+
+import Projects from '../en/projects.astro';
+
+// Detecta o idioma e obtém as traduções
+const lang = getLanguageFromPath(Astro.url.pathname);
+
+const t = useTranslations(lang);
+---
+
+<Layout
+  title="Trabalho | Bruno Pulis"
+  description="Formas que posso te ajudar"
+  currentLocale="pt-br"
+  routeKey="trabalho"
+>
+  <header class="page-header | flow">
+    <h1 class="title text-step-3">Vamos trabalhar juntos</h1>
+    <p class="lead | text-step-1">
+      Acredito que a web deve ser acessível para todos. Nos últimos anos, tenho ajudado empresas e
+      equipes a criar experiências digitais que não deixam ninguém para trás.
+    </p>
+  </header>
+  <Approach />
+  <Collaboration />
+  <Projects />
+  <Testimonials />
+  <CTA />
+  <FAQ />
+</Layout>
