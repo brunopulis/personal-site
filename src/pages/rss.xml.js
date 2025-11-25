@@ -16,6 +16,9 @@ export async function GET(context) {
       description: post.data.description,
       link: `/blog/${post.slug}/`,
     })),
+    xmlns: {
+      atom: 'http://www.w3.org/2005/Atom',
+    },
     customData: `<language>pt-br</language>`,
   });
 }

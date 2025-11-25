@@ -1,88 +1,210 @@
 ---
 import HeroSection from '@components/layouts/HeroSection.astro';
-import ShareButton from '@components/ShareButton.astro';
 import Layout from '@layout/Layout.astro';
-import { Clock } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 
-const notes = await getCollection('notes');
-const sortedNotes = notes.sort((a, b) => {
-  return new Date(b.data.pubDate || 0).getTime() - new Date(a.data.pubDate || 0).getTime();
+const notes = await getCollection('notes', ({ data }) => {
+  return data.published === true;
 });
 
-// Renderizar o conteúdo de cada nota
-const notesWithContent = await Promise.all(
-  sortedNotes.map(async (note) => {
-    const { Content } = await note.render();
-    return {
-      note,
-      Content,
-    };
-  })
-);
+const sortedNotes = notes.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+/**
+ * Formata uma data para o formato brasileiro
+ *
+ * @param {Date} date
+ * @returns {string}
+ */
+function formatDate(date) {
+  return new Intl.DateTimeFormat('pt-BR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date);
+}
 ---
 
-<Layout title="Notas - Bruno Pulis">
-  <main id="main-content">
-    <HeroSection
-      title="Notas"
-      description="Pensamentos rápidos, dicas práticas e reflexões sobre qualquer coisa."
-    />
-    <section class="h-entry bg-gray-50 py-16">
-      <div class="container-custom mx-auto">
-        <div class="mx-auto">
-          <div class="prose prose-lg max-w-none">
-            {
-              notesWithContent.length > 0 ? (
-                notesWithContent.map(({ note, Content }) => (
-                  <article class="mb-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
-                    <div class="mb-4 flex items-start justify-between">
-                      <div class="flex items-center gap-3">
-                        <div>
-                          <div class="font-bold text-gray-900">Bruno Pulis</div>
-                          <div class="flex items-center gap-2 text-sm text-gray-500">
-                            <Clock class="h-3 w-3" />
-                            {new Date(note.data.pubDate).toLocaleDateString('pt-BR', {
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric',
-                            })}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+<Layout
+  title="Notas | Bruno Pulis"
+  description="Minhas notas pessoais"
+  currentLocale="pt-br"
+  routeKey="notas"
+>
+  <HeroSection
+    title="Notas"
+    description="Pensamentos rápidos, dicas práticas e reflexões sobre qualquer coisa."
+  />
+  <section class="h-feed">
+    {
+      sortedNotes.map(async (note) => {
+        const { Content } = await note.render();
+        const noteUrl = `/notes/${note.slug}`;
+        return (
+          <article class="note h-entry">
+            <div class="note-meta">
+              <time class="note-date dt-published" datetime={note.data.pubDate.toISOString()}>
+                {formatDate(note.data.pubDate)}
+              </time>
+              <span class="note-type">{note.data.type}</span>
+              <a href={noteUrl} class="u-url u-uid" style="display:none">
+                {noteUrl}
+              </a>
+            </div>
 
-                    <div class="mb-4 prose prose-gray max-w-none">
-                      <Content />
-                    </div>
+            {note.data.in_reply_to && (
+              <div class="reply-context">
+                <span aria-hidden="true">↩️</span> Em resposta a:{' '}
+                <a
+                  href={note.data.in_reply_to}
+                  class="u-in-reply-to"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {note.data.in_reply_to}
+                </a>
+              </div>
+            )}
 
-                    <div class="mb-4 flex flex-wrap gap-2">
-                      {note.data.tags &&
-                        note.data.tags.map((tag: string) => (
-                          <span class="inline-flex items-center gap-1 rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                            #{tag}
-                          </span>
-                        ))}
-                    </div>
+            <div class="note-content e-content">
+              <Content />
+            </div>
 
-                    <div class="flex items-center gap-6 border-t border-gray-100 pt-4">
-                      <ShareButton
-                        title={`Nota de Bruno Pulis - ${new Date(note.data.pubDate).toLocaleDateString('pt-BR')}`}
-                        text={note.body}
-                        url={`${Astro.site}notes/${note.slug}`}
-                      />
-                    </div>
-                  </article>
-                ))
-              ) : (
-                <div class="empty-state">
-                  <p>Nenhuma nota encontrada.</p>
-                </div>
-              )
-            }
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+            {note.data.tags && note.data.tags.length > 0 && (
+              <div class="note-tags">
+                {note.data.tags.map((tag) => (
+                  <a href={`/notes/tag/${tag}`} class="tag p-category">
+                    #{tag}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            <div class="note-footer">
+              {note.data.syndication && note.data.syndication.length > 0 && (
+                <span>
+                  <span aria-hidden="true">🔗</span>{' '}
+                  <a
+                    href={note.data.syndication[0]}
+                    class="u-syndication"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Ver no Twitter
+                  </a>
+                </span>
+              )}
+
+              {note.data.metrics && (
+                <span class="metrics">
+                  <span aria-hidden="true">♥️</span> {note.data.metrics.favorites}
+                  <span aria-hidden="true">🔄</span> {note.data.metrics.retweets}
+                </span>
+              )}
+            </div>
+
+            <div class="p-author h-card" style="display:none">
+              <a href="/" class="p-name u-url">
+                Bruno Pulis
+              </a>
+            </div>
+          </article>
+        );
+      })
+    }
+  </section>
 </Layout>
+
+<style>
+  h1 {
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    font-size: 2rem;
+  }
+
+  .note {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 2rem;
+  }
+
+  .note:last-child {
+    border-bottom: none;
+  }
+
+  .note-meta {
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+
+  .note-date {
+    display: inline-block;
+  }
+
+  .note-type {
+    display: inline-block;
+    margin-left: 0.5rem;
+    border-radius: 3px;
+    background: #f0f0f0;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .note-content {
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+
+  .note-content img {
+    margin-top: 1rem;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .note-tags {
+    margin-top: 0.75rem;
+  }
+
+  .tag {
+    display: inline-block;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+    background: #e3f2fd;
+    padding: 0.25rem 0.5rem;
+    color: #1976d2;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .note-footer {
+    margin-top: 0.75rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+
+  .note-footer a {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  .note-footer a:hover {
+    text-decoration: underline;
+  }
+
+  .metrics {
+    display: inline-block;
+    margin-left: 1rem;
+    color: #999;
+  }
+
+  .reply-context {
+    margin-bottom: 1rem;
+    border-left: 3px solid #1976d2;
+    background: #f9f9f9;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+</style>
