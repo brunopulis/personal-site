@@ -29,11 +29,9 @@ export async function GET(context) {
         categories: note.data.tags || [],
       };
     }),
-    customData: `<language>pt-br</language>`,
-
-    // Adicionar informações extras no feed
     xmlns: {
       atom: 'http://www.w3.org/2005/Atom',
     },
+    customData: `<language>pt-br</language>`,
   });
 }
