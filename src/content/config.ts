@@ -11,7 +11,7 @@ import {
   pages,
   speaking,
   stream,
-} from './schemas';
+} from '@configs/schemas';
 
 export const collections = {
   biblioteca,
