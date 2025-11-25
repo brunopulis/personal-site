@@ -1,23 +1,21 @@
-@layer composition {
-  .stack {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-  .stack > * {
-    margin-block: 0;
-  }
+.stack > * {
+  margin-block: 0;
+}
 
-  .stack > * + * {
-    margin-block-start: var(--stack-space, 1.5rem);
-  }
+.stack > * + * {
+  margin-block-start: var(--stack-space, 1.5rem);
+}
 
-  .stack[data-gap='small'] {
-    --stack-space: 0.5rem;
-  }
+.stack[data-gap='small'] {
+  --stack-space: 0.5rem;
+}
 
-  .stack[data-gap='large'] {
-    --stack-space: 3rem;
-  }
+.stack[data-gap='large'] {
+  --stack-space: 3rem;
 }

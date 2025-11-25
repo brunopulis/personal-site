@@ -5,7 +5,7 @@
 
 @import './global/fonts.css' layer(tokens);
 
-@import './global/tokens.css' layer(tokens);
+@import './global/variables.css' layer(tokens);
 @import './global/base.css' layer(base);
 
 /* @import './tests/debug.css' layer(base); */
