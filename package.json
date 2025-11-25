@@ -10,10 +10,6 @@
     "build": "tinacms build && astro build",
     "build:pagefind": "pagefind --site dist",
     "preview": "astro preview",
-    "a11y": "pa11y-ci",
-    "a11y:report": "node test-a11y.mjs",
-    "a11y:dev": "npm run dev & sleep 5 && npm run a11y:report",
-    "a11y:build": "npm run build && npm run preview & sleep 5 && npm run a11y:report",
     "start": "astro dev",
     "sync": "astro sync",
     "lint": "eslint .",
@@ -76,19 +72,21 @@
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "inquirer": "^13.0.1",
+    "jsdom": "^27.2.0",
     "lint-staged": "^16.2.7",
-    "pa11y": "^9.0.1",
-    "pa11y-ci": "^4.0.1",
-    "pa11y-reporter-html": "^2.0.0",
     "pagefind": "^1.4.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-css-order": "^2.1.2",
     "rimraf": "^6.1.2",
     "sanitize-html": "^2.17.0",
+    "turndown": "^7.2.2",
     "typescript-eslint": "^8.47.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro}": ["eslint --fix", "prettier --write"]
+    "*.{js,jsx,ts,tsx,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

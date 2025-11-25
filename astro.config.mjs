@@ -1,5 +1,3 @@
-// @ts-nocheck
-// import db from '@astrojs/db';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
@@ -21,7 +19,7 @@ export default defineConfig({
     defaultLocale: 'pt-BR',
     locales: ['pt-BR', 'en'],
     routing: {
-      prefixDefaultLocale: false, // false = /sobre, true = /pt-BR/sobre
+      prefixDefaultLocale: false,
       redirectToDefaultLocale: true,
     },
     fallback: {
@@ -58,6 +56,7 @@ export default defineConfig({
       alias: {
         '@': path.resolve(__dirname, './src'),
         '@components': path.resolve(__dirname, './src/components'),
+        '@configs': path.resolve(__dirname, './src/configs'),
         '@layout/': path.resolve(__dirname, './src/layout'),
         '@layouts': path.resolve(__dirname, './src/layouts'),
         '@data': path.resolve(__dirname, './src/data'),
