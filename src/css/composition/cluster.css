@@ -15,10 +15,10 @@ horizontally. Can be any acceptable flexbox aligmnent value.
 Can be any acceptable flexbox alignment value.
 */
 
-:where(.cluster) {
+.cluster {
   display: flex;
   flex-wrap: wrap;
   justify-content: var(--cluster-horizontal-alignment, flex-start);
   align-items: var(--cluster-vertical-alignment, center);
-  gap: var(--gutter, var(--space-s-l));
+  gap: var(--gutter, var(--space-s-m));
 }

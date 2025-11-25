@@ -53,6 +53,27 @@
   --color-error: #ef4444;
   --color-info: #3b82f6;
 
+  --brand-buy-me-a-coffee: light-dark(#9500ff, #ffdd00);
+  --brand-forgejo: light-dark(#d40000, #ff6600);
+  --brand-github: light-dark(#333, #f5f5f5);
+  --brand-mastodon: light-dark(#563acc, #858afa);
+  --brand-json: light-dark(#5a8f00, #8be028);
+  --brand-npm: #cb3837;
+  --brand-proton: light-dark(#8a2bff, #ddc2ff);
+  --brand-rss: light-dark(#b04516, #f26522);
+  --calendar: light-dark(#2c5c2c, #7ed97e);
+  --country: light-dark(#146a67, #80dcdc);
+  --error: light-dark(#b91c1c, #fca5a5);
+  --favorite: light-dark(#b03c72, #ff9ccd);
+  --success: light-dark(#166534, #86efac);
+  --music: light-dark(#3d7099, #76b8cc);
+  --newsletter: light-dark(#37b0b0, #91fffa);
+  --snippets: light-dark(#ea580c, #fbbf24);
+  --status: light-dark(#16a34a, #4ade80);
+  --tattoo: light-dark(#951b1b, #ff7373);
+  --warning: light-dark(#975a16, #f6e05e);
+  --webrings: light-dark(#b054b0, #ffb3ff);
+
   /* Typography */
   --font-base: 'Source Sans 3', system-ui, sans-serif;
   --font-mono: 'Fira Code', 'Courier New', monospace;
@@ -89,6 +110,8 @@
   --space-xl: 3rem;
   --space-2xl: 4rem;
   --space-3xl: 6rem;
+
+  --margin-vertical-base-horizontal-zero: var(--space-md) 0;
 
   --gutter: clamp(1rem, calc(0.7rem + 1.52vw), 1.88rem);
   --space-tiny: clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem);

@@ -1,28 +1,11 @@
-/* © Ryan Mulligan - https://ryanmulligan.dev/blog/layout-breakouts/ */
-
+/*
+WRAPPER COMPOSITION 
+A common wrapper/container
+*/
 .wrapper {
   position: relative;
   margin-inline: auto;
-  padding-inline: var(--gutter);
-  max-width: var(--wrapper-max-width, 80rem);
-}
-
-.wrapper > * {
-  grid-column: content;
-}
-
-.prose-wrapper {
-  --wrapper-width: 64rem;
-}
-
-.popout {
-  grid-column: popout;
-}
-
-.feature {
-  grid-column: feature;
-}
-
-.full {
-  grid-column: full;
+  padding-right: var(--gutter);
+  padding-left: var(--gutter);
+  max-width: clamp(16rem, var(--wrapper-max-width, 100vw), 80rem);
 }

@@ -10,15 +10,14 @@ between each item.
 --repel-vertical-alignment How items should align vertically.
 Can be any acceptable flexbox alignment value.
 */
-
-:where(.repel) {
+.repel {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: var(--repel-vertical-alignment, center);
-  gap: var(--gutter, var(--space-s-l));
+  gap: var(--gutter, var(--space-s-m));
 }
 
-:where(.repel)[data-nowrap] {
+.repel[data-nowrap] {
   flex-wrap: nowrap;
 }
