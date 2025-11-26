@@ -48,7 +48,7 @@ function formatDate(date?: string | number | Date) {
             </p>
             <p class="mb-6 text-2xl font-light text-errie-black-900">{post.data.excerpt}</p>
             <a
-              href={'/blog/' + post.slug}
+              href={'/blog/' + post.slug.split('/').pop()}
               aria-labelledby={`post-${index}`}
               class="flex items-center gap-2 font-semibold text-errie-black-900 underline underline-offset-8 transition hover:no-underline"
             >

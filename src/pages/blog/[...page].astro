@@ -68,7 +68,7 @@ export const prerender = true;
           posts.map((post, index) => (
             <li class="box card" data-tags={post.data.tags?.join(',')}>
               <h3 class="mb-4 text-3xl font-bold">
-                <a href={`/blog/${post.slug}`} class="u-url group block">
+                <a href={`/blog/${post.slug.split('/').pop()}`} class="u-url group block">
                   {post.data.title}
                 </a>
               </h3>
@@ -87,7 +87,7 @@ export const prerender = true;
                 </div>
               )}
               <a
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug.split('/').pop()}`}
                 aria-labelledby={`post-${index}`}
                 class="flex items-center gap-2 font-semibold text-errie-black-900 underline underline-offset-8 transition hover:no-underline"
               >
