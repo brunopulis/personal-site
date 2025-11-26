@@ -51,7 +51,7 @@ const sortedPosts = posts.sort(
         sortedPosts.map((post) => (
           <article class="post-item">
             <h2>
-              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+              <a href={`/blog/${post.slug.split('/').pop()}`}>{post.data.title}</a>
             </h2>
             <time>{new Date(post.data.publishDate).toLocaleDateString('pt-BR')}</time>
 

@@ -27,7 +27,7 @@ const { posts, t, locale } = Astro.props;
           <article class="card">
             <div class="flow">
               <h3 class="card__title">
-                <a href={`/blog/${post.slug}`} class="card__link">
+                <a href={`/blog/${post.slug.split('/').pop()}`} class="card__link">
                   {post.data.title}
                 </a>
               </h3>
