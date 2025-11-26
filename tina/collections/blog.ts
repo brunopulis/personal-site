@@ -4,10 +4,15 @@ export const BlogCollection: Collection = {
   name: 'post',
   label: 'Blog',
   path: 'src/content/blog',
+  match: {
+    include: '**/*',
+  },
+  format: 'mdx',
   defaultItem: () => {
     return {
       title: 'Novo Post',
       author: 'Pulis',
+      publishDate: new Date().toISOString(),
       seo: {
         meta_title: '',
         meta_description: '',
@@ -19,14 +24,20 @@ export const BlogCollection: Collection = {
       featured: false,
     };
   },
-  match: {
-    include: '*',
-  },
-  format: 'md',
   ui: {
     filename: {
       slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, '-')}`;
+        const date = values?.publishDate ? new Date(values.publishDate) : new Date();
+        const year = date.getFullYear();
+        const slug =
+          values?.title
+            ?.toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w-]/g, '') || 'post';
+        // Preserve locale from existing path or default to pt-br
+        const locale = 'pt-br'; // You can make this dynamic based on a field
+        return `${locale}/${year}/${slug}`;
       },
     },
   },

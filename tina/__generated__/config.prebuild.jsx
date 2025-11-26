@@ -176,10 +176,15 @@ var BlogCollection = {
   name: "post",
   label: "Blog",
   path: "src/content/blog",
+  match: {
+    include: "**/*"
+  },
+  format: "mdx",
   defaultItem: () => {
     return {
       title: "Novo Post",
       author: "Pulis",
+      publishDate: (/* @__PURE__ */ new Date()).toISOString(),
       seo: {
         meta_title: "",
         meta_description: "",
@@ -191,14 +196,14 @@ var BlogCollection = {
       featured: false
     };
   },
-  match: {
-    include: "*"
-  },
-  format: "md",
   ui: {
     filename: {
       slugify: (values) => {
-        return `${values?.title?.toLowerCase().replace(/ /g, "-")}`;
+        const date = values?.publishDate ? new Date(values.publishDate) : /* @__PURE__ */ new Date();
+        const year = date.getFullYear();
+        const slug = values?.title?.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]/g, "") || "post";
+        const locale = "pt-br";
+        return `${locale}/${year}/${slug}`;
       }
     }
   },
