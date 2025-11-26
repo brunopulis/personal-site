@@ -15,7 +15,14 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "convert:mdx": "node scripts/convert-md-to-mdx.js",
+    "convert:mdx:dry-run": "node scripts/convert-md-to-mdx.js --dry-run",
+    "fix:images": "node scripts/fix-image-paths.js",
+    "fix:images:dry-run": "node scripts/fix-image-paths.js --dry-run",
+    "migrate:mdx": "node scripts/migrate-to-mdx.js",
+    "migrate:mdx:dry-run": "node scripts/migrate-to-mdx.js --dry-run",
+    "check:images": "node scripts/check-missing-images.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -84,9 +91,6 @@
     "typescript-eslint": "^8.47.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{js,jsx,ts,tsx,astro}": ["eslint --fix", "prettier --write"]
   }
 }
