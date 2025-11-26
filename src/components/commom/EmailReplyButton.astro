@@ -3,7 +3,7 @@ interface Props {
   postTitle?: string;
   postUrl?: string;
   email?: string;
-  style?: 'simple | button | inline';
+  style?: 'simple' | 'button' | 'inline';
 }
 
 const { postTitle, postUrl, email = 'brunopulis@protonmail.com', style } = Astro.props;
