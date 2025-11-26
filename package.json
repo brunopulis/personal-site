@@ -43,7 +43,7 @@
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
     "tailwindcss": "^4.1.13",
-    "tinacms": "^2.9.0",
+    "tinacms": "^2.9.5",
     "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40",
