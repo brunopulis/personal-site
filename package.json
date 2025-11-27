@@ -25,7 +25,7 @@
     "@astrojs/mdx": "^4.3.12",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/ts-plugin": "^1.10.5",
+    "@astrojs/ts-plugin": "^1.10.6",
     "@astrojs/vercel": "^9.0.0",
     "@cedx/akismet": "^17.1.0",
     "@fontsource-variable/source-sans-3": "^5.2.9",
