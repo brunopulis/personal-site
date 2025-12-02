@@ -1,0 +1,15 @@
+{%- set icons = {
+	like: { label: 'likes', icon: 'star' },
+	bookmark: { label: 'bookmarks', icon: 'bookmark-simple' },
+	rsvp: { label: 'RSVPs', icon: 'calendar', href: 'rsvp' },
+	read: { label: 'read', icon: 'book' },
+	watch: { label: 'watched', icon: 'film-slate' },
+	listen: { label: 'listens', icon: 'music-notes' },
+	article: { label: 'articles', icon: 'newspaper' },
+	reply: { label: 'replies', icon: 'arrow-bend-up-left' },
+	note: { label: 'notes', icon: 'note' },
+	photo: { label: 'photos', icon: 'photo' },
+	code: { label: 'code', icon: 'code' }
+} -%}
+{% if icons[postType] -%}
+<a class="{{ 'selected' if currentPage == (icons[postType].href or icons[postType].label) }}" href="/{{ icons[postType].href or icons[postType].label }}" title="{{ icons[postType].label }}">{% svg "types.svg#" + icons[postType].icon, icons[postType].label, "", 18 %}</a>{%- endif %}

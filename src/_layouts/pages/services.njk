@@ -1,0 +1,59 @@
+---
+layout: base
+theme: royal-blue
+headerClass: row-1
+mainClass: row-1
+headerStyle: '--header-color-override: var(--color-gray-100);'
+---
+
+<header class="section overflow-hidden full" data-color="royal-blue">
+  <div class="section__inner">
+    <div class="wrapper flow">
+      <div class="mascot" data-direction="rtl">
+        <div
+          class="flow region place-self-end text-gray-100"
+          style="--region-space-top: var(--space-header-distance)"
+        >
+          <h1 class="fade-in-bottom">{{ title }}</h1>
+          <p class="flow-space-s">{{ lead }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% svg 'divider/used-curve', null, 'seperator' %}
+</header>
+
+<article class="region">
+  <dl class="grid mt-l-xl gutter-xl" data-layout="thirds">
+    {% for tool in whatido[page.lang] %}
+      <div class="flow flow-space-l wrapper:text-center">
+        {% svg 'whatido/' + tool.key, null, 'text-step-4' %}
+        <dt class="text-step-1 font-display font-bold">{{ tool.title }}</dt>
+        <dd class="flow-space-s">{{ tool.summary | markdownFormat | safe }}</dd>
+      </div>
+    {% endfor %}
+  </dl>
+</article>
+
+<div class="wrapper">
+  <div class="grid" data-layout="50-50">
+    {%- for service in services %}
+      <article class="rounded-2xl border-2 border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-xl">
+        <header role="banner" class="mb-6 flex items-start gap-4">
+          <div class="flex-1">
+            <h3 class="mt-2 mb-1 text-2xl font-bold text-gray-900">{{service.title}}</h3>
+          </div>
+        </header>
+        <p class="mb-6 leading-relaxed text-gray-700">{{service.descricao}}</p>
+        <div class="flex">
+          <a
+            href={service.url}
+            class="text-blood-red-800 text-sm font-semibold transition hover:underline hover:underline-offset-8"
+          >
+            Saiba mais
+          </a>
+        </div>
+      </article>
+    {%- endfor %}
+  </div>
+</div>

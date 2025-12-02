@@ -1,0 +1,16 @@
+{% macro Newsletter(data, locale='pt-br') %}
+<section class="newsletter">
+  <h2 class="section-title">{{ data.title }}</h2>
+  {% if data.subtitle %}
+    <p class="newsletter__subtitle">{{ data.subtitle }}</p>
+  {% endif %}
+  <form action="{{ data.actionUrl }}" method="POST" class="newsletter__form">
+    <input type="email"
+           name="email"
+           placeholder="{{ data.placeholder }}"
+           required
+           class="newsletter__input">
+    <button type="submit" class="btn btn-primary">{{ data.buttonText }}</button>
+  </form>
+</section>
+{% endmacro %}
