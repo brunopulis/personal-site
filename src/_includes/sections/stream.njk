@@ -1,0 +1,15 @@
+{% import "components/stream-item.njk" as comps %}
+
+{% macro StreamFeed(items, locale = "pt-br") %}
+  <div class="grid" data-layout="stream">
+    {% for item in items %}
+      {{ comps.StreamItem(item, locale) }}
+    {% endfor %}
+  </div>
+
+  <p style="margin-top:20px;">
+    <a href="{{ localizedPath('stream', locale) }}">
+      {{ 'home.stream.view_all' | t(locale) }}
+    </a>
+  </p>
+{% endmacro %}

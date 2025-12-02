@@ -1,0 +1,19 @@
+{# src/_includes/components/stream-item.njk #}
+{% macro StreamItem(item, locale = "pt-br") %}
+  <article class="card | stream__item">
+    <div class="flow">
+      <span class="stream__item-icon" aria-hidden="true">
+        {{ iconMap[item.data.type] | default('📝') }}
+      </span>
+
+      <div class="stream__item-content">
+        <h3 class="stream__item-title">{{ item.data.title }}</h3>
+        <p>{{ item.data.detail }}</p>
+        <time class="dt-published stream__item-date"
+              datetime="{{ item.data.pubDate | date('iso') }}">
+          {{ item.data.pubDate | relDate(locale) }}
+        </time>
+      </div>
+    </div>
+  </article>
+{% endmacro %}

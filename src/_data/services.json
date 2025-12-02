@@ -1,0 +1,90 @@
+[
+	{
+		"id": "avaliacao",
+		"i18n": {
+			"pt": {
+				"title": "Avaliação de Acessibilidade",
+				"description":
+  				"Analiso o site, documento ou aplicação em detalhes e entrego um relatório priorizado com os problemas identificados e as correções necessárias. Foco em questões reais que impactam usuários e conformidade com WCAG.",
+				"url": "/servicos/auditoria-de-acessibilidade"
+			},
+			"en": {
+				"title": "Accessibility Assessment",
+				"description": "I analyze your site, document or application in detail and deliver a prioritized report with identified problems and necessary corrections. Focus on real issues that impact users and WCAG compliance.",
+				"url": "en/services/accessibility-assessment"
+			}
+		}
+	},
+	{
+		"id": "auditoria",
+		"i18n": {
+			"pt": {
+				"title": "Auditoria de Acessibilidade",
+				"description":
+  				"Realizo uma análise aprofundada do código, semântica HTML, ARIA, contraste, navegação por teclado e muito mais. Você recebe um laudo detalhado com os problemas encontrados, seu nível de severidade e sugestões práticas de resolução.",
+				"url": "/servicos/auditoria-de-acessibilidade"
+			},
+			"en": {
+				"title": "Accessibility Audit",
+				"description": "I perform an in-depth analysis of code, HTML semantics, ARIA, contrast, keyboard navigation and more. You receive a detailed report with identified problems, severity levels and practical resolution suggestions",
+				"url": "en/services/accessibility-audit"
+			}
+		}
+	},
+	{
+		"id": "mentoria",
+		"i18n": {
+			"pt": {
+				"title": "Mentoria",
+				"description":
+  				"Trabalho junto com você ou seu time implementando acessibilidade em projetos reais. Reviso seu código, explico as boas práticas no contexto do seu projeto e ajudo a consolidar conhecimento através da prática",
+				"url": "/servicos/mentoria"
+			},
+			"en": {
+				"title": "Accessibility Mentoring",
+				"description": "I work alongside you or your team implementing accessibility in real projects. I review your code, explain best practices in your project context and help consolidate knowledge through practice.",
+				"url": "en/services/mentoring"
+			}
+		}
+	},
+	{
+		"id": "palestras",
+		"i18n": {
+			"pt": {
+				"title": "Palestras e Workshops",
+				"description":
+  				"Apresento acessibilidade de forma prática e direta para empresas e eventos. Sem abstrações desnecessárias – foco em implementação real, padrões web e como integrar acessibilidade no seu workflow de desenvolvimento.",
+				"url": "/servicos/palestras"
+			},
+			"en": {
+				"title": "Talks and Workshops",
+				"description": "I present accessibility in a practical and direct way for companies and events. No unnecessary abstractions – focus on real implementation, web standards and how to integrate accessibility into your development workflow",
+				"url": "en/services/talks"
+			}
+		}
+	},
+	{
+		"id": "remediacao-docs",
+		"title": "Remediação de Documentos",
+		"tagline": "PDFs e documentos verdadeiramente acessíveis",
+		"descricao":
+			"Transformo seus documentos (PDFs, Word, PowerPoint) em versões acessíveis que atendem aos padrões.",
+		"url": "/servicos/remediacao-de-documentos"
+	},
+	{
+		"id": "remediacao-sites",
+		"title": "Remediação de Sites",
+		"tagline": "Corrijo o código para torná-lo acessível",
+		"descricao":
+			"Pego seu site inacessível e implemento todas as correções necessárias no código. Trabalho direto na implementação técnica.",
+		"url": "/servicos/remediacao-de-sites"
+	},
+	{
+		"id": "consultoria",
+		"title": "Consultoria",
+		"tagline": "Orientação estratégica para decisões certas",
+		"descricao":
+			"Ajudo sua empresa a definir estratégias de acessibilidade, criar políticas internas e tomar decisões informadas sobre investimentos.",
+		"url": "/servicos/consultoria"
+	}
+]

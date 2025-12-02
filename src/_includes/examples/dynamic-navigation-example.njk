@@ -1,0 +1,72 @@
+{# 
+  Exemplo de uso da navegação dinâmica internacionalizada
+  
+  Este arquivo demonstra como usar os filtros getLocalizedUrl e getHomeUrl
+  para gerar URLs dinamicamente baseadas no idioma da página.
+#}
+
+{# Importar dados de navegação #}
+{% set navData = i18n_navigation %}
+
+{# Exemplo 1: Menu de navegação principal #}
+<nav class="main-nav">
+  <ul>
+    {# Link para home #}
+    <li>
+      <a href="{{ '' | getHomeUrl(page.lang) }}">
+        {{ 'home.title' | t(page.lang) }}
+      </a>
+    </li>
+    
+    {# Links do menu principal #}
+    {% for item in navData.top %}
+      <li>
+        <a href="{{ item.key | getLocalizedUrl(page.lang) }}">
+          {{ item.text[page.lang] }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{# Exemplo 2: Menu de rodapé #}
+<nav class="footer-nav">
+  <ul>
+    {% for item in navData.bottom %}
+      <li>
+        <a href="{{ item.key | getLocalizedUrl(page.lang) }}">
+          {{ item.text[page.lang] }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{# Exemplo 3: Links específicos #}
+<div class="quick-links">
+  {# Link para blog sempre dinâmico #}
+  <a href="{{ 'blog' | getLocalizedUrl(page.lang) }}">
+    {{ 'blog' | getLocalizedUrl(page.lang) }}
+    {# pt-br: /blog/ #}
+    {# en: /en/blog/ #}
+  </a>
+  
+  {# Link para sobre #}
+  <a href="{{ 'about' | getLocalizedUrl(page.lang) }}">
+    {# pt-br: /sobre/ #}
+    {# en: /en/about/ #}
+  </a>
+</div>
+
+{# Exemplo 4: Breadcrumbs dinâmicos #}
+<nav aria-label="Breadcrumb">
+  <ol>
+    <li>
+      <a href="{{ '' | getHomeUrl(page.lang) }}">Home</a>
+    </li>
+    <li>
+      <a href="{{ 'blog' | getLocalizedUrl(page.lang) }}">Blog</a>
+    </li>
+    <li aria-current="page">{{ title }}</li>
+  </ol>
+</nav>
