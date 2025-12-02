@@ -1,30 +1,27 @@
 ---
-title: 'Colophon'
-description: 'Technologies I haved use on this site'
-lang: 'en'
-routeKey: 'colophon'
-date: '2025-11-21'
+layout: page
+title: Colophon
+permalink: /{{ lang }}/{{ page.fileSlug }}/index.html
+description: 'You can use this starter as a template for your blog and you are ready to go! But there are some adjustments you have to make.'
 ---
 
-This website was designed with a focus on simplicity, performance, and accessibility.
+Este site foi criado com o Eleventy, um gerador de sites estáticos, e está hospedado no Vercel. 
 
-## Technologies used
+O código-fonte está disponível no [GitHub](https://github.com/brunopulis/personal-site). 
 
-- **Generator:** [Astro](https://astro.build/)
-- **Hosting:** [Vercel](http://vercel.com/)
-- **Versioning:** Git and [GitHub](https://github.com/brunopulis/personal-site)
-- **CMS:** Markdown and [Tina CMS](https://tina.io/)
+Já usei o WordPress, Jekyll e Astro para versões anteriores deste site.
 
-### Design and Typography
+O site usa HTML, CSS e um pouco de JS não essencial. Todos os tipos de postagens têm feeds RSS, Atom e JSON disponíveis na página de inscrição. 
 
-- **Font:** [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
-- **Icons:** [Lucide Astro](https://lucide.dev/guide/packages/lucide-astro)
-- **Theme:** Created by me, with significant contributions from [Wagner Beethoveen](https://wagnerbeethoven.com.br/) <span>❤️</span>
+O site suporta um subconjunto de propriedades de microformato h-card, incluindo detalhes do autor e detalhes da postagem (exemplo).
 
-### Accessibility and QA
+Para quaisquer publicações no meu blog principal, eu as publico manualmente na minha conta Mastodon. 
 
-- **Validation:** Semantic HTML5
-- **Testing:** Validated with Axe DevTools, NVDA, and Lighthouse.
-- **Performance:** No tracking scripts or bloatware.
+Outros tipos de publicações, como links, são publicados no Mastodon usando o EchoFeed, um serviço de publicação cruzada que criei.
 
-[Colophon](<https://en.wikipedia.org/wiki/Colophon_(publishing)>) is a publishing term typically used to describe the publishing process but has been expanded to websites. This page was inspired by Binyamin Aron Green and Eric Bailey.
+Eu busco menções na web sobre as publicações do meu blog com o webmention.io. 
+
+Escrevi sobre como fiz isso nesta publicação. 
+
+Não coleto mais respostas do Mastodon.Envio menções na web para as minhas publicações com o EchoFeed.
+

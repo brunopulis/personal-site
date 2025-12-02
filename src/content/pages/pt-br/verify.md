@@ -1,10 +1,12 @@
 ---
-title: 'Verifique minha identidade'
-date: '2025-11-18'
-description: ''
-lang: 'pt-br'
-routeKey: 'verify'
+layout: page
+title: Verifique
+permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+key: 'verique'
+description: Verifique minha identidade online
+date: Last Modified
 ---
+
 
 Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui, por favor, [me avise](https://brunopulis.com/contato).
 
@@ -12,26 +14,28 @@ Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui
 
 ### Fediverso:
 
-- @robb@social.lol
+- @brunopulis@mastodon.social
 - @echofeedamplify@beep.town
 - @greatscott@beep.town
 
 All accounts on bugle.lol are run by me
+
 Accounts on hub.7622.me:
 @echofeed
 @wegotfamily
 Bluesky:
-@rknight.me - blog posts auto-posted with EchoFeed
-@echofeed.app
-Discord: rknightuk
-PSN: rknightuk
-Signal: rknightuk.01
-LastFM: rknightuk
-omg.lol: robb
-finger me: finger robb@omg.lol
-GitHub: rknightuk
-Apple Music: rknightuk
-Buy Me a Coffee: rknightuk
+
+- @rknight.me - blog posts auto-posted with EchoFeed
+- @echofeed.app
+- Discord: rknightuk
+- PSN: rknightuk
+- Signal: rknightuk.01
+- LastFM: rknightuk
+- omg.lol: robb
+- finger me: finger robb@omg.lol
+- GitHub: rknightuk
+- Apple Music: rknightuk
+- Ko-fi: [brunopulis](https://ko-fi.com/brunopulis)
 
 ## Email
 
@@ -64,7 +68,7 @@ TikTok
 Snapchat
 Pixelfed (why?)
 
-## Meus domínios
+## Meus domínios 
 
 - rknight.me
 - 7622.me
@@ -77,3 +81,7 @@ Pixelfed (why?)
 - deskmat.help
 - slashpages.net
 - toot.rodeo
+
+---
+
+*Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
