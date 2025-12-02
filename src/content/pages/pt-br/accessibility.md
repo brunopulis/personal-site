@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 'Accessibility Statement'
-permalink: /{{ lang }}/{{ page.fileSlug }}/index.html
+title: 'Declaração de Acessibilidade'
+permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
 description: 'Commitment to digital accessibility and how to report accessibility issues.'
 date: "Last Modified"
 ---

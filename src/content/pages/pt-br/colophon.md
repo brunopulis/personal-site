@@ -1,32 +1,27 @@
 ---
-title: 'Colophon'
-description: 'Tecnologias que usei para criar o site'
-lang: 'pt-br'
-routeKey: 'colophon'
-date: '2025-11-21'
+layout: page
+title: Colophon
+permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+description: 'You can use this starter as a template for your blog and you are ready to go! But there are some adjustments you have to make.'
 ---
 
-Este site foi projetado com foco em simplicidade, performance e acessibilidade.
+Este site foi criado com o Eleventy, um gerador de sites estáticos, e está hospedado no Vercel. 
 
-## Tecnologias usadas
+O código-fonte está disponível no [GitHub](https://github.com/brunopulis/personal-site). 
 
-- **Gerador:** [Astro](https://astro.build/)
-- **Hospedagem:** [Vercel](http://vercel.com/)
-- **Versionamento:** Git e [GitHub](https://github.com/brunopulis/personal-site)
-- **CMS:** Markdown e [Tina CMS](https://tina.io/)
+Já usei o WordPress, Jekyll e Astro para versões anteriores deste site.
 
-### Design & Tipografia
+O site usa HTML, CSS e um pouco de JS não essencial. Todos os tipos de postagens têm feeds RSS, Atom e JSON disponíveis na página de inscrição. 
 
-- **Fonte:** [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
-- **Ícones:** [Lucide Astro](https://lucide.dev/guide/packages/lucide-astro)
-- **Tema:** Criado por mim, com grandes contribuições de [Wagner Beethoveen](https://wagnerbeethoven.com.br/)
+O site suporta um subconjunto de propriedades de microformato h-card, incluindo detalhes do autor e detalhes da postagem (exemplo).
 
-### Acessibilidade e QA
+Para quaisquer publicações no meu blog principal, eu as publico manualmente na minha conta Mastodon. 
 
-- **Validação:** HTML5 Semântico
-- **Testes:** Validado com Axe DevTools, NVDA e Lighthouse.
-- **Performance:** Sem scripts de rastreamento ou bloatware.
+Outros tipos de publicações, como links, são publicados no Mastodon usando o EchoFeed, um serviço de publicação cruzada que criei.
 
-[Colophon](<https://en.wikipedia.org/wiki/Colophon_(publishing)>) é um termo editorial normalmente utilizado para descrever o processo de publicação, mas que foi alargado aos sites da Internet.
+Eu busco menções na web sobre as publicações do meu blog com o webmention.io. 
 
-Esta página foi inspirada por [Binyamin Aron Green](https://binyam.in) e [Eric Bailey](https://ericwbailey.website/).
+Escrevi sobre como fiz isso nesta publicação. 
+
+Não coleto mais respostas do Mastodon.Envio menções na web para as minhas publicações com o EchoFeed.
+
