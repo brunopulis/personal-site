@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Contact me
-permalink: /{{ lang }}/{{ page.fileSlug }}/index.html
+title: Contato
+permalink: "/contato/index.html"
 description: 'You can use this starter as a template for your blog and you are ready to go! But there are some adjustments you have to make.'
 ---
 

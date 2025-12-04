@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Privacy Policy
-permalink: /{{ lang }}/{{ page.fileSlug }}/index.html
-key: 'privacy'
+title: Projetos
+permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+key: 'projetos'
 description: I respect the EU General Data Protection Regulation (GDPR). This policy document explains how I collect and handle any information you provide to me.
 date: Last Modified
 ---
@@ -35,4 +35,4 @@ If you have any reason to complain about the way I handle your privacy, please c
 
 ---
 
-*Last Update: {{ page.date | formatDate('MMMM D, YYYY') }}*
+*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

@@ -1,0 +1,29 @@
+---
+layout: base
+title: Blog
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+description: 'All blog posts can be found here'
+pagination:
+    data: collections.posts
+    size: 10
+---
+
+<div class="wrapper">
+  <header class="section" style="--spot-color: var(--color-secondary)">
+    <div class="section__inner flow region">
+      <h1 class="text-rosewood-950 text-step-4">{{ title }}</h1>
+    </div>
+  </header>
+
+  <custom-masonry layout="50-50">
+    {% asyncEach item in pagination.items %}
+    {% include "partials/card-blog.njk" %}
+    {% endeach %}
+  </custom-masonry>
+
+  {% set collectionToPaginate = collections.posts %}
+  {% set metaKey = "blog" %}
+  {% if collectionToPaginate.length > pagination.size %}
+  {% include 'partials/pagination.njk' %}
+  {% endif %}
+</div>

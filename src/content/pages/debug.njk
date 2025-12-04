@@ -1,0 +1,35 @@
+---
+layout: base
+title: Debug
+permalink: /debug/
+eleventyExcludeFromCollections: true
+---
+
+<div class="wrapper">
+  <h1>Debug - Collections</h1>
+
+  <h2>Collection: streams</h2>
+  {% if collections.streams %}
+    <p>Total: {{ collections.streams.length }}</p>
+    <ul>
+      {% for stream in collections.streams %}
+      <li>
+        <strong>{{ stream.data.title }}</strong><br>
+        Path: {{ stream.inputPath }}<br>
+        Type: {{ stream.data.type }}<br>
+        Date: {{ stream.date }}<br>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p style="color: red;">❌ Collection 'streams' não existe ou está vazia</p>
+  {% endif %}
+  <hr>
+</div>
+
+<style>
+  .wrapper { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+  h1, h2 { color: #333; }
+  ul { list-style: none; padding: 0; }
+  hr { margin: 2rem 0; border: 1px solid #ddd; }
+</style>
