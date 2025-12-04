@@ -1,28 +1,10 @@
-{# 
-  Navegação Principal Atualizada com URLs Dinâmicas
-  
-  Este é um exemplo de como atualizar o main-nav.njk para usar
-  o sistema de URLs dinâmicas baseado em idioma.
-#}
-
+<!-- toggle drawer and sub menu in _data/meta.js -->
 {% set drawerNav = meta.navigation.drawerNav %}
 {% set subMenu = meta.navigation.subMenu %}
-{% set navData = i18n_navigation %}
 
 <nav id="mainnav" class="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
   <ul class="cluster" role="list" no-flash>
-    {# Link para Home #}
-    <li>
-      <a 
-        href="{{ '' | getHomeUrl(page.lang) }}"
-        {{ helpers.getLinkActiveState('' | getHomeUrl(page.lang), page.url) | safe }}
-      >
-        Home
-      </a>
-    </li>
-    
-    {# Links do menu principal usando dados dinâmicos #}
-    {% for item in navData.top %}
+    {% for item in navigation.top %}
       {% if item.submenu %}
         <li class="relative">
           <button
@@ -31,17 +13,19 @@
             aria-labelledby="mainnav-{{ loop.index }}"
             aria-controls="mainnav-{{ loop.index }}-sub"
           >
-            {{ item.text[page.lang] }} {% svg "misc/chev-down" %}
+            {{ item.text }} {% svg "misc/chev-down" %}
           </button>
           <ul class="nav-sublist | cluster" id="mainnav-{{ loop.index }}-sub">
             {% for subitem in item.submenu %}
               <li>
                 <a
-                  href="{{ subitem.key | getLocalizedUrl(page.lang) }}"
-                  {{ helpers.getLinkActiveState(subitem.key | getLocalizedUrl(page.lang), page.url) | safe }}
+                  href="{{ subitem.url }}"
+                  {{
+                    helpers.getLinkActiveState(subitem.url, page.url)
+                    | safe
+                  }}
+                  >{{ subitem.text }}</a
                 >
-                  {{ subitem.text[page.lang] }}
-                </a>
               </li>
             {% endfor %}
           </ul>
@@ -49,23 +33,40 @@
       {% else %}
         <li>
           <a
-            href="{{ item.key | getLocalizedUrl(page.lang) }}"
-            {{ helpers.getLinkActiveState(item.key | getLocalizedUrl(page.lang), page.url) | safe }}
+            href="{{ item.url }}"
+            {{
+              helpers.getLinkActiveState(item.url,
+              page.url)
+              |
+              safe
+            }}
+            >{{ item.text }}</a
           >
-            {{ item.text[page.lang] }}
-          </a>
         </li>
       {% endif %}
     {% endfor %}
   </ul>
 </nav>
 
-{# Resto do código permanece igual #}
 {% if drawerNav %}
+  <!-- template element holding a button that needs to be injected when JavaScript is finally available. -->
+  <!-- based on solution by Manuel Matuzovic, https://web.dev/website-navigation/ and the Web Accessibility Cookbook -->
+  <!-- see also: https://kittygiraudel.com/2022/09/30/templating-in-html/ -->
+
   <template id="burger-template">
     <button data-drawer-toggle class="cluster" type="button" aria-expanded="false" aria-controls="mainnav">
       <span>{{ meta.navigation.navLabel }}</span>
-      <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M5 12h14" />
         <path d="M12 5v14" />
       </svg>

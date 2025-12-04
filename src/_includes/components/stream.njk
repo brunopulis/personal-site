@@ -1,0 +1,37 @@
+<section class="region | flow">
+  <div class="flow | repel">
+    <h2 class="text-rosewood-950 text-step-4">Recentemente</h2>
+    <a href="/fluxo" class="btn btn-outline">todas entradas recentes</a>
+  </div>
+
+  <div class="grid" data-layout="stream">
+    {% set streams = collections.streams %}
+
+    {% if streams.length %}
+    {% for item in streams.slice(0, 4) %}
+    <article class="card stream-card--{{ item.data.type }}">
+      <div class="stream-card__content flow">
+        <span class="stream-card__icon" aria-hidden="true">
+          {{ item.data.type | streamIcon | safe }}
+        </span>
+        <h3 class="text-rosewood-950 text-step-6">{{ item.data.title }}</h3>
+
+        {% if item.data.detail %}
+        <p class="stream-card__detail">{{ item.data.detail }}</p>
+        {% endif %}
+
+        <div class="stream-card__meta cluster">
+          <span class="stream-card__type">{{ item.data.type | streamTypeLabel }}</span>
+          <span aria-hidden="true">•</span>
+          <time class="dt-published" datetime="{{ item.data.date | formatDate(toISOString) }}">
+            {{ item.data.date | relativeDate }}
+          </time>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+    {% else %}
+    <p>Nenhuma feed encontrado.</p>
+    {% endif %}
+  </div>
+</section>
