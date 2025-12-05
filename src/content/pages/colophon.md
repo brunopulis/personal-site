@@ -3,25 +3,32 @@ layout: page
 title: Colophon
 permalink: "colophon/index.html"
 description: 'You can use this starter as a template for your blog and you are ready to go! But there are some adjustments you have to make.'
+date: Last Modified
 ---
 
-Este site foi criado com o Eleventy, um gerador de sites estáticos, e está hospedado no Vercel. 
+Este site foi projetado com foco em simplicidade, performance e acessibilidade.
 
-O código-fonte está disponível no [GitHub](https://github.com/brunopulis/personal-site). 
+## Tecnologias usadas
 
-Já usei o WordPress, Jekyll e Astro para versões anteriores deste site.
+- **Gerador:** [Astro](https://astro.build/)
+- **Hospedagem:** [Vercel](http://vercel.com/)
+- **Versionamento:** Git e [GitHub](https://github.com/brunopulis/personal-site)
+- **CMS:** Markdown e [Tina CMS](https://tina.io/)
 
-O site usa HTML, CSS e um pouco de JS não essencial. Todos os tipos de postagens têm feeds RSS, Atom e JSON disponíveis na página de inscrição. 
+### Design & Tipografia
 
-O site suporta um subconjunto de propriedades de microformato h-card, incluindo detalhes do autor e detalhes da postagem (exemplo).
+- **Fonte:** [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
+- **Ícones:** [Lucide Astro](https://lucide.dev/guide/packages/lucide-astro)
+- **Tema:** Criado por mim, com grandes contribuições de [Wagner Beethoveen](https://wagnerbeethoven.com.br/)
 
-Para quaisquer publicações no meu blog principal, eu as publico manualmente na minha conta Mastodon. 
+### Acessibilidade e QA
 
-Outros tipos de publicações, como links, são publicados no Mastodon usando o EchoFeed, um serviço de publicação cruzada que criei.
+- **Validação:** HTML5 Semântico
+- **Testes:** Validado com Axe DevTools, NVDA e Lighthouse.
+- **Performance:** Sem scripts de rastreamento ou bloatware.
 
-Eu busco menções na web sobre as publicações do meu blog com o webmention.io. 
+[Colophon](<https://en.wikipedia.org/wiki/Colophon_(publishing)>) é um termo editorial normalmente utilizado para descrever o processo de publicação, mas que foi alargado aos sites da Internet.
 
-Escrevi sobre como fiz isso nesta publicação. 
+Esta página foi inspirada por [Binyamin Aron Green](https://binyam.in) e [Eric Bailey](https://ericwbailey.website/).
 
-Não coleto mais respostas do Mastodon.Envio menções na web para as minhas publicações com o EchoFeed.
-
+*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

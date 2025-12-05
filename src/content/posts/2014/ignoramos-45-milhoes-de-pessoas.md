@@ -1,5 +1,6 @@
 ---
 title: Ignoramos 45 milhões de pessoas
+excerpt: "Breve descrição"
 image: ''
 imageAlt: ''
 pubDate: 2014-12-18

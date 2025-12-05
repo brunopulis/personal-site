@@ -12,7 +12,6 @@ Uma grande lista de todas as páginas, projetos e postagens do meu site.
     <li><a href="/about">Sobre</a> - tudo sobre mim;</li>
     <li><a href="/colophon">Colophon</a> - ferramentas que uso em meu site;</li>
     <li><a href="/blog">Blog</a> - minhas postagens longas;</li>
-    <li><a href="/styleguide">Styleguide</a> - styleguide do site;</li>
     <li><a href="/notas">Notas</a> - notas, posts curtos, e tudo que der na cabeça</li>
     <li><a href="/bookmarks">Links</a> - coleção de links interessantes</li>
     <li><a href="/photos">Fotos</a> - minhas fotos</li>
