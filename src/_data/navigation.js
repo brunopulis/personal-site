@@ -1,46 +1,58 @@
 export default {
   top: [
     {
-      text: 'Blog',
-      url: '/blog/'
-    },
-    {
       text: 'Sobre',
       url: '/sobre/'
     },
     {
-      text: 'Serviços',
-      url: '/servicos/'
+      text: 'Agora',
+      url: '/agora/'
+    },
+    {
+      text: 'Blog',
+      url: '/blog/'
+    },
+    {
+      text: 'Atividades',
+      url: '/fluxo/'
     },
     {
       text: 'Projetos',
-      url: '/projetos/'
+      url: '/trabalho/'
     },
     {
-      text: 'Tags',
-      url: '/tags/'
+      text: 'Contato',
+      url: '/contato/'
     },
     {
       text: 'Explore',
-      url: '/more/'
+      url: '/explore/'
     }
   ],
   bottom: [
     {
-      text: 'Style guide',
-      url: '/styleguide/'
+      text: 'Blogroll',
+      url: '/blogroll/'
     },
     {
-      text: 'Disclaimer',
-      url: '/disclaimer/'
+      text: 'Biblioteca',
+      url: '/livros/'
     },
     {
-      text: 'Privacidade',
-      url: '/privacy/'
+      text: 'Filmes',
+      url: '/filmes/'
+    },
+    {
+      text: 'Notas',
+      url: '/notas/'
     },
     {
       text: 'Acessibilidade',
       url: '/acessibilidade/'
+    },
+    {
+      text: 'Privacidade',
+      url: '/privacy/'
     }
   ]
 };
