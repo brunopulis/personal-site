@@ -1,47 +1,57 @@
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const posts = collectionApi => {
-  return collectionApi
-    .getFilteredByGlob("./src/content/posts/**/*.md")
-    .reverse();
+  return collectionApi.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
 
+export const notes = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/notas/**/*.md').reverse();
+}
+
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const streams = collectionApi => {
   return collectionApi
-    .getFilteredByGlob("./src/content/streams/**/*.md")
+    .getFilteredByGlob('./src/content/streams/**/*.md')
     .sort((a, b) => b.data.date - a.data.date);
 };
 
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const showInSitemap = collectionApi => {
-  return collectionApi.getFilteredByGlob("./src/**/*.{md,njk}");
+  return collectionApi.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
-
 /**
- * 
- * @param {*} collection 
- * @returns 
+ *
+ * @param {*} collection
+ * @returns
  */
 export const tagList = collection => {
-  const tagsSet = new Set();
+  let tagSet = new Set(); // ✅ Definido ANTES do forEach
+  
   collection.getAll().forEach(item => {
-    if (!item.data.tags) return;
-    item.data.tags.filter(tag => !['posts', 'all'].includes(tag)).forEach(tag => tagsSet.add(tag));
+    if ("tags" in item.data) {
+      let tags = item.data.tags;
+      
+      for (const tag of tags) {
+        if (!['all', 'posts', 'streams', 'livros', 'notas', 'filmes', 'musicas'].includes(tag)) {
+          tagSet.add(tag);
+        }
+      }
+    }
   });
-  return Array.from(tagsSet).sort();
+  
+  return Array.from(tagSet).sort();
 };
 
 export default {

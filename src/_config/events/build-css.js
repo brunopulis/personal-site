@@ -3,7 +3,7 @@ import path from 'node:path';
 import postcss from 'postcss';
 import postcssImport from 'postcss-import';
 import postcssImportExtGlob from 'postcss-import-ext-glob';
-import tailwindcss from 'tailwindcss';
+import tailwindcss from '@tailwindcss/postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import fg from 'fast-glob';
@@ -12,21 +12,20 @@ const buildCss = async (inputPath, outputPaths) => {
   const inputContent = await fs.readFile(inputPath, 'utf-8');
 
   const result = await postcss([
-    postcssImportExtGlob,
-    postcssImport,
-    tailwindcss,
     autoprefixer,
     cssnano({
-      preset: ['default', {
-        // Preserve font-family values
-        normalizeDeclarations: {
-          properties: {
-            'font-family': false
-          }
-        },
-        // Disable font-family processing
-        minifyFontValues: false
-      }]
+      preset: [
+        'default',
+        {
+          normalizeDeclarations: {
+            properties: {
+              'font-family': false
+            }
+          },
+          // Disable font-family processing
+          minifyFontValues: false
+        }
+      ]
     })
   ]).process(inputContent, {from: inputPath});
 
