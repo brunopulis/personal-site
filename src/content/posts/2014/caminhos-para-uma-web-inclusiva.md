@@ -1,5 +1,6 @@
 ---
 title: Caminhos para uma web inclusiva
+excerpt: "Breve descrição"
 image: ''
 imageAlt: ''
 pubDate: 2014-02-03

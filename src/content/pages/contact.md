@@ -1,12 +1,26 @@
 ---
-layout: page
 title: Contato
 permalink: "/contato/index.html"
-description: 'You can use this starter as a template for your blog and you are ready to go! But there are some adjustments you have to make.'
+pubDate: '2025-11-18'
+date: Last Modified
 ---
 
-Diga olá!
+É assim que você pode entrar em contato comigo.
 
-Se você está procurando alguém para tornar sua empresa mais acessível Adoraria ouvir de ti! 
+- E-mail: [brunopulis@protonmail.com](mailto:brunopulis@protonmail.com)
 
-Envie-me um e-mail para brunopulis@protonmail.com ou envie-me uma mensagem no [LinkedIn](https://linkedin.com/in/pulis) e entrarei em contato com você assim que puder.
+## E-mail
+
+A melhor maneira de entrar em contato comigo é através do e-mail.
+
+Acredito que a comunicação via e-mail e simples e objetiva.
+
+Além disso, retira os ruídos das redes sociais.
+
+O e-mail também é meu canal de comunicação do blog, caso você responda alguma postagem do blog, irei te responder via e-mail.
+
+## Redes Sociais
+
+- [LinkedIn](https://linkedin.com/in/pulis)
+
+*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
