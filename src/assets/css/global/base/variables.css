@@ -33,7 +33,7 @@
 /* Light theme */
 :root,
 :root[data-theme='light'] {
-  --color-text: var(--color-gray-800);
+  --color-text: var(--color-aztec-950);
   --color-bg: var(--color-gray-100);
 
   --color-primary: var(--color-pink);

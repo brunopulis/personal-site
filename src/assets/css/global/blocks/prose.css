@@ -18,7 +18,6 @@
 }
 
 .prose :is(h2, h3, h4) {
-  --flow-space: 1.5em;
   overflow-wrap: anywhere;
   hyphens: auto;
 }
