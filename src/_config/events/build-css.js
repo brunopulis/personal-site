@@ -16,7 +16,18 @@ const buildCss = async (inputPath, outputPaths) => {
     postcssImport,
     tailwindcss,
     autoprefixer,
-    cssnano
+    cssnano({
+      preset: ['default', {
+        // Preserve font-family values
+        normalizeDeclarations: {
+          properties: {
+            'font-family': false
+          }
+        },
+        // Disable font-family processing
+        minifyFontValues: false
+      }]
+    })
   ]).process(inputContent, {from: inputPath});
 
   for (const outputPath of outputPaths) {

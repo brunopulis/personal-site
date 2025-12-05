@@ -1,9 +1,7 @@
-import {byLang} from './filters/byLang.js';
-import { localizedPath } from './filters/localized-path.js';
-import { getLocalizedUrl, getHomeUrl } from './filters/get-localized-url.js';
 import {categoryFilter} from './filters/category-filter.js';
 import {base64Format} from './filters/base64-format.js';
-import {toISOString, formatDate, formatDatePT_BR, formatDateEN} from './filters/dates.js';
+import {toISOString, formatDate, relativeDate } from './filters/dates.js';
+import {streamIcon, streamTypeLabel} from './filters/stream-icon.js';
 
 import {markdownFormat} from './filters/markdown-format.js';
 import {readingTime} from './filters/reading-time.js';
@@ -20,19 +18,13 @@ import {
   webmentionisOwn,
   webmentionSort
 } from './filters/webmentions.js';
-import { t } from './filters/i18n.js';
 
 export {
-  byLang,
-  localizedPath,
-  getLocalizedUrl,
-  getHomeUrl,
   categoryFilter,
   base64Format,
   toISOString,
   formatDate,
-  formatDatePT_BR,
-  formatDateEN,
+  relativeDate,
   markdownFormat,
   readingTime,
   splitlines,
@@ -41,10 +33,11 @@ export {
   sortAlphabetically,
   splitStrings,
   slugifyString,
+  streamIcon,
+  streamTypeLabel,
   webmentionGetForUrl,
   webmentionSize,
   webmentionByType,
   webmentionisOwn,
-  webmentionSort,
-  t
+  webmentionSort
 };
