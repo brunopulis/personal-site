@@ -30,8 +30,7 @@ main {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display);
-  font-weight: var(--font-extra-bold);
+  font-weight: 900;
   line-height: var(--leading-fine);
   letter-spacing: var(--tracking-s);
 }
@@ -70,7 +69,6 @@ textarea {
 }
 
 svg {
-  block-size: 0.6lh;
   inline-size: auto;
   flex: none;
 }

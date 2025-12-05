@@ -1,6 +1,9 @@
 /* based on Andy Bell's article: https://piccalil.li/blog/how-i-build-a-button-component/ */
 
 .button {
+  /* Configuration */
+  --button-padding: var(--space-xs) var(--space-m);
+  --button-gap: var(--space-2xs);
   --button-bg: var(--color-text);
   --button-color: color-mix(in oklab, var(--button-bg) 10%, var(--color-bg));
   --button-hover-bg: color-mix(in oklab, var(--button-bg) 90%, var(--color-bg));
@@ -9,24 +12,43 @@
   --button-border-style: solid;
   --button-border-color: color-mix(in oklab, var(--button-bg) 80%, var(--color-text));
   --button-radius: var(--border-radius-small);
-  --button-gap: var(--space-2xs);
-  --button-padding: var(--space-xs) var(--space-m);
-  --button-font-family: var(--font-body);
-  --button-font-weight: var(--font-regular);
-  --button-font-size: var(--size-step-0);
-  --button-text-transform: none;
-  --button-tracking: normal;
-
+  
+  /* Layout and spacing */
   display: inline-flex;
   align-items: center;
   gap: var(--button-gap);
   padding: var(--button-padding);
+
+  /* Colours */
   background: var(--button-bg);
   color: var(--button-color);
+
+  /* Stroke and radius */
   border-width: var(--button-border-width);
   border-style: var(--button-border-style);
   border-color: var(--button-border-color);
   border-radius: var(--button-radius);
+
+  /* Typography */
+  text-decoration: none;
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size, 1em);
+  letter-spacing: var(--button-tracking);
+  font-family: sans-serif;
+  line-height: var(--leading-flat, 1.1);
+  text-transform: var(--button-text-transform);
+  
+  /* Interactive */
+  cursor: pointer;
+
+  /* Other */
+  /* trim the space at the cap height - in  Safari Technology Preview */
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.button svg {
+  block-size: var(--button-icon-size, 1.2cap);
   text-decoration: none;
   font-family: var(--button-font-family);
   font-weight: var(--button-font-weight);
@@ -58,6 +80,8 @@
 
 /* Variants */
 .button[data-button-variant='primary'] {
+  --color-primary: var(--color-rosewood-950);
+
   --button-bg: var(--color-primary);
   --button-color: var(--color-light);
   --button-color: color-mix(in oklab, var(--color-primary) 5%, var(--color-light));
