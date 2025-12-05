@@ -1,37 +1,37 @@
 export const url = process.env.URL || 'http://localhost:8080';
-// Extract domain from `url`
 export const domain = new URL(url).hostname;
 export const siteName = 'Bruno Pulis';
-export const siteDescription = 'Eleventy starter for building modern, resilient websites';
-export const siteType = 'Person'; // schema
+export const siteDescription = 'Desenvolvedor e engenheiro de acessibilidade';
+export const siteType = 'Person';
 export const locale = 'pt_BR';
 export const lang = 'pt-br';
 export const skipContent = 'Ir para conteúdo';
+
 export const author = {
-  name: 'Bruno Pulis', // i.e. Bruno Pulis - page / blog author's name. Must be set.
-  avatar: '/icon-512x512.png', // path to the author's avatar. In this case just using a favicon.
-  email: 'brunopulis@protonmail.com', // i.e. brunopulis@protonmail.com - email of the author
-  website: 'https://www.brunopulis.com', // i.e. https.://www.brunopulis.com - the personal site of the author
-  fediverse: '@brunopulis@mastodon.social' // used for highlighting journalism on the fediverse. Can be Mastodon, Flipboard, Threads, WordPress (with the ActivityPub plugin installed), PeerTube, Pixelfed, etc. https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastbrunopulis/
+  name: 'Bruno Pulis',
+  avatar: '/icon-512x512.png',
+  email: 'brunopulis@protonmail.com',
+  website: 'https://www.brunopulis.com',
+  fediverse: '@brunopulis@mastodon.social'
 };
+
 export const creator = {
-  name: 'Bruno Pulis', // i.e. Bruno Pulis - creator's (developer) name.
+  name: 'Bruno Pulis',
   email: 'brunopulis@protonmail.com',
   website: 'https://www.brunopulis.com',
   social: 'https://mastodon.social/@brunopulis'
 };
-export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
-export const themeColor = '#dd4462'; // used in manifest, for example primary color value
-export const themeLight = '#f8f8f8'; // used for meta tag theme-color, if light colors are prefered. best use value set for light bg
-export const themeDark = '#2e2e2e'; // used for meta tag theme-color, if dark colors are prefered. best use value set for dark bg
-export const opengraph_default = '/assets/images/template/opengraph-default.jpg'; // fallback/default meta image
-export const opengraph_default_alt =
-  "Visible content: An Eleventy starter with CUBE CSS, Cube CSS, Every Layout, Design Tokens and Tailwind for uitility classes. A workflow for building modern and resilient websites, introduced by Andy Bell's project buildexcellentwebsit.es"; // alt text for default meta image"
+
+export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg';
+export const themeColor = '#dd4462';
+export const themeLight = '#f8f8f8';
+export const themeDark = '#2e2e2e';
+export const opengraph_default = '/assets/images/template/opengraph-default.jpg';
+export const opengraph_default_alt = "Bruno Pulis - Desenvolvedor e consultor de acessibilidade";
+
 export const blog = {
-  // RSS feed
-  name: 'My Web Development Blog',
-  description: 'Tell the word what you are writing about in your blog. It will show up on feed readers.',
-  // feed links are looped over in the head. You may add more to the array.
+  name: 'Bruno Pulis Blog',
+  description: 'Artigos sobre acessibilidade web, teologia e tecnologia',
   feedLinks: [
     {
       title: 'Atom Feed',
@@ -44,42 +44,44 @@ export const blog = {
       type: 'application/json'
     }
   ],
-  // Tags
   tagSingle: 'Tag',
   tagPlural: 'Tags',
-  tagMore: 'More tags:',
-  // pagination
+  tagMore: 'Mais tags:',
   paginationLabel: 'Blog',
-  paginationPage: 'Page',
-  paginationPrevious: 'Previous',
-  paginationNext: 'Next',
+  paginationPage: 'Página',
+  paginationPrevious: 'Anterior',
+  paginationNext: 'Próximo',
   paginationNumbers: true
 };
+
 export const details = {
   aria: 'section controls',
-  expand: 'expand all',
-  collapse: 'collapse all'
+  expand: 'expandir todos',
+  collapse: 'recolher todos'
 };
+
 export const dialog = {
-  close: 'Close',
-  next: 'Next',
-  previous: 'Previous'
+  close: 'Fechar',
+  next: 'Próximo',
+  previous: 'Anterior'
 };
+
 export const navigation = {
   navLabel: 'Menu',
-  ariaTop: 'Main',
-  ariaBottom: 'Complementary',
-  ariaPlatforms: 'Platforms',
+  ariaTop: 'Principal',
+  ariaBottom: 'Complementar',
+  ariaPlatforms: 'Plataformas',
   drawerNav: false,
   subMenu: false
 };
+
 export const themeSwitch = {
-  title: 'Theme',
-  light: 'light',
-  dark: 'dark'
+  title: 'Tema',
+  light: 'claro',
+  dark: 'escuro'
 };
+
 export const greenweb = {
-  // https://carbontxt.org/
   disclosures: [
     {
       docType: 'sustainability-page',
@@ -89,16 +91,18 @@ export const greenweb = {
   ],
   services: [{domain: 'netlify.com', serviceType: 'cdn'}]
 };
+
 export const tests = {
   pa11y: {
-    // keep customPaths empty if you want to test all pages
-    customPaths: ['/', '/about/', '/blog/', '/styleguide/'],
+    customPaths: ['/', '/sobre/', '/blog/', '/styleguide/'],
     globalIgnore: []
   }
 };
+
 export const viewRepo = {
-  // this is for the view/edit on github link. The value in the package.json will be pulled in.
   allow: true,
-  infoText: 'View this page on GitHub'
+  infoText: 'Ver esta página no GitHub'
 };
+
 export const easteregg = true;
+
