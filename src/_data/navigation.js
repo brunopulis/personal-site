@@ -9,13 +9,14 @@ export default {
       url: '/agora/'
     },
     {
+      text: 'Serviços',
+      url: '/servicos/'
+    },
+    {
       text: 'Blog',
       url: '/blog/'
     },
-    {
-      text: 'Atividades',
-      url: '/fluxo/'
-    },
+    
     {
       text: 'Projetos',
       url: '/trabalho/'

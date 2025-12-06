@@ -1,3 +1,9 @@
+/**
+ * 
+ * @author Bruno Pulis
+ * @param {*} text 
+ * @returns 
+ */
 export const readingTime = text => {
   let content = new String(text);
   const speed = 230; // reading speed in words per minute

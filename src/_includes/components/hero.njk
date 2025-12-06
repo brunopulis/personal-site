@@ -1,10 +1,29 @@
 <section class="hero" id="hero" aria-labelledby="hero-section">
-  <div data-layout="50-50" class="grid items-center">
-    <div class="hero__content flow">
-      <h1 class="font-light text-rosewood-950 text-step-5" id="hero-section">Oi, sou Bruno 👋</h1>
-      <p>Eu sou Bruno, um consultor de acessibilidade ajudo empresas a desenvolverem produtos digitais que todos possam usar, desde a orientação estratégica até apoio operacional.</p>
-      <p>
-        Aqui está um pouco mais <a href="/sobre" class="hero__link">sobre mim</a> e  <a href="/agora" class="hero__link">o que estou fazendo agora</a>.
-      </p>
+  <div class="mx-auto px-6 max-w-7xl gap-12 grid items-center md:grid-cols-2 py-24">
+    <div>
+      <h1 class="font-bold mb-6 leading-tight text-5xl" id="hero-section">Oi, sou Bruno 👋</h1>
+      <p class="font-light mb-6 text-2xl">Eu sou Bruno, um consultor de acessibilidade ajudo empresas a desenvolverem
+        produtos digitais que todos possam usar, desde a orientação estratégica até apoio operacional.</p>
+
+      <div class="flex">
+        <ul class="flex gap-4">
+          <li class="gap-2">
+            <a href="/sobre" class="underline underline-offset-8">
+              mais sobre mim
+            </a>
+          </li>
+          <li class="gap-2">
+            <a href="/agora" class="underline underline-offset-8">
+              o que estou fazendo agora
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <figure>
+      <img src="/assets/images/pulis/pulis.png" loading="eager" fetchpriority="auto" decoding="async"
+        class="mx-auto border-4 border-white/20 h-80 object-cover rounded-2xl shadow-2xl w-80" alt="">
+    </figure>
   </div>
 </section>

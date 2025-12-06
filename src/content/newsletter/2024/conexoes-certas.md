@@ -50,7 +50,7 @@ Ele pode receber diversos atributos como: `download`, `href`, `hreflang`, `ping`
 
 Sua estrutura básica é formada como no código abaixo:
 
-```markup
+```html
 <a href="contato.html">Fale conosco</a>
 ```
 
@@ -58,7 +58,7 @@ Esse exemplo não possui nenhum problema, todos os elementos necessários estão
 
 Mas nem tudo são flores, é muito comum vermos exemplos, como:
 
-```markup
+```html
 <a href="<https://twitter.com/obrunopulis>">
   <i class="fa fa-twitter"></i>
 <a>
@@ -112,7 +112,7 @@ Uma solução que pode ser elegante é o uso do atributo, `aria-label` ele funci
 
 Podemos fazer algo como:
 
-```markup
+```html
 <a href="noticia-1.html" aria-label="Leia o texto sobre as medalhas olímpicas">
   Leia o texto
 </a>

@@ -1,90 +1,79 @@
 [
-	{
-		"id": "avaliacao",
-		"i18n": {
-			"pt": {
-				"title": "Avaliação de Acessibilidade",
-				"description":
-  				"Analiso o site, documento ou aplicação em detalhes e entrego um relatório priorizado com os problemas identificados e as correções necessárias. Foco em questões reais que impactam usuários e conformidade com WCAG.",
-				"url": "/servicos/auditoria-de-acessibilidade"
-			},
-			"en": {
-				"title": "Accessibility Assessment",
-				"description": "I analyze your site, document or application in detail and deliver a prioritized report with identified problems and necessary corrections. Focus on real issues that impact users and WCAG compliance.",
-				"url": "en/services/accessibility-assessment"
-			}
-		}
-	},
-	{
-		"id": "auditoria",
-		"i18n": {
-			"pt": {
-				"title": "Auditoria de Acessibilidade",
-				"description":
-  				"Realizo uma análise aprofundada do código, semântica HTML, ARIA, contraste, navegação por teclado e muito mais. Você recebe um laudo detalhado com os problemas encontrados, seu nível de severidade e sugestões práticas de resolução.",
-				"url": "/servicos/auditoria-de-acessibilidade"
-			},
-			"en": {
-				"title": "Accessibility Audit",
-				"description": "I perform an in-depth analysis of code, HTML semantics, ARIA, contrast, keyboard navigation and more. You receive a detailed report with identified problems, severity levels and practical resolution suggestions",
-				"url": "en/services/accessibility-audit"
-			}
-		}
-	},
-	{
-		"id": "mentoria",
-		"i18n": {
-			"pt": {
-				"title": "Mentoria",
-				"description":
-  				"Trabalho junto com você ou seu time implementando acessibilidade em projetos reais. Reviso seu código, explico as boas práticas no contexto do seu projeto e ajudo a consolidar conhecimento através da prática",
-				"url": "/servicos/mentoria"
-			},
-			"en": {
-				"title": "Accessibility Mentoring",
-				"description": "I work alongside you or your team implementing accessibility in real projects. I review your code, explain best practices in your project context and help consolidate knowledge through practice.",
-				"url": "en/services/mentoring"
-			}
-		}
-	},
-	{
-		"id": "palestras",
-		"i18n": {
-			"pt": {
-				"title": "Palestras e Workshops",
-				"description":
-  				"Apresento acessibilidade de forma prática e direta para empresas e eventos. Sem abstrações desnecessárias – foco em implementação real, padrões web e como integrar acessibilidade no seu workflow de desenvolvimento.",
-				"url": "/servicos/palestras"
-			},
-			"en": {
-				"title": "Talks and Workshops",
-				"description": "I present accessibility in a practical and direct way for companies and events. No unnecessary abstractions – focus on real implementation, web standards and how to integrate accessibility into your development workflow",
-				"url": "en/services/talks"
-			}
-		}
-	},
-	{
-		"id": "remediacao-docs",
-		"title": "Remediação de Documentos",
-		"tagline": "PDFs e documentos verdadeiramente acessíveis",
-		"descricao":
-			"Transformo seus documentos (PDFs, Word, PowerPoint) em versões acessíveis que atendem aos padrões.",
-		"url": "/servicos/remediacao-de-documentos"
-	},
-	{
-		"id": "remediacao-sites",
-		"title": "Remediação de Sites",
-		"tagline": "Corrijo o código para torná-lo acessível",
-		"descricao":
-			"Pego seu site inacessível e implemento todas as correções necessárias no código. Trabalho direto na implementação técnica.",
-		"url": "/servicos/remediacao-de-sites"
-	},
-	{
-		"id": "consultoria",
-		"title": "Consultoria",
-		"tagline": "Orientação estratégica para decisões certas",
-		"descricao":
-			"Ajudo sua empresa a definir estratégias de acessibilidade, criar políticas internas e tomar decisões informadas sobre investimentos.",
-		"url": "/servicos/consultoria"
-	}
+  {
+    "id": "remediacao-documentos",
+    "title": "Remediação de Documentos",
+    "slug": "remediacao-documentos",
+    "url": "/servicos/remediacao-documentos/",
+    "description": "Transforme PDFs, planilhas e apresentações em documentos inclusivos",
+    "icon": "📄",
+    "priceRange": "R$ 80",
+    "tempo": "3-7 dias",
+    "relatedServices": ["auditoria-acessibilidade", "treinamentos-workshops"]
+  },
+  {
+    "id": "avaliacao-acessibilidade",
+    "title": "Avaliação de Acessibilidade",
+    "slug": "avaliacao-acessibilidade",
+    "url": "/servicos/avaliacao-acessibilidade/",
+    "description": "Diagnóstico rápido, focado e leve",
+    "icon": "🔍",
+    "priceRange": "A partir de R$ 2.000",
+    "tempo": "3-5 dias",
+    "relatedServices": ["auditoria-acessibilidade", "construcao-sites-acessiveis"]
+  },
+  {
+    "id": "auditoria-acessibilidade",
+    "title": "Auditoria de Acessibilidade",
+    "slug": "auditoria-acessibilidade",
+    "url": "/servicos/auditoria-acessibilidade/",
+    "description": "Análise completa e estruturada",
+    "icon": "📋",
+    "priceRange": "A partir de R$ 8.000",
+    "tempo": "2-4 semanas",
+    "relatedServices": ["treinamentos-workshops", "coaching-mentoria"]
+  },
+  {
+    "id": "treinamentos-workshops",
+    "title": "Treinamentos e Workshops",
+    "slug": "treinamentos-workshops",
+    "url": "/servicos/treinamentos-workshops/",
+    "description": "Capacidade e confiança para sua equipe",
+    "icon": "🎓",
+    "priceRange": "R$ 3.000 a R$ 10.000",
+    "tempo": "1 dia a 6 semanas",
+    "relatedServices": ["coaching-mentoria", "palestras-apresentacoes"]
+  },
+  {
+    "id": "palestras-apresentacoes",
+    "title": "Palestras e Apresentações",
+    "slug": "palestras-apresentacoes",
+    "url": "/servicos/palestras-apresentacoes/",
+    "description": "Aumentar consciência e inspirar times",
+    "icon": "🎤",
+    "priceRange": "R$ 2.000 a R$ 7.500",
+    "tempo": "30 min a 2h",
+    "relatedServices": ["treinamentos-workshops", "coaching-mentoria"]
+  },
+  {
+    "id": "coaching-mentoria",
+    "title": "Coaching e Mentoria",
+    "slug": "coaching-mentoria",
+    "url": "/servicos/coaching-mentoria/",
+    "description": "Suporte contínuo e personalizado",
+    "icon": "🤝",
+    "priceRange": "R$ 2.500 a R$ 25.000",
+    "tempo": "3-6 meses",
+    "relatedServices": ["treinamentos-workshops", "palestras-apresentacoes"]
+  },
+  {
+    "id": "construcao-sites-acessiveis",
+    "title": "Construção de Sites Acessíveis",
+    "slug": "construcao-sites-acessiveis",
+    "url": "/servicos/construcao-sites-acessiveis/",
+    "description": "Sites rápidos, fáceis de usar, construídos para durar",
+    "icon": "🚀",
+    "priceRange": "A partir de R$ 15.000",
+    "tempo": "6-12 semanas",
+    "relatedServices": ["avaliacao-acessibilidade", "coaching-mentoria"]
+  }
 ]

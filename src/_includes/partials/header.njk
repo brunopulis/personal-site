@@ -1,12 +1,6 @@
-<header class="site-header">
-  <div class="container">
-  <a href="#main" class="visually-hidden">{{ meta.skipContent }}</a>
-
-  <div class="repel ontop gutter-s">
-    <a href="/" class="logo | cluster" {{ indicateActiveHome }}>
-      {% svg "misc/logo" %}
-    </a>
+<a href="#main" class="sr-only">{{ meta.skipContent }}</a>
+<header class="border-b border-gray-200 py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {% include "partials/main-nav.njk" %}
-  </div>
   </div>
 </header>

@@ -1,30 +1,32 @@
-<section class="writing">
-  <div class="flow repel">
-    <h2 class="text-rosewood-950 text-step-4">Últimos artigos</h2>
-    <a href="/artigos" class="btn btn-outline">todos artigos</a>
-  </div>
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <h2 class="text-errie-black-900 font-bold text-4xl mb-4">Últimos artigos</h2>
+      <a href="/artigos" class="underline underline-offset-8">todos artigos</a>
+    </div>
 
-  {% set allRecentPosts = collections.posts %}
-  {% if allRecentPosts.length %}
-  <ul class="grid" role="list" data-layout="50-50">
-    {% for post in allRecentPosts.slice(0, 6) %}
-    <li class="card | shadow">
-      <div class="flow">
-        <h3 class="writing__title">
-          <a href="{{ post.url }}" class="writing__link">
+    {% set allRecentPosts = collections.posts %}
+    {% if allRecentPosts.length %}
+    <ul class="grid gap-6 md:grid-cols-1">
+      {% for post in allRecentPosts.slice(0, 6) %}
+      <li class="py-4">
+        <h3 class="mb-4 font-bold text-3xl">
+          <a href="{{ post.url }}"
+            class="text-errie-black-900 font-semibold flex gap-2 items-center transition underline underline-offset-8 hover:no-underline">
             {{ post.data.title }}
           </a>
         </h3>
 
         {% if post.data.description %}
-        <p class="writing__detail">{{ post.data.description }}</p>
+        <p class="flex items-center font-light gap-4 my-4 text-xl">{{ post.data.description }}</p>
         {% endif %}
-        <time datetime="{{ post.data.pubDate }}">{{ post.data.pubDate | formatDate('DD/MM/YYYY') }}</time>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>Nenhuma postagem encontrada.</p>
-  {% endif %}
+        <time datetime="{{ post.data.pubDate }}" class="text-errie-black-900 font-display">{{ post.data.pubDate |
+          formatDate('DD/MM/YYYY') }}</time>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-errie-black-900 font-display text-center">Nenhuma postagem encontrada.</p>
+    {% endif %}
+  </div>
 </section>
