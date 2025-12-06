@@ -74,34 +74,29 @@ export default {
         'typography': {
           DEFAULT: {
             css: {
-              'color': '#333',
-              'h1': {
-                fontWeight: '700',
-                color: '#1a202c'
+              color: '#1f2937',
+            a: {
+              color: '#0066cc',
+              '&:hover': {
+                color: '#0052a3',
               },
-              'h2': {
-                fontWeight: '600',
-                color: '#2d3748'
-              },
-              'p': {
-                marginTop: '1.25em',
-                marginBottom: '1.25em',
-                color: '#4a5568'
-              },
-              'a': {
-                'color': '#3182ce',
-                '&:hover': {
-                  color: '#2b6cb0'
-                }
-              },
-              'blockquote': {
-                fontStyle: 'italic',
-                borderLeftColor: '#3182ce'
-              },
-              'ul li::marker': {
-                color: '#3182ce'
-              }
-            }
+            },
+            'code::before': {
+              content: '',
+            },
+            'code::after': {
+              content: '',
+            },
+            code: {
+              backgroundColor: '#f3f4f6',
+              padding: '0.25rem 0.5rem',
+              borderRadius: '0.25rem',
+              fontWeight: '500',
+            },
+            pre: {
+              backgroundColor: '#1f2937',
+              color: '#f3f4f6',
+            },
           }
         }
       }

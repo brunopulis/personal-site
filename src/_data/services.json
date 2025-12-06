@@ -4,8 +4,7 @@
     "title": "Remediação de Documentos",
     "slug": "remediacao-documentos",
     "url": "/servicos/remediacao-documentos/",
-    "description": "Transforme PDFs, planilhas e apresentações em documentos inclusivos",
-    "icon": "📄",
+    "description": "Transforme PDFs, planilhas e apresentações em documentos verdadeiramente acessíveis. Seu conteúdo merece ser entendido por todos.",
     "priceRange": "R$ 80",
     "tempo": "3-7 dias",
     "relatedServices": ["auditoria-acessibilidade", "treinamentos-workshops"]
@@ -15,8 +14,7 @@
     "title": "Avaliação de Acessibilidade",
     "slug": "avaliacao-acessibilidade",
     "url": "/servicos/avaliacao-acessibilidade/",
-    "description": "Diagnóstico rápido, focado e leve",
-    "icon": "🔍",
+    "description": "Descubra exatamente onde você está. Diagnóstico focado que revela oportunidades rápidas de melhoria.",
     "priceRange": "A partir de R$ 2.000",
     "tempo": "3-5 dias",
     "relatedServices": ["auditoria-acessibilidade", "construcao-sites-acessiveis"]
@@ -26,8 +24,7 @@
     "title": "Auditoria de Acessibilidade",
     "slug": "auditoria-acessibilidade",
     "url": "/servicos/auditoria-acessibilidade/",
-    "description": "Análise completa e estruturada",
-    "icon": "📋",
+    "description": "Análise profunda e estruturada que mapeia o caminho completo para conformidade. De onde você está até onde precisa chegar.",
     "priceRange": "A partir de R$ 8.000",
     "tempo": "2-4 semanas",
     "relatedServices": ["treinamentos-workshops", "coaching-mentoria"]
@@ -37,8 +34,7 @@
     "title": "Treinamentos e Workshops",
     "slug": "treinamentos-workshops",
     "url": "/servicos/treinamentos-workshops/",
-    "description": "Capacidade e confiança para sua equipe",
-    "icon": "🎓",
+    "description": "Equipes capacitadas implementam acessibilidade naturalmente. Transformamos conhecimento em prática e confiança em ação.",
     "priceRange": "R$ 3.000 a R$ 10.000",
     "tempo": "1 dia a 6 semanas",
     "relatedServices": ["coaching-mentoria", "palestras-apresentacoes"]
@@ -48,8 +44,7 @@
     "title": "Palestras e Apresentações",
     "slug": "palestras-apresentacoes",
     "url": "/servicos/palestras-apresentacoes/",
-    "description": "Aumentar consciência e inspirar times",
-    "icon": "🎤",
+    "description": "Inspire sua organização. Mostre por que acessibilidade digital não é apenas certo—é essencial para negócios que crescem.",
     "priceRange": "R$ 2.000 a R$ 7.500",
     "tempo": "30 min a 2h",
     "relatedServices": ["treinamentos-workshops", "coaching-mentoria"]
@@ -59,8 +54,7 @@
     "title": "Coaching e Mentoria",
     "slug": "coaching-mentoria",
     "url": "/servicos/coaching-mentoria/",
-    "description": "Suporte contínuo e personalizado",
-    "icon": "🤝",
+    "description": "Acessibilidade não é um projeto, é uma jornada. Suporte contínuo e personalizado para consolidar mudanças que duram.",
     "priceRange": "R$ 2.500 a R$ 25.000",
     "tempo": "3-6 meses",
     "relatedServices": ["treinamentos-workshops", "palestras-apresentacoes"]
@@ -70,10 +64,19 @@
     "title": "Construção de Sites Acessíveis",
     "slug": "construcao-sites-acessiveis",
     "url": "/servicos/construcao-sites-acessiveis/",
-    "description": "Sites rápidos, fáceis de usar, construídos para durar",
-    "icon": "🚀",
+    "description": "Sites que funcionam para todos. Rápidos, intuitivos e construídos desde o início para incluir 100% dos seus usuários.",
     "priceRange": "A partir de R$ 15.000",
     "tempo": "6-12 semanas",
+    "relatedServices": ["avaliacao-acessibilidade", "coaching-mentoria"]
+  },
+  {
+    "id": "consultoria-estrategica",
+    "title": "Consultoria Estratégica",
+    "slug": "consultoria-estrategica",
+    "url": "/servicos/consultoria-estrategica/",
+    "description": "Acessibilidade digital não é tática—é estratégia. Implementação estruturada que transforma sua organização e expande seu mercado.",
+    "priceRange": "Planos personalizados",
+    "tempo": "A consultar",
     "relatedServices": ["avaliacao-acessibilidade", "coaching-mentoria"]
   }
 ]

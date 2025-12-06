@@ -22,7 +22,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('tags', 'base/tags.njk');
   eleventyConfig.addLayoutAlias('error', 'base/error.njk');
 
-  eleventyConfig.addLayoutAlias('home', 'pages/home.njk');
   eleventyConfig.addLayoutAlias('about', 'pages/about.njk');
   eleventyConfig.addLayoutAlias('services', 'pages/services.njk');
   eleventyConfig.addLayoutAlias('servicesHub', 'pages/services-hub.njk');
@@ -31,6 +30,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addCollection('posts', collections.posts);
   eleventyConfig.addCollection('notes', collections.notes);
+  eleventyConfig.addCollection('bookmarks', collections.bookmarks);
   eleventyConfig.addCollection('streams', collections.streams);
 
   eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);

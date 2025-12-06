@@ -1,6 +1,6 @@
 ---
 layout: services
-title: Remediação de Documentos Acessíveis | PDF, Word, Excel
+title: Remediação de Documentos Acessíveis
 description: Transforme PDFs, planilhas e apresentações em documentos inclusivos e conformes com WCAG 2.2 e PDF/UA.
 service: Remediação de Documentos
 serviceDescription: Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e conformes com WCAG 2.2 e PDF/UA.
@@ -10,10 +10,6 @@ url: /servicos/remediacao-documentos/
 priceRange: "R$ 80"
 date: Last Modified
 ---
-
-Transforme seus PDFs, planilhas e apresentações em materiais inclusivos e conformes.
-
-Seus documentos estão excluindo pessoas? PDFs escaneados, tabelas mal estruturadas, falta de textos alternativos – corrijo tudo isso seguindo **WCAG 2.2 e PDF/UA**.
 
 **Resultado**: documentos que realmente funcionam para todo mundo.
 
