@@ -1,7 +1,0 @@
-site: dist
-root_selector: 'main'
-exclude_selectors:
-  - '.no-search'
-  - 'nav'
-  - 'footer'
-force_language: 'pt'

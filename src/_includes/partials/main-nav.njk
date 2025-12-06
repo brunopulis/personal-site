@@ -1,0 +1,26 @@
+<div class="flex items-center justify-between h-16">
+  <div class="shrink-0">
+    <a href="/" class="logo | cluster" {{ indicateActiveHome }}>
+      {% svg "misc/logo" %}
+    </a>
+  </div>
+
+  <div class="hidden md:flex space-x-8">
+    <nav class="hidden md:block" id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
+      <ul class="flex space-x-8">
+        {% for item in navigation.top %}
+        <li>
+          <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+            class="text-gray-700 hover:text-gray-900 transition-colors font-medium">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <button class="md:hidden p-2 text-gray-700 hover:text-gray-900 focus:outline-none" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</div>
