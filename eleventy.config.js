@@ -25,6 +25,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('home', 'pages/home.njk');
   eleventyConfig.addLayoutAlias('about', 'pages/about.njk');
   eleventyConfig.addLayoutAlias('services', 'pages/services.njk');
+  eleventyConfig.addLayoutAlias('servicesHub', 'pages/services-hub.njk');
   eleventyConfig.addLayoutAlias('projects', 'pages/projects.njk');
   eleventyConfig.addLayoutAlias('blog', 'pages/blog.njk');
 

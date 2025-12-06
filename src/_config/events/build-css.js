@@ -1,58 +1,49 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import postcss from 'postcss';
-import postcssImport from 'postcss-import';
-import postcssImportExtGlob from 'postcss-import-ext-glob';
-import tailwindcss from '@tailwindcss/postcss';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
 import fg from 'fast-glob';
 
 const buildCss = async (inputPath, outputPaths) => {
   const inputContent = await fs.readFile(inputPath, 'utf-8');
 
-  const result = await postcss([
-    autoprefixer,
-    cssnano({
-      preset: [
-        'default',
-        {
-          normalizeDeclarations: {
-            properties: {
-              'font-family': false
-            }
-          },
-          // Disable font-family processing
-          minifyFontValues: false
-        }
-      ]
-    })
-  ]).process(inputContent, {from: inputPath});
-
   for (const outputPath of outputPaths) {
     await fs.mkdir(path.dirname(outputPath), {recursive: true});
-    await fs.writeFile(outputPath, result.css);
+    await fs.writeFile(outputPath, inputContent);
   }
 
-  return result.css;
+  return inputContent;
 };
 
 export const buildAllCss = async () => {
-  const tasks = [];
+  // Encontra os arquivos CSS a serem compilados
+  const simpleFiles = await fg(['src/assets/css/simple.css']);
+  const customFiles = await fg(['src/assets/css/custom.css']);
 
-  tasks.push(buildCss('src/assets/css/global/global.css', ['src/_includes/css/global.css']));
+  // Cria o diretório de destino
+  await fs.mkdir('dist/assets/css', {recursive: true});
+  await fs.mkdir('src/_includes/css', {recursive: true});
 
-  const localCssFiles = await fg(['src/assets/css/local/**/*.css']);
-  for (const inputPath of localCssFiles) {
-    const baseName = path.basename(inputPath);
-    tasks.push(buildCss(inputPath, [`src/_includes/css/${baseName}`]));
+  // Concatena os arquivos CSS para o global.css
+  let concatenatedCss = '';
+
+  // Copia simple.css individualmente e adiciona ao concatenado
+  for (const file of simpleFiles) {
+    const content = await fs.readFile(file, 'utf-8');
+    // Copia o arquivo individual
+    await fs.writeFile('dist/assets/css/simple.css', content);
+    // Adiciona ao concatenado
+    concatenatedCss += `/* ${path.basename(file)} */\n${content}\n\n`;
   }
 
-  const componentCssFiles = await fg(['src/assets/css/components/**/*.css']);
-  for (const inputPath of componentCssFiles) {
-    const baseName = path.basename(inputPath);
-    tasks.push(buildCss(inputPath, [`dist/assets/css/components/${baseName}`]));
+  // Copia custom.css individualmente e adiciona ao concatenado
+  for (const file of customFiles) {
+    const content = await fs.readFile(file, 'utf-8');
+    // Copia o arquivo individual
+    await fs.writeFile('dist/assets/css/custom.css', content);
+    // Adiciona ao concatenado
+    concatenatedCss += `/* ${path.basename(file)} */\n${content}\n\n`;
   }
 
-  await Promise.all(tasks);
+  // Escreve o arquivo global.css concatenado
+  await fs.writeFile('dist/assets/css/global.css', concatenatedCss);
+  await fs.writeFile('src/_includes/css/global.css', concatenatedCss);
 };

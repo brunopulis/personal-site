@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} - Tema Natalino</title>
-  <link rel="stylesheet" href="/assets/css/global.css">
-  <link rel="stylesheet" href="/assets/css/blocks/header.css">
-  <link rel="stylesheet" href="/assets/css/blocks/card.css">
-  <link rel="stylesheet" href="/assets/css/blocks/lights.css">
-  <link rel="stylesheet" href="/assets/css/compositions/card-grid.css">
-  <link rel="stylesheet" href="/assets/css/utilities/christmas.css">
+  {% include "head/css-inline.njk" %}
 </head>
+
 <body class="christmas-theme">
   <div class="lights" role="presentation" aria-hidden="true">
     <div class="lights__bulb" style="--delay: 0s"></div>
@@ -41,4 +38,5 @@
 
   <script src="/assets/js/snow.js"></script>
 </body>
+
 </html>

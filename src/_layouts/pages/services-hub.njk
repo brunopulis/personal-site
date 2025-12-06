@@ -1,0 +1,30 @@
+{% extends "../base/base.njk" %}
+{% from 'schemas/schemas.njk' import orgSchema %}
+
+{% block head %}
+{{ orgSchema() }}
+{% endblock %}
+
+{% block main_class %}servicos-hub{% endblock %}
+
+{% block content %}
+{{ content | safe }}
+
+<section class="servicos-grid">
+  {% for servico in services %}
+  <article class="servico-card">
+    <h2>
+      <span class="icon" aria-hidden="true" style="font-size: 1.5rem">{{ servico.icon }}</span>
+      <a href="{{ servico.url }}" class="btn">
+        {{ servico.title }}
+      </a>
+    </h2>
+    <p>{{ servico.description }}</p>
+    <ul>
+      <li>Tempo: {{ servico.tempo }}</li>
+      <li>Valor: {{ servico.priceRange }}</li>
+    </ul>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -7,7 +7,7 @@ description: 'Ich arbeite als freie Webentwicklerin und Designerin in Madrid. Se
 date: Last Modified
 ---
 
-Sou Bruno Pulis, um especialista em acessibilidade digital e front-end. 
+Sou Bruno Pulis, um especialista em acessibilidade digital e front-end.
 Minha paixão é criar uma web que realmente funcione para você e para todo mundo.
 
 ## Minha missão
@@ -18,21 +18,21 @@ Em Belo Horizonte, trabalho como **Especialista de Testes em Acessibilidade** na
 
 Para isso, eu:
 
-- <span aria-hidden="true">✍️</span> Escrevo sobre o tema;
-- <span aria-hidden="true">🗣️</span> Dou Palestras e Treinamentos;
-- <span aria-hidden="true">🤝</span> Ofereço Mentorias personalizadas.
+- Escrevo sobre o tema;
+- Dou Palestras e Treinamentos;
+- Ofereço Mentorias personalizadas.
 
-Também presto alguns [serviços digitais](/services).
+Também presto alguns [serviços digitais](/servicos).
 
 Você pode consultar [meu currículo](/cv) para saber mais sobre minhas experiências.
 
 ## Como Cheguei até Aqui
 
-Minha jornada não começou no código. Em 2006, eu estava servindo hambúrguer no Burger King. 
+Minha jornada não começou no código. Em 2006, eu estava servindo hambúrguer no Burger King.
 
 Em 2010, formado em Sistemas para Internet, comecei a viver a web, passando por agências e startups.
 
-O ponto de virada foi em 2021, quando a acessibilidade se tornou meu foco principal. 
+O ponto de virada foi em 2021, quando a acessibilidade se tornou meu foco principal.
 
 Desde então, cada projeto é um lembrete: **quero uma internet onde ninguém fique de fora**.
 
@@ -53,9 +53,9 @@ Sigo contribuindo com projetos e conteúdos sobre acessibilidade e qualidade.
 
 ## O que me guia
 
-Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo. 
+Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.
 
-Para mim, criar uma web acessível é uma extensão do chamado bíblico ao amor ao próximo. 
+Para mim, criar uma web acessível é uma extensão do chamado bíblico ao amor ao próximo.
 
 É garantir a dignidade de cada pessoa no ambiente digital.
 
@@ -66,7 +66,7 @@ Meus princípios de trabalho são:
 - Educação, e não julgamento;
 - Qualidade sem desculpas.
 
-##  Fora da tela
+## Fora da tela
 
 Minha vida é muito maior que minha profissão. Minha família é minha prioridade, e é por isso que sou rigoroso com meus horários.
 
@@ -79,7 +79,7 @@ Eu sou um leitor compulsivo. Eu leio de tudo, mas especialmente:
 
 Dica: [Confira minha biblioteca](/biblioteca).
 
-Também sou apaixonado por filmes — especialmente ficção científica, dramas históricos e animações. 
+Também sou apaixonado por filmes — especialmente ficção científica, dramas históricos e animações.
 
 Você pode ver meus [filmes favoritos](/filmes).
 
@@ -89,4 +89,4 @@ Confira no que [estou dedicado nesse momento](/agora).
 
 ---
 
-*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}

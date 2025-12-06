@@ -1,7 +1,5 @@
 {
   "layout": "base",
-  "permalink": "services/{{ customURL if customURL else title | slugify | safe }}.html",
-  "cta": true,
-  "tags" : ["service"],
-  "hideIntro": true
+  "permalink": "servicos/{{ customURL if customURL else title | slugify | safe }}/index.html",
+  "tags": ["service"]
 }

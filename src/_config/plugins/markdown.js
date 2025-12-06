@@ -45,10 +45,22 @@ export const markdownLib = markdownIt({
   .use(markdownitMark)
   .use(markdownitAbbr)
   .use(md => {
+    // Helper function to escape HTML entities
+    const escapeHtml = text => {
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"']/g, m => map[m]);
+    };
+
     md.renderer.rules.image = (tokens, idx) => {
       const token = tokens[idx];
       const src = token.attrGet('src');
-      const alt = token.content || '';
+      const alt = escapeHtml(token.content || '');
       const caption = token.attrGet('title');
 
       // Collect attributes
@@ -58,8 +70,8 @@ export const markdownLib = markdownIt({
         attributes.push(['eleventy:widths', '650,960,1400']);
       }
 
-      const attributesString = attributes.map(([key, value]) => `${key}="${value}"`).join(' ');
+      const attributesString = attributes.map(([key, value]) => `${key}="${escapeHtml(value)}"`).join(' ');
       const imgTag = `<img src="${src}" alt="${alt}" ${attributesString}>`;
-      return caption ? `<figure>${imgTag}<figcaption>${caption}</figcaption></figure>` : imgTag;
+      return caption ? `<figure>${imgTag}<figcaption>${escapeHtml(caption)}</figcaption></figure>` : imgTag;
     };
   });
