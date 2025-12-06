@@ -1,5 +1,7 @@
 ---
+layout: page
 title: Contato
+description: É assim que você pode entrar em contato comigo.
 permalink: "/contato/index.html"
 pubDate: '2025-11-18'
 date: Last Modified

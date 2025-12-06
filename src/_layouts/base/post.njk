@@ -3,46 +3,64 @@ layout: base
 schema: BlogPosting
 ---
 
-<div class="region">
-  <div class="wrapper flow prose">
-    <h1 class="gradient-text">{{ title }}</h1>
+<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
+  id="hero">
+  <div class="mx-auto px-6 max-w-7xl gap-12 grid items-center py-12">
+    <div>
+      <h1 class="font-bold mb-6 leading-tight text-5xl" id="hero-section">{{ title }}</h1>
+      <p>{{ description }}</p>
 
-    {% if image %}
-      <!-- image -->
-      {% image image, alt or "", credit, "eager", "feature" %}
-    {% endif %}
 
-    <p class="meta | cluster gutter-xs-s">
-      <!-- draft status -->
-      {%- if draft -%}
+      <div class="text-sm font-medium items-center flex flex-wrap gap-6 lg:text-base mb-6 text-blood-red-800">
+        <!-- draft status -->
+        {%- if draft -%}
         <span class="button" data-small-button data-button-variant="tertiary">draft</span>
-      {%- endif %}
-      <!-- date -->
-      {% set definedDate = date %} {% include "partials/date.njk" %}
-      {%
+        {%- endif %}
+        <!-- date -->
+        {% set definedDate = date %} {% include "partials/date.njk" %}
+        {%
         if tags.length >
         1
-      %}
+        %}
         <!-- tags -->
+        <span>Tags:</span>
         {% for tag in tags %}{% if tag != "posts" %}
-          <a class="button" href="/tags/{{ tag | slugify }}/" data-small-button> {{ tag }} </a>
+        <a class="bg-green-200 hover:bg-green-300 py-1 px-2 rounded-lg text-sm" href="/tags/{{ tag | slugify }}/"> {{
+          tag
+          }} </a>
         {% endif %}{% endfor %}
-      {% endif %}
-    </p>
+        {% endif %}
+      </div>
+    </div>
+</section>
 
-    {{ content | safe }}
-    {% include 'partials/edit-on.njk' %}
+<div class="px-4 py-12 lg:px-8 max-w-7xl mx-auto sm:px-6 prose">
+  <div class="">
+    {% if image %}
+    {% image image, alt or "", credit, "eager", "feature" %}
+    {% endif %}
+
+
+    <article>
+      <div class="prose prose-lg max-w-none">
+        {{ content | safe }}
+      </div>
+    </article>
+
+    <div class="flex flex-col gap-6">
+      {% set postTitle = title %}
+      {% set postUrl = page.url %}
+      {% set email = "brunopulis@protonmail.com" %}
+      {% include "components/post-engagement.njk" %}
+      {% include 'components/coffee.njk' %}
+    </div>
   </div>
 
   <!--  h-card infos: https://indieweb.org/authorship -->
   <div hidden class="h-entry">
     <a class="u-url" href="{{ page.url | url | absoluteUrl(meta.url) }}">{{ title }}</a>
     <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.author.name }}</a>
-    <img
-      eleventy:ignore
-      class="u-author h-card"
-      src="{{ meta.author.avatar | url | absoluteUrl(meta.url) }}"
-      alt="{{ meta.author.name }}"
-    />
+    <img eleventy:ignore class="u-author h-card" src="{{ meta.author.avatar | url | absoluteUrl(meta.url) }}"
+      alt="{{ meta.author.name }}" />
   </div>
 </div>
