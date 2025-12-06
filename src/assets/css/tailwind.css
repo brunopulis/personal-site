@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased font-sans;
+  }
+}
+
+@layer components {
+  .prose {
+    h1 {
+      @apply text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900;
+    }
+
+    h2 {
+      @apply text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900;
+    }
+
+    h3 {
+      @apply text-2xl md:text-3xl font-semibold mb-3 text-gray-900;
+    }
+
+    h4 {
+      @apply text-xl md:text-2xl font-semibold mb-2 text-gray-900;
+    }
+
+    p {
+      @apply mb-4 leading-relaxed text-gray-700;
+    }
+
+    a {
+      @apply text-blue-600 hover:text-blue-800 transition-colors underline decoration-transparent hover:decoration-current underline-offset-4;
+    }
+
+    ul {
+      @apply list-disc list-inside mb-4 text-gray-700;
+    }
+
+    ol {
+      @apply list-decimal list-inside mb-4 text-gray-700;
+    }
+
+    li {
+      @apply mb-1;
+    }
+
+    blockquote {
+      @apply border-l-4 border-blue-500 pl-4 italic my-6 text-gray-600 bg-gray-50 py-2 pr-2 rounded-r-lg;
+    }
+
+    code {
+      @apply bg-gray-100 text-pink-600 px-1 py-0.5 rounded text-sm font-mono;
+    }
+
+    pre {
+      @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+    }
+
+    pre code {
+      @apply bg-transparent text-inherit p-0;
+    }
+
+    img {
+      @apply rounded-lg shadow-sm max-w-full h-auto my-6;
+    }
+
+    hr {
+      @apply my-8 border-gray-200;
+    }
+  }
+}

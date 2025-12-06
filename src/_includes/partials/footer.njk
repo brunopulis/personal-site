@@ -1,0 +1,26 @@
+<footer class="bg-gray-900 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto">
+    <div class="py-12">
+      {% include 'partials/nav-secondary.njk' %}
+      {% include 'partials/webring.njk' %}
+      {% include 'partials/badges.njk' %}
+      {% include 'partials/creator.njk' %}
+    </div>
+</footer>
+
+<style>
+  /* Estilo pixelado para botões 88x31 */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  /* Responsivo para footer bottom em mobile */
+  @media (max-width: 768px) {
+    footer>div>div:last-child {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
