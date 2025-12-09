@@ -1,61 +1,69 @@
 ---
-layout: services
+layout: pages/service-item.njk
 title: Avaliação de Acessibilidade
-description: Avaliação de acessibilidade de sites e aplicativos.
-service: Avaliação de Acessibilidade
-serviceDescription: Avaliação de acessibilidade de sites e aplicativos.
-serviceId: avaliacao-acessibilidade
+slug: avaliacao
+description: Diagnóstico rápido, focado e leve que identifica riscos e oportunidades fáceis.
 permalink: "/servicos/avaliacao-acessibilidade/index.html"
 url: /servicos/avaliacao-acessibilidade/
-date: Last Modified
+
+service:
+  color: green-600
+  tagline: Diagnóstico rápido. Resultados claros. Prioridades óbvias.
+  icon: 🔍
+  
+  problem: |
+    Você quer melhorar a acessibilidade mas não tem orçamento ou tempo para uma auditoria completa agora.
+    Precisa saber onde estão os problemas críticos para começar a agir.
+  
+  solution: |
+    Uma avaliação rápida e focada (Heurística) que identifica os bloqueios principais, 
+    os "quick wins" e te dá um norte claro de por onde começar.
+  
+  diferencial:
+    - Resultados em dias, não semanas
+    - Foco em impacto real e correções rápidas
+    - Investimento acessível para começar
+    - Linguagem simples e direta
+  
+  inclusos:
+    - Relatório visual com problemas encontrados
+    - Classificação de severidade (crítico, alto, médio, baixo)
+    - Screenshots e exemplos de cada problema
+    - Lista de "Quick Wins" (melhorias rápidas)
+    - Estimativa de esforço para correção
+  
+  resultado:
+    - Visão clara dos maiores problemas do seu site
+    - Lista de tarefas imediatas para o time
+    - Argumentos técnicos para priorizar acessibilidade
+  
+  publicoAlvo:
+    - Startups e MVPs
+    - Sites institucionais pequenos
+    - Times que querem um diagnóstico inicial
+    - Auditoria de features específicas
+  
+  processo:
+    - Kickoff: Definição de escopo e páginas chave
+    - Avaliação: Testes manuais e automatizados focados
+    - Relatório: Documentação dos hallazgos
+    - Entrega: Envio do relatório e call de dúvidas
+  
+  timeline: "3-5 dias"
+  
+  testemunhal:
+    cliente: "Startup Fintech"
+    quote: "Foi o pontapé inicial que precisávamos. Em uma semana já tínhamos corrigido os problemas críticos."
+    resultado: "Melhoria imediata na experiência"
+  
+  faq:
+    - pergunta: "Isso substitui uma auditoria completa?"
+      resposta: "Não. É um diagnóstico inicial. Para conformidade legal total, recomendo a Auditoria Completa."
+    
+    - pergunta: "Vocês usam ferramentas automáticas?"
+      resposta: "Sim, mas o valor real está na análise manual especializada que ferramentas não pegam."
+  
+  cta:
+    primaria: "Solicitar Avaliação Rápida"
+    secundaria: "Comparar com Auditoria"
 ---
-
-Diagnóstico rápido. Resultados claros. Prioridades óbvias.
-Precisa saber se seu site/app tem problemas de acessibilidade mas não quer investimento grande? Faço uma avaliação rápida, focada e leve que identifica riscos, oportunidades fáceis e as mudanças que farão a maior diferença.
-
-## Por Que Fazer Uma Avaliação?
-
-- Entender o estado atual sem investimento grande. Não precisa de auditoria completa para começar.
-- Identificar problemas críticos. Quais issues prejudicam mais seus usuários?
-- Prioridades claras. Seu roadmap apontando exatamente o que fazer primeiro.
-- Resultados em dias, não semanas. Decisões rápidas com base em dados.
-
-## O Que Você Recebe
-
-- Relatório visual com problemas encontrados
-- Severidade clara de cada issue (crítico, alto, médio, baixo)
-- Screenshots e exemplos de cada problema
-- Oportunidades rápidas de melhoria (quick wins)
-- Estimativa de esforço pra corrigir cada coisa
-- Recomendações prioritárias baseadas em impacto
-
-## Ideal Para
-
-- Sites pequenos que querem uma primeira avaliação
-- MVPs antes de crescer
-- Auditorias pontuais de seções específicas
-- Quando você quer diagnóstico inicial sem compromisso
-
-## Processo
-
-1. Kickoff (1 dia)
-Você explica o site/app, contexto, usuários. Defino escopo e prioridades.
-2. Avaliação (2-3 dias)
-Testes automatizados, testes manuais com leitores de tela, navegação por teclado, diferentes navegadores/devices.
-3. Relatório (1 dia)
-4. Documento completo com os encontraveis, severidade, recomendações, quick wins.
-
-## Tecnologias
-
-Todos os formatos: web, mobile, aplicações, documentos.
-Especialidade: React, Vue, WordPress, HTML/CSS/JS, Next.js, Astro.
-
-## Quanto Custa?
-
-Entre em contato pra orçamento. Avaliações costumam sair entre R$ 2.000 e R$ 5.000 conforme escopo.
-
-## Pronto?
-
-Vamos conversar sobre seu projeto. Sem compromisso.
-
-Solicitar orçamento
