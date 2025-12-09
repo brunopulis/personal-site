@@ -8,7 +8,11 @@ import * as collections from './src/_config/collections.js';
 import * as customFilters from './src/_config/filters.js';
 import events from './src/_config/events.js';
 import plugins from './src/_config/plugins.js';
+import brokenLinksPlugin from 'eleventy-plugin-broken-links';
 import shortcodes from './src/_config/shortcodes.js';
+import {badge} from './src/_config/shortcodes/image.js';
+import {image, imageKeys} from './src/_config/shortcodes/image.js';
+import {svg} from './src/_config/shortcodes/svg.js';
 
 export default async function (eleventyConfig) {
   //  custom watch targets
@@ -30,6 +34,8 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addCollection('posts', collections.posts);
   eleventyConfig.addCollection('notes', collections.notes);
+  eleventyConfig.addCollection('books', collections.books);
+  eleventyConfig.addCollection('media', collections.media);
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
   eleventyConfig.addCollection('streams', collections.streams);
 
@@ -41,27 +47,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(plugins.drafts);
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
   eleventyConfig.addPlugin(plugins.rss);
+  eleventyConfig.addPlugin(brokenLinksPlugin);
   eleventyConfig.addPlugin(plugins.syntaxHighlight);
   eleventyConfig.addPlugin(plugins.webc, {
     components: ['./src/_includes/webc/*.webc'],
     useTransform: true
-  });
-  eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
-    formats: ['webp', 'jpeg'],
-    widths: ['auto'],
-    htmlOptions: {
-      imgAttributes: {
-        loading: 'lazy',
-        decoding: 'async',
-        sizes: 'auto'
-      },
-      pictureAttributes: {}
-    },
-    cacheOptions: {
-      duration: '1d',
-      directory: '.cache',
-      removeUrlQueryParams: false
-    }
   });
 
   //   Library and Data
@@ -97,11 +87,10 @@ export default async function (eleventyConfig) {
   });
 
   //  Shortcodes
-  eleventyConfig.addPairedShortcode('asideInfo', shortcodes.asideInfo);
-  eleventyConfig.addPairedShortcode('asideReadmore', shortcodes.asideReadmore);
-  eleventyConfig.addShortcode('svg', shortcodes.svg);
-  eleventyConfig.addShortcode('image', shortcodes.image);
-  eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeys);
+  eleventyConfig.addNunjucksAsyncShortcode('svg', svg);
+  eleventyConfig.addNunjucksAsyncShortcode('badge', badge);
+  eleventyConfig.addNunjucksAsyncShortcode('image', image);
+  eleventyConfig.addNunjucksAsyncShortcode('imageKeys', imageKeys);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
   //  Events: before build
@@ -119,9 +108,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.on('eleventy.after', events.tableSawWrapper);
 
   //  Passthrough File Copy
-  ['src/assets/fonts/', 'src/assets/images/template', 'src/assets/og-images'].forEach(p =>
-    eleventyConfig.addPassthroughCopy(p)
-  );
+  [
+    'src/assets/fonts/',
+    'src/assets/images/template',
+    'src/assets/og-images',
+    'src/assets/images/badges'
+  ].forEach(p => eleventyConfig.addPassthroughCopy(p));
 
   eleventyConfig.addPassthroughCopy({
     'src/assets/images/favicon/*': '/',

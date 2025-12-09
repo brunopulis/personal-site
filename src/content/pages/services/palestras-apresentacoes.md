@@ -1,118 +1,77 @@
 ---
+layout: pages/service-item.njk
 title: Palestras e Apresentações
-layout: services
-service: Palestras e Apresentações
-serviceDescription: Palestras e Apresentações
-serviceId: palestras-apresentacoes
+slug: palestras
+description: Talks sobre acessibilidade que aumentam consciência, compartilham insights do mundo real e inspiram times.
 permalink: "/servicos/palestras-apresentacoes/index.html"
 url: /servicos/palestras-apresentacoes/
-description: Talks sobre acessibilidade que aumentam consciência, compartilham insights do mundo real e inspiram times a desenhar e construir de forma mais inclusiva.
 date: Last Modified
+
+service:
+  color: red-600
+  tagline: Aumente a consciência, inspire times e crie urgência.
+  icon: 🎤
+  
+  problem: |
+    Muitas vezes a acessibilidade é ignorada não por maldade, mas por falta de conhecimento ou priorização.
+    Seu time ou evento precisa de um "wake-up call" ou de inspiração técnica.
+  
+  solution: |
+    Palestras energéticas e baseadas em casos reais que mostram o "porquê" e o "como" da acessibilidade.
+    Transformo tópicos áridos em histórias que engajam e motivam a ação.
+  
+  diferencial:
+    - Histórias reais de fracasso e sucesso
+    - Foco em inspirar mudança de atitude
+    - Conteúdo adaptável (técnico ou estratégico)
+    - Oratória engajadora, sem slides chatos
+  
+  inclusos:
+    - Briefing para alinhar com o público
+    - Conteúdo customizado para o evento
+    - Slides acessíveis compartilhados
+    - Sessão de Q&A (Perguntas e Respostas)
+    - Divulgação do evento nas minhas redes
+  
+  resultado:
+    - Time inspirado e com senso de urgência
+    - Compreensão clara do valor de negócio
+    - Quebra de mitos sobre acessibilidade
+    - Engajamento da liderança
+  
+  publicoAlvo:
+    - Conferências de Tecnologia e Design
+    - Eventos Corporativos (All-hands, Kick-offs)
+    - Universidades e Bootcamps
+    - Meetups de Comunidade
+  
+  processo:
+    - Briefing: Entendimento do público e objetivo
+    - Preparação: Customização da narrativa e slides
+    - Evento: Apresentação e interação
+    - Pós-evento: Compartilhamento de materiais
+  
+  timeline: "30 min a 2 horas"
+  
+  testemunhal:
+    cliente: "Conferência Tech"
+    quote: "Foi a palestra mais comentada do evento. O Bruno conseguiu fazer todo mundo rir e pensar sério ao mesmo tempo."
+    resultado: "Nota 9.8 de satisfação"
+  
+  faq:
+    - pergunta: "Você viaja para palestrar?"
+      resposta: "Sim, para qualquer lugar do Brasil ou mundo (custos de logística à parte)."
+    
+    - pergunta: "Faz palestras online?"
+      resposta: "Sim, tenho setup profissional de áudio e vídeo para eventos remotos."
+    
+    - pergunta: "Pode falar sobre um tema específico?"
+      resposta: "Claro. Tenho temas prontos, mas adoro criar algo novo para necessidades específicas."
+  
+  cta:
+    primaria: "Convidar para Palestrar"
+    secundaria: "Ver Temas Disponíveis"
 ---
-
-Aumente a consciência, inspire times e crie urgência.
-
-## Por que contratar uma palestra?
-
-- Criar urgência sobre acessibilidade. Nem todo mundo entende que acessibilidade é importante.
-- Inspirar times a priorizar. Casos reais mostram que vale a pena.
-- Compartilhar boas práticas. Experiências concretas, não teoria.
-- Atrair talento para a causa. Pessoas querem trabalhar em organizações que ligam pra acessibilidade.
-
-## Formatos Disponíveis
-
-### Talk Curta (30 min)
-
-Leve, inspiradora, perfeita pra kick-offs ou all-hands. Sem mergulho profundo, mas deixa a mensagem clara.
-
-Ideal para:
-
-- All-hands meetings
-- Kick-offs de projeto
-- Eventos corporativos
-Abertura de conferências
-
-### Palestra Padrão (45-60 min)
-
-Conteúdo estruturado + exemplos práticos + Q&A. A mais comum.
-Ideal para:
-
-- Conferências de tecnologia
-- Meetups locais
-- Seminários corporativos
-- Eventos de inovação
-
-### Masterclass (90-120 min)
-
-Deep dive com Q&A e discussão. Público pode questionar, debater.
-Ideal para:
-
-- Eventos corporativos grandes
-- Universidades e cursos
-- Eventos de comunidade
-- Workshops educacionais
-
-## Temas Disponíveis
-
-### Acessibilidade é UX
-
-Por que todo mundo ganha quando você constrói acessível. Não é só sobre deficiência, é sobre usabilidade.
-
-### Do Caos ao Conformance
-
-Histórias reais de remediação. Como sites quebrados se tornam acessíveis. Números, casos, antes/depois.
-
-### Leitores de Tela Não Mordem
-
-Desmistificando leitores de tela. Testes práticos com usuários reais. Você vai entender como pessoas cegas navegam a web.
-
-### React Acessível: Não é Ciência do Foguete
-
-Tópico técnico. Como construir componentes React acessíveis. Padrões, erros comuns, soluções.
-
-### A Verdade Sobre WCAG
-
-Desmistificando WCAG. O que realmente importa. Conformidade vs. acessibilidade real. Mitos e realidade.
-
-## Customizável
-
-Tenho flexibilidade pra adaptar tema conforme sua necessidade e audiência.
-
-## Audiência
-
-- Equipes internas: Devs, designers, product, gestores
-- Conferências: Audiência de tech/product/design
-- Comunidades: Meetups, grupos locais
-- Universidades: Alunos de tecnologia
-- Eventos públicos: Seminários, webinars
-
-## Processo
-
-1. Briefing (1-2 dias)
-Você explica: audiência, contexto, tamanho do evento, objetivos, duração, tema.
-2. Preparação (3-5 dias)
-Eu customizo a palestra pra sua audiência, preparo slides, exemplos.
-3. Palestra (no dia)
-Apresentação, Q&A, networking.
-
-## Formato
-
-- Presencial: Seu evento, minha presença física
-- Remoto: Video call, slides compartilhados
-- Híbrido: Ambos simultaneamente
-
-## Quanto Custa?
-
-- Talk Curta (30 min): R$ 2.000 a R$ 3.500
-- Palestra Padrão (45-60 min): R$ 3.500 a R$ 5.000
-- Masterclass (90-120 min): R$ 5.000 a R$ 7.500
-- Valores podem variar conforme: local (presencial/remoto), customização necessária, tamanho da audiência.
-
-## Precisa de uma Palestra?
-
-Vamos conversar sobre tema, audiência, objetivos. Desenho algo que faz sentido pro seu evento.
-Agendar conversa
-
 {% include "components/work-with-me.njk" %}
 
 ---
