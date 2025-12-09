@@ -1,0 +1,102 @@
+---
+layout: page
+title: "Meus Filmes e Séries"
+description: "Uma coleção dos meus favoritos, os que estou assistindo e minhas opiniões"
+permalink: "/media/index.html"
+---
+
+
+{% set moviesByYear = collections.media | groupBy("attendedYear") %}
+      
+{% for year in moviesByYear | sortKeys %}
+  <section class="mb-12 year-section" data-year="{{ year }}">
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold text-blue-400 mb-1">{{ year }}</h2>
+      <p class="text-sm">{{ moviesByYear[year] | length }} filme(s)</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      {% for movie in moviesByYear[year] | sort(attribute="data.date") %}
+        <article class="movie-card group cursor-pointer" data-status="{{ movie.data.status }}">
+          <div class="relative overflow-hidden rounded-lg mb-4">
+            <img 
+              src="{{ movie.data.poster }}" 
+              alt="{{ movie.data.title }}"
+              class="w-full h-80 object-cover"
+              loading="lazy"
+            />
+            <!-- Status Badge -->
+            <div class="my-3">
+              
+              <span class="px-3 py-1 rounded-full text-xs font-bold
+                {% if movie.data.status == 'assistido' %}
+                  bg-green-500/90 text-white
+                {% elif movie.data.status == 'assistindo' %}
+                  bg-yellow-500/90 text-black
+                {% else %}
+                  bg-purple-500/90 text-white
+                {% endif %}
+              ">
+                {{ movie.data.status | capitalize }}
+              </span>
+            </div>
+
+            <!-- Rating -->
+            <div class="">
+              <div class="flex gap-1">
+                <p>Minha avaliação:</p>
+                <div class="flex gap-1" role="img" aria-label="Avaliação: {{ movie.data.rating }} de 5 estrelas">
+                  {% for i in range(0, 5) %}
+                    <span aria-label="" class="text-lg {% if i < movie.data.rating %}text-yellow-400{% else %}text-gray-500{% endif %}">
+                      ★
+                    </span>
+                  {% endfor %}
+                </div>
+                <span class="sr-only">{{ movie.data.rating }} de 5 estrelas</span>
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="text-lg font-bold mb-1">{{ movie.data.title }}</h3>
+          <ul>
+            <li>Diretor: {{ movie.data.director }}</li>
+            <li>Categoria: {{ movie.data.category }}</li>
+            <li>Descrição: {{ movie.data.description }}</li>
+          </ul>
+
+          {% if movie.data.thoughts %}
+            <div class="mb-3 py-3">
+              <p class="text-xs font-bold mb-1">Minha opinião:</p>
+              <p class="text-sm line-clamp-2">
+                {{ movie.data.thoughts }}
+              </p>
+            </div>
+          {% endif %}
+
+          <div class="flex flex-wrap gap-2 mb-3">
+            {% for tag in movie.data.tags %}
+              <span class="px-2 py-1 rounded text-xs text-blue-400">
+                #{{ tag }}
+              </span>
+            {% endfor %}
+          </div>
+
+          <div class="flex justify-between text-xs text-gray-500 pt-3 border-t border-gray-800">
+            <span>{{ movie.data.recommendBy }}</span>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    <hr class="border-gray-700 mb-12" />
+  </section>
+  {% endfor %}
+
+  {% if collections.media.length === 0 %}
+    <div class="flex items-center justify-center h-96">
+      <div class="text-center text-gray-500">
+        <p class="text-xl mb-2">Nenhum filme por enquanto</p>
+        <p class="text-sm">Comece a adicionar seus filmes favoritos!</p>
+      </div>
+    </div>
+  {% endif %}
+</div>

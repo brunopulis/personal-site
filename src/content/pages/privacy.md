@@ -1,9 +1,9 @@
 ---
+layout: page
 title: 'Política de Privacidade'
-date: '2025-11-21'
 description: 'Coisas que faco para garantir a privacidade dos visitantes do site'
-lang: 'pt-br'
-routeKey: 'privacidade'
+permalink: /privacidade/index.html
+date: 2025-11-21
 ---
 
 Minha abordagem é simples: **respeito a sua privacidade tanto quanto protejo a minha. Este site opera com rastreamento zero**.
@@ -51,6 +51,6 @@ Não há coleta de dados de navegação.
 
 > Verifique você mesmo: Sinta-se à vontade para usar ferramentas como o [Cookie Metrix](https://www.cookiemetrix.com/) para auditar este site. O resultado será zero cookies.
 
-![Print da tela do site cookie metrix, mostrando que nao possui nenhum cookie no site](/assets/images/pages/no-cookies.png)
+![Print da tela do site cookie metrix, mostrando que nao possui nenhum cookie no site](assets/images/pages/no-cookies.png)
 
 Spoiler - não há cookies! 🙂
