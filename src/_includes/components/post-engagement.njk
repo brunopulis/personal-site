@@ -1,0 +1,120 @@
+{%- set defaultVariant = variant or 'default' -%}
+{%- set defaultEmail = email or 'brunopulis@protonmail.com' -%}
+{%- set subject = ('Re: ' + postTitle) | urlencode -%}
+{%- set bodyText = 'Olá! Li seu post "' + postTitle + '" e gostaria de comentar:\n\n' + postUrl + '\n\n' -%}
+{%- set body = bodyText | urlencode -%}
+{%- set mailToLink = 'mailto:' + defaultEmail + '?subject=' + subject + '&body=' + body -%}
+
+<div class="my-6 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm">
+  <ul class="flex flex-row gap-3">
+    <li>
+      <a href="{{ mailToLink }}" class="font-semibold text-blue-600 underline hover:text-blue-700">Responder por
+        e-mail</a>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .post-share-btn {
+    cursor: pointer;
+    border: none;
+  }
+
+  .post-share-btn:active {
+    transform: scale(0.98);
+  }
+</style>
+
+<script>
+  (function initPostEngagement() {
+    function setupShareButton(button) {
+      button.addEventListener('click', async () => {
+        const title = button.getAttribute('data-title') || '';
+        const text = button.getAttribute('data-text') || '';
+        const url = button.getAttribute('data-url') || '';
+
+        const shareText = `${text}\n\n${url}`;
+
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: title,
+              text: shareText,
+            });
+            showNotification('Compartilhado com sucesso! 🎉');
+          } catch (err) {
+            if (err instanceof Error && err.name !== 'AbortError') {
+              console.error('Erro ao compartilhar:', err);
+              fallbackCopy(shareText);
+            }
+          }
+        } else {
+          fallbackCopy(shareText);
+        }
+      });
+    }
+
+    function fallbackCopy(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text)
+          .then(() => {
+            showNotification('Link copiado! 📋');
+          })
+          .catch(err => {
+            console.error('Erro ao copiar:', err);
+            showNotification('Erro ao copiar', true);
+          });
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          showNotification('Link copiado! 📋');
+        } catch (err) {
+          console.error('Erro ao copiar:', err);
+          showNotification('Erro ao copiar', true);
+        }
+        document.body.removeChild(textArea);
+      }
+    }
+
+    function showNotification(message, isError = false) {
+      const toast = document.createElement('div');
+      const bgColor = isError ? 'bg-red-600' : 'bg-green-600';
+      toast.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white transition-all duration-300 ${bgColor}`;
+      toast.textContent = message;
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(20px)';
+
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+      }, 10);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 300);
+      }, 3000);
+    }
+
+    document.querySelectorAll('.post-share-btn').forEach(setupShareButton);
+
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.post-share-btn:not([data-initialized])').forEach(button => {
+        button.setAttribute('data-initialized', 'true');
+        setupShareButton(button);
+      });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  })();
+</script>
