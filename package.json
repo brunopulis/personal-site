@@ -34,7 +34,7 @@
     "@philnash/astro-pagination": "^0.5.0",
     "@tanstack/react-virtual": "^3.13.12",
     "@yeskunall/astro-umami": "^0.0.7",
-    "astro": "^5.16.0",
+    "astro": "^5.16.4",
     "astro-breadcrumbs": "^3.3.1",
     "astro-icon": "^1.1.5",
     "astro-robots-txt": "^1.0.0",
