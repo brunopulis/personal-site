@@ -1,123 +1,73 @@
 ---
-layout: pages/services.njk
+layout: pages/service-item.njk
 title: Construção de Sites Acessíveis
-description: Sites acessíveis que são rápidos, fáceis de usar e construídos pra durar. Desenhados e codificados pensando em acessibilidade desde o início.
-service: Construção de Sites Acessíveis
-serviceDescription: Construção de Sites Acessíveis
-serviceId: construcao-sites-acessiveis
+slug: construcao
+description: Sites acessíveis que são rápidos, fáceis de usar e construídos pra durar.
 permalink: "/servicos/construcao-sites-acessiveis/index.html"
 url: /servicos/construcao-sites-acessiveis/
-date: Last Modified
+
+service:
+  color: indigo-600
+  tagline: Sites rápidos, fáceis de usar e construídos para durar.
+  icon: 🚀
+  
+  problem: |
+    A maioria dos sites hoje é pesada, lenta e difícil de usar para pessoas com deficiência.
+    Tentar consertar um site mal feito depois de pronto custa 3x mais do que fazer certo desde o início.
+  
+  solution: |
+    Desenvolvo sites onde a acessibilidade é a fundação, não um "plugin". 
+    O resultado é um produto digital robusto, extremamente rápido e que funciona para todos os seus usuários.
+  
+  diferencial:
+    - Acessibilidade "baked-in" (nativa), não sobreposta
+    - Performance de elite (Core Web Vitals verdes)
+    - Código limpo, semântico e fácil de manter
+    - Design inclusivo que não parece "site de governo"
+  
+  inclusos:
+    - Discovery e Arquitetura de Informação
+    - Design System acessível e responsivo
+    - Desenvolvimento Frontend (React, Astro, 11ty, Vue)
+    - Testes rigorosos com leitores de tela
+    - Treinamento básico para seu time manter o site
+  
+  resultado:
+    - Site 100% compatível com WCAG 2.1 AA
+    - Melhora significativa em SEO (Google ama acessibilidade)
+    - Taxas de conversão maiores (usabilidade melhor)
+    - Menor custo de manutenção a longo prazo
+  
+  publicoAlvo:
+    - Empresas lançando novos sites corporativos
+    - Startups que precisam de landing pages de alta conversão
+    - Portais de conteúdo e blogs
+    - Redesigns completos de produtos legados
+  
+  processo:
+    - Discovery: Entendimento do negócio e usuários (1-2 semanas)
+    - Design: Prototipação acessível e validação (2-4 semanas)
+    - Desenvolvimento: Código semântico e testes contínuos (4-8 semanas)
+    - QA & Launch: Testes finais e deploy seguro (2 semanas)
+  
+  timeline: "8 a 14 semanas (depende do escopo)"
+  
+  testemunhal:
+    cliente: "ONG Internacional"
+    quote: "O site não só ficou acessível, mas ficou muito mais rápido. Nossas doações aumentaram 20% depois do redesign."
+    resultado: "Aumento de 20% em conversão"
+  
+  faq:
+    - pergunta: "Qual tecnologia você usa?"
+      resposta: "Depende do projeto. Uso muito Astro, Next.js e 11ty. A tecnologia serve ao produto, não o contrário."
+    
+    - pergunta: "Você faz o design também?"
+      resposta: "Sim, faço o design UI/UX com foco em acessibilidade. Se você já tiver designer, trabalho em parceria."
+    
+    - pergunta: "O site vai ser editável?"
+      resposta: "Sim, integro com CMS (como WordPress, Sanity, Strapi) para que seu time possa atualizar o conteúdo facilmente."
+  
+  cta:
+    primaria: "Solicitar Proposta"
+    secundaria: "Ver Portfolio"
 ---
-
-Sites rápidos, fáceis de usar e construídos para durar.
-
-
-## Por Que Construir Comigo
-
-Acessibilidade é default, não afterthought. Não é algo que você adiciona depois.
-Performance e acessibilidade andam juntas. Sites acessíveis são rápidos e enxutos.
-Design inclusivo desde o início. Não é remediação, é construção certa.
-Código que sua equipe consegue manter. Não vira tech debt.
-
-## O Que Faço
-
-### Discovery & Planejamento
-
-- Entendimento profundo de necessidades
-- Definição clara de objetivos
-- Arquitetura de informação acessível desde o começo
-
-### Design
-
-- Wireframes com acessibilidade em mente
-- Design system acessível
-- Testes com usuários reais
-
-### Desenvolvimento
-
-- HTML semântico
-- React/Vue com acessibilidade
-- Performance otimizada
-- Testes contínuos com leitores de tela
-
-### Deploy & Suporte
-
-- Deploy seguro
-- Documentação técnica
-- Treinamento da equipe
-- Suporte pós-launch
-
-## Tecnologias
-
-### Estático/SSR:
-
-- Next.js
-- Astro
-- 11ty
-
-### Frontend Frameworks:
-
-- React
-- Vue
-
-### CMS:
-
-- WordPress (quando apropriado)
-
-### Vanilla:
-
-- HTML/CSS/JS puro
-
-## Ideal Para
-
-- Sites corporativos novos
-- Redesign com acessibilidade como prioridade
-- Landing pages de alto impacto
-- Portais internos
-- Blogs e sites de conteúdo
-- Aplicações web
-
-## Processo
-
-1. Discovery (1-2 semanas)
-Entendo seu negócio, usuários, concorrentes, objetivos. Saímos com brief claro e roadmap.
-2. Design (2-4 semanas)
-Wireframes, design visual, design system acessível. Testes com usuários reais.
-3. Desenvolvimento (4-8 semanas)
-Construção com HTML semântico, componentes acessíveis, testes contínuos.
-4. QA & Testes (1-2 semanas)
-Testes automatizados, manuais, com leitores de tela, keyboard navigation, mobile.
-5. Deploy & Treinamento (1 semana)
-Código em produção, documentação, treinamento da equipe.
-
-## Investimento
-
-O investimento varia bastante conforme escopo. Alguns pontos de referência:
-
-- Site corporativo simples: R$ 15.000 a R$ 25.000
-Redesign com acessibilidade: R$ 20.000 a R$ 40.000
-Aplicação web: R$ 30.000+
-
-Preços variam conforme: complexidade, tamanho, funcionalidades, integrations.
-
-## Processo de Orçamento
-
-1. Brief Inicial: você explica: projeto, objetivos, usuários, timeline, orçamento rough.
-2. Proposta: Eu envio escopo claro, timeline, investimento.
-3. Kickoff: Se aprovado, começamos com discovery.
-
-## Tecnologia Específica?
-
-Você quer Next.js? Astro? React? WordPress? Não importa – a prioridade é acessibilidade e performance. Tecnologia é ferramenta.
-
-## Pronto pra Construir?
-
-Vamos conversar sobre seu projeto. Você explica a visão, eu faço uma proposta clara.
-Agendar conversa
-
-{% include "components/work-with-me.njk" %}
-
----
-
-Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}

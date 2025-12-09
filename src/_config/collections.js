@@ -7,17 +7,50 @@ export const posts = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
 
+/**
+ * 
+ * @param {*} collectionApi 
+ * @returns 
+ */
 export const notes = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/notas/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/notas/**/*.md');
 };
 
+/**
+ * 
+ * @param {*} collectionApi 
+ * @returns 
+ */
 export const bookmarks = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*.md').reverse();
 };
 
+/**
+ * 
+ * @param {*} collectionApi 
+ * @returns 
+ */
 export const gallery = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/gallery/**/*.md').reverse();
 };
+
+/**
+ * 
+ * @param {*} collectionApi 
+ * @returns 
+ */
+export const media = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/media/**/*.md').reverse();
+}
+
+/**
+ * 
+ * @param {*} collectionApi 
+ * @returns 
+ */
+export const books = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/books/**/*.md').reverse();
+}
 
 /**
  *
@@ -52,7 +85,7 @@ export const tagList = collection => {
       let tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'livros', 'notas', 'filmes', 'musicas'].includes(tag)) {
+        if (!['all', 'posts', 'streams', 'livros', 'notas', 'media', 'musicas'].includes(tag)) {
           tagSet.add(tag);
         }
       }
@@ -67,6 +100,8 @@ export default {
   streams,
   showInSitemap,
   bookmarks,
+  books,
   notes,
+  media,
   tagList
 };

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Blogroll"
-description: "Uma coleção de blogs e autores que eu recomendo e acompanho regularmente."
+description: "Pessoas incríveis na web, em ordem aleatória."
 permalink: "/blogroll/index.html"
 ---
 
@@ -16,9 +16,9 @@ permalink: "/blogroll/index.html"
     <button class="filter-btn" data-filter="Pessoal">Pessoal</button>
   </div>
 
-  <ul class="list-none grid grid-cols-1 md:grid-cols-3 gap-4">
+  <ul class="list-none grid grid-cols-1 md:grid-cols-3 gap-4 px-0">
     {% for blog in blogroll %}
-    <li class="blog-card border bg-white border-gray-200 hover:shadow-md mb-6 p-6 rounded-xl shadow-sm transition"
+    <li class="blog-card border bg-white border-gray-200 hover:shadow-md mb-6 rounded-xl shadow-sm transition"
       data-category="{{ blog.category }}">
       <div class="blog-header">
         <img src="https://v1.indieweb-avatar.11ty.dev/{{ blog.url | urlencode }}/" class="blogroll__avatar" width="60"
