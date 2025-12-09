@@ -1,3 +1,8 @@
 export const striptags = string => {
-  return string.replace(/<[^>]*>?/gm, '');
+  let prev;
+  do {
+    prev = string;
+    string = string.replace(/<[^>]*>?/gm, '');
+  } while (string !== prev);
+  return string;
 };
