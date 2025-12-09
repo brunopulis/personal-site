@@ -1,7 +1,5 @@
 {
-  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
-  "prettier.documentSelectors": ["**/*.astro"],
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+    "css.validate": true,
+    "less.validate": false,
+    "scss.validate": false
 }

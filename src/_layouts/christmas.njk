@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - Tema Natalino</title>
+  {% include "head/css-inline.njk" %}
+</head>
+
+<body class="christmas-theme">
+  <div class="lights" role="presentation" aria-hidden="true">
+    <div class="lights__bulb" style="--delay: 0s"></div>
+    <div class="lights__bulb" style="--delay: 0.3s"></div>
+    <div class="lights__bulb" style="--delay: 0.6s"></div>
+    <div class="lights__bulb" style="--delay: 0.9s"></div>
+    <div class="lights__bulb" style="--delay: 1.2s"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrapper">
+      <h1 class="site-header__title">{{ title }}</h1>
+      <p class="site-header__subtitle">{{ subtitle }}</p>
+    </div>
+  </header>
+
+  <main class="wrapper flow">
+    {{ content | safe }}
+  </main>
+
+  <button class="snow-toggle" data-snow-toggle aria-label="Alternar neve">
+    <span data-snow-text>❄️ Parar neve</span>
+  </button>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 - Feliz Natal e Próspero Ano Novo! 🎅🎄</p>
+  </footer>
+
+  <script src="/assets/js/snow.js"></script>
+</body>
+
+</html>

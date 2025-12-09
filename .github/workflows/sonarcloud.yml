@@ -1,4 +1,6 @@
 name: Build Sonar
+permissions:
+  contents: read
 on:
   push:
     branches:
