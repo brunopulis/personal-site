@@ -3,7 +3,6 @@ layout: page
 title: Isenção de responsabilidade
 permalink: "disclaimer/index.html"
 description: 'Isenção de responsabilidade sobre o conteudo do meu site.'
-pubDate: '2025-11-21'
 date: Last Modified
 ---
 

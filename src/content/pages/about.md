@@ -2,8 +2,7 @@
 layout: page
 title: Sobre mim
 permalink: "/sobre/index.html"
-key: 'sobre'
-description: 'Ich arbeite als freie Webentwicklerin und Designerin in Madrid. Seit 2008 erstelle ich Websites und Webapps.'
+description: 'A história de quem escreve nesse site.'
 date: Last Modified
 ---
 
