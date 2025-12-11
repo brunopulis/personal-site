@@ -1,0 +1,36 @@
+/* HUMANS.TXT */
+
+/* TEAM */
+Name: Bruno Pulis
+Title: Accessibility Engineer
+Email: brunopulis@protonmail.com
+Website: https://brunopulis.com
+GitHub: https://github.com/brunopulis
+Mastodon: https://mastodon.social/brunopulis
+LinkedIn: https://linkedin.com/in/pulis
+Location: Brasil
+
+/* SITE */
+Last Update: 2025-12-12
+Standards: HTML5, CSS3, A11Y, JavaScript ES6+
+Components: Eleventy, Tailwind CSS, Nunjucks
+IDE: VSCodium
+Hosting: Vercel
+Analytics: Umami
+Accessibility: WCAG 2.1 Level AA
+
+/* THANKS */
+Thanks to the Eleventy community for building an amazing static site generator.
+Thanks to Tailwind CSS for the utility-first approach.
+Thanks to all open source contributors.
+
+/* SOCIAL */
+GitHub: https://github.com/brunopulis
+Mastodon: https://mastodon.social/brunopulis
+LinkedIn: https://linkedin.com/in/pulis
+Email: brunopulis@protonmail.com
+
+/* COLOPHON */
+Design & Development: Bruno Pulis
+Founded: 2012
+Built with: Eleventy, Tailwind CSS, JavaScript, and ❤️
