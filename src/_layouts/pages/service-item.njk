@@ -1,0 +1,365 @@
+---
+layout: base
+---
+
+<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
+  id="hero">
+  <div class="mx-auto px-6 max-w-7xl gap-2 grid items-center py-12">
+    <div class="service-hero__icon">{{ service.icon }}</div>
+    <h1 class="service-hero__title">{{ title }}</h1>
+    <p class="service-hero__tagline">{{ service.tagline }}</p>
+
+    <div class="service-hero__ctas">
+      <a href="#contact" class="text-white underline underline-offset-8 hover:no-underline">{{ service.cta.primaria
+        }}</a>
+      <a href="#detalhes" class="text-white underline underline-offset-8 hover:no-underline">{{ service.cta.secundaria
+        }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="service-section mx-auto px-6 max-w-7xl gap-2 grid items-center py-12">
+  <div class="problem-solution">
+    <div class="problem-solution__item">
+      <h2 class="font-bold">O Desafio</h2>
+      {{ service.problem | markdownify | safe }}
+    </div>
+    <div class="problem-solution__item">
+      <h2>Nossa Abordagem</h2>
+      {{ service.solution | markdownify | safe }}
+    </div>
+  </div>
+
+  {% if service.diferencial %}
+  <div class="diferencial">
+    <h3>Por Que Somos Diferentes</h3>
+    <ul class="diferencial__list">
+      {% for item in service.diferencial %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</section>
+
+<section class="service-section bg-gray-50 py-12">
+  <div class="mx-auto px-6 max-w-7xl gap-2 grid items-center ">
+    <h2>O Que Você Recebe</h2>
+    <div class="service-cards">
+      {% for item in service.inclusos %}
+      <div class="service-card">
+        <h3>{{ item }}</h3>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS ESPERADOS -->
+<section class="service-section bg-gray-50 py-12">
+  <div class="mx-auto px-6 max-w-7xl gap-2 grid items-center ">
+    <h2>Resultados Esperados</h2>
+    <ul class="results-list">
+      {% for result in service.resultado %}
+      <li>
+        <span class="checkmark">✓</span>
+        {{ result }}
+      </li>
+      {% endfor %}
+    </ul>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="service-section bg-gray-50 py-12">
+  <div class="mx-auto px-6 max-w-7xl gap-2 grid items-center ">
+    <h2>Para Quem É Este Serviço</h2>
+    <ul class="audience-list">
+      {% for audience in service.publicoAlvo %}
+      <li>{{ audience }}</li>
+      {% endfor %}
+    </ul>
+</section>
+
+<!-- PROCESSO -->
+<section class="service-section container">
+  <h2>Como Funciona</h2>
+  <div class="process">
+    {% for step in service.processo %}
+    <div class="process__step">
+      {{ step }}
+    </div>
+    {% endfor %}
+  </div>
+  <p class="process__timeline">
+    <strong>Timeline:</strong> {{ service.timeline }}
+  </p>
+</section>
+
+<!-- TESTEMUNHAL -->
+{% if service.testemunhal %}
+<section class="service-section service-section--accent container">
+  <div class="testemunhal">
+    <blockquote class="testemunhal__quote">
+      "{{ service.testemunhal.quote }}"
+    </blockquote>
+    <div class="testemunhal__meta">
+      <strong>{{ service.testemunhal.cliente }}</strong>
+      <p>{{ service.testemunhal.resultado }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- FAQ -->
+{% if service.faq %}
+<section class="service-section container">
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq">
+    {% for item in service.faq %}
+    <details class="faq__item">
+      <summary class="faq__question">{{ item.pergunta }}</summary>
+      <div class="faq__answer">{{ item.resposta }}</div>
+    </details>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA FINAL -->
+<section class="service-cta container">
+  <h2>Pronto para Transformar Seus Documentos?</h2>
+  <p>Entre em contato. Vamos discutir sua situação e criar um plano personalizado.</p>
+  <a href="#contact" class="btn btn-primary btn-large">{{ service.cta.primaria }}</a>
+</section>
+
+</main>
+
+<style>
+  .service-hero {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-light));
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .service-hero__icon {
+    font-size: 1.5rem;
+  }
+
+  .service-hero__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .service-hero__tagline {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-hero__ctas {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .service-section {
+    padding: 4rem 2rem;
+  }
+
+  .service-section--alt {
+    background: #f9f9f9;
+  }
+
+  .problem-solution {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .problem-solution__item h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .problem-solution {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .diferencial__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .diferencial__list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  .diferencial__list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 3px solid var(--accent-color);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .results-list,
+  .audience-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .results-list li,
+  .audience-list li {
+    padding: 1rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .checkmark {
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .process {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .process__step {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+  }
+
+  .process__timeline {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+  }
+
+  .testemunhal {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .testemunhal__quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+  }
+
+  .testemunhal__meta {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  .faq {
+    max-width: 800px;
+  }
+
+  .faq__item {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .faq__question {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq__answer {
+    margin-top: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .service-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-light));
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent-color);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--accent-color);
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-large {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+</style>

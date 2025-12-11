@@ -1,0 +1,55 @@
+{% extends "../base/base.njk" %}
+{% from 'schemas/schemas.njk' import serviceSchema, breadcrumbSchema %}
+
+{% block head %}
+{{ serviceSchema(service, serviceDescription, url, priceRange) }}
+
+{% set breadcrumbs = [
+{ name: 'Bruno Pulis', url: '/' },
+{ name: 'Serviços', url: '/servicos/' },
+{ name: service, url: url }
+] %}
+{{ breadcrumbSchema(breadcrumbs) }}
+
+{% endblock %}
+
+{% block main_class %}servico-page{% endblock %}
+
+{% block content %}
+<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
+  id="hero">
+  <div class="mx-auto px-6 max-w-7xl gap-12 grid items-center py-12">
+    <div>
+      <h1 class="font-bold mb-6 leading-tight text-5xl" id="hero-section">{{ title }}</h1>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="prose mx-auto py-12 max-w-7xl px-6">
+  <article>
+    {{ content | safe }}
+  </article>
+
+  {% set related = serviceId | getRelatedServices %}
+  {% if related.length > 0 %}
+  <aside class="mt-16 border-t pt-8">
+    <h3 class="text-2xl font-bold mb-6">Serviços Relacionados</h3>
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose list-none pl-0">
+      {% for srv in related %}
+      <li class="rounded-xl bg-gray-50 p-6 hover:shadow-md transition border border-gray-100">
+        <a href="{{ srv.url }}" class="font-bold text-lg block mb-2 no-underline hover:text-blue-600">
+          <span class="mr-2">{{ srv.icon }}</span>{{ srv.title }}
+        </a>
+        <p class="text-sm text-gray-600 m-0">{{ srv.description }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block after_main %}
+{% include 'partials/cta.njk' %}
+{% endblock %}

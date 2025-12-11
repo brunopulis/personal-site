@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from "tailwindcss/defaultTheme";
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
+  content: ['./src/**/*.{html,njk,md,js}', './src/**/*.svg'],
+   theme: {
     extend: {
       colors: {
         transparent: "transparent",
@@ -111,12 +110,12 @@ export default {
     },
   },
   variants: {
-    animation: ["responsive"],
+    animation: ['responsive']
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss/plugin")(({ addVariant }) => {
-      addVariant("dark-me", ".dark_&");
-    }),
-  ],
+    require('@tailwindcss/typography'),
+    require('tailwindcss/plugin')(({addVariant}) => {
+      addVariant('dark-me', '.dark_&');
+    })
+  ]
 };

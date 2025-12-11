@@ -1,0 +1,20 @@
+[
+  {
+    "id": "liberapay",
+    "icon": "💰",
+    "name": "Liberapay",
+    "url": "https://liberapay.com/brunopulis"
+  },
+  {
+    "id": "kofi",
+    "icon": "☕",
+    "name": "Ko-fi",
+    "url": "https://ko-fi.com/brunopulis"
+  },
+  {
+    "id": "paypal",
+    "icon": "🌐",
+    "name": "Paypal",
+    "url": "https://www.paypal.com/donate/?hosted_button_id=7YBCWD8WYY4ZA"
+  }
+]
