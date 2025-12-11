@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Verifique
-permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+permalink: /verifique/index.html
 key: 'verique'
 description: Verifique minha identidade online
 date: Last Modified
