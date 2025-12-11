@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sobre mim
+title: "Sobre mim"
 permalink: "/sobre/index.html"
 description: 'A história de quem escreve nesse site.'
 date: Last Modified

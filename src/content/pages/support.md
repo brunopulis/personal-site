@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Apoie meu trabalho
-permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
-description: 'You can use this starter as a template for your blog and you are ready to go! But there are some adjustments you have to make.'
+title: "Apoie meu trabalho"
+permalink: /apoie/index.html
+description: 'Descubra formas de apoiar meu trabalho'
 tags: ['plataform']
 ---
 

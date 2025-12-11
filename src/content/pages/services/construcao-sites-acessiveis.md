@@ -1,6 +1,6 @@
 ---
 layout: service-item.njk
-title: Construção de Sites Acessíveis
+title: "Construção de Sites Acessíveis"
 slug: construcao
 description: Sites acessíveis que são rápidos, fáceis de usar e construídos pra durar.
 permalink: "/servicos/construcao-sites-acessiveis/index.html"
