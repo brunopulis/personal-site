@@ -4,6 +4,11 @@ import locale_pt_br from 'dayjs/locale/pt-br.js';
 dayjs.locale(locale_pt_br); 
 
 export const toISOString = dateString => dayjs(dateString).toISOString();
+
+export const toRfc822Date = (date) => {
+  return new Date(date).toUTCString();
+};
+
 export const formatDate = (date, format) => dayjs(date).format(format);
 
 /** Retorna a data no formato legível em português brasileiro (ex: 15 de dezembro de 2024) */

@@ -1,6 +1,6 @@
 import {categoryFilter} from './filters/category-filter.js';
 import {base64Format} from './filters/base64-format.js';
-import {toISOString, formatDate, readableDate, sortByDate, relativeDate} from './filters/dates.js';
+import {toISOString, toRfc822Date, formatDate, readableDate, sortByDate, relativeDate} from './filters/dates.js';
 import {streamIcon, streamTypeLabel} from './filters/stream-icon.js';
 
 import {groupBy, groupByMonth} from './filters/groupBy.js';
@@ -31,6 +31,7 @@ export {
   categoryFilter,
   base64Format,
   toISOString,
+  toRfc822Date,
   formatDate,
   readableDate,
   sortByDate,
