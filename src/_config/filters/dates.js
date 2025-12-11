@@ -25,5 +25,17 @@ export const relativeDate = date => {
     return dayjs(date).format('dd/MM/yyyy');
 };
 
+export const sortByDate = (array) => {
+  if (!array || !Array.isArray(array)) {
+    return [];
+  }
+
+  return array.sort((a, b) => {
+    const dateA = new Date(a.data?.date || a.date);
+    const dateB = new Date(b.data?.date || b.date);
+    return dateB - dateA;
+  });
+};
+
 /** Retorna apenas o ano */
 export const year = date => dayjs(date).format('YYYY');
