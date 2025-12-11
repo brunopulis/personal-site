@@ -1,0 +1,56 @@
+---
+layout: page
+title: "Meus trabalhos"
+permalink: "/trabalho/index.html"
+description: "Trabalhos que realizei"
+---
+
+
+{% set booksByYear = collections.books | groupBy("attendedYear") %}
+      
+{% for year in booksByYear | sortKeys %}
+  <section class="mb-12 year-section" data-year="{{ year }}">
+    <div class="space-y-6">
+      <h2 class="font-bold text-2xl text-blood-red-800">Lidos em {{ year }}</h2>
+      <p class="text-sm">{{ booksByYear[year] | length }} livro(s)</p>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+      {% for book in booksByYear[year] | sort(attribute="data.date") %}
+        <article class="bg-white border border-gray-100 hover:shadow-md overflow-hidden rounded-xl shadow-sm transition">
+          <img 
+            src="{{ book.data.cover }}" 
+            alt="{{ book.data.title }}"
+            class="w-48 h-48 object-cover w-full "
+            loading="lazy"
+            decoding="async"
+          />
+
+          <h3 class="font-semibold mb-1 text-xl">
+            <a href="{{ book.data.url }}">
+              {{ book.data.title }}
+            </a>
+          </h3>
+          {% if book.data.subtitle %}
+            <p>{{ book.data.title }}</p>
+          {% endif %}
+          <p>Autor: {{ book.data.author }}</li>
+          <p class="text-sm mb-4 text-gray-700">{{ book.data.description }}</p>
+          {% if book.data.review %}
+            <p>{{ book.data.review }}</p>
+          {% endif %}  
+        </article>
+      {% endfor %}
+    </div>
+    <hr class="border-gray-700 mb-12" />
+  </section>
+  {% endfor %}
+
+  {% if collections.media.length === 0 %}
+    <div class="flex items-center justify-center h-96">
+      <div class="text-center text-gray-500">
+        <p class="text-xl mb-2">Nenhum filme por enquanto</p>
+        <p class="text-sm">Comece a adicionar seus filmes favoritos!</p>
+      </div>
+    </div>
+  {% endif %}
+</div>

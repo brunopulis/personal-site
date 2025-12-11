@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Projetos
-permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+title: "Projetos"
+permalink: /projetos/index.html
 key: 'projetos'
 description: I respect the EU General Data Protection Regulation (GDPR). This policy document explains how I collect and handle any information you provide to me.
 date: Last Modified

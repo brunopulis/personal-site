@@ -1,10 +1,16 @@
 ---
+layout: page
 title: 'Mudancas do site'
-date: '2025-11-21'
-description: ''
-lang: 'pt-br'
-routeKey: 'log'
+permalink: /log/index.html
+pubDate: '2025-11-21'
+description: 'Mudanças em meu site'
+date: Last Modified 
 ---
+
+## 12-12-2025
+
+- Adicionei suporte ao Feeds RSS, Atom e JSON
+- Organizei coleções de dados
 
 ## 21-11-2025
 
@@ -14,3 +20,7 @@ routeKey: 'log'
 ## 20-11-2025
 
 - Adicionei as badges
+
+--- 
+
+*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

@@ -1,6 +1,6 @@
 ---
 layout: service-item.njk
-title: Auditoria de Acessibilidade
+title: "Auditoria de Acessibilidade"
 slug: auditoria
 description: Auditoria de acessibilidade de sites e aplicativos. Análise completa e estruturada.
 permalink: "/servicos/auditoria-acessibilidade/index.html"
