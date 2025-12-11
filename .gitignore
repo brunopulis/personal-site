@@ -4,7 +4,7 @@ node_modules
 # generated files
 dist
 docs/
-utils
+utils/
 old
 src/_includes/css
 src/_includes/scripts

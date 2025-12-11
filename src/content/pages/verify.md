@@ -1,18 +1,10 @@
 ---
-<<<<<<<< HEAD:src/content/pages/pt-br/verify.md
-title: "Verifique minha identidade"
-date: "2025-11-18"
-description: ""
-lang: "pt-br"
-routeKey: "verify"
-========
 layout: page
 title: Verifique
-permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+permalink: /verifique/index.html
 key: 'verique'
 description: Verifique minha identidade online
 date: Last Modified
->>>>>>>> d4bfc94dd2c792498cb4299b0929c39089402a62:src/content/pages/verify.md
 ---
 
 
