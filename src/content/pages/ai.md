@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Uso de inteligência artificial
+title: "Uso de inteligência artificial"
 description: "Como eu uso a inteligência artificial nesse site"
 permalink: /ia/index.html
 date: Last Modified
