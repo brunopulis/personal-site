@@ -110,6 +110,7 @@ export default async function (eleventyConfig) {
   //  Passthrough File Copy
   [
     'src/assets/fonts/',
+    'src/assets/images/',
     'src/assets/images/template',
     'src/assets/og-images',
     'src/assets/images/badges'
