@@ -71,14 +71,12 @@
 <meta property="article:author" content="{{ meta.author.name }}" />
 
 <!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
-{% for feedLink in meta.blog.feedLinks %}
-  <link
-    rel="alternate"
-    type="{{ feedLink.type }}"
-    title="{{ feedLink.title }}: {{ meta.siteName }}"
-    href="{{ feedLink.url }}"
-  />
-{% endfor %}
+<link rel="alternate" type="application/rss+xml" title="Feed Completo" href="{{ meta.url }}/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Blog" href="{{ meta.url }}/feeds/blog.xml">
+<link rel="alternate" type="application/rss+xml" title="Notas" href="{{ meta.url }}/feeds/notas.xml">
+<link rel="alternate" type="application/rss+xml" title="Streams" href="{{ meta.url }}/feeds/streams.xml">
+<link rel="alternate" type="application/rss+xml" title="Livros" href="{{ meta.url }}/feeds/livros.xml">
+<link rel="alternate" type="application/rss+xml" title="Músicas" href="{{ meta.url }}/feeds/musicas.xml">
 
 <!-- Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
 <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="any" />
