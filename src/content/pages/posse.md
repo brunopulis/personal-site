@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "Política de Privacidade"
-description: 'Coisas que faço para garantir a privacidade dos visitantes do site'
-permalink: /privacidade/index.html
-date: 2025-11-21
+title: "Estratégia POSSE"
+description: 'O que faço para fazer POSSE com meu conteúdo'
+permalink: /posse/index.html
 ---
 
 Minha abordagem é simples: **respeito a sua privacidade tanto quanto protejo a minha. Este site opera com rastreamento zero**.

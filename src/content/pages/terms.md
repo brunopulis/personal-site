@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Legal notice
-permalink: "{% if lang == 'pt-br' %}/{{ page.fileSlug }}/{% else %}/{{ lang }}/{{ page.fileSlug }}/{% endif %}index.html"
+title: "Termos de uso"
+permalink: /termos/index.html
 description: Imprint infos
 ---
 

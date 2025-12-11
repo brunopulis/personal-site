@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Verifique
+title: "Verifique"
 permalink: /verifique/index.html
-key: 'verique'
 description: Verifique minha identidade online
 date: Last Modified
 ---

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Resumo profissional
+title: "Resumo profissional"
 description: 'Meu resumo profissional'
 permalink: /cv/index.html
 date: Last Modified

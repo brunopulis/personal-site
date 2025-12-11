@@ -1,6 +1,6 @@
 ---
 layout: service-item.njk
-title: Consultoria Estratégica
+title: "Consultoria Estratégica"
 slug: consultoria-estrategica
 description: Implementação estruturada de acessibilidade em nível organizacional. Transformamos intenção em processos e cultura.
 permalink: "/servicos/consultoria-estrategica/index.html"

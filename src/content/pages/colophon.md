@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Colophon
+title: "Colophon"
 permalink: "colophon/index.html"
 description: 'Tecnologias que usei no site'
 date: Last Modified
