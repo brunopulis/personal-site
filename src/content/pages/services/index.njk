@@ -1,0 +1,330 @@
+---
+layout: base
+title: Serviços
+permalink: /servicos/index.html
+key: 'services'
+description: Ajudo organizações a tornarem seus produtos digitais, processos e cultura mais acessível e usável.
+---
+
+<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
+  id="hero">
+  <div class="mx-auto max-w-7xl gap-12 grid items-center py-12">
+    <div>
+      <h1 class="font-bold mb-6 leading-tight text-5xl" id="hero-section">{{ title }}</h1>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-7xl gap-12 grid items-center py-12">
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-6">
+    {% for service in collections.service %}
+    {% if service.url != page.url %}
+    <article class="card" style="--color: var(--color-{{ service.data.service.color }})">
+      <span class="card__icon" aria-hidden="true">{{ service.data.service.icon }}</span>
+      <h2 class="card__title">{{ service.data.title }}</h2>
+      <p class="card__tagline">{{ service.data.service.tagline }}</p>
+
+      <a href="{{ service.url }}" class="service-item__cta underline underline-offset-8 hover:no-underline">
+        Saber Mais
+        <span class="sr-only">sobre: {{ service.data.title }}</span>
+      </a>
+    </article>
+    {% endif %}
+    {% endfor %}
+</section>
+
+<section class="faq py-12 bg-gray-50">
+  <div class="mx-auto max-w-7xl gap-12 grid items-center ">
+    <h2>Perguntas frequentes</h2>
+
+    <div class="faq-wrapper">
+      <details class="faq-item">
+        <summary class="faq-question">Como escolho o serviço certo?</summary>
+        <div class="faq-answer">
+          <p>Depende do seu ponto de partida. Se não sabe por onde começar, comece com uma <strong>Avaliação de
+              Acessibilidade</strong>. Se já tem um diagnóstico, escolha o serviço específico (remediação, auditoria,
+            etc). Podemos ajudar na escolha também!</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Todos os serviços podem ser combinados?</summary>
+        <div class="faq-answer">
+          <p>Sim! Muitos clientes combinam serviços. Por exemplo: Auditoria + Remediação + Treinamento é uma abordagem
+            comum para transformação completa.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Qual é o investimento inicial?</summary>
+        <div class="faq-answer">
+          <p>Varia bastante conforme escopo. A maioria começa com uma Avaliação (mais acessível), depois evolui para
+            serviços maiores. Oferecemos orçamentos personalizados.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Vocês trabalham com empresas de qualquer tamanho?</summary>
+        <div class="faq-answer">
+          <p>Sim! Trabalhamos com startups, PMEs e grandes empresas. Adaptamos escopo e investimento para cada
+            realidade.
+          </p>
+        </div>
+      </details>
+    </div>
+</section>
+
+<!-- PRÓXIMO PASSO -->
+<section class="services-cta bg-gray-900 text-white py-12 text-center">
+  <div class="container">
+    <h2>Pronto para Começar?</h2>
+    <p>Vamos conversar sobre seus desafios e encontrar a melhor solução</p>
+    <a href="#contact" class="btn btn-primary btn-large">Agendar Conversa Inicial</a>
+  </div>
+</section>
+
+
+
+<style>
+  .services-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+
+  .services-hero__subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    border-top: 5px solid var(--color, #2563eb);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .card__icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+    font-weight: 700;
+  }
+
+  .card__tagline {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .card__meta {
+    margin-bottom: 1.5rem;
+  }
+
+  .meta-badge {
+    display: inline-block;
+    background: #f3f4f6;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .card__inclusos {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .card__inclusos h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+  }
+
+  .card__inclusos ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card__inclusos li {
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+    color: #666;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .card__inclusos li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color, #2563eb);
+    font-weight: bold;
+  }
+
+  .card__inclusos em {
+    color: #999;
+    font-size: 0.85rem;
+  }
+
+  .card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color, #2563eb);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    align-self: flex-start;
+  }
+
+  .card__cta:hover {
+    background: color-mix(in srgb, var(--color, #2563eb) 80%, black);
+    transform: translateX(4px);
+  }
+
+  .card__cta span {
+    transition: transform 0.3s;
+  }
+
+  .card:hover .card__cta span {
+    transform: translateX(4px);
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 4rem 2rem;
+    background: #f9fafb;
+  }
+
+  .faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1f2937;
+  }
+
+
+  .faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s;
+  }
+
+  .faq-item:hover .faq-question {
+    background: #f3f4f6;
+  }
+
+  .faq-question:after {
+    content: "▼";
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+  }
+
+  .faq-item[open] .faq-question:after {
+    transform: rotateZ(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  .faq-answer strong {
+    color: #1f2937;
+  }
+
+  /* CTA FINAL */
+  .services-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .services-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #2563eb;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-large {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .services-hero h1 {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
-title: "Free for dev"
-date: "2024-04-11"
+title: 'Free for dev'
+date: '2024-04-11'
 ---
 
 Projeto pessoal do Addy Osmani para armazenar referências gratuitas para desenvolvedores.

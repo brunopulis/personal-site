@@ -1,0 +1,124 @@
+{% set allMentions = page.url | webmentions %}
+{% set replies = allMentions | filterByType("in-reply-to") %}
+{% if allMentions.length > 0 %}
+{% set replies = allMentions | filterByType("in-reply-to") %}
+{% set likes = allMentions | filterByType("like-of") %}
+{% set reposts = allMentions | filterByType("repost-of") %}
+
+<section class="webmentions mt-12 pt-8 border-t border-gray-700" aria-label="Webmentions">
+
+  {% set repostAuthors = reposts | uniqueAuthors %}
+  <div class="mb-8">
+    <h3 class="text-sm font-black uppercase tracking-wide mb-4 flex items-center gap-2">
+      <span class="text-xl">{{ reposts.length }}</span>
+      <span>Repost{% if reposts.length != 1 %}s{% endif %}</span>
+    </h3>
+    <div class="flex flex-wrap gap-2 mb-6">
+      {% for author in repostAuthors %}
+      {% if author.photo %}
+      <a href="{{ author.url }}" target="_blank" rel="noopener noreferrer" title="{{ author.name }}"
+        class="group relative inline-block" aria-label="Repost de {{ author.name }}">
+        <img src="{{ author.photo }}" alt="{{ author.name }}"
+          class="w-12 h-12 rounded-full object-cover group-hover:ring-2 ring-green-400 transition" loading="lazy" />
+        <span
+          class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 rounded text-xs text-gray-200 opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
+          {{ author.name }}
+        </span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+
+  <!-- Likes -->
+
+  {% set likeAuthors = likes | uniqueAuthors %}
+  <div class="mb-8">
+    <h3 class="text-sm font-black uppercase tracking-wide mb-4 flex items-center gap-2">
+      <span class="text-xl">{{ likes.length }}</span>
+      <span>Like{% if likes.length != 1 %}s{% endif %}</span>
+    </h3>
+    <div class="flex flex-wrap gap-2 mb-6">
+      {% for author in likeAuthors %}
+      {% if author.photo %}
+      <a href="{{ author.url }}" target="_blank" rel="noopener noreferrer" title="{{ author.name }}"
+        class="group relative inline-block" aria-label="Like de {{ author.name }}">
+        <img src="{{ author.photo }}" alt="{{ author.name }}"
+          class="w-12 h-12 rounded-full object-cover group-hover:ring-2 ring-yellow-400 transition" loading="lazy" />
+        <span
+          class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 rounded text-xs text-gray-200 opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-10">
+          {{ author.name }}
+        </span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+
+  <!-- Comments/Replies -->
+
+  <div class="mb-8">
+    <button
+      class="text-sm font-black uppercase tracking-wide mb-4 flex items-center gap-2 hover:text-blue-400 transition cursor-pointer group"
+      onclick="this.parentElement.querySelector('.replies-container').classList.toggle('hidden')" aria-expanded="false"
+      aria-controls="replies">
+      <span class="text-lg">▶</span>
+      <span class="text-xl">{{ replies.length }}</span>
+      <span>Comment{% if replies.length != 1 %}s{% endif %}</span>
+    </button>
+
+    <div class="replies-container hidden space-y-4 pl-4 mt-4" id="replies">
+      {% for mention in replies | reverse %}
+      <article class="bg-gray-900 p-4 rounded border border-gray-700 hover:border-gray-600 transition">
+        <div class="flex items-start gap-3 mb-3">
+          {% if mention.author.photo %}
+          <img src="{{ mention.author.photo }}" alt="{{ mention.author.name }}"
+            class="w-10 h-10 rounded-full flex-shrink-0 object-cover" loading="lazy" />
+          {% endif %}
+          <div class="flex-1 min-w-0">
+            <a href="{{ mention.author.url }}" target="_blank" rel="noopener noreferrer"
+              class="font-bold hover:text-blue-400 transition">
+              {{ mention.author.name }}
+            </a>
+            <time class="text-xs text-gray-500 block">
+              {{ mention.published | readableDate }}
+            </time>
+          </div>
+        </div>
+
+        {% if mention.content.text %}
+        <p class="text-gray-300 mb-3 text-sm">{{ mention.content.text | truncate(300) }}</p>
+        {% endif %}
+
+        <a href="{{ mention.url }}" target="_blank" rel="noopener noreferrer"
+          class="text-sm text-blue-400 hover:underline inline-flex items-center gap-1">
+          Ler comentário completo
+          <span aria-hidden="true">→</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+
+
+  <!-- CTAs -->
+  <div class="space-y-2 text-sm text-gray-400 mt-6 pl-4 border-l border-gray-700">
+    <p class="flex items-start gap-2">
+      <span class="text-lg mt-0.5">▶</span>
+      <a href="#" class="hover:text-blue-400 transition">Shamefully plug your related post</a>
+    </p>
+    <p class="flex items-start gap-2">
+      <span class="text-lg mt-0.5">▶</span>
+      <a href="#" class="hover:text-blue-400 transition">Sharing on social media?</a>
+    </p>
+  </div>
+</section>
+{% endif %}
+
+<style>
+  .replies-container {
+    transition: all 0.3s ease;
+  }
+</style>

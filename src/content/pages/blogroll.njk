@@ -1,0 +1,220 @@
+---
+layout: page
+title: "Blogroll"
+description: "Pessoas incríveis na web, em ordem aleatória."
+permalink: "/blogroll/index.html"
+---
+
+<div class="container">
+  <div class="filter-section">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="Acessibilidade">Acessibilidade</button>
+    <button class="filter-btn" data-filter="Tecnologia">Tecnologia</button>
+    <button class="filter-btn" data-filter="Design">Design</button>
+    <button class="filter-btn" data-filter="Indie Web">Indie Web</button>
+    <button class="filter-btn" data-filter="Escrita">Escrita</button>
+    <button class="filter-btn" data-filter="Pessoal">Pessoal</button>
+  </div>
+
+  <ul class="list-none grid grid-cols-1 md:grid-cols-3 gap-4 px-0">
+    {% for blog in blogroll %}
+    <li class="blog-card border bg-white border-gray-200 hover:shadow-md mb-6 rounded-xl shadow-sm transition"
+      data-category="{{ blog.category }}">
+      <div class="blog-header">
+        <img src="https://v1.indieweb-avatar.11ty.dev/{{ blog.url | urlencode }}/" class="blogroll__avatar" width="60"
+          height="60" alt="Avatar image for {{ blog.title }}" loading="lazy" decoding="async" eleventy:formats="auto" />
+
+        <div>
+          <h2>
+            <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer">
+              {{ blog.title }}
+            </a>
+          </h2>
+          <a href="{{ blog.rss }}" target="_blank" rel="noopener noreferrer">
+            {{ blog.url }}
+          </a>
+
+        </div>
+      </div>
+
+      <div class="blog-footer flex">
+        <p>Categoria: </p>
+        <p class="blog-category">{{ blog.category }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+  .blogroll-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .blogroll-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .filter-btn:hover {
+    border-color: #333;
+  }
+
+  .filter-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+  }
+
+  .blogroll-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .blog-card {
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .blog-card:hover {
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-card h2 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .blog-card h2 a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .blog-card h2 a:hover {
+    color: #0066cc;
+  }
+
+  .blog-category {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666;
+    white-space: nowrap;
+  }
+
+  .blog-description {
+    color: #555;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  .blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+  }
+
+  .blog-author {
+    color: #999;
+  }
+
+  .blog-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .blog-link:hover {
+    color: #0052a3;
+  }
+
+  .blog-card.hidden {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .blogroll-container {
+      padding: 1rem;
+    }
+
+    .blogroll-container h1 {
+      font-size: 2rem;
+    }
+
+    .blog-header {
+      flex-direction: column;
+    }
+
+    .blog-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const filter = this.dataset.filter;
+
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      document.querySelectorAll('.blog-card').forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
