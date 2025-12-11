@@ -1,0 +1,32 @@
+---
+permalink: /feed/musicas.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ meta.siteName }} - Músicas</title>
+    <link>{{ meta.url }}/musicas</link>
+    <atom:link href="{{ meta.url }}/feed/musicas.xml" rel="self" type="application/rss+xml" />
+    <description>Músicas que estou curtindo</description>
+    <language>{{ meta.language }}</language>
+    <lastBuildDate>{{ now | toRfc822Date }}</lastBuildDate>
+
+    {%- for music in collections.media | selectattr('data.type', 'equalto', 'music') | slice(0, 30) %}
+    <item>
+      <title>{{ music.data.title }}{% if music.data.artist %} - {{ music.data.artist }}{% endif %}</title>
+      <link>{{ meta.url }}/musicas</link>
+      <guid isPermaLink="false">{{ meta.url }}/music/{{ music.data.title | slug }}</guid>
+      <description>
+        <![CDATA[
+          {% if music.data.artist %}<strong>Artista:</strong> {{ music.data.artist }}<br>{% endif %}
+          {% if music.data.album %}<strong>Álbum:</strong> {{ music.data.album }}<br>{% endif %}
+          {% if music.data.detail %}<p>{{ music.data.detail }}</p>{% endif %}
+        ]]>
+      </description>
+      <pubDate>{{ music.data.date | toRfc822Date }}</pubDate>
+      <category>música</category>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
