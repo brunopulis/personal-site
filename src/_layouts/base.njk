@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="{{ meta.lang }}">
+
+<head>
+  <!-- 1 charset/viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <!-- 2 title -->
+  <title>
+    {%- if title -%}
+    {{- title -}}
+    {%- else -%}
+    {{- meta.siteName -}}
+    {%- endif -%}
+  </title>
+
+  <base href="{{ page.url }}" />
+
+  <!-- 3 synchronous js  -->
+
+  <!-- 4 schema settings -->
+  {% include "head/schema.njk" %}
+
+  <!-- 5 CSS  -->
+  <link rel="stylesheet" href="/assets/css/main-dist.css">
+
+  <!-- 6 preloads  -->
+  {% include "head/preloads.njk" %}
+
+  <!-- 7 defer  -->
+  <script type="module" src=""></script>
+  {% include "head/js-defer.njk" %}
+
+  <!-- 8 meta tags, icons, open graph etc.  -->
+  {% include "head/meta-info.njk" %}
+
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  {% set indicateActiveHome %}
+  {% if page.url == "/" %}
+  aria-current=page
+  {% endif %}
+  {% endset %}
+  {% include "partials/header.njk" %}
+
+  <main id="main" class="{% block main_class %}{% endblock %}">
+    <snow-fall></snow-fall>
+    {% block content %}
+    {{ content | safe }}
+    {% endblock %}
+  </main>
+
+  {% block after_main %}{% endblock %}
+  {% include "partials/footer.njk" %}
+</body>
+</html>

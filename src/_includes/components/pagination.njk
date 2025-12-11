@@ -1,10 +1,10 @@
 <div class="container">
   {% if pagination and pagination.pages.length > 1 %}
     <div class="">
-      <nav class="flex p-4 text-bold" aria-label="Paginação">
-        {% if pagination.previousPageHref %}
+      <nav class="flex p-4 text-bold items-center justify-center gap-4" aria-label="Paginação">
+        {% if pagination.href.previous %}
           <a 
-            href="{{ pagination.previousPageHref }}" 
+            href="{{ pagination.href.previous }}" 
             class="px-4 py-2 underline underline-offset-8 hover:no-underline"
             rel="prev"
           >
@@ -18,9 +18,9 @@
           Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages.length }}
         </span>
 
-        {% if pagination.nextPageHref %}
+        {% if pagination.href.next %}
           <a 
-            href="{{ pagination.nextPageHref }}" 
+            href="{{ pagination.href.next }}" 
             class="px-4 py-2 underline underline-offset-8 hover:no-underline"
             rel="next"
           >

@@ -3,7 +3,6 @@ layout: page
 title: Usos
 permalink: "uses/index.html"
 description: 'Softwares que uso no meu cotidiano'
-pubDate: '2025-11-21'
 date: Last Modified
 ---
 

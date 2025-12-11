@@ -1,9 +1,8 @@
 ---
 layout: page
 title: Contato
-description: É assim que você pode entrar em contato comigo.
+description: Formas de entrar em contato comigo
 permalink: "/contato/index.html"
-pubDate: '2025-11-18'
 date: Last Modified
 ---
 
@@ -24,5 +23,7 @@ O e-mail também é meu canal de comunicação do blog, caso você responda algu
 ## Redes Sociais
 
 - [LinkedIn](https://linkedin.com/in/pulis)
+
+---
 
 *Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

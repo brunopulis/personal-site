@@ -1,16 +1,8 @@
 ---
 title: Dez fatos inúteis sobre mim
-excerpt: "Breve descrição"
-publishDate: 2025-10-25
-author: Bruno Pulis
 description: 'Descubra fatos inúteis sobre mim e quem sabe você não descubra algo curioso. '
-categories:
-  - Opinião
-tags:
-  - Diversão
-seo:
-  meta_title: Dez fatos inúteis sobre mim
-  keywords: []
+pubDate: 2025-10-25
+tags: ['pessoal']
 ---
 
 Lendo meu RSS, vi um posto do [Kev Quirk bem interessante](https://kevquirk.com/blog/ten-pointless-facts-about-me/) e resolvi participar da brincadeira.
