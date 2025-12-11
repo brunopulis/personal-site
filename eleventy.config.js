@@ -106,6 +106,7 @@ export default async function (eleventyConfig) {
 
   //  Passthrough File Copy
   [
+    'src/humans.txt',
     'src/assets',
     'src/assets/css',
     'src/assets/fonts/',

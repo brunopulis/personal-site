@@ -4,6 +4,11 @@ import locale_pt_br from 'dayjs/locale/pt-br.js';
 dayjs.locale(locale_pt_br); 
 
 export const toISOString = dateString => dayjs(dateString).toISOString();
+
+export const toRfc822Date = (date) => {
+  return new Date(date).toUTCString();
+};
+
 export const formatDate = (date, format) => dayjs(date).format(format);
 
 /** Retorna a data no formato legível em português brasileiro (ex: 15 de dezembro de 2024) */
@@ -23,6 +28,18 @@ export const relativeDate = date => {
     if (days < 7) return `${days} dias atrás`;
     if (days < 30) return `${Math.floor(days / 7)} semanas atrás`;
     return dayjs(date).format('dd/MM/yyyy');
+};
+
+export const sortByDate = (array) => {
+  if (!array || !Array.isArray(array)) {
+    return [];
+  }
+
+  return array.sort((a, b) => {
+    const dateA = new Date(a.data?.date || a.date);
+    const dateB = new Date(b.data?.date || b.date);
+    return dateB - dateA;
+  });
 };
 
 /** Retorna apenas o ano */
