@@ -1,0 +1,26 @@
+---
+layout: page
+title: Links
+description: 'Todos os links podem ser visto aqui'
+permalink: "{% if pagination.pageNumber > 0 %}/bookmarks/page/{{ pagination.pageNumber + 1 }}/{% else %}/bookmarks/{% endif %}"
+pagination:
+    data: collections.bookmarks
+    size: 10
+---
+
+
+<header class="section" style="--spot-color: var(--color-secondary)">
+    <div class="section__inner flow region">
+        <h1 class="text-rosewood-950 text-step-4">{{ title }}</h1>
+    </div>
+</header>
+
+<custom-masonry layout="50-50">
+    {% asyncEach item in pagination.items %}
+    {% include "partials/card-blog.njk" %}
+    {% endeach %}
+</custom-masonry>
+
+{% if pagination.pages.length > 1 %}
+  {% include 'components/pagination.njk' %}
+{% endif %}

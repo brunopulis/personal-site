@@ -6,31 +6,31 @@ description: 'Compromisso com a acessibilidade digital e como relatar problemas 
 date: "Last Modified"
 ---
 
-Accessibility design is about ensuring equal access for people with disabilities. It is about removing barriers to access.
+O design de acessibilidade visa garantir acesso igualitário para pessoas com deficiência. Trata-se de remover barreiras ao acesso.
 
-I am very committed to this principle and I continually try to improve the user experience for everyone.
+Estou muito comprometido com esse princípio e procuro continuamente melhorar a experiência do usuário para todos.
 
-## Conformance Status
+## Status de conformidade
 
-The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) define requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.
+As [Diretrizes de Acessibilidade para Conteúdo Web (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) definem requisitos para designers e desenvolvedores melhorarem a acessibilidade para pessoas com deficiência. Elas definem três níveis de conformidade: Nível A, Nível AA e Nível AAA.
 
-_Eleventy Excellent_ aims to be conformant with [ WCAG 2.1 Level AA.](https://www.w3.org/WAI/standards-guidelines/wcag/)
+O _Eleventy Excellent_ visa estar em conformidade com o [ WCAG 2.1 Nível AA.](https://www.w3.org/WAI/standards-guidelines/wcag/)
 
-Compliance depends on how users implement and customize the starter for their specific content and use cases.
+A conformidade depende de como os usuários implementam e personalizam o starter para seus conteúdos e casos de uso específicos.
 
-## Testing
+## Testes
 
-[pa11y-ci](https://github.com/pa11y/pa11y-ci) is used to run automated accessibility tests, [see the Docs](/docs/tests/).
+O [pa11y-ci](https://github.com/pa11y/pa11y-ci) é usado para executar testes automatizados de acessibilidade, [consulte a documentação](/docs/tests/).
 
 ## Feedback
 
-I very much welcome your feedback and suggestions on the accessibility of this starter project. Please let me know if you encounter any accessibility barriers:
+Agradeço muito seus comentários e sugestões sobre a acessibilidade deste projeto inicial. Informe-me se você encontrar alguma barreira de acessibilidade:
 
-- **GitHub Issues**: [Report accessibility issues](https://github.com/madrilene/eleventy-excellent/issues)
-- **Email**: {{ meta.creator.email }}
+- **Problemas no GitHub**: [Relate problemas de acessibilidade](https://github.com/madrilene/eleventy-excellent/issues)
+- **E-mail**: brunopulis@protonmail.com
 
-**Response Time**: I aim to respond to feedback within one week.
+**Tempo de resposta**: meu objetivo é responder aos comentários em até uma semana.
 
 ---
 
-*Last updated: {{ page.date | formatDate('MMMM D, YYYY') }}*
+_Última atualização: {{ page.date | formatDate("MMMM D, YYYY") }}_

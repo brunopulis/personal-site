@@ -9,7 +9,6 @@ import * as customFilters from './src/_config/filters.js';
 import events from './src/_config/events.js';
 import plugins from './src/_config/plugins.js';
 import brokenLinksPlugin from 'eleventy-plugin-broken-links';
-import shortcodes from './src/_config/shortcodes.js';
 import {badge} from './src/_config/shortcodes/image.js';
 import {image, imageKeys} from './src/_config/shortcodes/image.js';
 import {svg} from './src/_config/shortcodes/svg.js';
@@ -20,17 +19,15 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/_includes/**/*.{webc}');
 
   //  layout aliases
-  eleventyConfig.addLayoutAlias('base', 'base/base.njk');
-  eleventyConfig.addLayoutAlias('page', 'base/page.njk');
-  eleventyConfig.addLayoutAlias('post', 'base/post.njk');
-  eleventyConfig.addLayoutAlias('tags', 'base/tags.njk');
-  eleventyConfig.addLayoutAlias('error', 'base/error.njk');
+  eleventyConfig.addLayoutAlias('base', 'base.njk');
+  eleventyConfig.addLayoutAlias('error', 'error.njk');
+  eleventyConfig.addLayoutAlias('page', 'page.njk');
+  eleventyConfig.addLayoutAlias('post', 'post.njk');
+  eleventyConfig.addLayoutAlias('tags', 'tags.njk');
 
-  eleventyConfig.addLayoutAlias('about', 'pages/about.njk');
-  eleventyConfig.addLayoutAlias('services', 'pages/services.njk');
-  eleventyConfig.addLayoutAlias('servicesHub', 'pages/services-hub.njk');
-  eleventyConfig.addLayoutAlias('projects', 'pages/projects.njk');
-  eleventyConfig.addLayoutAlias('blog', 'pages/blog.njk');
+  eleventyConfig.addLayoutAlias('services', 'services.njk');
+  eleventyConfig.addLayoutAlias('services-item', 'services-item.njk');
+  eleventyConfig.addLayoutAlias('services-hub', 'services-hub.njk');
 
   eleventyConfig.addCollection('posts', collections.posts);
   eleventyConfig.addCollection('notes', collections.notes);
@@ -109,6 +106,8 @@ export default async function (eleventyConfig) {
 
   //  Passthrough File Copy
   [
+    'src/assets',
+    'src/assets/css',
     'src/assets/fonts/',
     'src/assets/images/',
     'src/assets/images/template',

@@ -1,12 +1,12 @@
 ---
+layout: page
 title: Resumo profissional
-pubDate: '2025-11-21'
-permalink: "cv/index.html"
 description: 'Meu resumo profissional'
+permalink: /cv/index.html
 date: Last Modified
 ---
 
-# Bruno Pulis
+## Bruno Pulis
 
 **Analista de Qualidade (QA) & Especialista em Acessibilidade Digital**
 📍 Belo Horizonte, MG | 📧 brunopulis@protonmail.com | 📱 +55 31 97343-8008
@@ -82,5 +82,7 @@ Responsável pela qualidade do produto _Membertizze_.
 - **Estrutura Semântica e Navegação** – Deque University (Nov 2021)
 - **Acessibilidade Digital em QA** – INSEP (Jul 2021)
 - **Scrum Foundation Professional Certificate (SFPC)**
+
+--- 
 
 *Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

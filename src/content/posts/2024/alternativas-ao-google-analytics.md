@@ -1,7 +1,7 @@
 ---
 title: "Alternativas ao Google Analytics"
 excerpt: "Breve descrição"
-publishDate: 2024-05-08T23:08:12.036Z
+pubDate: 2024-05-08T23:08:12.036Z
 draft: false
 isFeatured: false
 tags: []

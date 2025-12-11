@@ -1,5 +1,5 @@
 ---
-layout: pages/service-item.njk
+layout: service-item.njk
 title: Palestras e Apresentações
 slug: palestras
 description: Talks sobre acessibilidade que aumentam consciência, compartilham insights do mundo real e inspiram times.
