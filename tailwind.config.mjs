@@ -1,121 +1,127 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./src/**/*.{html,njk,md,js}', './src/**/*.svg'],
-   theme: {
+module.exports = {
+  content: [
+    './src/**/*.{njk,md,html,js}',
+    './src/content/**/*.{njk,md,html}'
+  ],
+  theme: {
     extend: {
       colors: {
-        transparent: "transparent",
-        "blood-red": "#610404",
-        brand: {
-          50: "#fff1f1",
-          100: "#ffdfdf",
-          200: "#ffc4c4",
-          300: "#ff9b9b",
-          400: "#ff6161",
-          500: "#ff3030",
-          600: "#f11111",
-          700: "#cb0a0a",
-          800: "#cb0a0a",
-          900: "#8a1212",
-          950: "#610404",
-        },
         primary: {
-          50: "#fdf2f8",
-          100: "#fce7f3",
-          200: "#fbcfe8",
-          300: "#f9a8d4",
-          400: "#f472b6",
-          500: "#E2187D",
-          600: "#db2777",
-          700: "#be185d",
-          800: "#9d174d",
-          900: "#831843",
-          950: "#500724",
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+          950: '#2e1065',
         },
-        neutral: {
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          200: "#e2e8f0",
-          300: "#cbd5e1",
-          400: "#94a3b8",
-          500: "#64748b",
-          550: "#d9d9d9",
-          600: "#d9d9d9",
-          700: "#334155",
-          800: "#1e293b",
-          900: "#0f172a",
-          950: "#020617",
+        secondary: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
         },
-        fontFamily: {
-          sans: ["Source Sans 3 Variable", ...defaultTheme.fontFamily.sans],
-          headings: ["Outfit Variable", ...defaultTheme.fontFamily.sans],
+        accent: {
+          50: '#fcfdf5',
+          100: '#f8fadc',
+          200: '#f3f7b0',
+          300: '#eef484',
+          400: '#e6ee54',
+          500: '#d9e11a',
+          600: '#bbc40f',
+          700: '#99a10d',
+          800: '#7c8012',
+          900: '#676a14',
+          950: '#373b05',
         },
-        keyframes: {
-          dropdown: {
-            "0%": { transform: "translateY(-1rem)", opacity: 0 },
-            "100%": { transform: "translateY(0)", opacity: 1 },
+        warning: {
+          50: '#fefce8',
+          100: '#fef9c3',
+          200: '#fef08a',
+          300: '#fde047',
+          400: '#facc15',
+          500: '#eab308',
+          600: '#ca8a04',
+          700: '#a16207',
+          800: '#854d0e',
+          900: '#713f12',
+          950: '#422006',
+        },
+        'blood-red': {
+          50: '#ffd9b6',
+          100: '#ffb499',
+          200: '#e58e75',
+          300: '#c1694e',
+          400: '#a74c33',
+          500: '#8c2f18',
+          600: '#802613',
+          700: '#70180b',
+          800: '#610404',
+          900: '#510000',
+        },
+        'light-silver': {
+          50: '#f9f9f9',
+          100: '#f2f2f2',
+          200: '#e9e9e9',
+          300: '#d9d9d9',
+          400: '#b5b5b5',
+          500: '#959595',
+          600: '#6d6d6d',
+          700: '#5a5a5a',
+          800: '#3b3b3b',
+          900: '#1b1b1b',
+        },
+      },
+      fontFamily: {
+        sans: ['Source Sans 3', 'system-ui', 'sans-serif'],
+        display: ['Lexend', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.5s ease-in-out',
+        'slide-down': 'slideDown 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': {
+            transform: 'translateY(20px)',
+            opacity: '0',
           },
-          fadeInShadowLight: {
-            "100%": {
-              boxShadow:
-                "0 20px 25px -5px rgba(15, 23, 42, .025), 0 8px 10px -6px rgba(15, 23, 42, .025);",
-            },
-          },
-          fadeInShadowDark: {
-            "100%": {
-              boxShadow:
-                "0 20px 25px -5px rgba(2, 6, 23, .25), 0 8px 10px -6px rgba(2, 6, 23, .25);",
-            },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
           },
         },
-        animation: {
-          dropdown: "dropdown 300ms ease-in-out forwards",
-          fadeInShadowLight: "fadeInShadowLight 500ms ease-in-out forwards",
-          fadeInShadowDark: "fadeInShadowDark 500ms ease-in-out forwards",
-        },
-        typography: {
-          DEFAULT: {
-            css: {
-              color: "#333",
-              h1: {
-                fontWeight: "700",
-                color: "#1a202c",
-              },
-              h2: {
-                fontWeight: "600",
-                color: "#2d3748",
-              },
-              p: {
-                marginTop: "1.25em",
-                marginBottom: "1.25em",
-                color: "#4a5568",
-              },
-              a: {
-                color: "#3182ce",
-                "&:hover": {
-                  color: "#2b6cb0",
-                },
-              },
-              blockquote: {
-                fontStyle: "italic",
-                borderLeftColor: "#3182ce",
-              },
-              "ul li::marker": {
-                color: "#3182ce",
-              },
-            },
+        slideDown: {
+          '0%': {
+            transform: 'translateY(-20px)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
           },
         },
       },
     },
   },
-  variants: {
-    animation: ['responsive']
-  },
   plugins: [
     require('@tailwindcss/typography'),
-    require('tailwindcss/plugin')(({addVariant}) => {
-      addVariant('dark-me', '.dark_&');
-    })
-  ]
-};
+  ],
+}

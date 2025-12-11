@@ -85,7 +85,7 @@ export const tagList = collection => {
       let tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'livros', 'notas', 'media', 'musicas'].includes(tag)) {
+        if (!['all', 'posts', 'streams', 'bookmarks', 'livros', 'notas', 'media', 'musicas'].includes(tag)) {
           tagSet.add(tag);
         }
       }
