@@ -1,46 +1,51 @@
 ---
 layout: page
 title: 'Política de Privacidade'
-description: 'Coisas que faco para garantir a privacidade dos visitantes do site'
+description: 'Coisas que faço para garantir a privacidade dos visitantes do site'
 permalink: /privacidade/index.html
 date: 2025-11-21
 ---
 
 Minha abordagem é simples: **respeito a sua privacidade tanto quanto protejo a minha. Este site opera com rastreamento zero**.
 
-I respect the EU General Data Protection Regulation (GDPR) and this policy document explains how I collect and handle any information you provide to me.
+Respeito o Regulamento Geral de Proteção de Dados (RGPD) da UE e este documento de política explica como recolho e trato qualquer informação que me forneça.
 
-**What background data is collected?**
-This site does not use any third party tracking scripts.
+## Quais dados de fundo são recolhidos?
 
-**How do I use the data you provide?**
-This website does not collect any data.
+Este site não utiliza nenhum script de rastreamento de terceiros.
 
-**How secure is your data?**
-Very secure, as this website does not collect any information.
+## Como utilizo os dados que me fornece?
 
-**How secure is this website?**
-This website transmits itself using HTTPS, encrypting all data between the browser and the server. Your network provider can still see that you are downloading assets from this site, but not its content. This also protects you from third parties intercepting data, for example, while browsing on public WiFi, or from network providers injecting advertisements on this site. All relevant response HTTP headers are set for your protection and the Content Security Policy is adjusted to this websites requirements.
+Este website não recolhe quaisquer dados.
 
-**Data controller**
+## Quão seguros estão os seus dados?
+Muito seguros, uma vez que este website não recolhe quaisquer informações.
+
+## Quão seguro é este website?
+
+Este website transmite os seus dados utilizando HTTPS, encriptando todos os dados entre o navegador e o servidor. Seu provedor de internet ainda poderá ver que você está baixando arquivos deste site, mas não o conteúdo em si. Isso também protege você contra a interceptação de dados por terceiros, por exemplo, ao navegar em redes Wi-Fi públicas, ou contra a inserção de anúncios neste site por provedores de internet. Todos os cabeçalhos HTTP de resposta relevantes estão configurados para sua proteção e a Política de Segurança de Conteúdo está ajustada aos requisitos deste site.
+
+## Controlador de dados
 
 {{ personal.address }}
 
-If you have any questions or doubts, please contact me: {{ personal.email }}.
+Em caso de dúvidas, entre em contato comigo: {{ personal.email }}.
 
-**Changes to the policy**
-If I change the content of this policy, those changes will be effective at the time I post them here.
+## Alterações na política
 
-**Complaints**
-If you have any reason to complain about the way I handle your privacy, please contact me by email: {{ personal.email }}.
+Se eu alterar o conteúdo desta política, as alterações entrarão em vigor no momento da publicação aqui.
+
+## Reclamações
+
+Se você tiver algum motivo para reclamar sobre a forma como lido com sua privacidade, entre em contato comigo por e-mail: {{ personal.email }}.
 
 ---
 
 ## Analytics
 
-Utilizo o [Umami](https://umami.is/docs) para coletar estatisticas de navegacao somente.
+Utilizo o [Umami](https://umami.is/docs) para coletar somente estatísticas de navegação.
 
-Voce pode ver o [dashboard em tempo real do meu site](https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi).
+Você pode ver o [dashboard em tempo real do meu site](https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi).
 
 Não há coleta de dados de navegação.
 
@@ -51,6 +56,4 @@ Não há coleta de dados de navegação.
 
 > Verifique você mesmo: Sinta-se à vontade para usar ferramentas como o [Cookie Metrix](https://www.cookiemetrix.com/) para auditar este site. O resultado será zero cookies.
 
-![Print da tela do site cookie metrix, mostrando que nao possui nenhum cookie no site](assets/images/pages/no-cookies.png)
-
-Spoiler - não há cookies! 🙂
+![Print da tela do site cookie metrix, mostrando que não possui nenhum cookie no site](/assets/images/pages/no-cookies.png)

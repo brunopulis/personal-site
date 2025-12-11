@@ -22,10 +22,6 @@ export const creator = {
   social: 'https://mastodon.social/@brunopulis'
 };
 
-export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg';
-export const themeColor = '#dd4462';
-export const themeLight = '#f8f8f8';
-export const themeDark = '#2e2e2e';
 export const opengraph_default = '/assets/images/template/opengraph-default.jpg';
 export const opengraph_default_alt = "Bruno Pulis - Desenvolvedor e consultor de acessibilidade";
 
