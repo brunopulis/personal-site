@@ -1,6 +1,6 @@
 ---
 layout: service-item.njk
-title: Treinamentos e Workshops
+title: "Treinamentos e Workshops"
 slug: treinamentos
 description: Capacidade e confiança. Sua equipe saindo do workshop implementando acessibilidade na prática.
 permalink: "/servicos/treinamentos-workshops/index.html"

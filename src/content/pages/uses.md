@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Usos
+title: "Ferramentas que uso"
 permalink: "uses/index.html"
 description: 'Softwares que uso no meu cotidiano'
 date: Last Modified
@@ -31,5 +31,7 @@ Esta é uma lista de serviços e aplicativos que uso por padrão para a grande m
 - 📰 Notícias: –
 - 🎵 Música: Youtube Music
 - 🔐 Gerenciamento de senhas: Bitwarden
+
+---
 
 *Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

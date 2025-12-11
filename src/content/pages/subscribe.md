@@ -1,9 +1,10 @@
 ---
-title: 'Inscreva'
+layout: page
+title: "Inscreva"
 description: 'Technologies I haved use on this site'
-lang: 'pt-br'
-routeKey: 'inscreva'
-date: '2025-11-21'
+permalink: /inscreva/index.html
+pubDate: '2025-11-21'
+date: Last Modified
 ---
 
 Receba atualizações sobre as últimas publicações usando o método de sua preferência!

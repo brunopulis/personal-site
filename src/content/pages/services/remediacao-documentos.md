@@ -1,6 +1,6 @@
 ---
 layout: service-item.njk
-title: Remediação de Documentos
+title: "Remediação de Documentos"
 slug: remediacao
 description: Transforme PDFs, planilhas e apresentações em documentos inclusivos e conformes com WCAG 2.2 e PDF/UA.
 permalink: "/servicos/remediacao-documentos/index.html"

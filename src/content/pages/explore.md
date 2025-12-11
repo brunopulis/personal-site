@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Explore
+title: "Explore"
 permalink: "/explore/index.html"
 description: 'Uma grande lista de todas as páginas, projetos e postagens do meu site.'
 ---
@@ -11,7 +11,7 @@ description: 'Uma grande lista de todas as páginas, projetos e postagens do meu
 - [Notas](/notas) - notas, posts curtos, e tudo que der na cabeça;
 - [Links](/bookmarks) - coleção de links interessantes;
 - [Fotos](/fotos) - minhas fotos;
-- [Biblioteca](/biblioteca) - minha biblioteca;
+- [Biblioteca](/livros) - minha biblioteca;
 - [Jogos](/jogos) - minha coleção de jogos;
 - [Changelog](/log) - Changelog e versões anteriores deste site;
 - [Afiliados](/afiliados) - Use esses links de referência para serviços que eu uso e nós dois ganhamos coisas grátis;
@@ -23,6 +23,6 @@ description: 'Uma grande lista de todas as páginas, projetos e postagens do meu
 - [Interesses](/interesses) - Coisas que me interessam, pelas quais sou apaixonado ou que gosto de alguma outra forma;
 - [POSSE](/posse) - Minha estratégia POSSE;
 - [Contato](/contato) - Como entrar em contato comigo;
-- [Verifique-me](/verify) - Verifique minhas identidades;
+- [Verifique-me](/verifique) - Verifique minhas identidades;
 
 

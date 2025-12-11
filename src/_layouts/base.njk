@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="{{ meta.lang }}">
-
 <head>
   <!-- 1 charset/viewport -->
   <meta charset="UTF-8" />
@@ -9,9 +8,9 @@
   <!-- 2 title -->
   <title>
     {%- if title -%}
-    {{- title -}}
+      {{ title }} | {{ meta.siteName }}
     {%- else -%}
-    {{- meta.siteName -}}
+      {{ meta.siteName }}
     {%- endif -%}
   </title>
 
