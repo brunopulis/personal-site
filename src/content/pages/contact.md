@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contato
+title: "Contato"
 description: Formas de entrar em contato comigo
 permalink: "/contato/index.html"
 date: Last Modified

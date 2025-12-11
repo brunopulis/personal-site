@@ -1,6 +1,6 @@
 ---
 layout: service-item.njk
-title: Coaching e Mentoria
+title: "Coaching e Mentoria"
 slug: coaching
 description: Suporte one-to-one ou em pequenos grupos pra construir confiança e resolver problemas reais.
 permalink: "/servicos/coaching-mentoria/index.html"
