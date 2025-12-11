@@ -13,6 +13,7 @@
     "css:build": "pnpm exec tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/tailwind.css",
     "css:watch": "pnpm exec tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/tailwind.css --watch",
     "clean": "rimraf dist",
+    "clean:og": "rimraf src/assets/og-images",
     "favicons": "node ./src/_config/setup/generate-favicons.js",
     "screenshots": "node ./src/_config/setup/generate-screenshots.js",
     "test:a11y": "npm run pa11y:build && (npm run pa11y:serve &) && sleep 5 && npm run pa11y:test",
