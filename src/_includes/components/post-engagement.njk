@@ -5,116 +5,105 @@
 {%- set body = bodyText | urlencode -%}
 {%- set mailToLink = 'mailto:' + defaultEmail + '?subject=' + subject + '&body=' + body -%}
 
-<div class="my-6 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm">
-  <ul class="flex flex-row gap-3">
+
+<div class="share-buttons py-4 border-t border-gray-200">
+  <p class="text-sm font-semibold text-blood-red-800">Compartilhe este artigo:</p>
+  
+  <ul class="flex flex-wrap gap-3 my-6 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm">
     <li>
-      <a href="{{ mailToLink }}" class="font-semibold text-blue-600 underline hover:text-blue-700">Responder por
-        e-mail</a>
+      <a href="{{ mailToLink }}" class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900">
+        Responder por e-mail
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}&via=brunopulis" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900">
+        Twitter
+      </a>
+    </li>
+    <li>
+      <a  href="https://www.linkedin.com/sharing/share-offsite/?url={{ meta.url }}{{ page.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900">
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a 
+      href="https://www.facebook.com/sharer/sharer.php?u={{ meta.url }}{{ page.url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900">
+      Facebook
+    </a>
+    </li>
+    <li>
+      <a 
+      href="https://bsky.app/intent/compose?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900">
+      Bluesky
+      </a>
+    </li>
+    <li>
+      <a 
+        href="https://toot.kytta.dev/?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900">
+        Mastodon
+      </a>
+    </li>
+    <li>
+      <button  
+        id="copy-link"
+        class="inline-flex items-center gap-2 rounded-lg font-semibold text-blood-red-800 underline hover:text-blood-red-900"
+        data-url="{{ meta.url }}{{ page.url }}">
+        <span id="copy-text">Copiar link</span>
+      </button>
     </li>
   </ul>
 </div>
 
-<style>
-  .post-share-btn {
-    cursor: pointer;
-    border: none;
-  }
-
-  .post-share-btn:active {
-    transform: scale(0.98);
-  }
-</style>
-
 <script>
-  (function initPostEngagement() {
-    function setupShareButton(button) {
-      button.addEventListener('click', async () => {
-        const title = button.getAttribute('data-title') || '';
-        const text = button.getAttribute('data-text') || '';
-        const url = button.getAttribute('data-url') || '';
+  document.addEventListener('DOMContentLoaded', () => {
+  const copyButton = document.getElementById('copy-link');
+  
+  if (!copyButton) return;
 
-        const shareText = `${text}\n\n${url}`;
+  copyButton.addEventListener('click', async () => {
+    const url = copyButton.dataset.url;
+    const originalText = document.getElementById('copy-text').textContent;
 
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: title,
-              text: shareText,
-            });
-            showNotification('Compartilhado com sucesso! 🎉');
-          } catch (err) {
-            if (err instanceof Error && err.name !== 'AbortError') {
-              console.error('Erro ao compartilhar:', err);
-              fallbackCopy(shareText);
-            }
-          }
-        } else {
-          fallbackCopy(shareText);
-        }
-      });
-    }
-
-    function fallbackCopy(text) {
+    try {
+      // Tenta usar a API Clipboard (moderna)
       if (navigator.clipboard) {
-        navigator.clipboard.writeText(text)
-          .then(() => {
-            showNotification('Link copiado! 📋');
-          })
-          .catch(err => {
-            console.error('Erro ao copiar:', err);
-            showNotification('Erro ao copiar', true);
-          });
+        await navigator.clipboard.writeText(url);
       } else {
+        // Fallback para navegadores antigos
         const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
+        textArea.value = url;
         document.body.appendChild(textArea);
         textArea.select();
-        try {
-          document.execCommand('copy');
-          showNotification('Link copiado! 📋');
-        } catch (err) {
-          console.error('Erro ao copiar:', err);
-          showNotification('Erro ao copiar', true);
-        }
+        document.execCommand('copy');
         document.body.removeChild(textArea);
       }
-    }
 
-    function showNotification(message, isError = false) {
-      const toast = document.createElement('div');
-      const bgColor = isError ? 'bg-red-600' : 'bg-green-600';
-      toast.className = `fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white transition-all duration-300 ${bgColor}`;
-      toast.textContent = message;
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(20px)';
-
-      document.body.appendChild(toast);
-
+      // Feedback visual
+      const copyText = document.getElementById('copy-text');
+      copyText.textContent = '✓ Copiado!';
+      
       setTimeout(() => {
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateY(0)';
-      }, 10);
-
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          document.body.removeChild(toast);
-        }, 300);
-      }, 3000);
+        copyText.textContent = originalText;
+      }, 2000);
+    } catch (error) {
+      console.error('Erro ao copiar:', error);
+      alert('Erro ao copiar link');
     }
-
-    document.querySelectorAll('.post-share-btn').forEach(setupShareButton);
-
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('.post-share-btn:not([data-initialized])').forEach(button => {
-        button.setAttribute('data-initialized', 'true');
-        setupShareButton(button);
-      });
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-  })();
+  });
+});
 </script>
