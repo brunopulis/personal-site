@@ -1,11 +1,11 @@
 ---
 title: Dez fatos inúteis sobre mim
-description: 'Descubra fatos inúteis sobre mim e quem sabe você não descubra algo curioso. '
+description: 'Descubra fatos inúteis sobre mim e quem sabe você não encontre algo curioso.'
 pubDate: 2025-10-25
-tags: ['pessoal']
+tags: ['pessoal', 'indie web']
 ---
 
-Lendo meu RSS, vi um posto do [Kev Quirk bem interessante](https://kevquirk.com/blog/ten-pointless-facts-about-me/) e resolvi participar da brincadeira.
+Lendo meu RSS, vi um post do [Kev Quirk bem interessante](https://kevquirk.com/blog/ten-pointless-facts-about-me/) e resolvi participar da brincadeira.
 
 ## Você usa fio dental?
 
