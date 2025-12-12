@@ -79,6 +79,7 @@
     "markdown-it-mark": "^4.0.0",
     "markdown-it-prism": "^3.0.1",
     "pa11y-ci": "^4.0.1",
+    "pagefind": "^1.4.0",
     "postcss": "^8.4.35",
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-jinja-template": "^2.1.0",
