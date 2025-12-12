@@ -14,6 +14,8 @@ import {image, imageKeys} from './src/_config/shortcodes/image.js';
 import {svg} from './src/_config/shortcodes/svg.js';
 
 export default async function (eleventyConfig) {
+  eleventyConfig.addGlobalData('now', new Date());
+  
   //  custom watch targets
   eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
   eleventyConfig.addWatchTarget('./src/_includes/**/*.{webc}');
