@@ -968,9 +968,6 @@
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
-  .py-24 {
-    padding-block: calc(var(--spacing) * 24);
-  }
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
   }
@@ -1036,6 +1033,9 @@
   }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-12 {
+    padding-bottom: calc(var(--spacing) * 12);
   }
   .pl-0 {
     padding-left: calc(var(--spacing) * 0);
@@ -1363,6 +1363,11 @@
       outline-style: none;
     }
   }
+  .max-md\:px-6 {
+    @media (width < 48rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
   .max-sm\:px-3 {
     @media (width < 40rem) {
       padding-inline: calc(var(--spacing) * 3);
@@ -1436,11 +1441,6 @@
   .md\:justify-between {
     @media (width >= 48rem) {
       justify-content: space-between;
-    }
-  }
-  .md\:px-6 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 6);
     }
   }
   .md\:text-3xl {
