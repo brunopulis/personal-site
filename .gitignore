@@ -3,6 +3,16 @@ node_modules/
 .pnpm-store/
 pnpm-debug.log
 
+# Cypress
+cypress/screenshots
+cypress/videos
+cypress/downloads
+
+# Jest
+.jest/cache
+coverage/
+__snapshots__/
+
 # generated files
 dist
 docs/
@@ -16,3 +26,8 @@ src/_includes/scripts
 
 # secret data
 .env
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
