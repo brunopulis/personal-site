@@ -46,14 +46,12 @@ service:
     - Portais e aplicações que precisam de documentação
     - Empresas buscando conformidade legal
   
-  processo:
+  processos:
     - Kickoff: Entendimento de objetivos e contexto técnico
     - Análise Inicial: Testes automatizados e manuais exploratórios
     - Análise Detalhada: Deep dive, documentação e priorização
     - Relatório Final: Apresentação, Q&A e sugestões de roadmap
-  
-  timeline: "2-4 semanas"
-  
+
   testemunhal:
     cliente: "E-commerce Nacional"
     quote: "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
