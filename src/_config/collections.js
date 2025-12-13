@@ -53,6 +53,15 @@ export const books = collectionApi => {
 }
 
 /**
+ * 
+ * @param {*} collectionApi 
+ * @returns 
+ */
+export const newsletters = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*.md').reverse();
+}
+
+/**
  *
  * @param {*} collectionApi
  * @returns
@@ -85,7 +94,7 @@ export const tagList = collection => {
       let tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'bookmarks', 'livros', 'notas', 'media', 'musicas'].includes(tag)) {
+        if (!['all', 'posts', 'streams', 'bookmarks', 'livros', 'newsletters', 'notas', 'media', 'musicas'].includes(tag)) {
           tagSet.add(tag);
         }
       }
@@ -99,6 +108,7 @@ export default {
   posts,
   streams,
   showInSitemap,
+  newsletters,
   bookmarks,
   books,
   notes,
