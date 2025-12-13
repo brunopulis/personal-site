@@ -1,7 +1,7 @@
 ---
 issue: '37'
 title: '16 blogs que acompanho sobre acessibilidade'
-date: '2024-08-02'
+pubDate: '2024-08-02'
 ---
 
 Essa semana teve coisas muito legais.

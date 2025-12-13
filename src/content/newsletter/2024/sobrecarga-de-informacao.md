@@ -1,7 +1,7 @@
 ---
 issue: '12'
 title: 'Como lidar com a sobrecarga de informação'
-date: '2024-01-17'
+pubDate: '2024-01-17'
 ---
 
 **17 de Janeiro de 2024.**
