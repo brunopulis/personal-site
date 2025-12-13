@@ -1190,8 +1190,8 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-blood-red-100 {
-    color: var(--color-blood-red-100);
+  .text-blood-red-300 {
+    color: var(--color-blood-red-300);
   }
   .text-blood-red-600 {
     color: var(--color-blood-red-600);
@@ -1327,27 +1327,23 @@
       }
     }
   }
-  .hover\:border-gray-600 {
+  .hover\:border-blood-red-800 {
     &:hover {
       @media (hover: hover) {
-        border-color: var(--color-gray-600);
+        border-color: var(--color-blood-red-800);
       }
     }
   }
-  .hover\:bg-blood-red-50 {
+  .hover\:bg-white {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-blood-red-50);
+        background-color: var(--color-white);
       }
     }
   }
-  .hover\:bg-blood-red-900 {
+  .hover\:text-blood-red-800 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-blood-red-900);
-      }
-    }
-  }
   .hover\:bg-white\/10 {
     &:hover {
       @media (hover: hover) {
