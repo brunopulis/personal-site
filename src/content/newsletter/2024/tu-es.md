@@ -1,7 +1,7 @@
 ---
 issue: '15'
 title: 'Tu és'
-date: '2024-01-22'
+pubDate: '2024-01-22'
 ---
 
 **Belo Horizonte, 21 de Janeiro de 2024.**

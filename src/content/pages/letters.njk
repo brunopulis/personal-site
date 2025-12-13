@@ -1,0 +1,54 @@
+---
+layout: page
+title: "Newsletter"
+description: "Filtro Digital"
+permalink: "{% if pagination.pageNumber > 0 %}/letters/page/{{ pagination.pageNumber + 1 }}/{% else %}/letters/{% endif %}"
+pagination:
+  data: collections.newsletters
+  size: 12
+---
+
+<div class="space-y-6">
+  {% for item in pagination.items %}
+    <article class="border bg-white border-gray-200 hover:shadow-md p-6 rounded-xl shadow-sm transition">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-bold mb-2">
+          <a href="{{ item.url | url }}" class="text-blood-red-800 hover:text-blood-red-900 hover:underline">
+            {{ item.data.title }}
+          </a>
+        </h2>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          {% if item.data.draft %}
+          <span class="px-2 py-1 bg-yellow-500/90 text-white text-xs rounded">draft</span>
+          {% endif %}
+          <time datetime="{{ item.data.pubDate | toISOString }}">
+            {{ item.data.pubDate | readableDate }}
+          </time>
+        </div>
+      </div>
+
+      {% if item.data.description %}
+      <div class="mb-4 text-gray-700 prose prose-gray max-w-none">
+        {{ item.data.description | markdownFormat | safe }}
+      </div>
+      {% endif %}
+
+      {% if item.data.tags and item.data.tags.length > 1 %}
+      <div class="flex gap-2 flex-wrap">
+        {% for tag in item.data.tags %}
+        {% if tag != "posts" %}
+        <span
+          class="items-center bg-gray-100 border border-gray-300 font-semibold gap-1 inline-flex px-3 py-1 rounded-full text-gray-700 text-xs">
+          {{ tag }}
+        </span>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
+
+{% if pagination.pages.length > 1 %}
+{% include 'components/pagination.njk' %}
+{% endif %}

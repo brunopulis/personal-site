@@ -1,7 +1,7 @@
 ---
 issue: '40'
 title: 'Você realmente sabe HTML?'
-date: '2024-10-03'
+pubDate: '2024-10-03'
 ---
 
 Essa pergunta parece trivial, mas acredite poucas pessoas sabem HTML de fato.

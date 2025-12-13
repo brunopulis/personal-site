@@ -34,6 +34,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('posts', collections.posts);
   eleventyConfig.addCollection('notes', collections.notes);
   eleventyConfig.addCollection('books', collections.books);
+  eleventyConfig.addCollection('letters', collections.newsletters);
   eleventyConfig.addCollection('media', collections.media);
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
   eleventyConfig.addCollection('streams', collections.streams);

@@ -1,7 +1,7 @@
 ---
 issue: '46'
 title: 'Se todos falassem a mesma língua?'
-date: '2024-12-18'
+pubDate: '2024-12-18'
 ---
 
 Opa!
