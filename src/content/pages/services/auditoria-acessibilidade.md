@@ -64,10 +64,8 @@ service:
   faq:
     - question: "Preciso corrigir tudo de uma vez?"
       answer: "Não. A auditoria prioriza os problemas por impacto. Você pode corrigir em fases."
-    
     - question: "Vocês corrigem os problemas também?"
       answer: "Posso corrigir ou orientar sua equipe. A auditoria é o diagnóstico; a correção é outro serviço."
-    
     - question: "Qual a diferença para a Avaliação Rápida?"
       answer: "A Auditoria é exaustiva e visa conformidade legal. A Avaliação é um diagnóstico rápido dos principais problemas."
   
