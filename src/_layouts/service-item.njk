@@ -13,8 +13,7 @@ layout: base
         {{ service.cta.primary }}
       </a>
       <a href="#detalhes" class="text-white underline underline-offset-8 hover:no-underline">
-        <<<<<<< HEAD {{ service.cta.secondary }}======={{ service.cta.secundaria }}>>>>>>>
-          e613b3b80a55533ca86f2cf31f92fbd7965163bb
+        {{ service.cta.secondary }}
       </a>
     </div>
   </div>
@@ -39,11 +38,8 @@ layout: base
 
         <ul class="list-disc space-y-4 py-3">
           {% for differential in service.differentials %}
-          <<<<<<< HEAD <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
-            =======
-            <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
-            >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
-            {% endfor %}
+          <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -57,17 +53,11 @@ layout: base
 
     <ul class="grid gap-6 md:grid-cols-2">
       {% for item in service.included %}
-      <<<<<<< HEAD <li
+      <li
         class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
         {{ item }}
-        </li>
-        =======
-        <li
-          class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-          {{ item }}
-        </li>
-        >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
-        {% endfor %}
+      </li>
+      {% endfor %}
     </ul>
   </div>
 </section>
@@ -79,7 +69,7 @@ layout: base
 
     <div class="grid gap-6 md:grid-cols-2">
       {% for result in service.results %}
-      <<<<<<< HEAD <div class="flex gap-4 items-start">
+      <div class="flex gap-4 items-start">
         <div class="shrink-0 text-2xl">✓</div>
         <div>
           <h3 class="font-semibold text-gray-900">{{ result.title }}</h3>
@@ -87,20 +77,46 @@ layout: base
             {{ result.description }}
           </p>
         </div>
-    </div>
-    =======
-    <div class="flex gap-4 items-start">
-      <div class="flex-shrink-0 text-2xl">✓</div>
-      <div>
-        <h3 class="font-semibold text-gray-900">{{ result.title }}</h3>
-        <p class="text-gray-600 text-sm">
-          {{ result.description }}
-        </p>
       </div>
+      {% endfor %}
     </div>
-    >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
-    {% endfor %}
+</section>
+
+<!-- Para Quem É -->
+<section class="py-12 bg-gray-50">
+  <div class="mx-auto max-w-7xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Para quem é este serviço?</h2>
+
+    <ul class="grid gap-6 md:grid-cols-2">
+      {% for audience in service.target %}
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 text-2xl">✓</div>
+        <div>
+          <h3 class="font-semibold text-gray-900">{{ audience }}</h3>
+        </div>
+      </div>
+      {% endfor %}
+    </ul>
   </div>
+</section>
+
+<!-- Como Funciona -->
+<section class="py-12">
+  <div class="mx-auto max-w-7xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Como Funciona</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      {% for process in service.processes %}
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 text-2xl">✓</div>
+        <div>
+          <h3 class="font-semibold text-gray-900">{{ process.title }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ process.description }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -111,15 +127,11 @@ layout: base
 
     <ul class="grid gap-6 md:grid-cols-2">
       {% for audience in service.target %}
-      <<<<<<< HEAD <li
+      <li
         class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-        =======
-        <li
-          class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-          >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
-          {{ audience }}
-        </li>
-        {% endfor %}
+        {{ audience }}
+      </li>
+      {% endfor %}
     </ul>
   </div>
 </section>

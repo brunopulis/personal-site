@@ -14,8 +14,8 @@ export async function tableSawWrapper({dir}) {
         let content = await fs.readFile(file, 'utf8');
 
         content = content
-          .replace(/(<table(?=[\s>]))/g, `<table-saw breakpoint="${breakpoint}">$1`)
-          .replace(
+          .replaceAll(/(<table(?=[\s>]))/g, `<table-saw breakpoint="${breakpoint}">$1`)
+          .replaceAll(
             /(<\/table>)/g,
             `$1</table-saw>\n<is-land on:idle on:media="${breakpoint}" import="/assets/components/table-saw.js"></is-land>`
           );
