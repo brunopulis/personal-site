@@ -68,6 +68,9 @@ service:
       resposta: "Testamos com ferramentas WCAG e entregamos relatório de conformidade completo."
 
   cta:
-    primaria: "Agendar Avaliação Gratuita"
-    secundaria: "Ver Exemplo de Remediação"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Agendar Avaliação Gratuita"
+    secondary: "Ver Exemplo de Remediação"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---

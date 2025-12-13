@@ -64,6 +64,9 @@ service:
       resposta: "Sim, mas o valor real está na análise manual especializada que ferramentas não pegam."
   
   cta:
-    primaria: "Solicitar Avaliação Rápida"
-    secundaria: "Comparar com Auditoria"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Solicitar Avaliação Rápida"
+    secondary: "Comparar com Auditoria"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---
