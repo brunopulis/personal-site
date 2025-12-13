@@ -17,7 +17,7 @@ __snapshots__/
 dist
 docs/
 utils/
-old
+old/
 src/_includes/css
 src/_includes/scripts
 
