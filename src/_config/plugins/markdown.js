@@ -11,7 +11,7 @@ import markdownitAbbr from 'markdown-it-abbr';
 import {slugifyString} from '../filters/slugify.js';
 
 export const markdownLib = markdownIt({
-  html: true,
+  sanitize: true,
   breaks: true,
   linkify: true,
   typographer: true
@@ -54,7 +54,7 @@ export const markdownLib = markdownIt({
         '"': '&quot;',
         "'": '&#039;'
       };
-      return text.replace(/[&<>"']/g, m => map[m]);
+      return text.replaceAll(/[&<>"']/g, m => map[m]);
     };
 
     md.renderer.rules.image = (tokens, idx) => {

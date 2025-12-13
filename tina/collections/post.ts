@@ -1,9 +1,9 @@
 import type { Collection } from 'tinacms';
 
-export const BlogCollection: Collection = {
+export const PostCollection: Collection = {
   name: 'post',
   label: 'Blog',
-  path: 'src/content/blog',
+  path: 'src/content/posts',
   format: 'md',
   defaultItem: () => {
     return {
@@ -33,8 +33,8 @@ export const BlogCollection: Collection = {
           values?.title
             ?.toLowerCase()
             .trim()
-            .replace(/\s+/g, '-')
-            .replace(/[^\w-]/g, '') || 'post';
+            .replaceAll(/\s+/g, '-')
+            .replaceAll(/[^\w-]/g, '') || 'post';
         // Preserve locale from existing path or default to pt-br
         const locale = 'pt-br'; // You can make this dynamic based on a field
         return `${locale}/${year}/${slug}`;

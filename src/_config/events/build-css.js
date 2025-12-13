@@ -11,14 +11,14 @@ export const buildAllCss = async () => {
   // Lê e processa o tailwind.css
   try {
     const tailwindContent = await fs.readFile(tailwindFile, 'utf-8');
-    
+
     // Escreve o arquivo main-dist.css que é usado no layout
     await fs.writeFile('dist/assets/css/main-dist.css', tailwindContent);
-    
+
     // Mantém o global.css para compatibilidade (se necessário)
     await fs.writeFile('dist/assets/css/global.css', tailwindContent);
     await fs.writeFile('src/_includes/css/global.css', tailwindContent);
   } catch (error) {
-    console.warn(`⚠️  Arquivo ${tailwindFile} não encontrado. Execute 'pnpm run css:build' primeiro.`);
+    console.log(`⚠️  Arquivo ${tailwindFile} não encontrado. Execute 'pnpm run css:build' primeiro.`);
   }
 };

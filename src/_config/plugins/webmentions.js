@@ -11,15 +11,12 @@ const WEBMENTION_API = 'https://webmention.io/api/mentions.jf2';
  * @returns {Promise<Array>} Array de webmentions
  */
 async function fetchWebmentions(url) {
-  // Comentado temporariamente para testar em dev
-  // if (process.env.ELEVENTY_ENV === 'development') {
-  //   return [];
-  // }
-
   try {
+    // Garante que a URL não tenha barra no final para consistência
     const cleanUrl = url.replace(/\/$/, '') || '/';
-    const fullUrl = `${DOMAIN}${cleanUrl}`;
+    const fullUrl = `${DOMAIN}${cleanUrl}/`; // Adiciona barra no final pois muitos serviços indexam assim
 
+    // Busca mentions especificamente para esta URL
     const apiUrl = `${WEBMENTION_API}?target=${encodeURIComponent(fullUrl)}`;
 
     const response = await EleventyFetch(apiUrl, {
@@ -73,7 +70,7 @@ function getUniqueAuthors(mentions) {
 
   mentions.forEach(mention => {
     const author = mention.author;
-    if (author && author.name) {
+    if (author?.name) {
       const key = author.url || author.name;
       if (!authors.has(key)) {
         authors.set(key, author);
@@ -101,7 +98,7 @@ function formatDate(dateObj) {
       minute: '2-digit'
     });
   } catch (error) {
-    console.warn('❌ Erro ao formatar data:', dateObj);
+    console.log('❌ Erro ao formatar data:', dateObj);
     return '';
   }
 }
@@ -125,11 +122,16 @@ function webmentions(eleventyConfig) {
   console.log('🔧 Registrando filtros de webmentions...');
 
   // Filtro assíncrono para buscar webmentions
-  eleventyConfig.addNunjucksAsyncFilter('webmentions', async url => {
-    console.log('📡 Buscando webmentions para:', url);
-    const result = await fetchWebmentions(url);
-    console.log('✅ Webmentions encontrados:', result.length);
-    return result;
+  eleventyConfig.addNunjucksAsyncFilter('webmentions', async (url, callback) => {
+    try {
+      console.log('📡 Buscando webmentions para:', url);
+      const result = await fetchWebmentions(url);
+      console.log('✅ Webmentions encontrados:', result.length);
+      callback(null, result);
+    } catch (error) {
+      console.error('❌ Erro no filtro webmentions:', error);
+      callback(null, []); // Retorna array vazio em caso de erro para não quebrar o build
+    }
   });
 
   // Filtro para filtrar por tipo

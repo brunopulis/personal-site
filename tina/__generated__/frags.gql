@@ -1,0 +1,160 @@
+fragment PostParts on Post {
+  __typename
+  title
+  publishDate
+  author
+  description
+  featured_image
+  body
+  categories
+  tags
+  draft
+  seo {
+    __typename
+    meta_title
+    meta_description
+    keywords
+  }
+}
+
+fragment PageParts on Page {
+  __typename
+  title
+  description
+  permalink
+  body
+}
+
+fragment ServiceParts on Service {
+  __typename
+  title
+  slug
+  description
+  permalink
+  service {
+    __typename
+    color
+    tagline
+    icon
+    problem
+    solution
+    differentials
+    included
+    results {
+      __typename
+      title
+      description
+    }
+    target
+    processes {
+      __typename
+      title
+      description
+    }
+    testimonials {
+      __typename
+      cliente
+      quote
+      resultado
+    }
+    faq {
+      __typename
+      question
+      answer
+    }
+    cta {
+      __typename
+      title
+      description
+      primary
+      secondary
+      link
+    }
+  }
+}
+
+fragment NoteParts on Note {
+  __typename
+  pubDate
+  published
+  type
+  tags
+  body
+}
+
+fragment BookParts on Book {
+  __typename
+  title
+  author
+  category
+  status
+  rating
+  cover
+  description
+  thoughts
+  quotes
+  attendedYear
+  recommendBy
+  tags
+  url
+  date
+  body
+}
+
+fragment NewsletterParts on Newsletter {
+  __typename
+  title
+  issue
+  pubDate
+  body
+}
+
+fragment MediaParts on Media {
+  __typename
+  title
+  director
+  category
+  status
+  rating
+  poster
+  description
+  thoughts
+  attendedYear
+  recommendBy
+  tags
+  url
+  date
+  body
+}
+
+fragment BookmarkParts on Bookmark {
+  __typename
+  title
+  date
+  body
+}
+
+fragment StreamParts on Stream {
+  __typename
+  title
+  type
+  detail
+  pubDate
+  tags
+  body
+}
+
+fragment TalkParts on Talk {
+  __typename
+  title
+  date
+  body
+}
+
+fragment GalleryParts on Gallery {
+  __typename
+  title
+  date
+  image
+  body
+}
