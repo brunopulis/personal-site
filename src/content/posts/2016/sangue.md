@@ -1,8 +1,8 @@
 ---
 title: Sangue
 pubDate: 2016-09-06
-categories: 'pessoal'
-url: https://brunopulis.com/sangue
+tags:
+  - Poesia
 ---
 
 Vermelho escorrente,

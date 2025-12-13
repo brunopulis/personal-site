@@ -13,7 +13,7 @@ export const posts = collectionApi => {
  * @returns 
  */
 export const notes = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/notas/**/*.md');
+  return collectionApi.getFilteredByGlob('./src/content/notes/**/*.md');
 };
 
 /**
@@ -30,8 +30,8 @@ export const bookmarks = collectionApi => {
  * @param {*} collectionApi 
  * @returns 
  */
-export const gallery = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/gallery/**/*.md').reverse();
+export const photos = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/photos/**/*.md').reverse();
 };
 
 /**
@@ -39,8 +39,8 @@ export const gallery = collectionApi => {
  * @param {*} collectionApi 
  * @returns 
  */
-export const media = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/media/**/*.md').reverse();
+export const medias = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/medias/**/*.md').reverse();
 }
 
 /**
@@ -77,6 +77,17 @@ export const streams = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
+export const music = collectionApi => {
+  return collectionApi
+    .getFilteredByGlob('./src/content/music/**/*.md')
+    .sort((a, b) => b.data.date - a.data.date);
+};
+
+/**
+ *
+ * @param {*} collectionApi
+ * @returns
+ */
 export const showInSitemap = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/**/*.{md,njk}');
 };
@@ -94,7 +105,7 @@ export const tagList = collection => {
       let tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'bookmarks', 'livros', 'newsletters', 'notas', 'media', 'musicas'].includes(tag)) {
+        if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'newsletters', 'notes', 'media', 'music'].includes(tag)) {
           tagSet.add(tag);
         }
       }
@@ -112,6 +123,7 @@ export default {
   bookmarks,
   books,
   notes,
-  media,
+  medias,
+  music,
   tagList
 };
