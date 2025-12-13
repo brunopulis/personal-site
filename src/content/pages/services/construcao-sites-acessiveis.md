@@ -68,6 +68,9 @@ service:
       resposta: "Sim, integro com CMS (como WordPress, Sanity, Strapi) para que seu time possa atualizar o conteúdo facilmente."
   
   cta:
-    primaria: "Solicitar Proposta"
-    secundaria: "Ver Portfolio"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Solicitar Proposta"
+    secondary: "Ver Portfolio"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---

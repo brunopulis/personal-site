@@ -69,8 +69,11 @@ service:
       resposta: "Claro. Tenho temas prontos, mas adoro criar algo novo para necessidades específicas."
   
   cta:
-    primaria: "Convidar para Palestrar"
-    secundaria: "Ver Temas Disponíveis"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Convidar para Palestrar"
+    secondary: "Ver Temas Disponíveis"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---
 {% include "components/work-with-me.njk" %}
 

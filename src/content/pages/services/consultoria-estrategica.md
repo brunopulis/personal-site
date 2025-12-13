@@ -68,6 +68,9 @@ service:
       resposta: "Menos do que na mentoria. Aqui o foco é garantir que SEUS times saibam colocar a mão no código corretamente."
   
   cta:
-    primaria: "Agendar Diagnóstico"
-    secundaria: "Ver Cases"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Agendar Diagnóstico"
+    secondary: "Ver Cases"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---

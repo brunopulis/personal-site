@@ -68,6 +68,9 @@ service:
       resposta: "Mensalidade recorrente ou pacote fechado com desconto."
   
   cta:
-    primaria: "Aplicar para Mentoria"
-    secundaria: "Ver Planos"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Aplicar para Mentoria"
+    secondary: "Ver Planos"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---
