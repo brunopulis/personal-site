@@ -1,7 +1,7 @@
 ---
 issue: '35'
 title: 'Por que foquei em acessibilidade?'
-date: '2024-07-13'
+pubDate: '2024-07-13'
 ---
 
 Olá, aqui é o Pulis com a edição 35.

@@ -1,7 +1,7 @@
 ---
 issue: '42'
 title: 'Erro de contraste como corrigir'
-date: '2024-11-07'
+pubDate: '2024-11-07'
 ---
 
 Olá pessoal,

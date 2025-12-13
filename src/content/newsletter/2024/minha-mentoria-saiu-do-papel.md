@@ -1,7 +1,7 @@
 ---
 issue: '38'
 title: 'Minha mentoria saiu do papel'
-date: '2024-08-22'
+pubDate: '2024-08-22'
 ---
 
 Faz duas semanas que ando meio sumido.

@@ -1,7 +1,7 @@
 ---
 issue: '34'
 title: 'Mente agitada, vida desorganizada'
-date: '2024-07-05'
+pubDate: '2024-07-05'
 ---
 
 Anos atrás, perdi várias partituras raras, passei meses pesquisando e arquivando.

@@ -1,7 +1,7 @@
 ---
 issue: '20'
 title: 'Vim te ajudar a não cometer esse erro'
-date: '2024-02-22'
+pubDate: '2024-02-22'
 ---
 
 Pulis Letters - Edição #20
