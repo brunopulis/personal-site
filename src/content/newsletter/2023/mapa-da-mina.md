@@ -1,7 +1,7 @@
 ---
 issue: '26'
 title: 'Vou te dar o mapa da mina!'
-date: '2024-04-04'
+pubDate: '2024-04-04'
 ---
 
 Quarta-feira, 03 de Abril de 2024
@@ -32,7 +32,7 @@ Eu gosto de alguns patterns, vou te mostrar alguns:
 
 - [Dialog (Modal) Pattern;](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
 - [Accordion Pattern (Sections With Show/Hide Functionality)](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/);
-- [Breadcrumb Pattern](<https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/)>).
+- [Breadcrumb Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/)>).
 
 Estou te entregando a faca e o queijo na mão!
 

@@ -1,7 +1,7 @@
 ---
 issue: '19'
 title: '6 Conselhos que gostaria de ter recebido'
-date: '2024-02-15'
+pubDate: '2024-02-15'
 ---
 
 Pulis Letters - Edição #19

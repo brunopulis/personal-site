@@ -1,7 +1,7 @@
 ---
 issue: '21'
 title: 'O que o Pokémon me ensinou sobre acessibilidade'
-date: '2024-02-29'
+pubDate: '2024-02-29'
 ---
 
 Pulis Letters - Edição #21  

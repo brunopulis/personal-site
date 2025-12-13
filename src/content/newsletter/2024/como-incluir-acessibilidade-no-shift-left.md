@@ -1,7 +1,7 @@
 ---
 issue: '11'
 title: 'Como incluir acessibilidade no Shift Left'
-date: '2024-01-15'
+pubDate: '2024-01-15'
 ---
 
 ![Imagem gerada com o Bing Create, prompt: teste automatizado.](/assets/images/newsletters/1705342283447-1024x576.png) _Imagem gerada com o Bing Create, prompt: teste automatizado._\[/caption\]
