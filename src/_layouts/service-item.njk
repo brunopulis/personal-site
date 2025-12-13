@@ -72,12 +72,14 @@ layout: base
       <div class="flex gap-4 items-start">
         <div class="shrink-0 text-2xl">✓</div>
         <div>
-          {{ result.description }}
+          <p class="text-gray-600">
+            {{ result.description }}
           </p>
         </div>
       </div>
       {% endfor %}
     </div>
+  </div>
 </section>
 
 <!-- Para Quem É -->
@@ -93,80 +95,6 @@ layout: base
           <h3 class="font-semibold text-gray-900">{{ audience }}</h3>
         </div>
       </div>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<!-- Como Funciona -->
-<section class="py-12">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Como Funciona</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      {% for process in service.processes %}
-      <div class="flex gap-4 items-start">
-        <div class="shrink-0 text-2xl">✓</div>
-        <div>
-          <h3 class="font-semibold text-gray-900">{{ process.title }}</h3>
-          <p class="text-gray-600 text-sm">
-            {{ process.description }}
-          </p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Para Quem É -->
-<section class="py-12 bg-gray-50">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Para quem é este serviço?</h2>
-
-    <ul class="grid gap-6 md:grid-cols-2">
-      {% for audience in service.target %}
-      <li
-        class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-        {{ audience }}
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<!-- Como Funciona -->
-<section class="py-12">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Como Funciona</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      {% for process in service.processes %}
-      <div class="flex gap-4 items-start">
-        <div class="shrink-0 text-2xl">✓</div>
-        <div>
-          <h3 class="font-semibold text-gray-900">{{ process.title }}</h3>
-          <p class="text-gray-600 text-sm">
-            {{ process.description }}
-          </p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% endfor %}
-  </div>
-  </div>
-</section>
-
-<!-- Para Quem É -->
-<section class="py-12 bg-gray-50">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Para quem é este serviço?</h2>
-
-    <ul class="grid gap-6 md:grid-cols-2">
-      {% for audience in service.target %}
-      <li
-        class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-        {{ audience }}
-      </li>
       {% endfor %}
     </ul>
   </div>
@@ -268,29 +196,31 @@ layout: base
 
 <!-- CTA Final -->
 {% if service.cta %}
+{% for cta in service.cta %}
 <section class="py-12 my-3" aria-labelledby="cta-section">
   <div class="bg-linear-to-br from-blood-red-800 to-blood-red-900 mx-auto max-w-7xl text-center space-y-8 py-12">
     <div class="space-y-4">
       <h2 class="text-3xl md:text-4xl font-bold text-white" id="cta-section">
-        {{ service.cta.title }}
+        {{ cta.title }}
       </h2>
       <p class="text-lg text-white">
-        {{ service.cta.description }}
+        {{ cta.description }}
       </p>
     </div>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="mailto:brunopulis@protonmail.com?subject=Solicitação de Orçamento - {{ title }}"
         class="inline-flex items-center no-underline justify-center px-8 py-3 bg-white text-blood-red-800 font-bold rounded-lg hover:bg-blood-red-50 transition">
-        {{ service.cta.primary }}
+        {{ cta.primary }}
       </a>
-      <a href="{{ service.cta.link }}"
+      <a href="{{ cta.link }}"
         class="inline-flex items-center no-underline justify-center px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blood-red-800 hover:border-blood-red-800 transition">
-        {{ service.cta.secondary }}
+        {{ cta.secondary }}
       </a>
     </div>
   </div>
 </section>
+{% endfor %}
 {% endif %}
 
 <style>
