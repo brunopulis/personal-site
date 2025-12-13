@@ -196,29 +196,31 @@ layout: base
 
 <!-- CTA Final -->
 {% if service.cta %}
+{% for cta in service.cta %}
 <section class="py-12 my-3" aria-labelledby="cta-section">
   <div class="bg-linear-to-br from-blood-red-800 to-blood-red-900 mx-auto max-w-7xl text-center space-y-8 py-12">
     <div class="space-y-4">
       <h2 class="text-3xl md:text-4xl font-bold text-white" id="cta-section">
-        {{ service.cta.title }}
+        {{ cta.title }}
       </h2>
       <p class="text-lg text-white">
-        {{ service.cta.description }}
+        {{ cta.description }}
       </p>
     </div>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="mailto:brunopulis@protonmail.com?subject=Solicitação de Orçamento - {{ title }}"
         class="inline-flex items-center no-underline justify-center px-8 py-3 bg-white text-blood-red-800 font-bold rounded-lg hover:bg-blood-red-50 transition">
-        {{ service.cta.primary }}
+        {{ cta.primary }}
       </a>
-      <a href="{{ service.cta.link }}"
+      <a href="{{ cta.link }}"
         class="inline-flex items-center no-underline justify-center px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blood-red-800 hover:border-blood-red-800 transition">
-        {{ service.cta.secondary }}
+        {{ cta.secondary }}
       </a>
     </div>
   </div>
 </section>
+{% endfor %}
 {% endif %}
 
 <style>
