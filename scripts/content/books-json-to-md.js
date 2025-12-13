@@ -39,7 +39,8 @@ function slugify(text) {
  */
 function escapeYaml(str) {
   if (!str) return '';
-  return str.replace(/"/g, '\\"');
+  // First escape backslashes, then double quotes
+  return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
 /**
