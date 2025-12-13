@@ -397,7 +397,7 @@ var ServiceCollection = {
 var NoteCollection = {
   name: "note",
   label: "Notas",
-  path: "src/content/notas",
+  path: "src/content/notes",
   format: "md",
   match: {
     include: "**/*"
@@ -896,14 +896,6 @@ var config_default = defineConfig({
       TalkCollection,
       GalleryCollection
     ]
-  },
-  search: {
-    tina: {
-      indexerToken: process.env.TINA_SEARCH_TOKEN,
-      stopwordLanguages: ["por"]
-    },
-    indexBatchSize: 100,
-    maxSearchIndexFieldLength: 100
   }
 });
 export {
