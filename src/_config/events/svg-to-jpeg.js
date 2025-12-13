@@ -16,7 +16,7 @@ export const svgToJpeg = async () => {
   if (files.length > 0) {
     files.forEach(async function (filename) {
       const outputFilename = filename.substring(0, filename.length - 4);
-      if (filename.endsWith('.svg') & !existsSync(path.join(ogImagesDir, outputFilename))) {
+      if (filename.endsWith('.svg') && !existsSync(path.join(ogImagesDir, outputFilename))) {
         const imageUrl = socialPreviewImagesDir + filename;
         await Image(imageUrl, {
           formats: ['jpeg'],

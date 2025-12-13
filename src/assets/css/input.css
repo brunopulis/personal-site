@@ -92,7 +92,7 @@
 
 @layer components {
   .hero {
-    @apply py-12 bg-gradient-to-br from-red-900 to-red-950 via-red-800 overflow-hidden relative text-white;
+    @apply py-12 bg-linear-to-br from-red-900 to-red-950 via-red-800 overflow-hidden relative text-white;
   }
 
   .prose {

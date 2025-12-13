@@ -9,11 +9,10 @@ import * as customFilters from './src/_config/filters.js';
 import events from './src/_config/events.js';
 import plugins from './src/_config/plugins.js';
 import brokenLinksPlugin from 'eleventy-plugin-broken-links';
-import {badge} from './src/_config/shortcodes/image.js';
-import {image, imageKeys} from './src/_config/shortcodes/image.js';
+import {badge, image, imageKeys} from './src/_config/shortcodes/image.js';
 import {svg} from './src/_config/shortcodes/svg.js';
 
-export default async function (eleventyConfig) {
+export default async function eleventy(eleventyConfig) {
   eleventyConfig.addGlobalData('now', new Date());
 
   //  custom watch targets
@@ -47,6 +46,7 @@ export default async function (eleventyConfig) {
     components: ['./src/_includes/webc/*.webc'],
     useTransform: true
   });
+  eleventyConfig.addPlugin(plugins.webmentions);
 
   //   Library and Data
   eleventyConfig.setLibrary('md', plugins.markdownLib);

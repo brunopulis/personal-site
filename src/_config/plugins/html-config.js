@@ -4,7 +4,7 @@ const isProduction = process.env.ELEVENTY_ENV === 'production';
 
 export const htmlConfig = eleventyConfig => {
   eleventyConfig.addTransform('html-minify', (content, path) => {
-    if (path && path.endsWith('.html') && isProduction) {
+    if (path?.endsWith('.html') && isProduction) {
       return htmlmin.minify(content, {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
