@@ -8,66 +8,73 @@ url: /servicos/auditoria-acessibilidade/
 
 service:
   color: purple-600
-  tagline: Análise completa e estruturada. Planeje melhorias com segurança.
+  tagline: Análise completa e estruturada, transforme problemas invisíveis em um plano de ação.
   icon: 📋
   
   problem: |
-    Você não sabe exatamente quão acessível seu produto é. Problemas invisíveis podem estar 
-    bloqueando usuários e criando riscos legais, mas sem um mapa claro, é difícil corrigir.
+    Seu site pode estar bloqueando usuários sem que você saiba. Problemas de acessibilidade não aparecem na superfície—criam riscos legais, afastam clientes e prejudicam sua reputação. Mas sem um diagnóstico claro, é impossível saber por onde começar.
   
   solution: |
-    Uma auditoria profunda que fornece um entendimento detalhado e estruturado. 
-    Você recebe não apenas uma lista de erros, mas um plano de ação priorizado e educativo.
+    Não é apenas uma lista de erros. Trabalho em 3 camadas:
   
-  diferencial:
-    - Análise estruturada por conformidade WCAG
-    - Priorização baseada em impacto real no usuário
-    - Documento educativo que treina sua equipe
-    - Segurança jurídica com status de conformidade claro
+  differentials:
+    - Análise estruturada. baseada em WCAG 2.2 AA, NBR 17.225 e NBR 17069
+    - Priorização por impacto real (quem sofre mais com cada problema)
+    - Recomendações técnicas com exemplos de código
+    - Documentação para ação, não deixo você preso a mim. Você recebe um plano que sua equipe consegue executar sozinha no futuro.
+    - Educação para sua equipe resolver problemas similares no futuro
   
-  inclusos:
-    - Relatório estruturado em conformidade WCAG 2.1 AA
-    - Análise técnica detalhada por componente/página
-    - Screenshots, exemplos e código problemático
+  included:
+    - Relatório executivo e técnico
+    - Análise por página ou componente
     - Recomendações de correção com sugestões técnicas
-    - Cronograma realista de implementação
-    - Testes com ferramentas automatizadas E manuais
-    - Checklist de conformidade para validação futura
+    - Checklist para validações futuras
   
-  resultado:
-    - Compreensão total do estado de acessibilidade
-    - Roadmap claro de correções priorizadas
-    - Equipe técnica educada sobre os problemas
-    - Mitigação de riscos legais
+  results:
+    - title: "Compreensão Total"
+      description: "Sabe exatamente o estado de acessibilidade do seu produto"
+    - title: "Roadmap Acionável"
+      description: "Correções priorizadas que sua equipe consegue executar"
+    - title: "Equipe Educada"
+      description: "Seu time entende os problemas e consegue evitar novos no futuro"
+    - title: "Segurança Jurídica"
+      description: "Documentação que te protege legalmente e comprova esforço de conformidade"
   
-  publicoAlvo:
+  target:
     - Sites corporativos com múltiplas páginas
     - E-commerce com processos complexos
     - Portais e aplicações que precisam de documentação
     - Empresas buscando conformidade legal
   
-  processos:
-    - Kickoff: Entendimento de objetivos e contexto técnico
-    - Análise Inicial: Testes automatizados e manuais exploratórios
-    - Análise Detalhada: Deep dive, documentação e priorização
-    - Relatório Final: Apresentação, Q&A e sugestões de roadmap
+  processes:
+    - title: "Reunião inicial"
+      description: "Entendimento de objetivos e contexto técnico"
+    - title: "Análise"
+      description: "Testes automatizados e manuais exploratórios"
+    - title: "Análise Detalhada"
+      description: "Deep dive, documentação e priorização"
+    - title: "Relatório Final"
+      description: "Apresentação dos resultados e tira dúvidas e sugestões de roadmap"
 
-  testemunhal:
+  testimonials:
     cliente: "E-commerce Nacional"
     quote: "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
     resultado: "Roadmap de 6 meses definido"
   
   faq:
-    - pergunta: "Preciso corrigir tudo de uma vez?"
-      resposta: "Não. A auditoria prioriza os problemas por impacto. Você pode corrigir em fases."
+    - question: "Preciso corrigir tudo de uma vez?"
+      answer: "Não. A auditoria prioriza os problemas por impacto. Você pode corrigir em fases."
     
-    - pergunta: "Vocês corrigem os problemas também?"
-      resposta: "Posso corrigir ou orientar sua equipe. A auditoria é o diagnóstico; a correção é outro serviço."
+    - question: "Vocês corrigem os problemas também?"
+      answer: "Posso corrigir ou orientar sua equipe. A auditoria é o diagnóstico; a correção é outro serviço."
     
-    - pergunta: "Qual a diferença para a Avaliação Rápida?"
-      resposta: "A Auditoria é exaustiva e visa conformidade legal. A Avaliação é um diagnóstico rápido dos principais problemas."
+    - question: "Qual a diferença para a Avaliação Rápida?"
+      answer: "A Auditoria é exaustiva e visa conformidade legal. A Avaliação é um diagnóstico rápido dos principais problemas."
   
   cta:
-    primaria: "Solicitar Orçamento"
-    secundaria: "Entenda o Processo"
+    - title: "Pronto para Começar?"
+      description: "Vamos diagnosticar exatamente o que precisa mudar, sem compromisso."
+      primary: "Solicitar Orçamento"
+      secondary: "Agendar conversa"
+      link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---
