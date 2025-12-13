@@ -39,7 +39,7 @@ function slugify(text) {
  */
 function escapeYaml(str) {
   if (!str) return '';
-  return str.replace(/"/g, '\\"');
+  return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
 /**
