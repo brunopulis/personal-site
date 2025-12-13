@@ -13,7 +13,7 @@ layout: base
         {{ service.cta.primary }}
       </a>
       <a href="#detalhes" class="text-white underline underline-offset-8 hover:no-underline">
-        {{ service.cta.secundaria }}
+        {{ service.cta.secondary }}
       </a>
     </div>
   </div>
@@ -38,7 +38,7 @@ layout: base
 
         <ul class="list-disc space-y-4 py-3">
           {% for differential in service.differentials %}
-            <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
+          <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
           {% endfor %}
         </ul>
       </div>
@@ -53,9 +53,10 @@ layout: base
 
     <ul class="grid gap-6 md:grid-cols-2">
       {% for item in service.included %}
-        <li class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-          {{ item }}
-        </li>
+      <li
+        class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
+        {{ item }}
+      </li>
       {% endfor %}
     </ul>
   </div>
@@ -68,15 +69,15 @@ layout: base
 
     <div class="grid gap-6 md:grid-cols-2">
       {% for result in service.results %}
-        <div class="flex gap-4 items-start">
-          <div class="flex-shrink-0 text-2xl">✓</div>
-          <div>
-            <h3 class="font-semibold text-gray-900">{{ result.title }}</h3>
-            <p class="text-gray-600 text-sm">
-              {{ result.description }}
-            </p>
-          </div>
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 text-2xl">✓</div>
+        <div>
+          <h3 class="font-semibold text-gray-900">{{ result.title }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ result.description }}
+          </p>
         </div>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -89,7 +90,8 @@ layout: base
 
     <ul class="grid gap-6 md:grid-cols-2">
       {% for audience in service.target %}
-      <li class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
+      <li
+        class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
         {{ audience }}
       </li>
       {% endfor %}
@@ -103,15 +105,15 @@ layout: base
     <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Como Funciona</h2>
     <div class="grid gap-6 md:grid-cols-2">
       {% for process in service.processes %}
-        <div class="flex gap-4 items-start">
-          <div class="flex-shrink-0 text-2xl">✓</div>
-          <div>
-            <h3 class="font-semibold text-gray-900">{{ process.title }}</h3>
-            <p class="text-gray-600 text-sm">
-              {{ process.description }}
-            </p>
-          </div>
+      <div class="flex gap-4 items-start">
+        <div class="shrink-0 text-2xl">✓</div>
+        <div>
+          <h3 class="font-semibold text-gray-900">{{ process.title }}</h3>
+          <p class="text-gray-600 text-sm">
+            {{ process.description }}
+          </p>
         </div>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -123,8 +125,8 @@ layout: base
     <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Depoimentos</h2>
 
     <div class="mt-16 space-y-16 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
-      <blockquote class="bg-white rounded-lg p-8 border-l-4 space-y-4 sm:flex lg:block">
-        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="flex-shrink-0 text-gray-300">
+      <blockquote class="bg-white rounded-lg p-8 space-y-4 sm:flex lg:block hover:border-blood-red-300">
+        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="shrink-0 text-blood-red-300">
           <path
             d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
             fill="currentColor" />
@@ -133,11 +135,11 @@ layout: base
           <p class="text-lg text-gray-700">
             "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
           </p>
-          <cite class="mt-4 block font-semibold not-italic text-gray-900">Shehab , England</cite>
+          <cite class="mt-4 block font-semibold not-italic text-blood-red-800">Shehab , England</cite>
         </div>
       </blockquote>
-      <blockquote class="bg-white rounded-lg p-8 border-l-4 space-y-4 sm:flex lg:block">
-        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="flex-shrink-0 text-gray-300">
+      <blockquote class="bg-white rounded-lg p-8 space-y-4 sm:flex lg:block hover:border-blood-red-300">
+        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="shrink-0 text-blood-red-300">
           <path
             d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
             fill="currentColor" />
@@ -146,11 +148,11 @@ layout: base
           <p class="text-lg text-gray-700">
             "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
           </p>
-          <cite class="mt-4 block font-semibold not-italic text-gray-900">Shehab , England</cite>
+          <cite class="mt-4 block font-semibold not-italic text-blood-red-800">Shehab , England</cite>
         </div>
       </blockquote>
-      <blockquote class="bg-white rounded-lg p-8 border-l-4 space-y-4 sm:flex lg:block">
-        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="flex-shrink-0 text-gray-300">
+      <blockquote class="bg-white rounded-lg p-8 space-y-4 sm:flex lg:block hover:border-blood-red-300">
+        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="shrink-0 text-blood-red-300">
           <path
             d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
             fill="currentColor" />
@@ -159,7 +161,7 @@ layout: base
           <p class="text-lg text-gray-700">
             "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
           </p>
-          <cite class="mt-4 block font-semibold not-italic text-gray-900">Shehab , England</cite>
+          <cite class="mt-4 block font-semibold not-italic text-blood-red-800">Shehab , England</cite>
         </div>
       </blockquote>
     </div>
@@ -168,54 +170,54 @@ layout: base
 
 <!-- FAQ -->
 {% if service.faq %}
-  <section class="py-12" aria-labelledby="faq-section">
-    <div class="mx-auto max-w-7xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12 text-center" id="faq-section">Perguntas
-        Frequentes</h2>
+<section class="py-12" aria-labelledby="faq-section">
+  <div class="mx-auto max-w-7xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12 text-center" id="faq-section">Perguntas
+      Frequentes</h2>
 
-      <div class="space-y-6">
-        {% for item in service.faq %}
-        <details
-          class="bg-gray-50 group border border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blood-red-300 transition">
-          <summary class="flex items-center justify-between font-semibold text-gray-900">
-            <span>{{ item.question }}</span>
-            <span class="text-blood-red-600 group-open:rotate-180 transition">▼</span>
-          </summary>
-          <p class="text-gray-600 mt-4 leading-relaxed">
-            {{ item.answer }}
-          </p>
-        </details>
-        {% endfor %}
-      </div>
+    <div class="space-y-6">
+      {% for item in service.faq %}
+      <details
+        class="bg-gray-50 group border border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blood-red-300 transition">
+        <summary class="flex items-center justify-between font-semibold text-gray-900">
+          <span>{{ item.question }}</span>
+          <span class="text-blood-red-600 group-open:rotate-180 transition">▼</span>
+        </summary>
+        <p class="text-gray-600 mt-4 leading-relaxed">
+          {{ item.answer }}
+        </p>
+      </details>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 {% endif %}
 
 <!-- CTA Final -->
 {% if service.cta %}
-  <section aria-labelledby="cta-section">
-    <div class="bg-gradient-to-br from-blood-red-800 to-blood-red-900 mx-auto max-w-7xl text-center space-y-8 py-12">
-      <div class="space-y-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-white" id="cta-section">
-          {{ cta.title }}
-        </h2>
-        <p class="text-lg text-blood-red-100">
-          {{ cta.description }}
-        </p>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:brunopulis@protonmail.com?subject=Solicitação de Orçamento - {{ title }}"
-          class="inline-flex items-center justify-center px-8 py-3 bg-white text-blood-red-800 font-bold rounded-lg hover:bg-blood-red-50 transition">
-          {{ cta.primary }}
-        </a>
-        <a href="{{ cta.link }}"
-          class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition">
-          {{ cta.secondary }}
-        </a>
-      </div>
+<section class="py-12 my-3" aria-labelledby="cta-section">
+  <div class="bg-linear-to-br from-blood-red-800 to-blood-red-900 mx-auto max-w-7xl text-center space-y-8 py-12">
+    <div class="space-y-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-white" id="cta-section">
+        {{ service.cta.title }}
+      </h2>
+      <p class="text-lg text-white">
+        {{ service.cta.description }}
+      </p>
     </div>
-  </section>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:brunopulis@protonmail.com?subject=Solicitação de Orçamento - {{ title }}"
+        class="inline-flex items-center no-underline justify-center px-8 py-3 bg-white text-blood-red-800 font-bold rounded-lg hover:bg-blood-red-50 transition">
+        {{ service.cta.primary }}
+      </a>
+      <a href="{{ service.cta.link }}"
+        class="inline-flex items-center no-underline justify-center px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blood-red-800 hover:border-blood-red-800 transition">
+        {{ service.cta.secondary }}
+      </a>
+    </div>
+  </div>
+</section>
 {% endif %}
 
 <style>
@@ -435,6 +437,6 @@ layout: base
   .btn-large {
     padding: 1rem 3rem;
     font-size: 1.1rem;
-    
+
   }
 </style>

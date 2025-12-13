@@ -10,7 +10,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
   <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-6">
     {% for service in collections.service %}
     {% if service.url != page.url %}
-    <article class="card" style="--color: var(--color-{{ service.data.service.color }})">
+    <article class="card">
       <span class="card__icon" aria-hidden="true">{{ service.data.service.icon }}</span>
       <h2 class="card__title">{{ service.data.title }}</h2>
       <p class="card__tagline">{{ service.data.service.tagline }}</p>

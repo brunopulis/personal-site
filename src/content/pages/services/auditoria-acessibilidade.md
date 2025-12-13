@@ -72,9 +72,9 @@ service:
       answer: "A Auditoria é exaustiva e visa conformidade legal. A Avaliação é um diagnóstico rápido dos principais problemas."
   
   cta:
-    - title: "Pronto para Começar?"
-      description: "Vamos diagnosticar exatamente o que precisa mudar, sem compromisso."
-      primary: "Solicitar Orçamento"
-      secondary: "Agendar conversa"
-      link: "https://cal.com/brunopulis/consultoria-gratuita"
+    title: "Pronto para Começar?"
+    description: "Vamos diagnosticar exatamente o que precisa mudar, sem compromisso."
+    primary: "Solicitar Orçamento"
+    secondary: "Agendar conversa"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---

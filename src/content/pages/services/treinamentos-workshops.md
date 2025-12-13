@@ -68,6 +68,9 @@ service:
       resposta: "Sim, certificado de conclusão para todos os participantes."
   
   cta:
-    primaria: "Agendar Treinamento"
-    secundaria: "Ver Ementa Completa"
+    title: "Pronto para Começar?"
+    description: "Vamos conversar sobre como posso ajudar seu projeto."
+    primary: "Agendar Treinamento"
+    secondary: "Ver Ementa Completa"
+    link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---
