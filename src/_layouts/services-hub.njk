@@ -1,0 +1,36 @@
+{% extends "base" %}
+{% from 'schemas/schemas.njk' import orgSchema %}
+
+{% block head %}
+{{ orgSchema() }}
+{% endblock %}
+
+{% block main_class %}servicos-hub{% endblock %}
+
+{% block content %}
+<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
+  id="hero">
+  <div class="mx-auto max-md:px-6 max-w-7xl gap-12 grid items-center py-12">
+    <div>
+      <h1 class="font-bold mb-6 leading-tight text-5xl" id="hero-section">{{ title }}</h1>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="prose mx-auto py-12 max-w-7xl">
+  {{ content | safe }}
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+    {% for servico in services %}
+    <article class="rounded-2xl bg-gray-50 p-8 group hover:shadow-xl shadow-sm transition">
+      <h2>
+        <a href="{{ servico.url }}" class="text-gray-900 underline underline-offset-8 hover:no-underline">
+          {{ servico.title }}
+        </a>
+      </h2>
+      <p>{{ servico.description }}</p>
+    </article>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

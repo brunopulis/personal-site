@@ -13,7 +13,8 @@ layout: base
         {{ service.cta.primary }}
       </a>
       <a href="#detalhes" class="text-white underline underline-offset-8 hover:no-underline">
-        {{ service.cta.secondary }}
+        <<<<<<< HEAD {{ service.cta.secondary }}======={{ service.cta.secundaria }}>>>>>>>
+          e613b3b80a55533ca86f2cf31f92fbd7965163bb
       </a>
     </div>
   </div>
@@ -38,8 +39,11 @@ layout: base
 
         <ul class="list-disc space-y-4 py-3">
           {% for differential in service.differentials %}
-          <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
-          {% endfor %}
+          <<<<<<< HEAD <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
+            =======
+            <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
+            >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
+            {% endfor %}
         </ul>
       </div>
     </div>
@@ -53,11 +57,17 @@ layout: base
 
     <ul class="grid gap-6 md:grid-cols-2">
       {% for item in service.included %}
-      <li
+      <<<<<<< HEAD <li
         class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
         {{ item }}
-      </li>
-      {% endfor %}
+        </li>
+        =======
+        <li
+          class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
+          {{ item }}
+        </li>
+        >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
+        {% endfor %}
     </ul>
   </div>
 </section>
@@ -69,7 +79,7 @@ layout: base
 
     <div class="grid gap-6 md:grid-cols-2">
       {% for result in service.results %}
-      <div class="flex gap-4 items-start">
+      <<<<<<< HEAD <div class="flex gap-4 items-start">
         <div class="shrink-0 text-2xl">✓</div>
         <div>
           <h3 class="font-semibold text-gray-900">{{ result.title }}</h3>
@@ -77,9 +87,20 @@ layout: base
             {{ result.description }}
           </p>
         </div>
-      </div>
-      {% endfor %}
     </div>
+    =======
+    <div class="flex gap-4 items-start">
+      <div class="flex-shrink-0 text-2xl">✓</div>
+      <div>
+        <h3 class="font-semibold text-gray-900">{{ result.title }}</h3>
+        <p class="text-gray-600 text-sm">
+          {{ result.description }}
+        </p>
+      </div>
+    </div>
+    >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
+    {% endfor %}
+  </div>
   </div>
 </section>
 
@@ -90,11 +111,15 @@ layout: base
 
     <ul class="grid gap-6 md:grid-cols-2">
       {% for audience in service.target %}
-      <li
+      <<<<<<< HEAD <li
         class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
-        {{ audience }}
-      </li>
-      {% endfor %}
+        =======
+        <li
+          class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
+          >>>>>>> e613b3b80a55533ca86f2cf31f92fbd7965163bb
+          {{ audience }}
+        </li>
+        {% endfor %}
     </ul>
   </div>
 </section>
@@ -437,6 +462,5 @@ layout: base
   .btn-large {
     padding: 1rem 3rem;
     font-size: 1.1rem;
-
   }
 </style>
