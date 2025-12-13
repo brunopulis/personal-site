@@ -1,8 +1,8 @@
 ---
 title: Por todos os lugares
 pubDate: 2016-07-15
-categories: 'Teologia'
-url: https://brunopulis.com/por-todos-os-lugares/
+tags:
+  - Teologia
 ---
 
 A maldade tem suas faces conhecidas e desconhecidas.
