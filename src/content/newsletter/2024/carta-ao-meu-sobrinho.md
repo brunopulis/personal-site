@@ -1,7 +1,7 @@
 ---
 issue: '09'
 title: 'Carta ao meu sobrinho'
-date: '2024-01-07'
+pubDate: '2024-01-07'
 ---
 
 **Petrópolis, 06 de Janeiro de 2024.**

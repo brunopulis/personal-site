@@ -1,7 +1,7 @@
 ---
 issue: '13'
 title: 'Dos céus'
-date: '2024-01-18'
+pubDate: '2024-01-18'
 ---
 
 Belo Horizonte, 28 de Janeiro de 2024.

@@ -13,15 +13,13 @@ Meu conteúdo está disponível via _RSS_, _Microformats_, e-mail, _Bluesky_ e _
 
 ## Inscreva-se com um leitor de feeds
 
-Este blog suporta inscrições via _RSS_. Usando um leitor de feeds, você pode se inscrever no [RSS]({{ “/feed.xml” | url }}). Saiba mais sobre RSS em aboutfeeds.com.
+Este blog suporta inscrições via _RSS_. Usando um leitor de feeds, você pode se inscrever no [RSS]({{ "/feed.xml" | url }}). Saiba mais sobre RSS em aboutfeeds.com.
 
 Você pode se inscrever em vários feeds que organizei, eles são:
 
-- [Feed do Blog](/rss.xml)
-- [Feed de Notas curtas](/rss-notas.xml)
-- [Feed dos meus filmes favoritos](/rss-filmes.xml)
-- [Feed do meu blogroll](/rss-blogroll.xml)
-- [Feed da minha biblioteca](/rss-biblioteca.xml)
+- [Feed do Blog](/feed/blog.xml)
+- [Feed de Notas curtas](/feed/notas.xml)
+- [Feed da minha biblioteca](/feed/livros.xml)
 
 ## Inscrição por e-mail
 
@@ -38,4 +36,4 @@ Se você usa um serviço federado como o [Mastodon](https://joinmastodon.org/), 
 Todas as publicações deste site serão federadas à rede (via ActivityPub).
 Digite sua conta abaixo para ser redirecionado para a página de seguir do seu servidor.
 
-[Seguir no Fediverso](https://fed.brid.gy/remote-follow?domain=brunopulis.com&protocol=web")
+[Seguir no Fediverso](https://fed.brid.gy/remote-follow?domain=brunopulis.com&protocol=web)

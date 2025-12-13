@@ -3,25 +3,28 @@ layout: base
 schema: BlogPosting
 ---
 
-<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800" id="hero">
+<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
+  id="hero">
   <div class="mx-auto max-md:px-6 max-w-7xl gap-12 grid items-center py-12">
     <div>
       <h1 class="font-bold mb-6 leading-tight text-5xl" id="hero-section">{{ title }}</h1>
       <p>{{ description }}</p>
 
       <div class="text-sm font-medium items-center mt-6 flex flex-wrap gap-6 lg:text-base mb-6 text-blood-red-800">
-        {% set definedDate = date %} 
+        {% set definedDate = date %}
         {% include "partials/date.njk" %}
-        
+
         {% if tags.length > 1 %}
-          <p class="text-sm text-white font-bold">
-            Tags:
-            {% for tag in tags %}{% if tag != "posts" %}
-            <a class="text-sm text-white hover:underline hover:underline-offset-8" href="/tags/{{ tag | slugify }}/"> 
-              {{ tag }} 
-            </a>
-          </p>
-        {% endif %}{% endfor %}
+        <p class="text-sm text-white font-bold">
+          Tags:
+          {% for tag in tags %}
+          {% if tag != "posts" %}
+          <a class="text-sm text-white hover:underline hover:underline-offset-8" href="/tags/{{ tag | slugify }}/">
+            {{ tag }}
+          </a>
+          {% endif %}
+          {% endfor %}
+        </p>
         {% endif %}
       </div>
     </div>

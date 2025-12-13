@@ -1,7 +1,7 @@
 ---
 issue: '45'
 title: 'Vida vazia, saudade sua'
-date: '2024-12-12'
+pubDate: '2024-12-12'
 ---
 
 Olá,
