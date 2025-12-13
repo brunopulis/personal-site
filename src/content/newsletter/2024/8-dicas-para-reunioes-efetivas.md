@@ -1,7 +1,7 @@
 ---
 issue: '08'
 title: '8 dicas para reuniões efetivas'
-date: '2024-01-03'
+pubDate: '2024-01-03'
 ---
 
 3 de Janeiro de 2024

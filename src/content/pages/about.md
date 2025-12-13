@@ -76,13 +76,13 @@ Eu sou um leitor compulsivo. Eu leio de tudo, mas especialmente:
 - Biografias;
 - Produtividade;
 
-Dica: [Confira minha biblioteca](/biblioteca).
+Dica: [Confira minha biblioteca](/livros).
 
 Também sou apaixonado por filmes — especialmente ficção científica, dramas históricos e animações.
 
-Você pode ver meus [filmes favoritos](/filmes).
+Você pode ver meus [filmes favoritos](/media).
 
-Adoro música! Gosto de violão flamenco, instrumental, chorinho e clássico. Quer conhecer? Veja meus [músicos favoritos](/musicos).
+Adoro música! Gosto de violão flamenco, instrumental, chorinho e clássico.
 
 Confira no que [estou dedicado nesse momento](/agora).
 

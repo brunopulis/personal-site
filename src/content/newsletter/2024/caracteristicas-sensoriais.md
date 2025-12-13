@@ -1,7 +1,7 @@
 ---
 issue: '41'
 title: 'Teclados, celulares, interfones e acessibilidade'
-date: '2024-11-01'
+pubDate: '2024-11-01'
 ---
 
 Olá pessoal,

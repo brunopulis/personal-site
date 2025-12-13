@@ -27,7 +27,7 @@ Este site foi projetado com foco em simplicidade, performance e acessibilidade.
 - **Testes:** Validado com Axe DevTools, NVDA e Lighthouse.
 - **Performance:** Sem scripts de rastreamento ou bloatware.
 
-[Colophon](<https://en.wikipedia.org/wiki/Colophon_(publishing)>) é um termo editorial normalmente utilizado para descrever o processo de publicação, mas que foi alargado aos sites da Internet.
+[Colophon](https://en.wikipedia.org/wiki/Colophon_(publishing)>) é um termo editorial normalmente utilizado para descrever o processo de publicação, mas que foi alargado aos sites da Internet.
 
 Esta página foi inspirada por [Binyamin Aron Green](https://binyam.in) e [Eric Bailey](https://ericwbailey.website/).
 
