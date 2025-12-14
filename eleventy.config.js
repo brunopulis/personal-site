@@ -100,6 +100,7 @@ export default async function eleventy(eleventyConfig) {
 
   //  Passthrough File Copy
   [
+    'admin',
     'src/humans.txt',
     'src/assets',
     'src/assets/css',
