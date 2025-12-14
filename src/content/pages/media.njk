@@ -6,7 +6,7 @@ permalink: "/media/index.html"
 ---
 
 
-{% set moviesByYear = collections.media | groupBy("attendedYear") %}
+{% set moviesByYear = collections.medias | groupBy("attendedYear") %}
       
 {% for year in moviesByYear | sortKeys %}
   <section class="mb-12 year-section" data-year="{{ year }}">
@@ -16,7 +16,7 @@ permalink: "/media/index.html"
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-      {% for movie in moviesByYear[year] | sort(attribute="data.date") %}
+      {% for movie in moviesByYear[year] | reverse %}
         <article class="movie-card group cursor-pointer" data-status="{{ movie.data.status }}">
           <div class="relative overflow-hidden rounded-lg mb-4">
             <img 
