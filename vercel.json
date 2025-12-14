@@ -1,8 +1,12 @@
 {
   "buildCommand": "pnpm run tinacms:build",
-  "installCommand": "pnpm install",
-  "devCommand": "pnpm run tinacms:dev",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "devCommand": "pnpm run dev",
   "outputDirectory": "_site",
+  "crons": [{
+    "path": "/api/revalidate",
+    "schedule": "0 0 * * *"
+  }],
   "headers": [
     {
       "source": "/(.*)",

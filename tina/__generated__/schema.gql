@@ -74,8 +74,8 @@ type Query {
   streamConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: StreamFilter): StreamConnection!
   talk(relativePath: String): Talk!
   talkConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: TalkFilter): TalkConnection!
-  gallery(relativePath: String): Gallery!
-  galleryConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: GalleryFilter): GalleryConnection!
+  photos(relativePath: String): Photos!
+  photosConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PhotosFilter): PhotosConnection!
 }
 
 input DocumentFilter {
@@ -89,7 +89,7 @@ input DocumentFilter {
   bookmark: BookmarkFilter
   stream: StreamFilter
   talk: TalkFilter
-  gallery: GalleryFilter
+  photos: PhotosFilter
 }
 
 type DocumentConnectionEdges {
@@ -115,7 +115,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post | Page | Service | Note | Book | Newsletter | Media | Bookmark | Stream | Talk | Gallery | Folder
+union DocumentNode = Post | Page | Service | Note | Book | Newsletter | Media | Bookmark | Stream | Talk | Photos | Folder
 
 type PostSeo {
   meta_title: String
@@ -600,7 +600,7 @@ type TalkConnection implements Connection {
   edges: [TalkConnectionEdges]
 }
 
-type Gallery implements Node & Document {
+type Photos implements Node & Document {
   title: String!
   date: String
   image: String
@@ -610,22 +610,22 @@ type Gallery implements Node & Document {
   _values: JSON!
 }
 
-input GalleryFilter {
+input PhotosFilter {
   title: StringFilter
   date: DatetimeFilter
   image: ImageFilter
   body: RichTextFilter
 }
 
-type GalleryConnectionEdges {
+type PhotosConnectionEdges {
   cursor: String!
-  node: Gallery
+  node: Photos
 }
 
-type GalleryConnection implements Connection {
+type PhotosConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [GalleryConnectionEdges]
+  edges: [PhotosConnectionEdges]
 }
 
 type Mutation {
@@ -654,8 +654,8 @@ type Mutation {
   createStream(relativePath: String!, params: StreamMutation!): Stream!
   updateTalk(relativePath: String!, params: TalkMutation!): Talk!
   createTalk(relativePath: String!, params: TalkMutation!): Talk!
-  updateGallery(relativePath: String!, params: GalleryMutation!): Gallery!
-  createGallery(relativePath: String!, params: GalleryMutation!): Gallery!
+  updatePhotos(relativePath: String!, params: PhotosMutation!): Photos!
+  createPhotos(relativePath: String!, params: PhotosMutation!): Photos!
 }
 
 input DocumentUpdateMutation {
@@ -669,7 +669,7 @@ input DocumentUpdateMutation {
   bookmark: BookmarkMutation
   stream: StreamMutation
   talk: TalkMutation
-  gallery: GalleryMutation
+  photos: PhotosMutation
   relativePath: String
 }
 
@@ -684,7 +684,7 @@ input DocumentMutation {
   bookmark: BookmarkMutation
   stream: StreamMutation
   talk: TalkMutation
-  gallery: GalleryMutation
+  photos: PhotosMutation
 }
 
 input PostSeoMutation {
@@ -837,7 +837,7 @@ input TalkMutation {
   body: JSON
 }
 
-input GalleryMutation {
+input PhotosMutation {
   title: String
   date: String
   image: String
