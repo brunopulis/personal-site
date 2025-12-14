@@ -151,7 +151,7 @@ fragment TalkParts on Talk {
   body
 }
 
-fragment GalleryParts on Gallery {
+fragment PhotosParts on Photos {
   __typename
   title
   date

@@ -10,9 +10,8 @@ import {MediaCollection} from './collections/media';
 import {BookmarkCollection} from './collections/bookmark';
 import {StreamCollection} from './collections/stream';
 import {TalkCollection} from './collections/talk';
-import {GalleryCollection} from './collections/gallery';
+import {PhotosCollection} from './collections/photos';
 
-// Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
 
 export default defineConfig({
@@ -41,7 +40,7 @@ export default defineConfig({
       BookmarkCollection,
       StreamCollection,
       TalkCollection,
-      GalleryCollection
+      PhotosCollection
     ]
   },
   search: {

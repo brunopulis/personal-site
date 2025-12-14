@@ -825,11 +825,11 @@ var TalkCollection = {
   ]
 };
 
-// tina/collections/gallery.ts
-var GalleryCollection = {
-  name: "gallery",
-  label: "Galeria",
-  path: "src/content/gallery",
+// tina/collections/photos.ts
+var PhotosCollection = {
+  name: "photos",
+  label: "Galeria de Fotos",
+  path: "src/content/photos",
   format: "md",
   match: {
     include: "**/*"
@@ -892,7 +892,7 @@ var config_default = defineConfig({
       BookmarkCollection,
       StreamCollection,
       TalkCollection,
-      GalleryCollection
+      PhotosCollection
     ]
   },
   search: {
