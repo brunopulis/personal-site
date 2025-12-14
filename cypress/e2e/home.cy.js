@@ -1,10 +1,12 @@
 describe('Testes de Acessibilidade - Home', () => {
-  
   beforeEach(() => {
     cy.visit('/');
     cy.injectAxe();
   });
 
+  it('should be a title element', () => {
+    cy.title();
+  })
   it('não deve ter violações de acessibilidade na página inicial', () => {
     cy.checkA11y();
   });

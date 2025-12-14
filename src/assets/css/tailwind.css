@@ -79,7 +79,6 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-blood-red-50: #ffd9b6;
-    --color-blood-red-100: #ffb499;
     --color-blood-red-300: #c1694e;
     --color-blood-red-600: #802613;
     --color-blood-red-800: #610404;
@@ -877,9 +876,6 @@
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
-  .bg-gray-800 {
-    background-color: var(--color-gray-800);
-  }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
   }
@@ -1194,14 +1190,8 @@
   .text-blue-400 {
     color: var(--color-blue-400);
   }
-  .text-gray-200 {
-    color: var(--color-gray-200);
-  }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
+  .text-blue-600 {
+    color: var(--color-blue-600);
   }
   .text-gray-500 {
     color: var(--color-gray-500);
@@ -1329,17 +1319,17 @@
       }
     }
   }
-  .hover\:border-gray-600 {
+  .hover\:border-gray-300 {
     &:hover {
       @media (hover: hover) {
-        border-color: var(--color-blood-red-800);
+        border-color: var(--color-gray-300);
       }
     }
   }
-  .hover\:bg-white {
+  .hover\:bg-blood-red-50 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-white);
+        background-color: var(--color-blood-red-50);
       }
     }
   }
@@ -1361,13 +1351,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-white);
-  .hover\:bg-white\/10 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, #fff 10%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-        }
       }
     }
   }
@@ -1382,13 +1365,6 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-blood-red-900);
-      }
-    }
-  }
-  .hover\:text-blue-400 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-400);
       }
     }
   }

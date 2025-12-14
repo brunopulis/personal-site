@@ -1,6 +1,14 @@
+# Hidden files
+.pnpm-store
+.jest/cache
+.cache
+.env
+.idea/
+.vscode/
+.DS_Store
+
 # Node modules
 node_modules/
-.pnpm-store/
 pnpm-debug.log
 
 # Cypress
@@ -9,25 +17,11 @@ cypress/videos
 cypress/downloads
 
 # Jest
-.jest/cache
-coverage/
 __snapshots__/
+coverage/
 
 # generated files
 dist
 docs/
-utils/
-old/
 src/_includes/css
 src/_includes/scripts
-
-# cache
-.cache
-
-# secret data
-.env
-
-# IDE
-.idea/
-.vscode/
-.DS_Store
