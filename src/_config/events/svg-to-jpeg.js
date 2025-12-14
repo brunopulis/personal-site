@@ -5,10 +5,10 @@ import Image from '@11ty/eleventy-img';
 const ogImagesDir = './src/assets/og-images';
 
 export const svgToJpeg = async () => {
-  const socialPreviewImagesDir = 'dist/assets/og-images/';
+  const socialPreviewImagesDir = '_site/assets/og-images/';
 
   if (!existsSync(socialPreviewImagesDir)) {
-    console.log('⚠ No OG images dir found');
+    console.log('Nenhum diretório de OG imagens encontrado');
     return;
   }
 
@@ -28,6 +28,6 @@ export const svgToJpeg = async () => {
       }
     });
   } else {
-    console.log('⚠ No images found on OG images dir');
+    console.log('Nenhuma imagem encontrada no diretório de imagens OG.');
   }
 };

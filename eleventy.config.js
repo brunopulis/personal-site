@@ -120,11 +120,6 @@ export default async function eleventy(eleventyConfig) {
   //  Build Settings
   eleventyConfig.setDataDeepMerge(true);
 
-  // -  ignore test files
-  if (process.env.ELEVENTY_ENV != 'test') {
-    eleventyConfig.ignores.add('src/common/pa11y.njk');
-  }
-
   //  general config
   return {
     dir: {
