@@ -1,8 +1,12 @@
 {
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --frozen-lockfile",
-  "devCommand": "pnpm run dev",
+  "buildCommand": "pnpm run tina:build",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm run tina:devDependencies",
   "outputDirectory": "_site",
+  "env": {
+    "NEXT_PUBLIC_TINA_CLIENT_ID": "@next_public_tina_client_id", 
+    "TINA_TOKEN": "@tina_token"
+  },
   "headers": [
     {
       "source": "/(.*)",
@@ -26,10 +30,15 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
-        },
+        }
+      ]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [
         {
-          "key": "Permissions-Policy",
-          "value": "autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()"
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
