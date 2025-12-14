@@ -825,6 +825,45 @@ var TalkCollection = {
   ]
 };
 
+// tina/collections/gallery.ts
+var GalleryCollection = {
+  name: "photos",
+  label: "Galeria de Fotos",
+  path: "src/content/photos",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      isTitle: true,
+      required: true
+    },
+    {
+      type: "datetime",
+      name: "date",
+      label: "Data",
+      ui: {
+        dateFormat: "DD/MM/YYYY"
+      }
+    },
+    {
+      type: "image",
+      name: "image",
+      label: "Imagem"
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
 // tina/config.ts
 var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 var config_default = defineConfig({
@@ -852,7 +891,8 @@ var config_default = defineConfig({
       MediaCollection,
       BookmarkCollection,
       StreamCollection,
-      TalkCollection
+      TalkCollection,
+      GalleryCollection
     ]
   },
   search: {

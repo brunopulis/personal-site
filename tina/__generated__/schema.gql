@@ -74,6 +74,8 @@ type Query {
   streamConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: StreamFilter): StreamConnection!
   talk(relativePath: String): Talk!
   talkConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: TalkFilter): TalkConnection!
+  photos(relativePath: String): Photos!
+  photosConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PhotosFilter): PhotosConnection!
 }
 
 input DocumentFilter {
@@ -87,6 +89,7 @@ input DocumentFilter {
   bookmark: BookmarkFilter
   stream: StreamFilter
   talk: TalkFilter
+  photos: PhotosFilter
 }
 
 type DocumentConnectionEdges {
@@ -112,7 +115,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post | Page | Service | Note | Book | Newsletter | Media | Bookmark | Stream | Talk | Folder
+union DocumentNode = Post | Page | Service | Note | Book | Newsletter | Media | Bookmark | Stream | Talk | Photos | Folder
 
 type PostSeo {
   meta_title: String
@@ -597,6 +600,34 @@ type TalkConnection implements Connection {
   edges: [TalkConnectionEdges]
 }
 
+type Photos implements Node & Document {
+  title: String!
+  date: String
+  image: String
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input PhotosFilter {
+  title: StringFilter
+  date: DatetimeFilter
+  image: ImageFilter
+  body: RichTextFilter
+}
+
+type PhotosConnectionEdges {
+  cursor: String!
+  node: Photos
+}
+
+type PhotosConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PhotosConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -623,6 +654,8 @@ type Mutation {
   createStream(relativePath: String!, params: StreamMutation!): Stream!
   updateTalk(relativePath: String!, params: TalkMutation!): Talk!
   createTalk(relativePath: String!, params: TalkMutation!): Talk!
+  updatePhotos(relativePath: String!, params: PhotosMutation!): Photos!
+  createPhotos(relativePath: String!, params: PhotosMutation!): Photos!
 }
 
 input DocumentUpdateMutation {
@@ -636,6 +669,7 @@ input DocumentUpdateMutation {
   bookmark: BookmarkMutation
   stream: StreamMutation
   talk: TalkMutation
+  photos: PhotosMutation
   relativePath: String
 }
 
@@ -650,6 +684,7 @@ input DocumentMutation {
   bookmark: BookmarkMutation
   stream: StreamMutation
   talk: TalkMutation
+  photos: PhotosMutation
 }
 
 input PostSeoMutation {
@@ -799,6 +834,13 @@ input StreamMutation {
 input TalkMutation {
   title: String
   date: String
+  body: JSON
+}
+
+input PhotosMutation {
+  title: String
+  date: String
+  image: String
   body: JSON
 }
 
