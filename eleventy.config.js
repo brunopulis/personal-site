@@ -3,12 +3,10 @@ dotenv.config();
 
 import yaml from 'js-yaml';
 
-//  config import
 import * as collections from './src/_config/collections.js';
 import * as customFilters from './src/_config/filters.js';
 import events from './src/_config/events.js';
 import plugins from './src/_config/plugins.js';
-import brokenLinksPlugin from 'eleventy-plugin-broken-links';
 import {badge, image, imageKeys} from './src/_config/shortcodes/image.js';
 import {svg} from './src/_config/shortcodes/svg.js';
 
@@ -28,7 +26,7 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addCollection('notes', collections.notes);
   eleventyConfig.addCollection('books', collections.books);
   eleventyConfig.addCollection('letters', collections.newsletters);
-  eleventyConfig.addCollection('media', collections.media);
+  eleventyConfig.addCollection('medias', collections.medias);
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
   eleventyConfig.addCollection('streams', collections.streams);
 
@@ -40,7 +38,6 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addPlugin(plugins.drafts);
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
   eleventyConfig.addPlugin(plugins.rss);
-  eleventyConfig.addPlugin(brokenLinksPlugin);
   eleventyConfig.addPlugin(plugins.syntaxHighlight);
   eleventyConfig.addPlugin(plugins.webc, {
     components: ['./src/_includes/webc/*.webc'],

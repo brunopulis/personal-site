@@ -3,7 +3,7 @@ import type {Collection} from 'tinacms';
 export const NoteCollection: Collection = {
   name: 'note',
   label: 'Notas',
-  path: 'src/content/notas',
+  path: 'src/content/notes',
   format: 'md',
   match: {
     include: '**/*'
