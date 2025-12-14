@@ -1,6 +1,6 @@
 import type {Collection} from 'tinacms';
 
-export const PhotosCollection: Collection = {
+export const GalleryCollection: Collection = {
   name: 'photos',
   label: 'Galeria de Fotos',
   path: 'src/content/photos',
