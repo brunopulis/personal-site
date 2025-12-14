@@ -77,6 +77,17 @@ export const streams = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
+export const games = collectionApi => {
+  return collectionApi
+    .getFilteredByGlob('./src/content/games/**/*.md')
+    .reverse();
+};
+
+/**
+ *
+ * @param {*} collectionApi
+ * @returns
+ */
 export const music = collectionApi => {
   return collectionApi
     .getFilteredByGlob('./src/content/music/**/*.md')
@@ -105,7 +116,7 @@ export const tagList = collection => {
       let tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'newsletters', 'notes', 'media', 'music'].includes(tag)) {
+        if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'].includes(tag)) {
           tagSet.add(tag);
         }
       }
@@ -125,6 +136,7 @@ export default {
   notes,
   medias,
   music,
+  games,
   tagList,
   gallery
 };
