@@ -2,7 +2,7 @@
 export default {
   testEnvironment: 'node',
   roots: ['<rootDir>/src/_config'],
-  testMatch: ['**/__tests__/**/*.test.js', '**/*.test.js'],
+  testMatch: ['**/tests/**/*.test.js', '**/*.test.js'],
   collectCoverageFrom: [
     'src/_config/**/*.js',
     '!src/_config/**/*.njk',

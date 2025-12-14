@@ -43,5 +43,13 @@ export default defineConfig({
       TalkCollection,
       GalleryCollection
     ]
+  },
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_SEARCH,
+      stopwordLanguages: ['por'],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100
   }
 });

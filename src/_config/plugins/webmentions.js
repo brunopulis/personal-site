@@ -33,7 +33,7 @@ async function fetchWebmentions(url) {
 
     return response.children || [];
   } catch (error) {
-    console.error(`❌ Erro ao buscar webmentions para ${url}:`, error.message);
+    console.error(`Erro ao buscar webmentions para ${url}:`, error.message);
     return [];
   }
 }
@@ -98,7 +98,7 @@ function formatDate(dateObj) {
       minute: '2-digit'
     });
   } catch (error) {
-    console.log('❌ Erro ao formatar data:', dateObj);
+    console.log('Erro ao formatar data:', dateObj);
     return '';
   }
 }
@@ -119,40 +119,30 @@ function truncateText(text, length = 300) {
  * @param {object} eleventyConfig - Configuração do 11ty
  */
 function webmentions(eleventyConfig) {
-  console.log('🔧 Registrando filtros de webmentions...');
+  console.log('Registrando filtros de webmentions...');
 
   // Filtro assíncrono para buscar webmentions
   eleventyConfig.addNunjucksAsyncFilter('webmentions', async (url, callback) => {
     try {
       console.log('📡 Buscando webmentions para:', url);
       const result = await fetchWebmentions(url);
-      console.log('✅ Webmentions encontrados:', result.length);
+      console.log('Webmentions encontrados:', result.length);
       callback(null, result);
     } catch (error) {
-      console.error('❌ Erro no filtro webmentions:', error);
+      console.error('Erro no filtro webmentions:', error);
       callback(null, []); // Retorna array vazio em caso de erro para não quebrar o build
     }
   });
 
-  // Filtro para filtrar por tipo
   eleventyConfig.addFilter('filterByType', filterByType);
-
-  // Filtro para contar webmentions
   eleventyConfig.addFilter('countMentions', countMentions);
-
-  // Filtro para obter autores únicos
   eleventyConfig.addFilter('uniqueAuthors', getUniqueAuthors);
-
-  // Filtro para formatar data
   eleventyConfig.addFilter('readableDate', formatDate);
-
-  // Filtro para truncar texto
   eleventyConfig.addFilter('truncate', truncateText);
 
-  console.log('✅ Plugin de Webmentions carregado com sucesso');
+  console.log('Plugin de Webmentions carregado com sucesso');
 }
 
-// Exportar como named exports
 export {
   webmentions,
   fetchWebmentions,

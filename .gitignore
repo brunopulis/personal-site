@@ -23,6 +23,7 @@ __snapshots__/
 coverage/
 
 # generated files
+admin/
 dist/
 docs/
 _site/
