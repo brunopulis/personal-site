@@ -5,52 +5,110 @@ permalink: "/jogos/index.html"
 description: "Coleção dos meus jogos favoritos"
 ---
 
-
-{% set booksByYear = collections.books | groupBy("attendedYear") %}
+<div class="games-grid">
+  {% for game in games %}
+  <article class="game-card">
+    <img src="{{ game.coverImage }}" alt="" loading="lazy">
+    
+    <div class="game-content">
+      <h2>{{ game.title }}</h2>
       
-{% for year in booksByYear | sortKeys %}
-  <section class="mb-12 year-section" data-year="{{ year }}">
-    <div class="space-y-6">
-      <h2 class="font-bold text-2xl text-blood-red-800">Lidos em {{ year }}</h2>
-      <p class="text-sm">{{ booksByYear[year] | length }} livro(s)</p>
-    </div>
-    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-      {% for book in booksByYear[year] | sort(attribute="data.date") %}
-        <article class="bg-white border border-gray-100 hover:shadow-md overflow-hidden rounded-xl shadow-sm transition">
-          <img 
-            src="{{ book.data.cover }}" 
-            alt="{{ book.data.title }}"
-            class="w-48 h-48 object-cover w-full "
-            loading="lazy"
-            decoding="async"
-          />
-
-          <h3 class="font-semibold mb-1 text-xl">
-            <a href="{{ book.data.url }}">
-              {{ book.data.title }}
-            </a>
-          </h3>
-          {% if book.data.subtitle %}
-            <p>{{ book.data.title }}</p>
-          {% endif %}
-          <p>Autor: {{ book.data.author }}</li>
-          <p class="text-sm mb-4 text-gray-700">{{ book.data.description }}</p>
-          {% if book.data.review %}
-            <p>{{ book.data.review }}</p>
-          {% endif %}  
-        </article>
-      {% endfor %}
-    </div>
-    <hr class="border-gray-700 mb-12" />
-  </section>
-  {% endfor %}
-
-  {% if collections.media.length === 0 %}
-    <div class="flex items-center justify-center h-96">
-      <div class="text-center text-gray-500">
-        <p class="text-xl mb-2">Nenhum filme por enquanto</p>
-        <p class="text-sm">Comece a adicionar seus filmes favoritos!</p>
+      <div class="game-meta">
+        <span class="rating">⭐ {{ game.rating }}/5</span>
+        {% if game.metacritic %}
+        <span class="metacritic">Metacritic: {{ game.metacritic }}</span>
+        {% endif %}
+        <span class="release-date">{{ game.releaseDate | formatDate }}</span>
       </div>
+      
+      <div class="genres">
+        {% for genre in game.genres %}
+        <span class="genre-tag">{{ genre }}</span>
+        {% endfor %}
+      </div>
+      
+      <p class="description">{{ game.description | truncate(200) }}</p>
+      
+      <div class="platforms">
+        <strong>Plataformas:</strong>
+        {{ game.platforms | join(', ') }}
+      </div>
+      
+      {% if game.website %}
+      <a href="{{ game.website }}" class="game-link" target="_blank">
+        Site Oficial →
+      </a>
+      {% endif %}
     </div>
-  {% endif %}
+  </article>
+  {% endfor %}
 </div>
+
+<style>
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .game-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .game-content {
+    padding: 1.5rem;
+  }
+  
+  .game-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .genre-tag {
+    background: #e0e0e0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .description {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .platforms {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .game-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0066cc;
+    text-decoration: none;
+  }
+</style>
