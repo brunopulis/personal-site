@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm run tina:build",
+  "buildCommand": "pnpm run tinacms:build",
   "installCommand": "pnpm install",
-  "devCommand": "pnpm run tina:devDependencies",
+  "devCommand": "pnpm run tinacms:dev",
   "outputDirectory": "_site",
   "env": {
     "NEXT_PUBLIC_TINA_CLIENT_ID": "@next_public_tina_client_id", 
