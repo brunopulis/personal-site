@@ -4,7 +4,8 @@
 .cache
 .env
 .env.local
-.tina/__generated__/
+.tina/
+/tina/__generated__/
 .idea/
 .vscode/
 .DS_Store
@@ -29,6 +30,3 @@ docs/
 _site/
 src/_includes/css
 src/_includes/scripts
-
-
-
