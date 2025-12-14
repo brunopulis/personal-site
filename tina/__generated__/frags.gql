@@ -150,11 +150,3 @@ fragment TalkParts on Talk {
   date
   body
 }
-
-fragment PhotosParts on Photos {
-  __typename
-  title
-  date
-  image
-  body
-}

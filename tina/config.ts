@@ -10,13 +10,13 @@ import {MediaCollection} from './collections/media';
 import {BookmarkCollection} from './collections/bookmark';
 import {StreamCollection} from './collections/stream';
 import {TalkCollection} from './collections/talk';
-import {PhotosCollection} from './collections/photos';
+import {GalleryCollection} from './collections/gallery';
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
 
 export default defineConfig({
   branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  clientId: process.env.TINA_CLIENT_ID,
   token: process.env.TINA_TOKEN,
   build: {
     outputFolder: 'admin',
@@ -40,7 +40,7 @@ export default defineConfig({
       BookmarkCollection,
       StreamCollection,
       TalkCollection,
-      PhotosCollection
+      GalleryCollection
     ]
   },
   search: {
