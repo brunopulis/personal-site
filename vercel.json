@@ -3,6 +3,10 @@
   "installCommand": "pnpm install",
   "devCommand": "pnpm run tina:devDependencies",
   "outputDirectory": "_site",
+  "env": {
+    "NEXT_PUBLIC_TINA_CLIENT_ID": "@next_public_tina_client_id", 
+    "TINA_TOKEN": "@tina_token"
+  },
   "headers": [
     {
       "source": "/(.*)",
