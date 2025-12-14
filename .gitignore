@@ -4,15 +4,13 @@
 .cache
 .env
 .env.local
-.tina/
-/tina/__generated__/
 .idea/
 .vscode/
 .DS_Store
 
 # Node modules
 node_modules/
-pnpm-debug.log
+pnpm-debug.log*
 
 # Cypress
 cypress/screenshots
@@ -24,9 +22,11 @@ __snapshots__/
 coverage/
 
 # generated files
-admin/
 dist/
 docs/
 _site/
 src/_includes/css
 src/_includes/scripts
+
+# Vercel
+.vercel/
