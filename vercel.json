@@ -1,4 +1,8 @@
 {
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "devCommand": "pnpm run dev",
+  "outputDirectory": "_site",
   "headers": [
     {
       "source": "/(.*)",
@@ -28,10 +32,28 @@
           "value": "autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()"
         }
       ]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --frozen-lockfile",
-  "devCommand": "pnpm run dev",
-  "outputDirectory": "dist"
+  "rewrites": [
+    {
+      "source": "/admin/(.*)",
+      "destination": "/admin/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "/admin/",
+      "permanent": false
+    }
+  ]
 }
