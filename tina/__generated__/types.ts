@@ -102,8 +102,8 @@ export type Query = {
   streamConnection: StreamConnection;
   talk: Talk;
   talkConnection: TalkConnection;
-  gallery: Gallery;
-  galleryConnection: GalleryConnection;
+  photos: Photos;
+  photosConnection: PhotosConnection;
 };
 
 
@@ -278,18 +278,18 @@ export type QueryTalkConnectionArgs = {
 };
 
 
-export type QueryGalleryArgs = {
+export type QueryPhotosArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-export type QueryGalleryConnectionArgs = {
+export type QueryPhotosConnectionArgs = {
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<GalleryFilter>;
+  filter?: InputMaybe<PhotosFilter>;
 };
 
 export type DocumentFilter = {
@@ -303,7 +303,7 @@ export type DocumentFilter = {
   bookmark?: InputMaybe<BookmarkFilter>;
   stream?: InputMaybe<StreamFilter>;
   talk?: InputMaybe<TalkFilter>;
-  gallery?: InputMaybe<GalleryFilter>;
+  photos?: InputMaybe<PhotosFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -343,7 +343,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Post | Page | Service | Note | Book | Newsletter | Media | Bookmark | Stream | Talk | Gallery | Folder;
+export type DocumentNode = Post | Page | Service | Note | Book | Newsletter | Media | Bookmark | Stream | Talk | Photos | Folder;
 
 export type PostSeo = {
   __typename?: 'PostSeo';
@@ -865,8 +865,8 @@ export type TalkConnection = Connection & {
   edges?: Maybe<Array<Maybe<TalkConnectionEdges>>>;
 };
 
-export type Gallery = Node & Document & {
-  __typename?: 'Gallery';
+export type Photos = Node & Document & {
+  __typename?: 'Photos';
   title: Scalars['String']['output'];
   date?: Maybe<Scalars['String']['output']>;
   image?: Maybe<Scalars['String']['output']>;
@@ -876,24 +876,24 @@ export type Gallery = Node & Document & {
   _values: Scalars['JSON']['output'];
 };
 
-export type GalleryFilter = {
+export type PhotosFilter = {
   title?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
   image?: InputMaybe<ImageFilter>;
   body?: InputMaybe<RichTextFilter>;
 };
 
-export type GalleryConnectionEdges = {
-  __typename?: 'GalleryConnectionEdges';
+export type PhotosConnectionEdges = {
+  __typename?: 'PhotosConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<Gallery>;
+  node?: Maybe<Photos>;
 };
 
-export type GalleryConnection = Connection & {
-  __typename?: 'GalleryConnection';
+export type PhotosConnection = Connection & {
+  __typename?: 'PhotosConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<GalleryConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<PhotosConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -923,8 +923,8 @@ export type Mutation = {
   createStream: Stream;
   updateTalk: Talk;
   createTalk: Talk;
-  updateGallery: Gallery;
-  createGallery: Gallery;
+  updatePhotos: Photos;
+  createPhotos: Photos;
 };
 
 
@@ -1081,15 +1081,15 @@ export type MutationCreateTalkArgs = {
 };
 
 
-export type MutationUpdateGalleryArgs = {
+export type MutationUpdatePhotosArgs = {
   relativePath: Scalars['String']['input'];
-  params: GalleryMutation;
+  params: PhotosMutation;
 };
 
 
-export type MutationCreateGalleryArgs = {
+export type MutationCreatePhotosArgs = {
   relativePath: Scalars['String']['input'];
-  params: GalleryMutation;
+  params: PhotosMutation;
 };
 
 export type DocumentUpdateMutation = {
@@ -1103,7 +1103,7 @@ export type DocumentUpdateMutation = {
   bookmark?: InputMaybe<BookmarkMutation>;
   stream?: InputMaybe<StreamMutation>;
   talk?: InputMaybe<TalkMutation>;
-  gallery?: InputMaybe<GalleryMutation>;
+  photos?: InputMaybe<PhotosMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1118,7 +1118,7 @@ export type DocumentMutation = {
   bookmark?: InputMaybe<BookmarkMutation>;
   stream?: InputMaybe<StreamMutation>;
   talk?: InputMaybe<TalkMutation>;
-  gallery?: InputMaybe<GalleryMutation>;
+  photos?: InputMaybe<PhotosMutation>;
 };
 
 export type PostSeoMutation = {
@@ -1271,7 +1271,7 @@ export type TalkMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type GalleryMutation = {
+export type PhotosMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
@@ -1298,7 +1298,7 @@ export type StreamPartsFragment = { __typename: 'Stream', title: string, type?: 
 
 export type TalkPartsFragment = { __typename: 'Talk', title: string, date?: string | null, body?: any | null };
 
-export type GalleryPartsFragment = { __typename: 'Gallery', title: string, date?: string | null, image?: string | null, body?: any | null };
+export type PhotosPartsFragment = { __typename: 'Photos', title: string, date?: string | null, image?: string | null, body?: any | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1490,24 +1490,24 @@ export type TalkConnectionQueryVariables = Exact<{
 
 export type TalkConnectionQuery = { __typename?: 'Query', talkConnection: { __typename?: 'TalkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'TalkConnectionEdges', cursor: string, node?: { __typename: 'Talk', id: string, title: string, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
-export type GalleryQueryVariables = Exact<{
+export type PhotosQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type GalleryQuery = { __typename?: 'Query', gallery: { __typename: 'Gallery', id: string, title: string, date?: string | null, image?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PhotosQuery = { __typename?: 'Query', photos: { __typename: 'Photos', id: string, title: string, date?: string | null, image?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
-export type GalleryConnectionQueryVariables = Exact<{
+export type PhotosConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<GalleryFilter>;
+  filter?: InputMaybe<PhotosFilter>;
 }>;
 
 
-export type GalleryConnectionQuery = { __typename?: 'Query', galleryConnection: { __typename?: 'GalleryConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'GalleryConnectionEdges', cursor: string, node?: { __typename: 'Gallery', id: string, title: string, date?: string | null, image?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PhotosConnectionQuery = { __typename?: 'Query', photosConnection: { __typename?: 'PhotosConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PhotosConnectionEdges', cursor: string, node?: { __typename: 'Photos', id: string, title: string, date?: string | null, image?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
@@ -1672,8 +1672,8 @@ export const TalkPartsFragmentDoc = gql`
   body
 }
     `;
-export const GalleryPartsFragmentDoc = gql`
-    fragment GalleryParts on Gallery {
+export const PhotosPartsFragmentDoc = gql`
+    fragment PhotosParts on Photos {
   __typename
   title
   date
@@ -2251,9 +2251,9 @@ export const TalkConnectionDocument = gql`
   }
 }
     ${TalkPartsFragmentDoc}`;
-export const GalleryDocument = gql`
-    query gallery($relativePath: String!) {
-  gallery(relativePath: $relativePath) {
+export const PhotosDocument = gql`
+    query photos($relativePath: String!) {
+  photos(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -2266,13 +2266,13 @@ export const GalleryDocument = gql`
       }
       id
     }
-    ...GalleryParts
+    ...PhotosParts
   }
 }
-    ${GalleryPartsFragmentDoc}`;
-export const GalleryConnectionDocument = gql`
-    query galleryConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: GalleryFilter) {
-  galleryConnection(
+    ${PhotosPartsFragmentDoc}`;
+export const PhotosConnectionDocument = gql`
+    query photosConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PhotosFilter) {
+  photosConnection(
     before: $before
     after: $after
     first: $first
@@ -2302,12 +2302,12 @@ export const GalleryConnectionDocument = gql`
           }
           id
         }
-        ...GalleryParts
+        ...PhotosParts
       }
     }
   }
 }
-    ${GalleryPartsFragmentDoc}`;
+    ${PhotosPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -2371,11 +2371,11 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     talkConnection(variables?: TalkConnectionQueryVariables, options?: C): Promise<{data: TalkConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: TalkConnectionQueryVariables, query: string}> {
         return requester<{data: TalkConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: TalkConnectionQueryVariables, query: string}, TalkConnectionQueryVariables>(TalkConnectionDocument, variables, options);
       },
-    gallery(variables: GalleryQueryVariables, options?: C): Promise<{data: GalleryQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GalleryQueryVariables, query: string}> {
-        return requester<{data: GalleryQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GalleryQueryVariables, query: string}, GalleryQueryVariables>(GalleryDocument, variables, options);
+    photos(variables: PhotosQueryVariables, options?: C): Promise<{data: PhotosQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PhotosQueryVariables, query: string}> {
+        return requester<{data: PhotosQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PhotosQueryVariables, query: string}, PhotosQueryVariables>(PhotosDocument, variables, options);
       },
-    galleryConnection(variables?: GalleryConnectionQueryVariables, options?: C): Promise<{data: GalleryConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GalleryConnectionQueryVariables, query: string}> {
-        return requester<{data: GalleryConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GalleryConnectionQueryVariables, query: string}, GalleryConnectionQueryVariables>(GalleryConnectionDocument, variables, options);
+    photosConnection(variables?: PhotosConnectionQueryVariables, options?: C): Promise<{data: PhotosConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PhotosConnectionQueryVariables, query: string}> {
+        return requester<{data: PhotosConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PhotosConnectionQueryVariables, query: string}, PhotosConnectionQueryVariables>(PhotosConnectionDocument, variables, options);
       }
     };
   }

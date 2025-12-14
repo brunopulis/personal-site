@@ -548,8 +548,8 @@ query talkConnection($before: String, $after: String, $first: Float, $last: Floa
   }
 }
 
-query gallery($relativePath: String!) {
-  gallery(relativePath: $relativePath) {
+query photos($relativePath: String!) {
+  photos(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -562,12 +562,12 @@ query gallery($relativePath: String!) {
       }
       id
     }
-    ...GalleryParts
+    ...PhotosParts
   }
 }
 
-query galleryConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: GalleryFilter) {
-  galleryConnection(
+query photosConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PhotosFilter) {
+  photosConnection(
     before: $before
     after: $after
     first: $first
@@ -597,7 +597,7 @@ query galleryConnection($before: String, $after: String, $first: Float, $last: F
           }
           id
         }
-        ...GalleryParts
+        ...PhotosParts
       }
     }
   }

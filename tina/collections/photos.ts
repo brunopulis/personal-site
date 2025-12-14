@@ -1,9 +1,9 @@
 import type {Collection} from 'tinacms';
 
-export const GalleryCollection: Collection = {
-  name: 'gallery',
-  label: 'Galeria',
-  path: 'src/content/gallery',
+export const PhotosCollection: Collection = {
+  name: 'photos',
+  label: 'Galeria de Fotos',
+  path: 'src/content/photos',
   format: 'md',
   match: {
     include: '**/*'
