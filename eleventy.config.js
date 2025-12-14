@@ -130,7 +130,7 @@ export default async function eleventy(eleventyConfig) {
       input: 'src',
       includes: '_includes',
       data: '_data',
-      output: 'dist',
+      output: '_site',
       layouts: '_layouts'
     },
     markdownTemplateEngine: 'njk',
