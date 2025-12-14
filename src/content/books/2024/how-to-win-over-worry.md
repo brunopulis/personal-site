@@ -1,10 +1,10 @@
 ---
 title: "How to Win Over Worry"
-author: ""
+author: "John Edmund Haggai"
 category: ""
 status: "lido"
 rating: 4
-cover: ""
+cover: "https://m.media-amazon.com/images/I/51UnvYR2iiL._SY445_SX342_ML2_.jpg"
 description: ""
 thoughts: ""
 quotes: ""

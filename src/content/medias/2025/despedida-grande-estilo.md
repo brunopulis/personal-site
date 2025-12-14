@@ -1,5 +1,6 @@
 ---
 title: "Despedida em Grande Estilo"
+pubDate: 2025-12-06
 director: "Joaquim Dos Santos"
 category: "Comédia"
 status: "assistido"
@@ -11,5 +12,4 @@ attendedYear: 2025
 recommendBy: "Prime Video"
 tags: ["Comédia", "Policial"]
 url: "https://www.imdb.com/pt/title/tt2568862/"
-date: 2025-12-06
 ---

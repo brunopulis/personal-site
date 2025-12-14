@@ -1,5 +1,6 @@
 ---
 title: "5 de setembro"
+pubDate: 2025-12-13
 director: "Tim Fehlbaum"
 category: "Drama"
 status: "assistido"
@@ -11,5 +12,4 @@ attendedYear: 2025
 recommendBy: "Netflix"
 tags: ["Drama", "Biografia"]
 url: "https://www.themoviedb.org/movie/1211472-september-5"
-date: 2025-12-13
 ---
