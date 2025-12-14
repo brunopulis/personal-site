@@ -25,8 +25,8 @@
     "cypress:a11y": "cypress run --spec 'cypress/e2e/*accessibility*'",
     "cypress:headed": "cypress run --headed",
     "cypress:debug": "cypress open --dev",
-    "tina:dev": "tinacms dev -c \"pnpm run dev\"",
-    "tina:build": "tinacms build && pnpm run build"
+    "tinacms:dev": "tinacms dev -c \"pnpm run dev\"",
+    "tinacms:build": "tinacms build && pnpm run build"
   },
   "keywords": [],
   "repository": {
