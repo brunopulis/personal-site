@@ -30,8 +30,8 @@ export const bookmarks = collectionApi => {
  * @param {*} collectionApi 
  * @returns 
  */
-export const photos = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/photos/**/*.md').reverse();
+export const gallery = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/gallery/**/*.md').reverse();
 };
 
 /**
@@ -105,7 +105,7 @@ export const tagList = collection => {
       let tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'newsletters', 'notes', 'media', 'music'].includes(tag)) {
+        if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'newsletters', 'notes', 'media', 'music'].includes(tag)) {
           tagSet.add(tag);
         }
       }
@@ -125,5 +125,6 @@ export default {
   notes,
   medias,
   music,
-  tagList
+  tagList,
+  gallery
 };
