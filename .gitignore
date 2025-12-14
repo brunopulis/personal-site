@@ -3,6 +3,8 @@
 .jest/cache
 .cache
 .env
+.env.local
+.tina/__generated__/
 .idea/
 .vscode/
 .DS_Store
@@ -21,7 +23,10 @@ __snapshots__/
 coverage/
 
 # generated files
-dist
+dist/
 docs/
+_site/
 src/_includes/css
 src/_includes/scripts
+
+

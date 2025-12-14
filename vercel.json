@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --frozen-lockfile",
-  "devCommand": "pnpm run dev",
+  "buildCommand": "pnpm run tina:build",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm run tina:devDependencies",
   "outputDirectory": "_site",
   "headers": [
     {
@@ -26,10 +26,6 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()"
         }
       ]
     },
