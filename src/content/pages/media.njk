@@ -2,11 +2,14 @@
 layout: page
 title: "Meus Filmes e Séries"
 description: "Uma coleção dos meus favoritos, os que estou assistindo e minhas opiniões"
-permalink: "/media/index.html"
+permalink: "{% if pagination.pageNumber > 0 %}/media/{{ pagination.pageNumber + 1 }}/{% else %}/media/{% endif %}"
+pagination:
+  data: collections.medias
+  size: 12
 ---
 
 
-{% set moviesByYear = collections.medias | groupBy("attendedYear") %}
+{% set moviesByYear = collections.medias | groupBy("watchedYear") %}
       
 {% for year in moviesByYear | sortKeys %}
   <section class="mb-12 year-section" data-year="{{ year }}">
@@ -16,12 +19,12 @@ permalink: "/media/index.html"
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-      {% for movie in moviesByYear[year] | reverse %}
-        <article class="movie-card group cursor-pointer" data-status="{{ movie.data.status }}">
+      {% for item in pagination.medias %}
+        <article class="movie-card group cursor-pointer" data-status="{{ item.data.status }}">
           <div class="relative overflow-hidden rounded-lg mb-4">
             <img 
-              src="{{ movie.data.poster }}" 
-              alt="{{ movie.data.title }}"
+              src="{{ item.data.poster }}" 
+              alt="{{ item.data.title }}"
               class="w-full h-80 object-cover"
               loading="lazy"
             />
@@ -29,15 +32,15 @@ permalink: "/media/index.html"
             <div class="my-3">
               
               <span class="px-3 py-1 rounded-full text-xs font-bold
-                {% if movie.data.status == 'assistido' %}
+                {% if item.data.status == 'assistido' %}
                   bg-green-500/90 text-white
-                {% elif movie.data.status == 'assistindo' %}
+                {% elif item.data.status == 'assistindo' %}
                   bg-yellow-500/90 text-black
                 {% else %}
                   bg-purple-500/90 text-white
                 {% endif %}
               ">
-                {{ movie.data.status | capitalize }}
+                {{ item.data.status | capitalize }}
               </span>
             </div>
 
@@ -45,36 +48,36 @@ permalink: "/media/index.html"
             <div class="">
               <div class="flex gap-1">
                 <p>Minha avaliação:</p>
-                <div class="flex gap-1" role="img" aria-label="Avaliação: {{ movie.data.rating }} de 5 estrelas">
+                <div class="flex gap-1" role="img" aria-label="Avaliação: {{ item.data.rating }} de 5 estrelas">
                   {% for i in range(0, 5) %}
-                    <span aria-label="" class="text-lg {% if i < movie.data.rating %}text-yellow-400{% else %}text-gray-500{% endif %}">
+                    <span aria-label="" class="text-lg {% if i < item.data.rating %}text-yellow-400{% else %}text-gray-500{% endif %}">
                       ★
                     </span>
                   {% endfor %}
                 </div>
-                <span class="sr-only">{{ movie.data.rating }} de 5 estrelas</span>
+                <span class="sr-only">{{ item.data.rating }} de 5 estrelas</span>
               </div>
             </div>
           </div>
           
-          <h3 class="text-lg font-bold mb-1">{{ movie.data.title }}</h3>
+          <h3 class="text-lg font-bold mb-1">{{ item.data.title }}</h3>
           <ul>
-            <li>Diretor: {{ movie.data.director }}</li>
-            <li>Categoria: {{ movie.data.category }}</li>
-            <li>Descrição: {{ movie.data.description }}</li>
+            <li>Diretor: {{ item.data.director }}</li>
+            <li>Categoria: {{ item.data.category }}</li>
+            <li>Descrição: {{ item.data.description }}</li>
           </ul>
 
-          {% if movie.data.thoughts %}
+          {% if item.data.thoughts %}
             <div class="mb-3 py-3">
               <p class="text-xs font-bold mb-1">Minha opinião:</p>
               <p class="text-sm line-clamp-2">
-                {{ movie.data.thoughts }}
+                {{ item.data.thoughts }}
               </p>
             </div>
           {% endif %}
 
           <div class="flex flex-wrap gap-2 mb-3">
-            {% for tag in movie.data.tags %}
+            {% for tag in item.data.tags %}
               <span class="px-2 py-1 rounded text-xs text-blue-400">
                 #{{ tag }}
               </span>
@@ -82,7 +85,7 @@ permalink: "/media/index.html"
           </div>
 
           <div class="flex justify-between text-xs text-gray-500 pt-3 border-t border-gray-800">
-            <span>{{ movie.data.recommendBy }}</span>
+            <span>{{ item.data.recommendBy }}</span>
           </div>
         </article>
       {% endfor %}
@@ -100,3 +103,7 @@ permalink: "/media/index.html"
     </div>
   {% endif %}
 </div>
+
+{% if pagination.pages.length > 1 %}  
+  {% include 'components/pagination.njk' %}
+{% endif %}
