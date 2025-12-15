@@ -1,25 +1,34 @@
 ---
 layout: page
 title: "Links interessantes"
-description: 'Todos os links podem ser visto aqui'
+description: 'Uma coleção de links interessantes que vi por ai'
 permalink: "{% if pagination.pageNumber > 0 %}/bookmarks/page/{{ pagination.pageNumber + 1 }}/{% else %}/bookmarks/{% endif %}"
 pagination:
-    data: collections.bookmarks
-    size: 10
+  data: collections.bookmarks
+  size: 10
 ---
 
+<div class="h-entry">
+  {% for bookmark in pagination.items %}
+    <article>
+      <h2 class="text-3xl">
+        <a href="{{ bookmark.data.url }}" rel="noopener noreferral" target="_blank">
+          {{ bookmark.data.title }}
+        </a>
+      </h2>
+      <div class="flex items-center gap-2 text-sm text-gray-500">
+        <p class="m-0">Salvo em:</p>
+        <time class="dt-published inline-flex" datetime="{{ bookmark.data.pubDate | toISOString }}">
+          {{ bookmark.data.pubDate | readableDate }}
+        </time>
+      </div>
 
-<header class="section" style="--spot-color: var(--color-secondary)">
-    <div class="section__inner flow region">
-        <h1 class="text-rosewood-950 text-step-4">{{ title }}</h1>
-    </div>
-</header>
-
-<custom-masonry layout="50-50">
-    {% asyncEach item in pagination.items %}
-    {% include "partials/card-blog.njk" %}
-    {% endeach %}
-</custom-masonry>
+      <div class="content">
+        {{ bookmark.content | safe }}
+      </div>
+    </article>
+  {% endfor %}
+</div>
 
 {% if pagination.pages.length > 1 %}
   {% include 'components/pagination.njk' %}

@@ -12,5 +12,5 @@ attendedYear: "2018"
 recommendBy: "Conferência ministerial"
 tags: ["Teologia", "Ministério", "Pastoral", "Ensino"]
 url: "https://amzn.to/4kJZF1J"
-date: 2018-04-29
+pubDate: 2018-04-29
 ---

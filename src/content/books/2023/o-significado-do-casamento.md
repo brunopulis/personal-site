@@ -12,5 +12,5 @@ attendedYear: "2023"
 recommendBy: ""
 tags: []
 url: ""
-date: 2023-11-06
+pubDate: 2023-11-06
 ---

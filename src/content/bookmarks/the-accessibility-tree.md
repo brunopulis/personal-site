@@ -1,4 +1,4 @@
 ---
 title: 'The Accessibility Tree'
-date: '2024-07-24'
+pubDate: 2024-07-24
 ---

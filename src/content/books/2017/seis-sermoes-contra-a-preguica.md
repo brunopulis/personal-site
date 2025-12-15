@@ -1,12 +1,20 @@
 ---
 title: 'Seis sermões contra a preguiça'
-excerpt: 'Um livro provocativo chocante e confrontativo a todos os preguiçosos incluíndo ao que vos escreve.'
+author: Tiago Cavaco
+category: 'teologia'
+cover: 'https://m.media-amazon.com/images/I/61SQmK5N4rL._SL1231_.jpg'
+status: 'lido'
+rating: 5
+description: 'Um livro provocativo chocante e confrontativo a todos os preguiçosos incluíndo ao que vos escreve.'
+thoughts: ''
+quotes: ''
+attendedYear: 2017
 pubDate: 2017-07-25T22:30:30.179Z
 tags: ['teologia']
-canonicalUrl: 'https://medium.com/@brunopulis/seis-serm%C3%B5es-contra-a-pregui%C3%A7a-e838106512c9'
 ---
 
-### Seis sermões contra a preguiça
+
+## Seis sermões contra a preguiça
 
 ![](https://cdn-images-1.medium.com/max/800/1*r2nWNAtgeqUYzmyZ6S6d1A.jpeg)
 
