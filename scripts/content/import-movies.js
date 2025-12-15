@@ -6,21 +6,15 @@ import { config } from 'dotenv';
 config();
 
 /**
- * Busca filmes assistidos da sua conta TMDB
- * Organiza por ano de visualização
+ * Importa filmes da sua conta TMDB como arquivos Markdown individuais
+ * Para usar com TinaCMS
  * 
- * Uso: node scripts/fetch-tmdb-watched.js
+ * Uso: node scripts/import-tmdb-movies.js
  */
 
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_ACCESS_TOKEN = process.env.TMDB_ACCESS_TOKEN;
-const TMDB_ACCOUNT_ID = process.env.TMDB_ACCOUNT_ID;
-
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-/**
- * Busca informações da conta
- */
 async function getAccountInfo() {
   const response = await fetch(`${BASE_URL}/account`, {
     headers: {
@@ -36,9 +30,6 @@ async function getAccountInfo() {
   return await response.json();
 }
 
-/**
- * Busca filmes com rating (assistidos)
- */
 async function getRatedMovies(accountId, page = 1) {
   const response = await fetch(
     `${BASE_URL}/account/${accountId}/rated/movies?page=${page}&sort_by=created_at.desc`,
@@ -57,51 +48,6 @@ async function getRatedMovies(accountId, page = 1) {
   return await response.json();
 }
 
-/**
- * Busca lista de watchlist (filmes marcados para assistir)
- */
-async function getWatchlist(accountId, page = 1) {
-  const response = await fetch(
-    `${BASE_URL}/account/${accountId}/watchlist/movies?page=${page}&sort_by=created_at.desc`,
-    {
-      headers: {
-        'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
-        'Content-Type': 'application/json'
-      }
-    }
-  );
-  
-  if (!response.ok) {
-    throw new Error(`Erro ao buscar watchlist: ${response.statusText}`);
-  }
-  
-  return await response.json();
-}
-
-/**
- * Busca filmes favoritos
- */
-async function getFavoriteMovies(accountId, page = 1) {
-  const response = await fetch(
-    `${BASE_URL}/account/${accountId}/favorite/movies?page=${page}&sort_by=created_at.desc`,
-    {
-      headers: {
-        'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
-        'Content-Type': 'application/json'
-      }
-    }
-  );
-  
-  if (!response.ok) {
-    throw new Error(`Erro ao buscar favoritos: ${response.statusText}`);
-  }
-  
-  return await response.json();
-}
-
-/**
- * Busca detalhes completos de um filme
- */
 async function getMovieDetails(movieId) {
   const response = await fetch(
     `${BASE_URL}/movie/${movieId}?append_to_response=credits,keywords,videos`,
@@ -114,38 +60,48 @@ async function getMovieDetails(movieId) {
   );
   
   if (!response.ok) {
-    throw new Error(`Erro ao buscar detalhes do filme ${movieId}`);
+    return null;
   }
   
   return await response.json();
 }
 
-/**
- * Busca todos os filmes com paginação
- */
+async function getFavoriteMovies(accountId) {
+  const response = await fetch(
+    `${BASE_URL}/account/${accountId}/favorite/movies?page=1`,
+    {
+      headers: {
+        'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
+        'Content-Type': 'application/json'
+      }
+    }
+  );
+  
+  if (!response.ok) {
+    return [];
+  }
+  
+  const data = await response.json();
+  return data.results || [];
+}
+
 async function fetchAllMovies(fetchFunction, accountId) {
   let allMovies = [];
   let page = 1;
   let totalPages = 1;
   
   do {
-    console.log(`  📄 Buscando página ${page}...`);
     const data = await fetchFunction(accountId, page);
     allMovies = allMovies.concat(data.results);
     totalPages = data.total_pages;
     page++;
-    
-    // Rate limiting - aguarda 250ms entre requisições
     await new Promise(resolve => setTimeout(resolve, 250));
-  } while (page <= totalPages && page <= 50); // Limita a 50 páginas (1000 filmes)
+  } while (page <= totalPages && page <= 50);
   
   return allMovies;
 }
 
-/**
- * Cria conteúdo Markdown para um filme
- */
-function createMovieMarkdown(movie, details, watchedYear) {
+function createMovieMarkdown(movie, details, isFavorite, watchedYear) {
   const slug = movie.title
     .toLowerCase()
     .normalize('NFD')
@@ -176,11 +132,11 @@ releaseDate: ${movie.release_date || ''}
 posterPath: ${movie.poster_path || ''}
 backdropPath: ${movie.backdrop_path || ''}
 watchedDate: ${watchedDate}
-watchedYear: ${watchedYear !== 'Sem data' ? watchedYear : ''}
+watchedYear: ${watchedYear}
 myRating: ${movie.rating || 0}
 tmdbRating: ${movie.vote_average || 0}
 voteCount: ${movie.vote_count || 0}
-isFavorite: ${movie.isFavorite || false}
+isFavorite: ${isFavorite}
 status: watched
 genres:
 ${genres.map(g => `  - ${g}`).join('\n') || '  - Desconhecido'}
@@ -210,43 +166,13 @@ ${details?.revenue ? `**Bilheteria:** $${details.revenue.toLocaleString('en-US')
 
 ---
 
-*Assistido em ${watchedYear !== 'Sem data' ? watchedYear : 'data desconhecida'}*
+*Assistido em ${watchedYear || 'data desconhecida'}*
 *Importado do TMDB em ${new Date().toLocaleDateString('pt-BR')}*
 `;
 }
 
-/**
- * Organiza filmes por ano de visualização
- */
-function organizeByYear(movies) {
-  const byYear = {};
-  
-  movies.forEach(movie => {
-    // Tenta extrair o ano da data de rating/adição
-    let year = 'Sem data';
-    
-    if (movie.rated_at) {
-      year = new Date(movie.rated_at).getFullYear();
-    } else if (movie.created_at) {
-      year = new Date(movie.created_at).getFullYear();
-    }
-    
-    if (!byYear[year]) {
-      byYear[year] = [];
-    }
-    
-    byYear[year].push(movie);
-  });
-  
-  return byYear;
-}
-
-/**
- * Função principal
- */
 async function main() {
   try {
-    // Validações
     if (!TMDB_ACCESS_TOKEN) {
       console.error('❌ TMDB_ACCESS_TOKEN não encontrado no .env');
       console.log('\n📖 Como obter seu Access Token:');
@@ -256,48 +182,41 @@ async function main() {
       return;
     }
     
-    console.log('🎬 Buscando filmes da sua conta TMDB...\n');
+    console.log('🎬 Importando filmes da sua conta TMDB...\n');
     
-    // Busca informações da conta
-    console.log('👤 Obtendo informações da conta...');
     const accountInfo = await getAccountInfo();
-    console.log(`✓ Conta: ${accountInfo.username || accountInfo.name}`);
-    console.log(`  ID: ${accountInfo.id}\n`);
+    console.log(`✓ Conta: ${accountInfo.username || accountInfo.name}\n`);
     
     const accountId = accountInfo.id;
     
-    // Busca filmes com rating (assistidos)
-    console.log('⭐ Buscando filmes com avaliação...');
+    console.log('⭐ Buscando filmes avaliados...');
     const ratedMovies = await fetchAllMovies(getRatedMovies, accountId);
-    console.log(`✓ ${ratedMovies.length} filmes avaliados\n`);
+    console.log(`✓ ${ratedMovies.length} filmes encontrados\n`);
     
-    // Busca favoritos
-    console.log('❤️  Buscando filmes favoritos...');
-    const favoriteMovies = await fetchAllMovies(getFavoriteMovies, accountId);
-    console.log(`✓ ${favoriteMovies.length} filmes favoritos\n`);
-    
-    // Marca favoritos
+    console.log('❤️  Buscando favoritos...');
+    const favoriteMovies = await getFavoriteMovies(accountId);
     const favoriteIds = new Set(favoriteMovies.map(m => m.id));
-    ratedMovies.forEach(movie => {
-      movie.isFavorite = favoriteIds.has(movie.id);
-    });
+    console.log(`✓ ${favoriteMovies.length} favoritos\n`);
     
-    // Organiza por ano
-    console.log('📅 Organizando filmes por ano...');
-    const moviesByYear = organizeByYear(ratedMovies);
-    console.log(`✓ Organizado em ${Object.keys(moviesByYear).length} anos\n`);
-    
-    // Cria diretório de saída base
     const baseDir = path.join(process.cwd(), 'src', 'content', 'medias');
     if (!fs.existsSync(baseDir)) {
       fs.mkdirSync(baseDir, { recursive: true });
     }
     
-    // Gera arquivos Markdown individuais por ano
-    console.log('📝 Gerando arquivos Markdown...\n');
+    console.log('📥 Importando filmes...\n');
     
-    let totalCreated = 0;
-    let totalSkipped = 0;
+    let imported = 0;
+    let skipped = 0;
+    let failed = 0;
+    
+    // Organiza filmes por ano
+    const moviesByYear = {};
+    ratedMovies.forEach(movie => {
+      const watchedDate = movie.rated_at || movie.created_at;
+      const year = watchedDate ? new Date(watchedDate).getFullYear() : 'Sem data';
+      if (!moviesByYear[year]) moviesByYear[year] = [];
+      moviesByYear[year].push(movie);
+    });
     
     for (const [year, movies] of Object.entries(moviesByYear)) {
       // Cria diretório do ano
@@ -306,10 +225,9 @@ async function main() {
         fs.mkdirSync(yearDir, { recursive: true });
       }
       
-      console.log(`📁 Criando filmes de ${year}...`);
+      console.log(`📁 Importando filmes de ${year}...`);
       
       for (const movie of movies) {
-        // Cria slug do título
         const slug = movie.title
           .toLowerCase()
           .normalize('NFD')
@@ -319,43 +237,42 @@ async function main() {
         
         const filePath = path.join(yearDir, `${slug}.md`);
         
-        // Verifica se já existe
         if (fs.existsSync(filePath)) {
           console.log(`  ⏭️  ${movie.title} - já existe`);
-          totalSkipped++;
+          skipped++;
           continue;
         }
         
-        // Busca detalhes completos se necessário
-        let details = null;
         try {
-          details = await getMovieDetails(movie.id);
-          await new Promise(resolve => setTimeout(resolve, 250)); // Rate limiting
+          console.log(`  ⬇️  ${movie.title}...`);
+          
+          // Busca detalhes completos
+          const details = await getMovieDetails(movie.id);
+          const isFavorite = favoriteIds.has(movie.id);
+          
+          const markdown = createMovieMarkdown(movie, details, isFavorite, year);
+          fs.writeFileSync(filePath, markdown);
+          
+          console.log(`  ✅ ${movie.title} - importado`);
+          imported++;
+          
+          await new Promise(resolve => setTimeout(resolve, 300));
+          
         } catch (error) {
-          console.log(`  ⚠️  ${movie.title} - erro ao buscar detalhes, usando dados básicos`);
+          console.error(`  ❌ ${movie.title} - erro: ${error.message}`);
+          failed++;
         }
-        
-        // Gera conteúdo do arquivo
-        const markdown = createMovieMarkdown(movie, details, year);
-        fs.writeFileSync(filePath, markdown);
-        
-        console.log(`  ✅ ${movie.title}`);
-        totalCreated++;
       }
       
       console.log(`✓ ${year}: ${movies.length} filmes\n`);
     }
     
-    console.log(`📊 Arquivos criados: ${totalCreated}`);
-    console.log(`⏭️  Arquivos pulados (já existiam): ${totalSkipped}\n`);
-    
-    // Sumário
-    console.log('📊 RESUMO:');
-    console.log(`   Total de filmes: ${ratedMovies.length}`);
-    console.log(`   Favoritos: ${favoriteMovies.length}`);
-    console.log(`   Anos diferentes: ${Object.keys(moviesByYear).length}`);
-    console.log(`   Arquivos criados: ${totalCreated}`);
-    console.log(`   Arquivos pulados: ${totalSkipped}\n`);
+    console.log(`\n📊 RESUMO:
+  ✅ Importados: ${imported}
+  ⏭️  Pulados (já existem): ${skipped}
+  ❌ Falharam: ${failed}
+  📁 Total: ${ratedMovies.length}
+    `);
     
     console.log('📁 Estrutura criada:');
     Object.keys(moviesByYear).sort((a, b) => {
@@ -366,22 +283,18 @@ async function main() {
       console.log(`   src/content/medias/${year}/ - ${moviesByYear[year].length} filmes`);
     });
     
-    console.log('\n✅ Concluído!');
-    console.log('\n💡 Próximos passos:');
-    console.log('   - Veja os arquivos em: src/content/medias/');
-    console.log('   - Cada filme está em: src/content/medias/{ANO}/{filme}.md');
-    console.log('   - Configure o TinaCMS para gerenciar os filmes');
-    console.log('   - Execute novamente para adicionar novos filmes');
+    if (imported > 0) {
+      console.log(`\n🎉 Importação concluída!
+💡 Próximos passos:
+   1. Veja os arquivos em: src/content/medias/{ANO}/
+   2. Configure o TinaCMS para gerenciar filmes
+   3. Acesse /admin para editar seus filmes
+   4. Adicione notas e tags personalizadas
+      `);
+    }
     
   } catch (error) {
     console.error('\n❌ Erro:', error.message);
-    
-    if (error.message.includes('401')) {
-      console.log('\n🔑 Erro de autenticação. Verifique:');
-      console.log('   1. TMDB_ACCESS_TOKEN está correto no .env');
-      console.log('   2. O token não expirou');
-      console.log('   3. Você tem permissão para acessar a conta');
-    }
   }
 }
 
