@@ -1,5 +1,5 @@
 ---
-title: "Pode ser que eu morra hoje (Um ano de histórias)"
+title: "Pode ser que eu morra hoje"
 author: ""
 category: ""
 status: "lido"
