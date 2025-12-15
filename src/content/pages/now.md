@@ -3,7 +3,7 @@ layout: page
 title: "Agora"
 permalink: /agora/index.html
 key: 'agora'
-description: I respect the EU General Data Protection Regulation (GDPR). This policy document explains how I collect and handle any information you provide to me.
+description: O que estou me dedicando nesse momento
 date: Last Modified
 ---
 
@@ -15,8 +15,8 @@ O objetivo é mostrar no que estou focado no momento. Esse site passou por atual
 - Tentando ser um discípulo mais consciente;
 - Retornando a leitura diária da Bíblia e devocionais;
 - Tentando ser uma pessoa menos estressada;
--    Tentando ser um marido melhor;
+- Tentando ser um marido melhor;
 - Reorganizando meu site;
 - Vivendo em BH.
 
-*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+*Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*

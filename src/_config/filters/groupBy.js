@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {s} array 
+ * @param {*} key 
+ * @returns 
+ */
 export const groupBy = (array, key) => {
   if (!array || !Array.isArray(array)) {
     return {};
@@ -13,6 +19,11 @@ export const groupBy = (array, key) => {
   }, {});
 };
 
+/**
+ * 
+ * @param {*} array 
+ * @returns 
+ */
 export const groupByMonth = (array) => {
   if (!array || !Array.isArray(array)) {
     return [];
