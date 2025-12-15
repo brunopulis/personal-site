@@ -14,30 +14,30 @@ description: "Uma coleção dos meus livros"
   </div>
   <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
     {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
-    <article class="bg-white border border-gray-100 hover:shadow-md overflow-hidden rounded-xl shadow-sm transition">
+    <article>
       {% if book.data.cover %}
-      <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" class="h-48 object-cover w-full" loading="lazy"
+      <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" class="h-64 object-cover w-full" height="270" loading="lazy"
         decoding="async" />
       {% endif %}
 
-      <div class="p-4">
-        <h3 class="font-semibold mb-1 text-xl">
+      <div class="py-4 gap-4">
+        <h3 class="font-semibold mb-1 text-sm">
           {% if book.data.url %}
-          <a href="{{ book.data.url }}" target="_blank" rel="noopener noreferrer" class="hover:text-blood-red-800">
+          <a href="{{ book.data.url }}" target="_blank" rel="noopener noreferrer" class="text-blood-red-800  underline underline-offset-8 hover:no-underline">
             {{ book.data.title }}
           </a>
           {% else %}
-          {{ book.data.title }}
+            {{ book.data.title }}
           {% endif %}
         </h3>
-        {% if book.data.author %}
-        <p class="text-sm text-gray-600 mb-2">{{ book.data.author }}</p>
+        {% if book.data.subtitle %}
+          <p class="text-sm mb-4 text-gray-700">{{ book.data.subtitle }}</p>
         {% endif %}
         {% if book.data.description %}
-        <p class="text-sm mb-4 text-gray-700">{{ book.data.description }}</p>
+          <p class="text-sm mb-4 text-gray-700">{{ book.data.description }}</p>
         {% endif %}
-        {% if book.data.thoughts %}
-        <p class="text-sm italic text-gray-600">{{ book.data.thoughts }}</p>
+        {% if book.data.author %}
+          <p class="text-sm text-gray-600 mb-2">{{ book.data.author }}</p>
         {% endif %}
       </div>
     </article>

@@ -12,5 +12,5 @@ attendedYear: "2024"
 recommendBy: ""
 tags: []
 url: ""
-date: 2024-06-22
+pubDate: 2024-06-22
 ---

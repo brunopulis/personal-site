@@ -12,5 +12,5 @@ attendedYear: "2018"
 recommendBy: "Clássico da literatura"
 tags: ["Literatura Cristã", "Alegoria", "Clássico", "Ficção"]
 url: "https://amzn.to/44ggoDN"
-date: 2018-03-18
+pubDate: 2018-03-18
 ---

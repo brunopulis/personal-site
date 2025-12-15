@@ -12,5 +12,5 @@ attendedYear: "2018"
 recommendBy: "Seminário"
 tags: ["Teologia", "Doutrina", "Cristianismo", "Estudo"]
 url: "https://amzn.to/3ZwfMHH"
-date: 2018-07-17
+pubDate: 2018-07-17
 ---

@@ -1,17 +1,17 @@
 ---
 title: O Método Bullet Journal
-author: 
+author: Ryder Carroll
 category: ""
 status: "lido"
 rating: 5
-cover: '/assets/images/blog/bujo.png'
-description: ""
+cover: 'https://m.media-amazon.com/images/I/81bGafFdQrL._SL1500_.jpg'
+description: "O método Bullet Journal é muito mais do que uma forma de organizar tarefas através de anotações. "
 thoughts: ""
 quotes: ""
 attendedYear: "2023"
 recommendBy: Gabriela Eufrásia
 tags: ['bujo', 'pkm', 'produtividade', 'empreendedorismo']
-url: ""
+url: "https://amzn.to/4aiPpLp"
 pubDate: 2023-01-10
 ---
 

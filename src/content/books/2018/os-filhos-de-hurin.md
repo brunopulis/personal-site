@@ -12,5 +12,5 @@ attendedYear: "2018"
 recommendBy: ""
 tags: []
 url: ""
-date: 2018-01-02
+pubDate: 2018-01-02
 ---

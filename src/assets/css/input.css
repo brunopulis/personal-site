@@ -117,7 +117,22 @@
     }
 
     a {
-      @apply text-blue-600 hover:text-blue-800 transition-colors underline decoration-transparent hover:decoration-current underline-offset-4;
+      @apply text-blood-red-800 underline underline-offset-8 hover:no-underline transition-colors;
+    }
+
+    a[href^=http]:not([href*="localhost:8080"]):not([href*="http://brunopulis.com"]):not(.no-indicator):after {
+      background-image: url(/assets/images/template/external.svg);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: 60% auto;
+      block-size: 1em;
+      content: "(link externo)";
+      display: inline-block;
+      inline-size: 1em;
+      overflow: hidden;
+      position: absolute;
+      text-indent: 1em;
+      white-space: nowrap;
     }
 
     ul {
