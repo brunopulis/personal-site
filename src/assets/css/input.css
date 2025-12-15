@@ -95,6 +95,14 @@
     @apply py-12 bg-linear-to-br from-red-900 to-red-950 via-red-800 overflow-hidden relative text-white;
   }
 
+  .hero :where(h1, p) {
+    @apply text-white;
+  }
+
+  .hero__title {
+    @apply font-bold mb-6 leading-tight text-5xl;
+  }
+
   .prose {
     h1 {
       @apply text-4xl md:text-5xl font-bold tracking-tight mb-6;
