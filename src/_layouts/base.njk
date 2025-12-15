@@ -38,7 +38,7 @@
   {% block head %}{% endblock %}
 </head>
 
-<body>
+<body class="relative">
   {% set indicateActiveHome %}
   {% if page.url == "/" %}
   aria-current=page
@@ -47,7 +47,6 @@
   {% include "partials/header.njk" %}
 
   <main id="main" class="{% block main_class %}{% endblock %}">
-    <snow-fall></snow-fall>
     {% block content %}
     {{ content | safe }}
     {% endblock %}
@@ -55,6 +54,14 @@
 
   {% block after_main %}{% endblock %}
   {% include "partials/footer.njk" %}
-  <a href="#top" class="ontop" aria-label="Ir para o topo">a</a>
+
+    {# Web Components - Scripts que carregam no navegador #}
+  <script type="module" src="/assets/scripts/is-land.js"></script>
+  
+  {# Componente de neve - só aparece se o usuário não tiver preferência por movimento reduzido #}
+  <is-land on:media="(prefers-reduced-motion: no-preference)">
+    <script type="module" src="/assets/scripts/snow-fall.js"></script>
+    <snow-fall count="150" style="--snow-fall-color: white"></snow-fall>
+  </is-land>
 </body>
 </html>
