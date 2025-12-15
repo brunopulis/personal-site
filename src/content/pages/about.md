@@ -88,4 +88,4 @@ Confira no que [estou dedicado nesse momento](/agora).
 
 ---
 
-Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}
+Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}

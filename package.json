@@ -22,7 +22,10 @@
     "cypress": "cypress open",
     "cypress:run": "cypress run",
     "cypress:headed": "cypress run --headed",
-    "cypress:debug": "cypress open --dev"
+    "cypress:debug": "cypress open --dev",
+    "fetch:movies": "node scripts/content/watched.js",
+    "import:movies": "node scripts/content/import-movies.js",
+    "import:all-movies": "node scripts/content/import-all-movies.js"
   },
   "keywords": [],
   "repository": {

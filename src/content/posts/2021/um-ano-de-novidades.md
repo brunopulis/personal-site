@@ -29,10 +29,10 @@ Finalmente me tornei membro da **_International Association of Accessibility Pro
 
 Como membro, você tem algumas vantagens como:
 
--   desconto para membros que residem em países de economia emergente;
--   descontos nas certificações oferecidas;
--   conteúdos exclusivos;
--   fóruns de discussões com profissionais renomados.
+- desconto para membros que residem em países de economia emergente;
+- descontos nas certificações oferecidas;
+- conteúdos exclusivos;
+- fóruns de discussões com profissionais renomados.
 
 Inclusive ela possui certificações internacionais sobre o tema, provavelmente irei escrever sobre esse assunto.
 
@@ -46,8 +46,8 @@ Na Concrete, fui informado que atuaria como QA num time mobile. Num primeiro mom
 
 Minha intenção é compartilhar com vocês meu processo de aprendizagem no mundo mobile. Irei seguir um conselho do Elton Minetto, onde orienta escrever se algo demorou mais de 30 minutos para aprender escreva um post por dois motivos:
 
--   ajuda a fixar o conteúdo;
--   contribui com pessoas que tiveram a mesma dificuldade.
+- ajuda a fixar o conteúdo;
+- scontribui com pessoas que tiveram a mesma dificuldade.
 
 Para essa e mais dicas na carreira de um desenvolver, [você pode fazer o download do e-book de forma gratuita](https://leanpub.com/dicas-carreira-devs).
 
@@ -65,5 +65,3 @@ E você, como foi o primeiro mês do seu ano? Compartilha ai nos comentários.
 
 Grande abraço,  
 Pulis.
-
-_Originalmente publicado em:_ [_https://brunopulis.com_](https://brunopulis.com/um-ano-de-novidades) _emJan 6, 2021._
