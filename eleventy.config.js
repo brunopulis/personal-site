@@ -100,8 +100,11 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.on('eleventy.after', events.tableSawWrapper);
 
   //  Passthrough File Copy
+  // Admin na raiz do projeto (fora de src/)
+  eleventyConfig.addPassthroughCopy({ 'admin': 'admin' });
+  
+  // Outros arquivos dentro de src/
   [
-    'admin',
     'src/humans.txt',
     'src/assets',
     'src/assets/css',
