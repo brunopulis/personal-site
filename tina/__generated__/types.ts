@@ -638,7 +638,7 @@ export type Book = Node & Document & {
   description?: Maybe<Scalars['String']['output']>;
   thoughts?: Maybe<Scalars['String']['output']>;
   quotes?: Maybe<Scalars['String']['output']>;
-  attendedYear?: Maybe<Scalars['String']['output']>;
+  attendedYear?: Maybe<Scalars['Float']['output']>;
   recommendBy?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   url?: Maybe<Scalars['String']['output']>;
@@ -669,7 +669,7 @@ export type BookFilter = {
   description?: InputMaybe<StringFilter>;
   thoughts?: InputMaybe<StringFilter>;
   quotes?: InputMaybe<StringFilter>;
-  attendedYear?: InputMaybe<StringFilter>;
+  attendedYear?: InputMaybe<NumberFilter>;
   recommendBy?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   url?: InputMaybe<StringFilter>;
@@ -1218,7 +1218,7 @@ export type BookMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
   thoughts?: InputMaybe<Scalars['String']['input']>;
   quotes?: InputMaybe<Scalars['String']['input']>;
-  attendedYear?: InputMaybe<Scalars['String']['input']>;
+  attendedYear?: InputMaybe<Scalars['Float']['input']>;
   recommendBy?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   url?: InputMaybe<Scalars['String']['input']>;
@@ -1286,7 +1286,7 @@ export type ServicePartsFragment = { __typename: 'Service', title: string, slug?
 
 export type NotePartsFragment = { __typename: 'Note', pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
-export type BookPartsFragment = { __typename: 'Book', title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: string | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null };
+export type BookPartsFragment = { __typename: 'Book', title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null };
 
 export type NewsletterPartsFragment = { __typename: 'Newsletter', title: string, issue?: string | null, pubDate?: string | null, body?: any | null };
 
@@ -1381,7 +1381,7 @@ export type BookQueryVariables = Exact<{
 }>;
 
 
-export type BookQuery = { __typename?: 'Query', book: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: string | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BookQuery = { __typename?: 'Query', book: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BookConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1393,7 +1393,7 @@ export type BookConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BookConnectionQuery = { __typename?: 'Query', bookConnection: { __typename?: 'BookConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookConnectionEdges', cursor: string, node?: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: string | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BookConnectionQuery = { __typename?: 'Query', bookConnection: { __typename?: 'BookConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookConnectionEdges', cursor: string, node?: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type NewsletterQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];

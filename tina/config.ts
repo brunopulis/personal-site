@@ -20,7 +20,7 @@ export default defineConfig({
   token: process.env.TINA_TOKEN,
   build: {
     outputFolder: 'admin',
-    publicFolder: '_site'
+    publicFolder: './'
   },
   media: {
     tina: {
@@ -46,7 +46,7 @@ export default defineConfig({
   search: {
     tina: {
       indexerToken: process.env.TINA_SEARCH,
-      stopwordLanguages: ['por'],
+      stopwordLanguages: ['por']
     },
     indexBatchSize: 100,
     maxSearchIndexFieldLength: 100

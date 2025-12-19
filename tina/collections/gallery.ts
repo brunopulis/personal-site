@@ -3,10 +3,10 @@ import type {Collection} from 'tinacms';
 export const GalleryCollection: Collection = {
   name: 'photos',
   label: 'Galeria de Fotos',
-  path: 'src/content/photos',
+  path: 'src/content/gallery',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {

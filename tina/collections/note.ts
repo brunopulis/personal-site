@@ -6,7 +6,7 @@ export const NoteCollection: Collection = {
   path: 'src/content/notes',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {
