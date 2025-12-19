@@ -1,4 +1,4 @@
 ---
 title: 'Sync bookmarks and tabs privately'
-pubdate: 2024-11-08
+pubDate: 2024-11-08
 ---

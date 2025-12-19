@@ -5,11 +5,15 @@ export const PostCollection: Collection = {
   label: 'Blog',
   path: 'src/content/posts',
   format: 'md',
+  match: {
+    include: '**/*'
+  },
+
   defaultItem: () => {
     return {
       title: 'Novo Post',
       author: 'Pulis',
-      publishDate: new Date().toISOString(),
+      pubDate: new Date().toISOString(),
       seo: {
         meta_title: '',
         meta_description: '',
@@ -21,13 +25,20 @@ export const PostCollection: Collection = {
       featured: false
     };
   },
-  match: {
-    include: '**/*.md'
-  },
   ui: {
+    // @ts-ignore
+    itemProps: (item: any) => {
+      return {
+        label: item?.title,
+        subtitle: item?.pubDate ? new Date(item.pubDate).toLocaleDateString('pt-BR') : ''
+      };
+    },
+    router: ({document}: {document: any}) => {
+      return `/blog/${document._sys.filename}/`;
+    },
     filename: {
-      slugify: values => {
-        const date = values?.publishDate ? new Date(values.publishDate) : new Date();
+      slugify: (values: any) => {
+        const date = values?.pubDate ? new Date(values.pubDate) : new Date();
         const year = date.getFullYear();
         const slug =
           values?.title
@@ -51,7 +62,7 @@ export const PostCollection: Collection = {
     },
     {
       type: 'datetime',
-      name: 'publishDate',
+      name: 'date',
       label: 'Data de Publicação',
       required: true,
       ui: {

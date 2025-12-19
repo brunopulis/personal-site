@@ -125,7 +125,7 @@ type PostSeo {
 
 type Post implements Node & Document {
   title: String!
-  publishDate: String!
+  date: String!
   author: String!
   description: String!
   featured_image: String
@@ -180,7 +180,7 @@ input PostSeoFilter {
 
 input PostFilter {
   title: StringFilter
-  publishDate: DatetimeFilter
+  date: DatetimeFilter
   author: StringFilter
   description: StringFilter
   featured_image: ImageFilter
@@ -518,6 +518,7 @@ type MediaConnection implements Connection {
 
 type Bookmark implements Node & Document {
   title: String!
+  url: String
   date: String
   body: JSON
   id: ID!
@@ -527,6 +528,7 @@ type Bookmark implements Node & Document {
 
 input BookmarkFilter {
   title: StringFilter
+  url: StringFilter
   date: DatetimeFilter
   body: RichTextFilter
 }
@@ -695,7 +697,7 @@ input PostSeoMutation {
 
 input PostMutation {
   title: String
-  publishDate: String
+  date: String
   author: String
   description: String
   featured_image: String
@@ -818,6 +820,7 @@ input MediaMutation {
 
 input BookmarkMutation {
   title: String
+  url: String
   date: String
   body: JSON
 }

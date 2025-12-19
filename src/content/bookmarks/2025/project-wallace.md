@@ -1,6 +1,6 @@
 ---
 title: 'Project Wallace'
-pubDate: '2025-12-15'
+pubDate: 2025-12-15
 url: https://www.projectwallace.com
 ---
 
