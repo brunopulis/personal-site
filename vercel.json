@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm build",
+  "buildCommand": "pnpm build && ls -la _site/admin",
   "installCommand": "pnpm install --frozen-lockfile",
   "devCommand": "pnpm dev",
   "outputDirectory": "_site",
