@@ -24,7 +24,7 @@ var PostCollection = {
     };
   },
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   ui: {
     filename: {
@@ -153,7 +153,7 @@ var PageCollection = {
   path: "src/content/pages",
   format: "md",
   match: {
-    include: "*"
+    include: "*.md"
   },
   fields: [
     {
@@ -192,7 +192,7 @@ var ServiceCollection = {
   path: "src/content/pages/services",
   format: "md",
   match: {
-    include: "*"
+    include: "*.md"
   },
   fields: [
     {
@@ -400,7 +400,7 @@ var NoteCollection = {
   path: "src/content/notes",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -518,7 +518,7 @@ var BookCollection = {
       }
     },
     {
-      type: "string",
+      type: "number",
       name: "attendedYear",
       label: "Ano de Leitura"
     },
@@ -565,7 +565,7 @@ var NewsletterCollection = {
   path: "src/content/newsletter",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -601,10 +601,10 @@ var NewsletterCollection = {
 var MediaCollection = {
   name: "media",
   label: "M\xEDdia (Filmes/S\xE9ries)",
-  path: "src/content/media",
+  path: "src/content/medias",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -711,7 +711,7 @@ var BookmarkCollection = {
   path: "src/content/bookmarks",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -745,7 +745,7 @@ var StreamCollection = {
   path: "src/content/streams",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -798,7 +798,7 @@ var TalkCollection = {
   path: "src/content/talks",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -829,10 +829,10 @@ var TalkCollection = {
 var GalleryCollection = {
   name: "photos",
   label: "Galeria de Fotos",
-  path: "src/content/photos",
+  path: "src/content/gallery",
   format: "md",
   match: {
-    include: "**/*"
+    include: "**/*.md"
   },
   fields: [
     {
@@ -872,7 +872,7 @@ var config_default = defineConfig({
   token: process.env.TINA_TOKEN,
   build: {
     outputFolder: "admin",
-    publicFolder: "_site"
+    publicFolder: "./"
   },
   media: {
     tina: {

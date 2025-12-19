@@ -1,4 +1,4 @@
-import type { Collection } from 'tinacms';
+import type {Collection} from 'tinacms';
 
 export const ServiceCollection: Collection = {
   name: 'service',
@@ -6,7 +6,7 @@ export const ServiceCollection: Collection = {
   path: 'src/content/pages/services',
   format: 'md',
   match: {
-    include: '*',
+    include: '*.md'
   },
   fields: [
     {
@@ -14,25 +14,25 @@ export const ServiceCollection: Collection = {
       name: 'title',
       label: 'Título',
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: 'string',
       name: 'slug',
-      label: 'Slug',
+      label: 'Slug'
     },
     {
       type: 'string',
       name: 'description',
       label: 'Descrição',
       ui: {
-        component: 'textarea',
-      },
+        component: 'textarea'
+      }
     },
     {
       type: 'string',
       name: 'permalink',
-      label: 'Permalink',
+      label: 'Permalink'
     },
     {
       type: 'object',
@@ -42,45 +42,45 @@ export const ServiceCollection: Collection = {
         {
           type: 'string',
           name: 'color',
-          label: 'Cor (Tailwind Class)',
+          label: 'Cor (Tailwind Class)'
         },
         {
           type: 'string',
           name: 'tagline',
-          label: 'Tagline',
+          label: 'Tagline'
         },
         {
           type: 'string',
           name: 'icon',
-          label: 'Ícone (Emoji)',
+          label: 'Ícone (Emoji)'
         },
         {
           type: 'string',
           name: 'problem',
           label: 'Problema',
           ui: {
-            component: 'textarea',
-          },
+            component: 'textarea'
+          }
         },
         {
           type: 'string',
           name: 'solution',
           label: 'Solução',
           ui: {
-            component: 'textarea',
-          },
+            component: 'textarea'
+          }
         },
         {
           type: 'string',
           name: 'differentials',
           label: 'Diferenciais',
-          list: true,
+          list: true
         },
         {
           type: 'string',
           name: 'included',
           label: 'O que está incluso',
-          list: true,
+          list: true
         },
         {
           type: 'object',
@@ -91,20 +91,20 @@ export const ServiceCollection: Collection = {
             {
               type: 'string',
               name: 'title',
-              label: 'Título',
+              label: 'Título'
             },
             {
               type: 'string',
               name: 'description',
-              label: 'Descrição',
-            },
-          ],
+              label: 'Descrição'
+            }
+          ]
         },
         {
           type: 'string',
           name: 'target',
           label: 'Público Alvo',
-          list: true,
+          list: true
         },
         {
           type: 'object',
@@ -115,14 +115,14 @@ export const ServiceCollection: Collection = {
             {
               type: 'string',
               name: 'title',
-              label: 'Título',
+              label: 'Título'
             },
             {
               type: 'string',
               name: 'description',
-              label: 'Descrição',
-            },
-          ],
+              label: 'Descrição'
+            }
+          ]
         },
         {
           type: 'object',
@@ -132,22 +132,22 @@ export const ServiceCollection: Collection = {
             {
               type: 'string',
               name: 'cliente',
-              label: 'Cliente',
+              label: 'Cliente'
             },
             {
               type: 'string',
               name: 'quote',
               label: 'Citação',
               ui: {
-                component: 'textarea',
-              },
+                component: 'textarea'
+              }
             },
             {
               type: 'string',
               name: 'resultado',
-              label: 'Resultado',
-            },
-          ],
+              label: 'Resultado'
+            }
+          ]
         },
         {
           type: 'object',
@@ -158,17 +158,17 @@ export const ServiceCollection: Collection = {
             {
               type: 'string',
               name: 'question',
-              label: 'Pergunta',
+              label: 'Pergunta'
             },
             {
               type: 'string',
               name: 'answer',
               label: 'Resposta',
               ui: {
-                component: 'textarea',
-              },
-            },
-          ],
+                component: 'textarea'
+              }
+            }
+          ]
         },
         {
           type: 'object',
@@ -178,31 +178,31 @@ export const ServiceCollection: Collection = {
             {
               type: 'string',
               name: 'title',
-              label: 'Título',
+              label: 'Título'
             },
             {
               type: 'string',
               name: 'description',
-              label: 'Descrição',
+              label: 'Descrição'
             },
             {
               type: 'string',
               name: 'primary',
-              label: 'Botão Primário',
+              label: 'Botão Primário'
             },
             {
               type: 'string',
               name: 'secondary',
-              label: 'Botão Secundário',
+              label: 'Botão Secundário'
             },
             {
               type: 'string',
               name: 'link',
-              label: 'Link',
-            },
-          ],
-        },
-      ],
-    },
-  ],
+              label: 'Link'
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };

@@ -6,7 +6,7 @@ export const NewsletterCollection: Collection = {
   path: 'src/content/newsletter',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {

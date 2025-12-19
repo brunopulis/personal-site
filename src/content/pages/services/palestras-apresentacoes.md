@@ -20,53 +20,61 @@ service:
     Palestras energéticas e baseadas em casos reais que mostram o "porquê" e o "como" da acessibilidade.
     Transformo tópicos áridos em histórias que engajam e motivam a ação.
   
-  diferencial:
+  differentials:
     - Histórias reais de fracasso e sucesso
     - Foco em inspirar mudança de atitude
     - Conteúdo adaptável (técnico ou estratégico)
     - Oratória engajadora, sem slides chatos
   
-  inclusos:
+  included:
     - Briefing para alinhar com o público
     - Conteúdo customizado para o evento
     - Slides acessíveis compartilhados
     - Sessão de Q&A (Perguntas e Respostas)
     - Divulgação do evento nas minhas redes
   
-  resultado:
-    - Time inspirado e com senso de urgência
-    - Compreensão clara do valor de negócio
-    - Quebra de mitos sobre acessibilidade
-    - Engajamento da liderança
+  results:
+    - title: "Urgência"
+      description: "Time inspirado e com senso de urgência"
+    - title: "Valor de Negócio"
+      description: "Compreensão clara do valor de negócio"
+    - title: "Mitos Quebrados"
+      description: "Quebra de mitos sobre acessibilidade"
+    - title: "Engajamento"
+      description: "Engajamento da liderança"
   
-  publicoAlvo:
+  target:
     - Conferências de Tecnologia e Design
     - Eventos Corporativos (All-hands, Kick-offs)
     - Universidades e Bootcamps
     - Meetups de Comunidade
   
-  processo:
-    - Briefing: Entendimento do público e objetivo
-    - Preparação: Customização da narrativa e slides
-    - Evento: Apresentação e interação
-    - Pós-evento: Compartilhamento de materiais
+  processes:
+    - title: "Briefing"
+      description: "Entendimento do público e objetivo"
+    - title: "Preparação"
+      description: "Customização da narrativa e slides"
+    - title: "Evento"
+      description: "Apresentação e interação"
+    - title: "Pós-evento"
+      description: "Compartilhamento de materiais"
   
   timeline: "30 min a 2 horas"
   
-  testemunhal:
+  testimonials:
     cliente: "Conferência Tech"
     quote: "Foi a palestra mais comentada do evento. O Bruno conseguiu fazer todo mundo rir e pensar sério ao mesmo tempo."
     resultado: "Nota 9.8 de satisfação"
   
   faq:
-    - pergunta: "Você viaja para palestrar?"
-      resposta: "Sim, para qualquer lugar do Brasil ou mundo (custos de logística à parte)."
+    - question: "Você viaja para palestrar?"
+      answer: "Sim, para qualquer lugar do Brasil ou mundo (custos de logística à parte)."
     
-    - pergunta: "Faz palestras online?"
-      resposta: "Sim, tenho setup profissional de áudio e vídeo para eventos remotos."
+    - question: "Faz palestras online?"
+      answer: "Sim, tenho setup profissional de áudio e vídeo para eventos remotos."
     
-    - pergunta: "Pode falar sobre um tema específico?"
-      resposta: "Claro. Tenho temas prontos, mas adoro criar algo novo para necessidades específicas."
+    - question: "Pode falar sobre um tema específico?"
+      answer: "Claro. Tenho temas prontos, mas adoro criar algo novo para necessidades específicas."
   
   cta:
     title: "Pronto para Começar?"
