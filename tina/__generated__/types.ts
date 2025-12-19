@@ -355,7 +355,7 @@ export type PostSeo = {
 export type Post = Node & Document & {
   __typename?: 'Post';
   title: Scalars['String']['output'];
-  publishDate: Scalars['String']['output'];
+  date: Scalars['String']['output'];
   author: Scalars['String']['output'];
   description: Scalars['String']['output'];
   featured_image?: Maybe<Scalars['String']['output']>;
@@ -410,7 +410,7 @@ export type PostSeoFilter = {
 
 export type PostFilter = {
   title?: InputMaybe<StringFilter>;
-  publishDate?: InputMaybe<DatetimeFilter>;
+  date?: InputMaybe<DatetimeFilter>;
   author?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   featured_image?: InputMaybe<ImageFilter>;
@@ -775,6 +775,7 @@ export type MediaConnection = Connection & {
 export type Bookmark = Node & Document & {
   __typename?: 'Bookmark';
   title: Scalars['String']['output'];
+  url?: Maybe<Scalars['String']['output']>;
   date?: Maybe<Scalars['String']['output']>;
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
@@ -784,6 +785,7 @@ export type Bookmark = Node & Document & {
 
 export type BookmarkFilter = {
   title?: InputMaybe<StringFilter>;
+  url?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
   body?: InputMaybe<RichTextFilter>;
 };
@@ -1129,7 +1131,7 @@ export type PostSeoMutation = {
 
 export type PostMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  publishDate?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
   author?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   featured_image?: InputMaybe<Scalars['String']['input']>;
@@ -1252,6 +1254,7 @@ export type MediaMutation = {
 
 export type BookmarkMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
@@ -1278,7 +1281,7 @@ export type PhotosMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type PostPartsFragment = { __typename: 'Post', title: string, publishDate: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
+export type PostPartsFragment = { __typename: 'Post', title: string, date: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
 
 export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, permalink?: string | null, body?: any | null };
 
@@ -1292,7 +1295,7 @@ export type NewsletterPartsFragment = { __typename: 'Newsletter', title: string,
 
 export type MediaPartsFragment = { __typename: 'Media', title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null };
 
-export type BookmarkPartsFragment = { __typename: 'Bookmark', title: string, date?: string | null, body?: any | null };
+export type BookmarkPartsFragment = { __typename: 'Bookmark', title: string, url?: string | null, date?: string | null, body?: any | null };
 
 export type StreamPartsFragment = { __typename: 'Stream', title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: any | null };
 
@@ -1305,7 +1308,7 @@ export type PostQueryVariables = Exact<{
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title: string, publishDate: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } };
+export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title: string, date: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } };
 
 export type PostConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1317,7 +1320,7 @@ export type PostConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, publishDate: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, date: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } | null } | null> | null } };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1438,7 +1441,7 @@ export type BookmarkQueryVariables = Exact<{
 }>;
 
 
-export type BookmarkQuery = { __typename?: 'Query', bookmark: { __typename: 'Bookmark', id: string, title: string, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BookmarkQuery = { __typename?: 'Query', bookmark: { __typename: 'Bookmark', id: string, title: string, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BookmarkConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1450,7 +1453,7 @@ export type BookmarkConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BookmarkConnectionQuery = { __typename?: 'Query', bookmarkConnection: { __typename?: 'BookmarkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookmarkConnectionEdges', cursor: string, node?: { __typename: 'Bookmark', id: string, title: string, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BookmarkConnectionQuery = { __typename?: 'Query', bookmarkConnection: { __typename?: 'BookmarkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookmarkConnectionEdges', cursor: string, node?: { __typename: 'Bookmark', id: string, title: string, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type StreamQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1513,7 +1516,7 @@ export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
   __typename
   title
-  publishDate
+  date
   author
   description
   featured_image
@@ -1649,6 +1652,7 @@ export const BookmarkPartsFragmentDoc = gql`
     fragment BookmarkParts on Bookmark {
   __typename
   title
+  url
   date
   body
 }
@@ -2424,7 +2428,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "https://content.tinajs.io/2.0/content/8aba382b-98b2-494f-93e5-c8cbd5d6de3b/github/main",
+        url: "http://localhost:4001/graphql",
         queries,
       })
     )

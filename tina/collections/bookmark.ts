@@ -6,7 +6,7 @@ export const BookmarkCollection: Collection = {
   path: 'src/content/bookmarks',
   format: 'md',
   match: {
-    include: '**/*.md'
+    include: '**/*'
   },
   fields: [
     {
@@ -15,6 +15,11 @@ export const BookmarkCollection: Collection = {
       label: 'Título',
       isTitle: true,
       required: true
+    },
+    {
+      type: 'string',
+      name: 'url',
+      label: 'URL'
     },
     {
       type: 'datetime',

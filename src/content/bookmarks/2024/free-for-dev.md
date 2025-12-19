@@ -1,6 +1,6 @@
 ---
 title: 'Free for dev'
-pubdate: '2024-04-11'
+pubDate: 2024-04-11
 ---
 
 Projeto pessoal do Addy Osmani para armazenar referências gratuitas para desenvolvedores.

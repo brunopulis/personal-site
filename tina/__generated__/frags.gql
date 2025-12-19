@@ -1,7 +1,7 @@
 fragment PostParts on Post {
   __typename
   title
-  publishDate
+  date
   author
   description
   featured_image
@@ -130,6 +130,7 @@ fragment MediaParts on Media {
 fragment BookmarkParts on Bookmark {
   __typename
   title
+  url
   date
   body
 }

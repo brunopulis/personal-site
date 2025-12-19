@@ -7,11 +7,14 @@ var PostCollection = {
   label: "Blog",
   path: "src/content/posts",
   format: "md",
+  match: {
+    include: "**/*"
+  },
   defaultItem: () => {
     return {
       title: "Novo Post",
       author: "Pulis",
-      publishDate: (/* @__PURE__ */ new Date()).toISOString(),
+      pubDate: (/* @__PURE__ */ new Date()).toISOString(),
       seo: {
         meta_title: "",
         meta_description: "",
@@ -23,13 +26,20 @@ var PostCollection = {
       featured: false
     };
   },
-  match: {
-    include: "**/*.md"
-  },
   ui: {
+    // @ts-ignore
+    itemProps: (item) => {
+      return {
+        label: item?.title,
+        subtitle: item?.pubDate ? new Date(item.pubDate).toLocaleDateString("pt-BR") : ""
+      };
+    },
+    router: ({ document }) => {
+      return `/blog/${document._sys.filename}/`;
+    },
     filename: {
       slugify: (values) => {
-        const date = values?.publishDate ? new Date(values.publishDate) : /* @__PURE__ */ new Date();
+        const date = values?.pubDate ? new Date(values.pubDate) : /* @__PURE__ */ new Date();
         const year = date.getFullYear();
         const slug = values?.title?.toLowerCase().trim().replaceAll(/\s+/g, "-").replaceAll(/[^\w-]/g, "") || "post";
         const locale = "pt-br";
@@ -47,7 +57,7 @@ var PostCollection = {
     },
     {
       type: "datetime",
-      name: "publishDate",
+      name: "date",
       label: "Data de Publica\xE7\xE3o",
       required: true,
       ui: {
@@ -153,7 +163,7 @@ var PageCollection = {
   path: "src/content/pages",
   format: "md",
   match: {
-    include: "*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -711,7 +721,7 @@ var BookmarkCollection = {
   path: "src/content/bookmarks",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -720,6 +730,11 @@ var BookmarkCollection = {
       label: "T\xEDtulo",
       isTitle: true,
       required: true
+    },
+    {
+      type: "string",
+      name: "url",
+      label: "URL"
     },
     {
       type: "datetime",
