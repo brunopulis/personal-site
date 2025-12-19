@@ -3,10 +3,10 @@ import type {Collection} from 'tinacms';
 export const MediaCollection: Collection = {
   name: 'media',
   label: 'Mídia (Filmes/Séries)',
-  path: 'src/content/media',
+  path: 'src/content/medias',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {

@@ -6,7 +6,7 @@ export const StreamCollection: Collection = {
   path: 'src/content/streams',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {

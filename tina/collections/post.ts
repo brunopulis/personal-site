@@ -1,4 +1,4 @@
-import type { Collection } from 'tinacms';
+import type {Collection} from 'tinacms';
 
 export const PostCollection: Collection = {
   name: 'post',
@@ -13,20 +13,20 @@ export const PostCollection: Collection = {
       seo: {
         meta_title: '',
         meta_description: '',
-        keywords: [],
+        keywords: []
       },
       tags: [],
       categories: [],
       draft: false,
-      featured: false,
+      featured: false
     };
   },
   match: {
-    include: '**/*',
+    include: '**/*.md'
   },
   ui: {
     filename: {
-      slugify: (values) => {
+      slugify: values => {
         const date = values?.publishDate ? new Date(values.publishDate) : new Date();
         const year = date.getFullYear();
         const slug =
@@ -38,8 +38,8 @@ export const PostCollection: Collection = {
         // Preserve locale from existing path or default to pt-br
         const locale = 'pt-br'; // You can make this dynamic based on a field
         return `${locale}/${year}/${slug}`;
-      },
-    },
+      }
+    }
   },
   fields: [
     {
@@ -47,7 +47,7 @@ export const PostCollection: Collection = {
       name: 'title',
       label: 'Título',
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: 'datetime',
@@ -56,14 +56,14 @@ export const PostCollection: Collection = {
       required: true,
       ui: {
         dateFormat: 'DD/MM/YYYY',
-        timeFormat: 'HH:mm',
-      },
+        timeFormat: 'HH:mm'
+      }
     },
     {
       type: 'string',
       name: 'author',
       label: 'Autor',
-      required: true,
+      required: true
     },
     {
       type: 'string',
@@ -72,20 +72,20 @@ export const PostCollection: Collection = {
       required: true,
       ui: {
         component: 'textarea',
-        description: 'Resumo do post para SEO e preview',
-      },
+        description: 'Resumo do post para SEO e preview'
+      }
     },
     {
       type: 'image',
       name: 'featured_image',
-      label: 'Imagem Destaque',
+      label: 'Imagem Destaque'
     },
     {
       type: 'rich-text',
       name: 'body',
       label: 'Conteúdo',
       isBody: true,
-      required: true,
+      required: true
     },
     {
       type: 'string',
@@ -93,16 +93,16 @@ export const PostCollection: Collection = {
       label: 'Categorias',
       list: true,
       ui: {
-        component: 'list',
+        component: 'list'
       },
       options: [
-        { value: 'tecnologia', label: 'Tecnologia' },
-        { value: 'design', label: 'Design' },
-        { value: 'desenvolvimento', label: 'Desenvolvimento' },
-        { value: 'tutorial', label: 'Tutorial' },
-        { value: 'opiniao', label: 'Opinião' },
-        { value: 'noticias', label: 'Notícias' },
-      ],
+        {value: 'tecnologia', label: 'Tecnologia'},
+        {value: 'design', label: 'Design'},
+        {value: 'desenvolvimento', label: 'Desenvolvimento'},
+        {value: 'tutorial', label: 'Tutorial'},
+        {value: 'opiniao', label: 'Opinião'},
+        {value: 'noticias', label: 'Notícias'}
+      ]
     },
     {
       type: 'string',
@@ -110,16 +110,16 @@ export const PostCollection: Collection = {
       label: 'Tags',
       list: true,
       ui: {
-        component: 'tags',
-      },
+        component: 'tags'
+      }
     },
     {
       type: 'boolean',
       name: 'draft',
       label: 'Rascunho',
       ui: {
-        description: 'Marque para manter como rascunho',
-      },
+        description: 'Marque para manter como rascunho'
+      }
     },
     {
       type: 'object',
@@ -129,23 +129,23 @@ export const PostCollection: Collection = {
         {
           type: 'string',
           name: 'meta_title',
-          label: 'Meta Title',
+          label: 'Meta Title'
         },
         {
           type: 'string',
           name: 'meta_description',
           label: 'Meta Description',
           ui: {
-            component: 'textarea',
-          },
+            component: 'textarea'
+          }
         },
         {
           type: 'string',
           name: 'keywords',
           label: 'Keywords',
-          list: true,
-        },
-      ],
-    },
-  ],
+          list: true
+        }
+      ]
+    }
+  ]
 };

@@ -9,7 +9,7 @@ rating: 5
 description:
 thoughts: ''
 quotes: ''
-attendedYear: 2022
+attendedYear: "2022"
 pubDate: 2022-10-15
 url: https://amzn.to/4rWMZbL
 ---

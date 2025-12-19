@@ -1,4 +1,4 @@
-import type { Collection } from 'tinacms';
+import type {Collection} from 'tinacms';
 
 export const PageCollection: Collection = {
   name: 'page',
@@ -6,7 +6,7 @@ export const PageCollection: Collection = {
   path: 'src/content/pages',
   format: 'md',
   match: {
-    include: '*',
+    include: '*.md'
   },
   fields: [
     {
@@ -14,26 +14,26 @@ export const PageCollection: Collection = {
       name: 'title',
       label: 'Título',
       isTitle: true,
-      required: true,
+      required: true
     },
     {
       type: 'string',
       name: 'description',
       label: 'Descrição',
       ui: {
-        component: 'textarea',
-      },
+        component: 'textarea'
+      }
     },
     {
       type: 'string',
       name: 'permalink',
-      label: 'Permalink',
+      label: 'Permalink'
     },
     {
       type: 'rich-text',
       name: 'body',
       label: 'Conteúdo',
-      isBody: true,
-    },
-  ],
+      isBody: true
+    }
+  ]
 };

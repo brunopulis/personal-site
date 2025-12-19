@@ -19,53 +19,61 @@ service:
     Remediamos estrutura, contraste, navegação e semântica. Seu conteúdo fica acessível 
     sem perder a formatação ou qualidade visual.
   
-  diferencial:
+  differentials:
     - Processo automatizado para documentos em volume
     - Sem perder qualidade ou design original
     - Conformidade WCAG 2.1 AA garantida
     - Documentação completa do processo
   
-  inclusos:
+  included:
     - Auditoria inicial do documento
     - Remediação de estrutura e hierarquia
     - Correção de contraste e legibilidade
     - Validação com ferramentas WCAG
     - Relatório técnico entregue
   
-  resultado:
-    - PDFs acessíveis a leitores de tela
-    - Navegação estruturada por títulos
-    - Contraste e fontes adequados
-    - Documento pronto para distribuição
+  results:
+    - title: "Leitores de Tela"
+      description: "PDFs acessíveis a leitores de tela"
+    - title: "Navegação Estruturada"
+      description: "Navegação estruturada por títulos"
+    - title: "Legibilidade"
+      description: "Contraste e fontes adequados"
+    - title: "Pronto para Uso"
+      description: "Documento pronto para distribuição"
 
-  publicoAlvo:
+  target:
     - Empresas com muitos PDFs para clientes
     - Instituições públicas e governamentais
     - Editoras e produtoras de conteúdo
     - Empresas em conformidade com LGPD
 
-  processo:
-    - Você envia os arquivos
-    - Análise inicial (1-2 dias)
-    - Remediação estruturada (conforme volume)
-    - Validação e entrega final
+  processes:
+    - title: "Envio"
+      description: "Você envia os arquivos"
+    - title: "Análise"
+      description: "Análise inicial (1-2 dias)"
+    - title: "Remediação"
+      description: "Remediação estruturada (conforme volume)"
+    - title: "Entrega"
+      description: "Validação e entrega final"
   
   timeline: "2-4 semanas"
 
-  testemunhal:
+  testimonials:
     cliente: "TechCorp Brasil"
     quote: "Conseguimos remediar 500 PDFs de forma profissional e eficiente."
     resultado: "100% de conformidade WCAG AA"
 
   faq:
-    - pergunta: "Quanto tempo leva remediar meus documentos?"
-      resposta: "2-4 semanas, dependendo de volume. Enviamos estimativa detalhada após análise inicial."
+    - question: "Quanto tempo leva remediar meus documentos?"
+      answer: "2-4 semanas, dependendo de volume. Enviamos estimativa detalhada após análise inicial."
     
-    - pergunta: "Meu documento vai ficar visualmente diferente?"
-      resposta: "Não. Mantemos layout e design. Tornamos acessível apenas internamente."
+    - question: "Meu documento vai ficar visualmente diferente?"
+      answer: "Não. Mantemos layout e design. Tornamos acessível apenas internamente."
     
-    - pergunta: "Como vocês garantem conformidade?"
-      resposta: "Testamos com ferramentas WCAG e entregamos relatório de conformidade completo."
+    - question: "Como vocês garantem conformidade?"
+      answer: "Testamos com ferramentas WCAG e entregamos relatório de conformidade completo."
 
   cta:
     title: "Pronto para Começar?"

@@ -6,7 +6,7 @@ export const TalkCollection: Collection = {
   path: 'src/content/talks',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {

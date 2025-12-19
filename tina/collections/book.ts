@@ -75,7 +75,7 @@ export const BookCollection: Collection = {
       }
     },
     {
-      type: 'string',
+      type: 'number',
       name: 'attendedYear',
       label: 'Ano de Leitura'
     },
