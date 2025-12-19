@@ -1,9 +1,8 @@
 # Hidden files
 .pnpm-store
 .jest/cache
-.cache
 .env
-.env.local
+.cache
 .idea/
 .vscode/
 .DS_Store

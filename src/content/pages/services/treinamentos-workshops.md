@@ -19,53 +19,61 @@ service:
     Treinamentos práticos e workshops "hands-on" que usam o SEU código e design. 
     Transformamos teoria em prática imediata, criando autonomia no time.
   
-  diferencial:
+  differentials:
     - Treinamento com o código real da sua empresa
     - Foco em autonomia, não dependência
     - Acessibilidade como cultura, não checklist
     - ROI de longo prazo com equipe capacitada
   
-  inclusos:
+  included:
     - Setup inicial no ambiente do projeto
     - Hands-on coding e design reviews
     - Testes com leitores de tela reais
     - Material de referência personalizado
     - Suporte via Slack/Email pós-treinamento
   
-  resultado:
-    - Equipe autônoma para resolver problemas futuros
-    - Redução drástica de bugs de acessibilidade
-    - Código mais semântico e performático
-    - Cultura de inclusão enraizada no time
+  results:
+    - title: "Autonomia"
+      description: "Equipe autônoma para resolver problemas futuros"
+    - title: "Redução de Bugs"
+      description: "Redução drástica de bugs de acessibilidade"
+    - title: "Código Semântico"
+      description: "Código mais semântico e performático"
+    - title: "Cultura"
+      description: "Cultura de inclusão enraizada no time"
   
-  publicoAlvo:
+  target:
     - Equipes de Desenvolvimento (React, Vue, etc)
     - Designers de Produto e UX/UI
     - Times de QA e Testers
     - Liderança técnica e de produto
   
-  processo:
-    - Kickoff: Entendimento do nível da equipe e stack
-    - Design do Treinamento: Customização do conteúdo
-    - Execução: Workshop prático ou série de aulas
-    - Follow-up: Suporte para implementação do aprendizado
+  processes:
+    - title: "Kickoff"
+      description: "Entendimento do nível da equipe e stack"
+    - title: "Design do Treinamento"
+      description: "Customização do conteúdo"
+    - title: "Execução"
+      description: "Workshop prático ou série de aulas"
+    - title: "Follow-up"
+      description: "Suporte para implementação do aprendizado"
   
   timeline: "1 dia (Workshop) a 6 semanas (Série)"
   
-  testemunhal:
+  testimonials:
     cliente: "Agência Digital"
     quote: "Mudou nossa forma de pensar. Antes acessibilidade era medo, agora é orgulho do time."
     resultado: "Equipe 100% engajada"
   
   faq:
-    - pergunta: "É presencial ou remoto?"
-      resposta: "Ambos. Remoto funciona bem para times distribuídos, presencial é ótimo para imersão."
+    - question: "É presencial ou remoto?"
+      answer: "Ambos. Remoto funciona bem para times distribuídos, presencial é ótimo para imersão."
     
-    - pergunta: "Precisa saber muito de acessibilidade antes?"
-      resposta: "Não. Adaptamos o nível, do básico ao avançado."
+    - question: "Precisa saber muito de acessibilidade antes?"
+      answer: "Não. Adaptamos o nível, do básico ao avançado."
     
-    - pergunta: "Vocês emitem certificado?"
-      resposta: "Sim, certificado de conclusão para todos os participantes."
+    - question: "Vocês emitem certificado?"
+      answer: "Sim, certificado de conclusão para todos os participantes."
   
   cta:
     title: "Pronto para Começar?"

@@ -6,7 +6,7 @@ export const BookmarkCollection: Collection = {
   path: 'src/content/bookmarks',
   format: 'md',
   match: {
-    include: '**/*'
+    include: '**/*.md'
   },
   fields: [
     {

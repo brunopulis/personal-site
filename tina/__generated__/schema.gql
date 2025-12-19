@@ -390,7 +390,7 @@ type Book implements Node & Document {
   description: String
   thoughts: String
   quotes: String
-  attendedYear: String
+  attendedYear: Float
   recommendBy: String
   tags: [String]
   url: String
@@ -421,7 +421,7 @@ input BookFilter {
   description: StringFilter
   thoughts: StringFilter
   quotes: StringFilter
-  attendedYear: StringFilter
+  attendedYear: NumberFilter
   recommendBy: StringFilter
   tags: StringFilter
   url: StringFilter
@@ -784,7 +784,7 @@ input BookMutation {
   description: String
   thoughts: String
   quotes: String
-  attendedYear: String
+  attendedYear: Float
   recommendBy: String
   tags: [String]
   url: String
