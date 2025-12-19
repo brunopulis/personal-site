@@ -101,7 +101,7 @@ export default async function eleventy(eleventyConfig) {
 
   //  Passthrough File Copy
   // Admin na raiz do projeto (fora de src/)
-  eleventyConfig.addPassthroughCopy({ 'admin': 'admin' });
+  eleventyConfig.addPassthroughCopy('./admin');
   
   // Outros arquivos dentro de src/
   [
