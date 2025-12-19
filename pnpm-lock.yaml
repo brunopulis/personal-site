@@ -42,7 +42,7 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3
       '@zachleat/table-saw':
-        specifier: ^1.0.6
+        specifier: ^1.0.7
         version: 1.0.7
       lite-youtube-embed:
         specifier: ^0.3.4
@@ -3328,11 +3328,28 @@ packages:
       vue-router:
         optional: true
 
+  '@vitejs/plugin-react@3.1.0':
+    resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.1.0-beta.0
+
+  '@vweevers/length-prefixed-stream@1.0.0':
+    resolution: {integrity: sha512-0LRYNcKW2t/bWJmiKYhPIUVwz4iMNpC3aPh3UdvfUS8B+68kHpdht7pPcuawb08057rXuyuxZXavcVpoVL01AA==}
+    engines: {node: '>=12'}
+
+  '@whatwg-node/promise-helpers@1.3.2':
+    resolution: {integrity: sha512-Nst5JdK47VIl9UcGwtv2Rcgyn5lWtZ0/mhRQ4G8NN2isxpq2TO30iqHzmwoJycjWuyUfg3GFXqP/gFHXeV57IA==}
+    engines: {node: '>=16.0.0'}
+
+  '@xobotyi/scrollbar-width@1.9.5':
+    resolution: {integrity: sha512-N8tkAACJx2ww8vFMneJmaAgmjAG1tnVBZJRLRcx061tmsLRZHSEZSLuGWnwPtunsSLvSqXQ2wfp7Mgqg1I+2dQ==}
+
   '@zachleat/snow-fall@1.0.3':
     resolution: {integrity: sha512-Y9srRbmO+k31vSm+eINYRV9DRoeWGV5/hlAn9o34bLpoWo+T5945v6XGBrFzQYjhyEGB4j/4zXuTW1zTxp2Reg==}
 
-  '@zachleat/table-saw@1.0.6':
-    resolution: {integrity: sha512-2nGcrjy+sMrQaLNChXaAcucNkQYcovMqVHCsF4M3dzIrOGocnuRFNRHaHFqjgN7Bcy45g62o/9TvvHyoZLdShg==}
+  '@zachleat/table-saw@1.0.7':
+    resolution: {integrity: sha512-AxYShldkUoofdzqyH/pgbiXBgoRbFtoQYKbCjTK7diViqepM2SqZoMZm7ofc9UeGaDWgktAOmoJg3T+yN0SAxA==}
 
   a-sync-waterfall@1.0.1:
     resolution: {integrity: sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==}
@@ -11325,9 +11342,32 @@ snapshots:
     optionalDependencies:
       react: 19.2.3
 
+  '@vitejs/plugin-react@3.1.0(vite@4.5.14(@types/node@25.0.3)(lightningcss@1.30.2)(terser@5.44.1))':
+    dependencies:
+      '@babel/core': 7.28.5
+      '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.5)
+      '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.28.5)
+      magic-string: 0.27.0
+      react-refresh: 0.14.2
+      vite: 4.5.14(@types/node@25.0.3)(lightningcss@1.30.2)(terser@5.44.1)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@vweevers/length-prefixed-stream@1.0.0':
+    dependencies:
+      inherits: 2.0.4
+      readable-stream: 4.7.0
+      varint: 5.0.2
+
+  '@whatwg-node/promise-helpers@1.3.2':
+    dependencies:
+      tslib: 2.6.3
+
+  '@xobotyi/scrollbar-width@1.9.5': {}
+
   '@zachleat/snow-fall@1.0.3': {}
 
-  '@zachleat/table-saw@1.0.6': {}
+  '@zachleat/table-saw@1.0.7': {}
 
   a-sync-waterfall@1.0.1: {}
 
