@@ -8,50 +8,6 @@ export const PostCollection: Collection = {
   match: {
     include: '**/*'
   },
-
-  defaultItem: () => {
-    return {
-      title: 'Novo Post',
-      author: 'Pulis',
-      pubDate: new Date().toISOString(),
-      seo: {
-        meta_title: '',
-        meta_description: '',
-        keywords: []
-      },
-      tags: [],
-      categories: [],
-      draft: false,
-      featured: false
-    };
-  },
-  ui: {
-    // @ts-ignore
-    itemProps: (item: any) => {
-      return {
-        label: item?.title,
-        subtitle: item?.pubDate ? new Date(item.pubDate).toLocaleDateString('pt-BR') : ''
-      };
-    },
-    router: ({document}: {document: any}) => {
-      return `/blog/${document._sys.filename}/`;
-    },
-    filename: {
-      slugify: (values: any) => {
-        const date = values?.pubDate ? new Date(values.pubDate) : new Date();
-        const year = date.getFullYear();
-        const slug =
-          values?.title
-            ?.toLowerCase()
-            .trim()
-            .replaceAll(/\s+/g, '-')
-            .replaceAll(/[^\w-]/g, '') || 'post';
-        // Preserve locale from existing path or default to pt-br
-        const locale = 'pt-br'; // You can make this dynamic based on a field
-        return `${locale}/${year}/${slug}`;
-      }
-    }
-  },
   fields: [
     {
       type: 'string',
@@ -66,15 +22,8 @@ export const PostCollection: Collection = {
       label: 'Data de Publicação',
       required: true,
       ui: {
-        dateFormat: 'DD/MM/YYYY',
-        timeFormat: 'HH:mm'
+        dateFormat: 'DD/MM/YYYY'
       }
-    },
-    {
-      type: 'string',
-      name: 'author',
-      label: 'Autor',
-      required: true
     },
     {
       type: 'string',
