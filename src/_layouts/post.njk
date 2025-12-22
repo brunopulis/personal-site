@@ -4,7 +4,7 @@ schema: BlogPosting
 ---
 
 <section class="hero" id="hero">
-  <div class="container">
+  <div class="mx-auto px-6 max-w-7xl py-6">
     <div>
       <h1 class="hero__title" id="hero-section">{{ title }}</h1>
       <p>{{ description }}</p>
@@ -29,7 +29,7 @@ schema: BlogPosting
     </div>
 </section>
 
-<div class="max:md-px-6 py-12 max-w-7xl mx-auto">
+<div class="mx-auto px-6 max-w-7xl py-6">
   <article itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
     {% if image %}
     {% image image, alt or "", credit, "eager", "feature" %}
