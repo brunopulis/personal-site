@@ -10,7 +10,7 @@ schema: BlogPosting
       <p>{{ description }}</p>
 
       <div class="text-sm font-medium items-center mt-6 flex flex-wrap gap-6 lg:text-base mb-6 text-blood-red-800">
-        {% set definedDate = date %}
+        {% set definedDate = pubDate %}
         {% include "partials/date.njk" %}
 
         {% if tags.length > 1 %}
