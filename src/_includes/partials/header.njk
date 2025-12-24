@@ -1,6 +1,23 @@
 <a href="#main" class="sr-only">{{ meta.skipContent }}</a>
 <header class="bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/75">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    {% include "partials/main-nav.njk" %}
+    <div class="flex items-center gap-6 py-5">
+       <div class="flex items-center shrink-0">
+          <a href="/" class="inline-flex items-center" {{ indicateActiveHome }}>
+            {% svg "misc/logo" %}
+          </a>
+
+          <!-- Desktop Menu -->
+          <nav id="mainnav" aria-label="{{ meta.navigation.ariaTop }}" class="hidden md:flex flex-1 justify-center">
+            <ul class="flex flex-wrap items-center gap-x-8 gap-y-2">
+              {% for item in navigation.top %}
+              <li>
+                <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+                  class="text-gray-700 hover:text-gray-900 transition-colors font-medium">{{ item.text }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+      </div>
   </div>
 </header>
