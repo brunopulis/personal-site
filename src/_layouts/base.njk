@@ -34,6 +34,8 @@
   <!-- 8 meta tags, icons, open graph etc.  -->
   {% include "head/meta-info.njk" %}
 
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"></script>
+
   {% block head %}{% endblock %}
 </head>
 
@@ -54,7 +56,7 @@
   {% block after_main %}{% endblock %}
   {% include "partials/footer.njk" %}
 
-    {# Web Components - Scripts que carregam no navegador #}
+  {# Web Components - Scripts que carregam no navegador #}
   <script type="module" src="/assets/scripts/is-land.js"></script>
   
   {# Componente de neve - só aparece se o usuário não tiver preferência por movimento reduzido #}
