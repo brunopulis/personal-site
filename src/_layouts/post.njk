@@ -3,10 +3,10 @@ layout: base
 schema: BlogPosting
 ---
 
-<section class="hero" id="hero">
-  <div class="mx-auto px-6 max-w-7xl py-6">
+<section class="hero" id="hero" aria-labelledby="posts-title" >
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
     <div>
-      <h1 class="hero__title" id="hero-section">{{ title }}</h1>
+      <h1 class="hero__title" id="post-title">{{ title }}</h1>
       <p>{{ description }}</p>
 
       <div class="text-sm font-medium items-center mt-6 flex flex-wrap gap-6 lg:text-base mb-6 text-blood-red-800">
@@ -29,17 +29,17 @@ schema: BlogPosting
     </div>
 </section>
 
-<div class="mx-auto px-6 max-w-7xl py-6">
+<div class="mx-auto max-w-5xl px-6 py-10">
   <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
     {% if image %}
     {% image image, alt or "", credit, "eager", "feature" %}
     {% endif %}
-    <div class="prose prose-lg max-w-none">
+    <div class="prose prose-lg mx-auto">
       {{ content | safe }}
     </div>
   </article>
 
-  <div class="flex flex-col gap-6">
+  <div class="mx-auto max-w-5xl px-6 py-6">
     {% set postTitle = title %}
     {% set postUrl = page.url %}
     {% set email = "brunopulis@protonmail.com" %}
