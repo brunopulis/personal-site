@@ -9,7 +9,7 @@
     {% if allRecentPosts.length %}
     <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {% for post in allRecentPosts.slice(0, 6) %}
-      <li class="group">
+      <li class="group h-100">
         <article class="h-full rounded-2xl border border-gray-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg">
           <h3 class="mb-3 font-semibold text-xl leading-snug">
             <a href="{{ post.url }}"
