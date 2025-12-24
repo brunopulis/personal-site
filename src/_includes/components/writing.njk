@@ -1,28 +1,30 @@
-<section class="pb-12">
-  <div class="max-w-7xl mx-auto max-sm:px-6">
+<section aria-labelledby="posts-title" class="bg-white py-12">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
     <div class="flex flex-col md:flex-row items-start md:items-center md:mb-4 justify-between gap-4">
-      <h2 class="text-errie-black-900 font-bold text-4xl mb-4">Últimos artigos</h2>
+      <h2 class="text-errie-black-900 font-bold text-4xl mb-4" id="post-title">Últimos artigos</h2>
       <a href="/blog" class="underline underline-offset-8">todos artigos</a>
     </div>
 
     {% set allRecentPosts = collections.posts %}
     {% if allRecentPosts.length %}
-    <ul class="grid gap-6 md:grid-cols-1">
+    <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {% for post in allRecentPosts.slice(0, 6) %}
-      <li class="py-4">
-        <h3 class="mb-4 font-bold text-3xl">
-          <a href="{{ post.url }}"
-            class="text-errie-black-900 font-semibold flex gap-2 items-center transition underline underline-offset-8 hover:no-underline">
-            {{ post.data.title }}
-          </a>
-        </h3>
-
-        {% if post.data.description %}
-        <p class="flex items-center font-light gap-4 my-4 text-xl">{{ post.data.description }}</p>
-        {% endif %}
-        <time datetime="{{ post.data.pubDate }}" class="text-errie-black-900 font-display">
-          Publicado em: {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
-        </time>
+      <li class="group">
+        <article class="h-full rounded-2xl border border-gray-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <h3 class="mb-3 font-semibold text-xl leading-snug">
+            <a href="{{ post.url }}"
+              class="text-errie-black-900 font-semibold flex gap-2 items-center transition underline underline-offset-8 decoration-transparent transition group-hover:decoration-gray-900">
+              {{ post.data.title }}
+            </a>
+          </h3>
+  
+          {% if post.data.description %}
+            <p class="mb-6 text-xl">{{ post.data.description }}</p>
+          {% endif %}
+          <time datetime="{{ post.data.pubDate }}" class="text-errie-black-900 font-display">
+            Publicado em: {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
+          </time>
+        </article>
       </li>
       {% endfor %}
     </ul>
