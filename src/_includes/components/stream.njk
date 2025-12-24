@@ -10,14 +10,14 @@
       {% if streams.length %}
       {% for item in streams.slice(0, 3) %}
       <article
-        class="rounded-2xl bg-gray-50 p-8 group hover:shadow-xl shadow-sm transition stream-card--{{ item.data.type }}">
+        class="h-entry rounded-2xl bg-gray-50 p-8 group hover:shadow-xl shadow-sm transition stream-card--{{ item.data.type }}">
         <span class="mb-4" aria-hidden="true">
           {{ item.data.type | streamIcon }}
         </span>
         <h3 class="text-errie-black-900 font-bold mb-3 text-sm">{{ item.data.title }}</h3>
 
         {% if item.data.detail %}
-        <p class="text-errie-black-900">{{ item.data.detail }}</p>
+        <p class="p-content text-errie-black-900">{{ item.data.detail }}</p>
         {% endif %}
 
         <div class="cluster">
