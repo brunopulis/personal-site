@@ -7,7 +7,7 @@
       </a>
 
       <nav id="mainnav" aria-label="{{ meta.navigation.ariaTop }}" class="hidden md:flex ml-auto">
-        <ul class="flex items-center gap-x-8">
+        <ul class="flex items-center gap-8">
           {% for item in navigation.top %}
           <li>
             <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
