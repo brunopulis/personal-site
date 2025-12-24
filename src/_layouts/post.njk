@@ -30,7 +30,7 @@ schema: BlogPosting
 </section>
 
 <div class="mx-auto px-6 max-w-7xl py-6">
-  <article itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
+  <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
     {% if image %}
     {% image image, alt or "", credit, "eager", "feature" %}
     {% endif %}
