@@ -15,7 +15,7 @@ description: 'Uma grande lista de todas as páginas, projetos e postagens do meu
 - [Jogos](/jogos) - minha coleção de jogos;
 - [Changelog](/log) - Changelog e versões anteriores deste site;
 - [Afiliados](/afiliados) - Use esses links de referência para serviços que eu uso e nós dois ganhamos coisas grátis;
-- [Agora](/agora) - o que estou fazendo agora;
+- [Agora](/now) - o que estou fazendo agora;
 - [Inscreva-se](/inscreva) - assine meu blog, notas, links e newsletter;
 - [Projetos](/projetos) - Tudo o que eu fiz;
 - [Uso de IA](/ia) - Para que eu uso e não uso IA;
