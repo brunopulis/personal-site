@@ -6,85 +6,115 @@ description: 'A história de quem escreve nesse site.'
 date: Last Modified
 ---
 
-Sou Bruno Pulis, um especialista em acessibilidade digital e front-end.
-Minha paixão é criar uma web que realmente funcione para você e para todo mundo.
+Nem sempre eu trabalhei com tecnologia.
+
+Em 2006, meu trabalho era simples: servir hambúrguer no Burger King.
+Hoje, meu trabalho é outro — mas continua sendo sobre pessoas.
+
+Eu sou **Bruno Pulis**.
+Trabalho com **acessibilidade digital e front-end**, ajudando a construir uma web que funcione de verdade para todo mundo.
 
 ## Minha missão
 
-Acredito em uma verdade simples: **tecnologia boa é tecnologia que inclui pessoas**.
+Ao longo da minha carreira, vi muitos produtos tecnicamente “bons” falharem no mais importante: as pessoas.
 
-Em Belo Horizonte, trabalho como **Especialista de Testes em Acessibilidade** na [NTT DATA Brasil](https://br.nttdata.com/), mas o que me move é meu propósito: ajudar pessoas e empresas a construírem experiências digitais verdadeiramente inclusivas.
+Sites bonitos, rápidos, bem escritos — mas impossíveis de usar para alguém com deficiência, com limitações temporárias ou simplesmente em um contexto diferente do esperado.
+
+Foi aí que entendi algo simples, mas fácil de ignorar:
+
+> tecnologia boa é tecnologia que inclui pessoas.
+
+Hoje, esse é o centro do meu trabalho.
+
+Atualmente moro Belo Horizonte, e atuo como **Especialista de Testes em Acessibilidade** na [NTT DATA Brasil](https://br.nttdata.com/). 
+
+Mas mais do que um cargo, o que me move é o propósito de ajudar pessoas e empresas a criarem experiências digitais verdadeiramente inclusivas.
 
 Para isso, eu:
 
-- Escrevo sobre o tema;
-- Dou Palestras e Treinamentos;
-- Ofereço Mentorias personalizadas.
+- escrevo sobre acessibilidade e web;
+- dou palestras e treinamentos;
+- ofereço mentorias personalizadas;
+- presto alguns [serviços digitais](/servicos).
 
-Também presto alguns [serviços digitais](/servicos).
+Se quiser saber mais sobre minha trajetória profissional, você pode consultar [meu currículo](/cv).
 
-Você pode consultar [meu currículo](/cv) para saber mais sobre minhas experiências.
+---
 
 ## Como Cheguei até Aqui
 
-Minha jornada não começou no código. Em 2006, eu estava servindo hambúrguer no Burger King.
+Minha jornada não começou no código. 
 
-Em 2010, formado em Sistemas para Internet, comecei a viver a web, passando por agências e startups.
+Em 2010, formado em **Sistemas para Internet**, passei a viver a web no dia a dia. 
 
-O ponto de virada foi em 2021, quando a acessibilidade se tornou meu foco principal.
+Trabalhei em agências, startups e projetos de diferentes tamanhos. Aprendi muito — e também vi muita gente ficando de fora.
 
-Desde então, cada projeto é um lembrete: **quero uma internet onde ninguém fique de fora**.
+O ponto de virada veio em **2021**.
 
-Em 2015, criei o [Awesome A11y](https://github.com/brunopulis/awesome-a11y), um repositório de recursos sobre acessibilidade.
+A acessibilidade deixou de ser um detalhe técnico e passou a ser o foco principal do meu trabalho. Desde então, cada projeto virou um lembrete constante:
+**a internet só faz sentido se ninguém ficar de fora**.
 
-Em 2017, mergulhei na área de Qualidade de Software.
+Alguns marcos dessa caminhada:
+
+- Em 2015, criei o [Awesome A11y](https://github.com/brunopulis/awesome-a11y), um repositório de recursos sobre acessibilidade.
+- Em 2017, mergulhei na área de Qualidade de Software, o que aprofundou ainda mais meu olhar crítico sobre processos, testes e impacto real do que entregamos.
+
+--- 
 
 ## Comunidade
 
-Sempre adorei compartilhar o que aprendo. A comunidade me deu propósito e grandes amizades.
+Sempre gostei de compartilhar o que aprendo.
+Mas foi na comunidade que encontrei algo maior: **propósito e pertencimento**.
 
-- Sou co-fundador do [Minas Dev](https://minasdev.org).
-- Já organizei diversos meetups e eventos em BH.
+Sou cofundador do Minas Dev e já ajudei a organizar diversos meetups e eventos em Belo Horizonte. Ao longo do tempo, esses espaços renderam não só aprendizado, mas também grandes amizades.
 
-Você pode conferir [meus projetos open-source](/projetos).
+Também contribuo com projetos open source e sigo produzindo conteúdos sobre acessibilidade e qualidade.
 
-Sigo contribuindo com projetos e conteúdos sobre acessibilidade e qualidade.
+A comunidade não é um extra no meu trabalho — ela faz parte dele.
+
+---
 
 ## O que me guia
 
 Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.
 
-Para mim, criar uma web acessível é uma extensão do chamado bíblico ao amor ao próximo.
+Para mim, criar uma web acessível não é apenas uma decisão técnica.
+É uma expressão prática do chamado bíblico ao amor ao próximo.
 
-É garantir a dignidade de cada pessoa no ambiente digital.
+É garantir dignidade.
+Também no ambiente digital.
 
-Meus princípios de trabalho são:
+Alguns princípios que guiam meu trabalho:
 
-- Fé e trabalho andam juntos;
-- Inclusão acima de tudo;
-- Educação, e não julgamento;
-- Qualidade sem desculpas.
+- fé e trabalho caminham juntos;
+- inclusão acima de tudo;
+- educação, e não julgamento;
+- qualidade sem desculpas.
+
+---
 
 ## Fora da tela
 
-Minha vida é muito maior que minha profissão. Minha família é minha prioridade, e é por isso que sou rigoroso com meus horários.
+Minha vida é muito maior que minha profissão.
 
-Eu sou um leitor compulsivo. Eu leio de tudo, mas especialmente:
+Minha família é minha prioridade, e por isso sou bastante rigoroso com meus horários e limites.
 
-- Teologia;
-- Ficção Científica;
-- Biografias;
-- Produtividade;
+Sou um leitor compulsivo. Leio de tudo, mas especialmente:
 
-Dica: [Confira minha biblioteca](/livros).
+- teologia;
+- ficção científica;
+- biografias;
+- produtividade.
 
-Também sou apaixonado por filmes — especialmente ficção científica, dramas históricos e animações.
+Se quiser, você pode conferir [minha biblioteca](/livros).
 
-Você pode ver meus [filmes favoritos](/media).
+Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações.
+E adoro música: violão flamenco, instrumental, chorinho e música clássica.
 
-Adoro música! Gosto de violão flamenco, instrumental, chorinho e clássico.
+Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações.
+E adoro música: violão flamenco, instrumental, chorinho e música clássica.
 
-Confira no que [estou dedicado nesse momento](/agora).
+Se quiser acompanhar no que estou focado no momento, dá uma olhada na página [agora](/agora).
 
 ---
 
