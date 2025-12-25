@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Agora"
-permalink: /agora/index.html
+permalink: /now/index.html
 key: 'agora'
 description: O que estou me dedicando nesse momento
 date: Last Modified
