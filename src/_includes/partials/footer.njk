@@ -1,27 +1,170 @@
-<footer class="bg-gray-900 border-t border-gray-800 py-12">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      {% include 'partials/nav-secondary.njk' %}
-      {% include 'partials/webring.njk' %}
-      {% include 'partials/badges.njk' %}
-      {% include 'partials/creator.njk' %}
+<footer class="p-3 bg-dark">
+  <div class="container py-5">
+    <!-- Secondary Links -->
+    <nav aria-label="Links secundários" class="mb-4">
+      <ul class="d-flex flex-wrap gap-3 small list-unstyled mb-0">
+        <li><a href="/blogroll" class="text-white custom-underline">Blogroll</a></li>
+        <li><a href="/bookmarks" class="text-white custom-underline">Links favoritos</a></li>
+        <li><a href="/livros" class="text-white custom-underline">Biblioteca</a></li>
+        <li><a href="/media" class="text-white custom-underline">Assistindo</a></li>
+        <li><a href="/musicas" class="text-white custom-underline">Músicas</a></li>
+        <li><a href="/uses" class="text-white custom-underline">Uses</a></li>
+        <li><a href="/privacidade" class="text-white custom-underline">Privacidade</a></li>
+        <li><a href="/ia" class="text-white custom-underline">Uso de IA</a></li>
+        <li><a href="/acessibilidade" class="text-white custom-underline">Acessibilidade</a></li>
+      </ul>
+    </nav>
+
+    <!-- Webring -->
+    <div class="d-flex align-items-center mb-4 small flex-wrap">
+      <p class="mb-2 me-3 text-white">
+        Membro do
+        <a href="https://a11y-webring.club" class="fw-semibold text-white custom-underline">
+          a11y-webring.club
+        </a>
+      </p>
+      <nav aria-label="Navegação do webring" class="d-flex gap-3">
+        <a href="https://a11y-webring.club/prev" class="text-white custom-underline">← anterior</a>
+        <a href="https://a11y-webring.club/random" class="text-white custom-underline">aleatório</a>
+        <a href="https://a11y-webring.club/next" class="text-white custom-underline">próximo →</a>
+      </nav>
     </div>
+
+    <!-- Badges -->
+    <section aria-label="Badges e selos" class="mb-4">
+      <ul class="d-flex flex-wrap gap-2 list-unstyled mb-0">
+        <li>
+          <img src="/assets/images/made-in-bh-88w.jpeg" width="88" height="31" alt="Feito em Belo Horizonte" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/badges/11ty.gif" width="88" height="31" alt="Criado com eleventy" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <img src="/assets/images/faith-tech-88w.jpeg" width="88" height="31" alt="Faith and Technology" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/love-validator-88w.jpeg" width="88" height="40" alt="Eu amo o validador da W3C" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <a href="/feed.xml">
+            <img src="/assets/images/badges/valid-html5.gif" width="88" height="31" alt="HTML5 Valid" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <a href="/feed.xml">
+            <img src="/assets/images/badges/valid-css.gif" width="88" height="31" alt="CSS Valid" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.w3.org/WAI/WCAG2AA-Conformance" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/wcag-aa-88w.jpeg" width="88" height="31" alt="WCAG 2.1 AA Compliant" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <a href="/feed.xml">
+            <img src="/assets/images/valid-rss-88w.jpeg" width="88" height="31" alt="RSS Feed Available" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <img src="/assets/images/people-pledge-88w.jpeg" width="88" height="31" alt="Feito por um humano" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/human-88w.jpeg" width="88" height="31" alt="Feito por um humano" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <a href="https://indieweb.org" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/microformats-88w.jpeg" width="88" height="31" alt="Suporte a microformats" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <a href="https://indieweb.org" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/indieweb-88w.jpeg" width="88" height="31" alt="Part of IndieWeb" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <a href="https://indieweb.org" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/webmentions-88w.jpeg" width="88" height="31" alt="Suporte a Webmentions" loading="lazy" decoding="async">
+          </a>
+        </li>
+        <li>
+          <img src="/assets/images/coffee-powered-88w.jpeg" width="88" height="31" alt="Powered by Coffee" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/obsidian-user-88w.jpeg" width="88" height="31" alt="Obsidian User" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/badges/88x31.gif" width="88" height="31" alt="Badges 88x31" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/internetarchive-88w.jpeg" width="88" height="31" alt="Internet Archive" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/cc-88w.jpeg" width="88" height="31" alt="Licenciado por Creative Commons" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/badges/mastodon.gif" width="88" height="31" alt="Mastodon" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <img src="/assets/images/vscodium-88w.jpeg" width="88" height="30" alt="VS Codium" loading="lazy" decoding="async">
+        </li>
+        <li>
+          <a href="https://brave.com/pt-br/download/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/badges/brave.gif" width="88" height="31" alt="Brave Browser" loading="lazy" decoding="async">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Bottom Section -->
+    <div class="pt-4 border-top border-secondary d-flex flex-column gap-3 flex-md-row align-items-md-center justify-content-md-between small">
+      <div>
+        <p class="text-white custom-underline mb-2 mb-md-0">
+          © 2012 Bruno Pulis — Feito com <span role="img" aria-label="amor">❤️</span> em BH
+        </p>
+        <p class="text-white custom-underline mb-2 mb-md-0">
+          Conteúdo licenciado em 
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-white custom-underline">
+            CC-BY-SA
+          </a>
+        </p>
+        <nav aria-label="Redes sociais" class="my-3">
+          <ul class="d-flex flex-wrap gap-3 list-unstyled mb-0">
+            <li>
+              <a href="/feed.xml" target="_blank" rel="me noopener noreferrer" class="text-white custom-underline">RSS</a>
+            </li>
+            <li>
+              <a href="https://github.com/brunopulis" target="_blank" rel="me noopener noreferrer" class="text-white custom-underline">GitHub</a>
+            </li>
+            <li>
+              <a href="https://mastodon.social/@brunopulis" target="_blank" rel="me noopener noreferrer" class="text-white custom-underline">Mastodon</a>
+            </li>
+            <li>
+              <a href="https://bsky.app/profile/brunopulis.com" target="_blank" rel="me noopener noreferrer" class="text-white custom-underline">Bluesky</a>
+            </li>
+            <li>
+              <a href="https://youtube.com/@brunopulis" target="_blank" rel="noopener noreferrer" class="text-white custom-underline">YouTube</a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/brunopulis" target="_blank" rel="noopener noreferrer" class="text-white custom-underline">LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-
+<!-- Custom CSS for underline offset -->
 <style>
-  /* Estilo pixelado para botões 88x31 */
-  .pixelated {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-  }
-
-  /* Responsivo para footer bottom em mobile */
-  @media (max-width: 768px) {
-    footer>div>div:last-child {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
+.custom-underline {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: text-decoration 0.2s;
+}
+.custom-underline:hover,
+.custom-underline:focus {
+  text-decoration: none;
+}
 </style>
