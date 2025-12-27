@@ -12,11 +12,12 @@ description: "Uma coleção dos meus livros"
     <h2 class="font-bold text-2xl text-blood-red-800">Lidos em {{ year }}</h2>
     <p class="text-sm">{{ booksByYear[year] | length }} livro(s)</p>
   </div>
-  <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+ <div class="container">
+  <div class="col-lg-3">
     {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
     <article>
       {% if book.data.cover %}
-      <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" class="h-64 object-cover w-full" height="270" loading="lazy"
+      <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" class="img-fluid" height="270" loading="lazy"
         decoding="async" />
       {% endif %}
 
@@ -55,4 +56,5 @@ description: "Uma coleção dos meus livros"
   </div>
 </div>
 {% endif %}
+</div>
 </div>
