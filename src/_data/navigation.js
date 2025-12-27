@@ -21,10 +21,6 @@ export default {
       url: '/servicos/'
     },
     {
-      text: 'Contato',
-      url: '/contato/'
-    },
-    {
       text: 'Explore',
       url: '/explore/'
     }
