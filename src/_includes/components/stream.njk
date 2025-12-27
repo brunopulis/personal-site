@@ -1,43 +1,41 @@
 <section aria-labelledby="recent-title" class="text-gray-900 py-12">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+  <div class="container py-16 lg:py-20">
     <header class="mb-12 max-w-2xl">
-      <h2
-        id="recent-title"
-        class="font-bold leading-tight mb-4 text-[clamp(1.75rem,3vw,2.25rem)]"
-      >
-        Conteúdos recentes
+      <h2 id="recent-title" class="font-bold leading-tight mb-4 text-[clamp(1.75rem,3vw,2.25rem)]">
+        Recent Content
       </h2>
       <p class="text-lg text-gray-600">
-        Escritos, estudos e projetos onde acessibilidade, tecnologia e ética se encontram.
+        Writings, studies, and projects where accessibility, technology, and ethics intersect.
       </p>
     </header>
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
       {% set streams = collections.streams %}
 
       {% if streams.length %}
       {% for item in streams.slice(0, 3) %}
-      <article
-        class="h-entry group stream-card--{{ item.data.type }}">
-        <span class="mb-4" aria-hidden="true">
-          {{ item.data.type | streamIcon }}
-        </span>
-        <h3 class="font-semibold text-xl mb-2">{{ item.data.title }}</h3>
+      <div class="col">
+        <article class="h-entry group stream-card--{{ item.data.type }}">
+          <span class="mb-4" aria-hidden="true">
+            {{ item.data.type | streamIcon }}
+          </span>
+          <h3 class="font-semibold text-xl mb-2">{{ item.data.title }}</h3>
 
-        {% if item.data.detail %}
-        <p class="p-content text-errie-black-900">{{ item.data.detail }}</p>
-        {% endif %}
+          {% if item.data.detail %}
+          <p class="p-content text-errie-black-900">{{ item.data.detail }}</p>
+          {% endif %}
 
-        <div class="cluster">
-          <span class="text-errie-black-900">{{ item.data.type | streamTypeLabel }}</span>
-          <span aria-hidden="true">•</span>
-          <time class="dt-published" datetime="{{ item.data.date | formatDate(toISOString) }}">
-            {{ item.data.date | formatDate('DD/MM/YYYY') }}
-          </time>
-        </div>
-      </article>
+          <div class="d-flex align-items-center">
+            <span class="text-errie-black-900">{{ item.data.type | streamTypeLabel }}</span>
+            <span aria-hidden="true" class="mx-2">•</span>
+            <time class="dt-published" datetime="{{ item.data.date | formatDate(toISOString) }}">
+              {{ item.data.date | formatDate('DD/MM/YYYY') }}
+            </time>
+          </div>
+        </article>
+      </div>
       {% endfor %}
       {% else %}
-      <p>Nenhuma feed encontrado.</p>
+      <p>No feeds found.</p>
       {% endif %}
     </div>
   </div>
