@@ -4,8 +4,8 @@ schema: BlogPosting
 ---
 
 <section class="hero" id="hero" aria-labelledby="posts-title" >
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-    <div>
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
       <h1 class="hero__title" id="post-title">{{ title }}</h1>
       <p>{{ description }}</p>
 
@@ -29,12 +29,13 @@ schema: BlogPosting
     </div>
 </section>
 
-<div class="mx-auto max-w-5xl px-6 py-10">
+<div class="container px-4 px-lg-5">
+ <div class="row gx-4 gx-lg-5 justify-content-center">
   <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
     {% if image %}
     {% image image, alt or "", credit, "eager", "feature" %}
     {% endif %}
-    <div class="prose prose-lg mx-auto">
+    <div class="col-md-10 col-lg-8 col-xl-10">
       {{ content | safe }}
     </div>
   </article>
@@ -56,4 +57,5 @@ schema: BlogPosting
     <img eleventy:ignore class="u-author h-card" src="{{ meta.author.avatar | url | absoluteUrl(meta.url) }}"
       alt="{{ meta.author.name }}" />
   </div>
+</div>
 </div>
