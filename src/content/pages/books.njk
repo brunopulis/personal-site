@@ -13,9 +13,9 @@ description: "Uma coleção dos meus livros"
     <p class="text-sm">{{ booksByYear[year] | length }} livro(s)</p>
   </div>
  <div class="container">
-  <div class="col-lg-3">
+  <div class="row">
     {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
-    <article>
+    <article class="col-lg-3">
       {% if book.data.cover %}
       <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" class="img-fluid" height="270" loading="lazy"
         decoding="async" />
