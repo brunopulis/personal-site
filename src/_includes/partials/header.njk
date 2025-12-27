@@ -1,20 +1,30 @@
-<a href="#main" class="sr-only">{{ meta.skipContent }}</a>
-<header class="bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/75">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<a href="#main" class="visually-hidden">{{ meta.skipContent }}</a>
+<header class="header py-4">
     <div class="flex items-center gap-6 py-5">
-      <a href="/" class="flex items-center gap-3 shrink-0" {{ indicateActiveHome }}>
-        {% svg "misc/logo" %}
-      </a>
+      <nav class="navbar navbar-expand-lg" id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
+        <div class="container">
+          <a href="/" class="navbar-brand" {{ indicateActiveHome }}>
+            {% svg "misc/logo" %}
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+            <span class="visually-hidden">Menu</span>
+          </button>
 
-      <nav id="mainnav" aria-label="{{ meta.navigation.ariaTop }}" class="hidden md:flex ml-auto">
-        <ul class="flex items-center gap-8">
-          {% for item in navigation.top %}
-          <li>
-            <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
-              class="text-gray-700 hover:text-gray-900 transition-colors font-medium">{{ item.text }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+          <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mx-auto">
+                {% for item in navigation.top %}
+                <li class="nav-item inline-block">
+                  <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }} class="nav-link">{{ item.text }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              <div class="d-flex gap-2">
+                 <a href="/pesquisa" class="btn btn-primary" id="search">Pesquisar</a>
+                 <a href="/contato" class="btn btn-primary">Contato</a>
+              </div>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
