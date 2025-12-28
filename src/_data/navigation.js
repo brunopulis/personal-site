@@ -14,7 +14,7 @@ export default {
     },
     {
       text: 'Projetos',
-      url: '/trabalho/'
+      url: '/projetos/'
     },
     {
       text: 'Serviços',
