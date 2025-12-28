@@ -2,12 +2,15 @@
 layout: base
 ---
 
-<section class="container px-4 px-lg-5" id="hero" aria-labelledby="hero-title">
-  <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div "col-md-10 col-lg-8 col-xl-10">
-      <h1 class="fw-bold lh-1 mb-4 text-black" id="hero-title">{{ title }}</h1>
-      <p class="text-black">{{ description }}</p>
+<section class="hero--inner" id="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <h1 class="fw-bold lh-1 mb-4 text-black" id="hero-title">{{ title }}</h1>
+        <p class="text-black">{{ description }}</p>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="container">
@@ -15,3 +18,9 @@ layout: base
       {{ content | safe }}
   </div>
 </section>
+
+<style>
+ .hero--inner {
+    min-height: 390px;
+ }
+</style>
