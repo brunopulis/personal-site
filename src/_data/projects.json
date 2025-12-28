@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Awesome A11y",
+    "url": "https://github.com/brunopulis/awesome-a11y",
+    "description": "A curate list about A11Y",
+  },
+  {
+    "title": "Awesome Cypress",
+    "url": "https://github.com/brunopulis/awesome-cypress",
+    "description": "A curate list about Cypress",
+  },
+  {
+    "title": "XPath vs CSS Selector",
+    "url": "https://v0-xp-ath-vs-css-selectors.vercel.app/",
+    "description": "Ferramenta para calcular o uso de XPath e CSS Selectors",
+  }
+]
