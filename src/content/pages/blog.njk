@@ -8,8 +8,8 @@ pagination:
   size: 12
 ---
 
-<div class="col-lg-4 col-md-6 col-12">
-  {% for item in pagination.items %}
+{% for item in pagination.items %}
+  <div class="col-lg-4 col-md-6 col-12">
     <article class="card">
       <div class="card-body">
         <h2 class="card-title">
@@ -45,8 +45,8 @@ pagination:
         </div>
       {% endif %}
     </article>
-  {% endfor %}
 </div>
+{% endfor %}
 
 {% if pagination.pages.length > 1 %}
   {% include 'components/pagination.njk' %}
