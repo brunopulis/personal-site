@@ -2,17 +2,17 @@
 layout: base
 ---
 
-<section class="container px-4 px-lg-5" id="hero">
+<section class="container px-4 px-lg-5" id="hero" aria-labelledby="hero-title">
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div "col-md-10 col-lg-8 col-xl-10">
-      <h1 class="fw-bold lh-1 mb-4 text-black">{{ title }}</h1>
+      <h1 class="fw-bold lh-1 mb-4 text-black" id="hero-title">{{ title }}</h1>
       <p class="text-black">{{ description }}</p>
     </div>
 </section>
 
-<section class="container px-4 px-lg-5">
-  <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div class="col-md-10 col-lg-8 col-xl-10">
+<section class="container">
+  <div class="row">
+    <div>
       {{ content | safe }}
     </div>
   </div>
