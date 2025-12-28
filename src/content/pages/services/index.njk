@@ -11,15 +11,17 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
     {% for service in collections.service %}
       <div class="col-lg-3 col-md-6">
         {% if service.url != page.url %}
-          <article class="card">
+          <article class="card p-2">
             <span class="card__icon" aria-hidden="true">{{ service.data.service.icon }}</span>
-            <h2 class="card__title">{{ service.data.title }}</h2>
-            <p class="card__tagline">
-              {{ service.data.service.tagline }}
-              <a href="{{ service.url }}" class="service-item__cta underline underline-offset-8 hover:no-underline">
-                saiba mais
-              </a> 
-            </p>
+            <div class="card-body">
+              <h2 class="card-title">{{ service.data.title }}</h2>
+              <p class="card-text">
+                {{ service.data.service.tagline }}
+                <a href="{{ service.url }}" class="service-item__cta underline underline-offset-8 hover:no-underline">
+                  saiba mais
+                </a> 
+              </p>
+            </div>
           </article>
         {% endif %}
       </div>
