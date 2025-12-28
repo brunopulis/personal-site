@@ -6,10 +6,10 @@
       {% svg "misc/logo" %}
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
-      <span class="navbar-toggler-icon"></span>
-      <span class="visually-hidden">Menu</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="visually-hidden">Menu</span>
       </button>
-      <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           {% for item in navigation.top %}
           <li class="nav-item inline-block">
