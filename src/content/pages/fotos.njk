@@ -6,51 +6,89 @@ description: "Uma coleção das minhas fotos"
 ---
 
 
-{% set booksByYear = collections.books | groupBy("attendedYear") %}
-      
-{% for year in booksByYear | sortKeys %}
-  <section class="mb-12 year-section" data-year="{{ year }}">
-    <div class="space-y-6">
-      <h2 class="font-bold text-2xl text-blood-red-800">Lidos em {{ year }}</h2>
-      <p class="text-sm">{{ booksByYear[year] | length }} livro(s)</p>
-    </div>
-    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-      {% for book in booksByYear[year] | sort(attribute="data.date") %}
-        <article class="bg-white border border-gray-100 hover:shadow-md overflow-hidden rounded-xl shadow-sm transition">
-          <img 
-            src="{{ book.data.cover }}" 
-            alt="{{ book.data.title }}"
-            class="w-48 h-48 object-cover w-full "
-            loading="lazy"
-            decoding="async"
-          />
+<section id="gallery" class="gallery section">
+      <div class="container-fluid aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
 
-          <h3 class="font-semibold mb-1 text-xl">
-            <a href="{{ book.data.url }}">
-              {{ book.data.title }}
-            </a>
-          </h3>
-          {% if book.data.subtitle %}
-            <p>{{ book.data.title }}</p>
-          {% endif %}
-          <p>Autor: {{ book.data.author }}</li>
-          <p class="text-sm mb-4 text-gray-700">{{ book.data.description }}</p>
-          {% if book.data.review %}
-            <p>{{ book.data.review }}</p>
-          {% endif %}  
-        </article>
-      {% endfor %}
-    </div>
-    <hr class="border-gray-700 mb-12" />
-  </section>
-  {% endfor %}
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+             <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-2.jpg" title="Gallery 2" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
 
-  {% if collections.media.length === 0 %}
-    <div class="flex items-center justify-center h-96">
-      <div class="text-center text-gray-500">
-        <p class="text-xl mb-2">Nenhum filme por enquanto</p>
-        <p class="text-sm">Comece a adicionar seus filmes favoritos!</p>
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+             <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-3.jpg" title="Gallery 3" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-4.jpg" title="Gallery 4" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+             <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-5.jpg" title="Gallery 5" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-6.jpg" title="Gallery 6" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+             <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-7.jpg" title="Gallery 7" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="https://unsplash.com/pt-br/fotografias/silhueta-de-uma-girafa-contra-o-ceu-do-por-do-sol-kQIIwEX1emg" loading="lazy" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-8-2.jpg" title="Gallery 8" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+        </div>
       </div>
-    </div>
-  {% endif %}
+    </section>
 </div>
