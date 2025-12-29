@@ -1,5 +1,5 @@
 ---
-title: "Mostre seu trabalho!: 10 maneiras de compartilhar sua criatividade e ser descoberto"
+title: "Mostre seu trabalho!"
 author: "Austin Kleon"
 category: "criatividade"
 status: "lido"
