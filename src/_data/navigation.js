@@ -5,27 +5,31 @@ export default {
       url: '/sobre/'
     },
     {
-      text: 'Blog',
-      url: '/blog/'
-    },
-    {
-      text: 'Agora',
-      url: '/now/'
-    },
-    {
-      text: 'Projetos',
-      url: '/projetos/'
+      text: 'Currículo',
+      url: '/cv/'
     },
     {
       text: 'Serviços',
       url: '/servicos/'
     },
     {
+      text: 'Trabalho',
+      url: '/trabalho/'
+    },
+    {
+      text: 'Blog',
+      url: '/blog/'
+    },   
+    {
       text: 'Explore',
       url: '/explore/'
     }
   ],
   bottom: [
+    {
+      text: 'Agora',
+      url: '/agora/'
+    },
     {
       text: 'Blogroll',
       url: '/blogroll/'
