@@ -25,9 +25,7 @@ pagination:
             {{ item.data.pubDate | readableDate }}
           </time>
         </div>
-      </div>
-      
-      {% if item.data.description %}
+         {% if item.data.description %}
         <p class="card-text">
           {{ item.data.description | markdownFormat | safe }}
         </p>
@@ -37,13 +35,12 @@ pagination:
         <div class="flex gap-2 flex-wrap">
           {% for tag in item.data.tags %}
             {% if tag != "posts" %}
-              <span class="items-center bg-gray-100 border border-gray-300 font-semibold gap-1 inline-flex px-3 py-1 rounded-full text-gray-700 text-xs">
-                {{ tag }}
-              </span>
+              <span class="badge rounded-pill text-bg-info">{{ tag }}</span>
             {% endif %}
           {% endfor %}
         </div>
       {% endif %}
+      </div>
     </article>
 </div>
 {% endfor %}
