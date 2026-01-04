@@ -118,6 +118,9 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     'src/assets/images/favicon/*': '/',
     'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js': 'assets/js/bootstrap.bundle.min.js',
+    'node_modules/@fortawesome/fontawesome-free/css/all.min.css': 'assets/css/fontawesome.min.css',
+    'node_modules/@fortawesome/fontawesome-free/webfonts': 'assets/fonts',
     'node_modules/@zachleat/snow-fall/snow-fall.js': 'assets/scripts/snow-fall.js',
     'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': 'assets/components/',
     'node_modules/@zachleat/table-saw/table-saw.js': 'assets/components/table-saw.js'

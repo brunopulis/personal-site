@@ -1,0 +1,40 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+@use "../../../node_modules/bootstrap/scss/bootstrap" as *;
+
+
+@use "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome" as *;
+@use "../../../node_modules/@fortawesome/fontawesome-free/scss/solid" as *;
+@use "../../../node_modules/@fortawesome/fontawesome-free/scss/regular" as *;
+@use "../../../node_modules/@fortawesome/fontawesome-free/scss/brands" as *;
+
+// 3. Base
+@use "./base/typography" as *;
+@use "./base/reset" as *;
+
+// 4. layouts
+@use "./layout/header" as *;
+@use "./layout/footer" as *;
+
+// 5. Componentes
+@use "./components/buttons" as *;
+@use "./components/cards" as *;
+@use "./components/hero" as *;
+@use "./components/forms" as *;
+
+// 6. Páginas Específicas
+@use "./pages/contact" as *;
+
+
+// 3. Seus estilos customizados extras
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Estilos do Menu que fizemos antes
+.navbar-nav .nav-link {
+  font-weight: 500;
+  
+  &:hover { color: $primary; }
+}
