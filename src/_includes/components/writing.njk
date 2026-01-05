@@ -1,17 +1,19 @@
-<section class="py-5" aria-labelledby="posts-title">
+<section class="py-4" aria-labelledby="posts-title">
   <div class="container my-5">
     <div
       class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4 justify-content-between gap-4"
     >
-      <h2 class="text-dark font-weight-bold display-4 mb-4" id="post-title">Últimos artigos</h2>
+      <div>
+        <h2 class="text-dark font-weight-bold display-4 mb-4" id="post-title">Últimos artigos</h2>
+        <p class="mt-4">Escrevo sobre acessibilidade, web, fé, tecnologia e a vida como ela é.</p>
+      </div>
       <a href="/blog" class="text-decoration-underline text-decoration-skip-ink">todos artigos</a>
     </div>
-    <p class="mt-4">Escrevo sobre acessibilidade, web, fé, tecnologia e a vida como ela é.</p>
 
     {% set allRecentPosts = collections.posts %}
     <div class="row">
-      {% for post in allRecentPosts.slice(0, 6) %}
-      <div class="col-lg-4 col-md-6 col-12">
+      {% for post in allRecentPosts.slice(0, 3) %}
+      <div class="col-lg-4 col-md-6 col-12 mb-2">
         <article class="h-entry card p-4 h-100">
           <div class="card-body">
             <h3 class="mb-3 font-weight-semibold text-xl leading-tight">
