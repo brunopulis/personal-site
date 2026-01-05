@@ -1,31 +1,21 @@
-# Hidden files
-.pnpm-store
-.jest/cache
-.env
-.cache
-.idea/
-.vscode/
-.DS_Store
-
-# Node modules
-node_modules/
-pnpm-debug.log*
-
-# Cypress
-cypress/screenshots
-cypress/videos
-cypress/downloads
-
-# Jest
-__snapshots__/
-coverage/
-
-# generated files
-dist/
-docs/
 _site/
-src/_includes/css
-src/_includes/scripts
+src/assets/css/
 
-# Vercel
-.vercel/
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

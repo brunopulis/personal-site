@@ -1,0 +1,157 @@
+{
+  "projects": [
+    {
+      "id": "site-institucional",
+      "title": "Reponto Recrutamento e seleção",
+      "description": "Redesign do site com foco em acessibilidade WCAG 2.2 AA.",
+      "image": "/assets/images/portfolio/reponto.png",
+      "imageAlt": "Screenshot do e-commerce mostrando página de produto com alto contraste",
+      "category": ["web", "a11y"],
+      "technologies": ["WordPress", "WCAG", "ARIA"],
+      "year": 2025,
+      "featured": true,
+      "links": {
+        "demo": "https://reponto.com.br"
+      },
+      "metrics": {
+        "lighthouse": {
+          "performance": 95,
+          "accessibility": 100,
+          "bestPractices": 98,
+          "seo": 100
+        },
+        "impact": "Aumento de 40% nas conversões de usuários com deficiência"
+      }
+    },
+    {
+      "id": "landing-page",
+      "title": "Mone de França",
+      "description": "Landing Page",
+      "image": "/assets/images/portfolio/mone.png",
+      "imageAlt": "Screenshot do e-commerce mostrando página de produto com alto contraste",
+      "category": ["web", "a11y"],
+      "technologies": ["WordPress", "WCAG", "ARIA"],
+      "year": 2025,
+      "featured": false,
+      "links": {
+        "demo": "https://monedefranca.com"
+      },
+      "metrics": {
+        "lighthouse": {
+          "performance": 95,
+          "accessibility": 100,
+          "bestPractices": 98,
+          "seo": 100
+        },
+        "impact": "Aumento de 40% nas conversões de usuários com deficiência"
+      }
+    },
+    {
+      "id": "landing-page",
+      "title": "João Kioshi",
+      "description": "Landing Page",
+      "image": "/assets/images/portfolio/joao-kioshi.png",
+      "imageAlt": "Screenshot do e-commerce mostrando página de produto com alto contraste",
+      "category": ["web", "a11y"],
+      "technologies": ["WordPress", "WCAG", "ARIA"],
+      "year": 2025,
+      "featured": false,
+      "links": {
+        "demo": "https://joaokioshi.com/prospeccaoebook/"
+      },
+      "metrics": {
+        "lighthouse": {
+          "performance": 95,
+          "accessibility": 100,
+          "bestPractices": 98,
+          "seo": 100
+        },
+        "impact": "Aumento de 40% nas conversões de usuários com deficiência"
+      }
+    },
+    {
+      "id": "landing-page",
+      "title": "Magra de Verdade",
+      "description": "Landing Page",
+      "image": "/assets/images/portfolio/magra-de-verdade.png",
+      "imageAlt": "Screenshot do e-commerce mostrando página de produto com alto contraste",
+      "category": ["web"],
+      "technologies": ["WordPress", "WCAG", "ARIA"],
+      "year": 2025,
+      "featured": false,
+      "links": {
+        "demo": "https://magradeverdade.com/"
+      },
+      "metrics": {
+        "lighthouse": {
+          "performance": 95,
+          "accessibility": 100,
+          "bestPractices": 98,
+          "seo": 100
+        },
+        "impact": "Aumento de 40% nas conversões de usuários com deficiência"
+      }
+    },
+    {
+      "id": "landing-page",
+      "title": "Biblioteca da Revolução",
+      "description": "Landing Page",
+      "image": "/assets/images/portfolio/biblioteca-revolucao.png",
+      "imageAlt": "Screenshot do e-commerce mostrando página de produto com alto contraste",
+      "category": ["web"],
+      "technologies": ["WordPress", "WCAG", "ARIA"],
+      "year": 2025,
+      "featured": false,
+      "links": {
+        "demo": "https://monedefranca.com",
+        "case": "/portfolio/ecommerce-acessivel/"
+      },
+      "metrics": {
+        "lighthouse": {
+          "performance": 95,
+          "accessibility": 100,
+          "bestPractices": 98,
+          "seo": 100
+        },
+        "impact": "Aumento de 40% nas conversões de usuários com deficiência"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "Todos",
+      "icon": "fa-th"
+    },
+    {
+      "id": "web",
+      "name": "Sites",
+      "icon": "fa-globe",
+      "description": "Projetos web e institucionais"
+    },
+    {
+      "id": "app",
+      "name": "Aplicações",
+      "icon": "fa-mobile-alt",
+      "description": "Aplicativos web e mobile"
+    },
+    {
+      "id": "a11y",
+      "name": "Acessibilidade",
+      "icon": "fa-universal-access",
+      "description": "Projetos focados em acessibilidade"
+    },
+    {
+      "id": "opensource",
+      "name": "Open Source",
+      "icon": "fa-code-branch",
+      "description": "Contribuições open source"
+    }
+  ],
+  "stats": {
+    "totalProjects": 8,
+    "yearsExperience": 10,
+    "satisfiedClients": 25,
+    "opensource": 15
+  }
+}

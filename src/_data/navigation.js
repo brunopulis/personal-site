@@ -1,8 +1,8 @@
 export default {
 	top: [
 		{
-			text: 'Sobre',
-			url: '/sobre/'
+			text: 'Blog',
+			url: '/blog/'
 		},
 		{
 			text: 'Serviços',
@@ -13,8 +13,8 @@ export default {
 			url: '/trabalho/'
 		},
 		{
-			text: 'Blog',
-			url: '/blog/'
+			text: 'Sobre',
+			url: '/sobre/'
 		},
 		{
 			text: 'Explore',

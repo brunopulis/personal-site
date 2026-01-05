@@ -7,31 +7,20 @@
 	"type": "module",
 	"packageManager": "pnpm@10.27.0",
 	"scripts": {
-		"build": "eleventy",
-    "build:tina": "tinacms build && eleventy",
-    "dev": "eleventy --serve --incremental",
-    "dev:full": "eleventy --serve",
+		"prebuild": "pnpm build:css",
+    "build": "eleventy",
     "build:css": "sass src/assets/scss/main.scss src/assets/css/main.css --style compressed --quiet-deps --load-path=node_modules",
-    "watch:css": "sass --watch src/assets/scss:src/assets/css --quiet-deps --load-path=node_modules --style compressed",
-    "dev:parallel": "concurrently \"pnpm:watch:css\" \"pnpm:dev\"",
-    "cms": "tinacms dev -c \"pnpm dev\"",
+    
+    "predev": "pnpm build:css",
+    "dev": "eleventy --serve --incremental --quiet",
+    "dev:full": "eleventy --serve",
+    
+    "watch:css": "sass --watch src/assets/scss:src/assets/css --quiet-deps --load-path=node_modules --style compressed --no-source-map",
+    "dev:parallel": "concurrently --kill-others \"pnpm:watch:css\" \"pnpm:dev\"",
+    
     "clean": "rimraf _site",
-    "clean:og": "rimraf src/assets/og-images",
     "clean:css": "rimraf src/assets/css",
-    "clean:all": "rimraf _site src/assets/css src/assets/og-images",
-    "favicons": "node ./src/_config/setup/generate-favicons.js",
-    "screenshots": "node ./src/_config/setup/generate-screenshots.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:watch": "NODE_OPTIONS=--experimental-vm-modules node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
-    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "test:debug": "NODE_OPTIONS=--experimental-vm-modules node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
-    "cypress": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:headed": "cypress run --headed",
-    "cypress:debug": "cypress open --dev",
-    "fetch:movies": "node scripts/content/watched.js",
-    "import:movies": "node scripts/content/import-movies.js",
-    "import:all-movies": "node scripts/content/import-all-movies.js"
+    "clean:all": "pnpm clean && pnpm clean:css && pnpm clean:og"
 	},
 	"keywords": [],
 	"repository": {
