@@ -2,7 +2,7 @@
 layout: service-item.njk
 title: "Auditoria de Acessibilidade"
 slug: auditoria
-description: Auditoria de acessibilidade de sites e aplicativos. Análise completa e estruturada.
+description: Avaliação técnica e funcional da acessibilidade do seu site, sistema ou produto digital, com base nas WCAG 2.2 e boas práticas do mercado.
 permalink: "/servicos/auditoria-acessibilidade/index.html"
 url: /servicos/auditoria-acessibilidade/
 

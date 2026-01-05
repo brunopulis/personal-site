@@ -33,12 +33,12 @@ service:
     - Linguagem simples, técnica e acionável
   
   included:
-    - Lista priorizada de problemas de acessibilidade
-    - Classificação de severidade (crítico, alto, médio, baixo)
-    - Impacto para usuários e para o negócio
-    - Recomendações claras e acionáveis
+    - Análise automática e manual
+    - Testes com teclado e leitores de tela
+    - Verificação de contraste, semântica e navegação
+    - Mapeamento de não conformidades WCAG
     - Indicação de quick wins (melhorias rápidas)
-    - Relatório técnico
+    - Relatório técnico priorizado por impacto
   
   results:
     - title: "Clareza Imediata"
@@ -49,10 +49,9 @@ service:
       description: "Informações concretas para planejar investimento"
   
   target:
-    - Startups e MVPs
-    - Sites institucionais
-    - Produtos em fase de crescimento
-    - Times que precisam de clareza antes de investir
+    - Empresas com sites ou sistemas em produção
+    - Times que precisam comprovar conformidade
+    - Produtos digitais em fase de melhoria ou reestruturação
   
   processes:
     - title: "Definição de Escopo"
