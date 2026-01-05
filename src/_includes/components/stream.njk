@@ -1,8 +1,8 @@
-<section aria-labelledby="recent-title" class="text-gray-900 py-12">
-  <div class="container py-16 lg:py-20">
-    <header class="mb-12 max-w-2xl">
+<section class="stream-section py-8" aria-labelledby="recent-title">
+  <div class="container">
+    <header class="mb-12">
       <h2 id="recent-title" class="font-bold leading-tight mb-4 text-[clamp(1.75rem,3vw,2.25rem)]">
-        Conteúdos recentes
+        Recentemente
       </h2>
       <p class="text-lg text-gray-600">
         O que tenho visto, ouvido e lido.
@@ -14,7 +14,7 @@
       {% if streams.length %}
       {% for item in streams.slice(0, 3) %}
       <div class="col">
-        <article class="h-entry group stream-card--{{ item.data.type }}">
+        <article class="h-entry card p-4 h-100 stream-card--{{ item.data.type }}">
           <span class="mb-4" aria-hidden="true">
             {{ item.data.type | streamIcon }}
           </span>
