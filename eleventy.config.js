@@ -13,6 +13,8 @@ import {svg} from './src/_config/shortcodes/svg.js';
 export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addGlobalData('now', new Date());
 
+	eleventyConfig.watchIgnores.add('src/assets/css/**');
+	
 	//  custom watch targets
 	eleventyConfig.addWatchTarget('./src/assets/scss/**/*.scss');
 	eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
@@ -89,7 +91,9 @@ export default async function eleventy(eleventyConfig) {
 
 	//  Events: before build
 	eleventyConfig.on('eleventy.before', async () => {
-		await events.buildAllCss();
+		if (process.env.ELEVENTY_RUN_MODE !== 'serve') { 
+			await events.buildAllCss();
+		}
 	});
 
 	//  Events: after build
