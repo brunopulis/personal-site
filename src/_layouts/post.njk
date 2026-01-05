@@ -3,12 +3,12 @@ layout: base
 schema: BlogPosting
 ---
 
-<section class="hero" id="hero" aria-labelledby="posts-title" >
-  <div class="container position-relative px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-      <div class="col-md-10 col-lg-10 col-xl-10">
-        <h1 class="hero__title" id="post-title">{{ title }}</h1>
-        <p>{{ description }}</p>
+<section class="hero py-4" id="hero" aria-labelledby="posts-title" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="hero__title text-white" id="post-title">{{ title }}</h1>
+        <p class="text-white">{{ description }}</p>
 
         <div class="text-sm font-medium items-center mt-6 flex flex-wrap gap-6 lg:text-base mb-6 text-blood-red-800">
           {% set definedDate = pubDate %}
@@ -31,23 +31,28 @@ schema: BlogPosting
     </div>
 </section>
 
-<div class="container px-4 px-lg-5">
- <div class="row gx-4 gx-lg-5 justify-content-center">
-  <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
-    {% if image %}
-    {% image image, alt or "", credit, "eager", "feature" %}
-    {% endif %}
-    <div class="col-md-10 col-lg-8 col-xl-10">
-      {{ content | safe }}
+<div class="container py-4">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-lg-8 mb-5 mb-lg-0">
+      <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
+        {% if image %}
+          {% image image, alt or "", credit, "eager", "feature" %}
+        {% endif %}
+        <div class="">
+          {{ content | safe }}
+        </div>
+      </article>
     </div>
-  </article>
+
+    <div class="col-lg-4">
+      {% include "components/sidebar.njk" %}
+    </div>
 
   <div class="mx-auto max-w-5xl px-6 py-6">
     {% set postTitle = title %}
     {% set postUrl = page.url %}
     {% set email = "brunopulis@protonmail.com" %}
     {% include "components/post-engagement.njk" %}
-    {% include "components/newsletter.njk" %}
     {% include 'components/coffee.njk' %}
     {% include "partials/webmentions.njk" %}
   </div>

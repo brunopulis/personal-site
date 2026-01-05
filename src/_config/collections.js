@@ -103,6 +103,29 @@ export const showInSitemap = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
+export const tagListRecurrency = collection => {
+  const tagCount = {}; // Objeto para contar as tags
+  const excludedTags = ['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'];
+
+  // Contar quantas vezes cada tag aparece
+  collection.getAll().forEach(item => {
+    if ('tags' in item.data) {
+      let tags = item.data.tags;
+
+      for (const tag of tags) {
+        if (!excludedTags.includes(tag)) {
+          tagCount[tag] = (tagCount[tag] || 0) + 1;
+        }
+      }
+    }
+  });
+
+  // Converter para array de objetos e ordenar por quantidade (decrescente)
+  return Object.entries(tagCount)
+    .sort((a, b) => b[1] - a[1]) // Ordena do maior para o menor
+    .map(([tag, count]) => ({ tag, count }));
+};
+
 /**
  *
  * @param {*} collection

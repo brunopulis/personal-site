@@ -1,4 +1,6 @@
-<p class="text-sm text-white font-bold items-center">Publicado em:</p>
-<time class="dt-published text-sm text-white" datetime="{{ definedDate | toISOString }}"> 
-  {{ definedDate | formatDate('MMMM D, YYYY') | capitalize }}
-</time>
+<div class="d-inline-flex">
+  <p class="text-sm text-white font-bold items-center">Publicado em: </p>
+  <time class="dt-published text-sm text-white" datetime="{{ definedDate | toISOString }}"> 
+    {{ definedDate | formatDate('MMMM D, YYYY') | capitalize }}
+  </time>
+</div>

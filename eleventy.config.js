@@ -14,6 +14,7 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addGlobalData('now', new Date());
 
 	//  custom watch targets
+	eleventyConfig.addWatchTarget('./src/assets/scss/**/*.scss');
 	eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
 	eleventyConfig.addWatchTarget('./src/_includes/**/*.{webc}');
 
@@ -33,6 +34,7 @@ export default async function eleventy(eleventyConfig) {
 
 	eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
 	eleventyConfig.addCollection('tagList', collections.tagList);
+	eleventyConfig.addCollection('tagListRecurrency', collections.tagListRecurrency);
 
 	//   Plugins
 	eleventyConfig.addPlugin(plugins.htmlConfig);
@@ -98,11 +100,16 @@ export default async function eleventy(eleventyConfig) {
 	}
 
 	eleventyConfig.on('eleventy.after', events.tableSawWrapper);
+
 	eleventyConfig.addPassthroughCopy('./admin');
-	['src/humans.txt', 'src/assets'].forEach(p => eleventyConfig.addPassthroughCopy(p));
+	eleventyConfig.addPassthroughCopy('src/humans.txt');
+	eleventyConfig.addPassthroughCopy('src/assets/css');
+	eleventyConfig.addPassthroughCopy('src/assets/js');
+	eleventyConfig.addPassthroughCopy('src/assets/fonts');
+	eleventyConfig.addPassthroughCopy('src/assets/images');
+	eleventyConfig.addPassthroughCopy('src/assets/og-images');
 
 	eleventyConfig.addPassthroughCopy({
-		'src/assets/images/favicon/*': '/',
 		'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
 		'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js': 'assets/js/bootstrap.bundle.min.js',
 		'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': 'assets/components/',

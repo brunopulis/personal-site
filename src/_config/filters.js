@@ -8,6 +8,7 @@ import {sortKeys} from './filters/sort-keys.js';
 import {getRelatedServices} from './filters/getRelatedServices.js';
 import {getServiceById} from './filters/getServiceById.js';
 import {serviceUrl} from './filters/serviceUrl.js';
+import { limit } from './filters/limit.js';
 import {markdownFormat} from './filters/markdown-format.js';
 import {readingTime} from './filters/reading-time.js';
 import {shuffle} from './filters/shuffle.js';
@@ -39,6 +40,7 @@ export {
   getServiceById,
   serviceUrl,
   relativeDate,
+  limit,
   markdownFormat,
   readingTime,
   splitlines,
