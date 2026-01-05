@@ -2,78 +2,125 @@
 layout: service-item.njk
 title: "Avaliação de Acessibilidade"
 slug: avaliacao
-description: Descubra exatamente onde seu site ou produto falha e o que corrigir primeiro.
+description: Descubra exatamente onde seu site ou produto falha — e o que corrigir primeiro.
 permalink: "/servicos/avaliacao-acessibilidade/index.html"
 url: /servicos/avaliacao-acessibilidade/
 
 service:
   color: green-600
-  tagline: Diagnóstico rápido. Resultados claros. Prioridades óbvias.
+  tagline: Diagnóstico claro, sem achismos e prioridades objetivas.
   icon: 🔍
   
   problem: |
-    Você quer melhorar a acessibilidade mas não tem orçamento ou tempo para uma auditoria completa agora.
-    Precisa saber onde estão os problemas críticos para começar a agir.
+    A maioria dos produtos digitais tem problemas sérios de acessibilidade —
+    mesmo quando parecem bem feitos.
+
+    Você sabe que precisa melhorar, mas não tem clareza sobre onde estão os
+    maiores riscos, o que corrigir primeiro ou se vale investir agora em uma
+    auditoria completa.
   
   solution: |
-    Uma avaliação rápida e focada (Heurística) que identifica os bloqueios principais, 
-    os "quick wins" e te dá um norte claro de por onde começar.
+    A Avaliação de Acessibilidade é um diagnóstico focado e objetivo.
+    Ela identifica os principais bloqueios enfrentados por usuários reais,
+    prioriza os problemas por impacto e entrega recomendações claras para ação.
+
+    Sem relatório inflado. Sem achismo. Apenas o que importa para decidir.
   
   differentials:
-    - Resultados em dias, não semanas
-    - Foco em impacto real e correções rápidas
-    - Investimento acessível para começar
-    - Linguagem simples e direta
+    - Diagnóstico focado, não volume de achados
+    - Priorização por impacto real no usuário
+    - Clareza para tomada de decisão
+    - Linguagem simples, técnica e acionável
   
   included:
-    - Relatório visual com problemas encontrados
+    - Lista priorizada de problemas de acessibilidade
     - Classificação de severidade (crítico, alto, médio, baixo)
-    - Screenshots e exemplos de cada problema
-    - Lista de "Quick Wins" (melhorias rápidas)
-    - Estimativa de esforço para correção
+    - Impacto para usuários e para o negócio
+    - Recomendações claras e acionáveis
+    - Indicação de quick wins (melhorias rápidas)
+    - Relatório técnico
   
   results:
-    - title: "Visão Clara"
-      description: "Visão clara dos maiores problemas do seu site"
-    - title: "Tarefas Imediatas"
-      description: "Lista de tarefas imediatas para o time"
-    - title: "Argumentos Técnicos"
-      description: "Argumentos técnicos para priorizar acessibilidade"
+    - title: "Clareza Imediata"
+      description: "Entendimento claro do que está bloqueando usuários"
+    - title: "Prioridades Definidas"
+      description: "O que corrigir agora, depois ou monitorar"
+    - title: "Base para Decisão"
+      description: "Informações concretas para planejar investimento"
   
   target:
     - Startups e MVPs
-    - Sites institucionais pequenos
-    - Times que querem um diagnóstico inicial
-    - Auditoria de features específicas
+    - Sites institucionais
+    - Produtos em fase de crescimento
+    - Times que precisam de clareza antes de investir
   
   processes:
-    - title: "Kickoff"
-      description: "Definição de escopo e páginas chave"
+    - title: "Definição de Escopo"
+      description: "Alinhamento das páginas ou fluxos a serem avaliados"
     - title: "Avaliação"
-      description: "Testes manuais e automatizados focados"
-    - title: "Relatório"
-      description: "Documentação dos hallazgos"
+      description: "Análise baseada nas WCAG e em uso real"
+    - title: "Priorização"
+      description: "Classificação dos problemas por impacto"
     - title: "Entrega"
-      description: "Envio do relatório e call de dúvidas"
+      description: "Relatório e orientações para próximos passos"
   
-  timeline: "3-5 dias"
+  timeline: "48h a 10 dias, conforme o plano escolhido"
+  
+  plans:
+    - name: "Essencial"
+      highlight: false
+      subtitle: "Diagnóstico rápido"
+      description: |
+        Ideal para quem precisa de um ponto de partida claro.
+      includes:
+        - Avaliação de até 3 páginas-chave
+        - Análise técnica baseada nas WCAG
+        - Lista priorizada de problemas
+        - Recomendações objetivas
+      delivery: "Até 48h"
+    
+    - name: "Profissional"
+      highlight: true
+      subtitle: "Visão completa"
+      description: |
+        Para produtos em crescimento ou em redesenho.
+      includes:
+        - Avaliação de até 8 páginas ou fluxos
+        - Análise técnica + uso real
+        - Priorização por impacto
+        - Recomendações detalhadas
+        - Observações de risco legal e de negócio
+      delivery: "Até 5 dias úteis"
+    
+    - name: "Avançado"
+      subtitle: "Avaliação estratégica"
+      highlight: false
+      description: |
+        Para produtos complexos que precisam de direção clara.
+      includes:
+        - Avaliação completa do produto
+        - Análise aprofundada das WCAG
+        - Priorização por curto, médio e longo prazo
+        - Base para roadmap de correções
+        - Reunião de apresentação e alinhamento
+      delivery: "Até 10 dias úteis"
   
   testimonials:
-    cliente: "Startup Fintech"
-    quote: "Foi o pontapé inicial que precisávamos. Em uma semana já tínhamos corrigido os problemas críticos."
-    resultado: "Melhoria imediata na experiência"
+    cliente: "Produto Digital B2B"
+    quote: "Finalmente entendemos onde estavam os maiores problemas e por onde começar."
+    resultado: "Correções priorizadas em poucos dias"
   
   faq:
     - question: "Isso substitui uma auditoria completa?"
-      answer: "Não. É um diagnóstico inicial. Para conformidade legal total, recomendo a Auditoria Completa."
+      answer: "Não. É um diagnóstico focado. Para conformidade legal total, recomendo a Auditoria Completa."
     
     - question: "Vocês usam ferramentas automáticas?"
-      answer: "Sim, mas o valor real está na análise manual especializada que ferramentas não pegam."
+      answer: "Sim, mas a análise manual especializada é o que traz valor real."
   
   cta:
     title: "Pronto para Começar?"
-    description: "Vamos conversar sobre como posso ajudar seu projeto."
-    primary: "Solicitar Avaliação Rápida"
-    secondary: "Comparar com Auditoria"
+    description: "Solicite uma avaliação e receba clareza antes de investir mais."
+    primary: "Solicitar Avaliação de Acessibilidade"
+    secondary: "Comparar Planos"
     link: "https://cal.com/brunopulis/consultoria-gratuita"
 ---

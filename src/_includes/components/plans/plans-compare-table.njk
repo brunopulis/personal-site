@@ -1,0 +1,43 @@
+<section class="mb-5">
+  <h2 class="h4 mb-4">{{ title }}</h2>
+
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th class="text-start" scope="col">Critério</th>
+          {% for plan in plans %}
+          <th scope="col">{{ plan.name }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for feature in features %}
+        <tr>
+          <th class="text-start" scope="row">{{ feature.label }}</td>
+
+            {% for plan in plans %}
+          <td>
+            {% if feature.key in plan.includes | join(" ") %}
+            ✔️
+            {% else %}
+            —
+            {% endif %}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+
+        {% if show_delivery %}
+        <tr>
+          <td class="text-start fw-bold">Prazo</td>
+          {% for plan in plans %}
+          <td>{{ plan.delivery }}</td>
+          {% endfor %}
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
