@@ -1,24 +1,34 @@
 import fs from 'node:fs/promises';
+import sass from 'sass';
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
 export const buildAllCss = async () => {
-  // Arquivo CSS do Tailwind
-  const tailwindFile = 'src/assets/css/tailwind.css';
+	console.log('🎨 Compilando SCSS...');
 
-  // Cria o diretório de destino
-  await fs.mkdir('_site/assets/css', {recursive: true});
-  await fs.mkdir('src/_includes/css', {recursive: true});
+	try {
+		const result = sass.compile('src/assets/scss/main.scss', {
+			loadPaths: ['node_modules'],
+			style: 'compressed',
+			sourceMap: process.env.ELEVENTY_RUN_MODE !== 'build'
+		});
 
-  // Lê e processa o tailwind.css
-  try {
-    const tailwindContent = await fs.readFile(tailwindFile, 'utf-8');
+		const processed = await postcss([autoprefixer(), cssnano({preset: 'default'})]).process(result.css, {
+			from: 'src/assets/scss/main.scss',
+			to: 'src/assets/css/main.css'
+		});
+		await fs.mkdir('src/assets/css', {recursive: true});
 
-    // Escreve o arquivo main-dist.css que é usado no layout
-    await fs.writeFile('_site/assets/css/main-dist.css', tailwindContent);
+		await fs.writeFile('src/assets/css/main.css', processed.css);
 
-    // Mantém o global.css para compatibilidade (se necessário)
-    await fs.writeFile('_site/assets/css/global.css', tailwindContent);
-    await fs.writeFile('src/_includes/css/global.css', tailwindContent);
-  } catch (error) {
-    console.log(`⚠️  Arquivo ${tailwindFile} não encontrado. Execute 'pnpm run css:build' primeiro.`);
-  }
+		console.log('✅ CSS compilado com sucesso em src/assets/css/main.css');
+
+		if (process.env.ELEVENTY_RUN_MODE !== 'build' && result.sourceMap) {
+			await fs.writeFile('src/assets/css/main.css.map', JSON.stringify(result.sourceMap));
+		}
+	} catch (error) {
+		console.error('❌ Erro ao compilar SCSS:', error);
+		throw error;
+	}
 };
