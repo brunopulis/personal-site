@@ -2,7 +2,7 @@
 layout: service-item.njk
 title: "Avaliação de Acessibilidade"
 slug: avaliacao
-description: Diagnóstico rápido, focado e leve que identifica riscos e oportunidades fáceis.
+description: Descubra exatamente onde seu site ou produto falha e o que corrigir primeiro.
 permalink: "/servicos/avaliacao-acessibilidade/index.html"
 url: /servicos/avaliacao-acessibilidade/
 
