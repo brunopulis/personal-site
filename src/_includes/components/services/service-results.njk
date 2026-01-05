@@ -1,0 +1,23 @@
+{% if results and results.items %}
+<section class="py-5 bg-light border-top">
+  <div class="container">
+
+    <header class="mb-4">
+      <h2 class="h4 fw-bold">
+        {{ results.title | default("Resultados") }}
+      </h2>
+    </header>
+
+    <ul class="list-unstyled row g-3">
+      {% for item in results.items %}
+      <li class="col-md-6">
+        <div class="d-flex align-items-start gap-2">
+          <span class="text-success fw-bold">✓</span>
+          <span>{{ item }}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

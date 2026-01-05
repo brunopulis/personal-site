@@ -2,19 +2,17 @@
 layout: base
 ---
 
-<section class="hero--inner" id="hero" aria-labelledby="hero-title">
+<section class="hero py-5">
   <div class="container">
-    <div class="row">
-      <div class="col-xl-12">
-        <h1 class="fw-bold lh-1 mb-4 text-black" id="hero-title">{{ title }}</h1>
-        <p class="text-black">{{ description }}</p>
-      </div>
-    </div>
+    <header class="mb-5">
+      <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
+      <p class="lead text-white">{{ description }}</p>
+    </header>
   </div>
 </section>
 
 <section class="container">
   <div class="row">
-      {{ content | safe }}
+    {{ content | safe }}
   </div>
 </section>

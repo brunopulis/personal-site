@@ -3,8 +3,8 @@ layout: service-item.njk
 title: "Construção de Sites Acessíveis"
 slug: construcao
 description: Sites acessíveis que são rápidos, fáceis de usar e construídos pra durar.
-permalink: "/servicos/construcao-sites-acessiveis/index.html"
-url: /servicos/construcao-sites-acessiveis/
+permalink: "/servicos/sites-acessiveis/index.html"
+url: /servicos/sites-acessiveis/
 
 service:
   color: indigo-600

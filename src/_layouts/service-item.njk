@@ -2,538 +2,165 @@
 layout: base
 ---
 
-<main class="container py-5">
-
-  <!-- Header do Serviço -->
-  <header class="mb-5">
-    <h1 class="fw-bold mb-3">
-      Avaliação de Acessibilidade
-    </h1>
-
-    <p class="lead">
-      Descubra exatamente onde seu site ou produto falha —
-      e o que corrigir primeiro.
-    </p>
-  </header>
-
-  <!-- Contexto -->
-  <section class="mb-5">
-    <p>
-      A maioria dos produtos digitais tem problemas sérios de acessibilidade.
-      Mesmo os que parecem bem feitos.
-    </p>
-
-    <p>
-      A avaliação de acessibilidade é um diagnóstico focado.
-      Ela mostra os principais bloqueios enfrentados por usuários reais
-      e aponta oportunidades rápidas de melhoria.
-    </p>
-
-    <p>
-      Sem achismo. Sem relatório inflado.
-    </p>
-  </section>
-
-  <!-- O que você recebe -->
-  <section class="mb-5">
-    <h2 class="h4 fw-bold mb-3">
-      O que você recebe
-    </h2>
-
-    <ul class="list-unstyled">
-      <li class="mb-2">✔ Lista priorizada de problemas de acessibilidade</li>
-      <li class="mb-2">✔ Impacto real para usuários e para o negócio</li>
-      <li class="mb-2">✔ Recomendações claras e acionáveis</li>
-    </ul>
-  </section>
-
-  <!-- Para quem é -->
-  <section class="mb-5">
-    <h2 class="h4 fw-bold mb-3">
-      Quando esse serviço faz sentido
-    </h2>
-
-    <ul>
-      <li>Você não sabe por onde começar</li>
-      <li>Quer entender riscos e prioridades</li>
-      <li>Precisa de clareza antes de investir mais</li>
-    </ul>
-  </section>
-
-  <!-- Como funciona -->
-  <section class="mb-5">
-    <h2 class="h4 fw-bold mb-3">
-      Como funciona
-    </h2>
-
-    <p>
-      Analiso seu produto com base nas WCAG
-      e em uso real.
-    </p>
-
-    <p>
-      O foco é clareza, não volume.
-    </p>
-  </section>
-
-  <!-- CTA -->
-  <section class="p-4 bg-light border rounded">
-    <h2 class="h4 fw-bold">
-      Quer entender como está a acessibilidade do seu produto?
-    </h2>
-
-    <p>
-      A avaliação de acessibilidade é o melhor primeiro passo.
-    </p>
-
-    <a href="/contato"
-       class="btn btn-primary btn-lg">
-      Solicitar avaliação de acessibilidade
-    </a>
-
-    <p class="small text-muted mt-2">
-      Retorno em até 48h • Sem compromisso
-    </p>
-  </section>
-
-</main>
-
-
-<section class="hero" id="hero">
+<section class="hero py-5">
   <div class="container">
-    <div class="row mb-5">
-      <h1 class="fw-bold mb-3">{{ title }}</h1>
-      <p class="lead">{{ service.tagline }}</p>
+    <header class="mb-5">
+      <span class="badge bg-white text-black mb-3">{{ service.icon }} Serviço</span>
+      <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
+      <p class="lead text-white">{{ service.tagline }}</p>
+    </header>
+  </div>
+</section>
 
-    <div class="service-hero__ctas">
-      <a href="/contato" class="text-white underline underline-offset-8 hover:no-underline">
-        {{ service.cta.primary }}
-      </a>
-      <a href="#detalhes" class="text-white underline underline-offset-8 hover:no-underline">
-        {{ service.cta.secondary }}
-      </a>
+<!-- Problem / Solution -->
+<section class="py-4" aria-labelledby="problem-solution">
+  <div class="container">
+    <div class="row g-5 mb-5">
+      <div class="col-md-6">
+        <h2 class="h4" id="problem-solution">O problema</h2>
+        <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
+      </div>
+
+      <div class="col-md-6">
+        <h2 class="h4">A solução</h2>
+        <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- O desafio -->
-<section class="mb-5">
+
+<!-- Differentials -->
+{% if service.differentials %}
+<section class="py-4" aria-labelledby="differentials">
   <div class="container">
-    <div class="row">
-      <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-6">O desafio</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        {{ service.problem | markdownify | safe }}
-      </p>
-    </div>
-
-    <div class="row">
-      <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-6">Minha Abordagem</h2>
-      <p class="text-lg text-gray-700 leading-relaxed mb-6">
-        {{ service.solution | markdownify | safe }}
-      </p>
-
-      <ul class="list-disc space-y-4 py-3">
-        {% for differential in service.differentials %}
-        <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+    <h2 class="h4 mb-3" id="differentials">Por que essa avaliação é diferente</h2>
+    <ul class="list-group list-group-flush">
+      {% for item in service.differentials %}
+      <li class="list-group-item">✔️ {{ item }}</li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
+{% endif %}
 
-<!-- O Que Você Recebe -->
-<section class="py-12 bg-gray-50">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">O que você recebe?</h2>
-
-    <ul class="grid gap-6 md:grid-cols-2">
+<!-- Included -->
+{% if service.included %}
+<section class="py-4" aria-labelledby="included">
+  <div class="container">
+    <h2 class="h4 mb-3" id="included">O que você recebe</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-3">
       {% for item in service.included %}
-      <li
-        class="font-semibold text-gray-900 mb-2 bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition flex items-start gap-4">
+      <div class="col">
+        <div class="border rounded p-3 h-100">
+          {{ item }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Results -->
+{% if service.results %}
+<section class="py-4" aria-labelledby="results">
+  <div class="container">
+    <h2 class="h4 mb-4" id="results">Resultados esperados</h2>
+    <div class="row g-4">
+      {% for result in service.results %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="h6 fw-bold">{{ result.title }}</h3>
+            <p class="text-muted mb-0">{{ result.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- Target -->
+{% if service.target %}
+<section class="py-4" aria-labelledby="target">
+  <div class="container">
+    <h2 class="h4 mb-3" id="target">Para quem é indicado</h2>
+    <ul class="list-inline">
+      {% for item in service.target %}
+      <li class="list-inline-item badge bg-light text-dark border me-2 mb-2">
         {{ item }}
       </li>
       {% endfor %}
     </ul>
-  </div>
 </section>
+{% endif %}
 
-<!-- Resultados Esperados -->
-<section class="py-12">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Resultados Esperados</h2>
-
-    <div class="grid gap-6 md:grid-cols-2">
-      {% for result in service.results %}
-      <div class="flex gap-4 items-start">
-        <div class="shrink-0 text-2xl">✓</div>
-        <div>
-          <p class="text-gray-600">
-            {{ result.description }}
-          </p>
-        </div>
-      </div>
+<!-- Process -->
+{% if service.processes %}
+<section class="py-4" aria-labelledby="process">
+  <div class="container">
+    <h2 class="h4 mb-4" id="process">Como funciona</h2>
+    <ol class="list-group list-group-numbered">
+      {% for step in service.processes %}
+      <li class="list-group-item">
+        <strong>{{ step.title }}:</strong>
+        <span class="text-muted">{{ step.description }}</span>
+      </li>
       {% endfor %}
-    </div>
-  </div>
+    </ol>
+    <p class="text-muted mt-3">
+      ⏱️ Prazo estimado: <strong>{{ service.timeline }}</strong>
+    </p>
 </section>
+{% endif %}
 
-<!-- Para Quem É -->
-<section class="py-12 bg-gray-50">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Para quem é este serviço?</h2>
-
-    <ul class="grid gap-6 md:grid-cols-2">
-      {% for audience in service.target %}
-      <div class="flex gap-4 items-start">
-        <div class="shrink-0 text-2xl">✓</div>
-        <div>
-          <h3 class="font-semibold text-gray-900">{{ audience }}</h3>
-        </div>
-      </div>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<!-- Como Funciona -->
-<section class="py-12">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Como Funciona</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      {% for process in service.processes %}
-      <div class="flex gap-4 items-start">
-        <div class="shrink-0 text-2xl">✓</div>
-        <div>
-          <h3 class="font-semibold text-gray-900">{{ process.title }}</h3>
-          <p class="text-gray-600 text-sm">
-            {{ process.description }}
-          </p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+<!-- Plans -->
+{% if service.plans %}
+{% set plansTitle = "Planos disponíveis" %}
+{% set plans = service.plans %}
+{% include "components/plans/plans-grid.njk" %}
+{% endif %}
 
 <!-- Testimonial -->
-<section class="py-12 bg-gray-50">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12">Depoimentos</h2>
-
-    <div class="mt-16 space-y-16 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
-      <blockquote class="bg-white rounded-lg p-8 space-y-4 sm:flex lg:block hover:border-blood-red-300">
-        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="shrink-0 text-blood-red-300">
-          <path
-            d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
-            fill="currentColor" />
-        </svg>
-        <div class="mt-8 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-10">
-          <p class="text-lg text-gray-700">
-            "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
-          </p>
-          <cite class="mt-4 block font-semibold not-italic text-blood-red-800">Shehab , England</cite>
-        </div>
-      </blockquote>
-      <blockquote class="bg-white rounded-lg p-8 space-y-4 sm:flex lg:block hover:border-blood-red-300">
-        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="shrink-0 text-blood-red-300">
-          <path
-            d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
-            fill="currentColor" />
-        </svg>
-        <div class="mt-8 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-10">
-          <p class="text-lg text-gray-700">
-            "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
-          </p>
-          <cite class="mt-4 block font-semibold not-italic text-blood-red-800">Shehab , England</cite>
-        </div>
-      </blockquote>
-      <blockquote class="bg-white rounded-lg p-8 space-y-4 sm:flex lg:block hover:border-blood-red-300">
-        <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" class="shrink-0 text-blood-red-300">
-          <path
-            d="M0 18h8.7v-5.555c-.024-3.906 1.113-6.841 2.892-9.68L6.452 0C3.188 2.644-.026 7.86 0 12.469V18zm12.408 0h8.7v-5.555C21.083 8.539 22.22 5.604 24 2.765L18.859 0c-3.263 2.644-6.476 7.86-6.451 12.469V18z"
-            fill="currentColor" />
-        </svg>
-        <div class="mt-8 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-10">
-          <p class="text-lg text-gray-700">
-            "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
-          </p>
-          <cite class="mt-4 block font-semibold not-italic text-blood-red-800">Shehab , England</cite>
-        </div>
-      </blockquote>
-    </div>
-  </div>
+{% if service.testimonials %}
+<section class="py-4" aria-labelledby="testimonial">
+  <div class="container">
+    <blockquote class="blockquote border-start ps-4">
+      <p class="mb-2">“{{ service.testimonials.quote }}”</p>
+      <footer class="blockquote-footer">
+        {{ service.testimonials.cliente }} —
+        <cite>{{ service.testimonials.resultado }}</cite>
+      </footer>
+    </blockquote>
 </section>
+{% endif %}
 
 <!-- FAQ -->
 {% if service.faq %}
-<section class="py-12" aria-labelledby="faq-section">
-  <div class="mx-auto max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-12 text-center" id="faq-section">Perguntas
-      Frequentes</h2>
-
-    <div class="space-y-6">
+<section class="py-4" aria-labelledby="faq">
+  <div class="container">
+    <h2 class="h4 mb-4" id="faq">Perguntas frequentes</h2>
+    <div class="accordion" id="faq">
       {% for item in service.faq %}
-      <details
-        class="bg-gray-50 group border border-gray-200 rounded-lg p-6 cursor-pointer hover:border-blood-red-300 transition">
-        <summary class="flex items-center justify-between font-semibold text-gray-900">
-          <span>{{ item.question }}</span>
-          <span class="text-blood-red-600 group-open:rotate-180 transition">▼</span>
-        </summary>
-        <p class="text-gray-600 mt-4 leading-relaxed">
-          {{ item.answer }}
-        </p>
-      </details>
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq-{{ loop.index }}">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#faq-content-{{ loop.index }}">
+            {{ item.question }}
+          </button>
+        </h3>
+        <div id="faq-content-{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#faq">
+          <div class="accordion-body">
+            {{ item.answer }}
+          </div>
+        </div>
+      </div>
       {% endfor %}
     </div>
-  </div>
 </section>
 {% endif %}
 
-<!-- CTA Final -->
-{% if service.cta %}
-{% for cta in service.cta %}
-<section class="py-12 my-3" aria-labelledby="cta-section">
-  <div class="bg-linear-to-br from-blood-red-800 to-blood-red-900 mx-auto max-w-7xl text-center space-y-8 py-12">
-    <div class="space-y-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-white" id="cta-section">
-        {{ cta.title }}
-      </h2>
-      <p class="text-lg text-white">
-        {{ cta.description }}
-      </p>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:brunopulis@protonmail.com?subject=Solicitação de Orçamento - {{ title }}"
-        class="inline-flex items-center no-underline justify-center px-8 py-3 bg-white text-blood-red-800 font-bold rounded-lg hover:bg-blood-red-50 transition">
-        {{ cta.primary }}
-      </a>
-      <a href="{{ cta.link }}"
-        class="inline-flex items-center no-underline justify-center px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blood-red-800 hover:border-blood-red-800 transition">
-        {{ cta.secondary }}
-      </a>
-    </div>
-  </div>
-</section>
-{% endfor %}
-{% endif %}
-
-<style>
-  .service-hero {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-light));
-    color: white;
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-
-  .service-hero__icon {
-    font-size: 1.5rem;
-  }
-
-  .service-hero__title {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  .service-hero__tagline {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .service-hero__ctas {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .service-section--alt {
-    background: #f9f9f9;
-  }
-
-  .problem-solution {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .problem-solution__item h2 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .problem-solution {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .diferencial__list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .diferencial__list li {
-    padding: 0.75rem 0;
-    padding-left: 2rem;
-    position: relative;
-  }
-
-  .diferencial__list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-  }
-
-  .service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    border-top: 3px solid var(--accent-color);
-    transition: transform 0.3s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-4px);
-  }
-
-  .results-list,
-  .audience-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .results-list li,
-  .audience-list li {
-    padding: 1rem 0;
-    padding-left: 2.5rem;
-    position: relative;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  .checkmark {
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-
-  .process {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .process__step {
-    background: white;
-    padding: 1.5rem;
-    border-left: 4px solid var(--accent-color);
-    border-radius: 4px;
-  }
-
-  .process__timeline {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-  }
-
-  .testemunhal {
-    background: white;
-    padding: 3rem 2rem;
-    border-radius: 8px;
-    text-align: center;
-  }
-
-  .testemunhal__quote {
-    font-size: 1.5rem;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    color: var(--accent-color);
-  }
-
-  .testemunhal__meta {
-    font-size: 0.95rem;
-    color: #666;
-  }
-
-  .faq {
-    max-width: 800px;
-  }
-
-  .faq__item {
-    margin-bottom: 1rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .faq__question {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq__answer {
-    margin-top: 1rem;
-    color: #666;
-    line-height: 1.6;
-  }
-
-  .service-cta {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-color-light));
-    color: white;
-    border-radius: 8px;
-    margin-bottom: 4rem;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-primary {
-    background: var(--accent-color);
-    color: white;
-  }
-
-  .btn-primary:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-  }
-
-  .btn-secondary {
-    background: white;
-    color: var(--accent-color);
-  }
-
-  .btn-secondary:hover {
-    opacity: 0.9;
-  }
-
-  .btn-large {
-    padding: 1rem 3rem;
-    font-size: 1.1rem;
-  }
-</style>
+<!-- CTA -->
+{% set cta = service.cta %}
+{% include "components/cta/cta-block.njk" %}
