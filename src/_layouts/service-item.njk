@@ -2,11 +2,108 @@
 layout: base
 ---
 
-<section class="py-12 bg-linear-to-br from-red-900 overflow-hidden relative text-white to-red-950 via-red-800"
-  id="hero">
-  <div class="mx-auto max-md:px-6 max-w-7xl gap-2 grid items-center py-12">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">{{ title }}</h1>
-    <p class="text-lg text-white md:text-xl">{{ service.tagline }}</p>
+<main class="container py-5">
+
+  <!-- Header do Serviço -->
+  <header class="mb-5">
+    <h1 class="fw-bold mb-3">
+      Avaliação de Acessibilidade
+    </h1>
+
+    <p class="lead">
+      Descubra exatamente onde seu site ou produto falha —
+      e o que corrigir primeiro.
+    </p>
+  </header>
+
+  <!-- Contexto -->
+  <section class="mb-5">
+    <p>
+      A maioria dos produtos digitais tem problemas sérios de acessibilidade.
+      Mesmo os que parecem bem feitos.
+    </p>
+
+    <p>
+      A avaliação de acessibilidade é um diagnóstico focado.
+      Ela mostra os principais bloqueios enfrentados por usuários reais
+      e aponta oportunidades rápidas de melhoria.
+    </p>
+
+    <p>
+      Sem achismo. Sem relatório inflado.
+    </p>
+  </section>
+
+  <!-- O que você recebe -->
+  <section class="mb-5">
+    <h2 class="h4 fw-bold mb-3">
+      O que você recebe
+    </h2>
+
+    <ul class="list-unstyled">
+      <li class="mb-2">✔ Lista priorizada de problemas de acessibilidade</li>
+      <li class="mb-2">✔ Impacto real para usuários e para o negócio</li>
+      <li class="mb-2">✔ Recomendações claras e acionáveis</li>
+    </ul>
+  </section>
+
+  <!-- Para quem é -->
+  <section class="mb-5">
+    <h2 class="h4 fw-bold mb-3">
+      Quando esse serviço faz sentido
+    </h2>
+
+    <ul>
+      <li>Você não sabe por onde começar</li>
+      <li>Quer entender riscos e prioridades</li>
+      <li>Precisa de clareza antes de investir mais</li>
+    </ul>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="mb-5">
+    <h2 class="h4 fw-bold mb-3">
+      Como funciona
+    </h2>
+
+    <p>
+      Analiso seu produto com base nas WCAG
+      e em uso real.
+    </p>
+
+    <p>
+      O foco é clareza, não volume.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="p-4 bg-light border rounded">
+    <h2 class="h4 fw-bold">
+      Quer entender como está a acessibilidade do seu produto?
+    </h2>
+
+    <p>
+      A avaliação de acessibilidade é o melhor primeiro passo.
+    </p>
+
+    <a href="/contato"
+       class="btn btn-primary btn-lg">
+      Solicitar avaliação de acessibilidade
+    </a>
+
+    <p class="small text-muted mt-2">
+      Retorno em até 48h • Sem compromisso
+    </p>
+  </section>
+
+</main>
+
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="row mb-5">
+      <h1 class="fw-bold mb-3">{{ title }}</h1>
+      <p class="lead">{{ service.tagline }}</p>
 
     <div class="service-hero__ctas">
       <a href="/contato" class="text-white underline underline-offset-8 hover:no-underline">
@@ -20,28 +117,26 @@ layout: base
 </section>
 
 <!-- O desafio -->
-<section class="py-12">
-  <div class="mx-auto max-w-7xl py-12">
-    <div class="space-y-12">
-      <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-6">O desafio</h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          {{ service.problem | markdownify | safe }}
-        </p>
-      </div>
+<section class="mb-5">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-6">O desafio</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        {{ service.problem | markdownify | safe }}
+      </p>
+    </div>
 
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-6">Minha Abordagem</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          {{ service.solution | markdownify | safe }}
-        </p>
+    <div class="row">
+      <h2 class="text-3xl md:text-4xl font-bold text-blood-red-800 mb-6">Minha Abordagem</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        {{ service.solution | markdownify | safe }}
+      </p>
 
-        <ul class="list-disc space-y-4 py-3">
-          {% for differential in service.differentials %}
-          <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
-          {% endfor %}
-        </ul>
-      </div>
+      <ul class="list-disc space-y-4 py-3">
+        {% for differential in service.differentials %}
+        <li class="flex gap-4 items-center text-gray-900">{{ differential }}</li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </section>
