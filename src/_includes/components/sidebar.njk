@@ -1,0 +1,72 @@
+<aside class="sidebar">
+  <section class="sidebar-section">
+    <h3 class="sidebar-title">Tags</h3>
+    <div class="tags-cloud">
+      {% set topTags = collections.tagListRecurrency | limit(10) %}
+      {% for item in topTags %}
+        <a href="/tags/{{ item.tag | slugify }}/" class="tag-link">
+          {{ item.tag }}
+          <span class="tag-count">({{ item.count }})</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="sidebar-section">
+    <h3 class="sidebar-title">Posts Recentes</h3>
+    <ul class="recent-posts">
+      {% set recentPosts = collections.posts | reverse %}
+      {% for post in recentPosts.slice(0,5) %}
+        <li class="recent-post-item">
+          <a href="{{ post.url }}" class="recent-post-link">
+            {{ post.data.title }}
+          </a>
+          <time class="recent-post-date" datetime="{{ post.data.pubDate | toISOString }}">
+            {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
+          </time>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="sidebar-section sidebar-newsletter">
+    <h3 class="sidebar-title"><span aria-hidden="true">📬</span> Newsletter</h3>
+    <p class="newsletter-description">
+      Receba conteúdos exclusivos sobre acessibilidade e desenvolvimento web!
+    </p>
+    <form 
+      action="https://brunopulis.substack.com/api/v1/free?nojs=true" 
+      method="post" 
+      class="newsletter-form"
+    >
+      <label for="email" class="visually-hidden">E-mail</label>
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="seu@email.com" 
+        required 
+        class="newsletter-input"
+        id="email"
+      >
+      <input type="hidden" name="first_url" value="{{ page.url }}">
+      <input type="hidden" name="first_referrer" value="{{ page.url }}">
+      <input type="hidden" name="current_url" value="{{ page.url }}">
+      <input type="hidden" name="current_referrer" value="{{ page.url }}">
+      <input type="hidden" name="referral_code" value="">
+      <input type="hidden" name="source" value="embed">
+
+      <button type="submit" class="newsletter-button">
+        Inscrever-se
+      </button>
+    </form>
+
+    <p class="newsletter-footer">
+      <small>
+        Sem spam, apenas conteúdo de qualidade. 
+        <a href="https://brunopulis.substack.com" target="_blank" rel="noopener noreferrer" class="substack-link">
+          Ver edições anteriores →
+        </a>
+      </small>
+    </p>
+  </section>
+</aside>
