@@ -5,12 +5,16 @@ export default {
 			url: '/blog/'
 		},
 		{
+			text: 'Trabalho',
+			url: '/trabalho/'
+		},
+		{
 			text: 'Serviços',
 			url: '/servicos/'
 		},
 		{
-			text: 'Trabalho',
-			url: '/trabalho/'
+			text: 'Agora',
+			url: '/agora/'
 		},
 		{
 			text: 'Sobre',
@@ -31,20 +35,44 @@ export default {
 			url: '/blogroll/'
 		},
 		{
+			text: 'Colophon',
+			url: '/colophon/'
+		},
+		{
+			text: 'Links favoritos',
+			url: '/bookmarks/'
+		},
+		{
 			text: 'Biblioteca',
 			url: '/livros/'
 		},
 		{
-			text: 'Filmes',
-			url: '/filmes/'
+			text: 'Assistindo',
+			url: '/media/'
 		},
 		{
-			text: 'Notas',
-			url: '/notas/'
+			text: 'Músicas',
+			url: '/musicas/'
+		},
+		{
+			text: 'O que uso',
+			url: '/uses/'
+		},
+		{
+			text: 'Meu uso de IA',
+			url: '/ia/'
 		},
 		{
 			text: 'Acessibilidade',
 			url: '/acessibilidade/'
+		},
+		{
+			text: 'Disclaimer',
+			url: '/disclaimer/'
+		},
+		{
+			text: 'Licença',
+			url: '/licenca/'
 		},
 		{
 			text: 'Privacidade',
