@@ -10,43 +10,6 @@ var PostCollection = {
   match: {
     include: "**/*"
   },
-  defaultItem: () => {
-    return {
-      title: "Novo Post",
-      author: "Pulis",
-      pubDate: (/* @__PURE__ */ new Date()).toISOString(),
-      seo: {
-        meta_title: "",
-        meta_description: "",
-        keywords: []
-      },
-      tags: [],
-      categories: [],
-      draft: false,
-      featured: false
-    };
-  },
-  ui: {
-    // @ts-ignore
-    itemProps: (item) => {
-      return {
-        label: item?.title,
-        subtitle: item?.pubDate ? new Date(item.pubDate).toLocaleDateString("pt-BR") : ""
-      };
-    },
-    router: ({ document }) => {
-      return `/blog/${document._sys.filename}/`;
-    },
-    filename: {
-      slugify: (values) => {
-        const date = values?.pubDate ? new Date(values.pubDate) : /* @__PURE__ */ new Date();
-        const year = date.getFullYear();
-        const slug = values?.title?.toLowerCase().trim().replaceAll(/\s+/g, "-").replaceAll(/[^\w-]/g, "") || "post";
-        const locale = "pt-br";
-        return `${locale}/${year}/${slug}`;
-      }
-    }
-  },
   fields: [
     {
       type: "string",
@@ -61,15 +24,9 @@ var PostCollection = {
       label: "Data de Publica\xE7\xE3o",
       required: true,
       ui: {
-        dateFormat: "DD/MM/YYYY",
-        timeFormat: "HH:mm"
-      }
-    },
-    {
-      type: "string",
-      name: "author",
-      label: "Autor",
-      required: true
+        dateFormat: "DD/MM/YYYY"
+      },
+      searchable: false
     },
     {
       type: "string",
@@ -84,14 +41,17 @@ var PostCollection = {
     {
       type: "image",
       name: "featured_image",
-      label: "Imagem Destaque"
+      label: "Imagem Destaque",
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true,
-      required: true
+      ui: {
+        component: "markdown"
+      }
     },
     {
       type: "string",
@@ -108,7 +68,8 @@ var PostCollection = {
         { value: "tutorial", label: "Tutorial" },
         { value: "opiniao", label: "Opini\xE3o" },
         { value: "noticias", label: "Not\xEDcias" }
-      ]
+      ],
+      searchable: false
     },
     {
       type: "string",
@@ -117,7 +78,8 @@ var PostCollection = {
       list: true,
       ui: {
         component: "tags"
-      }
+      },
+      searchable: false
     },
     {
       type: "boolean",
@@ -125,7 +87,8 @@ var PostCollection = {
       label: "Rascunho",
       ui: {
         description: "Marque para manter como rascunho"
-      }
+      },
+      searchable: false
     },
     {
       type: "object",
@@ -149,9 +112,11 @@ var PostCollection = {
           type: "string",
           name: "keywords",
           label: "Keywords",
-          list: true
+          list: true,
+          searchable: false
         }
-      ]
+      ],
+      searchable: false
     }
   ]
 };
@@ -179,12 +144,14 @@ var PageCollection = {
       label: "Descri\xE7\xE3o",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
       name: "permalink",
-      label: "Permalink"
+      label: "Permalink",
+      searchable: false
     },
     {
       type: "rich-text",
@@ -202,7 +169,7 @@ var ServiceCollection = {
   path: "src/content/pages/services",
   format: "md",
   match: {
-    include: "*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -215,7 +182,8 @@ var ServiceCollection = {
     {
       type: "string",
       name: "slug",
-      label: "Slug"
+      label: "Slug",
+      searchable: false
     },
     {
       type: "string",
@@ -223,12 +191,20 @@ var ServiceCollection = {
       label: "Descri\xE7\xE3o",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
       name: "permalink",
-      label: "Permalink"
+      label: "Permalink",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "url",
+      label: "URL",
+      searchable: false
     },
     {
       type: "object",
@@ -238,17 +214,20 @@ var ServiceCollection = {
         {
           type: "string",
           name: "color",
-          label: "Cor (Tailwind Class)"
+          label: "Cor (Tailwind Class)",
+          searchable: false
         },
         {
           type: "string",
           name: "tagline",
-          label: "Tagline"
+          label: "Tagline",
+          searchable: false
         },
         {
           type: "string",
           name: "icon",
-          label: "\xCDcone (Emoji)"
+          label: "\xCDcone (Emoji)",
+          searchable: false
         },
         {
           type: "string",
@@ -256,7 +235,8 @@ var ServiceCollection = {
           label: "Problema",
           ui: {
             component: "textarea"
-          }
+          },
+          searchable: false
         },
         {
           type: "string",
@@ -264,19 +244,22 @@ var ServiceCollection = {
           label: "Solu\xE7\xE3o",
           ui: {
             component: "textarea"
-          }
+          },
+          searchable: false
         },
         {
           type: "string",
           name: "differentials",
           label: "Diferenciais",
-          list: true
+          list: true,
+          searchable: false
         },
         {
           type: "string",
           name: "included",
           label: "O que est\xE1 incluso",
-          list: true
+          list: true,
+          searchable: false
         },
         {
           type: "object",
@@ -294,13 +277,15 @@ var ServiceCollection = {
               name: "description",
               label: "Descri\xE7\xE3o"
             }
-          ]
+          ],
+          searchable: false
         },
         {
           type: "string",
           name: "target",
           label: "P\xFAblico Alvo",
-          list: true
+          list: true,
+          searchable: false
         },
         {
           type: "object",
@@ -318,7 +303,58 @@ var ServiceCollection = {
               name: "description",
               label: "Descri\xE7\xE3o"
             }
-          ]
+          ],
+          searchable: false
+        },
+        {
+          type: "string",
+          name: "timeline",
+          label: "Timeline",
+          searchable: false
+        },
+        {
+          type: "object",
+          name: "plans",
+          label: "Planos",
+          list: true,
+          fields: [
+            {
+              type: "string",
+              name: "name",
+              label: "Nome"
+            },
+            {
+              type: "boolean",
+              name: "highlight",
+              label: "Destaque"
+            },
+            {
+              type: "string",
+              name: "subtitle",
+              label: "Subt\xEDtulo"
+            },
+            {
+              type: "string",
+              name: "description",
+              label: "Descri\xE7\xE3o",
+              ui: {
+                component: "textarea"
+              }
+            },
+            {
+              type: "string",
+              name: "includes",
+              label: "Incluso",
+              list: true,
+              searchable: false
+            },
+            {
+              type: "string",
+              name: "delivery",
+              label: "Entrega"
+            }
+          ],
+          searchable: false
         },
         {
           type: "object",
@@ -343,7 +379,8 @@ var ServiceCollection = {
               name: "resultado",
               label: "Resultado"
             }
-          ]
+          ],
+          searchable: false
         },
         {
           type: "object",
@@ -364,7 +401,8 @@ var ServiceCollection = {
                 component: "textarea"
               }
             }
-          ]
+          ],
+          searchable: false
         },
         {
           type: "object",
@@ -396,7 +434,8 @@ var ServiceCollection = {
               name: "link",
               label: "Link"
             }
-          ]
+          ],
+          searchable: false
         }
       ]
     }
@@ -410,9 +449,14 @@ var NoteCollection = {
   path: "src/content/notes",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo"
+    },
     {
       type: "datetime",
       name: "pubDate",
@@ -421,18 +465,21 @@ var NoteCollection = {
       ui: {
         dateFormat: "DD/MM/YYYY",
         timeFormat: "HH:mm"
-      }
+      },
+      searchable: false
     },
     {
       type: "boolean",
       name: "published",
-      label: "Publicado"
+      label: "Publicado",
+      searchable: false
     },
     {
       type: "string",
       name: "type",
       label: "Tipo",
-      options: [{ value: "note", label: "Nota" }]
+      options: [{ value: "note", label: "Nota" }],
+      searchable: false
     },
     {
       type: "string",
@@ -441,10 +488,11 @@ var NoteCollection = {
       list: true,
       ui: {
         component: "tags"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -472,12 +520,14 @@ var BookCollection = {
     {
       type: "string",
       name: "author",
-      label: "Autor"
+      label: "Autor",
+      searchable: false
     },
     {
       type: "string",
       name: "category",
-      label: "Categoria"
+      label: "Categoria",
+      searchable: false
     },
     {
       type: "string",
@@ -488,7 +538,8 @@ var BookCollection = {
         { value: "lendo", label: "Lendo" },
         { value: "quero-ler", label: "Quero Ler" },
         { value: "abandonado", label: "Abandonado" }
-      ]
+      ],
+      searchable: false
     },
     {
       type: "number",
@@ -496,12 +547,14 @@ var BookCollection = {
       label: "Avalia\xE7\xE3o",
       ui: {
         component: "number"
-      }
+      },
+      searchable: false
     },
     {
       type: "image",
       name: "cover",
-      label: "Capa"
+      label: "Capa",
+      searchable: false
     },
     {
       type: "string",
@@ -509,7 +562,8 @@ var BookCollection = {
       label: "Descri\xE7\xE3o",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
@@ -517,7 +571,8 @@ var BookCollection = {
       label: "Pensamentos",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
@@ -525,17 +580,20 @@ var BookCollection = {
       label: "Cita\xE7\xF5es",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "number",
       name: "attendedYear",
-      label: "Ano de Leitura"
+      label: "Ano de Leitura",
+      searchable: false
     },
     {
       type: "string",
       name: "recommendBy",
-      label: "Recomendado por"
+      label: "Recomendado por",
+      searchable: false
     },
     {
       type: "string",
@@ -544,23 +602,26 @@ var BookCollection = {
       list: true,
       ui: {
         component: "tags"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
       name: "url",
-      label: "URL"
+      label: "URL",
+      searchable: false
     },
     {
       type: "datetime",
-      name: "date",
+      name: "pubDate",
       label: "Data",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -575,20 +636,20 @@ var NewsletterCollection = {
   path: "src/content/newsletter",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
     {
       type: "string",
       name: "title",
       label: "T\xEDtulo",
-      isTitle: true,
       required: true
     },
     {
       type: "string",
       name: "issue",
-      label: "Edi\xE7\xE3o"
+      label: "Edi\xE7\xE3o",
+      searchable: false
     },
     {
       type: "datetime",
@@ -596,13 +657,17 @@ var NewsletterCollection = {
       label: "Data de Publica\xE7\xE3o",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true
+      isBody: true,
+      ui: {
+        component: "markdown"
+      }
     }
   ]
 };
@@ -614,7 +679,7 @@ var MediaCollection = {
   path: "src/content/medias",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -627,12 +692,14 @@ var MediaCollection = {
     {
       type: "string",
       name: "director",
-      label: "Diretor"
+      label: "Diretor",
+      searchable: false
     },
     {
       type: "string",
       name: "category",
-      label: "Categoria"
+      label: "Categoria",
+      searchable: false
     },
     {
       type: "string",
@@ -642,7 +709,8 @@ var MediaCollection = {
         { value: "assistido", label: "Assistido" },
         { value: "assistindo", label: "Assistindo" },
         { value: "quero-assistir", label: "Quero Assistir" }
-      ]
+      ],
+      searchable: false
     },
     {
       type: "number",
@@ -650,12 +718,14 @@ var MediaCollection = {
       label: "Avalia\xE7\xE3o",
       ui: {
         component: "number"
-      }
+      },
+      searchable: false
     },
     {
       type: "image",
       name: "poster",
-      label: "Poster"
+      label: "Poster",
+      searchable: false
     },
     {
       type: "string",
@@ -663,7 +733,8 @@ var MediaCollection = {
       label: "Descri\xE7\xE3o",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
@@ -671,17 +742,20 @@ var MediaCollection = {
       label: "Pensamentos",
       ui: {
         component: "textarea"
-      }
+      },
+      searchable: false
     },
     {
       type: "number",
-      name: "attendedYear",
-      label: "Ano Assistido"
+      name: "watchedYear",
+      label: "Ano Assistido",
+      searchable: false
     },
     {
       type: "string",
       name: "recommendBy",
-      label: "Recomendado por"
+      label: "Recomendado por",
+      searchable: false
     },
     {
       type: "string",
@@ -690,23 +764,26 @@ var MediaCollection = {
       list: true,
       ui: {
         component: "tags"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
       name: "url",
-      label: "URL"
+      label: "URL",
+      searchable: false
     },
     {
       type: "datetime",
-      name: "date",
+      name: "watchedDate",
       label: "Data",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -738,14 +815,15 @@ var BookmarkCollection = {
     },
     {
       type: "datetime",
-      name: "date",
+      name: "pubDate",
       label: "Data",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -760,7 +838,7 @@ var StreamCollection = {
   path: "src/content/streams",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -773,12 +851,14 @@ var StreamCollection = {
     {
       type: "string",
       name: "type",
-      label: "Tipo"
+      label: "Tipo",
+      searchable: false
     },
     {
       type: "string",
       name: "detail",
-      label: "Detalhes"
+      label: "Detalhes",
+      searchable: false
     },
     {
       type: "datetime",
@@ -786,7 +866,8 @@ var StreamCollection = {
       label: "Data de Publica\xE7\xE3o",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
       type: "string",
@@ -795,10 +876,11 @@ var StreamCollection = {
       list: true,
       ui: {
         component: "tags"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -813,7 +895,7 @@ var TalkCollection = {
   path: "src/content/talks",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -829,13 +911,17 @@ var TalkCollection = {
       label: "Data",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true
+      isBody: true,
+      ui: {
+        component: "markdown"
+      }
     }
   ]
 };
@@ -847,7 +933,7 @@ var GalleryCollection = {
   path: "src/content/gallery",
   format: "md",
   match: {
-    include: "**/*.md"
+    include: "**/*"
   },
   fields: [
     {
@@ -863,15 +949,17 @@ var GalleryCollection = {
       label: "Data",
       ui: {
         dateFormat: "DD/MM/YYYY"
-      }
+      },
+      searchable: false
     },
     {
       type: "image",
       name: "image",
-      label: "Imagem"
+      label: "Imagem",
+      searchable: false
     },
     {
-      type: "rich-text",
+      type: "string",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -881,6 +969,7 @@ var GalleryCollection = {
 
 // tina/config.ts
 var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+var isLocal = !process.env.TINA_SEARCH;
 var config_default = defineConfig({
   branch,
   clientId: process.env.TINA_CLIENT_ID,
