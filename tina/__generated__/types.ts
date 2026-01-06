@@ -356,10 +356,9 @@ export type Post = Node & Document & {
   __typename?: 'Post';
   title: Scalars['String']['output'];
   date: Scalars['String']['output'];
-  author: Scalars['String']['output'];
   description: Scalars['String']['output'];
   featured_image?: Maybe<Scalars['String']['output']>;
-  body: Scalars['JSON']['output'];
+  body?: Maybe<Scalars['String']['output']>;
   categories?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   draft?: Maybe<Scalars['Boolean']['output']>;
@@ -391,12 +390,6 @@ export type ImageFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export type BooleanFilter = {
   eq?: InputMaybe<Scalars['Boolean']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -411,10 +404,9 @@ export type PostSeoFilter = {
 export type PostFilter = {
   title?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
-  author?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   featured_image?: InputMaybe<ImageFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<StringFilter>;
   categories?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   draft?: InputMaybe<BooleanFilter>;
@@ -443,6 +435,12 @@ export type Page = Node & Document & {
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
+};
+
+export type RichTextFilter = {
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type PageFilter = {
@@ -475,6 +473,16 @@ export type ServiceServiceProcesses = {
   __typename?: 'ServiceServiceProcesses';
   title?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+};
+
+export type ServiceServicePlans = {
+  __typename?: 'ServiceServicePlans';
+  name?: Maybe<Scalars['String']['output']>;
+  highlight?: Maybe<Scalars['Boolean']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  includes?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  delivery?: Maybe<Scalars['String']['output']>;
 };
 
 export type ServiceServiceTestimonials = {
@@ -511,6 +519,8 @@ export type ServiceService = {
   results?: Maybe<Array<Maybe<ServiceServiceResults>>>;
   target?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   processes?: Maybe<Array<Maybe<ServiceServiceProcesses>>>;
+  timeline?: Maybe<Scalars['String']['output']>;
+  plans?: Maybe<Array<Maybe<ServiceServicePlans>>>;
   testimonials?: Maybe<ServiceServiceTestimonials>;
   faq?: Maybe<Array<Maybe<ServiceServiceFaq>>>;
   cta?: Maybe<ServiceServiceCta>;
@@ -522,6 +532,7 @@ export type Service = Node & Document & {
   slug?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   permalink?: Maybe<Scalars['String']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
   service?: Maybe<ServiceService>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -536,6 +547,15 @@ export type ServiceServiceResultsFilter = {
 export type ServiceServiceProcessesFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+};
+
+export type ServiceServicePlansFilter = {
+  name?: InputMaybe<StringFilter>;
+  highlight?: InputMaybe<BooleanFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  includes?: InputMaybe<StringFilter>;
+  delivery?: InputMaybe<StringFilter>;
 };
 
 export type ServiceServiceTestimonialsFilter = {
@@ -568,6 +588,8 @@ export type ServiceServiceFilter = {
   results?: InputMaybe<ServiceServiceResultsFilter>;
   target?: InputMaybe<StringFilter>;
   processes?: InputMaybe<ServiceServiceProcessesFilter>;
+  timeline?: InputMaybe<StringFilter>;
+  plans?: InputMaybe<ServiceServicePlansFilter>;
   testimonials?: InputMaybe<ServiceServiceTestimonialsFilter>;
   faq?: InputMaybe<ServiceServiceFaqFilter>;
   cta?: InputMaybe<ServiceServiceCtaFilter>;
@@ -578,6 +600,7 @@ export type ServiceFilter = {
   slug?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   permalink?: InputMaybe<StringFilter>;
+  url?: InputMaybe<StringFilter>;
   service?: InputMaybe<ServiceServiceFilter>;
 };
 
@@ -596,22 +619,24 @@ export type ServiceConnection = Connection & {
 
 export type Note = Node & Document & {
   __typename?: 'Note';
+  title?: Maybe<Scalars['String']['output']>;
   pubDate: Scalars['String']['output'];
   published?: Maybe<Scalars['Boolean']['output']>;
   type?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
 export type NoteFilter = {
+  title?: InputMaybe<StringFilter>;
   pubDate?: InputMaybe<DatetimeFilter>;
   published?: InputMaybe<BooleanFilter>;
   type?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type NoteConnectionEdges = {
@@ -642,8 +667,8 @@ export type Book = Node & Document & {
   recommendBy?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   url?: Maybe<Scalars['String']['output']>;
-  date?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  pubDate?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -673,8 +698,8 @@ export type BookFilter = {
   recommendBy?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   url?: InputMaybe<StringFilter>;
-  date?: InputMaybe<DatetimeFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  pubDate?: InputMaybe<DatetimeFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type BookConnectionEdges = {
@@ -695,7 +720,7 @@ export type Newsletter = Node & Document & {
   title: Scalars['String']['output'];
   issue?: Maybe<Scalars['String']['output']>;
   pubDate?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -705,7 +730,7 @@ export type NewsletterFilter = {
   title?: InputMaybe<StringFilter>;
   issue?: InputMaybe<StringFilter>;
   pubDate?: InputMaybe<DatetimeFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type NewsletterConnectionEdges = {
@@ -731,12 +756,12 @@ export type Media = Node & Document & {
   poster?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   thoughts?: Maybe<Scalars['String']['output']>;
-  attendedYear?: Maybe<Scalars['Float']['output']>;
+  watchedYear?: Maybe<Scalars['Float']['output']>;
   recommendBy?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   url?: Maybe<Scalars['String']['output']>;
-  date?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  watchedDate?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -751,12 +776,12 @@ export type MediaFilter = {
   poster?: InputMaybe<ImageFilter>;
   description?: InputMaybe<StringFilter>;
   thoughts?: InputMaybe<StringFilter>;
-  attendedYear?: InputMaybe<NumberFilter>;
+  watchedYear?: InputMaybe<NumberFilter>;
   recommendBy?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   url?: InputMaybe<StringFilter>;
-  date?: InputMaybe<DatetimeFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  watchedDate?: InputMaybe<DatetimeFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type MediaConnectionEdges = {
@@ -776,8 +801,8 @@ export type Bookmark = Node & Document & {
   __typename?: 'Bookmark';
   title: Scalars['String']['output'];
   url?: Maybe<Scalars['String']['output']>;
-  date?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  pubDate?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -786,8 +811,8 @@ export type Bookmark = Node & Document & {
 export type BookmarkFilter = {
   title?: InputMaybe<StringFilter>;
   url?: InputMaybe<StringFilter>;
-  date?: InputMaybe<DatetimeFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  pubDate?: InputMaybe<DatetimeFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type BookmarkConnectionEdges = {
@@ -810,7 +835,7 @@ export type Stream = Node & Document & {
   detail?: Maybe<Scalars['String']['output']>;
   pubDate?: Maybe<Scalars['String']['output']>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -822,7 +847,7 @@ export type StreamFilter = {
   detail?: InputMaybe<StringFilter>;
   pubDate?: InputMaybe<DatetimeFilter>;
   tags?: InputMaybe<StringFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type StreamConnectionEdges = {
@@ -842,7 +867,7 @@ export type Talk = Node & Document & {
   __typename?: 'Talk';
   title: Scalars['String']['output'];
   date?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -851,7 +876,7 @@ export type Talk = Node & Document & {
 export type TalkFilter = {
   title?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type TalkConnectionEdges = {
@@ -872,7 +897,7 @@ export type Photos = Node & Document & {
   title: Scalars['String']['output'];
   date?: Maybe<Scalars['String']['output']>;
   image?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  body?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -882,7 +907,7 @@ export type PhotosFilter = {
   title?: InputMaybe<StringFilter>;
   date?: InputMaybe<DatetimeFilter>;
   image?: InputMaybe<ImageFilter>;
-  body?: InputMaybe<RichTextFilter>;
+  body?: InputMaybe<StringFilter>;
 };
 
 export type PhotosConnectionEdges = {
@@ -1132,10 +1157,9 @@ export type PostSeoMutation = {
 export type PostMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
-  author?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   featured_image?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
   categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1157,6 +1181,15 @@ export type ServiceServiceResultsMutation = {
 export type ServiceServiceProcessesMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ServiceServicePlansMutation = {
+  name?: InputMaybe<Scalars['String']['input']>;
+  highlight?: InputMaybe<Scalars['Boolean']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  includes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  delivery?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ServiceServiceTestimonialsMutation = {
@@ -1189,6 +1222,8 @@ export type ServiceServiceMutation = {
   results?: InputMaybe<Array<InputMaybe<ServiceServiceResultsMutation>>>;
   target?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   processes?: InputMaybe<Array<InputMaybe<ServiceServiceProcessesMutation>>>;
+  timeline?: InputMaybe<Scalars['String']['input']>;
+  plans?: InputMaybe<Array<InputMaybe<ServiceServicePlansMutation>>>;
   testimonials?: InputMaybe<ServiceServiceTestimonialsMutation>;
   faq?: InputMaybe<Array<InputMaybe<ServiceServiceFaqMutation>>>;
   cta?: InputMaybe<ServiceServiceCtaMutation>;
@@ -1199,15 +1234,17 @@ export type ServiceMutation = {
   slug?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   permalink?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
   service?: InputMaybe<ServiceServiceMutation>;
 };
 
 export type NoteMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
   pubDate?: InputMaybe<Scalars['String']['input']>;
   published?: InputMaybe<Scalars['Boolean']['input']>;
   type?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type BookMutation = {
@@ -1224,15 +1261,15 @@ export type BookMutation = {
   recommendBy?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   url?: InputMaybe<Scalars['String']['input']>;
-  date?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  pubDate?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NewsletterMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   issue?: InputMaybe<Scalars['String']['input']>;
   pubDate?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MediaMutation = {
@@ -1244,19 +1281,19 @@ export type MediaMutation = {
   poster?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   thoughts?: InputMaybe<Scalars['String']['input']>;
-  attendedYear?: InputMaybe<Scalars['Float']['input']>;
+  watchedYear?: InputMaybe<Scalars['Float']['input']>;
   recommendBy?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   url?: InputMaybe<Scalars['String']['input']>;
-  date?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  watchedDate?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type BookmarkMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   url?: InputMaybe<Scalars['String']['input']>;
-  date?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  pubDate?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type StreamMutation = {
@@ -1265,50 +1302,50 @@ export type StreamMutation = {
   detail?: InputMaybe<Scalars['String']['input']>;
   pubDate?: InputMaybe<Scalars['String']['input']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type TalkMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PhotosMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PostPartsFragment = { __typename: 'Post', title: string, date: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
+export type PostPartsFragment = { __typename: 'Post', title: string, date: string, description: string, featured_image?: string | null, body?: string | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
 
 export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, permalink?: string | null, body?: any | null };
 
-export type ServicePartsFragment = { __typename: 'Service', title: string, slug?: string | null, description?: string | null, permalink?: string | null, service?: { __typename: 'ServiceService', color?: string | null, tagline?: string | null, icon?: string | null, problem?: string | null, solution?: string | null, differentials?: Array<string | null> | null, included?: Array<string | null> | null, target?: Array<string | null> | null, results?: Array<{ __typename: 'ServiceServiceResults', title?: string | null, description?: string | null } | null> | null, processes?: Array<{ __typename: 'ServiceServiceProcesses', title?: string | null, description?: string | null } | null> | null, testimonials?: { __typename: 'ServiceServiceTestimonials', cliente?: string | null, quote?: string | null, resultado?: string | null } | null, faq?: Array<{ __typename: 'ServiceServiceFaq', question?: string | null, answer?: string | null } | null> | null, cta?: { __typename: 'ServiceServiceCta', title?: string | null, description?: string | null, primary?: string | null, secondary?: string | null, link?: string | null } | null } | null };
+export type ServicePartsFragment = { __typename: 'Service', title: string, slug?: string | null, description?: string | null, permalink?: string | null, url?: string | null, service?: { __typename: 'ServiceService', color?: string | null, tagline?: string | null, icon?: string | null, problem?: string | null, solution?: string | null, differentials?: Array<string | null> | null, included?: Array<string | null> | null, target?: Array<string | null> | null, timeline?: string | null, results?: Array<{ __typename: 'ServiceServiceResults', title?: string | null, description?: string | null } | null> | null, processes?: Array<{ __typename: 'ServiceServiceProcesses', title?: string | null, description?: string | null } | null> | null, plans?: Array<{ __typename: 'ServiceServicePlans', name?: string | null, highlight?: boolean | null, subtitle?: string | null, description?: string | null, includes?: Array<string | null> | null, delivery?: string | null } | null> | null, testimonials?: { __typename: 'ServiceServiceTestimonials', cliente?: string | null, quote?: string | null, resultado?: string | null } | null, faq?: Array<{ __typename: 'ServiceServiceFaq', question?: string | null, answer?: string | null } | null> | null, cta?: { __typename: 'ServiceServiceCta', title?: string | null, description?: string | null, primary?: string | null, secondary?: string | null, link?: string | null } | null } | null };
 
-export type NotePartsFragment = { __typename: 'Note', pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: any | null };
+export type NotePartsFragment = { __typename: 'Note', title?: string | null, pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: string | null };
 
-export type BookPartsFragment = { __typename: 'Book', title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null };
+export type BookPartsFragment = { __typename: 'Book', title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, pubDate?: string | null, body?: string | null };
 
-export type NewsletterPartsFragment = { __typename: 'Newsletter', title: string, issue?: string | null, pubDate?: string | null, body?: any | null };
+export type NewsletterPartsFragment = { __typename: 'Newsletter', title: string, issue?: string | null, pubDate?: string | null, body?: string | null };
 
-export type MediaPartsFragment = { __typename: 'Media', title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null };
+export type MediaPartsFragment = { __typename: 'Media', title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, watchedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, watchedDate?: string | null, body?: string | null };
 
-export type BookmarkPartsFragment = { __typename: 'Bookmark', title: string, url?: string | null, date?: string | null, body?: any | null };
+export type BookmarkPartsFragment = { __typename: 'Bookmark', title: string, url?: string | null, pubDate?: string | null, body?: string | null };
 
-export type StreamPartsFragment = { __typename: 'Stream', title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: any | null };
+export type StreamPartsFragment = { __typename: 'Stream', title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: string | null };
 
-export type TalkPartsFragment = { __typename: 'Talk', title: string, date?: string | null, body?: any | null };
+export type TalkPartsFragment = { __typename: 'Talk', title: string, date?: string | null, body?: string | null };
 
-export type PhotosPartsFragment = { __typename: 'Photos', title: string, date?: string | null, image?: string | null, body?: any | null };
+export type PhotosPartsFragment = { __typename: 'Photos', title: string, date?: string | null, image?: string | null, body?: string | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title: string, date: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } };
+export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title: string, date: string, description: string, featured_image?: string | null, body?: string | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } };
 
 export type PostConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1320,7 +1357,7 @@ export type PostConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, date: string, author: string, description: string, featured_image?: string | null, body: any, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, date: string, description: string, featured_image?: string | null, body?: string | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } | null } | null> | null } };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1346,7 +1383,7 @@ export type ServiceQueryVariables = Exact<{
 }>;
 
 
-export type ServiceQuery = { __typename?: 'Query', service: { __typename: 'Service', id: string, title: string, slug?: string | null, description?: string | null, permalink?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, service?: { __typename: 'ServiceService', color?: string | null, tagline?: string | null, icon?: string | null, problem?: string | null, solution?: string | null, differentials?: Array<string | null> | null, included?: Array<string | null> | null, target?: Array<string | null> | null, results?: Array<{ __typename: 'ServiceServiceResults', title?: string | null, description?: string | null } | null> | null, processes?: Array<{ __typename: 'ServiceServiceProcesses', title?: string | null, description?: string | null } | null> | null, testimonials?: { __typename: 'ServiceServiceTestimonials', cliente?: string | null, quote?: string | null, resultado?: string | null } | null, faq?: Array<{ __typename: 'ServiceServiceFaq', question?: string | null, answer?: string | null } | null> | null, cta?: { __typename: 'ServiceServiceCta', title?: string | null, description?: string | null, primary?: string | null, secondary?: string | null, link?: string | null } | null } | null } };
+export type ServiceQuery = { __typename?: 'Query', service: { __typename: 'Service', id: string, title: string, slug?: string | null, description?: string | null, permalink?: string | null, url?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, service?: { __typename: 'ServiceService', color?: string | null, tagline?: string | null, icon?: string | null, problem?: string | null, solution?: string | null, differentials?: Array<string | null> | null, included?: Array<string | null> | null, target?: Array<string | null> | null, timeline?: string | null, results?: Array<{ __typename: 'ServiceServiceResults', title?: string | null, description?: string | null } | null> | null, processes?: Array<{ __typename: 'ServiceServiceProcesses', title?: string | null, description?: string | null } | null> | null, plans?: Array<{ __typename: 'ServiceServicePlans', name?: string | null, highlight?: boolean | null, subtitle?: string | null, description?: string | null, includes?: Array<string | null> | null, delivery?: string | null } | null> | null, testimonials?: { __typename: 'ServiceServiceTestimonials', cliente?: string | null, quote?: string | null, resultado?: string | null } | null, faq?: Array<{ __typename: 'ServiceServiceFaq', question?: string | null, answer?: string | null } | null> | null, cta?: { __typename: 'ServiceServiceCta', title?: string | null, description?: string | null, primary?: string | null, secondary?: string | null, link?: string | null } | null } | null } };
 
 export type ServiceConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1358,14 +1395,14 @@ export type ServiceConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ServiceConnectionQuery = { __typename?: 'Query', serviceConnection: { __typename?: 'ServiceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ServiceConnectionEdges', cursor: string, node?: { __typename: 'Service', id: string, title: string, slug?: string | null, description?: string | null, permalink?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, service?: { __typename: 'ServiceService', color?: string | null, tagline?: string | null, icon?: string | null, problem?: string | null, solution?: string | null, differentials?: Array<string | null> | null, included?: Array<string | null> | null, target?: Array<string | null> | null, results?: Array<{ __typename: 'ServiceServiceResults', title?: string | null, description?: string | null } | null> | null, processes?: Array<{ __typename: 'ServiceServiceProcesses', title?: string | null, description?: string | null } | null> | null, testimonials?: { __typename: 'ServiceServiceTestimonials', cliente?: string | null, quote?: string | null, resultado?: string | null } | null, faq?: Array<{ __typename: 'ServiceServiceFaq', question?: string | null, answer?: string | null } | null> | null, cta?: { __typename: 'ServiceServiceCta', title?: string | null, description?: string | null, primary?: string | null, secondary?: string | null, link?: string | null } | null } | null } | null } | null> | null } };
+export type ServiceConnectionQuery = { __typename?: 'Query', serviceConnection: { __typename?: 'ServiceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ServiceConnectionEdges', cursor: string, node?: { __typename: 'Service', id: string, title: string, slug?: string | null, description?: string | null, permalink?: string | null, url?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, service?: { __typename: 'ServiceService', color?: string | null, tagline?: string | null, icon?: string | null, problem?: string | null, solution?: string | null, differentials?: Array<string | null> | null, included?: Array<string | null> | null, target?: Array<string | null> | null, timeline?: string | null, results?: Array<{ __typename: 'ServiceServiceResults', title?: string | null, description?: string | null } | null> | null, processes?: Array<{ __typename: 'ServiceServiceProcesses', title?: string | null, description?: string | null } | null> | null, plans?: Array<{ __typename: 'ServiceServicePlans', name?: string | null, highlight?: boolean | null, subtitle?: string | null, description?: string | null, includes?: Array<string | null> | null, delivery?: string | null } | null> | null, testimonials?: { __typename: 'ServiceServiceTestimonials', cliente?: string | null, quote?: string | null, resultado?: string | null } | null, faq?: Array<{ __typename: 'ServiceServiceFaq', question?: string | null, answer?: string | null } | null> | null, cta?: { __typename: 'ServiceServiceCta', title?: string | null, description?: string | null, primary?: string | null, secondary?: string | null, link?: string | null } | null } | null } | null } | null> | null } };
 
 export type NoteQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type NoteQuery = { __typename?: 'Query', note: { __typename: 'Note', id: string, pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type NoteQuery = { __typename?: 'Query', note: { __typename: 'Note', id: string, title?: string | null, pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type NoteConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1377,14 +1414,14 @@ export type NoteConnectionQueryVariables = Exact<{
 }>;
 
 
-export type NoteConnectionQuery = { __typename?: 'Query', noteConnection: { __typename?: 'NoteConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NoteConnectionEdges', cursor: string, node?: { __typename: 'Note', id: string, pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type NoteConnectionQuery = { __typename?: 'Query', noteConnection: { __typename?: 'NoteConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NoteConnectionEdges', cursor: string, node?: { __typename: 'Note', id: string, title?: string | null, pubDate: string, published?: boolean | null, type?: string | null, tags?: Array<string | null> | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type BookQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type BookQuery = { __typename?: 'Query', book: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BookQuery = { __typename?: 'Query', book: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, pubDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BookConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1396,14 +1433,14 @@ export type BookConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BookConnectionQuery = { __typename?: 'Query', bookConnection: { __typename?: 'BookConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookConnectionEdges', cursor: string, node?: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BookConnectionQuery = { __typename?: 'Query', bookConnection: { __typename?: 'BookConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookConnectionEdges', cursor: string, node?: { __typename: 'Book', id: string, title: string, author?: string | null, category?: string | null, status?: string | null, rating?: number | null, cover?: string | null, description?: string | null, thoughts?: string | null, quotes?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, pubDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type NewsletterQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type NewsletterQuery = { __typename?: 'Query', newsletter: { __typename: 'Newsletter', id: string, title: string, issue?: string | null, pubDate?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type NewsletterQuery = { __typename?: 'Query', newsletter: { __typename: 'Newsletter', id: string, title: string, issue?: string | null, pubDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type NewsletterConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1415,14 +1452,14 @@ export type NewsletterConnectionQueryVariables = Exact<{
 }>;
 
 
-export type NewsletterConnectionQuery = { __typename?: 'Query', newsletterConnection: { __typename?: 'NewsletterConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NewsletterConnectionEdges', cursor: string, node?: { __typename: 'Newsletter', id: string, title: string, issue?: string | null, pubDate?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type NewsletterConnectionQuery = { __typename?: 'Query', newsletterConnection: { __typename?: 'NewsletterConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NewsletterConnectionEdges', cursor: string, node?: { __typename: 'Newsletter', id: string, title: string, issue?: string | null, pubDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type MediaQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type MediaQuery = { __typename?: 'Query', media: { __typename: 'Media', id: string, title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type MediaQuery = { __typename?: 'Query', media: { __typename: 'Media', id: string, title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, watchedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, watchedDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type MediaConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1434,14 +1471,14 @@ export type MediaConnectionQueryVariables = Exact<{
 }>;
 
 
-export type MediaConnectionQuery = { __typename?: 'Query', mediaConnection: { __typename?: 'MediaConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MediaConnectionEdges', cursor: string, node?: { __typename: 'Media', id: string, title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, attendedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type MediaConnectionQuery = { __typename?: 'Query', mediaConnection: { __typename?: 'MediaConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MediaConnectionEdges', cursor: string, node?: { __typename: 'Media', id: string, title: string, director?: string | null, category?: string | null, status?: string | null, rating?: number | null, poster?: string | null, description?: string | null, thoughts?: string | null, watchedYear?: number | null, recommendBy?: string | null, tags?: Array<string | null> | null, url?: string | null, watchedDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type BookmarkQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type BookmarkQuery = { __typename?: 'Query', bookmark: { __typename: 'Bookmark', id: string, title: string, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BookmarkQuery = { __typename?: 'Query', bookmark: { __typename: 'Bookmark', id: string, title: string, url?: string | null, pubDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BookmarkConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1453,14 +1490,14 @@ export type BookmarkConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BookmarkConnectionQuery = { __typename?: 'Query', bookmarkConnection: { __typename?: 'BookmarkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookmarkConnectionEdges', cursor: string, node?: { __typename: 'Bookmark', id: string, title: string, url?: string | null, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BookmarkConnectionQuery = { __typename?: 'Query', bookmarkConnection: { __typename?: 'BookmarkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookmarkConnectionEdges', cursor: string, node?: { __typename: 'Bookmark', id: string, title: string, url?: string | null, pubDate?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type StreamQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type StreamQuery = { __typename?: 'Query', stream: { __typename: 'Stream', id: string, title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type StreamQuery = { __typename?: 'Query', stream: { __typename: 'Stream', id: string, title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type StreamConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1472,14 +1509,14 @@ export type StreamConnectionQueryVariables = Exact<{
 }>;
 
 
-export type StreamConnectionQuery = { __typename?: 'Query', streamConnection: { __typename?: 'StreamConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'StreamConnectionEdges', cursor: string, node?: { __typename: 'Stream', id: string, title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type StreamConnectionQuery = { __typename?: 'Query', streamConnection: { __typename?: 'StreamConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'StreamConnectionEdges', cursor: string, node?: { __typename: 'Stream', id: string, title: string, type?: string | null, detail?: string | null, pubDate?: string | null, tags?: Array<string | null> | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type TalkQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type TalkQuery = { __typename?: 'Query', talk: { __typename: 'Talk', id: string, title: string, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type TalkQuery = { __typename?: 'Query', talk: { __typename: 'Talk', id: string, title: string, date?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type TalkConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1491,14 +1528,14 @@ export type TalkConnectionQueryVariables = Exact<{
 }>;
 
 
-export type TalkConnectionQuery = { __typename?: 'Query', talkConnection: { __typename?: 'TalkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'TalkConnectionEdges', cursor: string, node?: { __typename: 'Talk', id: string, title: string, date?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type TalkConnectionQuery = { __typename?: 'Query', talkConnection: { __typename?: 'TalkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'TalkConnectionEdges', cursor: string, node?: { __typename: 'Talk', id: string, title: string, date?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type PhotosQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type PhotosQuery = { __typename?: 'Query', photos: { __typename: 'Photos', id: string, title: string, date?: string | null, image?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PhotosQuery = { __typename?: 'Query', photos: { __typename: 'Photos', id: string, title: string, date?: string | null, image?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PhotosConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1510,14 +1547,13 @@ export type PhotosConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PhotosConnectionQuery = { __typename?: 'Query', photosConnection: { __typename?: 'PhotosConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PhotosConnectionEdges', cursor: string, node?: { __typename: 'Photos', id: string, title: string, date?: string | null, image?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PhotosConnectionQuery = { __typename?: 'Query', photosConnection: { __typename?: 'PhotosConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PhotosConnectionEdges', cursor: string, node?: { __typename: 'Photos', id: string, title: string, date?: string | null, image?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
   __typename
   title
   date
-  author
   description
   featured_image
   body
@@ -1548,6 +1584,7 @@ export const ServicePartsFragmentDoc = gql`
   slug
   description
   permalink
+  url
   service {
     __typename
     color
@@ -1567,6 +1604,16 @@ export const ServicePartsFragmentDoc = gql`
       __typename
       title
       description
+    }
+    timeline
+    plans {
+      __typename
+      name
+      highlight
+      subtitle
+      description
+      includes
+      delivery
     }
     testimonials {
       __typename
@@ -1593,6 +1640,7 @@ export const ServicePartsFragmentDoc = gql`
 export const NotePartsFragmentDoc = gql`
     fragment NoteParts on Note {
   __typename
+  title
   pubDate
   published
   type
@@ -1616,7 +1664,7 @@ export const BookPartsFragmentDoc = gql`
   recommendBy
   tags
   url
-  date
+  pubDate
   body
 }
     `;
@@ -1640,11 +1688,11 @@ export const MediaPartsFragmentDoc = gql`
   poster
   description
   thoughts
-  attendedYear
+  watchedYear
   recommendBy
   tags
   url
-  date
+  watchedDate
   body
 }
     `;
@@ -1653,7 +1701,7 @@ export const BookmarkPartsFragmentDoc = gql`
   __typename
   title
   url
-  date
+  pubDate
   body
 }
     `;

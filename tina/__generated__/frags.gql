@@ -2,7 +2,6 @@ fragment PostParts on Post {
   __typename
   title
   date
-  author
   description
   featured_image
   body
@@ -31,6 +30,7 @@ fragment ServiceParts on Service {
   slug
   description
   permalink
+  url
   service {
     __typename
     color
@@ -50,6 +50,16 @@ fragment ServiceParts on Service {
       __typename
       title
       description
+    }
+    timeline
+    plans {
+      __typename
+      name
+      highlight
+      subtitle
+      description
+      includes
+      delivery
     }
     testimonials {
       __typename
@@ -75,6 +85,7 @@ fragment ServiceParts on Service {
 
 fragment NoteParts on Note {
   __typename
+  title
   pubDate
   published
   type
@@ -97,7 +108,7 @@ fragment BookParts on Book {
   recommendBy
   tags
   url
-  date
+  pubDate
   body
 }
 
@@ -119,11 +130,11 @@ fragment MediaParts on Media {
   poster
   description
   thoughts
-  attendedYear
+  watchedYear
   recommendBy
   tags
   url
-  date
+  watchedDate
   body
 }
 
@@ -131,7 +142,7 @@ fragment BookmarkParts on Bookmark {
   __typename
   title
   url
-  date
+  pubDate
   body
 }
 

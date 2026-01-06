@@ -126,10 +126,9 @@ type PostSeo {
 type Post implements Node & Document {
   title: String!
   date: String!
-  author: String!
   description: String!
   featured_image: String
-  body: JSON!
+  body: String
   categories: [String]
   tags: [String]
   draft: Boolean
@@ -161,12 +160,6 @@ input ImageFilter {
   in: [String]
 }
 
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-}
-
 input BooleanFilter {
   eq: Boolean
   exists: Boolean
@@ -181,10 +174,9 @@ input PostSeoFilter {
 input PostFilter {
   title: StringFilter
   date: DatetimeFilter
-  author: StringFilter
   description: StringFilter
   featured_image: ImageFilter
-  body: RichTextFilter
+  body: StringFilter
   categories: StringFilter
   tags: StringFilter
   draft: BooleanFilter
@@ -210,6 +202,12 @@ type Page implements Node & Document {
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
+}
+
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
 }
 
 input PageFilter {
@@ -238,6 +236,15 @@ type ServiceServiceResults {
 type ServiceServiceProcesses {
   title: String
   description: String
+}
+
+type ServiceServicePlans {
+  name: String
+  highlight: Boolean
+  subtitle: String
+  description: String
+  includes: [String]
+  delivery: String
 }
 
 type ServiceServiceTestimonials {
@@ -270,6 +277,8 @@ type ServiceService {
   results: [ServiceServiceResults]
   target: [String]
   processes: [ServiceServiceProcesses]
+  timeline: String
+  plans: [ServiceServicePlans]
   testimonials: ServiceServiceTestimonials
   faq: [ServiceServiceFaq]
   cta: ServiceServiceCta
@@ -280,6 +289,7 @@ type Service implements Node & Document {
   slug: String
   description: String
   permalink: String
+  url: String
   service: ServiceService
   id: ID!
   _sys: SystemInfo!
@@ -294,6 +304,15 @@ input ServiceServiceResultsFilter {
 input ServiceServiceProcessesFilter {
   title: StringFilter
   description: StringFilter
+}
+
+input ServiceServicePlansFilter {
+  name: StringFilter
+  highlight: BooleanFilter
+  subtitle: StringFilter
+  description: StringFilter
+  includes: StringFilter
+  delivery: StringFilter
 }
 
 input ServiceServiceTestimonialsFilter {
@@ -326,6 +345,8 @@ input ServiceServiceFilter {
   results: ServiceServiceResultsFilter
   target: StringFilter
   processes: ServiceServiceProcessesFilter
+  timeline: StringFilter
+  plans: ServiceServicePlansFilter
   testimonials: ServiceServiceTestimonialsFilter
   faq: ServiceServiceFaqFilter
   cta: ServiceServiceCtaFilter
@@ -336,6 +357,7 @@ input ServiceFilter {
   slug: StringFilter
   description: StringFilter
   permalink: StringFilter
+  url: StringFilter
   service: ServiceServiceFilter
 }
 
@@ -351,22 +373,24 @@ type ServiceConnection implements Connection {
 }
 
 type Note implements Node & Document {
+  title: String
   pubDate: String!
   published: Boolean
   type: String
   tags: [String]
-  body: JSON
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
 input NoteFilter {
+  title: StringFilter
   pubDate: DatetimeFilter
   published: BooleanFilter
   type: StringFilter
   tags: StringFilter
-  body: RichTextFilter
+  body: StringFilter
 }
 
 type NoteConnectionEdges {
@@ -394,8 +418,8 @@ type Book implements Node & Document {
   recommendBy: String
   tags: [String]
   url: String
-  date: String
-  body: JSON
+  pubDate: String
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -425,8 +449,8 @@ input BookFilter {
   recommendBy: StringFilter
   tags: StringFilter
   url: StringFilter
-  date: DatetimeFilter
-  body: RichTextFilter
+  pubDate: DatetimeFilter
+  body: StringFilter
 }
 
 type BookConnectionEdges {
@@ -444,7 +468,7 @@ type Newsletter implements Node & Document {
   title: String!
   issue: String
   pubDate: String
-  body: JSON
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -454,7 +478,7 @@ input NewsletterFilter {
   title: StringFilter
   issue: StringFilter
   pubDate: DatetimeFilter
-  body: RichTextFilter
+  body: StringFilter
 }
 
 type NewsletterConnectionEdges {
@@ -477,12 +501,12 @@ type Media implements Node & Document {
   poster: String
   description: String
   thoughts: String
-  attendedYear: Float
+  watchedYear: Float
   recommendBy: String
   tags: [String]
   url: String
-  date: String
-  body: JSON
+  watchedDate: String
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -497,12 +521,12 @@ input MediaFilter {
   poster: ImageFilter
   description: StringFilter
   thoughts: StringFilter
-  attendedYear: NumberFilter
+  watchedYear: NumberFilter
   recommendBy: StringFilter
   tags: StringFilter
   url: StringFilter
-  date: DatetimeFilter
-  body: RichTextFilter
+  watchedDate: DatetimeFilter
+  body: StringFilter
 }
 
 type MediaConnectionEdges {
@@ -519,8 +543,8 @@ type MediaConnection implements Connection {
 type Bookmark implements Node & Document {
   title: String!
   url: String
-  date: String
-  body: JSON
+  pubDate: String
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -529,8 +553,8 @@ type Bookmark implements Node & Document {
 input BookmarkFilter {
   title: StringFilter
   url: StringFilter
-  date: DatetimeFilter
-  body: RichTextFilter
+  pubDate: DatetimeFilter
+  body: StringFilter
 }
 
 type BookmarkConnectionEdges {
@@ -550,7 +574,7 @@ type Stream implements Node & Document {
   detail: String
   pubDate: String
   tags: [String]
-  body: JSON
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -562,7 +586,7 @@ input StreamFilter {
   detail: StringFilter
   pubDate: DatetimeFilter
   tags: StringFilter
-  body: RichTextFilter
+  body: StringFilter
 }
 
 type StreamConnectionEdges {
@@ -579,7 +603,7 @@ type StreamConnection implements Connection {
 type Talk implements Node & Document {
   title: String!
   date: String
-  body: JSON
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -588,7 +612,7 @@ type Talk implements Node & Document {
 input TalkFilter {
   title: StringFilter
   date: DatetimeFilter
-  body: RichTextFilter
+  body: StringFilter
 }
 
 type TalkConnectionEdges {
@@ -606,7 +630,7 @@ type Photos implements Node & Document {
   title: String!
   date: String
   image: String
-  body: JSON
+  body: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -616,7 +640,7 @@ input PhotosFilter {
   title: StringFilter
   date: DatetimeFilter
   image: ImageFilter
-  body: RichTextFilter
+  body: StringFilter
 }
 
 type PhotosConnectionEdges {
@@ -698,10 +722,9 @@ input PostSeoMutation {
 input PostMutation {
   title: String
   date: String
-  author: String
   description: String
   featured_image: String
-  body: JSON
+  body: String
   categories: [String]
   tags: [String]
   draft: Boolean
@@ -723,6 +746,15 @@ input ServiceServiceResultsMutation {
 input ServiceServiceProcessesMutation {
   title: String
   description: String
+}
+
+input ServiceServicePlansMutation {
+  name: String
+  highlight: Boolean
+  subtitle: String
+  description: String
+  includes: [String]
+  delivery: String
 }
 
 input ServiceServiceTestimonialsMutation {
@@ -755,6 +787,8 @@ input ServiceServiceMutation {
   results: [ServiceServiceResultsMutation]
   target: [String]
   processes: [ServiceServiceProcessesMutation]
+  timeline: String
+  plans: [ServiceServicePlansMutation]
   testimonials: ServiceServiceTestimonialsMutation
   faq: [ServiceServiceFaqMutation]
   cta: ServiceServiceCtaMutation
@@ -765,15 +799,17 @@ input ServiceMutation {
   slug: String
   description: String
   permalink: String
+  url: String
   service: ServiceServiceMutation
 }
 
 input NoteMutation {
+  title: String
   pubDate: String
   published: Boolean
   type: String
   tags: [String]
-  body: JSON
+  body: String
 }
 
 input BookMutation {
@@ -790,15 +826,15 @@ input BookMutation {
   recommendBy: String
   tags: [String]
   url: String
-  date: String
-  body: JSON
+  pubDate: String
+  body: String
 }
 
 input NewsletterMutation {
   title: String
   issue: String
   pubDate: String
-  body: JSON
+  body: String
 }
 
 input MediaMutation {
@@ -810,19 +846,19 @@ input MediaMutation {
   poster: String
   description: String
   thoughts: String
-  attendedYear: Float
+  watchedYear: Float
   recommendBy: String
   tags: [String]
   url: String
-  date: String
-  body: JSON
+  watchedDate: String
+  body: String
 }
 
 input BookmarkMutation {
   title: String
   url: String
-  date: String
-  body: JSON
+  pubDate: String
+  body: String
 }
 
 input StreamMutation {
@@ -831,20 +867,20 @@ input StreamMutation {
   detail: String
   pubDate: String
   tags: [String]
-  body: JSON
+  body: String
 }
 
 input TalkMutation {
   title: String
   date: String
-  body: JSON
+  body: String
 }
 
 input PhotosMutation {
   title: String
   date: String
   image: String
-  body: JSON
+  body: String
 }
 
 schema {
