@@ -8,19 +8,16 @@
 	"packageManager": "pnpm@10.27.0",
 	"scripts": {
 		"prebuild": "pnpm build:css",
-    "build": "eleventy",
-    "build:css": "sass src/assets/scss/main.scss src/assets/css/main.css --style compressed --quiet-deps --load-path=node_modules",
-    
-    "predev": "pnpm build:css",
-    "dev": "eleventy --serve --incremental --quiet",
-    "dev:full": "eleventy --serve",
-    
-    "watch:css": "sass --watch src/assets/scss:src/assets/css --quiet-deps --load-path=node_modules --style compressed --no-source-map",
-    "dev:parallel": "concurrently --kill-others \"pnpm:watch:css\" \"pnpm:dev\"",
-    
-    "clean": "rimraf _site",
-    "clean:css": "rimraf src/assets/css",
-    "clean:all": "pnpm clean && pnpm clean:css && pnpm clean:og"
+		"build": "eleventy",
+		"build:css": "sass src/assets/scss/main.scss src/assets/css/main.css --style compressed --quiet-deps --load-path=node_modules",
+		"predev": "pnpm build:css",
+		"dev": "eleventy --serve --incremental --quiet",
+		"dev:full": "eleventy --serve",
+		"watch:css": "sass --watch src/assets/scss:src/assets/css --quiet-deps --load-path=node_modules --style compressed --no-source-map",
+		"dev:parallel": "concurrently --kill-others \"pnpm:watch:css\" \"pnpm:dev\" \"npx tinacms dev\"",
+		"clean": "rimraf _site",
+		"clean:css": "rimraf src/assets/css",
+		"clean:all": "pnpm clean && pnpm clean:css && pnpm clean:og"
 	},
 	"keywords": [],
 	"repository": {

@@ -13,6 +13,7 @@ import {TalkCollection} from './collections/talk';
 import {GalleryCollection} from './collections/gallery';
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
+const isLocal = !process.env.TINA_SEARCH;
 
 export default defineConfig({
   branch,
