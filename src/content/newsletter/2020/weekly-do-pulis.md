@@ -1,14 +1,11 @@
 ---
 title: "Weekly do Pulis — Edição Nº5"
 pubDate: 2020-10-30T13:00:21.586Z
-draft: false
-isFeatured: false
-tags: []
 category: "blog"
 canonicalUrl: "https://medium.com/@brunopulis/weekly-do-pulis-edi%C3%A7%C3%A3o-n%C2%BA5-5444020307ba"
 ---
 
-### Weekly do Pulis — Edição Nº5
+## Weekly do Pulis — Edição Nº5
 
 Fala pessoal!
 

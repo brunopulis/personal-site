@@ -1,7 +1,7 @@
 @use "abstracts/variables" as *;
 @use "abstracts/mixins" as *;
 
-@use "bootstrap/scss/bootstrap" as *;
+@use "abstracts/bootstrap" as *;
 
 @use "@fortawesome/fontawesome-free/scss/fontawesome" as *;
 @use "@fortawesome/fontawesome-free/scss/solid" as *;
@@ -28,18 +28,7 @@
 // 6. Páginas Específicas
 @use "pages/portfolio" as *;
 @use "pages/contact" as *;
+@use "pages/explore" as *;
 
 @use "utilities/utilities" as *;
-
-
-// 3. Seus estilos customizados extras
-body {
-  -webkit-font-smoothing: antialiased;
-}
-
-// Estilos do Menu que fizemos antes
-.navbar-nav .nav-link {
-  font-weight: 500;
-  
-  &:hover { color: $primary; }
-}
+@use "utilities/prism-diff" as *;

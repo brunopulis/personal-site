@@ -1,5 +1,5 @@
 {
-  "layout": "post",
-  "permalink": "/letters/{{ title | slugify }}/index.html",
-  "tags": ["newsletters"]
+	"layout": "post",
+	"permalink": "/newsletter/{{ page.fileSlug }}/",
+	"tags": ["newsletters"]
 }

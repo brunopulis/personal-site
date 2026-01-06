@@ -1,7 +1,7 @@
 ---
 issue: '05'
 title: 'Como usar atributos ARIA sem passar vergonha'
-pubDate: '2023-12-18'
+pubDate: 2023-12-18
 ---
 
 Essa é a última carta sobre acessibilidade do ano de 2023. Vamos retornar em Janeiro, com muita informação útil e novidades.

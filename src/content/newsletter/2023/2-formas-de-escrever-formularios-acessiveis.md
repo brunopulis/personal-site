@@ -1,7 +1,7 @@
 ---
 issue: '44'
 title: '2 formas de escrever formulários acessíveis'
-pubDate: '2024-11-28'
+pubDate: 2024-11-28
 ---
 
 Fiz um teste essa semana que me deixou puto, uma tela simples com mais de 18 erros de acessibilidade. Fiquei pensando "como uma criatura conseguiu fazer isso".

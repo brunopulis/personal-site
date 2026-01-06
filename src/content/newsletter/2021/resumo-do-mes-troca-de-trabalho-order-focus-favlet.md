@@ -1,10 +1,6 @@
 ---
 title: "Resumo do mês, troca de trabalho, Order Focus Favlet, WCAG Reporter"
 pubDate: 2021-07-12T13:00:23.663Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
 canonicalUrl: "https://medium.com/@brunopulis/resumo-do-m%C3%AAs-troca-de-trabalho-order-focus-favlet-wcag-reporter-5b61a202b5c9"
 ---
 

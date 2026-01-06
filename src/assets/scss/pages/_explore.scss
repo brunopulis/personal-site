@@ -1,0 +1,17 @@
+// ==============================================================
+// Explore
+// ==============================================================
+
+@use "../abstracts/bootstrap" as *;
+@use "../abstracts/variables" as *;
+
+.explore__card {
+  @extend .card;
+
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.explore__link {
+  color: $rosewood-950;
+}
