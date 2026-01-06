@@ -10,7 +10,7 @@
     <ul class="flex flex-wrap items-center gap-x-8 gap-y-2">
       {% for item in navigation.top %}
       <li>
-        <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
+        <a href="{{ item.url }}" {% if page.url == item.text %}aria-current="page"{% endif %}
           class="text-gray-700 hover:text-gray-900 transition-colors font-medium">{{ item.text }}</a>
       </li>
       {% endfor %}
@@ -19,22 +19,22 @@
 
   <!-- Mobile Menu Button -->
   <button
-        id="menu-btn"
-        aria-label="Menu"
-        aria-expanded="false"
-        class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
-      >
-        <svg
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          class="h-6 w-6"
-          aria-hidden="true"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+    id="menu-btn"
+    aria-label="Menu"
+    aria-expanded="false"
+    class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
+  >
+    <svg
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      class="h-6 w-6"
+      aria-hidden="true"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
 </div>
 
 <!-- Mobile Menu -->

@@ -13,13 +13,12 @@
         <ul class="navbar-nav mx-auto">
           {% for item in navigation.top %}
           <li class="nav-item inline-block">
-            <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }} class="nav-link">{{ item.text }}</a>
+            <a href="{{ item.url }}" {% if page.url == item.text %}aria-current="page"{% endif %} class="nav-link">{{ item.text }}</a>
           </li>
           {% endfor %}
         </ul>
         <div class="d-flex gap-2">
-          <a href="/pesquisa" class="btn btn-primary" id="search">Pesquisar</a>
-          <a href="/contato" class="btn btn-primary">Contato</a>
+          <a href="/newsletter" class="btn btn-primary" id="search">Newsletter</a>
         </div>
       </div>
     </div>

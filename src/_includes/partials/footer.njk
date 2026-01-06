@@ -2,15 +2,12 @@
   <div class="container py-5">
     <nav aria-label="Links secundários" class="mb-4">
       <ul class="d-flex flex-wrap gap-3 small list-unstyled mb-0">
-        <li><a href="/blogroll" class="text-white custom-underline">Blogroll</a></li>
-        <li><a href="/bookmarks" class="text-white custom-underline">Links favoritos</a></li>
-        <li><a href="/livros" class="text-white custom-underline">Biblioteca</a></li>
-        <li><a href="/media" class="text-white custom-underline">Assistindo</a></li>
-        <li><a href="/musicas" class="text-white custom-underline">Músicas</a></li>
-        <li><a href="/uses" class="text-white custom-underline">Uses</a></li>
-        <li><a href="/privacidade" class="text-white custom-underline">Privacidade</a></li>
-        <li><a href="/ia" class="text-white custom-underline">Uso de IA</a></li>
-        <li><a href="/acessibilidade" class="text-white custom-underline">Acessibilidade</a></li>
+        {% for item in navigation.bottom %}
+          <li>
+            <a href="{{ item.url }}" {% if page.url == item.text %}aria-current="page"{% endif %}
+              class="text-white">{{ item.text }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
 
