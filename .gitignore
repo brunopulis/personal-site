@@ -15,7 +15,8 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-
+.cache
+tina/__generated__/
 # Logs
 *.log
 npm-debug.log*
