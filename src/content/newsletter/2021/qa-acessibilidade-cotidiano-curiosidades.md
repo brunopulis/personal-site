@@ -1,7 +1,5 @@
 ---
 title: 'QA de acessibilidade: cotidiano e curiosidades'
-image: ''
-imageAlt: ''
 pubDate: 2021-08-22
 category: 'Qualidade de Software'
 url: https://brunopulis.com/qa-acessibilidade-cotidiano-curiosidades/

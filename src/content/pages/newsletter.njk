@@ -2,29 +2,33 @@
 layout: page
 title: "Newsletter"
 description: "Filtro Digital"
-permalink: "{% if pagination.pageNumber > 0 %}/letters/page/{{ pagination.pageNumber + 1 }}/{% else %}/letters/{% endif %}"
+permalink: "{% if pagination.pageNumber > 0 %}/newsletter/page/{{ pagination.pageNumber + 1 }}/{% else %}/newsletter/{% endif %}"
 pagination:
   data: collections.newsletters
   size: 12
 ---
 
-<div class="space-y-6">
+<div class="col-lg-8 mb-5 mb-lg-0">
+  <div>
   {% for item in pagination.items %}
-    <article class="border bg-white border-gray-200 hover:shadow-md p-6 rounded-xl shadow-sm transition">
-      <div class="mb-4">
-        <h2 class="text-2xl md:text-3xl font-bold mb-2">
+    <article class="card mb-5">
+      <div class="card-body">
+        <h2 class="card-title">
           <a href="{{ item.url | url }}" class="text-blood-red-800 hover:text-blood-red-900 hover:underline">
             {{ item.data.title }}
           </a>
         </h2>
         <div class="flex items-center gap-2 text-sm text-gray-500">
-          {% if item.data.draft %}
-          <span class="px-2 py-1 bg-yellow-500/90 text-white text-xs rounded">draft</span>
-          {% endif %}
           <time datetime="{{ item.data.pubDate | toISOString }}">
             {{ item.data.pubDate | readableDate }}
           </time>
         </div>
+
+        {% if item.data.description %}  
+          <p class="card-text">
+            {{ item.data.description | markdownFormat | safe }}
+          </p>
+        {% endif %}
       </div>
 
       {% if item.data.description %}
@@ -47,6 +51,7 @@ pagination:
       {% endif %}
     </article>
   {% endfor %}
+  </div>
 </div>
 
 {% if pagination.pages.length > 1 %}
