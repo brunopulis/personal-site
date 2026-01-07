@@ -1,25 +1,45 @@
-# This file is for unifying the coding style for different editors and IDEs
-# https://editorconfig.org/
-
-# WordPress Coding Standards
-# https://make.wordpress.org/core/handbook/coding-standards/
-
+# EditorConfig: https://editorconfig.org
 root = true
 
+# Padrões para todos os arquivos
 [*]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
-indent_style = tab
-
-[*.{.scss,.sass,.css}]
 indent_style = space
 indent_size = 2
 
-[*.yml]
-indent_style = space
+# Arquivos JavaScript, TypeScript e JSON
+[*.{js,mjs,cjs,ts,json,jsonc}]
+indent_size = 2
+quote_type = single
+
+# Arquivos de template (Nunjucks, Liquid, etc)
+[*.{njk,liquid,html,webc}]
 indent_size = 2
 
-[*.md]
+# Arquivos de estilo
+[*.{css,scss,sass}]
+indent_size = 2
+
+# Arquivos YAML
+[*.{yml,yaml}]
+indent_size = 2
+
+# Arquivo package.json (convenção npm)
+[package.json]
+indent_size = 2
+
+# Arquivos de configuração do Tina CMS
+[.tina/**]
+indent_size = 2
+
+# Arquivos gerados - não formatar
+[{*.min.*,*.lock}]
+insert_final_newline = false
 trim_trailing_whitespace = false
+
+# Arquivos bash
+[*.sh]
+end_of_line = lf
