@@ -45,7 +45,7 @@ var PostCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true,

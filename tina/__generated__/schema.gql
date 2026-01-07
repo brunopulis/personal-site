@@ -128,7 +128,7 @@ type Post implements Node & Document {
   date: String!
   description: String!
   featured_image: String
-  body: String
+  body: JSON
   categories: [String]
   tags: [String]
   draft: Boolean
@@ -160,6 +160,12 @@ input ImageFilter {
   in: [String]
 }
 
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input BooleanFilter {
   eq: Boolean
   exists: Boolean
@@ -176,7 +182,7 @@ input PostFilter {
   date: DatetimeFilter
   description: StringFilter
   featured_image: ImageFilter
-  body: StringFilter
+  body: RichTextFilter
   categories: StringFilter
   tags: StringFilter
   draft: BooleanFilter
@@ -202,12 +208,6 @@ type Page implements Node & Document {
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
-}
-
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
 }
 
 input PageFilter {
@@ -724,7 +724,7 @@ input PostMutation {
   date: String
   description: String
   featured_image: String
-  body: String
+  body: JSON
   categories: [String]
   tags: [String]
   draft: Boolean

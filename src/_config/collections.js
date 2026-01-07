@@ -4,7 +4,7 @@
  * @returns
  */
 export const posts = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/posts/**/*').reverse();
 };
 
 /**
