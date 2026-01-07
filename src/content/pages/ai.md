@@ -6,18 +6,16 @@ permalink: /ia/index.html
 date: Last Modified
 ---
 
-## Uso de IA
-
 Essa página tem o objetivo de mostrar quais são os usos de IA nesse site.
 
-## Uso IA para:
+## Uso IA para
 
 - Realizar pesquisas;
 - Construir componentes Astro;
 - Dúvidas relacionadas a desenvolvimento;
 - Refinamento de ideias.
 
-## Não utilizo IA para:
+## Não uso para
 
 - Criar conteúdo;
 
