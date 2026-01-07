@@ -15,7 +15,7 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-.cache
+.cache/
 tina/__generated__/
 # Logs
 *.log
