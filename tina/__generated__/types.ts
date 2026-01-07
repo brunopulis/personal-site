@@ -358,7 +358,7 @@ export type Post = Node & Document & {
   date: Scalars['String']['output'];
   description: Scalars['String']['output'];
   featured_image?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
   categories?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   draft?: Maybe<Scalars['Boolean']['output']>;
@@ -390,6 +390,12 @@ export type ImageFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type RichTextFilter = {
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type BooleanFilter = {
   eq?: InputMaybe<Scalars['Boolean']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -406,7 +412,7 @@ export type PostFilter = {
   date?: InputMaybe<DatetimeFilter>;
   description?: InputMaybe<StringFilter>;
   featured_image?: InputMaybe<ImageFilter>;
-  body?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
   categories?: InputMaybe<StringFilter>;
   tags?: InputMaybe<StringFilter>;
   draft?: InputMaybe<BooleanFilter>;
@@ -435,12 +441,6 @@ export type Page = Node & Document & {
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
-};
-
-export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type PageFilter = {
@@ -1159,7 +1159,7 @@ export type PostMutation = {
   date?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   featured_image?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
   categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1318,7 +1318,7 @@ export type PhotosMutation = {
   body?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PostPartsFragment = { __typename: 'Post', title: string, date: string, description: string, featured_image?: string | null, body?: string | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
+export type PostPartsFragment = { __typename: 'Post', title: string, date: string, description: string, featured_image?: string | null, body?: any | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null };
 
 export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, permalink?: string | null, body?: any | null };
 
@@ -1345,7 +1345,7 @@ export type PostQueryVariables = Exact<{
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title: string, date: string, description: string, featured_image?: string | null, body?: string | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } };
+export type PostQuery = { __typename?: 'Query', post: { __typename: 'Post', id: string, title: string, date: string, description: string, featured_image?: string | null, body?: any | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } };
 
 export type PostConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1357,7 +1357,7 @@ export type PostConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, date: string, description: string, featured_image?: string | null, body?: string | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, date: string, description: string, featured_image?: string | null, body?: any | null, categories?: Array<string | null> | null, tags?: Array<string | null> | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PostSeo', meta_title?: string | null, meta_description?: string | null, keywords?: Array<string | null> | null } | null } | null } | null> | null } };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
