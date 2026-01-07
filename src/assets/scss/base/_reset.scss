@@ -1,0 +1,42 @@
+
+ul:not([class]) {
+  padding-inline-start: 1.3ch;
+  padding-left: 1.5rem;
+}
+
+.row :is(ul:not([class]):not([role=list])) li::marker {
+  color: var(--clr-blood-red-800);
+  content: "– ";
+}
+
+.row :is(li,dl,blockquote) {
+  max-inline-size: 60ch;
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration-thickness: .15ex;
+  text-underline-offset: .2ch;
+  -webkit-text-decoration-skip: ink;
+  color: currentColor;
+  text-decoration-skip-ink: auto;
+}
+
+.indicator:after, a[href^=http]:not([href*="localhost:8080"]):not([href*="eleventy-excellent.netlify.app"]):not(.no-indicator):after {
+  background-image: url(/assets/images/template/external.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+  block-size: 1em;
+  content: "(external link)";
+  display: inline-block;
+  inline-size: 1em;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 1em;
+  white-space: nowrap;
+}
+
+.indicator, a[href^=http]:not([href*="localhost:8080"]):not([href*="eleventy-excellent.netlify.app"]):not(.button):not(.no-indicator) {
+  padding-inline-end: .8em;
+}

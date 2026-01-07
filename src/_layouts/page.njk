@@ -2,17 +2,19 @@
 layout: base
 ---
 
-<section class="hero py-5">
+<section class="hero">
   <div class="container">
-    <header class="mb-5">
+    <div class="row">
       <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
       <p class="lead text-white">{{ description }}</p>
-    </header>
+    </div>
   </div>
 </section>
 
-<section class="container">
-  <div class="row py-4">
-    {{ content | safe }}
+<section>
+  <div class="container">
+    <div class="row py-4">
+      {{ content | safe }}
+    </div>
   </div>
 </section>
