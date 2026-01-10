@@ -1,58 +1,30 @@
 ---
 layout: page
-title: "Newsletter"
-description: "Filtro Digital"
-permalink: "{% if pagination.pageNumber > 0 %}/newsletter/page/{{ pagination.pageNumber + 1 }}/{% else %}/newsletter/{% endif %}"
+title: "Filtro digital"
+description: "Sua fonte de notícias sobre tecnologia, acessibilidade e desenvolvimento web"
+permalink: "{% if pagination.pageNumber > 0 %}/newsletter/page/{{ pagination.pageNumber + 1 }}/{% else %}/newsletter/{%
+endif %}"
 pagination:
   data: collections.newsletters
   size: 12
 ---
 
-<div class="col-lg-8 mb-5 mb-lg-0">
-  <div>
-  {% for item in pagination.items %}
-    <article class="card mb-5">
-      <div class="card-body">
-        <h2 class="card-title">
-          <a href="{{ item.url | url }}" class="text-blood-red-800 hover:text-blood-red-900 hover:underline">
-            {{ item.data.title }}
-          </a>
-        </h2>
-        <div class="flex items-center gap-2 text-sm text-gray-500">
-          <time datetime="{{ item.data.pubDate | toISOString }}">
-            {{ item.data.pubDate | readableDate }}
-          </time>
-        </div>
+<ul class="flow" role="list">
+{% for item in pagination.items %}
+  <li class="article__entry h-entry">
+    <h2><a href="{{ item.url | url }}">{{ item.data.title }}</a></h2>  
+    <time datetime="{{ item.data.pubDate | toISOString }}">
+      {{ item.data.pubDate | readableDate }}
+    </time>
 
-        {% if item.data.description %}  
-          <p class="card-text">
-            {{ item.data.description | markdownFormat | safe }}
-          </p>
-        {% endif %}
-      </div>
-
-      {% if item.data.description %}
-      <div class="mb-4 text-gray-700 prose prose-gray max-w-none">
-        {{ item.data.description | markdownFormat | safe }}
-      </div>
-      {% endif %}
-
-      {% if item.data.tags and item.data.tags.length > 1 %}
-      <div class="flex gap-2 flex-wrap">
-        {% for tag in item.data.tags %}
-        {% if tag != "posts" %}
-        <span
-          class="items-center bg-gray-100 border border-gray-300 font-semibold gap-1 inline-flex px-3 py-1 rounded-full text-gray-700 text-xs">
-          {{ tag }}
-        </span>
-        {% endif %}
-        {% endfor %}
-      </div>
-      {% endif %}
-    </article>
-  {% endfor %}
-  </div>
-</div>
+    {% if item.data.description %}
+    <p class="card-text">
+      {{ item.data.description | markdownFormat | safe }}
+    </p>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
 
 {% if pagination.pages.length > 1 %}
 {% include 'components/pagination.njk' %}
