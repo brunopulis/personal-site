@@ -51,14 +51,6 @@ export default {
 		{
 			text: 'Biblioteca',
 			url: '/livros/'
-		},
-		{
-			text: 'Assistindo',
-			url: '/media/'
-		},
-		{
-			text: 'Músicas',
-			url: '/musicas/'
 		}
 	]
 };
