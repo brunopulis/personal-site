@@ -1,10 +1,7 @@
 ---
 title: 'HTML Semântico: repensando sobre seu uso'
-image: ''
-imageAlt: ''
 pubDate: 2020-04-30
-category: 'Frontend'
-url: https://brunopulis.com/repensando-sobre-o-html/
+tags: [´frontend', 'a11y']
 ---
 
 ## Introdução

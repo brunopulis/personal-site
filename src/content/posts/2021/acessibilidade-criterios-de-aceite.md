@@ -1,9 +1,7 @@
 ---
 title: 'Acessibilidade e critérios de aceite: o quê eles tem um comum?'
-image: ''
-imageAlt: ''
 pubDate: 2021-04-25
-category: 'Acessibilidade'
+tags: ['a11y']
 ---
 
 Como QA, somos responsáveis por garantir a qualidade do software.

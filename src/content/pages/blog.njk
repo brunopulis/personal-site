@@ -8,43 +8,43 @@ pagination:
   size: 12
 ---
 
-<div class="col-lg-8 mb-5 mb-lg-0">
-  <div>
-    {% for item in pagination.items %}
-      <article class="card mb-5">
-        <div class="card-body">
-          <h2 class="card-title">
-            <a href="{{ item.url | url }}" class="text-blood-red-800 hover:text-blood-red-900 hover:underline">
-              {{ item.data.title }}
-            </a>
-          </h2>
-          <div class="flex items-center gap-2 text-sm text-gray-500">
-            {% if item.data.draft %}
-            <span class="px-2 py-1 bg-yellow-500/90 text-white text-xs rounded">draft</span>
-            {% endif %}
-            <time datetime="{{ item.data.pubDate | toISOString }}">
-              {{ item.data.pubDate | readableDate }}
-            </time>
-          </div>
-          {% if item.data.description %}
-          <p class="card-text">
-            {{ item.data.description | markdownFormat | safe }}
-          </p>
-          {% endif %}
 
-          {% if item.data.tags and item.data.tags.length > 1 %}
-          <div class="flex gap-2 flex-wrap">
-            {% for tag in item.data.tags %}
-            {% if tag != "posts" %}
-            <span class="badge rounded-pill text-bg-info">{{ tag }}</span>
-            {% endif %}
-            {% endfor %}
-          </div>
-          {% endif %}
-        </div>
-      </article>
-    {% endfor %}
-  </div>
+<div class="grid">
+  {% for item in pagination.items %}
+  <article class="">
+    <div class="">
+      <h2 class="">
+        <a href="{{ item.url | url }}" class="">
+          {{ item.data.title }}
+        </a>
+      </h2>
+      <div class="flex items-center gap-2 text-sm text-gray-500">
+        {% if item.data.draft %}
+        <span class="px-2 py-1 bg-yellow-500/90 text-white text-xs rounded">draft</span>
+        {% endif %}
+        <time datetime="{{ item.data.pubDate | toISOString }}">
+          {{ item.data.pubDate | readableDate }}
+        </time>
+      </div>
+      {% if item.data.description %}
+      <p class="card-text">
+        {{ item.data.description | markdownFormat | safe }}
+      </p>
+      {% endif %}
+
+      {% if item.data.tags and item.data.tags.length > 1 %}
+      <div class="flex gap-2 flex-wrap">
+        {% for tag in item.data.tags %}
+        {% if tag != "posts" %}
+        <span class="badge rounded-pill text-bg-info">{{ tag }}</span>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
 </div>
 
 <div class="col-lg-4">

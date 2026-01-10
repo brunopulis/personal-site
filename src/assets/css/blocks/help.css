@@ -1,0 +1,16 @@
+.help-list {
+  --flow-space: 2.5rem;
+}
+
+.help-item {
+  max-width: 52ch;
+}
+
+.help-item h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.help-item p {
+  color: var(--color-text-muted);
+}

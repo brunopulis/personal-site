@@ -1,13 +1,8 @@
 ---
 title: Ignoramos 45 milhões de pessoas
 excerpt: "Breve descrição"
-image: ''
-imageAlt: ''
 pubDate: 2014-12-18
-category: 'Acessibilidade'
-url: https://brunopulis.com/ignoramos-45-milhoes-de-pessoas/
-tags:
-  - acessibilidade
+tags: ['a11y']
 ---
 
 Este post é um alerta, provavelmente você está excluindo **45 milhões** de usuários nas suas aplicações e websites.

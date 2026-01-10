@@ -2,8 +2,7 @@
 title: 'Acessibilidade'
 excerpt: 'o caminho para uma web inclusiva'
 pubDate: 2014-02-03
-tags: []
-category: 'blog'
+tags: ['a11y']
 canonicalUrl: 'https://medium.com/@brunopulis/acessibilidade-146637a4a46c'
 ---
 

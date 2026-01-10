@@ -3,8 +3,7 @@ title: Primeiros passos com Flutter
 image: '/assets/images/blog/flutter.jpeg'
 imageAlt: ''
 pubDate: 2021-11-16
-category: 'Frontend'
-url: https://brunopulis.com/primeiros-passos-com-flutter/
+tags: ['frontend']
 ---
 
 Recentemente fiquei com vontade aprender sobre desenvolvimento mobile. Vários fatores contribuíram para isso, um deles foi entender o contexto de desenvolvimento mobile, pois trabalho diaramente com mobile.

@@ -8,57 +8,39 @@ export const posts = collectionApi => {
 };
 
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const notes = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/notes/**/*.md');
 };
 
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const bookmarks = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*.md').reverse();
 };
 
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const gallery = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/gallery/**/*.md').reverse();
 };
 
 /**
- * 
- * @param {*} collectionApi 
- * @returns 
+ *
+ * @param {*} collectionApi
+ * @returns
  */
 export const medias = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/medias/**/*.md').reverse();
-}
-
-/**
- * 
- * @param {*} collectionApi 
- * @returns 
- */
-export const books = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/books/**/*.md').reverse();
-}
-
-/**
- * 
- * @param {*} collectionApi 
- * @returns 
- */
-export const newsletters = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*.md').reverse();
 }
 
 /**
@@ -66,11 +48,18 @@ export const newsletters = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const streams = collectionApi => {
-  return collectionApi
-    .getFilteredByGlob('./src/content/streams/**/*.md')
-    .sort((a, b) => b.data.date - a.data.date);
-};
+export const books = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/books/**/*.md').reverse();
+}
+
+/**
+ *
+ * @param {*} collectionApi
+ * @returns
+ */
+export const newsletters = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*.md').reverse();
+}
 
 /**
  *
@@ -104,7 +93,7 @@ export const showInSitemap = collectionApi => {
 };
 
 export const tagListRecurrency = collection => {
-  const tagCount = {}; // Objeto para contar as tags
+  const tagCount = {};
   const excludedTags = ['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'];
 
   // Contar quantas vezes cada tag aparece
@@ -151,7 +140,6 @@ export const tagList = collection => {
 
 export default {
   posts,
-  streams,
   showInSitemap,
   newsletters,
   bookmarks,

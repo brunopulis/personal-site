@@ -2,10 +2,7 @@
 title: "Como a teologia me ajudou a palestrar"
 excerpt: "Disclaimer"
 pubDate: 2018-06-14T04:06:47.968Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
+tags: ['pessoal', 'teologia']
 canonicalUrl: "https://medium.com/@brunopulis/como-a-teologia-me-ajudou-a-palestrar-2a5818089f68"
 ---
 

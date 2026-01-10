@@ -2,16 +2,13 @@
 // Explore
 // ==============================================================
 
-@use "../abstracts/bootstrap" as *;
-@use "../abstracts/variables" as *;
+@use "../abstracts/tokens";
 
 .explore__card {
-  @extend .card;
-
   height: 100%;
-  padding: 1.5rem;
+  padding: tokens.$space-6 tokens.$space-0;
 }
 
 .explore__link {
-  color: $rosewood-950;
+  color: tokens.$color-accent-primary;
 }

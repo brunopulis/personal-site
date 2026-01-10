@@ -1,40 +1,25 @@
-<section class="py-4" aria-labelledby="posts-title">
-  <div class="container my-5">
-    <div
-      class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4 justify-content-between gap-4"
-    >
-      <div>
-        <h2 class="text-dark font-weight-bold display-4 mb-4" id="post-title">Últimos artigos</h2>
-        <p class="mt-4">Escrevo sobre acessibilidade, web, fé, tecnologia e a vida como ela é.</p>
-      </div>
-      <a href="/blog" class="text-decoration-underline text-decoration-skip-ink">todos artigos</a>
-    </div>
+<section class="region" aria-labelledby="posts-title">
+  <div class="wrapper flow">
+    <header class="flow">
+      <h2 class="title" id="post-title">Últimos artigos</h2>
+      <p>Escrevo para organizar ideias, compartilhar aprendizados
+      e questionar práticas comuns da web.</p>
+    </header>
 
-    {% set allRecentPosts = collections.posts %}
-    <div class="row">
-      {% for post in allRecentPosts.slice(0, 3) %}
-      <div class="col-lg-4 col-md-6 col-12 mb-2">
-        <article class="h-entry card p-4 h-100">
-          <div class="card-body">
-            <h3 class="mb-3 font-weight-semibold text-xl leading-tight">
-              <a
-                href="{{ post.url }}"
-                class="text-dark font-weight-semibold d-flex gap-2 align-items-center transition text-decoration-underline text-decoration-skip-ink transition group-hover:text-decoration-gray-900"
-              >
-                {{ post.data.title }}
-              </a>
-            </h3>
+    {% set posts = collections.posts %}
+    <ul class="grid" data-layout="thirds" role="list">
+      {% for post in posts.slice(0, 3) %}
+      <li class="card h-entry">
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
 
-            {% if post.data.description %}
-              <p class="mb-6 text-xl">{{ post.data.description }}</p>
-            {% endif %}
-            <time datetime="{{ post.data.pubDate }}" class="dt-published text-dark font-display">
-              Publicado em: {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
-            </time>
-          </div>
-        </article>
-      </div>
+        {% if post.data.description %}
+        <p>{{ post.data.description }}</p>
+        {% endif %}
+        <time datetime="{{ post.data.pubDate }}" class="dt-published">
+          Publicado em: {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
+        </time>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </section>

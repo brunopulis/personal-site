@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
+@use "../abstracts/tokens";
 
 .newsletter-card {
-  background: $alto-50;
+  background: tokens.$color-text-muted;
 }

@@ -2,10 +2,7 @@
 title: "Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez disso."
 excerpt: "Se você está tentando tornar seu site ou aplicativo acessível, você provavelmente se atrapalhou nas Diretrizes de Acessibilidade para o…"
 pubDate: 2017-11-14T01:24:43.278Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
+tags: ['a11y']
 canonicalUrl: "https://medium.com/@brunopulis/ignore-o-wcag-teste-de-usu%C3%A1rios-com-pessoas-com-defici%C3%AAncia-em-vez-disso-dbccc3ee2b2a"
 ---
 

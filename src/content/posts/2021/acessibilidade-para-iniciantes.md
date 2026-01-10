@@ -1,10 +1,7 @@
 ---
 title: Acessibilidade para iniciantes
-image: ''
-imageAlt: ''
 pubDate: 2021-05-19
-draft: false
-category: 'Acessibilidade'
+tags: ['a11y']
 ---
 
 ## **Importante**

@@ -3,10 +3,7 @@ title: Como construir um LinkedIn campeão
 image: '/assets/images/blog/ssi-linkedin.png'
 imageAlt: ''
 pubDate: 2021-04-25
-draft: false
-category: 'Carreira'
-tags:
-  - 'carreira'
+tags: ['carreira']
 ---
 
 O **LinkedIn** talvez seja a maior rede social corporativa da atualidade. A plataforma cresce exponencialmente e agrega bons recursos.

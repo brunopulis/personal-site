@@ -1,10 +1,8 @@
 ---
 title: Caminhos para uma web inclusiva
 excerpt: "Breve descrição"
-image: ''
-imageAlt: ''
 pubDate: 2014-02-03
-category: 'Acessibilidade'
+tags: ['a11y']
 ---
 
 Sou um defensor da acessibilidade digital em sua na totalidade. Devemos tornar nossas ferramentas inclusivas a qualquer tipo de público.

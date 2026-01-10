@@ -1,3 +1,5 @@
+@use "../abstracts/tokens";
+
 // Portfolio Card Styles
 .portfolio-card {
   transition: all 0.3s ease;
@@ -19,11 +21,11 @@
   }
   
   .card-title {
-    color: #212529;
+    color: tokens.$color-text-primary;
     transition: color 0.2s;
     
     &:hover {
-      color: #610404;
+      color: tokens.$color-text-primary;
     }
   }
 }
@@ -33,9 +35,9 @@
   transition: all 0.2s;
   
   &.active {
-    background-color: #610404 !important;
+    background-color: tokens.$color-text-primary !important;
     color: white !important;
-    border-color: #610404 !important;
+    border-color: tokens.$color-text-primary !important;
   }
 }
 
@@ -58,8 +60,8 @@
 // Badges
 .badge {
   font-weight: 500;
-  font-size: 0.75rem;
-  padding: 0.35rem 0.65rem;
+  font-size: tokens.$fs-xs;
+  padding: tokens.$space-xs tokens.$space-sm;
 }
 
 // Responsive

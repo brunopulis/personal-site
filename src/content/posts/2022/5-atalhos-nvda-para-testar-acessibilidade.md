@@ -2,12 +2,7 @@
 title: 5 atalhos do NVDA para testar acessibilidade
 excerpt: Atalhos rapidos para o NVDA
 pubDate: 2022-09-04
-modifiedDate: 2025-06-16
-isFeatured: false
-category: Acessibilidade
-tags: ['nvda', 'leitor de tela']
-draft: false
-coverImage: ''
+tags: ['a11y', 'nvda', 'leitor de tela']
 ---
 
 O NVDA é um leitor de tela gratuito para Windows. Ele foi projetado para ajudar pessoas com deficiência a usar computadores e navegar na web.
