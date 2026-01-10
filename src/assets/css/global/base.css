@@ -166,10 +166,14 @@ a[data-variant="naked"] {
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 mark,
 ::selection {
-  background-color: var(--color-highlight);
-  color: var(--color, unset);
+  background-color: var(--color-highlight, #849cdb);
+  color: var(--color-text-selection, #ffffff);
 }
 
 small,

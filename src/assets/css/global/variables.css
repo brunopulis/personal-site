@@ -17,9 +17,12 @@
   --color-accent: var(--color-blue);
   --color-accent-danger: var(--color-red);
 
+  --color-highlight: var(--color-blue);
+  --color-text-selection: var(--color-light);
+
   /* Typography */
-  --font-base: 'Source Sans 3', system-ui, sans-serif;
-  --font-mono: 'Fira Code', 'Courier New', monospace;
+  --font-base: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: "Fira Code", "Courier New", monospace;
 
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1350,20,1.414,8,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   /* Fluid Type Scale */
@@ -43,7 +46,6 @@
   --size-step-7: clamp(3.5832rem, 0.3074rem + 16.379vw, 14.1272rem);
   /* Step 8: 68.7971px → 319.6136px */
   --size-step-8: clamp(4.2998rem, -0.5704rem + 24.3511vw, 19.9759rem);
-
 
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */

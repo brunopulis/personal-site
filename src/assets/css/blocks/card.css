@@ -7,6 +7,7 @@
 
 .card h3 {
   margin-bottom: 0.25rem;
+  color: var(--color-dark);
 }
 
 .card p {
