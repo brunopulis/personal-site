@@ -1,0 +1,5 @@
+@use "../abstracts/tokens";
+
+.flow > * + * {
+  margin-top: tokens.$space-4;
+}

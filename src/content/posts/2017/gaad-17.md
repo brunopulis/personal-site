@@ -1,8 +1,7 @@
 ---
 title: 'GAAD: Global Accessibility Awareness Day 17'
 pubDate: 2017-09-11
-tags:
-  - indicacoes
+tags: ['a11y']
 ---
 
 Fala pessoal, nesse post vou contar um pouco de como foi participar no Global Acessibility Awarenss da edição de Belo Horizonte promovido pelo IXDABH.

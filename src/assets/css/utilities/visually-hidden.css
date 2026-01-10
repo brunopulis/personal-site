@@ -1,0 +1,51 @@
+.skip-link {
+  clip: rect(1px, 1px, 1px, 1px);
+  display: block;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 999;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  background-color: var(--background);
+  clip: auto;
+  padding: var(--space-xs);
+  width: auto;
+  height: auto;
+  overflow: visible;
+  color: var(--color);
+  line-height: 1;
+}
+
+.skip-link:not(:focus),
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.visually-hidden {
+  height: 0;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}

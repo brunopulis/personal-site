@@ -1,25 +1,34 @@
-<section class="newsletter-section py-4" aria-labelledby="newsletter-title">
-  <div class="container">
-    <div class="row">
-      <div class="bg-alto-50 newsletter__card card p-4">
-        <h3 class="font-weight-bold mb-4" style="font-size: clamp(1.25rem, 2.5vw, 1.5rem);">
-          Quer aprender acessibilidade comigo?
-        </h3>
-        <p class="mb-4 font-size-lg">
-          Toda quinta de manhã envio um e-mail com o que aprendi na semana.
-          Pode ser um bug de acessibilidade, um artigo que li ou uma técnica nova que testei.
-        </p>
-        <p class="mb-4 font-size-lg">
-          Mais de 300 pessoas leem enquanto tomam café, porque é direto ao ponto e sem enrolação.
-        </p>
-        <p class="mb-4 text-gray-600">
-          Sem spam. Cancele quando quiser.
-        </p>
-        <a href="{{ personal.platforms.substack }}" target="_blank" rel="noopener noreferrer" class="font-weight-medium text-decoration-underline text-decoration-skip-ink-auto text-decoration-color-transparent transition hover:text-decoration-color-gray-900">
-          Assinar <span lang="en">newsletter</span>
-          <span class="visually-hidden">abre em uma nova aba</span>
-        </a>
-      </div>
+<section class="newsletter region" aria-labelledby="newsletter-title">
+  <div class="wrapper">
+    <div class="newsletter-box flow">
+      <h2 id="newsletter-title">
+        Quer continuar essa conversa?
+      </h2>
+      <p>
+        Toda quarta de manhã envio um e-mail curto com algo que aprendi na semana.
+        Pode ser um bug de acessibilidade, um texto que me vez pensar, ou uma pergunta que ainda não sei responder.
+      </p>
+      <p class="newsletter__note">
+        Mais de 300 pessoas leem enquanto tomam café, porque é direto ao ponto e sem enrolação.
+      </p>
+      <p>
+        Sem spam, sem funil, sem promessa vazia.
+      </p>
+
+      <form action="https://brunopulis.substack.com/api/v1/free?nojs=true" method="post" class="newsletter-form">
+        <label for="email" class="visually-hidden">E-mail</label>
+        <input type="email" name="email" placeholder="seu@email.com" required class="newsletter-input" id="email">
+        <input type="hidden" name="first_url" value="{{ page.url }}">
+        <input type="hidden" name="first_referrer" value="{{ page.url }}">
+        <input type="hidden" name="current_url" value="{{ page.url }}">
+        <input type="hidden" name="current_referrer" value="{{ page.url }}">
+        <input type="hidden" name="referral_code" value="">
+        <input type="hidden" name="source" value="embed">
+
+        <button type="submit" class="newsletter-button">
+          Assinar
+        </button>
+      </form>
     </div>
   </div>
 </section>

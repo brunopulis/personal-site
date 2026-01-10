@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="{{ meta.lang }}">
+
 <head>
   <!-- 1 charset/viewport -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light">
   <!-- 2 title -->
   <title>
     {%- if title -%}
-      {{ title }} | {{ meta.siteName }}
+    {{ title }} | {{ meta.siteName }}
     {%- else -%}
-      {{ meta.siteName }}
+    {{ meta.siteName }}
     {%- endif -%}
   </title>
 
@@ -22,7 +22,8 @@
   {% include "head/schema.njk" %}
 
   <!-- 5 CSS  -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+
 
   <!-- 6 preloads  -->
   {% include "head/preloads.njk" %}
@@ -39,7 +40,7 @@
   {% block head %}{% endblock %}
 </head>
 
-<body class="relative">
+<body>
   {% set indicateActiveHome %}
   {% if page.url == "/" %}
   aria-current=page
@@ -55,5 +56,5 @@
 
   {% block after_main %}{% endblock %}
   {% include "partials/footer.njk" %}
-  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
 </html>

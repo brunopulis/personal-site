@@ -1,0 +1,159 @@
+:root {
+  /* Base */
+  --color-dark: #171e1e;
+  --color-light: #ffffff;
+  --color-gray: #d9d9d9;
+  --color-red: #610404;
+  --color-blue: #849cdb;
+
+  /* Semânticos */
+  --color-background: var(--color-dark);
+  --color-surface: #1f2626; /* dark levemente elevado */
+  --color-text-primary: var(--color-light);
+  --color-text-muted: var(--color-gray);
+
+  --color-border-subtle: #2a3232;
+
+  --color-accent: var(--color-blue);
+  --color-accent-danger: var(--color-red);
+
+  /* Typography */
+  --font-base: 'Source Sans 3', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1350,20,1.414,8,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* Fluid Type Scale */
+  /* Step -1: 13.3333px → 14.1443px */
+  --size-step--1: clamp(0.8333rem, 0.8176rem + 0.0787vw, 0.884rem);
+  /* Step 0: 16px → 20px */
+  --size-step-0: clamp(1rem, 0.9223rem + 0.3883vw, 1.25rem);
+  /* Step 1: 19.2px → 28.28px */
+  --size-step-1: clamp(1.2rem, 1.0237rem + 0.8816vw, 1.7675rem);
+  /* Step 2: 23.04px → 39.9879px */
+  --size-step-2: clamp(1.44rem, 1.1109rem + 1.6454vw, 2.4992rem);
+  /* Step 3: 27.648px → 56.5429px */
+  --size-step-3: clamp(1.728rem, 1.1669rem + 2.8053vw, 3.5339rem);
+  /* Step 4: 33.1776px → 79.9517px */
+  --size-step-4: clamp(2.0736rem, 1.1654rem + 4.5412vw, 4.997rem);
+  /* Step 5: 39.8131px → 113.0517px */
+  --size-step-5: clamp(2.4883rem, 1.0662rem + 7.1105vw, 7.0657rem);
+  /* Step 6: 47.7757px → 159.8551px */
+  --size-step-6: clamp(2.986rem, 0.8097rem + 10.8815vw, 9.9909rem);
+  /* Step 7: 57.3309px → 226.0351px */
+  --size-step-7: clamp(3.5832rem, 0.3074rem + 16.379vw, 14.1272rem);
+  /* Step 8: 68.7971px → 319.6136px */
+  --size-step-8: clamp(4.2998rem, -0.5704rem + 24.3511vw, 19.9759rem);
+
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --width-wide: 100%;
+  --width-s: 35ch;
+  --width-l: 65ch;
+
+  /* Spacing */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  --margin-vertical-base-horizontal-zero: var(--space-md) 0;
+
+  --gutter: clamp(1rem, calc(0.7rem + 1.52vw), 1.88rem);
+  --space-tiny: clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem);
+  --space-xxs: clamp(0.5rem, calc(0.46rem + 0.22vw), 0.63rem);
+  --space-xs: clamp(0.75rem, calc(0.68rem + 0.33vw), 0.94rem);
+  --space-s: clamp(1rem, calc(0.91rem + 0.43vw), 1.25rem);
+  --space-m: clamp(1.5rem, calc(1.37rem + 0.65vw), 1.88rem);
+  --space-l: clamp(2rem, calc(1.83rem + 0.87vw), 2.5rem);
+  --space-xl: clamp(3rem, calc(2.74rem + 1.3vw), 3.75rem);
+  --space-xxl: clamp(4rem, calc(3.65rem + 1.74vw), 5rem);
+  --space-huge: clamp(6rem, calc(5.48rem + 2.61vw), 7.5rem);
+  --space-tiny-xxs: clamp(0.25rem, calc(0.12rem + 0.65vw), 0.63rem);
+  --space-xxs-xs: clamp(0.5rem, calc(0.35rem + 0.76vw), 0.94rem);
+  --space-xs-s: clamp(0.75rem, calc(0.58rem + 0.87vw), 1.25rem);
+  --space-s-m: clamp(1rem, calc(0.7rem + 1.52vw), 1.88rem);
+  --space-m-l: clamp(1.5rem, calc(1.15rem + 1.74vw), 2.5rem);
+  --space-l-xl: clamp(2rem, calc(1.39rem + 3.04vw), 3.75rem);
+  --space-xl-xxl: clamp(3rem, calc(2.3rem + 3.48vw), 5rem);
+  --space-xxl-huge: clamp(4rem, calc(2.78rem + 6.09vw), 7.5rem);
+  --space-s-l: clamp(1rem, calc(0.48rem + 2.61vw), 2.5rem);
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-padding: var(--space-md);
+  --grid-gap: var(--space-md);
+  --section-gap: var(--space-3xl);
+
+  /* Borders */
+  --border-m: 0.125rem;
+  --border-s: 0.0625rem;
+  --border-l: 0.25rem;
+
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+  --border-width: 1px;
+  --border-width-thick: 2px;
+
+  /* Buttons */
+  --button-color: var(--color-white);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* Z-index */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #f9fafb;
+    --color-text-muted: #d1d5db;
+    --color-text-inverse: #1f2937;
+
+    --color-bg: #111827;
+    --color-bg-secondary: #1f2937;
+    --color-bg-tertiary: #374151;
+
+    --color-border: #374151;
+    --color-border-dark: #4b5563;
+  }
+}

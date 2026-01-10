@@ -1,35 +1,33 @@
 export default {
 	top: [
 		{
-			text: 'Blog',
+			text: 'Artigos',
 			url: '/blog/'
 		},
 		{
-			text: 'Trabalho',
-			url: '/trabalho/'
+			text: 'Newsletter',
+      variant: '',
+			url: '/newsletter/'
+		},
+		{
+			text: 'Explorar',
+			url: '/explore/'
 		},
 		{
 			text: 'Serviços',
 			url: '/servicos/'
 		},
 		{
-			text: 'Agora',
-			url: '/agora/'
-		},
-		{
 			text: 'Sobre',
 			url: '/sobre/'
 		},
 		{
-			text: 'Explore',
-			url: '/explore/'
+			text: 'Contato',
+      class: 'wit-icon button',
+			url: '/contato/'
 		}
 	],
 	bottom: [
-		{
-			text: 'Agora',
-			url: '/agora/'
-		},
 		{
 			text: 'Blogroll',
 			url: '/blogroll/'
@@ -37,6 +35,14 @@ export default {
 		{
 			text: 'Colophon',
 			url: '/colophon/'
+		},
+    {
+			text: 'O que uso',
+			url: '/uses/'
+		},
+    {
+			text: 'Meu uso de IA',
+			url: '/ia/'
 		},
 		{
 			text: 'Links favoritos',
@@ -53,30 +59,6 @@ export default {
 		{
 			text: 'Músicas',
 			url: '/musicas/'
-		},
-		{
-			text: 'O que uso',
-			url: '/uses/'
-		},
-		{
-			text: 'Meu uso de IA',
-			url: '/ia/'
-		},
-		{
-			text: 'Acessibilidade',
-			url: '/acessibilidade/'
-		},
-		{
-			text: 'Disclaimer',
-			url: '/disclaimer/'
-		},
-		{
-			text: 'Licença',
-			url: '/licenca/'
-		},
-		{
-			text: 'Privacidade',
-			url: '/privacy/'
 		}
 	]
 };

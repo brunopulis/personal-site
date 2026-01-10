@@ -1,10 +1,7 @@
 ---
 title: Vocabulário de um QA
-image: ''
-imageAlt: ''
 pubDate: 2020-08-18
-category: 'Qualidade'
-url: https://brunopulis.com/vocabulario-de-um-qa/
+tags: ['qa']
 ---
 
 > Este artigo é uma tradução e adaptação livre do artigo “QA Testing Vocabulary” que pode ser acessado no [blog](https://www.mindfulqa.com/qa-vocabulary/). O autor foi notificado e houve permissão para realizar a tradução.

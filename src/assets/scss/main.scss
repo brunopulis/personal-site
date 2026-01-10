@@ -1,34 +1,36 @@
-@use "abstracts/variables" as *;
-@use "abstracts/mixins" as *;
+// 1. ABSTRACTS
+@use "abstracts/tokens";
+@use "abstracts/mixins";
 
-@use "abstracts/bootstrap" as *;
+// 2. VENDORS
+@use "vendors/bootstrap";
+@use "vendors/fontawesome";
 
-@use "@fortawesome/fontawesome-free/scss/fontawesome" as *;
-@use "@fortawesome/fontawesome-free/scss/solid" as *;
-@use "@fortawesome/fontawesome-free/scss/regular" as *;
-@use "@fortawesome/fontawesome-free/scss/brands" as *;
+// 3. BASE
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
 
-// 3. Base
-@use "base/typography" as *;
-@use "base/reset" as *;
+// 4. LAYOUT (C – Composition)
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/section";
+@use "layout/flow";
 
-// 4. layouts
-@use "layout/header" as *;
-@use "layout/footer" as *;
+// 5. COMPONENTS (B – Blocks)
+@use "components/button";
+@use "components/card";
+@use "components/hero";
+@use "components/newsletter";
+@use "components/forms";
+@use "components/sidebar";
 
-// 5. Componentes
-@use "components/buttons" as *;
-@use "components/cards" as *;
-@use "components/hero" as *;
-@use "components/stream" as *;
-@use "components/sidebar" as *;
-@use "components/newsletter" as *;
-@use "components/forms" as *;
+// 6. UTILITIES (U – Utilities)
+@use "utilities/text";
+@use "utilities/spacing";
+@use "utilities/icons";
 
-// 6. Páginas Específicas
-@use "pages/portfolio" as *;
-@use "pages/contact" as *;
-@use "pages/explore" as *;
-
-@use "utilities/utilities" as *;
-@use "utilities/prism-diff" as *;
+// 7. PAGES (E – Exceptions)
+@use "pages/home";
+@use "pages/explore";

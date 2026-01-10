@@ -2,11 +2,7 @@
 title: "Seis maiores erros de acessibilidade digital"
 excerpt: "Os seis maiores erros de acessibilidade digital e como podemos corrigí-los."
 pubDate: 2020-09-02T21:13:07.000Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/seis-maiores-erros-de-acessibilidade-digital-c708d313eb7d"
+tags: ['a11y']
 ---
 
 ### Seis maiores erros de acessibilidade digital

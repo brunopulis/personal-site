@@ -1,6 +1,6 @@
-@use "../abstracts/variables" as *;
+@use "../abstracts/tokens";
 
 .stream-section {
-  background: $alto-50;
-  padding-block: 2rem;
+  background: tokens.$alto-50;
+  padding-block: tokens.$space-6;
 }

@@ -2,10 +2,7 @@
 title: "HTML não é tão simples quanto você pensa"
 excerpt: "Como a marcação do HTML pode afetar diretamente seu negócio"
 pubDate: 2020-07-01T12:19:10.431Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
+tags: ['a11y']
 canonicalUrl: "https://medium.com/@brunopulis/html-n%C3%A3o-%C3%A9-t%C3%A3o-simples-quanto-voc%C3%AA-pensa-15ea9b611def"
 ---
 
@@ -55,13 +52,13 @@ Um exemplo do framework Vuetify com o componente select:
 
 Aparentemente é um componente simples e elegante, mas qual é sua saída no código HTML? Sua saída é parecida com isso:
 
-```
+```html
 <div class="v-input theme--light v-text-field v-text-field--is-booted v-select"></div>  <div class="v-input__control">    <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-1359" class="v-input__slot">      <div class="v-select__slot">          <label for="input-1359" class="v-label theme--light" style="left: 0px; right: auto; position: absolute;">Standard</label>          <div class="v-select__selections">              <input id="input-1359" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">          </div>          <div class="v-input__append-inner">              <div class="v-input__icon v-input__icon--append">                <i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i>              </div>          </div>          <input type="hidden">      </div>        <div class="v-menu"></div>    </div>    <div class="v-text-field__details">        <div class="v-messages theme--light">            <div class="v-messages__wrapper"></div>        </div>    </div>  </div></div>
 ```
 
 Já no bom e velho HTML, o componente de select se parece com isso.
 
-```
+```html
 <select>  <option>Selecione uma opção</option>  <option>1</option>  <option>2</option>  <option>3</option></select>
 ```
 

@@ -1,6 +1,62 @@
-@use "../abstracts/variables" as *;
+@use "sass:color";
+@use "../abstracts/tokens";
 
 .hero {
-  background: $rosewood-900;
-  padding: 3.5rem 0;
+  padding: tokens.$space-8 tokens.$space-0;
+
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    color: color.adjust(tokens.$color-text-muted, $lightness: 10%);
+    margin-bottom: tokens.$space-4;
+  }
+
+  &__title {
+    font-family: tokens.$font-display;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+    color: color.adjust(tokens.$color-text-muted, $lightness: 10%);
+    margin-bottom: tokens.$space-6;
+  }
+
+  &__lead {
+    font-size: 1.1rem;
+    max-width: 40ch;
+  }
+
+  &__actions {
+    margin-top: tokens.$space-6;
+    display: flex;
+    gap: tokens.$space-4;
+    align-items: center;
+
+    .hero__link {
+      color: tokens.$color-text-muted;
+      text-decoration: underline;
+    }
+  }
+
+  .hero__image img {
+    border-radius: tokens.$border-radius-md;
+    filter: grayscale(100%);
+  }
+
+  &__link {
+    color: tokens.$color-text-primary;
+
+    &:hover {
+      text-decoration-color: tokens.$color-text-primary;
+    }
+
+    &--muted {
+      color: tokens.$color-text-muted;
+    }
+  }
+}
+
+.navbar-brand {
+  width: tokens.$space-6;
+  height: auto;
+  display: block;
 }

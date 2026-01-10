@@ -1,0 +1,13 @@
+.explore .wrapper {
+  padding-block: clamp(3rem, 6vw, 6rem);
+}
+
+.explore a {
+  color: var(--color-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.explore a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,8 @@
+.region {
+  padding-block-start: var(--region-space-top, var(--space-l-xl));
+  padding-block-end: var(--region-space-bottom, var(--space-l-xl));
+}
+
+.region--help {
+  padding-block: clamp(4rem, 6vw, 6rem);
+}

@@ -2,8 +2,7 @@
 title: 4 validadores de acessibilidade que recomendo
 excerpt: "Breve descrição"
 pubDate: 2014-02-19
-category: Acessibilidade
-tags: ['validadores']
+tags: ['a11y']
 ---
 
 ## Introdução

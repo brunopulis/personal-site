@@ -1,27 +1,16 @@
 <a href="#main" class="visually-hidden">{{ meta.skipContent }}</a>
-<header class="header py-4">
-  <nav class="navbar navbar-expand-lg" id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
-    <div class="container">
-      <a href="/" class="navbar-brand" {{ indicateActiveHome }}>
-      {% svg "misc/logo" %}
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span>
-        <span class="visually-hidden">Menu</span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          {% for item in navigation.top %}
-          <li class="nav-item inline-block">
-            <a href="{{ item.url }}" {% if page.url == item.text %}aria-current="page"{% endif %} class="nav-link">{{ item.text }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-        <div class="d-flex gap-2">
-          <a href="/newsletter" class="btn btn-primary" id="search">Newsletter</a>
-        </div>
-      </div>
-    </div>
+<header class="wrapper region | repel | page-header">
+  <a href="/" class="navbar-brand" data-variant="naked">
+    Bruno Pulis
+  </a>
+  <nav data-variant="main" id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
+    <ul style="--gutter: 1rem;" role="list" class="cluster">
+      {% for item in navigation.top %}
+      <li>
+        <a href="{{ item.url }}" {% if page.url==item.text %}aria-current="page" {% endif %} data-variant="{{ item.variant }}" {% if item.class %}class="{{ item.class }}"{% endif %}>{{
+          item.text }}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </nav>
-  </div>
 </header>

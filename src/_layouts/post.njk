@@ -3,50 +3,48 @@ layout: base
 schema: BlogPosting
 ---
 
-<section class="hero py-4" id="hero" aria-labelledby="posts-title" >
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1 class="hero__title text-white" id="post-title">{{ title }}</h1>
-        <p class="text-white">{{ description }}</p>
+<section class="hero py-4" id="hero" aria-labelledby="posts-title">
+  <div class="wrapper">
+    <div class="flow">
+      <h1 id="post-title">{{ title }}</h1>
+      <p>{{ description }}</p>
 
-        <div class="text-sm font-medium items-center mt-6 flex flex-wrap gap-6 lg:text-base mb-6 text-blood-red-800">
-          {% set definedDate = pubDate %}
-          {% include "partials/date.njk" %}
+      <div>
+        {% set definedDate = pubDate %}
+        {% include "partials/date.njk" %}
 
-          {% if tags.length > 1 %}
-          <p class="text-sm text-white font-bold">
-            Tags:
-            {% for tag in tags %}
-              {% if tag != "posts" %}
-                <a class="text-sm text-white hover:underline hover:underline-offset-8" href="/tags/{{ tag | slugify }}/">
-                {{ tag }}
-                </a>
-              {% endif %}
-            {% endfor %}
-          </p>
+        {% if tags.length > 1 %}
+        <p>
+          Tags:
+          {% for tag in tags %}
+          {% if tag != "posts" %}
+          <a href="/tags/{{ tag | slugify }}/">
+            {{ tag }}
+          </a>
           {% endif %}
-        </div>
+          {% endfor %}
+        </p>
+        {% endif %}
       </div>
     </div>
+  </div>
 </section>
 
-<div class="container py-4">
-  <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div class="col-lg-8 mb-5 mb-lg-0">
-      <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
-        {% if image %}
-          {% image image, alt or "", credit, "eager", "feature" %}
-        {% endif %}
-        <div class="">
-          {{ content | safe }}
-        </div>
-      </article>
-    </div>
+<div class="wrapper">
+  <div class="flow">
+    <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
+      {% if image %}
+      {% image image, alt or "", credit, "eager", "feature" %}
+      {% endif %}
+      <div class="">
+        {{ content | safe }}
+      </div>
+    </article>
+  </div>
 
-    <div class="col-lg-4">
-      {% include "components/sidebar.njk" %}
-    </div>
+  <div class="col-lg-4">
+    {% include "components/sidebar.njk" %}
+  </div>
 
   <div class="mx-auto max-w-5xl px-6 py-6">
     {% set postTitle = title %}

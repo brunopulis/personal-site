@@ -1,0 +1,9 @@
+@use "../abstracts/tokens";
+
+body {
+  font-family: tokens.$font-text;
+  font-size: tokens.$fs-base;
+  line-height: 1.6;
+  background-color: tokens.$color-bg-root;
+  color: tokens.$color-text-secondary;
+}

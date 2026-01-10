@@ -2,7 +2,7 @@
 title: 'Texto alternativo: o guia definitivo'
 excerpt: 'Esta publicação contém tudo o que você precisa saber sobre texto alternativo! Quando usá-los e como desenhá-los perfeitamente. Por mim…'
 pubDate: 2017-10-26T12:47:26.632Z
-tags: ['acessibilidade', 'texto alternativo']
+tags: ['a11y', 'texto alternativo']
 canonicalUrl: 'https://medium.com/@brunopulis/texto-alternativo-o-guia-definitivo-ae196e7a1e39'
 ---
 

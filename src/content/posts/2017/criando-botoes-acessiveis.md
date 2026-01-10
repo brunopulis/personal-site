@@ -3,10 +3,7 @@ title: "Como criar botões acessíveis"
 excerpt: "Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.
  Hoje, vou falar sobre como…"
 pubDate: 2017-10-02T23:28:46.808Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
+tags: ['a11y']
 canonicalUrl: "https://medium.com/@brunopulis/como-criar-bot%C3%B5es-acess%C3%ADveis-2205ba4a91c8"
 ---
 

@@ -1,0 +1,23 @@
+.intent {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.intent .wrapper {
+  padding-block: clamp(4rem, 7vw, 7rem);
+}
+
+.intent p {
+  max-width: 55ch;
+  color: var(--color-gray);
+}
+
+.intent a {
+  color: var(--color-blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.intent a:hover {
+  color: var(--color-light);
+}

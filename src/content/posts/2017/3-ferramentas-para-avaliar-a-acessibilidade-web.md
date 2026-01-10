@@ -2,10 +2,7 @@
 title: "3 ferramentas para avaliar a acessibilidade web"
 excerpt: "Neste post bem rapidinho vou mostrar alguns avaliadores automáticos para testar as recomendações da WCAG em suas app’s ou websites."
 pubDate: 2017-10-02T23:53:59.488Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
+tags: ['a11y']
 canonicalUrl: "https://medium.com/@brunopulis/3-ferramentas-para-avaliar-a-acessibilidade-web-41fa8091e42b"
 ---
 

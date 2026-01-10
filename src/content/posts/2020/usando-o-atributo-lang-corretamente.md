@@ -1,10 +1,7 @@
 ---
 title: Para que serve o atributo lang no HTML?
-image: ''
-imageAlt: ''
 pubDate: 2020-01-14
-category: 'Frontend'
-url: https://brunopulis.com/usando-o-atributo-lang-corretamente/
+tags: ['a11y']
 ---
 
 Se você está começando ou já tem experiência com HTML, com certeza já deve ter notado o atributo lang no seu código.

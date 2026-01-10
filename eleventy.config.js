@@ -13,10 +13,7 @@ import {svg} from './src/_config/shortcodes/svg.js';
 export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addGlobalData('now', new Date());
 
-	eleventyConfig.watchIgnores.add('src/assets/css/**');
-	
-	//  custom watch targets
-	eleventyConfig.addWatchTarget('./src/assets/scss/**/*.scss');
+	eleventyConfig.addWatchTarget('src/assets/css/**');
 	eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
 	eleventyConfig.addWatchTarget('./src/_includes/**/*.{webc}');
 
@@ -32,7 +29,6 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addCollection('medias', collections.medias);
 	eleventyConfig.addCollection('games', collections.games);
 	eleventyConfig.addCollection('bookmarks', collections.bookmarks);
-	eleventyConfig.addCollection('streams', collections.streams);
 
 	eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
 	eleventyConfig.addCollection('tagList', collections.tagList);
@@ -50,19 +46,14 @@ export default async function eleventy(eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(plugins.webmentions);
 
-	//   Library and Data
 	eleventyConfig.setLibrary('md', plugins.markdownLib);
 	eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
 
-	//  Filters
 	Object.entries(customFilters).forEach(([name, fn]) => {
-		// 1️⃣ Não registrar filtros que não são funções
 		if (typeof fn !== 'function') {
 			console.warn(`⚠️  Ignorando filtro "${name}" porque não é uma função (valor: ${fn})`);
 			return;
 		}
-
-		// 2️⃣ Proteger filtros universais do Eleventy
 		const universal = ['where', 'first', 'last', 'reverse', 'sort'];
 		if (universal.includes(name)) {
 			console.warn(
@@ -71,14 +62,12 @@ export default async function eleventy(eleventyConfig) {
 			return;
 		}
 
-		// 3️⃣ Aviso de colisão (caso ainda exista algum outro filtro com o mesmo nome)
 		if (eleventyConfig.getFilter(name)) {
 			console.warn(
 				`⚠️  Filtro "${name}" já existe – será sobrescrito. Verifique se não está substituindo um filtro universal.`
 			);
 		}
 
-		// 4️⃣ Registra o filtro
 		eleventyConfig.addFilter(name, fn);
 	});
 
@@ -88,13 +77,6 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode('image', image);
 	eleventyConfig.addNunjucksAsyncShortcode('imageKeys', imageKeys);
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
-
-	//  Events: before build
-	eleventyConfig.on('eleventy.before', async () => {
-		if (process.env.ELEVENTY_RUN_MODE !== 'serve') { 
-			await events.buildAllCss();
-		}
-	});
 
 	//  Events: after build
 	if (process.env.ELEVENTY_RUN_MODE === 'serve') {

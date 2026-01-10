@@ -2,10 +2,7 @@
 title: "Dev Fest BH 2017"
 excerpt: "O local"
 pubDate: 2017-11-20T14:44:57.550Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
+tags: ['a11y']
 canonicalUrl: "https://medium.com/@brunopulis/dev-fest-bh-2017-1ed9580ca910"
 ---
 

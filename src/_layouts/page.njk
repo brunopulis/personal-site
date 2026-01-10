@@ -3,17 +3,17 @@ layout: base
 ---
 
 <section class="hero">
-  <div class="container">
-    <div class="row">
-      <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
-      <p class="lead text-white">{{ description }}</p>
+  <div class="wrapper">
+    <div class="flow">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="row py-4">
+  <div class="wrapper">
+    <div class="flow">
       {{ content | safe }}
     </div>
   </div>
