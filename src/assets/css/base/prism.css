@@ -1,6 +1,3 @@
-/**
- * Prism Tomorrow Night theme
- */
 code[class*="language-"],
 pre[class*="language-"] {
   color: #ccc;
@@ -22,6 +19,16 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+.token::selection {
+  text-shadow: none;
+  background: var(--color-highlight, #849cdb);
+  color: var(--color-text-selection, #ffffff);
 }
 
 /* Code blocks */
