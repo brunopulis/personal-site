@@ -1,3 +1,5 @@
+import { slugifyString } from './filters/slugify.js';
+
 /**
  *
  * @param {*} collectionApi
@@ -96,14 +98,21 @@ export const tagListRecurrency = collection => {
   const tagCount = {};
   const excludedTags = ['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'];
 
-  // Contar quantas vezes cada tag aparece
+  // Contar quantas vezes cada tag aparece (agrupado por slug)
+  const slugToTag = {};
+
   collection.getAll().forEach(item => {
     if ('tags' in item.data) {
       let tags = item.data.tags;
 
       for (const tag of tags) {
         if (!excludedTags.includes(tag)) {
-          tagCount[tag] = (tagCount[tag] || 0) + 1;
+          const slug = slugifyString(tag);
+          tagCount[slug] = (tagCount[slug] || 0) + 1;
+          // Store the most common/first version of the tag name for display
+          if (!slugToTag[slug]) {
+             slugToTag[slug] = tag;
+          }
         }
       }
     }
@@ -112,7 +121,7 @@ export const tagListRecurrency = collection => {
   // Converter para array de objetos e ordenar por quantidade (decrescente)
   return Object.entries(tagCount)
     .sort((a, b) => b[1] - a[1]) // Ordena do maior para o menor
-    .map(([tag, count]) => ({ tag, count }));
+    .map(([slug, count]) => ({ tag: slugToTag[slug], count, slug }));
 };
 
 /**
@@ -121,7 +130,8 @@ export const tagListRecurrency = collection => {
  * @returns
  */
 export const tagList = collection => {
-  let tagSet = new Set(); // ✅ Definido ANTES do forEach
+  let tagSet = new Set();
+  let slugSet = new Set();
 
   collection.getAll().forEach(item => {
     if ('tags' in item.data) {
@@ -129,13 +139,17 @@ export const tagList = collection => {
 
       for (const tag of tags) {
         if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'].includes(tag)) {
-          tagSet.add(tag);
+          const slug = slugifyString(tag);
+          if (!slugSet.has(slug)) {
+            slugSet.add(slug);
+            tagSet.add(tag);
+          }
         }
       }
     }
   });
 
-  return Array.from(tagSet).sort();
+  return Array.from(tagSet).sort((a, b) => a.localeCompare(b));
 };
 
 export default {

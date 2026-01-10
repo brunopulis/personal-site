@@ -5,7 +5,6 @@
 {% set reposts = allMentions | filterByType("repost-of") %}
 
 <section class="webmentions mt-12 pt-8 border-t border-gray-200" aria-label="Webmentions">
-
   {% set repostAuthors = reposts | uniqueAuthors %}
   <div class="mb-8">
     <h3 class="text-sm font-black uppercase tracking-wide mb-4 flex items-center gap-2 text-gray-900">
@@ -30,9 +29,6 @@
     </div>
   </div>
 
-
-  <!-- Likes -->
-
   {% set likeAuthors = likes | uniqueAuthors %}
   <div class="mb-8">
     <h3 class="text-sm font-black uppercase tracking-wide mb-4 flex items-center gap-2 text-gray-900">
@@ -56,9 +52,6 @@
       {% endfor %}
     </div>
   </div>
-
-
-  <!-- Comments/Replies -->
 
   <div class="mb-8">
     <button
@@ -101,21 +94,6 @@
       </article>
       {% endfor %}
     </div>
-  </div>
-
-
-  <!-- CTAs -->
-  <div class="space-y-2 text-sm text-gray-500 mt-6 pl-4 border-l border-gray-200">
-    <p class="flex items-start gap-2">
-      <span class="text-lg mt-0.5">▶</span>
-      <a href="https://twitter.com/intent/tweet?text={{ title }}&url={{ meta.url }}{{ page.url }}" target="_blank"
-        class="hover:text-blue-600 transition">Compartilhar no Twitter</a>
-    </p>
-    <p class="flex items-start gap-2">
-      <span class="text-lg mt-0.5">▶</span>
-      <a href="mailto:?subject={{ title }}&body={{ meta.url }}{{ page.url }}"
-        class="hover:text-blue-600 transition">Compartilhar por Email</a>
-    </p>
   </div>
 </section>
 {% endif %}

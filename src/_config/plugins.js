@@ -1,6 +1,6 @@
 import { EleventyRenderPlugin } from '@11ty/eleventy';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
-import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import { syntaxHighlightPlugin } from './plugins/syntaxHighlight.js';
 import rss from '@11ty/eleventy-plugin-rss';
 import webc from '@11ty/eleventy-plugin-webc';
 
@@ -13,7 +13,7 @@ import {htmlConfig} from './plugins/html-config.js';
 export default {
   EleventyRenderPlugin,
   rss,
-  syntaxHighlight,
+  syntaxHighlight: syntaxHighlightPlugin,
   webc,
   eleventyImageTransformPlugin,
   markdownLib,

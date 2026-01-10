@@ -1,33 +1,23 @@
-<div class="container">
-  {% if pagination and pagination.pages.length > 1 %}
-    <nav class="flex p-4 text-bold gap-4" aria-label="Paginação">
-      {% if pagination.href.previous %}
-        <a 
-          href="{{ pagination.href.previous }}" 
-          class="px-4 py-2 underline underline-offset-8 hover:no-underline"
-          rel="prev"
-        >
-          ← Anterior
-        </a>
-      {% else %}
-        <span class="px-4 py-2 text-gray-700 cursor-not-allowed">← Anterior</span>
-      {% endif %}
-
-      <span class="px-4 py-2 text-gray-700">
-        Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages.length }}
-      </span>
-
-      {% if pagination.href.next %}
-        <a 
-          href="{{ pagination.href.next }}" 
-          class="px-4 py-2 underline underline-offset-8 hover:no-underline"
-          rel="next"
-        >
-          Próxima →
-        </a>
-      {% else %}
-        <span class="px-4 py-2 text-gray-700 cursor-not-allowed">Próxima →</span>
-      {% endif %}
-    </nav>
+{% if pagination and pagination.pages.length > 1 %}
+<nav class="cluster" style="--cluster-gap: 1rem" aria-label="Paginação">
+  {% if pagination.href.previous %}
+  <a href="{{ pagination.href.previous }}" rel="prev">
+    ← Anterior
+  </a>
+  {% else %}
+  <span class="cursor-not-allowed">← Anterior</span>
   {% endif %}
-</div>
+
+  <span>
+    Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages.length }}
+  </span>
+
+  {% if pagination.href.next %}
+  <a href="{{ pagination.href.next }}" rel="next">
+    Próxima →
+  </a>
+  {% else %}
+  <span class="cursor-not-allowed">Próxima →</span>
+  {% endif %}
+</nav>
+{% endif %}

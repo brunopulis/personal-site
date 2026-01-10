@@ -17,7 +17,8 @@
 		"font-awesome/**",
 		".tina/**",
 		"tina/__generated__/**",
-		".tina/__generated__/**"
+		".tina/__generated__/**",
+		"*.njk"
 		]
 	},
 	"formatter": {
