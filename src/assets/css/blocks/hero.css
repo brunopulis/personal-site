@@ -3,7 +3,7 @@
   color: var(--color-light);
 }
 
-.hero .wrapper {
+.hero--wrapper {
   padding-block: clamp(4rem, 8vw, 7rem);
 }
 
