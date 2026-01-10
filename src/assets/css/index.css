@@ -2,6 +2,7 @@
 
 @import "./base/reset.css" layer(reset);
 @import "./base/fonts.css" layer(tokens);
+@import "./base/prism.css" layer(base);
 
 @import "./global/variables.css" layer(tokens);
 @import "./global/base.css" layer(base);

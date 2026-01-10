@@ -1,7 +1,7 @@
 ---
 title: 'HTML Semântico: repensando sobre seu uso'
 pubDate: 2020-04-30
-tags: [´frontend', 'a11y']
+tags: [frontend, a11y]
 ---
 
 ## Introdução
@@ -129,7 +129,7 @@ Essa semana a [Talita Pagani](https://twitter.com/talitapagani) iniciou uma conv
 
 Esse assunto no Twitter me fez lembrar de outra conversa com o [Reinaldo Ferraz](https://twitter.com/reinaldoferraz) em um BrazilJS. Estávamos falando sobre o estado atual da acessibilidade web no Brasil e os avanços que temos feito. Ele disse uma frase que me marcou muito:
 
-\> **Estamos em um momento que as pessoas precisam reaprender como escrever HTML. Só assim, conseguiremos tornar a web mais inclusiva.**
+> **Estamos em um momento que as pessoas precisam reaprender como escrever HTML. Só assim, conseguiremos tornar a web mais inclusiva.**
 
 ## Conclusão
 

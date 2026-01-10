@@ -3,64 +3,55 @@ layout: base
 schema: BlogPosting
 ---
 
-<section class="hero py-4" id="hero" aria-labelledby="posts-title">
+<header class="hero" aria-labelledby="post-title">
   <div class="wrapper">
     <div class="flow">
-      <h1 id="post-title">{{ title }}</h1>
+      <h1 class="title p-name" id="post-title">{{ title }}</h1>
       <p>{{ description }}</p>
 
       <div>
         {% set definedDate = pubDate %}
-        {% include "partials/date.njk" %}
-
-        {% if tags.length > 1 %}
-        <p>
-          Tags:
-          {% for tag in tags %}
-          {% if tag != "posts" %}
-          <a href="/tags/{{ tag | slugify }}/">
-            {{ tag }}
-          </a>
-          {% endif %}
-          {% endfor %}
-        </p>
-        {% endif %}
+        <time class="dt-published text-sm text-white" datetime="{{ definedDate | toISOString }}">
+          Publicado em: {{ definedDate | formatDate('MMMM D, YYYY') | capitalize }}
+        </time>
       </div>
     </div>
   </div>
-</section>
+</header>
 
-<div class="wrapper">
+<div class="wrapper | region">
   <div class="flow">
     <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
       {% if image %}
       {% image image, alt or "", credit, "eager", "feature" %}
       {% endif %}
-      <div class="">
+      <div class="e-content flow">
         {{ content | safe }}
       </div>
     </article>
+
+    <footer class="after-article flow">
+      <h2 class="visually-hidden">Tags</h2>
+      <ul class="cluster" role="list">
+        {% for tag in tags %}
+        {% if tag != "posts" %}
+        <li class="tag">
+          <a href="/tags/{{ tag | slugify }}/" class="p-category">{{ tag }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+
+      {% set postTitle = title %}
+      {% set postUrl = page.url %}
+      {% set email = "brunopulis@protonmail.com" %}
+      {% include "components/post-engagement.njk" %}
+    </footer>
   </div>
 
-  <div class="col-lg-4">
-    {% include "components/sidebar.njk" %}
-  </div>
-
-  <div class="mx-auto max-w-5xl px-6 py-6">
-    {% set postTitle = title %}
-    {% set postUrl = page.url %}
-    {% set email = "brunopulis@protonmail.com" %}
-    {% include "components/post-engagement.njk" %}
-    {% include 'components/coffee.njk' %}
-    {% include "partials/webmentions.njk" %}
-  </div>
+  {% include "components/newsletter.njk" %}
+  {% include "partials/webmentions.njk" %}
 
   <!--  h-card infos: https://indieweb.org/authorship -->
-  <div hidden class="h-entry">
-    <a class="u-url" href="{{ page.url | url | absoluteUrl(meta.url) }}">{{ title }}</a>
-    <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.author.name }}</a>
-    <img eleventy:ignore class="u-author h-card" src="{{ meta.author.avatar | url | absoluteUrl(meta.url) }}"
-      alt="{{ meta.author.name }}" />
-  </div>
-</div>
+  {% include "components/authorship.njk" %}
 </div>

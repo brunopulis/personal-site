@@ -16,5 +16,11 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[nunjucks]": {
+    "editor.defaultFormatter": "dwkns.nunjucks-11ty-plus"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
