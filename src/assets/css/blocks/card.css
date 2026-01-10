@@ -9,8 +9,12 @@
   margin-bottom: 0.25rem;
 }
 
+.card p {
+  color: var(--color-surface);
+}
+
 .card a {
-  color: var(--color-dark);
+  color: var(--color-surface);
   text-decoration: none;
 }
 
