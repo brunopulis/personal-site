@@ -42,7 +42,7 @@ export const gallery = collectionApi => {
  * @returns
  */
 export const medias = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/medias/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/medias/**/*').reverse();
 }
 
 /**
