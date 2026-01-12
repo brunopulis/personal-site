@@ -1,19 +1,23 @@
 ---
 title: "Com amor, Van Gogh"
-excerpt: "A história comovente do pintor que amava por demais."
-pubDate: 2018-10-26T13:01:03.055Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/com-amor-van-gogh-33d3cff8b97a"
+watchedDate: 2018-10-26
+watchedYear: 2018
+director: "DK Welchman"
+category: "Drama"
+status: "assistido"
+rating: 5
+poster: "https://image.tmdb.org/t/p/w600_and_h900_face/pw72rhXTRbIel6iNWKHUqiIvcZm.jpg"
+description: "Um ano após o suicídio de Vincent Van Gogh, Armand Roulin encontra uma carta por ele enviada ao irmão Theo, que jamais chegou ao seu destino. Após conversar com o pai, carteiro que era amigo pessoal de Van Gogh, Armand é incentivado a entregar ele mesmo a correspondência. Desta forma, ele parte para a cidade francesa de Arles na esperança de encontrar algum contato com a família do pintor falecido. Lá, inicia uma investigação junto às pessoas que conheceram Van Gogh, no intuito de decifrar se ele realmente se matou."
+thoughts: "A verdade é que não podemos falar senão pelas nossas pinturas."
+tags: ["Drama", "Biografia"]
+url: "https://www.themoviedb.org/movie/339877-loving-vincent"
 ---
 
-### Com amor, Van Gogh
+## Com amor, Van Gogh
 
 ![](https://cdn-images-1.medium.com/max/2560/1*n4fJskKgBqtsVhmiw51XWA.jpeg)
 
-Noite Estrelada, por Vicent Van Gogh
+Noite Estrelada, por Vicent Van Gogh
 
 O Saber Indica desta sexta traz um dos melhores filmes que vi recentemente: **Com Amor, Van Gogh.** Ambientado um ano após o suicídio de Van Gogh, Armand Roulin encontra uma carta do artista endereçada a Theo (seu irmão) que, porém, nunca chegou a seu destino.
 
