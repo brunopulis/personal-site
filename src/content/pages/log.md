@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 'Mudancas do site'
+title: "Mudancas do site"
 permalink: /log/index.html
-pubDate: '2025-11-21'
-description: 'Mudanças em meu site'
-date: Last Modified 
+pubDate: "2025-11-21"
+description: "Mudanças em meu site"
+date: Last Modified
 ---
 
 ## 12-12-2025
@@ -21,6 +21,4 @@ date: Last Modified
 
 - Adicionei as badges
 
---- 
-
-*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+_Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}_

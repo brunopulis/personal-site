@@ -1,11 +1,10 @@
 ---
 layout: page
 title: "Verifique"
-permalink: /verifique/index.html
+permalink: /verify/index.html
 description: Verifique minha identidade online
 date: Last Modified
 ---
-
 
 Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui, por favor, [me avise](https://brunopulis.com/contato).
 
@@ -13,74 +12,39 @@ Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui
 
 ### Fediverso:
 
-- @brunopulis@mastodon.social
-- @echofeedamplify@beep.town
-- @greatscott@beep.town
-
-All accounts on bugle.lol are run by me
-
-Accounts on hub.7622.me:
-@echofeed
-@wegotfamily
-Bluesky:
-
-- @rknight.me - blog posts auto-posted with EchoFeed
-- @echofeed.app
-- Discord: rknightuk
-- PSN: rknightuk
-- Signal: rknightuk.01
-- LastFM: rknightuk
-- omg.lol: robb
-- finger me: finger robb@omg.lol
-- GitHub: rknightuk
-- Apple Music: rknightuk
+- [@brunopulis@mastodon.social](https://mastodon.social/@brunopulis)
+- [@brunopulis@threads.net](https://threads.net/@brunopulis)
+- [@brunopulis.com@bsky.social](https://bsky.social/@brunopulis)
+- Discord: [brunopulis](https://discord.com/users/brunopulis)
+- PSN: [anakinbr88](https://psnprofiles.com/players/anakinbr88)
+- GitHub: [brunopulis](https://github.com/brunopulis)
 - Ko-fi: [brunopulis](https://ko-fi.com/brunopulis)
 
 ## Email
 
-I can be contacted at robb@omg.lol
-Emails I send will come from desk@ this domain.
-EchoFeed emails will come from help@ or hello@.
+Você pode entrar em contato comigo através do e-mail brunopulis@protonmail.com
 
 ## Redes inativas
 
-These are me, but I don't actively use them.
+Essas redes são minhas, mas não utilizo mais.
 
-- Instagram: rknightuk
-- Facebook: rknightuk
-- Letterboxd: rknightuk
-- Micro.blog: rknightuk
-- Spotify
-- Mastodon: @ruminate@social.lol
+- [Instagram](https://www.instagram.com/brunopulis)
+- [Pixelfed](https://pixelfed.org/@brunopulis)
+- [Facebook](https://www.facebook.com/obrunopulis)
 
-## Testing Accounts
+## Redes que não possuo
 
-Everything posted to these accounts will be nonsense and likely deleted.
+Se houver uma conta com meu nome nessas redes, não sou eu.
 
-Threads: @rknightuk
-Bluesky: @brightknob.bsky.social
-Do Not Have
-If an account with my name is on these networks, it is not me.
+- Twitter/X
+- Snapchat
+- TikTok
 
-Twitter/X
-TikTok
-Snapchat
-Pixelfed (why?)
+## Meus domínios
 
-## Meus domínios 
-
-- rknight.me
-- 7622.me
-- therobb.com (redirects here)
-- knightshift.dev
-- echofeed.app
-- ruminatepodcast.com
-- wegot.family
-- bugle.lol
-- deskmat.help
-- slashpages.net
-- toot.rodeo
+- brunopulis.com
+- brunopulis.com.br
 
 ---
 
-*Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+_Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}_
