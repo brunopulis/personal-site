@@ -225,7 +225,7 @@ formato: base
     </h2>
     <p>{{ data.faqs.description | safe }}</p>
 
-    <div class="grid" data-layout="50-50">
+    <div class="grid box" data-layout="50-50">
       {% for item in data.faqs.questions %}
       <details>
         <summary>{{ item.question }}</summary>
