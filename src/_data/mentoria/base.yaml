@@ -144,8 +144,7 @@ testimonials:
   description: Conheça as histórias de quem já transformou sua carreira com a mentoria BASE.
   testimonial:
     - content: |
-        A mentoria com o Bruno foi extremamente valiosa para meu desenvolvimento profissiona e pessoal. Ele compartilhou conhecimentos aprofundados sobre testes de acessibilidade, desmistificando os conceitos da WCAG (Web Content Accessibility Guidelines) de uma forma clara e prática.
-        As explicações detalhadas me permitiram implementar princípios de acessibilidade de maneira concreta em meus projetos de frontend, melhorando significativamente a qualidade e inclusividade das interfaces que desenvolvo. Os insights fornecidos não ficaram apenas no campo teórico, mas se traduziram em aplicações diretas no meu dia a dia como desenvolvedor.
+        A mentoria foi extremamente valiosa para meu desenvolvimento profissional e pessoal. Ele desmistificou os conceitos da WCAG de forma clara e prática, permitindo que eu implementasse princípios de acessibilidade concretamente em meus projetos de frontend. Os insights foram além da teoria, traduzindo-se em aplicações diretas no meu dia a dia como desenvolvedor, melhorando significativamente a qualidade e inclusividade das interfaces que desenvolvo.
       author: "Murilo Messias de Camargo"
       position: "Desenvolvedor Front-end"
     - content: |
