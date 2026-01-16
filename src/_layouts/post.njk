@@ -11,8 +11,12 @@ schema: BlogPosting
 
       <div>
         {% set definedDate = pubDate %}
-        <time class="dt-published text-sm text-white" datetime="{{ definedDate | toISOString }}">
-          Publicado em: {{ definedDate | formatDate('MMMM D, YYYY') | capitalize }}
+        <time
+          class="dt-published text-sm text-white"
+          datetime="{{ definedDate | toISOString }}"
+        >
+          Publicado em: {{ definedDate | formatDate('MMMM D, YYYY') | capitalize
+          }}
         </time>
       </div>
     </div>
@@ -21,36 +25,35 @@ schema: BlogPosting
 
 <div class="wrapper | region">
   <div class="flow">
-    <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
-      {% if image %}
-      {% image image, alt or "", credit, "eager", "feature" %}
-      {% endif %}
-      <div class="e-content flow">
-        {{ content | safe }}
-      </div>
+    <article
+      class="h-entry"
+      itemscope
+      itemtype="https://schema.org/BlogPosting"
+      data-pagefind-body
+    >
+      {% if image %} {% image image, alt or "", credit, "eager", "feature" %} {%
+      endif %}
+      <div class="e-content flow">{{ content | safe }}</div>
     </article>
 
     <footer class="after-article flow">
       <h2 class="visually-hidden">Tags</h2>
       <ul class="cluster" role="list">
-        {% for tag in tags %}
-        {% if tag != "posts" %}
+        {% for tag in tags %} {% if tag != "posts" %}
         <li class="tag">
           <a href="/tags/{{ tag | slugify }}/" class="p-category">{{ tag }}</a>
         </li>
-        {% endif %}
-        {% endfor %}
+        {% endif %} {% endfor %}
       </ul>
 
-      {% set postTitle = title %}
-      {% set postUrl = page.url %}
-      {% set email = "brunopulis@protonmail.com" %}
-      {% include "components/post-engagement.njk" %}
+      {% set postTitle = title %} {% set postUrl = page.url %} {% set email =
+      "brunopulis@protonmail.com" %} {% include "components/post-engagement.njk"
+      %}
     </footer>
   </div>
 
-  {% include "components/newsletter.njk" %}
-  {% include "partials/webmentions.njk" %}
+  {% include "components/newsletter.njk" %} {% include
+  "partials/webmentions.njk" %}
 
   <!--  h-card infos: https://indieweb.org/authorship -->
   {% include "components/authorship.njk" %}

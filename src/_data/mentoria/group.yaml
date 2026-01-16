@@ -1,0 +1,10 @@
+flags:
+  isIndividual: false
+  isGroup: false
+
+hero:
+  title: Mentoria BASE — Grupo
+
+investment:
+  price:
+    value: 697

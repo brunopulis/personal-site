@@ -1,0 +1,211 @@
+slug: mentoria
+
+hero:
+  title: Mentoria BASE
+  subtitle: Acessibilidade digital com método e prática.
+  description: Dominar acessibilidade web com estrutura, clareza e aplicação real através da troca com outros profissionais.
+  features:
+    - Uma mentoria para quem quer dominar acessibilidade web com estrutura, clareza e aplicação real.
+    - Você aprende com orientação especializada e troca constante com outros profissionais.
+    - Conteúdo direto, prática orientada e evolução consistente.
+
+problem: |
+  Cursos gravados são ótimos, mas não respondem às dúvidas específicas do seu projeto.
+  Você trava em problemas reais e não tem a quem recorrer para desbloquear.
+
+solution: |
+  Mentoria técnica personalizada, analisamos juntos seu código, design ou teste
+  e resolvemos juntos. Você aprende fazendo, no seu ritmo e no seu contexto.
+
+value_proposition:
+  paragraphs:
+    - A Mentoria BASE em grupo mantém o mesmo método validado da versão individual.
+    - O aprendizado acontece em conjunto, com discussões técnicas e exemplos reais.
+    - Ideal para quem busca profundidade técnica aliada à troca de experiências.
+
+methodology:
+  title: Metodologia BASE
+  description: Uma abordagem completa que une teoria e prática para formar profissionais capacitados em criar experiências digitais acessíveis
+
+  technical_bases:
+    title: Bases Técnicas
+    items:
+      - WCAG aplicada a cenários reais;
+      - HTML semântico e WAI-ARIA de forma consciente;
+      - Entendimento prático do funcionamento de leitores de tela.
+
+  inclusive_attitude:
+    title: Atitude Inclusiva
+    items:
+      - Acessibilidade como cultura compartilhada;
+      - Empatia aplicada ao código e ao design;
+      - Discussão de decisões pensando em usuários diversos.
+
+  practical_solutions:
+    title: Soluções Práticas
+    items:
+      - Uso de axe, Lighthouse e NVDA no fluxo profissional;
+      - Técnicas de contraste, foco e navegação por teclado;
+      - Implementação e análise de componentes acessíveis.
+
+  execution:
+    title: Execução com Propósito
+    items:
+      - Análise coletiva de projetos;
+      - Estudos de caso reais;
+      - Orientações práticas aplicáveis ao dia a dia.
+
+target_audience:
+  title: Para quem é
+  paragraphs: Para profissionais que querem aprender acessibilidade de forma estruturada, ideal para quem valoriza troca, debate técnico e aprendizado coletivo.
+
+  frontend:
+    title: Desenvolvedores Front-end
+    items:
+      - Boas práticas acessíveis desde a base.
+      - Discussão de padrões reutilizáveis.
+      - JavaScript com foco em inclusão.
+      - Redução de erros comuns em equipe.
+
+  qa:
+    title: Analistas de Qualidade (QA)
+    items:
+      - Testes manuais e automatizados em conjunto.
+      - Discussão de cenários reais de falha.
+      - Criação de planos de teste colaborativos.
+      - Padronização de relatórios.
+
+how_it_works:
+  title: Como funciona a mentoria em grupo
+  paragraphs:
+    - Encontros ao vivo em grupo.
+    - Conteúdo estruturado por módulos.
+    - Espaço para dúvidas e discussão técnica.
+    - Exercícios práticos orientados.
+    - Feedback coletivo com direcionamento claro.
+
+differentiators:
+  title: Por que escolher a Mentoria BASE
+  subtitle: Um programa estruturado para impulsionar sua carreira e desenvolver expertise em acessibilidade web.
+  advantages:
+    items:
+      - title: Carreira Acelerada
+        text: Desenvolva habilidades altamente valorizadas no mercado e destaque-se como especialista em acessibilidade.
+      - title: Projetos Reais
+        text: Aprenda com projetos reais e pratique o que aprendeu na prática.
+      - title: Networking
+        text: Networking com profissionais e empresas
+      - title: Flexibilidade
+        text: Flexibilidade total (estude no seu ritmo)
+      - title: Suporte Dedicado
+        text: Conte com mentoria personalizada e suporte técnico durante toda sua jornada.
+      - title: Bônus Exclusivos
+        text: Acesso a recursos extras, templates e ferramentas para acelerar seu aprendizado.
+
+  cta: Quero me inscrever
+
+achievements:
+  title: O que você vai conquistar
+  items:
+    - Entendimento sólido de WCAG.
+    - Capacidade de aplicar acessibilidade com segurança.
+    - Visão crítica sobre interfaces e código.
+    - Evolução técnica com apoio coletivo.
+    - Diferencial profissional no mercado.
+
+mentor:
+  eyebrow: Seu mentor
+  image: /assets/images/pulis.webp
+  title: Conheça seu mentor
+  description: |
+    Bruno Pulis é especialista em acessibilidade web com mais de uma década de experiência, ajudando empresas e desenvolvedores a criarem experiências digitais verdadeiramente inclusivas.
+
+    Como consultor e educador, já capacitou centenas de profissionais e implementou soluções de acessibilidade em projetos de grande escala para empresas nacionais e internacionais.
+    Sua missão é democratizar o conhecimento sobre acessibilidade web e formar uma nova geração de profissionais comprometidos com a inclusão digital.
+
+  skills:
+    - Mais de 10 anos de experiência em acessibilidade digital.
+    - Capacitação de profissionais e equipes em acessibilidade web.
+    - Mentoria com foco em prática e aplicação real.
+
+  data:
+    - "10+ anos de experiência"
+    - "500+ profissionais mentorados"
+    - "15+ certificações"
+    - "50+ projetos entregues"
+  specialties:
+    - WCAG 2.2
+    - WAI-ARIA
+    - HTML Semântico
+
+testimonials:
+  eyebrow: Depoimentos
+  title: O que dizem os alunos
+  description: Conheça as histórias de quem já transformou sua carreira com a mentoria BASE.
+  testimonial:
+    - content: |
+        A mentoria com o Bruno foi extremamente valiosa para meu desenvolvimento profissiona e pessoal. Ele compartilhou conhecimentos aprofundados sobre testes de acessibilidade, desmistificando os conceitos da WCAG (Web Content Accessibility Guidelines) de uma forma clara e prática.
+        As explicações detalhadas me permitiram implementar princípios de acessibilidade de maneira concreta em meus projetos de frontend, melhorando significativamente a qualidade e inclusividade das interfaces que desenvolvo. Os insights fornecidos não ficaram apenas no campo teórico, mas se traduziram em aplicações diretas no meu dia a dia como desenvolvedor.
+      author: "Murilo Messias de Camargo"
+      position: "Desenvolvedor Front-end"
+    - content: |
+        A mentoria com o Bruno foi muito enriquecedora. Ele abordou vários conhecimentos sobre testes de acessibilidade, explicou os conceito da WCAG e como aplicá-los de forma que eu consegui utilizar no dia-a-dia. Foi uma experiência muito boa que valeu muito à pena.
+      author: "Cinthia Ferraz"
+      position: "Analista de Qualidade"
+    - content: |
+        Me senti muito acolhida, vc ouviu minha história, se colocou acessível, me deu direcionamentos e desafios que me motivaram ainda mais. Fiquei admirada pela sua sabedoria e pela maneira bem simplificada que transmite seus conhecimentos.
+      author: "Daniela Capassi"
+      position: "Analista de Qualidade em Acessibilidade Digital"
+faqs:
+  title: Perguntas Frequentes
+  description: Encontre respostas para as dúvidas mais comuns sobre a mentoria BASE.
+  questions:
+    - question: Preciso ter conhecimentos prévios em acessibilidade?
+      answer: Não, a mentoria foi desenvolvida para atender desde iniciantes até profissionais que já trabalham com desenvolvimento web e desejam aprofundar seus conhecimentos em acessibilidade.
+    - question: Qual é a duração da mentoria?
+      answer: A mentoria é composta de 8 encontros, um a cada 15 dias.
+    - question: O que está incluso na mentoria?
+      answer: A mentoria inclui a gravação das sessões, plano de ensino, materiais de estudo, exercícios práticos, suporte individualizado e feedback contínuo.
+    - question: Como são realizadas as sessões?
+      answer: As sessões são realizadas por meio de videoconferências no Google Meet
+    - question: As sessões são gravadas?
+      answer: Sim, todas as sessões são gravadas e disponibilizadas para os alunos.
+    - question: Há algum certificado ao final da mentoria?
+      answer: Sim! Ao concluir a mentoria, você receberá um certificado de participação.
+    - question: Quais são as formas de pagamento?
+      answer: Aceitamos pagamento via Pix com 5% de desconto, transferência bancária, cartão de crédito parcelado em até 10 vezes, taxas repassadas ao cliente.
+
+investment:
+  title: Investimento
+  description: Comece agora sua jornada para se tornar um especialista em acessibilidade
+  paragraphs: Invista em uma habilidade que está em alta demanda no mercado e faça a diferença criando experiências digitais inclusivas.
+  price:
+    value: 1.997
+    installments: a_definir
+  conditions:
+    - Á vista com 5% de desconto;
+    - ou 10 vezes de XPTO no cartão
+    - Pagamento 100% seguro
+
+cta:
+  primary: Entrar na lista de espera
+  label: Garantir minha vaga
+  url: /mentoria
+  observations:
+    - Lançamento em breve.
+    - Vagas limitadas.
+
+benefits:
+  - HTML semântico e WAI-ARIA
+  - Testes com leitores de tela
+  - Auditoria e refatoração acessível
+
+price:
+  value: 0
+  currency: BRL
+
+payment:
+  installments: false
+  installmentsCount: 0
+  installmentsValue: 0
+  gateway: null
