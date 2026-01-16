@@ -10,7 +10,7 @@ export default {
 			url: '/newsletter/'
 		},
 		{
-			text: 'Explorar',
+			text: 'Explore',
 			url: '/explore/'
 		},
 		{
@@ -23,7 +23,6 @@ export default {
 		},
 		{
 			text: 'Contato',
-      class: 'wit-icon button',
 			url: '/contato/'
 		}
 	],
