@@ -1,0 +1,259 @@
+---
+layout: base
+formato: base
+---
+
+{% set data = mentoria[formato] %}
+<section class="hero">
+  <div class="wrapper">
+    <header>
+      <small class="badge">{{ data.hero.title }}</small>
+      <h1 class="title">{{ data.hero.subtitle }}</h1>
+      <p class="subtitle">{{ data.hero.description }}</p>
+    </header>
+  </div>
+</section>
+
+<!-- Scarcity / Urgency Alert -->
+<div class="wrapper">
+  <div class="alert alert-warning d-flex align-items-center gap-3">
+    <div>
+      {% if data.conversion.scarcity.enabled %}
+      <strong>{{ data.conversion.scarcity.label }}:</strong> Restam apenas {{
+      data.conversion.scarcity.remaining_slots }} vagas. {% endif %} {% if
+      data.conversion.urgency.enabled %}
+      <strong>{{ data.conversion.urgency.label }}</strong> até {{
+      data.conversion.urgency.deadline | formatDate("dd/MM/yyyy") }}. {% endif
+      %}
+    </div>
+  </div>
+</div>
+
+<!-- Problem / Solution -->
+<section class="region" aria-labelledby="problem-solution">
+  <div class="wrapper flow">
+    <div class="grid" data-layout="50-50">
+      <div class="card">
+        <h2 class="title" data-color="dark" id="problem-solution">
+          O problema
+        </h2>
+        <p class="lead">{{ data.problem | safe | nl2br }}</p>
+      </div>
+
+      <div class="card">
+        <h2 class="title" data-color="dark" id="solution">A solução</h2>
+        <p class="lead">{{ data.solution | safe | nl2br }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+<section class="region" aria-labelledby="methodology">
+  <div class="wrapper flow">
+    <h2 class="title" data-color="light" id="methodology">
+      {{ data.methodology.title }}
+    </h2>
+    <p class="lead">{{ data.methodology.description | safe | nl2br }}</p>
+    <div class="grid" data-layout="50-50">
+      <article class="card">
+        <h3>{{ data.methodology.technical_bases.title }}</h3>
+        <ul>
+          {% for item in data.methodology.technical_bases.items %}
+          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>{{ data.methodology.inclusive_attitude.title }}</h3>
+        <ul>
+          {% for item in data.methodology.inclusive_attitude.items %}
+          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>{{ data.methodology.practical_solutions.title }}</h3>
+        <ul>
+          {% for item in data.methodology.practical_solutions.items %}
+          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>{{ data.methodology.execution.title }}</h3>
+        <ul>
+          {% for item in data.methodology.execution.items %}
+          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Audience -->
+<section class="region" aria-labelledby="audience">
+  <div class="wrapper flow">
+    <h2 class="title" data-color="light" id="audience">
+      {{ data.target_audience.title }}
+    </h2>
+    <p>{{ data.target_audience.paragraphs }}</p>
+    <p class="lead">{{ data.target_audience.description | safe | nl2br }}</p>
+    <div class="grid" data-layout="50-50">
+      <article class="card">
+        <h3>{{ data.target_audience.frontend.title }}</h3>
+        <ul>
+          {% for item in data.target_audience.frontend.items %}
+          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>{{ data.target_audience.qa.title }}</h3>
+        <ul>
+          {% for item in data.target_audience.qa.items %}
+          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Differentiators -->
+<section class="region" aria-labelledby="differentiators-title">
+  <div class="wrapper flow">
+    <h2 class="title" data-color="light" id="differentiators-title">
+      {{ data.differentiators.title }}
+    </h2>
+    <p>{{ data.differentiators.subtitle }}</p>
+
+
+    <div class="grid" data-layout="thirds">
+      {% for item in data.differentiators.advantages.items %}
+      <article class="card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Mentor -->
+<section class="region" aria-labelledby="mentor-title">
+  <div class="wrapper flow">
+    <span>{{ data.mentor.eyebrow }}</span>
+    <h2 class="title" data-color="light" id="mentor-title">
+      {{ data.mentor.title }}
+    </h2>
+
+    <div class="grid" data-layout="50-50">
+      <article>
+        <p>{{ data.mentor.description | safe }}</p>
+        <ul>
+          {% for item in data.mentor.skills %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+
+      <article>
+        <img src="{{ data.mentor.image }}" alt="{{ data.mentor.title }}" />
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="region" aria-labelledby="testimonials-title">
+  <div class="wrapper flow">
+    <span>{{ data.testimonials.eyebrow }}</span>
+    <h2 class="title" data-color="light" id="testimonials-title">
+      {{ data.testimonials.title }}
+    </h2>
+    <p>{{ data.testimonials.description | safe }}</p>
+
+    <ul role="list" class="grid" data-layout="thirds">
+      {% for item in data.testimonials.testimonial %}
+      <li class="card flow">
+        <p>{{ item.content | safe }}</p>
+        <p>{{ item.author }}</p>
+        <p>{{ item.position }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- Investment Section -->
+<section class="region bg-dark text-white" aria-labelledby="investment">
+  <div class="wrapper flow text-center box">
+    <h2 id="investment">{{ data.investment.title }}</h2>
+    <p class="lead">{{ data.investment.description }}</p>
+
+    <div class="py-4">
+      <div class="display-4 fw-bold text-primary">
+        R$ {{ data.investment.price.value }}
+      </div>
+      {% if data.payment.installments %}
+      <p class="lead text-white">
+        Ou em até {{ data.payment.installmentsCount }}x de
+        <strong>R$ {{ data.payment.installmentsValue }}</strong>
+      </p>
+      {% endif %}
+    </div>
+
+
+    <a href="{{ data.conversion.cta.link }}" class="btn btn-primary btn-lg px-5 py-3 fw-bold">
+      {{ data.conversion.cta.primary.label }}
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="region" aria-labelledby="faq-title">
+  <div class="wrapper flow">
+    <span>{{ data.faq.eyebrow }}</span>
+    <h2 class="title" data-color="light" id="faq-title">
+      {{ data.faqs.title }}
+    </h2>
+    <p>{{ data.faqs.description | safe }}</p>
+
+    <div class="grid" data-layout="50-50">
+      {% for item in data.faqs.questions %}
+      <details>
+        <summary>{{ item.question }}</summary>
+        <p>{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+
+    <p>
+      Ainda tem dúvidas?
+      <a href="mailto:brunopulis@protonmail.com?subject=Tenho%20dúvidas%20sobre%20a%20mentoria">Entre em contato
+        comigo</a>
+    </p>
+  </div>
+</section>
+
+<!-- Included -->
+{% if data.included %}
+<section class="region" aria-labelledby="included">
+  <div class="wrapper flow">
+    <h2 id="included">O que você recebe</h2>
+    <ul class="row row-cols-1 row-cols-md-2 g-3">
+      {% for item in data.included %}
+      <li class="col">
+        <div class="border rounded p-3 h-100">{{ item }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
