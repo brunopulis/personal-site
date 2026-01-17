@@ -1,0 +1,50 @@
+---json
+{
+"permalink": "/feeds/bookmarks/feed.json",
+"eleventyExcludeFromCollections": true,
+"metadata": {
+"title": "Bruno Pulis - Links favoritos",
+"description": "Links interessantes que vi por ai",
+"language": "pt-br",
+"base": "https://www.brunopulis.com",
+"author": {
+"name": "Bruno Pulis",
+"email": "brunopulis@protonmail.com"
+}
+}
+}
+---
+{
+"version": "https://jsonfeed.org/version/1.1",
+"title": "{{ metadata.title }}",
+"description": "{{ metadata.description }}",
+"home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}",
+"feed_url": "{{ permalink | htmlBaseUrl(metadata.base) }}",
+"language": "{{ metadata.language }}",
+"authors": [
+{
+"name": "{{ metadata.author.name }}",
+"url": "{{ metadata.base | addPathPrefixToFullUrl }}"
+}
+],
+"items": [
+{%- for bookmark in collections.bookmarks | reverse | limit(10) %}
+{%- set absolutePostUrl = bookmark.url | htmlBaseUrl(metadata.base) %}
+{
+"id": "{{ absolutePostUrl }}",
+"url": "{{ absolutePostUrl }}",
+"title": {{ bookmark.data.title | dump | safe }},
+"content_html": {{ bookmark.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
+{%- if bookmark.data.summary %}
+"summary": {{ bookmark.data.summary | dump | safe }},
+{%- endif %}
+"date_published": "{{ bookmark.date | toRfc822Date }}",
+"date_modified": "{{ bookmark.data.updated | default(bookmark.date) | toRfc822Date }}"
+{%- if bookmark.data.tags %},
+"tags": {{ bookmark.data.tags | dump | safe }}
+{%- endif %}
+}
+{% if not loop.last %},{% endif %}
+{%- endfor %}
+]
+}
