@@ -1,10 +1,10 @@
 ---json
 {
-  "permalink": "/feeds/bookmarks/feed.json",
+  "permalink": "/feeds/notes/feed.json",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Bruno Pulis - Links favoritos",
-    "description": "Links interessantes que vi por ai",
+    "title": "Bruno Pulis - Notas",
+    "description": "Posts curtos, estilo twitter, pensamentos e qualquer comentário aleatório",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
     "author": {
@@ -28,20 +28,20 @@
     }
   ],
   "items": [
-    {%- for bookmark in collections.bookmarks | reverse | limit(10) %}
-    {%- set absolutePostUrl = bookmark.url | htmlBaseUrl(metadata.base) %}
+    {%- for note in collections.notes | reverse | limit(10) %}
+    {%- set absolutePostUrl = note.url | htmlBaseUrl(metadata.base) %}
     {
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",
-      "title": {{ bookmark.data.title | dump | safe }},
-      "content_html": {{ bookmark.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
-      {%- if bookmark.data.summary %}
-        "summary": {{ bookmark.data.summary | dump | safe }},
+      "title": {{ (note.data.title or (note.data.pubDate or note.date) | toRfc822Date) | dump | safe }},
+      "content_html": {{ note.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
+      {%- if note.data.summary %}
+        "summary": {{ note.data.summary | dump | safe }},
       {%- endif %}
-      "date_published": "{{ bookmark.date | toRfc822Date }}",
-      "date_modified": "{{ bookmark.data.updated | default(bookmark.date) | toRfc822Date }}"
-      {%- if bookmark.data.tags %},
-        "tags": {{ bookmark.data.tags | dump | safe }}
+      "date_published": "{{ (note.data.pubDate or note.date) | toRfc822Date }}",
+      "date_modified": "{{ note.data.updated | default(note.date) | toRfc822Date }}"
+      {%- if note.data.tags %},
+        "tags": {{ note.data.tags | dump | safe }}
       {%- endif %}
     }
     {% if not loop.last %},{% endif %}
