@@ -94,6 +94,7 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/fonts');
 	eleventyConfig.addPassthroughCopy('src/assets/images');
 	eleventyConfig.addPassthroughCopy('src/assets/og-images');
+	eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
 
 	eleventyConfig.addPassthroughCopy({
 		'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
