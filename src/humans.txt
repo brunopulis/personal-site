@@ -33,4 +33,4 @@ Email: brunopulis@protonmail.com
 /* COLOPHON */
 Design & Development: Bruno Pulis
 Founded: 2012
-Built with: Eleventy, Tailwind CSS, JavaScript, and ❤️
+Built with: Eleventy, CUBE CSS, JavaScript, and ❤️

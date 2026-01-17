@@ -70,13 +70,29 @@
 <meta property="og:locale" content="{{ meta.locale }}" />
 <meta property="article:author" content="{{ meta.author.name }}" />
 
-<!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
-<link rel="alternate" type="application/rss+xml" title="Feed Completo" href="{{ meta.url }}/feed.xml">
-<link rel="alternate" type="application/rss+xml" title="Blog" href="{{ meta.url }}/feeds/blog.xml">
-<link rel="alternate" type="application/rss+xml" title="Notas" href="{{ meta.url }}/feeds/notas.xml">
-<link rel="alternate" type="application/rss+xml" title="Streams" href="{{ meta.url }}/feeds/streams.xml">
-<link rel="alternate" type="application/rss+xml" title="Livros" href="{{ meta.url }}/feeds/livros.xml">
-<link rel="alternate" type="application/rss+xml" title="Músicas" href="{{ meta.url }}/feeds/musicas.xml">
+<!-- Blog -->
+<link rel="alternate" type="application/atom+xml" title="Blog de Bruno Pulis (Atom)" href="/feeds/blog/atom.xml">
+<link rel="alternate" type="application/rss+xml" title="Blog de Bruno Pulis (RSS)" href="/feeds/blog/rss.xml">
+<link rel="alternate" type="application/json" title="Blog de Bruno Pulis (JSON)" href="/feeds/blog/feed.json">
+
+<link rel="alternate" type="application/atom+xml" title="Bookmarks - Bruno Pulis" href="/feeds/bookmarks/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Books - Bruno Pulis" href="/feeds/books/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Notas - Bruno Pulis" href="/feeds/notes/atom.xml">
+
+<!-- Bookmarks -->
+<link rel="alternate" type="application/atom+xml" title="Bookmarks - Atom" href="/bookmarks/feed.atom">
+<link rel="alternate" type="application/rss+xml" title="Bookmarks - RSS" href="/bookmarks/feed.xml">
+<link rel="alternate" type="application/feed+json" title="Bookmarks - JSON" href="/bookmarks/feed.json">
+
+<!-- Books -->
+<link rel="alternate" type="application/atom+xml" title="Livros - Atom" href="/books/feed.atom">
+<link rel="alternate" type="application/rss+xml" title="Livros - RSS" href="/books/feed.xml">
+<link rel="alternate" type="application/feed+json" title="Livros - JSON" href="/books/feed.json">
+
+<!-- Notes -->
+<link rel="alternate" type="application/atom+xml" title="Notas - Atom" href="/notes/feed.atom">
+<link rel="alternate" type="application/rss+xml" title="Notas - RSS" href="/notes/feed.xml">
+<link rel="alternate" type="application/feed+json" title="Notas - JSON" href="/notes/feed.json">
 
 <!-- Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
 <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="any" />
