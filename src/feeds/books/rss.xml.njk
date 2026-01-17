@@ -1,17 +1,17 @@
 ---json
 {
-  "permalink": "/feeds/books/rss.xml",
-  "eleventyExcludeFromCollections": true,
-  "metadata": {
-    "title": "Bruno Pulis - Biblioteca",
-    "description": "Minha biblioteca de leitura",
-    "language": "pt-br",
-    "base": "https://www.brunopulis.com",
-    "author": {
-      "name": "Bruno Pulis",
-      "email": "brunopulis@protonmail.com"
-    }
-  }
+"permalink": "/feeds/books/rss.xml",
+"eleventyExcludeFromCollections": true,
+"metadata": {
+"title": "Bruno Pulis - Biblioteca",
+"description": "Minha biblioteca de leitura",
+"language": "pt-br",
+"base": "https://www.brunopulis.com",
+"author": {
+"name": "Bruno Pulis",
+"email": "brunopulis@protonmail.com"
+}
+}
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -25,7 +25,7 @@
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
     {%- set books = collections.books %}
-    {%- for book in books.slice(0, 10) %}
+    {%- for book in books | reverse | limit(10) %}
     {%- set absolutePostUrl = book.url | htmlBaseUrl(metadata.base) %}
     <item>
       <title>{{ book.data.title }}</title>
