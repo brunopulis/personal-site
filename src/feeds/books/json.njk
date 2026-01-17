@@ -1,0 +1,50 @@
+---json
+{
+  "permalink": "/feeds/books/feed.json",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Bruno Pulis - Biblioteca",
+    "description": "Minha biblioteca de leitura",
+    "language": "pt-br",
+    "base": "https://www.brunopulis.com",
+    "author": {
+      "name": "Bruno Pulis",
+      "email": "brunopulis@protonmail.com"
+    }
+  }
+}
+---
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ metadata.title }} - Blog",
+  "description": "{{ metadata.description }}",
+  "home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}",
+  "feed_url": "{{ permalink | htmlBaseUrl(metadata.base) }}",
+  "language": "{{ metadata.language }}",
+  "authors": [
+    {
+      "name": "{{ metadata.author.name }}",
+      "url": "{{ metadata.base | addPathPrefixToFullUrl }}"
+    }
+  ],
+  "items": [
+    {%- for book in collections.books | reverse | limit(10) %}
+    {%- set absolutePostUrl = book.url | htmlBaseUrl(metadata.base) %}
+    {
+      "id": "{{ absolutePostUrl }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": {{ book.data.title | dump | safe }},
+      "content_html": {{ book.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
+      {%- if book.data.summary %}
+        "summary": {{ book.data.summary | dump | safe }},
+      {%- endif %}
+      "date_published": "{{ book.date | toRfc822Date }}",
+      "date_modified": "{{ book.data.updated | default(book.date) | toRfc822Date }}"
+      {%- if book.data.tags %},
+        "tags": {{ book.data.tags | dump | safe }}
+      {%- endif %}
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
