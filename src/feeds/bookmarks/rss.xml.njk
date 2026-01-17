@@ -1,0 +1,47 @@
+---json
+{
+  "permalink": "/feeds/bookmarks/rss.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Bruno Pulis - Links favoritos",
+    "description": "Links interessantes que vi por ai",
+    "language": "pt-br",
+    "base": "https://www.brunopulis.com",
+    "author": {
+      "name": "Bruno Pulis",
+      "email": "brunopulis@protonmail.com"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.base | addPathPrefixToFullUrl }}"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.base | addPathPrefixToFullUrl }}</link>
+    <atom:link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" type="application/rss+xml" />
+    <description>{{ metadata.description }}</description>
+    <language>{{ metadata.language or page.lang }}</language>
+    {%- set bookmarks = collections.bookmarks %}
+    {%- for bookmark in bookmarks | reverse | limit(10) %}
+    {%- set absolutePostUrl = bookmark.url | htmlBaseUrl(metadata.base) %}
+    <item>
+      <title>{{ bookmark.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <description>{{ bookmark.content | renderTransforms(bookmark.data.page, metadata.base) }}</description>
+      <pubDate>{{ (bookmark.data.pubDate or bookmark.date) | toRfc822Date }}</pubDate>
+      <dc:creator>{{ metadata.author.name }}</dc:creator>
+      <guid>{{ absolutePostUrl }}</guid>
+      {%- if bookmark.data.tags %}
+      {%- for tag in bookmark.data.tags %}
+      {%- if tag not in ["posts", "all"] %}
+      <category>{{ tag }}</category>
+      {%- endif %}
+      {%- endfor %}
+      {%- endif %}
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
