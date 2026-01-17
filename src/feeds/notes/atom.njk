@@ -1,10 +1,10 @@
 ---json
 {
-  "permalink": "/feeds/books/atom.xml",
+  "permalink": "/feeds/notes/atom.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Bruno Pulis - Biblioteca",
-    "subtitle": "Minha biblioteca de leitura",
+    "title": "Bruno Pulis - Notas",
+    "subtitle": "Posts curtos, estilo twitter, pensamentos e qualquer comentário aleatório",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
     "author": {
@@ -21,27 +21,27 @@
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" />
   <link href="{{ metadata.base | addPathPrefixToFullUrl }}" />
-  <updated>{{ collections.books | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.notes | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.base | addPathPrefixToFullUrl }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
 
-  {%- for book in collections.books | limit(10) %}
-  {%- set absolutePostUrl = book.url | htmlBaseUrl(metadata.base) %}
+  {%- for note in collections.notes | limit(10) %}
+  {%- set absolutePostUrl = note.url | htmlBaseUrl(metadata.base) %}
   <entry>
-    <title>{{ book.data.title }}</title>
+    <title>{{ note.data.title or (note.data.pubDate or note.date) | dateToRfc3339 }}</title>
     <link href="{{ absolutePostUrl }}" />
-    <updated>{{ (book.data.pubDate or book.date) | dateToRfc3339 }}</updated>
+    <updated>{{ (note.data.pubDate or note.date) | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ book.content | renderTransforms(book.data.page,
+    <content xml:lang="{{ metadata.language }}" type="html">{{ note.content | renderTransforms(note.data.page,
       metadata.base) }}</content>
-    {%- if book.data.summary %}
-    <summary>{{ book.data.summary }}</summary>
+    {%- if note.data.summary %}
+    <summary>{{ note.data.summary }}</summary>
     {%- endif %}
-    {%- if book.data.tags %}
-    {%- for tag in book.data.tags %}
+    {%- if note.data.tags %}
+    {%- for tag in note.data.tags %}
     <category term="{{ tag }}" />
     {%- endfor %}
     {%- endif %}

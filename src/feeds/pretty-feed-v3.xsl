@@ -128,9 +128,18 @@ This file is in BETA. Please test and contribute to the discussion:
               </xsl:choose>
             </p>
             <a class="head_link" target="_blank">
-              <xsl:attribute name="href">
-                <xsl:value-of select="/rss/channel/link"/>
-              </xsl:attribute>
+              <xsl:choose>
+                <xsl:when test="/rss/channel/link">
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="/rss/channel/link"/>
+                  </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="/atom:feed/atom:link[not(@rel) or @rel='alternate']/@href"/>
+                  </xsl:attribute>
+                </xsl:otherwise>
+              </xsl:choose>
               Visite meu site &#x2192;
             </a>
           </header>
@@ -158,6 +167,19 @@ This file is in BETA. Please test and contribute to the discussion:
                   <xsl:otherwise><xsl:value-of select="atom:updated" /></xsl:otherwise>
                 </xsl:choose>
               </small>
+              <div class="pt-2">
+                <xsl:choose>
+                  <xsl:when test="description">
+                    <xsl:value-of select="description" disable-output-escaping="yes" />
+                  </xsl:when>
+                  <xsl:when test="atom:content">
+                    <xsl:value-of select="atom:content" disable-output-escaping="yes" />
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="atom:summary" disable-output-escaping="yes" />
+                  </xsl:otherwise>
+                </xsl:choose>
+              </div>
             </div>
           </xsl:for-each>
         </div>
