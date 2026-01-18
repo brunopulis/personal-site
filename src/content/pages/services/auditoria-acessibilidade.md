@@ -9,7 +9,6 @@ url: /servicos/auditoria-acessibilidade/
 service:
   color: purple-600
   tagline: Análise completa e estruturada, transforme problemas invisíveis em um plano de ação.
-  icon: 📋
   
   problem: |
     Seu site pode estar bloqueando usuários sem que você saiba. Problemas de acessibilidade não aparecem na superfície—criam riscos legais, afastam clientes e prejudicam sua reputação. Mas sem um diagnóstico claro, é impossível saber por onde começar.
@@ -21,7 +20,6 @@ service:
     - Análise estruturada. baseada em WCAG 2.2 AA, NBR 17.225 e NBR 17069
     - Priorização por impacto real (quem sofre mais com cada problema)
     - Recomendações técnicas com exemplos de código
-    - Documentação para ação, não deixo você preso a mim. Você recebe um plano que sua equipe consegue executar sozinha no futuro.
     - Educação para sua equipe resolver problemas similares no futuro
   
   included:
@@ -37,8 +35,6 @@ service:
       description: "Correções priorizadas que sua equipe consegue executar"
     - title: "Equipe Educada"
       description: "Seu time entende os problemas e consegue evitar novos no futuro"
-    - title: "Segurança Jurídica"
-      description: "Documentação que te protege legalmente e comprova esforço de conformidade"
   
   target:
     - Sites corporativos com múltiplas páginas

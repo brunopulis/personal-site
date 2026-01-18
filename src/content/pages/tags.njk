@@ -12,31 +12,28 @@ eleventyComputed:
 
 {% set taglist = collections[tag] %}
 
-<div class="wrapper | region">
-  <div class="flow">
-    <ul class="flow" role="list">
-      {% for item in taglist | reverse %}
-      <li class="flow prose max-w-none">
-        <h3 class="text-step-2">
-          <a href="{{ item.url }}">{{ item.data.title }}</a>
-        </h3>
 
-        {% if item.data.description %}
-        <p class="text-step-0 p-summary opacity-90">
-          {{ item.data.description | markdownify | safe }}
-        </p>
-        {% endif %}
-        <time datetime="{{ item.data.pubDate | toISOString }}">
-          {{ item.data.pubDate | formatDate("MMM D, YYYY") | capitalize }}
-        </time>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
+<ul class="flow" role="list">
+  {% for item in taglist | reverse %}
+  <li class="flow prose max-w-none">
+    <h3 class="text-step-2">
+      <a href="{{ item.url }}">{{ item.data.title }}</a>
+    </h3>
 
-<nav class="wrapper | region">
-  <a href="/tags/" class="button">
+    {% if item.data.description %}
+    <p class="text-step-0 p-summary opacity-90">
+      {{ item.data.description | markdownify | safe }}
+    </p>
+    {% endif %}
+    <time datetime="{{ item.data.pubDate | toISOString }}">
+      {{ item.data.pubDate | formatDate("MMM D, YYYY") | capitalize }}
+    </time>
+  </li>
+  {% endfor %}
+</ul>
+
+<nav class="">
+  <a href="/tags/">
     ← Explorar todas as tags
   </a>
 </nav>

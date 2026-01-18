@@ -61,9 +61,12 @@ service:
   timeline: "8 a 14 semanas (depende do escopo)"
   
   testimonials:
-    cliente: "ONG Internacional"
-    quote: "O site não só ficou acessível, mas ficou muito mais rápido. Nossas doações aumentaram 20% depois do redesign."
-    resultado: "Aumento de 20% em conversão"
+    - client: "João Kioshi"
+      quote: "Excelente profissional, me ajudou a deixar minha landing page pronta para vendas e deu todo suporte na parte operacional de coisas que eu nem o havia contratado. Quando o assunto for sistemas, landing page, segurança no digital, acessibilidade, super recomendo."
+    - client: "Mone de França"
+      quote: "Excelente! Trabalho rápido e eficiente."
+    - client: "Raphael Bessa"
+      quote: "Responsabilidade, competência e preço justo. Recomendo!"
   
   faq:
     - question: "Qual tecnologia você usa?"
