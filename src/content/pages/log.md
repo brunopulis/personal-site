@@ -7,6 +7,11 @@ description: "Mudanças em meu site"
 date: Last Modified
 ---
 
+## 17-01-2026
+
+- Adicionei suporte para RSS com: Atom, RSS e JSON
+- Reorganizei o menu principal.
+
 ## 12-12-2025
 
 - Adicionei suporte ao Feeds RSS, Atom e JSON

@@ -1,24 +1,28 @@
 ---
 layout: page
 title: "Inscreva"
-description: 'Technologies I haved use on this site'
-permalink: /inscreva/index.html
+description: 'Acompanhe todos meus artigos direto pelo seu leitor de RSS preferido'
+permalink: /subscribe/index.html
 pubDate: '2025-11-21'
 date: Last Modified
 ---
 
-Receba atualizações sobre as últimas publicações usando o método de sua preferência!
+Meu site existe uma gama de conteúdo, por isso separei esses conteúdos em uma espécie de categorias.
+Cada categoria possui seu próprio [_RSS_](https://pt.wikipedia.org/wiki/RSS).
 
 Meu conteúdo está disponível via _RSS_, _Microformats_, e-mail, _Bluesky_ e _Fediverso_.
 
 ## Inscreva-se com um leitor de feeds
 
-Este blog suporta inscrições via _RSS_. Usando um leitor de feeds, você pode se inscrever no [RSS]({{ "/feed.xml" | url }}). Saiba mais sobre RSS em aboutfeeds.com.
+Este site suporta inscrições via _RSS_. Usando um leitor de feeds, você pode se inscrever no [RSS]({{ "/feed.xml" | url }}). 
+
+Saiba mais sobre o [poder do RSS](https://aboutfeeds.com)
 
 Você pode se inscrever em vários feeds que organizei, eles são:
 
-- [Feed do Blog](/feed/blog.xml)
-- [Feed de Notas curtas](/feed/notas.xml)
+- [Artigos longos](/feed/blog.xml)
+- [Notas curtas](/feed/notas.xml)
+- [Links](/feed/bookmarks.xml)
 - [Feed da minha biblioteca](/feed/livros.xml)
 
 ## Inscrição por e-mail

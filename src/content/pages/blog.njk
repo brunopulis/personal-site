@@ -9,8 +9,8 @@ pagination:
   size: 12
 ---
 
-<section class="sidebar-section region">
-  <h3 class="sidebar-title">Explore por tema</h3>
+<section>
+  <h2 class="title">Explore por tema</h2>
   <ul class="cluster" role="list">
     {% set topTags = collections.tagListRecurrency | limit(16) %}
     {% for item in topTags %}
@@ -27,7 +27,7 @@ pagination:
 <ul class="flow" role="list">
   {% for item in pagination.items %}
   <li class="article__entry h-entry">
-    <h3 class="">
+    <h3 class="flow">
       <a href="{{ item.url | url }}">{{ item.data.title }}</a>
     </h3>
     {% if item.data.description %}

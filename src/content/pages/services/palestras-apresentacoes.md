@@ -10,7 +10,6 @@ date: Last Modified
 service:
   color: red-600
   tagline: Aumente a consciência, inspire times e crie urgência.
-  icon: 🎤
   
   problem: |
     Muitas vezes a acessibilidade é ignorada não por maldade, mas por falta de conhecimento ou priorização.
@@ -62,9 +61,12 @@ service:
   timeline: "30 min a 2 horas"
   
   testimonials:
-    cliente: "Conferência Tech"
-    quote: "Foi a palestra mais comentada do evento. O Bruno conseguiu fazer todo mundo rir e pensar sério ao mesmo tempo."
-    resultado: "Nota 9.8 de satisfação"
+    - client: "Allan Stanichescki"
+      quote: "Top! Mostrou como é importante a acessibilidade na web e várias ferramentas que ajudam os desenvolvedores a criarem sites com mais acessibilidade, ainda mais que há poucos sites que são acessíveis para pessoas com alguma deficiência."
+    - client: "Thais Martins"
+      quote: "Gostei muito do tema abordado, foi de suma importancia para o nosso dia a dia."
+    - client: "Pedro Bernardi"
+      quote: "Achei a palestra muito esclarecedora. Por mais que tivemos pouco tempo para discutir de um assunto tão amplo, você conseguiu instigar em nós o desejo de melhora e aprimoramento. Obrigado!"
   
   faq:
     - question: "Você viaja para palestrar?"
