@@ -9,6 +9,10 @@ export const toRfc822Date = (date) => {
   return new Date(date).toUTCString();
 };
 
+export const toRfc3339Date = (date) => {
+  return new Date(date).toRfc3339Date();
+}
+
 export const formatDate = (date, format) => dayjs(date).format(format);
 
 /** Retorna a data no formato legível em português brasileiro (ex: 15 de dezembro de 2024) */
@@ -42,5 +46,5 @@ export const sortByDate = (array) => {
   });
 };
 
-/** Retorna apenas o ano */
+
 export const year = date => dayjs(date).format('YYYY');

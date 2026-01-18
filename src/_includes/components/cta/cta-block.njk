@@ -1,14 +1,17 @@
-<section class="text-center py-5 bg-light rounded">
-  <h2 class="h4 fw-bold">{{ cta.title }}</h2>
-  <p class="text-muted mb-4">{{ cta.description }}</p>
+<section class="region">
+  <div class="wrapper flow">
+    <div class="card">
+      <h2 class="title" data-color="dark">{{ cta.title }}</h2>
+      <p>{{ cta.description }}</p>
 
-  <a href="{{ cta.link }}" class="btn btn-success btn-lg me-2">
-    {{ cta.primary }}
-  </a>
-
-  {% if cta.secondary %}
-  <a href="{{ cta.link }}" class="btn btn-outline-secondary btn-lg">
-    {{ cta.secondary }}
-  </a>
-  {% endif %}
+      <ul class="cluster flow" role="list">
+        {% if cta.primary %}
+          <li><a href="{{ cta.link }}">{{ cta.primary }}</a></li>
+        {% endif %}
+        {% if cta.secondary %}
+          <li><a href="{{ cta.link }}">{{ cta.secondary }}</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
 </section>

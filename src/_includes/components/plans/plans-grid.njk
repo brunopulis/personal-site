@@ -1,29 +1,21 @@
-<section class="py-4" aria-labelledby="plans">
-  <div class="container">
-    <h2 class="h4 mb-4" id="plans">{{ plansTitle }}</h2>
-
-    <div class="row g-4">
+<section class="region" aria-labelledby="plans">
+  <div class="wrapper flow">
+    <h2 class="title" id="plans">{{ plansTitle }}</h2>
+    <div class="grid" data-layout="thirds">
       {% for plan in plans %}
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h3 class="h5 fw-bold">{{ plan.name }}</h3>
-            <p class="text-muted">{{ plan.subtitle }}</p>
+        <article class="box shadow-sm flow">
+          <header role="banner">
+            <h3 class="title">{{ plan.name }}</h3>
+            <p>{{ plan.subtitle }}</p>
+          </header>
+          <p>{{ plan.description }}</p>
 
-            <p>{{ plan.description }}</p>
-
-            <ul class="list-unstyled">
-              {% for item in plan.includes %}
-              <li>✔️ {{ item }}</li>
-              {% endfor %}
-            </ul>
-
-            <p class="text-muted mt-3">
-              ⏱️ {{ plan.delivery }}
-            </p>
-          </div>
-        </div>
-      </div>
+          <ul>
+            {% for item in plan.includes %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </article>
       {% endfor %}
     </div>
   </div>

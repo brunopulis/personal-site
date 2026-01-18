@@ -15,7 +15,9 @@
 		"lint": "biome lint .",
 		"lint:fix": "biome lint --write .",
 		"format": "biome format --write .",
-		"check": "biome check --write ."
+		"check": "biome check --write .",
+		"validate-feeds": "echo 'Validando feeds...' && find _site -name 'feed.*' -type f",
+    "test-feeds": "curl http://localhost:8080/feeds/blog/atom.xml && curl http://localhost:8080/feeds/blog/rss.xml && curl http://localhost:8080/feeds/blog/feed.json"
 	},
 	"keywords": [],
 	"repository": {

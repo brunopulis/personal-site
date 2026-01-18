@@ -15,7 +15,7 @@ export const posts = collectionApi => {
  * @returns
  */
 export const notes = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/notes/**/*.md');
+  return collectionApi.getFilteredByGlob('./src/content/notes/**/*').reverse();
 };
 
 /**
@@ -24,7 +24,7 @@ export const notes = collectionApi => {
  * @returns
  */
 export const bookmarks = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*').reverse();
 };
 
 /**
@@ -33,7 +33,7 @@ export const bookmarks = collectionApi => {
  * @returns
  */
 export const gallery = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/gallery/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/gallery/**/*').reverse();
 };
 
 /**
@@ -51,7 +51,7 @@ export const medias = collectionApi => {
  * @returns
  */
 export const books = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/books/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/books/**/*').reverse();
 }
 
 /**
@@ -60,7 +60,7 @@ export const books = collectionApi => {
  * @returns
  */
 export const newsletters = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*.md').reverse();
+  return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*').reverse();
 }
 
 /**
@@ -70,7 +70,7 @@ export const newsletters = collectionApi => {
  */
 export const games = collectionApi => {
   return collectionApi
-    .getFilteredByGlob('./src/content/games/**/*.md')
+    .getFilteredByGlob('./src/content/games/**/*')
     .reverse();
 };
 
@@ -81,7 +81,7 @@ export const games = collectionApi => {
  */
 export const music = collectionApi => {
   return collectionApi
-    .getFilteredByGlob('./src/content/music/**/*.md')
+    .getFilteredByGlob('./src/content/music/**/*')
     .sort((a, b) => b.data.date - a.data.date);
 };
 
