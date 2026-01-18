@@ -1,25 +1,25 @@
 export default {
 	top: [
 		{
-			text: 'Artigos',
-			url: '/blog/'
-		},
-		{
-			text: 'Newsletter',
-      variant: '',
-			url: '/newsletter/'
-		},
-		{
-			text: 'Explore',
-			url: '/explore/'
+			text: 'Sobre',
+			url: '/sobre/'
 		},
 		{
 			text: 'Serviços',
 			url: '/servicos/'
 		},
 		{
-			text: 'Sobre',
-			url: '/sobre/'
+			text: 'Artigos',
+			url: '/blog/'
+		},
+		{
+			text: 'Notas',
+			url: '/notas/'
+		},
+		{
+			text: 'Newsletter',
+      variant: '',
+			url: '/newsletter/'
 		},
 		{
 			text: 'Contato',
