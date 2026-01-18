@@ -1,21 +1,20 @@
 slug: mentoria
 
 hero:
-  title: Mentoria BASE
-  subtitle: Acessibilidade digital com método e prática.
-  description: Dominar acessibilidade web com estrutura, clareza e aplicação real através da troca com outros profissionais.
+  title: Mentoria prática para destravar seu projeto digital em 8 semanas
+  subtitle: Sem teoria solta, sem promessas vazias.
+  description: Trabalhe direto comigo para estruturar, priorizar e executar o que realmente gera resultado no seu produto, serviço ou carreira digital.
   features:
     - Uma mentoria para quem quer dominar acessibilidade web com estrutura, clareza e aplicação real.
     - Você aprende com orientação especializada e troca constante com outros profissionais.
     - Conteúdo direto, prática orientada e evolução consistente.
 
 problem: |
-  Cursos gravados são ótimos, mas não respondem às dúvidas específicas do seu projeto.
-  Você trava em problemas reais e não tem a quem recorrer para desbloquear.
+  Você já sabe que acessibilidade é importante.
+  Mas, no projeto real, surgem dúvidas específicas e cursos gravados não respondem.
 
 solution: |
-  Mentoria técnica personalizada, analisamos juntos seu código, design ou teste
-  e resolvemos juntos. Você aprende fazendo, no seu ritmo e no seu contexto.
+  Na mentoria individual, analisamos o seu código, o seu contexto e os seus desafios reais.
 
 value_proposition:
   paragraphs:
@@ -59,21 +58,15 @@ target_audience:
   title: Para quem é
   paragraphs: Para profissionais que querem aprender acessibilidade de forma estruturada, ideal para quem valoriza troca, debate técnico e aprendizado coletivo.
 
-  frontend:
-    title: Desenvolvedores Front-end
-    items:
-      - Boas práticas acessíveis desde a base.
-      - Discussão de padrões reutilizáveis.
-      - JavaScript com foco em inclusão.
-      - Redução de erros comuns em equipe.
+  for_you:
+    - Já trabalha com frontend ou QA e atua em projetos reais;
+    - Já tentou aprender acessibilidade digital sozinho;
+    - Quer parar de “achar” e começar a ter critério técnico;
+    - Precisa aplicar acessibilidade no dia a dia, não só estudar.
 
-  qa:
-    title: Analistas de Qualidade (QA)
-    items:
-      - Testes manuais e automatizados em conjunto.
-      - Discussão de cenários reais de falha.
-      - Criação de planos de teste colaborativos.
-      - Padronização de relatórios.
+  for_not:
+    - Quer uma solução rápida e mágica;
+    - Não é para quem não pretende aplicar em projetos reais.
 
 how_it_works:
   title: Como funciona a mentoria em grupo
@@ -185,12 +178,15 @@ investment:
     - Pagamento 100% seguro
 
 cta:
-  primary: Entrar na lista de espera
-  label: Garantir minha vaga
-  url: /mentoria
-  observations:
-    - Lançamento em breve.
-    - Vagas limitadas.
+  - primary: Quero entrar na mentoria
+    label: Garantir minha vaga
+    url: /mentoria
+    observations: Vagas limitadas, acompanhamento real
+  - secondary:
+    label:
+    url:
+    observations:
+
 
 benefits:
   - HTML semântico e WAI-ARIA
