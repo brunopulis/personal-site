@@ -2,42 +2,41 @@
 layout: base
 ---
 
-<section class="hero py-5">
-  <div class="container">
-    <header class="mb-5">
-      <span class="badge bg-white text-black mb-3">{{ service.icon }} Serviço</span>
-      <h1 class="display-5 fw-bold text-white">{{ title }}</h1>
-      <p class="lead text-white">{{ service.tagline }}</p>
+<section class="hero">
+  <div class="wrapper">
+    <header>
+      <span class="badge">Serviço</span>
+      <h1 class="title">{{ title }}</h1>
+      <p>{{ service.tagline }}</p>
     </header>
   </div>
 </section>
 
 <!-- Problem / Solution -->
-<section class="py-4" aria-labelledby="problem-solution">
-  <div class="container">
-    <div class="row g-5 mb-5">
-      <div class="col-md-6">
-        <h2 class="h4" id="problem-solution">O problema</h2>
+<section class="region" aria-labelledby="problem-solution">
+  <div class="wrapper">
+    <div class="grid" data-layout="50-50">
+      <article class="box">
+        <h2 class="title" data-color="light" id="problem-solution">O problema</h2>
         <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
-      </div>
+      </article>
 
-      <div class="col-md-6">
-        <h2 class="h4">A solução</h2>
+      <article class="box">
+        <h2 class="title" data-color="light">A solução</h2>
         <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-
 <!-- Differentials -->
 {% if service.differentials %}
-<section class="py-4" aria-labelledby="differentials">
-  <div class="container">
-    <h2 class="h4 mb-3" id="differentials">Por que essa avaliação é diferente</h2>
-    <ul class="list-group list-group-flush">
+<section class="region" aria-labelledby="differentials">
+  <div class="wrapper flow">
+    <h2 class="title text-center" id="differentials">Por que essa avaliação é diferente</h2>
+    <ul class="grid" data-layout="50-50" role="list">
       {% for item in service.differentials %}
-      <li class="list-group-item">✔️ {{ item }}</li>
+      <li class="box">{{ item }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -46,72 +45,49 @@ layout: base
 
 <!-- Included -->
 {% if service.included %}
-<section class="py-4" aria-labelledby="included">
-  <div class="container">
-    <h2 class="h4 mb-3" id="included">O que você recebe</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-3">
+<section class="region" aria-labelledby="included">
+  <div class="wrapper flow">
+    <h2 class="title text-center" id="included">O que você recebe</h2>
+    <ul class="grid" data-layout="thirds" role="list">
       {% for item in service.included %}
-      <div class="col">
+      <li class="box">
         <div class="border rounded p-3 h-100">
           {{ item }}
         </div>
-      </div>
-      {% endfor %}
-    </div>
-</section>
-{% endif %}
-
-<!-- Results -->
-{% if service.results %}
-<section class="py-4" aria-labelledby="results">
-  <div class="container">
-    <h2 class="h4 mb-4" id="results">Resultados esperados</h2>
-    <div class="row g-4">
-      {% for result in service.results %}
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h3 class="h6 fw-bold">{{ result.title }}</h3>
-            <p class="text-muted mb-0">{{ result.description }}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-</section>
-{% endif %}
-
-<!-- Target -->
-{% if service.target %}
-<section class="py-4" aria-labelledby="target">
-  <div class="container">
-    <h2 class="h4 mb-3" id="target">Para quem é indicado</h2>
-    <ul class="list-inline">
-      {% for item in service.target %}
-      <li class="list-inline-item badge bg-light text-dark border me-2 mb-2">
-        {{ item }}
       </li>
       {% endfor %}
     </ul>
 </section>
 {% endif %}
 
-<!-- Process -->
-{% if service.processes %}
-<section class="py-4" aria-labelledby="process">
-  <div class="container">
-    <h2 class="h4 mb-4" id="process">Como funciona</h2>
-    <ol class="list-group list-group-numbered">
-      {% for step in service.processes %}
-      <li class="list-group-item">
-        <strong>{{ step.title }}:</strong>
-        <span class="text-muted">{{ step.description }}</span>
+<!-- Results -->
+{% if service.results %}
+<section class="region" aria-labelledby="results">
+  <div class="wrapper flow">
+    <h2 class="title" id="results">Resultados esperados</h2>
+    <ul class="grid" data-layout="thirds" role="list">
+      {% for result in service.results %}
+      <li class="card shadow">
+        <h3 class="h6 fw-bold">{{ result.title }}</h3>
+        <p class="text-muted mb-0">{{ result.description }}</p>
       </li>
       {% endfor %}
-    </ol>
-    <p class="text-muted mt-3">
-      ⏱️ Prazo estimado: <strong>{{ service.timeline }}</strong>
-    </p>
+    </ul>
+</section>
+{% endif %}
+
+<!-- Target -->
+{% if service.target %}
+<section class="region" aria-labelledby="target">
+  <div class="wrapper flow">
+    <h2 class="title" id="target">Para quem é indicado</h2>
+    <ul class="grid" data-layout="thirds" role="list">
+      {% for item in service.target %}
+      <li class="box">
+        {{ item }}
+      </li>
+      {% endfor %}
+    </ul>
 </section>
 {% endif %}
 
@@ -122,42 +98,58 @@ layout: base
 {% include "components/plans/plans-grid.njk" %}
 {% endif %}
 
+<!-- Process -->
+{% if service.processes %}
+<section class="region" aria-labelledby="process">
+  <div class="wrapper flow">
+    <h2 class="title  text-center" id="process">Como funciona</h2>
+    <ol class="grid" data-layout="50-50" role="list">
+      {% for step in service.processes %}
+        <li class="box">
+          <strong>{{ step.title }}:</strong>
+          <span class="text-muted">{{ step.description }}</span>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
 <!-- Testimonial -->
 {% if service.testimonials %}
-<section class="py-4" aria-labelledby="testimonial">
-  <div class="container">
-    <blockquote class="blockquote border-start ps-4">
-      <p class="mb-2">“{{ service.testimonials.quote }}”</p>
-      <footer class="blockquote-footer">
-        {{ service.testimonials.cliente }} —
-        <cite>{{ service.testimonials.resultado }}</cite>
-      </footer>
-    </blockquote>
+<section class="region" aria-labelledby="testimonial">
+  <div class="wrapper flow">
+    <h2 class="title text-center" id="process">Depoimentos</h2>
+
+    <div class="grid" data-layout="thirds">
+      {% set testimonials = service.testimonials %}
+      {% for testimonial in testimonials %}
+      <blockquote class="box">
+        <p class="mb-2">“{{ testimonial.quote }}”</p>
+        <footer class="blockquote-footer">
+          {{ testimonial.client }}
+        </footer>
+      </blockquote>
+      {% endfor %}
+    </div>
 </section>
 {% endif %}
 
 <!-- FAQ -->
 {% if service.faq %}
-<section class="py-4" aria-labelledby="faq">
-  <div class="container">
-    <h2 class="h4 mb-4" id="faq">Perguntas frequentes</h2>
-    <div class="accordion" id="faq">
+<section class="region" aria-labelledby="faq">
+  <div class="wrapper flow">
+    <h2 class="title text-center" id="faq">Perguntas frequentes</h2>
+
+    <div class="grid" data-layout="50-50">
       {% for item in service.faq %}
-      <div class="accordion-item">
-        <h3 class="accordion-header" id="faq-{{ loop.index }}">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faq-content-{{ loop.index }}">
-            {{ item.question }}
-          </button>
-        </h3>
-        <div id="faq-content-{{ loop.index }}" class="accordion-collapse collapse" data-bs-parent="#faq">
-          <div class="accordion-body">
-            {{ item.answer }}
-          </div>
-        </div>
-      </div>
+      <details class="box accordion-item">
+        <summary class="accordion-header">{{ item.question }}</summary>
+        <p>{{ item.answer }}</p>
+      </details>
       {% endfor %}
     </div>
+  </div>
 </section>
 {% endif %}
 

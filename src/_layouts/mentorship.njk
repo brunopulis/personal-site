@@ -103,24 +103,25 @@ formato: base
     </h2>
     <p>{{ data.target_audience.paragraphs }}</p>
     <p class="lead">{{ data.target_audience.description | safe | nl2br }}</p>
-    <div class="grid" data-layout="50-50">
-      <article class="card">
-        <h3>{{ data.target_audience.frontend.title }}</h3>
-        <ul>
-          {% for item in data.target_audience.frontend.items %}
-          <li style="color: var(--color-dark)">{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </article>
 
-      <article class="card">
-        <h3>{{ data.target_audience.qa.title }}</h3>
+    <div class="grid" data-layout="50-50">
+      <div class="box">
+        <p><strong>Essa mentoria é para você se:</strong></p>
         <ul>
-          {% for item in data.target_audience.qa.items %}
-          <li style="color: var(--color-dark)">{{ item }}</li>
+          {% for item in data.target_audience.for_you %}
+              <li style="color: var(--color-light)">{{ item }}</li>
           {% endfor %}
         </ul>
-      </article>
+      </div>
+
+      <div class="box">
+        <p><strong>Essa mentoria não é para:</strong></p>
+        <ul>
+          {% for item in data.target_audience.for_not %}
+              <li style="color: var(--color-light)">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
