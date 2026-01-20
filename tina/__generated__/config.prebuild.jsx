@@ -48,10 +48,7 @@ var PostCollection = {
       type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true,
-      ui: {
-        component: "markdown"
-      }
+      isBody: true
     },
     {
       type: "string",
@@ -128,7 +125,8 @@ var PageCollection = {
   path: "src/content/pages",
   format: "md",
   match: {
-    include: "**/*"
+    include: "*",
+    exclude: "services/**/*"
   },
   fields: [
     {
@@ -492,7 +490,7 @@ var NoteCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -621,7 +619,7 @@ var BookCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -661,13 +659,10 @@ var NewsletterCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true,
-      ui: {
-        component: "markdown"
-      }
+      isBody: true
     }
   ]
 };
@@ -783,7 +778,7 @@ var MediaCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -823,7 +818,7 @@ var BookmarkCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -880,7 +875,7 @@ var StreamCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true
@@ -915,13 +910,10 @@ var TalkCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
-      isBody: true,
-      ui: {
-        component: "markdown"
-      }
+      isBody: true
     }
   ]
 };
@@ -959,7 +951,7 @@ var GalleryCollection = {
       searchable: false
     },
     {
-      type: "string",
+      type: "rich-text",
       name: "body",
       label: "Conte\xFAdo",
       isBody: true

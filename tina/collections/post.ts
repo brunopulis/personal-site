@@ -46,10 +46,7 @@ export const PostCollection: Collection = {
 			type: 'rich-text',
 			name: 'body',
 			label: 'Conteúdo',
-			isBody: true,
-			ui: {
-				component: 'markdown'
-			}
+			isBody: true
 		},
 		{
 			type: 'string',

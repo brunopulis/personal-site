@@ -31,13 +31,10 @@ export const NewsletterCollection: Collection = {
 			searchable: false
 		},
 		{
-			type: 'string',
+			type: 'rich-text',
 			name: 'body',
 			label: 'Conteúdo',
-			isBody: true,
-			ui: {
-				component: 'markdown'
-			}
+			isBody: true
 		}
 	]
 };

@@ -378,7 +378,7 @@ type Note implements Node & Document {
   published: Boolean
   type: String
   tags: [String]
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -390,7 +390,7 @@ input NoteFilter {
   published: BooleanFilter
   type: StringFilter
   tags: StringFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type NoteConnectionEdges {
@@ -419,7 +419,7 @@ type Book implements Node & Document {
   tags: [String]
   url: String
   pubDate: String
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -450,7 +450,7 @@ input BookFilter {
   tags: StringFilter
   url: StringFilter
   pubDate: DatetimeFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type BookConnectionEdges {
@@ -468,7 +468,7 @@ type Newsletter implements Node & Document {
   title: String!
   issue: String
   pubDate: String
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -478,7 +478,7 @@ input NewsletterFilter {
   title: StringFilter
   issue: StringFilter
   pubDate: DatetimeFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type NewsletterConnectionEdges {
@@ -506,7 +506,7 @@ type Media implements Node & Document {
   tags: [String]
   url: String
   watchedDate: String
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -526,7 +526,7 @@ input MediaFilter {
   tags: StringFilter
   url: StringFilter
   watchedDate: DatetimeFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type MediaConnectionEdges {
@@ -544,7 +544,7 @@ type Bookmark implements Node & Document {
   title: String!
   url: String
   pubDate: String
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -554,7 +554,7 @@ input BookmarkFilter {
   title: StringFilter
   url: StringFilter
   pubDate: DatetimeFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type BookmarkConnectionEdges {
@@ -574,7 +574,7 @@ type Stream implements Node & Document {
   detail: String
   pubDate: String
   tags: [String]
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -586,7 +586,7 @@ input StreamFilter {
   detail: StringFilter
   pubDate: DatetimeFilter
   tags: StringFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type StreamConnectionEdges {
@@ -603,7 +603,7 @@ type StreamConnection implements Connection {
 type Talk implements Node & Document {
   title: String!
   date: String
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -612,7 +612,7 @@ type Talk implements Node & Document {
 input TalkFilter {
   title: StringFilter
   date: DatetimeFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type TalkConnectionEdges {
@@ -630,7 +630,7 @@ type Photos implements Node & Document {
   title: String!
   date: String
   image: String
-  body: String
+  body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -640,7 +640,7 @@ input PhotosFilter {
   title: StringFilter
   date: DatetimeFilter
   image: ImageFilter
-  body: StringFilter
+  body: RichTextFilter
 }
 
 type PhotosConnectionEdges {
@@ -809,7 +809,7 @@ input NoteMutation {
   published: Boolean
   type: String
   tags: [String]
-  body: String
+  body: JSON
 }
 
 input BookMutation {
@@ -827,14 +827,14 @@ input BookMutation {
   tags: [String]
   url: String
   pubDate: String
-  body: String
+  body: JSON
 }
 
 input NewsletterMutation {
   title: String
   issue: String
   pubDate: String
-  body: String
+  body: JSON
 }
 
 input MediaMutation {
@@ -851,14 +851,14 @@ input MediaMutation {
   tags: [String]
   url: String
   watchedDate: String
-  body: String
+  body: JSON
 }
 
 input BookmarkMutation {
   title: String
   url: String
   pubDate: String
-  body: String
+  body: JSON
 }
 
 input StreamMutation {
@@ -867,20 +867,20 @@ input StreamMutation {
   detail: String
   pubDate: String
   tags: [String]
-  body: String
+  body: JSON
 }
 
 input TalkMutation {
   title: String
   date: String
-  body: String
+  body: JSON
 }
 
 input PhotosMutation {
   title: String
   date: String
   image: String
-  body: String
+  body: JSON
 }
 
 schema {

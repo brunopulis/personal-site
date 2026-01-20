@@ -6,7 +6,8 @@ export const PageCollection: Collection = {
 	path: 'src/content/pages',
 	format: 'md',
 	match: {
-		include: '**/*'
+		include: '*',
+		exclude: 'services/**/*'
 	},
 	fields: [
 		{

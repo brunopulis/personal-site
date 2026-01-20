@@ -7,9 +7,9 @@
 	"type": "module",
 	"packageManager": "pnpm@10.28.0",
 	"scripts": {
-		"dev": "eleventy --serve --incremental",
-		"dev:full": "eleventy --serve",
-		"build": "eleventy",
+		"dev": "tinacms dev -c \"eleventy --serve --incremental\"",
+		"dev:full": "tinacms dev -c \"eleventy --serve\"",
+		"build": "SKIP_DB_INDEX_CHECK=true tinacms build --local && eleventy",
 		"clean": "rimraf _site",
 		"clean:all": "pnpm clean && pnpm clean:og",
 		"lint": "biome lint .",
@@ -17,7 +17,7 @@
 		"format": "biome format --write .",
 		"check": "biome check --write .",
 		"validate-feeds": "echo 'Validando feeds...' && find _site -name 'feed.*' -type f",
-    "test-feeds": "curl http://localhost:8080/feeds/blog/atom.xml && curl http://localhost:8080/feeds/blog/rss.xml && curl http://localhost:8080/feeds/blog/feed.json"
+		"test-feeds": "curl http://localhost:8080/feeds/blog/atom.xml && curl http://localhost:8080/feeds/blog/rss.xml && curl http://localhost:8080/feeds/blog/feed.json"
 	},
 	"keywords": [],
 	"repository": {

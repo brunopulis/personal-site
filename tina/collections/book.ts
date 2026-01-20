@@ -120,7 +120,7 @@ export const BookCollection: Collection = {
 			searchable: false
 		},
 		{
-			type: 'string',
+			type: 'rich-text',
 			name: 'body',
 			label: 'Conteúdo',
 			isBody: true
