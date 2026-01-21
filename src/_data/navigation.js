@@ -5,21 +5,16 @@ export default {
 			url: '/sobre/'
 		},
 		{
+			text: 'Trabalho',
+			url: '/trabalho/'
+		},
+		{
 			text: 'Serviços',
 			url: '/servicos/'
 		},
 		{
 			text: 'Artigos',
 			url: '/blog/'
-		},
-		{
-			text: 'Notas',
-			url: '/notas/'
-		},
-		{
-			text: 'Newsletter',
-      variant: '',
-			url: '/newsletter/'
 		},
 		{
 			text: 'Contato',

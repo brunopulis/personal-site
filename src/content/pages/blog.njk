@@ -9,7 +9,13 @@ pagination:
   size: 12
 ---
 
-<section>
+<section class="flow">
+  <h2 class="title">Explore as categorias</h2>
+  <p>
+   Além de textos longos do blog, também escrevo <a href="/notas">notas curtas</a> e <a href="/newsletter">newsletters</a>,
+   assim você não perde nenhum conteúdo. Assine meu <a href="/feeds/blog/rss.xml">RSS</a>.
+  </p>
+
   <h2 class="title">Explore por tema</h2>
   <ul class="cluster" role="list">
     {% set topTags = collections.tagListRecurrency | limit(16) %}
