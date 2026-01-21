@@ -6,7 +6,7 @@ export default {
 		},
 		{
 			text: 'Trabalho',
-			url: '/trabalho/'
+			url: '/portfolio/'
 		},
 		{
 			text: 'Serviços',
