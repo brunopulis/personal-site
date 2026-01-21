@@ -11,11 +11,11 @@ performance e usabilidade."
 {% set stats = portfolio.stats %}
 
 <section class="region flow">
-  <h2 class="title">Projetos concluídos</h2>
+  <h2 class="title p-name">Projetos concluídos</h2>
   <div class="grid" data-layout="50-50" id="portfolio-grid">
     {% for project in projects %}
-    <article class="flow">
-      <img src="{{ project.image }}" class="portfolio__image" alt="{{ project.imageAlt }}" loading="lazy">
+    <article class="flow h-entry">
+      <img src="{{ project.image }}" class="portfolio__image u-photo" alt="{{ project.imageAlt }}" loading="lazy">
       <div class="flow">
         <h3>
           <a href="{{ project.links.demo }}">{{ project.title }}</a>
