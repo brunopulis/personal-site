@@ -5,14 +5,14 @@ layout: base
 <section class="hero">
   <div class="wrapper">
     <div class="flow">
-      <h1 class="title">{{ title }}</h1>
-      <p>{{ description }}</p>
+      <h1 class="title p-name">{{ title }}</h1>
+      <p class="p-description">{{ description }}</p>
     </div>
   </div>
 </section>
 
 <section class="region">
-  <div class="wrapper">
+  <div class="wrapper h-feed">
     <div class="flow">
       {{ content | safe }}
     </div>
