@@ -65,12 +65,11 @@
         const originalText = document.getElementById('copy-text').textContent;
 
         try {
-          // Tenta usar a API Clipboard (moderna)
           if (navigator.clipboard) {
             await navigator.clipboard.writeText(url);
           } else {
-            // Fallback para navegadores antigos
             const textArea = document.createElement('textarea');
+
             textArea.value = url;
             document.body.appendChild(textArea);
             textArea.select();
@@ -78,7 +77,6 @@
             document.body.removeChild(textArea);
           }
 
-          // Feedback visual
           const copyText = document.getElementById('copy-text');
           copyText.textContent = '✓ Copiado!';
 
