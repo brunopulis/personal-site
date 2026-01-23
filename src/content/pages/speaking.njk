@@ -1,0 +1,51 @@
+---
+layout: page
+title: "Palestras e Eventos"
+permalink: "/speaking/index.html"
+key: 'speaking'
+description: "Compartilhando conhecimento sobre como construir uma web mais acessível e padronizada. Meu foco é
+acessibilidade prática, padrões WCAG e sistemas de design inclusivo."
+cta:
+link: /contato
+label: Me convide para seu evento
+---
+
+{% set allTalks = talks %}
+{% set talksByYear = allTalks | groupBy("attendedYear") %}
+
+{% for year in talksByYear | sortKeys %}
+<section class="flow" data-year="{{ year }}">
+  <div class="region-header border">
+    <h2 class="title">{{ year }}</h2>
+    <p class="text-sm">{{ talksByYear[year] | length }} {{ "palestras" if talksByYear[year] | length > 1 else "palestra"
+      }}</p>
+  </div>
+
+  <ul class="grid" role="list">
+    {% for talk in talksByYear[year] | sort(attribute="date") | reverse %}
+    <li>
+      <article class="flow">
+        <h3>{{ talk.title }}</h3>
+        <p class="text-sm">
+          Em: <time datetime="{{ talk.date }}" class="dt-published">{{ talk.date | readableDate }}</time>
+        </p>
+        {% if talk.location %}
+        <p class="text-sm">{{ talk.location }}</p>
+        {% endif %}
+        {% if (talk.slides or talk.video) and not talk.isPrivate %}
+        <div class="cluster" style="--gutter: var(--space-xs)">
+          {% if talk.slides %}
+          <a href="{{ talk.slides }}">Slides</a>
+          {% endif %}
+          {% if talk.video %}
+          <a href="{{ talk.video }}">Vídeo</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  <hr class="border-gray-700 mb-12" />
+</section>
+{% endfor %}

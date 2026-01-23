@@ -9,6 +9,10 @@ export default {
 			url: '/portfolio/'
 		},
 		{
+			text: 'Palestras',
+			url: '/speaking/'
+		},
+		{
 			text: 'Serviços',
 			url: '/servicos/'
 		},
