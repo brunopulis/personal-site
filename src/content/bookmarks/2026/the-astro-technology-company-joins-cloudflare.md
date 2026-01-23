@@ -1,5 +1,8 @@
 ---
 title: The Astro Technology Company joins Cloudflare
+pubDate: 2026-01-23
+type: bookmark
+tags: ["astro", "frontend"]
 url: ' https://astro.build/blog/joining-cloudflare/'
 ---
 
