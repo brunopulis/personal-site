@@ -10,7 +10,8 @@ description: "Minha coleção de livros"
 <section class="flow" data-year="{{ year }}">
   <div class="region-header">
     <h2 class="title">Lidos em {{ year }}</h2>
-    <p class="text-sm">{{ booksByYear[year] | length }} livro(s)</p>
+    <p class="text-sm">{{ booksByYear[year] | length }} {{ "livros" if booksByYear[year] | length > 1 else "livro" }}
+    </p>
   </div>
 
   <ul class="grid" role="list">

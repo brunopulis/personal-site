@@ -7,6 +7,13 @@ layout: base
     <div class="flow">
       <h1 class="title p-name">{{ title }}</h1>
       <p class="p-description">{{ description }}</p>
+
+
+      {% if cta %}
+        <div class="flow">
+          <a href="{{cta.link}}">{{cta.label}}</a>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>

@@ -42,9 +42,7 @@
 
 <body>
   {% set indicateActiveHome %}
-  {% if page.url == "/" %}
-  aria-current=page
-  {% endif %}
+    {% if page.url == "/" %}aria-current=page{% endif %}
   {% endset %}
   {% include "partials/header.njk" %}
 
@@ -56,5 +54,4 @@
 
   {% block after_main %}{% endblock %}
   {% include "partials/footer.njk" %}
-
 </html>
