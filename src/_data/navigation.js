@@ -25,6 +25,24 @@ export default {
 			url: '/contato/'
 		}
 	],
+	secondary: [
+		{
+			text: 'Disclaimer',
+			url: '/disclaimer/'
+		},
+		{
+			text: 'Licença de uso',
+			url: '/licenca/'
+		},
+		{
+			text: 'Política de privacidade',
+			url: '/privacidade/'
+		},
+		{
+			text: 'Declaração de acessibilidade',
+			url: '/acessibilidade/'
+		}
+	],
 	bottom: [
 		{
 			text: 'Blogroll',

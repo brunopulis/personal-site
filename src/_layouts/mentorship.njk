@@ -4,121 +4,331 @@ formato: base
 ---
 
 {% set data = mentoria[formato] %}
-<section class="hero">
-  <div class="wrapper">
-    <header>
-      <small class="badge">{{ data.hero.title }}</small>
-      <h1 class="title">{{ data.hero.subtitle }}</h1>
-      <p class="subtitle">{{ data.hero.description }}</p>
-    </header>
-  </div>
+<section class="hero bg-slate-950">
+  <header class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <span
+        class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 border border-primary/20">
+        {{ data.hero.title }}
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight text-white">
+        {{ data.hero.subtitle }}
+      </h1>
+      <p class="text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+        {{ data.hero.description }}
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#investment"
+          class="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-md font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+          Quero me tornar especialista
+        </a>
+        <a href="#methodology"
+          class="w-full sm:w-auto px-8 py-4 border border-slate-800 rounded-md font-bold text-lg hover:bg-slate-900 transition-colors text-white">
+          Ver metodologia
+        </a>
+      </div>
+    </div>
+  </header>
 </section>
 
 <!-- Scarcity / Urgency Alert -->
-<div class="wrapper">
-  <div class="alert alert-warning d-flex align-items-center gap-3">
-    <div>
+{% if data.conversion.scarcity.enabled or data.conversion.urgency.enabled %}
+<div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+  <div class="bg-amber-900/20 border border-amber-500/30 rounded-lg p-4 flex items-center gap-3 backdrop-blur-sm">
+    <div class="text-amber-500 shrink-0">
+      {% lucide "alarm-clock", "w-6 h-6" %}
+    </div>
+    <div class="text-amber-200 text-sm md:text-base">
       {% if data.conversion.scarcity.enabled %}
-      <strong>{{ data.conversion.scarcity.label }}:</strong> Restam apenas {{
-      data.conversion.scarcity.remaining_slots }} vagas. {% endif %} {% if
-      data.conversion.urgency.enabled %}
-      <strong>{{ data.conversion.urgency.label }}</strong> até {{
-      data.conversion.urgency.deadline | formatDate("dd/MM/yyyy") }}. {% endif
-      %}
+      <strong class="text-amber-400">{{ data.conversion.scarcity.label }}:</strong> Restam apenas {{
+      data.conversion.scarcity.remaining_slots }} vagas.
+      {% endif %}
+      {% if data.conversion.urgency.enabled %}
+      <strong class="text-amber-400 ml-2">{{ data.conversion.urgency.label }}</strong> até {{
+      data.conversion.urgency.deadline | formatDate("dd/MM/yyyy") }}.
+      {% endif %}
     </div>
   </div>
 </div>
+{% endif %}
 
 <!-- Problem / Solution -->
-<section class="region" aria-labelledby="problem-solution">
-  <div class="wrapper flow">
-    <div class="grid" data-layout="50-50">
-      <div class="card">
-        <h2 class="title" data-color="dark" id="problem-solution">
-          O problema
-        </h2>
-        <p class="lead">{{ data.problem | safe | nl2br }}</p>
+<section class="py-24 bg-slate-900 px-6" aria-labelledby="problem-solution">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+    <article class="p-8 bg-black rounded-xl border border-slate-800 shadow-sm">
+      <div class="w-12 h-12 bg-red-900/30 text-red-400 rounded-lg flex items-center justify-center mb-6">
+        {% lucide "circle-alert", "w-6 h-6" %}
       </div>
+      <h2 class="text-2xl font-bold mb-4 text-white" id="problem-solution">
+        O problema
+      </h2>
+      <p class="text-slate-400">{{ data.problem | safe | nl2br }}</p>
+    </article>
 
-      <div class="card">
-        <h2 class="title" data-color="dark" id="solution">A solução</h2>
-        <p class="lead">{{ data.solution | safe | nl2br }}</p>
+    <article class="p-8 bg-black rounded-xl border border-slate-800 shadow-sm">
+      <div class="w-12 h-12 bg-green-900/30 text-green-400 rounded-lg flex items-center justify-center mb-6">
+        {% lucide "circle-check", "w-6 h-6" %}
       </div>
-    </div>
+      <h2 class="text-2xl font-bold mb-4 text-white" id="solution">A solução</h2>
+      <p class="text-slate-400">{{ data.solution | safe | nl2br }}</p>
+    </article>
   </div>
 </section>
 
 <!-- Methodology -->
-<section class="region" aria-labelledby="methodology">
-  <div class="wrapper flow">
-    <h2 class="title" data-color="light" id="methodology">
-      {{ data.methodology.title }}
-    </h2>
-    <p class="lead">{{ data.methodology.description | safe | nl2br }}</p>
-    <div class="grid" data-layout="50-50">
-      <article class="card">
-        <h3>{{ data.methodology.technical_bases.title }}</h3>
-        <ul>
+<section class="py-24 bg-slate-950 px-6" id="methodology" aria-labelledby="methodology-title">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" id="methodology-title">{{ data.methodology.title }}
+      </h2>
+      <p class="text-slate-400 max-w-2xl mx-auto text-lg">{{ data.methodology.description }}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <article
+        class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-primary/50 transition-colors group">
+        <div class="text-primary mb-4 group-hover:scale-110 transition-transform">
+          {% lucide "code", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">{{ data.methodology.technical_bases.title }}</h3>
+        <ul class="space-y-2 text-slate-400 text-sm">
           {% for item in data.methodology.technical_bases.items %}
-          <li style="color: var(--color-dark)">{{ item }}</li>
+          <li class="flex gap-2">
+            <span class="text-primary mt-1 shrink-0" aria-hidden="true">{% lucide "check", "w-3 h-3" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
       </article>
 
-      <article class="card">
-        <h3>{{ data.methodology.inclusive_attitude.title }}</h3>
-        <ul>
+      <article
+        class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-primary/50 transition-colors group">
+        <div class="text-primary mb-4 group-hover:scale-110 transition-transform">
+          {% lucide "heart", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">{{ data.methodology.inclusive_attitude.title }}</h3>
+        <ul class="space-y-2 text-slate-400 text-sm">
           {% for item in data.methodology.inclusive_attitude.items %}
-          <li style="color: var(--color-dark)">{{ item }}</li>
+          <li class="flex gap-2">
+            <span class="text-primary mt-1 shrink-0">{% lucide "check", "w-3 h-3" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
       </article>
 
-      <article class="card">
-        <h3>{{ data.methodology.practical_solutions.title }}</h3>
-        <ul>
+      <article
+        class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-primary/50 transition-colors group">
+        <div class="text-primary mb-4 group-hover:scale-110 transition-transform">
+          {% lucide "wrench", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">{{ data.methodology.practical_solutions.title }}</h3>
+        <ul class="space-y-2 text-slate-400 text-sm">
           {% for item in data.methodology.practical_solutions.items %}
-          <li style="color: var(--color-dark)">{{ item }}</li>
+          <li class="flex gap-2">
+            <span class="text-primary mt-1 shrink-0">{% lucide "check", "w-3 h-3" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
       </article>
 
-      <article class="card">
-        <h3>{{ data.methodology.execution.title }}</h3>
-        <ul>
+      <article
+        class="p-6 bg-slate-900 rounded-xl border border-slate-800 hover:border-primary/50 transition-colors group">
+        <div class="text-primary mb-4 group-hover:scale-110 transition-transform">
+          {% lucide "zap", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">{{ data.methodology.execution.title }}</h3>
+        <ul class="space-y-2 text-slate-400 text-sm">
           {% for item in data.methodology.execution.items %}
-          <li style="color: var(--color-dark)">{{ item }}</li>
+          <li class="flex gap-2">
+            <span class="text-primary mt-1 shrink-0">{% lucide "check", "w-3 h-3" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- Cronograma -->
+<section class="py-24  bg-[#0d1117] px-6" id="cronograma">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Cronograma das Aulas</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Oito semanas de imersão total para transformar sua visão e prática
+        técnica sobre acessibilidade digital.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            01</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">videocam</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Fundamentos e WCAG Sem Segredos</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">Entenda a base de tudo: por onde começar a estudar e como
+          aplicar as diretrizes sem se perder.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">sensors</span> AO VIVO
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            02</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">menu_book</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Semântica e Estrutura</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">HTML não é só div. Vamos estruturar documentos que
+          máquinas e humanos compreendam.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">code</span> PRÁTICA
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            03</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">videocam</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Navegação e Foco</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">O mouse é opcional. Aprenda a gerenciar foco e ordens de
+          tabulação de forma profissional.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">sensors</span> AO VIVO
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            04</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">menu_book</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Leitores de Tela</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">Como usuários cegos navegam? Vamos testar com NVDA,
+          VoiceOver e TalkBack em tempo real.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">smartphone</span> PRÁTICA
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            05</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">videocam</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Cores e Contraste</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">Muito além do cinza. Aprenda a criar interfaces vibrantes
+          e acessíveis para todos.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">palette</span> AO VIVO
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            06</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">menu_book</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">ARIA e Componentes</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">Modais e dropdowns. Como usar ARIA sem quebrar a
+          acessibilidade nativa do browser.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">layers</span> PRÁTICA
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            07</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">videocam</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Auditoria e Testes</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">Checklists e ferramentas automáticas e manuais para
+          garantir a qualidade final.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">fact_check</span> AO VIVO
+        </div>
+      </div>
+      <div
+        class="bg-black border border-border-dark p-6 rounded-xl hover:border-primary transition-colors flex flex-col group">
+        <div class="flex items-center justify-between mb-4">
+          <span
+            class="font-mono text-[10px] font-bold tracking-widest text-primary bg-primary/10 px-2 py-1 rounded">SEMANA
+            08</span>
+          <span
+            class="material-symbols-outlined text-primary text-xl opacity-60 group-hover:opacity-100 transition-opacity">workspace_premium</span>
+        </div>
+        <h4 class="font-bold text-lg leading-snug mb-3 text-white">Projeto Final</h4>
+        <p class="text-sm text-slate-400 leading-relaxed mb-6">Consolidação de tudo com foco exclusivo no seu projeto ou
+          desafio de carreira atual.</p>
+        <div class="mt-auto flex items-center gap-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-tighter">
+          <span class="material-symbols-outlined text-xs">military_tech</span> FINALIZAÇÃO
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Audience -->
-<section class="region" aria-labelledby="audience">
-  <div class="wrapper flow">
-    <h2 class="title" data-color="light" id="audience">
-      {{ data.target_audience.title }}
-    </h2>
-    <p>{{ data.target_audience.paragraphs }}</p>
-    <p class="lead">{{ data.target_audience.description | safe | nl2br }}</p>
+<section class="py-24 bg-slate-900 px-6" aria-labelledby="audience-title">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" id="audience-title">{{ data.target_audience.title }}
+      </h2>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto">{{ data.target_audience.description | safe | nl2br }}</p>
+    </div>
 
-    <div class="grid" data-layout="50-50">
-      <div class="box">
-        <p><strong>Essa mentoria é para você se:</strong></p>
-        <ul>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="p-8 bg-slate-950 rounded-2xl border border-green-500/20">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="text-green-500">{% lucide "user-check", "w-8 h-8" %}</div>
+          <h3 class="text-xl font-bold text-white">Essa mentoria é para você se:</h3>
+        </div>
+        <ul class="space-y-4">
           {% for item in data.target_audience.for_you %}
-              <li style="color: var(--color-light)">{{ item }}</li>
+          <li class="flex gap-3 text-slate-300">
+            <span class="text-green-500 shrink-0">{% lucide "check", "w-5 h-5" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
       </div>
 
-      <div class="box">
-        <p><strong>Essa mentoria não é para:</strong></p>
-        <ul>
+      <div class="p-8 bg-slate-950 rounded-2xl border border-red-500/20">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="text-red-500">{% lucide "user-x", "w-8 h-8" %}</div>
+          <h3 class="text-xl font-bold text-white">Essa mentoria não é para:</h3>
+        </div>
+        <ul class="space-y-4">
           {% for item in data.target_audience.for_not %}
-              <li style="color: var(--color-light)">{{ item }}</li>
+          <li class="flex gap-3 text-slate-300">
+            <span class="text-red-500 shrink-0">{% lucide "x", "w-5 h-5" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
       </div>
@@ -127,19 +337,23 @@ formato: base
 </section>
 
 <!-- Differentiators -->
-<section class="region" aria-labelledby="differentiators-title">
-  <div class="wrapper flow">
-    <h2 class="title" data-color="light" id="differentiators-title">
-      {{ data.differentiators.title }}
-    </h2>
-    <p>{{ data.differentiators.subtitle }}</p>
+<section class="py-24 bg-slate-950 px-6" aria-labelledby="differentiators-title">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" id="differentiators-title">{{
+        data.differentiators.title }}</h2>
+      <p class="text-slate-400 text-lg">{{ data.differentiators.subtitle }}</p>
+    </div>
 
-
-    <div class="grid" data-layout="thirds">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% set icons = ["rocket", "layout", "users", "refresh-ccw", "life-buoy", "gift"] %}
       {% for item in data.differentiators.advantages.items %}
-      <article class="card">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.text }}</p>
+      <article class="p-8 bg-slate-900 rounded-xl border border-slate-800 hover:bg-slate-800/50 transition-colors">
+        <div class="text-primary mb-6">
+          {% lucide icons[loop.index0], "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">{{ item.title }}</h3>
+        <p class="text-slate-400 leading-relaxed">{{ item.text }}</p>
       </article>
       {% endfor %}
     </div>
@@ -147,114 +361,227 @@ formato: base
 </section>
 
 <!-- Mentor -->
-<section class="region" aria-labelledby="mentor-title">
-  <div class="wrapper flow">
-    <span>{{ data.mentor.eyebrow }}</span>
-    <h2 class="title" data-color="light" id="mentor-title">
-      {{ data.mentor.title }}
-    </h2>
-
-    <div class="grid" data-layout="50-50">
-      <article>
-        <p>{{ data.mentor.description | safe }}</p>
-        <ul>
+<section class="py-24 bg-slate-900 px-6 overflow-hidden" aria-labelledby="mentor-title">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 items-center gap-12">
+      <div class="relative">
+        <div class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl"></div>
+        <img class="relative rounded-2xl w-full grayscale hover:grayscale-0 transition-all duration-500"
+          src="{{ data.mentor.image }}" alt="{{ data.mentor.title }}" />
+      </div>
+      <div>
+        <span class="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">{{ data.mentor.eyebrow
+          }}</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" id="mentor-title">{{ data.mentor.title }}</h2>
+        <div class="prose prose-invert text-slate-400 mb-8 max-w-none">
+          <p>{{ data.mentor.description | safe }}</p>
+        </div>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {% for item in data.mentor.skills %}
-          <li>{{ item }}</li>
+          <li class="flex items-center gap-3 text-slate-300">
+            <span class="text-primary">{% lucide "circle-check-big", "w-5 h-5" %}</span>
+            {{ item }}
+          </li>
           {% endfor %}
         </ul>
-      </article>
-
-      <article>
-        <img src="{{ data.mentor.image }}" alt="{{ data.mentor.title }}" />
-      </article>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Testimonials -->
-<section class="region" aria-labelledby="testimonials-title">
-  <div class="wrapper flow">
-    <span>{{ data.testimonials.eyebrow }}</span>
-    <h2 class="title" data-color="light" id="testimonials-title">
-      {{ data.testimonials.title }}
+<section class="py-24 bg-slate-900 px-6" aria-labelledby="testimonials-title">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-extrabold mb-12 text-center text-white" id="testimonials-title">{{
+      data.testimonials.title }}
     </h2>
-    <p>{{ data.testimonials.description | safe }}</p>
 
-    <ul role="list" class="grid" data-layout="thirds">
+    <div class="grid md:grid-cols-3 gap-8">
       {% for item in data.testimonials.testimonial %}
-      <li class="card flow">
-        <p>{{ item.content | safe }}</p>
-        <p>{{ item.author }}</p>
-        <p>{{ item.position }}</p>
-      </li>
+      <article class="p-8 bg-card-dark rounded-2xl shadow-sm border border-border-dark flex flex-col justify-between">
+        <div class="text-primary/40 mb-6">
+          <div class="flex text-yellow-400 mb-4">
+            {% lucide "star", "w-5 h-5 stroke-yellow" %}
+            {% lucide "star", "w-5 h-5 fill-yellow" %}
+            {% lucide "star", "w-5 h-5 fill-yellow" %}
+            {% lucide "star", "w-5 h-5 fill-yellow" %}
+            {% lucide "star", "w-5 h-5 fill-yellow" %}
+          </div>
+        </div>
+        <p class="text-slate-400 italic mb-6">"{{ item.content | safe }}"</p>
+        <footer role="contentinfo">
+          <p class="font-bold text-white">{{ item.author }}</p>
+          <p class="text-sm text-slate-500">{{ item.position }}</p>
+        </footer>
+      </article>
       {% endfor %}
-    </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Bonus -->
+<section class="py-24 bg-primary px-6" id="bonus">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-white">Bônus Exclusivos</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto text-lg font-medium">Além das 8 semanas de mentoria, você terá acesso
+        imediato a materiais e comunidades estratégicas.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <article
+        class="group relative bg-black p-8 rounded-2xl border border-border-dark hover:border-primary transition-all duration-300 flex flex-col">
+        <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+          {% lucide "list-check", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white">Checklist de Acessibilidade Pulis</h3>
+        <p class="text-slate-400 text-sm leading-relaxed mb-8">Um guia em PDF prático e direto para você realizar
+          auditorias rápidas no seu dia a dia profissional.</p>
+        <div class="mt-auto pt-6 border-t border-border-dark">
+          <p class="text-slate-600 text-xs line-through mb-1">Valor: R$ 197</p>
+          <p class="text-primary font-bold text-lg">Grátis para alunos</p>
+        </div>
+      </article>
+      <article
+        class="group relative bg-black p-8 rounded-2xl border border-border-dark hover:border-primary transition-all duration-300 flex flex-col">
+        <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+          {% lucide "users", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white">Comunidade Exclusiva no Discord</h3>
+        <p class="text-slate-400 text-sm leading-relaxed mb-8">Acesso a um grupo privado para networking, tirar dúvidas
+          e trocar experiências com outros especialistas.</p>
+        <div class="mt-auto pt-6 border-t border-border-dark">
+          <p class="text-slate-600 text-xs line-through mb-1">Valor: R$ 497/ano</p>
+          <p class="text-primary font-bold text-lg">Grátis para alunos</p>
+        </div>
+      </article>
+      <article
+        class="group relative bg-black p-8 rounded-2xl border border-border-dark hover:border-primary transition-all duration-300 flex flex-col">
+        <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex mb-6">
+          {% lucide "play-circle", "w-8 h-8" %}
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-white">Acesso Vitalício às Gravações</h3>
+        <p class="text-slate-400 text-sm leading-relaxed mb-8">Assista às sessões ao vivo quando e onde quiser, sem
+          expiração, para consultar sempre que precisar.</p>
+        <div class="mt-auto pt-6 border-t border-border-dark">
+          <p class="text-slate-600 text-xs line-through mb-1">Valor: R$ 997</p>
+          <p class="text-primary font-bold text-lg">Grátis para alunos</p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
 <!-- Investment Section -->
-<section class="region bg-dark text-white" aria-labelledby="investment">
-  <div class="wrapper flow text-center box">
-    <h2 id="investment">{{ data.investment.title }}</h2>
-    <p class="lead">{{ data.investment.description }}</p>
+<section class="py-24 bg-slate-900  px-6" id="investment" aria-labelledby="investment-title">
+  <div
+    class="max-w-xl mx-auto text-center border-2 border-primary rounded-3xl p-10 bg-card-dark shadow-2xl relative overflow-hidden">
+    <div
+      class="absolute top-0 right-0 bg-primary text-white text-[12px] font-bold px-8 py-2 rotate-45 translate-x-6 translate-y-2 uppercase">
+      Poucas vagas
+    </div>
+    <h2 class="text-2xl font-bold mb-2 text-white" id="investment-title">{{ data.investment.title }}</h2>
+    <p class="text-slate-400 mb-8">{{ data.investment.description }}</p>
 
-    <div class="py-4">
-      <div class="display-4 fw-bold text-primary">
-        R$ {{ data.investment.price.value }}
+    <div class="mb-12">
+      <div class="text-5xl font-extrabold mb-8 flex items-center justify-center text-white">
+        <span class="text-xl font-normal text-slate-500 mr-2">R$</span> {{ data.investment.price.value }} <span
+          class="text-lg font-normal text-slate-500 ml-2">à vista.</span>
       </div>
-      {% if data.payment.installments %}
-      <p class="lead text-white">
-        Ou em até {{ data.payment.installmentsCount }}x de
-        <strong>R$ {{ data.payment.installmentsValue }}</strong>
-      </p>
-      {% endif %}
+      <p class="text-sm text-slate-500 mb-10">Ou parcele em até 12x no cartão de crédito</p>
+
+      <a class="block w-full py-4 bg-primary text-white rounded-xl font-extrabold text-xl hover:opacity-90 transition-opacity shadow-lg shadow-primary/40 mb-4"
+        href="#">
+        Garantir minha vaga
+      </a>
     </div>
 
-
-    <a href="{{ data.conversion.cta.link }}" class="btn btn-primary btn-lg px-5 py-3 fw-bold">
-      {{ data.conversion.cta.primary.label }}
-    </a>
+    <div class="flex flex-col items-center gap-6">
+      <a href="{{ data.conversion.cta.link }}"
+        class="block w-full py-4 bg-primary text-white rounded-xl font-extrabold text-xl hover:opacity-90 transition-opacity shadow-lg shadow-primary/40 mb-4">
+        {{ data.conversion.cta.primary.label }}
+      </a>
+      <p class="text-xs text-slate-500 flex items-center justify-center">
+        {% lucide "lock", "w-4 h-4" %}
+        Pagamento 100% seguro | Vagas limitadas
+      </p>
+    </div>
+  </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="region" aria-labelledby="faq-title">
-  <div class="wrapper flow">
-    <span>{{ data.faq.eyebrow }}</span>
-    <h2 class="title" data-color="light" id="faq-title">
-      {{ data.faqs.title }}
-    </h2>
-    <p>{{ data.faqs.description | safe }}</p>
+<section class="py-24 px-6 section-spacing bg-[#0d1117] px-6 border-y border-border-dark"
+  aria-labelledby="guaranteed-title"> <!-- Garantia -->
+  <div class="max-w-4xl mx-auto">
+    <div
+      class="bg-black rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12 border border-border-dark">
+      <div class="shrink-0">
+        <div class="relative">
+          {% lucide "verified", "w-8 h-8" %}
+        </div>
+      </div>
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight text-white">Risco Zero e Garantia Total</h2>
+        <p class="text-lg text-slate-400 leading-relaxed mb-6">
+          Eu confio tanto na metodologia <strong>BASE</strong> que ofereço uma garantia incondicional de <strong>7
+            dias</strong>. Participe das primeiras aulas, acesse o material e sinta a experiência.
+        </p>
+        <div class="inline-flex items-center text-primary font-bold text-lg">
+          <span class="material-icons mr-2">assignment_return</span>
+          Satisfação garantida ou seu dinheiro de volta.
+        </div>
+        <p class="mt-4 text-sm text-slate-500">
+          Se por qualquer motivo você não ficar satisfeito(a) dentro deste prazo, basta enviar um único e-mail e faremos
+          o
+          reembolso integral, sem perguntas e sem letras miúdas.
+        </p>
+      </div>
+    </div>
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">{{ data.faq.eyebrow }}</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" id="faq-title">{{ data.faqs.title }}</h2>
+    </div>
 
-    <div class="grid box" data-layout="50-50">
+    <div class="space-y-4">
       {% for item in data.faqs.questions %}
-      <details>
-        <summary>{{ item.question }}</summary>
-        <p>{{ item.answer }}</p>
+      <details class="group p-6 bg-slate-900 rounded-xl border border-slate-800 open:border-primary/30 transition-all">
+        <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-white text-lg">
+          {{ item.question }}
+          <span class="text-primary group-open:rotate-180 transition-transform">
+            {% lucide "chevron-down", "w-5 h-5" %}
+          </span>
+        </summary>
+        <div class="mt-4 text-slate-400 leading-relaxed">
+          {{ item.answer }}
+        </div>
       </details>
       {% endfor %}
     </div>
 
-    <p>
-      Ainda tem dúvidas?
-      <a href="mailto:brunopulis@protonmail.com?subject=Tenho%20dúvidas%20sobre%20a%20mentoria">Entre em contato
-        comigo</a>
-    </p>
+    <div class="mt-12 text-center p-8 bg-slate-900/50 rounded-2xl border border-slate-800">
+      <p class="text-white text-lg mb-4">Ainda tem dúvidas?</p>
+      <a href="mailto:brunopulis@protonmail.com?subject=Tenho%20dúvidas%20sobre%20a%20mentoria"
+        class="text-primary font-bold hover:underline inline-flex items-center gap-2">
+        {% lucide "mail", "w-5 h-5" %}
+        Entre em contato comigo
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- Included -->
 {% if data.included %}
-<section class="region" aria-labelledby="included">
-  <div class="wrapper flow">
-    <h2 id="included">O que você recebe</h2>
-    <ul class="row row-cols-1 row-cols-md-2 g-3">
+<section class="py-24 bg-slate-900 px-6" aria-labelledby="included-title">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center" id="included-title">O que você recebe</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for item in data.included %}
-      <li class="col">
-        <div class="border rounded p-3 h-100">{{ item }}</div>
-      </li>
+      <div class="p-4 bg-slate-950 rounded-xl border border-slate-800 flex items-start gap-4">
+        <span class="text-primary mt-1 shrink-0">{% lucide "check-circle", "w-5 h-5" %}</span>
+        <span class="text-slate-300">{{ item }}</span>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 {% endif %}

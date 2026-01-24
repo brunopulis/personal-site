@@ -1,25 +1,41 @@
-<section class="region" aria-labelledby="posts-title">
-  <div class="wrapper flow">
-    <header class="flow">
-      <h2 class="title" id="post-title">Últimos artigos</h2>
-      <p>Escrevo para organizar ideias, compartilhar aprendizados
-        e questionar práticas comuns da web.</p>
+<section class="py-24" aria-labelledby="posts-title">
+  <div class="max-w-6xl mx-auto px-6">
+    <header class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <h2 class="text-3xl font-bold mb-4" id="post-title">Últimos artigos</h2>
+        <p class="text-brand-gray-500">Escrevo para organizar ideias, compartilhar aprendizados e questionar práticas
+          comuns da web.</p>
+      </div>
+      <a href="/blog"
+        class="text-brand-blue-500 font-bold flex items-center gap-2 border-b-2 border-brand-blue-500/30 hover:border-brand-blue-500 transition-all pb-1">
+        ver todos os artigos
+      </a>
     </header>
 
     {% set posts = collections.posts %}
-    <ul class="grid" data-layout="thirds" role="list">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {% for post in posts.slice(0, 3) %}
-      <li class="card h-entry">
-        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <article class="group cursor-pointer h-entry">
+        <div
+          class="p-8 h-full bg-brand-dark-900 border border-brand-gray-200/30 rounded-xl flex flex-col justify-between hover:ring-2 hover:ring-brand-blue-500/50 transition-all">
+          <div class="">
+            <span class="text-accent-red text-xs font-bold uppercase tracking-widest block mb-4">
+              {{ post.data.tags[0] }}
+            </span>
+            <h3 class="text-xl font-bold mb-4 group-hover:text-brand-blue-500 transition-colors">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
 
-        {% if post.data.description %}
-        <p>{{ post.data.description }}</p>
-        {% endif %}
-        <time datetime="{{ post.data.pubDate }}" class="dt-published">
-          Publicado em: {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
-        </time>
-      </li>
+            {% if post.data.description %}
+            <p class="text-brand-gray-500 dark:text-brand-gray-400 text-sm mb-6">{{ post.data.description }}</p>
+            {% endif %}
+            <time datetime="{{ post.data.pubDate }}"
+              class="dt-published text-xs text-brand-gray-500 dark:text-brand-gray-400 font-mono">
+              Publicado em: {{ post.data.pubDate | formatDate('DD/MM/YYYY') }}
+            </time>
+          </div>
+        </div>
+      </article>
       {% endfor %}
-    </ul>
-  </div>
+    </div>
 </section>

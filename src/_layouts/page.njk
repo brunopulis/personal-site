@@ -9,10 +9,15 @@ layout: base
       <p class="p-description">{{ description }}</p>
 
 
-      {% if cta %}
-        <div class="flow">
-          <a href="{{cta.link}}">{{cta.label}}</a>
-        </div>
+      {% if cta or cta2 %}
+      <div class="cluster">
+        {% if cta %}
+        <a href="{{ cta.link }}" class="button">{{ cta.label }}</a>
+        {% endif %}
+        {% if cta2 %}
+        <a href="{{ cta2.link }}" class="button" data-variant="outline">{{ cta2.label }}</a>
+        {% endif %}
+      </div>
       {% endif %}
     </div>
   </div>

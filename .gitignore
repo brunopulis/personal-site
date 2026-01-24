@@ -1,4 +1,5 @@
 _site/
+.agent/
 
 # Dependencies
 node_modules/

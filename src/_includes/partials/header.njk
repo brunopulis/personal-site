@@ -1,16 +1,24 @@
-<a href="#main" class="visually-hidden">{{ meta.skipContent }}</a>
+<a href="#main" class="sr-only">{{ meta.skipContent }}</a>
 <header class="wrapper region | repel | page-header">
-  <a href="/" class="navbar-brand" data-variant="naked">
-    Bruno Pulis
-  </a>
-  <nav data-variant="main" id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
-    <ul style="--gutter: 1rem;" role="list" class="cluster">
-      {% for item in navigation.top %}
-      <li>
-        <a href="{{ item.url }}" {% if page.url==item.text %}aria-current="page" {% endif %} data-variant="{{ item.variant }}" {% if item.class %}class="{{ item.class }}"{% endif %}>{{
-          item.text }}</a>
-      </li>
-      {% endfor %}
-    </ul>
+  <nav
+    class="sticky top-0 z-50 border-b border-brand-gray-500 dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+    id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold text-white tracking-tight">
+        {% svg "misc/logo", "Bruno Pulis" %}
+      </a>
+
+      <div class="md:flex items-center space-x-8">
+        <ul class="md:flex items-center space-x-8">
+          {% for item in navigation.top %}
+          <li>
+            <a href="{{ item.url }}" {% if page.url==item.text %}aria-current="page" {% endif %}
+              class="text-brand-blue-500 font-medium border-b-2 border-brand-blue-500/30 hover:border-brand-blue-500 transition-all {{ itemClass }}">{{
+              item.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>
