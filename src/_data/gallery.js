@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default function() {
-  const dir = path.join(__dirname, "../../assets/images/gallery/");
+  const dir = path.join(__dirname, "../assets/images/gallery/");
 
 
   if (!fs.existsSync(dir)) {

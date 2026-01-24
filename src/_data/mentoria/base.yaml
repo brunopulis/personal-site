@@ -1,9 +1,9 @@
 slug: mentoria
 
 hero:
-  title: Mentoria prática para destravar seu projeto digital em 8 semanas
-  subtitle: Sem teoria solta, sem promessas vazias.
-  description: Trabalhe direto comigo para estruturar, priorizar e executar o que realmente gera resultado no seu produto, serviço ou carreira digital.
+  title: Mentoria prática de 8 semanas
+  subtitle: "Mentoria BASE: Aprenda acessibilidade na prática"
+  description: "Sem teoria solta, sem promessas vazias. Trabalhe direto comigo para estruturar, priorizar e executar o que realmente gera resultado no seu produto."
   features:
     - Uma mentoria para quem quer dominar acessibilidade web com estrutura, clareza e aplicação real.
     - Você aprende com orientação especializada e troca constante com outros profissionais.
@@ -62,11 +62,11 @@ target_audience:
     - Já trabalha com frontend ou QA e atua em projetos reais;
     - Já tentou aprender acessibilidade digital sozinho;
     - Quer parar de “achar” e começar a ter critério técnico;
-    - Precisa aplicar acessibilidade no dia a dia, não só estudar.
 
   for_not:
-    - Quer uma solução rápida e mágica;
-    - Não é para quem não pretende aplicar em projetos reais.
+    - Quem busca uma fórmula mágica ou solução sem esforço;
+    - Quem quer apenas um certificado sem colocar a mão na massa;
+    - Quem não pretende aplicar em projetos reais.
 
 how_it_works:
   title: Como funciona a mentoria em grupo
@@ -117,9 +117,10 @@ mentor:
     Sua missão é democratizar o conhecimento sobre acessibilidade web e formar uma nova geração de profissionais comprometidos com a inclusão digital.
 
   skills:
-    - Mais de 10 anos de experiência em acessibilidade digital.
-    - Capacitação de profissionais e equipes em acessibilidade web.
-    - Mentoria com foco em prática e aplicação real.
+    - 11 anos de experiência em acessibilidade digital.
+    - Capacitação de profissionais em acessibilidade web.
+    - Foco na prática e aplicação real.
+    - 100% dos alunos recomendam a mentoria.
 
   data:
     - "10+ anos de experiência"

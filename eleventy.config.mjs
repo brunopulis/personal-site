@@ -9,6 +9,7 @@ import events from './src/_config/events.js';
 import plugins from './src/_config/plugins.js';
 import {badge, image, imageKeys} from './src/_config/shortcodes/image.js';
 import {svg} from './src/_config/shortcodes/svg.js';
+import {lucide} from './src/_config/shortcodes/lucide.js';
 
 export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addGlobalData('now', new Date());
@@ -76,6 +77,7 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode('badge', badge);
 	eleventyConfig.addNunjucksAsyncShortcode('image', image);
 	eleventyConfig.addNunjucksAsyncShortcode('imageKeys', imageKeys);
+	eleventyConfig.addShortcode('lucide', lucide);
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
 	//  Events: after build
@@ -89,7 +91,6 @@ export default async function eleventy(eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy('./admin');
 	eleventyConfig.addPassthroughCopy('src/humans.txt');
-	eleventyConfig.addPassthroughCopy('src/assets/css');
 	eleventyConfig.addPassthroughCopy('src/assets/js');
 	eleventyConfig.addPassthroughCopy('src/assets/fonts');
 	eleventyConfig.addPassthroughCopy('src/assets/images');
