@@ -1,14 +1,15 @@
 <a href="#main" class="sr-only">{{ meta.skipContent }}</a>
-<header class="wrapper region | repel | page-header">
+<header
+  class="sticky top-0 z-50 border-b border-gray-200 dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
   <nav class="sticky top-0 z-50 border-b border-slate-200 bg-background-light/80 backdrop-blur-md" id="mainnav"
     aria-label="{{ meta.navigation.ariaTop }}">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <a href="/" class="text-xl font-extrabold text-white tracking-tight">
         {% svg "misc/logo", "Bruno Pulis" %}
       </a>
 
-      <div class="md:flex items-center space-x-8">
-        <ul class="md:flex items-center space-x-8">
+      <nav>
+        <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 md:gap-x-8">
           {% for item in navigation.top %}
           <li>
             <a href="{{ item.url }}" {% if page.url==item.text %}aria-current="page" {% endif %}
@@ -17,7 +18,7 @@
           </li>
           {% endfor %}
         </ul>
-      </div>
+      </nav>
     </div>
   </nav>
 </header>
