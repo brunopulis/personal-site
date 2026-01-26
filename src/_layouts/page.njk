@@ -2,30 +2,31 @@
 layout: base
 ---
 
-<section class="hero">
-  <div class="wrapper">
-    <div class="flow">
-      <h1 class="title p-name">{{ title }}</h1>
-      <p class="p-description">{{ description }}</p>
+<section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+  <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+    <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight text-white p-name">
+      {{ title }}</h1>
+    <p class="text-xl md:text-2xl text-brand-gray-500 font-light leading-relaxed p-description">{{
+      description }}</p>
 
 
-      {% if cta or cta2 %}
-      <div class="cluster">
-        {% if cta %}
-        <a href="{{ cta.link }}" class="button">{{ cta.label }}</a>
-        {% endif %}
-        {% if cta2 %}
-        <a href="{{ cta2.link }}" class="button" data-variant="outline">{{ cta2.label }}</a>
-        {% endif %}
-      </div>
+    {% if cta or cta2 %}
+    <div class="cluster">
+      {% if cta %}
+      <a href="{{ cta.link }}" class="button">{{ cta.label }}</a>
+      {% endif %}
+      {% if cta2 %}
+      <a href="{{ cta2.link }}" class="button" data-variant="outline">{{ cta2.label }}</a>
       {% endif %}
     </div>
+    {% endif %}
+  </div>
   </div>
 </section>
 
 <section class="region">
-  <div class="wrapper h-feed">
-    <div class="flow">
+  <div class="max-w-6xl mx-auto px-6 h-feed">
+    <div class="prose max-w-none">
       {{ content | safe }}
     </div>
   </div>
