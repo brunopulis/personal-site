@@ -2,29 +2,22 @@
 layout: base
 ---
 
-<section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
-  <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
-    <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight text-white p-name">
-      {{ title }}</h1>
-    <p class="text-xl md:text-2xl text-brand-gray-500 font-light leading-relaxed p-description">{{
-      description }}</p>
 
-
-    {% if cta or cta2 %}
-    <div class="cluster">
-      {% if cta %}
-      <a href="{{ cta.link }}" class="button">{{ cta.label }}</a>
-      {% endif %}
-      {% if cta2 %}
-      <a href="{{ cta2.link }}" class="button" data-variant="outline">{{ cta2.label }}</a>
-      {% endif %}
+<section aria-labelledby="page-title">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <h1 id="page-title" class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tighter mb-8">
+      {{ title }}
+    </h1>
+    <p class="text-xl md:text-3xl text-text-muted leading-relaxed max-w-3xl">
+      {{ description }}
+    </p>
+    <div class="mt-8 flex gap-4">
+      <div class="h-1 w-20 bg-brand-blue-500 rounded-full"></div>
     </div>
-    {% endif %}
-  </div>
   </div>
 </section>
 
-<section class="region">
+<section class="container mx-auto px-6 pb-32 space-y-32">
   <div class="max-w-6xl mx-auto px-6 h-feed">
     <div class="prose max-w-none">
       {{ content | safe }}
