@@ -9,44 +9,37 @@ pagination:
   size: 12
 ---
 
-<section class="flow">
-  <h2 class="title">Explore as categorias</h2>
-  <p>
-   Além de textos longos do blog, também escrevo <a href="/notas">notas curtas</a> e <a href="/newsletter">newsletters</a>,
-   assim você não perde nenhum conteúdo. Assine meu <a href="/feeds/blog/rss.xml">RSS</a>.
-  </p>
-
-  <h2 class="title">Explore por tema</h2>
-  <ul class="cluster" role="list">
+<section class="mb-24">
+  <div class="flex items-center gap-4 mb-8">
+    <h2 class="text-sm text-brand-blue-500 font-bold uppercase tracking-[0.2em]">Explore as categorias</h2>
+    <div class="h-px grow bg-border-dark"></div>
+  </div>
+  <div class="flex flex-wrap gap-3">
     {% set topTags = collections.tagListRecurrency | limit(16) %}
     {% for item in topTags %}
-    <li>
-      <a href="/tags/{{ item.tag | slugifyString }}/" class="tag-link">
-        {{ item.tag }}
-        <span class="tag-count">({{ item.count }})</span>
-      </a>
-    </li>
+    <a class="px-4 py-2 rounded-lg bg-brand-dark-600 border no-underline border-brand-blue-500 text-white  text-sm font-medium hover:border-primary hover:text-primary transition-all"
+      href="/tags/{{ item.tag | slugifyString }}/">{{ item.tag }} <span class="text-text-muted ml-1 text-xs">({{ item.count }})</span></a>
     {% endfor %}
-  </ul>
+  </div>
 </section>
 
-<ul class="flow" role="list">
+<section class="space-y-16">
   {% for item in pagination.items %}
-  <li class="article__entry h-entry">
-    <h3 class="flow">
-      <a href="{{ item.url | url }}">{{ item.data.title }}</a>
-    </h3>
+  <article class="group h-entry">
+    <time class="text-xs font-bold text-brand-blue-500 uppercase tracking-widest mb-3 block" datetime="{{ item.data.pubDate | toISOString }}">
+      {{ item.data.pubDate | readableDate }}
+    </time>
+    <a class="inline-block mb-3 text-white" href="{{ item.url | url }}">
+      <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-accent-blue transition-colors leading-tight">{{ item.data.title }}</h3>
+    </a>
     {% if item.data.description %}
-    <p class="card-text">
+    <p class="text-brand-gray-500 leading-relaxed max-w-2xl">
       {{ item.data.description | markdownFormat | safe }}
     </p>
     {% endif %}
-    <time datetime="{{ item.data.pubDate | toISOString }}">
-      {{ item.data.pubDate | readableDate }}
-    </time>
-  </li>
+  </article>
   {% endfor %}
-</ul>
+</section>
 
 {% if pagination.pages.length > 1 %}
 {% include 'components/pagination.njk' %}
