@@ -25,7 +25,7 @@ schema: BlogPosting
     <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
       {% if image %} {% image image, alt or "", credit, "eager", "feature" %} {%
       endif %}
-      <div class="e-content flow">{{ content | safe }}</div>
+      <div class="e-content prose max-w-none">{{ content | safe }}</div>
     </article>
 
     <footer class="after-article flow">
