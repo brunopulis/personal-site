@@ -1,7 +1,7 @@
 export default {
   title: "Seu Site",
   url: "https://www.brunopulis.com",
-  language: "pt-BR",
+  language: "pt-br",
   description: "Desenvolvedor e engenheiro de acessibilidade",
   author: {
     name: "Bruno Pulis",
