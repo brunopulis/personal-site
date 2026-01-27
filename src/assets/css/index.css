@@ -56,4 +56,26 @@
 }
 @layer reset, tokens, base, composition, utility, block, exception;
 
-/* @import './tests/debug.css' layer(base); */
+@layer base {
+  a {
+    @apply text-brand-blue-500 underline underline-offset-8;
+  }
+
+  a:hover {
+    @apply text-brand-blue-600 no-underline;
+  }
+
+  a:focus-visible {
+    outline: 2px dashed var(--color-brand-blue-500);
+    outline-offset: 4px;
+    border-radius: 1px;
+  }
+
+  .prose a {
+    @apply text-sm font-bold tracking-widest text-brand-blue-500 border-b-2 border-transparent transition-all duration-300;
+
+    &:hover {
+      @apply text-brand-blue-600 border-brand-blue-500 no-underline;
+    }
+  }
+}
