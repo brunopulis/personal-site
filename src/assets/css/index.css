@@ -79,3 +79,13 @@
     }
   }
 }
+
+@layer block {
+  .card {
+    @apply p-8 h-full bg-brand-dark-900 border border-brand-gray-200/30 rounded-xl flex flex-col justify-between transition-all;
+  }
+
+  .card:hover {
+    @apply shadow-md hover:ring-2 hover:ring-brand-blue-500/50;
+  }
+}

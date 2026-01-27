@@ -16,8 +16,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {% for post in posts.slice(0, 3) %}
       <article class="group cursor-pointer h-entry">
-        <div
-          class="p-8 h-full bg-brand-dark-900 border border-brand-gray-200/30 rounded-xl flex flex-col justify-between hover:ring-2 hover:ring-brand-blue-500/50 transition-all">
+        <div class="card">
           <div class="">
             <span class="text-accent-red text-xs font-bold uppercase tracking-widest block mb-4">
               {{ post.data.tags[0] }}
