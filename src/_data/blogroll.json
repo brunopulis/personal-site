@@ -4,7 +4,7 @@
     "url": "https://coryd.dev",
     "rss": "https://rsspress.me/coryd",
     "description": "A smart developer and probably the one person who tinkers with their website as much as I do.",
-    "category": "Web"
+    "category": "Desenvolvimento web"
   },
   {
     "title": "Reinaldo Ferraz",
@@ -47,7 +47,7 @@
     "url": "https://notes.neatnik.net",
     "rss": "https://notes.neatnik.net/rss.xml",
     "description": "The creator of omg.lol who has to write more stuff if I list him here.",
-    "category": "Web"
+    "category": "Desenvolvimento web"
   },
   {
     "title": "Zoe Aubert",
@@ -61,7 +61,7 @@
     "url": "https://localghost.dev",
     "rss": "https://localghost.dev/rss.xml",
     "description": "A developer who has an incredible website (check out the early 00s theme) and brings back the fun of the web.",
-    "category": "Web"
+    "category": "Desenvolvimento web"
   },
   {
     "title": "Martin Feld",
@@ -82,7 +82,7 @@
     "url": "https://lewisdale.dev",
     "rss": "https://lewisdale.dev/rss/",
     "description": "Lewis is a fellow UK-based developer posting about development things as well as cycling.",
-    "category": "Desenvolvimento"
+    "category": "Desenvolvimento web"
   },
   {
     "title": "Wade Urry",
@@ -96,7 +96,7 @@
     "url": "https://flamedfury.com",
     "rss": "https://flamedfury.com/rss.xml/",
     "description": "Posts about the open web and related topics and just look at that website. So good.",
-    "category": "Web"
+    "category": "Desenvolvimento web"
   },
   {
     "title": "Matt Birchler",
@@ -113,10 +113,17 @@
     "category": "Diversos"
   },
   {
-    "title": "Zach Leatherman",
-    "url": "https://www.zachleat.com",
-    "rss": "https://www.zachleat.com/web/rss",
-    "description": "The creator of Eleventy who posts excellent articles about Eleventy, web components, and everything in between.",
+    "title": "Adam Argyle",
+    "url": "https://nerdy.dev/",
+    "rss": "https://nerdy.dev/rss.xml",
+    "description": "Adam Argyle is a designer and developer who posts about design, development, and everything in between.",
+    "category": "CSS"
+  },
+  {
+    "title": "Ahmad Shadeed",
+    "url": "https://ishadeed.com/",
+    "rss": "https://ishadeed.com/rss.xml",
+    "description": "Ahmad Shadeed is a designer and developer who posts about design, development, and everything in between.",
     "category": "CSS"
   },
   {
