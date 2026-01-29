@@ -1,27 +1,34 @@
-<section class="py-24 border-t border-brand-gray-800">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
-    <div>
-      <h2 class="text-3xl font-bold mb-6">Explorar</h2>
-      <p class="text-brand-gray-500 mb-8 leading-relaxed">
-        Se você prefere navegar sem pressa, organizei os conteúdos por temas, séries e conexões. Encontre exatamente o
-        que você precisa para seu aprendizado.
-      </p>
-      <a class="inline-flex items-center gap-2 text-brand-blue-500 font-bold group" href="/explore">
-        Explorar conteúdos
-      </a>
-    </div>
-    <div class="card">
-      <h2 class="text-3xl font-bold mb-6">Um espaço feito com intenção</h2>
-      <p class="text-brand-gray-500 mb-6 leading-relaxed">
-        Este site não tenta convencer ninguém. Ele existe para quem valoriza clareza, acessibilidade e trabalho bem
-        feito.
-      </p>
-      <p class="text-brand-gray-500 mb-8">
-        Se isso faz sentido para você, talvez possamos conversar.
-      </p>
-      <a class="inline-flex items-center gap-2 text-brand-blue-500 font-bold group" href="/contato">
-        Entrar em contato
-      </a>
-    </div>
+<section class="mt-6 sm:mt-6 lg:mt-8 py-6">
+  <header>
+    <h2 class="font-bold mb-2 text-3xl">Explore</h2>
+    <p class="leading-relaxed">
+      Este site não tenta convencer ninguém valorizo a clareza, acessibilidade e trabalho bem feito.
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+    <a href="/now/"
+      class="block p-4 bg-brand-blue-50 dark:bg-brand-blue-900/20 rounded-lg hover:bg-brand-blue-100 dark:hover:bg-brand-blue-900/30 transition-colors">
+      <div class="text-2xl mb-2" aria-hidden="true">📍</div>
+      <h3 class="font-semibold">O que estou fazendo agora</h3>
+      <p class="text-sm">Projetos atuais e foco</p>
+    </a>
+
+    <a href="/uses/"
+      class="block p-4 bg-brand-blue-50 dark:bg-brand-blue-900/20 rounded-lg hover:bg-brand-blue-100 dark:hover:bg-brand-blue-900/30 transition-colors">
+      <div class="text-2xl mb-2" aria-hidden="true">🛠️</div>
+      <h3 class="font-semibold">Ferramentas que uso</h3>
+      <p class="text-sm">Hardware, software e setup</p>
+    </a>
+
+    <a href="/sitemap/"
+      class="block p-4 bg-brand-blue-50 dark:bg-brand-blue-900/20 rounded-lg hover:bg-brand-blue-100 dark:hover:bg-brand-blue-900/30 transition-colors">
+      <div class="text-2xl mb-2" aria-hidden="true">🗺️</div>
+      <h3 class="font-semibold">Explore este site</h3>
+      <p class="text-sm">Diretório completo de páginas</p>
+    </a>
   </div>
+  <a class="group inline-flex items-center gap-2 font-bold" href="/explore">
+    Explorar conteúdos {% lucide "chevron-right", { class: "w-4 h-4" } %}
+  </a>
 </section>

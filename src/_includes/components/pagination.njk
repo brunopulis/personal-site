@@ -1,24 +1,10 @@
-{% if pagination and pagination.pages.length > 1 %}
-<nav class="mt-20 pt-10 border-t border-border-dark flex gap-4 text-sm font-medium" aria-label="Paginação">
+<nav class="flex justify-between items-center mt-8" aria-label="Pagination">
   {% if pagination.href.previous %}
-  <a class="flex items-center gap-2 text-brand-gray-500 hover:text-white transition-colors"
-    href="{{ pagination.href.previous }}" rel="prev">
-    {% lucide "chevron-left", { class: "w-4 h-4 text-brand-gray-500" } %}
-    Anterior
-  </a>
+    <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Newer</a>
   {% else %}
-  <span class="cursor-not-allowed flex items-center gap-2 text-brand-gray-500 hover:text-white transition-colors">{%
-    lucide "chevron-left", { class: "w-4 h-4 text-brand-gray-500" } %} Anterior</span>
+    <span></span>
   {% endif %}
-  <span class="text-brand-gray-500">Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages.length }}</span>
   {% if pagination.href.next %}
-  <a class="flex items-center gap-2 text-brand-gray-500 hover:text-white transition-colors"
-    href="{{ pagination.href.next }}" rel="next">
-    Próxima
-    {% lucide "chevron-right", { class: "w-4 h-4 text-brand-gray-500" } %}
-  </a>
-  {% else %}
-  <span class="cursor-not-allowed">Próxima {% lucide "chevron-right", { class: "w-4 h-4 text-brand-gray-500" } %}</span>
+    <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Older</a>
   {% endif %}
 </nav>
-{% endif %}
