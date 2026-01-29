@@ -122,7 +122,7 @@ var PostCollection = {
 var PageCollection = {
   name: "page",
   label: "P\xE1ginas",
-  path: "src/content/pages",
+  path: "src/pages",
   format: "md",
   match: {
     include: "*",

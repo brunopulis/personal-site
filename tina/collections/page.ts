@@ -3,7 +3,7 @@ import type {Collection} from 'tinacms';
 export const PageCollection: Collection = {
 	name: 'page',
 	label: 'Páginas',
-	path: 'src/content/pages',
+	path: 'src/pages',
 	format: 'md',
 	match: {
 		include: '*',
