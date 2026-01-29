@@ -1,7 +1,9 @@
 {%- set defaultVariant = variant or 'default' -%}
 {%- set defaultEmail = email or 'brunopulis@protonmail.com' -%}
-{%- set subject = ('Re: ' + postTitle) | urlencode -%}
-{%- set bodyText = 'Olá! Li seu post "' + postTitle + '" e gostaria de comentar:\n\n' + postUrl + '\n\n' -%}
+{%- set pTitle = postTitle or title -%}
+{%- set pUrl = postUrl or (meta.url + page.url) -%}
+{%- set subject = ('Re: ' + pTitle) | urlencode -%}
+{%- set bodyText = 'Olá! Li seu post "' + pTitle + '" e gostaria de comentar:\n\n' + pUrl + '\n\n' -%}
 {%- set body = bodyText | urlencode -%}
 {%- set mailToLink = 'mailto:' + defaultEmail + '?subject=' + subject + '&body=' + body -%}
 
@@ -13,7 +15,7 @@
   </div>
 
   <div class="share-buttons">
-    <p class="text-sm font-semibold text-blood-red-800">Compartilhe este artigo ou responda:</p>
+    <p class="text-sm font-semibold text-brand-red-800">Compartilhe este artigo ou responda:</p>
 
     <ul class="cluster" role="list">
       <li><a href="{{ mailToLink }}">Responder por e-mail</a></li>

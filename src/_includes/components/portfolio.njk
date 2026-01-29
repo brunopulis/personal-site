@@ -1,50 +1,45 @@
-<section class="py-6" id="projetos" aria-labelledby="projetos-title">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<section class="mx-auto mt-12 sm:mt-6 lg:mt-8 px-4 sm:px-6 lg:px-6 py-12 max-w-7xl" id="projetos" aria-labelledby="projetos-title">
+    <div class="flex md:flex-row flex-col justify-between md:items-end gap-6 mb-16">
       <div>
-        <h2 class="text-3xl font-bold mb-4" id="projetos-title">Projetos em Destaque</h2>
-        <p class="text-brand-gray-500 max-w-2xl">Uma seleção de trabalhos onde a
-          acessibilidade
-          e os padrões web foram o pilar central para resolver desafios complexos.</p>
+        <h2 class="mb-4 font-bold text-3xl" id="projetos-title">Projetos em Destaque</h2>
+        <p class="max-w-2xl">Alguns trabalhos que realizei, <a class="font-bold" href="/portfolio">ver portfólio completo.</a></p>
       </div>
-      <a class="text-brand-blue-500 font-bold flex items-center gap-2" href="/portfolio">
-        ver portfólio completo {% lucide "arrow-right" %}
-      </a>
+      
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="gap-8 grid grid-cols-1 md:grid-cols-2">
       {% set projects = portfolio.projects %}
       {% for project in projects.slice(0, 2) %}
       <div
-        class="group bg-brand-dark-900 border border-brand-gray-200/30 rounded-xl overflow-hidden card-hover flex flex-col">
-        <div class="aspect-video w-full overflow-hidden bg-[#0d1117] relative">
+        class="group flex flex-col border border-brand-dark-200 rounded-xl overflow-hidden card-hover">
+        <div class="relative w-full aspect-video overflow-hidden">
           <img alt="{{ project.imageAlt }}"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             src="{{ project.image }}">
           <div class="absolute inset-0 bg-linear-to from-card-dark/80 to-transparent"></div>
         </div>
-        <div class="p-8 flex flex-col grow">
-          <h3 class="text-2xl font-bold text-brand-gray-500 dark:text-white mb-4">{{ project.title }}</h3>
-          <p class="text-brand-gray-500 mb-6 grow">
+        <div class="flex flex-col p-8 grow">
+          <h3 class="mb-4 font-bold text-2xl">{{ project.title }}</h3>
+          <p class="mb-6 grow">
             {{ project.description }}
           </p>
           <div class="flex flex-wrap gap-2 mb-8">
             {% for tech in project.technologies %}
             <span
-              class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-brand-blue-500/10 text-brand-blue-500 rounded-full border border-brand-blue-500/20">
+              class="bg-brand-blue-500/10 px-3 py-1 border border-brand-blue-500/20 rounded-full font-bold text-[10px] text-brand-blue-500 uppercase tracking-wider">
               {{ tech }}
             </span>
             {% endfor %}
           </div>
           <div class="flex gap-4">
             {% if project.links.demo %}
-            <a class="inline-flex items-center gap-2 text-brand-blue-500 font-bold hover:underline"
+            <a class="inline-flex items-center gap-2 font-bold text-brand-blue-500 hover:underline"
               href="{{ project.links.demo }}">
               Ver projeto
               {% lucide "arrow-up-right", { "class": "w-4 h-4" } %}
             </a>
             {% endif %}
             {% if project.links.case %}
-            <a class="inline-flex items-center gap-2 text-brand-blue-500 font-bold hover:underline"
+            <a class="inline-flex items-center gap-2 font-bold text-brand-blue-500 hover:underline"
               href="{{ project.links.case }}">
               Ver estudo de caso
               {% lucide "arrow-right", { "class": "w-4 h-4" } %}

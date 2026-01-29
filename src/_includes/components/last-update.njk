@@ -1,11 +1,9 @@
-<div
-  class="mt-24 pt-8 border-t border-slate-200 dark:border-border-dark flex items-center justify-between text-sm text-slate-500 dark:text-muted-dark">
-  <p class="flex items-center gap-2 text-white">
+<div class="flex justify-between items-center mt-24 pt-8 border-slate-200 dark:border-border-dark border-t text-sm">
+  <p class="flex items-center gap-2">
     {% lucide "clock", { class: "w-4 h-4" } %}
     Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}
   </p>
-  <a class="text-white flex items-center gap-1 scroll-smooth hover:text-brand-blue-500 transition-colors"
-    href="#mainnav">
+  <a class="flex items-center gap-1 hover:text-brand-blue-500 transition-colors scroll-smooth" href="#mainnav">
     Voltar ao topo {% lucide "arrow-up" %}
   </a>
 </div>

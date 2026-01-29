@@ -1,21 +1,39 @@
-<section class="hero max-w-6xl mx-auto px-6 pt-24 pb-32">
-  <div class="max-w-3xl">
-    <h1 class="text-5xl text-white font-extrabold leading-tight mb-8">Acessibilidade, web e pensamento crítico.</h1>
+<section aria-label="hero-title">
+  <div class="text-center mb-12 py-8">
+    <h1 class="p-name text-4xl font-bold mb-4" id="hero-title">{{ site.name }}</h1>
+    <p class="p-summary text-xl text-brand-dark-500 mb-6">{{ site.description }}</p>
+    <a class="u-url hidden" href="{{ site.url }}/"></a>
 
-    <p class="text-lg md:text-xl text-white leading-relaxed mb-6">
-      Eu sou <span class="font-semibold text-brand-blue-500">Bruno Pulis</span>. Trabalho com
-      acessibilidade digital,
-      qualidade de software e <em>front-end</em> — não como checklist, mas como convicção.
-    </p>
+    <div class="max-w-2xl mx-auto mb-8">
+      <p class="text-lg leading-relaxed text-brand-dark-500 mb-6">
+        Este é meu canto digital. Um espaço para escrever, compartilhar conhecimento e ajudar pessoas e equipes a
+        construírem uma web mais humana.
+      </p>
 
-    <p class="text-xl md:text-2xl text-white mb-8">
-      Este é meu canto digital. Um espaço para escrever, compartilhar
-      conhecimento e ajudar pessoas e equipes a construírem uma web mais humana.
-    </p>
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">
+          🌱 IndieWeb
+        </span>
+        <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+          📡 RSS Ready
+        </span>
+        <span class="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">
+          🔒 Privacy First
+        </span>
+        <span class="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full">
+          ♿ Accessible
+        </span>
+      </div>
+    </div>
 
-    <nav aria-label="Ações principais" class="flex flex-wrap gap-4">
-      <a href="/servicos" class="">Ver serviços</a>
-      <a href="/now" class="">O que estou fazendo agora</a>
-    </nav>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/about/" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors">
+        <span aria-hidden="true">👋</span> Saiba mais sobre mim
+      </a>
+      <a href="/now/"
+        class="border border-purple-600 text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 px-6 py-2 rounded-lg transition-colors">
+        <span aria-hidden="true">📍</span>O que estou fazendo agora
+      </a>
+    </div>
   </div>
 </section>
