@@ -5,8 +5,6 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
 export const buildAllCss = async () => {
-	console.log('🎨 Compilando SCSS...');
-
 	try {
 		const result = sass.compile('src/assets/scss/main.scss', {
 			loadPaths: ['node_modules'],

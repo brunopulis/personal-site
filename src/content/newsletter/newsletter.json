@@ -1,5 +1,4 @@
 {
 	"layout": "post",
-	"permalink": "/newsletter/{{ page.fileSlug }}/",
-	"tags": ["newsletters"]
+	"permalink": "/newsletter/{{ page.fileSlug }}/"
 }

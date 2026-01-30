@@ -53,30 +53,121 @@
   --color-brand-blue-800: #485578;
   --color-brand-blue-900: #2e364c;
   --color-brand-blue-950: #131720;
+
+  --color-focus-ring: #849cdb;
+  --color-focus-ring-offset: #d9d9d9;
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
 }
+
 @layer reset, tokens, base, composition, utility, block, exception;
 
 @layer base {
   a {
-    @apply text-brand-blue-500 underline underline-offset-8;
+    @apply text-brand-dark-500;
   }
 
   a:hover {
-    @apply text-brand-blue-600 no-underline;
+    @apply text-brand-blue-500 underline;
   }
 
-  a:focus-visible {
-    outline: 2px dashed var(--color-brand-blue-500);
-    outline-offset: 4px;
-    border-radius: 1px;
+  button:hover {
+    transform: translateY(-1px);
+  }
+
+  button:active {
+    transform: translateY(0);
+  }
+
+  :focus-visible {
+    outline: 3px dashed var(--color-focus-ring);
+    outline-offset: 3px;
   }
 
   .prose a {
-    @apply text-sm font-bold tracking-widest text-brand-blue-500 border-b-2 border-transparent transition-all duration-300;
+    @apply border-transparent border-b-2 font-bold text-brand-blue-500 text-sm tracking-widest transition-all duration-300;
 
     &:hover {
-      @apply text-brand-blue-600 border-brand-blue-500 no-underline;
+      @apply border-brand-blue-500 text-brand-blue-600 no-underline;
     }
+  }
+
+  /* Blog post typography styles */
+  .prose {
+    @apply max-w-none text-gray-900 dark:text-gray-100;
+  }
+
+  .prose p {
+    @apply mb-6 leading-relaxed;
+  }
+
+  .prose h1 {
+    @apply mt-8 mb-6 font-bold text-gray-900 dark:text-gray-100 text-3xl;
+  }
+
+  .prose h2 {
+    @apply mt-8 mb-4 font-bold text-gray-900 dark:text-gray-100 text-2xl;
+  }
+
+  .prose h3 {
+    @apply mt-6 mb-3 font-semibold text-gray-900 dark:text-gray-100 text-xl;
+  }
+
+  .prose h4 {
+    @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-lg;
+  }
+
+  .prose h5 {
+    @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-base;
+  }
+
+  .prose h6 {
+    @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-sm;
+  }
+
+  .prose ul {
+    @apply mb-6 pl-6;
+  }
+
+  .prose ol {
+    @apply mb-6 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose ul li {
+    @apply list-disc;
+  }
+
+  .prose ol li {
+    @apply list-decimal;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-purple-500 pl-6 py-2 mb-6 italic text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800/50;
+  }
+
+  .prose code {
+    @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono text-purple-700 dark:text-purple-300 text-sm;
+  }
+
+  .prose pre {
+    @apply bg-gray-100 dark:bg-gray-900 mb-6 p-4 rounded-lg overflow-x-auto text-gray-900 dark:text-gray-100;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0;
+    color: inherit;
+  }
+
+  /* Ensure HLJS themes don't override background/text inside prose blocks */
+  .prose pre code.hljs,
+  .prose code.hljs,
+  .prose pre .hljs {
+    background: transparent !important;
+    color: inherit;
   }
 }
 
@@ -87,5 +178,11 @@
 
   .card:hover {
     @apply shadow-md hover:ring-2 hover:ring-brand-blue-500/50;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply mx-auto lg:px-6 max-w-7xl;
   }
 }

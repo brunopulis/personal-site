@@ -2,30 +2,9 @@
 layout: base
 ---
 
-
-<section aria-labelledby="page-title">
-  <div class="container max-w-6xl mx-auto px-6 py-16 md:py-24">
-    <h1 id="page-title" class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tighter mb-8">
-      {{ title }}
-    </h1>
-    <p class="text-xl md:text-3xl text-text-muted leading-relaxed max-w-3xl">
-      {{ description }}
-    </p>
-    {% if cta %}
-    <div class="mt-8 flex gap-4">
-      <a href="{{ cta.link }}"
-        class="mt-8 flex gap-4 text-sm tracking-widest text-brand-blue-500 hover:text-brand-blue-600 border-b-2 border-brand-blue-500 hover:border-brand-blue-600 transition-all duration-300">
-        {{ cta.label }}
-      </a>
-    </div>
-    {% endif %}
-    <div class="h-1 w-20 bg-primary rounded-full"></div>
-  </div>
-</section>
-
-<section class="pb-32 space-y-32">
-  <div class="max-w-6xl mx-auto px-6 h-feed">
-    <div class="prose max-w-none">
+<section class="space-y-32">
+  <div class="mx-auto mt-12 sm:mt-6 lg:mt-8 px-4 sm:px-6 lg:px-6 py-12 max-w-7xl h-feed">
+    <div class="max-w-none prose">
       {{ content | safe }}
     </div>
   </div>

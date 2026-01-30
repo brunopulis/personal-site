@@ -1,50 +1,107 @@
 ---
 layout: base
-schema: BlogPosting
 ---
+<a href="/blog/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">
+  ← Voltar para o blog
+</a>
 
-<header class="hero" aria-labelledby="post-title">
-  <div class="wrapper">
-    <div class="flow">
-      <h1 class="title p-name" id="post-title">{{ title }}</h1>
-      <p>{{ description }}</p>
+<nav class="mb-4 text-brand-gray-500 text-sm" aria-label="Breadcrumb">
+  <ol class="flex space-x-2">
+    <li><a href="/" class="hover:text-blue-600">Home</a></li>
+    <li><span aria-hidden="true">›</span></li>
+    <li><a href="/blog/" class="hover:text-blue-600">Blog</a></li>
+    <li><span aria-hidden="true">›</span></li>
+    <li class="text-gray-900 dark:text-gray-100">{{ title }}</li>
+  </ol>
+</nav>
 
-      <div>
-        {% set definedDate = pubDate %}
-        <time class="dt-published text-sm text-white" datetime="{{ definedDate | toISOString }}">
-          Publicado em: {{ definedDate | formatDate('MMMM D, YYYY') | capitalize
-          }}
-        </time>
-      </div>
+<article class="h-entry">
+  {% if featuredImage %}
+  <img class="mb-6 rounded-lg w-full u-photo" src="{{ featuredImage }}" alt="Featured image for {{ title }}" />
+  {% endif %}
+
+  <header class="mb-6">
+    <h1 class="mb-2 p-name font-bold text-3xl">{{ title }}</h1>
+    {% if subtitle %}
+    <p class="mb-4 text-brand-gray-500 dark:text-gray-400 text-xl">{{ subtitle }}</p>
+    {% endif %}
+    <div class="text-brand-gray-500 dark:text-gray-400 text-sm">
+      Publicado em <time class="dt-published" datetime="{{ page.date | toISOString }}">{{ page.date | readableDate
+        }}</time>
+      por <span class="p-author h-card"><a class="p-name hover:text-blue-600 u-url" href="/about/">{{ author or
+          site.author }}</a></span>
+      • <span class="reading-time">{{ content | readingTime }} min de leitura</span>
+    </div>
+    <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
+  </header>
+
+  <div class="max-w-none e-content prose">
+    {{ content | safe }}
+  </div>
+
+  {% if tags %}
+  <div class="mt-8 pt-6 border-gray-200 dark:border-gray-700 border-t post-tags">
+    <h3 class="mb-2 font-semibold text-gray-500 text-sm uppercase tracking-wide">Tags</h3>
+    <div class="flex flex-wrap gap-2">
+      {% for tag in tags %}
+      <a class="hover:opacity-80 p-category px-3 py-1 rounded-full text-white text-sm transition-opacity"
+        style="--tag-bg: {{ tag | tagColor }}; background-color: var(--tag-bg);" href="/tags/{{ tag | slug }}/">#{{ tag
+        }}</a>
+      {% endfor %}
     </div>
   </div>
-</header>
+  {% endif %}
 
-<div class="wrapper | region">
-  <div class="flow">
-    <article class="h-entry" itemscope itemtype="https://schema.org/BlogPosting" data-pagefind-body>
-      {% if image %} {% image image, alt or "", credit, "eager", "feature" %} {%
-      endif %}
-      <div class="e-content prose max-w-none">{{ content | safe }}</div>
-    </article>
+  <section class="mt-8 pt-6 border-gray-200 dark:border-gray-700 border-t">
+    {% include "components/post-engagement.njk" %}
+  </section>
 
-    <footer class="after-article flow">
-      <h2 class="title">Tags</h2>
-      <ul class="cluster" role="list">
-        {% for tag in tags %} {% if tag != "posts" %}
-        <li class="tag">
-          <a href="/tags/{{ tag | slugify }}/" class="p-category">{{ tag }}</a>
-        </li>
-        {% endif %} {% endfor %}
-      </ul>
+  <section class="mt-12 pt-8 border-gray-200 dark:border-gray-700 border-t">
+    <div class="bg-brand-blue-50 dark:bg-brand-blue-900/20 p-6 rounded-lg">
+      <div class="flex items-start space-x-4">
+        <img class="rounded-full w-16 h-16" src="/assets/images/pulis.webp" alt="{{ site.author }}" />
+        <div>
+          <h3 class="font-semibold text-lg">Sobre {{ site.author }}</h3>
+          <p class="mt-1 text-brand-gray-500 dark:text-gray-400">{{ site.bio.long }}</p>
+          <div class="flex space-x-4 mt-3 text-sm">
+            <a href="/sobre/" class="text-blue-600 hover:text-blue-800">Saiba mais sobre mim</a>
+            <a href="/apoie/" class="text-green-600 hover:text-green-800">Apoie meu trabalho</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      {% set postTitle = title %}
-      {% set postUrl = page.url %}
-      {% set email = "brunopulis@protonmail.com" %}
-      {% include "components/post-engagement.njk" %}
-      {% include "partials/webmentions.njk" %}
-    </footer>
-  </div>
-  {% include "components/newsletter.njk" %}
-  {% include "components/authorship.njk" %}
-</div>
+  <section class="mt-8">
+    {% if site.bio.long %}
+    <div class="bg-blue-50 dark:bg-blue-900/20 mb-8 p-6 rounded-lg">
+      <h3 class="mb-2 font-semibold text-lg">Sobre {{ site.author }}</h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        {{ site.bio.long }}
+      </p>
+    </div>
+    {% endif %}
+    {% if site.newsletter.enabled %}
+    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
+      <h3 class="mb-2 font-semibold text-lg">{{ site.newsletter.title }}</h3>
+      <p class="mb-4 text-brand-gray-500 dark:text-gray-400">{{ site.newsletter.description }}</p>
+      <form action="{{ site.newsletter.action }}" method="post"
+        class="flex sm:flex-row flex-col gap-3 mx-auto max-w-md">
+        <input type="email" name="email" placeholder="your@email.com" class="flex-1 px-4 py-2 border rounded-lg"
+          required />
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg text-white">Subscribe</button>
+      </form>
+    </div>
+    {% endif %}
+  </section>
+
+
+  <section id="webmentions" class="mt-12">
+    <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
+    <div id="webmentions-list">
+      <div class="py-4 text-gray-500 text-center">
+        <div class="animate-pulse">Carregando webmentions...</div>
+      </div>
+    </div>
+  </section>
+</article>
