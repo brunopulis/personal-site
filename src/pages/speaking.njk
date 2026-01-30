@@ -1,0 +1,64 @@
+---
+layout: page
+title: "Palestras e Eventos"
+permalink: "/speaking/index.html"
+key: 'speaking'
+description: "Compartilhando conhecimento sobre como construir uma web mais acessível e padronizada. Meu foco é
+acessibilidade prática, padrões WCAG e sistemas de design inclusivo."
+cta:
+  link: /contato
+  label: Me convide para seu evento
+cta2:
+  link: /press-kit
+  label: Confira meu Press Kit
+---
+
+{% set allTalks = talks %}
+{% set talksByYear = allTalks | groupBy("attendedYear") %}
+
+{% for year in talksByYear | sortKeys %}
+<section class="mx-auto max-w-7xl h-feed">
+  <div class="flex justify-between items-baseline mb-8 pb-4 border-border-dark border-b">
+    <h2 class="font-bold text-3xl tracking-tight">{{ year }}</h2>
+    <p class="text-sm">
+      {{ talksByYear[year] | length }} {{ "palestras" if talksByYear[year] | length > 1 else "palestra" }}
+    </p>
+  </div>
+
+  <div class="gap-6 grid grid-cols-1">
+    {% for talk in talksByYear[year] | sort(attribute="date") | reverse %}
+    <article
+      class="flex flex-col justify-between p-8 border border-brand-gray-200/30 rounded-xl hover:ring-2 hover:ring-brand-blue-500/50 h-full transition-all">
+      <div class="flex justify-between items-center mb-4">
+        {% lucide "presentation", { class: "w-4 h-4 text-brand-blue-500" } %}
+        <time datetime="{{ talk.date }}" class="font-mono text-brand-blue-500 dt-published">{{ talk.date |
+          formatDate("MMMM D, YYYY") }}</time>
+      </div>
+      <div class="flex-1">
+        <h3 class="font-bold group-hover:text-primary text-xl leading-tight transition-colors">
+          {{ talk.title }}
+        </h3>
+      </div>
+
+      <div class="flex items-center gap-1.5 mt-4 text-gray-500 text-xs">
+        {% if talk.location %}
+        {% lucide "map-pin", { class: "w-4 h-4 text-brand-blue-500" } %}
+        <p class="text-brand-blue-500">{{ talk.location }}</p>
+        {% endif %}
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-8">
+        {% if talk.slides %}
+        <a href="{{ talk.slides }}"
+          class="border-transparent hover:border-brand-blue-500 border-b-2 text-brand-blue-500 hover:text-brand-blue-600 text-sm tracking-widest transition-all duration-300">Slides</a>
+        {% endif %}
+        {% if talk.video %}
+        <a href="{{ talk.video }}"
+          class="border-transparent hover:border-brand-blue-500 border-b-2 text-brand-blue-500 hover:text-brand-blue-600 text-sm tracking-widest transition-all duration-300">Vídeo</a>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+</section>
+{% endfor %}
+<hr class="mb-12 border-gray-700" />

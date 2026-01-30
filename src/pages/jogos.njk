@@ -1,0 +1,114 @@
+---
+layout: page
+title: "Meus jogos favoritos"
+permalink: "/jogos/index.html"
+description: "Coleção dos meus jogos favoritos"
+---
+
+<div class="games-grid">
+  {% for game in games %}
+  <article class="game-card">
+    <img src="{{ game.coverImage }}" alt="" loading="lazy">
+    
+    <div class="game-content">
+      <h2>{{ game.title }}</h2>
+      
+      <div class="game-meta">
+        <span class="rating">⭐ {{ game.rating }}/5</span>
+        {% if game.metacritic %}
+        <span class="metacritic">Metacritic: {{ game.metacritic }}</span>
+        {% endif %}
+        <span class="release-date">{{ game.releaseDate | formatDate }}</span>
+      </div>
+      
+      <div class="genres">
+        {% for genre in game.genres %}
+        <span class="genre-tag">{{ genre }}</span>
+        {% endfor %}
+      </div>
+      
+      <p class="description">{{ game.description | truncate(200) }}</p>
+      
+      <div class="platforms">
+        <strong>Plataformas:</strong>
+        {{ game.platforms | join(', ') }}
+      </div>
+      
+      {% if game.website %}
+      <a href="{{ game.website }}" class="game-link" target="_blank">
+        Site Oficial →
+      </a>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+<style>
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .game-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .game-content {
+    padding: 1.5rem;
+  }
+  
+  .game-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .genre-tag {
+    background: #e0e0e0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .description {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .platforms {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  
+  .game-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0066cc;
+    text-decoration: none;
+  }
+</style>

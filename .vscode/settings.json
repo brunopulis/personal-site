@@ -22,5 +22,12 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": [
+    "assisti",
+    "Filmes",
+    "fotografias",
+    "lista",
+    "todas"
+  ]
 }

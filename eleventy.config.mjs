@@ -99,7 +99,6 @@ export default async function eleventy(eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy({
 		'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
-		'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js': 'assets/js/bootstrap.bundle.min.js',
 		'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': 'assets/components/',
 		'node_modules/@zachleat/table-saw/table-saw.js': 'assets/components/table-saw.js'
 	});

@@ -16,7 +16,7 @@ export const toRfc3339Date = (date) => {
 export const formatDate = (date, format) => dayjs(date).format(format);
 
 /** Retorna a data no formato legível em português brasileiro (ex: 15 de dezembro de 2024) */
-export const readableDate = date => dayjs(date).format('D [de] MMMM [de] YYYY');
+export const readableDate = date => dayjs(date, { zone: "utc" }).format('LLLL d, yyyy');
 
 /** * Retorna a data em formato relativo (ex: "há 3 dias").
  * @param {Date} date - Objeto Date ou string de data.

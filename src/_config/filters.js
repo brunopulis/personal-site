@@ -16,6 +16,7 @@ import {sortAlphabetically} from './filters/sort-alphabetic.js';
 import {splitStrings} from './filters/split-strings.js';
 import {splitlines} from './filters/splitlines.js';
 import {striptags} from './filters/striptags.js';
+import {tagColor} from './filters/tag-color.js';
 import {slugifyString} from './filters/slugify.js';
 import {
   webmentionGetForUrl,
@@ -56,5 +57,6 @@ export {
   webmentionByType,
   webmentionisOwn,
   webmentionSort,
+  tagColor,
   markdownFormat as markdownify
 };

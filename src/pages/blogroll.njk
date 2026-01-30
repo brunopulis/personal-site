@@ -1,0 +1,64 @@
+---
+layout: base
+title: "Blogroll"
+description: "Pessoas e blogs incríveis que acompanho na web."
+permalink: "/blogroll/index.html"
+---
+
+<header class="mb-12">
+  <h1 class="text-4xl font-bold mb-4">Blogroll</h1>
+  <p class="text-xl">
+    Uma lista curada de pessoas, blogs e recursos que acompanho e recomendo.
+  </p>
+</header>
+
+{% set groupedBlogs = blogroll | groupBy('category') %}
+<div class="space-y-16">
+  {% for category, blogs in groupedBlogs | dictsort %}
+  <section aria-labelledby="cat-{{ category | slugifyString }}">
+    <h2 id="cat-{{ category | slugifyString }}" class="text-2xl font-bold mb-8 flex items-center gap-3">
+      {{ category }}
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {% for blog in blogs %}
+      <article class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <div class="flex flex-col h-full">
+          <h3 class="text-xl font-bold mb-3">
+            <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer" class="after:absolute after:inset-0">
+              {{ blog.title }}
+            </a>
+          </h3>
+
+          <p class="mb-6 flex-1 line-clamp-3">
+            {{ blog.description }}
+          </p>
+
+          <div class="flex items-center justify-between mt-auto">
+            {% if blog.rss %}
+            <a href="{{ blog.rss }}" class="relative z-10 text-orange-500 hover:text-orange-600 p-2 -m-2"
+              aria-label="RSS Feed para {{ blog.title }}">
+              {% lucide "rss", { "class": "w-5 h-5" } %}
+            </a>
+            {% endif %}
+
+            <span class="text-sm font-medium">
+              {{ blog.url | replace('https://', '') | replace('http://', '') | replace('www.', '') | splitStrings('/') |
+              first }}
+            </span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+
+{% if (blogroll | length) == 0 %}
+<div
+  class="text-center py-20 bg-gray-50 dark:bg-gray-900 rounded-3xl border-2 border-dashed border-gray-200 dark:border-gray-800">
+  {% lucide "search-x", { "class": "w-12 h-12 mx-auto text-gray-400 mb-4" } %}
+  <p class="text-gray-500 dark:text-gray-400 text-lg">Nenhum blog encontrado no momento.</p>
+</div>
+{% endif %}

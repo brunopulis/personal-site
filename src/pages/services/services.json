@@ -1,0 +1,5 @@
+{
+  "layout": "base",
+  "permalink": "servicos/{{ customURL if customURL else title | slugify | safe }}/index.html",
+  "tags": ["service"]
+}
