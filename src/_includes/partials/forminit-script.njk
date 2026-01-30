@@ -1,0 +1,35 @@
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+<script>
+  const forminit = new Forminit();
+  const FORM_ID = '{{ site.forminitFormId }}';
+
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    // Show loading state
+    status.textContent = 'Enviando...';
+    status.className = 'status-loading';
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+    console.log('Sending payload:', payload);
+    const { data, error } = await forminit.submit(FORM_ID, payload);
+
+    if (error) {
+      status.textContent = error.message;
+      status.className = 'status-error';
+      return;
+    }
+
+    // Success
+    status.textContent = 'Mensagem enviada com sucesso!';
+    status.className = 'status-success';
+
+    window.location.href = '/thank-you';
+    form.reset();
+  });
+</script>

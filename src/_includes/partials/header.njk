@@ -1,20 +1,35 @@
-<a href="#main" class="sr-only">{{ meta.skipContent }}</a>
-<header>
-  <nav class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-y-4 md:gap-x-12"
-    id="mainnav" aria-label="{{ meta.navigation.ariaTop }}">
-    <a href="/"
-      class="text-2xl font-black text-brand-dark-500 tracking-tighter hover:text-brand-red-500 transition-colors duration-300">
+<header class="bg-brand-gray-200 border-brand-gray-500border-b">
+  <div class="flex justify-between items-center mx-auto px-4 py-3 container">
+    <a class="font-semibold text-lg" href="/">
       {% svg "misc/logo", "Bruno Pulis" %}
     </a>
 
-    <ul class="flex flex-wrap items-center justify-center md:justify-end gap-x-4 md:gap-x-8 gap-y-2">
-      {% for item in navigation.top %}
-      <li>
-        <a href="{{ item.url }}" {% if page.url==item.text %}aria-current="page" {% endif %} class="{{ itemClass }}">
-          {{ item.text }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
+    <nav>
+      <div id="primary-nav" class="hidden md:block">
+        {% set url = page.url or '/' %}
+        {% set isHome = url == '/' %}
+        {% set isBlog = (url and (url | slice(0, 6) == '/blog/')) %}
+        {% set isAbout = url == '/about/' %}
+        {% set isUses = url == '/uses/' %}
+        {% set isNow = url == '/now/' %}
+        {% set isContact = url == '/contact/' %}
+        <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
+          {% for item in navigation.top %}
+          <li>
+            <a href="{{ item.url }}"
+              class="nav-item block py-2 {% if item.url == url %}underline font-semibold{% endif %}" {% if item.url==url
+              %}aria-current="page" {% endif %}>{{ item.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+
+    <button id="hamburger" class="md:hidden p-2 border border-gray-300 rounded" aria-label="Toggle menu"
+      aria-controls="primary-nav" aria-expanded="false">
+      <span class="block bg-brand-dark-700 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
+      <span class="block bg-brand-dark-700 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
+      <span class="block bg-brand-dark-700 w-5 h-0.5 transition-transform bar-3"></span>
+    </button>
+  </div>
 </header>
