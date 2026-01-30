@@ -9,9 +9,9 @@
   <!-- 2 title -->
   <title>
     {%- if title -%}
-    {{ title }} | {{ meta.siteName }}
+    {{ title }} | {{ site.name }}
     {%- else -%}
-    {{ meta.siteName }}
+    {{ site.name }}
     {%- endif -%}
   </title>
   <base href="{{ page.url }}" />
@@ -123,75 +123,9 @@
   <script defer src="https://cloud.umami.is/script.js" data-website-id="88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"></script>
 </head>
 
-<body class="flex flex-col min-h-screen bg-white text-brand-dark-500">
-  <div id="progress-bar" aria-hidden="true"></div>
-  <a href="#main" class="sr-only">{{ meta.skipContent }}</a>
-  <header class=" bg-brand-gray-200 border-brand-gray-200 dark:border-gray-700 border-b">
-    <div class="flex items-center gap-3 mx-auto px-4 py-3 container">
-      <button id="hamburger" class="md:hidden p-2 border border-gray-300 dark:border-gray-600 rounded"
-        aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
-        <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
-        <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
-        <span class="block bg-gray-700 dark:bg-gray-200 w-5 h-0.5 transition-transform bar-3"></span>
-      </button>
-      <a class="font-semibold text-lg" href="/">
-        {% svg "misc/logo", "Bruno Pulis" %}
-      </a>
-
-      <form class="hidden sm:block ml-auto" role="search" aria-label="Site" action="/search/" method="get">
-        <label class="sr-only" for="q">Digite sua pesquisa</label>
-        <input id="q" name="q" type="search" placeholder="digite um termo de pesquisa…"
-          class="px-3 py-2 border rounded w-64" />
-      </form>
-      <div class="flex items-center gap-2 ml-2">
-        <button id="dark-toggle" class="px-2 py-1 border rounded text-sm" aria-pressed="false"
-          aria-label="Toggle dark mode">🌙</button>
-      </div>
-    </div>
-  </header>
-  <nav class="bg-brand-gray-200 border-brand-gray-200 dark:border-gray-700 border-b">
-    <div id="primary-nav" class="hidden md:block mx-auto px-4 py-2 container">
-      {% set url = page.url or '/' %}
-      {% set isHome = url == '/' %}
-      {% set isBlog = (url and (url | slice(0, 6) == '/blog/')) %}
-      {% set isAbout = url == '/about/' %}
-      {% set isUses = url == '/uses/' %}
-      {% set isNow = url == '/now/' %}
-      {% set isContact = url == '/contact/' %}
-      <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
-        <li>
-          <a href="/"
-            class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isHome %}underline font-semibold{% endif %}"
-            {% if isHome %}aria-current="page" {% endif %}><span aria-hidden="true">🏠</span> Home</a>
-        </li>
-        <li>
-          <a href="/blog/"
-            class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isBlog %}underline font-semibold{% endif %}"
-            {% if isBlog %}aria-current="page" {% endif %}><span aria-hidden="true">✍️</span> Blog</a>
-        </li>
-        <li>
-          <a href="/about/"
-            class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isAbout %}underline font-semibold{% endif %}"
-            {% if isAbout %}aria-current="page" {% endif %}><span aria-hidden="true">👋</span> Sobre</a>
-        </li>
-        <li>
-          <a href="/uses/"
-            class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isUses %}underline font-semibold{% endif %}"
-            {% if isUses %}aria-current="page" {% endif %}><span aria-hidden="true">🛠️</span> Uses</a>
-        </li>
-        <li>
-          <a href="/now/"
-            class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNow %}underline font-semibold{% endif %}"
-            {% if isNow %}aria-current="page" {% endif %}><span aria-hidden="true">📍</span> Now</a>
-        </li>
-        <li>
-          <a href="/contact/"
-            class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isContact %}underline font-semibold{% endif %}"
-            {% if isContact %}aria-current="page" {% endif %}><span aria-hidden="true">💬</span> Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<body class="flex flex-col bg-white min-h-screen text-brand-dark-500">
+  <a href="#main" class="sr-only">{{ site.skipContent }}</a>
+  {% include "partials/header.njk" %}
 
   <div class="flex-1 mx-auto px-4 py-6 max-w-4xl container">
     <main id="main">
@@ -200,5 +134,8 @@
   </div>
 
   {% include "partials/footer.njk" %}
+  {% if hasForm %}
+  {% include "partials/forminit-script.njk" %}
+  {% endif %}
 
 </html>
