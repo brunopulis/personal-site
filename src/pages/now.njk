@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: base
 title: "Agora"
 permalink: /now/index.html
 key: 'agora'
@@ -7,16 +7,26 @@ description: O que estou me dedicando nesse momento
 date: Last Modified
 ---
 
+<h1 class="mb-6 font-bold text-2xl">
+  <span aria-hidden="true">📍</span> O que estou fazendo agora
+</h1>
 
-Essa página foi inspirado no trabalho de Derek Sivers que você pode conferir em [nownownow](https://nownownow.com/).
+<div class="max-w-none prose prose-lg">
+  <p>Descubra no que estou dedicado nesse momento.</p>
+  <p>Essa página foi inspirado no trabalho de Derek Sivers que você pode conferir em [nownownow](https://nownownow.com/).</p>
 
-O objetivo é mostrar no que estou focado no momento. Esse site passou por atualizações recentes e é um trabalho em andamento.
+  <p>O objetivo é mostrar no que estou focado no momento. Esse site passou por atualizações recentes e é um trabalho em andamento.</p>
 
-- Tentando ser um discípulo mais consciente;
-- Retornando a leitura diária da Bíblia e devocionais;
-- Tentando ser uma pessoa menos estressada;
-- Tentando ser um marido melhor;
-- Reorganizando meu site;
-- Vivendo em BH.
+  <h2>Meu foco atual:</h2>
+  <ul>
+    <li>Tentando ser um discípulo mais consciente;</li>
+    <li>Retornando a leitura diária da Bíblia e devocionais;</li>
+    <li>Tentando ser uma pessoa menos estressada;</li>
+    <li>Tentando ser um marido melhor;</li>
+  </ul>
+  
+  <h2>Localização</h2>
+  <p>Atualmente baseado em: Belo Horizonte.</p>
+</div>
 
-*Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+{% include "components/last-update.njk" %}

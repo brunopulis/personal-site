@@ -1,0 +1,60 @@
+---
+layout: page
+title: "Meus trabalhos"
+permalink: "/work/index.html"
+description: "Uma seleção de projetos variando de desenvolvimento front-end ao design de interface, focada em
+performance e usabilidade."
+---
+
+{% set projects = portfolio.projects %}
+{% set categories = portfolio.categories %}
+{% set stats = portfolio.stats %}
+
+<section class="mt-12 sm:mt-6 lg:mt-8 px-4 sm:px-6 lg:px-6 py-12 max-w-7xl">
+  {% for project in projects %}
+  <article class="group flex lg:flex-row flex-col items-center gap-12 lg:gap-24 portfolio-item">
+    <figure
+      class="border border-brand-dark-950 dark:border-border-dark rounded-xl w-full lg:w-1/2 overflow-hidden transition-all duration-500">
+      <img alt="{{ project.imageAlt or project.title }}"
+        class="w-full object-cover aspect-video transition-transform duration-500" src="{{ project.image }}">
+    </figure>
+    <div class="space-y-6 w-full lg:w-1/2">
+      <div class="space-y-2">
+        <span class="font-bold text-brand-red-500 text-sm uppercase tracking-widest">
+          {{ project.category | join(' e ') or "Redesign & Acessibilidade" }}
+        </span>
+        <h2 class="font-bold text-lg text-brand-dark-500">
+          <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
+        </h2>
+      </div>
+      <p class="text-lg leading-relaxed">
+        {{ project.description }}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        {% for tech in project.technologies %}
+        <span class="bg-brand-dark-950 px-3 py-1 dark:bg-border-dark rounded-full text-sm">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="mx-auto mb-32 px-6 container">
+  <div class="space-y-8 p-12 md:p-20 border border-brand-gray-200/30 rounded-3xl text-center">
+    <h2 class="font-bold text-brand-blue-500 text-4xl md:text-5xl">Vamos construir algo juntos?</h2>
+    <p class="mx-auto max-w-2xl text-lg">
+      Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de software e design.
+    </p>
+    <div class="flex sm:flex-row flex-col justify-center items-center gap-6 pt-4">
+      <a class="bg-brand-red-500 hover:bg-brand-red-600 text-white px-8 py-4 rounded-xl w-full sm:w-auto font-bold text-lg no-underline transition-all hover:-translate-y-1 transform"
+        href="/contato">
+        Entre em contato
+      </a>
+      <a class="group flex items-center gap-2 font-semibold ttext-lg hover:underline" href="/cv">
+        Veja meu currículo
+        {% lucide "arrow-right", { class: "group-hover:translate-x-1 transition-transform" } %}
+      </a>
+    </div>
+  </div>
+</section>
