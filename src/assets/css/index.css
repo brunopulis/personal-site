@@ -185,4 +185,16 @@
   .wrapper {
     @apply mx-auto lg:px-6 max-w-7xl;
   }
+
+  .status-loading {
+    @apply text-blue-500 font-medium;
+  }
+
+  .status-error {
+    @apply text-red-500 font-bold border border-red-200 bg-red-50 p-2 rounded mt-2;
+  }
+
+  .status-success {
+    @apply text-green-600 font-bold border border-green-200 bg-green-50 p-2 rounded mt-2;
+  }
 }
