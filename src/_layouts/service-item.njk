@@ -1,72 +1,58 @@
 ---
 layout: base
 ---
-<section class="hero">
-  <div class="wrapper">
-    <header class="gap-12 mb-24">
-      <span class="hero__badge">Serviço</span>
-      <h1 class="mb-4 font-extrabold text-6xl md:text-8xl leading-tight tracking-tighter hero__title">
-        {{ title }}
-      </h1>
-      <p class="max-w-3xl text-text-muted text-xl md:text-3xl leading-relaxed hero__description">{{ service.tagline }}
-      </p>
-    </header>
+
+<h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
+<p class="mb-6">{{service.tagline}}</p>
+
+<section class="py-20">
+  <div class="mb-12">
+    <span class="font-bold text-primary text-xs">O que é o serviço</span>
+    <h2 class="mt-4 font-bold text-3xl tracking-tight">Transforme barreiras em oportunidades</h2>
   </div>
+
+  <p class="mb-6 leading-relaxed">
+    Uma consultoria detalhada que analisa seu produto digital sob a ótica das diretrizes internacionais <strong>WCAG
+      (Web Content Accessibility Guidelines)</strong>.
+  </p>
+  <p class="mb-6 leading-relaxed">
+    Ajudamos sua empresa a remover barreiras de interação e a transformar a acessibilidade em um diferencial
+    competitivo, garantindo que ninguém seja deixado para trás na sua jornada digital.
+  </p>
 </section>
 
-<section class="bg-background-light dark:bg-background-dark/50 py-20">
-  <div class="mx-auto px-6 max-w-[800px]">
-    <div class="mb-12 text-center">
-      <span class="font-bold text-primary text-xs uppercase tracking-widest">O que é o serviço</span>
-      <h2 class="mt-4 font-bold text-3xl tracking-tight">Transforme barreiras em oportunidades</h2>
-    </div>
-    <p class="mb-6 text-gray-700 dark:text-gray-300 text-lg text-center leading-relaxed">
-      Uma consultoria detalhada que analisa seu produto digital sob a ótica das diretrizes internacionais <strong>WCAG
-        (Web Content Accessibility Guidelines)</strong>.
-    </p>
-    <p class="text-gray-700 dark:text-gray-300 text-lg text-center leading-relaxed">
-      Ajudamos sua empresa a remover barreiras de interação e a transformar a acessibilidade em um diferencial
-      competitivo, garantindo que ninguém seja deixado para trás na sua jornada digital.
-    </p>
-  </div>
-</section>
-
-<section class="gap-16 grid md:grid-cols-2 mx-auto px-6 py-24 max-w-[1200px]">
-  <div>
+<section class="gap-8 grid md:grid-cols-2 px-6 py-12">
+  <div class="prose">
     <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
-      <span class="text-primary material-symbols-outlined">check_circle</span>
+      {% lucide "check-circle", { class: "text-primary" } %}
       O que está incluído
     </h3>
     <ul class="space-y-6">
       <li class="flex gap-4">
-        <span class="text-green-500 shrink-0 material-symbols-outlined">done</span>
         <div>
-          <p class="font-bold text-[#141018] dark:text-white">Auditoria Completa WCAG 2.1/2.2</p>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Avaliação detalhada nos níveis A e AA para garantir
+          <p class="font-bold">Auditoria Completa WCAG 2.1/2.2</p>
+          <p class="text-muted text-sm">Avaliação detalhada nos níveis A e AA para garantir
             conformidade técnica.</p>
         </div>
       </li>
       <li class="flex gap-4">
-        <span class="text-green-500 shrink-0 material-symbols-outlined">done</span>
         <div>
-          <p class="font-bold text-[#141018] dark:text-white">Testes com Tecnologias Assistivas</p>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Verificação com leitores de tela (NVDA, JAWS, VoiceOver),
+          <p class="font-bold">Testes com Tecnologias Assistivas</p>
+          <p class="text-muted text-sm">Verificação com leitores de tela (NVDA, JAWS, VoiceOver),
             navegação por teclado e comandos de voz.</p>
         </div>
       </li>
       <li class="flex gap-4">
-        <span class="text-green-500 shrink-0 material-symbols-outlined">done</span>
         <div>
-          <p class="font-bold text-[#141018] dark:text-white">Relatório de Melhorias Priorizadas</p>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Documentação técnica com bugs encontrados, impacto no
+          <p class="font-bold">Relatório de Melhorias Priorizadas</p>
+          <p class="text-muted text-sm">Documentação técnica com bugs encontrados, impacto no
             usuário e sugestões de código para correção.</p>
         </div>
       </li>
       <li class="flex gap-4">
-        <span class="text-green-500 shrink-0 material-symbols-outlined">done</span>
         <div>
-          <p class="font-bold text-[#141018] dark:text-white">Workshop de Handover</p>
-          <p class="text-gray-600 dark:text-gray-400 text-sm">Sessão dedicada com seu time de engenharia e produto para
+          <p class="font-bold">Workshop de Handover</p>
+          <p class="text-muted text-sm">Sessão dedicada com seu time de engenharia e produto para
             explicar as vulnerabilidades encontradas.</p>
         </div>
       </li>
@@ -74,7 +60,7 @@ layout: base
   </div>
   <div>
     <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
-      <span class="text-primary material-symbols-outlined">account_tree</span>
+      {% lucide "tree", { class: "text-primary" } %}
       Nossa Metodologia
     </h3>
     <div class="relative space-y-12 ml-4 border-primary/20 border-l-2">
@@ -82,21 +68,21 @@ layout: base
         <span
           class="top-0 -left-3.25 absolute bg-primary border-4 border-white dark:border-background-dark rounded-full size-6"></span>
         <h4 class="mb-2 font-bold text-lg">1. Diagnóstico Automatizado</h4>
-        <p class="text-gray-600 dark:text-gray-400 text-sm">Uso de ferramentas avançadas para identificação rápida de
+        <p class="text-muted text-sm">Uso de ferramentas avançadas para identificação rápida de
           erros estruturais e de contraste em larga escala.</p>
       </div>
       <div class="relative pl-10">
         <span
           class="top-0 -left-2.25 absolute bg-primary border-4 border-white dark:border-background-dark rounded-full size-6"></span>
         <h4 class="mb-2 font-bold text-lg">2. Validação Manual</h4>
-        <p class="text-gray-600 dark:text-gray-400 text-sm">Especialistas testam cada fluxo crítico para garantir que a
+        <p class="text-muted text-sm">Especialistas testam cada fluxo crítico para garantir que a
           lógica e o contexto estão acessíveis.</p>
       </div>
       <div class="relative pl-10">
         <span
           class="top-0 -left-3.25 absolute bg-primary border-4 border-white dark:border-background-dark rounded-full size-6"></span>
         <h4 class="mb-2 font-bold text-lg">3. Entrega de Roadmap</h4>
-        <p class="text-gray-600 dark:text-gray-400 text-sm">Classificação de erros por severidade, facilitando o
+        <p class="text-muted text-sm">Classificação de erros por severidade, facilitando o
           planejamento do seu backlog de correções.</p>
       </div>
     </div>
@@ -107,12 +93,12 @@ layout: base
 <section class="bg-background-light py-20" aria-labelledby="problem-solution">
   <div class="wrapper">
     <div class="gap-6 grid md:grid-cols-2">
-      <article class="box">
+      <article class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
         <h2 class="mb-4 font-bold text-2xl" id="problem-solution">O problema</h2>
         <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
       </article>
 
-      <article class="box">
+      <article class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
         <h2 class="mb-4 font-bold text-2xl">A solução</h2>
         <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
       </article>
@@ -128,7 +114,7 @@ layout: base
       diferente</h2>
     <ul class="grid" data-layout="50-50" role="list">
       {% for item in service.differentials %}
-      <li class="box">{{ item }}</li>
+      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">{{ item }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -142,10 +128,8 @@ layout: base
     <h2 class="text-center title" id="included">O que você recebe</h2>
     <ul class="gap-6 grid md:grid-cols-3">
       {% for item in service.included %}
-      <li class="box">
-        <div class="p-3 border rounded h-100">
-          {{ item }}
-        </div>
+      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
+        {{ item }}
       </li>
       {% endfor %}
     </ul>
@@ -159,7 +143,7 @@ layout: base
     <h2 class="title" id="results">Resultados esperados</h2>
     <ul class="grid" data-layout="thirds" role="list">
       {% for result in service.results %}
-      <li class="shadow card">
+      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
         <h3 class="h6 fw-bold">{{ result.title }}</h3>
         <p class="mb-0 text-muted">{{ result.description }}</p>
       </li>
@@ -175,7 +159,7 @@ layout: base
     <h2 class="title" id="target">Para quem é indicado</h2>
     <ul class="grid" data-layout="thirds" role="list">
       {% for item in service.target %}
-      <li class="box">
+      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
         {{ item }}
       </li>
       {% endfor %}
@@ -231,7 +215,8 @@ layout: base
 {% if service.faq %}
 <section class="py-20" aria-labelledby="faq">
   <div class="wrapper flow">
-    <h2 class="mb-4 font-extrabold text-4xl text-center leading-tight hero__title title" id="faq">Perguntas frequentes</h2>
+    <h2 class="mb-4 font-extrabold text-4xl text-center leading-tight hero__title title" id="faq">Perguntas frequentes
+    </h2>
 
     <div class="mx-auto max-7xl" data-layout="50-50">
       {% for item in service.faq %}
