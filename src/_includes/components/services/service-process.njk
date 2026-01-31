@@ -1,7 +1,6 @@
 {% if process and process.steps %}
 <section class="py-5 border-top">
   <div class="container">
-
     <header class="mb-4">
       <h2 class="h4 fw-bold">
         {{ process.title | default("Processo") }}
@@ -11,8 +10,8 @@
     <div class="row g-4">
       {% for step in process.steps %}
       <div class="col-md-4">
-        <div class="h-100 p-4 border rounded-3">
-          <h3 class="h6 fw-semibold mb-2">
+        <div class="p-4 border rounded-3 h-100">
+          <h3 class="mb-2 h6 fw-semibold">
             {{ loop.index }}. {{ step.title }}
           </h3>
           <p class="mb-0 text-muted">

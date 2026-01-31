@@ -7,7 +7,6 @@ permalink: "/services/auditoria-acessibilidade/index.html"
 url: /services/auditoria-acessibilidade/
 
 service:
-  color: purple-600
   tagline: Análise completa e estruturada, transforme problemas invisíveis em um plano de ação.
 
   problem: |
@@ -53,9 +52,11 @@ service:
       description: "Apresentação dos resultados e tira dúvidas e sugestões de roadmap"
 
   testimonials:
-    cliente: "E-commerce Nacional"
+    client: "E-commerce Nacional"
     quote: "A auditoria nos deu o mapa exato do que precisávamos fazer. Economizamos meses de trabalho."
-    resultado: "Roadmap de 6 meses definido"
+    results: "Roadmap de 6 meses definido"
+    person: "Client"
+    jobDescription: "Frontend"
 
   faq:
     - question: "Preciso corrigir tudo de uma vez?"

@@ -1,17 +1,17 @@
-<section class="">
-  <div class="wrapper">
-    <div class="bg-brand-red-500">
-      <h2 class="text-white" data-color="dark">{{ cta.title }}</h2>
-      <p>{{ cta.description }}</p>
+<section class="block bg-brand-red-500 p-6 rounded">
+  <h2 class="mb-6 font-bold text-white text-3xl" >{{ cta.title }}</h2>
+  <p class="mb-4 text-white">{{ cta.description }}</p>
 
-      <ul class="cluster flow" role="list">
-        {% if cta.primary %}
-          <li><a href="{{ cta.link }}">{{ cta.primary }}</a></li>
-        {% endif %}
-        {% if cta.secondary %}
-          <li><a href="{{ cta.link }}">{{ cta.secondary }}</a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
+  <ul class="flex sm:flex-row flex-col gap-4 space-y-6">
+    {% if cta.primary %}
+      <li class="">
+        <a href="{{ cta.link }}" class="bg-transparent shadow-lg shadow-primary/20 px-8 py-4 border border-white rounded-md w-full sm:w-auto font-bold text-white text-lg hover:no-underline hover:scale-105 transition-transform">
+          {{ cta.primary }}
+        </a>
+      </li>
+    {% endif %}
+    {% if cta.secondary %}
+      <li><a href="{{ cta.link }}">{{ cta.secondary }}</a></li>
+    {% endif %}
+  </ul>
 </section>

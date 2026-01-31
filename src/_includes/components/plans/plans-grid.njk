@@ -1,54 +1,25 @@
 <section class="region" aria-labelledby="plans">
-  <div class="wrapper">
-    <h2 class="mt-4 font-bold text-3xl tracking-tight" id="plans">{{ plansTitle }}</h2>
+  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="plans">
+    {{ plansTitle }}
+  </h2>
 
-    <div class="gap-6 lg:gap-8 grid grid-cols-1 lg:grid-cols-3">
-      {% for plan in plans %}
-        <article class="flex flex-col bg-white p-6 lg:p-8 border border-gray-200 rounded-lg">
-          <header role="banner">
-            <h3 class="mb-1 font-semibold text-brand-red-500 text-xl">{{ plan.name }}</h3>
-            <p class="mb-4 min-h-12.5 text-brand-gray-500 text-sm grow">{{ plan.subtitle }}</p>
-          </header>
-          <p>{{ plan.description }}</p>
+  <div class="gap-4 lg:gap-8 grid grid-cols-1 lg:grid-cols-3">
+    {% for plan in plans %}
+      <article class="flex flex-col bg-white p-6 lg:p-8 border border-gray-200 rounded-lg">
+        <header role="banner">
+          <h3 class="mb-1 font-semibold text-brand-red-500 text-xl">{{ plan.name }}</h3>
+          <p class="mb-4 min-h-12.5 text-sm grow">{{ plan.subtitle }}</p>
+        </header>
+        <p>{{ plan.description }}</p>
+        <p class="mb-6 font-bold text-gray-900 text-3xl lg:text-4xl">{{ plan.value }}</p>
 
-          <div class="mb-6">
-            <span class="font-bold text-gray-900 text-3xl lg:text-4xl">$0</span>
-            <span class="text-gray-500 text-sm">/ month</span>
-            <p class="mt-1 text-gray-500 text-xs">Free forever</p>
-            <a href="javascript:void(0)" class="block mb-8 py-2.5 border border-gray-300 hover:border-gray-400 rounded-lg w-full font-semibold text-gray-700 text-center transition duration-200">
-          Get Free
-        </a>
-        <div>
-          <h3 class="mb-4 font-medium text-gray-800 text-sm">Features:</h3>
-          <ul class="flex-grow space-y-3 text-sm">
-            <li class="flex items-start">
-              <i class="flex-shrink-0 mt-1 mr-2 text-blue-500 fas fa-check"></i><span class="text-gray-700"><span class="font-semibold">5</span>
-              projects</span></li>
-            <li class="flex items-start">
-              <i class="flex-shrink-0 mt-1 mr-2 text-blue-500 fas fa-check"></i><span class="text-gray-700"><span class="font-semibold">20 AI credits</span>
-              (single-use)</span></li>
-            <li class="flex items-start">
-              <i class="flex-shrink-0 mt-1 mr-2 text-blue-500 fas fa-check"></i><span class="text-gray-700"><span class="font-semibold">0.5GB</span>
-              file storage</span></li>
-            <li class="flex items-start">
-              <i class="flex-shrink-0 mt-1 mr-2 text-blue-500 fas fa-check"></i><span class="text-gray-700"><span class="font-semibold">10,000+</span>
-              professional templates</span></li>
-            <li class="flex items-start">
-              <i class="flex-shrink-0 mt-1 mr-2 text-blue-500 fas fa-check"></i><span class="text-gray-700"><span class="font-semibold">1M+</span>
-              photos, graphics and fonts</span></li>
-            <li class="flex items-start">
-              <i class="flex-shrink-0 mt-1 mr-2 text-blue-500 fas fa-check"></i><span class="text-gray-700">High-fidelity Mockups</span>
-            </li>
-          </ul>
-        </div>
-            <ul>
-              {% for item in plan.includes %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
+        <h3 class="mb-4 font-medium text-gray-800 text-sm">Incluído:</h3>
+        <ul class="space-y-3 text-sm grow prose">
+          {% for item in plan.includes %}
+          <li class="flex items-start">{{item}}</li>
+          {% endfor %}  
+        </ul>
+      </article>
+    {% endfor %}
   </div>
 </section>
