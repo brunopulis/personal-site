@@ -6,21 +6,25 @@ key: 'services'
 description: Ajudo organizações a tornarem seus produtos digitais, processos e cultura mais acessível e usável.
 ---
 
+<h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
+<p class="mb-6">{{description}}</p>
+
+
 <section aria-labelledby="diagnostic-title">
-  <h2 class="font-bold text-brand-red-500 text-2xl uppercase" id="diagnostic-title">Diagnóstico</h2>
+  <h2 class="font-bold text-brand-red-500 text-xl" id="diagnostic-title">Diagnóstico</h2>
   <div class="gap-6 grid md:grid-cols-2">
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "search", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Avaliação de Acessibilidade</h3>
       <p class="mb-6 leading-relaxed">Descubra exatamente onde você está.
         Diagnóstico focado que revela oportunidades rápidas de melhoria para seu produto digital.
         <a href="/services/avaliacao-acessibilidade"
-          class="inline-flex items-center font-medium text-brand-red-500 hover:underline">
+          class="inline-flex items-center font-medium text-brand-red-500 transition-colors">
           Saiba mais {% lucide "chevron-right", { class: "w-4 h-4 ml-1" } %}
         </a>
       </p>
     </article>
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "check", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Auditoria de Acessibilidade</h3>
       <p class="mb-6 leading-relaxed">Análise profunda e estruturada que mapeia o
@@ -38,7 +42,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
   <h2 class="font-bold text-brand-red-500 text-2xl uppercase" id="execution-title">Execução</h2>
 
   <div class="gap-6 grid md:grid-cols-2">
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "file-text", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Remediação de Documentos</h3>
       <p class="mb-6 leading-relaxed">PDFs, planilhas e apresentações acessíveis.
@@ -48,7 +52,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
         </a>
       </p>
     </article>
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "code", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Construção de Sites Acessíveis</h3>
       <p class="mb-6 leading-relaxed">Sites rápidos, intuitivos e construídos desde o início para
@@ -65,7 +69,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
 <section aria-labelledby="education-title">
   <h2 class="font-bold text-brand-red-500 text-2xl uppercase" id="education-title">Educação e Cultura</h2>
   <div class="gap-6 grid md:grid-cols-2">
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "presentation", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Treinamentos e Workshops</h3>
       <p class="mb-6 leading-relaxed">Capacitação prática para equipes de design e desenvolvimento
@@ -75,7 +79,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
           Saiba mais {% lucide "chevron-right", { class: "w-4 h-4 ml-1" } %}
         </a>
     </article>
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "presentation", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Palestras e Apresentações</h3>
       <p class="mb-6 leading-relaxed">Inspire sua organização e mostre por que a
@@ -92,7 +96,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
 <section aria-labelledby="consulting-title">
   <h2 class="font-bold text-brand-red-500 text-2xl uppercase" id="consulting-title">Acompanhamento Estratégico</h2>
   <div class="gap-6 grid md:grid-cols-2">
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "brain", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Coaching e Mentoria</h3>
       <p class="mb-6 leading-relaxed">Acessibilidade como jornada contínua, com
@@ -102,7 +106,7 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
         </a>
       </p>
     </article>
-    <article>
+    <article class="block bg-brand-gray-200 p-4 border border-brand-gray-200">
       {% lucide "handshake", { class: "w-10 h-10 text-brand-red-500" } %}
       <h3 class="mb-3 font-bold text-brand-red-500 text-xl">Consultoria Estratégica</h3>
       <p class="mb-6 leading-relaxed">Implemento acessibilidade como parte da
@@ -165,17 +169,14 @@ description: Ajudo organizações a tornarem seus produtos digitais, processos e
   </div>
 </section>
 
-<section class="mt-32">
-  <div
-    class="flex flex-col items-center justify-content-center bg-brand-red-500 p-6 border border-brand-blue-500 rounded-3xl text-center">
-    <h2 class="z-10 relative mb-6 font-bold text-white text-4xl">Ainda em dúvida?</h2>
-    <p class="z-10 relative mx-auto mb-10 max-w-2xl text-white text-lg">
-      Entre em contato para entender o que realmente importa agora. Vamos
-      conversar sobre como elevar o nível do seu produto?
-    </p>
-    <a href="https://wa.me/5531973438008?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20acessibilidade."
-      class="bg-brand-blue-500 hover:bg-brand-blue-600 shadow-xl px-10 py-4 rounded-xl font-bold text-brand-dark-500 text-lg no-underline hover:scale-105 transition-all transform">
-      Falar comigo no WhatsApp
-    </a>
-  </div>
+<section class="bg-brand-gray-200 my-12 p-8 px-6 border border-brand-gray-200 rounded text-center">
+  <h2 class="mb-6 font-bold text-brand-red-500 text-4xl">Ainda em dúvida?</h2>
+  <p class="mx-auto mb-10 max-w-2xl">
+    Entre em contato para entender o que realmente importa agora. Vamos
+    conversar sobre como elevar o nível do seu produto?
+  </p>
+  <a href="https://wa.me/5531973438008?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20acessibilidade."
+    class="bg-brand-red-500 hover:bg-brand-red-600 shadow-xl px-10 py-4 rounded-xl font-bold text-white text-lg no-underline hover:scale-105 transition-all transform">
+    Falar comigo no WhatsApp
+  </a>
 </section>

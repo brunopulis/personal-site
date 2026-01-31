@@ -3,8 +3,8 @@ layout: service-item.njk
 title: "Avaliação de Acessibilidade"
 slug: avaliacao
 description: Descubra exatamente onde seu site ou produto falha — e o que corrigir primeiro.
-permalink: "/servicos/avaliacao-acessibilidade/index.html"
-url: /servicos/avaliacao-acessibilidade/
+permalink: "/services/avaliacao-acessibilidade/index.html"
+url: /services/avaliacao-acessibilidade/
 
 service:
   tagline: Diagnóstico claro, sem achismos e prioridades objetivas.
