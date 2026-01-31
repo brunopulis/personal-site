@@ -1,7 +1,8 @@
 import { slugifyString } from './filters/slugify.js';
 
 /**
- *
+ * Posts Collection
+ * 
  * @param {*} collectionApi
  * @returns
  */
@@ -10,12 +11,23 @@ export const posts = collectionApi => {
 };
 
 /**
- *
+ * Notes Collection
+ * 
  * @param {*} collectionApi
  * @returns
  */
 export const notes = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/notes/**/*').reverse();
+};
+
+/**
+ * Poetry Collection
+ * 
+ * @param {*} collectionApi
+ * @returns
+ */
+export const poetry = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/poetry/**/*').reverse();
 };
 
 /**

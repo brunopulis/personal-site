@@ -5,27 +5,27 @@ title: Arquivo
 ---
 <h1 class="text-2xl font-bold mb-6">Arquivo</h1>
 
-<div class="prose prose-lg dark:prose-invert max-w-none mb-8">
+<div class="prose prose-lg max-w-none mb-8">
   <p>Arquivo de todos os posts, organizados por ano e mês.</p>
 </div>
 
-{% set postsByYear = collections.posts | groupby("date.getFullYear()") %}
+{% set postsByYear = collections.posts | groupby("pubDate.getFullYear()") %}
 {% for year, posts in postsByYear %}
-<section class="mb-8">
-  <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">{{ year }}</h2>
+<section class="mb-8 h-feed">
+  <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2">{{ year }}</h2>
 
-  {% set postsByMonth = posts | groupby("date.getMonth()") %}
+  {% set postsByMonth = posts | groupby("data.pubDate.getMonth()") %}
   {% for month, monthPosts in postsByMonth %}
   <div class="mb-6">
-    <h3 class="text-lg font-medium mb-3 text-gray-700 dark:text-gray-300">
-      {{ monthPosts[0].date | readableDate("MMMM") }}
+    <h3 class="text-lg font-medium mb-3 text-gray-700">
+      {{ monthPosts[0].pubDate | readableDate("MMMM") }}
     </h3>
 
     <div class="space-y-2">
       {% for post in monthPosts %}
       <article class="flex items-start gap-4 py-2">
-        <time class="text-sm text-gray-500 dark:text-gray-400 font-mono min-w-[4rem]">
-          {{ post.date | readableDate("MMM dd") }}
+        <time class="dt-published text-sm font-mono min-w-16">
+          {{ post.data.pubDate | readableDate("MMM dd") }}
         </time>
         <div class="flex-1">
           <h4 class="font-medium">
@@ -34,7 +34,7 @@ title: Arquivo
             </a>
           </h4>
           {% if post.data.description %}
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ post.data.description }}</p>
+          <p class="text-sm text-gray-600 mt-1">{{ post.data.description }}</p>
           {% endif %}
           {% if post.data.tags %}
           <div class="flex flex-wrap gap-1 mt-2">

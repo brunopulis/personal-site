@@ -3,76 +3,77 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-4 text-sm">
       <div>
         <h3 class="font-semibold mb-2">Técnico</h3>
-        <ul class="space-y-1 text-gray-600 dark:text-gray-400">
-          <li><a href="https://11ty.dev" target="_blank" rel="noopener">Feito com Eleventy</a></li>
-          <li><a href="/style/">Guia de estilo</a></li>
+        <ul class="space-y-1">
+          <li><a href="https://11ty.dev" class="underline" target="_blank" rel="noopener">Feito com Eleventy</a></li>
+          <li><a href="/style/" class="underline">Guia de estilo</a></li>
           <li><a href="https://github.com/brunopulis/brunopulis/edit/main/src/sitemap.njk" target="_blank"
-              rel="noopener">Editar esta página</a></li>
-          <li><a href="https://github.com/brunopulis/brunopulis/blob/main/GUIDE.md" target="_blank" rel="noopener">Guia
-              do projeto</a></li>
+              rel="noopener" class="underline">Editar esta página</a></li>
+          <li><a href="https://github.com/brunopulis/brunopulis/blob/main/GUIDE.md" target="_blank" rel="noopener"
+              class="underline">Guia do projeto</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="font-semibold mb-2">Navegação</h3>
-        <ul class="space-y-1 text-gray-600 dark:text-gray-400">
-          <li><a href="/sitemap/">Mapa do site</a></li>
-          <li><a href="/archive/">Arquivo</a></li>
-          <li><a href="/categories/">Categorias</a></li>
+        <ul class="space-y-1">
+          <li><a href="/sitemap/" class="underline">Mapa do site</a></li>
+          <li><a href="/archive/" class="underline">Arquivo</a></li>
+          <li><a href="/categories/" class="underline">Categorias</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="font-semibold mb-2">Recursos</h3>
-        <ul class="space-y-1 text-gray-600 dark:text-gray-400">
-          <li><a href="/bookmarks">Links favoritos</a></li>
-          <li><a href="/bookshelf/">Biblioteca</a></li>
-          <li><a href="/media/">Filmes e séries</a></li>
-          <li><a href="/notes/">Notas pessoais</a></li>
+        <ul class="space-y-1">
+          <li><a href="/bookmarks" class="underline">Links favoritos</a></li>
+          <li><a href="/bookshelf/" class="underline">Biblioteca</a></li>
+          <li><a href="/media/" class="underline">Filmes e séries</a></li>
+          <li><a href="/notes/" class="underline">Notas pessoais</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="font-semibold mb-2">Redes Sociais</h3>
         <nav aria-label="Redes sociais">
-          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
+          <ul class="space-y-1">
             <li>
-              <a href="/feed.xml" target="_blank" class="inline-flex items-center gap-2 " rel="me noopener noreferrer">
+              <a href="/feed.xml" class="inline-flex items-center gap-2 underline" target="_blank"
+                rel="me noopener noreferrer">
                 {% lucide "rss", { "class": "w-4 h-4" } %}
                 <span>RSS</span>
               </a>
             </li>
             <li>
-              <a href="https://github.com/brunopulis" target="_blank" class="inline-flex items-center gap-2 "
+              <a href="https://github.com/brunopulis" target="_blank" class="inline-flex items-center gap-2 underline"
                 rel="me noopener noreferrer">
                 {% lucide "github", { "class": "w-4 h-4" } %}
                 <span>GitHub</span>
               </a>
             </li>
             <li>
-              <a href="https://mastodon.social/@brunopulis" target="_blank" class="inline-flex items-center gap-2"
-                rel="me noopener noreferrer">
+              <a href="https://mastodon.social/@brunopulis" target="_blank"
+                class="inline-flex items-center gap-2 underline" rel="me noopener noreferrer">
                 {% svg "platform/mastodon", "", "w-4 h-4" %}
                 <span>Mastodon</span>
               </a>
             </li>
             <li>
-              <a href="https://bsky.app/profile/brunopulis.com" target="_blank" class="inline-flex items-center gap-2"
-                rel="me noopener noreferrer">
+              <a href="https://bsky.app/profile/brunopulis.com" target="_blank"
+                class="inline-flex items-center gap-2 underline" rel="me noopener noreferrer">
                 {% svg "platform/bluesky", "", "w-4 h-4" %}
                 <span>Bluesky</span>
               </a>
             </li>
             <li>
-              <a href="https://youtube.com/@brunopulis" target="_blank" class="inline-flex items-center gap-2"
+              <a href="https://youtube.com/@brunopulis" target="_blank" class="inline-flex items-center gap-2 underline"
                 rel="noopener noreferrer">
                 {% lucide "youtube", { "class": "w-4 h-4" } %}
                 <span>YouTube</span>
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/brunopulis" target="_blank" class="inline-flex items-center gap-2 "
-                rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/brunopulis" target="_blank"
+                class="inline-flex items-center gap-2 underline" rel="noopener noreferrer">
                 {% lucide "linkedin", { "class": "w-4 h-4" } %}
                 <span>LinkedIn</span>
               </a>
@@ -182,7 +183,7 @@
           <ul class="flex flex-wrap justify-center gap-2">
             {% for item in navigation.secondary %}
             <li>
-              <a href="{{ item.url }}" class="text-xs">{{ item.text }}</a>
+              <a href="{{ item.url }}" class="text-xs underline">{{ item.text }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -193,16 +194,16 @@
     <div class="flex md:flex-row flex-col justify-between items-center gap-3">
       <div class="flex flex-wrap justify-center md:justify-start gap-2">
         <p class="text-xs">
-          Membro do <a href="https://a11y-webring.club">a11y-webring.club</a>
+          Membro do <a href="https://a11y-webring.club" class="underline">a11y-webring.club</a>
         </p>
       </div>
 
       <div class="flex flex-wrap justify-center md:justify-start gap-2">
         <nav aria-label="Navegação do webring">
           <ul class="flex flex-wrap justify-center gap-4">
-            <li><a href="https://a11y-webring.club/prev" class="text-xs">anterior</a></li>
-            <li><a href="https://a11y-webring.club/random" class="text-xs">aleatório</a></li>
-            <li><a href="https://a11y-webring.club/next" class="text-xs">próximo</a></li>
+            <li><a href="https://a11y-webring.club/prev" class="text-xs underline">anterior</a></li>
+            <li><a href="https://a11y-webring.club/random" class="text-xs underline">aleatório</a></li>
+            <li><a href="https://a11y-webring.club/next" class="text-xs underline">próximo</a></li>
           </ul>
         </nav>
       </div>
