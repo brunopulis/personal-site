@@ -2,234 +2,132 @@
 layout: base
 ---
 
-<h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
-<p class="mb-6">{{service.tagline}}</p>
-
-<section class="py-20">
+<section class="py-10">
   <div class="mb-12">
-    <span class="font-bold text-primary text-xs">O que é o serviço</span>
-    <h2 class="mt-4 font-bold text-3xl tracking-tight">Transforme barreiras em oportunidades</h2>
+    <h1 class="mb-4 font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+    <p class="mb-6">{{service.tagline}}</p>
   </div>
-
-  <p class="mb-6 leading-relaxed">
-    Uma consultoria detalhada que analisa seu produto digital sob a ótica das diretrizes internacionais <strong>WCAG
-      (Web Content Accessibility Guidelines)</strong>.
-  </p>
-  <p class="mb-6 leading-relaxed">
-    Ajudamos sua empresa a remover barreiras de interação e a transformar a acessibilidade em um diferencial
-    competitivo, garantindo que ninguém seja deixado para trás na sua jornada digital.
-  </p>
 </section>
 
-<section class="gap-8 grid md:grid-cols-2 px-6 py-12">
+<section class="gap-4 grid md:grid-cols-2">
   <div class="prose">
     <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
       {% lucide "check-circle", { class: "text-primary" } %}
       O que está incluído
     </h3>
     <ul class="space-y-6">
-      <li class="flex gap-4">
-        <div>
-          <p class="font-bold">Auditoria Completa WCAG 2.1/2.2</p>
-          <p class="text-muted text-sm">Avaliação detalhada nos níveis A e AA para garantir
-            conformidade técnica.</p>
-        </div>
-      </li>
-      <li class="flex gap-4">
-        <div>
-          <p class="font-bold">Testes com Tecnologias Assistivas</p>
-          <p class="text-muted text-sm">Verificação com leitores de tela (NVDA, JAWS, VoiceOver),
-            navegação por teclado e comandos de voz.</p>
-        </div>
-      </li>
-      <li class="flex gap-4">
-        <div>
-          <p class="font-bold">Relatório de Melhorias Priorizadas</p>
-          <p class="text-muted text-sm">Documentação técnica com bugs encontrados, impacto no
-            usuário e sugestões de código para correção.</p>
-        </div>
-      </li>
-      <li class="flex gap-4">
-        <div>
-          <p class="font-bold">Workshop de Handover</p>
-          <p class="text-muted text-sm">Sessão dedicada com seu time de engenharia e produto para
-            explicar as vulnerabilidades encontradas.</p>
-        </div>
-      </li>
+      <li class="font-bold">Auditoria Completa WCAG 2.1/2.2</li>
+      <li class="font-bold">Testes com Tecnologias Assistivas</li>
+      <li class="font-bold">Relatório de Melhorias Priorizadas</li>
+      <li class="font-bold">Workshop de Handover</li>
     </ul>
   </div>
-  <div>
+  <div class="prose">
     <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
-      {% lucide "tree", { class: "text-primary" } %}
+      {% lucide "cpu", { class: "text-primary" } %}
       Nossa Metodologia
     </h3>
-    <div class="relative space-y-12 ml-4 border-primary/20 border-l-2">
-      <div class="relative pl-10">
-        <span
-          class="top-0 -left-3.25 absolute bg-primary border-4 border-white dark:border-background-dark rounded-full size-6"></span>
-        <h4 class="mb-2 font-bold text-lg">1. Diagnóstico Automatizado</h4>
-        <p class="text-muted text-sm">Uso de ferramentas avançadas para identificação rápida de
-          erros estruturais e de contraste em larga escala.</p>
-      </div>
-      <div class="relative pl-10">
-        <span
-          class="top-0 -left-2.25 absolute bg-primary border-4 border-white dark:border-background-dark rounded-full size-6"></span>
-        <h4 class="mb-2 font-bold text-lg">2. Validação Manual</h4>
-        <p class="text-muted text-sm">Especialistas testam cada fluxo crítico para garantir que a
-          lógica e o contexto estão acessíveis.</p>
-      </div>
-      <div class="relative pl-10">
-        <span
-          class="top-0 -left-3.25 absolute bg-primary border-4 border-white dark:border-background-dark rounded-full size-6"></span>
-        <h4 class="mb-2 font-bold text-lg">3. Entrega de Roadmap</h4>
-        <p class="text-muted text-sm">Classificação de erros por severidade, facilitando o
-          planejamento do seu backlog de correções.</p>
-      </div>
-    </div>
+    <ol class="space-y-6">
+      <li class="font-bold">Diagnóstico Automatizado</li>
+      <li class="font-bold">Validação Manual</li>
+      <li class="font-bold">Entrega de Roadmap</li>
+      <li class="font-bold">Workshop de Handover</li>
+    </ol>
   </div>
 </section>
 
-<!-- Problem / Solution -->
-<section class="bg-background-light py-20" aria-labelledby="problem-solution">
-  <div class="wrapper">
-    <div class="gap-6 grid md:grid-cols-2">
-      <article class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
-        <h2 class="mb-4 font-bold text-2xl" id="problem-solution">O problema</h2>
-        <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
-      </article>
+<section class="py-20" aria-labelledby="problem-solution">
+  <div class="gap-6 grid md:grid-cols-2">
+    <article class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" id="problem-solution">O problema</h2>
+      <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
+    </article>
 
-      <article class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
-        <h2 class="mb-4 font-bold text-2xl">A solução</h2>
-        <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
-      </article>
-    </div>
+    <article class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">A solução</h2>
+      <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
+    </article>
   </div>
 </section>
 
 <!-- Differentials -->
 {% if service.differentials %}
-<section class="region" aria-labelledby="differentials">
-  <div class="wrapper">
-    <h2 class="mb-4 font-extrabold text-4xl leading-tight hero__title" id="differentials">Por que essa avaliação é
-      diferente</h2>
-    <ul class="grid" data-layout="50-50" role="list">
-      {% for item in service.differentials %}
-      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">{{ item }}</li>
-      {% endfor %}
-    </ul>
-  </div>
+<section class="py-12" aria-labelledby="differentials">
+  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="differentials">
+    Diferenciais
+  </h2>
+  <ul class="gap-6 grid md:grid-cols-2">
+    {% for item in service.differentials %}
+    <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">{{ item }}</li>
+    {% endfor %}
+  </ul>
 </section>
 {% endif %}
 
 <!-- Included -->
 {% if service.included %}
-<section class="region" aria-labelledby="included">
-  <div class="wrapper flow">
-    <h2 class="text-center title" id="included">O que você recebe</h2>
-    <ul class="gap-6 grid md:grid-cols-3">
-      {% for item in service.included %}
-      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
-        {{ item }}
-      </li>
-      {% endfor %}
-    </ul>
+<section class="py-12" aria-labelledby="included-title">
+  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="included-title">O que você recebe</h2>
+  <ul class="gap-6 grid md:grid-cols-2">
+    {% for item in service.included %}
+    <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+      {{ item }}
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 {% endif %}
 
 <!-- Results -->
 {% if service.results %}
-<section class="region" aria-labelledby="results">
-  <div class="wrapper flow">
-    <h2 class="title" id="results">Resultados esperados</h2>
-    <ul class="grid" data-layout="thirds" role="list">
-      {% for result in service.results %}
-      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
-        <h3 class="h6 fw-bold">{{ result.title }}</h3>
-        <p class="mb-0 text-muted">{{ result.description }}</p>
-      </li>
-      {% endfor %}
-    </ul>
+<section class="py-12" aria-labelledby="results-title">
+  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="results-title">Resultados esperados</h2>
+  <ul class="gap-6 grid md:grid-cols-3">
+    {% for result in service.results %}
+    <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+      <h3 class="mb-4 font-bold text-brand-red-500">{{ result.title }}</h3>
+      <p>{{ result.description }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 {% endif %}
 
 <!-- Target -->
 {% if service.target %}
-<section class="region" aria-labelledby="target">
-  <div class="wrapper flow">
-    <h2 class="title" id="target">Para quem é indicado</h2>
-    <ul class="grid" data-layout="thirds" role="list">
+<section class="region" aria-labelledby="target-title">
+  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="target-title">Para quem é indicado</h2>
+  <div class="prose">
+    <ul class="space-y-6">
       {% for item in service.target %}
-      <li class="bg-brand-gray-200 border border-brand-gray-300 rounded-lg p-6">
+      <li class="">
         {{ item }}
       </li>
       {% endfor %}
     </ul>
-</section>
-{% endif %}
-
-<!-- Plans -->
-{% if service.plans %}
-{% set plansTitle = "Planos disponíveis" %}
-{% set plans = service.plans %}
-{% include "components/plans/plans-grid.njk" %}
-{% endif %}
-
-<!-- Process -->
-{% if service.processes %}
-<section class="region" aria-labelledby="process">
-  <div class="wrapper flow">
-    <h2 class="text-center title" id="process">Como funciona</h2>
-    <ol class="grid" data-layout="50-50" role="list">
-      {% for step in service.processes %}
-      <li class="box">
-        <strong>{{ step.title }}:</strong>
-        <span class="text-muted">{{ step.description }}</span>
-      </li>
-      {% endfor %}
-    </ol>
   </div>
-</section>
-{% endif %}
-
-<!-- Testimonial -->
-{% if service.testimonials %}
-<section class="region" aria-labelledby="testimonial">
-  <div class="wrapper flow">
-    <h2 class="text-center title" id="process">Depoimentos</h2>
-
-    <div class="grid" data-layout="thirds">
-      {% set testimonials = service.testimonials %}
-      {% for testimonial in testimonials %}
-      <blockquote class="box">
-        <p class="mb-2">“{{ testimonial.quote }}”</p>
-        <footer class="blockquote-footer">
-          {{ testimonial.client }}
-        </footer>
-      </blockquote>
-      {% endfor %}
-    </div>
 </section>
 {% endif %}
 
 <!-- FAQ -->
 {% if service.faq %}
-<section class="py-20" aria-labelledby="faq">
-  <div class="wrapper flow">
-    <h2 class="mb-4 font-extrabold text-4xl text-center leading-tight hero__title title" id="faq">Perguntas frequentes
-    </h2>
+<section class="py-20" aria-labelledby="faq-title">
+  <h2 class="mb-6 font-bold text-brand-red-500 text-4xl text-center leading-tight" id="faq-title">
+    Perguntas frequentes
+  </h2>
 
-    <div class="mx-auto max-7xl" data-layout="50-50">
-      {% for item in service.faq %}
-      <details class="box accordion-item">
-        <summary class="accordion-header">{{ item.question }}</summary>
-        <p>{{ item.answer }}</p>
-      </details>
-      {% endfor %}
-    </div>
+  <div class="space-y-4">
+    {% for item in service.faq %}
+    <details class="group bg-brand-gray-200 mb-6 p-6 border border-brand-gray-300 open:border-primary/30 rounded-xl transition-all">
+      <summary class="flex justify-between items-center font-bold text-brand-red-500 text-lg cursor-pointer list-none">
+        {{ item.question }}
+        <span class="text-primary group-open:rotate-180 transition-transform">
+          {% lucide "chevron-down", "w-5 h-5 text-brand-red-5000" %}
+        </span>
+      </summary>
+      <p class="mt-4">{{ item.answer }}</p>
+    </details>
+    {% endfor %}
   </div>
 </section>
 {% endif %}
-
-<!-- CTA -->
-{% set cta = service.cta %}
-{% include "components/cta/cta-block.njk" %}
