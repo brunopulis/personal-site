@@ -32,10 +32,9 @@ export default {
     enabled: true,
     libera: "brunopulis",
     kofi: "brunopulis",
-    paypal: "ttps://www.paypal.com/donate/?hosted_button_id=7YBCWD8WYY4ZA",
-    buymeacoffee: "brunopulis",
+    paypal: "donate/?hosted_button_id=7YBCWD8WYY4ZA",
     github: "brunopulis",
-    message: "If you find value in my writing, consider supporting my work. Every contribution helps me continue creating thoughtful content."
+    message: "Se você encontrar valor na minha escrita, considere apoiar meu trabalho. Cada contribuição me ajuda a continuar criando conteúdo bem pensado."
   },
   analytics: {
     enabled: true,

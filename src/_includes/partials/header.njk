@@ -16,9 +16,8 @@
         <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
           {% for item in navigation.top %}
           <li>
-            <a href="{{ item.url }}"
-              class="nav-item block py-2 {% if item.url == url %}underline font-semibold{% endif %}" {% if item.url==url
-              %}aria-current="page" {% endif %}>{{ item.text }}</a>
+            <a href="{{ item.url }}" class="nav-item block py-2 {% if item.url == url %}underline font-bold{% endif %}"
+              {% if item.url==url %}aria-current="page" {% endif %}>{{ item.text }}</a>
           </li>
           {% endfor %}
         </ul>

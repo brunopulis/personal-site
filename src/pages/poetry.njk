@@ -1,0 +1,32 @@
+---
+layout: base
+title: Poesia
+permalink: "{% if pagination.pageNumber > 0 %}/poetry/page/{{ pagination.pageNumber + 1 }}/{% else %}/poetry/{% endif %}"
+pagination:
+  data: collections.poetry
+  size: 10
+---
+
+<h1 class="mb-4 font-bold text-2xl">Poesias</h1>
+<p>Collected poems with their own pages.</p>
+
+<div class="h-feed">
+  {% set items = poetry | default([]) %}
+  {% if items | length == 0 %}
+    <p class="text-gray-500 dark:text-gray-400 italic">No poems yet. Add files under <code>src/poetry/</code>.</p>
+  {% else %}
+    <section class="space-y-6">
+      {% for item in items %}
+      <article class="pb-4 border-b">
+        <h2 class="font-semibold text-lg"><a href="{{ item.url }}">{{ item.data.title or 'Untitled' }}</a></h2>
+        {% if item.date %}
+          <time class="text-gray-500 text-xs" datetime="{{ item.date | toISOString }}">{{ item.date | readableDate }}</time>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </section>
+    {% if pagination.pages.length > 1 %}
+      {% include 'components/pagination.njk' %}
+    {% endif %}
+  {% endif %}
+</div>

@@ -16,14 +16,14 @@ pagination:
   <div class="space-y-8">
     {% for post in pagination.items %}
       <article class="pb-6 border-b h-entry">
-        <h2 class="p-name font-semibold text-xl"><a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <time class="dark:text-gray-400 text-sm dt-published" datetime="{{ post.data.pubDate | toISOString }}">{{ post.data.pubDate | readableDate }}</time>
-        <div class="mt-2 p-summary text-gray-700 dark:text-gray-300">
+        <h2 class="p-name font-bold text-xl"><a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <time class="text-sm dt-published" datetime="{{ post.data.pubDate | toISOString }}">{{ post.data.pubDate | readableDate }}</time>
+        <div class="mt-2 p-summary">
           {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
         </div>
         <div class="space-x-2 mt-2 text-sm">
           {% for tag in post.data.tags %}
-            <a class="bg-gray-100 dark:bg-gray-800 p-category px-2 py-0.5 rounded" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+            <a class="bg-brand-gray-200 p-category px-2 py-0.5 rounded font-bold text-brand-dark-500" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
           {% endfor %}
         </div>
       </article>

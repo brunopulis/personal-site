@@ -22,8 +22,10 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addLayoutAlias('base', 'base.njk');
 	eleventyConfig.addLayoutAlias('page', 'page.njk');
 	eleventyConfig.addLayoutAlias('post', 'post.njk');
+	eleventyConfig.addLayoutAlias('poetry', 'poetry.njk');
 
 	eleventyConfig.addCollection('posts', collections.posts);
+	eleventyConfig.addCollection('poetry', collections.poetry);
 	eleventyConfig.addCollection('notes', collections.notes);
 	eleventyConfig.addCollection('books', collections.books);
 	eleventyConfig.addCollection('letters', collections.newsletters);
@@ -32,8 +34,7 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addCollection('bookmarks', collections.bookmarks);
 
 	eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
-	eleventyConfig.addCollection('tagList', collections.tagList);
-	eleventyConfig.addCollection('tagListRecurrency', collections.tagListRecurrency);
+	
 
 	//   Plugins
 	eleventyConfig.addPlugin(plugins.htmlConfig);

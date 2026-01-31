@@ -63,6 +63,15 @@
 @layer reset, tokens, base, composition, utility, block, exception;
 
 @layer base {
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0ms !important;
+      transition-duration: 0ms !important;
+    }
+  }
+
   a {
     @apply text-brand-dark-500;
   }
