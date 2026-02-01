@@ -1,16 +1,26 @@
 ---
-layout: page
+layout: base
 title: "Estratégia POSSE"
 description: 'O que faço para fazer POSSE com meu conteúdo'
 permalink: /posse/index.html
+date: Last Modified
 ---
 
-Essa página lista meus esforços para criar conteúdo primeiramente em meu site e replicar em outras redes sociais.
 
-Estou num processo de transição e a intenção é que todas as minhas postagens são postadas primeiro no meu site e depois compartilhadas automaticamente (ou "sindicadas") em vários sites de mídia social usando. 
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-Isso geralmente é chamado **POSSE**:
+<div class="prose">
+  <p>Essa página lista meus esforços para criar conteúdo primeiramente em meu site e replicar em outras redes sociais.
+  </p>
+  <p>Estou num processo de transição e a intenção é que todas as minhas postagens são postadas primeiro no meu site e
+    depois compartilhadas automaticamente (ou "sindicadas") em vários sites de mídia social usando.</p>
+  <p>Isso geralmente é chamado <abbr title="Publique em seu próprio site, Sindique em outro lugar">POSSE</abbr></p>
+  <p>POSSE é uma abreviação de Publicar (em seu) próprio site, Sindicar em outro lugar, a prática de postar conteúdo em
+    seu próprio site primeiro e depois publicar cópias ou compartilhar links com terceiros</p>
 
-> POSSE é uma abreviação de Publicar (em seu) próprio site, Sindicar em outro lugar, a prática de postar conteúdo em seu próprio site primeiro e depois publicar cópias ou compartilhar links com terceiros
+  <p>Você pode conhecer mais sobre isso no <a href="https://indieweb.org/POSSE"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600">site da Indie Web</a></p>
+</div>
 
-Você pode conhecer mais sobre isso no [site da Indie Web](https://indieweb.org/POSSE)
+{% include "components/last-update.njk" %}

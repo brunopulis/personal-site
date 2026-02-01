@@ -3,9 +3,10 @@ layout: base
 title: "Meus livros"
 permalink: "/bookshelf/index.html"
 description: "Minha coleção de livros"
+date: Last Modified
 ---
 
-<h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
 <p class="mb-6">{{ description }}</p>
 
 {% set booksByYear = collections.books | groupBy("attendedYear") %}
@@ -53,3 +54,5 @@ description: "Minha coleção de livros"
   <hr class="my-6 mb-12 border-gray-200" />
 </section>
 {% endfor %}
+
+{% include 'components/pagination.njk' %}

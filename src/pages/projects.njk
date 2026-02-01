@@ -2,8 +2,8 @@
 layout: base
 title: "Meus projetos"
 permalink: "/projects/index.html"
-key: 'projects'
 description: "Projetos Open Source que mantenho"
+date: Last Modified
 ---
 
 <h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
@@ -15,11 +15,14 @@ description: "Projetos Open Source que mantenho"
     <article>
       <h2 class="font-semibold text-lg">{{ project.title }}</h2>
       <p>{{ project.description }}</p>
-       <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-content-center gap-2 my-2 font-bold underline hover:underline">
+      <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center justify-content-center gap-2 my-2 font-bold underline hover:underline">
         Ver projeto <span class="sr-only">{{ project.title }}</span>
-        {% lucide "chevron-right", { "class": "w-4 h-4" } %}        
+        {% lucide "chevron-right", { "class": "w-4 h-4" } %}
       </a>
     </article>
   </li>
   {% endfor %}
 </ul>
+
+{% include "components/last-update.njk" %}

@@ -1,43 +1,97 @@
 ---
-layout: page
+layout: base
 title: "Inscreva"
 description: 'Acompanhe todos meus artigos direto pelo seu leitor de RSS preferido'
 permalink: /subscribe/index.html
-pubDate: '2025-11-21'
 date: Last Modified
 ---
 
-Meu site existe uma gama de conteúdo, por isso separei esses conteúdos em uma espécie de categorias.
-Cada categoria possui seu próprio [_RSS_](https://pt.wikipedia.org/wiki/RSS).
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-Meu conteúdo está disponível via _RSS_, _Microformats_, e-mail, _Bluesky_ e _Fediverso_.
+<div class="prose">
+  <p>Meu site existe uma gama de conteúdo, por isso separei esses conteúdos em uma espécie de categorias.</p>
+  <p>Cada categoria possui seu próprio <a href="https://pt.wikipedia.org/wiki/RSS"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">RSS</a>.</p>
 
-## Inscreva-se com um leitor de feeds
+  <p>Meu conteúdo está disponível via <a href="https://pt.wikipedia.org/wiki/RSS"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">RSS</a>, <a href="https://microformats.org/"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">Microformats</a>, e-mail, Bluesky e no Fediverso.</p>
 
-Este site suporta inscrições via _RSS_. Usando um leitor de feeds, você pode se inscrever no [RSS]({{ "/feed.xml" | url }}). 
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">
+    Inscreva-se com um leitor de feeds
+  </h2>
 
-Saiba mais sobre o [poder do RSS](https://aboutfeeds.com)
+  <p>Este site suporta inscrições via <a href="https://pt.wikipedia.org/wiki/RSS"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">RSS</a>.</p>
 
-Você pode se inscrever em vários feeds que organizei, eles são:
+  <p>Usando um leitor de feeds, você pode se inscrever no <a href="{{ " /feed.xml" | url }}"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">RSS</a>.</p>
 
-- [Artigos longos](/feed/blog.xml)
-- [Notas curtas](/feed/notas.xml)
-- [Links](/feed/bookmarks.xml)
-- [Feed da minha biblioteca](/feed/livros.xml)
+  <p>Saiba mais sobre o <a href="https://aboutfeeds.com"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">poder do RSS</a>.</p>
 
-## Inscrição por e-mail
+  <p>Você pode se inscrever em vários feeds que organizei, eles são:</p>
 
-A maneira mais fácil de se [inscrever é por e-mail](https://brunopulis.substack.com/). Os e-mails são enviados uma vez por semana e você pode cancelar a inscrição a qualquer momento.
+  <ul>
+    <li><a href="/feed/blog.xml" class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600"
+        target="_blank" rel="noreferrer noopener">Artigos longos</a></li>
+    <li><a href="/feed/notas.xml" class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600"
+        target="_blank" rel="noreferrer noopener">Notas curtas</a></li>
+    <li><a href="/feed/bookmarks.xml" class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600"
+        target="_blank" rel="noreferrer noopener">Links</a></li>
+    <li><a href="/feed/livros.xml" class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600"
+        target="_blank" rel="noreferrer noopener">Feed da minha biblioteca</a></li>
+  </ul>
 
-## Siga no Bluesky
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">
+    Inscrição por e-mail
+  </h2>
 
-Se você usa o [Bluesky](https://bsky.app/), pode me seguir [@brunopulis.com](https://bsky.app/profile/brunopulis.com).
-Todas as publicações deste site serão federadas à rede via Brid.gy, de modo que aparecerão no identificador oficial.
+  <p>A maneira mais fácil de se inscrever é por e-mail. Os e-mails são enviados uma vez por semana e você pode cancelar
+    a inscrição a qualquer momento.</p>
 
-## Siga-me no Mastodon ou em outras redes do fediverso
+  <p>Se inscreva no <a href="https://brunopulis.substack.com/"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">Substack</a>.</p>
 
-Se você usa um serviço federado como o [Mastodon](https://joinmastodon.org/), pode me seguir pesquisando <code>@bruno@brunopulis.com</code> no seu servidor.
-Todas as publicações deste site serão federadas à rede (via ActivityPub).
-Digite sua conta abaixo para ser redirecionado para a página de seguir do seu servidor.
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">
+    Siga no Bluesky
+  </h2>
 
-[Seguir no Fediverso](https://fed.brid.gy/remote-follow?domain=brunopulis.com&protocol=web)
+  <p>Se você usa o <a href="https://bsky.app/"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">Bluesky</a>, pode me seguir <a href="https://bsky.app/profile/brunopulis.com"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">@brunopulis.com</a>.</p>
+
+  <p>Todas as publicações deste site serão federadas à rede via Brid.gy, de modo que aparecerão no identificador
+    oficial.</p>
+
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">
+    Siga-me no Mastodon ou em outras redes do fediverso
+  </h2>
+
+  <p>Se você usa um serviço federado como o <a href="https://joinmastodon.org/"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+      rel="noreferrer noopener">Mastodon</a>, pode me seguir pesquisando <span
+      class="font-mono">@bruno@brunopulis.com</span> no seu
+    servidor.
+  </p>
+
+  <p>Todas as publicações deste site serão federadas à rede (via ActivityPub).</p>
+
+  <p>Digite sua conta abaixo para ser redirecionado para a página de seguir do seu servidor.</p>
+
+  <a href="https://fed.brid.gy/remote-follow?domain=brunopulis.com&protocol=web"
+    class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" target="_blank"
+    rel="noreferrer noopener">Seguir no Fediverso</a>
+</div>
+
+{% include "components/last-update.njk" %}

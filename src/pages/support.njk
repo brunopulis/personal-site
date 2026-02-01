@@ -2,10 +2,13 @@
 layout: base
 title: "Apoie meu trabalho"
 permalink: /support/index.html
+date: Last Modified
 ---
 
-<h1 class="text-2xl font-bold mb-6">{{ title }}</h1>
-<div class="prose prose-lg max-w-none">
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
+
+<div class="prose">
   {% if site.donate.message %}
   <p>{{ site.donate.message }}</p>
   {% else %}
@@ -14,7 +17,7 @@ permalink: /support/index.html
   {% endif %}
 
   {% if site.donate.enabled %}
-  <h2>Contribuição única</h2>
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Contribuição única</h2>
   <p>Compre um café ou faça uma contribuição única para ajudar a me apoiar:</p>
 
   <div class="flex flex-wrap gap-4 my-6">
@@ -33,7 +36,8 @@ permalink: /support/index.html
   </div>
 
   {% if site.donate.github %}
-  <h2>Contribuição contínua</h2>
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Contribuição contínua
+  </h2>
   <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
 
   <div class="my-6">
@@ -45,7 +49,8 @@ permalink: /support/index.html
   {% endif %}
   {% endif %}
 
-  <h2>Outras formas de ajudar</h2>
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Outras formas de ajudar
+  </h2>
   <ul>
     <li><strong>Compartilhe meus posts</strong> com outras pessoas que possam encontrá-los valiosos</li>
     <li><strong>Se inscreva na minha newsletter</strong> para ficar atualizado sobre novos conteúdos</li>
@@ -58,4 +63,5 @@ permalink: /support/index.html
     e manter este blog. Obrigado pelo seu apoio! 🙏
   </p>
 </div>
-</div>
+
+{% include "components/last-update.njk" %}

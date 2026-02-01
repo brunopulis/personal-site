@@ -1,50 +1,65 @@
 ---
-layout: page
+layout: base
 title: "Verifique"
-permalink: /verify/index.html
 description: Verifique minha identidade online
+permalink: /verify/index.html
 date: Last Modified
 ---
 
-Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui, por favor, [me avise](https://brunopulis.com/contato).
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-6">{{ description }}</p>
 
-## Redes ativas
+<div class="prose">
+  <p>Se você encontrar uma conta que pareça ser minha, mas não esteja listada aqui, por favor, <a
+      href="https://brunopulis.com/contato">me avise</a>.</p>
 
-### Fediverso:
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Redes ativas</h2>
 
-- [@brunopulis@mastodon.social](https://mastodon.social/@brunopulis)
-- [@brunopulis@threads.net](https://threads.net/@brunopulis)
-- [@brunopulis.com@bsky.social](https://bsky.social/@brunopulis)
-- Discord: [brunopulis](https://discord.com/users/brunopulis)
-- PSN: [anakinbr88](https://psnprofiles.com/players/anakinbr88)
-- GitHub: [brunopulis](https://github.com/brunopulis)
-- Ko-fi: [brunopulis](https://ko-fi.com/brunopulis)
+  <h3 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Fediverso</h3>
 
-## Email
+  <ul>
+    <li><a href="https://mastodon.social/@brunopulis">@brunopulis@mastodon.social</a></li>
+    <li><a href="https://threads.net/@brunopulis">@brunopulis@threads.net</a></li>
+    <li><a href="https://bsky.social/@brunopulis">@brunopulis.com@bsky.social</a></li>
+    <li><a href="https://discord.com/users/brunopulis">Discord: brunopulis</a></li>
+    <li><a href="https://psnprofiles.com/players/anakinbr88">PSN: anakinbr88</a></li>
+    <li><a href="https://github.com/brunopulis">GitHub: brunopulis</a></li>
+    <li><a href="https://ko-fi.com/brunopulis">Ko-fi: brunopulis</a></li>
+  </ul>
 
-Você pode entrar em contato comigo através do e-mail brunopulis@protonmail.com
+  <h3 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Email</h3>
 
-## Redes inativas
+  <p>Você pode entrar em contato comigo através do e-mail <a
+      href="mailto:brunopulis@protonmail.com">brunopulis@protonmail.com</a></p>
 
-Essas redes são minhas, mas não utilizo mais.
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Redes inativas</h2>
 
-- [Instagram](https://www.instagram.com/brunopulis)
-- [Pixelfed](https://pixelfed.org/@brunopulis)
-- [Facebook](https://www.facebook.com/obrunopulis)
+  <p>Essas redes são minhas, mas não utilizo mais.</p>
 
-## Redes que não possuo
+  <ul>
+    <li><a href="https://www.instagram.com/brunopulis">Instagram</a></li>
+    <li><a href="https://pixelfed.org/@brunopulis">Pixelfed</a></li>
+    <li><a href="https://www.facebook.com/obrunopulis">Facebook</a></li>
+  </ul>
 
-Se houver uma conta com meu nome nessas redes, não sou eu.
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Redes que não
+    possuo</h2>
 
-- Twitter/X
-- Snapchat
-- TikTok
+  <p>Se houver uma conta com meu nome nessas redes, não sou eu.</p>
 
-## Meus domínios
+  <ul>
+    <li>Twitter/X</li>
+    <li>Snapchat</li>
+    <li>TikTok</li>
+    <li>Orkut</li>
+  </ul>
 
-- brunopulis.com
-- brunopulis.com.br
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Meus domínios</h2>
 
----
+  <ul>
+    <li>brunopulis.com</li>
+    <li>brunopulis.com.br</li>
+  </ul>
+</div>
 
-_Última atualização: {{ page.date | formatDate('MMMM D, YYYY') }}_
+{% include "components/last-update.njk" %}

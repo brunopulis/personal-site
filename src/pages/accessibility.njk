@@ -1,36 +1,53 @@
 ---
-layout: page
+layout: base
 title: 'Declaração de Acessibilidade'
-permalink: /acessibilidade/index.html
+permalink: /accessibility/index.html
 description: 'Compromisso com a acessibilidade digital e como relatar problemas de acessibilidade.'
 date: "Last Modified"
 ---
 
-O design de acessibilidade visa garantir acesso igualitário para pessoas com deficiência. Trata-se de remover barreiras ao acesso.
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-Estou muito comprometido com esse princípio e procuro continuamente melhorar a experiência do usuário para todos.
+<div class="prose">
+  <p>O design de acessibilidade visa garantir acesso igualitário para pessoas com deficiência. Trata-se de remover
+    barreiras ao acesso.</p>
 
-## Status de conformidade
+  <p>Estou muito comprometido com esse princípio e procuro continuamente melhorar a experiência do usuário para todos.
+  </p>
 
-As [Diretrizes de Acessibilidade para Conteúdo Web (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) definem requisitos para designers e desenvolvedores melhorarem a acessibilidade para pessoas com deficiência. Elas definem três níveis de conformidade: Nível A, Nível AA e Nível AAA.
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">
+    Status de conformidade
+  </h2>
 
-O _Eleventy Excellent_ visa estar em conformidade com o [ WCAG 2.1 Nível AA.](https://www.w3.org/WAI/standards-guidelines/wcag/)
+  <p>
+    As <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Diretrizes de Acessibilidade para Conteúdo Web
+      (WCAG)</a> definem requisitos para designers e desenvolvedores melhorarem a acessibilidade para pessoas com
+    deficiência. Elas definem três níveis de conformidade: Nível A, Nível AA e Nível AAA.</p>
 
-A conformidade depende de como os usuários implementam e personalizam o starter para seus conteúdos e casos de uso específicos.
+  <p>A conformidade depende de como os usuários implementam e personalizam o starter para seus conteúdos e casos de uso
+    específicos.</p>
 
-## Testes
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">
+    Testes
+  </h2>
 
-O [pa11y-ci](https://github.com/pa11y/pa11y-ci) é usado para executar testes automatizados de acessibilidade, [consulte a documentação](/docs/tests/).
+  <p>O <a href="https://github.com/pa11y/pa11y-ci">pa11y-ci</a> é usado para executar testes automatizados de
+    acessibilidade, <a href="/docs/tests/">consulte a documentação</a>.</p>
 
-## Feedback
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">
+    Feedback
+  </h2>
 
-Agradeço muito seus comentários e sugestões sobre a acessibilidade deste projeto inicial. Informe-me se você encontrar alguma barreira de acessibilidade:
+  <p>Agradeço muito seus comentários e sugestões sobre a acessibilidade deste projeto inicial. Informe-me se você
+    encontrar alguma barreira de acessibilidade:</p>
 
-- **Problemas no GitHub**: [Relate problemas de acessibilidade](https://github.com/madrilene/eleventy-excellent/issues)
-- **E-mail**: brunopulis@protonmail.com
+  <ul>
+    <li><a href="https://github.com/brunopulis/personal-site/issues">Problemas no GitHub</a></li>
+    <li>E-mail: <a hrtef="mailto:brunopulis@protonmail.com">brunopulis@protonmail.com</a></li>
+  </ul>
 
-**Tempo de resposta**: meu objetivo é responder aos comentários em até uma semana.
+  <p>Tempo de resposta: meu objetivo é responder aos comentários em até uma semana.</p>
+</div>
 
----
-
-_Última atualização: {{ page.date | formatDate("MMMM D, YYYY") }}_
+{% include "components/last-update.njk" %}

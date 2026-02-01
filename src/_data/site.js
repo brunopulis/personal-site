@@ -64,7 +64,7 @@ export default {
     poetry: { enabled: true, title: "Poetry", path: "/poetry/" },
     portfolio: { enabled: true, title: "Portfolio", path: "/portfolio/" },
     projects: { enabled: true, title: "Projects", path: "/projects/" },
-    resume: { enabled: true, title: "Résumé", path: "/resume/" },
+    resume: { enabled: true, title: "Curriculo", path: "/resume/" },
     type: { enabled: true, title: "Type", path: "/type/" },
     links: { enabled: true, title: "Links", path: "/links/" },
     bookshelf: { enabled: true, title: "Bookshelf", path: "/bookshelf/" }
