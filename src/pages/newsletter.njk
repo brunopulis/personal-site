@@ -1,26 +1,35 @@
 ---
-layout: page
+layout: base
 title: "Filtro digital"
 description: "Sua fonte de notícias sobre tecnologia, acessibilidade e desenvolvimento web"
 permalink: "{% if pagination.pageNumber > 0 %}/newsletter/page/{{ pagination.pageNumber + 1 }}/{% else %}/newsletter/{%
 endif %}"
+date: Last Modified
 pagination:
   data: collections.newsletters
   size: 12
 ---
 
-<ul class="flow" role="list">
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
+<a class="hidden u-url" href="{{ site.url }}/newsletter/"></a>
+
+<ol class="space-y-8 h-feed">
 {% for item in pagination.items %}
-  <li class="article__entry h-entry">
-    <h2><a href="{{ item.url | url }}">{{ item.data.title }}</a></h2>  
-    <time datetime="{{ item.data.pubDate | toISOString }}">
+ <li class="py-6 border-brand-gray-500 border-b h-entry">
+    <h2 class="p-name font-bold text-2xl">
+      <a href="{{ item.url | url }}" class="text-brand-red-500 hover:text-brand-red-600 text-xl underline u-url" >
+        {{ item.data.title }}
+      </a>
+    </h2>  
+    <time class="text-sm dt-published"  datetime="{{ item.data.pubDate | toISOString }}">
       {{ item.data.pubDate | readableDate }}
     </time>
 
     {% if item.data.description %}
-    <p class="card-text">
+     <div class="mt-2 p-summary">
       {{ item.data.description | markdownFormat | safe }}
-    </p>
+     </div>
     {% endif %}
   </li>
 {% endfor %}
@@ -29,3 +38,5 @@ pagination:
 {% if pagination.pages.length > 1 %}
 {% include 'components/pagination.njk' %}
 {% endif %}
+
+{% include "components/last-update.njk" %}

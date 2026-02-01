@@ -1,10 +1,13 @@
 ---
 layout: base
 title: Obrigado
+description: Obrigado pela sua mensagem! Entraremos em contato o mais breve possível.
+date: Last Modified
 ---
 
-<h1 class="mb-6 font-bold text-2xl">Obrigado!</h1>
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-6">{{ description }}</p>
 
-<p class="mb-6">Obrigado pela sua mensagem! Entraremos em contato o mais breve possível.</p>
+<a href="/" class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600">Voltar para Home</a>
 
-<a href="/" class="text-blue-600 hover:text-blue-700">Voltar para Home</a>
+{% include "components/last-update.njk" %}

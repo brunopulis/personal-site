@@ -1,8 +1,7 @@
-<section class="mt-12 py-6" id="projetos" aria-labelledby="projetos-title">
-  <header class="gap-6 mb-8">
-    <h2 class="mb-4 font-bold text-3xl" id="projetos-title">Projetos em Destaque</h2>
-    <p class="max-w-2xl">Alguns trabalhos que realizei, <a class="font-bold" href="/portfolio">ver portfólio
-        completo.</a></p>
+<section class="mt-12 py-6 border-brand-gray-500 border-b mb-12" id="projetos" aria-labelledby="projetos-title">
+  <header class="gap-6 mb-6">
+    <h2 class="mb-4 font-bold text-3xl text-brand-red-500" id="projetos-title">Portfólio</h2>
+    <p>Alguns trabalhos que realizei</p>
   </header>
 
   <div class="gap-4 grid grid-cols-1">
@@ -16,7 +15,7 @@
         <div class="absolute inset-0 bg-linear-to from-card-dark/80 to-transparent"></div>
       </div>
       <div class="flex flex-col p-8 md:w-3/5 grow">
-        <h3 class="mb-4 font-bold text-2xl">{{ project.title }}</h3>
+        <h3 class="mb-4 font-bold text-brand-red-500 text-2xl">{{ project.title }}</h3>
         <p class="mb-6 grow">
           {{ project.description }}
         </p>
@@ -30,14 +29,16 @@
         </div>
         <div class="flex gap-4">
           {% if project.links.demo %}
-          <a class="inline-flex items-center gap-2 font-bold underline hover:underline" href="{{ project.links.demo }}">
-            Ver projeto
+          <a class="inline-flex items-center gap-2 text-brand-red-500 hover:text-brand-red-600 font-bold underline hover:no-underline"
+            href="{{ project.links.demo }}">
+            ver projeto <span class="sr-only">: {{ project.title }}</span>
             {% lucide "arrow-up-right", { "class": "w-4 h-4" } %}
           </a>
           {% endif %}
           {% if project.links.case %}
-          <a class="inline-flex items-center gap-2 font-bold underline hover:underline" href="{{ project.links.case }}">
-            Ver estudo de caso
+          <a class="inline-flex items-center gap-2 text-brand-red-500 hover:text-brand-red-600 font-bold underline hover:no-underline"
+            href="{{ project.links.case }}">
+            ver estudo de caso <span class="sr-only">: {{ project.title }}</span>
             {% lucide "arrow-right", { "class": "w-4 h-4" } %}
           </a>
           {% endif %}
@@ -46,5 +47,10 @@
     </div>
     {% endfor %}
   </div>
-  </div>
+  <p class="mt-6">
+    <a href="/portfolio"
+      class="group inline-flex items-center underline text-brand-red-500 hover:text-brand-red-600 hover:no-underline transition-colors gap-2 font-bold">
+      ver todos os trabalhos {% lucide "chevron-right", { class: "w-4 h-4" } %}
+    </a>
+  </p>
 </section>

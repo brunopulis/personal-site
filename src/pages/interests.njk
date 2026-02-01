@@ -7,16 +7,22 @@ description: 'Uma lista de coisas que gosto sem nenhuma ordem específica; talve
 date: Last Modified
 ---
 
-Meus interesses não estão em uma ordem cronológica.
-Essa página está em constante evolução.
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-- Sou fã de Linux e Open Source;
-- Padrões Web;
-- Teologia;
-- Literatura;
-- Cibersegurança;
-- Música;
-- Kung Fu.
+<div class="prose">
+  <p>Meus interesses não estão em uma ordem cronológica.</p>
+  <p>Essa página está em constante evolução.</p>
 
+  <ul>
+    <li>Sou fã de Linux e Open Source;</li>
+    <li>Padrões Web;</li>
+    <li>Teologia;</li>
+    <li>Literatura;</li>
+    <li>Cibersegurança;</li>
+    <li>Música;</li>
+    <li>Kung Fu.</li>
+  </ul>
+</div>
 
-*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+{% include "components/last-update.njk" %}

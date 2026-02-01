@@ -3,7 +3,7 @@ import {base64Format} from './filters/base64-format.js';
 import {toISOString, toRfc822Date, formatDate, readableDate, sortByDate, relativeDate} from './filters/dates.js';
 import {streamIcon, streamTypeLabel} from './filters/stream-icon.js';
 
-import {groupBy, groupByMonth} from './filters/groupBy.js';
+import {groupBy, groupByYear, groupByMonth, groupByYearMonth} from './filters/groupBy.js';
 import {sortKeys} from './filters/sort-keys.js';
 import {getRelatedServices} from './filters/getRelatedServices.js';
 import {getServiceById} from './filters/getServiceById.js';
@@ -28,7 +28,9 @@ import {
 
 export {
   groupBy,
+  groupByYear,
   groupByMonth,
+  groupByYearMonth,
   sortKeys,
   categoryFilter,
   base64Format,

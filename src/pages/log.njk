@@ -1,29 +1,39 @@
 ---
-layout: page
-title: "Mudancas do site"
+layout: base
+title: "Registro de mudanças"
 permalink: /log/index.html
 pubDate: "2025-11-21"
-description: "Mudanças em meu site"
+description: "Mudanças que fiz ao longo do meu site"
 date: Last Modified
 ---
 
-## 17-01-2026
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-- Adicionei suporte para RSS com: Atom, RSS e JSON
-- Reorganizei o menu principal.
+<div class="prose">
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl">17-01-2026</h2>
 
-## 12-12-2025
+  <ul>
+    <li>Adicionei suporte para RSS com: Atom, RSS e JSON</li>
+    <li>Reorganizei o menu principal.</li>
+  </ul>
 
-- Adicionei suporte ao Feeds RSS, Atom e JSON
-- Organizei coleções de dados
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl">12-12-2025</h2>
+  <ul>
+    <li>Adicionei suporte ao Feeds RSS, Atom e JSON</li>
+    <li>Organizei coleções de dados</li>
+  </ul>
 
-## 21-11-2025
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl">21-11-2025</h2>
+  <ul>
+    <li>Adicionei as paginas: /logs, /uses/, /subscribe</li>
+    <li>Adicionei o conteudo da pagina de licenca;</li>
+  </ul>
 
-- Adicionei as paginas: /logs, /uses/, /subscribe
-- Adicionei o conteudo da pagina de licenca;
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl">20-11-2025</h2>
+  <ul>
+    <li>Adicionei as badges</li>
+  </ul>
+</div>
 
-## 20-11-2025
-
-- Adicionei as badges
-
-_Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}_
+{% include "components/last-update.njk" %}

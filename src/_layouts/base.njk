@@ -123,11 +123,11 @@
   <script defer src="https://cloud.umami.is/script.js" data-website-id="88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"></script>
 </head>
 
-<body class="flex flex-col bg-white min-h-screen text-brand-dark-500">
+<body class="flex flex-col min-h-screen">
   <a href="#main" class="sr-only">{{ site.skipContent }}</a>
   {% include "partials/header.njk" %}
 
-  <div class="flex-1 mx-auto px-4 py-6 max-w-4xl container">
+  <div class="flex-1 mx-auto px-4 py-6 max-w-5xl container">
     <main id="main">
       {{ content | safe }}
     </main>

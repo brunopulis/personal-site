@@ -1,24 +1,20 @@
 export default {
 	top: [
 		{
+			text: 'Artigos',
+			url: '/blog/'
+		},
+		{
 			text: 'Sobre',
 			url: '/about/'
-		},
-		{
-			text: 'Trabalho',
-			url: '/portfolio/'
-		},
-		{
-			text: 'Palestras',
-			url: '/speaking/'
 		},
 		{
 			text: 'Serviços',
 			url: '/services/'
 		},
 		{
-			text: 'Artigos',
-			url: '/blog/'
+			text: 'Portfolio',
+			url: '/portfolio/'
 		},
 		{
 			text: 'Contato',

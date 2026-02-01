@@ -2,6 +2,7 @@
 layout: base
 title: "Meus trabalhos"
 permalink: "/portfolio/index.html"
+date: Last Modified
 description: "Uma seleção de projetos variando de desenvolvimento front-end ao design de interface, focada em
 performance e usabilidade."
 ---
@@ -10,7 +11,7 @@ performance e usabilidade."
 {% set categories = portfolio.categories %}
 {% set stats = portfolio.stats %}
 
-<h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
 <p class="mb-6">{{ description }}</p>
 
 <section class="space-y-8">
@@ -59,3 +60,6 @@ performance e usabilidade."
     </a>
   </div>
 </section>
+
+
+{% include "components/last-update.njk" %}

@@ -1,12 +1,15 @@
 ---
 layout: base
 title: "Guia de estilo"
+description: Guia de estilo do meu site
 permalink: /style/index.html
+date: Last Modified
 ---
 
-<h1 class="text-2xl font-bold mb-6">Guia de estilo</h1>
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-6">{{ description }}</p>
 
-<div class="space-y-12">
+<div class="space-y-12 prose">
   <section>
     <h2 class="text-xl font-semibold mb-4">Tipografia</h2>
     <div class="space-y-4">
@@ -108,3 +111,5 @@ function example() {
     </div>
   </section>
 </div>
+
+{% include "components/last-update.njk" %}

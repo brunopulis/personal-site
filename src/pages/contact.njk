@@ -7,38 +7,41 @@ hasForm: true
 date: Last Modified
 ---
 
-<h1 class="mb-6 font-bold text-2xl">Entre em contato</h1>
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Entre em contato</h1>
+<p class="mb-4">{{ description }}</p>
 
 <p>Eu adoraria ouvir sua voz! Se você tiver alguma dúvida, feedback ou apenas quiser cumprimentar,
   sinta-se à vontade para me contatar por qualquer um dos canais abaixo.</p>
 
 <div class="gap-8 grid grid-cols-1 md:grid-cols-2 mt-8">
   <div>
-    <h2>Entrar em contato</h2>
+    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Entrar em contato</h2>
     <ul class="space-y-3 mt-4">
       <li class="flex items-center gap-3">
-        <span class="text-blue-600">📧</span>
-        <a href="mailto:{{ site.email }}" class="hover:text-blue-600">{{ site.email }}</a>
+        <span class="text-brand-red-600">📧</span>
+        <a href="mailto:{{ site.email }}"
+          class="text-brand-red-500 hover:no-underline underline hover:text-brand-red-600">{{ site.email
+          }}</a>
       </li>
       {% if site.social.github %}
       <li class="flex items-center gap-3">
-        <span class="text-blue-600">🐙</span>
+        <span class="text-brand-red-600">🐙</span>
         <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
-          class="hover:text-blue-600">GitHub</a>
+          class="text-brand-red-500 hover:no-underline underline hover:text-brand-red-600">GitHub</a>
       </li>
       {% endif %}
       {% if site.social.mastodon %}
       <li class="flex items-center gap-3">
-        <span class="text-blue-600">🐘</span>
+        <span class="text-brand-red-600">🐘</span>
         <a href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}" target="_blank"
-          rel="noopener" class="hover:text-blue-600">Mastodon</a>
+          rel="noopener" class="text-brand-red-500 hover:no-underline underline hover:text-brand-red-600">Mastodon</a>
       </li>
       {% endif %}
     </ul>
   </div>
 
   <div>
-    <h2 class="mb-4 font-semibold text-xl">Mensagem rápida</h2>
+    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Mensagem rápida</h2>
     {% include "partials/contact-form.njk" %}
   </div>
 </div>
