@@ -8,27 +8,33 @@ pagination:
   data: collections.posts
   size: 12
 ---
-<div class="h-feed">
-  <h1 class="mb-6 p-name font-bold text-2xl">Blog</h1>
-  <p>{{ post.data.description }}</p>
+<div>
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Blog</h1>
+  <p class="mb-4">{{ description }}</p>
   <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
 
-  <div class="space-y-8">
+  <ol class="space-y-8 h-feed">
     {% for post in pagination.items %}
-      <article class="pb-6 border-b h-entry">
-        <h2 class="p-name font-semibold text-xl"><a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a></h2>
-        <time class="dark:text-gray-400 text-sm dt-published" datetime="{{ post.data.pubDate | toISOString }}">{{ post.data.pubDate | readableDate }}</time>
-        <div class="mt-2 p-summary text-gray-700 dark:text-gray-300">
-          {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-        </div>
-        <div class="space-x-2 mt-2 text-sm">
-          {% for tag in post.data.tags %}
-            <a class="bg-gray-100 dark:bg-gray-800 p-category px-2 py-0.5 rounded" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-          {% endfor %}
-        </div>
-      </article>
+    <li class="py-6 border-brand-gray-500 border-b h-entry">
+      <h2 class="p-name font-bold text-2xl">
+        <a class="text-brand-red-500 hover:text-brand-red-600 text-xl underline u-url" href="{{ post.url }}">{{
+          post.data.title }}</a>
+      </h2>
+      <time class="text-sm dt-published" datetime="{{ post.data.pubDate | toISOString }}">
+        Publicado em: {{ post.data.pubDate | readableDate }}
+      </time>
+      <div class="mt-2 p-summary">
+        {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+      </div>
+      <div class="space-x-2 mt-2 text-sm">
+        {% for tag in post.data.tags %}
+        <a class="bg-brand-gray-200 p-category px-2 py-0.5 rounded font-bold text-brand-dark-500"
+          href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </li>
     {% endfor %}
-  </div>
+  </ol>
 </div>
 
 {% if pagination.pages.length > 1 %}

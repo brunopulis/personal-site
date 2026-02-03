@@ -3,8 +3,8 @@ layout: mentorship.njk
 title: "Mentoria BASE"
 slug: mentoria
 description: Acessibilidade web com acompanhamento direto.
-permalink: "/servicos/mentoria/index.html"
-url: "/servicos/mentoria/"
+permalink: "/services/mentoria/index.html"
+url: "/services/mentoria/"
 
 service:
   color: teal-600

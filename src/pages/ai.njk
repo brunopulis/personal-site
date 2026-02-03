@@ -1,24 +1,31 @@
 ---
-layout: page
+layout: base
 title: "Uso de inteligência artificial"
 description: "Como eu uso a inteligência artificial nesse site"
-permalink: /ia/index.html
+permalink: /ai/index.html
 date: Last Modified
 ---
 
-Essa página tem o objetivo de mostrar quais são os usos de IA nesse site.
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-## Uso IA para
+<div class="prose">
+  <p>Essa página tem o objetivo de mostrar quais são os usos de IA nesse site.</p>
 
-- Realizar pesquisas;
-- Construir componentes Astro;
-- Dúvidas relacionadas a desenvolvimento;
-- Refinamento de ideias.
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Uso IA para</h2>
 
-## Não uso para
+  <ul>
+    <li>Realizar pesquisas</li>
+    <li>Construir componentes Astro</li>
+    <li>Dúvidas relacionadas a desenvolvimento</li>
+    <li>Refinamento de ideias</li>
+  </ul>
 
-- Criar conteúdo;
+  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Não uso para</h2>
 
----
+  <ul>
+    <li>Criar conteúdo</li>
+  </ul>
+</div>
 
-*Útlima atualização: {{ page.date | formatDate('MMMM D, YYYY') }}*
+{% include "components/last-update.njk" %}

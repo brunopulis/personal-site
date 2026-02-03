@@ -22,18 +22,19 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addLayoutAlias('base', 'base.njk');
 	eleventyConfig.addLayoutAlias('page', 'page.njk');
 	eleventyConfig.addLayoutAlias('post', 'post.njk');
+	eleventyConfig.addLayoutAlias('poetry', 'poetry.njk');
 
 	eleventyConfig.addCollection('posts', collections.posts);
+	eleventyConfig.addCollection('poetry', collections.poetry);
 	eleventyConfig.addCollection('notes', collections.notes);
 	eleventyConfig.addCollection('books', collections.books);
-	eleventyConfig.addCollection('letters', collections.newsletters);
+	eleventyConfig.addCollection('newsletters', collections.newsletters);
 	eleventyConfig.addCollection('medias', collections.medias);
 	eleventyConfig.addCollection('games', collections.games);
 	eleventyConfig.addCollection('bookmarks', collections.bookmarks);
 
 	eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
-	eleventyConfig.addCollection('tagList', collections.tagList);
-	eleventyConfig.addCollection('tagListRecurrency', collections.tagListRecurrency);
+	
 
 	//   Plugins
 	eleventyConfig.addPlugin(plugins.htmlConfig);
@@ -91,11 +92,23 @@ export default async function eleventy(eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy('./admin');
 	eleventyConfig.addPassthroughCopy('src/humans.txt');
-	eleventyConfig.addPassthroughCopy('src/assets/js');
-	eleventyConfig.addPassthroughCopy('src/assets/fonts');
-	eleventyConfig.addPassthroughCopy('src/assets/images');
-	eleventyConfig.addPassthroughCopy('src/assets/og-images');
+	eleventyConfig.addPassthroughCopy({ 
+		"src/assets/images": "assets/images",
+		"src/assets/fonts": "assets/fonts",
+		"src/assets/js": "assets/js",
+		"src/assets/svg": "assets/svg",
+		"src/assets/images/favicon/favicon.ico": "favicon.ico",
+		"src/assets/images/favicon/favicon.svg": "favicon.svg",
+		"src/assets/images/favicon/favicon-96x96.png": "favicon-96x96.png",
+		"src/assets/images/favicon/apple-touch-icon.png": "apple-touch-icon.png",
+		"src/assets/images/favicon/icon-192x192.png": "icon-192x192.png",
+		"src/assets/images/favicon/icon-512x512.png": "icon-512x512.png"
+	});
 	eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
+	
+	// PWA assets: manifest and service worker to site root
+  eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
+  eleventyConfig.addPassthroughCopy({ "src/sw.js": "sw.js" });
 
 	eleventyConfig.addPassthroughCopy({
 		'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',

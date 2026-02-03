@@ -1,28 +1,42 @@
 export default {
 	top: [
 		{
-			text: 'Sobre',
-			url: '/sobre/'
-		},
-		{
-			text: 'Trabalho',
-			url: '/portfolio/'
-		},
-		{
-			text: 'Palestras',
-			url: '/speaking/'
-		},
-		{
-			text: 'Serviços',
-			url: '/servicos/'
-		},
-		{
 			text: 'Artigos',
 			url: '/blog/'
 		},
 		{
+			text: 'Sobre',
+			url: '/about/'
+		},
+		{
+			text: 'Serviços',
+			url: '/services/'
+		},
+		{
+			text: 'Portfolio',
+			url: '/portfolio/'
+		},
+		{
 			text: 'Contato',
-			url: '/contato/'
+			url: '/contact/'
 		}
-	]
+	],
+	secondary: [
+		{
+			text: 'Disclaimer',
+			url: '/disclaimer/'
+		},
+		{
+			text: 'Licença de uso',
+			url: '/license/'
+		},
+		{
+			text: 'Política de privacidade',
+			url: '/privacy/'
+		},
+		{
+			text: 'Declaração de acessibilidade',
+			url: '/accessibility/'
+		}
+	],
 };

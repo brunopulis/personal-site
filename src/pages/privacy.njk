@@ -1,59 +1,113 @@
 ---
-layout: page
+layout: base
 title: "Política de Privacidade"
 description: 'Coisas que faço para garantir a privacidade dos visitantes do site'
-permalink: /privacidade/index.html
-date: 2025-11-21
+permalink: /privacy/index.html
+date: Last Modified
 ---
 
-Minha abordagem é simples: **respeito a sua privacidade tanto quanto protejo a minha. Este site opera com rastreamento zero**.
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-Respeito o Regulamento Geral de Proteção de Dados (RGPD) da UE e este documento de política explica como recolho e trato qualquer informação que me forneça.
+<div class="prose">
+  <p>Minha abordagem é simples: respeito a sua privacidade tanto quanto protejo a minha. Este site opera com
+    rastreamento zero.</p>
+  <p>Respeito a <abbr title="Lei Geral de Proteção de Dados">LGPD</abbr> e <abbr lang="en"
+      title="General Data Protection Regulation">GDPR</abbr> e este documento
+    de política explica como recolho e trato qualquer informação que me forneça.
+  </p>
 
-## Quais dados de fundo são recolhidos?
+  <section aria-labelledby="quais-dados-sao-recolhidos">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl"
+      id="quais-dados-sao-recolhidos">Quais dados de fundo são recolhidos?</h2>
 
-Este site não utiliza nenhum script de rastreamento de terceiros.
+    <p>Este site não utiliza nenhum script de rastreamento de terceiros.</p>
+  </section>
 
-## Como utilizo os dados que me fornece?
+  <section aria-labelledby="como-utilizo-os-dados">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl"
+      id="como-utilizo-os-dados">Como utilizo os dados que me fornece?</h2>
 
-Este website não recolhe quaisquer dados.
+    <p>Este website não recolhe quaisquer dados.</p>
+  </section>
 
-## Quão seguros estão os seus dados?
-Muito seguros, uma vez que este website não recolhe quaisquer informações.
+  <section aria-labelledby="quao-seguros-estao-os-seus-dados">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl"
+      id="quao-seguros-estao-os-seus-dados">Quão seguros estão os seus dados?</h2>
+    <p>Muito seguros, uma vez que este website não recolhe quaisquer informações.</p>
+  </section>
 
-## Quão seguro é este website?
+  <section aria-labelledby="quao-seguro-e-este-website">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl"
+      id="quao-seguro-e-este-website">Quão seguro é este website?</h2>
 
-Este website transmite os seus dados utilizando HTTPS, encriptando todos os dados entre o navegador e o servidor. Seu provedor de internet ainda poderá ver que você está baixando arquivos deste site, mas não o conteúdo em si. Isso também protege você contra a interceptação de dados por terceiros, por exemplo, ao navegar em redes Wi-Fi públicas, ou contra a inserção de anúncios neste site por provedores de internet. Todos os cabeçalhos HTTP de resposta relevantes estão configurados para sua proteção e a Política de Segurança de Conteúdo está ajustada aos requisitos deste site.
+    <p>Este website transmite os seus dados utilizando HTTPS, encriptando todos os dados entre o navegador e o
+      servidor.</p>
+    <p>Seu provedor de internet ainda poderá ver que você está baixando arquivos deste site, mas não o conteúdo em si.
+      Isso
+      também protege você contra a interceptação de dados por terceiros, por exemplo, ao navegar em redes Wi-Fi
+      públicas, ou
+      contra a inserção de anúncios neste site por provedores de internet. Todos os cabeçalhos HTTP de resposta
+      relevantes estão
+      configurados para sua proteção e a Política de Segurança de Conteúdo está ajustada aos requisitos deste site.
+    </p>
+  </section>
 
-## Controlador de dados
+  <section aria-labelledby="controlador-de-dados">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl"
+      id="controlador-de-dados">Controlador de dados</h2>
 
-{{ personal.address }}
+    <p>{{ personal.address }}</p>
+    <p>Em caso de dúvidas, entre em contato comigo: {{ personal.email }}.</p>
+  </section>
 
-Em caso de dúvidas, entre em contato comigo: {{ personal.email }}.
+  <section aria-labelledby="alteracoes-na-politica">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl"
+      id="alteracoes-na-politica">Alterações na política</h2>
+    <p>Se eu alterar o conteúdo desta política, as alterações entrarão em vigor no momento da publicação aqui.</p>
+  </section>
 
-## Alterações na política
+  <section aria-labelledby="reclamacoes">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl" id="reclamacoes">
+      Reclamações</h2>
+    <p>Se você tiver algum motivo para reclamar sobre a forma como lido com sua privacidade, entre em contato comigo
+      por
+      e-mail: {{ personal.email }}.</p>
+  </section>
 
-Se eu alterar o conteúdo desta política, as alterações entrarão em vigor no momento da publicação aqui.
+  <section aria-labelledby="analytics">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl" id="analytics">
+      Dados analíticos</h2>
+    <p>Utilizo o <a href="https://umami.is/docs"
+        class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" rel="noopener noreferrer"
+        target="_blank">Umami</a> para coletar somente estatísticas de navegação.</p>
+    <p>Você pode ver o <a href="https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi"
+        class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600"
+        rel="noopener noreferrer">dashboard</a> em tempo real
+      do meu
+      site.</p>
+    <p>Não há coleta de dados de navegação.</p>
+  </section>
 
-## Reclamações
+  <section aria-labelledby="cookies">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl" id="cookies">Cookies
+    </h2>
 
-Se você tiver algum motivo para reclamar sobre a forma como lido com sua privacidade, entre em contato comigo por e-mail: {{ personal.email }}.
+    <ul>
+      <li>Não há instalação de cookies no seu dispositivo.</li>
+      <li>Não há identificadores únicos (IDs) para rastreamento.</li>
+    </ul>
 
----
+    <p>Verifique você mesmo: Sinta-se à vontade para usar ferramentas como o <a href="https://www.cookiemetrix.com/"
+        class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" rel="noopener noreferrer"
+        target="_blank">Cookie Metrix</a>
+      para auditar este site.</p>
 
-## Analytics
+    <p>O resultado será zero cookies.</p>
 
-Utilizo o [Umami](https://umami.is/docs) para coletar somente estatísticas de navegação.
+    <img src="/assets/images/pages/no-cookies.png" alt="Print da tela do site cookie metrix, mostrando que não possui
+    nenhum cookie no site">
+  </section>
+</div>
 
-Você pode ver o [dashboard em tempo real do meu site](https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi).
-
-Não há coleta de dados de navegação.
-
-## Cookies
-
-- Não há instalação de cookies no seu dispositivo.
-- Não há identificadores únicos (IDs) para rastreamento.
-
-> Verifique você mesmo: Sinta-se à vontade para usar ferramentas como o [Cookie Metrix](https://www.cookiemetrix.com/) para auditar este site. O resultado será zero cookies.
-
-![Print da tela do site cookie metrix, mostrando que não possui nenhum cookie no site](/assets/images/pages/no-cookies.png)
+{% include "components/last-update.njk" %}

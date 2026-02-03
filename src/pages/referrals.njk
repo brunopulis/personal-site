@@ -1,13 +1,27 @@
 ---
-layout: page
+layout: base
 title: "Afiliados"
-permalink: /afiliados/index.html
+permalink: /referrals/index.html
 description: 'Links de afiliados de produtos e serviços que recomendo.'
-tags: ['referral']
+date: Last Modified
 ---
 
-Os links de referência são outra forma alternativa de [me apoiar](/apoie) e ganhe recompensas extras. 
-Tudo o que os produtos e serviços aqui apresentados são o que eu mesmo utilizo.
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-4">{{ description }}</p>
 
-- [Hostinger](https://hostinger.com.br?REFERRALCODE=1BRUNO6688), uma excelente alternativa de hospedagem.
-- 
+<div class="prose">
+  <p>Os links de referência são outra forma alternativa de <a href="/support"
+      class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600">me apoiar</a> e ganhar
+    recompensas extras.
+    Tudo o que os produtos e serviços aqui apresentados são o que eu mesmo utilizo.</p>
+
+  <p>Aqui estão alguns produtos e serviços que utilizo e recomendo:</p>
+
+  <ul>
+    <li><a href="https://hostinger.com.br?REFERRALCODE=1BRUNO6688"
+        class="text-brand-red-500 underline hover:no-underline hover:text-brand-red-600" rel="sponsored"
+        target="_blank">Hostinger</a>, uma excelente alternativa de hospedagem.</li>
+  </ul>
+</div>
+
+{% include "components/last-update.njk" %}

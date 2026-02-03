@@ -1,8 +1,8 @@
-<section class="mb-8" aria-labelledby="posts-title">
+<section class="border-brand-gray-500 border-b pb-12" aria-labelledby="posts-title">
   <header class="flex md:flex-row flex-col justify-between md:items-end gap-6 mb-16">
     <div>
-      <h2 class="flex items-center gap-2 mb-6 font-semibold text-2xl" id="post-title">
-        <span aria-hidden="true">✍️</span> Últimos artigos
+      <h2 class="flex align-middle items-center gap-2 mb-6 font-bold text-brand-red-500 text-3xl" id="post-title">
+        Últimos artigos
       </h2>
       <p>Escrevo para organizar ideias, compartilhar aprendizados e questionar práticas comuns da web.</p>
     </div>
@@ -14,7 +14,7 @@
   {% endif %}
 
   {% if posts | length > 0 %}
-  <div class="space-y-8">
+  <div class="space-y-4">
     {% for post in posts.slice(0, 3) %}
     {% set url = post.url %}
     {% set title = (post.data and post.data.title) or post.title %}
@@ -22,16 +22,16 @@
     {% set desc = (post.data and post.data.description) or post.description or (post.templateContent | default('') |
     striptags | truncate(160)) %}
     {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-    <article class="pb-6 border-gray-200 dark:border-gray-700 border-b last:border-b-0 h-entry">
-      <h3 class="mb-2 p-name font-semibold text-xl">
-        <a href="{{ post.url }}" class="hover:text-brand-blue-500 transition-colors u-url">
+    <article class="pb-6 border-brand-gray-500 border-b last:border-b-0 h-entry">
+      <h3 class="mb-2 p-name font-bold text-brand-red-500 text-2xl">
+        <a href="{{ post.url }}" class="text-brand-red-500 underline hover:text-brand-red-600 transition-colors u-url">
           {{ title }}
         </a>
       </h3>
 
       {% if dateVal %}
       <time class="block mb-3 text-sm dt-published" datetime="{{ dateVal | toISOString }}">
-        {{ dateVal | readableDate }}
+        Publicado em: {{ dateVal | readableDate }}
       </time>
       {% endif %}
 
@@ -53,7 +53,7 @@
   {% endif %}
 
   <div class="mt-6">
-    <a href="/blog" class="inline-flex items-center gap-2">
+    <a href="/blog" class="inline-flex text-brand-red-500 underline hover:no-underline font-bold items-center gap-2">
       ver todos os artigos {% lucide "chevron-right", { class: "w-4 h-4" } %}
     </a>
   </div>

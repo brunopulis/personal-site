@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: base
 title: "Meus trabalhos"
 permalink: "/portfolio/index.html"
+date: Last Modified
 description: "Uma seleção de projetos variando de desenvolvimento front-end ao design de interface, focada em
 performance e usabilidade."
 ---
@@ -10,7 +11,10 @@ performance e usabilidade."
 {% set categories = portfolio.categories %}
 {% set stats = portfolio.stats %}
 
-<section class="mt-12 sm:mt-6 lg:mt-8 px-4 sm:px-6 lg:px-6 py-12 max-w-7xl">
+<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+<p class="mb-6">{{ description }}</p>
+
+<section class="space-y-8">
   {% for project in projects %}
   <article class="group flex lg:flex-row flex-col items-center gap-12 lg:gap-24 portfolio-item">
     <figure
@@ -23,7 +27,7 @@ performance e usabilidade."
         <span class="font-bold text-brand-red-500 text-sm uppercase tracking-widest">
           {{ project.category | join(' e ') or "Redesign & Acessibilidade" }}
         </span>
-        <h2 class="font-bold text-lg text-brand-dark-500">
+        <h2 class="font-bold text-brand-red-500 hover:text-brand-red-600 text-lg">
           <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
         </h2>
       </div>
@@ -32,7 +36,7 @@ performance e usabilidade."
       </p>
       <div class="flex flex-wrap gap-3">
         {% for tech in project.technologies %}
-        <span class="bg-brand-dark-950 px-3 py-1 dark:bg-border-dark rounded-full text-sm">{{ tech }}</span>
+        <span class="bg-brand-red-500 px-3 py-1 rounded-full text-white text-sm">{{ tech }}</span>
         {% endfor %}
       </div>
     </div>
@@ -40,21 +44,22 @@ performance e usabilidade."
   {% endfor %}
 </section>
 
-<section class="mx-auto mb-32 px-6 container">
-  <div class="space-y-8 p-12 md:p-20 border border-brand-gray-200/30 rounded-3xl text-center">
-    <h2 class="font-bold text-brand-blue-500 text-4xl md:text-5xl">Vamos construir algo juntos?</h2>
-    <p class="mx-auto max-w-2xl text-lg">
-      Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de software e design.
-    </p>
-    <div class="flex sm:flex-row flex-col justify-center items-center gap-6 pt-4">
-      <a class="bg-brand-red-500 hover:bg-brand-red-600 text-white px-8 py-4 rounded-xl w-full sm:w-auto font-bold text-lg no-underline transition-all hover:-translate-y-1 transform"
-        href="/contato">
-        Entre em contato
-      </a>
-      <a class="group flex items-center gap-2 font-semibold ttext-lg hover:underline" href="/cv">
-        Veja meu currículo
-        {% lucide "arrow-right", { class: "group-hover:translate-x-1 transition-transform" } %}
-      </a>
-    </div>
+<section class="bg-brand-gray-200 my-12 p-8 px-6 border border-brand-gray-200 rounded">
+  <h2 class="mb-6 font-bold text-2xl">Vamos construir algo juntos?</h2>
+  <p class="mb-4">Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de software e design.
+  </p>
+
+  <div class="flex sm:flex-row flex-col gap-6 pt-4">
+    <a class="bg-brand-red-500 hover:bg-brand-red-600 px-8 py-4 rounded-xl w-full sm:w-auto font-bold text-white text-lg hover:no-underline transition-all hover:-translate-y-1 transform"
+      href="/contact">
+      Entre em contato
+    </a>
+    <a class="group flex items-center gap-2 font-semibold text-primary hover:text-brand-red-500 text-lg hover:underline" href="/resume">
+      Veja meu currículo {% lucide "chevron-right", { class: "transition-transform group-hover:translate-x-1 w-4 h-4" }
+      %}
+    </a>
   </div>
 </section>
+
+
+{% include "components/last-update.njk" %}
