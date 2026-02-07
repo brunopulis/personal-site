@@ -1,41 +1,52 @@
-<section class="mt-6 sm:mt-6 lg:mt-8 py-12 border-brand-gray-500 border-b mb-12" aria-labelledby="service-title">
-  <header class="mb-16">
-    <h2 class="mb-4 font-bold text-brand-red-500 text-3xl" id="service-title">Como posso ajudar</h2>
-    <p class="max-w-2xl">
-      Meu foco é construir experiências digitais que respeitam pessoas, contexto e padrões.
-    </p>
-  </header>
-
-  <ul class="gap-3 grid grid-cols-1 md:grid-cols-3">
-    <li>
-      <h3 class="mb-4 font-bold text-brand-red-500 text-2xl">Desenvolvimento acessível</h3>
-      <p class="text-text-secondary-dark text-sm leading-relaxed">
-        Acessibilidade não entra no fim. Atuo desde a arquitetura da
-        informação até o código, garantindo conformidade com WCAG e
-        experiências reais para usuários.
+<section class="py-24" aria-labelledby="service-title">
+  <div class="container mx-auto px-6">
+    <header class="mb-16">
+      <h2 class="mb-4 font-bold text-brand-red-500 text-3xl" id="service-title">Como posso ajudar</h2>
+      <p class="max-w-2xl">
+        Meu foco é construir experiências digitais que respeitam pessoas, contexto e padrões.
       </p>
-    </li>
+    </header>
 
-    <li>
-      <h3 class="mb-4 font-bold text-brand-red-500 text-2xl">Auditoria, testes e remediação</h3>
-      <p class="text-text-secondary-dark text-sm leading-relaxed">
-        Identifico problemas reais de acessibilidade em interfaces, documentos
-        e fluxos. Entrego diagnósticos claros e soluções aplicáveis.
-      </p>
-    </li>
+    <ul class="grid md:grid-cols-3 gap-12">
+      <li class="space-y-4">
+        <div class="w-12 h-12 bg-brand-red-500/10 text-brand-red-500 rounded-xl flex items-center justify-center">
+          {% lucide "code", { class: "w-4 h-4" } %}
+        </div>
+        <h3 class="text-xl font-bold text-brand-red-500">Desenvolvimento acessível</h3>
+        <p class="text-stone-600 leading-relaxed">
+          Acessibilidade não entra no fim. Atuo desde a arquitetura da informação até o código final, garantindo
+          conformidade com WCAG para todos.
+        </p>
+      </li>
 
-    <li>
-      <h3 class="mb-4 font-bold text-brand-red-500 text-2xl">Mentoria e treinamentos</h3>
-      <p class="text-text-secondary-dark text-sm leading-relaxed">
-        Ajudo equipes e profissionais a entender acessibilidade como parte da
-        qualidade — não como checklist.
-      </p>
-    </li>
-  </ul>
-  <p class="mt-6">
-    <a href="/services"
-      class="group inline-flex items-center text-brand-red-500 hover:text-brand-red-600 hover:no-underline underline gap-2 font-bold">
-      ver todos os serviços {% lucide "chevron-right", { class: "w-4 h-4" } %}
-    </a>
-  </p>
+      <li class="space-y-4">
+        <div class="w-12 h-12 bg-brand-red-500/10 text-brand-red-500 rounded-xl flex items-center justify-center">
+          {% lucide "search", { class: "w-4 h-4" } %}
+        </div>
+        <h3 class="text-xl font-bold text-brand-red-500">Auditoria, testes e remediação</h3>
+        <p class="text-stone-600 leading-relaxed">
+          Identifico problemas reais de acessibilidade em interfaces, documentos
+          e fluxos. Entrego diagnósticos claros e soluções aplicáveis.
+        </p>
+      </li>
+
+      <li class="space-y-4">
+        <div class="w-12 h-12 bg-brand-red-500/10 text-brand-red-500 rounded-xl flex items-center justify-center">
+          {% lucide "brain", { class: "w-4 h-4" } %}
+        </div>
+        <h3 class="text-xl font-bold text-brand-red-500">Mentoria e treinamentos</h3>
+        <p class="text-stone-600 leading-relaxed">
+          Ajudo equipes e profissionais a entender acessibilidade como parte da
+          qualidade — não como checklist.
+        </p>
+      </li>
+    </ul>
+
+    <div class="mt-6 text-center">
+      <a href="/services"
+        class="group inline-flex items-center text-brand-red-500 hover:text-brand-red-600 hover:no-underline underline gap-2 font-bold">
+        ver todos os serviços {% lucide "chevron-right", { class: "w-4 h-4" } %}
+      </a>
+    </div>
+  </div>
 </section>

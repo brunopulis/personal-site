@@ -1,60 +1,59 @@
-<section class="border-brand-gray-500 border-b pb-12" aria-labelledby="posts-title">
-  <header class="flex md:flex-row flex-col justify-between md:items-end gap-6 mb-16">
-    <div>
-      <h2 class="flex align-middle items-center gap-2 mb-6 font-bold text-brand-red-500 text-3xl" id="post-title">
-        Últimos artigos
-      </h2>
-      <p>Escrevo para organizar ideias, compartilhar aprendizados e questionar práticas comuns da web.</p>
-    </div>
-  </header>
-
-  {% set posts = collections.posts | default([]) %}
-  {% if (posts | length) == 0 %}
-  {% set posts = collections.searchIndex | default([]) %}
-  {% endif %}
-
-  {% if posts | length > 0 %}
-  <div class="space-y-4">
-    {% for post in posts.slice(0, 3) %}
-    {% set url = post.url %}
-    {% set title = (post.data and post.data.title) or post.title %}
-    {% set dateVal = post.data.pubDate %}
-    {% set desc = (post.data and post.data.description) or post.description or (post.templateContent | default('') |
-    striptags | truncate(160)) %}
-    {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-    <article class="pb-6 border-brand-gray-500 border-b last:border-b-0 h-entry">
-      <h3 class="mb-2 p-name font-bold text-brand-red-500 text-2xl">
-        <a href="{{ post.url }}" class="text-brand-red-500 underline hover:text-brand-red-600 transition-colors u-url">
-          {{ title }}
-        </a>
-      </h3>
-
-      {% if dateVal %}
-      <time class="block mb-3 text-sm dt-published" datetime="{{ dateVal | toISOString }}">
-        Publicado em: {{ dateVal | readableDate }}
-      </time>
-      {% endif %}
-
-      {% if desc %}
-      <p class="mb-3 p-summary leading-relaxed">{{ desc }}</p>
-      {% endif %}
-      {% if tags %}
-      <div class="flex flex-wrap gap-2">
-        {% for tag in tags %}
-        <a class="hover:opacity-80 p-category px-2 py-1 rounded text-white text-xs transition-opacity"
-          style="--tag-bg: {{ tag | tagColor }}; background-color: var(--tag-bg);"
-          href="/tags/{{ tag | slugifyString }}/">#{{ tag }}</a>
-        {% endfor %}
+<section class="py-24 border-t border-stone-200" aria-labelledby="posts-title">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <header class="flex md:flex-row flex-col justify-between md:items-end gap-6 mb-16">
+      <div>
+        <h2 class="flex align-middle items-center gap-2 mb-6 font-bold text-brand-red-500 text-3xl" id="post-title">
+          Últimos artigos
+        </h2>
+        <p>Escrevo para organizar ideias, compartilhar aprendizados e questionar práticas comuns da web.</p>
       </div>
-      {% endif %}
-    </article>
-    {% endfor %}
-  </div>
-  {% endif %}
+    </header>
 
-  <div class="mt-6">
-    <a href="/blog" class="inline-flex text-brand-red-500 underline hover:no-underline font-bold items-center gap-2">
-      ver todos os artigos {% lucide "chevron-right", { class: "w-4 h-4" } %}
-    </a>
+    {% set posts = collections.posts | default([]) %}
+    {% if (posts | length) == 0 %}
+    {% set posts = collections.searchIndex | default([]) %}
+    {% endif %}
+
+    {% if posts | length > 0 %}
+    <div class="space-y-12">
+      {% for post in posts.slice(0, 3) %}
+      {% set url = post.url %}
+      {% set title = (post.data and post.data.title) or post.title %}
+      {% set dateVal = post.data.pubDate %}
+      {% set desc = (post.data and post.data.description) or post.description or (post.templateContent | default('') |
+      striptags | truncate(160)) %}
+      {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+      <article class="group h-entry">
+        {% if dateVal %}
+        <time class="text-xs text-stone-500 font-medium uppercase tracking-widest"
+          datetime="{{ dateVal | toISOString }}">
+          {{ dateVal | readableDate }}
+        </time>
+        {% endif %}
+        <h3 class="text-2xl font-bold mt-2 group-hover:text-primary transition-colors cursor-pointer">
+          <a href="{{ post.url }}" class="u-url">
+            {{ title }}
+          </a>
+        </h3>
+        {% if desc %}
+        <p class="text-stone-600 mt-3 line-clamp-2">{{ desc }}</p>
+        {% endif %}
+        {% if tags %}
+        <div class="mt-4">
+          {% for tag in tags %}
+          <span class="px-3 py-1 bg-stone-100 font-bold text-stone-500 text-xs rounded">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="mt-6">
+      <a href="/blog" class="inline-flex text-brand-red-500 underline hover:no-underline font-bold items-center gap-2">
+        ver todos os artigos {% lucide "chevron-right", { class: "w-4 h-4" } %}
+      </a>
+    </div>
   </div>
 </section>

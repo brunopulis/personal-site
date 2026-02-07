@@ -1,56 +1,54 @@
-<section class="mt-12 py-6 border-brand-gray-500 border-b mb-12" id="projetos" aria-labelledby="projetos-title">
-  <header class="gap-6 mb-6">
-    <h2 class="mb-4 font-bold text-3xl text-brand-red-500" id="projetos-title">Portfólio</h2>
-    <p>Alguns trabalhos que realizei</p>
-  </header>
-
-  <div class="gap-4 grid grid-cols-1">
-    {% set projects = portfolio.projects %}
-    {% for project in projects.slice(0, 2) %}
-    <div class="group flex flex-col md:flex-row border border-brand-dark-200 rounded-xl overflow-hidden card-hover">
-      <div class="relative w-full md:w-2/5 aspect-video md:aspect-auto overflow-hidden">
-        <img alt="{{ project.imageAlt }}"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          src="{{ project.image }}">
-        <div class="absolute inset-0 bg-linear-to from-card-dark/80 to-transparent"></div>
+<section class="py-24 bg-brand-gray-200" aria-labelledby="projetos-title">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between mb-16">
+      <div>
+        <h2 class="font-display text-3xl font-bold mb-2" id="projetos-title">Portfólio</h2>
+        <p class="text-stone-500">Alguns trabalhos que realizei</p>
       </div>
-      <div class="flex flex-col p-8 md:w-3/5 grow">
-        <h3 class="mb-4 font-bold text-brand-red-500 text-2xl">{{ project.title }}</h3>
-        <p class="mb-6 grow">
-          {{ project.description }}
-        </p>
-        <div class="flex flex-wrap gap-2 mb-8">
-          {% for tech in project.technologies %}
-          <span
-            class="bg-brand-blue-500 px-3 py-1 border border-brand-blue-500 rounded-full font-bold text-[10px] uppercase tracking-wider">
-            {{ tech }}
-          </span>
-          {% endfor %}
-        </div>
-        <div class="flex gap-4">
-          {% if project.links.demo %}
-          <a class="inline-flex items-center gap-2 text-brand-red-500 hover:text-brand-red-600 font-bold underline hover:no-underline"
-            href="{{ project.links.demo }}">
-            ver projeto <span class="sr-only">: {{ project.title }}</span>
-            {% lucide "arrow-up-right", { "class": "w-4 h-4" } %}
-          </a>
-          {% endif %}
-          {% if project.links.case %}
-          <a class="inline-flex items-center gap-2 text-brand-red-500 hover:text-brand-red-600 font-bold underline hover:no-underline"
-            href="{{ project.links.case }}">
-            ver estudo de caso <span class="sr-only">: {{ project.title }}</span>
-            {% lucide "arrow-right", { "class": "w-4 h-4" } %}
-          </a>
-          {% endif %}
-        </div>
-      </div>
+      <a class="text-primary font-semibold flex items-center gap-1 hover:underline" href="/portfolio">
+        Ver todos {% lucide "arrow-right", { "class": "w-4 h-4" } %}
+      </a>
     </div>
-    {% endfor %}
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {% set projects = portfolio.projects %}
+      {% for project in projects.slice(0, 2) %}
+      <div class="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:shadow-xl transition-all">
+        <div class="aspect-video bg-stone-100 dark:bg-stone-900 overflow-hidden">
+          <img alt="{{ project.imageAlt }}"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="{{ project.image }}">
+        </div>
+        <div class="p-8">
+          <h3 class="font-display text-2xl font-bold mb-3">{{ project.title }}</h3>
+          <p class="text-stone-600 mb-6">
+            {{ project.description }}
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            {% for tech in project.technologies %}
+            <span class="px-3 py-1 bg-brand-red-500/10 text-brand-red-500  uppercase text-xs font-bold rounded">
+              {{ tech }}
+            </span>
+            {% endfor %}
+          </div>
+          <div class="flex gap-4">
+            {% if project.links.demo %}
+            <a class="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 uppercase transition-all"
+              href="{{ project.links.demo }}">
+              ver projeto <span class="sr-only">: {{ project.title }}</span>
+              {% lucide "arrow-up-right", { "class": "w-4 h-4" } %}
+            </a>
+            {% endif %}
+            {% if project.links.case %}
+            <a class="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 uppercase transition-all"
+              href="{{ project.links.case }}">
+              ver estudo de caso <span class="sr-only">: {{ project.title }}</span>
+              {% lucide "arrow-right", { "class": "w-4 h-4" } %}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  <p class="mt-6">
-    <a href="/portfolio"
-      class="group inline-flex items-center underline text-brand-red-500 hover:text-brand-red-600 hover:no-underline transition-colors gap-2 font-bold">
-      ver todos os trabalhos {% lucide "chevron-right", { class: "w-4 h-4" } %}
-    </a>
-  </p>
 </section>
