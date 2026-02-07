@@ -2,107 +2,100 @@
 layout: base
 ---
 
-<a href="/blog/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">
-  ← Voltar para o blog
-</a>
+<div class="mx-auto px-6 py-24 container max-w-4xl">
+  <a href="/blog/" class="inline-flex items-center mb-3 text-brand-red-500 hover:text-brand-red-600">
+    {% lucide "chevron-left", { class: "w-4 h-4" } %}
+    Voltar para o blog
+  </a>
 
-<nav class="mb-4 text-brand-gray-500 text-sm" aria-label="Breadcrumb">
-  <ol class="flex space-x-2">
-    <li><a href="/" class="hover:text-blue-600">Home</a></li>
-    <li><span aria-hidden="true">›</span></li>
-    <li><a href="/blog/" class="hover:text-blue-600">Blog</a></li>
-    <li><span aria-hidden="true">›</span></li>
-    <li class="text-gray-900 dark:text-gray-100">{{ title }}</li>
-  </ol>
-</nav>
+  <nav class="mb-4 text-brand-dark-500text-sm" aria-label="Breadcrumb">
+    <ol class="flex space-x-2">
+      <li><a href="/" class="hover:text-brand-red-500">Home</a></li>
+      <li><span aria-hidden="true">›</span></li>
+      <li><a href="/blog/" class="hover:text-brand-red-500">Blog</a></li>
+      <li><span aria-hidden="true">›</span></li>
+      <li class="text-brand-red-500 font-bold">{{ title }}</li>
+    </ol>
+  </nav>
 
-<article class="h-entry">
-  {% if featuredImage %}
-  <img class="mb-6 rounded-lg w-full u-photo" src="{{ featuredImage }}" alt="Featured image for {{ title }}" />
-  {% endif %}
-
-  <header class="mb-6">
-    <h1 class="mb-2 p-name font-bold text-3xl">{{ title }}</h1>
-    {% if subtitle %}
-    <p class="mb-4 text-brand-gray-500 dark:text-gray-400 text-xl">{{ subtitle }}</p>
+  <article class="h-entry">
+    {% if featuredImage %}
+    <img class="mb-6 rounded-lg w-full u-photo" src="{{ featuredImage }}" alt="Featured image for {{ title }}" />
     {% endif %}
-    <div class="text-brand-gray-500 dark:text-gray-400 text-sm">
-      Publicado em <time class="dt-published" datetime="{{ page.date | toISOString }}">{{ page.date | readableDate
-        }}</time>
-      por <span class="p-author h-card"><a class="p-name hover:text-blue-600 u-url" href="/about/">{{ author or
-          site.author }}</a></span>
-      • <span class="reading-time">{{ content | readingTime }} min de leitura</span>
+
+    <header class="mb-6">
+      <h1 class="mb-2 p-name font-bold text-3xl text-brand-red-500">{{ title }}</h1>
+      {% if subtitle %}
+      <p class="mb-4 text-brand-dark-500 text-xl">{{ subtitle }}</p>
+      {% endif %}
+      <div class="text-brand-dark-500 text-sm">
+        Publicado em <time class="dt-published" datetime="{{ page.date | toISOString }}">{{ page.date | readableDate
+          }}</time>
+        por <span class="p-author h-card"><a class="p-name hover:text-brand-red-500 u-url" href="/about/">{{ author or
+            site.author }}</a></span>
+        • <span class="reading-time">{{ content | readingTime }} min de leitura</span>
+      </div>
+      <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
+    </header>
+
+    <div class="max-w-none e-content prose">
+      {{ content | safe }}
     </div>
-    <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
-  </header>
 
-  <div class="max-w-none e-content prose">
-    {{ content | safe }}
-  </div>
-
-  {% if tags %}
-  <div class="mt-8 pt-6 border-gray-200 dark:border-gray-700 border-t post-tags">
-    <h3 class="mb-2 font-semibold text-gray-500 text-sm uppercase tracking-wide">Tags</h3>
-    <div class="flex flex-wrap gap-2">
-      {% for tag in tags %}
-      <a class="hover:opacity-80 p-category px-3 py-1 rounded-full text-white text-sm transition-opacity"
-        style="--tag-bg: {{ tag | tagColor }}; background-color: var(--tag-bg);" href="/tags/{{ tag | slug }}/">#{{ tag
-        }}</a>
-      {% endfor %}
+    {% if tags %}
+    <div class="mt-8 pt-6 border-gray-200 border-t post-tags">
+      <h3 class="mb-2 font-semibold text-brand-red-500 text-sm">Tags</h3>
+      <div class="flex flex-wrap gap-2">
+        {% for tag in tags %}
+        <a class="bg-brand-gray-200 p-category px-2 py-0.5 rounded font-bold text-brand-dark-500"
+          href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-  {% endif %}
+    {% endif %}
 
-  <section class="mt-8 pt-6 border-gray-200 dark:border-gray-700 border-t">
-    {% include "components/post-engagement.njk" %}
-  </section>
+    <section class="mt-8 pt-6 border-gray-200 border-t">
+      {% include "components/post-engagement.njk" %}
+    </section>
 
-  <section class="mt-12 pt-8 border-gray-200 dark:border-gray-700 border-t">
-    <div class="bg-brand-blue-50 dark:bg-brand-blue-900/20 p-6 rounded-lg">
-      <div class="flex items-start space-x-4">
-        <img class="rounded-full w-16 h-16" src="/assets/images/pulis.webp" alt="{{ site.author }}" />
-        <div>
-          <h3 class="font-semibold text-lg">Sobre {{ site.author }}</h3>
-          <p class="mt-1 text-brand-gray-500 dark:text-gray-400">{{ site.bio.long }}</p>
-          <div class="flex space-x-4 mt-3 text-sm">
-            <a href="/sobre/" class="text-blue-600 hover:text-blue-800">Saiba mais sobre mim</a>
-            <a href="/apoie/" class="text-green-600 hover:text-green-800">Apoie meu trabalho</a>
+    {% if site.bio.long %}
+    <section class="mt-12 pt-8 border-brand-gray-200 border-t">
+      <div class="bg-brand-gray-200 p-6 rounded-lg">
+        <div class="flex items-center space-x-4">
+          <img class="rounded-full w-16 h-16" src="/assets/images/pulis.webp" alt="{{ site.author }}" />
+          <div>
+            <h2 class="font-bold text-lg">Sobre {{ site.author }}</h2>
+            <p class="mt-1 text-brand-dark-500">{{ site.bio.long }}</p>
+            <div class="flex space-x-4 mt-3 text-sm">
+              <a href="/sobre/" class="text-brand-red-500 font-bold underline hover:no-underline">Saiba mais sobre
+                mim</a>
+              <a href="/apoie/" class="text-brand-red-500 font-bold underline hover:no-underline">Apoie meu trabalho</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="mt-8">
-    {% if site.bio.long %}
-    <div class="bg-blue-50 dark:bg-blue-900/20 mb-8 p-6 rounded-lg">
-      <h3 class="mb-2 font-semibold text-lg">Sobre {{ site.author }}</h3>
-      <p class="text-gray-700 dark:text-gray-300">
-        {{ site.bio.long }}
-      </p>
-    </div>
+    </section>
     {% endif %}
-    {% if site.newsletter.enabled %}
-    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
-      <h3 class="mb-2 font-semibold text-lg">{{ site.newsletter.title }}</h3>
-      <p class="mb-4 text-brand-gray-500 dark:text-gray-400">{{ site.newsletter.description }}</p>
-      <form action="{{ site.newsletter.action }}" method="post"
-        class="flex sm:flex-row flex-col gap-3 mx-auto max-w-md">
-        <input type="email" name="email" placeholder="your@email.com" class="flex-1 px-4 py-2 border rounded-lg"
-          required />
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg text-white">Subscribe</button>
-      </form>
-    </div>
-    {% endif %}
-  </section>
 
-
-  <section id="webmentions" class="mt-12">
-    <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
-    <div id="webmentions-list">
-      <div class="py-4 text-gray-500 text-center">
-        <div class="animate-pulse">Carregando webmentions...</div>
+    <section class="mt-12 pt-8 border-brand-gray-200 border-t">
+      {% if site.newsletter.enabled %}
+      <div class="bg-brand-gray-200 p-6 rounded-lg text-center">
+        <h3 class="mb-2 font-bold  text-brand-red-500 text-lg">{{ site.newsletter.title }}</h3>
+        <p class="mb-4 text-brand-dark-500">{{ site.newsletter.description }}</p>
+        <a href=""
+          class="bg-brand-red-500 hover:bg-brand-red-600 px-6 py-2 rounded-lg font-bold text-white">Inscrever</a>
       </div>
-    </div>
-  </section>
-</article>
+      {% endif %}
+    </section>
+
+
+    <section id="webmentions" class="mt-12">
+      <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
+      <div id="webmentions-list">
+        <div class="py-4 text-gray-500 text-center">
+          <div class="animate-pulse">Carregando webmentions...</div>
+        </div>
+      </div>
+    </section>
+  </article>
+</div>

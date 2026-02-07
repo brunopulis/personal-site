@@ -8,48 +8,55 @@
 {%- set mailToLink = 'mailto:' + defaultEmail + '?subject=' + subject + '&body=' + body -%}
 
 
-<div class="post-engagement flow region">
-  <div class="post-footer-box">
-    <p>Obrigado pela leitura! Gostou deste post? Assine meu <a href="https://brunopulis.com/feed.xml" target="_blank"
-        rel="alternate">RSS</a>.</p>
+<div class="post-engagement my-6">
+  <div class="post-footer-box mb-4">
+    <p class="text-2xl text-brand-dark-500">Obrigado pela leitura! Gostou deste post? Assine meu <a
+        href="https://brunopulis.com/feed.xml" target="_blank" rel="alternate">RSS</a>.</p>
   </div>
 
   <div class="share-buttons">
-    <p class="text-sm font-semibold text-brand-red-800">Compartilhe este artigo ou responda:</p>
+    <p class="text-sm font-semibold text-brand-red-500 mb-6">Compartilhe este artigo ou responda:</p>
 
-    <ul class="cluster" role="list">
-      <li><a href="{{ mailToLink }}">Responder por e-mail</a></li>
-      <li><a href="/apoie">Me apoie</a></li>
+    <ul class="inline-flex flex-wrap gap-2">
+      <li><a class="underline hover:no-underline text-brand-red-500" href="{{ mailToLink }}">Responder por e-mail</a>
+      </li>
+
       <li>
-        <a href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}&via=brunopulis"
+        <a class="underline hover:no-underline text-brand-red-500"
+          href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}&via=brunopulis"
           target="_blank" rel="noopener noreferrer">
           Twitter
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ meta.url }}{{ page.url }}" target="_blank"
+        <a class="underline hover:no-underline text-brand-red-500"
+          href="https://www.linkedin.com/sharing/share-offsite/?url={{ meta.url }}{{ page.url }}" target="_blank"
           rel="noopener noreferrer">LinkedIn</a>
       </li>
       <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ meta.url }}{{ page.url }}" target="_blank"
+        <a class="underline hover:no-underline text-brand-red-500"
+          href="https://www.facebook.com/sharer/sharer.php?u={{ meta.url }}{{ page.url }}" target="_blank"
           rel="noopener noreferrer">
           Facebook
         </a>
       </li>
       <li>
-        <a href="https://bsky.app/intent/compose?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}"
+        <a class="underline hover:no-underline text-brand-red-500"
+          href="https://bsky.app/intent/compose?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}"
           target="_blank" rel="noopener noreferrer">
           Bluesky
         </a>
       </li>
       <li>
-        <a href="https://toot.kytta.dev/?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}" target="_blank"
+        <a class="underline hover:no-underline text-brand-red-500"
+          href="https://toot.kytta.dev/?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}" target="_blank"
           rel="noopener noreferrer">
           Mastodon
         </a>
       </li>
       <li>
-        <button id="copy-link" data-url="{{ meta.url }}{{ page.url }}">
+        <button id="copy-link" data-url="{{ meta.url }}{{ page.url }}"
+          class="underline hover:no-underline text-brand-red-500">
           <span id="copy-text">Copiar link</span>
         </button>
       </li>

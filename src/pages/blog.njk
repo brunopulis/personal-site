@@ -8,7 +8,7 @@ pagination:
   data: collections.posts
   size: 12
 ---
-<div>
+<div class="mx-auto px-6 py-24 container">
   <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Blog</h1>
   <p class="mb-4">{{ description }}</p>
   <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
@@ -35,8 +35,9 @@ pagination:
     </li>
     {% endfor %}
   </ol>
+
+  {% if pagination.pages.length > 1 %}
+  {% include 'components/pagination.njk' %} 
+  {% endif %}
 </div>
 
-{% if pagination.pages.length > 1 %}
-{% include 'components/pagination.njk' %}
-{% endif %}

@@ -17,16 +17,16 @@ export default {
   },
   bio: {
     short: "Especialista em acessibilidade digital e <em>frontend</em>.",
-    long: ""
+    long: "Olá! Eu sou o Bruno Pulis, um desenvolvedor de software apaixonado por tecnologia e acessibilidade. Trabalho com desenvolvimento web há mais de 10 anos e tenho experiência em diversas tecnologias, incluindo React, Node.js, Python e muito mais."
   },
   location: "Belo Horizonte, Brazil",
   timezone: "America/Sao_Paulo",
   newsletter: {
     enabled: true,
     provider: "buttondown",
-    action: "https://buttondown.email/api/emails/embed-subscribe/brunopulis",
-    title: "Join the Newsletter",
-    description: "Get thoughtful updates delivered to your inbox. No spam, just meaningful content."
+    action: "/api/newsletter",
+    title: "Assinhe minha newsletter",
+    description: "Receba atualizações direto no seu e-mail. Sem spam, apenas conteúdo significativo."
   },
   donate: {
     enabled: true,
