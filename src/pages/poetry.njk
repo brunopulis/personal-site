@@ -1,35 +1,40 @@
 ---
 layout: base
 title: Poesia
-permalink: "{% if pagination.pageNumber > 0 %}/poetry/page/{{ pagination.pageNumber + 1 }}/{% else %}/poetry/{% endif %}"
+permalink: "{% if pagination.pageNumber > 0 %}/poetry/page/{{ pagination.pageNumber + 1 }}/{% else %}/poetry/{% endif
+%}"
 date: Last Modified
 pagination:
   data: collections.poetry
   size: 10
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Poesias</h1>
-<p>Coleção de poemas com suas próprias páginas</p>
+<div class="mx-auto my-24 px-6 container">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Poesias</h1>
+  <p>Coleção de poemas com suas próprias páginas</p>
 
-<div class="h-feed">
-  {% set items = poetry | default([]) %}
-  {% if items | length == 0 %}
+  <div class="h-feed">
+    {% set items = poetry | default([]) %}
+    {% if items | length == 0 %}
     <p class="italic">Nenhum poema encontrado.</p>
-  {% else %}
+    {% else %}
     <section class="space-y-6">
       {% for item in items %}
       <article class="pb-4 border-b">
-        <h2 class="font-bold text-brand-red-500 text-2xl"><a href="{{ item.url }}">{{ item.data.title or 'Sem título' }}</a></h2>
+        <h2 class="font-bold text-brand-red-500 text-2xl"><a href="{{ item.url }}">{{ item.data.title or 'Sem título'
+            }}</a></h2>
         {% if item.date %}
-          <time class="text-xs dt-published" datetime="{{ item.date | toISOString }}">{{ item.date | readableDate }}</time>
+        <time class="text-xs dt-published" datetime="{{ item.date | toISOString }}">{{ item.date | readableDate
+          }}</time>
         {% endif %}
       </article>
       {% endfor %}
     </section>
     {% if pagination.pages.length > 1 %}
-      {% include 'components/pagination.njk' %}
+    {% include 'components/pagination.njk' %}
     {% endif %}
-  {% endif %}
-</div>
+    {% endif %}
+  </div>
 
-{% include "components/last-update.njk" %}
+  {% include "components/last-update.njk" %}
+</div>

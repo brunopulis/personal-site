@@ -10,33 +10,35 @@ pagination:
   size: 12
 ---
 
+<div class="mx-auto my-24 px-6 container">
 <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
 <p class="mb-4">{{ description }}</p>
 <a class="hidden u-url" href="{{ site.url }}/newsletter/"></a>
 
 <ol class="space-y-8 h-feed">
-{% for item in pagination.items %}
- <li class="py-6 border-brand-gray-500 border-b h-entry">
+  {% for item in pagination.items %}
+  <li class="py-6 border-brand-gray-500 border-b h-entry">
     <h2 class="p-name font-bold text-2xl">
-      <a href="{{ item.url | url }}" class="text-brand-red-500 hover:text-brand-red-600 text-xl underline u-url" >
+      <a href="{{ item.url | url }}" class="text-brand-red-500 hover:text-brand-red-600 text-xl underline u-url">
         {{ item.data.title }}
       </a>
-    </h2>  
-    <time class="text-sm dt-published"  datetime="{{ item.data.pubDate | toISOString }}">
+    </h2>
+    <time class="text-sm dt-published" datetime="{{ item.data.pubDate | toISOString }}">
       {{ item.data.pubDate | readableDate }}
     </time>
 
     {% if item.data.description %}
-     <div class="mt-2 p-summary">
+    <div class="mt-2 p-summary">
       {{ item.data.description | markdownFormat | safe }}
-     </div>
+    </div>
     {% endif %}
   </li>
-{% endfor %}
-</ul>
+  {% endfor %}
+  </ul>
 
-{% if pagination.pages.length > 1 %}
-{% include 'components/pagination.njk' %}
-{% endif %}
+  {% if pagination.pages.length > 1 %}
+  {% include 'components/pagination.njk' %}
+  {% endif %}
 
-{% include "components/last-update.njk" %}
+  {% include "components/last-update.njk" %}
+</div>
