@@ -6,110 +6,112 @@ permalink: /style/index.html
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-6">{{ description }}</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-6">{{ description }}</p>
 
-<div class="space-y-12 prose">
-  <section>
-    <h2 class="text-xl font-semibold mb-4">Tipografia</h2>
-    <div class="space-y-4">
-      <div>
-        <h1 class="text-3xl font-bold">Título 1</h1>
-        <h2 class="text-2xl font-semibold">Título 2</h2>
-        <h3 class="text-xl font-medium">Título 3</h3>
-        <h4 class="text-lg">Título 4</h4>
+  <div class="space-y-12 prose">
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Tipografia</h2>
+      <div class="space-y-4">
+        <div>
+          <h1 class="text-3xl font-bold">Título 1</h1>
+          <h2 class="text-2xl font-semibold">Título 2</h2>
+          <h3 class="text-xl font-medium">Título 3</h3>
+          <h4 class="text-lg">Título 4</h4>
+        </div>
+        <p class="text-base">Este é um parágrafo regular. Deve ser legível e confortável para leituras prolongadas.</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Este é um texto menor usado para metadados e informações
+          secundárias.</p>
       </div>
-      <p class="text-base">Este é um parágrafo regular. Deve ser legível e confortável para leituras prolongadas.</p>
-      <p class="text-sm text-gray-600 dark:text-gray-400">Este é um texto menor usado para metadados e informações
-        secundárias.</p>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2 class="text-xl font-semibold mb-4">Cores</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="space-y-2">
-        <div class="w-full h-16 bg-blue-600 rounded"></div>
-        <p class="text-sm">Azul Primária</p>
-      </div>
-      <div class="space-y-2">
-        <div class="w-full h-16 bg-gray-600 rounded"></div>
-        <p class="text-sm">Cinza</p>
-      </div>
-      <div class="space-y-2">
-        <div class="w-full h-16 bg-green-600 rounded"></div>
-        <p class="text-sm">Verde</p>
-      </div>
-      <div class="space-y-2">
-        <div class="w-full h-16 bg-red-600 rounded"></div>
-        <p class="text-sm">Vermelho</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2 class="text-xl font-semibold mb-4">Componentes</h2>
-
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-lg font-medium mb-2">Botões</h3>
-        <div class="flex space-x-4">
-          <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Primary</button>
-          <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">Secondary</button>
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Cores</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="space-y-2">
+          <div class="w-full h-16 bg-blue-600 rounded"></div>
+          <p class="text-sm">Azul Primária</p>
+        </div>
+        <div class="space-y-2">
+          <div class="w-full h-16 bg-gray-600 rounded"></div>
+          <p class="text-sm">Cinza</p>
+        </div>
+        <div class="space-y-2">
+          <div class="w-full h-16 bg-green-600 rounded"></div>
+          <p class="text-sm">Verde</p>
+        </div>
+        <div class="space-y-2">
+          <div class="w-full h-16 bg-red-600 rounded"></div>
+          <p class="text-sm">Vermelho</p>
         </div>
       </div>
+    </section>
 
-      <div>
-        <h3 class="text-lg font-medium mb-2">Tags</h3>
-        <div class="flex space-x-2">
-          <span
-            class="px-3 py-1 text-sm rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">#example</span>
-          <span
-            class="px-3 py-1 text-sm rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">#tag</span>
-          <span
-            class="px-3 py-1 text-sm rounded-full bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">#demo</span>
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Componentes</h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Botões</h3>
+          <div class="flex space-x-4">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Primary</button>
+            <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">Secondary</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium mb-2">Tags</h3>
+          <div class="flex space-x-2">
+            <span
+              class="px-3 py-1 text-sm rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">#example</span>
+            <span
+              class="px-3 py-1 text-sm rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">#tag</span>
+            <span
+              class="px-3 py-1 text-sm rounded-full bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">#demo</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-medium mb-2">Cards</h3>
+          <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 max-w-md">
+            <h4 class="font-semibold mb-2">Card Title</h4>
+            <p class="text-gray-600 dark:text-gray-400">This is an example card component with some content.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div>
-        <h3 class="text-lg font-medium mb-2">Cards</h3>
-        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 max-w-md">
-          <h4 class="font-semibold mb-2">Card Title</h4>
-          <p class="text-gray-600 dark:text-gray-400">This is an example card component with some content.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2 class="text-xl font-semibold mb-4">Estilo de texto</h2>
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <p>This section demonstrates the prose styling used for blog content.</p>
 
-  <section>
-    <h2 class="text-xl font-semibold mb-4">Estilo de texto</h2>
-    <div class="prose prose-lg dark:prose-invert max-w-none">
-      <p>This section demonstrates the prose styling used for blog content.</p>
+        <blockquote>
+          <p>This is a blockquote. It should stand out from regular text and be easily identifiable.</p>
+        </blockquote>
 
-      <blockquote>
-        <p>This is a blockquote. It should stand out from regular text and be easily identifiable.</p>
-      </blockquote>
+        <ul>
+          <li>Item não ordenado 1</li>
+          <li>Item não ordenado 2</li>
+          <li>Item não ordenado 3</li>
+        </ul>
 
-      <ul>
-        <li>Item não ordenado 1</li>
-        <li>Item não ordenado 2</li>
-        <li>Item não ordenado 3</li>
-      </ul>
+        <ol>
+          <li>Item ordenado 1</li>
+          <li>Item ordenado 2</li>
+          <li>Item ordenado 3</li>
+        </ol>
 
-      <ol>
-        <li>Item ordenado 1</li>
-        <li>Item ordenado 2</li>
-        <li>Item ordenado 3</li>
-      </ol>
-
-      <pre><code>// Code block example
+        <pre><code>// Code block example
 function example() {
   return "Hello, world!";
 }</code></pre>
 
-      <p>Este é um texto com <code>inline code</code> e um <a href="#">link exemplo</a>.</p>
-    </div>
-  </section>
-</div>
+        <p>Este é um texto com <code>inline code</code> e um <a href="#">link exemplo</a>.</p>
+      </div>
+    </section>
+  </div>
 
-{% include "components/last-update.njk" %}
+  {% include "components/last-update.njk" %}
+</div>

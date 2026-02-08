@@ -9,32 +9,34 @@ paination:
   size: 10
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{title}}</h1>
+<div class="mx-auto my-24 px-6 container">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{title}}</h1>
 
-<div class="h-entry">
-  {% for bookmark in pagination.items %}
-  <article>
-    <h2 class="text-3xl">
-      <a href="{{ bookmark.data.url }}" rel="noopener noreferral" target="_blank">
-        {{ bookmark.data.title }}
-      </a>
-    </h2>
-    <div class="flex items-center gap-2 text-gray-500 text-sm">
-      <p class="m-0">Salvo em:</p>
-      <time class="inline-flex dt-published" datetime="{{ bookmark.data.pubDate | toISOString }}">
-        {{ bookmark.data.pubDate | readableDate }}
-      </time>
-    </div>
+  <div class="h-entry">
+    {% for bookmark in pagination.items %}
+    <article>
+      <h2 class="text-3xl">
+        <a href="{{ bookmark.data.url }}" rel="noopener noreferral" target="_blank">
+          {{ bookmark.data.title }}
+        </a>
+      </h2>
+      <div class="flex items-center gap-2 text-gray-500 text-sm">
+        <p class="m-0">Salvo em:</p>
+        <time class="inline-flex dt-published" datetime="{{ bookmark.data.pubDate | toISOString }}">
+          {{ bookmark.data.pubDate | readableDate }}
+        </time>
+      </div>
 
-    <div class="content">
-      {{ bookmark.content | safe }}
-    </div>
-  </article>
-  {% endfor %}
+      <div class="content">
+        {{ bookmark.content | safe }}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% if pagination.pages.length > 1 %}
+  {% include 'components/pagination.njk' %}
+  {% endif %}
+
+  {% include 'components/last-update.njk' %}
 </div>
-
-{% if pagination.pages.length > 1 %}
-{% include 'components/pagination.njk' %}
-{% endif %}
-
-{% include 'components/last-update.njk' %}

@@ -5,63 +5,67 @@ permalink: /support/index.html
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-4">{{ description }}</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-4">{{ description }}</p>
 
-<div class="prose">
-  {% if site.donate.message %}
-  <p>{{ site.donate.message }}</p>
-  {% else %}
-  <p>Se você encontrar valor na minha escrita, considere apoiar meu trabalho. Cada contribuição me ajuda a continuar
-    criando conteúdo bem pensado.</p>
-  {% endif %}
-
-  {% if site.donate.enabled %}
-  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Contribuição única</h2>
-  <p>Compre um café ou faça uma contribuição única para ajudar a me apoiar:</p>
-
-  <div class="flex flex-wrap gap-4 my-6">
-    {% if site.donate.kofi %}
-    <a href="https://ko-fi.com/{{ site.donate.kofi }}" target="_blank" rel="noopener"
-      class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-      <span aria-hidden="true">☕</span> Ko-fi
-    </a>
+  <div class="prose">
+    {% if site.donate.message %}
+    <p>{{ site.donate.message }}</p>
+    {% else %}
+    <p>Se você encontrar valor na minha escrita, considere apoiar meu trabalho. Cada contribuição me ajuda a continuar
+      criando conteúdo bem pensado.</p>
     {% endif %}
-    {% if site.donate.paypal %}
-    <a href="https://paypal.com/{{ site.donate.paypal }}" target="_blank" rel="noopener"
-      class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-      <span aria-hidden="true">☕</span> PayPal
-    </a>
+
+    {% if site.donate.enabled %}
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Contribuição única
+    </h2>
+    <p>Compre um café ou faça uma contribuição única para ajudar a me apoiar:</p>
+
+    <div class="flex flex-wrap gap-4 my-6">
+      {% if site.donate.kofi %}
+      <a href="https://ko-fi.com/{{ site.donate.kofi }}" target="_blank" rel="noopener"
+        class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        <span aria-hidden="true">☕</span> Ko-fi
+      </a>
+      {% endif %}
+      {% if site.donate.paypal %}
+      <a href="https://paypal.com/{{ site.donate.paypal }}" target="_blank" rel="noopener"
+        class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        <span aria-hidden="true">☕</span> PayPal
+      </a>
+      {% endif %}
+    </div>
+
+    {% if site.donate.github %}
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Contribuição contínua
+    </h2>
+    <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
+
+    <div class="my-6">
+      <a href="https://github.com/sponsors/{{ site.donate.github }}" target="_blank" rel="noopener"
+        class="inline-flex items-center px-6 py-3 bg-brand-dark-500 text-white rounded-lg hover:bg-brand-dark-700 transition-colors">
+        <span aria-hidden="true">💖</span> GitHub Sponsors
+      </a>
+    </div>
     {% endif %}
+    {% endif %}
+
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Outras formas de
+      ajudar
+    </h2>
+    <ul>
+      <li><strong>Compartilhe meus posts</strong> com outras pessoas que possam encontrá-los valiosos</li>
+      <li><strong>Se inscreva na minha newsletter</strong> para ficar atualizado sobre novos conteúdos</li>
+      <li><strong>Siga-me nas redes sociais</strong> e interaja com meu conteúdo</li>
+      <li><strong>Envie feedback</strong> via email ou webmentions</li>
+    </ul>
+
+    <p class="text-sm mt-8">
+      Cada contribuição, não importa o tamanho, ajuda-me a continuar criando conteúdo bem pensado
+      e manter este blog. Obrigado pelo seu apoio! 🙏
+    </p>
   </div>
 
-  {% if site.donate.github %}
-  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Contribuição contínua
-  </h2>
-  <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
-
-  <div class="my-6">
-    <a href="https://github.com/sponsors/{{ site.donate.github }}" target="_blank" rel="noopener"
-      class="inline-flex items-center px-6 py-3 bg-brand-dark-500 text-white rounded-lg hover:bg-brand-dark-700 transition-colors">
-      <span aria-hidden="true">💖</span> GitHub Sponsors
-    </a>
-  </div>
-  {% endif %}
-  {% endif %}
-
-  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-2xl">Outras formas de ajudar
-  </h2>
-  <ul>
-    <li><strong>Compartilhe meus posts</strong> com outras pessoas que possam encontrá-los valiosos</li>
-    <li><strong>Se inscreva na minha newsletter</strong> para ficar atualizado sobre novos conteúdos</li>
-    <li><strong>Siga-me nas redes sociais</strong> e interaja com meu conteúdo</li>
-    <li><strong>Envie feedback</strong> via email ou webmentions</li>
-  </ul>
-
-  <p class="text-sm mt-8">
-    Cada contribuição, não importa o tamanho, ajuda-me a continuar criando conteúdo bem pensado
-    e manter este blog. Obrigado pelo seu apoio! 🙏
-  </p>
+  {% include "components/last-update.njk" %}
 </div>
-
-{% include "components/last-update.njk" %}

@@ -9,31 +9,35 @@ pagination:
   size: 12
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-4">{{ description }}</p>
+<div class="mx-auto my-24 px-6 container">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-4">{{ description }}</p>
 
-{% set moviesByYear = collections.medias | groupBy("watchedYear") %}
-{% for year in moviesByYear | sortKeys %}
-<section class="flow" data-year="{{ year }}">
-  <div class="flex items-center justify-content-between mb-6">
-    <h2 class="font-bold text-brand-red-500 text-2xl">Visto em {{ year }}</h2>
-    <p class="text-sm">{{ moviesByYear[year] | length }} {{ "filmes" if moviesByYear[year] | length > 1 else "filme" }}
-    </p>
-  </div>
+  {% set moviesByYear = collections.medias | groupBy("watchedYear") %}
+  {% for year in moviesByYear | sortKeys %}
+  <section class="flow" data-year="{{ year }}">
+    <div class="flex items-center justify-content-between mb-6">
+      <h2 class="font-bold text-brand-red-500 text-2xl">Visto em {{ year }}</h2>
+      <p class="text-sm">{{ moviesByYear[year] | length }} {{ "filmes" if moviesByYear[year] | length > 1 else "filme"
+        }}
+      </p>
+    </div>
 
-  <ul class="gap-6 grid grid-cols-1 md:grid-cols-4" role="list">
-    {% for movie in moviesByYear[year] | sort(attribute="data.date") | reverse %}
+    <ul class="gap-6 grid grid-cols-1 md:grid-cols-4" role="list">
+      {% for movie in moviesByYear[year] | sort(attribute="data.date") | reverse %}
       <li class="space-y-6">
         <article>
           {% if movie.data.poster %}
-          <img src="{{ movie.data.poster }}" alt="{{ movie.data.title }}" class="w-full object-cover transition-transform duration-500" height="270" loading="lazy"
-          decoding="async"  />
+          <img src="{{ movie.data.poster }}" alt="{{ movie.data.title }}"
+            class="w-full object-cover transition-transform duration-500" height="270" loading="lazy"
+            decoding="async" />
           {% endif %}
 
           <div class="space-y-6">
             <h3 class="mt-6 font-bold text-brand-red-500">
               {% if movie.data.url %}
-              <a href="{{ movie.data.url }}" class="font-bold text-brand-red-500" target="_blank" rel="noopener noreferrer">
+              <a href="{{ movie.data.url }}" class="font-bold text-brand-red-500" target="_blank"
+                rel="noopener noreferrer">
                 {{ movie.data.title }}
               </a>
               {% else %}
@@ -52,14 +56,15 @@ pagination:
           </div>
         </article>
       </li>
-    {% endfor %}
-  </ul>
-  <hr class="mb-12 py-12 border-brand-gray-500" />
-</section>
-{% endfor %}
+      {% endfor %}
+    </ul>
+    <hr class="mb-12 py-12 border-brand-gray-500" />
+  </section>
+  {% endfor %}
 
-{% if pagination.pages.length > 1 %}
-{% include 'components/pagination.njk' %}
-{% endif %}
+  {% if pagination.pages.length > 1 %}
+  {% include 'components/pagination.njk' %}
+  {% endif %}
 
-{% include "components/last-update.njk" %}
+  {% include "components/last-update.njk" %}
+</div>

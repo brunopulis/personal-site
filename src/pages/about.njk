@@ -6,7 +6,7 @@ description: 'A história de quem escreve nesse site.'
 date: Last Modified
 ---
 
-<div class="h-card">
+<div class="container mx-auto px-6 my-24 h-card">
   <img class="rounded-full w-24 h-24 u-photo" src="/assets/images/pulis.webp" alt="Bruno Pulis" />
   <h1 class="p-name py-2 font-bold text-brand-red-500 text-3xl">Bruno Pulis</h1>
   <p class="mt-2 p-note">A história de quem escreve neste site. Uma jornada focada em tornar a web acessível para todos.
@@ -30,7 +30,8 @@ date: Last Modified
         <li>Escrevo sobre acessibilidade e web;</li>
         <li>Dou palestras e treinamentos;</li>
         <li>Ofereço mentorias personalizadas;</li>
-        <li>Presto alguns <a href="/servicos" class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">serviços digitais</a>.</li>
+        <li>Presto alguns <a href="/servicos"
+            class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">serviços digitais</a>.</li>
       </ul>
     </div>
 
@@ -113,11 +114,12 @@ date: Last Modified
         <li class="text-sm">Produtividade.</li>
       </ul>
 
-      <p>Confira <a href="/livros" class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">minha biblioteca</a>.</p>
+      <p>Confira <a href="/livros"
+          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">minha biblioteca</a>.</p>
       <p>Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações. E adoro
         música: violão flamenco, instrumental, chorinho e música clássica.</p>
     </section>
   </div>
-</div>
 
-{% include "components/last-update.njk" %}
+  {% include "components/last-update.njk" %}
+</div>

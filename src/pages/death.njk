@@ -7,10 +7,12 @@ pubDate: '2025-11-18'
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-4">{{ description }}</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-4">{{ description }}</p>
 
-<div class="prose">
+  <div class="prose">
+  </div>
+
+  {% include "components/last-update.njk" %}
 </div>
-
-{% include "components/last-update.njk" %}

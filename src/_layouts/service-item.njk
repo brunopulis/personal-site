@@ -2,132 +2,136 @@
 layout: base
 ---
 
-<section class="py-10">
-  <div class="mb-12">
-    <h1 class="mb-4 font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-    <p class="mb-6">{{service.tagline}}</p>
-  </div>
-</section>
+<div class="container mx-auto px-6 my-24">
+  <section class="py-10">
+    <div class="mb-12">
+      <h1 class="mb-4 font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+      <p class="mb-6">{{service.tagline}}</p>
+    </div>
+  </section>
 
-<section class="gap-4 grid md:grid-cols-2">
-  <div class="prose">
-    <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
-      {% lucide "check-circle", { class: "text-primary" } %}
-      O que está incluído
-    </h3>
-    <ul class="space-y-6">
-      <li class="font-bold">Auditoria Completa WCAG 2.1/2.2</li>
-      <li class="font-bold">Testes com Tecnologias Assistivas</li>
-      <li class="font-bold">Relatório de Melhorias Priorizadas</li>
-      <li class="font-bold">Workshop de Handover</li>
+  <section class="gap-4 grid md:grid-cols-2">
+    <div class="prose">
+      <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
+        {% lucide "check-circle", { class: "text-primary" } %}
+        O que está incluído
+      </h3>
+      <ul class="space-y-6">
+        <li class="font-bold">Auditoria Completa WCAG 2.1/2.2</li>
+        <li class="font-bold">Testes com Tecnologias Assistivas</li>
+        <li class="font-bold">Relatório de Melhorias Priorizadas</li>
+        <li class="font-bold">Workshop de Handover</li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
+        {% lucide "cpu", { class: "text-primary" } %}
+        Nossa Metodologia
+      </h3>
+      <ol class="space-y-6">
+        <li class="font-bold">Diagnóstico Automatizado</li>
+        <li class="font-bold">Validação Manual</li>
+        <li class="font-bold">Entrega de Roadmap</li>
+        <li class="font-bold">Workshop de Handover</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-20" aria-labelledby="problem-solution">
+    <div class="gap-6 grid md:grid-cols-2">
+      <article class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+        <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" id="problem-solution">O problema</h2>
+        <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
+      </article>
+
+      <article class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+        <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">A solução</h2>
+        <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Differentials -->
+  {% if service.differentials %}
+  <section class="py-12" aria-labelledby="differentials">
+    <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="differentials">
+      Diferenciais
+    </h2>
+    <ul class="gap-6 grid md:grid-cols-2">
+      {% for item in service.differentials %}
+      <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">{{ item }}</li>
+      {% endfor %}
     </ul>
-  </div>
-  <div class="prose">
-    <h3 class="flex items-center gap-3 mb-8 font-bold text-2xl">
-      {% lucide "cpu", { class: "text-primary" } %}
-      Nossa Metodologia
-    </h3>
-    <ol class="space-y-6">
-      <li class="font-bold">Diagnóstico Automatizado</li>
-      <li class="font-bold">Validação Manual</li>
-      <li class="font-bold">Entrega de Roadmap</li>
-      <li class="font-bold">Workshop de Handover</li>
-    </ol>
-  </div>
-</section>
+  </section>
+  {% endif %}
 
-<section class="py-20" aria-labelledby="problem-solution">
-  <div class="gap-6 grid md:grid-cols-2">
-    <article class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
-      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" id="problem-solution">O problema</h2>
-      <p class="text-muted">{{ service.problem | safe | nl2br }}</p>
-    </article>
-
-    <article class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
-      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">A solução</h2>
-      <p class="text-muted">{{ service.solution | safe | nl2br }}</p>
-    </article>
-  </div>
-</section>
-
-<!-- Differentials -->
-{% if service.differentials %}
-<section class="py-12" aria-labelledby="differentials">
-  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="differentials">
-    Diferenciais
-  </h2>
-  <ul class="gap-6 grid md:grid-cols-2">
-    {% for item in service.differentials %}
-    <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">{{ item }}</li>
-    {% endfor %}
-  </ul>
-</section>
-{% endif %}
-
-<!-- Included -->
-{% if service.included %}
-<section class="py-12" aria-labelledby="included-title">
-  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="included-title">O que você recebe</h2>
-  <ul class="gap-6 grid md:grid-cols-2">
-    {% for item in service.included %}
-    <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
-      {{ item }}
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endif %}
-
-<!-- Results -->
-{% if service.results %}
-<section class="py-12" aria-labelledby="results-title">
-  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="results-title">Resultados esperados</h2>
-  <ul class="gap-6 grid md:grid-cols-3">
-    {% for result in service.results %}
-    <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
-      <h3 class="mb-4 font-bold text-brand-red-500">{{ result.title }}</h3>
-      <p>{{ result.description }}</p>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endif %}
-
-<!-- Target -->
-{% if service.target %}
-<section class="region" aria-labelledby="target-title">
-  <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="target-title">Para quem é indicado</h2>
-  <div class="prose">
-    <ul class="space-y-6">
-      {% for item in service.target %}
-      <li class="">
+  <!-- Included -->
+  {% if service.included %}
+  <section class="py-12" aria-labelledby="included-title">
+    <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="included-title">O que você recebe</h2>
+    <ul class="gap-6 grid md:grid-cols-2">
+      {% for item in service.included %}
+      <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
         {{ item }}
       </li>
       {% endfor %}
     </ul>
-  </div>
-</section>
-{% endif %}
+  </section>
+  {% endif %}
 
-<!-- FAQ -->
-{% if service.faq %}
-<section class="py-20" aria-labelledby="faq-title">
-  <h2 class="mb-6 font-bold text-brand-red-500 text-4xl text-center leading-tight" id="faq-title">
-    Perguntas frequentes
-  </h2>
+  <!-- Results -->
+  {% if service.results %}
+  <section class="py-12" aria-labelledby="results-title">
+    <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="results-title">Resultados esperados</h2>
+    <ul class="gap-6 grid md:grid-cols-3">
+      {% for result in service.results %}
+      <li class="bg-brand-gray-200 p-6 border border-brand-gray-300 rounded-lg">
+        <h3 class="mb-4 font-bold text-brand-red-500">{{ result.title }}</h3>
+        <p>{{ result.description }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
-  <div class="space-y-4">
-    {% for item in service.faq %}
-    <details class="group bg-brand-gray-200 mb-6 p-6 border border-brand-gray-300 open:border-primary/30 rounded-xl transition-all">
-      <summary class="flex justify-between items-center font-bold text-brand-red-500 text-lg cursor-pointer list-none">
-        {{ item.question }}
-        <span class="text-primary group-open:rotate-180 transition-transform">
-          {% lucide "chevron-down", "w-5 h-5 text-brand-red-5000" %}
-        </span>
-      </summary>
-      <p class="mt-4">{{ item.answer }}</p>
-    </details>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
+  <!-- Target -->
+  {% if service.target %}
+  <section class="region" aria-labelledby="target-title">
+    <h2 class="mb-6 font-bold text-brand-red-500 text-2xl text-center" id="target-title">Para quem é indicado</h2>
+    <div class="prose">
+      <ul class="space-y-6">
+        {% for item in service.target %}
+        <li class="">
+          {{ item }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- FAQ -->
+  {% if service.faq %}
+  <section class="py-20" aria-labelledby="faq-title">
+    <h2 class="mb-6 font-bold text-brand-red-500 text-4xl text-center leading-tight" id="faq-title">
+      Perguntas frequentes
+    </h2>
+
+    <div class="space-y-4">
+      {% for item in service.faq %}
+      <details
+        class="group bg-brand-gray-200 mb-6 p-6 border border-brand-gray-300 open:border-primary/30 rounded-xl transition-all">
+        <summary
+          class="flex justify-between items-center font-bold text-brand-red-500 text-lg cursor-pointer list-none">
+          {{ item.question }}
+          <span class="text-primary group-open:rotate-180 transition-transform">
+            {% lucide "chevron-down", "w-5 h-5 text-brand-red-5000" %}
+          </span>
+        </summary>
+        <p class="mt-4">{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</div>

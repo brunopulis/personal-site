@@ -6,26 +6,28 @@ permalink: /ai/index.html
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-4">{{ description }}</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-4">{{ description }}</p>
 
-<div class="prose">
-  <p>Essa página tem o objetivo de mostrar quais são os usos de IA nesse site.</p>
+  <div class="prose">
+    <p>Essa página tem o objetivo de mostrar quais são os usos de IA nesse site.</p>
 
-  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Uso IA para</h2>
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Uso IA para</h2>
 
-  <ul>
-    <li>Realizar pesquisas</li>
-    <li>Construir componentes Astro</li>
-    <li>Dúvidas relacionadas a desenvolvimento</li>
-    <li>Refinamento de ideias</li>
-  </ul>
+    <ul>
+      <li>Realizar pesquisas</li>
+      <li>Construir componentes Astro</li>
+      <li>Dúvidas relacionadas a desenvolvimento</li>
+      <li>Refinamento de ideias</li>
+    </ul>
 
-  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Não uso para</h2>
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b text-brand-red-500 font-semibold text-xl">Não uso para</h2>
 
-  <ul>
-    <li>Criar conteúdo</li>
-  </ul>
+    <ul>
+      <li>Criar conteúdo</li>
+    </ul>
+  </div>
+
+  {% include "components/last-update.njk" %}
 </div>
-
-{% include "components/last-update.njk" %}

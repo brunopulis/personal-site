@@ -5,60 +5,62 @@ title: Arquivo
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Arquivo</h1>
-<p class="mb-4">Arquivo de todos os posts, organizados por ano e mês.</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Arquivo</h1>
+  <p class="mb-4">Arquivo de todos os posts, organizados por ano e mês.</p>
 
-{% set postsByYear = collections.posts | groupByYear %}
-{% for year, posts in postsByYear %}
-<section class="mb-8 max-w-none h-feed prose prose-lg">
-  <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-xl">{{ year }}</h2>
+  {% set postsByYear = collections.posts | groupByYear %}
+  {% for year, posts in postsByYear %}
+  <section class="mb-8 max-w-none h-feed prose prose-lg">
+    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-xl">{{ year }}</h2>
 
-  {% set postsByMonth = posts | groupByMonth %}
-  {% for month, monthPosts in postsByMonth %}
-  <div class="mb-6">
-    <h3 class="mb-3 font-medium text-brand-red-500 text-2xl capitalize">
-      {{ monthPosts[0].data.pubDate | formatDate("MMMM") }}
-    </h3>
+    {% set postsByMonth = posts | groupByMonth %}
+    {% for month, monthPosts in postsByMonth %}
+    <div class="mb-6">
+      <h3 class="mb-3 font-medium text-brand-red-500 text-2xl capitalize">
+        {{ monthPosts[0].data.pubDate | formatDate("MMMM") }}
+      </h3>
 
-    <div class="space-y-2">
-      {% for post in monthPosts %}
-      <article class="h-entry">
-        <time class="font-mono text-sm dt-published">
-          {{ post.data.pubDate | formatDate("MMM dd") }}
-        </time>
-        <div class="flex-1">
-          <h4 class="text-xl">
-            <a href="{{ post.url }}"
-              class="font-bold text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">
-              {{ post.data.title }}
-            </a>
-          </h4>
-          {% if post.data.description %}
-          <p class="mt-1 text-sm">{{ post.data.description }}</p>
-          {% endif %}
-          {% if post.data.tags %}
-          <div class="flex flex-wrap gap-1 mt-2">
-            {% for tag in post.data.tags %}
-            <span class="inline-block px-2 py-1 rounded-full text-white text-xs"
-              style="--tag-bg: {{ tag | tagColor }}; background-color: var(--tag-bg);">
-              {{ tag }}
-            </span>
-            {% endfor %}
+      <div class="space-y-2">
+        {% for post in monthPosts %}
+        <article class="h-entry">
+          <time class="font-mono text-sm dt-published">
+            {{ post.data.pubDate | formatDate("MMM dd") }}
+          </time>
+          <div class="flex-1">
+            <h4 class="text-xl">
+              <a href="{{ post.url }}"
+                class="font-bold text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">
+                {{ post.data.title }}
+              </a>
+            </h4>
+            {% if post.data.description %}
+            <p class="mt-1 text-sm">{{ post.data.description }}</p>
+            {% endif %}
+            {% if post.data.tags %}
+            <div class="flex flex-wrap gap-1 mt-2">
+              {% for tag in post.data.tags %}
+              <span class="inline-block px-2 py-1 rounded-full text-white text-xs"
+                style="--tag-bg: {{ tag | tagColor }}; background-color: var(--tag-bg);">
+                {{ tag }}
+              </span>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
-          {% endif %}
-        </div>
-      </article>
-      {% endfor %}
+        </article>
+        {% endfor %}
+      </div>
     </div>
-  </div>
+    {% endfor %}
+  </section>
   {% endfor %}
-</section>
-{% endfor %}
 
-{% if collections.posts.length == 0 %}
-<div class="py-12 text-center">
-  <p class="text-gray-500 dark:text-gray-400">Nenhum artigo encontrado.</p>
+  {% if collections.posts.length == 0 %}
+  <div class="py-12 text-center">
+    <p class="text-gray-500 dark:text-gray-400">Nenhum artigo encontrado.</p>
+  </div>
+  {% endif %}
+
+  {% include "components/last-update.njk" %}
 </div>
-{% endif %}
-
-{% include "components/last-update.njk" %}

@@ -6,43 +6,46 @@ description: "Softwares que uso no meu cotidiano"
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">O que uso</h1>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">O que uso</h1>
 
-<div class="space-y-8 prose">
-  <section>
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Desenvolvimento</h2>
-    <ul class="space-y-2">
-      <li><strong>Editor:</strong> VsCodium</li>
-      <li><strong>Terminal:</strong> Zsh</li>
-      <li><strong>Browser:</strong> Brave</li>
-      <li><strong>Version Control:</strong> Git, GitHub e Codeberg</li>
-    </ul>
-  </section>
+  <div class="space-y-8 prose">
+    <section>
+      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Desenvolvimento</h2>
+      <ul class="space-y-2">
+        <li><strong>Editor:</strong> VsCodium</li>
+        <li><strong>Terminal:</strong> Zsh</li>
+        <li><strong>Browser:</strong> Brave</li>
+        <li><strong>Version Control:</strong> Git, GitHub e Codeberg</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" lang="en">Hardware</h2>
-    <ul class="space-y-2">
-      <li><strong>Computer:</strong> Your computer specs</li>
-      <li><strong>Monitor:</strong> Your monitor setup</li>
-      <li><strong>Keyboard:</strong> Logitech K380</li>
-      <li><strong>Mouse:</strong> Logitech M325</li>
-    </ul>
-  </section>
+    <section>
+      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" lang="en">Hardware</h2>
+      <ul class="space-y-2">
+        <li><strong>Computer:</strong> Your computer specs</li>
+        <li><strong>Monitor:</strong> Your monitor setup</li>
+        <li><strong>Keyboard:</strong> Logitech K380</li>
+        <li><strong>Mouse:</strong> Logitech M325</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" lang="en">Software</h2>
-    <ul class="space-y-2">
-      <li><strong>OS:</strong> Zorin OS</li>
-      <li><strong>Notes:</strong> Obsidian</li>
-      <li><strong>Design:</strong> Figma</li>
-      <li><strong>Productivity:</strong> Todoist</li>
-    </ul>
-  </section>
+    <section>
+      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl" lang="en">Software</h2>
+      <ul class="space-y-2">
+        <li><strong>OS:</strong> Zorin OS</li>
+        <li><strong>Notes:</strong> Obsidian</li>
+        <li><strong>Design:</strong> Figma</li>
+        <li><strong>Productivity:</strong> Todoist</li>
+      </ul>
+    </section>
+  </div>
+
+  <p class="mt-8 text-sm">
+    Esta página foi inspirada por <a href="https://uses.tech/"
+      class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" target="_blank"
+      rel="noopener noreferrer">uses.tech</a>
+  </p>
+
+  {% include "components/last-update.njk" %}
 </div>
-
-<p class="mt-8 text-sm">
-  Esta página foi inspirada por <a href="https://uses.tech/" class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" target="_blank"
-    rel="noopener noreferrer">uses.tech</a>
-</p>
-
-{% include "components/last-update.njk" %}

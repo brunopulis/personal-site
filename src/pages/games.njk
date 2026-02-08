@@ -6,49 +6,51 @@ description: "Coleção dos meus jogos favoritos"
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-4">{{ description }}</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-4">{{ description }}</p>
 
-<div class="games-grid">
-  {% for game in games %}
-  <article class="game-card">
-    <img src="{{ game.coverImage }}" alt="" loading="lazy">
+  <div class="games-grid">
+    {% for game in games %}
+    <article class="game-card">
+      <img src="{{ game.coverImage }}" alt="" loading="lazy">
 
-    <div class="game-content">
-      <h2>{{ game.title }}</h2>
+      <div class="game-content">
+        <h2>{{ game.title }}</h2>
 
-      <div class="game-meta">
-        <span class="rating">⭐ {{ game.rating }}/5</span>
-        {% if game.metacritic %}
-        <span class="metacritic">Metacritic: {{ game.metacritic }}</span>
+        <div class="game-meta">
+          <span class="rating">⭐ {{ game.rating }}/5</span>
+          {% if game.metacritic %}
+          <span class="metacritic">Metacritic: {{ game.metacritic }}</span>
+          {% endif %}
+          <span class="release-date">{{ game.releaseDate | formatDate }}</span>
+        </div>
+
+        <div class="genres">
+          {% for genre in game.genres %}
+          <span class="genre-tag">{{ genre }}</span>
+          {% endfor %}
+        </div>
+
+        <p class="description">{{ game.description | truncate(200) }}</p>
+
+        <div class="platforms">
+          <strong>Plataformas:</strong>
+          {{ game.platforms | join(', ') }}
+        </div>
+
+        {% if game.website %}
+        <a href="{{ game.website }}" class="game-link" target="_blank">
+          Site Oficial →
+        </a>
         {% endif %}
-        <span class="release-date">{{ game.releaseDate | formatDate }}</span>
       </div>
+    </article>
+    {% endfor %}
+  </div>
 
-      <div class="genres">
-        {% for genre in game.genres %}
-        <span class="genre-tag">{{ genre }}</span>
-        {% endfor %}
-      </div>
-
-      <p class="description">{{ game.description | truncate(200) }}</p>
-
-      <div class="platforms">
-        <strong>Plataformas:</strong>
-        {{ game.platforms | join(', ') }}
-      </div>
-
-      {% if game.website %}
-      <a href="{{ game.website }}" class="game-link" target="_blank">
-        Site Oficial →
-      </a>
-      {% endif %}
-    </div>
-  </article>
-  {% endfor %}
+  {% include "components/last-update.njk" %}
 </div>
-
-{% include "components/last-update.njk" %}
 
 <style>
   .games-grid {

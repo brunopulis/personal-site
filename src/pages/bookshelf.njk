@@ -6,53 +6,57 @@ description: "Minha coleção de livros"
 date: Last Modified
 ---
 
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-6">{{ description }}</p>
+<div class="container mx-auto px-6 my-24">
+  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+  <p class="mb-6">{{ description }}</p>
 
-{% set booksByYear = collections.books | groupBy("attendedYear") %}
-{% for year in booksByYear | sortKeys %}
-<section class="flow" data-year="{{ year }}">
-  <div class="flex items-center">
-    <h2 class="font-bold text-brand-red-500 text-2xl">Lidos em {{ year }}</h2>
-    <p class="text-sm">{{ booksByYear[year] | length }} {{ "livros" if booksByYear[year] | length > 1 else "livro" }}
-    </p>
-  </div>
+  {% set booksByYear = collections.books | groupBy("attendedYear") %}
+  {% for year in booksByYear | sortKeys %}
+  <section class="flow" data-year="{{ year }}">
+    <div class="flex items-center">
+      <h2 class="font-bold text-brand-red-500 text-2xl">Lidos em {{ year }}</h2>
+      <p class="text-sm">{{ booksByYear[year] | length }} {{ "livros" if booksByYear[year] | length > 1 else "livro" }}
+      </p>
+    </div>
 
-  <ul class="gap-6 grid grid-cols-1 md:grid-cols-4" role="list">
-    {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
-    <li class="space-y-6">
-      <article>
-        {% if book.data.cover %}
-        <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" class="w-full object-cover transition-transform duration-500" height="270" loading="lazy"
-          decoding="async" />
-        {% endif %}
+    <ul class="gap-6 grid grid-cols-1 md:grid-cols-4" role="list">
+      {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
+      <li class="space-y-6">
+        <article>
+          {% if book.data.cover %}
+          <img src="{{ book.data.cover }}" alt="{{ book.data.title }}"
+            class="w-full object-cover transition-transform duration-500" height="270" loading="lazy"
+            decoding="async" />
+          {% endif %}
 
-        <div class="space-y-6">
-          <h3 class="mt-6 font-bold text-brand-red-500">
-            {% if book.data.url %}
-            <a href="{{ book.data.url }}" class="font-bold text-brand-red-500" target="_blank" rel="noopener noreferrer">
+          <div class="space-y-6">
+            <h3 class="mt-6 font-bold text-brand-red-500">
+              {% if book.data.url %}
+              <a href="{{ book.data.url }}" class="font-bold text-brand-red-500" target="_blank"
+                rel="noopener noreferrer">
+                {{ book.data.title }}
+              </a>
+              {% else %}
               {{ book.data.title }}
-            </a>
-            {% else %}
-              {{ book.data.title }}
-            {% endif %}
-          </h3>
-          {% if book.data.subtitle %}
+              {% endif %}
+            </h3>
+            {% if book.data.subtitle %}
             <p>{{ book.data.subtitle }}</p>
-          {% endif %}
-          {% if book.data.description %}
+            {% endif %}
+            {% if book.data.description %}
             <p class="text-sm">{{ book.data.description }}</p>
-          {% endif %}
-          {% if book.data.author %}
-          <p class="font-bold text-brand-red-500">{{ book.data.author }}</p>
-          {% endif %}
-        </div>
-      </article>
-    </li>
-    {% endfor %}
-  </ul>
-  <hr class="my-6 mb-12 border-gray-200" />
-</section>
-{% endfor %}
+            {% endif %}
+            {% if book.data.author %}
+            <p class="font-bold text-brand-red-500">{{ book.data.author }}</p>
+            {% endif %}
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+    <hr class="my-6 mb-12 border-gray-200" />
+  </section>
+  {% endfor %}
 
-{% include 'components/pagination.njk' %}
+  {% include 'components/pagination.njk' %}
+</div>
