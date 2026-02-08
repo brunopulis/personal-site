@@ -4,7 +4,7 @@ title: "Links interessantes"
 description: 'Uma coleção de links interessantes que vi por ai'
 permalink: "{% if pagination.pageNumber > 0 %}/bookmarks/page/{{ pagination.pageNumber + 1 }}/{% else %}/bookmarks/{%endif %}"
 date: Last Modified
-paination:
+pagination:
   data: collections.bookmarks
   size: 10
 ---
@@ -13,22 +13,22 @@ paination:
   <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{title}}</h1>
 
   <div class="h-entry">
-    {% for bookmark in pagination.items %}
-    <article>
+    {% for item in pagination.items %}
+    <article class="mb-12 py-6 border-brand-gray-500 border-b h-entry">
       <h2 class="text-3xl">
-        <a href="{{ bookmark.data.url }}" rel="noopener noreferral" target="_blank">
-          {{ bookmark.data.title }}
+        <a href="{{ item.data.url }}" rel="noopener noreferral" target="_blank">
+          {{ item.data.title }}
         </a>
       </h2>
       <div class="flex items-center gap-2 text-gray-500 text-sm">
         <p class="m-0">Salvo em:</p>
-        <time class="inline-flex dt-published" datetime="{{ bookmark.data.pubDate | toISOString }}">
-          {{ bookmark.data.pubDate | readableDate }}
+        <time class="inline-flex dt-published" datetime="{{ item.data.pubDate | toISOString }}">
+          {{ item.data.pubDate | readableDate }}
         </time>
       </div>
 
-      <div class="content">
-        {{ bookmark.content | safe }}
+      <div class="content mt-4">
+        {{ item.content | safe }}
       </div>
     </article>
     {% endfor %}
