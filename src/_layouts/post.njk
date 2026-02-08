@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<div class="mx-auto px-6 py-24 container max-w-4xl">
+<div class="mx-auto px-6 py-24 max-w-4xl container">
   <a href="/blog/" class="inline-flex items-center mb-3 text-brand-red-500 hover:text-brand-red-600">
     {% lucide "chevron-left", { class: "w-4 h-4" } %}
     Voltar para o blog
@@ -14,7 +14,7 @@ layout: base
       <li><span aria-hidden="true">›</span></li>
       <li><a href="/blog/" class="hover:text-brand-red-500">Blog</a></li>
       <li><span aria-hidden="true">›</span></li>
-      <li class="text-brand-red-500 font-bold">{{ title }}</li>
+      <li class="font-bold text-brand-red-500">{{ title }}</li>
     </ol>
   </nav>
 
@@ -24,7 +24,7 @@ layout: base
     {% endif %}
 
     <header class="mb-6">
-      <h1 class="mb-2 p-name font-bold text-3xl text-brand-red-500">{{ title }}</h1>
+      <h1 class="mb-2 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
       {% if subtitle %}
       <p class="mb-4 text-brand-dark-500 text-xl">{{ subtitle }}</p>
       {% endif %}
@@ -67,9 +67,9 @@ layout: base
             <h2 class="font-bold text-lg">Sobre {{ site.author }}</h2>
             <p class="mt-1 text-brand-dark-500">{{ site.bio.long }}</p>
             <div class="flex space-x-4 mt-3 text-sm">
-              <a href="/sobre/" class="text-brand-red-500 font-bold underline hover:no-underline">Saiba mais sobre
+              <a href="/sobre/" class="font-bold text-brand-red-500 underline hover:no-underline">Saiba mais sobre
                 mim</a>
-              <a href="/apoie/" class="text-brand-red-500 font-bold underline hover:no-underline">Apoie meu trabalho</a>
+              <a href="/apoie/" class="font-bold text-brand-red-500 underline hover:no-underline">Apoie meu trabalho</a>
             </div>
           </div>
         </div>
@@ -80,9 +80,9 @@ layout: base
     <section class="mt-12 pt-8 border-brand-gray-200 border-t">
       {% if site.newsletter.enabled %}
       <div class="bg-brand-gray-200 p-6 rounded-lg text-center">
-        <h3 class="mb-2 font-bold  text-brand-red-500 text-lg">{{ site.newsletter.title }}</h3>
+        <h3 class="mb-2 font-bold text-brand-red-500 text-lg">{{ site.newsletter.title }}</h3>
         <p class="mb-4 text-brand-dark-500">{{ site.newsletter.description }}</p>
-        <a href=""
+        <a href="https://brunopulis.substack.com" rel="noopener noreferrer" target="_blank"
           class="bg-brand-red-500 hover:bg-brand-red-600 px-6 py-2 rounded-lg font-bold text-white">Inscrever</a>
       </div>
       {% endif %}
