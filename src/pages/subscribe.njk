@@ -105,6 +105,19 @@ date: Last Modified
 
     <p>Digite sua conta abaixo para ser redirecionado para a página de seguir do seu servidor.</p>
 
+    <form
+      action="https://fed.brid.gy/remote-follow"
+      method="post"
+      class="fediverse-follow-form"
+    >
+      <input type="hidden" name="id" value="{{ site.followId }}">
+      <input type="hidden" name="domain" value="{{ site.url }}">
+      <input type="hidden" name="protocol" value="web">
+
+      <button type="submit" class="fediverse-follow-button">
+        Seguir no Fediverso
+      </button>
+    </form>
     <a href="https://fed.brid.gy/remote-follow?domain=brunopulis.com&protocol=web"
       class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" target="_blank"
       rel="noreferrer noopener">Seguir no Fediverso</a>
