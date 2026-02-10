@@ -11,33 +11,30 @@ performance e usabilidade."
 {% set categories = portfolio.categories %}
 {% set stats = portfolio.stats %}
 
-<div class="container mx-auto px-6 my-24">
+<div class="mx-auto my-24 px-6 container">
   <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
   <p class="mb-6">{{ description }}</p>
 
-  <section class="space-y-8">
+  <section class="gap-6 grid md:grid-cols-3">
     {% for project in projects %}
-    <article class="group flex lg:flex-row flex-col items-center gap-12 lg:gap-24 portfolio-item">
+    <article class="group bg-white hover:shadow-xl border border-stone-200 rounded-2xl overflow-hidden transition-all">
       <figure
-        class="border border-brand-dark-950 dark:border-border-dark rounded-xl w-full lg:w-1/2 overflow-hidden transition-all duration-500">
+        class="bg-stone-100 dark:bg-stone-900 aspect-video overflow-hidden">
         <img alt="{{ project.imageAlt or project.title }}"
-          class="w-full object-cover aspect-video transition-transform duration-500" src="{{ project.image }}">
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="{{ project.image }}">
       </figure>
-      <div class="space-y-6 w-full lg:w-1/2">
-        <div class="space-y-2">
-          <span class="font-bold text-brand-red-500 text-sm uppercase tracking-widest">
-            {{ project.category | join(' e ') or "Redesign & Acessibilidade" }}
-          </span>
-          <h2 class="font-bold text-brand-red-500 hover:text-brand-red-600 text-lg">
-            <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
-          </h2>
-        </div>
-        <p class="text-lg leading-relaxed">
+      <div class="p-8">
+        <h2 class="mb-3 font-display font-bold text-2xl">
+          <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
+        </h2>
+        <p class="mb-6 text-stone-600">
           {{ project.description }}
         </p>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap gap-2 mb-8">
           {% for tech in project.technologies %}
-          <span class="bg-brand-red-500 px-3 py-1 rounded-full text-white text-sm">{{ tech }}</span>
+            <span class="bg-brand-red-500/10 px-3 py-1 rounded font-bold text-brand-red-500 text-xs uppercase">
+              {{ tech }}
+            </span>
           {% endfor %}
         </div>
       </div>
