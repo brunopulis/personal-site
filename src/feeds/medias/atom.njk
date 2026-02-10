@@ -1,0 +1,50 @@
+---json
+{
+  "permalink": "/feeds/medias/atom.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Bruno Pulis - Filmes e séries",
+    "description": "Filmes e séries que consumo",
+    "language": "pt-br",
+    "base": "https://www.brunopulis.com",
+    "author": {
+      "name": "Bruno Pulis",
+      "email": "brunopulis@protonmail.com"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" />
+  <link href="{{ metadata.base | addPathPrefixToFullUrl }}" />
+  <updated>{{ collections.medias | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ metadata.base | addPathPrefixToFullUrl }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+
+  {%- for post in collections.medias | limit(10) %}
+  {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ (post.data.pubDate or post.date) | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ metadata.language }}" type="html">{{ post.content | renderTransforms(post.data.page,
+      metadata.base) }}</content>
+    {%- if post.data.summary %}
+    <summary>{{ post.data.summary }}</summary>
+    {%- endif %}
+    {%- if post.data.tags %}
+    {%- for tag in post.data.tags %}
+    <category term="{{ tag }}" />
+    {%- endfor %}
+    {%- endif %}
+  </entry>
+  {%- endfor %}
+</feed>
