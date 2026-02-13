@@ -51,8 +51,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4
       lucide:
-        specifier: ^0.563.0
-        version: 0.563.0
+        specifier: ^0.564.0
+        version: 0.564.0
     devDependencies:
       '@babel/preset-env':
         specifier: ^7.28.6
@@ -971,8 +971,8 @@ packages:
   '@codemirror/state@6.5.4':
     resolution: {integrity: sha512-8y7xqG/hpB53l25CIoit9/ngxdfoG+fx+V3SHBrinnhOtLvKHRyAJJuHzkWrR4YXXLX8eXBsejgAAxHUOdW1yw==}
 
-  '@codemirror/view@6.39.13':
-    resolution: {integrity: sha512-QBO8ZsgJLCbI28KdY0/oDy5NQLqOQVZCozBknxc2/7L98V+TVYFHnfaCsnGh1U+alpd2LOkStVwYY7nW2R1xbw==}
+  '@codemirror/view@6.39.14':
+    resolution: {integrity: sha512-WJcvgHm/6Q7dvGT0YFv/6PSkoc36QlR0VCESS6x9tGsnF1lWLmmYxOgX3HH6v8fo6AvSLgpcs+H0Olre6MKXlg==}
 
   '@cypress/request@3.0.10':
     resolution: {integrity: sha512-hauBrOdvu08vOsagkZ/Aju5XuiZx6ldsLfByg1htFeldhex+PeMrYauANzFsMJeAA0+dyPLbDoX2OYuvVoLDkQ==}
@@ -5693,8 +5693,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
-  lucide@0.563.0:
-    resolution: {integrity: sha512-2zBzDJ5n2Plj3d0ksj6h9TWPOSiKu9gtxJxnBAye11X/8gfWied6IYJn6ADYBp1NPoJmgpyOYP3wMrVx69+2AA==}
+  lucide@0.564.0:
+    resolution: {integrity: sha512-FasyXKHWon773WIl3HeCQpd5xS6E0aLjqxiQStlHNKktni+HDncc1sqY+6vRUbCfmDsIaKQz43EEQLAUDLZO0g==}
 
   lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
@@ -9111,7 +9111,7 @@ snapshots:
   '@codemirror/language@6.0.0':
     dependencies:
       '@codemirror/state': 6.5.4
-      '@codemirror/view': 6.39.13
+      '@codemirror/view': 6.39.14
       '@lezer/common': 1.5.1
       '@lezer/highlight': 1.2.3
       '@lezer/lr': 1.4.8
@@ -9121,7 +9121,7 @@ snapshots:
     dependencies:
       '@marijn/find-cluster-break': 1.0.2
 
-  '@codemirror/view@6.39.13':
+  '@codemirror/view@6.39.14':
     dependencies:
       '@codemirror/state': 6.5.4
       crelt: 1.0.6
@@ -14200,7 +14200,7 @@ snapshots:
     dependencies:
       react: 19.2.4
 
-  lucide@0.563.0: {}
+  lucide@0.564.0: {}
 
   lunr@2.3.9: {}
 
