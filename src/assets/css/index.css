@@ -1,7 +1,9 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import "@picocss/pico/css/pico.min.css";
 
-@theme {
+/* Suas customizações aqui */
+:root {
+  --pico-font-family: "Noto Sans", sans-serif;
+
   /* Brand Red (#610404) */
   --color-brand-red-50: #f7f2f2;
   --color-brand-red-100: #efe5e5;
@@ -77,6 +79,65 @@
     color: var(--color-brand-dark-500);
   }
 
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  body > header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  section {
+    padding: 25px 0;
+  }
+
+  .tags {
+    font-size: 0.875rem;
+  }
+
+  .hero__links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .skip-to-content {
+    z-index: 999;
+    position: absolute;
+    top: calc(var(--pico-spacing) * 0.75);
+    left: calc(var(--pico-spacing) * 0.75);
+    transform: translateY(-1000%);
+
+    --pico-box-shadow: var(--pico-card-box-shadow);
+    opacity: 0;
+  }
+
+  .main-nav {
+    border: 1px solid var(--color-brand-gray-200);
+  }
+
+  .note {
+    gap: 1rem;
+  }
+
+  .webring,
+  .last-update {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
   a {
     @apply text-brand-dark-500;
   }
@@ -96,93 +157,6 @@
   :focus-visible {
     outline: 3px dashed var(--color-focus-ring);
     outline-offset: 3px;
-  }
-
-  .prose a {
-    @apply border-transparent border-b-2 font-bold text-brand-blue-500 text-sm tracking-widest transition-all duration-300;
-
-    &:hover {
-      @apply border-brand-blue-500 text-brand-blue-600 no-underline;
-    }
-  }
-
-  /* Blog post typography styles */
-  .prose {
-    @apply max-w-none text-gray-900 dark:text-gray-100;
-  }
-
-  .prose p {
-    @apply mb-6 leading-relaxed;
-  }
-
-  .prose h1 {
-    @apply mt-8 mb-6 font-bold text-gray-900 dark:text-gray-100 text-3xl;
-  }
-
-  .prose h2 {
-    @apply mt-8 mb-4 font-bold text-gray-900 dark:text-gray-100 text-2xl;
-  }
-
-  .prose h3 {
-    @apply mt-6 mb-3 font-semibold text-gray-900 dark:text-gray-100 text-xl;
-  }
-
-  .prose h4 {
-    @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-lg;
-  }
-
-  .prose h5 {
-    @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-base;
-  }
-
-  .prose h6 {
-    @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-sm;
-  }
-
-  .prose ul {
-    @apply mb-6 pl-6;
-  }
-
-  .prose ol {
-    @apply mb-6 pl-6;
-  }
-
-  .prose li {
-    @apply mb-2;
-  }
-
-  .prose ul li {
-    @apply list-disc;
-  }
-
-  .prose ol li {
-    @apply list-decimal;
-  }
-
-  .prose blockquote,
-  blockquote {
-    @apply border-l-4 border-brand-red-500 pl-6 py-2 mb-6 italic text-brand-dark-500 bg-brand-gray-200;
-  }
-
-  .prose code {
-    @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono text-purple-700 dark:text-purple-300 text-sm;
-  }
-
-  .prose pre {
-    @apply bg-gray-100 dark:bg-gray-900 mb-6 p-4 rounded-lg overflow-x-auto text-gray-900 dark:text-gray-100;
-  }
-
-  .prose pre code {
-    @apply bg-transparent p-0;
-    color: inherit;
-  }
-
-  /* Ensure HLJS themes don't override background/text inside prose blocks */
-  .prose pre code.hljs,
-  .prose code.hljs,
-  .prose pre .hljs {
-    background: transparent !important;
-    color: inherit;
   }
 }
 
