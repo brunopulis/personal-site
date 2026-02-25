@@ -1,4 +1,0 @@
-{
-  "layout": "base",
-  "permalink": "services/{{ customURL if customURL else title | slugify | safe }}/index.html"
-}
