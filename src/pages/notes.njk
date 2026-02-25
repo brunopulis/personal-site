@@ -2,46 +2,40 @@
 layout: page
 title: "Notas"
 description: "Pensamentos curtos, links interessantes e atualizações rápidas."
-permalink: "{% if pagination.pageNumber > 0 %}/notes/page/{{ pagination.pageNumber + 1 }}/{% else %}/notes/{% endif %}"
+permalink: "{% if pagination.pageNumber > 0 %}/notas/page/{{ pagination.pageNumber + 1 }}/{% else %}/notas/{% endif %}"
 date: Last Modified
 pagination:
   data: collections.notes
   size: 12
 ---
 
-<div class="mx-auto my-24 px-6 container">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Notas</h1>
-  <p>Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.</p>
+<h1 class="p-name">{{ title }}</h1>
+<p class="p-note">{{ description }}</p>
 
-  <div class="h-feed">
-    <div class="gap-4 grid grid-cols-1">
-      {% for note in pagination.items %}
-      <article
-        class="flex flex-col shadow-sm hover:shadow-md p-6 border border-brand-gray-200 rounded-2xl transition-shadow">
-        <time datetime="{{ note.data.pubDate | toISOString }}"
-          class="mb-4 font-semibold text-brand-red-500 text-xs uppercase dt-published">
-          {{ note.data.pubDate | formatDate('DD/MM/YYYY') }}
-        </time>
+<div class="h-feed">
+  {% for note in pagination.items %}
+  <article class="note">
+    <time datetime="{{ note.data.pubDate | toISOString }}" class="dt-published">
+      {{ note.data.pubDate | formatDate('DD/MM/YYYY') }}
+    </time>
 
-        <div class="max-w-none e-content grow prose">
-          {{ note.content | safe }}
-        </div>
+    <div class="e-content">
+      {{ note.content | safe }}
+    </div>
 
-        {% if note.data.tags and note.data.tags.length > 0 %}
-        <div class="flex flex-wrap gap-4 mt-6 pt-4 border-brand-gray-300 border-t">
-          {% for tag in note.data.tags %}
-          {% if tag !== "notes" %}
-          <span class="p-category font-bold text-brand-red-500 text-xs transition-colors cursor-default">#{{ tag
-            }}</span>
-          {% endif %}
-          {% endfor %}
-        </div>
-        {% endif %}
-      </article>
+    {% if note.data.tags and note.data.tags.length > 0 %}
+    <div class="tags">
+      {% for tag in note.data.tags %}
+      {% if tag !== "notes" %}
+      <span class="p-category">#{{ tag }}</span>
+      {% endif %}
       {% endfor %}
     </div>
-  </div>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>
 
-  {% include 'components/pagination.njk' %}
-  {% include "components/last-update.njk" %}
+{% include 'components/pagination.njk' %}
+{% include "components/last-update.njk" %}
 </div>

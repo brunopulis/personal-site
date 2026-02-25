@@ -9,7 +9,7 @@ pagination:
   size: 10
 ---
 
-<div class="mx-auto my-24 px-6 container">
+<div class="mx-auto my-24 max-w-6xl">
   <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{title}}</h1>
 
   <div class="h-entry">
@@ -27,7 +27,7 @@ pagination:
         </time>
       </div>
 
-      <div class="content mt-4">
+      <div class="mt-4 content">
         {{ item.content | safe }}
       </div>
     </article>

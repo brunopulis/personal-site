@@ -2,17 +2,18 @@
 layout: base
 title: "Contato"
 description: Formas de entrar em contato comigo
-permalink: "/contact/index.html"
+permalink: "/contato/index.html"
 hasForm: true
 date: Last Modified
 ---
 
-<div class="container mx-auto px-6 my-24">
+<div class="mx-auto my-24 max-w-6xl">
   <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Entre em contato</h1>
   <p class="mb-4">{{ description }}</p>
 
   <p>Eu adoraria ouvir sua voz! Se você tiver alguma dúvida, feedback ou apenas quiser cumprimentar,
-    sinta-se à vontade para me contatar por qualquer um dos canais abaixo.</p>
+    sinta-se à vontade para me contatar por qualquer um dos canais abaixo.
+  </p>
 
   <div class="gap-8 grid grid-cols-1 md:grid-cols-2 mt-8">
     <div>
@@ -21,29 +22,24 @@ date: Last Modified
         <li class="flex items-center gap-3">
           <span class="text-brand-red-600">📧</span>
           <a href="mailto:{{ site.email }}"
-            class="text-brand-red-500 hover:no-underline underline hover:text-brand-red-600">{{ site.email
+            class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">{{ site.email
             }}</a>
         </li>
         {% if site.social.github %}
         <li class="flex items-center gap-3">
           <span class="text-brand-red-600">🐙</span>
           <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
-            class="text-brand-red-500 hover:no-underline underline hover:text-brand-red-600">GitHub</a>
+            class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">GitHub</a>
         </li>
         {% endif %}
         {% if site.social.mastodon %}
         <li class="flex items-center gap-3">
           <span class="text-brand-red-600">🐘</span>
           <a href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}" target="_blank"
-            rel="noopener" class="text-brand-red-500 hover:no-underline underline hover:text-brand-red-600">Mastodon</a>
+            rel="noopener" class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">Mastodon</a>
         </li>
         {% endif %}
       </ul>
-    </div>
-
-    <div>
-      <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Mensagem rápida</h2>
-      {% include "partials/contact-form.njk" %}
     </div>
   </div>
 
