@@ -2,124 +2,99 @@
 layout: base
 title: "Sobre mim"
 permalink: "/about/index.html"
-description: 'A história de quem escreve nesse site.'
+description: 'A história de quem escreve neste site. Uma jornada focada em tornar a web acessível para todos.'
 date: Last Modified
 ---
 
-<div class="container mx-auto px-6 my-24 h-card">
-  <img class="rounded-full w-24 h-24 u-photo" src="/assets/images/pulis.webp" alt="Bruno Pulis" />
-  <h1 class="p-name py-2 font-bold text-brand-red-500 text-3xl">Bruno Pulis</h1>
-  <p class="mt-2 p-note">A história de quem escreve neste site. Uma jornada focada em tornar a web acessível para todos.
-  </p>
+<h1 class="p-name">{{ title }}</h1>
+<p class="p-note">{{ description }}</p>
+<p>Nem sempre eu trabalhei com tecnologia.</p>
+<p>
+  Em 2006, meu trabalho era simples: servir hambúrguer no Burger King. Hoje, meu trabalho é outro — mas continua
+  sendo sobre pessoas.
+</p>
 
-  <div class="max-w-2xl prose">
-    <p>Nem sempre eu trabalhei com tecnologia.</p>
-    <p>Em 2006, meu trabalho era simples: servir hambúrguer no Burger King. Hoje, meu trabalho é outro — mas continua
-      sendo sobre pessoas.</p>
+<h2>Minha missão</h2>
+<p>Ao longo da minha carreira, vi muitos produtos tecnicamente "bons" falharem no mais importante: as pessoas.</p>
+<p>Sites bonitos, rápidos, bem escritos — mas impossíveis de usar para alguém com deficiência, com limitações
+  temporárias ou simplesmente em um contexto diferente do esperado.</p>
+<p>
+  Foi aí que entendi algo simples, mas fácil de ignorar: <strong>tecnologia boa é tecnologia que inclui
+    pessoas.</strong>
+</p>
 
-    <h2 class="my-2 font-bold text-brand-red-500 text-2xl">Minha missão</h2>
-    <p>Ao longo da minha carreira, vi muitos produtos tecnicamente "bons" falharem no mais importante: as pessoas.</p>
-    <p>Sites bonitos, rápidos, bem escritos — mas impossíveis de usar para alguém com deficiência, com limitações
-      temporárias ou simplesmente em um contexto diferente do esperado.</p>
-    <p>Foi aí que entendi algo simples, mas fácil de ignorar: <strong>tecnologia boa é tecnologia que inclui
-        pessoas.</strong></p>
+<h3>O que eu faço:</h3>
+<ul class="space-y-2 list-none">
+  <li>Dou palestras e treinamentos;</li>
+  <li>Ofereço mentorias personalizadas;</li>
+  <li>Desenvolvo sites acessíveis;</li>
+  <li>Faço auditoria e remediação de sites e documentos.</li>
+</ul>
 
-    <div class="my-4">
-      <h3 class="mb-4 font-bold text-brand-red-500 text-2xl">O que eu faço:</h3>
-      <ul class="space-y-2 list-none">
-        <li>Escrevo sobre acessibilidade e web;</li>
-        <li>Dou palestras e treinamentos;</li>
-        <li>Ofereço mentorias personalizadas;</li>
-        <li>Presto alguns <a href="/servicos"
-            class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">serviços digitais</a>.</li>
-      </ul>
-    </div>
+<p>Se você precisa de algum desses serviços me mande um <a
+    href="mailto:brunopulis@protonmail.com?subject=Serviços%20de%20acessibilidade">e-mail</a>.</p>
 
-    <section aria-labelledby="how-i-reached-here" class="prose">
-      <h2 id="how-i-reached-here" class="mt-16 mb-8 font-bold text-brand-red-500 text-2xl">Como cheguei até aqui
-      </h2>
-      <p>Minha jornada não começou no código. Em 2010, formado em <strong>Sistemas
-          para Internet</strong>, passei a viver a web no dia a dia.</p>
-      <p>Trabalhei em agências, startups e projetos de diferentes tamanhos. Aprendi muito — e também vi muita gente
-        ficando de fora.</p>
+<section aria-labelledby="how-i-reached-here">
+  <h2 id="how-i-reached-here">Como cheguei até aqui</h2>
+  <p>Minha jornada não começou no código. Em 2010, formado em <strong>Sistemas
+      para Internet</strong>, passei a viver a web no dia a dia.</p>
+  <p>Trabalhei em agências, startups e projetos de diferentes tamanhos. Aprendi muito — e também vi muita gente
+    ficando de fora.</p>
 
-      <ul class="gap-2 grid grid-cols-1 p-0 list-none">
-        <li class="block">
-          <span class="font-bold text-brand-red-500 text-xs uppercase">2015</span>
-          <h3 class="mt-0 font-display font-bold text-brand-red-500 text-2xl">Awesome A11y</h3>
-          <p class="leading-relaxed">Criei o repositório, hoje uma referência em recursos
-            de
-            acessibilidade no Brasil.</p>
-        </li>
-        <li class="flex flex-col justify-between">
-          <span class="font-bold text-brand-red-500 text-xs uppercase">2017</span>
-          <h3 class="mt-0 font-display font-bold text-brand-red-500 text-2xl">Qualidade de Software</h3>
-          <p class="leading-relaxed">Mergulhei na área de QA para aprofundar o olhar
-            crítico
-            sobre processos e testes.</p>
-        </li>
-        <li class="flex flex-col justify-between">
-          <span class="font-bold text-brand-red-500 text-xs uppercase">2021</span>
-          <h3 class="mt-0 font-display font-bold text-brand-red-500 text-2xl">Foco total em acessibilidade</h3>
-          <p class="text-sm leading-relaxed">
-            A acessibilidade deixou de ser um detalhe técnico e
-            passou a ser o foco principal do meu trabalho. Cada projeto virou um lembrete constante: <strong>a internet
-              só
-              faz sentido se ninguém ficar de fora.</strong>
-          </p>
-        </li>
-      </ul>
-    </section>
+  <p>Alguns projetos que tenho orgulho de ter feito:</p>
+  <ul>
+    <li><a href="https://github.com/brunopulis/awesome-a11y-br">Awesome A11y</a>;</li>
+    <li><a href="https://github.com/brunopulis/awesome-cypress">Awesome Cypress</a>;</li>
+    <li><a href="https://github.com/brunopulis/v0-xp-ath-vs-css-selectors">XPath vs CSS Selectors</a>.</li>
+  </ul>
+</section>
 
-    <section aria-labelledby="guiding-principles">
-      <h2 id="guiding-principles" class="mt-16 mb-8 font-bold text-brand-red-500 text-3xl">O que me guia</h2>
-      <div class="space-y-6 mb-12">
-        <p>Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.</p>
-        <p>Para mim, criar uma web acessível não é apenas uma decisão técnica. É uma expressão prática do chamado
-          bíblico
-          ao amor ao próximo. É garantir dignidade também no ambiente digital.</p>
+<section aria-labelledby="guiding-principles">
+  <h2 id="guiding-principles">O que me guia</h2>
 
-        <div class="gap-4 grid grid-cols-1 sm:grid-cols-2">
-          <div class="flex items-center gap-4 bg-brand-blue-500 p-4 rounded-lg">
-            {% lucide "church", { class: "w-4 h-4" } %}
-            <span class="font-bold text-brand-dark-500">Fé e trabalho juntos</span>
-          </div>
-          <div class="flex items-center gap-4 bg-brand-blue-500 p-4 rounded-lg">
-            {% lucide "person-standing", { class: "w-4 h-4" } %}
-            <span class="font-bold text-brand-dark-500">Inclusão acima de tudo</span>
-          </div>
-          <div class="flex items-center gap-4 bg-brand-blue-500 p-4 rounded-lg">
-            {% lucide "book", { class: "w-4 h-4" } %}
-            <span class="font-bold text-brand-dark-500">Educação e não julgamento</span>
-          </div>
-          <div class="flex items-center gap-4 bg-brand-blue-500 p-4 rounded-lg">
-            {% lucide "verified", { class: "w-4 h-4" } %}
-            <span class="font-bold text-brand-dark-500">Qualidade sem desculpas</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <p>Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.</p>
+  <p>Para mim, criar uma web acessível não é apenas uma decisão técnica.</p>
+  <p>É uma expressão prática do chamado bíblico ao amor ao próximo. É garantir dignidade também no ambiente digital.</p>
 
-    <section class="prose" aria-labelledby="offscreen-title">
-      <h2 id="offscreen-title" class="mt-16 mb-8 font-bold text-brand-red-500 text-3xl">Fora da tela</h2>
-      <p>Minha vida é muito maior que minha profissão. Minha família é minha prioridade, e por isso sou bastante
-        rigoroso com meus horários e limites.</p>
+  <ul>
+    <li>
+      {% lucide "church" %}
+      Fé e trabalho juntos
+    </li>
+    <li>
+      {% lucide "person-standing" %}
+      Inclusão acima de tudo
+    </li>
+    <li>
+      {% lucide "book" %}
+      Educação e não julgamento
+    </li>
+    <li>
+      {% lucide "verified" %}
+      Qualidade sem desculpas
+    </li>
+  </ul>
+</section>
 
-      <p>Sou um leitor compulsivo. Leio de tudo, mas especialmente:</p>
+<section aria-labelledby="offscreen-title">
+  <h2 id="offscreen-title">Fora da tela</h2>
+  <p>Minha vida é muito maior que minha profissão. Minha família é minha prioridade, e por isso sou bastante
+    rigoroso com meus horários e limites.</p>
 
-      <ul class="gap-2 my-4">
-        <li class="text-sm">Teologia;</li>
-        <li class="text-sm">Ficção Científica;</li>
-        <li class="text-sm">Biografias;</li>
-        <li class="text-sm">Produtividade.</li>
-      </ul>
+  <p>Sou um leitor compulsivo. Leio de tudo, mas especialmente:</p>
 
-      <p>Confira <a href="/livros"
-          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">minha biblioteca</a>.</p>
-      <p>Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações. E adoro
-        música: violão flamenco, instrumental, chorinho e música clássica.</p>
-    </section>
-  </div>
+  <ul>
+    <li>Teologia;</li>
+    <li>Ficção Científica;</li>
+    <li>Biografias;</li>
+    <li>Produtividade.</li>
+  </ul>
 
-  {% include "components/last-update.njk" %}
-</div>
+  <p>Você pode conferir os meus <a href="/livros">livros</a>, <a href="/filmes">filmes e séries</a>, <a
+      href="/notas">notas</a>, <a href="/jogos">fotos</a> e <a href="/jogos">jogos</a>.</p>
+
+  <p>Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações. E adoro
+    música: violão flamenco, instrumental, chorinho e música clássica.</p>
+</section>
+
+{% include "components/last-update.njk" %}

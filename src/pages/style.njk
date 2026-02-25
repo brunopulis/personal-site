@@ -6,76 +6,76 @@ permalink: /style/index.html
 date: Last Modified
 ---
 
-<div class="container mx-auto px-6 my-24">
+<div class="mx-auto my-24 max-w-6xl">
   <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
   <p class="mb-6">{{ description }}</p>
 
   <div class="space-y-12 prose">
     <section>
-      <h2 class="text-xl font-semibold mb-4">Tipografia</h2>
+      <h2 class="mb-4 font-semibold text-xl">Tipografia</h2>
       <div class="space-y-4">
         <div>
-          <h1 class="text-3xl font-bold">Título 1</h1>
-          <h2 class="text-2xl font-semibold">Título 2</h2>
-          <h3 class="text-xl font-medium">Título 3</h3>
+          <h1 class="font-bold text-3xl">Título 1</h1>
+          <h2 class="font-semibold text-2xl">Título 2</h2>
+          <h3 class="font-medium text-xl">Título 3</h3>
           <h4 class="text-lg">Título 4</h4>
         </div>
         <p class="text-base">Este é um parágrafo regular. Deve ser legível e confortável para leituras prolongadas.</p>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Este é um texto menor usado para metadados e informações
+        <p class="text-gray-600 dark:text-gray-400 text-sm">Este é um texto menor usado para metadados e informações
           secundárias.</p>
       </div>
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold mb-4">Cores</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <h2 class="mb-4 font-semibold text-xl">Cores</h2>
+      <div class="gap-4 grid grid-cols-2 md:grid-cols-4">
         <div class="space-y-2">
-          <div class="w-full h-16 bg-blue-600 rounded"></div>
+          <div class="bg-blue-600 rounded w-full h-16"></div>
           <p class="text-sm">Azul Primária</p>
         </div>
         <div class="space-y-2">
-          <div class="w-full h-16 bg-gray-600 rounded"></div>
+          <div class="bg-gray-600 rounded w-full h-16"></div>
           <p class="text-sm">Cinza</p>
         </div>
         <div class="space-y-2">
-          <div class="w-full h-16 bg-green-600 rounded"></div>
+          <div class="bg-green-600 rounded w-full h-16"></div>
           <p class="text-sm">Verde</p>
         </div>
         <div class="space-y-2">
-          <div class="w-full h-16 bg-red-600 rounded"></div>
+          <div class="bg-red-600 rounded w-full h-16"></div>
           <p class="text-sm">Vermelho</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold mb-4">Componentes</h2>
+      <h2 class="mb-4 font-semibold text-xl">Componentes</h2>
 
       <div class="space-y-6">
         <div>
-          <h3 class="text-lg font-medium mb-2">Botões</h3>
+          <h3 class="mb-2 font-medium text-lg">Botões</h3>
           <div class="flex space-x-4">
-            <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Primary</button>
-            <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">Secondary</button>
+            <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">Primary</button>
+            <button class="hover:bg-gray-50 px-4 py-2 border border-gray-300 rounded">Secondary</button>
           </div>
         </div>
 
         <div>
-          <h3 class="text-lg font-medium mb-2">Tags</h3>
+          <h3 class="mb-2 font-medium text-lg">Tags</h3>
           <div class="flex space-x-2">
             <span
-              class="px-3 py-1 text-sm rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">#example</span>
+              class="bg-blue-100 dark:bg-blue-900 px-3 py-1 rounded-full text-blue-800 dark:text-blue-200 text-sm">#example</span>
             <span
-              class="px-3 py-1 text-sm rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">#tag</span>
+              class="bg-green-100 dark:bg-green-900 px-3 py-1 rounded-full text-green-800 dark:text-green-200 text-sm">#tag</span>
             <span
-              class="px-3 py-1 text-sm rounded-full bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200">#demo</span>
+              class="bg-purple-100 dark:bg-purple-900 px-3 py-1 rounded-full text-purple-800 dark:text-purple-200 text-sm">#demo</span>
           </div>
         </div>
 
         <div>
-          <h3 class="text-lg font-medium mb-2">Cards</h3>
-          <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 max-w-md">
-            <h4 class="font-semibold mb-2">Card Title</h4>
+          <h3 class="mb-2 font-medium text-lg">Cards</h3>
+          <div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg max-w-md">
+            <h4 class="mb-2 font-semibold">Card Title</h4>
             <p class="text-gray-600 dark:text-gray-400">This is an example card component with some content.</p>
           </div>
         </div>
@@ -83,8 +83,8 @@ date: Last Modified
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold mb-4">Estilo de texto</h2>
-      <div class="prose prose-lg dark:prose-invert max-w-none">
+      <h2 class="mb-4 font-semibold text-xl">Estilo de texto</h2>
+      <div class="dark:prose-invert max-w-none prose prose-lg">
         <p>This section demonstrates the prose styling used for blog content.</p>
 
         <blockquote>
