@@ -5,6 +5,8 @@
   <!-- 1 charset/viewport -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2a3140">
+  <meta name="color-scheme" content="light dark">
 
   <!-- 2 title -->
   <title>
@@ -22,59 +24,59 @@
   {# SEO: Structured Data (JSON-LD) #}
   {% if site.url %}
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "url": "{{ site.url }}",
-            "name": "{{ site.name }}",
-            "description": "{{ site.description }}"
-          },
-          {
-            "@type": "Organization",
-            "name": "{{ site.author }}",
-            "url": "{{ site.url }}",
-            "sameAs": [
-              {% set sameAs = [] %}
-              {% if site.social and site.social.github %}
-                {% set sameAs = sameAs.concat(['https://github.com/' + site.social.github]) %}
-              {% endif %}
-              {% if site.social and site.social.twitter %}
-                {% set sameAs = sameAs.concat(['https://twitter.com/' + (site.social.twitter | replace('@',''))]) %}
-              {% endif %}
-              {% for link in sameAs %}
-                "{{ link }}"{% if not loop.last %},{% endif %}
-              {% endfor %}
-            ]
-          }
-        ]
-      } 
-    </script>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "{{ site.url }}",
+          "name": "{{ site.name }}",
+          "description": "{{ site.description }}"
+        },
+        {
+          "@type": "Organization",
+          "name": "{{ site.author }}",
+          "url": "{{ site.url }}",
+          "sameAs": [
+            {% set sameAs = [] %}
+            {% if site.social and site.social.github %}
+              {% set sameAs = sameAs.concat(['https://github.com/' + site.social.github]) %}
+            {% endif %}
+            {% if site.social and site.social.twitter %}
+              {% set sameAs = sameAs.concat(['https://twitter.com/' + (site.social.twitter | replace('@',''))]) %}
+            {% endif %}
+            {% for link in sameAs %}
+              "{{ link }}"{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ]
+        }
+      ]
+    }
+  </script>
 
   {# Breadcrumbs: Home > Current #}
   {% set isHome = (page.url or '/') == '/' %}
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{{ site.url }}"
-          }{% if not isHome %},
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "{{ title or site.name }}",
-            "item": "{{ site.url }}{{ page.url or '/' }}"
-          }
-          {% endif %}
-        ]
-      }
-    </script>
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}"
+        }{% if not isHome %},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ title or site.name }}",
+          "item": "{{ site.url }}{{ page.url or '/' }}"
+        }
+        {% endif %}
+      ]
+    }
+  </script>
 
   {# BlogPosting for content pages (#blog, #notes, #poetry, #journal) #}
   {% set url = page.url or '/' %}
@@ -82,28 +84,28 @@
   '/poetry/' ) or (url | slice(0,9) == '/journal/' ) %}
   {% if isPostLike %}
   <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ (site.url and (site.url + (page.url or '/'))) or '' }}"
-          },
-          "headline": "{{ title or site.name }}",
-          {% if ogImage %}"image": ["{{ ogImage }}"],{% endif %}
-          "datePublished": "{{ page.date | htmlDateString }}",
-          "dateModified": "{{ page.date | htmlDateString }}",
-          "author": {
-            "@type": "Person",
-            "name": "{{ author or site.author }}"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "{{ site.name }}"
-          },
-          "description": "{{ description or site.description }}"
-        }
-      </script>
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ (site.url and (site.url + (page.url or '/'))) or '' }}"
+      },
+      "headline": "{{ title or site.name }}",
+      {% if ogImage %}"image": ["{{ ogImage }}"],{% endif %}
+      "datePublished": "{{ page.date | htmlDateString }}",
+      "dateModified": "{{ page.date | htmlDateString }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ author or site.author }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.name }}"
+      },
+      "description": "{{ description or site.description }}"
+    }
+  </script>
   {% endif %}
   {% endif %}
 
@@ -123,17 +125,15 @@
   <script defer src="https://cloud.umami.is/script.js" data-website-id="88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"></script>
 </head>
 
-<body class="bg-background-light text-stone-800 transition-colors duration-300">
-  <a href="#main" class="sr-only">{{ site.skipContent }}</a>
+<body>
+  <a href="#main" class="skip-to-content contrast">{{ site.skipContent }}</a>
   {% include "partials/header.njk" %}
 
   <main id="main">
-    {{ content | safe }}
+    <div class="container">
+      {{ content | safe }}
+    </div>
   </main>
-
   {% include "partials/footer.njk" %}
-  {% if hasForm %}
-  {% include "partials/forminit-script.njk" %}
-  {% endif %}
 
 </html>
