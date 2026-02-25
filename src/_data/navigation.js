@@ -1,24 +1,28 @@
 export default {
 	top: [
 		{
-			text: 'Artigos',
-			url: '/blog/'
-		},
-		{
 			text: 'Sobre',
 			url: '/about/'
 		},
 		{
-			text: 'Serviços',
-			url: '/services/'
+			text: 'Blog',
+			url: '/blog/'
 		},
 		{
-			text: 'Portfolio',
-			url: '/portfolio/'
+			text: 'Notas',
+			url: '/notas/'
+		},
+		{
+			text: 'Projetos',
+			url: '/projetos/'
+		},
+		{
+			text: 'Explore',
+			url: '/explore/'
 		},
 		{
 			text: 'Contato',
-			url: '/contact/'
+			url: '/contato/'
 		}
 	],
 	secondary: [
