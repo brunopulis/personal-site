@@ -2,7 +2,7 @@ import { slugifyString } from './filters/slugify.js';
 
 /**
  * Posts Collection
- * 
+ *
  * @param {*} collectionApi
  * @returns
  */
@@ -12,7 +12,7 @@ export const posts = collectionApi => {
 
 /**
  * Notes Collection
- * 
+ *
  * @param {*} collectionApi
  * @returns
  */
@@ -22,7 +22,7 @@ export const notes = collectionApi => {
 
 /**
  * Poetry Collection
- * 
+ *
  * @param {*} collectionApi
  * @returns
  */
@@ -108,7 +108,19 @@ export const showInSitemap = collectionApi => {
 
 export const tagListRecurrency = collection => {
   const tagCount = {};
-  const excludedTags = ['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'];
+  const excludedTags = [
+    'all',
+    'posts',
+    'streams',
+    'bookmarks',
+    'books',
+    'gallery',
+    'games',
+    'newsletters',
+    'notes',
+    'medias',
+    'music'
+  ];
 
   // Contar quantas vezes cada tag aparece (agrupado por slug)
   const slugToTag = {};
