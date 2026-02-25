@@ -1,54 +1,23 @@
-<section class="py-24 bg-brand-gray-200" aria-labelledby="projetos-title">
-  <div class="container mx-auto px-6">
-    <div class="flex items-center justify-between mb-16">
-      <div>
-        <h2 class="font-display text-3xl font-bold mb-2" id="projetos-title">Portfólio</h2>
-        <p class="text-stone-500">Alguns trabalhos que realizei</p>
-      </div>
-      <a class="text-primary font-semibold flex items-center gap-1 hover:underline" href="/portfolio">
-        Ver todos {% lucide "arrow-right", { "class": "w-4 h-4" } %}
-      </a>
-    </div>
+<section aria-labelledby="portfolio-title">
+  <h2 id="portfolio-title">Portfólio</h2>
+  <p>Alguns trabalhos que realizei</p>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      {% set projects = portfolio.projects %}
-      {% for project in projects.slice(0, 2) %}
-      <div class="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:shadow-xl transition-all">
-        <div class="aspect-video bg-stone-100 dark:bg-stone-900 overflow-hidden">
-          <img alt="{{ project.imageAlt }}"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="{{ project.image }}">
+  <div class="grid">
+    {% set projects = portfolio.projects %}
+    {% for project in projects.slice(0, 3) %}
+      <article>
+        <figure>
+          <img alt="{{ project.imageAlt }}" src="{{ project.image }}" />
+        </figure>
+
+        <div>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
         </div>
-        <div class="p-8">
-          <h3 class="font-display text-2xl font-bold mb-3">{{ project.title }}</h3>
-          <p class="text-stone-600 mb-6">
-            {{ project.description }}
-          </p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            {% for tech in project.technologies %}
-            <span class="px-3 py-1 bg-brand-red-500/10 text-brand-red-500  uppercase text-xs font-bold rounded">
-              {{ tech }}
-            </span>
-            {% endfor %}
-          </div>
-          <div class="flex gap-4">
-            {% if project.links.demo %}
-            <a class="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 uppercase transition-all"
-              href="{{ project.links.demo }}">
-              ver projeto <span class="sr-only">: {{ project.title }}</span>
-              {% lucide "arrow-up-right", { "class": "w-4 h-4" } %}
-            </a>
-            {% endif %}
-            {% if project.links.case %}
-            <a class="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 uppercase transition-all"
-              href="{{ project.links.case }}">
-              ver estudo de caso <span class="sr-only">: {{ project.title }}</span>
-              {% lucide "arrow-right", { "class": "w-4 h-4" } %}
-            </a>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
+      </article>
+    {% endfor %}
   </div>
+  <a href="/portfolio">
+    ver todos projetos {% lucide "chevron-right", { "class": "w-4 h-4" } %}
+  </a>
 </section>

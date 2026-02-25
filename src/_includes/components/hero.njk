@@ -1,44 +1,19 @@
-<section class="py-24 md:py-32" aria-label="hero-title">
-  <div class="container mx-auto px-6 max-w-4xl text-center">
-    <h1 class="font-display text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight p-name" id="hero-title">
-      {{ site.name }}
-    </h1>
-    <p class="p-summary text-xl md:text-2xl mb-8 font-light">
-      {{ site.description }}
-    </p>
-    <a class="hidden u-url" href="{{ site.url }}/"></a>
+<section class="hero" aria-label="hero-title">
+  <h1 class="p-name hero__title" id="hero-title">
+    <span aria-hidden="true">👋</span> Olá,
+    {{ site.name }}
+  </h1>
 
-    <div class="mx-auto mb-8 max-w-2xl">
-      <p class="mb-6 text-brand-dark-500 text-lg leading-relaxed">
-        Este é meu canto digital. Um espaço para escrever, compartilhar conhecimento e ajudar pessoas e equipes a
-        construírem uma web mais humana.
-      </p>
+  <p class="p-summary hero__summary">
+    Sou engenheiro de softwado focado em experiências inclusivas.
+  </p>
 
-      <div class="flex flex-wrap justify-center gap-4 text-sm">
-        <span class="bg-brand-blue-500 px-3 py-1 rounded-full font-bold text-brand-dark-500">
-          <span aria-hidden="true">🌱</span> Indie Web
-        </span>
-        <span class="bg-brand-blue-500 px-3 py-1 rounded-full font-bold text-brand-dark-500">
-          <span aria-hidden="true">📡</span> Suporte a RSS
-        </span>
-        <span class="bg-brand-blue-500 px-3 py-1 rounded-full font-bold text-brand-dark-500" lang="en">
-          <span aria-hidden="true">🔒</span> Privacy First
-        </span>
-        <span class="bg-brand-blue-500 px-3 py-1 rounded-full font-bold text-brand-dark-500">
-          <span aria-hidden="true">♿</span> Acessível
-        </span>
-      </div>
-    </div>
+  <p class="hero__location">Vivo em Belo Horizonte, com minha esposa Mariana e minha filha Elisa.</p>
 
-    <div class="flex flex-wrap justify-center gap-4 mb-12">
-      <a href="/about/"
-        class="font-bold bg-brand-red-500 text-white px-8 py-4 rounded-full hover:no-underline hover:scale-105 transition-transform flex items-center justify-center gap-2">
-        <span aria-hidden="true">👋</span> Saiba mais sobre mim
-      </a>
-      <a href="/now/"
-        class="border-2 border-brand-red-500 text-brand-red-500 px-8 py-4 rounded-full font-bold hover:bg-brand-red-500 hover:text-white hover:no-underline transition-colors">
-        <span aria-hidden="true">📍</span>O que estou fazendo agora
-      </a>
-    </div>
+  <a class="hidden u-url" href="{{ site.url }}/"></a>
+
+  <div class="hero__links">
+    <a href="/about/">Sobre mim</a>
+    <a href="/now/">Agora</a>
   </div>
 </section>
