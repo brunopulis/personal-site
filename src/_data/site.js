@@ -1,12 +1,12 @@
 export default {
   name: "Bruno Pulis",
-  description: "Especialista em acessibilidade digital e frontend.",
+  description: "Sou engenheiro de softwado focado em experiências inclusivas.",
+
   skipContent: "Pular para o conteúdo principal",
   url: "https://brunopulis.com",
   followId: "https://brunopulis.com",
   author: "Bruno Pulis",
   email: "brunopulis@protonmail.com",
-  forminitFormId: process.env.FORMINIT_FORM_ID,
   social: {
     github: "brunopulis",
     mastodon: "@brunopulis@mastodon.social",
