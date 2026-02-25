@@ -1,212 +1,94 @@
-<footer class="bg-white py-20 border-stone-200 border-t">
-  <div class="mx-auto px-6 container">
-    <div class="gap-12 grid grid-cols-2 md:grid-cols-4 mb-20">
+<footer>
+  <div class="container">
+    <div class="grid">
       <div>
-        <h3 class="mb-2 font-semibold">Técnico</h3>
-        <ul class="space-y-1">
-          <li><a href="https://11ty.dev" class="underline" target="_blank" rel="noopener">Feito com Eleventy</a></li>
-          <li><a href="/style/" class="underline">Guia de estilo</a></li>
+        <h3>Técnico</h3>
+        <ul>
+          <li><a href="https://11ty.dev" target="_blank" rel="noopener">Feito com Eleventy</a></li>
+          <li><a href="/style/">Guia de estilo</a></li>
           <li><a href="https://github.com/brunopulis/brunopulis/edit/main/src/sitemap.njk" target="_blank"
-              rel="noopener" class="underline">Editar esta página</a></li>
-          <li><a href="https://github.com/brunopulis/brunopulis/blob/main/GUIDE.md" target="_blank" rel="noopener"
-              class="underline">Guia do projeto</a></li>
+              rel="noopener">Editar esta página</a></li>
+          <li><a href="https://github.com/brunopulis/brunopulis/blob/main/GUIDE.md" target="_blank" rel="noopener">Guia
+              do projeto</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-2 font-semibold">Navegação</h3>
-        <ul class="space-y-1">
-          <li><a href="/sitemap/" class="underline">Mapa do site</a></li>
-          <li><a href="/archive/" class="underline">Arquivo</a></li>
-          <li><a href="/categories/" class="underline">Categorias</a></li>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="/sitemap/">Mapa do site</a></li>
+          <li><a href="/archive/">Arquivo</a></li>
+          <li><a href="/categories/">Categorias</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-2 font-semibold">Recursos</h3>
-        <ul class="space-y-1">
-          <li><a href="/bookmarks" class="underline">Links favoritos</a></li>
-          <li><a href="/bookshelf/" class="underline">Biblioteca</a></li>
-          <li><a href="/media/" class="underline">Filmes e séries</a></li>
-          <li><a href="/notes/" class="underline">Notas pessoais</a></li>
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="/bookmarks">Links favoritos</a></li>
+          <li><a href="/bookshelf/">Biblioteca</a></li>
+          <li><a href="/media/">Filmes e séries</a></li>
+          <li><a href="/notes/">Notas pessoais</a></li>
         </ul>
-      </div>
-
-      <div>
-        <h3 class="mb-2 font-semibold">Redes Sociais</h3>
-        <nav aria-label="Redes sociais">
-          <ul class="space-y-1">
-            <li>
-              <a href="/feed.xml" class="inline-flex items-center gap-2 underline" target="_blank"
-                rel="me noopener noreferrer">
-                {% lucide "rss", { "class": "w-4 h-4" } %}
-                <span>RSS</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/brunopulis" rel="me"  target="_blank" class="inline-flex items-center gap-2 underline"
-                rel="me noopener noreferrer">
-                {% lucide "github", { "class": "w-4 h-4" } %}
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://mastodon.social/@brunopulis" target="_blank"
-                class="inline-flex items-center gap-2 underline" rel="me noopener noreferrer">
-                {% svg "platform/mastodon", "", "w-4 h-4" %}
-                <span>Mastodon</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/brunopulis.com" target="_blank"
-                class="inline-flex items-center gap-2 underline" rel="me noopener noreferrer">
-                {% svg "platform/bluesky", "", "w-4 h-4" %}
-                <span>Bluesky</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://youtube.com/@brunopulis" target="_blank" class="inline-flex items-center gap-2 underline"
-                rel="noopener noreferrer">
-                {% lucide "youtube", { "class": "w-4 h-4" } %}
-                <span>YouTube</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/brunopulis" target="_blank"
-                class="inline-flex items-center gap-2 underline" rel="noopener noreferrer">
-                {% lucide "linkedin", { "class": "w-4 h-4" } %}
-                <span>LinkedIn</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </div>
 
-    <ul class="flex flex-wrap gap-2 py-4 border-brand-gray-800 border-y">
-      <li>
-        <img src="/assets/images/badges/made-in-bh.png" class="h-8" width="88" height="31" alt="Feito em Belo Horizonte"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/11ty.gif" class="h-8" width="88" height="31" alt="Criado com eleventy"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/faith-tech.png" class="h-8" width="88" height="31" alt="Faith and Technology"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/love-validator.png" class="h-8" width="88" height="40"
-          alt="Eu amo o validador da W3C" loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/valid-html5.gif" class="h-8" width="88" height="31" alt="HTML5 Valid"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/valid-css.gif" class="h-8" width="88" height="31" alt="CSS Valid" loading="lazy"
-          decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/wcag-aa.png" class="h-8" width="88" height="31" alt="WCAG 2.1 AA Compliant"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/valid-rss.png" class="h-8" width="88" height="31" alt="RSS Feed Available"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/valid-atom.png" class="h-8" width="88" height="31" alt="Atom Feed Available"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/people-pledge.png" class="h-8" width="88" height="31" alt="Feito por um humano"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/human.svg" class="h-8" width="88" height="31" alt="Feito por um humano"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/microformats.png" class="h-8" width="88" height="31"
-          alt="Suporte a microformats" loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/indieweb.png" class="h-8" width="88" height="31" alt="Part of IndieWeb"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/webmentions.png" class="h-8" width="88" height="31" alt="Suporte a Webmentions"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/coffee-powered.png" class="h-8" width="88" height="31" alt="Powered by Coffee"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/obsidian-user.png" class="h-8" width="88" height="31" alt="Obsidian User"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/88x31.gif" class="h-8" width="88" height="31" alt="Badges 88x31" loading="lazy"
-          decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/internetarchive.jpg" class="h-8" width="88" height="31" alt="Internet Archive"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/cc.png" class="h-8" width="88" height="31" alt="Licenciado por Creative Commons"
-          loading="lazy" decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/mastodon.gif" class="h-8" width="88" height="31" alt="Mastodon" loading="lazy"
-          decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/vscodium.jpg" class="h-8" width="88" height="30" alt="VS Codium" loading="lazy"
-          decoding="async">
-      </li>
-      <li>
-        <img src="/assets/images/badges/brave.gif" class="h-8" width="88" height="31" alt="Brave Browser" loading="lazy"
-          decoding="async">
-      </li>
-    </ul>
-
-    <div class="flex md:flex-row flex-col justify-between items-center gap-3 mb-5 py-4">
-      <div class="flex flex-wrap justify-center md:justify-start gap-2">
-        <p class="text-xs">2012 Bruno Pulis — Feito com ❤️ em BH.</p>
+    <div>
+      <div>
+        <p>2012 Bruno Pulis — Feito com ❤️ em BH.</p>
       </div>
-      <div class="flex flex-wrap justify-center gap-2">
+      <div>
         <nav aria-label="Políticas do site">
-          <ul class="flex flex-wrap justify-center gap-2">
+          <ul>
             {% for item in navigation.secondary %}
-            <li>
-              <a href="{{ item.url }}" class="text-xs underline">{{ item.text }}</a>
-            </li>
+            <li><a href="{{ item.url }}">{{ item.text }}</a></li>
             {% endfor %}
           </ul>
         </nav>
-      </div>
-    </div>
 
-    <div class="flex md:flex-row flex-col justify-between items-center gap-3">
-      <div class="flex flex-wrap justify-center md:justify-start gap-2">
-        <p class="text-xs">
-          Membro do <a href="https://a11y-webring.club" class="underline">a11y-webring.club</a>
-        </p>
-      </div>
-
-      <div class="flex flex-wrap justify-center md:justify-start gap-2">
-        <nav aria-label="Navegação do webring">
-          <ul class="flex flex-wrap justify-center gap-4">
-            <li><a href="https://a11y-webring.club/prev" class="text-xs underline">anterior</a></li>
-            <li><a href="https://a11y-webring.club/random" class="text-xs underline">aleatório</a></li>
-            <li><a href="https://a11y-webring.club/next" class="text-xs underline">próximo</a></li>
+        <nav>
+          <ul>
+            <li>
+              <a href="https://mastodon.social/@brunopulis" target="_blank">
+                {% svg "platform/mastodon", "", "" %}
+                <span class="skip-to-content">Mastodon</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://bsky.app/profile/brunopulis.com" target="_blank" rel="me noopener noreferrer">
+                {% svg "platform/bluesky", "", "w-4 h-4" %}
+                <span class="skip-to-content">Bluesky</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/brunopulis" target="_blank" rel="noopener noreferrer">
+                {% lucide "linkedin", { "class": "w-4 h-4" } %}
+                <span class="skip-to-content">LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="/feeds">
+                {% lucide "rss", { "class": "w-4 h-4" } %}
+                <span class="skip-to-content">RSS</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
+
+    <div class="webring">
+      <p>
+        Membro do <a href="https://a11y-webring.club" class="underline">a11y-webring.club</a>
+      </p>
+      <nav aria-label="Navegação do webring">
+        <ul>
+          <li><a href="https://a11y-webring.club/prev">anterior</a></li>
+          <li><a href="https://a11y-webring.club/random">aleatório</a></li>
+          <li><a href="https://a11y-webring.club/next">próximo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
   </div>
 </footer>
