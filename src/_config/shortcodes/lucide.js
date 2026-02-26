@@ -16,23 +16,22 @@ export const lucide = (name, attrs = {}) => {
 
   // Set default optional attributes for the SVG tag
   const defaults = {
-    'xmlns': 'http://www.w3.org/2000/svg',
-    'width': 24,
-    'height': 24,
-    'viewBox': '0 0 24 24',
-    'fill': 'none',
-    'stroke': 'currentColor',
+    xmlns: 'http://www.w3.org/2000/svg',
+    width: 24,
+    height: 24,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
     'stroke-width': 2,
     'stroke-linecap': 'round',
     'stroke-linejoin': 'round',
-    'class': '',
+    class: '',
     'aria-hidden': 'true',
   };
 
   // If attrs is a string, assume it's a class string (shortcut)
-  const finalAttrs = typeof attrs === 'string' 
-    ? { ...defaults, class: attrs } 
-    : { ...defaults, ...attrs };
+  const finalAttrs =
+    typeof attrs === 'string' ? { ...defaults, class: attrs } : { ...defaults, ...attrs };
 
   const attrString = Object.entries(finalAttrs)
     .map(([key, value]) => `${key}="${value}"`)

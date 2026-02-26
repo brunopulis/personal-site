@@ -28,9 +28,9 @@ export const categoryFilter = (items, category) => {
     try {
       let itemCategories = null;
 
-      if (item.data && item.data.categories) {
+      if (item.data?.categories) {
         itemCategories = item.data.categories;
-      } else if (item.data && item.data.category) {
+      } else if (item.data?.category) {
         itemCategories = item.data.category;
       } else if (item.categories) {
         itemCategories = item.categories;
@@ -42,12 +42,10 @@ export const categoryFilter = (items, category) => {
         return false;
       }
 
-      const categoriesArray = Array.isArray(itemCategories) 
-        ? itemCategories 
-        : [itemCategories];
+      const categoriesArray = Array.isArray(itemCategories) ? itemCategories : [itemCategories];
 
-      return categoriesArray.some(cat => 
-        String(cat).toLowerCase().trim() === String(category).toLowerCase().trim()
+      return categoriesArray.some(
+        cat => String(cat).toLowerCase().trim() === String(category).toLowerCase().trim()
       );
     } catch (error) {
       console.error('categoryFilter: error filtering item', error);

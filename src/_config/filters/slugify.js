@@ -8,6 +8,6 @@ export const slugifyString = str => {
   return slugify(str, {
     replacement: '-',
     remove: /[#,&,+()$~%.'":*¿?¡!<>{}]/g,
-    lower: true
+    lower: true,
   });
 };

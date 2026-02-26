@@ -8,7 +8,7 @@ export const streamIcon = type => {
     concert: '🎤',
     link: '🔗',
     note: '💭',
-    post: '✍️'
+    post: '✍️',
   };
   return icons[type] || icons.note;
 };
@@ -22,7 +22,7 @@ export const streamTypeLabel = type => {
     podcast: 'Podcast',
     concert: 'Show',
     link: 'Link',
-    note: 'Nota'
+    note: 'Nota',
   };
   return labels[type] || type;
 };

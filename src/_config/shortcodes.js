@@ -1,7 +1,7 @@
-import {asideInfo} from './shortcodes/aside-info.js';
-import {asideReadmore} from './shortcodes/aside-readmore.js';
-import {image, imageKeys, badge} from './shortcodes/image.js';
-import {svg} from './shortcodes/svg.js';
+import { asideInfo } from './shortcodes/aside-info.js';
+import { asideReadmore } from './shortcodes/aside-readmore.js';
+import { badge, image, imageKeys } from './shortcodes/image.js';
+import { svg } from './shortcodes/svg.js';
 
 export default {
   asideInfo,
@@ -9,5 +9,5 @@ export default {
   image,
   imageKeys,
   badge,
-  svg
+  svg,
 };

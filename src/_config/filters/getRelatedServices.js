@@ -1,4 +1,4 @@
-import {getServiceById} from './getServiceById.js';
+import { getServiceById } from './getServiceById.js';
 
 export const getRelatedServices = serviceId => {
   const service = getServiceById(serviceId);

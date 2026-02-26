@@ -26,9 +26,9 @@ async function fetchWebmentions(url) {
       dryRun: false,
       fetchOptions: {
         headers: {
-          'User-Agent': '11ty-webmentions/1.0'
-        }
-      }
+          'User-Agent': '11ty-webmentions/1.0',
+        },
+      },
     });
 
     return response.children || [];
@@ -95,9 +95,9 @@ function formatDate(dateObj) {
       month: 'long',
       day: 'numeric',
       hour: '2-digit',
-      minute: '2-digit'
+      minute: '2-digit',
     });
-  } catch (error) {
+  } catch (_error) {
     console.log('Erro ao formatar data:', dateObj);
     return '';
   }
@@ -111,7 +111,7 @@ function formatDate(dateObj) {
  */
 function truncateText(text, length = 300) {
   if (!text) return '';
-  return text.length > length ? text.substring(0, length) + '...' : text;
+  return text.length > length ? `${text.substring(0, length)}...` : text;
 }
 
 /**
@@ -150,5 +150,5 @@ export {
   countMentions,
   getUniqueAuthors,
   formatDate,
-  truncateText
+  truncateText,
 };

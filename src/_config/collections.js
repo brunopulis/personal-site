@@ -21,17 +21,18 @@ export const notes = collectionApi => {
 };
 
 /**
- * Poetry Collection
+ * Poems Collection
  *
  * @param {*} collectionApi
  * @returns
  */
-export const poetry = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/poetry/**/*').reverse();
+export const poems = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/poems/**/*').reverse();
 };
 
 /**
- *
+ * Bookmarks Collection
+ 
  * @param {*} collectionApi
  * @returns
  */
@@ -40,53 +41,57 @@ export const bookmarks = collectionApi => {
 };
 
 /**
+ * Photos Collection
  *
  * @param {*} collectionApi
  * @returns
  */
-export const gallery = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/gallery/**/*').reverse();
+export const photos = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/photos/**/*').reverse();
 };
 
 /**
+ * Medias Collection
  *
  * @param {*} collectionApi
  * @returns
  */
 export const medias = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/medias/**/*').reverse();
-}
+};
 
 /**
+ * Books Collection
  *
  * @param {*} collectionApi
  * @returns
  */
 export const books = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/books/**/*').reverse();
-}
+};
 
 /**
+ * Newsletters Collection
  *
  * @param {*} collectionApi
  * @returns
  */
 export const newsletters = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*').reverse();
-}
+};
 
 /**
+ * Games Collection
  *
  * @param {*} collectionApi
  * @returns
  */
 export const games = collectionApi => {
-  return collectionApi
-    .getFilteredByGlob('./src/content/games/**/*')
-    .reverse();
+  return collectionApi.getFilteredByGlob('./src/content/games/**/*').reverse();
 };
 
 /**
+ * Music Collection
  *
  * @param {*} collectionApi
  * @returns
@@ -98,6 +103,7 @@ export const music = collectionApi => {
 };
 
 /**
+ * Show in Sitemap Collection
  *
  * @param {*} collectionApi
  * @returns
@@ -111,15 +117,15 @@ export const tagListRecurrency = collection => {
   const excludedTags = [
     'all',
     'posts',
-    'streams',
+    'poems',
+    'photos',
     'bookmarks',
     'books',
-    'gallery',
     'games',
     'newsletters',
     'notes',
     'medias',
-    'music'
+    'music',
   ];
 
   // Contar quantas vezes cada tag aparece (agrupado por slug)
@@ -127,7 +133,7 @@ export const tagListRecurrency = collection => {
 
   collection.getAll().forEach(item => {
     if ('tags' in item.data) {
-      let tags = item.data.tags;
+      const tags = item.data.tags;
 
       for (const tag of tags) {
         if (!excludedTags.includes(tag)) {
@@ -135,7 +141,7 @@ export const tagListRecurrency = collection => {
           tagCount[slug] = (tagCount[slug] || 0) + 1;
           // Store the most common/first version of the tag name for display
           if (!slugToTag[slug]) {
-             slugToTag[slug] = tag;
+            slugToTag[slug] = tag;
           }
         }
       }
@@ -154,15 +160,30 @@ export const tagListRecurrency = collection => {
  * @returns
  */
 export const tagList = collection => {
-  let tagSet = new Set();
-  let slugSet = new Set();
+  const tagSet = new Set();
+  const slugSet = new Set();
 
   collection.getAll().forEach(item => {
     if ('tags' in item.data) {
-      let tags = item.data.tags;
+      const tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!['all', 'posts', 'streams', 'bookmarks', 'books', 'gallery', 'games', 'newsletters', 'notes', 'medias', 'music'].includes(tag)) {
+        if (
+          ![
+            'all',
+            'posts',
+            'poems',
+            'photos',
+            'bookmarks',
+            'books',
+            'gallery',
+            'games',
+            'newsletters',
+            'notes',
+            'medias',
+            'music',
+          ].includes(tag)
+        ) {
           const slug = slugifyString(tag);
           if (!slugSet.has(slug)) {
             slugSet.add(slug);
@@ -181,11 +202,12 @@ export default {
   showInSitemap,
   newsletters,
   bookmarks,
+  poems,
   books,
   notes,
   medias,
   music,
   games,
   tagList,
-  gallery
+  photos,
 };
