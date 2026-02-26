@@ -1,12 +1,17 @@
 #!/usr/bin/env node
-import fs from 'fs';
-import path from 'path';
-import {fileURLToPath} from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const folders = ['src/content/notas', 'src/content/newsletter', 'src/content/posts', 'src/content/reply'];
+const folders = [
+  'src/content/notas',
+  'src/content/newsletter',
+  'src/content/posts',
+  'src/content/reply',
+];
 
 const CONTENT_DIR = path.join(__dirname, folders[3]);
 const SRC_DIR = path.join(__dirname, 'src');
@@ -16,9 +21,10 @@ function getAllFiles(dirPath, arrayOfFiles) {
 
   arrayOfFiles = arrayOfFiles || [];
 
-  files.forEach(function (file) {
-    if (fs.statSync(dirPath + '/' + file).isDirectory()) {
-      arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
+  files.forEach(file => {
+    const filePath = `${dirPath}/${file}`;
+    if (fs.statSync(filePath).isDirectory()) {
+      arrayOfFiles = getAllFiles(filePath, arrayOfFiles);
     } else {
       if (file.endsWith('.md')) {
         arrayOfFiles.push(path.join(dirPath, '/', file));
@@ -31,7 +37,7 @@ function getAllFiles(dirPath, arrayOfFiles) {
 
 function checkImages() {
   const files = getAllFiles(CONTENT_DIR);
-  let missingImages = [];
+  const missingImages = [];
 
   console.log(`Scanning ${files.length} files in ${CONTENT_DIR}...`);
 
@@ -48,16 +54,16 @@ function checkImages() {
     // Regex for HTML images: <img src="url"
     const htmlImageRegex = /<img.*?src=["'](.*?)["']/g;
 
-    let match;
-
     // Check Markdown images
-    while ((match = markdownImageRegex.exec(content)) !== null) {
+    const markdownMatches = content.matchAll(markdownImageRegex);
+    for (const match of markdownMatches) {
       const imageUrl = match[1];
       checkImage(file, imageUrl, missingImages);
     }
 
     // Check HTML images
-    while ((match = htmlImageRegex.exec(content)) !== null) {
+    const htmlMatches = content.matchAll(htmlImageRegex);
+    for (const match of htmlMatches) {
       const imageUrl = match[1];
       checkImage(file, imageUrl, missingImages);
     }
@@ -102,12 +108,15 @@ function checkImage(file, imageUrl, missingImages) {
   // Check if file exists
   if (!fs.existsSync(imagePath)) {
     // Try one more fallback: maybe it's relative to project root?
-    const rootPath = path.join(__dirname, imageUrl.startsWith('/') ? imageUrl.substring(1) : imageUrl);
+    const rootPath = path.join(
+      __dirname,
+      imageUrl.startsWith('/') ? imageUrl.substring(1) : imageUrl
+    );
     if (!fs.existsSync(rootPath)) {
       missingImages.push({
         file: file,
         image: imageUrl,
-        resolvedPath: imagePath
+        resolvedPath: imagePath,
       });
     }
   }
