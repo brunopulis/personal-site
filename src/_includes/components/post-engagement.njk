@@ -8,95 +8,43 @@
 {%- set mailToLink = 'mailto:' + defaultEmail + '?subject=' + subject + '&body=' + body -%}
 
 
-<div class="bg-brand-gray-200 p-6 rounded-lg">
-  <div class="mb-4 post-footer-box">
-    <p class="text-brand-dark-500 text-2xl">Obrigado pela leitura! Gostou deste post? Assine meu <a
-        href="https://brunopulis.com/feed.xml" target="_blank" rel="alternate">RSS</a>.</p>
+<div>
+  <div>
+    <p>Obrigado pela leitura! Gostou deste post? Assine meu <a href="https://brunopulis.com/feed.xml" target="_blank"
+        rel="alternate">RSS</a>.</p>
   </div>
 
-  <div class="share-buttons">
-    <p class="mb-6 font-semibold text-brand-red-500 text-sm">Compartilhe este artigo ou responda:</p>
-
-    <ul class="inline-flex flex-wrap gap-2">
-      <li><a class="text-brand-red-500 underline hover:no-underline" href="{{ mailToLink }}">Responder por e-mail</a>
-      </li>
-
+  <div>
+    <ul>
+      <li><a href="{{ mailToLink }}">Responder por e-mail</a></li>
       <li>
-        <a class="text-brand-red-500 underline hover:no-underline"
-          href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}&via=brunopulis"
+        <a href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}&via=brunopulis"
           target="_blank" rel="noopener noreferrer">
           Twitter
         </a>
       </li>
       <li>
-        <a class="text-brand-red-500 underline hover:no-underline"
-          href="https://www.linkedin.com/sharing/share-offsite/?url={{ meta.url }}{{ page.url }}" target="_blank"
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ meta.url }}{{ page.url }}" target="_blank"
           rel="noopener noreferrer">LinkedIn</a>
       </li>
       <li>
-        <a class="text-brand-red-500 underline hover:no-underline"
-          href="https://www.facebook.com/sharer/sharer.php?u={{ meta.url }}{{ page.url }}" target="_blank"
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ meta.url }}{{ page.url }}" target="_blank"
           rel="noopener noreferrer">
           Facebook
         </a>
       </li>
       <li>
-        <a class="text-brand-red-500 underline hover:no-underline"
-          href="https://bsky.app/intent/compose?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}"
+        <a href="https://bsky.app/intent/compose?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}"
           target="_blank" rel="noopener noreferrer">
           Bluesky
         </a>
       </li>
       <li>
-        <a class="text-brand-red-500 underline hover:no-underline"
-          href="https://toot.kytta.dev/?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}" target="_blank"
+        <a href="https://toot.kytta.dev/?text={{ title | urlencode }}%0A{{ meta.url }}{{ page.url }}" target="_blank"
           rel="noopener noreferrer">
           Mastodon
         </a>
       </li>
-      <li>
-        <button id="copy-link" data-url="{{ meta.url }}{{ page.url }}"
-          class="text-brand-red-500 underline hover:no-underline">
-          <span id="copy-text">Copiar link</span>
-        </button>
-      </li>
     </ul>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const copyButton = document.getElementById('copy-link');
-
-      if (!copyButton) return;
-
-      copyButton.addEventListener('click', async () => {
-        const url = copyButton.dataset.url;
-        const originalText = document.getElementById('copy-text').textContent;
-
-        try {
-          if (navigator.clipboard) {
-            await navigator.clipboard.writeText(url);
-          } else {
-            const textArea = document.createElement('textarea');
-
-            textArea.value = url;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-          }
-
-          const copyText = document.getElementById('copy-text');
-          copyText.textContent = '✓ Copiado!';
-
-          setTimeout(() => {
-            copyText.textContent = originalText;
-          }, 2000);
-        } catch (error) {
-          console.error('Erro ao copiar:', error);
-          alert('Erro ao copiar link');
-        }
-      });
-    });
-  </script>
 </div>

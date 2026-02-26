@@ -6,24 +6,20 @@ description: 'Links de afiliados de produtos e serviços que recomendo.'
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-  <p class="mb-4">{{ description }}</p>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </header>
 
   <div class="prose">
-    <p>Os links de referência são outra forma alternativa de <a href="/support"
-        class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">me apoiar</a> e ganhar
-      recompensas extras.
-      Tudo o que os produtos e serviços aqui apresentados são o que eu mesmo utilizo.</p>
+    <p>Os links de referência são outra forma alternativa de <a href="/support">me apoiar</a> e ganhar
+      recompensas extras. Tudo o que os produtos e serviços aqui apresentados são o que eu mesmo utilizo.</p>
 
     <p>Aqui estão alguns produtos e serviços que utilizo e recomendo:</p>
-
     <ul>
-      <li><a href="https://hostinger.com.br?REFERRALCODE=1BRUNO6688"
-          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" rel="sponsored"
-          target="_blank">Hostinger</a>, uma excelente alternativa de hospedagem.</li>
+      <li><a href="https://hostinger.com.br?REFERRALCODE=1BRUNO6688" rel="sponsored" target="_blank">Hostinger</a>, uma
+        excelente alternativa de hospedagem.</li>
     </ul>
   </div>
-
-  {% include "components/last-update.njk" %}
 </div>

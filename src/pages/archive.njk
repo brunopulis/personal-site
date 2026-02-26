@@ -2,26 +2,29 @@
 layout: base
 permalink: "/archive/"
 title: Arquivo
+description: Todos os post, organizados por data de publicação.
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Arquivo</h1>
-  <p class="mb-4">Arquivo de todos os posts, organizados por ano e mês.</p>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </header>
 
   {% set postsByYear = collections.posts | groupByYear %}
   {% for year, posts in postsByYear %}
-  <section class="mb-8 max-w-none h-feed prose prose-lg">
-    <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-xl">{{ year }}</h2>
+  <section class="region flow">
+    <h2>{{ year }}</h2>
 
     {% set postsByMonth = posts | groupByMonth %}
     {% for month, monthPosts in postsByMonth %}
-    <div class="mb-6">
-      <h3 class="mb-3 font-medium text-brand-red-500 text-2xl capitalize">
-        {{ monthPosts[0].data.pubDate | formatDate("MMMM") }}
-      </h3>
+    <article class="card">
+      <div class="flow">
+        <h3 class="mb-3 font-medium text-brand-red-500 text-2xl capitalize">
+          {{ monthPosts[0].data.pubDate | formatDate("MMMM") }}
+        </h3>
 
-      <div class="space-y-2">
         {% for post in monthPosts %}
         <article class="h-entry">
           <time class="font-mono text-sm dt-published">
@@ -51,16 +54,9 @@ date: Last Modified
         </article>
         {% endfor %}
       </div>
-    </div>
-    {% endfor %}
-  </section>
-  {% endfor %}
-
-  {% if collections.posts.length == 0 %}
-  <div class="py-12 text-center">
-    <p class="text-gray-500 dark:text-gray-400">Nenhum artigo encontrado.</p>
-  </div>
-  {% endif %}
-
-  {% include "components/last-update.njk" %}
+</div>
+</div>
+{% endfor %}
+</section>
+{% endfor %}
 </div>

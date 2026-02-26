@@ -6,18 +6,22 @@ description: "Isenção de responsabilidade sobre o conteudo do meu site."
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-  <p class="mb-4">{{ description }}</p>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </header>
 
-  <div class="prose">
-    <ul class="space-y-4">
+  <article class="flow prose">
+    <ul>
       <li>
-        <strong>Opiniões Pessoais</strong>: Todo o conteúdo reflete apenas as minhas opiniões, não as do meu empregador.
+        <strong>Opiniões Pessoais</strong>: Todo o conteúdo reflete apenas as minhas opiniões, não as do meu
+        empregador.
         Meus pontos de vista evoluem; posts antigos podem não representar meu pensamento atual.
       </li>
       <li>
-        <strong>Conteúdo Técnico</strong>: Os tutoriais descrevem como eu resolvi problemas específicos naquele momento.
+        <strong>Conteúdo Técnico</strong>: Os tutoriais descrevem como eu resolvi problemas específicos naquele
+        momento.
         Não são garantias de "melhores práticas" universais.
       </li>
       <li>
@@ -29,7 +33,5 @@ date: Last Modified
         seus sistemas ou dados decorrentes do uso destas informações. Use por sua conta e risco.
       </li>
     </ul>
-  </div>
-
-  {% include "components/last-update.njk" %}
+  </article>
 </div>

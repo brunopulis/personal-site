@@ -1,43 +1,45 @@
 ---
 layout: base
 title: "Blog"
-description: "Escrevo para organizar ideias, questionar práticas comuns da web e compartilhar aprendizados sobre
-acessibilidade, front-end e pensamento crítico."
+description: "Escrevo para organizar ideias, questionar práticas comuns da web e compartilhar aprendizados sobre acessibilidade, front-end e pensamento crítico."
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 pagination:
   data: collections.posts
   size: 12
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Blog</h1>
-  <p class="mb-4">{{ description }}</p>
-  <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
+<section class="wrapper region">
+  <header class="flow">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
+  </header>
 
-  <ol class="space-y-8 h-feed">
+  <div class="h-feed">
     {% for post in pagination.items %}
-    <li class="py-6 border-brand-gray-500 border-b h-entry">
-      <h2 class="p-name font-bold text-2xl">
-        <a class="text-brand-red-500 hover:text-brand-red-600 text-xl underline u-url" href="{{ post.url }}">{{
+    <article class="prose | region flow h-entry">
+      <h2 class="p-name">
+        <a class="u-url" href="{{ post.url }}">{{
           post.data.title }}</a>
       </h2>
-      <time class="text-sm dt-published" datetime="{{ post.data.pubDate | toISOString }}">
+      <time class="dt-published" datetime="{{ post.data.pubDate | toISOString }}">
         Publicado em: {{ post.data.pubDate | readableDate }}
       </time>
-      <div class="mt-2 p-summary">
+
+      <p class="p-summary">
         {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-      </div>
-      <div class="space-x-2 mt-2 text-sm">
+      </p>
+
+      <div clas="tags__container">
         {% for tag in post.data.tags %}
-        <a class="bg-brand-gray-200 p-category px-2 py-0.5 rounded font-bold text-brand-dark-500"
-          href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        <a class="p-category tags" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
         {% endfor %}
       </div>
-    </li>
+    </article>
     {% endfor %}
-  </ol>
+  </div>
 
   {% if pagination.pages.length > 1 %}
   {% include 'components/pagination.njk' %}
   {% endif %}
-</div>
+</section>

@@ -2,172 +2,119 @@
 layout: base
 permalink: "/explore/"
 title: Mapa do site
-description: Mapa do site
+description: Explore todas as páginas do meu site.
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">
-    <span class="mb-2 text-2xl" aria-hidden="true"></span> {{ title }}
-  </h1>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </header>
 
-  <div class="h-feed">
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Páginas Principais</h2>
-    <ul class="space-y-2 mb-6">
+  <div class="h-feed region flow">
+    <h2>Páginas Principais</h2>
+    <ul>
       <li>
-        <a href="/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🏠</span>
-          Home
-        </a>
+        <span aria-hidden="true">🏠</span>
+        <a href="/">Home</a>
       </li>
       <li>
-        <a href="/blog/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">✍️</span>
-          Blog
-        </a>
+        <span aria-hidden="true">✍️</span>
+        <a href="/blog/">Blog</a>
       </li>
       <li>
-        <a href="/about/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">👋</span>
-          Sobre
-        </a>
-      </li>
-      <li>
-        <a href="/contact/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">💬</span>
-          Contato
-        </a>
+        <span aria-hidden="true">💬</span>
+        <a href="/contact/">Contato</a>
       </li>
     </ul>
 
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Páginas Pessoais</h2>
-    <ul class="space-y-2 mb-6">
+    <h2>Páginas Pessoais</h2>
+    <ul>
       <li>
-        <a href="/uses/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🛠️</span>
-          O que uso
-        </a>
+        <span aria-hidden="true">🧔</span>
+        <a href="/about/">Sobre mim</a>
       </li>
       <li>
-        <a href="/now/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">📍</span>
-          Fazendo agora
-        </a>
+        <span aria-hidden="true">🛠️</span>
+        <a href="/uses/">O que uso</a>
       </li>
       <li>
-        <a href="/gallery/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🗺️</span>
-          Galeria de fotos
-        </a>
+        <span aria-hidden="true">📍</span>
+        <a href="/now/">Fazendo agora</a>
       </li>
       <li>
-        <a href="/support/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">💖</span>
-          Apoie meu trabalho
-        </a>
-      </li>
-      <li>
-        <a href="/notes/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🗒️</span>
-          Notas
-        </a>
-      </li>
-      <li>
-        <a href="/poetry/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🖋️</span>
-          Poemas
-        </a>
+        <span aria-hidden="true">💖</span>
+        <a href="/support/">Apoie meu trabalho</a>
       </li>
     </ul>
 
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Descobertas</h2>
-    <ul class="space-y-2 mb-6">
+    <h2>Descobertas</h2>
+    <ul>
       <li>
-        <a href="/archive/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">📅</span>
-          Arquivo
-        </a>
+        <span aria-hidden="true">📅</span>
+        <a href="/archive/">Arquivo</a>
       </li>
       <li>
-        <a href="/blogroll/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🔗</span>
-          Blogroll
-        </a>
+        <span aria-hidden="true">🔗</span>
+        <a href="/blogroll/">Blogroll</a>
       </li>
       <li>
-        <a href="/subscribe/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">📡</span>
-          Feeds
-        </a>
+        <span aria-hidden="true">🪧</span>
+        <a href="/colophon/">Colophon</a>
       </li>
       <li>
-        <a href="/bookmarks/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🧭</span>
-          Links
-        </a>
+        <span aria-hidden="true">📡</span>
+        <a href="/subscribe/">Feeds</a>
       </li>
       <li>
-        <a href="/bookshelf/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">📚</span>
-          Livros
-        </a>
+        <span aria-hidden="true">🧭</span>
+        <a href="/bookmarks/">Links</a>
       </li>
     </ul>
 
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Meta</h2>
-    <ul class="space-y-2 mb-6">
+    <h2>Coleções</h2>
+    <ul>
       <li>
-        <a href="/style/" class="flex items-center gap-2 hover:text-brand-red-600 dark:hover:text-brand-red-400">
-          <span aria-hidden="true">🎨</span>
-          Guia de Estilo
-        </a>
+        <span aria-hidden="true">📚</span>
+        <a href="/bookshelf/">Livros</a>
       </li>
       <li>
-        <a href="/accessibility/"
-          class="flex items-center gap-2 hover:text-brand-orange-600 dark:hover:text-brand-orange-400">
-          <span aria-hidden="true">♿</span>
-          Acessibilidade
-        </a>
+        <span aria-hidden="true">🎬</span>
+        <a href="/media/">Mídias</a>
+      </li>
+      <li>
+        <span aria-hidden="true">🎮</span>
+        <a href="/games/">Jogos</a>
+      </li>
+      <li>
+        <span aria-hidden="true">📷</span>
+        <a href="/gallery/">Galeria de Fotos</a>
+      </li>
+      <li>
+        <span aria-hidden="true">📝</span>
+        <a href="/notas/">Notas</a>
+      </li>
+      <li>
+        <span aria-hidden="true">🖋️</span>
+        <a href="/poetry/">Poemas</a>
       </li>
     </ul>
 
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Trabalho</h2>
+    <h2>Trabalho</h2>
     <ul class="space-y-2">
       <li>
-        <a href="/portfolio/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🧩</span>
-          Portfolio
-        </a>
+        <span aria-hidden="true">🧩</span>
+        <a href="/portfolio/">Portfólio</a>
       </li>
       <li>
-        <a href="/projects/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">🛠️</span>
-          Projetos
-        </a>
+        <span aria-hidden="true">🛠️</span>
+        <a href="/projects/">Projetos</a>
       </li>
       <li>
-        <a href="/resume/" class="flex items-center gap-2 hover:text-brand-red-600">
-          <span aria-hidden="true">📄</span>
-          Currículo
-        </a>
+        <span aria-hidden="true">📄</span>
+        <a href="/resume/">Currículo</a>
       </li>
     </ul>
   </div>
-
-  <div class="mt-12">
-    <h2 class="mb-4 font-bold text-2xl">Perdido?</h2>
-    <p>
-      Este site foi construído com <a href="https://11ty.dev" target="_blank" rel="noopener noreferrer"
-        class="hover:underline">
-        Eleventy
-        <sup class="inline-bloc ml-1">{% lucide "external-link", { class: "inline w-4 h-4" }
-          %}</sup>
-      </a>
-      e segue os princípios da <a href="https://indieweb.org" target="_blank" rel="noopener noreferrer"
-        class="hover:underline">IndieWeb <sup class="inline-bloc ml-1">{% lucide "external-link",
-          { class: "inline w-4 h-4" } %}</sup></a>.
-    </p>
-  </div>
-
-  {% include "components/last-update.njk" %}
 </div>
