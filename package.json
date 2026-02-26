@@ -17,7 +17,8 @@
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format --write .",
-    "check": "biome check --write ."
+    "check": "biome check --write .",
+    "test": "cross-env NODE_OPTIONS='--no-webstorage --experimental-vm-modules' jest"
   },
   "keywords": [],
   "repository": {
