@@ -20,7 +20,7 @@ performance e usabilidade."
     <ul class="grid" data-layout="50-50" role="list">
       {% for project in projects %}
       <li class="card">
-        <img alt="{{ project.imageAlt or project.title }}" class="w-full h-full object-cover" src="{{ project.image }}">
+        <img alt="{{ project.imageAlt or project.title }}" src="{{ project.image }}">
         <div class="flow">
           <h2>
             <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
@@ -28,17 +28,13 @@ performance e usabilidade."
           <p>
             {{ project.description }}
           </p>
-          <a href="{{ project.url or project.links.demo }}">
-            visualizar projeto
-            <span class="visually-hidden">{{ project.title }}</span>
-          </a>
         </div>
       </li>
       {% endfor %}
     </ul>
   </div>
 
-  <article class="card">
+  <aside class="card">
     <div class="flow">
       <h2>Vamos construir algo juntos?</h2>
       <p>Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de
@@ -52,5 +48,5 @@ performance e usabilidade."
         </div>
       </div>
     </div>
-  </article>
+  </aside>
 </div>

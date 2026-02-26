@@ -13,28 +13,41 @@ pagination:
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
     <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
+    <nav class="interstitial | flow box" aria-label="Navegação rápida">
+      <p class="font-bold text-step-0 text-brand">Explore também:</p>
+      <ul class="cluster" role="list" style="--gutter: var(--space-s)">
+        <li><a href="/poemas/">Poemas</a></li>
+        <li><a href="/notas/">Notas</a></li>
+        <li><a href="/now/">O que estou fazendo agora</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="h-feed">
+  <div class="h-feed flow region" style="--flow-space: var(--space-xl)">
     {% for post in pagination.items %}
-    <article class="prose | region flow h-entry">
-      <h2 class="p-name">
-        <a class="u-url" href="{{ post.url }}">{{
-          post.data.title }}</a>
-      </h2>
-      <time class="dt-published" datetime="{{ post.data.pubDate | toISOString }}">
-        Publicado em: {{ post.data.pubDate | readableDate }}
-      </time>
+    <article class="{% if loop.first %}featured-post{% else %}standard-post{% endif %} | flow h-entry">
+      <header class="flow">
+        <h2 class="p-name">
+          <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+        </h2>
+        <time class="dt-published text-step--1" datetime="{{ post.data.pubDate | toISOString }}">
+          {{ post.data.pubDate | readableDate }}
+        </time>
+      </header>
 
-      <p class="p-summary">
-        {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-      </p>
+      <div class="prose">
+        <p class="p-summary">
+          {{ post.data.description or (post.templateContent | striptags | truncate(200)) }}
+        </p>
+      </div>
 
-      <div clas="tags__container">
+      <div class="tags-list | cluster" role="list">
         {% for tag in post.data.tags %}
-        <a class="p-category tags" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
         {% endfor %}
       </div>
+      
+      {% if not loop.last %}<hr class="post-separator">{% endif %}
     </article>
     {% endfor %}
   </div>
