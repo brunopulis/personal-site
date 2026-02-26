@@ -1,0 +1,10 @@
+/*
+BOX
+Apply padding and background to contain content
+*/
+.box {
+  padding: var(--box-padding, var(--space-s-m));
+  background-color: var(--color-bg-mod-1);
+  border: 1px solid var(--color-bg-mod-2);
+  border-radius: var(--border-radius);
+}
