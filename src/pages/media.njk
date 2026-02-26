@@ -1,70 +1,66 @@
 ---
-layout: base
+layout: page
 title: "Meus Filmes e Séries"
 description: "Uma coleção dos meus favoritos, os que estou assistindo e minhas opiniões"
 permalink: "{% if pagination.pageNumber > 0 %}/media/{{ pagination.pageNumber + 1 }}/{% else %}/media/{% endif %}"
-date: Last Modified
 pagination:
   data: collections.medias
   size: 12
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-  <p class="mb-4">{{ description }}</p>
+<header class="flow">
+  <h1 class="p-name">{{ title }}</h1>
+  <p>{{ description }}</p>
+</header>
 
-  {% set moviesByYear = collections.medias | groupBy("watchedYear") %}
-  {% for year in moviesByYear | sortKeys %}
-  <section class="flow" data-year="{{ year }}">
-    <div class="flex items-center justify-content-between mb-6">
-      <h2 class="font-bold text-brand-red-500 text-2xl">Visto em {{ year }}</h2>
-      <p class="text-sm">{{ moviesByYear[year] | length }} {{ "filmes" if moviesByYear[year] | length > 1 else "filme"
-        }}
-      </p>
-    </div>
+{% set moviesByYear = collections.medias | groupBy("watchedYear") %}
+{% for year in moviesByYear | sortKeys %}
+<section class="region flow" data-year="{{ year }}">
+  <div>
+    <h2>Visto em {{ year }}</h2>
+    <p>{{ moviesByYear[year] | length }} {{ "filmes" if moviesByYear[year] | length > 1 else "filme" }}
+    </p>
+  </div>
 
-    <ul class="gap-6 grid grid-cols-1 md:grid-cols-4" role="list">
-      {% for movie in moviesByYear[year] | sort(attribute="data.date") | reverse %}
-      <li class="space-y-6">
-        <article>
-          {% if movie.data.poster %}
-          <img src="{{ movie.data.poster }}" alt="{{ movie.data.title }}"
-            class="w-full object-cover transition-transform duration-500" height="270" loading="lazy"
-            decoding="async" />
-          {% endif %}
+  <ul class="grid" role="list">
+    {% for movie in moviesByYear[year] | sort(attribute="data.date") | reverse %}
+    <li>
+      <article class="flow card">
+        {% if movie.data.poster %}
+        <img src="{{ movie.data.poster }}" alt="{{ movie.data.title }}"
+          class="w-full object-cover transition-transform duration-500" height="270" loading="lazy" decoding="async" />
+        {% endif %}
 
-          <div class="space-y-6">
-            <h3 class="mt-6 font-bold text-brand-red-500">
-              {% if movie.data.url %}
-              <a href="{{ movie.data.url }}" class="font-bold text-brand-red-500" target="_blank"
-                rel="noopener noreferrer">
-                {{ movie.data.title }}
-              </a>
-              {% else %}
+        <div class="flow">
+          <h3 class="mt-6 font-bold text-brand-red-500">
+            {% if movie.data.url %}
+            <a href="{{ movie.data.url }}" class="font-bold text-brand-red-500" target="_blank"
+              rel="noopener noreferrer">
               {{ movie.data.title }}
-              {% endif %}
-            </h3>
-            {% if movie.data.subtitle %}
-            <p class="text-sm">{{ movie.data.subtitle }}</p>
+            </a>
+            {% else %}
+            {{ movie.data.title }}
             {% endif %}
-            {% if movie.data.description %}
-            <p class="text-sm">{{ movie.data.description }}</p>
-            {% endif %}
-            {% if movie.data.director %}
-            <p class="font-semibold text-brand-red-500">{{ movie.data.director }}</p>
-            {% endif %}
-          </div>
-        </article>
-      </li>
-      {% endfor %}
-    </ul>
-    <hr class="mb-12 py-12 border-brand-gray-500" />
-  </section>
-  {% endfor %}
+          </h3>
+          {% if movie.data.subtitle %}
+          <p class="text-sm">{{ movie.data.subtitle }}</p>
+          {% endif %}
+          {% if movie.data.description %}
+          <p class="text-sm">{{ movie.data.description }}</p>
+          {% endif %}
+          {% if movie.data.director %}
+          <p class="font-semibold text-brand-red-500">{{ movie.data.director }}</p>
+          {% endif %}
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  <hr />
+</section>
+{% endfor %}
 
-  {% if pagination.pages.length > 1 %}
-  {% include 'components/pagination.njk' %}
-  {% endif %}
-
-  {% include "components/last-update.njk" %}
+{% if pagination.pages.length > 1 %}
+{% include 'components/pagination.njk' %}
+{% endif %}
 </div>
