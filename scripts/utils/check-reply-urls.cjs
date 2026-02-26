@@ -1,14 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
-const http = require('http');
+const fs = require('node:fs');
+const path = require('node:path');
+const https = require('node:https');
+const http = require('node:http');
 
 const replyDir = './src/content/reply';
 const filesToDelete = [];
 
 // Função para extrair URLs de um arquivo markdown
 function extractUrls(content) {
-  const urlRegex = /https?:\/\/[^\s\)]+/g;
+  const urlRegex = /https?:\/\/[^\s)]+/g;
   return content.match(urlRegex) || [];
 }
 
@@ -21,8 +21,8 @@ function checkUrl(url) {
       method: 'HEAD',
       timeout: 10000,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-      }
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      },
     };
 
     const req = protocol.request(url, options, res => {
@@ -60,7 +60,7 @@ async function processFile(filePath) {
 
     if (statusCode === 404 || statusCode === 403) {
       console.log(`    ❌ ${statusCode} - URL inacessível!`);
-      return {file: filePath, url, statusCode};
+      return { file: filePath, url, statusCode };
     } else if (statusCode) {
       console.log(`    ✓ ${statusCode}`);
     } else {
@@ -103,9 +103,11 @@ async function walkDir(dir) {
   console.log('='.repeat(60));
 
   if (filesToDelete.length > 0) {
-    console.log(`\n❌ Encontrados ${filesToDelete.length} arquivo(s) com URLs inacessíveis (403/404):\n`);
+    console.log(
+      `\n❌ Encontrados ${filesToDelete.length} arquivo(s) com URLs inacessíveis (403/404):\n`
+    );
 
-    filesToDelete.forEach(({file, url, statusCode}) => {
+    filesToDelete.forEach(({ file, url, statusCode }) => {
       console.log(`  ${file}`);
       console.log(`    URL: ${url}`);
       console.log(`    Status: ${statusCode}\n`);

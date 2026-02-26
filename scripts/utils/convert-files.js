@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,7 +22,10 @@ function convertMDXtoMD(content) {
 
   // Converte componentes customizados em markdown
   // Ex: <Image /> -> ![image](image.jpg)
-  markdown = markdown.replace(/<Image\s+src=["']([^"']+)["']\s+alt=["']([^"']+)["']\s*\/>/g, '![$2]($1)');
+  markdown = markdown.replace(
+    /<Image\s+src=["']([^"']+)["']\s+alt=["']([^"']+)["']\s*\/>/g,
+    '![$2]($1)'
+  );
 
   // Converte outros componentes vazios em nada
   markdown = markdown.replace(/<[A-Z][^/>]*\/>/g, '');
