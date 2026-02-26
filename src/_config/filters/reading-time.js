@@ -1,14 +1,14 @@
 /**
- * 
+ *
  * @author Bruno Pulis
- * @param {*} text 
- * @returns 
+ * @param {*} text
+ * @returns
  */
 export const readingTime = text => {
-  let content = new String(text);
+  const content = new String(text);
   const speed = 230; // reading speed in words per minute
 
-  let re = /(&lt;.*?&gt;)|(<.*?>)/gi;
+  const re = /(&lt;.*?&gt;)|(<.*?>)/gi;
   let plain = content;
   let previous;
   do {
@@ -18,8 +18,8 @@ export const readingTime = text => {
 
   plain = plain.replace(/\n+|'s/g, ' ');
 
-  let words = plain.split(' ');
-  let count = words.length;
+  const words = plain.split(' ');
+  const count = words.length;
 
   const calculatedReadingTime = Math.round(count / speed);
   return calculatedReadingTime;

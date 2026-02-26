@@ -15,7 +15,7 @@ export const webmentionisOwn = webmention => {
     'https://www.brunopulis.com',
     'https://bsky.app/profile/brunopulis.com',
     'https://mastodon.social/@brunopulis',
-    'https://www.threads.com/@brunopulis'
+    'https://www.threads.com/@brunopulis',
   ];
   const authorUrl = webmention.author ? webmention.author.url : false;
   return authorUrl && urls.includes(authorUrl);
@@ -23,10 +23,10 @@ export const webmentionisOwn = webmention => {
 
 export const webmentionSort = mentions => {
   return mentions.sort((a, b) => {
-    if (a['published'] < b['published']) {
+    if (a.published < b.published) {
       return -1;
     }
-    if (a['published'] > b['published']) {
+    if (a.published > b.published) {
       return 1;
     }
     return 0;

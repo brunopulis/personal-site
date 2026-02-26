@@ -1,4 +1,4 @@
-import {markdownLib} from '../plugins/markdown.js';
+import { markdownLib } from '../plugins/markdown.js';
 
 export const asideReadmore = children => {
   if (!children) {

@@ -1,28 +1,34 @@
-import {categoryFilter} from './filters/category-filter.js';
-import {base64Format} from './filters/base64-format.js';
-import {toISOString, toRfc822Date, formatDate, readableDate, sortByDate, relativeDate} from './filters/dates.js';
-import {streamIcon, streamTypeLabel} from './filters/stream-icon.js';
-
-import {groupBy, groupByYear, groupByMonth, groupByYearMonth} from './filters/groupBy.js';
-import {sortKeys} from './filters/sort-keys.js';
-import {getRelatedServices} from './filters/getRelatedServices.js';
-import {getServiceById} from './filters/getServiceById.js';
-import {serviceUrl} from './filters/serviceUrl.js';
-import { limit } from './filters/limit.js';
-import {markdownFormat} from './filters/markdown-format.js';
-import {readingTime} from './filters/reading-time.js';
-import {shuffle} from './filters/shuffle.js';
-import {sortAlphabetically} from './filters/sort-alphabetic.js';
-import {splitStrings} from './filters/split-strings.js';
-import {splitlines} from './filters/splitlines.js';
-import {striptags} from './filters/striptags.js';
-import {slugifyString} from './filters/slugify.js';
+import { base64Format } from './filters/base64-format.js';
+import { categoryFilter } from './filters/category-filter.js';
 import {
-  webmentionGetForUrl,
-  webmentionSize,
+  formatDate,
+  readableDate,
+  relativeDate,
+  sortByDate,
+  toISOString,
+  toRfc822Date,
+} from './filters/dates.js';
+import { getRelatedServices } from './filters/getRelatedServices.js';
+import { getServiceById } from './filters/getServiceById.js';
+import { groupBy, groupByMonth, groupByYear, groupByYearMonth } from './filters/groupBy.js';
+import { limit } from './filters/limit.js';
+import { markdownFormat } from './filters/markdown-format.js';
+import { readingTime } from './filters/reading-time.js';
+import { serviceUrl } from './filters/serviceUrl.js';
+import { shuffle } from './filters/shuffle.js';
+import { slugifyString } from './filters/slugify.js';
+import { sortAlphabetically } from './filters/sort-alphabetic.js';
+import { sortKeys } from './filters/sort-keys.js';
+import { splitStrings } from './filters/split-strings.js';
+import { splitlines } from './filters/splitlines.js';
+import { streamIcon, streamTypeLabel } from './filters/stream-icon.js';
+import { striptags } from './filters/striptags.js';
+import {
   webmentionByType,
+  webmentionGetForUrl,
   webmentionisOwn,
-  webmentionSort
+  webmentionSize,
+  webmentionSort,
 } from './filters/webmentions.js';
 
 export {
@@ -58,5 +64,5 @@ export {
   webmentionByType,
   webmentionisOwn,
   webmentionSort,
-  markdownFormat as markdownify
+  markdownFormat as markdownify,
 };

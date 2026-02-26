@@ -1,7 +1,7 @@
 import * as fs from 'node:fs/promises';
-import {resolve, join} from 'node:path';
+import { join, resolve } from 'node:path';
 
-export async function tableSawWrapper({dir}) {
+export async function tableSawWrapper({ dir }) {
   const outputDir = resolve(dir.output);
   const breakpoint = '(max-width: 41.875em)';
 
@@ -26,7 +26,7 @@ export async function tableSawWrapper({dir}) {
 }
 
 async function readDirRecursive(dir) {
-  const entries = await fs.readdir(dir, {withFileTypes: true});
+  const entries = await fs.readdir(dir, { withFileTypes: true });
   const files = await Promise.all(
     entries.map(entry => {
       const res = join(dir, entry.name);

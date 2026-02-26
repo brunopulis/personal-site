@@ -1,5 +1,5 @@
-import Image from '@11ty/eleventy-img';
 import path from 'node:path';
+import Image from '@11ty/eleventy-img';
 
 const stringifyAttributes = attributeMap => {
   return Object.entries(attributeMap)
@@ -28,7 +28,7 @@ const processImage = async options => {
     widths = [650, 960, 1400],
     sizes = 'auto',
     formats = ['webp', 'jpeg', 'png'],
-    simple = false // Novo parâmetro para images simples (badges)
+    simple = false, // Novo parâmetro para images simples (badges)
   } = options;
 
   // Prepend "./src" if not present
@@ -40,19 +40,19 @@ const processImage = async options => {
   if (simple || width) {
     const srcExtension = path.extname(src).toLowerCase();
     const isGif = srcExtension === '.gif';
-    
+
     // Para GIFs, não processar - apenas retornar o caminho direto
     if (isGif) {
       const cleanSrc = src.replace('./src/', '/');
-      
+
       const imageAttributes = stringifyAttributes({
-        'src': cleanSrc,
-        ...(width && {'width': width}),
-        ...(height && {'height': height}),
+        src: cleanSrc,
+        ...(width && { width: width }),
+        ...(height && { height: height }),
         alt,
         loading,
-        'decoding': loading === 'eager' ? 'sync' : 'async',
-        ...(imageClass && {class: imageClass})
+        decoding: loading === 'eager' ? 'sync' : 'async',
+        ...(imageClass && { class: imageClass }),
       });
 
       return `<img ${imageAttributes}>`;
@@ -60,33 +60,33 @@ const processImage = async options => {
 
     // Para outras imagens, processar normalmente
     if (width) {
-      widths = [parseInt(width)];
+      widths = [parseInt(width, 10)];
     }
-    
+
     const metadata = await Image(src, {
-      widths: [parseInt(width || widths[0])],
+      widths: [parseInt(width || widths[0], 10)],
       formats: ['jpeg'],
       urlPath: '/assets/images/',
       outputDir: './_site/assets/images/',
-      filenameFormat: (id, src, width, format, options) => {
+      filenameFormat: (_id, src, width, format, _options) => {
         const extension = path.extname(src);
         const name = path.basename(src, extension);
         return `${name}-${width}w.${format}`;
-      }
+      },
     });
 
     const lowsrc = metadata.jpeg || Object.values(metadata)[0];
     const lowsrcEntry = lowsrc[lowsrc.length - 1];
 
     const imageAttributes = stringifyAttributes({
-      'src': lowsrcEntry.url,
-      'width': lowsrcEntry.width,
-      'height': lowsrcEntry.height,
+      src: lowsrcEntry.url,
+      width: lowsrcEntry.width,
+      height: lowsrcEntry.height,
       alt,
       loading,
-      'decoding': loading === 'eager' ? 'sync' : 'async',
-      ...(imageClass && {class: imageClass}),
-      'eleventy:ignore': ''
+      decoding: loading === 'eager' ? 'sync' : 'async',
+      ...(imageClass && { class: imageClass }),
+      'eleventy:ignore': '',
     });
 
     const imgElement = `<img ${imageAttributes}>`;
@@ -106,11 +106,11 @@ const processImage = async options => {
     height,
     urlPath: '/assets/images/',
     outputDir: './_site/assets/images/',
-    filenameFormat: (id, src, width, format, options) => {
+    filenameFormat: (_id, src, width, format, _options) => {
       const extension = path.extname(src);
       const name = path.basename(src, extension);
       return `${name}-${width}w.${format}`;
-    }
+    },
   });
 
   const lowsrc = metadata.jpeg || metadata.png || metadata.gif || Object.values(metadata)[0];
@@ -125,18 +125,18 @@ const processImage = async options => {
     .join('\n');
 
   const imageAttributes = stringifyAttributes({
-    'src': lowsrcEntry.url,
-    'width': lowsrcEntry.width,
-    'height': lowsrcEntry.height,
+    src: lowsrcEntry.url,
+    width: lowsrcEntry.width,
+    height: lowsrcEntry.height,
     alt,
     loading,
-    'decoding': loading === 'eager' ? 'sync' : 'async',
-    ...(imageClass && {class: imageClass}),
-    'eleventy:ignore': ''
+    decoding: loading === 'eager' ? 'sync' : 'async',
+    ...(imageClass && { class: imageClass }),
+    'eleventy:ignore': '',
   });
 
   const pictureElement = `<picture> ${imageSources}<img ${imageAttributes}></picture>`;
-  const imgElement = `<img ${imageAttributes}>`;
+  const _imgElement = `<img ${imageAttributes}>`;
 
   return caption
     ? `<figure slot="image"${
@@ -181,7 +181,7 @@ export const image = async (
     widths,
     sizes,
     formats,
-    simple
+    simple,
   });
 };
 
@@ -211,6 +211,6 @@ export const badge = async (src, alt) => {
     loading: 'eager',
     width: '88',
     height: '31',
-    simple: true
+    simple: true,
   });
 };

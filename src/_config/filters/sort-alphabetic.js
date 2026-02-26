@@ -15,7 +15,7 @@ export const sortAlphabetically = (array, property = 'title') => {
   }
 
   return array
-    .filter(item => item && item[property])
+    .filter(item => item?.[property])
     .sort((a, b) => {
       const aValue = String(a[property]).toLowerCase().trim();
       const bValue = String(b[property]).toLowerCase().trim();

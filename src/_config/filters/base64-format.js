@@ -5,7 +5,7 @@ export const base64Format = async imagePath => {
     const mimeTypes = {
       jpg: 'image/jpeg',
       jpeg: 'image/jpeg',
-      png: 'image/png'
+      png: 'image/png',
     };
 
     const ext = imagePath.split('.').pop().toLowerCase();
