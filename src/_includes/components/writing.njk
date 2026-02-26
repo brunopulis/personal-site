@@ -1,45 +1,49 @@
-<section aria-labelledby="posts-title">
-  <h2 id="post-title">Últimos artigos</h2>
-  <p>Escrevo para organizar ideias, compartilhar aprendizados e questionar práticas comuns da web.</p>
+<section class="wrapper" aria-labelledby="posts-title">
+  <header class="region | flow">
+    <h2 id="post-title">Últimos artigos</h2>
+    <p>Escrevo para organizar ideias, compartilhar aprendizados e questionar práticas comuns da web.</p>
+  </header>
 
   {% set posts = collections.posts %}
   {% if (posts | length) == 0 %}
-    {% set posts = collections.searchIndex | default([]) %}
+  {% set posts = collections.searchIndex | default([]) %}
   {% endif %}
 
   {% if posts | length > 0 %}
-    <div class="grid">
-      {% for post in posts.slice(0, 3) %}
-        {% set title = post.data.title %}
-        {% set dateVal = post.data.pubDate %}
-        {% set desc = post.data.description | striptags | truncate(160) %}
-        {% set tags = post.data.tags %}
-        <article class="h-entry">
-          <h3 class="mt-2 font-bold group-hover:text-primary text-2xl transition-colors cursor-pointer">
-            <a href="{{ post.url }}" class="u-url">{{ title }}</a>
-          </h3>
-          {% if dateVal %}
-            <time class="dt-published" datetime="{{ dateVal | toISOString }}">
-              {{ dateVal | readableDate }}
-            </time>
-          {% endif %}
+  <div class="grid" data-layout="33x3">
+    {% for post in posts.slice(0, 3) %}
+    {% set title = post.data.title %}
+    {% set dateVal = post.data.pubDate %}
+    {% set desc = post.data.description | striptags | truncate(160) %}
+    {% set tags = post.data.tags %}
+    <article class="card h-entry">
+      <div class="flow">
+        <h3>
+          <a href="{{ post.url }}" class="u-url">{{ title }}</a>
+        </h3>
+        <time class="dt-published" datetime="{{ dateVal | toISOString }}">
+          {{ dateVal | readableDate }}
+        </time>
 
-          {% if desc %}
-            <p>{{ desc }}</p>
-          {% endif %}
-          {% if tags %}
-            <div class="mt-4">
-              {% for tag in tags %}
-                <span class="tags">#{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </div>
+        {% if desc %}
+        <p>{{ desc }}</p>
+        {% endif %}
+        {% if tags %}
+        <div>
+          {% for tag in tags %}
+          <a href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
   {% endif %}
 
-  <a href="/blog">
-    ver todos os artigos {% lucide "chevron-right", { class: "w-4 h-4" } %}
-  </a>
+  <div class="region | flow">
+    <a href="/blog" class="button">
+      ver todos os artigos {% lucide "chevron-right" %}
+    </a>
+  </div>
 </section>

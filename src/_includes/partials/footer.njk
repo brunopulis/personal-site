@@ -1,94 +1,68 @@
 <footer>
-  <div class="container">
-    <div class="grid">
-      <div>
-        <h3>Técnico</h3>
-        <ul>
-          <li><a href="https://11ty.dev" target="_blank" rel="noopener">Feito com Eleventy</a></li>
-          <li><a href="/style/">Guia de estilo</a></li>
-          <li><a href="https://github.com/brunopulis/brunopulis/edit/main/src/sitemap.njk" target="_blank"
-              rel="noopener">Editar esta página</a></li>
-          <li><a href="https://github.com/brunopulis/brunopulis/blob/main/GUIDE.md" target="_blank" rel="noopener">Guia
-              do projeto</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Navegação</h3>
-        <ul>
-          <li><a href="/sitemap/">Mapa do site</a></li>
-          <li><a href="/archive/">Arquivo</a></li>
-          <li><a href="/categories/">Categorias</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Recursos</h3>
-        <ul>
-          <li><a href="/bookmarks">Links favoritos</a></li>
-          <li><a href="/bookshelf/">Biblioteca</a></li>
-          <li><a href="/media/">Filmes e séries</a></li>
-          <li><a href="/notes/">Notas pessoais</a></li>
-        </ul>
-      </div>
+  <div class="wrapper">
+    <div class="region flow" aria-label="Políticas do site">
+      <ul class="cluster text-left" role="list">
+        {% for item in navigation.secondary %}
+        <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
 
-    <div>
-      <div>
-        <p>2012 Bruno Pulis — Feito com ❤️ em BH.</p>
-      </div>
-      <div>
-        <nav aria-label="Políticas do site">
-          <ul>
-            {% for item in navigation.secondary %}
-            <li><a href="{{ item.url }}">{{ item.text }}</a></li>
-            {% endfor %}
-          </ul>
-        </nav>
+    <div class="repel">
+      <p>2012 Bruno Pulis — Feito com ❤️ em BH.</p>
+      <nav>
+        <ul class="cluster" role="list">
+          <li>
+            <a href="https://linkedin.com/in/brunopulis" target="_blank" rel="noopener noreferrer">
+              {% lucide "linkedin", { "class": "w-4 h-4" } %}
+              <span class="visually-hidden">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:brunopulis@protonmail.com" target="_blank">
+              {% lucide "mail" %}
+              <span class="visually-hidden">Email</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://mastodon.social/@brunopulis" target="_blank">
+              {% svg "platform/mastodon", "", "" %}
+              <span class="visually-hidden">Mastodon</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/brunopulis.com" target="_blank" rel="me noopener noreferrer">
+              {% svg "platform/bluesky", "", "w-4 h-4" %}
+              <span class="visually-hidden">Bluesky</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://threads.net/@brunopulis" target="_blank" rel="noopener noreferrer">
+              {% lucide "spool" %}
+              <span class="visually-hidden">Threads</span>
+            </a>
+          </li>
 
-        <nav>
-          <ul>
-            <li>
-              <a href="https://mastodon.social/@brunopulis" target="_blank">
-                {% svg "platform/mastodon", "", "" %}
-                <span class="skip-to-content">Mastodon</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/brunopulis.com" target="_blank" rel="me noopener noreferrer">
-                {% svg "platform/bluesky", "", "w-4 h-4" %}
-                <span class="skip-to-content">Bluesky</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/brunopulis" target="_blank" rel="noopener noreferrer">
-                {% lucide "linkedin", { "class": "w-4 h-4" } %}
-                <span class="skip-to-content">LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a href="/feeds">
-                {% lucide "rss", { "class": "w-4 h-4" } %}
-                <span class="skip-to-content">RSS</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
 
-    <div class="webring">
-      <p>
-        Membro do <a href="https://a11y-webring.club" class="underline">a11y-webring.club</a>
-      </p>
-      <nav aria-label="Navegação do webring">
-        <ul>
-          <li><a href="https://a11y-webring.club/prev">anterior</a></li>
-          <li><a href="https://a11y-webring.club/random">aleatório</a></li>
-          <li><a href="https://a11y-webring.club/next">próximo</a></li>
+          <li>
+            <a href="/feeds">
+              {% lucide "rss", { "class": "w-4 h-4" } %}
+              <span class="visually-hidden">RSS</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
-  </div>
+
+    <div class="repel flow">
+      <p>
+        Membro do <a href="https://a11y-webring.club" class="underline">a11y-webring.club</a>
+      </p>
+      <ul class="cluster" role="list">
+        <li><a href="https://a11y-webring.club/prev">anterior</a></li>
+        <li><a href="https://a11y-webring.club/random">aleatório</a></li>
+        <li><a href="https://a11y-webring.club/next">próximo</a></li>
+      </ul>
+    </div>
   </div>
 </footer>

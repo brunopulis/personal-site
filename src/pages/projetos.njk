@@ -8,59 +8,49 @@ performance e usabilidade."
 ---
 
 {% set projects = portfolio.projects %}
-{% set categories = portfolio.categories %}
 {% set stats = portfolio.stats %}
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-  <p class="mb-6">{{ description }}</p>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </header>
 
-  <section class="gap-6 grid md:grid-cols-3">
-    {% for project in projects %}
-    <article class="group bg-white hover:shadow-xl border border-stone-200 rounded-2xl overflow-hidden transition-all">
-      <figure
-        class="bg-stone-100 dark:bg-stone-900 aspect-video overflow-hidden">
-        <img alt="{{ project.imageAlt or project.title }}"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="{{ project.image }}">
-      </figure>
-      <div class="p-8">
-        <h2 class="mb-3 font-display font-bold text-2xl">
-          <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
-        </h2>
-        <p class="mb-6 text-stone-600">
-          {{ project.description }}
-        </p>
-        <div class="flex flex-wrap gap-2 mb-8">
-          {% for tech in project.technologies %}
-            <span class="bg-brand-red-500/10 px-3 py-1 rounded font-bold text-brand-red-500 text-xs uppercase">
-              {{ tech }}
-            </span>
-          {% endfor %}
+  <div class="h-feed region flow">
+    <ul class="grid" data-layout="50-50" role="list">
+      {% for project in projects %}
+      <li class="card">
+        <img alt="{{ project.imageAlt or project.title }}" class="w-full h-full object-cover" src="{{ project.image }}">
+        <div class="flow">
+          <h2>
+            <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
+          </h2>
+          <p>
+            {{ project.description }}
+          </p>
+          <a href="{{ project.url or project.links.demo }}">
+            visualizar projeto
+            <span class="visually-hidden">{{ project.title }}</span>
+          </a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <article class="card">
+    <div class="flow">
+      <h2>Vamos construir algo juntos?</h2>
+      <p>Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de
+        software e design.
+      </p>
+
+      <div class="cluster | repel">
+        <div>
+          <a href="/contact">Entre em contato</a>
+          <a href="/resume">Veja meu currículo</a>
         </div>
       </div>
-    </article>
-    {% endfor %}
-  </section>
-
-  <section class="bg-brand-gray-200 my-12 p-8 px-6 border border-brand-gray-200 rounded">
-    <h2 class="mb-6 font-bold text-2xl">Vamos construir algo juntos?</h2>
-    <p class="mb-4">Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de
-      software e design.
-    </p>
-
-    <div class="flex sm:flex-row flex-col gap-6 pt-4">
-      <a class="bg-brand-red-500 hover:bg-brand-red-600 px-8 py-4 rounded-xl w-full sm:w-auto font-bold text-white text-lg hover:no-underline transition-all hover:-translate-y-1 transform"
-        href="/contact">
-        Entre em contato
-      </a>
-      <a class="group flex items-center gap-2 font-semibold text-primary hover:text-brand-red-500 text-lg hover:underline"
-        href="/resume">
-        Veja meu currículo {% lucide "chevron-right", { class: "transition-transform group-hover:translate-x-1 w-4 h-4"
-        }
-        %}
-      </a>
     </div>
-  </section>
-
-  {% include "components/last-update.njk" %}
+  </article>
 </div>

@@ -1,0 +1,82 @@
+/*
+Button styles
+
+Globally style the button element, submit, button and reset input.
+Include the .button class for styling <a> tags as buttons. 
+*/
+button,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  /* Configure focus color from global focus */
+  --focus-color: var(--color-brand);
+
+  background-color: var(--color-brand);
+  border: solid 0.1rem var(--color-brand);
+  border-radius: var(--border-radius);
+  color: var(--color-bg);
+  cursor: pointer;
+  padding: var(--space-3xs) var(--space-2xs);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="button"]:hover
+input[type="button"]:focus {
+  filter: brightness(1.2);
+  transform: translateY(-2px)
+}
+
+button:disabled,
+/* 
+For disabled link styles, used with role=link
+
+@link https://www.scottohara.me/blog/2021/05/28/disabled-links.html 
+*/
+.button[aria-disabled="true"],
+input[type="submit"]:disabled,
+input[type="reset"]:disabled, 
+input[type="button"]:disabled {
+  background-color: var(--color-bg-mod-2);
+  border: solid 0.1rem var(--color-bg-mod-2);
+  color: var(--color-text-mod-2);
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+/* 
+EXCEPTIONS
+
+Offer a variant button style
+
+@link https://cube.fyi/exception.html 
+*/
+button[data-variant='outline'],
+.button[data-variant='outline'],
+input[type="submit"][data-variant='outline'],
+input[type="reset"][data-variant='outline'],
+input[type="button"][data-variant='outline'] {
+  color: var(--color-brand);
+  background: var(--color-bg);
+  border: solid 0.1rem var(--color-brand);
+}
+
+button[data-variant='outline']:hover,
+.button[data-variant='outline']:hover,
+input[type="submit"][data-variant='outline']:hover,
+input[type="reset"][data-variant='outline']:hover,
+input[type="button"][data-variant='outline']:hover {
+  filter: brightness(1.2);
+  border: solid 0.1rem var(--color-brand);
+}

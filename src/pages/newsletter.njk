@@ -10,35 +10,32 @@ pagination:
   size: 12
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-<h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-<p class="mb-4">{{ description }}</p>
-<a class="hidden u-url" href="{{ site.url }}/newsletter/"></a>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
+    <p class="mb-4">{{ description }}</p>
+    <a class="hidden u-url" href="{{ site.url }}/newsletter/"></a>
+  </header>
+  <hr />
 
-<ol class="space-y-8 h-feed">
-  {% for item in pagination.items %}
-  <li class="py-6 border-brand-gray-500 border-b h-entry">
-    <h2 class="p-name font-bold text-2xl">
-      <a href="{{ item.url | url }}" class="text-brand-red-500 hover:text-brand-red-600 text-xl underline u-url">
-        {{ item.data.title }}
-      </a>
-    </h2>
-    <time class="text-sm dt-published" datetime="{{ item.data.pubDate | toISOString }}">
-      {{ item.data.pubDate | readableDate }}
-    </time>
-
-    {% if item.data.description %}
-    <div class="mt-2 p-summary">
-      {{ item.data.description | markdownFormat | safe }}
-    </div>
-    {% endif %}
-  </li>
-  {% endfor %}
-  </ul>
+  <ol class="region flow h-feed" role="list">
+    {% for item in pagination.items %}
+    <li class="card h-entry">
+      <div class="flow">
+        <h2 class="p-name">
+          <a href="{{ item.url | url }}" class="u-url">
+            {{ item.data.title }}
+          </a>
+        </h2>
+        <time class="dt-published" datetime="{{ item.data.pubDate | toISOString }}">
+          {{ item.data.pubDate | readableDate }}
+        </time>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
 
   {% if pagination.pages.length > 1 %}
-  {% include 'components/pagination.njk' %}
+    {% include 'components/pagination.njk' %}
   {% endif %}
-
-  {% include "components/last-update.njk" %}
 </div>

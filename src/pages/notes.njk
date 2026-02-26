@@ -9,33 +9,38 @@ pagination:
   size: 12
 ---
 
-<h1 class="p-name">{{ title }}</h1>
-<p class="p-note">{{ description }}</p>
+<section class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p class="p-note">{{ description }}</p>
+  </header>
 
-<div class="h-feed">
-  {% for note in pagination.items %}
-  <article class="note">
-    <time datetime="{{ note.data.pubDate | toISOString }}" class="dt-published">
-      {{ note.data.pubDate | formatDate('DD/MM/YYYY') }}
-    </time>
+  <div class="h-feed region flow">
+    {% for note in pagination.items %}
+    <article class="card">
+      <div class="flow">
+        <time datetime="{{ note.data.pubDate | toISOString }}" class="dt-published">
+          {{ note.data.pubDate | formatDate('DD/MM/YYYY') }}
+        </time>
 
-    <div class="e-content">
-      {{ note.content | safe }}
-    </div>
+        <div class="e-content">
+          {{ note.content | safe }}
+        </div>
+      </div>
 
-    {% if note.data.tags and note.data.tags.length > 0 %}
-    <div class="tags">
-      {% for tag in note.data.tags %}
-      {% if tag !== "notes" %}
-      <span class="p-category">#{{ tag }}</span>
+      {% if note.data.tags and note.data.tags.length > 0 %}
+      <div class="tags">
+        {% for tag in note.data.tags %}
+        {% if tag !== "notes" %}
+        <span class="p-category">#{{ tag }}</span>
+        {% endif %}
+        {% endfor %}
+      </div>
       {% endif %}
-      {% endfor %}
-    </div>
-    {% endif %}
-  </article>
-  {% endfor %}
-</div>
+    </article>
+    {% endfor %}
+  </div>
 
-{% include 'components/pagination.njk' %}
-{% include "components/last-update.njk" %}
-</div>
+  {% include 'components/pagination.njk' %}
+  {% include "components/last-update.njk" %}
+</section>

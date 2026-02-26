@@ -81,6 +81,9 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addShortcode('lucide', lucide);
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
+	//  Events
+	eleventyConfig.on('eleventy.before', events.buildAllCss);
+
 	//  Events: after build
 	if (process.env.ELEVENTY_RUN_MODE === 'serve') {
 		eleventyConfig.on('eleventy.after', async () => {
@@ -93,6 +96,7 @@ export default async function eleventy(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('./admin');
 	eleventyConfig.addPassthroughCopy('src/humans.txt');
 	eleventyConfig.addPassthroughCopy({ 
+		"src/assets/css": "assets/css",
 		"src/assets/images": "assets/images",
 		"src/assets/fonts": "assets/fonts",
 		"src/assets/js": "assets/js",
@@ -106,7 +110,6 @@ export default async function eleventy(eleventyConfig) {
 	});
 	eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
 	
-	// PWA assets: manifest and service worker to site root
   eleventyConfig.addPassthroughCopy({ "src/manifest.webmanifest": "manifest.webmanifest" });
   eleventyConfig.addPassthroughCopy({ "src/sw.js": "sw.js" });
 

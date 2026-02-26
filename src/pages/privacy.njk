@@ -6,11 +6,13 @@ permalink: /privacy/index.html
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">{{ title }}</h1>
-  <p class="mb-4">{{ description }}</p>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p>{{ description }}</p>
+  </header>
 
-  <div class="prose">
+  <article class="flow prose">
     <p>Minha abordagem é simples: respeito a sua privacidade tanto quanto protejo a minha. Este site opera com
       rastreamento zero.</p>
     <p>Respeito a <abbr title="Lei Geral de Proteção de Dados">LGPD</abbr> e <abbr lang="en"
@@ -18,98 +20,59 @@ date: Last Modified
       de política explica como recolho e trato qualquer informação que me forneça.
     </p>
 
-    <section aria-labelledby="quais-dados-sao-recolhidos">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl"
-        id="quais-dados-sao-recolhidos">Quais dados de fundo são recolhidos?</h2>
+    <h2>Quais dados de fundo são recolhidos?</h2>
+    <p>Este site não utiliza nenhum script de rastreamento de terceiros.</p>
 
-      <p>Este site não utiliza nenhum script de rastreamento de terceiros.</p>
-    </section>
+    <h2>Como utilizo os dados que me fornece?</h2>
+    <p>Este website não recolhe quaisquer dados.</p>
 
-    <section aria-labelledby="como-utilizo-os-dados">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl"
-        id="como-utilizo-os-dados">Como utilizo os dados que me fornece?</h2>
+    <h2>Quão seguros estão os seus dados?</h2>
+    <p>Muito seguros, uma vez que este website não recolhe quaisquer informações.</p>
 
-      <p>Este website não recolhe quaisquer dados.</p>
-    </section>
+    <h2>Quão seguro é este website?</h2>
+    <p>Este website transmite os seus dados utilizando HTTPS, encriptando todos os dados entre o navegador e o
+      servidor.</p>
+    <p>Seu provedor de internet ainda poderá ver que você está baixando arquivos deste site, mas não o conteúdo em si.
+      Isso
+      também protege você contra a interceptação de dados por terceiros, por exemplo, ao navegar em redes Wi-Fi
+      públicas, ou
+      contra a inserção de anúncios neste site por provedores de internet. Todos os cabeçalhos HTTP de resposta
+      relevantes estão
+      configurados para sua proteção e a Política de Segurança de Conteúdo está ajustada aos requisitos deste site.
+    </p>
 
-    <section aria-labelledby="quao-seguros-estao-os-seus-dados">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl"
-        id="quao-seguros-estao-os-seus-dados">Quão seguros estão os seus dados?</h2>
-      <p>Muito seguros, uma vez que este website não recolhe quaisquer informações.</p>
-    </section>
+    <h2>Controlador de dados</h2>
+    <p>{{ personal.address }}</p>
+    <p>Em caso de dúvidas, entre em contato comigo: {{ personal.email }}.</p>
 
-    <section aria-labelledby="quao-seguro-e-este-website">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl"
-        id="quao-seguro-e-este-website">Quão seguro é este website?</h2>
+    <h2>Alterações na política</h2>
+    <p>Se eu alterar o conteúdo desta política, as alterações entrarão em vigor no momento da publicação aqui.</p>
 
-      <p>Este website transmite os seus dados utilizando HTTPS, encriptando todos os dados entre o navegador e o
-        servidor.</p>
-      <p>Seu provedor de internet ainda poderá ver que você está baixando arquivos deste site, mas não o conteúdo em si.
-        Isso
-        também protege você contra a interceptação de dados por terceiros, por exemplo, ao navegar em redes Wi-Fi
-        públicas, ou
-        contra a inserção de anúncios neste site por provedores de internet. Todos os cabeçalhos HTTP de resposta
-        relevantes estão
-        configurados para sua proteção e a Política de Segurança de Conteúdo está ajustada aos requisitos deste site.
-      </p>
-    </section>
+    <h2>Reclamações</h2>
+    <p>Se você tiver algum motivo para reclamar sobre a forma como lido com sua privacidade, entre em contato comigo
+      por
+      e-mail: {{ personal.email }}.</p>
 
-    <section aria-labelledby="controlador-de-dados">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl"
-        id="controlador-de-dados">Controlador de dados</h2>
+    <h2>Dados analíticos</h2>
+    <p>Utilizo o <a href="https://umami.is/docs" rel="noopener noreferrer" target="_blank">Umami</a> para coletar
+      somente estatísticas de navegação.</p>
+    <p>Você pode ver o <a href="https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi"
+        rel="noopener noreferrer">dashboard</a> em tempo real do meu site.</p>
+    <p>Não há coleta de dados de navegação.</p>
 
-      <p>{{ personal.address }}</p>
-      <p>Em caso de dúvidas, entre em contato comigo: {{ personal.email }}.</p>
-    </section>
+    <h2>Cookies</h2>
+    <ul>
+      <li>Não há instalação de cookies no seu dispositivo.</li>
+      <li>Não há identificadores únicos (IDs) para rastreamento.</li>
+    </ul>
 
-    <section aria-labelledby="alteracoes-na-politica">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl"
-        id="alteracoes-na-politica">Alterações na política</h2>
-      <p>Se eu alterar o conteúdo desta política, as alterações entrarão em vigor no momento da publicação aqui.</p>
-    </section>
+    <p>Verifique você mesmo: Sinta-se à vontade para usar ferramentas como o <a href="https://www.cookiemetrix.com/"
+        rel="noopener noreferrer" target="_blank">Cookie Metrix</a>
+      para auditar este site.</p>
 
-    <section aria-labelledby="reclamacoes">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl" id="reclamacoes">
-        Reclamações</h2>
-      <p>Se você tiver algum motivo para reclamar sobre a forma como lido com sua privacidade, entre em contato comigo
-        por
-        e-mail: {{ personal.email }}.</p>
-    </section>
+    <p>O resultado será zero cookies.</p>
 
-    <section aria-labelledby="analytics">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl" id="analytics">
-        Dados analíticos</h2>
-      <p>Utilizo o <a href="https://umami.is/docs"
-          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" rel="noopener noreferrer"
-          target="_blank">Umami</a> para coletar somente estatísticas de navegação.</p>
-      <p>Você pode ver o <a href="https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi"
-          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline"
-          rel="noopener noreferrer">dashboard</a> em tempo real
-        do meu
-        site.</p>
-      <p>Não há coleta de dados de navegação.</p>
-    </section>
-
-    <section aria-labelledby="cookies">
-      <h2 class="mb-4 pb-2 border-brand-gray-500 border-b font-semibold text-brand-red-500 text-2xl" id="cookies">Cookies
-      </h2>
-
-      <ul>
-        <li>Não há instalação de cookies no seu dispositivo.</li>
-        <li>Não há identificadores únicos (IDs) para rastreamento.</li>
-      </ul>
-
-      <p>Verifique você mesmo: Sinta-se à vontade para usar ferramentas como o <a href="https://www.cookiemetrix.com/"
-          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" rel="noopener noreferrer"
-          target="_blank">Cookie Metrix</a>
-        para auditar este site.</p>
-
-      <p>O resultado será zero cookies.</p>
-
-      <img src="/assets/images/pages/no-cookies.png" alt="Print da tela do site cookie metrix, mostrando que não possui
+    <img src="/assets/images/pages/no-cookies.png" alt="Print da tela do site cookie metrix, mostrando que não possui
       nenhum cookie no site">
-    </section>
-  </div>
-
-  {% include "components/last-update.njk" %}
+  </article>
 </div>

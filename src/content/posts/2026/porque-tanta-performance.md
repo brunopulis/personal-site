@@ -5,8 +5,6 @@ pubDate: 2026-02-09
 tags: ["100DaysToOffload", "Pessoal"]
 ---
 
-![Ilustracao feita pelo chatgpt de um homem preso dentro de si](/assets/images/blog/stuck-inside.png)
-
 Enquanto escrevo, escuto [Beautiful Things](https://music.youtube.com/watch?v=R7yyorwvuac&list=RDAO0JF8WuooS-0aso5YN8QmsA).
 
 Percebi que faz bastante tempo que não paro para simplesmente escrever por aqui.

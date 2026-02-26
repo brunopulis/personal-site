@@ -7,22 +7,24 @@ description: O que estou me dedicando nesse momento
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">
-    <span aria-hidden="true">📍</span> O que estou fazendo agora
-  </h1>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">
+      <span aria-hidden="true">📍</span> {{ title }}
+    </h1>
+    <p>{{ description }}</p>
+  </header>
 
-  <div class="max-w-none prose">
+  <div class="flow prose">
     <p>Descubra no que estou dedicado nesse momento.</p>
     <p>Essa página foi inspirado no trabalho de Derek Sivers que você pode conferir em <a href="https://nownownow.com/"
-        class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline" target="_blank"
-        rel="noopener noreferrer">nownownow</a>.</p>
+        target="_blank" rel="noopener noreferrer">nownownow</a>.</p>
 
     <p>O objetivo é mostrar no que estou focado no momento. Esse site passou por atualizações recentes e é um trabalho
       em
       andamento.</p>
 
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Meu foco atual:</h2>
+    <h2>Meu foco atual:</h2>
     <ul>
       <li>Tentando ser um discípulo mais consciente;</li>
       <li>Retornando a leitura diária da Bíblia e devocionais;</li>
@@ -30,9 +32,7 @@ date: Last Modified
       <li>Tentando ser um marido melhor;</li>
     </ul>
 
-    <h2 class="mb-4 font-bold text-brand-red-500 text-2xl">Localização</h2>
+    <h2>Localização</h2>
     <p>Atualmente baseado em: Belo Horizonte.</p>
   </div>
-
-  {% include "components/last-update.njk" %}
 </div>

@@ -1,6 +1,8 @@
-<section aria-labelledby="posts-title">
-  <h2 id="post-title">Últimas notas</h2>
-  <p>Notas curtas, pensamentos aleatórios e curiosidades. Meu microblog pessoal.</p>
+<section class="wrapper" aria-labelledby="posts-title">
+  <header class="region | flow">
+    <h2 id="post-title">Últimas notas</h2>
+    <p>Notas curtas, pensamentos aleatórios e curiosidades. Meu microblog pessoal.</p>
+  </header>
 
   {% set posts = collections.notes %}
   {% if (posts | length) == 0 %}
@@ -8,33 +10,37 @@
   {% endif %}
 
   {% if posts %}
-  <div class="grid">
+  <div class="grid" data-layout="33x3">
     {% for post in posts.slice(0, 3) %}
     {% set title = post.data.title %}
     {% set dateVal = post.data.pubDate %}
     {% set desc = post.templateContent | striptags | truncate(80) %}
     {% set tags = post.data.tags %}
-    <article class="h-entry">
-      <div class="e-content">
-        {{ desc }}
-      </div>
-      <time class="dt-published" datetime="{{ dateVal | toISOString }}">
-        {{ dateVal | readableDate }}
-      </time>
+    <article class="card h-entry">
+      <div class="flow">
+        <div class="e-content">
+          {{ desc }}
+        </div>
+        <time class="dt-published" datetime="{{ dateVal | toISOString }}">
+          {{ dateVal | readableDate }}
+        </time>
 
-      {% if tags %}
-      <div class="mt-4">
-        {% for tag in tags %}
-        <span class="tags">#{{ tag }}</span>
-        {% endfor %}
+        {% if tags %}
+        <div class="mt-4">
+          {% for tag in tags %}
+          <span class="tags">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
     </article>
     {% endfor %}
   </div>
   {% endif %}
 
-  <a href="/notas">
-    ver todas as notas {% lucide "chevron-right" %}
-  </a>
+  <div class="region | flow">
+    <a href="/notas" class="button">
+      ver todas as notas {% lucide "chevron-right" %}
+    </a>
+  </div>
 </section>

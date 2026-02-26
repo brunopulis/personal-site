@@ -6,52 +6,33 @@ permalink: "/blogroll/index.html"
 date: Last Modified
 ---
 
-<div class="mx-auto my-24 max-w-6xl">
-  <header class="mb-12">
-    <h1 class="mb-6 p-name font-bold text-brand-red-500 text-3xl">Blogroll</h1>
-    <p class="text-xl">
+<section class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">Blogroll</h1>
+    <p class="p-note">
       Uma lista curada de pessoas, blogs e recursos que acompanho e recomendo.
     </p>
   </header>
 
   {% set groupedBlogs = blogroll | groupBy('category') %}
-  <div class="space-y-16">
+  <div class="h-feed">
     {% for category, blogs in groupedBlogs | dictsort %}
-    <section aria-labelledby="cat-{{ category | slugifyString }}">
+    <section class="region flow" aria-labelledby="cat-{{ category | slugifyString }}">
       <h2 id="cat-{{ category | slugifyString }}"
         class="flex items-center gap-3 mb-8 font-bold text-brand-red-500 text-2xl">
         {{ category }}
       </h2>
 
-      <div class="gap-6 grid grid-cols-1 md:grid-cols-2">
+      <div class="grid" data-layout="33x3">
         {% for blog in blogs %}
-        <article class="relative p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <div class="flex flex-col h-full">
-            <h3 class="mb-3 font-bold text-xl">
-              <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer"
-                class="after:absolute after:inset-0 text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">
+        <article class="card">
+          <div class="flow">
+            <h3>
+              <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer">
                 {{ blog.title }}
               </a>
             </h3>
-
-            <p class="flex-1 mb-6 line-clamp-3">
-              {{ blog.description }}
-            </p>
-
-            <div class="flex justify-between items-center mt-auto">
-              {% if blog.rss %}
-              <a href="{{ blog.rss }}" class="z-10 relative -m-2 p-2 text-brand-red-500 hover:text-brand-red-600"
-                aria-label="RSS Feed para {{ blog.title }}">
-                {% lucide "rss", { "class": "w-5 h-5" } %}
-              </a>
-              {% endif %}
-
-              <span class="font-medium text-sm">
-                {{ blog.url | replace('https://', '') | replace('http://', '') | replace('www.', '') | splitStrings('/')
-                |
-                first }}
-              </span>
-            </div>
+            <p>{{ blog.description }}</p>
           </div>
         </article>
         {% endfor %}
@@ -69,4 +50,4 @@ date: Last Modified
   {% endif %}
 
   {% include "components/last-update.njk" %}
-</div>
+</section>

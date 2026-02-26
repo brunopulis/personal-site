@@ -6,24 +6,38 @@ import cssnano from 'cssnano';
 
 export const buildAllCss = async () => {
 	try {
-		const result = sass.compile('src/assets/scss/main.scss', {
-			loadPaths: ['node_modules'],
-			style: 'compressed',
-			sourceMap: process.env.ELEVENTY_RUN_MODE !== 'build'
+		const fg = (await import('fast-glob')).default;
+		const path = await import('node:path');
+
+		const scssFiles = await fg('src/assets/scss/**/*.scss', {
+			ignore: ['**/_*.scss']
 		});
 
-		const processed = await postcss([autoprefixer(), cssnano({preset: 'default'})]).process(result.css, {
-			from: 'src/assets/scss/main.scss',
-			to: 'src/assets/css/main.css'
-		});
 		await fs.mkdir('src/assets/css', {recursive: true});
 
-		await fs.writeFile('src/assets/css/main.css', processed.css);
+		for (const file of scssFiles) {
+			const parsedPath = path.parse(file);
+			const cssFilename = `${parsedPath.name}.css`;
+			const destPath = path.posix.join('src/assets/css', cssFilename);
 
-		console.log('✅ CSS compilado com sucesso em src/assets/css/main.css');
+			const result = sass.compile(file, {
+				loadPaths: ['node_modules'],
+				style: 'compressed',
+				sourceMap: process.env.ELEVENTY_RUN_MODE !== 'build'
+			});
 
-		if (process.env.ELEVENTY_RUN_MODE !== 'build' && result.sourceMap) {
-			await fs.writeFile('src/assets/css/main.css.map', JSON.stringify(result.sourceMap));
+			const processed = await postcss([autoprefixer(), cssnano({preset: 'default'})]).process(result.css, {
+				from: file,
+				to: destPath
+			});
+
+			await fs.writeFile(destPath, processed.css);
+
+			console.log(`✅ CSS compilado com sucesso em ${destPath}`);
+
+			if (process.env.ELEVENTY_RUN_MODE !== 'build' && result.sourceMap) {
+				await fs.writeFile(`${destPath}.map`, JSON.stringify(result.sourceMap));
+			}
 		}
 	} catch (error) {
 		console.error('❌ Erro ao compilar SCSS:', error);
