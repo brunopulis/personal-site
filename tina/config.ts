@@ -1,19 +1,18 @@
-import {defineConfig} from 'tinacms';
-import {PostCollection} from './collections/post';
-import {PageCollection} from './collections/page';
-
-import {ServiceCollection} from './collections/service';
-import {NoteCollection} from './collections/note';
-import {BookCollection} from './collections/book';
-import {NewsletterCollection} from './collections/newsletter';
-import {MediaCollection} from './collections/media';
-import {BookmarkCollection} from './collections/bookmark';
-import {StreamCollection} from './collections/stream';
-import {TalkCollection} from './collections/talk';
-import {GalleryCollection} from './collections/gallery';
+import { defineConfig } from 'tinacms';
+import { BookCollection } from './collections/book';
+import { BookmarkCollection } from './collections/bookmark';
+import { GalleryCollection } from './collections/gallery';
+import { MediaCollection } from './collections/media';
+import { NewsletterCollection } from './collections/newsletter';
+import { NoteCollection } from './collections/note';
+import { PageCollection } from './collections/page';
+import { PostCollection } from './collections/post';
+import { ServiceCollection } from './collections/service';
+import { StreamCollection } from './collections/stream';
+import { TalkCollection } from './collections/talk';
 
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
-const isLocal = !process.env.TINA_SEARCH;
+const _isLocal = !process.env.TINA_SEARCH;
 
 export default defineConfig({
   branch,
@@ -21,13 +20,13 @@ export default defineConfig({
   token: process.env.TINA_TOKEN,
   build: {
     outputFolder: 'admin',
-    publicFolder: './'
+    publicFolder: './',
   },
   media: {
     tina: {
       mediaRoot: 'assets/images',
-      publicFolder: 'src'
-    }
+      publicFolder: 'src',
+    },
   },
   schema: {
     collections: [
@@ -41,15 +40,15 @@ export default defineConfig({
       BookmarkCollection,
       StreamCollection,
       TalkCollection,
-      GalleryCollection
-    ]
+      GalleryCollection,
+    ],
   },
   search: {
     tina: {
       indexerToken: process.env.TINA_SEARCH,
-      stopwordLanguages: ['por']
+      stopwordLanguages: ['por'],
     },
     indexBatchSize: 100,
-    maxSearchIndexFieldLength: 100
-  }
+    maxSearchIndexFieldLength: 100,
+  },
 });

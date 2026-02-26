@@ -1,6 +1,475 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
 
+// tina/collections/book.ts
+var BookCollection = {
+  name: "book",
+  label: "Livros",
+  path: "src/content/books",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      isTitle: true,
+      required: true
+    },
+    {
+      type: "string",
+      name: "author",
+      label: "Autor",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "category",
+      label: "Categoria",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "status",
+      label: "Status",
+      options: [
+        { value: "lido", label: "Lido" },
+        { value: "lendo", label: "Lendo" },
+        { value: "quero-ler", label: "Quero Ler" },
+        { value: "abandonado", label: "Abandonado" }
+      ],
+      searchable: false
+    },
+    {
+      type: "number",
+      name: "rating",
+      label: "Avalia\xE7\xE3o",
+      ui: {
+        component: "number"
+      },
+      searchable: false
+    },
+    {
+      type: "image",
+      name: "cover",
+      label: "Capa",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Descri\xE7\xE3o",
+      ui: {
+        component: "textarea"
+      },
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "thoughts",
+      label: "Pensamentos",
+      ui: {
+        component: "textarea"
+      },
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "quotes",
+      label: "Cita\xE7\xF5es",
+      ui: {
+        component: "textarea"
+      },
+      searchable: false
+    },
+    {
+      type: "number",
+      name: "attendedYear",
+      label: "Ano de Leitura",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "recommendBy",
+      label: "Recomendado por",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "tags",
+      label: "Tags",
+      list: true,
+      ui: {
+        component: "tags"
+      },
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "url",
+      label: "URL",
+      searchable: false
+    },
+    {
+      type: "datetime",
+      name: "pubDate",
+      label: "Data",
+      ui: {
+        dateFormat: "DD/MM/YYYY"
+      },
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
+// tina/collections/bookmark.ts
+var BookmarkCollection = {
+  name: "bookmark",
+  label: "Bookmarks",
+  path: "src/content/bookmarks",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      isTitle: true,
+      required: true
+    },
+    {
+      type: "string",
+      name: "url",
+      label: "URL"
+    },
+    {
+      type: "datetime",
+      name: "pubDate",
+      label: "Data",
+      ui: {
+        dateFormat: "DD/MM/YYYY"
+      },
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
+// tina/collections/gallery.ts
+var GalleryCollection = {
+  name: "photos",
+  label: "Galeria de Fotos",
+  path: "src/content/gallery",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      isTitle: true,
+      required: true
+    },
+    {
+      type: "datetime",
+      name: "date",
+      label: "Data",
+      ui: {
+        dateFormat: "DD/MM/YYYY"
+      },
+      searchable: false
+    },
+    {
+      type: "image",
+      name: "image",
+      label: "Imagem",
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
+// tina/collections/media.ts
+var MediaCollection = {
+  name: "media",
+  label: "M\xEDdia (Filmes/S\xE9ries)",
+  path: "src/content/medias",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      isTitle: true,
+      required: true
+    },
+    {
+      type: "string",
+      name: "director",
+      label: "Diretor",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "category",
+      label: "Categoria",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "status",
+      label: "Status",
+      options: [
+        { value: "assistido", label: "Assistido" },
+        { value: "assistindo", label: "Assistindo" },
+        { value: "quero-assistir", label: "Quero Assistir" }
+      ],
+      searchable: false
+    },
+    {
+      type: "number",
+      name: "rating",
+      label: "Avalia\xE7\xE3o",
+      ui: {
+        component: "number"
+      },
+      searchable: false
+    },
+    {
+      type: "image",
+      name: "poster",
+      label: "Poster",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Descri\xE7\xE3o",
+      ui: {
+        component: "textarea"
+      },
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "thoughts",
+      label: "Pensamentos",
+      ui: {
+        component: "textarea"
+      },
+      searchable: false
+    },
+    {
+      type: "number",
+      name: "watchedYear",
+      label: "Ano Assistido",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "recommendBy",
+      label: "Recomendado por",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "tags",
+      label: "Tags",
+      list: true,
+      ui: {
+        component: "tags"
+      },
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "url",
+      label: "URL",
+      searchable: false
+    },
+    {
+      type: "datetime",
+      name: "watchedDate",
+      label: "Data",
+      ui: {
+        dateFormat: "DD/MM/YYYY"
+      },
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
+// tina/collections/newsletter.ts
+var NewsletterCollection = {
+  name: "newsletter",
+  label: "Newsletter",
+  path: "src/content/newsletter",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      required: true
+    },
+    {
+      type: "string",
+      name: "issue",
+      label: "Edi\xE7\xE3o",
+      searchable: false
+    },
+    {
+      type: "datetime",
+      name: "pubDate",
+      label: "Data de Publica\xE7\xE3o",
+      ui: {
+        dateFormat: "DD/MM/YYYY"
+      },
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
+// tina/collections/note.ts
+var NoteCollection = {
+  name: "note",
+  label: "Notas",
+  path: "src/content/notes",
+  format: "md",
+  match: {
+    include: "**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo"
+    },
+    {
+      type: "datetime",
+      name: "pubDate",
+      label: "Data de Publica\xE7\xE3o",
+      required: true,
+      ui: {
+        dateFormat: "DD/MM/YYYY",
+        timeFormat: "HH:mm"
+      },
+      searchable: false
+    },
+    {
+      type: "boolean",
+      name: "published",
+      label: "Publicado",
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "type",
+      label: "Tipo",
+      options: [{ value: "note", label: "Nota" }],
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "tags",
+      label: "Tags",
+      list: true,
+      ui: {
+        component: "tags"
+      },
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
+// tina/collections/page.ts
+var PageCollection = {
+  name: "page",
+  label: "P\xE1ginas",
+  path: "src/pages",
+  format: "md",
+  match: {
+    include: "*",
+    exclude: "services/**/*"
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "T\xEDtulo",
+      isTitle: true,
+      required: true
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Descri\xE7\xE3o",
+      ui: {
+        component: "textarea"
+      },
+      searchable: false
+    },
+    {
+      type: "string",
+      name: "permalink",
+      label: "Permalink",
+      searchable: false
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Conte\xFAdo",
+      isBody: true
+    }
+  ]
+};
+
 // tina/collections/post.ts
 var PostCollection = {
   name: "post",
@@ -114,48 +583,6 @@ var PostCollection = {
         }
       ],
       searchable: false
-    }
-  ]
-};
-
-// tina/collections/page.ts
-var PageCollection = {
-  name: "page",
-  label: "P\xE1ginas",
-  path: "src/pages",
-  format: "md",
-  match: {
-    include: "*",
-    exclude: "services/**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo",
-      isTitle: true,
-      required: true
-    },
-    {
-      type: "string",
-      name: "description",
-      label: "Descri\xE7\xE3o",
-      ui: {
-        component: "textarea"
-      },
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "permalink",
-      label: "Permalink",
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
     }
   ]
 };
@@ -440,392 +867,6 @@ var ServiceCollection = {
   ]
 };
 
-// tina/collections/note.ts
-var NoteCollection = {
-  name: "note",
-  label: "Notas",
-  path: "src/content/notes",
-  format: "md",
-  match: {
-    include: "**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo"
-    },
-    {
-      type: "datetime",
-      name: "pubDate",
-      label: "Data de Publica\xE7\xE3o",
-      required: true,
-      ui: {
-        dateFormat: "DD/MM/YYYY",
-        timeFormat: "HH:mm"
-      },
-      searchable: false
-    },
-    {
-      type: "boolean",
-      name: "published",
-      label: "Publicado",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "type",
-      label: "Tipo",
-      options: [{ value: "note", label: "Nota" }],
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "tags",
-      label: "Tags",
-      list: true,
-      ui: {
-        component: "tags"
-      },
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
-    }
-  ]
-};
-
-// tina/collections/book.ts
-var BookCollection = {
-  name: "book",
-  label: "Livros",
-  path: "src/content/books",
-  format: "md",
-  match: {
-    include: "**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo",
-      isTitle: true,
-      required: true
-    },
-    {
-      type: "string",
-      name: "author",
-      label: "Autor",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "category",
-      label: "Categoria",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "status",
-      label: "Status",
-      options: [
-        { value: "lido", label: "Lido" },
-        { value: "lendo", label: "Lendo" },
-        { value: "quero-ler", label: "Quero Ler" },
-        { value: "abandonado", label: "Abandonado" }
-      ],
-      searchable: false
-    },
-    {
-      type: "number",
-      name: "rating",
-      label: "Avalia\xE7\xE3o",
-      ui: {
-        component: "number"
-      },
-      searchable: false
-    },
-    {
-      type: "image",
-      name: "cover",
-      label: "Capa",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "description",
-      label: "Descri\xE7\xE3o",
-      ui: {
-        component: "textarea"
-      },
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "thoughts",
-      label: "Pensamentos",
-      ui: {
-        component: "textarea"
-      },
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "quotes",
-      label: "Cita\xE7\xF5es",
-      ui: {
-        component: "textarea"
-      },
-      searchable: false
-    },
-    {
-      type: "number",
-      name: "attendedYear",
-      label: "Ano de Leitura",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "recommendBy",
-      label: "Recomendado por",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "tags",
-      label: "Tags",
-      list: true,
-      ui: {
-        component: "tags"
-      },
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "url",
-      label: "URL",
-      searchable: false
-    },
-    {
-      type: "datetime",
-      name: "pubDate",
-      label: "Data",
-      ui: {
-        dateFormat: "DD/MM/YYYY"
-      },
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
-    }
-  ]
-};
-
-// tina/collections/newsletter.ts
-var NewsletterCollection = {
-  name: "newsletter",
-  label: "Newsletter",
-  path: "src/content/newsletter",
-  format: "md",
-  match: {
-    include: "**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo",
-      required: true
-    },
-    {
-      type: "string",
-      name: "issue",
-      label: "Edi\xE7\xE3o",
-      searchable: false
-    },
-    {
-      type: "datetime",
-      name: "pubDate",
-      label: "Data de Publica\xE7\xE3o",
-      ui: {
-        dateFormat: "DD/MM/YYYY"
-      },
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
-    }
-  ]
-};
-
-// tina/collections/media.ts
-var MediaCollection = {
-  name: "media",
-  label: "M\xEDdia (Filmes/S\xE9ries)",
-  path: "src/content/medias",
-  format: "md",
-  match: {
-    include: "**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo",
-      isTitle: true,
-      required: true
-    },
-    {
-      type: "string",
-      name: "director",
-      label: "Diretor",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "category",
-      label: "Categoria",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "status",
-      label: "Status",
-      options: [
-        { value: "assistido", label: "Assistido" },
-        { value: "assistindo", label: "Assistindo" },
-        { value: "quero-assistir", label: "Quero Assistir" }
-      ],
-      searchable: false
-    },
-    {
-      type: "number",
-      name: "rating",
-      label: "Avalia\xE7\xE3o",
-      ui: {
-        component: "number"
-      },
-      searchable: false
-    },
-    {
-      type: "image",
-      name: "poster",
-      label: "Poster",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "description",
-      label: "Descri\xE7\xE3o",
-      ui: {
-        component: "textarea"
-      },
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "thoughts",
-      label: "Pensamentos",
-      ui: {
-        component: "textarea"
-      },
-      searchable: false
-    },
-    {
-      type: "number",
-      name: "watchedYear",
-      label: "Ano Assistido",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "recommendBy",
-      label: "Recomendado por",
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "tags",
-      label: "Tags",
-      list: true,
-      ui: {
-        component: "tags"
-      },
-      searchable: false
-    },
-    {
-      type: "string",
-      name: "url",
-      label: "URL",
-      searchable: false
-    },
-    {
-      type: "datetime",
-      name: "watchedDate",
-      label: "Data",
-      ui: {
-        dateFormat: "DD/MM/YYYY"
-      },
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
-    }
-  ]
-};
-
-// tina/collections/bookmark.ts
-var BookmarkCollection = {
-  name: "bookmark",
-  label: "Bookmarks",
-  path: "src/content/bookmarks",
-  format: "md",
-  match: {
-    include: "**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo",
-      isTitle: true,
-      required: true
-    },
-    {
-      type: "string",
-      name: "url",
-      label: "URL"
-    },
-    {
-      type: "datetime",
-      name: "pubDate",
-      label: "Data",
-      ui: {
-        dateFormat: "DD/MM/YYYY"
-      },
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
-    }
-  ]
-};
-
 // tina/collections/stream.ts
 var StreamCollection = {
   name: "stream",
@@ -918,50 +959,9 @@ var TalkCollection = {
   ]
 };
 
-// tina/collections/gallery.ts
-var GalleryCollection = {
-  name: "photos",
-  label: "Galeria de Fotos",
-  path: "src/content/gallery",
-  format: "md",
-  match: {
-    include: "**/*"
-  },
-  fields: [
-    {
-      type: "string",
-      name: "title",
-      label: "T\xEDtulo",
-      isTitle: true,
-      required: true
-    },
-    {
-      type: "datetime",
-      name: "date",
-      label: "Data",
-      ui: {
-        dateFormat: "DD/MM/YYYY"
-      },
-      searchable: false
-    },
-    {
-      type: "image",
-      name: "image",
-      label: "Imagem",
-      searchable: false
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Conte\xFAdo",
-      isBody: true
-    }
-  ]
-};
-
 // tina/config.ts
 var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
-var isLocal = !process.env.TINA_SEARCH;
+var _isLocal = !process.env.TINA_SEARCH;
 var config_default = defineConfig({
   branch,
   clientId: process.env.TINA_CLIENT_ID,
