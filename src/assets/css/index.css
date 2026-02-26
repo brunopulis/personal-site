@@ -70,8 +70,8 @@ Global theme tokens
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-display: var(--font-base);
   --font-accent:
-    "Menlo", "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono",
-    "Source Code Pro", "Courier New", monospace;
+    "Menlo", "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro",
+    "Courier New", monospace;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --line-height-compact: 1.2;
@@ -210,10 +210,10 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01s !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01s !important;
-    scroll-behavior: auto !important;
+    animation-duration: 0.01s;
+    animation-iteration-count: 1;
+    transition-duration: 0.01s;
+    scroll-behavior: auto;
   }
 }
 
@@ -782,8 +782,7 @@ nav[data-variant="sidebar"] li[data-children="true"]::before {
     content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE1LjM3NUw2IDkuMzc0OTlMNy4wNzUgOC4yOTk5OUwxMiAxMy4yNUwxNi45MjUgOC4zMjQ5OUwxOCA5LjM5OTk5TDEyIDE1LjM3NVoiIGZpbGw9IiNDRUQzRTgiLz4KPC9zdmc+Cg==");
   }
 }
-nav[data-variant="sidebar"]
-  li[data-children="true"][data-state="active"]::before {
+nav[data-variant="sidebar"] li[data-children="true"][data-state="active"]::before {
   top: 0.2rem;
   transform: rotate(0deg);
 }
@@ -914,7 +913,7 @@ Largely based on:
 @link: https://portfolio.set.studio/design-system/component/cards/
 */
 .card {
-  --img-ratio: 3/2;
+  --img-ratio: 3 / 2;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1030,9 +1029,9 @@ to change how empty grid tracks are handled.
 .grid {
   display: grid;
   grid-template-columns: repeat(
-    var(--grid-placement, auto-fill),
-    minmax(var(--grid-min-item-size, 16rem), 1fr)
-  );
+      var(--grid-placement, auto-fill),
+      minmax(var(--grid-min-item-size, 16rem), 1fr)
+    );
   gap: var(--gutter, var(--space-s-l));
 }
 
