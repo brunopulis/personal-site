@@ -1,32 +1,10 @@
-<section class="newsletter region" aria-labelledby="newsletter-title">
-  <div class="newsletter-box flow">
-    <h2 id="newsletter-title">
-      Quer continuar essa conversa?
-    </h2>
-    <p>
-      Toda quarta de manhã envio um e-mail curto com algo que aprendi na semana.
-      Pode ser um bug de acessibilidade, um texto que me vez pensar, ou uma pergunta que ainda não sei responder.
+<section class="card region">
+  {% if site.newsletter.enabled %}
+  <div class="flow">
+    <h3>{{ site.newsletter.title }}</h3>
+    <p>{{ site.newsletter.description }}
+      <a href="https://brunopulis.substack.com" rel="noopener noreferrer" target="_blank">Inscrever</a>
     </p>
-    <p class="newsletter__note">
-      Mais de 300 pessoas leem enquanto tomam café, porque é direto ao ponto e sem enrolação.
-    </p>
-    <p>
-      Sem spam, sem funil, sem promessa vazia.
-    </p>
-
-    <form action="https://brunopulis.substack.com/api/v1/free?nojs=true" method="post" class="newsletter-form">
-      <label for="email" class="visually-hidden">E-mail</label>
-      <input type="email" name="email" placeholder="seu@email.com" required class="newsletter-input" id="email">
-      <input type="hidden" name="first_url" value="{{ page.url }}">
-      <input type="hidden" name="first_referrer" value="{{ page.url }}">
-      <input type="hidden" name="current_url" value="{{ page.url }}">
-      <input type="hidden" name="current_referrer" value="{{ page.url }}">
-      <input type="hidden" name="referral_code" value="">
-      <input type="hidden" name="source" value="embed">
-
-      <button type="submit" class="newsletter-button">
-        Assinar
-      </button>
-    </form>
   </div>
+  {% endif %}
 </section>

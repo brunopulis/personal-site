@@ -7,15 +7,14 @@
 {%- set body = bodyText | urlencode -%}
 {%- set mailToLink = 'mailto:' + defaultEmail + '?subject=' + subject + '&body=' + body -%}
 
+<section class="region">
+  <div class="flow">
+    <p>
+      Gostou deste post? Compartilhe em suas redes e assine meu <a href="https://brunopulis.com/feed.xml"
+        target="_blank" rel="alternate">RSS</a>.
+    </p>
 
-<div>
-  <div>
-    <p>Obrigado pela leitura! Gostou deste post? Assine meu <a href="https://brunopulis.com/feed.xml" target="_blank"
-        rel="alternate">RSS</a>.</p>
-  </div>
-
-  <div>
-    <ul>
+    <ul class="cluster" role="list">
       <li><a href="{{ mailToLink }}">Responder por e-mail</a></li>
       <li>
         <a href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}&via=brunopulis"
@@ -47,4 +46,5 @@
       </li>
     </ul>
   </div>
-</div>
+</section>
+<hr />
