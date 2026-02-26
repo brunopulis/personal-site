@@ -1,0 +1,38 @@
+.featured-post {
+  --flow-space: var(--space-m);
+  padding: var(--space-l);
+  background: var(--color-bg-mod-1);
+  border-left: 8px solid var(--color-brand);
+  position: relative;
+
+  h2 {
+    font-size: var(--step-3);
+    max-width: 25ch;
+  }
+}
+
+.standard-post {
+  padding-inline: var(--space-s);
+}
+
+.tags-list {
+  font-size: var(--step--1);
+  --gutter: var(--space-xs);
+
+  a {
+    text-decoration: none;
+    color: var(--color-text-mod-1);
+    background: var(--color-bg-mod-2);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--color-brand);
+      color: var(--color-bg);
+    }
+  }
+}
+
+.post-separator {
+  opacity: 0.2;
+}

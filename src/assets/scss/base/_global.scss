@@ -19,7 +19,7 @@ body {
 }
 
 /* Base typesetting */
-:is(h1, h2, h3) {
+:is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-display);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-compact);

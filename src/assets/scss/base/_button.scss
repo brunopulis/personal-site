@@ -17,10 +17,15 @@ input[type="button"] {
   border-radius: var(--border-radius);
   color: var(--color-bg);
   cursor: pointer;
-  padding: var(--space-3xs) var(--space-2xs);
-  display: inline-block;
+  padding: var(--space-xs) var(--space-m);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   text-decoration: none;
   text-align: center;
+  font-weight: var(--font-weight-bold);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:hover,
