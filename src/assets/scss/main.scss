@@ -2,54 +2,54 @@
 * The variables/tokens (or whatever you 
 * wish to call them) that power the rest of your styles
 */
-@import 'abstracts/fonts';
-@import 'abstracts/space';
-@import 'abstracts/theme';
-@import 'abstracts/type';
+@import './abstracts/_fonts.scss';
+@import './abstracts/_space.scss';
+@import './abstracts/_theme.scss';
+@import './abstracts/_type.scss';
 
 /* 
 * Embrace the cascade and inheritance to 
 * style as much as possible at a global level 
 */
-@import 'base/reset';
-@import 'base/global';
-@import 'base/form';
-@import 'base/code';
-@import 'base/details';
-@import 'base/table';
-@import 'base/button';
-@import 'base/nav';
+@import './base/_reset.scss';
+@import './base/_global.scss';
+@import './base/_form.scss';
+@import './base/_code.scss';
+@import './base/_details.scss';
+@import './base/_table.scss';
+@import './base/_button.scss';
+@import './base/_nav.scss';
 
 /* 
 * Skeletal components or organisational structures.
 */
-@import 'blocks/prose';
-@import 'blocks/hero';
-@import 'blocks/callout';
-@import 'blocks/card';
-@import 'blocks/interstitial';
-@import 'blocks/blog';
+@import './blocks/_prose.scss';
+@import './blocks/_hero.scss';
+@import './blocks/_callout.scss';
+@import './blocks/_card.scss';
+@import './blocks/_interstitial.scss';
+@import './blocks/_blog.scss';
 
 /* 
 * High level, flexible layouts that provide a 
 * skeleton to support any variant of a component
 */
-@import 'compositions/grid';
-@import 'compositions/repel';
-@import 'compositions/cluster';
-@import 'compositions/sidebar';
-@import 'compositions/reel';
-@import 'compositions/switcher';
-@import 'compositions/frame';
+@import './compositions/_grid.scss';
+@import './compositions/_repel.scss';
+@import './compositions/_cluster.scss';
+@import './compositions/_sidebar.scss';
+@import './compositions/_reel.scss';
+@import './compositions/_switcher.scss';
+@import './compositions/_frame.scss';
 
 /* 
 * Classes that do one job and one job well 
 */
-@import 'utilities/visually-hidden';
-@import 'utilities/flow';
-@import 'utilities/region';
-@import 'utilities/wrapper';
-@import 'utilities/width';
-@import 'utilities/text';
-@import 'utilities/skip-link';
-@import 'utilities/box';
+@import './utilities/_visually-hidden.scss';
+@import './utilities/_flow.scss';
+@import './utilities/_region.scss';
+@import './utilities/_wrapper.scss';
+@import './utilities/_width.scss';
+@import './utilities/_text.scss';
+@import './utilities/_skip-link.scss';
+@import './utilities/_box.scss';
