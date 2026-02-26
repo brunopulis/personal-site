@@ -2,27 +2,17 @@
 layout: base
 ---
 
-<a href="/poetry/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">← Voltar para poesia</a>
-
-<nav class="mb-4 text-sm" aria-label="Breadcrumb">
-  <ol class="flex space-x-2">
-    <li><a href="/" class="hover:text-blue-600">Home</a></li>
-    <li><span aria-hidden="true">›</span></li>
-    <li><a href="/poetry/" class="hover:text-blue-600">Poesias</a></li>
-    <li><span aria-hidden="true">›</span></li>
-    <li class="">{{ title }}</li>
-  </ol>
-</nav>
-
-<article class="h-entry">
-  <header class="mb-4">
-    <h1 class="mb-2 p-name font-bold text-2xl">{{ title }}</h1>
-    <div class="text-sm">
-      <time class="dt-published" datetime="{{ page.date | toISOString }}">{{ page.date | readableDate }}</time>
-      <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
-    </div>
+<div class="wrapper region">
+  <header class="flow">
+    <h1 class="p-name">{{ title }}</h1>
+    <p class="p-note">{{ description }}</p>
   </header>
-  <div class="max-w-none e-content prose">
-    {{ content | safe }}
-  </div>
-</article>
+
+  <article class="h-entry flow">
+    <div class="e-content prose flow">
+      {{ content | safe }}
+    </div>
+
+    {% include "components/post-engagement.njk" %}
+  </article>
+</div>
