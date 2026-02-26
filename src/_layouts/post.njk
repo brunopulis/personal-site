@@ -2,69 +2,47 @@
 layout: base
 ---
 
-<nav aria-label="breadcrumb">
-  <ol>
-    <li><a href="/">Home</a></li>
-    <li><span aria-hidden="true">›</span></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><span aria-hidden="true">›</span></li>
-    <li>{{ title }}</li>
-  </ol>
-</nav>
+<div class="wrapper region">
+  <nav class="flow region" aria-label="breadcrumb">
+    <ol class="cluster" role="list">
+      <li><a href="/">Home</a></li>
+      <li><span aria-hidden="true">›</span></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><span aria-hidden="true">›</span></li>
+      <li>{{ title }}</li>
+    </ol>
+  </nav>
 
-<article class="h-entry">
-  <h1 class="p-name">{{ title }}</h1>
-  {% if subtitle %}
-  <p class="subtitle">{{ subtitle }}</p>
-  {% endif %}
-  <div>
-    Publicado em <time class="dt-published" datetime="{{ page.date | toISOString }}">{{ page.date | readableDate
-      }}</time>
-    por <span class="p-author h-card"><a class="p-name hover:text-brand-red-500 u-url" href="/about/">{{ author or
-        site.author }}</a></span>
-    • <span class="reading-time">{{ content | readingTime }} min de leitura</span>
-  </div>
-  <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
+  <article class="h-entry flow ">
+    <h1 class="p-name">{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
 
-  <div class="e-content">
-    {{ content | safe }}
-  </div>
-
-  {% if tags %}
-  <div class="mt-8 pt-6 border-gray-200 border-t post-tags">
-    <h3 class="mb-2 font-semibold text-brand-red-500 text-sm">Tags</h3>
-    <div class="flex flex-wrap gap-2">
-      {% for tag in tags %}
-      <a class="bg-brand-gray-200 p-category px-2 py-0.5 rounded font-bold text-brand-dark-500"
-        href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
-
-  <section>
-    {% include "components/post-engagement.njk" %}
-  </section>
-
-  <section>
-    {% if site.newsletter.enabled %}
     <div>
-      <h3>{{ site.newsletter.title }}</h3>
-      <p>{{ site.newsletter.description }}</p>
-      <a href="https://brunopulis.substack.com" rel="noopener noreferrer" target="_blank"
-        class="bg-brand-red-500 hover:bg-brand-red-600 px-6 py-2 rounded-lg font-bold text-white">Inscrever</a>
+      Publicado em
+      <time class="dt-published" datetime="{{ page.date | toISOString }}">
+        {{ page.date | readableDate}}
+      </time>
+      • <a class="hidden u-url" href="{{ page.url }}">Link permanente</a>
     </div>
-    {% endif %}
-  </section>
 
 
-  <section id="webmentions" class="mt-12">
-    <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
-    <div id="webmentions-list">
-      <div class="py-4 text-gray-500 text-center">
-        <div class="animate-pulse">Carregando webmentions...</div>
+    <div class="e-content prose flow">
+      {{ content | safe }}
+    </div>
+
+    {% if tags %}
+    <div class="mt-8 pt-6 border-gray-200 border-t post-tags">
+      <h3 class="mb-2 font-semibold text-brand-red-500 text-sm">Tags</h3>
+      <div class="flex flex-wrap gap-2">
+        {% for tag in tags %}
+        <a class="bg-brand-gray-200 p-category px-2 py-0.5 rounded font-bold text-brand-dark-500"
+          href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        {% endfor %}
       </div>
     </div>
-  </section>
-</article>
+    {% endif %}
+
+    {% include "components/post-engagement.njk" %}
+    {% include "components/newsletter.njk" %}
+  </article>
 </div>
