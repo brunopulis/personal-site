@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/30</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/26</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/30</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
@@ -120,24 +120,14 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,6 +139,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -167,14 +166,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,7 +183,7 @@
  * @param {String} category - Categoria a filtrar
  * @returns {Array} Items filtrados pela categoria
  */
-export const categoryFilter = <span class="fstat-no" title="function not covered" >(i</span>tems, category) =&gt; {
+export const categoryFilter = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>tems, category) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  if (!items) {</span>
 <span class="cstat-no" title="statement not covered" >    console.warn('categoryFilter: items is undefined or null');</span>
 <span class="cstat-no" title="statement not covered" >    return [];</span>
@@ -209,9 +207,9 @@ export const categoryFilter = <span class="fstat-no" title="function not covered
 <span class="cstat-no" title="statement not covered" >    try {</span>
       let itemCategories = <span class="cstat-no" title="statement not covered" >null;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (item.data &amp;&amp; item.data.categories) {</span>
+<span class="cstat-no" title="statement not covered" >      if (item.data?.categories) {</span>
 <span class="cstat-no" title="statement not covered" >        itemCategories = item.data.categories;</span>
-      } else <span class="cstat-no" title="statement not covered" >if (item.data &amp;&amp; item.data.category) {</span>
+      } else <span class="cstat-no" title="statement not covered" >if (item.data?.category) {</span>
 <span class="cstat-no" title="statement not covered" >        itemCategories = item.data.category;</span>
       } else <span class="cstat-no" title="statement not covered" >if (item.categories) {</span>
 <span class="cstat-no" title="statement not covered" >        itemCategories = item.categories;</span>
@@ -223,12 +221,10 @@ export const categoryFilter = <span class="fstat-no" title="function not covered
 <span class="cstat-no" title="statement not covered" >        return false;</span>
       }
 &nbsp;
-      const categoriesArray = <span class="cstat-no" title="statement not covered" >Array.isArray(itemCategories) </span>
-        ? itemCategories 
-        : [itemCategories];
+      const categoriesArray = <span class="cstat-no" title="statement not covered" >Array.isArray(itemCategories) ? itemCategories : [itemCategories];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return categoriesArray.some(<span class="fstat-no" title="function not covered" >ca</span>t =&gt; </span>
-<span class="cstat-no" title="statement not covered" >        String(cat).toLowerCase().trim() === String(category).toLowerCase().trim()</span>
+<span class="cstat-no" title="statement not covered" >      return categoriesArray.some(</span>
+<span class="fstat-no" title="function not covered" >        ca</span>t =&gt; <span class="cstat-no" title="statement not covered" >String(cat).toLowerCase().trim() === String(category).toLowerCase().trim()</span>
       );
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >      console.error('categoryFilter: error filtering item', error);</span>
@@ -237,14 +233,15 @@ export const categoryFilter = <span class="fstat-no" title="function not covered
   });
 };
 &nbsp;
-export default categoryFilter;</pre></td></tr></table></pre>
+export default categoryFilter;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T23:38:25.998Z
+                at 2026-02-27T18:50:29.943Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

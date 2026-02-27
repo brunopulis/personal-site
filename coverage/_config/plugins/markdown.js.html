@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>0/18</span>
             </div>
         
             
@@ -140,7 +140,11 @@
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,38 +218,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import markdownIt from 'markdown-it';
-import markdownItAttrs from 'markdown-it-attrs';
-import markdownItPrism from 'markdown-it-prism';
-import markdownItAnchor from 'markdown-it-anchor';
-import markdownItClass from '@toycode/markdown-it-class';
-import markdownItLinkAttributes from 'markdown-it-link-attributes';
-import {full as markdownItEmoji} from 'markdown-it-emoji';
-import markdownItFootnote from 'markdown-it-footnote';
-import markdownitMark from 'markdown-it-mark';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import markdownItClass from '@toycode/markdown-it-class';
+import markdownIt from 'markdown-it';
 import markdownitAbbr from 'markdown-it-abbr';
-import {slugifyString} from '../filters/slugify.js';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItAttrs from 'markdown-it-attrs';
+import { full as markdownItEmoji } from 'markdown-it-emoji';
+import markdownItFootnote from 'markdown-it-footnote';
+import markdownItLinkAttributes from 'markdown-it-link-attributes';
+import markdownitMark from 'markdown-it-mark';
+import markdownItPrism from 'markdown-it-prism';
+import { slugifyString } from '../filters/slugify.js';
 &nbsp;
 export const markdownLib = <span class="cstat-no" title="statement not covered" >markdownIt({</span>
   html: true,
   breaks: true,
   linkify: true,
-  typographer: true
+  typographer: false,
 })
   .disable('code')
   .use(markdownItAttrs)
   .use(markdownItPrism, {
-    defaultLanguage: 'plaintext'
+    defaultLanguage: 'plaintext',
   })
   .use(markdownItAnchor, {
     slugify: slugifyString,
     tabIndex: false,
     permalink: markdownItAnchor.permalink.headerLink({
-      class: 'heading-anchor'
-    })
+      class: 'heading-anchor',
+    }),
   })
   .use(markdownItClass, {})
   .use(markdownItLinkAttributes, [
@@ -255,9 +263,9 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
 <span class="cstat-no" title="statement not covered" >        return href.match(/^https?:\/\//);</span>
       },
       attrs: {
-        rel: 'noopener'
-      }
-    }
+        rel: 'noopener',
+      },
+    },
   ])
   .use(markdownItEmoji)
   .use(markdownItFootnote)
@@ -271,9 +279,9 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
         '&lt;': '&amp;lt;',
         '&gt;': '&amp;gt;',
         '"': '&amp;quot;',
-        "'": '&amp;#039;'
+        "'": '&amp;#039;',
       };
-<span class="cstat-no" title="statement not covered" >      return text.replace(/[&amp;&lt;&gt;"']/g, <span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >map[m])</span>;</span>
+<span class="cstat-no" title="statement not covered" >      return text.replaceAll(/[&amp;&lt;&gt;"']/g, <span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >map[m])</span>;</span>
     };
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    md.renderer.rules.image = <span class="fstat-no" title="function not covered" >(t</span>okens, idx) =&gt; {</span>
@@ -289,9 +297,13 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
 <span class="cstat-no" title="statement not covered" >        attributes.push(['eleventy:widths', '650,960,1400']);</span>
       }
 &nbsp;
-      const attributesString = <span class="cstat-no" title="statement not covered" >attributes.map(<span class="fstat-no" title="function not covered" >([</span>key, value]) =&gt; <span class="cstat-no" title="statement not covered" >`${key}="${escapeHtml(value)}"`)</span>.join(' ');</span>
+      const attributesString = <span class="cstat-no" title="statement not covered" >attributes</span>
+        .map(<span class="fstat-no" title="function not covered" >([</span>key, value]) =&gt; <span class="cstat-no" title="statement not covered" >`${key}="${escapeHtml(value)}"`)</span>
+        .join(' ');
       const imgTag = <span class="cstat-no" title="statement not covered" >`&lt;img src="${src}" alt="${alt}" ${attributesString}&gt;`;</span>
-<span class="cstat-no" title="statement not covered" >      return caption ? `&lt;figure&gt;${imgTag}&lt;figcaption&gt;${escapeHtml(caption)}&lt;/figcaption&gt;&lt;/figure&gt;` : imgTag;</span>
+<span class="cstat-no" title="statement not covered" >      return caption</span>
+        ? `&lt;figure&gt;${imgTag}&lt;figcaption&gt;${escapeHtml(caption)}&lt;/figcaption&gt;&lt;/figure&gt;`
+        : imgTag;
     };
   });
 &nbsp;</pre></td></tr></table></pre>
@@ -301,7 +313,7 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T23:38:26.033Z
+                at 2026-02-27T18:50:29.979Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
