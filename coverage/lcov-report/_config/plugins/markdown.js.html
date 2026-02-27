@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>19/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -156,7 +156,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,7 +179,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,35 +192,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,7 +237,7 @@ import markdownitMark from 'markdown-it-mark';
 import markdownItPrism from 'markdown-it-prism';
 import { slugifyString } from '../filters/slugify.js';
 &nbsp;
-export const markdownLib = <span class="cstat-no" title="statement not covered" >markdownIt({</span>
+export const markdownLib = markdownIt({
   html: true,
   breaks: true,
   linkify: true,
@@ -259,8 +259,8 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
   .use(markdownItLinkAttributes, [
     {
       // match external links
-<span class="fstat-no" title="function not covered" >      ma</span>tcher(href) {
-<span class="cstat-no" title="statement not covered" >        return href.match(/^https?:\/\//);</span>
+      matcher(href) {
+        return href.match(/^https?:\/\//);
       },
       attrs: {
         rel: 'noopener',
@@ -271,37 +271,37 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
   .use(markdownItFootnote)
   .use(markdownitMark)
   .use(markdownitAbbr)
-  .use(<span class="fstat-no" title="function not covered" >md</span> =&gt; {
+  .use(md =&gt; {
     // Helper function to escape HTML entities
-    const escapeHtml = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >te</span>xt =&gt; {</span>
-      const map = <span class="cstat-no" title="statement not covered" >{</span>
+    const escapeHtml = text =&gt; {
+      const map = {
         '&amp;': '&amp;amp;',
         '&lt;': '&amp;lt;',
         '&gt;': '&amp;gt;',
         '"': '&amp;quot;',
         "'": '&amp;#039;',
       };
-<span class="cstat-no" title="statement not covered" >      return text.replaceAll(/[&amp;&lt;&gt;"']/g, <span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >map[m])</span>;</span>
+      return text.replaceAll(/[&amp;&lt;&gt;"']/g, <span class="fstat-no" title="function not covered" >m </span>=&gt; <span class="cstat-no" title="statement not covered" >map[m])</span>;
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    md.renderer.rules.image = <span class="fstat-no" title="function not covered" >(t</span>okens, idx) =&gt; {</span>
-      const token = <span class="cstat-no" title="statement not covered" >tokens[idx];</span>
-      const src = <span class="cstat-no" title="statement not covered" >token.attrGet('src');</span>
-      const alt = <span class="cstat-no" title="statement not covered" >escapeHtml(token.content || '');</span>
-      const caption = <span class="cstat-no" title="statement not covered" >token.attrGet('title');</span>
+    md.renderer.rules.image = (tokens, idx) =&gt; {
+      const token = tokens[idx];
+      const src = token.attrGet('src');
+      const alt = escapeHtml(token.content || <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
+      const caption = token.attrGet('title');
 &nbsp;
       // Collect attributes
-      const attributes = <span class="cstat-no" title="statement not covered" >token.attrs || [];</span>
-      const hasEleventyWidths = <span class="cstat-no" title="statement not covered" >attributes.some(<span class="fstat-no" title="function not covered" >([</span>key]) =&gt; <span class="cstat-no" title="statement not covered" >key === 'eleventy:widths')</span>;</span>
-<span class="cstat-no" title="statement not covered" >      if (!hasEleventyWidths) {</span>
-<span class="cstat-no" title="statement not covered" >        attributes.push(['eleventy:widths', '650,960,1400']);</span>
+      const attributes = token.attrs || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+      const hasEleventyWidths = attributes.some(([key]) =&gt; key === 'eleventy:widths');
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!hasEleventyWidths) {
+        attributes.push(['eleventy:widths', '650,960,1400']);
       }
 &nbsp;
-      const attributesString = <span class="cstat-no" title="statement not covered" >attributes</span>
-        .map(<span class="fstat-no" title="function not covered" >([</span>key, value]) =&gt; <span class="cstat-no" title="statement not covered" >`${key}="${escapeHtml(value)}"`)</span>
+      const attributesString = attributes
+        .map(([key, value]) =&gt; `${key}="${escapeHtml(value)}"`)
         .join(' ');
-      const imgTag = <span class="cstat-no" title="statement not covered" >`&lt;img src="${src}" alt="${alt}" ${attributesString}&gt;`;</span>
-<span class="cstat-no" title="statement not covered" >      return caption</span>
+      const imgTag = `&lt;img src="${src}" alt="${alt}" ${attributesString}&gt;`;
+      return caption
         ? `&lt;figure&gt;${imgTag}&lt;figcaption&gt;${escapeHtml(caption)}&lt;/figcaption&gt;&lt;/figure&gt;`
         : imgTag;
     };
@@ -313,7 +313,7 @@ export const markdownLib = <span class="cstat-no" title="statement not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-27T18:50:29.943Z
+                at 2026-02-27T20:11:11.759Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
