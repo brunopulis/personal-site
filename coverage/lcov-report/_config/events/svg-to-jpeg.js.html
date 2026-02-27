@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -94,9 +94,7 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,47 +117,43 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {promises as fsPromises, existsSync} from 'node:fs';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { existsSync, promises as fsPromises } from 'node:fs';
 import path from 'node:path';
 import Image from '@11ty/eleventy-img';
 &nbsp;
 const ogImagesDir = <span class="cstat-no" title="statement not covered" >'./src/assets/og-images';</span>
 &nbsp;
 export const svgToJpeg = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
-  const socialPreviewImagesDir = <span class="cstat-no" title="statement not covered" >'dist/assets/og-images/';</span>
+  const socialPreviewImagesDir = <span class="cstat-no" title="statement not covered" >'_site/assets/og-images/';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!existsSync(socialPreviewImagesDir)) {</span>
-<span class="cstat-no" title="statement not covered" >    console.log('⚠ No OG images dir found');</span>
+<span class="cstat-no" title="statement not covered" >    console.log('Nenhum diretório de OG imagens encontrado');</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
   const files = <span class="cstat-no" title="statement not covered" >await fsPromises.readdir(socialPreviewImagesDir);</span>
 <span class="cstat-no" title="statement not covered" >  if (files.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    files.forEach(<span class="fstat-no" title="function not covered" >as</span>ync function (filename) {</span>
+<span class="cstat-no" title="statement not covered" >    files.forEach(<span class="fstat-no" title="function not covered" >as</span>ync filename =&gt; {</span>
       const outputFilename = <span class="cstat-no" title="statement not covered" >filename.substring(0, filename.length - 4);</span>
-<span class="cstat-no" title="statement not covered" >      if (filename.endsWith('.svg') &amp; !existsSync(path.join(ogImagesDir, outputFilename))) {</span>
+<span class="cstat-no" title="statement not covered" >      if (filename.endsWith('.svg') &amp;&amp; !existsSync(path.join(ogImagesDir, outputFilename))) {</span>
         const imageUrl = <span class="cstat-no" title="statement not covered" >socialPreviewImagesDir + filename;</span>
 <span class="cstat-no" title="statement not covered" >        await Image(imageUrl, {</span>
           formats: ['jpeg'],
           outputDir: ogImagesDir,
-          filenameFormat: <span class="fstat-no" title="function not covered" >fu</span>nction (id, src, width, format, options) {
-<span class="cstat-no" title="statement not covered" >            return `${outputFilename}.${format}`;</span>
-          }
+          filenameFormat: <span class="fstat-no" title="function not covered" >(_</span>id, _src, _width, format, _options) =&gt; <span class="cstat-no" title="statement not covered" >`${outputFilename}.${format}`,</span>
         });
       }
     });
   } else {
-<span class="cstat-no" title="statement not covered" >    console.log('⚠ No images found on OG images dir');</span>
+<span class="cstat-no" title="statement not covered" >    console.log('Nenhuma imagem encontrada no diretório de imagens OG.');</span>
   }
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -169,7 +163,7 @@ export const svgToJpeg = <span class="cstat-no" title="statement not covered" ><
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T23:38:25.998Z
+                at 2026-02-27T18:50:29.943Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

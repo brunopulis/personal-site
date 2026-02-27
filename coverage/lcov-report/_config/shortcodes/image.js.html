@@ -278,7 +278,8 @@
 <a name='L213'></a><a href='#L213'>213</a>
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
-<a name='L216'></a><a href='#L216'>216</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -493,8 +494,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Image from '@11ty/eleventy-img';
-import path from 'node:path';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import path from 'node:path';
+import Image from '@11ty/eleventy-img';
 &nbsp;
 const stringifyAttributes = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >at</span>tributeMap =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return Object.entries(attributeMap)</span>
@@ -523,7 +525,7 @@ const processImage = <span class="cstat-no" title="statement not covered" ><span
     widths = <span class="branch-0 cbranch-no" title="branch not covered" >[650, 960, 1400],</span>
     sizes = <span class="branch-0 cbranch-no" title="branch not covered" >'auto',</span>
     formats = <span class="branch-0 cbranch-no" title="branch not covered" >['webp', 'jpeg', 'png'],</span>
-    simple = <span class="branch-0 cbranch-no" title="branch not covered" >false </span>// Novo parâmetro para images simples (badges)
+    simple = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span> // Novo parâmetro para images simples (badges)
   } = <span class="cstat-no" title="statement not covered" >options;</span>
 &nbsp;
   // Prepend "./src" if not present
@@ -535,19 +537,19 @@ const processImage = <span class="cstat-no" title="statement not covered" ><span
 <span class="cstat-no" title="statement not covered" >  if (simple || width) {</span>
     const srcExtension = <span class="cstat-no" title="statement not covered" >path.extname(src).toLowerCase();</span>
     const isGif = <span class="cstat-no" title="statement not covered" >srcExtension === '.gif';</span>
-    
+&nbsp;
     // Para GIFs, não processar - apenas retornar o caminho direto
 <span class="cstat-no" title="statement not covered" >    if (isGif) {</span>
       const cleanSrc = <span class="cstat-no" title="statement not covered" >src.replace('./src/', '/');</span>
-      
+&nbsp;
       const imageAttributes = <span class="cstat-no" title="statement not covered" >stringifyAttributes({</span>
-        'src': cleanSrc,
-        ...(width &amp;&amp; {'width': width}),
-        ...(height &amp;&amp; {'height': height}),
+        src: cleanSrc,
+        ...(width &amp;&amp; { width: width }),
+        ...(height &amp;&amp; { height: height }),
         alt,
         loading,
-        'decoding': loading === 'eager' ? 'sync' : 'async',
-        ...(imageClass &amp;&amp; {class: imageClass})
+        decoding: loading === 'eager' ? 'sync' : 'async',
+        ...(imageClass &amp;&amp; { class: imageClass }),
       });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      return `&lt;img ${imageAttributes}&gt;`;</span>
@@ -555,33 +557,33 @@ const processImage = <span class="cstat-no" title="statement not covered" ><span
 &nbsp;
     // Para outras imagens, processar normalmente
 <span class="cstat-no" title="statement not covered" >    if (width) {</span>
-<span class="cstat-no" title="statement not covered" >      widths = [parseInt(width)];</span>
+<span class="cstat-no" title="statement not covered" >      widths = [parseInt(width, 10)];</span>
     }
-    
+&nbsp;
     const metadata = <span class="cstat-no" title="statement not covered" >await Image(src, {</span>
-      widths: [parseInt(width || widths[0])],
+      widths: [parseInt(width || widths[0], 10)],
       formats: ['jpeg'],
       urlPath: '/assets/images/',
-      outputDir: './dist/assets/images/',
-      filenameFormat: <span class="fstat-no" title="function not covered" >(i</span>d, src, width, format, options) =&gt; {
+      outputDir: './_site/assets/images/',
+      filenameFormat: <span class="fstat-no" title="function not covered" >(_</span>id, src, width, format, _options) =&gt; {
         const extension = <span class="cstat-no" title="statement not covered" >path.extname(src);</span>
         const name = <span class="cstat-no" title="statement not covered" >path.basename(src, extension);</span>
 <span class="cstat-no" title="statement not covered" >        return `${name}-${width}w.${format}`;</span>
-      }
+      },
     });
 &nbsp;
     const lowsrc = <span class="cstat-no" title="statement not covered" >metadata.jpeg || Object.values(metadata)[0];</span>
     const lowsrcEntry = <span class="cstat-no" title="statement not covered" >lowsrc[lowsrc.length - 1];</span>
 &nbsp;
     const imageAttributes = <span class="cstat-no" title="statement not covered" >stringifyAttributes({</span>
-      'src': lowsrcEntry.url,
-      'width': lowsrcEntry.width,
-      'height': lowsrcEntry.height,
+      src: lowsrcEntry.url,
+      width: lowsrcEntry.width,
+      height: lowsrcEntry.height,
       alt,
       loading,
-      'decoding': loading === 'eager' ? 'sync' : 'async',
-      ...(imageClass &amp;&amp; {class: imageClass}),
-      'eleventy:ignore': ''
+      decoding: loading === 'eager' ? 'sync' : 'async',
+      ...(imageClass &amp;&amp; { class: imageClass }),
+      'eleventy:ignore': '',
     });
 &nbsp;
     const imgElement = <span class="cstat-no" title="statement not covered" >`&lt;img ${imageAttributes}&gt;`;</span>
@@ -600,12 +602,12 @@ const processImage = <span class="cstat-no" title="statement not covered" ><span
     width,
     height,
     urlPath: '/assets/images/',
-    outputDir: './dist/assets/images/',
-    filenameFormat: <span class="fstat-no" title="function not covered" >(i</span>d, src, width, format, options) =&gt; {
+    outputDir: './_site/assets/images/',
+    filenameFormat: <span class="fstat-no" title="function not covered" >(_</span>id, src, width, format, _options) =&gt; {
       const extension = <span class="cstat-no" title="statement not covered" >path.extname(src);</span>
       const name = <span class="cstat-no" title="statement not covered" >path.basename(src, extension);</span>
 <span class="cstat-no" title="statement not covered" >      return `${name}-${width}w.${format}`;</span>
-    }
+    },
   });
 &nbsp;
   const lowsrc = <span class="cstat-no" title="statement not covered" >metadata.jpeg || metadata.png || metadata.gif || Object.values(metadata)[0];</span>
@@ -620,18 +622,18 @@ const processImage = <span class="cstat-no" title="statement not covered" ><span
     .join('\n');
 &nbsp;
   const imageAttributes = <span class="cstat-no" title="statement not covered" >stringifyAttributes({</span>
-    'src': lowsrcEntry.url,
-    'width': lowsrcEntry.width,
-    'height': lowsrcEntry.height,
+    src: lowsrcEntry.url,
+    width: lowsrcEntry.width,
+    height: lowsrcEntry.height,
     alt,
     loading,
-    'decoding': loading === 'eager' ? 'sync' : 'async',
-    ...(imageClass &amp;&amp; {class: imageClass}),
-    'eleventy:ignore': ''
+    decoding: loading === 'eager' ? 'sync' : 'async',
+    ...(imageClass &amp;&amp; { class: imageClass }),
+    'eleventy:ignore': '',
   });
 &nbsp;
   const pictureElement = <span class="cstat-no" title="statement not covered" >`&lt;picture&gt; ${imageSources}&lt;img ${imageAttributes}&gt;&lt;/picture&gt;`;</span>
-  const imgElement = <span class="cstat-no" title="statement not covered" >`&lt;img ${imageAttributes}&gt;`;</span>
+  const _imgElement = <span class="cstat-no" title="statement not covered" >`&lt;img ${imageAttributes}&gt;`;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return caption</span>
     ? `&lt;figure slot="image"${
@@ -676,7 +678,7 @@ export const image = <span class="cstat-no" title="statement not covered" ><span
     widths,
     sizes,
     formats,
-    simple
+    simple,
   });
 };
 &nbsp;
@@ -706,16 +708,17 @@ export const badge = <span class="cstat-no" title="statement not covered" ><span
     loading: 'eager',
     width: '88',
     height: '31',
-    simple: true
+    simple: true,
   });
-};</pre></td></tr></table></pre>
+};
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-11T23:38:25.998Z
+                at 2026-02-27T18:50:29.943Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
