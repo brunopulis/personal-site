@@ -13,4 +13,5 @@ export default {
     '^.+\\.jsx?$': 'babel-jest',
   },
   workerIdleMemoryLimit: '512MB',
+  fakeTimers: { enableGlobally: false },
 };
