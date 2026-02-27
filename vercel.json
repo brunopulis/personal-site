@@ -77,5 +77,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "https://www.brunopulis.com/:path*",
+      "destination": "https://brunopulis.com/:path*",
+      "permanent": true
+    }
   ]
 }
