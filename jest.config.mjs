@@ -8,12 +8,14 @@ export default {
   verbose: true,
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^(\\.{1,2}/.*)\\.js$': '$1',
   },
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.jsx?$': ['babel-jest', { configFile: './babel.config.cjs' }],
   },
   transformIgnorePatterns: [
     'node_modules/(?!(slugify|dayjs|deepmerge|markdown-it|entities|semver)/)',
   ],
   workerIdleMemoryLimit: '512MB',
+  testPathIgnorePatterns: ['/node_modules/', '/cypress/'],
 };
