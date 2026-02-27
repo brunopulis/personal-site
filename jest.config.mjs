@@ -12,6 +12,8 @@ export default {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
+  transformIgnorePatterns: [
+    'node_modules/(?!(slugify|dayjs|deepmerge|markdown-it|entities|semver)/)',
+  ],
   workerIdleMemoryLimit: '512MB',
-  fakeTimers: { enableGlobally: false },
 };
