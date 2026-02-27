@@ -20,7 +20,8 @@
       "!**/tina/__generated__",
       "!**/.tina/__generated__",
       "!**/*.njk",
-      "!**/coverage"
+      "!**/coverage",
+      "!**/src/assets/css/main.css"
     ]
   },
   "formatter": {
