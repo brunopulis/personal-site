@@ -10,7 +10,7 @@
     "watch:css": "postcss src/assets/scss/main.scss -o _site/assets/css/main.css --watch",
     "dev": "tinacms dev -c \"concurrently \\\"eleventy --serve --incremental\\\" \\\"pnpm watch:css\\\"\"",
     "dev:full": "tinacms dev -c \"concurrently \\\"eleventy --serve\\\" \\\"pnpm watch:css\\\"\"",
-    "build": "SKIP_DB_INDEX_CHECK=true tinacms build --local && eleventy && pnpm build:css",
+    "build": "eleventy && pnpm build:css",
     "clean": "rimraf _site",
     "clean:all": "pnpm clean && pnpm clean:og",
     "lint": "biome lint .",
