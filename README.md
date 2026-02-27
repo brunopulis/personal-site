@@ -1,4 +1,6 @@
 # Bruno Pulis - Site Pessoal
+[![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)](https://github.com/brunopulis/personal-website/actions)
+
 
 Meu site pessoal construído com Eleventy, TinaCMS e design acessível.
 
