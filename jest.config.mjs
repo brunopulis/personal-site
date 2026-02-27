@@ -1,7 +1,7 @@
 export default {
   testEnvironment: 'node',
-  roots: ['<rootDir>/src/_config'],
-  testMatch: ['**/tests/**/*.test.js', '**/*.test.js'],
+  roots: ['<rootDir>/tests'],
+  testMatch: ['**/unit/**/*.test.js', '**/integration/**/*.test.js'],
   collectCoverageFrom: ['src/_config/**/*.js', '!src/_config/**/*.njk'],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
@@ -12,4 +12,5 @@ export default {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
+  workerIdleMemoryLimit: '512MB',
 };

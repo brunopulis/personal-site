@@ -50,11 +50,12 @@ pnpm install
 ## Git hooks
 
 O projeto usa Husky com pre-commit hooks que executam:
+
 - Biome lint/format em arquivos modificados
 
 ## Estrutura
 
-```
+```shell
 src/
 ├── _config/          # Configurações do Eleventy
 ├── assets/           # JS, CSS, Imagens
