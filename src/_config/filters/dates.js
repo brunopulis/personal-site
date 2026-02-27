@@ -10,7 +10,7 @@ export const toRfc822Date = date => {
 };
 
 export const toRfc3339Date = date => {
-  return new Date(date).toRfc3339Date();
+  return dayjs(date).format();
 };
 
 export const formatDate = (date, format) => dayjs(date).format(format);
