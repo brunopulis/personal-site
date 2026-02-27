@@ -37,7 +37,7 @@ importers:
         version: 8.2.0(@types/node@25.3.1)
       '@inquirer/select':
         specifier: ^5.0.4
-        version: 5.0.4(@types/node@25.3.1)
+        version: 5.1.0(@types/node@25.3.1)
       '@picocss/pico':
         specifier: ^2.1.1
         version: 2.1.1
@@ -1787,8 +1787,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/core@11.1.1':
-    resolution: {integrity: sha512-hV9o15UxX46OyQAtaoMqAOxGR8RVl1aZtDx1jHbCtSJy1tBdTfKxLPKf7utsE4cRy4tcmCQ4+vdV+ca+oNxqNA==}
+  '@inquirer/core@11.1.5':
+    resolution: {integrity: sha512-QQPAX+lka8GyLcZ7u7Nb1h6q72iZ/oy0blilC3IB2nSt1Qqxp7akt94Jqhi/DzARuN3Eo9QwJRvtl4tmVe4T5A==}
     engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
     peerDependencies:
       '@types/node': '>=18'
@@ -1881,8 +1881,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@inquirer/select@5.0.4':
-    resolution: {integrity: sha512-s8KoGpPYMEQ6WXc0dT9blX2NtIulMdLOO3LA1UKOiv7KFWzlJ6eLkEYTDBIi+JkyKXyn8t/CD6TinxGjyLt57g==}
+  '@inquirer/select@5.1.0':
+    resolution: {integrity: sha512-OyYbKnchS1u+zRe14LpYrN8S0wH1vD0p2yKISvSsJdH2TpI87fh4eZdWnpdbrGauCRWDph3NwxRmM4Pcm/hx1Q==}
     engines: {node: '>=23.5.0 || ^22.13.0 || ^21.7.0 || ^20.12.0'}
     peerDependencies:
       '@types/node': '>=18'
@@ -4771,6 +4771,15 @@ packages:
 
   fast-shallow-equal@1.0.0:
     resolution: {integrity: sha512-HPtaa38cPgWvaCFmRNhlc6NG7pv6NUHqjPgVAkWGoB9mQMwYB27/K0CvOM5Czy+qpT3e8XJ6Q4aPAnzpNpzNaw==}
+
+  fast-string-truncated-width@3.0.3:
+    resolution: {integrity: sha512-0jjjIEL6+0jag3l2XWWizO64/aZVtpiGE3t0Zgqxv0DPuxiMjvB3M24fCyhZUO4KomJQPj3LTSUnDP3GpdwC0g==}
+
+  fast-string-width@3.0.2:
+    resolution: {integrity: sha512-gX8LrtNEI5hq8DVUfRQMbr5lpaS4nMIWV+7XEbXk2b8kiQIizgnlr12B4dA3ZEx3308ze0O4Q1R+cHts8kyUJg==}
+
+  fast-wrap-ansi@0.2.0:
+    resolution: {integrity: sha512-rLV8JHxTyhVmFYhBJuMujcrHqOT2cnO5Zxj37qROj23CP39GXubJRBUFF0z8KFK77Uc0SukZUf7JZhsVEQ6n8w==}
 
   fastest-stable-stringify@2.0.2:
     resolution: {integrity: sha512-bijHueCGd0LqqNK9b5oCMHc0MluJAx0cwqASgbWMvkO01lCYgIhacVRLcaDz3QnyYIRNJRDwMb41VuT6pHJ91Q==}
@@ -9919,7 +9928,7 @@ snapshots:
   '@inquirer/checkbox@5.0.4(@types/node@25.3.1)':
     dependencies:
       '@inquirer/ansi': 2.0.3
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/figures': 2.0.3
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
@@ -9927,26 +9936,26 @@ snapshots:
 
   '@inquirer/confirm@6.0.4(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
 
-  '@inquirer/core@11.1.1(@types/node@25.3.1)':
+  '@inquirer/core@11.1.5(@types/node@25.3.1)':
     dependencies:
       '@inquirer/ansi': 2.0.3
       '@inquirer/figures': 2.0.3
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
       cli-width: 4.1.0
+      fast-wrap-ansi: 0.2.0
       mute-stream: 3.0.0
       signal-exit: 4.1.0
-      wrap-ansi: 9.0.2
     optionalDependencies:
       '@types/node': 25.3.1
 
   '@inquirer/editor@5.0.4(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/external-editor': 2.0.3(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
@@ -9954,7 +9963,7 @@ snapshots:
 
   '@inquirer/expand@5.0.4(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
@@ -9970,14 +9979,14 @@ snapshots:
 
   '@inquirer/input@5.0.4(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
 
   '@inquirer/number@4.0.4(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
@@ -9985,7 +9994,7 @@ snapshots:
   '@inquirer/password@5.0.4(@types/node@25.3.1)':
     dependencies:
       '@inquirer/ansi': 2.0.3
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
@@ -10001,29 +10010,29 @@ snapshots:
       '@inquirer/password': 5.0.4(@types/node@25.3.1)
       '@inquirer/rawlist': 5.2.0(@types/node@25.3.1)
       '@inquirer/search': 4.1.0(@types/node@25.3.1)
-      '@inquirer/select': 5.0.4(@types/node@25.3.1)
+      '@inquirer/select': 5.1.0(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
 
   '@inquirer/rawlist@5.2.0(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
 
   '@inquirer/search@4.1.0(@types/node@25.3.1)':
     dependencies:
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/figures': 2.0.3
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
       '@types/node': 25.3.1
 
-  '@inquirer/select@5.0.4(@types/node@25.3.1)':
+  '@inquirer/select@5.1.0(@types/node@25.3.1)':
     dependencies:
       '@inquirer/ansi': 2.0.3
-      '@inquirer/core': 11.1.1(@types/node@25.3.1)
+      '@inquirer/core': 11.1.5(@types/node@25.3.1)
       '@inquirer/figures': 2.0.3
       '@inquirer/type': 4.0.3(@types/node@25.3.1)
     optionalDependencies:
@@ -13224,6 +13233,16 @@ snapshots:
   fast-json-stable-stringify@2.1.0: {}
 
   fast-shallow-equal@1.0.0: {}
+
+  fast-string-truncated-width@3.0.3: {}
+
+  fast-string-width@3.0.2:
+    dependencies:
+      fast-string-truncated-width: 3.0.3
+
+  fast-wrap-ansi@0.2.0:
+    dependencies:
+      fast-string-width: 3.0.2
 
   fastest-stable-stringify@2.0.2: {}
 
