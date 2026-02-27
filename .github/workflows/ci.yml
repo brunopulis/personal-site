@@ -48,3 +48,20 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+
+      - name: Check coverage threshold
+        run: |
+          COVERAGE=$(pnpm exec jest --coverage --coverageThreshold='{"statements":{"threshold":70},"lines":{"threshold":70},"functions":{"threshold":70},"branches":{"threshold":60}}' 2>&1 || true)
+          echo "$COVERAGE"
+          if echo "$COVERAGE" | grep -q "failed"; then
+            echo "❌ Coverage below threshold!"
+            exit 1
+          fi
+          echo "✅ Coverage threshold met!"
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
