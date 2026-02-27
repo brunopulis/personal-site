@@ -6,6 +6,8 @@ node_modules/
 # Environment
 .env
 .env.local
+.env.production
+.env.*.local
 
 # OS
 .DS_Store
@@ -15,8 +17,17 @@ Thumbs.db
 .vscode/
 .idea/
 .cache/
+
+# TinaCMS
 tina/__generated__/
 
 # Logs
 *.log
 npm-debug.log*
+
+# Testing
+coverage/
+
+# Build outputs
+cypress/videos/
+cypress/screenshots/
