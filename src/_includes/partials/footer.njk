@@ -1,7 +1,7 @@
 <footer>
   <div class="wrapper">
     <div class="region flow" aria-label="Políticas do site">
-      <ul class="cluster text-left" role="list">
+      <ul class="text-left cluster" role="list">
         {% for item in navigation.secondary %}
         <li><a href="{{ item.url }}">{{ item.text }}</a></li>
         {% endfor %}
@@ -13,8 +13,8 @@
       <nav>
         <ul class="cluster" role="list">
           <li>
-            <a href="https://linkedin.com/in/brunopulis" target="_blank" rel="noopener noreferrer">
-              {% lucide "linkedin", { "class": "w-4 h-4" } %}
+            <a href="https://linkedin.com/in/brunopulis" target="_blank" rel="me noopener noreferrer">
+              {% svg "plataform/linkedin" %}
               <span class="visually-hidden">LinkedIn</span>
             </a>
           </li>
@@ -25,19 +25,25 @@
             </a>
           </li>
           <li>
-            <a href="https://mastodon.social/@brunopulis" target="_blank">
-              {% svg "platform/mastodon", "", "" %}
+            <a href="https://pixelfed.social/brunopulis.com" rel="me noopener noreferrer" target="_blank">
+              {% svg "platform/pixelfed" %}
+              <span class="visually-hidden">Pixelfed</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://mastodon.social/@brunopulis" rel="me noopener noreferrer" target="_blank">
+              {% svg "platform/mastodon" %}
               <span class="visually-hidden">Mastodon</span>
             </a>
           </li>
           <li>
             <a href="https://bsky.app/profile/brunopulis.com" target="_blank" rel="me noopener noreferrer">
-              {% svg "platform/bluesky", "", "w-4 h-4" %}
+              {% svg "platform/bluesky" %}
               <span class="visually-hidden">Bluesky</span>
             </a>
           </li>
           <li>
-            <a href="https://threads.net/@brunopulis" target="_blank" rel="noopener noreferrer">
+            <a href="https://threads.net/@brunopulis" target="_blank" rel="me noopener noreferrer">
               {% lucide "spool" %}
               <span class="visually-hidden">Threads</span>
             </a>
@@ -46,7 +52,7 @@
 
           <li>
             <a href="/feeds">
-              {% lucide "rss", { "class": "w-4 h-4" } %}
+              {% lucide "rss" %}
               <span class="visually-hidden">RSS</span>
             </a>
           </li>
