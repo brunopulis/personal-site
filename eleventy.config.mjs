@@ -106,9 +106,9 @@ export default async function eleventy(eleventyConfig) {
     'src/assets/images/favicon/apple-touch-icon.png': 'apple-touch-icon.png',
     'src/assets/images/favicon/icon-192x192.png': 'icon-192x192.png',
     'src/assets/images/favicon/icon-512x512.png': 'icon-512x512.png',
+    'src/.well-known': '.well-known',
   });
   eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
-
   eleventyConfig.addPassthroughCopy({ 'src/manifest.webmanifest': 'manifest.webmanifest' });
   eleventyConfig.addPassthroughCopy({ 'src/sw.js': 'sw.js' });
 
