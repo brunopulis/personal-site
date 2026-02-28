@@ -49,6 +49,9 @@ pagination:
           {% if book.data.author %}
           <p>{{ book.data.author }}</p>
           {% endif %}
+          {% if book.data.rating %}
+          <p>{{ book.data.rating | starRating }}</p>
+          {% endif %}
         </div>
       </article>
     </li>

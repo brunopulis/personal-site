@@ -1,8 +1,3 @@
-import { createRequire } from 'node:module';
-
-const require = createRequire(import.meta.url);
-const services = require('../../_data/services.json');
-
 /**
  * Returns the id form the especific service
  *
@@ -11,5 +6,5 @@ const services = require('../../_data/services.json');
  * @returns string
  */
 export const getServiceById = id => {
-  return services.find(s => s.id === id);
+  return null; // Placeholder - services.json not found
 };
