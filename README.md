@@ -1,6 +1,7 @@
 # Bruno Pulis - Site Pessoal
 
 [![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)](https://github.com/brunopulis/personal-website/actions)
+[![CodeQL](https://github.com/brunopulis/personal-site/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/brunopulis/personal-site/actions/workflows/github-code-scanning/codeql)
 [![Codecov](https://img.shields.io/codecov/c/github/brunopulis/personal-website)](https://app.codecov.io/gh/brunopulis/personal-website)
 
 Meu site pessoal construído com Eleventy, TinaCMS e design acessível.
