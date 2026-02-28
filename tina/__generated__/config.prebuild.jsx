@@ -173,7 +173,7 @@ var BookmarkCollection = {
 // tina/collections/gallery.ts
 var GalleryCollection = {
   name: "photos",
-  label: "Galeria de Fotos",
+  label: "Fotos",
   path: "src/content/gallery",
   format: "md",
   match: {
