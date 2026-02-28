@@ -11,6 +11,57 @@ export const posts = collectionApi => {
 };
 
 /**
+ * Get unique years from posts - works as Eleventy collection
+ * Uses getFilteredByGlob for lazy loading
+ */
+export const postYears = collectionApi => {
+  const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
+  if (!allPosts) {
+    return [];
+  }
+
+  const years = [
+    ...new Set(
+      allPosts
+        .map(post => {
+          // Use only data.pubDate from frontmatter, not post.date (which is file modified date)
+          const postDate = post.data.pubDate || post.data.date;
+          return postDate ? new Date(postDate).getFullYear() : null;
+        })
+        .filter(Boolean)
+    ),
+  ];
+  return years.sort((a, b) => a - b);
+};
+
+/**
+ * Get unique years (alias for postYears)
+ */
+export const getPostYears = postYears;
+
+/**
+ * Posts by Year Collections
+ * Generates: posts2026, posts2025, posts2024, etc.
+ */
+export const getPostsByYear = collectionApi => year => {
+  const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
+  if (!allPosts) {
+    return [];
+  }
+  return allPosts
+    .filter(post => {
+      const postDate = post.data.pubDate || post.data.date;
+      const postYear = postDate ? new Date(postDate).getFullYear() : null;
+      return postYear === year;
+    })
+    .sort((a, b) => {
+      const dateA = a.data.pubDate || a.data.date;
+      const dateB = b.data.pubDate || b.data.date;
+      return new Date(dateB) - new Date(dateA);
+    });
+};
+
+/**
  * Notes Collection
  *
  * @param {*} collectionApi
@@ -32,12 +83,22 @@ export const poems = collectionApi => {
 
 /**
  * Bookmarks Collection
- 
+
  * @param {*} collectionApi
  * @returns
  */
 export const bookmarks = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*').reverse();
+};
+
+/**
+ * Likes Collection
+
+ * @param {*} collectionApi
+ * @returns
+ */
+export const likes = collectionApi => {
+  return collectionApi.getFilteredByGlob('./src/content/likes/**/*').reverse();
 };
 
 /**
@@ -198,16 +259,20 @@ export const tagList = collection => {
 };
 
 export default {
-  posts,
   showInSitemap,
   newsletters,
-  bookmarks,
-  poems,
   books,
-  notes,
+  bookmarks,
+  games,
+  getPostsByYear,
+  getPostYears,
+  likes,
   medias,
   music,
-  games,
-  tagList,
+  notes,
   photos,
+  poems,
+  posts,
+  postYears,
+  tagList,
 };

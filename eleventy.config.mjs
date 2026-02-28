@@ -25,6 +25,9 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addLayoutAlias('poem', 'poem.njk');
 
   eleventyConfig.addCollection('posts', collections.posts);
+  eleventyConfig.addCollection('postYears', collections.postYears);
+  eleventyConfig.addCollection('postsByYear', collections.getPostsByYear);
+
   eleventyConfig.addCollection('poems', collections.poems);
   eleventyConfig.addCollection('notes', collections.notes);
   eleventyConfig.addCollection('books', collections.books);
