@@ -11,6 +11,7 @@ import {
 import { getRelatedServices } from './filters/getRelatedServices.js';
 import { getServiceById } from './filters/getServiceById.js';
 import { groupBy, groupByMonth, groupByYear, groupByYearMonth } from './filters/groupBy.js';
+import { lazyGroupByYear, lazyPaginate } from './filters/lazy.js';
 import { limit } from './filters/limit.js';
 import { markdownFormat } from './filters/markdown-format.js';
 import { readingTime } from './filters/reading-time.js';
@@ -65,4 +66,6 @@ export {
   webmentionisOwn,
   webmentionSort,
   markdownFormat as markdownify,
+  lazyPaginate,
+  lazyGroupByYear,
 };

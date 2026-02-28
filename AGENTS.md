@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Site pessoal/blog estático construído com Eleventy, TinaCMS e design acessível. Projeto em TypeScript/JavaScript com testes Jest e Cypress.
+Site pessoal/blog estático construído com Eleventy, TinaCMS e design acessível. Projeto em JavaScript/TypeScript com testes Jest e Cypress.
 
 ## Comandos de Build, Lint e Test
 
@@ -15,7 +15,7 @@ pnpm install
 ### Desenvolvimento
 
 ```bash
-pnpm dev          # Inicia servidor com watch
+pnpm dev          # Servidor com watch + TinaCMS
 pnpm dev:full    # Desenvolvimento completo
 ```
 
@@ -23,7 +23,7 @@ pnpm dev:full    # Desenvolvimento completo
 
 ```bash
 pnpm build        # Build de produção
-pnpm build:css    # Compila CSS apenas
+pnpm build:css   # Compila CSS apenas
 pnpm clean        # Remove diretório _site
 pnpm clean:all    # Limpa tudo
 ```
@@ -40,18 +40,22 @@ pnpm check        # Lint + format (corrige tudo)
 ### Testes
 
 ```bash
-pnpm test                  # Executa todos os testes
-pnpm test -- tests/unit   # Apenas testes unitários
-pnpm test -- tests/integration  # Apenas testes de integração
-pnpm test -- --testNamePattern="slugify"  # Teste específico por nome
-pnpm test -- filename.test.js  # Executa arquivo específico
+pnpm test                           # Executa todos os testes
+pnpm test -- --testPathPattern=unit           # Apenas unitários
+pnpm test -- --testPathPattern=integration    # Apenas integração
+pnpm test -- --testNamePattern=slugify         # Teste por nome
+pnpm test -- slugify.test.js                   # Arquivo específico
+pnpm test -- --watch                           # Modo watch
+pnpm test -- --coverage                        # Com coverage
 ```
+
+**Nota**: Jest 30+ requer `NODE_OPTIONS='--experimental-vm-modules'`
 
 ## Estrutura de Testes
 
-```shell
+```
 tests/
-├── unit/           # Testes unitários (54 testes)
+├── unit/           # Testes unitários
 │   ├── simple.test.js
 │   ├── dates.test.js
 │   ├── slugify.test.js
@@ -70,9 +74,9 @@ tests/
 
 ### Imports
 
-- Use imports ESM (`import { x } from './path.js'`)
-- Ordene imports: externos > internos > relativos
-- Use paths relativos curtos quando possível
+- Use ESM (`import { x } from './path.js'`)
+- Ordene: externos > internos > relativos
+- Use paths relativos curtos
 
 ### Nomenclatura
 
@@ -84,8 +88,8 @@ tests/
 ### Tipos
 
 - Use TypeScript para novos arquivos
-- Para JS, use JSDoc para documentar tipos
-- Prefira tipos explícitos em parâmetros de funções
+- Para JS, use JSDoc
+- Prefira tipos explícitos em parâmetros
 
 ### Tratamento de Erros
 
@@ -93,42 +97,41 @@ tests/
 - Logue erros com contexto adequado
 - Retorne valores padrão seguros em filtros
 
-### Estilo de Código (Biome)
-
-O projeto usa Biome para lint e formatação. Configuração em `biome.json`.
+### Biome Config (biome.json)
 
 ```json
 {
-  "editor.defaultFormatter": "biome",
-  "editor.formatOnSave": true,
-  "javascript.formate.semicolon": "always",
-  "javascript.formate.quoteStyle": "single"
+  "formatter": { "indentWidth": 2, "lineWidth": 100 },
+  "javascript": {
+    "formatter": { "quoteStyle": "single", "semicolons": "always" }
+  },
+  "linter": {
+    "rules": { "recommended": true, "style": { "useConst": "error" } }
+  }
 }
 ```
 
 ## Estrutura do Projeto
 
-```shell
+```
 src/
-├── _config/              # Configurações Eleventy
-│   ├── filters/          # Filtros Nunjucks
-│   ├── plugins/          # Plugins (markdown, etc)
-│   ├── shortcodes/       # Shortcodes
-│   └── events/           # Eventos de build
-├── assets/               # JS, SCSS, Imagens
-├── common/               # Templates globais
-├── content/              # Conteúdo do site
+├── _config/           # Configurações Eleventy
+│   ├── filters/        # Filtros Nunjucks
+│   ├── plugins/        # Plugins (markdown, etc)
+│   ├── shortcodes/     # Shortcodes
+│   └── events/        # Eventos de build
+├── assets/            # JS, SCSS, Imagens
+├── common/            # Templates globais
+├── content/           # Conteúdo do site
 │   ├── newsletter/
 │   ├── talks/
 │   └── games/
-└── sw.js                 # Service Worker
+└── sw.js              # Service Worker
 ```
 
 ## Git Hooks (Husky)
 
-O projeto usa Husky com pre-commit hooks que executam:
-
-- `lint-staged` com Biome em arquivos modificados
+Husky com pre-commit executa `lint-staged` com Biome.
 
 Para ativar: `pnpm husky install`
 
@@ -140,21 +143,22 @@ Para ativar: `pnpm husky install`
 - **cypress** - Testes E2E
 - **@biomejs/biome** - Linter/Formatter
 - **sass** / **postcss** - CSS
-- **markdown-it** - Processamento Markdown
 
 ## Notas Importantes
 
 1. O `.env` contém variáveis sensíveis e NÃO deve ser commitado
-2. Arquivos de SEO já existem em `src/common/` (robots, sitemap, manifest)
-3. Configurações de CI/CD em `.github/workflows/`
-4. Testes rodam com flag `--no-webstorage` por conta do Jest 30
+2. Arquivos de SEO em `src/common/` (robots, sitemap, manifest)
+3. CI/CD em `.github/workflows/`
+4. Testes usam flag `--no-webstorage` com Jest 30
 
 ## Troubleshooting
 
 ### Testes falhando com "Cannot initialize local storage"
 
-Use: `cross-env NODE_OPTIONS='--no-webstorage --experimental-vm-modules' jest`
+```bash
+cross-env NODE_OPTIONS='--no-webstorage --experimental-vm-modules' jest
+```
 
 ### Problemas com pnpm
 
-O projeto usa pnpm 10+. Use `corepack enable` para ativar.
+Use pnpm 10+: `corepack enable`

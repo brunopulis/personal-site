@@ -2,7 +2,7 @@ import type { Collection } from 'tinacms';
 
 export const GalleryCollection: Collection = {
   name: 'photos',
-  label: 'Galeria de Fotos',
+  label: 'Fotos',
   path: 'src/content/gallery',
   format: 'md',
   match: {

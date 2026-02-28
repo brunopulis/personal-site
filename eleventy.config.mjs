@@ -2,8 +2,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+import bundlePlugin from '@11ty/eleventy-plugin-bundle';
 import yaml from 'js-yaml';
-
 import * as collections from './src/_config/collections.js';
 import events from './src/_config/events.js';
 import * as customFilters from './src/_config/filters.js';
@@ -30,6 +30,7 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addCollection('books', collections.books);
   eleventyConfig.addCollection('newsletters', collections.newsletters);
   eleventyConfig.addCollection('medias', collections.medias);
+  eleventyConfig.addCollection('likes', collections.likes);
   eleventyConfig.addCollection('games', collections.games);
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
 
@@ -46,6 +47,11 @@ export default async function eleventy(eleventyConfig) {
     useTransform: true,
   });
   eleventyConfig.addPlugin(plugins.webmentions);
+  // Note: Use shortcodes image/imageKeys for optimized images instead of automatic transform
+  // eleventyImageTransformPlugin requires explicit sizes attribute on all images
+  eleventyConfig.addPlugin(bundlePlugin, {
+    minify: true,
+  });
 
   eleventyConfig.setLibrary('md', plugins.markdownLib);
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
@@ -131,5 +137,19 @@ export default async function eleventy(eleventyConfig) {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     templateFormats: ['njk', 'md', 'html'],
+    browserSyncConfig: {
+      callbacks: {
+        ready: (_err, bs) => {
+          bs.addMiddleware('*', (req, res) => {
+            // Cache headers para assets estáticos
+            if (req.url.match(/\.(css|js|png|jpg|jpeg|webp|avif|svg|ico|woff2?)$/)) {
+              res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+            } else {
+              res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+            }
+          });
+        },
+      },
+    },
   };
 }

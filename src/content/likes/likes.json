@@ -1,1 +1,3 @@
-[]
+{
+  "permalink": "/likes/{{ page.fileSlug }}/"
+}
