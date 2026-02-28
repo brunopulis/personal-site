@@ -8,6 +8,7 @@ import {
   toISOString,
   toRfc822Date,
 } from './filters/dates.js';
+import { filterByMediaType, lazyGroupByWatchedYear } from './filters/filterByType.js';
 import { filterByYear } from './filters/filterByYear.js';
 import { getRelatedServices } from './filters/getRelatedServices.js';
 import { getServiceById } from './filters/getServiceById.js';
@@ -23,6 +24,7 @@ import { sortAlphabetically } from './filters/sort-alphabetic.js';
 import { sortKeys } from './filters/sort-keys.js';
 import { splitStrings } from './filters/split-strings.js';
 import { splitlines } from './filters/splitlines.js';
+import { starRating } from './filters/starRating.js';
 import { streamIcon, streamTypeLabel } from './filters/stream-icon.js';
 import { striptags } from './filters/striptags.js';
 import {
@@ -47,6 +49,7 @@ export {
   readableDate,
   sortByDate,
   filterByYear,
+  filterByMediaType,
   getRelatedServices,
   getServiceById,
   serviceUrl,
@@ -70,4 +73,6 @@ export {
   markdownFormat as markdownify,
   lazyPaginate,
   lazyGroupByYear,
+  lazyGroupByWatchedYear,
+  starRating,
 };

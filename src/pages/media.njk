@@ -13,54 +13,104 @@ pagination:
   <p>{{ description }}</p>
 </header>
 
-{% set moviesByYear = collections.medias | groupBy("watchedYear") %}
-{% for year in moviesByYear | sortKeys %}
-<section class="region flow" data-year="{{ year }}">
-  <div>
-    <h2>Visto em {{ year }}</h2>
-    <p>{{ moviesByYear[year] | length }} {{ "filmes" if moviesByYear[year] | length > 1 else "filme" }}
-    </p>
-  </div>
+{% set movies = collections.medias | filterByMediaType("movie") %}
+{% set tvShows = collections.medias | filterByMediaType("tv") %}
 
-  <ul class="grid" role="list">
-    {% for movie in moviesByYear[year] | sort(attribute="data.date") | reverse %}
-    <li>
-      <article class="flow card">
-        {% if movie.data.poster %}
-        <img src="{{ movie.data.poster }}" alt="{{ movie.data.title }}"
-          class="w-full object-cover transition-transform duration-500" height="270" loading="lazy" decoding="async" />
-        {% endif %}
+{% if movies | length > 0 %}
+<section class="region flow">
+  <h2>Filmes</h2>
+  {% set moviesByYear = movies | lazyGroupByWatchedYear %}
+  {% for year in moviesByYear | sortKeys %}
+  <div data-year="{{ year }}">
+    <h3>Assistidos em {{ year }}</h3>
+    <ul class="grid" role="list">
+      {% for movie in moviesByYear[year] | sort(attribute="data.watchedDate") | reverse %}
+      <li>
+        <article class="flow card">
+          {% if movie.data.poster %}
+          <img src="{{ movie.data.poster }}" alt="{{ movie.data.title }}"
+            class="w-full object-cover transition-transform duration-500" height="270" loading="lazy" decoding="async" />
+          {% endif %}
 
-        <div class="flow">
-          <h3 class="mt-6 font-bold text-brand-red-500">
-            {% if movie.data.url %}
-            <a href="{{ movie.data.url }}" class="font-bold text-brand-red-500" target="_blank"
-              rel="noopener noreferrer">
+          <div class="flow">
+            <h3 class="mt-6 font-bold text-brand-red-500">
+              {% if movie.data.url %}
+              <a href="{{ movie.data.url }}" class="font-bold text-brand-red-500" target="_blank"
+                rel="noopener noreferrer">
+                {{ movie.data.title }}
+              </a>
+              {% else %}
               {{ movie.data.title }}
-            </a>
-            {% else %}
-            {{ movie.data.title }}
+              {% endif %}
+            </h3>
+            {% if movie.data.subtitle %}
+            <p class="text-sm">{{ movie.data.subtitle }}</p>
             {% endif %}
-          </h3>
-          {% if movie.data.subtitle %}
-          <p class="text-sm">{{ movie.data.subtitle }}</p>
-          {% endif %}
-          {% if movie.data.description %}
-          <p class="text-sm">{{ movie.data.description }}</p>
-          {% endif %}
-          {% if movie.data.director %}
-          <p class="font-semibold text-brand-red-500">{{ movie.data.director }}</p>
-          {% endif %}
-        </div>
-      </article>
-    </li>
-    {% endfor %}
-  </ul>
-  <hr />
+            {% if movie.data.description %}
+            <p class="text-sm">{{ movie.data.description }}</p>
+            {% endif %}
+            {% if movie.data.director %}
+            <p class="font-semibold text-brand-red-500">{{ movie.data.director }}</p>
+            {% endif %}
+            {% if movie.data.rating %}
+            <p>{{ movie.data.rating | starRating }}</p>
+            {% endif %}
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
 </section>
-{% endfor %}
+{% endif %}
+
+{% if tvShows | length > 0 %}
+<section class="region flow">
+  <h2>Séries de TV</h2>
+  {% set tvByYear = tvShows | lazyGroupByWatchedYear %}
+  {% for year in tvByYear | sortKeys %}
+  <div data-year="{{ year }}">
+    <h3>Assistidas em {{ year }}</h3>
+    <ul class="grid" role="list">
+      {% for show in tvByYear[year] | sort(attribute="data.watchedDate") | reverse %}
+      <li>
+        <article class="flow card">
+          {% if show.data.poster %}
+          <img src="{{ show.data.poster }}" alt="{{ show.data.title }}"
+            class="w-full object-cover transition-transform duration-500" height="270" loading="lazy" decoding="async" />
+          {% endif %}
+
+          <div class="flow">
+            <h3 class="mt-6 font-bold text-brand-red-500">
+              {% if show.data.url %}
+              <a href="{{ show.data.url }}" class="font-bold text-brand-red-500" target="_blank"
+                rel="noopener noreferrer">
+                {{ show.data.title }}
+              </a>
+              {% else %}
+              {{ show.data.title }}
+              {% endif %}
+            </h3>
+            {% if show.data.subtitle %}
+            <p class="text-sm">{{ show.data.subtitle }}</p>
+            {% endif %}
+            {% if show.data.description %}
+            <p class="text-sm">{{ show.data.description }}</p>
+            {% endif %}
+            {% if show.data.rating %}
+            <p>{{ show.data.rating | starRating }}</p>
+            {% endif %}
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
 
 {% if pagination.pages.length > 1 %}
 {% include 'components/pagination.njk' %}
 {% endif %}
-</div>
