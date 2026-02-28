@@ -8,6 +8,7 @@ import {
   toISOString,
   toRfc822Date,
 } from './filters/dates.js';
+import { filterByYear } from './filters/filterByYear.js';
 import { getRelatedServices } from './filters/getRelatedServices.js';
 import { getServiceById } from './filters/getServiceById.js';
 import { groupBy, groupByMonth, groupByYear, groupByYearMonth } from './filters/groupBy.js';
@@ -45,6 +46,7 @@ export {
   formatDate,
   readableDate,
   sortByDate,
+  filterByYear,
   getRelatedServices,
   getServiceById,
   serviceUrl,

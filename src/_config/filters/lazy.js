@@ -19,7 +19,8 @@ export const lazyGroupByYear = collection => {
   const grouped = {};
 
   for (const item of items) {
-    const year = item.date ? new Date(item.date).getFullYear() : 'unknown';
+    const postDate = item.data.pubDate || item.data.date;
+    const year = postDate ? new Date(postDate).getFullYear() : 'unknown';
     if (!grouped[year]) {
       grouped[year] = [];
     }

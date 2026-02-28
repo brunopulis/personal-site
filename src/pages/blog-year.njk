@@ -1,38 +1,39 @@
 ---
 layout: base
-title: "Blog"
-description: "Escrevo para organizar ideias, questionar práticas comuns da web e compartilhar aprendizados sobre acessibilidade, front-end e pensamento crítico."
-permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+title: Postagens de
+description: "Artigos de {year}"
 pagination:
-  data: collections.posts
-  size: 10
+  data: collections.postYears
+  size: 1
+  alias: year
+permalink: "/blog/{{ year }}/"
 ---
+
+{% set postsAno = collections.posts | filterByYear(year) %}
 
 <section class="wrapper region">
   <header class="flow">
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
-    <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
-    <nav class="interstitial | flow box" aria-label="Navegação rápida">
-      <p class="font-bold text-brand text-step-0">Explore também:</p>
-      <ul class="cluster" role="list" style="--gutter: var(--space-s)">
-        <li><a href="/poemas/">Poemas</a></li>
-        <li><a href="/notas/">Notas</a></li>
-        <li><a href="/now/">O que estou fazendo agora</a></li>
-      </ul>
-    </nav>
+    <h1>{{ title }} {{ year }}</h1>
+    <p>Artigos publicados em {{ year }}</p>
     <nav aria-label="Navegação por ano">
       <ul class="cluster" role="list">
+        <li>
+          <a href="/blog/">Todos</a>
+        </li>
         {% for y in collections.postYears %}
-        <li><a href="/blog/{{ y }}/">{{ y }}</a></li>
+        <li>
+          <a href="/blog/{{ y }}/" {% if y == year %}aria-current="page"{% endif %}>
+            {{ y }}
+          </a>
+        </li>
         {% endfor %}
       </ul>
     </nav>
   </header>
 
   <div class="h-feed flow region" style="--flow-space: var(--space-xl)">
-    {% for post in pagination.items %}
-    <article class="{% if loop.first %}featured-post{% else %}standard-post{% endif %} | flow h-entry">
+    {% for post in postsAno %}
+    <article class="h-entry standard-post | flow">
       <header class="flow">
         <h2 class="p-name">
           <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
@@ -58,8 +59,4 @@ pagination:
     </article>
     {% endfor %}
   </div>
-
-  {% if pagination.pages.length > 1 %}
-  {% include 'components/pagination.njk' %}
-  {% endif %}
 </section>
