@@ -5,6 +5,6 @@
  * @param {string} id
  * @returns string
  */
-export const getServiceById = (id) => {
+export const getServiceById = (_id) => {
   return null; // Placeholder - services.json not found
 };
