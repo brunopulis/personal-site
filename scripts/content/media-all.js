@@ -127,7 +127,7 @@ async function fetchAllFromEndpoint(fetchFunction, accountId) {
     allItems = allItems.concat(data.results || []);
     totalPages = data.total_pages || 0;
     page++;
-    await new Promise(resolve => setTimeout(resolve, 250));
+    await new Promise((resolve) => setTimeout(resolve, 250));
   } while (page <= totalPages && page <= 50);
 
   return allItems;
@@ -159,13 +159,13 @@ function createMovieMarkdown(movie, details, metadata) {
     watchedDate = new Date().toISOString();
   }
 
-  const genres = details?.genres?.map(g => g.name) || [];
-  const director = details?.credits?.crew?.find(c => c.job === 'Director')?.name || '';
-  const cast = details?.credits?.cast?.slice(0, 5).map(c => c.name) || [];
+  const genres = details?.genres?.map((g) => g.name) || [];
+  const director = details?.credits?.crew?.find((c) => c.job === 'Director')?.name || '';
+  const cast = details?.credits?.cast?.slice(0, 5).map((c) => c.name) || [];
   const runtime = details?.runtime || 0;
 
   const trailerKey =
-    details?.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
+    details?.videos?.results?.find((v) => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
 
   // Pega a avaliação
   const myRating = metadata.rating || details?.account_states?.rated?.value || 0;
@@ -190,12 +190,12 @@ isFavorite: ${metadata.isFavorite || false}
 inWatchlist: ${metadata.inWatchlist || false}
 status: ${metadata.status || 'watched'}
 sources:
-${metadata.sources?.map(s => `  - ${s}`).join('\n') || '  - unknown'}
+${metadata.sources?.map((s) => `  - ${s}`).join('\n') || '  - unknown'}
 genres:
-${genres.map(g => `  - ${g}`).join('\n') || '  - Desconhecido'}
+${genres.map((g) => `  - ${g}`).join('\n') || '  - Desconhecido'}
 director: ${director}
 cast:
-${cast.map(c => `  - ${c}`).join('\n')}
+${cast.map((c) => `  - ${c}`).join('\n')}
 runtime: ${runtime}
 originalLanguage: ${movie.original_language || 'en'}
 budget: ${details?.budget || 0}
@@ -269,17 +269,17 @@ async function main() {
       console.log(`   📑 Buscando lista "${list.name}"...`);
       const listDetails = await getListDetails(list.id);
       customListMovies = customListMovies.concat(listDetails.items || []);
-      await new Promise(resolve => setTimeout(resolve, 250));
+      await new Promise((resolve) => setTimeout(resolve, 250));
     }
     console.log(`   ✓ ${customListMovies.length} filmes em listas personalizadas\n`);
 
     // Consolida todos os filmes únicos
     const movieMap = new Map();
-    const favoriteIds = new Set(favoriteMovies.map(m => m.id));
-    const watchlistIds = new Set(watchlistMovies.map(m => m.id));
+    const favoriteIds = new Set(favoriteMovies.map((m) => m.id));
+    const watchlistIds = new Set(watchlistMovies.map((m) => m.id));
 
     // Adiciona filmes avaliados
-    ratedMovies.forEach(movie => {
+    ratedMovies.forEach((movie) => {
       if (!movieMap.has(movie.id)) {
         movieMap.set(movie.id, {
           ...movie,
@@ -296,7 +296,7 @@ async function main() {
     });
 
     // Adiciona favoritos que não foram avaliados
-    favoriteMovies.forEach(movie => {
+    favoriteMovies.forEach((movie) => {
       if (!movieMap.has(movie.id)) {
         movieMap.set(movie.id, {
           ...movie,
@@ -314,7 +314,7 @@ async function main() {
     });
 
     // Adiciona watchlist
-    watchlistMovies.forEach(movie => {
+    watchlistMovies.forEach((movie) => {
       if (!movieMap.has(movie.id)) {
         movieMap.set(movie.id, {
           ...movie,
@@ -332,7 +332,7 @@ async function main() {
     });
 
     // Adiciona filmes de listas personalizadas
-    customListMovies.forEach(movie => {
+    customListMovies.forEach((movie) => {
       if (!movieMap.has(movie.id)) {
         movieMap.set(movie.id, {
           ...movie,
@@ -403,7 +403,7 @@ async function main() {
         console.log(`   ✅ importado em ${year}/`);
         imported++;
 
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise((resolve) => setTimeout(resolve, 300));
       } catch (error) {
         console.error(`   ❌ erro: ${error.message}`);
         failed++;
@@ -418,8 +418,8 @@ async function main() {
 
     // Mostra distribuição por fontes
     const sources = {};
-    allMovies.forEach(m => {
-      m.metadata.sources.forEach(s => {
+    allMovies.forEach((m) => {
+      m.metadata.sources.forEach((s) => {
         sources[s] = (sources[s] || 0) + 1;
       });
     });

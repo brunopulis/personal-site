@@ -46,7 +46,7 @@ async function fetchWebmentions(url) {
  */
 function filterByType(mentions, type) {
   if (!type) return mentions;
-  return mentions.filter(m => m['wm-property'] === type);
+  return mentions.filter((m) => m['wm-property'] === type);
 }
 
 /**
@@ -68,7 +68,7 @@ function countMentions(mentions, type) {
 function getUniqueAuthors(mentions) {
   const authors = new Map();
 
-  mentions.forEach(mention => {
+  mentions.forEach((mention) => {
     const author = mention.author;
     if (author?.name) {
       const key = author.url || author.name;

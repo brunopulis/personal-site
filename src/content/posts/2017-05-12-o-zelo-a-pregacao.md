@@ -1,12 +1,12 @@
 ---
-title: "O zelo a pregação"
-excerpt: "De uns tempos pra cá venho lendo bons livros e materiais relacionados a Teologia Reformada que me fizeram argumentar alguns posicionamentos…"
+title: 'O zelo a pregação'
+excerpt: 'De uns tempos pra cá venho lendo bons livros e materiais relacionados a Teologia Reformada que me fizeram argumentar alguns posicionamentos…'
 pubDate: 2017-05-12T16:54:25.411Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/o-zelo-a-prega%C3%A7%C3%A3o-fc54616bf68f"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/o-zelo-a-prega%C3%A7%C3%A3o-fc54616bf68f'
 ---
 
 ### O zelo a pregação

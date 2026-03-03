@@ -5,7 +5,7 @@ Ditch these styles altogether if not required for the website.
 */
 
 fieldset {
-  border: solid .1rem var(--color-border);
+  border: solid 0.1rem var(--color-border);
 }
 
 legend {
@@ -22,17 +22,18 @@ form button {
   margin-block-start: var(--space-xs);
 }
 
-:is(input:not([type="checkbox"], [type="radio"], [type="color"]), select, textarea) {
+:is(input:not([type='checkbox'], [type='radio'], [type='color']), select, textarea) {
   background: var(--color-bg);
-  border: solid .1rem var(--color-border);
+  border: solid 0.1rem var(--color-border);
   border-radius: var(--border-radius);
   box-shadow: none;
   color: var(--color-text);
-  letter-spacing: -.5px;
+  letter-spacing: -0.5px;
   padding: var(--space-3xs) var(--space-2xs);
 }
 
-:is(input[type="submit"], input[type="checkbox"], input[type="radio"]), select {
+:is(input[type='submit'], input[type='checkbox'], input[type='radio']),
+select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -41,66 +42,70 @@ form button {
 
 /* Chevron for select */
 select:not([multiple]) {
-  background-image: linear-gradient(45deg, transparent 49%, var(--color-text) 51%), linear-gradient(135deg, var(--color-text) 51%, transparent 49%);
+  background-image:
+    linear-gradient(45deg, transparent 49%, var(--color-text) 51%),
+    linear-gradient(135deg, var(--color-text) 51%, transparent 49%);
   background-position: calc(100% - 16px), calc(100% - 11px);
-  background-size: 5px 5px, 5px 5px;
+  background-size:
+    5px 5px,
+    5px 5px;
   background-repeat: no-repeat;
   padding-inline-end: 2rem;
 }
 
 /* checkbox and radio button style */
-input[type="checkbox"],
-input[type="radio"] {
-  border: solid .1rem var(--color-border);
+input[type='checkbox'],
+input[type='radio'] {
+  border: solid 0.1rem var(--color-border);
   padding: var(--space-2xs);
   vertical-align: middle;
   position: relative;
   width: min-content;
   margin-inline-start: 0;
-  margin-inline-end: .25rem;
-  margin-block-end: .3rem;
+  margin-inline-end: 0.25rem;
+  margin-block-end: 0.3rem;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   border-radius: var(--border-radius);
 }
 
-input[type="radio"] {
+input[type='radio'] {
   border-radius: 100%;
 }
 
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
-  border: solid .1rem var(--color-brand);
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  border: solid 0.1rem var(--color-brand);
   background-color: var(--color-brand);
 }
 
-input[type="checkbox"]:checked::after {
+input[type='checkbox']:checked::after {
   /* Creates a rectangle with colored right and bottom borders which is rotated to look like a check mark */
-  content: " ";
-  width: .17em;
-  height: .32em;
+  content: ' ';
+  width: 0.17em;
+  height: 0.32em;
   border-radius: 0;
   position: absolute;
-  top: .06em;
-  left: .16em;
+  top: 0.06em;
+  left: 0.16em;
   background-color: transparent;
-  border-right: solid var(--color-bg) .07em;
-  border-bottom: solid var(--color-bg) .07em;
+  border-right: solid var(--color-bg) 0.07em;
+  border-bottom: solid var(--color-bg) 0.07em;
   font-size: 2em;
   transform: rotate(45deg);
 }
 
-input[type="radio"]:checked::after {
+input[type='radio']:checked::after {
   /* creates a colored circle for the checked radio button  */
-  content: " ";
-  width: .25em;
-  height: .25em;
+  content: ' ';
+  width: 0.25em;
+  height: 0.25em;
   border-radius: 100%;
   position: absolute;
-  top: .13em;
+  top: 0.13em;
   background-color: var(--color-bg);
-  left: .13em;
+  left: 0.13em;
   font-size: 2em;
 }
 

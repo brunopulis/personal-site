@@ -1,12 +1,12 @@
 ---
-title: "Eu tenho um sonho"
-excerpt: "Onde as pessoas retirem a distração do culto público."
+title: 'Eu tenho um sonho'
+excerpt: 'Onde as pessoas retirem a distração do culto público.'
 pubDate: 2016-11-22T18:49:08.939Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/eu-tenho-um-sonho-55fabb919806"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/eu-tenho-um-sonho-55fabb919806'
 ---
 
 ### Eu tenho um sonho

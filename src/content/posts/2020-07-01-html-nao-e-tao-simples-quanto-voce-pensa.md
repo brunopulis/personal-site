@@ -1,9 +1,9 @@
 ---
-title: "HTML não é tão simples quanto você pensa"
-excerpt: "Como a marcação do HTML pode afetar diretamente seu negócio"
+title: 'HTML não é tão simples quanto você pensa'
+excerpt: 'Como a marcação do HTML pode afetar diretamente seu negócio'
 pubDate: 2020-07-01T12:19:10.431Z
 tags: ['a11y']
-canonicalUrl: "https://medium.com/@brunopulis/html-n%C3%A3o-%C3%A9-t%C3%A3o-simples-quanto-voc%C3%AA-pensa-15ea9b611def"
+canonicalUrl: 'https://medium.com/@brunopulis/html-n%C3%A3o-%C3%A9-t%C3%A3o-simples-quanto-voc%C3%AA-pensa-15ea9b611def'
 ---
 
 ### HTML não é tão simples quanto você pensa
@@ -59,7 +59,12 @@ Aparentemente é um componente simples e elegante, mas qual é sua saída no có
 Já no bom e velho HTML, o componente de select se parece com isso.
 
 ```html
-<select>  <option>Selecione uma opção</option>  <option>1</option>  <option>2</option>  <option>3</option></select>
+<select>
+  <option>Selecione uma opção</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
 ```
 
 **Simples, não?  
@@ -111,13 +116,13 @@ A fundação HTML, CSS, Javascript devem ser sólidas, frameworks vem e vão. Qu
 
 Separei alguns links para aprender a escrever HTML semântico, espero que os ajude.
 
--   [Recomendações de acessibilidade](http://emag.governoeletronico.gov.br/cursodesenvolvedor/desenvolvimento-web/recomendacoes-de-acessibilidade-definicao.html)
--   [HTML5 and CSS fundamentals](https://www.edx.org/course/html5-and-css-fundamentals)
--   [HTML5 Coding Essentials and best pratices](https://www.edx.org/course/html5-coding-essentials-and-best-practices)
--   [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [Recomendações de acessibilidade](http://emag.governoeletronico.gov.br/cursodesenvolvedor/desenvolvimento-web/recomendacoes-de-acessibilidade-definicao.html)
+- [HTML5 and CSS fundamentals](https://www.edx.org/course/html5-and-css-fundamentals)
+- [HTML5 Coding Essentials and best pratices](https://www.edx.org/course/html5-coding-essentials-and-best-practices)
+- [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 
 ### Referências
 
--   [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
--   [Pesquisa WebAIM](https://webaim.org/projects/million/)
--   [Vuetify Select](https://vuetifyjs.com/en/components/selects/)
+- [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [Pesquisa WebAIM](https://webaim.org/projects/million/)
+- [Vuetify Select](https://vuetifyjs.com/en/components/selects/)

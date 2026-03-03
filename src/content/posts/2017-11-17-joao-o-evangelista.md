@@ -1,12 +1,12 @@
 ---
-title: "João, o Evangelista"
-excerpt: "João, filho de Zebedeu e Salomé, foi o discípulo mais novo dos doze. Juntamente com seu irmão Tiago, foi convidado a peregrinar com Jesus…"
+title: 'João, o Evangelista'
+excerpt: 'João, filho de Zebedeu e Salomé, foi o discípulo mais novo dos doze. Juntamente com seu irmão Tiago, foi convidado a peregrinar com Jesus…'
 pubDate: 2017-11-17T13:51:51.663Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/jo%C3%A3o-o-evangelista-7371c39239ea"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/jo%C3%A3o-o-evangelista-7371c39239ea'
 ---
 
 ### João, o Evangelista
@@ -23,7 +23,7 @@ Autor do último evangelho e escritor das cartas de I, II, III João e Apocalips
 
 ![](https://cdn-images-1.medium.com/max/2560/1*3gAz9Ml4qm81HRGfmKTK3g.jpeg)
 
-Transfiguração. 1487–1495. Por [Giovanni Bellini](https://pt.wikipedia.org/wiki/Giovanni_Bellini "Giovanni Bellini"), atualmente no Museo Nazionale di Capodimonte, em [Nápoles](https://pt.wikipedia.org/wiki/N%C3%A1poles "Nápoles")
+Transfiguração. 1487–1495. Por [Giovanni Bellini](https://pt.wikipedia.org/wiki/Giovanni_Bellini 'Giovanni Bellini'), atualmente no Museo Nazionale di Capodimonte, em [Nápoles](https://pt.wikipedia.org/wiki/N%C3%A1poles 'Nápoles')
 
 > Jesus considerava João como o “discípulo amado”. Um fato interessante sobre a vida de João é que ele foi o único dos 12 apóstolos a ter uma morte natural, sem conhecer o martírio.
 

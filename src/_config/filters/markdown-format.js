@@ -2,7 +2,7 @@ import markdownParser from 'markdown-it';
 
 const markdown = markdownParser();
 
-export const markdownFormat = string => {
+export const markdownFormat = (string) => {
   if (!string || typeof string !== 'string') {
     return '';
   }

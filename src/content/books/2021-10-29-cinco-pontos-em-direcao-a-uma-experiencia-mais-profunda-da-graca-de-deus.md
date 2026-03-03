@@ -1,16 +1,16 @@
 ---
-title: "Cinco pontos: Em direção a uma experiência mais profunda da graça de Deus"
-author: ""
-category: ""
-status: "lido"
+title: 'Cinco pontos: Em direção a uma experiência mais profunda da graça de Deus'
+author: ''
+category: ''
+status: 'lido'
 rating: 5
-cover: ""
-description: ""
-thoughts: ""
-quotes: ""
-attendedYear: "2018"
-recommendBy: ""
+cover: ''
+description: ''
+thoughts: ''
+quotes: ''
+attendedYear: '2018'
+recommendBy: ''
 tags: []
-url: ""
+url: ''
 pubDate: 2021-10-29
 ---

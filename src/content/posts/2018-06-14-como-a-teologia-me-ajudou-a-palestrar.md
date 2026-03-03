@@ -1,9 +1,9 @@
 ---
-title: "Como a teologia me ajudou a palestrar"
-excerpt: "Disclaimer"
+title: 'Como a teologia me ajudou a palestrar'
+excerpt: 'Disclaimer'
 pubDate: 2018-06-14T04:06:47.968Z
 tags: ['pessoal', 'teologia']
-canonicalUrl: "https://medium.com/@brunopulis/como-a-teologia-me-ajudou-a-palestrar-2a5818089f68"
+canonicalUrl: 'https://medium.com/@brunopulis/como-a-teologia-me-ajudou-a-palestrar-2a5818089f68'
 ---
 
 ### Como a teologia me ajudou a palestrar
@@ -36,7 +36,7 @@ Na teologia não estudamos somente a Bíblia, temos diversas matérias como: soc
 
 > _É a_ **_arte de pregar_**_, ou seja,_ **_utilizar os princípios da retórica com a finalidade específica de falar sobre o conteúdo da bíblia_** _sagrada cristã._
 
-> _Este termo acabou por originar a palavra_ homilia_, que quer dizer “discurso com a finalidade de agradar”\[1\]._
+> _Este termo acabou por originar a palavra_ homilia*, que quer dizer “discurso com a finalidade de agradar”\[1\].*
 
 Ela procura ajudar o pregador a comunicar a mensagem de forma clara e inteligível. No mundo do desenvolvimento, conheço diversas pessoas que tecnicamente são excelentes, mas como comunicadores ainda não são bons. Necessitamos de nos comunicar bem, afinal, nem só de código viverá o desenvolvedor, mas de uma comunicação efetiva e clara.
 
@@ -78,9 +78,9 @@ Outra dica: não fixe o olhar em uma única pessoa, olhe na altura dos olhos das
 
 Existem certos padrões de vozes que se não tomarmos cuidado atrapalham na hora de comunicar a mensagem, dentre eles podemos citar:
 
--   Voz estridente;
--   Voz fanhosa;
--   Voz monótona;
+- Voz estridente;
+- Voz fanhosa;
+- Voz monótona;
 
 Caso, você tenha algum tipo de voz citado acima **não se desespere!** Com treinamento e modulação da sua voz, você aumentará consideravelmente o alcance da mensagem.
 
@@ -89,7 +89,7 @@ Uma regra de ouro é: **procure falar pausadamente**, sem querer correr com o co
 O vídeo abaixo mostra sobre a modulação da voz de maneira fenomenal
 
 [**Transcript of "How to speak so that people want to listen"**  
-_TED Talk Subtitles and Transcript: Have you ever felt like you're talking, but nobody is listening? Here's Julian…_www.ted.com](https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen/transcript?language=pt-br "https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen/transcript?language=pt-br")[](https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen/transcript?language=pt-br)
+\_TED Talk Subtitles and Transcript: Have you ever felt like you're talking, but nobody is listening? Here's Julian…\_www.ted.com](https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen/transcript?language=pt-br 'https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen/transcript?language=pt-br')[](https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen/transcript?language=pt-br)
 
 Se o tom de sua voz é baixo e tranquilo, procure aumentar o tom dando ênfase em partes importantes do seu conteúdo.
 
@@ -107,22 +107,22 @@ Devemos encontrar essa “conexão” ou contexto com o ouvinte e, assim, conseg
 
 #### Dicas finais
 
--   **Melhore o som da sua voz:** procure pronunciar as palavras  
-    corretamente, evitando falar com a boca fechada, falando em um tom  
-    adequado, alterando a potência de vez em quando para enfatizar coisas  
-    importantes;
--   **Fale com os olhos:** antes de falar qualquer palavra,  
-    cumprimente silenciosamente as pessoas com “um sorriso nos olhos”,  
-    procurando identificar cada pessoa, em lances rápidos de olhar.  
-    Durante sua talk olhe para as pessoas, comunique-se com elas  
-    através de expressões, transmita segurança e sinta o que elas estão  
-    sentindo enquanto ouvem suas palavras.
--   **Seja zueiro, conte piadas, abuse dos gifs:** não aborde de cara o assunto, use storytelling, descreva uma experiência, relate seu  
-    trajeto até o local. Aborde uma situação alegre. Lembre-se: até os grandes  
-    pregadores podem temer durante uma mensagem. O temor e tremor é  
-    natural. Encare isto com tranquilidade. É uma questão de tempo.
--   **Atualize-se:** estude sobre o assunto, invista tempo pesquisando, lendo, estudando, testando e codando principalmente. O hábito da leitura é primordial para ser um palestrante que sabe comunicar. Quem lê mais, sabe mais.
--   **Faça com amor:** compartilhar conhecimento é uma das melhores coisas da nossa área, ver o crescimento das pessoas por algo que ensinamos não há dinheiro que pague. E também se divirta!
+- **Melhore o som da sua voz:** procure pronunciar as palavras  
+  corretamente, evitando falar com a boca fechada, falando em um tom  
+  adequado, alterando a potência de vez em quando para enfatizar coisas  
+  importantes;
+- **Fale com os olhos:** antes de falar qualquer palavra,  
+  cumprimente silenciosamente as pessoas com “um sorriso nos olhos”,  
+  procurando identificar cada pessoa, em lances rápidos de olhar.  
+  Durante sua talk olhe para as pessoas, comunique-se com elas  
+  através de expressões, transmita segurança e sinta o que elas estão  
+  sentindo enquanto ouvem suas palavras.
+- **Seja zueiro, conte piadas, abuse dos gifs:** não aborde de cara o assunto, use storytelling, descreva uma experiência, relate seu  
+  trajeto até o local. Aborde uma situação alegre. Lembre-se: até os grandes  
+  pregadores podem temer durante uma mensagem. O temor e tremor é  
+  natural. Encare isto com tranquilidade. É uma questão de tempo.
+- **Atualize-se:** estude sobre o assunto, invista tempo pesquisando, lendo, estudando, testando e codando principalmente. O hábito da leitura é primordial para ser um palestrante que sabe comunicar. Quem lê mais, sabe mais.
+- **Faça com amor:** compartilhar conhecimento é uma das melhores coisas da nossa área, ver o crescimento das pessoas por algo que ensinamos não há dinheiro que pague. E também se divirta!
 
 ![](https://cdn-images-1.medium.com/max/800/1*pqOfrll9YlPMQFCTVl-Y7w.jpeg)
 
@@ -139,10 +139,10 @@ Grande abraço.
 Cursos no Udemy sobre oratória:
 
 [**Public Speaking for Beginners | Udemy**  
-_Public Speaking Skills Developed From Scratch, in Little Time_www.udemy.com](https://www.udemy.com/public-speaking-for-beginners-al/learn/v4/overview "https://www.udemy.com/public-speaking-for-beginners-al/learn/v4/overview")[](https://www.udemy.com/public-speaking-for-beginners-al/learn/v4/overview)
+\_Public Speaking Skills Developed From Scratch, in Little Time_www.udemy.com](https://www.udemy.com/public-speaking-for-beginners-al/learn/v4/overview 'https://www.udemy.com/public-speaking-for-beginners-al/learn/v4/overview')[](https://www.udemy.com/public-speaking-for-beginners-al/learn/v4/overview)
 
 [**2018 Complete Public Speaking Masterclass For Every Occasion**  
-_Facts about this course Public Speaking Course \*This is the Udemy Best-Selling course for Public Speaking \*Highest…_www.udemy.com](https://www.udemy.com/the-complete-public-speaking-masterclass-for-every-occasion/learn/v4/content "https://www.udemy.com/the-complete-public-speaking-masterclass-for-every-occasion/learn/v4/content")[](https://www.udemy.com/the-complete-public-speaking-masterclass-for-every-occasion/learn/v4/content)
+\_Facts about this course Public Speaking Course \*This is the Udemy Best-Selling course for Public Speaking \*Highest…\_www.udemy.com](https://www.udemy.com/the-complete-public-speaking-masterclass-for-every-occasion/learn/v4/content 'https://www.udemy.com/the-complete-public-speaking-masterclass-for-every-occasion/learn/v4/content')[](https://www.udemy.com/the-complete-public-speaking-masterclass-for-every-occasion/learn/v4/content)
 
 ### Bibliografia
 

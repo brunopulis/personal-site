@@ -1,12 +1,12 @@
 ---
-title: "Cristo, o farol divino"
-excerpt: "Como Cristo pode ser um farol em tempos sombrios onde a desesperança fala mais alto do que a própria esperança?"
+title: 'Cristo, o farol divino'
+excerpt: 'Como Cristo pode ser um farol em tempos sombrios onde a desesperança fala mais alto do que a própria esperança?'
 pubDate: 2018-11-26T02:16:04.828Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/cristo-o-farol-divino-53c664528ee9"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/cristo-o-farol-divino-53c664528ee9'
 ---
 
 ### Cristo, o farol divino

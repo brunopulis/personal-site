@@ -92,7 +92,7 @@ async function fetchAllMovies(fetchFunction, accountId) {
     allMovies = allMovies.concat(data.results);
     totalPages = data.total_pages;
     page++;
-    await new Promise(resolve => setTimeout(resolve, 250));
+    await new Promise((resolve) => setTimeout(resolve, 250));
   } while (page <= totalPages && page <= 50);
 
   return allMovies;
@@ -109,13 +109,13 @@ function createMovieMarkdown(movie, details, isFavorite, watchedYear) {
   const releaseYear = movie.release_date?.substring(0, 4) || '';
   const watchedDate = movie.rated_at || movie.created_at || '';
 
-  const genres = details?.genres?.map(g => g.name) || [];
-  const director = details?.credits?.crew?.find(c => c.job === 'Director')?.name || '';
-  const cast = details?.credits?.cast?.slice(0, 5).map(c => c.name) || [];
+  const genres = details?.genres?.map((g) => g.name) || [];
+  const director = details?.credits?.crew?.find((c) => c.job === 'Director')?.name || '';
+  const cast = details?.credits?.cast?.slice(0, 5).map((c) => c.name) || [];
   const runtime = details?.runtime || 0;
 
   const trailerKey =
-    details?.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
+    details?.videos?.results?.find((v) => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
 
   return `---
 title: ${movie.title}
@@ -135,10 +135,10 @@ voteCount: ${movie.vote_count || 0}
 isFavorite: ${isFavorite}
 status: watched
 genres:
-${genres.map(g => `  - ${g}`).join('\n') || '  - Desconhecido'}
+${genres.map((g) => `  - ${g}`).join('\n') || '  - Desconhecido'}
 director: ${director}
 cast:
-${cast.map(c => `  - ${c}`).join('\n')}
+${cast.map((c) => `  - ${c}`).join('\n')}
 runtime: ${runtime}
 originalLanguage: ${movie.original_language || 'en'}
 budget: ${details?.budget || 0}
@@ -191,7 +191,7 @@ async function main() {
 
     console.log('❤️  Buscando favoritos...');
     const favoriteMovies = await getFavoriteMovies(accountId);
-    const favoriteIds = new Set(favoriteMovies.map(m => m.id));
+    const favoriteIds = new Set(favoriteMovies.map((m) => m.id));
     console.log(`✓ ${favoriteMovies.length} favoritos\n`);
 
     const baseDir = path.join(process.cwd(), 'src', 'content', 'medias');
@@ -207,7 +207,7 @@ async function main() {
 
     // Organiza filmes por ano
     const moviesByYear = {};
-    ratedMovies.forEach(movie => {
+    ratedMovies.forEach((movie) => {
       const watchedDate = movie.rated_at || movie.created_at;
       const year = watchedDate ? new Date(watchedDate).getFullYear() : 'Sem data';
       if (!moviesByYear[year]) moviesByYear[year] = [];
@@ -252,7 +252,7 @@ async function main() {
           console.log(`  ✅ ${movie.title} - importado`);
           imported++;
 
-          await new Promise(resolve => setTimeout(resolve, 300));
+          await new Promise((resolve) => setTimeout(resolve, 300));
         } catch (error) {
           console.error(`  ❌ ${movie.title} - erro: ${error.message}`);
           failed++;
@@ -276,7 +276,7 @@ async function main() {
         if (b === 'Sem data') return -1;
         return parseInt(b, 10) - parseInt(a, 10);
       })
-      .forEach(year => {
+      .forEach((year) => {
         console.log(`   src/content/medias/${year}/ - ${moviesByYear[year].length} filmes`);
       });
 

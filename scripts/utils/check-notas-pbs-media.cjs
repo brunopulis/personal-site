@@ -13,7 +13,7 @@ function extractPbsMediaUrls(content) {
 
 // Função para verificar o status code de uma URL
 function checkUrl(url) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const options = {
       method: 'HEAD',
       timeout: 10000,
@@ -22,7 +22,7 @@ function checkUrl(url) {
       },
     };
 
-    const req = https.request(url, options, res => {
+    const req = https.request(url, options, (res) => {
       resolve(res.statusCode);
     });
 
@@ -65,7 +65,7 @@ async function processFile(filePath) {
     }
 
     // Pequeno delay para não sobrecarregar os servidores
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
   }
 
   return null;

@@ -21,7 +21,7 @@ export const groupBy = (array, key) => {
   }, {});
 };
 
-export const groupByYear = array => {
+export const groupByYear = (array) => {
   if (!array || !Array.isArray(array)) {
     return [];
   }
@@ -55,7 +55,7 @@ export const groupByYear = array => {
  * @param {*} array
  * @returns
  */
-export const groupByMonth = array => {
+export const groupByMonth = (array) => {
   if (!array || !Array.isArray(array)) {
     return [];
   }
@@ -89,14 +89,14 @@ export const groupByMonth = array => {
  * @param {*} array
  * @returns
  */
-export const groupByYearMonth = array => {
+export const groupByYearMonth = (array) => {
   if (!array || !Array.isArray(array)) {
     return [];
   }
 
   const grouped = {};
 
-  array.forEach(item => {
+  array.forEach((item) => {
     const date = new Date(item.data?.date || item.date);
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -122,7 +122,7 @@ export const groupByYearMonth = array => {
   });
 };
 
-export const sortByDate = array => {
+export const sortByDate = (array) => {
   if (!array || !Array.isArray(array)) {
     return [];
   }

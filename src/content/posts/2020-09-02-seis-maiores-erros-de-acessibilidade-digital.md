@@ -1,6 +1,6 @@
 ---
-title: "Seis maiores erros de acessibilidade digital"
-excerpt: "Os seis maiores erros de acessibilidade digital e como podemos corrigí-los."
+title: 'Seis maiores erros de acessibilidade digital'
+excerpt: 'Os seis maiores erros de acessibilidade digital e como podemos corrigí-los.'
 pubDate: 2020-09-02T21:13:07.000Z
 tags: ['a11y']
 ---
@@ -17,18 +17,18 @@ Diariamente sofro na pele com isso, para quem não me acompanha ou está chegand
 
 Para amenizar esse problema eu adotei algumas práticas:
 
--   dar zoom em textos com baixo contraste;
--   mudo as cores dos textos para uma com maior contraste via Inspetor de elementos do navegador;
--   usar tema escuro.
+- dar zoom em textos com baixo contraste;
+- mudo as cores dos textos para uma com maior contraste via Inspetor de elementos do navegador;
+- usar tema escuro.
 
 ### Guia sobre contraste
 
 Para aplicarmos as correções de maneira efetiva, devemos consultar as recomendações da WCAG. Abaixo as regras que se aplicam ao contraste:
 
--   [1.4.3 — Contraste (mínimo) \[AA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum) (em inglês);
--   [1.4.6 — Contraste melhorado \[AAA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced) (em inglês);
--   [1.4.11 — Contraste Não-Textual \[AA\] — WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast) (em inglês);
--   [2.3.1 — Três flashes ou abaixo do limite \[A\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold).
+- [1.4.3 — Contraste (mínimo) \[AA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum) (em inglês);
+- [1.4.6 — Contraste melhorado \[AAA\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced) (em inglês);
+- [1.4.11 — Contraste Não-Textual \[AA\] — WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast) (em inglês);
+- [2.3.1 — Três flashes ou abaixo do limite \[A\] — WCAG 2.0](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold).
 
 ### Ferramentas para verificação
 
@@ -112,7 +112,7 @@ O atributo `placeholder` é uma string que fornece uma breve dica ao usuário qu
 
 > Nota: O atributo placeholder não é semanticamente útil como outras maneiras de explicar seu formulário e pode causar problemas técnicos inesperados com seu conteúdo.
 
-> _Vale lembrar, para rotular um formulário o elemento correto para ser usado é o_ `_label_`
+> *Vale lembrar, para rotular um formulário o elemento correto para ser usado é o* `_label_`
 
 ### Exemplo correto
 
@@ -122,8 +122,8 @@ Semelhantemente com os links vazios, os botões vazios querem dizer que o elemen
 
 Além disso, essa violação fere duas recomendações da WCAG:
 
--   [1.3.3 — Características sensoriais \[A\] — WCAG 2.0 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/sensory-characteristics);
--   [2.5.3 — Rótulo no nome acessível \[A\] — WCAG 2.1 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)
+- [1.3.3 — Características sensoriais \[A\] — WCAG 2.0 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/sensory-characteristics);
+- [2.5.3 — Rótulo no nome acessível \[A\] — WCAG 2.1 (em inglês)](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)
 
 O exemplo a seguir, demonstra o problema de um botão sem informação textual.
 
@@ -159,12 +159,12 @@ O que podemos fazer para mudar essa situação? Deixe sua sugestão do que podem
 
 ### Referências
 
--   [Guia WCAG](https://guia-wcag.com/)
--   [Pesquisa do WebAIM](https://webaim.org/projects/million/#errors)
--   [Accessible Colors](https://accessible-colors.com/)
--   [Empty link example](https://blog.pope.tech/2020/03/13/empty-link-example/)
--   [Documentação do elementro A](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a)
--   [Documentação do atributo placeholder](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-placeholder)
--   [Explorando o atributo alt](http://reinaldoferraz.com.br/explorando-o-atributo-alt/)
+- [Guia WCAG](https://guia-wcag.com/)
+- [Pesquisa do WebAIM](https://webaim.org/projects/million/#errors)
+- [Accessible Colors](https://accessible-colors.com/)
+- [Empty link example](https://blog.pope.tech/2020/03/13/empty-link-example/)
+- [Documentação do elementro A](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a)
+- [Documentação do atributo placeholder](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-placeholder)
+- [Explorando o atributo alt](http://reinaldoferraz.com.br/explorando-o-atributo-alt/)
 
 _Originalmente publicado em_ [_https://brunopulis.com_](https://brunopulis.com/seis-maiores-erros-acessibilidade-digital/) _em Setembro 02, 2020._

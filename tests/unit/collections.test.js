@@ -2,7 +2,7 @@ import { tagList, tagListRecurrency } from '../../src/_config/collections.js';
 
 describe('Collections', () => {
   describe('tagListRecurrency', () => {
-    const createMockCollection = items => ({
+    const createMockCollection = (items) => ({
       getAll: () => items,
     });
 
@@ -15,9 +15,9 @@ describe('Collections', () => {
       const collection = createMockCollection(items);
       const result = tagListRecurrency(collection);
 
-      expect(result.find(r => r.slug === 'javascript').count).toBe(2);
-      expect(result.find(r => r.slug === 'web').count).toBe(2);
-      expect(result.find(r => r.slug === 'css').count).toBe(1);
+      expect(result.find((r) => r.slug === 'javascript').count).toBe(2);
+      expect(result.find((r) => r.slug === 'web').count).toBe(2);
+      expect(result.find((r) => r.slug === 'css').count).toBe(1);
     });
 
     test('should exclude predefined tags', () => {
@@ -29,7 +29,7 @@ describe('Collections', () => {
       const collection = createMockCollection(items);
       const result = tagListRecurrency(collection);
 
-      const slugs = result.map(r => r.slug);
+      const slugs = result.map((r) => r.slug);
       expect(slugs).not.toContain('posts');
       expect(slugs).not.toContain('all');
       expect(slugs).toContain('javascript');
@@ -63,7 +63,7 @@ describe('Collections', () => {
   });
 
   describe('tagList', () => {
-    const createMockCollection = items => ({
+    const createMockCollection = (items) => ({
       getAll: () => items,
     });
 

@@ -1,12 +1,12 @@
 ---
-title: "Pecados expostos"
-excerpt: "O cenário moderno permeia a justiça própria e um censo de moralismo onde a punição é aplicada de acordo com o que se acha prudente, fato…"
+title: 'Pecados expostos'
+excerpt: 'O cenário moderno permeia a justiça própria e um censo de moralismo onde a punição é aplicada de acordo com o que se acha prudente, fato…'
 pubDate: 2017-06-11T19:02:56.289Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/pecados-expostos-3e762b86d487"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/pecados-expostos-3e762b86d487'
 ---
 
 ### Pecados expostos

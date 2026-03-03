@@ -26,11 +26,11 @@
   }
 
   function displayWebmentions(mentions, container) {
-    const likes = mentions.filter(m => m['wm-property'] === 'like-of');
-    const reposts = mentions.filter(m => m['wm-property'] === 'repost-of');
-    const replies = mentions.filter(m => m['wm-property'] === 'in-reply-to');
-    const bookmarks = mentions.filter(m => m['wm-property'] === 'bookmark-of');
-    const general = mentions.filter(m => m['wm-property'] === 'mention-of');
+    const likes = mentions.filter((m) => m['wm-property'] === 'like-of');
+    const reposts = mentions.filter((m) => m['wm-property'] === 'repost-of');
+    const replies = mentions.filter((m) => m['wm-property'] === 'in-reply-to');
+    const bookmarks = mentions.filter((m) => m['wm-property'] === 'bookmark-of');
+    const general = mentions.filter((m) => m['wm-property'] === 'mention-of');
 
     let html = '';
 
@@ -54,7 +54,7 @@
 
     if (conversationMentions.length > 0) {
       html += '<div class="space-y-4">';
-      conversationMentions.forEach(mention => {
+      conversationMentions.forEach((mention) => {
         html += renderMention(mention);
       });
       html += '</div>';

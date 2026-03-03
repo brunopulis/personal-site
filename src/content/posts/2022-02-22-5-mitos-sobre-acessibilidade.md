@@ -1,7 +1,7 @@
 ---
 title: 5 mitos sobre acessibilidade que você precisa esclarecer
 pubDate: 2022-02-22
-tags: ["a11y"]
+tags: ['a11y']
 ---
 
 Ao longo da minha carreira já ouvi muita bobagem sobre acessibilidade.  

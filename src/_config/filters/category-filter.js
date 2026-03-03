@@ -24,7 +24,7 @@ export const categoryFilter = (items, category) => {
     return items;
   }
 
-  return items.filter(item => {
+  return items.filter((item) => {
     try {
       let itemCategories = null;
 
@@ -45,7 +45,7 @@ export const categoryFilter = (items, category) => {
       const categoriesArray = Array.isArray(itemCategories) ? itemCategories : [itemCategories];
 
       return categoriesArray.some(
-        cat => String(cat).toLowerCase().trim() === String(category).toLowerCase().trim()
+        (cat) => String(cat).toLowerCase().trim() === String(category).toLowerCase().trim()
       );
     } catch (error) {
       console.error('categoryFilter: error filtering item', error);

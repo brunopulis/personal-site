@@ -8,11 +8,10 @@ rating: 5
 description: 'Um livro provocativo chocante e confrontativo a todos os preguiçosos incluíndo ao que vos escreve.'
 thoughts: ''
 quotes: ''
-attendedYear: "2017"
+attendedYear: '2017'
 pubDate: 2017-07-25T22:30:30.179Z
 tags: ['teologia']
 ---
-
 
 ## Seis sermões contra a preguiça
 

@@ -90,14 +90,14 @@ Abaixo uma tabela demonstrando os problemas mais recorrentes nas páginas.
 
 Falhas mais comuns de acessibilidade na web. Fonte: [The WebAIM Million](https://webaim.org/projects/million/#intro)
 
-| Tipo de falha da WCAG | % de home pages em Fevereiro de 2020 | % de home pages em Fevereiro de 2019|
-| --------------------- | ---------------------                | ---------------------               |
-| Baixo contraste | 86.3% | 85.3%| 
-|Imagens sem texto alternativo|66.0%|68.0%|
-|Links vazios|59.9%|58.1%|
-|Faltando label em formulários|53.8%|52.8%|
-|Botões vazios|28.7%|25.0%|
-|Linguagem do documento ausente|28.0%|33.1%|
+| Tipo de falha da WCAG          | % de home pages em Fevereiro de 2020 | % de home pages em Fevereiro de 2019 |
+| ------------------------------ | ------------------------------------ | ------------------------------------ |
+| Baixo contraste                | 86.3%                                | 85.3%                                |
+| Imagens sem texto alternativo  | 66.0%                                | 68.0%                                |
+| Links vazios                   | 59.9%                                | 58.1%                                |
+| Faltando label em formulários  | 53.8%                                | 52.8%                                |
+| Botões vazios                  | 28.7%                                | 25.0%                                |
+| Linguagem do documento ausente | 28.0%                                | 33.1%                                |
 
 Fica nítido uma coisa, **temos um problema gritante com a semântica e estrutura**
 

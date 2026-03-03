@@ -1,16 +1,16 @@
 ---
-title: "Criação do Ocidente - A Religião e a Civilização Medieval"
-author: ""
-category: ""
-status: "lido"
+title: 'Criação do Ocidente - A Religião e a Civilização Medieval'
+author: ''
+category: ''
+status: 'lido'
 rating: 5
-cover: ""
-description: ""
-thoughts: ""
-quotes: ""
-attendedYear: "2021"
-recommendBy: ""
+cover: ''
+description: ''
+thoughts: ''
+quotes: ''
+attendedYear: '2021'
+recommendBy: ''
 tags: []
-url: ""
+url: ''
 pubDate: 2022-02-28
 ---

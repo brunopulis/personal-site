@@ -7,9 +7,9 @@ export const getVariable = function (string) {
   return this.getVariables()[string];
 };
 
-export const slug = str =>
+export const slug = (str) =>
   !str ? null : /\p{Emoji_Presentation}/u.test(str) ? str : slugify(str, { lower: true });
 
-export const toArray = value => (!value ? [] : Array.isArray(value) ? value : [value]);
+export const toArray = (value) => (!value ? [] : Array.isArray(value) ? value : [value]);
 
 export const limit = (arr, n) => arr.slice(0, n);

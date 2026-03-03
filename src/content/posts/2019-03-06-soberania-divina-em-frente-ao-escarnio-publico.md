@@ -1,12 +1,12 @@
 ---
-title: "A Soberania divina em frente ao escárnio público"
-excerpt: "Em tempos festivos como o carnaval, a máxima de “tudo é permitido” povoa as avenidas, ruas e bares espalhados pelas cidades."
+title: 'A Soberania divina em frente ao escárnio público'
+excerpt: 'Em tempos festivos como o carnaval, a máxima de “tudo é permitido” povoa as avenidas, ruas e bares espalhados pelas cidades.'
 pubDate: 2019-03-06T14:21:01.615Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/a-soberania-divina-em-frente-ao-esc%C3%A1rnio-p%C3%BAblico-f6a228533cf"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/a-soberania-divina-em-frente-ao-esc%C3%A1rnio-p%C3%BAblico-f6a228533cf'
 ---
 
 ### A Soberania divina em frente ao escárnio público
@@ -74,11 +74,11 @@ Satanás, sendo criatura, obedece o Criador de todas as coisas. Notamos isso qua
 
 Em contrapartida, Cristo é todo poderoso e majestoso, verificado em diversas passagens bíblicas, como:
 
--   a manifestação da glória em 2Cr 7;
--   a presença da glória no tabernáculo;
--   Moisés presenciando a glória de Deus;
--   abertura do mar vermelho;
--   dentre outros.
+- a manifestação da glória em 2Cr 7;
+- a presença da glória no tabernáculo;
+- Moisés presenciando a glória de Deus;
+- abertura do mar vermelho;
+- dentre outros.
 
 ### Mas afinal, o que é Soberania de Deus?
 

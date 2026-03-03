@@ -1,6 +1,6 @@
 ---
 title: Ignoramos 45 milhões de pessoas
-excerpt: "Breve descrição"
+excerpt: 'Breve descrição'
 pubDate: 2014-12-18
 tags: ['a11y']
 ---

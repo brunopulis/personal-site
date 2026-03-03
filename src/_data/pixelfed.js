@@ -16,10 +16,10 @@ export default async function () {
     );
 
     const allPhotos = [];
-    posts.forEach(post => {
+    posts.forEach((post) => {
       post.media_attachments
-        .filter(m => m.type === 'image')
-        .forEach(m => {
+        .filter((m) => m.type === 'image')
+        .forEach((m) => {
           allPhotos.push({
             postUrl: post.url,
             preview: m.preview_url,

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 
-export const base64Format = async imagePath => {
+export const base64Format = async (imagePath) => {
   try {
     const mimeTypes = {
       jpg: 'image/jpeg',

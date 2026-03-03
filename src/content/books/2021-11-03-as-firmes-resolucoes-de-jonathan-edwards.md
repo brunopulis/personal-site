@@ -1,16 +1,16 @@
 ---
-title: "As Firmes Resoluções de Jonathan Edwards"
-author: ""
-category: ""
-status: "lido"
+title: 'As Firmes Resoluções de Jonathan Edwards'
+author: ''
+category: ''
+status: 'lido'
 rating: 5
-cover: ""
-description: ""
-thoughts: ""
-quotes: ""
-attendedYear: "2021"
-recommendBy: ""
+cover: ''
+description: ''
+thoughts: ''
+quotes: ''
+attendedYear: '2021'
+recommendBy: ''
 tags: []
-url: ""
+url: ''
 pubDate: 2021-11-03
 ---

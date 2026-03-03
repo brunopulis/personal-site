@@ -1,16 +1,16 @@
 ---
-title: "KeepUp: Organização do Tempo de Estudo"
-author: ""
-category: ""
-status: "lido"
+title: 'KeepUp: Organização do Tempo de Estudo'
+author: ''
+category: ''
+status: 'lido'
 rating: 4
-cover: ""
-description: ""
-thoughts: "Excelente livro, cumpre o que propõe dando dicas valiosas sobre organização de tempo, estudo e prioridades nas atividades acadêmicas."
-quotes: ""
-attendedYear: "2018"
-recommendBy: ""
+cover: ''
+description: ''
+thoughts: 'Excelente livro, cumpre o que propõe dando dicas valiosas sobre organização de tempo, estudo e prioridades nas atividades acadêmicas.'
+quotes: ''
+attendedYear: '2018'
+recommendBy: ''
 tags: []
-url: ""
+url: ''
 pubDate: 2021-10-29
 ---

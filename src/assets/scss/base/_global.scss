@@ -5,9 +5,9 @@ Low-specificity, global styles that apply to the whole
 project: https://cube.fyi/css.html
 */
 @media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -68,7 +68,7 @@ blockquote:not([class]) {
 hr {
   border: none;
   border-top: 2px dotted;
-} 
+}
 
 kbd {
   background-color: var(--color-bg-mod-1);
@@ -76,12 +76,12 @@ kbd {
   border-radius: var(--border-radius-sm);
   font-family: var(--font-accent);
   font-size: 1rem;
-  padding: .115rem .25rem;
-  }
+  padding: 0.115rem 0.25rem;
+}
 
 figcaption {
   font-size: var(--step--1);
-  margin-block-start: .5rem;
+  margin-block-start: 0.5rem;
   text-align: center;
 }
 
@@ -150,18 +150,17 @@ a:hover {
   background-color: var(--color-brand);
   color: var(--color-bg);
   text-decoration: none;
-
 }
 
 /* Use naked variant to style links as regular text */
-a[data-variant="naked"] {
+a[data-variant='naked'] {
   color: var(--color-text);
   text-decoration: none;
 }
 
 /* Add underline when naked variant link state is hover or focus */
-a[data-variant="naked"]:hover,
-a[data-variant="naked"]:focus {
+a[data-variant='naked']:hover,
+a[data-variant='naked']:focus {
   background-color: unset;
   text-decoration: underline;
 }
@@ -175,7 +174,7 @@ when an element receives focus via the mouse. */
 /* Show focus styles on keyboard focus. */
 :focus-visible {
   outline: dotted 2px var(--focus-color, currentColor);
-  outline-offset:  var(--focus-offset, 2px);
+  outline-offset: var(--focus-offset, 2px);
 }
 
 /* Add scroll margin to all target elements 
@@ -204,6 +203,6 @@ mark,
 @media (prefers-color-scheme: dark) {
   img,
   picture {
-    filter: brightness(.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
   }
 }

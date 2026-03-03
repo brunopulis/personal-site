@@ -1,11 +1,11 @@
 ---
-title: "Assassino?"
+title: 'Assassino?'
 pubDate: 2018-10-29T16:40:54.968Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/assassino-fdd32f174e52"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/assassino-fdd32f174e52'
 ---
 
 ### Assassino?

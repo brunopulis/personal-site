@@ -1,17 +1,17 @@
 ---
-title: "Desintoxicação sexual: Um guia para homens que querem fugir da imoralidade sexual"
-author: "Tim Challies"
-category: "vida-crista"
-status: "lido"
+title: 'Desintoxicação sexual: Um guia para homens que querem fugir da imoralidade sexual'
+author: 'Tim Challies'
+category: 'vida-crista'
+status: 'lido'
 rating: 5
-cover: "https://m.media-amazon.com/images/I/718j+YqMPGL._SL1222_.jpg"
-description: "Um guia prático e bíblico para homens que buscam viver em pureza sexual."
-thoughts: "Abordagem prática e fundamentada biblicamente para um tema crucial nos dias atuais."
-quotes: "A pureza sexual não é apenas evitar o mal, mas buscar ativamente o bem."
-attendedYear: "2018"
-recommendBy: "Grupo de homens da igreja"
-tags: ["Vida Cristã", "Pureza", "Santidade", "Homens"]
-url: "https://amzn.to/4njZIDd"
+cover: 'https://m.media-amazon.com/images/I/718j+YqMPGL._SL1222_.jpg'
+description: 'Um guia prático e bíblico para homens que buscam viver em pureza sexual.'
+thoughts: 'Abordagem prática e fundamentada biblicamente para um tema crucial nos dias atuais.'
+quotes: 'A pureza sexual não é apenas evitar o mal, mas buscar ativamente o bem.'
+attendedYear: '2018'
+recommendBy: 'Grupo de homens da igreja'
+tags: ['Vida Cristã', 'Pureza', 'Santidade', 'Homens']
+url: 'https://amzn.to/4njZIDd'
 pubDate: 2018-06-17
 ---
 
@@ -19,7 +19,7 @@ pubDate: 2018-06-17
 
 ![](https://cdn-images-1.medium.com/max/2560/1*HBW70ofCfZd40Ea2LMsUbQ.jpeg)
 
-A criação de Adão, obra de [Michelangelo Buonarotti](https://pt.wikipedia.org/wiki/Michelangelo "Michelangelo")
+A criação de Adão, obra de [Michelangelo Buonarotti](https://pt.wikipedia.org/wiki/Michelangelo 'Michelangelo')
 
 O **_Saber Indica_** de hoje traz a resenha do livro Desintoxicação Sexual: um guia para homens que querem fugir da imoralidade sexual de Tim Challies.
 
@@ -61,8 +61,8 @@ Um dos ápices desse capítulo é a natureza da pornografia, segundo Challies, e
 
 Ela zomba da intenção de Deus em relação ao sexo, ou seja, todas as mensagens são opostas ao que Deus orientou o homem, por exemplo:
 
--   Deus afirma que o propósito do sexo é a construção da unidade entre o homem e a mulher no matrimônio. A pornografia diz que seu propósito e preencher qualquer necessidade sentida, com qualquer parceiro;
--   Deus afirma que o desejo sexual é bom quando controlado, mas a pornografia diz que o desejo não pode e não deve ser controlado, levando a libertinagem.
+- Deus afirma que o propósito do sexo é a construção da unidade entre o homem e a mulher no matrimônio. A pornografia diz que seu propósito e preencher qualquer necessidade sentida, com qualquer parceiro;
+- Deus afirma que o desejo sexual é bom quando controlado, mas a pornografia diz que o desejo não pode e não deve ser controlado, levando a libertinagem.
 
 ### Violenta
 
@@ -100,15 +100,15 @@ A Bíblia não nos deixa órfãos nesse quesito, ela fala de fato, em modo exten
 
 Existem duas maneiras de olharmos a masturbação a luz das Escrituras como algo condenável, mesmo ela não a citando:\[4\]
 
--   A masturbação é extremamente comum hoje e quase está associada à **_cobiça sexual_**_. P_odemos seguramente concluir que essa era também a situação do mundo antigo. No sermão do monte, Jesus faz menção disso: _“olhar com desejo para uma mulher já cometeu adultério com ela no coração”_ Mt 5:28;
--   Ela é imoral, da mesma forma que a Bíblia não fala diretamente ao aborto — ela menciona a valorização da vida humana e, por isso, podemos concluir que o aborto é pecado, devido à associação com o homicídio.   
-    Da mesma forma, a masturbação é ligada à cobiça sexual, originando o adultério, cobiça, prostituição e uma gama de outros pecados.
+- A masturbação é extremamente comum hoje e quase está associada à **_cobiça sexual_**_. P_odemos seguramente concluir que essa era também a situação do mundo antigo. No sermão do monte, Jesus faz menção disso: _“olhar com desejo para uma mulher já cometeu adultério com ela no coração”\_ Mt 5:28;
+- Ela é imoral, da mesma forma que a Bíblia não fala diretamente ao aborto — ela menciona a valorização da vida humana e, por isso, podemos concluir que o aborto é pecado, devido à associação com o homicídio.   
+  Da mesma forma, a masturbação é ligada à cobiça sexual, originando o adultério, cobiça, prostituição e uma gama de outros pecados.
 
 Outros pontos importantes que Tim aborta são as consequências da masturbação, as quais podemos pontuar, como:
 
--   Poluição da mente;
--   Culpabilidade;
--   Isolamento (físico e psicológico);
+- Poluição da mente;
+- Culpabilidade;
+- Isolamento (físico e psicológico);
 
 ### As três dádivas do sexo
 
@@ -128,9 +128,9 @@ Adão em seu estado de perfeição, confiou na provisão de Deus e sem cometer n
 
 Podemos absorver três bençãos relacionadas ao sexo:
 
--   O sexo conduz a uma obediência alegre;
--   O sexo fortalece a liderança do marido;
--   O sexo promove a verdadeira liberdade.
+- O sexo conduz a uma obediência alegre;
+- O sexo fortalece a liderança do marido;
+- O sexo promove a verdadeira liberdade.
 
 Frutificando assim um relacionamento saudável entre os cônjuges.
 
@@ -148,16 +148,16 @@ A pergunta que se deve fazer é “Qual é o propósito do sexo? Qual sua inten�
 
 Pontos importantes que devem ser ditos, sobre o que o **sexo não é:**
 
--   Sexo não é o fundamental;
--   Sexo não é algo para ser experimentado de forma indireta;
--   O sexo não gira primordialmente em torno das pessoas;
+- Sexo não é o fundamental;
+- Sexo não é algo para ser experimentado de forma indireta;
+- O sexo não gira primordialmente em torno das pessoas;
 
 **O que o sexo é:**
 
--   O sexo é terno;
--   O sexo é doce;
--   O sexo é desinteresado e doador;
--   O sexo tem limites.
+- O sexo é terno;
+- O sexo é doce;
+- O sexo é desinteresado e doador;
+- O sexo tem limites.
 
 ### Desintoxicação da sua alma
 

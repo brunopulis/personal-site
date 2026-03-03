@@ -25,7 +25,7 @@ const FAVORITE_GAMES = [
 ];
 
 async function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function fetchGameData(slug) {
@@ -41,15 +41,15 @@ async function fetchGameData(slug) {
 }
 
 function createMarkdownContent(data) {
-  const genres = data.genres?.map(g => `  - ${g.name}`).join('\n') || '  - Action';
-  const platforms = data.platforms?.map(p => `  - ${p.platform.name}`).join('\n') || '';
+  const genres = data.genres?.map((g) => `  - ${g.name}`).join('\n') || '  - Action';
+  const platforms = data.platforms?.map((p) => `  - ${p.platform.name}`).join('\n') || '';
   const screenshots =
     data.short_screenshots
       ?.slice(0, 5)
-      .map(s => `  - ${s.image}`)
+      .map((s) => `  - ${s.image}`)
       .join('\n') || '';
-  const developers = data.developers?.map(d => d.name).join(', ') || 'Desconhecido';
-  const publishers = data.publishers?.map(p => p.name).join(', ') || 'Desconhecido';
+  const developers = data.developers?.map((d) => d.name).join(', ') || 'Desconhecido';
+  const publishers = data.publishers?.map((p) => p.name).join(', ') || 'Desconhecido';
   const esrbRating = data.esrb_rating?.name || '';
 
   return `---
@@ -156,7 +156,7 @@ async function importGames() {
   }
 }
 
-importGames().catch(error => {
+importGames().catch((error) => {
   console.error('❌ Erro fatal:', error);
   process.exit(1);
 });

@@ -1,12 +1,12 @@
 ---
-title: "Hulk e a nova natureza"
-excerpt: "O que Hulk, pode nos ensinar acerca da temperança da vida?"
+title: 'Hulk e a nova natureza'
+excerpt: 'O que Hulk, pode nos ensinar acerca da temperança da vida?'
 pubDate: 2019-05-14T01:10:02.997Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/s%C3%A9rie-avengers-hulk-e-a-nova-natureza-a749f6565317"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/s%C3%A9rie-avengers-hulk-e-a-nova-natureza-a749f6565317'
 ---
 
 ### Hulk e a nova natureza

@@ -1,12 +1,12 @@
 ---
-title: "O grito da alma"
-excerpt: "Quando tudo se faz sem sentido"
+title: 'O grito da alma'
+excerpt: 'Quando tudo se faz sem sentido'
 pubDate: 2017-08-13T18:39:00.167Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/o-grito-da-alma-2721e7af8d1f"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/o-grito-da-alma-2721e7af8d1f'
 ---
 
 ### O grito da alma

@@ -13,19 +13,19 @@ details {
 summary {
   cursor: pointer;
   font-weight: var(--font-weight-bold);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 details[open] {
-  padding: .5rem 1rem .75rem 1rem;
+  padding: 0.5rem 1rem 0.75rem 1rem;
 }
 
 details[open] summary {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   padding: 0;
 }
 
-details[open]>*:last-child {
+details[open] > *:last-child {
   margin-bottom: 0;
 }
 
@@ -36,9 +36,9 @@ details[data-variant='fancy'] {
 
   summary::-webkit-details-marker,
   summary::marker {
-    content: "";
+    content: '';
     /* Hide marker on iOS */
-    display:none;
+    display: none;
   }
 
   summary:after {
@@ -51,14 +51,14 @@ details[data-variant='fancy'] {
     pointer-events: none;
     position: absolute;
     right: 1rem;
-    top: .7rem;
+    top: 0.7rem;
     transform: rotate(180deg);
   }
 }
 
 details[open][data-variant='fancy'] {
   summary:after {
-    top: .7rem;
+    top: 0.7rem;
     transform: rotate(0deg);
   }
 }

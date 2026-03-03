@@ -5,7 +5,7 @@ import tagColors from '../../_data/tagColors.json' with { type: 'json' };
  * @param {string} tag
  * @returns {string}
  */
-export const tagColor = tag => {
+export const tagColor = (tag) => {
   if (!tag) return '#6b7280';
   const normalizedTag = tag.toLowerCase();
   return tagColors[normalizedTag] || '#6b7280';

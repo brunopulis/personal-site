@@ -1,12 +1,12 @@
 ---
-title: "Documentando seu projeto sass com sassdoc"
-excerpt: "Aprenda a documentar seus projetos sass de forma prática e concisa."
+title: 'Documentando seu projeto sass com sassdoc'
+excerpt: 'Aprenda a documentar seus projetos sass de forma prática e concisa.'
 pubDate: 2018-06-28T02:21:08.130Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/documentando-seu-projeto-sass-com-sassdoc-63b42333e48c"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/documentando-seu-projeto-sass-com-sassdoc-63b42333e48c'
 ---
 
 ### Documentando seu projeto sass com SassDoc
@@ -17,10 +17,10 @@ Quem nunca deve que documentar uma classe ou uma função com um escopo bem gran
 
 A documentação pode trazer alguns benefícios como:
 
--   Rastreabilidade de código;
--   Manutenbilidade;
--   Escalonamento do código;
--   Descrição correta de cada parte do software.
+- Rastreabilidade de código;
+- Manutenbilidade;
+- Escalonamento do código;
+- Descrição correta de cada parte do software.
 
 O SassDoc vem com a proposta de documentar o Sass, mas você pode se perguntar: "há necessidade realmente de documentar um projeto sass?", a resposta é **dependente do contexto**, sites e sistemas básicos com componentes bem definidos e reutilizáveis não há necessidade.
 
@@ -34,10 +34,10 @@ A definição oficial é:
 
 Algumas vantagens de utilizar ele, são:
 
--   altamente personalizável;
--   incrivelmente rápido;
--   totalmente legível;
--   integrado com Grunt/Gulp/Broccoli ou diretamente Node.
+- altamente personalizável;
+- incrivelmente rápido;
+- totalmente legível;
+- integrado com Grunt/Gulp/Broccoli ou diretamente Node.
 
 ### Como ele funciona?
 
@@ -47,7 +47,7 @@ Ele analisa a pasta de origem é busca comentários específicos para a document
 
 ### Instalando
 
-npm install sassdoc -g 
+npm install sassdoc -g
 
 ### Comentários
 
@@ -67,8 +67,7 @@ Para executar o SassDoc, você pode integrar ele com algum automatizador de tare
 sassdoc
 
 // Com o diretório definido  
-sassdoc doc-system/  
-  
+sassdoc doc-system/
 
 ### Documentando
 
@@ -85,11 +84,11 @@ _/// _@param_ _{Length}_ _$size_ — Tamanho da tipografia
 ///  
 /// _@example_ _scss_ — rem mixin  
 /// _.foo_ {  
-///   @include rem(20px); // Exibe fonte convertida  
+/// @include rem(20px); // Exibe fonte convertida  
 /// }  
 ///  
 @mixin rem(_$size_) {  
-  font-size: $size; //Fallback in px  
+ font-size: $size; //Fallback in px  
   font-size: calculateRem($size);  
 }
 

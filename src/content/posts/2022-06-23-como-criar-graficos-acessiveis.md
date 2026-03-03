@@ -5,7 +5,7 @@ imageAlt: ''
 pubDate: 2022-06-23
 category: 'Acessibilidade'
 url: https://brunopulis.com/como-criar-graficos-acessiveis/
-tags: ["a11y"]
+tags: ['a11y']
 ---
 
 Gráficos, mapas e infográficos estão presentes em nossas vidas, mas é quando essas informações não estão acessíveis?

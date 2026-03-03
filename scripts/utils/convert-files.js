@@ -83,7 +83,7 @@ function convertMDXDirectory(dirPath) {
   }
 
   const files = fs.readdirSync(dirPath, { recursive: true });
-  const mdxFiles = files.filter(file => file.endsWith('.mdx'));
+  const mdxFiles = files.filter((file) => file.endsWith('.mdx'));
 
   if (mdxFiles.length === 0) {
     console.log('Nenhum arquivo .mdx encontrado.');
@@ -95,7 +95,7 @@ function convertMDXDirectory(dirPath) {
   let converted = 0;
   let skipped = 0;
 
-  mdxFiles.forEach(file => {
+  mdxFiles.forEach((file) => {
     const filePath = path.join(dirPath, file);
     if (processMDXFile(filePath)) {
       converted++;
@@ -119,9 +119,9 @@ function removeMDXFiles(dirPath, confirm = false) {
   }
 
   const files = fs.readdirSync(dirPath, { recursive: true });
-  const mdxFiles = files.filter(file => file.endsWith('.mdx'));
+  const mdxFiles = files.filter((file) => file.endsWith('.mdx'));
 
-  mdxFiles.forEach(file => {
+  mdxFiles.forEach((file) => {
     const filePath = path.join(dirPath, file);
     try {
       fs.unlinkSync(filePath);
@@ -137,7 +137,7 @@ function removeMDXFiles(dirPath, confirm = false) {
 // Processa argumentos da linha de comando
 const args = process.argv.slice(2);
 const removeFlag = args.includes('--remove');
-const dirArg = args.find(arg => !arg.startsWith('--')) || 'src/content/posts';
+const dirArg = args.find((arg) => !arg.startsWith('--')) || 'src/content/posts';
 
 console.log(`\n🚀 Iniciando conversão de MDX para MD\n`);
 console.log(`📂 Diretório: ${path.resolve(dirArg)}\n`);

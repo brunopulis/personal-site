@@ -43,7 +43,7 @@ describe('Collection Processing Integration', () => {
 
   describe('Post processing pipeline', () => {
     test('should add slugs to collection items', () => {
-      const withSlugs = mockCollection.map(post => ({
+      const withSlugs = mockCollection.map((post) => ({
         ...post,
         slug: slugifyString(post.data.title),
       }));
@@ -70,12 +70,12 @@ describe('Collection Processing Integration', () => {
 
   describe('Tag-based filtering', () => {
     test('should filter posts by tag', () => {
-      const techPosts = mockCollection.filter(post => post.data.tags.includes('tech'));
+      const techPosts = mockCollection.filter((post) => post.data.tags.includes('tech'));
       expect(techPosts).toHaveLength(3);
     });
 
     test('should get unique tags from collection', () => {
-      const allTags = mockCollection.flatMap(post => post.data.tags);
+      const allTags = mockCollection.flatMap((post) => post.data.tags);
       const uniqueTags = [...new Set(allTags)];
 
       expect(uniqueTags).toContain('tech');
@@ -105,7 +105,7 @@ describe('Collection Processing Integration', () => {
   describe('Complex collection queries', () => {
     test('should get recent posts from specific category', () => {
       const result = mockCollection
-        .filter(post => post.data.category === 'development')
+        .filter((post) => post.data.category === 'development')
         .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
         .slice(0, 2);
 
@@ -115,7 +115,7 @@ describe('Collection Processing Integration', () => {
 
     test('should get all tags with post count', () => {
       const tagCounts = mockCollection.reduce((acc, post) => {
-        post.data.tags.forEach(tag => {
+        post.data.tags.forEach((tag) => {
           acc[tag] = (acc[tag] || 0) + 1;
         });
         return acc;
@@ -135,7 +135,7 @@ describe('Collection Processing Integration', () => {
       const archive = grouped.map(([year, items]) => ({
         year,
         count: items.length,
-        posts: items.map(p => p.data.title),
+        posts: items.map((p) => p.data.title),
       }));
 
       expect(archive[0].year).toBe('2024');

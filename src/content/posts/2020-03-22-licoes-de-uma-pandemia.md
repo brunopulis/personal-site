@@ -1,12 +1,12 @@
 ---
-title: "As lições de uma pandemia"
-excerpt: "O mundo hoje enfrenta um inimigo silencioso e mortal, o COVID-19 ou popularmente chamado de “corona vírus”. Sua forma de contágio é brutal…"
+title: 'As lições de uma pandemia'
+excerpt: 'O mundo hoje enfrenta um inimigo silencioso e mortal, o COVID-19 ou popularmente chamado de “corona vírus”. Sua forma de contágio é brutal…'
 pubDate: 2020-03-22T16:57:56.220Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/as-li%C3%A7%C3%B5es-de-uma-pandemia-c8a8eee6afb8"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/as-li%C3%A7%C3%B5es-de-uma-pandemia-c8a8eee6afb8'
 ---
 
 ### As lições de uma pandemia
@@ -56,7 +56,7 @@ A esperança é o que nos move e impulsa para querermos viver e celebrar o dom d
 > Ela lhes dirá bem devagarinho, para que não esqueçam:  
 >  — O meu nome é ES-PE-RAN-ÇA…
 
-_“_Nova Antologia Poética_”, Editora Globo — São Paulo, 1998, pág. 118._
+_“\_Nova Antologia Poética_”, Editora Globo — São Paulo, 1998, pág. 118.\_
 
 Que sua esperança possa estar firmada em algo concreto e sólido, como diria o velho livro:
 

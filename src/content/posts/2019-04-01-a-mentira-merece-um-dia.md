@@ -1,12 +1,12 @@
 ---
-title: "A mentira merece um dia?"
-excerpt: "O dia 1º de abril “comemora-se” o dia mentira, mas será que de fato a mentira precisa de um dia especifico para ser celebrada, ou ela é…"
+title: 'A mentira merece um dia?'
+excerpt: 'O dia 1º de abril “comemora-se” o dia mentira, mas será que de fato a mentira precisa de um dia especifico para ser celebrada, ou ela é…'
 pubDate: 2019-04-01T13:43:06.969Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/a-mentira-merece-um-dia-f56ba12ed50d"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/a-mentira-merece-um-dia-f56ba12ed50d'
 ---
 
 ### A mentira merece um dia?

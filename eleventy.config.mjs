@@ -57,7 +57,7 @@ export default async function eleventy(eleventyConfig) {
   });
 
   eleventyConfig.setLibrary('md', plugins.markdownLib);
-  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
+  eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents));
 
   Object.entries(customFilters).forEach(([name, fn]) => {
     if (typeof fn !== 'function') {

@@ -13,11 +13,11 @@ export default function () {
     return [];
   }
 
-  const images = fs.readdirSync(dir).filter(file => {
+  const images = fs.readdirSync(dir).filter((file) => {
     return ['.jpg', '.jpeg', '.png', '.webp'].includes(path.extname(file).toLowerCase());
   });
 
-  return images.map(image => ({
+  return images.map((image) => ({
     src: `/assets/images/gallery/${image}`,
     alt: '',
   }));
