@@ -48,7 +48,7 @@
     "@zachleat/table-saw": "^1.0.7",
     "deepmerge": "^4.3.1",
     "lite-youtube-embed": "^0.3.4",
-    "lucide": "^0.575.0",
+    "lucide": "^0.576.0",
     "postcss-import": "^16.1.1",
     "sass": "^1.97.3"
   },
