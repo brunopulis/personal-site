@@ -56,6 +56,12 @@
   "redirects": [
     {
       "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.brunopulis.com"
+        }
+      ],
       "destination": "https://brunopulis.com/:path*",
       "permanent": true
     }
