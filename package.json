@@ -68,7 +68,7 @@
     "cypress-axe": "^1.7.0",
     "dayjs": "^1.11.19",
     "dotenv": "^17.2.3",
-    "eslint": "^9.0.0",
+    "eslint": "^10.0.2",
     "fast-glob": "^3.3.3",
     "globals": "^17.4.0",
     "gray-matter": "^4.0.3",
