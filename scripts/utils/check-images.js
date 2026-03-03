@@ -21,7 +21,7 @@ function getAllFiles(dirPath, arrayOfFiles) {
 
   arrayOfFiles = arrayOfFiles || [];
 
-  files.forEach(file => {
+  files.forEach((file) => {
     const filePath = `${dirPath}/${file}`;
     if (fs.statSync(filePath).isDirectory()) {
       arrayOfFiles = getAllFiles(filePath, arrayOfFiles);
@@ -41,7 +41,7 @@ function checkImages() {
 
   console.log(`Scanning ${files.length} files in ${CONTENT_DIR}...`);
 
-  files.forEach(file => {
+  files.forEach((file) => {
     let content = fs.readFileSync(file, 'utf8');
 
     // Remove code blocks to avoid false positives
@@ -71,7 +71,7 @@ function checkImages() {
 
   if (missingImages.length > 0) {
     console.log('\nFound missing images:');
-    missingImages.forEach(item => {
+    missingImages.forEach((item) => {
       console.log(`File: ${path.relative(__dirname, item.file)}`);
       console.log(`  Image: ${item.image}`);
       console.log(`  Resolved Path: ${item.resolvedPath}`);

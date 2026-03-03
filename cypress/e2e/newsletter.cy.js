@@ -32,8 +32,8 @@ describe('Newsletter', () => {
   });
 
   it('não deve ter erros de console', () => {
-    cy.on('window:console', console => {
-      expect(consoleSpy => {
+    cy.on('window:console', (console) => {
+      expect((consoleSpy) => {
         console.warn = consoleSpy;
       });
     });

@@ -1,12 +1,12 @@
 ---
-title: "Precisamos urgente de equilíbrio"
-excerpt: "Esse artigo não será técnico, mas uma reflexão sobre um tema pouco tocado, mas que todos passam em suas carreiras na área de TI."
+title: 'Precisamos urgente de equilíbrio'
+excerpt: 'Esse artigo não será técnico, mas uma reflexão sobre um tema pouco tocado, mas que todos passam em suas carreiras na área de TI.'
 pubDate: 2017-12-21T14:03:35.906Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/precisamos-urgente-de-equil%C3%ADbrio-337721babb9e"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/precisamos-urgente-de-equil%C3%ADbrio-337721babb9e'
 ---
 
 ### Precisamos urgente de equilíbrio
@@ -39,7 +39,7 @@ O desequilíbrio vem acompanhado de uma agonia e frustação pessoal/profissiona
 O [Bernard De Luna](https://medium.com/u/101a148eb371) escreveu um texto excelente sobre estresse e ansiedade.
 
 [**Olá Devs, precisamos falar sobre estresse e ansiedade**  
-_A programação é um trabalho incrível e pode ser muito relacionada ao trabalho de um artista. O desenvolvedor, ou…_medium.com](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e "https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e")[](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e)
+\_A programação é um trabalho incrível e pode ser muito relacionada ao trabalho de um artista. O desenvolvedor, ou…\_medium.com](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e 'https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e')[](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e)
 
 Compreender que o desequilíbrio é algo externo afetando o seu “eu interno” é primordial para um tratamento adequado. Existem diversas formas de tratar esse desequilíbrio, pois varia entre cada indivíduo.
 

@@ -1,12 +1,12 @@
 ---
-title: "As chamas da desesperança"
-excerpt: "Talvez palavras não expressam o que está na garganta brasileira: a inquietação, o descaso e impunidade, perante o Museu Nacional."
+title: 'As chamas da desesperança'
+excerpt: 'Talvez palavras não expressam o que está na garganta brasileira: a inquietação, o descaso e impunidade, perante o Museu Nacional.'
 pubDate: 2018-09-04T04:20:21.470Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/as-chamas-da-desesperan%C3%A7a-d1ed254604d7"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/as-chamas-da-desesperan%C3%A7a-d1ed254604d7'
 ---
 
 ### As chamas da desesperança

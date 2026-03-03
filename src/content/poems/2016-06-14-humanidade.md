@@ -2,7 +2,7 @@
 title: Humanidade
 pubDate: 2016-06-14
 url: https://brunopulis.com/humanidade/
-tags: ["pessoal"]
+tags: ['pessoal']
 ---
 
 No dia 12/06/16 o mundo assistiu mais um massacre desumano, pessoas saíram para se divertir, passar um tempo com amigos e desconhecidos e não voltaram para suas casas, famílias e entes queridos.

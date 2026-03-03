@@ -1,7 +1,7 @@
 import path from 'node:path';
 import Image from '@11ty/eleventy-img';
 
-const stringifyAttributes = attributeMap => {
+const stringifyAttributes = (attributeMap) => {
   return Object.entries(attributeMap)
     .map(([attribute, value]) => {
       if (typeof value === 'undefined') return '';
@@ -10,12 +10,12 @@ const stringifyAttributes = attributeMap => {
     .join(' ');
 };
 
-const errorSrcRequired = shortcodeName => {
+const errorSrcRequired = (shortcodeName) => {
   throw new Error(`src parameter is required for {% ${shortcodeName} %} shortcode`);
 };
 
 // Handles image processing
-const processImage = async options => {
+const processImage = async (options) => {
   let {
     src = 'images/',
     alt = '',
@@ -117,9 +117,9 @@ const processImage = async options => {
   const lowsrcEntry = lowsrc[lowsrc.length - 1];
 
   const imageSources = Object.values(metadata)
-    .map(imageFormat => {
+    .map((imageFormat) => {
       return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat
-        .map(entry => entry.srcset)
+        .map((entry) => entry.srcset)
         .join(', ')}" sizes="${sizes}">`;
     })
     .join('\n');

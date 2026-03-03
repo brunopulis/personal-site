@@ -31,9 +31,9 @@ pnpm clean:all    # Limpa tudo
 ### Qualidade de Código
 
 ```bash
-pnpm lint         # Executa biome lint
+pnpm lint         # Executa ESLint
 pnpm lint:fix     # Corrige problemas de lint
-pnpm format       # Formata código
+pnpm format       # Formata código com Prettier
 pnpm check        # Lint + format (corrige tudo)
 ```
 
@@ -97,17 +97,15 @@ tests/
 - Logue erros com contexto adequado
 - Retorne valores padrão seguros em filtros
 
-### Biome Config (biome.json)
+### ESLint / Prettier
 
 ```json
 {
-  "formatter": { "indentWidth": 2, "lineWidth": 100 },
-  "javascript": {
-    "formatter": { "quoteStyle": "single", "semicolons": "always" }
-  },
-  "linter": {
-    "rules": { "recommended": true, "style": { "useConst": "error" } }
-  }
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 100
 }
 ```
 
@@ -131,7 +129,7 @@ src/
 
 ## Git Hooks (Husky)
 
-Husky com pre-commit executa `lint-staged` com Biome.
+Husky com pre-commit executa `lint-staged` com ESLint e Prettier.
 
 Para ativar: `pnpm husky install`
 
@@ -141,7 +139,8 @@ Para ativar: `pnpm husky install`
 - **tinacms** - CMS Git-based
 - **jest** - Testes unitários
 - **cypress** - Testes E2E
-- **@biomejs/biome** - Linter/Formatter
+- **eslint** - Linter
+- **prettier** - Formatter
 - **sass** / **postcss** - CSS
 
 ## Notas Importantes

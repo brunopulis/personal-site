@@ -18,13 +18,13 @@
   // Dark mode toggle
   const darkToggle = document.getElementById('dark-toggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  const setToggleUI = isDark => {
+  const setToggleUI = (isDark) => {
     if (!darkToggle) return;
     darkToggle.textContent = isDark ? '☀️' : '🌙';
     darkToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
     darkToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   };
-  const applyTheme = isDark => {
+  const applyTheme = (isDark) => {
     document.documentElement.classList.toggle('dark', isDark);
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     setToggleUI(isDark);
@@ -111,19 +111,19 @@
       a11yMenu.classList.remove('hidden');
       a11yToggle.setAttribute('aria-expanded', 'true');
     };
-    a11yToggle.addEventListener('click', e => {
+    a11yToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       const isHidden = a11yMenu.classList.contains('hidden');
       if (isHidden) openMenu();
       else closeMenu();
     });
-    document.addEventListener('click', e => {
+    document.addEventListener('click', (e) => {
       if (!a11yMenu.classList.contains('hidden')) {
         const within = a11yMenu.contains(e.target) || a11yToggle.contains(e.target);
         if (!within) closeMenu();
       }
     });
-    document.addEventListener('keydown', e => {
+    document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
   }
@@ -131,7 +131,7 @@
   // Font toggle for footer
   const fontToggle = document.getElementById('font-toggle');
   if (fontToggle) {
-    const applyFontPref = enabled => {
+    const applyFontPref = (enabled) => {
       document.documentElement.classList.toggle('system-fonts', enabled);
       fontToggle.textContent = enabled ? 'Web Fonts' : 'System Fonts';
       fontToggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');

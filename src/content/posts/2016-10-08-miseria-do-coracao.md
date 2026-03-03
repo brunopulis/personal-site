@@ -1,9 +1,9 @@
 ---
-title: "Miséria do Coração"
-excerpt: "Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao…"
+title: 'Miséria do Coração'
+excerpt: 'Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao…'
 pubDate: 2016-10-08T18:20:22.348Z
-tags: ["teologia"]
-canonicalUrl: "https://medium.com/@brunopulis/mis%C3%A9ria-do-cora%C3%A7%C3%A3o-ce7e4fd2871d"
+tags: ['teologia']
+canonicalUrl: 'https://medium.com/@brunopulis/mis%C3%A9ria-do-cora%C3%A7%C3%A3o-ce7e4fd2871d'
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*2zWx67YS_hDtaIjtJYKxOw.jpeg)

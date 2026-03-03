@@ -16,13 +16,13 @@ async function createMedia() {
 
   const title = await input({
     message: 'Título da mídia:',
-    validate: value => value.trim() !== '' || 'O título é obrigatório.',
+    validate: (value) => value.trim() !== '' || 'O título é obrigatório.',
   });
 
   const watchedDate = await input({
     message: 'Data em que assistiu (AAAA-MM-DD):',
     default: dayjs().format('YYYY-MM-DD'),
-    validate: value => /^\d{4}-\d{2}-\d{2}$/.test(value) || 'Formato inválido. Use AAAA-MM-DD.',
+    validate: (value) => /^\d{4}-\d{2}-\d{2}$/.test(value) || 'Formato inválido. Use AAAA-MM-DD.',
   });
 
   const watchedYear = dayjs(watchedDate).year();
@@ -60,7 +60,7 @@ async function createMedia() {
   const recommendBy = await input({ message: 'Recomendado por:' });
 
   const tagsInput = await input({ message: 'Tags (separadas por vírgula):' });
-  const tags = tagsInput ? tagsInput.split(',').map(tag => tag.trim()) : [];
+  const tags = tagsInput ? tagsInput.split(',').map((tag) => tag.trim()) : [];
 
   const url = await input({ message: 'URL (TMDB, IMDb, etc):' });
 

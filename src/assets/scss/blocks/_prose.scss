@@ -11,7 +11,7 @@
   max-width: 52ch;
 }
 
-.prose :is(pre,pre+*,figure,figure+*,h2,h3,h4) {
+.prose :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
   --flow-space: var(--space-l-xl);
 }
 

@@ -136,7 +136,7 @@ async function fetchAllMovies(fetchFunction, accountId) {
     page++;
 
     // Rate limiting - aguarda 250ms entre requisições
-    await new Promise(resolve => setTimeout(resolve, 250));
+    await new Promise((resolve) => setTimeout(resolve, 250));
   } while (page <= totalPages && page <= 50); // Limita a 50 páginas (1000 filmes)
 
   return allMovies;
@@ -156,13 +156,13 @@ function createMovieMarkdown(movie, details, watchedYear) {
   const releaseYear = movie.release_date?.substring(0, 4) || '';
   const watchedDate = movie.rated_at || movie.created_at || '';
 
-  const genres = details?.genres?.map(g => g.name) || [];
-  const director = details?.credits?.crew?.find(c => c.job === 'Director')?.name || '';
-  const cast = details?.credits?.cast?.slice(0, 5).map(c => c.name) || [];
+  const genres = details?.genres?.map((g) => g.name) || [];
+  const director = details?.credits?.crew?.find((c) => c.job === 'Director')?.name || '';
+  const cast = details?.credits?.cast?.slice(0, 5).map((c) => c.name) || [];
   const runtime = details?.runtime || 0;
 
   const trailerKey =
-    details?.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
+    details?.videos?.results?.find((v) => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
 
   return `---
 title: ${movie.title}
@@ -182,10 +182,10 @@ voteCount: ${movie.vote_count || 0}
 isFavorite: ${movie.isFavorite || false}
 status: watched
 genres:
-${genres.map(g => `  - ${g}`).join('\n') || '  - Desconhecido'}
+${genres.map((g) => `  - ${g}`).join('\n') || '  - Desconhecido'}
 director: ${director}
 cast:
-${cast.map(c => `  - ${c}`).join('\n')}
+${cast.map((c) => `  - ${c}`).join('\n')}
 runtime: ${runtime}
 originalLanguage: ${movie.original_language || 'en'}
 budget: ${details?.budget || 0}
@@ -220,7 +220,7 @@ ${details?.revenue ? `**Bilheteria:** $${details.revenue.toLocaleString('en-US')
 function organizeByYear(movies) {
   const byYear = {};
 
-  movies.forEach(movie => {
+  movies.forEach((movie) => {
     // Tenta extrair o ano da data de rating/adição
     let year = 'Sem data';
 
@@ -276,8 +276,8 @@ async function main() {
     console.log(`✓ ${favoriteMovies.length} filmes favoritos\n`);
 
     // Marca favoritos
-    const favoriteIds = new Set(favoriteMovies.map(m => m.id));
-    ratedMovies.forEach(movie => {
+    const favoriteIds = new Set(favoriteMovies.map((m) => m.id));
+    ratedMovies.forEach((movie) => {
       movie.isFavorite = favoriteIds.has(movie.id);
     });
 
@@ -329,7 +329,7 @@ async function main() {
         let details = null;
         try {
           details = await getMovieDetails(movie.id);
-          await new Promise(resolve => setTimeout(resolve, 250)); // Rate limiting
+          await new Promise((resolve) => setTimeout(resolve, 250)); // Rate limiting
         } catch (_error) {
           console.log(`  ⚠️  ${movie.title} - erro ao buscar detalhes, usando dados básicos`);
         }
@@ -363,7 +363,7 @@ async function main() {
         if (b === 'Sem data') return -1;
         return parseInt(b, 10) - parseInt(a, 10);
       })
-      .forEach(year => {
+      .forEach((year) => {
         console.log(`   src/content/medias/${year}/ - ${moviesByYear[year].length} filmes`);
       });
 

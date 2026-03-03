@@ -1,12 +1,12 @@
 ---
-title: "O cristão e sua ignorância literária"
-excerpt: "E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo…"
+title: 'O cristão e sua ignorância literária'
+excerpt: 'E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo…'
 pubDate: 2017-12-05T03:36:32.790Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/o-crist%C3%A3o-e-sua-ignor%C3%A2ncia-liter%C3%A1ria-da9979a5caf5"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/o-crist%C3%A3o-e-sua-ignor%C3%A2ncia-liter%C3%A1ria-da9979a5caf5'
 ---
 
 ### O cristão e sua ignorância literária
@@ -26,7 +26,7 @@ Particularmente, o Brasil tem altos índices de pessoas com algo conhecido como:
 
 > É a incapacidade que uma pessoa demonstra ao não compreender textos simples. Tais pessoas, mesmo capacitadas a decodificar minimamente as letras, geralmente frases, sentenças, textos curtos e os números, não desenvolvem habilidade de interpretação de textos. Também é definido como **analfabeto funcional** o indivíduo maior de quinze anos possuidor de escolaridade inferior a quatro anos letivos.
 
-Cerca de 20,3% da população brasileira sofre desse fenômeno educacional. O [censo 2010](https://pt.wikipedia.org/wiki/Censo_demogr%C3%A1fico_do_Brasil_de_2010 "Censo demográfico do Brasil de 2010") mostrou que um entre cinco pessoas (20,3%) são analfabetas funcionais. O problema maior está na região Nordeste, onde a taxa de analfabetismo funcional chega a 30,8%.
+Cerca de 20,3% da população brasileira sofre desse fenômeno educacional. O [censo 2010](https://pt.wikipedia.org/wiki/Censo_demogr%C3%A1fico_do_Brasil_de_2010 'Censo demográfico do Brasil de 2010') mostrou que um entre cinco pessoas (20,3%) são analfabetas funcionais. O problema maior está na região Nordeste, onde a taxa de analfabetismo funcional chega a 30,8%.
 
 ### Como o analfabetismo funcional afeta a igreja
 

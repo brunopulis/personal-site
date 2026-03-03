@@ -1,12 +1,12 @@
 ---
-title: "Pontes versus muros"
-excerpt: "E ali haverá uma grande estrada, um caminho que será chamado Caminho de Santidade. Os impuros não passarão por ele; servirá apenas aos que…"
+title: 'Pontes versus muros'
+excerpt: 'E ali haverá uma grande estrada, um caminho que será chamado Caminho de Santidade. Os impuros não passarão por ele; servirá apenas aos que…'
 pubDate: 2017-10-30T10:54:16.036Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/pontes-versus-muros-7f32f3433d79"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/pontes-versus-muros-7f32f3433d79'
 ---
 
 ### Pontes versus muros

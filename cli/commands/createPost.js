@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import checkbox from '@inquirer/checkbox';
 import { input } from '@inquirer/prompts';
 
-export default async __siteroot => {
+export default async (__siteroot) => {
   const title = await input({ message: 'Post title' });
   const slug = await input({ message: 'Post slug', default: utils.slugify(title) });
 
@@ -63,7 +63,7 @@ date: ${postDate}
 excerpt: ""`;
 
   if (tags.length > 0) {
-    meta = `${meta}\ntags:\n${tags.map(tag => `    - ${tag}`).join('\n')}`;
+    meta = `${meta}\ntags:\n${tags.map((tag) => `    - ${tag}`).join('\n')}`;
   }
 
   if (project.value !== 'none') {

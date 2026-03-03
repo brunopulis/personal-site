@@ -1,12 +1,12 @@
 ---
-title: "A crença na descrença"
-excerpt: "Quando a descrença se torna sua crença moral e religiosa"
+title: 'A crença na descrença'
+excerpt: 'Quando a descrença se torna sua crença moral e religiosa'
 pubDate: 2017-08-04T11:59:46.389Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/a-cren%C3%A7a-na-descren%C3%A7a-3ffcd5e2c53d"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/a-cren%C3%A7a-na-descren%C3%A7a-3ffcd5e2c53d'
 ---
 
 ### A crença na descrença
@@ -35,9 +35,9 @@ O verdadeiro ateu, à luz das Escrituras, é caracterizado por aquele que nega a
 
 O ateísmo trata a descrença como crença, posto que existem princípios ideológicos, movimentos e associações. A partir do momento que os três aspectos a seguir estão presentes, podemos chegar a esta conclusão:
 
--   práticas comuns entre os indivíduos;
--   princípios ideológicos, morais e éticos;
--   defesa de sua perspectiva de vida ou cosmovisão.
+- práticas comuns entre os indivíduos;
+- princípios ideológicos, morais e éticos;
+- defesa de sua perspectiva de vida ou cosmovisão.
 
 Desta forma, por expressarem sua religiosidade e espiritualidade de forma integral, pode-se concluir que o ateísmo é uma religião.
 

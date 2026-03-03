@@ -1,12 +1,12 @@
 ---
-title: "Mais uma luz — o valor da vida."
-excerpt: "Hoje quero indicar uma música que o Carlos André Rodrigues Couto me mostrou. A música é a One More Light da banda Linkin Park. No vídeo…"
+title: 'Mais uma luz — o valor da vida.'
+excerpt: 'Hoje quero indicar uma música que o Carlos André Rodrigues Couto me mostrou. A música é a One More Light da banda Linkin Park. No vídeo…'
 pubDate: 2018-05-24T05:14:52.301Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/mais-uma-luz-828e0f04de52"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/mais-uma-luz-828e0f04de52'
 ---
 
 ### Mais uma luz — o valor da vida.

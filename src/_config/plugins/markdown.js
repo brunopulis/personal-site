@@ -44,9 +44,9 @@ export const markdownLib = markdownIt({
   .use(markdownItFootnote)
   .use(markdownitMark)
   .use(markdownitAbbr)
-  .use(md => {
+  .use((md) => {
     // Helper function to escape HTML entities
-    const escapeHtml = text => {
+    const escapeHtml = (text) => {
       const map = {
         '&': '&amp;',
         '<': '&lt;',
@@ -54,7 +54,7 @@ export const markdownLib = markdownIt({
         '"': '&quot;',
         "'": '&#039;',
       };
-      return text.replaceAll(/[&<>"']/g, m => map[m]);
+      return text.replaceAll(/[&<>"']/g, (m) => map[m]);
     };
 
     md.renderer.rules.image = (tokens, idx) => {

@@ -38,7 +38,7 @@ describe('Chained Filters Integration', () => {
 
   describe('slugify + groupBy', () => {
     test('should use slugified category as group key', () => {
-      const postsWithSlugCategories = mockPosts.map(post => ({
+      const postsWithSlugCategories = mockPosts.map((post) => ({
         ...post,
         data: { ...post.data, categorySlug: slugifyString(post.data.category) },
       }));
@@ -51,7 +51,7 @@ describe('Chained Filters Integration', () => {
 
   describe('markdownFormat + striptags + limit', () => {
     test('should extract plain text from markdown and limit', () => {
-      const postsWithContent = mockPosts.map(post => ({
+      const postsWithContent = mockPosts.map((post) => ({
         ...post,
         plainContent: striptags(markdownFormat(post.content)),
       }));
@@ -64,7 +64,7 @@ describe('Chained Filters Integration', () => {
 
   describe('Full pipeline: content processing', () => {
     test('should process posts through full pipeline', () => {
-      const processed = mockPosts.map(post => ({
+      const processed = mockPosts.map((post) => ({
         ...post,
         slug: slugifyString(post.title),
         plainContent: striptags(markdownFormat(post.content)),
@@ -77,7 +77,7 @@ describe('Chained Filters Integration', () => {
     });
 
     test('should group by year then limit', () => {
-      const processed = mockPosts.map(post => ({
+      const processed = mockPosts.map((post) => ({
         ...post,
         year: post.data.date.split('-')[0],
       }));
@@ -104,8 +104,8 @@ describe('Chained Filters Integration', () => {
     });
 
     test('should handle empty after processing', () => {
-      const emptyContent = mockPosts.filter(p => p.content === '');
-      const processed = emptyContent.map(p => ({
+      const emptyContent = mockPosts.filter((p) => p.content === '');
+      const processed = emptyContent.map((p) => ({
         slug: slugifyString(p.title),
       }));
       expect(processed).toEqual([]);

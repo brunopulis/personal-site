@@ -11,7 +11,7 @@ Largely based on:
   display: flex;
   flex-direction: column;
   position: relative;
-  border: solid .1rem;
+  border: solid 0.1rem;
   border-radius: var(--border-radius);
 }
 
@@ -53,16 +53,15 @@ Largely based on:
   text-decoration: underline;
 }
 
-
 /* Use :focus-within to match the :hover style */
 .card:focus-within {
-  box-shadow: 0 0 0 .1rem;
+  box-shadow: 0 0 0 0.1rem;
 }
 
 /* Remove the unnecessary basic :focus style only where :focus-within is supported */
 .card:focus-within a:focus {
   text-decoration: none;
-} 
+}
 
 /* Create consistent image behaviour and ratio */
 .card > img {

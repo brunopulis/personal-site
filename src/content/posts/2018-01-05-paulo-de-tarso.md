@@ -1,12 +1,12 @@
 ---
-title: "Paulo de Tarso"
-excerpt: "A vida e obra do apostolo Paulo"
+title: 'Paulo de Tarso'
+excerpt: 'A vida e obra do apostolo Paulo'
 pubDate: 2018-01-05T12:50:25.961Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/paulo-de-tarso-9fa61e8c4fde"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/paulo-de-tarso-9fa61e8c4fde'
 ---
 
 ### Paulo de Tarso
@@ -15,9 +15,9 @@ canonicalUrl: "https://medium.com/@brunopulis/paulo-de-tarso-9fa61e8c4fde"
 
 **Paulo de Tarso** é uma das figuras mais icônicas do Novo Testamento. Escritor de boa parte do Novo Testamento, fariseu, antes perseguidor agora perseguido por amor do Evangelho, foi dado a ele o título de apóstolo por Deus, sendo missionário radical levando o Evangelho a lugares inimagináveis para o período histórico que vivia.
 
-O nome original de Paulo era “Saulo” (em hebraico: שָׁאוּל- _Sha’ul_; tiberiano: Šāʼûl — “o que se pediu, o que se orou por” e traduzido em grego antigo: Σαούλ — _Saul_ — ou Σαῦλος — _Saulos_), nome que divide com o bíblico Rei Saul, um outro benjaminita e primeiro rei de Israel, que foi sucedido pelo Rei Davi, da tribo de Judá. Segundo suas próprias palavras, era um fariseu.
+O nome original de Paulo era “Saulo” (em hebraico: שָׁאוּל- _Sha’ul_; tiberiano: Šāʼûl — “o que se pediu, o que se orou por” e traduzido em grego antigo: Σαούλ — *Saul* — ou Σαῦλος — *Saulos*), nome que divide com o bíblico Rei Saul, um outro benjaminita e primeiro rei de Israel, que foi sucedido pelo Rei Davi, da tribo de Judá. Segundo suas próprias palavras, era um fariseu.
 
-O uso de “Paulo” (em grego: Παῦλος — _Paulos_; em latim: _Paulus_ ou _Paullus_ — “baixo”; “curto”) aparece nos “Atos” pela primeira vez quando ele começou sua primeira jornada missionária em território desconhecido. Em Atos 13:6–13, Paulo aparece juntamente com Barnabé e João Marcos conversando com Sérgio Paulo, um oficial romano em Chipre que seria convertido por ele.
+O uso de “Paulo” (em grego: Παῦλος — *Paulos*; em latim: _Paulus_ ou *Paullus* — “baixo”; “curto”) aparece nos “Atos” pela primeira vez quando ele começou sua primeira jornada missionária em território desconhecido. Em Atos 13:6–13, Paulo aparece juntamente com Barnabé e João Marcos conversando com Sérgio Paulo, um oficial romano em Chipre que seria convertido por ele.
 
 ### Vida
 
@@ -26,7 +26,7 @@ Nascido na cidade Tarso, descendente da tribo de Benjamim, possuindo cidadania r
 O [Raphael Bessa](https://medium.com/u/2728f9e228fa) escreveu um excelente artigo sobre Gamaliel, vale a pena a leitura.
 
 [**Gamaliel**  
-medium.com](https://medium.com/saber-teol%C3%B3gico/gamaliel-c9f84d8e37e1 "https://medium.com/saber-teol%C3%B3gico/gamaliel-c9f84d8e37e1")[](https://medium.com/saber-teol%C3%B3gico/gamaliel-c9f84d8e37e1)
+medium.com](https://medium.com/saber-teol%C3%B3gico/gamaliel-c9f84d8e37e1 'https://medium.com/saber-teol%C3%B3gico/gamaliel-c9f84d8e37e1')[](https://medium.com/saber-teol%C3%B3gico/gamaliel-c9f84d8e37e1)
 
 Como de costume, toda criança aprendia o ofício familiar. Paulo aprendeu a profissão de construir tendas e posteriormente se tornou um fariseu. Era um dos mais temidos de sua época, pois instaurou uma grande perseguição aos nazarenos (como era conhecido os cristãos na época). Tamanha era a perseguição que ele entrava pelas casas e arrastava homens e mulheres entregando-os a prisão (Atos 8:3).
 
@@ -40,13 +40,13 @@ Catorze epístolas no Novo Testamento são atribuídas a Paulo. Agostinho desenv
 
 Das catorze cartas atribuídas a Paulo e incluídas no cânone do Novo Testamento, há pouca ou nenhuma disputa de que Paulo tenha escrito pelo menos sete:
 
--   Epístola aos Romanos
--   Primeira Epístola aos Coríntios
--   Segunda Epístola aos Coríntios
--   Epístola aos Gálatas
--   Epístola aos Filipenses
--   Primeira Epístola aos Tessalonicenses
--   Epístola a Filemon
+- Epístola aos Romanos
+- Primeira Epístola aos Coríntios
+- Segunda Epístola aos Coríntios
+- Epístola aos Gálatas
+- Epístola aos Filipenses
+- Primeira Epístola aos Tessalonicenses
+- Epístola a Filemon
 
 A Epístola aos Hebreus, que foi atribuída a ele ainda na antiguidade, já era questionada na época, e atualmente não é considerada como tendo sido escrita por ele pela maior parte dos especialistas. Há variados graus de disputa a respeito da autoria das demais epístolas.
 

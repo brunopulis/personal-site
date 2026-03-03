@@ -1,9 +1,9 @@
 ---
-title: "Avaliadores automáticos"
+title: 'Avaliadores automáticos'
 excerpt: "procurando bug's de acessibilidade no seu site"
 pubDate: 2014-02-19
 tags: ['a11y']
-canonicalUrl: "https://medium.com/@brunopulis/avaliadores-automaticos-c47262e65b1c"
+canonicalUrl: 'https://medium.com/@brunopulis/avaliadores-automaticos-c47262e65b1c'
 ---
 
 ## Avaliadores automáticos

@@ -1,12 +1,12 @@
 ---
-title: "Inácio de Antioquia"
-excerpt: "Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu Paulo e foi sucessor de Pedro na…"
+title: 'Inácio de Antioquia'
+excerpt: 'Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu Paulo e foi sucessor de Pedro na…'
 pubDate: 2017-12-08T12:01:01.591Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/in%C3%A1cio-de-antioquia-b2e630be8547"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/in%C3%A1cio-de-antioquia-b2e630be8547'
 ---
 
 ### Inácio de Antioquia
@@ -31,15 +31,15 @@ E na iminência do martírio prometeu aos cristãos que mesmo depois da morte co
 
 ### **Obras**
 
-Atribui-se sete obra a Inácio, conhecidas como _Epístolas de Inácio,_ preservadas no [_Codex Hierosolymitanus_](https://pt.wikipedia.org/wiki/Codex_Hierosolymitanus "Codex Hierosolymitanus")_._
+Atribui-se sete obra a Inácio, conhecidas como _Epístolas de Inácio,_ preservadas no [_Codex Hierosolymitanus_](https://pt.wikipedia.org/wiki/Codex_Hierosolymitanus 'Codex Hierosolymitanus')_._
 
--   Epístola a Policarpo de Esmirna;
--   Epístola aos Efésios;
--   [Epístola aos Esmirniotas](https://pt.wikipedia.org/wiki/Ep%C3%ADstola_aos_Esmirniotas "Epístola aos Esmirniotas");
--   Epístola aos Filadélfios;
--   Epístola aos Magnésios;
--   Epístola aos Romanos;
--   [Epístola aos Trálios](https://pt.wikipedia.org/wiki/Ep%C3%ADstola_aos_Tr%C3%A1lios "Epístola aos Trálios").
+- Epístola a Policarpo de Esmirna;
+- Epístola aos Efésios;
+- [Epístola aos Esmirniotas](https://pt.wikipedia.org/wiki/Ep%C3%ADstola_aos_Esmirniotas 'Epístola aos Esmirniotas');
+- Epístola aos Filadélfios;
+- Epístola aos Magnésios;
+- Epístola aos Romanos;
+- [Epístola aos Trálios](https://pt.wikipedia.org/wiki/Ep%C3%ADstola_aos_Tr%C3%A1lios 'Epístola aos Trálios').
 
 ### Morte
 
@@ -48,7 +48,7 @@ No ano 106, Santo Inácio está em Roma, onde, no ano seguinte, foram lançados 
 Bibliografia
 
 [**Esboços da História da Igreja - CAPÍTULO 2: INÁCIO DE ANTIOQUIA (116 dC)**  
-_Esboços da Historia da Igreja J.C.Robertson CAPÍTULO II: INÁCIO DE ANTIOQUIA (116 dC) Quando nosso Senhor subiu ao céu…_projetocasteloforte.com.br](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/ "http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/")[](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/)
+\_Esboços da Historia da Igreja J.C.Robertson CAPÍTULO II: INÁCIO DE ANTIOQUIA (116 dC) Quando nosso Senhor subiu ao céu…\_projetocasteloforte.com.br](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/ 'http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/')[](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/)
 
 [**Inácio de Antioquia - Wikipédia, a enciclopédia livre**  
-_Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu São Paulo e…_pt.wikipedia.org](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia "https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia")[](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia)
+\_Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu São Paulo e…\_pt.wikipedia.org](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia 'https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia')[](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia)

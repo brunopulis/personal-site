@@ -1,19 +1,19 @@
 ---
-title: "Ídolos e idolatrias"
-excerpt: "Desde o Gênese da criação, o homem tem a tendência maligna em criar ídolos para si, João Calvino costuma dizer: \"O coração do homem é uma…"
+title: 'Ídolos e idolatrias'
+excerpt: 'Desde o Gênese da criação, o homem tem a tendência maligna em criar ídolos para si, João Calvino costuma dizer: "O coração do homem é uma…'
 pubDate: 2017-06-20T04:21:26.070Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/%C3%ADdolos-e-idolatrias-afcb9631add9"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/%C3%ADdolos-e-idolatrias-afcb9631add9'
 ---
 
 ### Ídolos e idolatrias
 
 ![](https://cdn-images-1.medium.com/max/800/1*3O2IETrBZuVL_CLVpKDYjQ.jpeg)
 
-“A adoração do [Bezerro de Ouro](https://pt.wikipedia.org/wiki/Bezerro_de_Ouro "Bezerro de Ouro")”, de [Nicolas Poussin](https://pt.wikipedia.org/wiki/Nicolas_Poussin "Nicolas Poussin").
+“A adoração do [Bezerro de Ouro](https://pt.wikipedia.org/wiki/Bezerro_de_Ouro 'Bezerro de Ouro')”, de [Nicolas Poussin](https://pt.wikipedia.org/wiki/Nicolas_Poussin 'Nicolas Poussin').
 
 Desde o Gênese da criação, o homem tem a tendência maligna em criar ídolos para si, João Calvino costuma dizer: "**O coração do homem é uma fábrica de ídolos**". Vemos em toda as Escrituras a prática e concepção da idolatria ser veementemente censurada por Deus.
 
@@ -42,7 +42,8 @@ Já na tradição teológica reformada o Breve Catecismo de Westminster, comenta
 
 No primeiro mandamento mostra **quem** devemos adorar e prestar culto, já no segundo nos mostra **como** devemos adorar.
 
-Por causa da natureza caída, a mente humana sempre tenta adicionar uma nova forma de cultuar a Deus com simbolismos e figuras para o Sagrado.  
+Por causa da natureza caída, a mente humana sempre tenta adicionar uma nova forma de cultuar a Deus com simbolismos e figuras para o Sagrado.
+
    
 Desde a fundação do cristianismo houve essa "adição", como por exemplo, o culto as imagens e zelo pela tradição. Levando o homem adorar a criatura ao invés do Criador Rm 1:25
 

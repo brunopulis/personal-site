@@ -1,7 +1,7 @@
 import slugify from 'slugify';
 
 /** Converts string to a slug form. */
-export const slugifyString = str => {
+export const slugifyString = (str) => {
   if (typeof str !== 'string') {
     return '';
   }

@@ -6,9 +6,9 @@ Include the .button class for styling <a> tags as buttons.
 */
 button,
 .button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
   /* Configure focus color from global focus */
   --focus-color: var(--color-brand);
 
@@ -32,14 +32,13 @@ button:hover,
 button:focus,
 .button:hover,
 .button:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="button"]:hover
-input[type="button"]:focus {
+input[type='submit']:hover,
+input[type='submit']:focus,
+input[type='reset']:hover,
+input[type='reset']:focus,
+input[type='button']:hover input[type='button']:focus {
   filter: brightness(1.2);
-  transform: translateY(-2px)
+  transform: translateY(-2px);
 }
 
 button:disabled,
@@ -69,9 +68,9 @@ Offer a variant button style
 */
 button[data-variant='outline'],
 .button[data-variant='outline'],
-input[type="submit"][data-variant='outline'],
-input[type="reset"][data-variant='outline'],
-input[type="button"][data-variant='outline'] {
+input[type='submit'][data-variant='outline'],
+input[type='reset'][data-variant='outline'],
+input[type='button'][data-variant='outline'] {
   color: var(--color-brand);
   background: var(--color-bg);
   border: solid 0.1rem var(--color-brand);
@@ -79,9 +78,9 @@ input[type="button"][data-variant='outline'] {
 
 button[data-variant='outline']:hover,
 .button[data-variant='outline']:hover,
-input[type="submit"][data-variant='outline']:hover,
-input[type="reset"][data-variant='outline']:hover,
-input[type="button"][data-variant='outline']:hover {
+input[type='submit'][data-variant='outline']:hover,
+input[type='reset'][data-variant='outline']:hover,
+input[type='button'][data-variant='outline']:hover {
   filter: brightness(1.2);
   border: solid 0.1rem var(--color-brand);
 }

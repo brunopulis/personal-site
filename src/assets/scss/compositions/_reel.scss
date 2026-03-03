@@ -43,6 +43,7 @@ to enable scroll snapping
 .reel[data-variant='img'] {
   block-size: var(--reel-height, 50vh);
 }
-.reel[data-variant='img'] > img { 
-  block-size: 100%; width: auto;
+.reel[data-variant='img'] > img {
+  block-size: 100%;
+  width: auto;
 }

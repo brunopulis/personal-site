@@ -1,12 +1,12 @@
-export const drafts = eleventyConfig => {
-  eleventyConfig.addGlobalData('eleventyComputed.permalink', () => data => {
+export const drafts = (eleventyConfig) => {
+  eleventyConfig.addGlobalData('eleventyComputed.permalink', () => (data) => {
     if (data.draft && !process.env.BUILD_DRAFTS) {
       return false;
     }
     return data.permalink;
   });
 
-  eleventyConfig.addGlobalData('eleventyComputed.eleventyExcludeFromCollections', () => data => {
+  eleventyConfig.addGlobalData('eleventyComputed.eleventyExcludeFromCollections', () => (data) => {
     if (data.draft && !process.env.BUILD_DRAFTS) {
       return true;
     }

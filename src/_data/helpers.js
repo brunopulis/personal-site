@@ -33,7 +33,7 @@ export function getLinkActiveState(itemUrl, pageUrl) {
  * @returns {Array} - Result collection or empty.
  */
 export function filterCollectionByKeys(collection, keys) {
-  return collection.filter(x => keys.includes(x.data.key));
+  return collection.filter((x) => keys.includes(x.data.key));
 }
 
 /**

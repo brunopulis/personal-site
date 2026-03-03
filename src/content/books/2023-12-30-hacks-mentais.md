@@ -1,16 +1,16 @@
 ---
-title: "Hacks Mentais: 70 Hacks para Produtividade, Hábitos e Relacionamentos"
-author: ""
-category: ""
-status: "lido"
+title: 'Hacks Mentais: 70 Hacks para Produtividade, Hábitos e Relacionamentos'
+author: ''
+category: ''
+status: 'lido'
 rating: 1
-cover: ""
-description: ""
-thoughts: ""
-quotes: ""
-attendedYear: "2023"
-recommendBy: ""
+cover: ''
+description: ''
+thoughts: ''
+quotes: ''
+attendedYear: '2023'
+recommendBy: ''
 tags: []
-url: ""
+url: ''
 pubDate: 2023-12-30
 ---

@@ -1,10 +1,11 @@
 ---
-title: "Como criar botões acessíveis"
-excerpt: "Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.
- Hoje, vou falar sobre como…"
+title: 'Como criar botões acessíveis'
+excerpt:
+  'Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.
+  Hoje, vou falar sobre como…'
 pubDate: 2017-10-02T23:28:46.808Z
 tags: ['a11y']
-canonicalUrl: "https://medium.com/@brunopulis/como-criar-bot%C3%B5es-acess%C3%ADveis-2205ba4a91c8"
+canonicalUrl: 'https://medium.com/@brunopulis/como-criar-bot%C3%B5es-acess%C3%ADveis-2205ba4a91c8'
 ---
 
 ### Como criar botões acessíveis
@@ -42,21 +43,21 @@ O exemplo abaixo mostra de forma clara como fazer.
   <a href=”#” role="button">Leia mais <span class=”sr-only”>sobre Galo na libertadores</span></a>  
 </div>
 
-ou 
+ou
 
 <button>Leia mais <span class="sr-only">sobre o Galo na libertadores</span></button>
 
 ### CSS
 
 .sr-only {  
-  position: absolute;  
-  width: 1px;  
-  height: 1px;  
-  padding: 0;  
-  margin: -1px;  
-  overflow: hidden;  
-  clip: rect(0,0,0,0);  
-  border: 0;  
+ position: absolute;  
+ width: 1px;  
+ height: 1px;  
+ padding: 0;  
+ margin: -1px;  
+ overflow: hidden;  
+ clip: rect(0,0,0,0);  
+ border: 0;  
 }
 
 ### Conclusão

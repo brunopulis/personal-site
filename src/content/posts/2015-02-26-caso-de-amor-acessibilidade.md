@@ -8,7 +8,7 @@ tags: ['a11y']
 
 Aos que me conhecem sabem que eu sou defensor de uma **Web inclusiva** e não exclusiva, por isso luto pela Acessibilidade Web no Brasil.
 
-Por isso, este post irá tratar de forma reflexiva o assunto e mostrar que o mais importante para essa questão trata-se de **_consciência_**.
+Por isso, este post irá tratar de forma reflexiva o assunto e mostrar que o mais importante para essa questão trata-se de ***consciência***.
 
 Meu interesse pelo assunto começou há um tempo, quando vi um leitor de tela ler uma página. Lembro das primeiras conversas sobre acessibilidade com as pessoas dedicadas ao assunto, foi algo fascinante.
 

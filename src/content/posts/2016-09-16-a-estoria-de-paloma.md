@@ -24,7 +24,7 @@ Lembrando desse ocorrido, pensa que tudo foi em vão e quem sabe as pessoas a ac
 
 Paloma é um retrato de um grupo de pessoas que estão em nossa realidade e podem estar escondidas em nossas igrejas, por medo e repressão não revelam a verdade sobre si mesma.
 
-Foi-se o tempo que esconder e não encarar a realidade, pessoas transgêneros estão por aí. E a Igreja de Cristo uma instituição que deveria ser conhecida como um ambiente de amor fraternal e socorro ao ferido se faz oposta a isso, nela **_deveríamos ser quem nós somos, uma pena que isso é impraticável._**
+Foi-se o tempo que esconder e não encarar a realidade, pessoas transgêneros estão por aí. E a Igreja de Cristo uma instituição que deveria ser conhecida como um ambiente de amor fraternal e socorro ao ferido se faz oposta a isso, nela ***deveríamos ser quem nós somos, uma pena que isso é impraticável.***
 
 Como instituição devemos estar preparados para **qualquer tipo de público e abraça-los em amor.**
 

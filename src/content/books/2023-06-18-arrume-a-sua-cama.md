@@ -1,18 +1,18 @@
 ---
 title: Arrume a sua cama
 subtitle: Pequenas coisas que podem mudar a sua vida... E talvez o mundo
-author: "William H. Mcraven"
-category: ""
-status: "lido"
+author: 'William H. Mcraven'
+category: ''
+status: 'lido'
 rating: 5
-cover: "https://m.media-amazon.com/images/I/81C7jAnjS3L._SL1500_.jpg"
-description: "Quando foi convidado para proferir a aula inaugural dos alunos de graduação da Universidade do Texas, o almirante William McRaven pensou em compartilhar suas lições sobre liderança."
-thoughts: ""
-quotes: ""
-attendedYear: "2023"
-recommendBy: ""
+cover: 'https://m.media-amazon.com/images/I/81C7jAnjS3L._SL1500_.jpg'
+description: 'Quando foi convidado para proferir a aula inaugural dos alunos de graduação da Universidade do Texas, o almirante William McRaven pensou em compartilhar suas lições sobre liderança.'
+thoughts: ''
+quotes: ''
+attendedYear: '2023'
+recommendBy: ''
 tags: ['desenvolvimento pessoal', 'produtividade']
-url: "https://amzn.to/4aiicjk"
+url: 'https://amzn.to/4aiicjk'
 pubDate: 2023-06-18
 ---
 

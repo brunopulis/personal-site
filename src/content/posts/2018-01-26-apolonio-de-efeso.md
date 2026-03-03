@@ -1,12 +1,12 @@
 ---
-title: "Apolônio de Éfeso"
-excerpt: "Ele estava completamente familiarizado com a história de Éfeso e com os feitos dos montanistas frígios. O autor desconhecido de…"
+title: 'Apolônio de Éfeso'
+excerpt: 'Ele estava completamente familiarizado com a história de Éfeso e com os feitos dos montanistas frígios. O autor desconhecido de…'
 pubDate: 2018-01-26T12:01:01.524Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/apol%C3%B4nio-de-%C3%A9feso-cb08aee20479"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/apol%C3%B4nio-de-%C3%A9feso-cb08aee20479'
 ---
 
 ### Apolônio de Éfeso

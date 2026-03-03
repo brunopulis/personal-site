@@ -1,16 +1,16 @@
 ---
 title: Acessibilidade na Web
 subtitle: Boas práticas para construir sites e aplicações acessíveis
-description: "Um guia para quem quer conhecer mais ou aprofundar seus conhecimentos em Acessibilidade Web"
-author: "Reinaldo Ferraz"
-category: "Acessibilidade"
-status: "lido"
+description: 'Um guia para quem quer conhecer mais ou aprofundar seus conhecimentos em Acessibilidade Web'
+author: 'Reinaldo Ferraz'
+category: 'Acessibilidade'
+status: 'lido'
 rating: 5
 cover: '/assets/images/blog/acessibilidade-na-web.webp'
-attendedYear: "2020"
-recommendBy: ""
+attendedYear: '2020'
+recommendBy: ''
 tags: []
-url: "https://www.casadocodigo.com.br/products/livro-acessibilidade"
+url: 'https://www.casadocodigo.com.br/products/livro-acessibilidade'
 pubDate: 2020-07-18
 ---
 

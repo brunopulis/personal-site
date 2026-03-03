@@ -50,7 +50,6 @@ A flipped version where the sidebar is on the right
 }
 
 @media screen and (min-width: 960px) {
-
   .sidebar:not([data-direction])[data-variant='sticky'] > :first-child,
   .sidebar[data-direction][data-variant='sticky'] > :last-child {
     position: sticky;

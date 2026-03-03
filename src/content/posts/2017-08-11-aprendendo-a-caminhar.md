@@ -1,12 +1,12 @@
 ---
-title: "Aprendendo a caminhar"
-excerpt: "Como Foo Fighters descreveu o novo nascimento."
+title: 'Aprendendo a caminhar'
+excerpt: 'Como Foo Fighters descreveu o novo nascimento.'
 pubDate: 2017-08-11T15:06:01.957Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/aprendendo-a-caminhar-e7fc1962d7d1"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/aprendendo-a-caminhar-e7fc1962d7d1'
 ---
 
 ### Aprendendo a caminhar

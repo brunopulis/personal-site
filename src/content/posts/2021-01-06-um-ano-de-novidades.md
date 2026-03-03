@@ -1,9 +1,9 @@
 ---
-title: "Um ano de novidades"
-excerpt: "Novidades de um ano que iniciou a todo vapor"
+title: 'Um ano de novidades'
+excerpt: 'Novidades de um ano que iniciou a todo vapor'
 pubDate: 2021-01-06T12:55:00.000Z
 tags: ['pessoal']
-canonicalUrl: "https://medium.com/@brunopulis/um-ano-de-novidades-61cf21251af4"
+canonicalUrl: 'https://medium.com/@brunopulis/um-ano-de-novidades-61cf21251af4'
 ---
 
 ### Um ano de novidades

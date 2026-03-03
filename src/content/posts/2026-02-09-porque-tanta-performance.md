@@ -1,8 +1,8 @@
 ---
 title: Por que tanta peformance?
-description: "E porque isso pode estar te matando lentamente"
+description: 'E porque isso pode estar te matando lentamente'
 pubDate: 2026-02-09
-tags: ["100DaysToOffload", "Pessoal"]
+tags: ['100DaysToOffload', 'Pessoal']
 ---
 
 Enquanto escrevo, escuto [Beautiful Things](https://music.youtube.com/watch?v=R7yyorwvuac&list=RDAO0JF8WuooS-0aso5YN8QmsA).

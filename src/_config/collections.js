@@ -6,7 +6,7 @@ import { slugifyString } from './filters/slugify.js';
  * @param {*} collectionApi
  * @returns
  */
-export const posts = collectionApi => {
+export const posts = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/posts/**/*').reverse();
 };
 
@@ -14,7 +14,7 @@ export const posts = collectionApi => {
  * Get unique years from posts - works as Eleventy collection
  * Uses getFilteredByGlob for lazy loading
  */
-export const postYears = collectionApi => {
+export const postYears = (collectionApi) => {
   const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
   if (!allPosts) {
     return [];
@@ -23,7 +23,7 @@ export const postYears = collectionApi => {
   const years = [
     ...new Set(
       allPosts
-        .map(post => {
+        .map((post) => {
           // Use only data.pubDate from frontmatter, not post.date (which is file modified date)
           const postDate = post.data.pubDate || post.data.date;
           return postDate ? new Date(postDate).getFullYear() : null;
@@ -43,13 +43,13 @@ export const getPostYears = postYears;
  * Posts by Year Collections
  * Generates: posts2026, posts2025, posts2024, etc.
  */
-export const getPostsByYear = collectionApi => year => {
+export const getPostsByYear = (collectionApi) => (year) => {
   const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
   if (!allPosts) {
     return [];
   }
   return allPosts
-    .filter(post => {
+    .filter((post) => {
       const postDate = post.data.pubDate || post.data.date;
       const postYear = postDate ? new Date(postDate).getFullYear() : null;
       return postYear === year;
@@ -67,7 +67,7 @@ export const getPostsByYear = collectionApi => year => {
  * @param {*} collectionApi
  * @returns
  */
-export const notes = collectionApi => {
+export const notes = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/notes/**/*').reverse();
 };
 
@@ -77,7 +77,7 @@ export const notes = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const poems = collectionApi => {
+export const poems = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/poems/**/*').reverse();
 };
 
@@ -87,7 +87,7 @@ export const poems = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const bookmarks = collectionApi => {
+export const bookmarks = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*').reverse();
 };
 
@@ -97,7 +97,7 @@ export const bookmarks = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const likes = collectionApi => {
+export const likes = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/likes/**/*').reverse();
 };
 
@@ -107,7 +107,7 @@ export const likes = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const photos = collectionApi => {
+export const photos = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/photos/**/*').reverse();
 };
 
@@ -117,7 +117,7 @@ export const photos = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const medias = collectionApi => {
+export const medias = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/medias/**/*').reverse();
 };
 
@@ -127,7 +127,7 @@ export const medias = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const books = collectionApi => {
+export const books = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/books/**/*').reverse();
 };
 
@@ -137,7 +137,7 @@ export const books = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const newsletters = collectionApi => {
+export const newsletters = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*').reverse();
 };
 
@@ -147,7 +147,7 @@ export const newsletters = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const games = collectionApi => {
+export const games = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/games/**/*').reverse();
 };
 
@@ -157,7 +157,7 @@ export const games = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const music = collectionApi => {
+export const music = (collectionApi) => {
   return collectionApi
     .getFilteredByGlob('./src/content/music/**/*')
     .sort((a, b) => b.data.date - a.data.date);
@@ -169,11 +169,11 @@ export const music = collectionApi => {
  * @param {*} collectionApi
  * @returns
  */
-export const showInSitemap = collectionApi => {
+export const showInSitemap = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
-export const tagListRecurrency = collection => {
+export const tagListRecurrency = (collection) => {
   const tagCount = {};
   const excludedTags = [
     'all',
@@ -192,7 +192,7 @@ export const tagListRecurrency = collection => {
   // Contar quantas vezes cada tag aparece (agrupado por slug)
   const slugToTag = {};
 
-  collection.getAll().forEach(item => {
+  collection.getAll().forEach((item) => {
     if ('tags' in item.data) {
       const tags = item.data.tags;
 
@@ -220,11 +220,11 @@ export const tagListRecurrency = collection => {
  * @param {*} collection
  * @returns
  */
-export const tagList = collection => {
+export const tagList = (collection) => {
   const tagSet = new Set();
   const slugSet = new Set();
 
-  collection.getAll().forEach(item => {
+  collection.getAll().forEach((item) => {
     if ('tags' in item.data) {
       const tags = item.data.tags;
 

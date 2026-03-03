@@ -1,12 +1,12 @@
 ---
-title: "Na rotina do culto"
-excerpt: "Quanto a mim, os meus pés quase que se desviaram; pouco faltou para que escorregassem os meus passos."
+title: 'Na rotina do culto'
+excerpt: 'Quanto a mim, os meus pés quase que se desviaram; pouco faltou para que escorregassem os meus passos.'
 pubDate: 2018-05-19T03:17:43.383Z
 draft: false
 isFeatured: false
 tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/na-rotina-do-culto-3e983f6911e2"
+category: 'blog'
+canonicalUrl: 'https://medium.com/@brunopulis/na-rotina-do-culto-3e983f6911e2'
 ---
 
 ### Na rotina do culto

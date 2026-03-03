@@ -1,6 +1,6 @@
 ---
 title: 5 tags que ajudam na acessibilidade
-excerpt: "Breve descrição"
+excerpt: 'Breve descrição'
 pubDate: 2024-09-30
 category: 'Acessibilidade'
 ---

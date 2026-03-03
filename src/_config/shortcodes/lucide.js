@@ -4,7 +4,7 @@ export const lucide = (name, attrs = {}) => {
   // Handle kebab-case to PascalCase (e.g., alert-circle -> AlertCircle)
   const pascalName = name
     .split('-')
-    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join('');
 
   const iconNodes = icons[pascalName] || icons[name];
