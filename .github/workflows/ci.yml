@@ -1,4 +1,7 @@
 name: CI
+permissions:
+  contents: read
+  pull-requests: write
 
 on:
   push:
@@ -26,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run Biome check
+      - name: Run ESLint check
         run: pnpm check
 
   test:
