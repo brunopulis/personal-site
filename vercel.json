@@ -1,35 +1,9 @@
 {
-  "buildCommand": "pnpm build && ls -la _site/admin",
+  "buildCommand": "pnpm build",
   "installCommand": "pnpm install --frozen-lockfile",
   "devCommand": "pnpm dev",
   "outputDirectory": "_site",
   "headers": [
-    {
-      "source": "/assets/css/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/css"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/js/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
     {
       "source": "/assets/(.*)",
       "headers": [
@@ -40,7 +14,7 @@
       ]
     },
     {
-      "source": "/(.*).html",
+      "source": "/.+\\.html$",
       "headers": [
         {
           "key": "Cache-Control",
@@ -80,7 +54,7 @@
   ],
   "redirects": [
     {
-      "source": "https://www.brunopulis.com/:path*",
+      "source": "/:path*",
       "destination": "https://brunopulis.com/:path*",
       "permanent": true
     }
