@@ -54,8 +54,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4
       lucide:
-        specifier: ^0.576.0
-        version: 0.576.0
+        specifier: ^0.577.0
+        version: 0.577.0
       postcss-import:
         specifier: ^16.1.1
         version: 16.1.1(postcss@8.5.8)
@@ -5792,8 +5792,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
-  lucide@0.576.0:
-    resolution: {integrity: sha512-R8OBTUFiPq4BZ7LxRNZECDvBa/8MKgTqcF5N1iifqyPSGD7lT8ymV9103di01b+6xjhPsqlh7hlSxqNcJEK1eg==}
+  lucide@0.577.0:
+    resolution: {integrity: sha512-PpC/m5eOItp/WU/GlQPFBXDOhq6HibL73KzYP37OX3LM7VmzWQF8voEj8QRWUFvy9FIKfeDQkWYoyS1D/MdWFA==}
 
   lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
@@ -14496,7 +14496,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  lucide@0.576.0: {}
+  lucide@0.577.0: {}
 
   lunr@2.3.9: {}
 
