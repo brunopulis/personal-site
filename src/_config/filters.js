@@ -13,6 +13,7 @@ import { filterByYear } from './filters/filterByYear.js';
 import { getRelatedServices } from './filters/getRelatedServices.js';
 import { getServiceById } from './filters/getServiceById.js';
 import { groupBy, groupByMonth, groupByYear, groupByYearMonth } from './filters/groupBy.js';
+import { getPostsByTag } from './filters/get-posts-by-tag.js';
 import { lazyGroupByYear, lazyPaginate } from './filters/lazy.js';
 import { limit } from './filters/limit.js';
 import { markdownFormat } from './filters/markdown-format.js';
@@ -63,6 +64,7 @@ export {
   sortAlphabetically,
   splitStrings,
   slugifyString,
+  getPostsByTag,
   streamIcon,
   streamTypeLabel,
   webmentionGetForUrl,

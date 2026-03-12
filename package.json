@@ -16,6 +16,7 @@
     "dev": "tinacms dev -c \"concurrently \\\"eleventy --serve --incremental\\\" \\\"pnpm watch:css\\\"\"",
     "dev:full": "tinacms dev -c \"concurrently \\\"eleventy --serve\\\" \\\"pnpm watch:css\\\"\"",
     "build": "eleventy && pnpm build:css",
+    "build:tina": "tinacms build --skip-search-index",
     "clean": "rimraf _site",
     "clean:all": "pnpm clean && pnpm clean:og",
     "lint": "eslint .",

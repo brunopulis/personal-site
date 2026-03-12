@@ -38,6 +38,8 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
 
   eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
+  eleventyConfig.addCollection('tagsWithCount', collections.tagListRecurrency);
+  eleventyConfig.addCollection('tagList', collections.tagList);
 
   //   Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);
