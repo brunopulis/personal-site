@@ -19,7 +19,7 @@ Thumbs.db
 .cache/
 
 # TinaCMS
-tina/__generated__/
+# tina/__generated__/
 
 # Logs
 *.log
