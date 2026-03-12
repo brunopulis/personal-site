@@ -197,13 +197,16 @@ export const tagListRecurrency = (collection) => {
       const tags = item.data.tags;
 
       for (const tag of tags) {
-        if (!excludedTags.includes(tag)) {
-          const slug = slugifyString(tag);
-          tagCount[slug] = (tagCount[slug] || 0) + 1;
-          // Store the most common/first version of the tag name for display
-          if (!slugToTag[slug]) {
-            slugToTag[slug] = tag;
-          }
+        if (excludedTags.includes(tag)) {
+          continue;
+        }
+        const slug = slugifyString(tag);
+        if (!slug) {
+          continue;
+        }
+        tagCount[slug] = (tagCount[slug] || 0) + 1;
+        if (!slugToTag[slug]) {
+          slugToTag[slug] = tag;
         }
       }
     }
@@ -246,9 +249,10 @@ export const tagList = (collection) => {
           ].includes(tag)
         ) {
           const slug = slugifyString(tag);
-          if (!tags.find((t) => t.slug === slug)) {
-            tags.push({ tag, slug });
+          if (!slug || !tags.find((t) => t.slug === slug)) {
+            continue;
           }
+          tags.push({ tag, slug });
         }
       }
     }

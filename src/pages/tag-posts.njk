@@ -9,6 +9,7 @@ pagination:
 permalink: "/tags/{{ tag.slug }}{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 eleventyComputed:
   title: "Tag: {{ tag.tag }}"
+eleventyExcludeFromCollections: true
 ---
 
 {% set posts = collections.posts | getPostsByTag(tag.tag) %}
