@@ -1,6 +1,6 @@
 <footer>
   <div class="wrapper">
-    <div class="region flow" aria-label="Políticas do site">
+    <div class="region flow">
       <ul class="text-left cluster" role="list">
         {% for item in navigation.secondary %}
         <li><a href="{{ item.url }}">{{ item.text }}</a></li>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="repel">
-      <p>2012 Bruno Pulis — Feito com ❤️ em BH.</p>
+      <p>2012 Bruno Pulis — Feito com <span role="img" aria-label="amor">❤️</span> em BH.</p>
       <nav>
         <ul class="cluster" role="list">
           <li>
@@ -42,14 +42,6 @@
               <span class="visually-hidden">Bluesky</span>
             </a>
           </li>
-          <li>
-            <a href="https://threads.net/@brunopulis" target="_blank" rel="me noopener noreferrer">
-              {% lucide "spool" %}
-              <span class="visually-hidden">Threads</span>
-            </a>
-          </li>
-
-
           <li>
             <a href="/feeds">
               {% lucide "rss" %}

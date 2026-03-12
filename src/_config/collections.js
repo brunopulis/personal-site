@@ -212,6 +212,7 @@ export const tagListRecurrency = (collection) => {
   // Converter para array de objetos e ordenar por quantidade (decrescente)
   return Object.entries(tagCount)
     .sort((a, b) => b[1] - a[1]) // Ordena do maior para o menor
+    .slice(0, 10) // Limita aos top 10
     .map(([slug, count]) => ({ tag: slugToTag[slug], count, slug }));
 };
 
@@ -221,14 +222,13 @@ export const tagListRecurrency = (collection) => {
  * @returns
  */
 export const tagList = (collection) => {
-  const tagSet = new Set();
-  const slugSet = new Set();
+  const tags = [];
 
   collection.getAll().forEach((item) => {
     if ('tags' in item.data) {
-      const tags = item.data.tags;
+      const itemTags = item.data.tags;
 
-      for (const tag of tags) {
+      for (const tag of itemTags) {
         if (
           ![
             'all',
@@ -246,16 +246,15 @@ export const tagList = (collection) => {
           ].includes(tag)
         ) {
           const slug = slugifyString(tag);
-          if (!slugSet.has(slug)) {
-            slugSet.add(slug);
-            tagSet.add(tag);
+          if (!tags.find((t) => t.slug === slug)) {
+            tags.push({ tag, slug });
           }
         }
       }
     }
   });
 
-  return Array.from(tagSet).sort((a, b) => a.localeCompare(b));
+  return tags.sort((a, b) => a.tag.localeCompare(b.tag));
 };
 
 export default {
