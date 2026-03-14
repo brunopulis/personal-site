@@ -1,19 +1,14 @@
 import { slugifyString } from './filters/slugify.js';
 
-/**
- * Posts Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const posts = (collectionApi) => {
-  return collectionApi.getFilteredByGlob('./src/content/posts/**/*').reverse();
+  const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
+  return allPosts.sort((a, b) => {
+    const dateA = a.data.pubDate || a.data.date;
+    const dateB = b.data.pubDate || b.data.date;
+    return new Date(dateB).getTime() - new Date(dateA).getTime();
+  });
 };
 
-/**
- * Get unique years from posts - works as Eleventy collection
- * Uses getFilteredByGlob for lazy loading
- */
 export const postYears = (collectionApi) => {
   const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
   if (!allPosts) {
@@ -24,25 +19,19 @@ export const postYears = (collectionApi) => {
     ...new Set(
       allPosts
         .map((post) => {
-          // Use only data.pubDate from frontmatter, not post.date (which is file modified date)
           const postDate = post.data.pubDate || post.data.date;
-          return postDate ? new Date(postDate).getFullYear() : null;
+          if (!postDate) return null;
+          const year = new Date(postDate).getFullYear();
+          return Number.isNaN(year) ? null : year;
         })
-        .filter(Boolean)
+        .filter((y) => typeof y === 'number')
     ),
   ];
   return years.sort((a, b) => a - b);
 };
 
-/**
- * Get unique years (alias for postYears)
- */
 export const getPostYears = postYears;
 
-/**
- * Posts by Year Collections
- * Generates: posts2026, posts2025, posts2024, etc.
- */
 export const getPostsByYear = (collectionApi) => (year) => {
   const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
   if (!allPosts) {
@@ -57,118 +46,52 @@ export const getPostsByYear = (collectionApi) => (year) => {
     .sort((a, b) => {
       const dateA = a.data.pubDate || a.data.date;
       const dateB = b.data.pubDate || b.data.date;
-      return new Date(dateB) - new Date(dateA);
+      return new Date(dateB).getTime() - new Date(dateA).getTime();
     });
 };
 
-/**
- * Notes Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const notes = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/notes/**/*').reverse();
 };
 
-/**
- * Poems Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const poems = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/poems/**/*').reverse();
 };
 
-/**
- * Bookmarks Collection
-
- * @param {*} collectionApi
- * @returns
- */
 export const bookmarks = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*').reverse();
 };
 
-/**
- * Likes Collection
-
- * @param {*} collectionApi
- * @returns
- */
 export const likes = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/likes/**/*').reverse();
 };
 
-/**
- * Photos Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const photos = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/photos/**/*').reverse();
 };
 
-/**
- * Medias Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const medias = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/medias/**/*').reverse();
 };
 
-/**
- * Books Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const books = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/books/**/*').reverse();
 };
 
-/**
- * Newsletters Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const newsletters = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*').reverse();
 };
 
-/**
- * Games Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const games = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/content/games/**/*').reverse();
 };
 
-/**
- * Music Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const music = (collectionApi) => {
   return collectionApi
     .getFilteredByGlob('./src/content/music/**/*')
     .sort((a, b) => b.data.date - a.data.date);
 };
 
-/**
- * Show in Sitemap Collection
- *
- * @param {*} collectionApi
- * @returns
- */
 export const showInSitemap = (collectionApi) => {
   return collectionApi.getFilteredByGlob('./src/**/*.{md,njk}');
 };
@@ -189,7 +112,6 @@ export const tagListRecurrency = (collection) => {
     'music',
   ];
 
-  // Contar quantas vezes cada tag aparece (agrupado por slug)
   const slugToTag = {};
 
   collection.getAll().forEach((item) => {
@@ -212,18 +134,12 @@ export const tagListRecurrency = (collection) => {
     }
   });
 
-  // Converter para array de objetos e ordenar por quantidade (decrescente)
   return Object.entries(tagCount)
-    .sort((a, b) => b[1] - a[1]) // Ordena do maior para o menor
-    .slice(0, 10) // Limita aos top 10
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10)
     .map(([slug, count]) => ({ tag: slugToTag[slug], count, slug }));
 };
 
-/**
- *
- * @param {*} collection
- * @returns
- */
 export const tagList = (collection) => {
   const tags = [];
 
@@ -249,10 +165,9 @@ export const tagList = (collection) => {
           ].includes(tag)
         ) {
           const slug = slugifyString(tag);
-          if (!slug || !tags.find((t) => t.slug === slug)) {
-            continue;
+          if (slug && !tags.find((t) => t.slug === slug)) {
+            tags.push({ tag, slug });
           }
-          tags.push({ tag, slug });
         }
       }
     }

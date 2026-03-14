@@ -122,16 +122,4 @@ export const groupByYearMonth = (array) => {
   });
 };
 
-export const sortByDate = (array) => {
-  if (!array || !Array.isArray(array)) {
-    return [];
-  }
-
-  return array.sort((a, b) => {
-    const dateA = new Date(a.data?.date || a.date);
-    const dateB = new Date(b.data?.date || b.date);
-    return dateB - dateA;
-  });
-};
-
 export default groupBy;
