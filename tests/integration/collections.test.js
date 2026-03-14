@@ -1,4 +1,5 @@
-import { groupBy, groupByYear, sortByDate } from '../../src/_config/filters/groupBy.js';
+import { groupBy, groupByYear } from '../../src/_config/filters/groupBy.js';
+import { sortByDate } from '../../src/_config/filters/dates.js';
 import { limit } from '../../src/_config/filters/limit.js';
 import { slugifyString } from '../../src/_config/filters/slugify.js';
 

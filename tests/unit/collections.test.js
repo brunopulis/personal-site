@@ -75,7 +75,7 @@ describe('Collections', () => {
       const collection = createMockCollection(items);
       const result = tagList(collection);
 
-      expect(result).toEqual(['apple', 'banana', 'zebra']);
+      expect(result.map((t) => t.tag)).toEqual(['apple', 'banana', 'zebra']);
     });
 
     test('should exclude predefined tags', () => {
@@ -86,11 +86,12 @@ describe('Collections', () => {
       const collection = createMockCollection(items);
       const result = tagList(collection);
 
-      expect(result).not.toContain('posts');
-      expect(result).not.toContain('poems');
-      expect(result).not.toContain('all');
-      expect(result).toContain('javascript');
-      expect(result).toContain('web');
+      const tagNames = result.map((t) => t.tag);
+      expect(tagNames).not.toContain('posts');
+      expect(tagNames).not.toContain('poems');
+      expect(tagNames).not.toContain('all');
+      expect(tagNames).toContain('javascript');
+      expect(tagNames).toContain('web');
     });
 
     test('should handle items without tags', () => {
@@ -98,7 +99,7 @@ describe('Collections', () => {
       const collection = createMockCollection(items);
       const result = tagList(collection);
 
-      expect(result).toEqual(['javascript']);
+      expect(result.map((t) => t.tag)).toEqual(['javascript']);
     });
 
     test('should return empty array for collection without tags', () => {
@@ -114,8 +115,9 @@ describe('Collections', () => {
       const collection = createMockCollection(items);
       const result = tagList(collection);
 
-      expect(result).toContain('Java Script');
-      expect(result).toContain('web development');
+      expect(result.map((t) => t.tag)).toContain('Java Script');
+      expect(result.map((t) => t.tag)).toContain('web development');
+      expect(result.find((t) => t.tag === 'Java Script').slug).toBe('java-script');
     });
   });
 });
