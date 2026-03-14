@@ -11,7 +11,7 @@ export default defineConfig({
     viewportHeight: 720,
     video: true,
     screenshotOnRunFailure: true,
-    specPattern: 'cypress/e2e/**/*.cy.js',
+    specPattern: 'tests/e2e/**/*.cy.js',
   },
   component: {
     devServer: {
