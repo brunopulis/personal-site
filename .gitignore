@@ -29,5 +29,5 @@ npm-debug.log*
 coverage/
 
 # Build outputs
-cypress/videos/
-cypress/screenshots/
+e2e/videos/
+e2e/screenshots/
