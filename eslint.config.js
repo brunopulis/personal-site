@@ -1,6 +1,7 @@
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default tseslint.config(
   {
     ignores: [
       'node_modules/',
@@ -44,5 +45,5 @@ export default [
       'comma-dangle': 'off',
       'no-console': 'off',
     },
-  },
-];
+  }
+);

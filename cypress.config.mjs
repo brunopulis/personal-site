@@ -15,7 +15,7 @@ export default defineConfig({
   },
   component: {
     devServer: {
-      framework: 'other',
+      framework: null,
       bundler: 'vite',
     },
   },

@@ -9,8 +9,10 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "allowJs": true,
-    "checkJs": false
+    "checkJs": true,
+    "strict": false,
+    "isolatedModules": true
   },
-  "include": ["src/**/*", "scripts/**/*", "cli/**/*", "*.js", "*.mjs"],
+  "include": ["src/**/*", "scripts/**/*", "cli/**/*", "*.js", "*.mjs", "*.ts"],
   "exclude": ["node_modules", "_site"]
 }
