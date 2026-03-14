@@ -1,9 +1,5 @@
-import {
-  groupBy,
-  groupByYear,
-  groupByYearMonth,
-  sortByDate,
-} from '../../src/_config/filters/groupBy.js';
+import { groupBy, groupByYear, groupByYearMonth } from '../../src/_config/filters/groupBy.js';
+import { sortByDate } from '../../src/_config/filters/dates.js';
 
 describe('groupBy Filter', () => {
   const items = [
