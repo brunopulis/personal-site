@@ -11,5 +11,3 @@ export const slug = (str) =>
   !str ? null : /\p{Emoji_Presentation}/u.test(str) ? str : slugify(str, { lower: true });
 
 export const toArray = (value) => (!value ? [] : Array.isArray(value) ? value : [value]);
-
-export const limit = (arr, n) => arr.slice(0, n);
