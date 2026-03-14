@@ -10971,16 +10971,14 @@ class bd extends $r {
           );
         return { status: n.value, value: s };
       } else
-        return this._def.schema
-          ._parseAsync({ data: r.data, path: r.path, parent: r })
-          .then((o) =>
-            iy(o)
-              ? Promise.resolve(i.transform(o.value, a)).then((s) => ({
-                  status: n.value,
-                  value: s,
-                }))
-              : ar
-          );
+        return this._def.schema._parseAsync({ data: r.data, path: r.path, parent: r }).then((o) =>
+          iy(o)
+            ? Promise.resolve(i.transform(o.value, a)).then((s) => ({
+                status: n.value,
+                value: s,
+              }))
+            : ar
+        );
     mi.assertNever(i);
   }
 }
@@ -110688,16 +110686,14 @@ class yoe extends G0 {
       }));
   }
   required(t) {
-    return super
-      .required(t)
-      .withMutation((n) =>
-        n.test({
-          message: t || Op.required,
-          name: 'required',
-          skipAbsent: !0,
-          test: (r) => !!r.length,
-        })
-      );
+    return super.required(t).withMutation((n) =>
+      n.test({
+        message: t || Op.required,
+        name: 'required',
+        skipAbsent: !0,
+        test: (r) => !!r.length,
+      })
+    );
   }
   notRequired() {
     return super
