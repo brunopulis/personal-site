@@ -1,5 +1,5 @@
 ---
-title: 'Your Money Counts: The Biblical Guide to Earning, Spending, Saving, Investing, Giving, and Getting Out of Debt'
+title: 'Your Money Counts'
 author: ''
 category: ''
 status: 'lido'
