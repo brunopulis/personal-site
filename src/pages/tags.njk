@@ -18,7 +18,7 @@ eleventyComputed:
       <ul>
         {% for t in collections.tagsWithCount %}
           <li>
-            <a href="/tags/{{ t.slug }}/">#{{ t.tag }}</a>
+            <a href="/tag/{{ t.slug }}/">#{{ t.tag }}</a>
             <span>{{ t.count }} post{{ 's' if t.count != 1 }}</span>
           </li>
         {% endfor %}

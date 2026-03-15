@@ -31,7 +31,7 @@
         {% if tags %}
         <div>
           {% for tag in tags %}
-          <a href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+          <a href="/tag/{{ tag | slug }}/">#{{ tag }}</a>
           {% endfor %}
         </div>
         {% endif %}
