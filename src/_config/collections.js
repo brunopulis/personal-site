@@ -142,30 +142,40 @@ export const tagListRecurrency = (collection) => {
 
 export const tagList = (collection) => {
   const tags = [];
+  const excludedTagsList = [
+    'all',
+    'posts',
+    'poems',
+    'photos',
+    'bookmarks',
+    'books',
+    'gallery',
+    'games',
+    'newsletters',
+    'notes',
+    'medias',
+    'music',
+    'post',
+    'note',
+    'poem',
+    'book',
+    'bookmark',
+    'game',
+    'newsletter',
+    'media',
+  ];
 
   collection.getAll().forEach((item) => {
     if ('tags' in item.data) {
       const itemTags = item.data.tags;
 
       for (const tag of itemTags) {
-        if (
-          ![
-            'all',
-            'posts',
-            'poems',
-            'photos',
-            'bookmarks',
-            'books',
-            'gallery',
-            'games',
-            'newsletters',
-            'notes',
-            'medias',
-            'music',
-          ].includes(tag)
-        ) {
+        if (!excludedTagsList.includes(tag)) {
           const slug = slugifyString(tag);
-          if (slug && !tags.find((t) => t.slug === slug)) {
+          if (!slug || slug.length === 0) {
+            continue;
+          }
+          if (!tags.find((t) => t.slug === slug)) {
             tags.push({ tag, slug });
           }
         }

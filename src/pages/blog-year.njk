@@ -51,7 +51,7 @@ permalink: "/blog/{{ year }}/"
 
       <div class="tags-list | cluster" role="list">
         {% for tag in post.data.tags %}
-        <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+        <a class="p-category" href="/tag/{{ tag | slug }}/">#{{ tag }}</a>
         {% endfor %}
       </div>
 

@@ -4,9 +4,9 @@ title: "Tag: {{ tag.tag }}"
 description: "Posts com a tag {{ tag.tag }}"
 pagination:
   data: collections.tagList
-  size: 10
+  size: 1
   alias: tag
-permalink: "/tags/{{ tag.slug }}/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% else %}index{% endif %}.html"
+permalink: "/tag/{{ tag.slug }}/"
 eleventyComputed:
   title: "Tag: {{ tag.tag }}"
 eleventyExcludeFromCollections: true
@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
     <nav aria-label="Navegação por tags">
       <ul class="cluster" role="list">
         {% for t in collections.tagList %}
-        <li><a href="/tags/{{ t.slug }}/" {% if t.tag == tag.tag %}aria-current="page"{% endif %}>#{{ t.tag }}</a></li>
+        <li><a href="/tag/{{ t.slug }}/" {% if t.tag == tag.tag %}aria-current="page"{% endif %}>#{{ t.tag }}</a></li>
         {% endfor %}
       </ul>
     </nav>
@@ -47,7 +47,7 @@ eleventyExcludeFromCollections: true
 
       <div class="tags-list | cluster" role="list">
         {% for t in post.data.tags %}
-        <a class="p-category" href="/tags/{{ t | slug }}/">#{{ t }}</a>
+        <a class="p-category" href="/tag/{{ t | slug }}/">#{{ t }}</a>
         {% endfor %}
       </div>
 
