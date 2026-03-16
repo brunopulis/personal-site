@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import esbuild from 'esbuild';
 import fg from 'fast-glob';
+import esbuild from 'esbuild';
 
 export const buildJs = async (inputPath, outputPath) => {
   const result = await esbuild.build({
@@ -9,12 +9,12 @@ export const buildJs = async (inputPath, outputPath) => {
     entryPoints: [inputPath],
     bundle: true,
     minify: true,
-    write: false,
+    write: false
   });
 
   const output = result.outputFiles[0].text;
 
-  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+  await fs.mkdir(path.dirname(outputPath), {recursive: true});
   await fs.writeFile(outputPath, output);
 
   return output;
@@ -33,7 +33,7 @@ export const buildAllJs = async () => {
   const componentFiles = await fg(['src/assets/scripts/components/**/*.js']);
   for (const inputPath of componentFiles) {
     const baseName = path.basename(inputPath);
-    const outputPath = `_site/assets/scripts/components/${baseName}`;
+    const outputPath = `dist/assets/scripts/components/${baseName}`;
     tasks.push(buildJs(inputPath, outputPath));
   }
 
