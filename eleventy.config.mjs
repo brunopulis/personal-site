@@ -8,9 +8,8 @@ import * as collections from './src/_config/collections.js';
 import events from './src/_config/events.js';
 import * as customFilters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
-import { badge, image, imageKeys } from './src/_config/shortcodes/image.js';
-import { lucide } from './src/_config/shortcodes/lucide.js';
-import { svg } from './src/_config/shortcodes/svg.js';
+import {lucide} from './src/_config/shortcodes/lucide.js';
+import {svg} from './src/_config/shortcodes/svg.js';
 
 export default async function eleventy(eleventyConfig) {
   eleventyConfig.addGlobalData('now', new Date());
@@ -46,20 +45,18 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addPlugin(plugins.drafts);
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
   eleventyConfig.addPlugin(plugins.rss);
-  eleventyConfig.addPlugin(plugins.syntaxHighlight);
   eleventyConfig.addPlugin(plugins.webc, {
     components: ['./src/_includes/webc/*.webc'],
-    useTransform: true,
+    useTransform: true
   });
-  eleventyConfig.addPlugin(plugins.webmentions);
   // Note: Use shortcodes image/imageKeys for optimized images instead of automatic transform
   // eleventyImageTransformPlugin requires explicit sizes attribute on all images
   eleventyConfig.addPlugin(bundlePlugin, {
-    minify: true,
+    minify: true
   });
 
   eleventyConfig.setLibrary('md', plugins.markdownLib);
-  eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents));
+  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
 
   Object.entries(customFilters).forEach(([name, fn]) => {
     if (typeof fn !== 'function') {
@@ -85,9 +82,6 @@ export default async function eleventy(eleventyConfig) {
 
   //  Shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('svg', svg);
-  eleventyConfig.addNunjucksAsyncShortcode('badge', badge);
-  eleventyConfig.addNunjucksAsyncShortcode('image', image);
-  eleventyConfig.addNunjucksAsyncShortcode('imageKeys', imageKeys);
   eleventyConfig.addShortcode('lucide', lucide);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
@@ -100,8 +94,6 @@ export default async function eleventy(eleventyConfig) {
       await events.svgToJpeg();
     });
   }
-
-  eleventyConfig.on('eleventy.after', events.tableSawWrapper);
 
   eleventyConfig.addPassthroughCopy('./admin');
   eleventyConfig.addPassthroughCopy('src/humans.txt');
@@ -117,16 +109,15 @@ export default async function eleventy(eleventyConfig) {
     'src/assets/images/favicon/apple-touch-icon.png': 'apple-touch-icon.png',
     'src/assets/images/favicon/icon-192x192.png': 'icon-192x192.png',
     'src/assets/images/favicon/icon-512x512.png': 'icon-512x512.png',
-    'src/.well-known': '.well-known',
+    'src/.well-known': '.well-known'
   });
   eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
-  eleventyConfig.addPassthroughCopy({ 'src/manifest.webmanifest': 'manifest.webmanifest' });
-  eleventyConfig.addPassthroughCopy({ 'src/sw.js': 'sw.js' });
+  eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
+  eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
 
   eleventyConfig.addPassthroughCopy({
     'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
-    'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': 'assets/components/',
-    'node_modules/@zachleat/table-saw/table-saw.js': 'assets/components/table-saw.js',
+    'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': 'assets/components/'
   });
 
   eleventyConfig.setDataDeepMerge(true);
@@ -137,7 +128,7 @@ export default async function eleventy(eleventyConfig) {
       includes: '_includes',
       data: '_data',
       output: '_site',
-      layouts: '_layouts',
+      layouts: '_layouts'
     },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
@@ -153,8 +144,8 @@ export default async function eleventy(eleventyConfig) {
               res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
             }
           });
-        },
-      },
-    },
+        }
+      }
+    }
   };
 }
