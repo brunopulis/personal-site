@@ -45,7 +45,7 @@
     {{- meta.siteName -}}
   {%- endif -%}" />
 <meta property="og:image" content="{%- if layout == 'post' -%}
-    {{- meta.url -}}/assets/og-images/{{ title | slugify }}-preview.jpeg
+    {{- meta.url -}}{{- title | ogImage() -}}
   {%- else -%}
     {{- meta.url -}}{{- meta.opengraph_default -}}
   {%- endif -%}" />

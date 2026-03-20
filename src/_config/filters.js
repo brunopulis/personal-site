@@ -10,8 +10,6 @@ import {
 } from './filters/dates.js';
 import {filterByMediaType, lazyGroupByWatchedYear} from './filters/filterByType.js';
 import {filterByYear} from './filters/filterByYear.js';
-import {getRelatedServices} from './filters/getRelatedServices.js';
-import {getServiceById} from './filters/getServiceById.js';
 import {groupBy, groupByMonth, groupByYear, groupByYearMonth} from './filters/groupBy.js';
 import {getPostsByTag} from './filters/get-posts-by-tag.js';
 import {lazyGroupByYear, lazyPaginate} from './filters/lazy.js';
@@ -19,7 +17,6 @@ import {limit} from './filters/limit.js';
 import {markdownFormat} from './filters/markdown-format.js';
 import {ogImage} from './filters/og-image.js';
 import {readingTime} from './filters/reading-time.js';
-import {serviceUrl} from './filters/serviceUrl.js';
 import {shuffle} from './filters/shuffle.js';
 import {slugifyString} from './filters/slugify.js';
 import {sortAlphabetically} from './filters/sort-alphabetic.js';
@@ -52,9 +49,6 @@ export {
   sortByDate,
   filterByYear,
   filterByMediaType,
-  getRelatedServices,
-  getServiceById,
-  serviceUrl,
   relativeDate,
   limit,
   markdownFormat,

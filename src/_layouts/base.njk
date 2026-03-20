@@ -82,7 +82,8 @@
   {% set url = page.url or '/' %}
   {% set isPostLike = (url | slice(0,6) == '/blog/' ) or (url | slice(0,7) == '/notes/' ) or (url | slice(0,8) ==
   '/poetry/' ) or (url | slice(0,9) == '/journal/' ) %}
-  {% if isPostLike %}
+  {{ isPostLike }}
+  {% if isPostLike and site.url %}
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -92,7 +93,7 @@
         "@id": "{{ (site.url and (site.url + (page.url or '/'))) or '' }}"
       },
       "headline": "{{ title or site.name }}",
-      {% if ogImage %}"image": ["{{ ogImage }}"],{% endif %}
+      {% if isPostLike %}"image": ["{{ title | ogImage() }}"],{% endif %}
       "datePublished": "{{ page.date | htmlDateString }}",
       "dateModified": "{{ page.date | htmlDateString }}",
       "author": {
