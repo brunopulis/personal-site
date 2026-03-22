@@ -1,20 +1,20 @@
 @font-face {
   font-display: swap;
-  font-family: Inter;
+  font-family: Source Sans\3;
   font-style: normal;
   font-weight: 400;
   src:
-    url(../fonts/inter-v12-latin-regular.woff2) format('woff2'),
-    url(../fonts/inter-v12-latin-regular.woff) format('woff');
+    url(../fonts/source-sans-3/source-sans-3-regular.woff2) format('woff2'),
+    url(../fonts/source-sans-3/source-sans-3-regular.woff) format('woff');
 }
 @font-face {
   font-display: swap;
-  font-family: Inter;
+  font-family: Source Sans\3;
   font-style: normal;
   font-weight: 700;
   src:
-    url(../fonts/inter-v12-latin-700.woff2) format('woff2'),
-    url(../fonts/inter-v12-latin-700.woff) format('woff');
+    url(../fonts/source-sans-3/source-sans-3-bold.woff2) format('woff2'),
+    url(../fonts/source-sans-3/source-sans-3-bold.woff) format('woff');
 }
 :root {
   --space-3xs: clamp(0.25rem, calc(0.23rem + 0.11vw), 0.31rem);
