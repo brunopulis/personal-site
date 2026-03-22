@@ -1,17 +1,12 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {fileURLToPath} from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const folders = [
-  'src/content/notas',
-  'src/content/newsletter',
-  'src/content/posts',
-  'src/content/reply',
-];
+const folders = ['src/content/notas', 'src/content/newsletter', 'src/content/posts', 'src/content/reply'];
 
 const CONTENT_DIR = path.join(__dirname, folders[3]);
 const SRC_DIR = path.join(__dirname, 'src');
@@ -21,7 +16,7 @@ function getAllFiles(dirPath, arrayOfFiles) {
 
   arrayOfFiles = arrayOfFiles || [];
 
-  files.forEach((file) => {
+  files.forEach(file => {
     const filePath = `${dirPath}/${file}`;
     if (fs.statSync(filePath).isDirectory()) {
       arrayOfFiles = getAllFiles(filePath, arrayOfFiles);
@@ -41,7 +36,7 @@ function checkImages() {
 
   console.log(`Scanning ${files.length} files in ${CONTENT_DIR}...`);
 
-  files.forEach((file) => {
+  files.forEach(file => {
     let content = fs.readFileSync(file, 'utf8');
 
     // Remove code blocks to avoid false positives
@@ -71,7 +66,7 @@ function checkImages() {
 
   if (missingImages.length > 0) {
     console.log('\nFound missing images:');
-    missingImages.forEach((item) => {
+    missingImages.forEach(item => {
       console.log(`File: ${path.relative(__dirname, item.file)}`);
       console.log(`  Image: ${item.image}`);
       console.log(`  Resolved Path: ${item.resolvedPath}`);
@@ -108,15 +103,12 @@ function checkImage(file, imageUrl, missingImages) {
   // Check if file exists
   if (!fs.existsSync(imagePath)) {
     // Try one more fallback: maybe it's relative to project root?
-    const rootPath = path.join(
-      __dirname,
-      imageUrl.startsWith('/') ? imageUrl.substring(1) : imageUrl
-    );
+    const rootPath = path.join(__dirname, imageUrl.startsWith('/') ? imageUrl.substring(1) : imageUrl);
     if (!fs.existsSync(rootPath)) {
       missingImages.push({
         file: file,
         image: imageUrl,
-        resolvedPath: imagePath,
+        resolvedPath: imagePath
       });
     }
   }
