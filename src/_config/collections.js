@@ -1,6 +1,7 @@
-import { slugifyString } from './filters/slugify.js';
+import {slugifyString} from './filters/slugify.js';
 
-export const posts = (collectionApi) => {
+/** All blog posts as a collection. */
+export const posts = collectionApi => {
   const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
   return allPosts.sort((a, b) => {
     const dateA = a.data.pubDate || a.data.date;
@@ -9,198 +10,63 @@ export const posts = (collectionApi) => {
   });
 };
 
-export const postYears = (collectionApi) => {
-  const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
-  if (!allPosts) {
-    return [];
-  }
-
-  const years = [
-    ...new Set(
-      allPosts
-        .map((post) => {
-          const postDate = post.data.pubDate || post.data.date;
-          if (!postDate) return null;
-          const year = new Date(postDate).getFullYear();
-          return Number.isNaN(year) ? null : year;
-        })
-        .filter((y) => typeof y === 'number')
-    ),
-  ];
-  return years.sort((a, b) => a - b);
-};
-
-export const getPostYears = postYears;
-
-export const getPostsByYear = (collectionApi) => (year) => {
-  const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
-  if (!allPosts) {
-    return [];
-  }
-  return allPosts
-    .filter((post) => {
-      const postDate = post.data.pubDate || post.data.date;
-      const postYear = postDate ? new Date(postDate).getFullYear() : null;
-      return postYear === year;
-    })
-    .sort((a, b) => {
-      const dateA = a.data.pubDate || a.data.date;
-      const dateB = b.data.pubDate || b.data.date;
-      return new Date(dateB).getTime() - new Date(dateA).getTime();
-    });
-};
-
-export const notes = (collectionApi) => {
+/** All notes posts as a collection. */
+export const notes = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/notes/**/*').reverse();
 };
 
-export const poems = (collectionApi) => {
+/** All poems as a collection. */
+export const poems = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/poems/**/*').reverse();
 };
 
-export const bookmarks = (collectionApi) => {
+export const bookmarks = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*').reverse();
 };
 
-export const likes = (collectionApi) => {
+export const likes = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/likes/**/*').reverse();
 };
 
-export const photos = (collectionApi) => {
+export const photos = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/photos/**/*').reverse();
 };
 
-export const medias = (collectionApi) => {
+export const medias = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/medias/**/*').reverse();
 };
 
-export const books = (collectionApi) => {
+export const books = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/books/**/*').reverse();
 };
 
-export const newsletters = (collectionApi) => {
+export const newsletters = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*').reverse();
 };
 
-export const games = (collectionApi) => {
+export const games = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/games/**/*').reverse();
 };
 
-export const music = (collectionApi) => {
+export const music = collectionApi => {
   return collectionApi
     .getFilteredByGlob('./src/content/music/**/*')
     .sort((a, b) => b.data.date - a.data.date);
 };
 
-export const showInSitemap = (collectionApi) => {
-  return collectionApi.getFilteredByGlob('./src/**/*.{md,njk}');
+/** All relevant pages as a collection for sitemap.xml */
+export const showInSitemap = collection => {
+  return collection.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
-export const tagListRecurrency = (collection) => {
-  const tagCount = {};
-  const excludedTags = [
-    'all',
-    'posts',
-    'poems',
-    'photos',
-    'bookmarks',
-    'books',
-    'games',
-    'newsletters',
-    'notes',
-    'medias',
-    'music',
-  ];
+/** All tags from all posts as a collection - excluding custom collections */
+export const tagList = collection => {
+  const tagsSet = new Set();
 
-  const slugToTag = {};
-
-  collection.getAll().forEach((item) => {
-    if ('tags' in item.data) {
-      const tags = item.data.tags;
-
-      for (const tag of tags) {
-        if (excludedTags.includes(tag)) {
-          continue;
-        }
-        const slug = slugifyString(tag);
-        if (!slug) {
-          continue;
-        }
-        tagCount[slug] = (tagCount[slug] || 0) + 1;
-        if (!slugToTag[slug]) {
-          slugToTag[slug] = tag;
-        }
-      }
-    }
+  collection.getAll().forEach(item => {
+    if (!item.data.tags) return;
+    item.data.tags.filter(tag => !['posts', 'docs', 'all'].includes(tag)).forEach(tag => tagsSet.add(tag));
   });
 
-  return Object.entries(tagCount)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
-    .map(([slug, count]) => ({ tag: slugToTag[slug], count, slug }));
-};
-
-export const tagList = (collection) => {
-  const tags = [];
-  const excludedTagsList = [
-    'all',
-    'posts',
-    'poems',
-    'photos',
-    'bookmarks',
-    'books',
-    'gallery',
-    'games',
-    'newsletters',
-    'notes',
-    'medias',
-    'music',
-    'post',
-    'note',
-    'poem',
-    'book',
-    'bookmark',
-    'game',
-    'newsletter',
-    'media',
-  ];
-
-  collection.getAll().forEach((item) => {
-    if ('tags' in item.data) {
-      const itemTags = item.data.tags;
-
-      for (const tag of itemTags) {
-        if (!excludedTagsList.includes(tag)) {
-          const slug = slugifyString(tag);
-          if (!slug || slug.length === 0) {
-            continue;
-          }
-          if (!tags.find((t) => t.slug === slug)) {
-            tags.push({ tag, slug });
-          }
-        }
-      }
-    }
-  });
-
-  return tags.sort((a, b) => a.tag.localeCompare(b.tag));
-};
-
-export default {
-  showInSitemap,
-  newsletters,
-  books,
-  bookmarks,
-  games,
-  getPostsByYear,
-  getPostYears,
-  likes,
-  medias,
-  music,
-  notes,
-  photos,
-  poems,
-  posts,
-  postYears,
-  tagList,
+  return Array.from(tagsSet).sort();
 };
