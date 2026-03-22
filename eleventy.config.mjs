@@ -15,28 +15,30 @@ import yaml from 'js-yaml';
 
 import * as collections from './src/_config/collections.js';
 import events from './src/_config/events.js';
-import * as filters from './src/_config/filters.js';
+import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
 
 export default async function eleventy(eleventyConfig) {
-  eleventyConfig.addGlobalData('now', new Date());
+  // Events: before build
+  eleventyConfig.on('eleventy.before', async () => {
+    await events.buildAllCss();
+    await events.buildAllJs();
+  });
 
+  // Custom watch targets
   eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
   eleventyConfig.addWatchTarget('./src/_includes/**/*.{webc}');
 
-  //  layout aliases
+  // Layout aliases
   eleventyConfig.addLayoutAlias('base', 'base.njk');
   eleventyConfig.addLayoutAlias('page', 'page.njk');
   eleventyConfig.addLayoutAlias('post', 'post.njk');
-  eleventyConfig.addLayoutAlias('tags', 'tags.njk');
   eleventyConfig.addLayoutAlias('poem', 'poem.njk');
+  eleventyConfig.addLayoutAlias('tags', 'tags.njk');
 
   // Collections
   eleventyConfig.addCollection('posts', collections.posts);
-  eleventyConfig.addCollection('postYears', collections.postYears);
-  eleventyConfig.addCollection('postsByYear', collections.getPostsByYear);
-
   eleventyConfig.addCollection('poems', collections.poems);
   eleventyConfig.addCollection('notes', collections.notes);
   eleventyConfig.addCollection('books', collections.books);
@@ -45,7 +47,6 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addCollection('likes', collections.likes);
   eleventyConfig.addCollection('games', collections.games);
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
-
   eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
   eleventyConfig.addCollection('tagList', collections.tagList);
 
@@ -55,27 +56,10 @@ export default async function eleventy(eleventyConfig) {
 
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
   eleventyConfig.addPlugin(plugins.rss);
+  eleventyConfig.addPlugin(plugins.syntaxHighlight);
 
-  eleventyConfig.addPlugin(plugins.webc, {
-    components: ['./src/_includes/webc/*.webc'],
-    useTransform: true
-  });
-
-  // Disabled due to external image rate limiting
-  // eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
-  //   formats: ['webp', 'jpeg'],
-  //   widths: ['auto'],
-  //   htmlOptions: {
-  //     imgAttributes: {
-  //       loading: 'lazy',
-  //       decoding: 'async'
-  //     },
-  //     pictureAttributes: {}
-  //   }
-  // });
-
-  // bundle
-  eleventyConfig.addBundle('css', {hoist: true});
+  // Disabled - eleventyImageTransformPlugin causes build failures with external images
+  // eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, { ... });
 
   // Library and Data
   eleventyConfig.setLibrary('md', plugins.markdownLib);
@@ -103,7 +87,6 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addFilter('relativeDate', filters.relativeDate);
   eleventyConfig.addFilter('readableDate', filters.readableDate);
   eleventyConfig.addFilter('sortByDate', filters.sortByDate);
-  eleventyConfig.addFilter('categoryFilter', filters.categoryFilter);
   eleventyConfig.addFilter('getPostsByTag', filters.getPostsByTag);
   eleventyConfig.addFilter('starRating', filters.starRating);
   eleventyConfig.addFilter('readingTime', filters.readingTime);
@@ -130,7 +113,6 @@ export default async function eleventy(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(path);
   });
 
-  eleventyConfig.addPassthroughCopy('src/humans.txt');
   eleventyConfig.addPassthroughCopy({
     // -- to root
     'src/assets/images/favicon/*': '/',
@@ -147,19 +129,13 @@ export default async function eleventy(eleventyConfig) {
     'src/assets/images/favicon/icon-192x192.png': 'icon-192x192.png',
     'src/assets/images/favicon/icon-512x512.png': 'icon-512x512.png',
     'src/.well-known': '.well-known',
-    // -- node_modules
-    'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': `assets/components/`
-  });
-  eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
-  eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
-  eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
 
-  eleventyConfig.addPassthroughCopy({
+    // -- node_modules
     'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
     'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': 'assets/components/'
   });
 
-  eleventyConfig.setDataDeepMerge(true);
+  eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
 
   return {
     markdownTemplateEngine: 'njk',

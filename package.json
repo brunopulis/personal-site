@@ -11,13 +11,14 @@
     }
   },
   "scripts": {
-    "build": "eleventy && pnpm build:css",
+    "build": "pnpm run clean && pnpm run build:11ty",
+    "build:11ty": "cross-env ELEVENTY_ENV=production eleventy",
     "build:css": "postcss src/assets/scss/main.scss -o _site/assets/css/main.css --minify",
     "clean": "rimraf dist src/_includes/css src/_includes/scripts",
     "clean:og": "rimraf src/assets/og-images",
     "clean:all": "pnpm clean && pnpm clean:og",
-    "dev": "concurrently \"eleventy --serve --incremental\" \"pnpm watch:css\"",
-    "dev:full": "concurrently \"eleventy --serve\" \"pnpm watch:css\"",
+    "dev:11ty": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "start": "pnpm run dev:11ty",
     "favicons": "node ./src/_config/setup/generate-favicons.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

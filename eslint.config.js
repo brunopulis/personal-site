@@ -3,19 +3,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: [
-      'node_modules/',
-      '_site/',
-      'dist/',
-      'public/',
-      '*.min.js',
-      'bootstrap/',
-      'font-awesome/',
-
-      'coverage/',
-      'src/assets/css/main.css',
-      'admin/'
-    ]
+    ignores: ['node_modules/', '_site/', 'public/', '*.min.js', 'coverage/', 'src/assets/css/main.css']
   },
   {
     languageOptions: {
