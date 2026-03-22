@@ -28,6 +28,6 @@ export const svgToJpeg = async () => {
       }
     });
   } else {
-    console.log('No images found on OG images dir');
+    console.log('⚠ No images found on OG images dir');
   }
 };

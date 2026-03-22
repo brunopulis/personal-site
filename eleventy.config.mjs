@@ -1,15 +1,25 @@
-import dotenv from 'dotenv';
+/**
+ * Most adjustments must be made in `./src/_config/*`
+ *
+ * Hint VS Code for eleventyConfig autocompletion.
+ * © Henry Desroches - https://gist.github.com/xdesro/69583b25d281d055cd12b144381123bf
+ * @param {import("@11ty/eleventy/src/UserConfig")} eleventyConfig -
+ * @returns {Object} -
+ */
 
+// register dotenv for process.env.* variables to pickup
+import dotenv from 'dotenv';
 dotenv.config();
 
-import bundlePlugin from '@11ty/eleventy-plugin-bundle';
 import yaml from 'js-yaml';
+
+import bundlePlugin from '@11ty/eleventy-plugin-bundle';
+
 import * as collections from './src/_config/collections.js';
 import events from './src/_config/events.js';
-import * as customFilters from './src/_config/filters.js';
+import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
-import {lucide} from './src/_config/shortcodes/lucide.js';
-import {svg} from './src/_config/shortcodes/svg.js';
+import shortcodes from './src/_config/shortcodes.js';
 
 export default async function eleventy(eleventyConfig) {
   eleventyConfig.addGlobalData('now', new Date());
@@ -21,8 +31,10 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addLayoutAlias('base', 'base.njk');
   eleventyConfig.addLayoutAlias('page', 'page.njk');
   eleventyConfig.addLayoutAlias('post', 'post.njk');
+  eleventyConfig.addLayoutAlias('tags', 'tags.njk');
   eleventyConfig.addLayoutAlias('poem', 'poem.njk');
 
+  // Collections
   eleventyConfig.addCollection('posts', collections.posts);
   eleventyConfig.addCollection('postYears', collections.postYears);
   eleventyConfig.addCollection('postsByYear', collections.getPostsByYear);
@@ -37,66 +49,70 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addCollection('bookmarks', collections.bookmarks);
 
   eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
-  eleventyConfig.addCollection('tagsWithCount', collections.tagListRecurrency);
   eleventyConfig.addCollection('tagList', collections.tagList);
 
   //   Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);
   eleventyConfig.addPlugin(plugins.drafts);
+
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
   eleventyConfig.addPlugin(plugins.rss);
+
   eleventyConfig.addPlugin(plugins.webc, {
     components: ['./src/_includes/webc/*.webc'],
     useTransform: true
   });
-  // Note: Use shortcodes image/imageKeys for optimized images instead of automatic transform
-  // eleventyImageTransformPlugin requires explicit sizes attribute on all images
-  eleventyConfig.addPlugin(bundlePlugin, {
-    minify: true
+
+  eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
+    formats: ['webp', 'jpeg'],
+    widths: ['auto'],
+    htmlOptions: {
+      imgAttributes: {
+        loading: 'lazy',
+        decoding: 'async'
+      },
+      pictureAttributes: {}
+    }
   });
 
+   // bundle
+  eleventyConfig.addBundle('css', {hoist: true});
+
+  // Library and Data
   eleventyConfig.setLibrary('md', plugins.markdownLib);
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
 
-  Object.entries(customFilters).forEach(([name, fn]) => {
-    if (typeof fn !== 'function') {
-      console.warn(`⚠️  Ignorando filtro "${name}" porque não é uma função (valor: ${fn})`);
-      return;
-    }
-    const universal = ['where', 'first', 'last', 'reverse', 'sort'];
-    if (universal.includes(name)) {
-      console.warn(
-        `⚠️  Ignorando filtro customizado "${name}" para preservar o filtro universal do Eleventy.`
-      );
-      return;
-    }
-
-    if (eleventyConfig.getFilter(name)) {
-      console.warn(
-        `⚠️  Filtro "${name}" já existe – será sobrescrito. Verifique se não está substituindo um filtro universal.`
-      );
-    }
-
-    eleventyConfig.addFilter(name, fn);
-  });
+  // Filters
+  eleventyConfig.addFilter('toIsoString', filters.toIsoString);
+  eleventyConfig.addFilter('formatDate', filters.formatDate);
+  eleventyConfig.addFilter('markdownFormat', filters.markdownFormat);
+  eleventyConfig.addFilter('splitlines', filters.splitlines);
+  eleventyConfig.addFilter('striptags', filters.striptags);
+  eleventyConfig.addFilter('shuffle', filters.shuffleArray);
+  eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
+  eleventyConfig.addFilter('slugify', filters.slugifyString);
 
   //  Shortcodes
-  eleventyConfig.addNunjucksAsyncShortcode('svg', svg);
-  eleventyConfig.addShortcode('lucide', lucide);
+  eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);
+  eleventyConfig.addShortcode('image', shortcodes.imageShortcode);
+  eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeysShortcode);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
-  //  Events
-  eleventyConfig.on('eleventy.before', events.buildAllCss);
-
-  //  Events: after build
+  // Events: after build
   if (process.env.ELEVENTY_RUN_MODE === 'serve') {
-    eleventyConfig.on('eleventy.after', async () => {
-      await events.svgToJpeg();
-    });
+    eleventyConfig.on('eleventy.after', events.svgToJpeg);
   }
+
+  // Passthrough File Copy
+  ['src/assets/fonts/', 'src/assets/images/template', 'src/assets/og-images'].forEach(path => {
+    eleventyConfig.addPassthroughCopy(path);
+  });
 
   eleventyConfig.addPassthroughCopy('src/humans.txt');
   eleventyConfig.addPassthroughCopy({
+    // -- to root
+    'src/assets/images/favicon/*': '/',
+
     'src/assets/css': 'assets/css',
     'src/assets/images': 'assets/images',
     'src/assets/fonts': 'assets/fonts',
@@ -108,7 +124,9 @@ export default async function eleventy(eleventyConfig) {
     'src/assets/images/favicon/apple-touch-icon.png': 'apple-touch-icon.png',
     'src/assets/images/favicon/icon-192x192.png': 'icon-192x192.png',
     'src/assets/images/favicon/icon-512x512.png': 'icon-512x512.png',
-    'src/.well-known': '.well-known'
+    'src/.well-known': '.well-known',
+    // -- node_modules
+    'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': `assets/components/`
   });
   eleventyConfig.addPassthroughCopy('src/feeds/pretty-feed-v3.xsl');
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
@@ -122,29 +140,16 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   return {
+    markdownTemplateEngine: 'njk',
+
     dir: {
+      output: '_site',
       input: 'src',
       includes: '_includes',
-      data: '_data',
-      output: '_site',
-      layouts: '_layouts'
+      layouts: '_layouts',
+      data: '_data'
     },
-    markdownTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
-    templateFormats: ['njk', 'md', 'html'],
-    browserSyncConfig: {
-      callbacks: {
-        ready: (_err, bs) => {
-          bs.addMiddleware('*', (req, res) => {
-            // Cache headers para assets estáticos
-            if (req.url.match(/\.(css|js|png|jpg|jpeg|webp|avif|svg|ico|woff2?)$/)) {
-              res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-            } else {
-              res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
-            }
-          });
-        }
-      }
-    }
+
+    templateFormats: ['njk', 'md', 'html']
   };
 }
