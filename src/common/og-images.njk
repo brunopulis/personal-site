@@ -1,11 +1,11 @@
 ---
-fontDisplay: "'Red Hat Display', Ubuntu" # needed created in local development, font must be installed on your system.
-fontBody: "'Atkinson Hyperlegible', Ubuntu" # needed created in local development, font must be installed on your system.
-background: '#FBBE25'
-text: '#161616'
-siteUrl: 'eleventy-excellent.netlify.app'
+fontDisplay: "'Noto Sans', Ubuntu" # needed created in local development, font must be installed on your system.
+fontBody: "'Source Sans 3', Ubuntu" # needed created in local development, font must be installed on your system.
+background: '#d9d9d9'
+text: '#610404'
+siteUrl: 'brunopulis.com'
 pagination:
-  data: collections.allPosts
+  data: collections.posts
   size: 1
   alias: post
 permalink: '/assets/og-images/{{ post.data.title | slugify }}-preview.svg'
