@@ -19,7 +19,7 @@ pagination:
 {% if movies | length > 0 %}
 <section class="region flow">
   <h2>Filmes</h2>
-  {% set moviesByYear = movies | lazyGroupByWatchedYear %}
+  {% set moviesByYear = movies  %}
   {% for year in moviesByYear | sortKeys %}
   <div data-year="{{ year }}">
     <h3>Assistidos em {{ year }}</h3>
