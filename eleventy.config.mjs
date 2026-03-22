@@ -108,7 +108,6 @@ export default async function eleventy(eleventyConfig) {
     eleventyConfig.addPassthroughCopy(path);
   });
 
-  eleventyConfig.addPassthroughCopy('./admin');
   eleventyConfig.addPassthroughCopy('src/humans.txt');
   eleventyConfig.addPassthroughCopy({
     // -- to root
@@ -151,21 +150,6 @@ export default async function eleventy(eleventyConfig) {
       data: '_data'
     },
 
-    htmlTemplateEngine: 'njk',
-    templateFormats: ['njk', 'md', 'html'],
-    browserSyncConfig: {
-      callbacks: {
-        ready: (_err, bs) => {
-          bs.addMiddleware('*', (req, res) => {
-            // Cache headers para assets estáticos
-            if (req.url.match(/\.(css|js|png|jpg|jpeg|webp|avif|svg|ico|woff2?)$/)) {
-              res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-            } else {
-              res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
-            }
-          });
-        }
-      }
-    }
+    templateFormats: ['njk', 'md', 'html']
   };
 }
