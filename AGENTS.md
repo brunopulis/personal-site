@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Site pessoal/blog estático construído com Eleventy, TinaCMS e design acessível. Projeto em JavaScript/TypeScript com testes Jest e Cypress.
+Site pessoal/blog estático construído com Eleventy e design acessível. Projeto em JavaScript/TypeScript com testes Jest e Cypress.
 
 ## Comandos de Build, Lint e Test
 
@@ -15,7 +15,7 @@ pnpm install
 ### Desenvolvimento
 
 ```bash
-pnpm dev          # Servidor com watch + TinaCMS
+pnpm dev          # Servidor com watch
 pnpm dev:full    # Desenvolvimento completo
 ```
 
@@ -136,7 +136,6 @@ Para ativar: `pnpm husky install`
 ## Dependências Principais
 
 - **@11ty/eleventy** - Static Site Generator
-- **tinacms** - CMS Git-based
 - **jest** - Testes unitários
 - **cypress** - Testes E2E
 - **eslint** - Linter
