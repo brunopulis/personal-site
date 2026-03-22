@@ -1,4 +1,3 @@
-import {base64Format} from './filters/base64-format.js';
 import {categoryFilter} from './filters/category-filter.js';
 import {
   formatDate,
@@ -18,21 +17,13 @@ import {markdownFormat} from './filters/markdown-format.js';
 import {ogImage} from './filters/og-image.js';
 import {readingTime} from './filters/reading-time.js';
 import {shuffle} from './filters/shuffle.js';
-import {slugifyString} from './filters/slugify.js';
+import {slugifyString, postSlug} from './filters/slugify.js';
 import {sortAlphabetically} from './filters/sort-alphabetic.js';
 import {sortKeys} from './filters/sort-keys.js';
 import {splitStrings} from './filters/split-strings.js';
 import {splitlines} from './filters/splitlines.js';
 import {starRating} from './filters/starRating.js';
-import {streamIcon, streamTypeLabel} from './filters/stream-icon.js';
 import {striptags} from './filters/striptags.js';
-import {
-  webmentionByType,
-  webmentionGetForUrl,
-  webmentionisOwn,
-  webmentionSize,
-  webmentionSort
-} from './filters/webmentions.js';
 
 export {
   groupBy,
@@ -41,7 +32,6 @@ export {
   groupByYearMonth,
   sortKeys,
   categoryFilter,
-  base64Format,
   toISOString,
   toRfc822Date,
   formatDate,
@@ -59,15 +49,10 @@ export {
   shuffle,
   sortAlphabetically,
   splitStrings,
+  slugifyString as slugify,
   slugifyString,
+  postSlug,
   getPostsByTag,
-  streamIcon,
-  streamTypeLabel,
-  webmentionGetForUrl,
-  webmentionSize,
-  webmentionByType,
-  webmentionisOwn,
-  webmentionSort,
   markdownFormat as markdownify,
   lazyPaginate,
   lazyGroupByYear,
