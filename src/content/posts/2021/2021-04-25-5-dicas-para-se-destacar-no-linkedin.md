@@ -64,7 +64,7 @@ Opte por fotos que focam seu rosto, com um fundo colorido ou que faça contraste
 
 Ele gera diversos formatos para fotos de perfil, o resultado é como, por exemplo:
 
-![Free profile](/assets/images/blog/free-profile-pic.webp)
+![Free profile](/assets/images/blog/free-profile-pic.png)
 
 Percebo duas vantagens nesse serviço, Além de ser gratuito irá deixar sua foto na rede muito mais apresentável e profissional.
 

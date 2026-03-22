@@ -12,7 +12,7 @@ Neste artigo irei mostrar 5 motivos para testar com um leitor de telas. Vamos l�
 
 ## O que são leitores de telas?
 
-![Notebook preto em cima de uma mesa branca. Sua tela está desfocada e existe uma linha braille acopla para o uso da tecnologia assistiva](@assets/images/blog/screen-reader.png)
+![Notebook preto em cima de uma mesa branca. Sua tela está desfocada e existe uma linha braille acopla para o uso da tecnologia assistiva](/assets/images/blog/screen-reader.webp)
 
 Foto por [Elizabeth Woolner](https://unsplash.com/es/@elizabeth_woolner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/s/photos/blind?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -33,7 +33,7 @@ Tendo em vista que, definimos o que são os leitores de tela irei apresentar par
 
 ## Prevenção de bugs
 
-![Uma joaninha com seu corpo vermelho e pintinhas pretas, ela está em cima de uma folha verde. Ao fundo a vegetação da floresta está desfocada.   A joianinha é usada para representar os bugs que encontramos nas aplicações](@assets/images/blog/bug.png)
+![Uma joaninha com seu corpo vermelho e pintinhas pretas, ela está em cima de uma folha verde. Ao fundo a vegetação da floresta está desfocada.   A joianinha é usada para representar os bugs que encontramos nas aplicações](/assets/images/blog/bug.png)
 
 Foto por Neringa Hunnefeld
 
@@ -90,7 +90,7 @@ O exemplo a seguir adotamos a técnica com o uso do _aria-label_:
 
 Esses itens diversas vezes são ignorados pelos desenvolvedores, costumo chamar isso de programação orientada a mouse. Com isso, precisamos de “descobrir” certos comportamentos.
 
-![](@assets/images/blog/discorevy.png)
+![](/assets/images/blog/discorevy.png)
 
 Foto por [Dariusz Sankowski](https://unsplash.com/@dariuszsankowski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/s/photos/map-unknow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -100,7 +100,7 @@ Dessa forma, pessoas que utilizam somente o teclado ficam extremamente prejudica
 
 ## HTML semântico
 
-![Trecho de código HTML com um fundo preta e letras coloridas](@assets/images/blog/code.jpg)
+![Trecho de código HTML com um fundo preta e letras coloridas](/assets/images/blog/code.jpg)
 
 O leitor de telas é amigo íntimo do HTML, como um fiel amigo ele informa **exatamente** como foi escrito.
 
@@ -112,7 +112,7 @@ Estude HTML semântico, caso você tenha dúvidas [entre em contato comigo](mail
 
 ## Feedback em tempo real
 
-![](@assets/images/blog/feedback.png)
+![](/assets/images/blog/feedback.png)
 
 Foto por [Claudio Schwarz](https://unsplash.com/@purzlbaum?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/s/photos/rating?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -132,7 +132,7 @@ Existem técnicas que podemos usamos em alguns casos, como o atributo **aria-liv
 
 ## A experiência do usuário final
 
-![](@assets/images/blog/ux.png)
+![](/assets/images/blog/ux.png)
 
 Foto por [Amélie Mourichon](https://unsplash.com/@amayli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/s/photos/ux-design?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
