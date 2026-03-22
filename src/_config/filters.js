@@ -25,6 +25,11 @@ import {splitlines} from './filters/splitlines.js';
 import {starRating} from './filters/starRating.js';
 import {striptags} from './filters/striptags.js';
 
+export function assetPath(value) {
+  if (typeof value !== 'string') return value;
+  return value.replace(/@assets\//g, '/assets/');
+}
+
 export {
   groupBy,
   groupByYear,

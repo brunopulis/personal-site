@@ -1,8 +1,6 @@
 ---
 title: Ídolos de bolso
 pubDate: 2016-09-05
-category: 'Teologia'
-canonicalUrl: https://brunopulis.com/idolos-de-bolso/
 tags: ['teologia']
 ---
 
@@ -16,7 +14,7 @@ A orientação parece que foi esquecida por nossa geração, porque estamos dand
 
 Trata se daquela sensação de que o seu celular está vibrando no seu bolso, fazendo com que você o pegue a cada cinco minutos para conferir.
 
-A síndrome é mais comum do que imaginamos, de acordo com Larry. Segundo ele, pelo menos 70% das pessoas que assumem usar muito o celular sofrem este tipo de “delírio”.  
+A síndrome é mais comum do que imaginamos, de acordo com Larry. Segundo ele, pelo menos 70% das pessoas que assumem usar muito o celular sofrem este tipo de “delírio”.
 Para o professor, a sensação está relacionada aos mecanismos de resposta do nosso cérebro.
 
 ## **Nomophobia**
@@ -63,8 +61,6 @@ Tendência do usuário acreditar em todas as doenças sobre qual leu na internet
  É quando, por conta da facilidade de encontrar todo tipo de informação na internet, nosso cérebro passar a reter menor quantidade de informação.
 
 O cérebro passa a agir como se não mais precisasse memorizar certas informações, já que conseguiria com facilidade na rede.
-
-![Ilustração do que acontece em 60 minutos na Internet. ](@assets/images/blog/60-minutos-715x1024-ABUYBRHM9aQP.avif)
 
 Os conceitos parecem que mudaram, segundo o sociólogo polonês Zygmunt Bauman as pessoas não sabem mais a diferença de comunidade e rede.
 

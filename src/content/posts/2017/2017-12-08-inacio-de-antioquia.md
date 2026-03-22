@@ -2,14 +2,10 @@
 title: 'Inácio de Antioquia'
 excerpt: 'Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu Paulo e foi sucessor de Pedro na…'
 pubDate: 2017-12-08T12:01:01.591Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/in%C3%A1cio-de-antioquia-b2e630be8547'
+tags: ['teologia']
 ---
 
-### Inácio de Antioquia
+## Inácio de Antioquia
 
 ![](https://cdn-images-1.medium.com/max/800/1*1FLiWcDHKFHED_Pq-EWdww.jpeg)
 
@@ -47,8 +43,7 @@ No ano 106, Santo Inácio está em Roma, onde, no ano seguinte, foram lançados 
 
 Bibliografia
 
-[**Esboços da História da Igreja - CAPÍTULO 2: INÁCIO DE ANTIOQUIA (116 dC)**  
+- [**Esboços da História da Igreja - CAPÍTULO 2: INÁCIO DE ANTIOQUIA (116 dC)**
 \_Esboços da Historia da Igreja J.C.Robertson CAPÍTULO II: INÁCIO DE ANTIOQUIA (116 dC) Quando nosso Senhor subiu ao céu…\_projetocasteloforte.com.br](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/ 'http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/')[](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/)
-
-[**Inácio de Antioquia - Wikipédia, a enciclopédia livre**  
+- [**Inácio de Antioquia - Wikipédia, a enciclopédia livre**
 \_Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu São Paulo e…\_pt.wikipedia.org](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia 'https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia')[](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia)

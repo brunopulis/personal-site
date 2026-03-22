@@ -2,14 +2,10 @@
 title: 'Quem foi R C Sproul? E porque foi de grande importância'
 excerpt: 'Robert Charles Sproul, nasceu em 13 de fevereiro de 1939, em Pittsburgh, Pensilvânia. Foi teólogo calvinista e pastor. Ele é o fundador e…'
 pubDate: 2017-12-15T15:35:14.611Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/quem-foi-r-c-sproul-e-porque-foi-de-grande-import%C3%A2ncia-510c928418'
+tags: ['teologia']
 ---
 
-### Quem foi R C Sproul? E porque foi de grande importância
+## Quem foi R C Sproul? E porque foi de grande importância
 
 ![](https://cdn-images-1.medium.com/max/2560/1*3WFFfzeWtCxkeNVecMpy4w.jpeg)
 
@@ -19,13 +15,9 @@ Casou-se com Vesta em 1960. Serviu no Gordon College em Massachusetts, Conwell T
 
 ![](https://cdn-images-1.medium.com/max/800/1*pqQt-ETTtc6q1VI6NjAhFA.jpeg)
 
-#paracegover: R.C.Sproul e Vesta sorrindo dentro de um carro após a cerimônia de casamento
-
 Em 1971, Sproul, Vesta e seus dois filhos, Sherrie e R.C. Jr. instalaram-se nas montanhas do oeste da Pensilvânia para servir no recém-estabelecido Centro de Estudo do Vale de Ligonier. R.C. publicou seu primeiro livro em 1973, **The Symbol**, uma exposição do Credo dos Apóstolos, ganhando um prêmio de livro do Christianity Today.
 
 ![](https://cdn-images-1.medium.com/max/800/1*kkVuMAqPymNVAc6lXwfB-w.jpeg)
-
-#paracegover: Pessoas sentadas em uma sala atentas a fala de R.C.Sproul que está em pé.
 
 R.C. liderou uma equipe de acadêmicos e escritores cristãos, o que viria a ser um dos documentos mais significativos da igreja do século XX, The Chicago Statement on Biblical Inerrancy. Em 1984, a equipe de Sprouls e Ligonier mudou-se para Orlando, Flórida. Além de liderar um ministério de rápido crescimento e entregar palestras para ensinar séries, Sproul também serviu como professor de teologia para um seminário reformado.
 
@@ -69,13 +61,12 @@ Perdemos um grande homem que dedicou sua vida ao ensino das verdades do Sola Scr
 
 > “Você pode sofrer por mim na semana anterior à minha morte, se eu estiver com medo e machucado, mas quando eu suspirar com aquela última respiração fugaz e minha alma imortal fugir para o Céu, eu estarei pulando sobre hidrantes nas ruas douradas e minha maior preocupação, se eu tiver alguma, será minha esposa aqui na Terra sofrendo. Quando eu morrer, eu serei identificado com a exaltação de Cristo. Mas agora sou identificado com Sua aflição.” — R. C. Sproul
 
-### Referências Bibliográficas
+## Referências Bibliográficas
 
-[**Remembering R.C. | R.C. Sproul**  
+- [**Remembering R.C. | R.C. Sproul**
 \_A son of Pittsburgh, R.C. Sproul spent the early years of his life pursuing sports and the girl he met while in the…\_rcsproul.com](https://rcsproul.com/remembering-rc/ 'https://rcsproul.com/remembering-rc/')[](https://rcsproul.com/remembering-rc/)
-
-[**Robert Charles Sproul - Wikipédia, a enciclopédia livre**  
+- [**Robert Charles Sproul - Wikipédia, a enciclopédia livre**
 \_Robert Charles Sproul, ( 13 de fevereiro de 1939, em Pittsburgh, 14 de dezembro de 2017 Pensilvânia) foi um teólogo…\_pt.wikipedia.org](https://pt.wikipedia.org/wiki/Robert_Charles_Sproul#Bibliografia 'https://pt.wikipedia.org/wiki/Robert_Charles_Sproul#Bibliografia')[](https://pt.wikipedia.org/wiki/Robert_Charles_Sproul#Bibliografia)
 
-Soli Deo Gloria,  
+Soli Deo Gloria,
 Bruno Pulis

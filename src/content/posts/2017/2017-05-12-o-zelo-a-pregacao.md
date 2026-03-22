@@ -7,8 +7,6 @@ tags: ['teologia']
 
 ## O zelo a pregação
 
-![](https://cdn-images-1.medium.com/max/2560/1*1FrKkRRYZlybujRqgNHGYQ.jpeg)
-
 De uns tempos pra cá venho lendo bons livros e materiais relacionados a Teologia Reformada que me fizeram argumentar alguns posicionamentos do pitoresco meio evangélico brasileiro.
 
 Uma das coisas que tenho me atentado é sobre o **púlpito** ou a exposição das Escrituras, de fato, é a posição mais perigosa Spurgeon já nos alertava sobre:

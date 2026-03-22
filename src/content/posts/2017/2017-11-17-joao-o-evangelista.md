@@ -2,16 +2,10 @@
 title: 'João, o Evangelista'
 excerpt: 'João, filho de Zebedeu e Salomé, foi o discípulo mais novo dos doze. Juntamente com seu irmão Tiago, foi convidado a peregrinar com Jesus…'
 pubDate: 2017-11-17T13:51:51.663Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/jo%C3%A3o-o-evangelista-7371c39239ea'
+tags: ['teologia']
 ---
 
-### João, o Evangelista
-
-![](https://cdn-images-1.medium.com/max/800/1*cJfp3sbapWkbyYK0pH0-8A.jpeg)
+## João, o Evangelista
 
 João, filho de Zebedeu e Salomé, foi o discípulo mais novo dos doze. Juntamente com seu irmão Tiago, foi convidado a peregrinar com Jesus no seu ministério terreno. Ambos eram pescadores (Mt 4.21). João Batista o apresentou a Jesus (Jo 1.35–39), que o chamou para ser apóstolo (Mc 1.19–20).
 
@@ -20,10 +14,6 @@ João, filho de Zebedeu e Salomé, foi o discípulo mais novo dos doze. Juntamen
 Era do grupo mais íntimo de Jesus (Mc 5.37; Mt 17.1; 26.37). Ele e Tiago são chamados de BOANERGES ou filhos do trovão. Foi ele o único discípulo que permaneceu perto da cruz (Jo 19.26–27) e o primeiro a crer na ressurreição de Cristo (Jo 20.1–10).
 
 Autor do último evangelho e escritor das cartas de I, II, III João e Apocalipse, em sua grande maioria o discípulo João aparece juntamente com Pedro e Tiago, mostrando a afinidade entre eles. Um episódio marcante dessa afinidade é a passagem do Monte da transfiguração, onde Jesus chama os três para vigiar juntamente com ele.
-
-![](https://cdn-images-1.medium.com/max/2560/1*3gAz9Ml4qm81HRGfmKTK3g.jpeg)
-
-Transfiguração. 1487–1495. Por [Giovanni Bellini](https://pt.wikipedia.org/wiki/Giovanni_Bellini 'Giovanni Bellini'), atualmente no Museo Nazionale di Capodimonte, em [Nápoles](https://pt.wikipedia.org/wiki/N%C3%A1poles 'Nápoles')
 
 > Jesus considerava João como o “discípulo amado”. Um fato interessante sobre a vida de João é que ele foi o único dos 12 apóstolos a ter uma morte natural, sem conhecer o martírio.
 

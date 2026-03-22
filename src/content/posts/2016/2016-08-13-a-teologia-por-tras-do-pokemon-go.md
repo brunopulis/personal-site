@@ -35,10 +35,6 @@ Pensei na hora que ouvi isso: “Sério que pessoas estão discutindo isso?”
 
 Pelo mais cômico que possa parecer, ele tem ajudado pessoas que sofrem de depressão, [autismo](http://g1.globo.com/tecnologia/games/noticia/2016/08/como-pokemon-go-transformou-vida-de-jovem-autista-que-nao-conseguia-sair-de-casa.html) e até [câncer](http://extra.globo.com/noticias/mundo/hospital-infantil-usa-jogo-pokemon-go-para-tirar-pacientes-do-leito-19741332.html) aliviar um pouco da sua dor através da interatividade que ele propõe.
 
-Exemplos como esse print que vi no Facebook:
-
-![Relato de uma pessoa com depressão que conseguiu sair de casa por causa do jogo. Hoje eu andei 2,45km no meu bairro por causa de Pokémon GO. Eu sou uma pessoa que tem depressäo e ansiedade - em alguns dias é dificil ter animo at pra sair da cama. E hoje, por causa de Pokémon GO, eu levantei e sai de casa por vontade propri coisa que näo acontecia hå vårios meses. Pense nisso antes de chamar quem curte Pokémon GO de "alienados". Esse jogo faz um bem danado pra algumas pessoas. ](@assets/images/blog/pokemon-go.png)
-
 Partindo do pressuposto que o jogo realmente é do, **coisa ruim**, ele iria querer promover alguma coisa boa para pessoas com problemas?
 
 Ou iria querer colocar elas mais, no fundo do poço? Essa é a pergunta que paira no ar.

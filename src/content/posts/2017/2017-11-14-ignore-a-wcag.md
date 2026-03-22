@@ -3,18 +3,15 @@ title: 'Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez di
 excerpt: 'Se você está tentando tornar seu site ou aplicativo acessível, você provavelmente se atrapalhou nas Diretrizes de Acessibilidade para o…'
 pubDate: 2017-11-14T01:24:43.278Z
 tags: ['a11y']
-canonicalUrl: 'https://medium.com/@brunopulis/ignore-o-wcag-teste-de-usu%C3%A1rios-com-pessoas-com-defici%C3%AAncia-em-vez-disso-dbccc3ee2b2a'
 ---
 
-### Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez disso.
+## Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez disso
 
 Se você está tentando tornar seu site ou aplicativo acessível, você provavelmente se atrapalhou nas Diretrizes de Acessibilidade para o Conteúdo da Web (WCAG). Mas não desperdice sua energia tentando compreendê-la. Sério, não!
 
 Texto postado originalmente em [https://axesslab.com/skip-the-wcag/](https://axesslab.com/skip-the-wcag/) escrito por [Hampus Sethfors](https://twitter.com/hampelusken), adaptado e traduzido por Bruno Pulis.
 
-![](https://cdn-images-1.medium.com/max/800/1*NUpRlUy6k5_-NWR_yBjujA.jpeg)
-
-### Teste com pessoas reais
+## Teste com pessoas reais
 
 Eu sei que é uma declaração ousada. Mas o [WCAG](https://www.w3.org/TR/WCAG20/) irá confundi-lo. E provavelmente assustá-lo. É realmente um documento longo e difícil de compreender.
 
@@ -44,7 +41,7 @@ Se você quiser testar com pessoas com deficiência, criei uma lista de dicas pa
 
 E se você acha que parece um pouco assustador, guiá-lo a [recrutar usuários e realizar os testes.](https://axesslab.com/user-testing/) (conteúdo em inglês)
 
-### Não me mate …
+### Não me mate
 
 E, finalmente, volto para as pessoas incríveis da comunidade de acessibilidade: por favor, não me mate por sugerir que as pessoas ignorem as WCAG. O fato é que eu amo as WCAG! Provavelmente é um dos documentos mais importantes em torno de todas as categorias.
 

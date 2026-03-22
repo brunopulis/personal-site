@@ -7,8 +7,6 @@ tags: ['teologia']
 
 ## Pecados expostos
 
-![](https://cdn-images-1.medium.com/max/800/1*9NYYmgz09FZVgTOuipMhhw.jpeg)
-
 O cenário moderno permeia a justiça própria e um censo de moralismo onde a punição é aplicada de acordo com o que se acha prudente, fato que me recorda muito bem um episódio bíblico bastante famoso.
 
 No texto abaixo, demonstra-se isso o caso da mulher pega em adultério. Segundo a lei a pena era o apedrejamento os doutores da lei trouxeram ela perante Jesus e ele traz uma resposta a uma pergunta:

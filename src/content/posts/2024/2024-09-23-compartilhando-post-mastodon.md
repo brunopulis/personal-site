@@ -1,9 +1,6 @@
 ---
 title: Compartilhando post no Mastodon
 pubDate: 2024-09-23
-image: '/assets/images/blog/mastodon.jpg'
-imageAlt: 'Capa do artigo: Meus aplicativos de 2024'
-category: 'Pessoal'
 tags:
   - fediverso
   - indie web
@@ -18,7 +15,7 @@ Vou te ensinar como fazer isso passo a passo, vamos lá?
 
 Vi essa técnica no blog do [Jens Oliver Meie](https://meiert.com/en/biography/), no artigo [Website Optimization Measures, Part XXVI · Jens Oliver Meiert](https://meiert.com/en/blog/optimization-measures-26/).
 
-Achei curioso porque me parecia bem simples, de fato, minhas suspeitas foram confirmadas.  
+Achei curioso porque me parecia bem simples, de fato, minhas suspeitas foram confirmadas.
 No blog do Jens, existe um a sessão que incentiva o usuário a compartilhar o post no Mastodon.
 
 Isso é conhecido como _“toot”_, uma espécie de _tweet_ do Mastodon. O resultado final será semelhante a isso.
@@ -58,5 +55,5 @@ Você deve ter percebido, que existem uns caracteres estranhos, eles tem funçõ
 
 ## Conclusão
 
-Pronto, seu post pode ser compartilhado no Mastodon.  
+Pronto, seu post pode ser compartilhado no Mastodon.
 Gostou dessa dica?

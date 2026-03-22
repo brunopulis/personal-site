@@ -3,23 +3,19 @@ title: "Aonde está Deus?"
 excerpt: "Quando nossas desesperanças sufocam nossa fé? 
  uando nossa confiança é abalada por situações que parecem não terem soluções?"
 pubDate: 2018-12-27T02:12:18.439Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/aonde-est%C3%A1-deus-a16731a7468d"
+tags: ['teologia']
 ---
 
-### Aonde está Deus?
+## Aonde está Deus?
 
 ![](https://cdn-images-1.medium.com/max/2560/1*cdA_eph3sZR1B1AYGwnd4Q.jpeg)
 
 Obra A criação de Adão — Michelangelo
 
-Quando nossas desesperanças sufocam nossa fé?   
+Quando nossas desesperanças sufocam nossa fé?
  uando nossa confiança é abalada por situações que parecem não terem soluções?
 
-Expulsamos Deus da nossa cultura, vida e família.   
+Expulsamos Deus da nossa cultura, vida e família.
 le não sumiu, mas nossa obstinação e depravação, fez essa imagem ilusória em que Ele desapareceu.
 
 Na verdade, decidimos ter a emancipação do divino e optamos empoderamento humano.

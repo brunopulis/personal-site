@@ -2,20 +2,16 @@
 title: 'O cristão e sua ignorância literária'
 excerpt: 'E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo…'
 pubDate: 2017-12-05T03:36:32.790Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/o-crist%C3%A3o-e-sua-ignor%C3%A2ncia-liter%C3%A1ria-da9979a5caf5'
+tags: ['teologia']
 ---
 
-### O cristão e sua ignorância literária
+## O cristão e sua ignorância literária
 
 ![](https://cdn-images-1.medium.com/max/2560/1*w3toaGngMtx_o5B1bQAT1A.jpeg)
 
 Coletânea de livros com capas coloridas em uma estante. Foto por [Karim Ghantous](https://unsplash.com/photos/JHTlgIpNyQA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) disponível no site [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-> E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo Jesus.  
+> E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo Jesus.
 > 2 Timóteo 3:15
 
 Ao aprofundarmos nossa leitura nas Escrituras e contexto cultural do Novo Testamento, deparamos com um fator interessante: a _educação._ O sistema educacional israelita era baseado inteiramente na Torah e no Talmud e, por consequência, todo judeu tinha um conhecimento preliminar sobre a Lei. Os que gostariam de aprofundar e se destacavam, porém, eram escolhidos para entrar nas escolas rabínicas para compreender os mistérios da Torah.
@@ -70,9 +66,9 @@ Um outro fator que ajudar o analfabetismo bíblico é a falta de tempo, ou pelo 
 
 Aparentemente temos tempo de sobra para as futilidades e banalidades da internet, mas quando o assunto é estudo bíblico, chega a ser lamentável. Gastamos um tempo que não temos, pois, as Escrituras nos afirmam:
 
-> Portanto, vede prudentemente como andais, não como néscios, mas como sábios,  
-> **Remindo o tempo**; porquanto os dias são maus.  
-> Por isso não sejais insensatos, mas entendei qual seja a vontade do Senhor.  
+> Portanto, vede prudentemente como andais, não como néscios, mas como sábios,
+> **Remindo o tempo**; porquanto os dias são maus.
+> Por isso não sejais insensatos, mas entendei qual seja a vontade do Senhor.
 > Ef 5: 15–17
 
 Devemos aproveitar nosso tempo com coisas que edificam e fortalecem nossa fé, afinal se não fizermos isso seremos como os descrentes.
@@ -87,7 +83,7 @@ Você já parou para pensar se precisamos mesmo ter Twitter, Facebook, Instagram
 
 E, como nosso tempo de leitura durante a semana é quase nulo, vamos na expectativa de ouvir a palavra no culto. Mas, para nossa supresa, ouvimos rotineiramente:
 
-> "A **palavra vai ser breve**",   
+> "A **palavra vai ser breve**",
 > "N**ão vou tomar muito seu tempo**",
 
 As Escrituras perderam o valor principal no culto. **A melhor parte não é e não pode ser o louvor,** mas a **exposição da Palavra,** momento onde Deus fala com seu povo. Entretanto, os jovens não parecem se importar, afinal já tem outras atividades depois do culto e, com isso, vão se tornando analfabetos cada dia mais.
@@ -104,5 +100,5 @@ Que nosso analfabetismo bíblico se converta em erudição e possamos ser a resp
 
 Sejamos como Timóteo que, apesar da sua pouca idade, já era conhecedor das Sagradas Letras e as praticava.
 
-Soli Deo Gloria,  
+Soli Deo Gloria,
 @brunopulis

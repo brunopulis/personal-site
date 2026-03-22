@@ -2,18 +2,12 @@
 title: 'A mentira merece um dia?'
 excerpt: 'O dia 1º de abril “comemora-se” o dia mentira, mas será que de fato a mentira precisa de um dia especifico para ser celebrada, ou ela é…'
 pubDate: 2019-04-01T13:43:06.969Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/a-mentira-merece-um-dia-f56ba12ed50d'
+tags: ['teologia']
 ---
 
-### A mentira merece um dia?
+## A mentira merece um dia?
 
 ![](https://cdn-images-1.medium.com/max/2560/1*Z4nyEP9ebG4GdZImukuzCw.jpeg)
-
-#paracegover: pessoa utilizando uma máscara numa floresta
 
 No dia 1º de abril “comemora-se” o dia mentira, mas será que de fato a mentira precisa de um dia especifico para ser celebrada, ou ela é parte do nosso cotidiano?
 
@@ -30,7 +24,6 @@ Uma dessas tendências é o ato de **mentir**, que assustadoramente é praticado
 A Bíblia nos dá um alerta sobre o destino dos praticantes da mentira:
 
 > Mas, quanto aos tímidos, e aos incrédulos, e aos abomináveis, e aos homicidas, e aos que se prostituem, e aos feiticeiros, e aos idólatras e a **todos os mentirosos**, a sua parte será no lago que arde com fogo e enxofre; o que é a segunda morte.
-
 > [Apocalipse 21:8](https://www.bibliaonline.com.br/acf/ap/21/8+)
 
 A obra da redenção traz um novo prisma para os mentirosos e todos os pecadores.
@@ -39,22 +32,21 @@ Cristo, em seu sacrifício pascal, reconecta o homem ao Criador, abrindo uma via
 
 A palavra de Deus salienta em diversas passagens que os regenerados na fé abandonem a prática da mentira e suas derivações. Alguns versículos onde ela alerta sobre o uso da mentira:
 
-> O Senhor odeia os lábios mentirosos,  
-> mas se deleita com os que falam a verdade.   
+> O Senhor odeia os lábios mentirosos,
+> mas se deleita com os que falam a verdade.
 > [Provérbios 12:22](https://www.bibliaon.com/versiculo/proverbios_12_22/)
-
-> Quem pratica a fraude  
-> não habitará no meu santuário;  
-> o mentiroso não permanecerá  
-> na minha presença.   
+> Quem pratica a fraude
+> não habitará no meu santuário;
+> o mentiroso não permanecerá
+> na minha presença.
 > [Salmos 101:7](https://www.bibliaon.com/versiculo/salmos_101_7/)
 
 Aliada à mentira vem a fofoca, algo que o Criador abomina. Tal abominação é pelo fato de levantarmos falso testemunho da criação que é o espelho do próprio Criador.
 
 Que nossas vidas sejam guiadas pela verdade contida nas Escrituras. Ainda há tempo de nos arrependermos das mentiras que contamos para nós mesmos e aos outros.
 
-> Não mintam uns aos outros, visto que vocês já se despiram do velho homem com suas práticas e se revestiram do novo, o qual está sendo renovado em conhecimento, à imagem do seu Criador.   
+> Não mintam uns aos outros, visto que vocês já se despiram do velho homem com suas práticas e se revestiram do novo, o qual está sendo renovado em conhecimento, à imagem do seu Criador.
 > [Colossenses 3:9–10](https://www.bibliaon.com/versiculo/colossenses_3_9-10/)
 
-Na paz,  
+Na paz,
 Bruno Pulis

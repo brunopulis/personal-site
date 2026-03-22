@@ -1,8 +1,6 @@
 ---
 title: 'Acessibilidade Web: como começar do jeito certo'
 pubDate: 2023-02-13
-category: Acessibilidade
-canonical: https://brunopulis.com/introducao-acessibilidade-web/
 tags: ['a11y']
 ---
 
@@ -148,4 +146,4 @@ Desenvolver um produto ou serviço sem pensar em acessibilidade e dar um tiro no
 
 ## Referências
 
-_Algumas informações neste artigo são do documento [Web Accessibility Initiative (WAI): Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/). [Shawn Lawton Henry](https://www.w3.org/People/Shawn/). Copyright © 2010 W3C® (MIT, ERCIM, Keio). Status: Atualizado em 31 Março de 2022. https://www.w3.org/WAI/fundamentals/accessibility-intro/_
+_Algumas informações neste artigo são do documento [Web Accessibility Initiative (WAI): Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/). [Shawn Lawton Henry](https://www.w3.org/People/Shawn/). Copyright © 2010 W3C® (MIT, ERCIM, Keio). Status: Atualizado em 31 Março de 2022. <https://www.w3.org/WAI/fundamentals/accessibility-intro/>_

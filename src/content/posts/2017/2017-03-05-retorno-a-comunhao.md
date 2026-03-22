@@ -3,12 +3,9 @@ title: 'Retorno a comunhão'
 excerpt: 'O tempo passa, o início era perfeito, horas pareciam minutos, mas ao poucos a comunhão foi sendo aniquilada pela rotina, cansaço e…'
 pubDate: 2017-03-05T04:48:59.168Z
 tags: ['teologia']
-canonicalUrl: 'https://medium.com/@brunopulis/retorno-a-comunh%C3%A3o-c996f67ef992'
 ---
 
 ## Retorno a comunhão
-
-![](https://cdn-images-1.medium.com/max/800/1*9-0Pi5MUrNbv-H8KUgp1Lg.jpeg)
 
 O tempo passa, o início era perfeito, horas pareciam minutos, mas ao poucos a comunhão foi sendo aniquilada pela _rotina, cansaço e pressões._
 

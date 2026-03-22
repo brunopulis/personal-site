@@ -1,18 +1,13 @@
 ---
 title: 'Como criar botões acessíveis'
-excerpt:
-  'Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.
-  Hoje, vou falar sobre como…'
+excerpt: 'Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante. Hoje, vou falar sobre como…'
 pubDate: 2017-10-02T23:28:46.808Z
 tags: ['a11y']
-canonicalUrl: 'https://medium.com/@brunopulis/como-criar-bot%C3%B5es-acess%C3%ADveis-2205ba4a91c8'
 ---
 
 ### Como criar botões acessíveis
 
-![](https://cdn-images-1.medium.com/max/800/1*K6w9XhCJsBtvG9bF8_yUFA.png)
-
-Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.  
+Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.
  Hoje, vou falar sobre como **criar botões acessíveis** sem prejudicar a estética e/ou seu comportamento.
 
 Estruturalmente **botões** são links estilizados via CSS e tem um valor muito importante para fazerem conversões de cliques, mas, a maioria deles são aplicados de forma incorreta. Nesse post vou mostrar a correção para esse problema.
@@ -23,9 +18,11 @@ Em diversos sites, nos deparamos com _call to actions_ (como: ‘Clique aqui’;
 
 Fiz esse exemplo para ilustrar quando são feitos incorretamente.
 
-<div class=”card-action”>  
-  <a href=”#”>Leia mais</a>  
+```html
+<div class=”card-action”>
+  <a href=”#”>Leia mais</a>
 </div>
+```
 
 Da forma que foi feita a marcação, o usuário que utiliza leitor de tela, como o **NVDA**, **JAWS** por exemplo, ficaria perdido porque os botões de “Leia mais” não tem em seu contexto nenhuma informação. Os leitores de tela oferecem um recurso de navegar via links de forma rápida. No NVDA utiliza-se a tecla **L** para saltar todos os links da página.
 
@@ -39,26 +36,32 @@ O exemplo abaixo mostra de forma clara como fazer.
 
 ### Markup
 
-<div class=”card-action”>  
-  <a href=”#” role="button">Leia mais <span class=”sr-only”>sobre Galo na libertadores</span></a>  
+```html
+<div class=”card-action”>
+  <a href=”#” role="button">Leia mais <span class=”sr-only”>sobre Galo na libertadores</span></a>
 </div>
+```
 
 ou
 
+```html
 <button>Leia mais <span class="sr-only">sobre o Galo na libertadores</span></button>
+```
 
 ### CSS
 
-.sr-only {  
- position: absolute;  
- width: 1px;  
- height: 1px;  
- padding: 0;  
- margin: -1px;  
- overflow: hidden;  
- clip: rect(0,0,0,0);  
- border: 0;  
+```css
+.sr-only {
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ padding: 0;
+ margin: -1px;
+ overflow: hidden;
+ clip: rect(0,0,0,0);
+ border: 0;
 }
+```
 
 ### Conclusão
 

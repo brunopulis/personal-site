@@ -3,16 +3,9 @@ title: 'HTML não é tão simples quanto você pensa'
 excerpt: 'Como a marcação do HTML pode afetar diretamente seu negócio'
 pubDate: 2020-07-01T12:19:10.431Z
 tags: ['a11y']
-canonicalUrl: 'https://medium.com/@brunopulis/html-n%C3%A3o-%C3%A9-t%C3%A3o-simples-quanto-voc%C3%AA-pensa-15ea9b611def'
 ---
 
-### HTML não é tão simples quanto você pensa
-
-![Foto. Uma pessoa sentada em uma mesa de cor marrom, com uma lapiseira na mão fazendo anotação em um papel. Fundo desfocado.](https://cdn-images-1.medium.com/max/2560/1*bMMrt9n-vSXSCQPYePJpIQ.jpeg)
-
-Esse artigo foi postado originalmente no [meu blog](https://brunopulis.com/dev/repensando-sobre-o-html/).
-
-### Introdução
+## Introdução
 
 O HTML é o bloco de construção mais básico da web. É o responsável por definir duas características importantíssimas: **significado** e a **estrutura** do conteúdo da web.
 
@@ -20,7 +13,7 @@ Além dessas características primordiais, também contribui para um melhor posi
 
 Outro fator não menos importante, é a promoção do conteúdo para todas as pessoas, visto que, uma vez escrito corretamente consegue atingir todos os públicos, garantindo assim a interoperabilidade do conteúdo, sem se preocupar com plataformas ou devices.
 
-### Um breve contexto
+## Um breve contexto
 
 O ano é 2020, frameworks de frontend, especialmente de javascript nascem a cada seis segundos com a promessa quase messiânica de resolver nossos problemas.
 
@@ -34,7 +27,7 @@ Bom, essa analogia demonstra a realidade de muitos de nós, pensamos nas melhore
 
 Frameworks são excelentes ferramentas, **mas não são uma bala de prata**, devemos ter cuidados e prudência, afinal você não precisa de um canhão para matar uma formiga.
 
-### Uma tendência
+## Uma tendência
 
 Atualmente a maioria dos projetos web tem alguma lib ou framework de javascript por trás, por um lado isso é excelente, a web evoluiu e fazer frontend não é a mesma coisa do que 10 anos atrás.
 
@@ -46,7 +39,7 @@ O problema é que a maioria desses frameworks possuem erros grotescos de html, a
 
 Um exemplo do framework Vuetify com o componente select:
 
-```
+```javascript
 <v-select :items="items" label="Standard"></v-select>
 ```
 
@@ -67,7 +60,7 @@ Já no bom e velho HTML, o componente de select se parece com isso.
 </select>
 ```
 
-**Simples, não?  
+**Simples, não?
 **Exemplos assim, estão recheados aos montes pela web. A WebAIM uma empresa que presta treinamentos e consultorias sobre acessibilidade web, realizou no ano de 2019 uma pesquisa onde mapeou 1 milhão de páginas e detectou problemas relacionados a acessibilidade. E pasmem, a maioria dos problemas não era coisas hiper complexas, mas extremamente simples.
 
 Abaixo uma tabela demonstrando os problemas mais recorrentes nas páginas.
@@ -76,7 +69,7 @@ Abaixo uma tabela demonstrando os problemas mais recorrentes nas páginas.
 
 Fica nítido uma coisa, **temos um problema gritante com a semântica e estrutura**
 
-### HTML semântico
+## HTML semântico
 
 Quando falamos sobre semântica, estamos falando sobre o conteúdo ter significado. Assim como um livro ou TCC respeita uma estrutura lógica de hierarquia de informação o HTML também possuí.
 
@@ -100,7 +93,7 @@ Esse assunto no Twitter me fez lembrar de outra conversa com o [Reinaldo Ferraz]
 
 > **_Estamos em um momento que as pessoas precisam reaprender como escrever HTML. Só assim, conseguiremos tornar a web mais inclusiva._**
 
-### Conclusão
+## Conclusão
 
 A minha dica é desacelerar e voltar a base, não adianta nada saber os melhores frameworks e técnicas de desenvolvimento frontend, sendo que, o **essencial** não está bem fundado.
 
@@ -112,7 +105,7 @@ Uma fundação com estrutura sólida nos dá segurança e confiança, mas uma fu
 
 A fundação HTML, CSS, Javascript devem ser sólidas, frameworks vem e vão. Que tal refletirmos e escrevermos de forma semântica?
 
-### Conteúdos relevantes
+## Conteúdos relevantes
 
 Separei alguns links para aprender a escrever HTML semântico, espero que os ajude.
 
@@ -121,7 +114,7 @@ Separei alguns links para aprender a escrever HTML semântico, espero que os aju
 - [HTML5 Coding Essentials and best pratices](https://www.edx.org/course/html5-coding-essentials-and-best-practices)
 - [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 
-### Referências
+## Referências
 
 - [Referência da MDN sobre HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [Pesquisa WebAIM](https://webaim.org/projects/million/)

@@ -2,14 +2,10 @@
 title: 'Na rotina do culto'
 excerpt: 'Quanto a mim, os meus pés quase que se desviaram; pouco faltou para que escorregassem os meus passos.'
 pubDate: 2018-05-19T03:17:43.383Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/na-rotina-do-culto-3e983f6911e2'
+tags: ['teologia']
 ---
 
-### Na rotina do culto
+## Na rotina do culto
 
 ![](https://cdn-images-1.medium.com/max/2560/1*5U97Vzx2Mec3vFmRzBmjGA.jpeg)
 
@@ -23,7 +19,7 @@ A caminhada cristã é recheada de obstáculos que, em diversas vezes, pensamos 
 
 O Salmo 73 narra o drama de Asafe — sua vida estava em profunda crise. Ao realizarmos uma investigação do texto é nítido como ele demonstrava sinais de cansaço espiritual e amargura com a vida. Fica claro isto quando ele afirma:
 
-> Pois eu tinha inveja dos néscios, quando via a prosperidade dos ímpios.   
+> Pois eu tinha inveja dos néscios, quando via a prosperidade dos ímpios.
 > Salmos 73:3
 
 O clamor do seu coração era para ter uma vida mais fácil e um refrigério para sua alma cansada da rotina do culto.
@@ -34,11 +30,11 @@ Muitos de nós nos encontramos na mesma situação, cansados e sem refrigério p
 
 E se a história de Asafe acontecesse nos dias atuais, como seria? Abaixo tentarei contextualizar essa história bíblica na ótica do nosso tempo.
 
-### Nos dias atuais
+## Nos dias atuais
 
 Asafe é um cristão que por diversas vezes não se enquadra na pós-modernidade. Existe dentro dele um choque cultural muito grande. Grande parte do tempo, ele é incompreendido e taxado como radical e extremista. Mas o que ele queria, na verdade, era compreender alguns acontecimentos que iremos narrar logo a seguir.
 
-### Reverência a Deus
+## Reverência a Deus
 
 Parece que os jovens e adolescentes não compreendem mais sobre o significado de reverência no culto público. Exemplos simples como conversas paralelas, mexer no celular ou comer alimentos no meio do culto tem se tornado comum e, pasmem, não são chamados à atenção por conta dessas atitudes. O coração de Asafe se entristece, pois o Deus Todo Poderoso está presente e as pessoas não estão nem aí.
 
@@ -50,7 +46,7 @@ Eles compreendem que existe um Deus Santo que deve ser adorado por esse motivo.
 
 Porém, a irreverência e desobediência dessa geração é sua marca registrada. Tratam a Deus, como um amigo de faculdade ou de escola e esquecem que ele é Rei e Soberano. Afinal, você iria tratar o rei de um reino como seu colega? Creio que não. Mas então, por que com Deus temos essas atitude?
 
-### Louvor e adoração
+## Louvor e adoração
 
 Outro ponto que Asafe não consegue entender são as músicas que as igrejas tem entoado. Nunca se viu em toda a história da igreja um louvor tão decadente e humanista.
 
@@ -60,7 +56,7 @@ O Asafe contemporâneo não canta diversas músicas, pois não se vê sentido ne
 
 O louvor deixou de ser um sermão cantado e passou ser um entretenimento para as massas, com músicas humanistas onde a prioridade é Deus me abençoar, libertar e curar.
 
-### Exposição das Escrituras
+## Exposição das Escrituras
 
 Ele tem esperança que algo mude que preencha o vazio existencial da sua alma e aposta todas suas fichas no momento da exposição das Escrituras.
 
@@ -70,7 +66,7 @@ Nosso personagem não recorda qual foi a última vez que ouviu uma pregação so
 
 Seu coração se desfalece em meio de tanto descaso com as Escrituras e percebe uma gama enorme de jovens famintos pela Palavra, mas o que se tem dado são somente migalhas do Pão da Vida. Muitos se cansaram, pois não são alimentados como deveriam. Parece que o Evangelho não é substancial para a vida deles e acabam trilhando rumos diferentes, procurando espiritualidades alternativas.
 
-### Comunhão
+## Comunhão
 
 Nosso “Asafe” tem uma ponta de esperança na comunhão dos santos, mas se decepciona mais uma vez, pois, não há interação entre os santos, mas somente um relacionamento totalmente superficial e virtual.
 
@@ -80,7 +76,7 @@ Com isso, temos um cenário com crentes extremamente rasos na fé, sem quase nen
 
 Tal geração, se denomina como os loucos por Jesus, aqueles que vão revolucionar o mundo. Ao analisar as escrituras, percebemos que os apóstolos no livro de Atos revolucionaram o mundo (colocaram de cabeça pra baixo) por conta do seu testemunho, sua vida íntegra e reta perante Deus.
 
-### O desgosto
+## O desgosto
 
 Asafe, mais uma vez volta para casa com uma inquietação no peito e um cansaço quase mórbido. Tentou mais uma reunião e não conseguiu, saiu sem entender nada do que aconteceu. Sente o vazio na alma e procura até pensar que a culpa foi dele, mas chega logo à conclusão que isso ocorreu por negligência das pessoas.
 
@@ -114,12 +110,12 @@ Após sua vida ser restaurada, ele recorda da passagem da escritura que diz:
 
 > Porque ainda que a figueira não floresça, nem haja fruto na vide; ainda que decepcione o produto da oliveira, e os campos não produzam mantimento; ainda que as ovelhas da malhada sejam arrebatadas, e nos currais não haja gado;
 
-> Todavia eu me alegrarei no Senhor; exultarei no Deus da minha salvação.  
+> Todavia eu me alegrarei no Senhor; exultarei no Deus da minha salvação.
 > O Senhor Deus é a minha força, e fará os meus pés como os das cervas, e me fará andar sobre as minhas alturas
 
 > [Habacuque 3:17-19](https://www.bibliaonline.com.br/acf/hc/3/18,19+)
 
-Na paz,  
+Na paz,
 Bruno Pulis
 
 Soli Deo Gloria

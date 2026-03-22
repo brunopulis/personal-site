@@ -2,14 +2,10 @@
 title: 'Mais uma luz — o valor da vida.'
 excerpt: 'Hoje quero indicar uma música que o Carlos André Rodrigues Couto me mostrou. A música é a One More Light da banda Linkin Park. No vídeo…'
 pubDate: 2018-05-24T05:14:52.301Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/mais-uma-luz-828e0f04de52'
+tags: ['reflexão']
 ---
 
-### Mais uma luz — o valor da vida.
+## Mais uma luz — o valor da vida
 
 ![](https://cdn-images-1.medium.com/max/2560/1*aBnCW2ku2lG2yviLuCZAyg.jpeg)
 
@@ -29,15 +25,15 @@ Chester em sua genialidade, discursa sobre três tópicos em toda a canção: **
 
 Em um mundo tão cruel, cheio de egoísmos e carente de atenção valorizar a vida é algo raro. Geralmente nós valorizamos a vida quando perdemos. Engraçado, que avaliamos isto somente na perda e não na beleza que esta contida na vida. Há um trecho da música que ele deixa bem claro, isso:
 
-> Se eles perguntam  
-> Quem se importa se mais uma luz se apagar?  
+> Se eles perguntam
+> Quem se importa se mais uma luz se apagar?
 > Em um céu de um milhão de estrelas
 
 Chester, consegue transcrever uma verdade bíblica através de melodia com uma profunda reflexão sobre como nos tornamos tão egoístas e esquecemos sobre valorizar o indivíduo como um ser social.
 
 Outro ponto que ele explora bem é a compaixão, fica claro nesse trecho:
 
-> Quem se importa se mais uma luz se apagar?  
+> Quem se importa se mais uma luz se apagar?
 > Bem, eu me importo
 
 Vivemos de uma forma tão desordenada, mas ao mesmo tempo tão conectada com inutilidades, que o tato diversas vezes é esquecimento e enxergar além do que os olhos possam ver, pode se tornar uma tarefa árdua e totalmente sem sentido.
@@ -48,8 +44,8 @@ Vivemos em uma geração que não tem prazer na profundidade, mas na sua forma r
 
 Já dizia o bom livro que _“a vida é como um sopro”_ e isso é transcrito nesses versos:
 
-> Quem se importa quando o tempo de alguém se acaba?  
-> Se um momento é tudo que somos  
+> Quem se importa quando o tempo de alguém se acaba?
+> Se um momento é tudo que somos
 > Somos passageiros, passageiros
 
 Ele compreende que a vida é breve e passa num sopro, dizemos ter todo o tempo do mundo, mas num estalar de dedos estamos nos nossos últimos dias. Quando se olha já se passaram os dias, as horas e os anos. A vida é o bem mais precioso do ser humano e desperdiçá-la é o pior dos pecados.
@@ -64,5 +60,5 @@ Repreendeu as tormentas da vida e seus amigos puderam novamente ter paz, tamanha
 
 E Ele somente Ele, tem o poder de silenciar as tormentas de nossas vidas. Dar sentido, significado e completude a nossa existência, que possamos ter uma vida regada de valorização, compaixão e viver de forma digna.
 
-Na paz,  
+Na paz,
 Bruno Pulis

@@ -3,16 +3,15 @@ title: 'Texto alternativo: o guia definitivo'
 excerpt: 'Esta publicação contém tudo o que você precisa saber sobre texto alternativo! Quando usá-los e como desenhá-los perfeitamente. Por mim…'
 pubDate: 2017-10-26T12:47:26.632Z
 tags: ['a11y', 'texto alternativo']
-canonicalUrl: 'https://medium.com/@brunopulis/texto-alternativo-o-guia-definitivo-ae196e7a1e39'
 ---
 
-### Texto alternativo: o guia definitivo
+## Texto alternativo: o guia definitivo
 
 Esta publicação contém tudo o que você precisa saber sobre texto alternativo! Quando usá-los e como desenhá-los perfeitamente. Por mim, Daniel, um desenvolvedor web com deficiência visual que usa um leitor de tela no meu dia-a-dia.
 
 Texto postado originalmente em [https://axesslab.com/alt-texts/](https://axesslab.com/alt-texts/) escrito por [Daniel Göransson](https://twitter.com/danielgoransson), adaptado e traduzido por Bruno Pulis.
 
-![](https://cdn-images-1.medium.com/max/800/1*1ZHlYR33mks9baP3y-C2lA.jpeg)
+![Gato fofinho](/assets/images/blog/cute-cat.webp)
 
 ### Minhas experiência com imagens na web
 
@@ -56,14 +55,14 @@ Um leitor de tela transforma uma informação visual em fala ou braile. Para faz
 
 Textos alternativos são super importantes! Tão importantes que o WCAG tem textos alternativos como sua primeira _guideline_ a ser seguida:
 
-> Todo o conteúdo não textual que é apresentado ao usuário tem uma alternativa de texto que serve o propósito equivalente._  
+> Todo o conteúdo não textual que é apresentado ao usuário tem uma alternativa de texto que serve o propósito equivalente._
 > – WCAG guideline 1.1.1_
 
 ### Como eu adiciona um texto alternativo?
 
 No HTML, um texto alternativo é um atributo em um elemento de imagem:
 
-```
+```html
 <img src="cachorro.png" alt="Cachorro brincando no prado." />
 ```
 
@@ -87,8 +86,8 @@ Aqui estão os passos para criar textos alternativos fabulosos!
 
 Pode parecer óbvio, mas um texto alternativo deve descrever uma imagem. Por exemplo:
 
-“Grupo de pessoas em uma estação de trem.”  
-“Bebê feliz brincando numa caixa de areia.”  
+“Grupo de pessoas em uma estação de trem.”
+“Bebê feliz brincando numa caixa de areia.”
 “Cinco pessoas na fila do supermercado.”
 
 As coisas que não pertencem a um texto alternativo são:
@@ -134,7 +133,7 @@ Uma dica que você pode incluir no texto alternativo e no final dela descrever o
 
 > “Cão pulando através de um aro. Ilustração.”
 
-### Fim com um período.
+### Fim com um período
 
 Termine um texto alternativo com um período. Isso tornará os leitores de tela em pausa um pouco após a última palavra no texto alternativo, o que cria uma experiência de leitura mais agradável para o usuário.
 
@@ -228,7 +227,7 @@ Existem dois caminhos principais para adicionar um SVG a uma página HTML
 
 - Dentro de um elemento img. Nesse caso, basta adicionar um texto alternativo como de costume:
 
-```
+```html
 <img src="dog.svg" alt="Cachorro brincando na grama." />
 ```
 
@@ -244,6 +243,6 @@ Facebook atualmente incluiu uma feature que descreve imagens automaticamente. M
 
 Então me desculpe, você ainda deve escrever textos alternativos!
 
-### Obrigado por criar uma web melhor!
+## Obrigado por criar uma web melhor
 
 Estou feliz por você ter lido até aqui! Isso quer dizer que você se importa em desenvolver uma web um ligar melhor para todos os usuários. Compartilhe o conhecimento e continue sendo incrível!

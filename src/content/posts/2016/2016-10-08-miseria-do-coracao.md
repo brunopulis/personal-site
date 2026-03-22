@@ -3,14 +3,9 @@ title: 'Miséria do Coração'
 excerpt: 'Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao…'
 pubDate: 2016-10-08T18:20:22.348Z
 tags: ['teologia']
-canonicalUrl: 'https://medium.com/@brunopulis/mis%C3%A9ria-do-cora%C3%A7%C3%A3o-ce7e4fd2871d'
 ---
 
-![](https://cdn-images-1.medium.com/max/2560/1*2zWx67YS_hDtaIjtJYKxOw.jpeg)
-
-[https://unsplash.com/photos/B32qg6Ua34Y](https://unsplash.com/photos/B32qg6Ua34Y)
-
-> Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao arrependimento.  
+> Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao arrependimento.
 > [Mateus 9:13](https://www.bibliaonline.com.br/acf/mt/9/13)
 
 Usamos a palavra misericórdia na maioria do tempo sem saber seu verdadeiro significado.
@@ -23,7 +18,7 @@ Quero que você leitor(a) entre na história comigo, Jesus ao entrar na porta da
 
 Jesus, porém, ao ver aquela cena fita nos olhos da viúva, percebe os detalhes da alma sofrida o Espírito o impele em profunda compaixão do coração (misericórdia) e ele traz o alívio para aquela alma sofredora com apenas uma frase:
 
-> **Não chores.**  
+> **Não chores.**
 > [Lucas 7:13](https://www.bibliaonline.com.br/acf/lc/7/13)
 
 Essa frase furiosa e destruidora das incertezas, dos lamentos e sofrimentos permeia seu coração, o Mestre toca no esquife e ordena o menino se levantar.
@@ -34,5 +29,5 @@ Te contei essa história, para ilustrar que a misericórdia ocorreu porque Jesus
 
 Que possamos seguir o exemplo do Grande Mestre em importar com o que realmente importa. E escutar os detalhes que a alma anseia e definitivamente sermos instrumentos de amor e justiça para as pessoas nesse mundo decaído e vil.
 
-> A coisa **principal** é fazer da coisa **principal** a coisa **principal**.  
+> A coisa **principal** é fazer da coisa **principal** a coisa **principal**.
 > [Pastor Neil Barreto](https://www.facebook.com/Pastor-Neil-Barreto-454197575084/)

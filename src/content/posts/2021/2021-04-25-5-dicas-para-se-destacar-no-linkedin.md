@@ -1,7 +1,5 @@
 ---
 title: Como construir um LinkedIn campeão
-image: '/assets/images/blog/ssi-linkedin.png'
-imageAlt: ''
 pubDate: 2021-04-25
 tags: ['carreira']
 ---
@@ -66,7 +64,7 @@ Opte por fotos que focam seu rosto, com um fundo colorido ou que faça contraste
 
 Ele gera diversos formatos para fotos de perfil, o resultado é como, por exemplo:
 
-![Free profile](/assets/images/blog/free-profile-pic.png)
+![Free profile](/assets/images/blog/free-profile-pic.webp)
 
 Percebo duas vantagens nesse serviço, Além de ser gratuito irá deixar sua foto na rede muito mais apresentável e profissional.
 

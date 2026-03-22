@@ -2,14 +2,10 @@
 title: 'As chamas da desesperança'
 excerpt: 'Talvez palavras não expressam o que está na garganta brasileira: a inquietação, o descaso e impunidade, perante o Museu Nacional.'
 pubDate: 2018-09-04T04:20:21.470Z
-draft: false
-isFeatured: false
 tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/as-chamas-da-desesperan%C3%A7a-d1ed254604d7'
 ---
 
-### As chamas da desesperança
+## As chamas da desesperança
 
 ![](https://cdn-images-1.medium.com/max/2560/1*IdaYlyH-R-KS5tkgsi10mA.jpeg)
 
@@ -23,21 +19,21 @@ O fogo foi cruel, como uma pintura da Roma antiga, Nero derruba mais um grande e
 
 Se o Brasil, fosse alguém seria um refugiado que perdeu sua identidade e nacionalidade. Restando apenas lembranças do tempo glorioso e um passado que traz saudosismo n'alma.
 
-Todos nós perdemos…  
-Roubaram um pedaço de mim (de nós), ó querido Brasil!   
+Todos nós perdemos…
+Roubaram um pedaço de mim (de nós), ó querido Brasil!
 Choro por nossa história ir tão triste assim.
 
-Ó Pátria amada  
-Idolatrada  
+Ó Pátria amada
+Idolatrada
 Salve! Salve!
 
-Até quando irão nos roubar?  
+Até quando irão nos roubar?
 Hoje somos como vasos quebrados esperando alguém que nos dê acalento e paz para almas perdidas nas desesperanças que o fogo nos trouxe.
 
 Mas no novo raiar do sol nos diz que não fugimos da luta pois tu és:
 
-Terra adorada  
-Entre outras mil  
-És tu, Brasil  
-Ó Pátria amada!  
+Terra adorada
+Entre outras mil
+És tu, Brasil
+Ó Pátria amada!
 Brasil

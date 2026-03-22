@@ -2,16 +2,10 @@
 title: 'A crença na descrença'
 excerpt: 'Quando a descrença se torna sua crença moral e religiosa'
 pubDate: 2017-08-04T11:59:46.389Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/a-cren%C3%A7a-na-descren%C3%A7a-3ffcd5e2c53d'
+tags: ['teologia']
 ---
 
-### A crença na descrença
-
-![](https://cdn-images-1.medium.com/max/2560/1*f47d0UvVTUebu35c5iL4hQ.jpeg)
+## A crença na descrença
 
 Sempre me questiono acerca da crença e da descrença.
 

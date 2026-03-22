@@ -2,14 +2,10 @@
 title: 'Apolônio de Éfeso'
 excerpt: 'Ele estava completamente familiarizado com a história de Éfeso e com os feitos dos montanistas frígios. O autor desconhecido de…'
 pubDate: 2018-01-26T12:01:01.524Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/apol%C3%B4nio-de-%C3%A9feso-cb08aee20479'
+tags: ['teologia']
 ---
 
-### Apolônio de Éfeso
+## Apolônio de Éfeso
 
 Ele estava completamente familiarizado com a história de Éfeso e com os feitos dos montanistas frígios. O autor desconhecido de _Praedestinatus_ afirma que ele era um bispo de Éfeso. Porém, a falta de apoio de outros escritores cristãos torna seu relato duvidoso. Ele se dedicou a defender a igreja contra Montano e seguiu os passos de Zótico de Comana (_Zoticus Comanus_), Juliano de Apameia (_Julianus Apamaea_), Sotas de Anquíalo (_Sotas Anchialus_) e Apolinário Cláudio.
 

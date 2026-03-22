@@ -7,8 +7,6 @@ tags: ['teologia']
 
 ## Leonard Ravenhill
 
-![](https://cdn-images-1.medium.com/max/800/1*ysEP-9eRFpT6ZhZ8vNrDHw.jpeg)
-
 Leonard Ravenhill e Martha Ravenhill em 1988.
 
 Ravenhill é um daqueles pregadores ou que você ama ou odeia, não existe meio termo ou politicamente correto com esse grande homem de Deus. Era um homem totalmente apaixonado pela causa de Cristo.
@@ -58,12 +56,10 @@ Se posso de dar um conselho, ouça, veja e medite nas palavras desse servo inspi
 
 ### Bibliografia
 
-[Wikipédia](https://pt.wikipedia.org/wiki/Leonard_Ravenhill)
-[Defesa do Evangelho](https://defesadoevangelho.com.br/categoria/leonard-ravenhill/)
+- [Wikipédia](https://pt.wikipedia.org/wiki/Leonard_Ravenhill)
+- [Defesa do Evangelho](https://defesadoevangelho.com.br/categoria/leonard-ravenhill/)
 
 Soli Deo Glória,
 @brunopulis
 
 Nos ajude a espalhar a palavra do Reino, deixe seu comentário e compartilhe nossas publicações.
-
-![](https://cdn-images-1.medium.com/max/800/1*Xs_n7rUQRbe-EszCS4oXRg.gif)
