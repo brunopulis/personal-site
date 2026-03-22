@@ -1,5 +1,5 @@
-import path from 'node:path';
 import Image from '@11ty/eleventy-img';
+import path from 'node:path';
 
 const stringifyAttributes = attributeMap => {
   return Object.entries(attributeMap)
@@ -23,26 +23,27 @@ const processImage = async options => {
     loading = 'lazy',
     containerClass,
     imageClass,
-    width,
-    height,
     widths = [650, 960, 1400],
-    sizes = 'auto',
-    formats = ['webp', 'jpeg', 'png']
+    sizes,
+    formats = ['avif', 'webp', 'jpeg']
   } = options;
+
+  // Set sizes based on loading (if not provided)
+  if (sizes == null) {
+    sizes = loading === 'lazy' ? 'auto' : '100vw';
+  }
 
   // Prepend "./src" if not present
   if (!src.startsWith('./src')) {
-    src = `./src/${src}`;
+    src = `./src${src}`;
   }
 
   const metadata = await Image(src, {
     widths: [...widths],
     formats: [...formats],
-    width,
-    height,
     urlPath: '/assets/images/',
-    outputDir: './_site/assets/images/',
-    filenameFormat: (_id, src, width, format, _options) => {
+    outputDir: './dist/assets/images/',
+    filenameFormat: (id, src, width, format, options) => {
       const extension = path.extname(src);
       const name = path.basename(src, extension);
       return `${name}-${width}w.${format}`;
@@ -71,6 +72,7 @@ const processImage = async options => {
   });
 
   const pictureElement = `<picture> ${imageSources}<img ${imageAttributes}></picture>`;
+
   return caption
     ? `<figure slot="image"${containerClass ? ` class="${containerClass}"` : ''}>${pictureElement}<figcaption>${caption}</figcaption></figure>`
     : `<picture slot="image"${containerClass ? ` class="${containerClass}"` : ''}>${imageSources}<img ${imageAttributes}></picture>`;
