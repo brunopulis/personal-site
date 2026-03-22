@@ -5,11 +5,7 @@ pubDate: 2017-08-01T03:26:54.826Z
 tags: ['teologia', 'oração']
 ---
 
-### Razões para se orar
-
-![](https://cdn-images-1.medium.com/max/2560/1*oN-NHSTvomjk1ShEK0gFiw.jpeg)
-
-Foto por [Ben White](https://unsplash.com/photos/iWv-bGqUfao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+## Razões para se orar
 
 > E, quando orares, não sejas como os hipócritas; pois se comprazem em orar em pé nas sinagogas, e às esquinas das ruas, para serem vistos pelos homens. Em verdade vos digo que já receberam o seu galardão. Mas quando você orar, vá para seu quarto, feche a porta e ore a seu Pai, que está no secreto. Então seu Pai, que vê no secreto, o recompensará.
 

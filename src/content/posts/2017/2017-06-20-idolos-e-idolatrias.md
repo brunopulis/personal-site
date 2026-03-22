@@ -7,8 +7,6 @@ tags: ['teologia']
 
 ## Ídolos e idolatrias
 
-![](https://cdn-images-1.medium.com/max/800/1*3O2IETrBZuVL_CLVpKDYjQ.jpeg)
-
 “A adoração do [Bezerro de Ouro](https://pt.wikipedia.org/wiki/Bezerro_de_Ouro 'Bezerro de Ouro')”, de [Nicolas Poussin](https://pt.wikipedia.org/wiki/Nicolas_Poussin 'Nicolas Poussin').
 
 Desde o Gênese da criação, o homem tem a tendência maligna em criar ídolos para si, João Calvino costuma dizer: "**O coração do homem é uma fábrica de ídolos**". Vemos em toda as Escrituras a prática e concepção da idolatria ser veementemente censurada por Deus.
@@ -52,8 +50,6 @@ Em nossa pós-modernidade temos novas idolatrias como: **hedonismo, tecnologia, 
 
 Outra forma de idolatria é criar as próprias regras de adoração desobedecendo as ordenanças bíblicas de como a fazer.
 
-![](https://cdn-images-1.medium.com/max/800/1*I5hPAaDrVGJOx6MZ_PxDQw.jpeg)
-
 A idolatria não está ligada somente associada ao objeto de adoração, mas existe uma ligação com a imoralidade e adultério.
 
 Existe essa ligação ao adultério espiritual, por causa da imoralidade que só acontece porque o desejo da carne se torna superior ao do relacionamento com Deus e do culto ao seu nome.
@@ -74,5 +70,3 @@ Confessar e deixar o pecado que tão de perto nos seduz e rodeia e trilhar camin
 
 Soli Deo Glória,
 @brunopulis
-
-![](https://cdn-images-1.medium.com/max/800/1*Xs_n7rUQRbe-EszCS4oXRg.gif)

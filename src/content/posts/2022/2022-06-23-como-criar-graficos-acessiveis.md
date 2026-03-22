@@ -1,10 +1,6 @@
 ---
 title: Como criar gráficos acessíveis
-image: ''
-imageAlt: ''
 pubDate: 2022-06-23
-category: 'Acessibilidade'
-url: https://brunopulis.com/como-criar-graficos-acessiveis/
 tags: ['a11y']
 ---
 

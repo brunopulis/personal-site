@@ -32,21 +32,22 @@ No livro “Proibindo a entrada de pessoas perfeitas” a um trecho que conta de
 
 Eis o trecho:
 
-> > Querida Igreja,
-> > Eu tenho um segredo para contar a vocês. Sou homossexual. Lamento não ter contado antes, mas eu temia a reação de vocês. Já vivi isso antes. Tenho sido o assunto de discussões entre pessoas que eu considerava amigos íntimos, e eu perdi alguns deles por causa disso. Alguns choraram, me abraçaram e desde então têm sido fonte de apoio e amor incondicional. Outros choraram e foram embora, sem saber o que dizer, pelo menos na minha cara. Três palavrinhas… “Eu sou gay” e de repente pessoas que eu conhecia havia anos, com as quais conversava quase diariamente, ria e chorava, que foram companheiros em tempos difíceis, viraram as costas e se afastaram de mim.
-> > **Proibindo a Entrada de Pessoas Perfeitas pág.185**
-> > O que mais me intriga é aquela pergunta:
-> > **“E se Jesus estivesse aqui, o que ele ia fazer no caso de Paloma?”**
-> > Nossa querida Paloma nos mostra uma dura realidade, *a igreja não está preparada para inserir essas pessoas no seu contexto religioso.*
-> >
-> > - Não estamos preparados por que exalamos hipocrisia ao invés de santidade e amor, Jesus repudiava fortemente a hipocrisia (Mt 23).
-> > - Não estamos preparados por que escondemos nossos rostos para a realidade de nossa era.
-> > - Não estamos preparados por que criamos uma cultura para nosso povo e esquecemos dos lá de fora.
-> >   Por essas e outras razões, nos desculpem a tantas Palomas que repudiamos e rejeitamos e não tratamos com honestidade e dignidade e amor, nós como igreja temos falhado, nos perdoe por sermos tão egoístas.
-> >   \_O que nos resta é clamar a misericórdia de Deus.
+> Querida Igreja,
+> Eu tenho um segredo para contar a vocês. Sou homossexual. Lamento não ter contado antes, mas eu temia a reação de vocês. Já vivi isso antes. Tenho sido o assunto de discussões entre pessoas que eu considerava amigos íntimos, e eu perdi alguns deles por causa disso. Alguns choraram, me abraçaram e desde então têm sido fonte de apoio e amor incondicional. Outros choraram e foram embora, sem saber o que dizer, pelo menos na minha cara. Três palavrinhas… “Eu sou gay” e de repente pessoas que eu conhecia havia anos, com as quais conversava quase diariamente, ria e chorava, que foram companheiros em tempos difíceis, viraram as costas e se afastaram de mim.
+> **Proibindo a Entrada de Pessoas Perfeitas pág.185**
+> O que mais me intriga é aquela pergunta:
+> **“E se Jesus estivesse aqui, o que ele ia fazer no caso de Paloma?”**
+> Nossa querida Paloma nos mostra uma dura realidade, *a igreja não está preparada para inserir essas pessoas no seu contexto religioso.*
 >
-> > \_E como o mestre disse certa vez:
-> >
-> > > _Se alguém vier a mim de maneira nenhuma, eu o lançarei fora._
-> > > Na Paz,
-> > > @brunopulis
+> - Não estamos preparados por que exalamos hipocrisia ao invés de santidade e amor, Jesus repudiava fortemente a hipocrisia (Mt 23).
+> - Não estamos preparados por que escondemos nossos rostos para a realidade de nossa era.
+> - Não estamos preparados por que criamos uma cultura para nosso povo e esquecemos dos lá de fora.
+>    Por essas e outras razões, nos desculpem a tantas Palomas que repudiamos e rejeitamos e não tratamos com honestidade e dignidade e amor, nós como igreja temos falhado, nos perdoe por sermos tão egoístas.
+> \_O que nos resta é clamar a misericórdia de Deus.
+>
+> \_E como o mestre disse certa vez:
+>
+> *Se alguém vier a mim de maneira nenhuma, eu o lançarei fora.*
+
+Na Paz,
+@brunopulis

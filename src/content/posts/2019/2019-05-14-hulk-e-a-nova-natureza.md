@@ -2,18 +2,14 @@
 title: 'Hulk e a nova natureza'
 excerpt: 'O que Hulk, pode nos ensinar acerca da temperança da vida?'
 pubDate: 2019-05-14T01:10:02.997Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/s%C3%A9rie-avengers-hulk-e-a-nova-natureza-a749f6565317'
+tags: ['teologia']
 ---
 
-### Hulk e a nova natureza
+## Hulk e a nova natureza
 
 ![](https://cdn-images-1.medium.com/max/2560/1*BF2k_Lef94da_Hf3LLhzqg.jpeg)
 
-### O que Hulk, pode nos ensinar acerca da temperança da vida?
+## O que Hulk, pode nos ensinar acerca da temperança da vida?
 
 Hulk talvez seja uma das figuras mais marcantes do mundo dos quadrinhos. Sempre se apresenta com expressões bem traçadas e vívidas. Uma de suas grandes características é a raiva — essa que, quando motivada, toma conta de todo o ser de Bruce Banner, enquanto sua genialidade sai de cena.
 
@@ -22,7 +18,6 @@ Banner vive um dilema que muito de nós no mundo moderno vivemos: **a falta de e
 Coincidentemente, a Bíblia descreve perfeitamente esse estado de falta de equilíbrio desde suas primeiras páginas. Na queda da humanidade perdemos o equilíbrio e fomos fadados ao preço do pecado, a saber, a morte espiritual:
 
 > Porque todos pecaram e destituídos estão da glória de Deus;
-
 > [Romanos 3:23](https://www.bibliaonline.com.br/acf/rm/3/23+)
 
 A humanidade, assim como Hulk, age com sua natureza corrompida deixando ser o norte de suas vidas. A doutrina da depravação total é um exemplo claro dessa natureza corrompida.
@@ -42,8 +37,7 @@ O prazer pela desordem e desequilíbrio já não são características do “nov
 Talvez nossa rebelião seja apenas um grito de agonia, para que a paz invada nosso ser em toda sua completude, trazendo a nós graça e harmonia.
 
 > Deixo-lhes a paz; a minha paz lhes dou. Não a dou como o mundo a dá. Não se perturbem os seus corações, nem tenham medo.
-
 > [João 14:27](https://www.bibliaonline.com.br/nvi/jo/14/27+)
 
-Na paz,  
+Na paz,
 Bruno Pulis

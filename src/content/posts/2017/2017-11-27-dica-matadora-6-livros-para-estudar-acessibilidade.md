@@ -3,10 +3,9 @@ title: 'Dica matadora: 6 livros para estudar acessibilidade web'
 excerpt: 'Neste artigo irei mostrar uma lista de livros para você que se interessa pelo assunto, são livros excelentes e recomendados…'
 pubDate: 2017-11-27T13:32:34.220Z
 tags: ['a11y']
-canonicalUrl: 'https://medium.com/@brunopulis/dica-matadora-6-livros-para-estudar-acessibilidade-web-b29a20b6053a'
 ---
 
-### Dica matadora: 6 livros para estudar acessibilidade web
+## Dica matadora: 6 livros para estudar acessibilidade web
 
 ![](https://cdn-images-1.medium.com/max/2560/1*M1MRvrZVPQL-r7yO6NGygg.jpeg)
 

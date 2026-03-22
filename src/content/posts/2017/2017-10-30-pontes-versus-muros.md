@@ -2,18 +2,12 @@
 title: 'Pontes versus muros'
 excerpt: 'E ali haverá uma grande estrada, um caminho que será chamado Caminho de Santidade. Os impuros não passarão por ele; servirá apenas aos que…'
 pubDate: 2017-10-30T10:54:16.036Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/pontes-versus-muros-7f32f3433d79'
+tags: ['teologia']
 ---
 
-### Pontes versus muros
+## Pontes versus muros
 
-![](https://cdn-images-1.medium.com/max/2560/1*_TNDfRk9Khz65Gx2QJcduA.jpeg)
-
-> E ali haverá uma grande estrada, um caminho que será chamado Caminho de Santidade. Os impuros não passarão por ele; servirá apenas aos que são do Caminho; os insensatos não o tomarão.  
+> E ali haverá uma grande estrada, um caminho que será chamado Caminho de Santidade. Os impuros não passarão por ele; servirá apenas aos que são do Caminho; os insensatos não o tomarão.
 > Isaías 35:8 NVI
 
 Desde os tempos mais remotos os homens tentam contato com o transcendente, intangível e sobrenatural. Ora, por manifestações religiosas, culturais e sociais.

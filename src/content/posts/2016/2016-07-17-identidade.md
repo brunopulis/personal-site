@@ -1,7 +1,6 @@
 ---
 title: Identidade
 pubDate: 2016-07-17
-url: https://brunopulis.com/identidade/
 tags: ['pessoal']
 ---
 

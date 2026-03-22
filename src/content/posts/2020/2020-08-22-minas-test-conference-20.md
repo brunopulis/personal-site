@@ -1,8 +1,7 @@
 ---
 title: Minas Test Conference 20
 pubDate: 2020-08-22
-tags: ['indicações']
-url: https://brunopulis.com/review-minas-test-conference-20/
+tags: ['indicações', 'review', 'eventos']
 ---
 
 ## Introdução
@@ -33,7 +32,7 @@ Mesmo com esse contratempo, a organização se preocupou tornar o evento mais in
 
 Essa palestra infelizmente eu não acompanhei desde o início, porém, do momento que comecei a acompanhar até o final me agradou bastante. [Leonardo](https://www.linkedin.com/in/leonardogalani/) e [Ramses](https://www.linkedin.com/in/rsaccoll/) com maestria tocaram em pontos importantíssimos sobre **fundamentos** da engenharia de software e como podemos aplicá-los no nosso cotidiano.
 
-https://youtu.be/Ab5tEM3YG1c
+<https://youtu.be/Ab5tEM3YG1c>
 
 ### O mindset de consultor – O que as empresas buscam nos profissionais de qualidade de software?
 
@@ -41,7 +40,7 @@ Marcelo, veio com uma abordagem mais holística sobre a carreia de consultor de 
 
 Abriu meus olhos para enxergar como alguém que contribui além do código ou de técnicas. Ficou claro, que podemos contribuir com a gestão de uma forma mais assertiva. A lição que tirei dessa palestra foi: **saia fora da caixa**.
 
-https://youtu.be/UK2UDdcEhvM
+<https://youtu.be/UK2UDdcEhvM>
 
 ### Test Driven Development: uma ferramenta para controlar a ansiedade
 
@@ -54,7 +53,7 @@ Mostrou as duas escolas sobre a metodologia e deixou ainda duas referências de 
 
 Além disso, fez um hands-on em como aplicar o TDD em uma funcionalidade. Deixou bem claro em como a metodologia pode contribuir para termos maior controle e previsibilidade de funcionalidades que porventura iremos desenvolver.
 
-https://youtu.be/F-smhcndyig
+<https://youtu.be/F-smhcndyig>
 
 ### A importância da automação e como fazer isso utilizando o Testcafe
 
@@ -64,7 +63,7 @@ Ainda fez um hands-on e funcionou tudo de forma perfeita.
 
 Queria dar meus parabéns para a organização e a todos que apoiaram a Tais num momento de nervosismo, o espirito de comunidade e empatia falou muito mais alto e isso e louvável, poucos eventos têm essa sutileza com os palestrantes.
 
-https://youtu.be/R4I1L3SkDwg
+<https://youtu.be/R4I1L3SkDwg>
 
 ### Reduzindo o escopo da analise de resultados de testes de carga usando Machine Learning
 
@@ -74,7 +73,7 @@ A palestra se assemelhava a uma aula de faculdade daquelas que todos gostam. Al�
 
 Um mundo de possibilidades foi aberto e diversas pessoas surtaram com novas possibilidades. E como sempre o Júlio, nos deixa reflexivos sobre estudar os fundamentos, aliar o fundamento teórico a prática.
 
-https://youtu.be/xPI9RWIrSz4
+<https://youtu.be/xPI9RWIrSz4>
 
 ### Automação de testes utilizando braço robô
 
@@ -94,7 +93,7 @@ Comentou também sobre o uso indevido de informações dos usuários nas redes s
 
 Foi uma palestra diferente, com um olhar de um outro ângulo. O ensinamento que permeiou foi que podemos absorver muito com o marketing e o monitoramento de redes sociais para atuarmos de uma forma melhor.
 
-https://youtu.be/z\_sPUMSJv6E
+<https://youtu.be/z\_sPUMSJv6E>
 
 ### Tabuleiro acessível: o diferencial da inclusão a partir de jogos analógicos
 
@@ -108,7 +107,7 @@ Será que as empresas pensam e veem eles como possíveis consumidores de jogos d
 
 Sai dela pensativo em como podemos contribuir para o avanço de um projeto tão bonito como esse.
 
-https://youtu.be/0s\_ZrV5cV6g
+<https://youtu.be/0s\_ZrV5cV6g>
 
 ### AWS for Testers – Como se beneficiar dos serviços da AWS para analisar possíveis bugs
 
@@ -122,7 +121,7 @@ Além da AWS, também demonstrou como realizar requisições de API usando o Pos
 
 Sai da apresentação, pensando que segunda-feira quero descobrir qual a arquitetura da AWS que usamos e como posso contribuir para a melhoria contínua do produto.
 
-https://youtu.be/i\_WHRK7I7Fs
+<https://youtu.be/i\_WHRK7I7Fs>
 
 ### From zero to hero implantando processos ágeis de qualidade
 
@@ -134,7 +133,7 @@ Salientou que esse modelo pode ser adaptativo e variar de acordo com o contexto.
 
 > Baixa produtividade é um problema de gestão.
 
-https://youtu.be/INW8TkkC4pE
+<https://youtu.be/INW8TkkC4pE>
 
 ### QA OPS: O QA colaborando em um time DevOps
 
@@ -144,7 +143,7 @@ O mais interessante para mim, foi a forma como foi abordado o tema. A explicaç�
 
 Sanou diversas dúvidas que tinha sobre o assunto e segunda-feira também vou começar a vasculhar as pipelines para promover algumas melhorias.
 
-https://youtu.be/PzlA9WfV24w
+<https://youtu.be/PzlA9WfV24w>
 
 ## Considerações finais
 

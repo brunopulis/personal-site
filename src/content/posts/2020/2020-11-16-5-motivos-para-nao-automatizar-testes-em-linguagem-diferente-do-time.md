@@ -1,11 +1,10 @@
 ---
 title: 5 motivos para não automatizar testes em linguagem diferente do time
-image: ''
-imageAlt: ''
 excerpt: Descobertas com automacao de software
 pubDate: 2020-11-16
-category: 'Qualidade'
-tags: ['automação']
+tags:
+  - QA
+  - Automação
 ---
 
 Automatizar cenários de teste é uma parte integrante de nossa atuação como profissionais focados em qualidade. Em um contexto ágil é de extrema importância, pois, contribui para promover e permear a qualidade no projeto.
@@ -18,7 +17,7 @@ Neste artigo irei elencar alguns pontos para uma escolha consciente de ferrament
 
 ## Pontes ao invés de muros
 
-![](@assets/images/blog/pontes.webp)
+![](/assets/images/blog/pontes.webp)
 
 [Imagem por creativeart](https://www.freepik.com/free-photo/wood-standing-blank-arms-crossed-understanding_1077755.htm#query=pontes&position=18&from_view=search) em Freepik
 

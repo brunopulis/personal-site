@@ -5,7 +5,7 @@ pubDate: 2020-09-02T21:13:07.000Z
 tags: ['a11y']
 ---
 
-### Seis maiores erros de acessibilidade digital
+## Seis maiores erros de acessibilidade digital
 
 ![Seis maiores erros de acessibilidade digital](https://cdn-images-1.medium.com/max/800/1*gEAqPCtml_CoO4YW7a2X-Q.jpeg)
 
@@ -112,7 +112,7 @@ O atributo `placeholder` é uma string que fornece uma breve dica ao usuário qu
 
 > Nota: O atributo placeholder não é semanticamente útil como outras maneiras de explicar seu formulário e pode causar problemas técnicos inesperados com seu conteúdo.
 
-> *Vale lembrar, para rotular um formulário o elemento correto para ser usado é o* `_label_`
+> _Vale lembrar, para rotular um formulário o elemento correto para ser usado é o_ `_label_`
 
 ### Exemplo correto
 

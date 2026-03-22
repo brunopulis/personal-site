@@ -8,7 +8,7 @@ canonicalUrl: 'https://medium.com/@brunopulis/avaliadores-automaticos-c47262e65b
 
 ## Avaliadores automáticos
 
-#### procurando bug's de acessibilidade no seu site
+### Procurando bug's de acessibilidade no seu site
 
 Após você ter desenvolvido seu site chega a hora de testar sintaticamente o Markup dele para isso eu separei alguns dos validadores que considero que sejam de grande valia e de fácil entendimento para resolverem problemas comuns da acessibilidade na web.
 

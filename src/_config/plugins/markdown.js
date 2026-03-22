@@ -47,9 +47,13 @@ export const markdownLib = markdownIt({
   .use(md => {
     md.renderer.rules.image = (tokens, idx) => {
       const token = tokens[idx];
-      const src = token.attrGet('src');
+      let src = token.attrGet('src');
       const alt = token.content || '';
       const caption = token.attrGet('title');
+
+      if (src && src.startsWith('@assets/')) {
+        src = src.replace('@assets/', '/assets/');
+      }
 
       // Collect attributes
       const attributes = token.attrs || [];

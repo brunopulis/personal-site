@@ -1,51 +1,46 @@
 ---
 title: "Eu e meus 30 anos"
-excerpt: "A alma já não tem o folêgo da juventude poeril,
-o cansaço toma conta…"
+excerpt: "A alma já não tem o folêgo da juventude poeril, o cansaço toma conta…"
 pubDate: 2018-11-13T02:27:11.760Z
-draft: false
-isFeatured: false
-tags: []
-category: "blog"
-canonicalUrl: "https://medium.com/@brunopulis/eu-e-meus-30-anos-8bb21e130014"
+tags: ['reflexão', 'pessoal']
 ---
 
-### Eu e meus 30 anos
+## Eu e meus 30 anos
 
 ![](https://cdn-images-1.medium.com/max/2560/1*lzQNIuXO-9mYRg7yaUBG5g.jpeg)
 
 Foto por [Clément M.](https://unsplash.com/photos/sNyFgVJ72is?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/road?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-A alma já não tem o folêgo da juventude poeril,  
+A alma já não tem o folêgo da juventude poeril,
 o cansaço toma conta…
 
-tantas coisas não fazem mais sentido,  
+tantas coisas não fazem mais sentido,
 outras mal se encaixam.
 
-tantas dúvidas,  
+tantas dúvidas,
 incertas...
 
-prudência é a palavra,  
-para trilhar rumo ao desconhecido.  
+prudência é a palavra,
+para trilhar rumo ao desconhecido.
 lucidez é o que devemos ter.
 
-e a gente sorri   
-para o idoso casal no elevador,  
-uma árvore bonita  
-uma poesia  
+e a gente sorri
+para o idoso casal no elevador,
+uma árvore bonita
+uma poesia
 o sorriso sem graça de uma garota.
 
-já não há espaços para metades,  
+já não há espaços para metades,
 mas por inteiros.
 
-mesmo que seja um inteiro partido,  
+mesmo que seja um inteiro partido,
 destroçado pela vida.
 
-dizem os bons poetas,  
+dizem os bons poetas,
 que abraço cura.
 
-abrace suas dores,  
-suas felicidades,  
+abrace suas dores,
+suas felicidades,
 seus amores…
 
 e viva e vá ser gauchê na vida.

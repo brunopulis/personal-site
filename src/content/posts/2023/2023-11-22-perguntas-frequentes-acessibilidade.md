@@ -1,7 +1,7 @@
 ---
 title: 11 Perguntas frequentes sobre acessibilidade
 pubDate: 2023-11-22
-tags: ['dúvidas']
+tags: ['dúvidas', 'a11y']
 ---
 
 Acessibilidade é um tema em alta, por isso, traduzi as perguntas frequentes sobre acessibilidade.

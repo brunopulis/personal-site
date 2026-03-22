@@ -1,7 +1,6 @@
 ---
 title: Meus aplicativos de 2024
 pubDate: 2024-12-31
-category: 'Pessoal'
 tags:
   - Pessoal
   - Apps

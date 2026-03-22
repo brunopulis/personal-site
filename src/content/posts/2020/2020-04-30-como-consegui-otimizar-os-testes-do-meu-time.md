@@ -1,12 +1,9 @@
 ---
 title: 'PHPUnit: como otimizar a performance dos testes'
-image: ''
-imageAlt: ''
 pubDate: 2020-04-30
-category: 'Qualidade'
-url: https://brunopulis.com/como-consegui-otimizar-os-testes-do-meu-time/
 tags:
-  - qualidade-de-software
+  - QA
+  - Automação
 ---
 
 Testes são uma das partes mais importantes na concepção de um produto digital. Através deles obtemos garantia que determinada funcionalidade cumpre com os requisitos e atende ao cliente de maneira satisfatória.
@@ -68,11 +65,11 @@ Existem algumas formas de criar esse filtro, eu criei o filtro baseado nesse [ar
 
 Esses são alguns relatos de pessoas que usaram os filtros:
 
-> This is the effect on the unit test suite of [@opencfp](https://twitter.com/opencfp?ref_src=twsrc%5Etfw) with/out xdebug filter. 44.39 vs. 15.34 seconds. I’d call that “much faster”. Great job [@derickr](https://twitter.com/derickr?ref_src=twsrc%5Etfw)!  
+> This is the effect on the unit test suite of [@opencfp](https://twitter.com/opencfp?ref_src=twsrc%5Etfw) with/out xdebug filter. 44.39 vs. 15.34 seconds. I’d call that “much faster”. Great job [@derickr](https://twitter.com/derickr?ref_src=twsrc%5Etfw)!
 > (Integration tests were omitted) [pic.twitter.com/LeNdaxBOOV](https://t.co/LeNdaxBOOV)
 >
 > — Holger W🌞ltersdorf (@hollodotme) [January 17, 2018](https://twitter.com/hollodotme/status/953719914686242816?ref_src=twsrc%5Etfw)
-> Without the filter 6 seconds  
+> Without the filter 6 seconds
 > With the filter about 4.9 seconds
 >
 > Anyway specifically you want me to beta test? 🙂

@@ -2,14 +2,10 @@
 title: 'A Soberania divina em frente ao escárnio público'
 excerpt: 'Em tempos festivos como o carnaval, a máxima de “tudo é permitido” povoa as avenidas, ruas e bares espalhados pelas cidades.'
 pubDate: 2019-03-06T14:21:01.615Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/a-soberania-divina-em-frente-ao-esc%C3%A1rnio-p%C3%BAblico-f6a228533cf'
+tags: ['teologia']
 ---
 
-### A Soberania divina em frente ao escárnio público
+## A Soberania divina em frente ao escárnio público
 
 ![](https://cdn-images-1.medium.com/max/2560/1*98XThlYi7SLJaPfL2gHBSw.jpeg)
 
@@ -19,7 +15,7 @@ Talvez o carnaval, uma das grandes paixões do brasileiro, seja uma forma de ext
 
 A pergunta que ressoa é: **_há moralidade na diversão?_**
 
-### O corinthianismo
+## O corinthianismo
 
 Recentemente o Corinthians, criou uma campanha chamada **“corinthianismo”**, onde o intuito aparente era comparar a paixão pelo time com um devoto religioso. Porém, a mensagem da campanha é de cunho apelativo e beirando ao vilipêndio religioso.
 
@@ -27,21 +23,18 @@ Nela podemos ver claramente, alusões da vida e obra de Cristo, tais como: o cam
 
 Mas a campanha nos aponta para uma questão muito mais profunda: **a necessidade de adoração**.
 
-### Seres humanos: seres cúlticos
+## Seres humanos: seres cúlticos
 
-Desde a sua criação o ser humano é um ser dotado de: **veneração**.  
+Desde a sua criação o ser humano é um ser dotado de: **veneração**.
 No trecho de Gênesis 1:26–27, encontramos a criação do homem:
 
 > E disse Deus: Façamos o homem à nossa **imagem**, conforme a nossa **semelhança**; e domine sobre os peixes do mar, e sobre as aves dos céus, e sobre o gado, e sobre toda a terra, e sobre todo o réptil que se move sobre a terra.
-
 > E criou Deus o homem à sua **imagem**; à **imagem** de Deus o criou; homem e mulher os criou.
-
 > Gênesis 1:26,27
 
 Note que o texto sugere uma profundidade da pessoalidade divina, a essência do divino. Encontramos também vestígios disso em Eclesiastes:
 
 > Ele fez tudo apropriado ao seu tempo. Também pôs no coração do homem o **anseio pela eternidade**; mesmo assim ele não consegue compreender inteiramente o que Deus fez.
-
 > Eclesiastes 3:11
 
 Esse anseio nos mostra que o homem em sua totalidade é um ser que foi criado para prestar culto e buscar sentido e significado para sua existência. Somos seres, por essência, religiosos.
@@ -85,9 +78,7 @@ Em contrapartida, Cristo é todo poderoso e majestoso, verificado em diversas pa
 A W Pink, em seu livro “Deus é Soberano”, pontua uma definição para o termo:
 
 > Soberania de Deus! Que queremos dizer com essa expressão?
-
 > Queremos afirmar a supremacia de Deus, realeza de Deus, a divindade de Deus. Dizer que Deus é soberano é declarar que Deus é Deus. Dizer que Deus é soberano é declarar que ele é o Altíssimo, o qual tudo faz segundo sua vontade no exército dos céus e entre os moradores da terra; "Não há quem possa deter a mão, nem lhe dizer: Que fazer? (Dn 4:35).
-
 > Dizer que Deus é soberano é declarar que ele é onipotente, possuidor de todo poder nos céus e na terra, de tal maneira que ninguém pode impedir seus conselhos, contrariar os seus propósitos ou resistir a sua vontade (Sl 115:3)\[1\]
 
 Na atualidade há um esforço grande para a emancipação da religião e tudo quanto diz respeito a ela. Excluíram Deus, de suas vidas e negaram todos os valores morais e éticos em nome de uma liberdade que será encontrada somente com o Altíssimo.
@@ -101,10 +92,9 @@ Um desfile de uma escola de samba, financiada por um time de futebol, não abala
 Como dizem por ai: “vamos ser a resistência”. Nós cristãos seremos a resistência contra a maldade e impiedades que assolam o mundo moderno, que decidiu abandonar o Criador e viver pra si mesmo.
 
 > Porque não temos que lutar contra a carne e o sangue, mas, sim, contra os principados, contra as potestades, contra os príncipes das trevas deste século, contra as hostes espirituais da maldade, nos lugares celestiais.
-
 > [Efésios 6:12](https://www.bibliaonline.com.br/acf/ef/6/12+)
 
-Na paz,  
+Na paz,
 @brunopulis
 
 ### Referências Bibliográfica

@@ -7,10 +7,6 @@ tags: ['teologia']
 
 ## Tipos de pregadores
 
-O pregador de tópicos
-
-![](https://cdn-images-1.medium.com/max/800/1*mPgIEfmcjnw6aZfKwtTGhg.jpeg)
-
 Hoje iremos analisar os tipos de pregadores existentes dentro da igreja e como identificá-los.
 
 ### O pregador de tópicos
@@ -35,8 +31,6 @@ De acordo com o texto eu extraio alguns tópicos como:
 Toda sua pregação será desenvolvida em cima dos 4 tópicos que apontamos acima. Irei fazer um esboço do tema Unção, demonstrando
 
 ### É dada por Deus
-
-![](https://cdn-images-1.medium.com/max/800/1*H94Ov0_QL3oIHfUx7yfYSA.png)
 
 Em toda a Bíblia vemos que a unção é dada por Deus, porém, no Antigo Testamento era derramada somente a uma classe restrita de pessoas:
 
@@ -65,13 +59,9 @@ Nesse tópico, poderíamos dar o exemplo de Jesus, Moisés, Jacó (ao esperar Re
 
 Neste tópico poderíamos pegar a Missio Dei (Missão de Deus) Mc 16:15 o famoso e grande IDE para a igreja e sua aplicação na vida do cristão de modo cotidiano.
 
-![](https://cdn-images-1.medium.com/max/800/1*so8GXrf8I7mwSoFsxVRLiQ.jpeg)
-
 Aqui, seria perfeito para exemplos práticos do IDE e testemunhos do que Deus fez e está fazendo na vida da Igreja e na sua também.
 
 ### Restaurar a vida dos que sofrem
-
-![](https://cdn-images-1.medium.com/max/800/1*9YEu7w21BICdI6OHCPiHeA.png)
 
 Encerramos com uma palavra sobre como a unção nos capacita para realizar a missão e resgatar os perdidos e doentes.
 
@@ -81,5 +71,3 @@ Soli Deo Gloria,
 Bruno Pulis
 
 Gostou? Compartilhe e espalhe a mensagem divina
-
-![](https://cdn-images-1.medium.com/max/800/1*Xs_n7rUQRbe-EszCS4oXRg.gif)

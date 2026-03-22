@@ -1,8 +1,10 @@
 ---
 title: 'Uma doença chamada conteúdo curto'
 pubDate: 2024-10-02
-image: '/assets/images/blog/social-midia-scaled.jpg'
 excerpt: 'Como o conteúdo curto nos viciou e quais são as alternativas para sair dessa loucura.'
+tags:
+  - Reflexão
+  - Redes Sociais
 ---
 
 Nesse artigo vou te contar a minha história com produção de conteúdo e como o conteúdo curto me atrapalhou.
@@ -26,7 +28,7 @@ Alguns anos se passaram e outras redes sociais surgiram, como:
 - Facebook;
 - Instagram.
 
-Todas elas com um único propósito: **mantê-lo o maior tempo possível dentro de suas plataformas**.  
+Todas elas com um único propósito: **mantê-lo o maior tempo possível dentro de suas plataformas**.
 Isso ajudou todas elas serem negócios milionários, cada uma teve seu auge.
 
 Aliás, saudades do Orkut, suas comunidades e scraps.
@@ -49,7 +51,7 @@ Somos bombardeados todos os dias com excesso de informação inútil. Não temos
 
 No meu ponto de vista, o Instagram tem vários problemas, o que mais me prejudicou como criador de conteúdo foi ter que sintetizar conteúdo.
 
-Parece que não consigo criar um conteúdo mais denso, fico procurando cortar e diminuir o tempo inteiro.  
+Parece que não consigo criar um conteúdo mais denso, fico procurando cortar e diminuir o tempo inteiro.
 Efeitos do conteúdo curto.
 
 Percebo também como é difícil sintetizar pensamentos mais profundos. Fiquei bem pensativo acerca dessas situações e dei de cara com esse vídeo do Elton.
@@ -62,7 +64,7 @@ Depois de ouvir o Elton, li o texto do Alexandre Zara: [Guia de conteúdo para n
 
 Zara e Elton, conseguiram colocar palavra por palavra de algo que sentia e não conseguia expressar. Me via preso nesse ciclo vicioso e dopaminérgico sem fim.
 
-Por isso, vou concentrar meus esforços em outras redes sociais, voltadas para conteúdos densos e ricos.  
+Por isso, vou concentrar meus esforços em outras redes sociais, voltadas para conteúdos densos e ricos.
 Talvez publique vez ou outra no Instagram, sem compromissos.
 
 ## Conclusão e nova estratégia

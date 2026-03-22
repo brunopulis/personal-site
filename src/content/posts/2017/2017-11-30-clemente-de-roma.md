@@ -2,14 +2,10 @@
 title: 'Clemente de Roma'
 excerpt: 'São Clemente I, também conhecido como Clemente Romano (em latim, Clemens Romanus), foi o quarto papa do Cristianismo da Igreja Romana…'
 pubDate: 2017-11-30T23:59:03.350Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/clemente-de-roma-74ab14af843b'
+tags: ['teologia']
 ---
 
-### Clemente de Roma
+## Clemente de Roma
 
 ![](https://cdn-images-1.medium.com/max/800/1*OB2BeNQ_QaVgQ_cA047Ikg.jpeg)
 

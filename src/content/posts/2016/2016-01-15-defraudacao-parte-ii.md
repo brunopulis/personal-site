@@ -8,9 +8,7 @@ canonicalUrl: 'https://medium.com/@brunopulis/defraudacao-parte-ii-312703587849'
 
 ## Defraudação Parte II: As consequências daquilo que você chama de joguinho
 
-![](https://cdn-images-1.medium.com/max/2560/1*Kf8ZL_X5KrDbunosShjLuA.jpeg)
-
-Pois bem no [artigo passado](https://medium.com/reflexao-diaria/defraudacao-4d8257c051c#.ixsvbd4q4) retratamos a definição e conceito de defraudação do ponto de vista bíblico e como sua prática é corriqueira nos nossos dias.
+Pois bem no [artigo passado](https://brunopulis.com/blog/defraudacao-parte-i) retratamos a definição e conceito de defraudação do ponto de vista bíblico e como sua prática é corriqueira nos nossos dias.
 
 Quero tocar num ponto que com certeza muita gente vai ficar mordida. Os famosos **joguinhos amorosos ou joguinhos de conquista.** Em primeiro lugar já soa muito estranho ter joguinhos desse tipo dentro da Igreja.
 
