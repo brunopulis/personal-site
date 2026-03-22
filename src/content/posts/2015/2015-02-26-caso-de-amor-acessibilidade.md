@@ -4,7 +4,7 @@ pubDate: 2015-02-26
 tags: ['a11y']
 ---
 
-![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](@assets/images/blog/stormtropper.avif)
+![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](/assets/images/blog/stormtropper.avif)
 
 Aos que me conhecem sabem que eu sou defensor de uma **Web inclusiva** e não exclusiva, por isso luto pela Acessibilidade Web no Brasil.
 
@@ -24,14 +24,14 @@ Será que conseguimos ficar tranquilos ao saber que excluímos o acesso a determ
 
 Confesso que minha consciência pesa muito, por isso a cada dia eu me apaixono mais pelo assunto.
 
-Você pode estar se questionando: “Isso é exagero da sua parte”.  
+Você pode estar se questionando: “Isso é exagero da sua parte”.
 Creio que não meu caro leitor faça alguns testes simples:
 
 - Retire o mouse e tente navegar em algum site de preferência sites governamentais e de grandes marcas;
 - Tente navegar as escuras com o auxílio de um leitor de tela;
 - Tente através do **TAB** chegar a um determinado local sem um link de pular para o conteúdo determinado.
 
-Estes três pequenos e bobos testes podem te surpreender muito.  
+Estes três pequenos e bobos testes podem te surpreender muito.
 E pelo que eu já percebi, estamos construindo remendos sobre remendos, levando assim os espaços virtuais a terem deficiência e não inclusivos e como diria a [Thaís Frota](https://twitter.com/acessibilidade):
 
 > Se o lugar não está pronto para receber TODAS as pessoas, o lugar é deficiente
