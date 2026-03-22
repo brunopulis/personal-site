@@ -27,7 +27,7 @@ cta2:
       <article
         class="flex flex-col justify-between p-8 border border-brand-brand-gray-200 rounded-xl hover:ring-2 hover:ring-brand-gray-200 h-full transition-all">
         <div class="flex justify-between items-center mb-4">
-          {% lucide "presentation", { class: "w-4 h-4 text-brand-red-500" } %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
           <time datetime="{{ talk.date }}" class="font-mono dt-published">{{ talk.date |
             formatDate("MMMM D, YYYY") }}</time>
         </div>
@@ -36,7 +36,7 @@ cta2:
             {{ talk.title }}
           </h3>
           {% if talk.location %}
-          {% lucide "map-pin", { class: "w-4 h-4 text-brand-blue-500" } %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           <p class="text-brand-blue-500">{{ talk.location }}</p>
           {% endif %}
 
