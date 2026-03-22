@@ -1,25 +1,26 @@
-/* 
+/*
 Google fonts with subsetting via Google Webfonts Helper
 
-@link https://gwfh.mranftl.com/fonts/inter?subsets=latin 
+@link https://gwfh.mranftl.com/fonts/inter?subsets=latin
 */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Inter';
+  font-family: 'Source Sans 3';
   font-style: normal;
   font-weight: 400;
   src:
-    url('../fonts/inter-v12-latin-regular.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('../fonts/inter-v12-latin-regular.woff')
+    url('../fonts/source-sans-3/source-sans-3-regular.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('../fonts/source-sans-3/source-sans-3-regular.woff')
       format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Inter';
+  font-family: 'Source Sans 3';
   font-style: normal;
   font-weight: 700;
   src:
-    url('../fonts/inter-v12-latin-700.woff2') format('woff2'),
-    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('../fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/source-sans-3/source-sans-3-bold.woff2') format('woff2'),
+    /* Chrome 36+, Opera 23+, Firefox 39+ */ url('../fonts/source-sans-3/source-sans-3-bold.woff')
+      format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
