@@ -28,13 +28,6 @@
         {% if desc %}
         <p>{{ desc }}</p>
         {% endif %}
-        {% if tags %}
-        <div>
-          {% for tag in tags %}
-          <a href="/tag/{{ tag | slug }}/">#{{ tag }}</a>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
     </article>
     {% endfor %}

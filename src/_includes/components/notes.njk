@@ -16,7 +16,7 @@
     {% set dateVal = post.data.pubDate %}
     {% set desc = post.templateContent | striptags | truncate(80) %}
     {% set tags = post.data.tags %}
-    <article class="card h-entry">
+    <article class="h-entry card">
       <div class="flow">
         <div class="e-content">
           {{ desc }}
@@ -24,14 +24,6 @@
         <time class="dt-published" datetime="{{ dateVal | toISOString }}">
           {{ dateVal | readableDate }}
         </time>
-
-        {% if tags %}
-        <div class="mt-4">
-          {% for tag in tags %}
-          <span class="tags">#{{ tag }}</span>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
     </article>
     {% endfor %}
