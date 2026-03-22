@@ -42,7 +42,7 @@ const processImage = async options => {
     widths: [...widths],
     formats: [...formats],
     urlPath: '/assets/images/',
-    outputDir: './dist/assets/images/',
+    outputDir: './_site/assets/images/',
     filenameFormat: (id, src, width, format, options) => {
       const extension = path.extname(src);
       const name = path.basename(src, extension);

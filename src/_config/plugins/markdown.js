@@ -51,17 +51,18 @@ export const markdownLib = markdownIt({
       const alt = token.content || '';
       const caption = token.attrGet('title');
 
+      // Convert @assets paths to /assets for static serving
       if (src && src.startsWith('@assets/')) {
         src = src.replace('@assets/', '/assets/');
       }
 
-      // Skip eleventy-img processing for external URLs to avoid rate limiting
+      // Skip eleventy-img processing for external URLs
       const isExternalUrl = src && (src.startsWith('http://') || src.startsWith('https://'));
 
       // Collect attributes
       const attributes = token.attrs || [];
 
-      // Only add eleventy:widths for local images, not external URLs
+      // Only add eleventy:widths for local images
       if (!isExternalUrl) {
         const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
         if (!hasEleventyWidths) {

@@ -1,4 +1,3 @@
-import {categoryFilter} from './filters/category-filter.js';
 import {
   formatDate,
   readableDate,
@@ -25,18 +24,12 @@ import {splitlines} from './filters/splitlines.js';
 import {starRating} from './filters/starRating.js';
 import {striptags} from './filters/striptags.js';
 
-export function assetPath(value) {
-  if (typeof value !== 'string') return value;
-  return value.replace(/@assets\//g, '/assets/');
-}
-
-export {
+export default {
   groupBy,
   groupByYear,
   groupByMonth,
   groupByYearMonth,
   sortKeys,
-  categoryFilter,
   toISOString,
   toRfc822Date,
   formatDate,
@@ -47,6 +40,7 @@ export {
   relativeDate,
   limit,
   markdownFormat,
+  markdownify: markdownFormat,
   ogImage,
   readingTime,
   splitlines,
@@ -54,11 +48,10 @@ export {
   shuffle,
   sortAlphabetically,
   splitStrings,
-  slugifyString as slugify,
+  slugify: slugifyString,
   slugifyString,
   postSlug,
   getPostsByTag,
-  markdownFormat as markdownify,
   lazyPaginate,
   lazyGroupByYear,
   lazyGroupByWatchedYear,
