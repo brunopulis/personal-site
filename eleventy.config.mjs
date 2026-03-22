@@ -13,11 +13,9 @@ dotenv.config();
 
 import yaml from 'js-yaml';
 
-import bundlePlugin from '@11ty/eleventy-plugin-bundle';
-
 import * as collections from './src/_config/collections.js';
 import events from './src/_config/events.js';
-import filters from './src/_config/filters.js';
+import * as filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
 
@@ -75,7 +73,7 @@ export default async function eleventy(eleventyConfig) {
     }
   });
 
-   // bundle
+  // bundle
   eleventyConfig.addBundle('css', {hoist: true});
 
   // Library and Data
@@ -83,14 +81,37 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
 
   // Filters
-  eleventyConfig.addFilter('toIsoString', filters.toIsoString);
+  eleventyConfig.addFilter('toISOString', filters.toISOString);
   eleventyConfig.addFilter('formatDate', filters.formatDate);
   eleventyConfig.addFilter('markdownFormat', filters.markdownFormat);
   eleventyConfig.addFilter('splitlines', filters.splitlines);
   eleventyConfig.addFilter('striptags', filters.striptags);
-  eleventyConfig.addFilter('shuffle', filters.shuffleArray);
+  eleventyConfig.addFilter('shuffle', filters.shuffle);
   eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
   eleventyConfig.addFilter('slugify', filters.slugifyString);
+  eleventyConfig.addFilter('slugifyString', filters.slugifyString);
+  eleventyConfig.addFilter('limit', filters.limit);
+  eleventyConfig.addFilter('dateToRfc822', filters.toRfc822Date);
+  eleventyConfig.addFilter('toRfc822Date', filters.toRfc822Date);
+  eleventyConfig.addFilter('groupByYear', filters.groupByYear);
+  eleventyConfig.addFilter('groupByMonth', filters.groupByMonth);
+  eleventyConfig.addFilter('groupByYearMonth', filters.groupByYearMonth);
+  eleventyConfig.addFilter('groupBy', filters.groupBy);
+  eleventyConfig.addFilter('filterByYear', filters.filterByYear);
+  eleventyConfig.addFilter('filterByMediaType', filters.filterByMediaType);
+  eleventyConfig.addFilter('relativeDate', filters.relativeDate);
+  eleventyConfig.addFilter('readableDate', filters.readableDate);
+  eleventyConfig.addFilter('sortByDate', filters.sortByDate);
+  eleventyConfig.addFilter('categoryFilter', filters.categoryFilter);
+  eleventyConfig.addFilter('getPostsByTag', filters.getPostsByTag);
+  eleventyConfig.addFilter('starRating', filters.starRating);
+  eleventyConfig.addFilter('readingTime', filters.readingTime);
+  eleventyConfig.addFilter('ogImage', filters.ogImage);
+  eleventyConfig.addFilter('splitStrings', filters.splitStrings);
+  eleventyConfig.addFilter('sortKeys', filters.sortKeys);
+  eleventyConfig.addFilter('lazyGroupByWatchedYear', filters.lazyGroupByWatchedYear);
+  eleventyConfig.addFilter('lazyGroupByYear', filters.lazyGroupByYear);
+  eleventyConfig.addFilter('lazyPaginate', filters.lazyPaginate);
 
   //  Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);

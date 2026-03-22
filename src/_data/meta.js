@@ -25,10 +25,10 @@ export const author = {
 };
 
 export const creator = {
-  name: 'Lene Saile', // i.e. Lene Saile - creator's (developer) name.
-  email: 'hola@lenesaile.com',
-  website: 'https://www.lenesaile.com',
-  social: 'https://front-end.social/@lene'
+  name: 'Bruno Pulis', // i.e. Lene Saile - creator's (developer) name.
+  email: 'hello@brunopulis.com',
+  website: 'https://www.brunopulis.com',
+  social: 'https://mastodon.social/@lene'
 };
 
 export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
