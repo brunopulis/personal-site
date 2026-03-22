@@ -1,0 +1,13 @@
+<article class="card">
+  <div class="flow">
+    <h3>
+      <a href="{{ item.url }}">{{ item.data.title }}</a>
+    </h3>
+    <time class="dt-published" datetime="{{ item.date | toISOString }}">
+      {{ item.date | readableDate }}
+    </time>
+    {% if item.data.description %}
+    <p>{{ item.data.description | striptags | truncate(160) }}</p>
+    {% endif %}
+  </div>
+</article>
