@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {fileURLToPath} from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,10 +22,7 @@ function convertMDXtoMD(content) {
 
   // Converte componentes customizados em markdown
   // Ex: <Image /> -> ![image](image.jpg)
-  markdown = markdown.replace(
-    /<Image\s+src=["']([^"']+)["']\s+alt=["']([^"']+)["']\s*\/>/g,
-    '![$2]($1)'
-  );
+  markdown = markdown.replace(/<Image\s+src=["']([^"']+)["']\s+alt=["']([^"']+)["']\s*\/>/g, '![$2]($1)');
 
   // Converte outros componentes vazios em nada
   markdown = markdown.replace(/<[A-Z][^/>]*\/>/g, '');
@@ -82,8 +79,8 @@ function convertMDXDirectory(dirPath) {
     process.exit(1);
   }
 
-  const files = fs.readdirSync(dirPath, { recursive: true });
-  const mdxFiles = files.filter((file) => file.endsWith('.mdx'));
+  const files = fs.readdirSync(dirPath, {recursive: true});
+  const mdxFiles = files.filter(file => file.endsWith('.mdx'));
 
   if (mdxFiles.length === 0) {
     console.log('Nenhum arquivo .mdx encontrado.');
@@ -95,7 +92,7 @@ function convertMDXDirectory(dirPath) {
   let converted = 0;
   let skipped = 0;
 
-  mdxFiles.forEach((file) => {
+  mdxFiles.forEach(file => {
     const filePath = path.join(dirPath, file);
     if (processMDXFile(filePath)) {
       converted++;
@@ -118,10 +115,10 @@ function removeMDXFiles(dirPath, confirm = false) {
     return;
   }
 
-  const files = fs.readdirSync(dirPath, { recursive: true });
-  const mdxFiles = files.filter((file) => file.endsWith('.mdx'));
+  const files = fs.readdirSync(dirPath, {recursive: true});
+  const mdxFiles = files.filter(file => file.endsWith('.mdx'));
 
-  mdxFiles.forEach((file) => {
+  mdxFiles.forEach(file => {
     const filePath = path.join(dirPath, file);
     try {
       fs.unlinkSync(filePath);
@@ -137,7 +134,7 @@ function removeMDXFiles(dirPath, confirm = false) {
 // Processa argumentos da linha de comando
 const args = process.argv.slice(2);
 const removeFlag = args.includes('--remove');
-const dirArg = args.find((arg) => !arg.startsWith('--')) || 'src/content/posts';
+const dirArg = args.find(arg => !arg.startsWith('--')) || 'src/content/posts';
 
 console.log(`\n🚀 Iniciando conversão de MDX para MD\n`);
 console.log(`📂 Diretório: ${path.resolve(dirArg)}\n`);

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { input, number, select } from '@inquirer/prompts';
+import {input, number, select} from '@inquirer/prompts';
 import dayjs from 'dayjs';
 import slugify from 'slugify';
 
@@ -16,58 +16,58 @@ async function createMedia() {
 
   const title = await input({
     message: 'Título da mídia:',
-    validate: (value) => value.trim() !== '' || 'O título é obrigatório.',
+    validate: value => value.trim() !== '' || 'O título é obrigatório.'
   });
 
   const watchedDate = await input({
     message: 'Data em que assistiu (AAAA-MM-DD):',
     default: dayjs().format('YYYY-MM-DD'),
-    validate: (value) => /^\d{4}-\d{2}-\d{2}$/.test(value) || 'Formato inválido. Use AAAA-MM-DD.',
+    validate: value => /^\d{4}-\d{2}-\d{2}$/.test(value) || 'Formato inválido. Use AAAA-MM-DD.'
   });
 
   const watchedYear = dayjs(watchedDate).year();
 
-  const director = await input({ message: 'Diretor:' });
+  const director = await input({message: 'Diretor:'});
 
   const category = await input({
     message: 'Categoria (Ex: Filme, Série, Anime):',
-    default: 'Filme',
+    default: 'Filme'
   });
 
   const status = await select({
     message: 'Status:',
     choices: [
-      { name: 'Assistido', value: 'assistido' },
-      { name: 'Para assistir', value: 'para assistir' },
-      { name: 'Abandonado', value: 'abandonado' },
+      {name: 'Assistido', value: 'assistido'},
+      {name: 'Para assistir', value: 'para assistir'},
+      {name: 'Abandonado', value: 'abandonado'}
     ],
-    default: 'assistido',
+    default: 'assistido'
   });
 
   const rating = await number({
     message: 'Nota (1-5):',
     min: 1,
     max: 5,
-    default: 5,
+    default: 5
   });
 
-  const poster = await input({ message: 'URL do Poster:' });
+  const poster = await input({message: 'URL do Poster:'});
 
-  const description = await input({ message: 'Descrição/Sinopse:' });
+  const description = await input({message: 'Descrição/Sinopse:'});
 
-  const thoughts = await input({ message: 'Seus pensamentos:' });
+  const thoughts = await input({message: 'Seus pensamentos:'});
 
-  const recommendBy = await input({ message: 'Recomendado por:' });
+  const recommendBy = await input({message: 'Recomendado por:'});
 
-  const tagsInput = await input({ message: 'Tags (separadas por vírgula):' });
-  const tags = tagsInput ? tagsInput.split(',').map((tag) => tag.trim()) : [];
+  const tagsInput = await input({message: 'Tags (separadas por vírgula):'});
+  const tags = tagsInput ? tagsInput.split(',').map(tag => tag.trim()) : [];
 
-  const url = await input({ message: 'URL (TMDB, IMDb, etc):' });
+  const url = await input({message: 'URL (TMDB, IMDb, etc):'});
 
   const slug = slugify(title, {
     lower: true,
     strict: true,
-    locale: 'pt',
+    locale: 'pt'
   });
 
   const frontmatter = `---
@@ -90,7 +90,7 @@ url: "${url}"
   const baseDir = path.join(process.cwd(), 'src', 'content', 'medias', watchedYear.toString());
 
   if (!fs.existsSync(baseDir)) {
-    fs.mkdirSync(baseDir, { recursive: true });
+    fs.mkdirSync(baseDir, {recursive: true});
   }
 
   const filePath = path.join(baseDir, `${slug}.md`);

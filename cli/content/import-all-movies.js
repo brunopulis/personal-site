@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { config } from 'dotenv';
+import {config} from 'dotenv';
 import fetch from 'node-fetch';
 
 config();
@@ -17,9 +17,9 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 async function getAccountInfo() {
   const response = await fetch(`${BASE_URL}/account`, {
     headers: {
-      Authorization: `Bearer ${TMDB_ACCESS_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
+      'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
+      'Content-Type': 'application/json'
+    }
   });
 
   if (!response.ok) {
@@ -34,9 +34,9 @@ async function getRatedMovies(accountId, page = 1) {
     `${BASE_URL}/account/${accountId}/rated/movies?page=${page}&sort_by=created_at.desc`,
     {
       headers: {
-        Authorization: `Bearer ${TMDB_ACCESS_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
+        'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
+        'Content-Type': 'application/json'
+      }
     }
   );
 
@@ -48,15 +48,12 @@ async function getRatedMovies(accountId, page = 1) {
 }
 
 async function getMovieDetails(movieId) {
-  const response = await fetch(
-    `${BASE_URL}/movie/${movieId}?append_to_response=credits,keywords,videos`,
-    {
-      headers: {
-        Authorization: `Bearer ${TMDB_ACCESS_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
+  const response = await fetch(`${BASE_URL}/movie/${movieId}?append_to_response=credits,keywords,videos`, {
+    headers: {
+      'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
+      'Content-Type': 'application/json'
     }
-  );
+  });
 
   if (!response.ok) {
     return null;
@@ -68,9 +65,9 @@ async function getMovieDetails(movieId) {
 async function getFavoriteMovies(accountId) {
   const response = await fetch(`${BASE_URL}/account/${accountId}/favorite/movies?page=1`, {
     headers: {
-      Authorization: `Bearer ${TMDB_ACCESS_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
+      'Authorization': `Bearer ${TMDB_ACCESS_TOKEN}`,
+      'Content-Type': 'application/json'
+    }
   });
 
   if (!response.ok) {
@@ -91,7 +88,7 @@ async function fetchAllMovies(fetchFunction, accountId) {
     allMovies = allMovies.concat(data.results);
     totalPages = data.total_pages;
     page++;
-    await new Promise((resolve) => setTimeout(resolve, 250));
+    await new Promise(resolve => setTimeout(resolve, 250));
   } while (page <= totalPages && page <= 50);
 
   return allMovies;
@@ -108,13 +105,13 @@ function createMovieMarkdown(movie, details, isFavorite, watchedYear) {
   const releaseYear = movie.release_date?.substring(0, 4) || '';
   const watchedDate = movie.rated_at || movie.created_at || '';
 
-  const genres = details?.genres?.map((g) => g.name) || [];
-  const director = details?.credits?.crew?.find((c) => c.job === 'Director')?.name || '';
-  const cast = details?.credits?.cast?.slice(0, 5).map((c) => c.name) || [];
+  const genres = details?.genres?.map(g => g.name) || [];
+  const director = details?.credits?.crew?.find(c => c.job === 'Director')?.name || '';
+  const cast = details?.credits?.cast?.slice(0, 5).map(c => c.name) || [];
   const runtime = details?.runtime || 0;
 
   const trailerKey =
-    details?.videos?.results?.find((v) => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
+    details?.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube')?.key || '';
 
   return `---
 title: ${movie.title}
@@ -134,10 +131,10 @@ voteCount: ${movie.vote_count || 0}
 isFavorite: ${isFavorite}
 status: watched
 genres:
-${genres.map((g) => `  - ${g}`).join('\n') || '  - Desconhecido'}
+${genres.map(g => `  - ${g}`).join('\n') || '  - Desconhecido'}
 director: ${director}
 cast:
-${cast.map((c) => `  - ${c}`).join('\n')}
+${cast.map(c => `  - ${c}`).join('\n')}
 runtime: ${runtime}
 originalLanguage: ${movie.original_language || 'en'}
 budget: ${details?.budget || 0}
@@ -190,12 +187,12 @@ async function main() {
 
     console.log('❤️  Buscando favoritos...');
     const favoriteMovies = await getFavoriteMovies(accountId);
-    const favoriteIds = new Set(favoriteMovies.map((m) => m.id));
+    const favoriteIds = new Set(favoriteMovies.map(m => m.id));
     console.log(`✓ ${favoriteMovies.length} favoritos\n`);
 
     const baseDir = path.join(process.cwd(), 'src', 'content', 'medias');
     if (!fs.existsSync(baseDir)) {
-      fs.mkdirSync(baseDir, { recursive: true });
+      fs.mkdirSync(baseDir, {recursive: true});
     }
 
     console.log('📥 Importando filmes...\n');
@@ -206,7 +203,7 @@ async function main() {
 
     // Organiza filmes por ano
     const moviesByYear = {};
-    ratedMovies.forEach((movie) => {
+    ratedMovies.forEach(movie => {
       const watchedDate = movie.rated_at || movie.created_at;
       const year = watchedDate ? new Date(watchedDate).getFullYear() : 'Sem data';
       if (!moviesByYear[year]) moviesByYear[year] = [];
@@ -217,7 +214,7 @@ async function main() {
       // Cria diretório do ano
       const yearDir = path.join(baseDir, year.toString());
       if (!fs.existsSync(yearDir)) {
-        fs.mkdirSync(yearDir, { recursive: true });
+        fs.mkdirSync(yearDir, {recursive: true});
       }
 
       console.log(`📁 Importando filmes de ${year}...`);
@@ -251,7 +248,7 @@ async function main() {
           console.log(`  ✅ ${movie.title} - importado`);
           imported++;
 
-          await new Promise((resolve) => setTimeout(resolve, 300));
+          await new Promise(resolve => setTimeout(resolve, 300));
         } catch (error) {
           console.error(`  ❌ ${movie.title} - erro: ${error.message}`);
           failed++;
@@ -275,7 +272,7 @@ async function main() {
         if (b === 'Sem data') return -1;
         return parseInt(b, 10) - parseInt(a, 10);
       })
-      .forEach((year) => {
+      .forEach(year => {
         console.log(`   src/content/medias/${year}/ - ${moviesByYear[year].length} filmes`);
       });
 
