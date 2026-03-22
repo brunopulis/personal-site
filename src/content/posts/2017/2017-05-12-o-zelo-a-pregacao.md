@@ -2,14 +2,10 @@
 title: 'O zelo a pregação'
 excerpt: 'De uns tempos pra cá venho lendo bons livros e materiais relacionados a Teologia Reformada que me fizeram argumentar alguns posicionamentos…'
 pubDate: 2017-05-12T16:54:25.411Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/o-zelo-a-prega%C3%A7%C3%A3o-fc54616bf68f'
+tags: ['teologia']
 ---
 
-### O zelo a pregação
+## O zelo a pregação
 
 ![](https://cdn-images-1.medium.com/max/2560/1*1FrKkRRYZlybujRqgNHGYQ.jpeg)
 
@@ -29,7 +25,7 @@ Paulo alerta a Timóteo em uma das suas cartas ele a:
 
 > Prega a palavra, insta a tempo e fora de tempo, admoesta, repreende, exorta, com toda longanimidade e ensino.
 
-> Porque virá tempo em que não suportarão a sã doutrina; mas, tendo grande desejo de ouvir coisas agradáveis, ajuntarão para si mestres segundo os seus próprios desejos,  
+> Porque virá tempo em que não suportarão a sã doutrina; mas, tendo grande desejo de ouvir coisas agradáveis, ajuntarão para si mestres segundo os seus próprios desejos,
 > e não só desviarão os ouvidos da verdade, mas se voltarão às fábulas.
 
 Precisamos em tempos caóticos como o nosso o ensino fiel das Escrituras e não recursos tecnológicos, psicologias baratas, misticismo religioso, técnicas de oratória e como cativar seu público.
@@ -40,5 +36,5 @@ O maior exemplo foi o de Jesus, ele não precisava de uma música de fundo melan
 
 Por isso ore pedindo capacitação, escolha uma instituição de ensino teológico séria e competente e se prepare para trilhar um caminho glorioso.
 
-Soli Deo Gloria,  
+Soli Deo Gloria,
 Bruno Pulis.

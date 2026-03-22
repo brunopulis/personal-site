@@ -3,10 +3,9 @@ title: 'Tipos de pregadores'
 excerpt: 'O pregador de tópicos'
 pubDate: 2017-06-06T22:00:52.760Z
 tags: ['teologia']
-canonicalUrl: 'https://medium.com/@brunopulis/tipos-de-pregadores-b6ca44f68bc3'
 ---
 
-### Tipos de pregadores
+## Tipos de pregadores
 
 O pregador de tópicos
 
@@ -22,10 +21,10 @@ Geralmente é um tipo de pregador que analisa o texto e extraí dele um determin
 
 > A apregoar o ano aceitável do Senhor e o dia da vingança do nosso Deus; a consolar todos os tristes;
 
-> A ordenar acerca dos tristes de Sião que se lhes dê glória em vez de cinza, óleo de gozo em vez de tristeza, vestes de louvor em vez de espírito angustiado; a fim de que se chamem árvores de justiça, plantações do Senhor, para que ele seja glorificado.  
+> A ordenar acerca dos tristes de Sião que se lhes dê glória em vez de cinza, óleo de gozo em vez de tristeza, vestes de louvor em vez de espírito angustiado; a fim de que se chamem árvores de justiça, plantações do Senhor, para que ele seja glorificado.
 > [Isaías 61:1–3](https://www.bibliaonline.com.br/acf/is/61/1-3)
 
-O tema que irei trabalhar é sobre a **Unção do Senhor** ao servo dEle.  
+O tema que irei trabalhar é sobre a **Unção do Senhor** ao servo dEle.
 De acordo com o texto eu extraio alguns tópicos como:
 
 - É dada por Deus (verso 1)
@@ -78,7 +77,7 @@ Encerramos com uma palavra sobre como a unção nos capacita para realizar a mis
 
 Poderia fazer uma vasta relação de versículos sobre cura e restauração.
 
-Soli Deo Gloria,  
+Soli Deo Gloria,
 Bruno Pulis
 
 Gostou? Compartilhe e espalhe a mensagem divina

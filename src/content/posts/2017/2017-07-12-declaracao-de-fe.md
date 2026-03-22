@@ -2,14 +2,10 @@
 title: 'Declaração de fé'
 excerpt: 'Cremos em Deus Pai, Todo-poderoso, Criador dos céus e da terra.'
 pubDate: 2017-07-12T00:06:17.767Z
-draft: false
-isFeatured: false
-tags: []
-category: 'blog'
-canonicalUrl: 'https://medium.com/@brunopulis/declara%C3%A7%C3%A3o-de-f%C3%A9-e9cacca5846f'
+tags: ['teologia']
 ---
 
-### Declaração de fé
+## Declaração de fé
 
 Cremos em Deus Pai, Todo-poderoso, Criador dos céus e da terra.
 

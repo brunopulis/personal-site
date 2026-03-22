@@ -6,7 +6,7 @@ tags: ['teologia']
 canonicalUrl: 'https://medium.com/@brunopulis/retorno-a-comunh%C3%A3o-c996f67ef992'
 ---
 
-### Retorno a comunhão
+## Retorno a comunhão
 
 ![](https://cdn-images-1.medium.com/max/800/1*9-0Pi5MUrNbv-H8KUgp1Lg.jpeg)
 
@@ -26,5 +26,5 @@ Que possamos celebrar a ceia do amor em realidade, pois meu caro estou farto de 
 
 Afinal, aonde ficou teu pão?
 
-Na paz,  
+Na paz,
 Bruno Pulis
