@@ -61,17 +61,18 @@ export default async function eleventy(eleventyConfig) {
     useTransform: true
   });
 
-  eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
-    formats: ['webp', 'jpeg'],
-    widths: ['auto'],
-    htmlOptions: {
-      imgAttributes: {
-        loading: 'lazy',
-        decoding: 'async'
-      },
-      pictureAttributes: {}
-    }
-  });
+  // Disabled due to external image rate limiting
+  // eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
+  //   formats: ['webp', 'jpeg'],
+  //   widths: ['auto'],
+  //   htmlOptions: {
+  //     imgAttributes: {
+  //       loading: 'lazy',
+  //       decoding: 'async'
+  //     },
+  //     pictureAttributes: {}
+  //   }
+  // });
 
   // bundle
   eleventyConfig.addBundle('css', {hoist: true});

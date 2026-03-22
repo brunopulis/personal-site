@@ -55,11 +55,18 @@ export const markdownLib = markdownIt({
         src = src.replace('@assets/', '/assets/');
       }
 
+      // Skip eleventy-img processing for external URLs to avoid rate limiting
+      const isExternalUrl = src && (src.startsWith('http://') || src.startsWith('https://'));
+
       // Collect attributes
       const attributes = token.attrs || [];
-      const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
-      if (!hasEleventyWidths) {
-        attributes.push(['eleventy:widths', '650,960,1400']);
+
+      // Only add eleventy:widths for local images, not external URLs
+      if (!isExternalUrl) {
+        const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
+        if (!hasEleventyWidths) {
+          attributes.push(['eleventy:widths', '650,960,1400']);
+        }
       }
 
       const attributesString = attributes.map(([key, value]) => `${key}="${value}"`).join(' ');
