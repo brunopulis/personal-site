@@ -20,10 +20,6 @@ export const poems = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/poems/**/*').reverse();
 };
 
-export const bookmarks = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/bookmarks/**/*').reverse();
-};
-
 export const likes = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/likes/**/*').reverse();
 };
@@ -46,12 +42,6 @@ export const newsletters = collectionApi => {
 
 export const games = collectionApi => {
   return collectionApi.getFilteredByGlob('./src/content/games/**/*').reverse();
-};
-
-export const music = collectionApi => {
-  return collectionApi
-    .getFilteredByGlob('./src/content/music/**/*')
-    .sort((a, b) => b.data.date - a.data.date);
 };
 
 /** All relevant pages as a collection for sitemap.xml */
