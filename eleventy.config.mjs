@@ -95,7 +95,6 @@ export default async function eleventy(eleventyConfig) {
     });
   }
 
-  eleventyConfig.addPassthroughCopy('./admin');
   eleventyConfig.addPassthroughCopy('src/humans.txt');
   eleventyConfig.addPassthroughCopy({
     'src/assets/css': 'assets/css',

@@ -11,39 +11,38 @@ export default tseslint.config(
       '*.min.js',
       'bootstrap/',
       'font-awesome/',
-      '.tina/',
-      'tina/__generated__/',
+
       'coverage/',
       'src/assets/css/main.css',
-      'admin/',
-    ],
+      'admin/'
+    ]
   },
   {
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...globals.es2022,
+        ...globals.es2022
       },
       parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
     rules: {
       'no-unused-vars': [
         'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' },
+        {argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_'}
       ],
       'no-var': 'off',
       'prefer-const': 'off',
-      eqeqeq: 'off',
-      curly: 'off',
-      semi: ['error', 'always'],
-      quotes: 'off',
-      indent: 'off',
+      'eqeqeq': 'off',
+      'curly': 'off',
+      'semi': ['error', 'always'],
+      'quotes': 'off',
+      'indent': 'off',
       'comma-dangle': 'off',
-      'no-console': 'off',
-    },
+      'no-console': 'off'
+    }
   }
 );
