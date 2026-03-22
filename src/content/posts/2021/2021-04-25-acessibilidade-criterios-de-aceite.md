@@ -56,7 +56,7 @@ Como usuário gostaria quando selecionar "Add Delivery Address" seja exibido um 
 
 Em um _brainstorming_, foi levantado o protótipo que tem o objetivo de concluir a jornada de cadastro de endereço.
 
-![Uma janela modal, nela existem informações sobre o endereço do usuário](@assets/images/blog/modal.png)
+![Uma janela modal, nela existem informações sobre o endereço do usuário](/assets/images/blog/modal.png)
 
 Exemplo de modal
 

@@ -18,7 +18,7 @@ Você pode conferir uma lista completa na [categoria de livros no Awesome A11y](
 
 Vamos as indicações!
 
-![Garoto comemorando na arquibancada de um time de futebol. Ele está vestido com uma blusa azul e boné. Gesticula com as mãos vibrando e dizendo "Sim, vamos lá"](@assets/images/blog/giphy.gif)
+![Garoto comemorando na arquibancada de um time de futebol. Ele está vestido com uma blusa azul e boné. Gesticula com as mãos vibrando e dizendo "Sim, vamos lá"](/assets/images/blog/giphy.gif)
 
 ## [Acessibilidade na web](https://amzn.to/3MlXvVo)
 

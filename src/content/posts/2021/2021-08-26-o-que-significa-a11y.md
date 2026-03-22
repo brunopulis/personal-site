@@ -14,7 +14,7 @@ O termo, representa a ideia de ser aliado das pessoas com deficiência, afim de,
 
 Quando utilizamos, dizemos que somos aliados de uma causa tão nobre e em contrapartida, referenciando a acessibilidade digital em si.
 
-![Sigla A11y exemplificada](@assets/images/blog/a11y.png)
+![Sigla A11y exemplificada](/assets/images/blog/a11y.png)
 
 Existem outros termos que utilizam a mesma lógica, por exemplo:
 
