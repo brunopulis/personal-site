@@ -26,20 +26,18 @@
   }
 
   function displayWebmentions(mentions, container) {
-    const likes = mentions.filter((m) => m['wm-property'] === 'like-of');
-    const reposts = mentions.filter((m) => m['wm-property'] === 'repost-of');
-    const replies = mentions.filter((m) => m['wm-property'] === 'in-reply-to');
-    const bookmarks = mentions.filter((m) => m['wm-property'] === 'bookmark-of');
-    const general = mentions.filter((m) => m['wm-property'] === 'mention-of');
+    const likes = mentions.filter(m => m['wm-property'] === 'like-of');
+    const reposts = mentions.filter(m => m['wm-property'] === 'repost-of');
+    const replies = mentions.filter(m => m['wm-property'] === 'in-reply-to');
+    const bookmarks = mentions.filter(m => m['wm-property'] === 'bookmark-of');
+    const general = mentions.filter(m => m['wm-property'] === 'mention-of');
 
     let html = '';
 
     // Show counts
     if (likes.length > 0 || reposts.length > 0 || bookmarks.length > 0) {
-      html +=
-        '<div class="flex items-center space-x-4 mb-6 text-sm text-gray-600 dark:text-gray-400">';
-      if (likes.length > 0)
-        html += `<span>❤️ ${likes.length} like${likes.length !== 1 ? 's' : ''}</span>`;
+      html += '<div class="flex items-center space-x-4 mb-6 text-sm text-gray-600 dark:text-gray-400">';
+      if (likes.length > 0) html += `<span>❤️ ${likes.length} like${likes.length !== 1 ? 's' : ''}</span>`;
       if (reposts.length > 0)
         html += `<span>🔄 ${reposts.length} repost${reposts.length !== 1 ? 's' : ''}</span>`;
       if (bookmarks.length > 0)
@@ -54,7 +52,7 @@
 
     if (conversationMentions.length > 0) {
       html += '<div class="space-y-4">';
-      conversationMentions.forEach((mention) => {
+      conversationMentions.forEach(mention => {
         html += renderMention(mention);
       });
       html += '</div>';
