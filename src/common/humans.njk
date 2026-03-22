@@ -4,6 +4,7 @@ eleventyExcludeFromCollections: true
 excludeFromSitemap: true
 ---
 
+<<<<<<< HEAD
 /* TEAM */
 Developer: {{ meta.creator.name }}
 Contato: {{ meta.creator.email }}
@@ -34,3 +35,11 @@ Thanks to all open source contributors.
 Design & Development: Bruno Pulis
 Founded: 2012
 Built with: Eleventy, CUBE CSS, JavaScript, and ❤️
+=======
+/* TEAM */ Developer: {{ meta.creator.name }} Contact: {{ meta.creator.email }} Site:
+{{ meta.creator.website }}
+{% if meta.creator.social %}
+  Find me on: {{ meta.creator.social }}
+{% endif %}
+/* SITE */ Doctype: HTML5
+>>>>>>> 464e2eef868ba472edf02931c2703e2cc91784c7
