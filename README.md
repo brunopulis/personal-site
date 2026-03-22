@@ -4,12 +4,11 @@
 [![CodeQL](https://github.com/brunopulis/personal-site/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/brunopulis/personal-site/actions/workflows/github-code-scanning/codeql)
 [![Codecov](https://img.shields.io/codecov/c/github/brunopulis/personal-website)](https://app.codecov.io/gh/brunopulis/personal-website)
 
-Meu site pessoal construído com Eleventy, TinaCMS e design acessível.
+Meu site pessoal construído com Eleventy e design acessível.
 
 ## Tech Stack
 
 - **11ty** - Static Site Generator
-- **TinaCMS** - Git-based CMS
 - **SCSS** - CSS com PostCSS
 - **Jest** - Testes unitários
 - **Cypress** - Testes E2E
