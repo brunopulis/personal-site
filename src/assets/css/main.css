@@ -36,8 +36,8 @@
   --space-2xl-3xl: clamp(4rem, calc(2.78rem + 6.09vw), 7.5rem);
   --space-s-l: clamp(1rem, calc(0.48rem + 2.61vw), 2.5rem);
   --font-base:
-    'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif;
+    'Source Sans 3', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-display: var(--font-base);
   --font-accent:
     'Menlo', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro',
@@ -51,15 +51,15 @@
   --width-longform: 65ch;
   --tracking: -0.05ch;
   --tracking-s: -0.05ch;
-  --color-text: #1d1d1d;
+  --color-text: #171e1e;
   --color-text-mod-1: #494949;
   --color-text-mod-2: #616161;
   --color-bg: #fff;
-  --color-bg-mod-1: #f8f8f8;
+  --color-bg-mod-1: #171e1e;
   --color-bg-mod-2: #ededed;
   --color-border: #1d1d1d;
   --color-brand: #4f29f0;
-  --color-accent: #9f2c5e;
+  --color-accent: #610404;
   --color-highlight: #eefbc1;
 }
 @media (prefers-color-scheme: dark) {
@@ -623,19 +623,13 @@ nav[data-variant='sidebar'] ul > li ul {
 }
 .hero {
   --region-space: 8rem;
-  background-color: var(--color-bg);
-  background-image:
-    radial-gradient(var(--color-text) 7%, transparent 20%),
-    radial-gradient(var(--color-bg) 20%, transparent 20%);
-  background-position:
-    0 0,
-    50px 50px;
-  background-size: 3px 3px;
+  background: var(--color-accent);
   padding-inline: var(--space-s-m);
   text-align: center;
 }
 .hero > * {
   --flow-space: 1rem;
+  color: #fff;
   margin-inline: auto;
 }
 .callout {
@@ -735,9 +729,15 @@ nav[data-variant='sidebar'] ul > li ul {
   background: var(--color-brand);
   color: var(--color-bg);
 }
+footer {
+  color: #fff;
+}
+.featured-post,
+footer {
+  background: var(--color-bg-mod-1);
+}
 .featured-post {
   --flow-space: var(--space-m);
-  background: var(--color-bg-mod-1);
   border-left: 8px solid var(--color-brand);
   padding: var(--space-l);
   position: relative;

@@ -1,0 +1,678 @@
+---
+layout: page
+eyebrown: "Serviços"
+title: "Como posso ajudar você"
+permalink: "/servicos/index.html"
+key: 'servicos'
+description: "Não trabalho com soluções prontas. Entendo o contexto do seu projeto e ofereço o que faz sentido para ele — seja uma auditoria pontual ou um acompanhamento de longo prazo."
+date: Last Modified
+cta:
+  link: /contato
+  label: Me convide para seu evento
+cta2:
+  link: /press-kit
+  label: Confira meu Press Kit
+---
+
+<style>
+    /* ── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --blood:   #610404;
+      --blood-h: #7a0606;
+      --blue:    #849CDB;
+      --silver:  #D9D9D9;
+      --black:   #171E1E;
+      --white:   #FAFAF8;
+      --muted:   #555F5F;
+      --border:  #E2E2DF;
+
+      --font-sans:  'Source Sans 3', sans-serif;
+      --font-serif: 'Noto Serif', serif;
+
+      --max: 72rem;
+      --gap: clamp(1.5rem, 5vw, 4rem);
+    }
+
+    /* ── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    /* ── SKIP LINK ───────────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--blood);
+      color: #fff;
+      padding: .5rem 1rem;
+      font-weight: 600;
+      font-size: .875rem;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      z-index: 999;
+      transition: top .15s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── FOCUS ───────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────────── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1rem var(--gap);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--black);
+      line-height: 1.2;
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--blood);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 22px; height: 22px; fill: #fff; }
+    .logo-text span { display: block; }
+    nav { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 400;
+      color: var(--muted);
+      transition: color .15s;
+    }
+    nav a:hover { color: var(--black); }
+    nav a[aria-current="page"] {
+      color: var(--blood);
+      font-weight: 600;
+    }
+
+    /* ── LAYOUT HELPERS ──────────────────────────────────────── */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: var(--gap);
+      padding-right: var(--gap);
+    }
+
+    /* ── PAGE HERO ───────────────────────────────────────────── */
+    .page-hero {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero .eyebrow {
+      font-size: .8125rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blood);
+      margin-bottom: .75rem;
+      display: block;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--black);
+    }
+    .page-hero .lead {
+      margin: 1.25rem 0;
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 52ch;
+      line-height: 1.75;
+    }
+
+    /* ── SECTION LABEL ───────────────────────────────────────── */
+    .section-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--blood);
+      display: inline-block;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── SERVICE GROUPS ──────────────────────────────────────── */
+    .services-section {
+      padding: clamp(3rem, 8vw, 5rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .services-section:last-of-type { border-bottom: none; }
+
+    .service-group {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem 5rem;
+      align-items: start;
+    }
+
+    .group-title {
+      font-size: clamp(1.375rem, 3vw, 1.75rem);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: .75rem;
+    }
+    .group-desc {
+      font-size: .9375rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .service-cards { display: flex; flex-direction: column; gap: 0; }
+
+    .service-card {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      transition: background .15s;
+    }
+    .service-card:first-child { border-top: 1px solid var(--border); }
+    .service-card:last-child { border-bottom: none; }
+
+    .card-num {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--blood);
+      padding-top: .25rem;
+      min-width: 2.5ch;
+      font-variant-numeric: tabular-nums;
+    }
+    .card-body {}
+    .card-name {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: .4rem;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: .9375rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .card-tag {
+      display: inline-block;
+      margin-top: .75rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--blood);
+      border: 1px solid currentColor;
+      border-radius: 2rem;
+      padding: .2em .75em;
+    }
+
+    /* ── PROCESS ─────────────────────────────────────────────── */
+    .process-section {
+      background: var(--black);
+      color: var(--white);
+      padding: clamp(3rem, 8vw, 6rem) var(--gap);
+    }
+    .process-inner { max-width: var(--max); margin: 0 auto; }
+    .process-section .section-label { color: var(--blue); border-color: var(--blue); }
+    .process-section .group-title { color: var(--white); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin-top: 3rem;
+    }
+    .process-step {
+      padding: 2rem 2rem 2rem 0;
+      border-right: 1px solid rgba(255,255,255,.12);
+      padding-left: 2rem;
+    }
+    .process-step:first-child { padding-left: 0; }
+    .process-step:last-child { border-right: none; }
+    .step-num {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--blood);
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .step-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: .4rem;
+    }
+    .step-desc {
+      font-size: .875rem;
+      color: rgba(250,250,248,.6);
+      line-height: 1.65;
+    }
+
+    /* ── CLOSING ─────────────────────────────────────────────── */
+    .closing-section {
+      padding: clamp(4rem, 10vw, 8rem) var(--gap);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .closing-inner { max-width: var(--max); margin: 0 auto; }
+    .closing-section h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .closing-section p {
+      font-family: var(--font-serif);
+      font-size: 1.0625rem;
+      color: var(--muted);
+      max-width: 48ch;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--blood);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9375rem;
+      letter-spacing: .02em;
+      padding: .875rem 2rem;
+      border-radius: 4px;
+      transition: background .15s, transform .1s;
+    }
+    .btn:hover { background: var(--blood-h); transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--black);
+      color: rgba(250,250,248,.6);
+      padding: 2.5rem var(--gap);
+      font-size: .875rem;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-inner a { color: rgba(250,250,248,.6); text-decoration: none; }
+    .footer-inner a:hover { color: var(--white); }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 800px) {
+      .service-group {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .group-meta { position: static; }
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+      .process-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .process-step:last-child { border-bottom: none; }
+      .process-step:first-child { padding-left: 2rem; }
+    }
+    @media (max-width: 520px) {
+      nav { gap: 1rem; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .page-hero h1,
+      .page-hero .lead,
+      .page-hero .eyebrow {
+        animation: fade-up .5s both;
+      }
+      .page-hero .eyebrow { animation-delay: .05s; }
+      .page-hero h1       { animation-delay: .12s; }
+      .page-hero .lead    { animation-delay: .2s; }
+
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(10px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
+<div class="mx-auto my-24 max-w-6xl page-hero">
+  <span class="eyebrow">{{eyebrown}}</span>
+  <h1 class="mb-4 font-bold text-2xl">{{ title }}</h1>
+  <p class="mb-6">{{description}}</p>
+
+  <section class="h-feed">
+    <section class="services-section" aria-labelledby="sec-diagnostico">
+      <div class="service-group">
+        <div class="group-meta">
+          <span class="section-label">Diagnóstico</span>
+          <h2 class="group-title" id="sec-diagnostico">Entenda onde você está</h2>
+          <p class="group-desc">
+            Antes de consertar, é preciso enxergar. Esses serviços são
+            para times que querem uma leitura honesta do estado atual
+            da acessibilidade no produto.
+          </p>
+        </div>
+
+        <div class="service-cards" role="list">
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">01</span>
+            <div class="card-body">
+              <h3 class="card-name">Avaliação de Acessibilidade</h3>
+              <p class="card-desc">
+                Um diagnóstico focado para identificar onde estão os problemas
+                reais e quais melhorias têm impacto imediato. Bom ponto de
+                partida para quem quer entender onde está — sem laudo extenso,
+                sem burocracia.
+              </p>
+              <span class="card-tag">Curto prazo</span>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">02</span>
+            <div class="card-body">
+              <h3 class="card-name">Auditoria de Acessibilidade</h3>
+              <p class="card-desc">
+                Análise estruturada que mapeia o caminho completo para
+                conformidade com WCAG 2.2. Para projetos que precisam de
+                um laudo técnico detalhado e um plano de ação claro — com
+                critérios, evidências e prioridades definidas.
+              </p>
+              <span class="card-tag">Médio prazo</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="sec-execucao">
+      <div class="service-group">
+        <div class="group-meta">
+          <span class="section-label">Execução</span>
+          <h2 class="group-title" id="sec-execucao">Construir e corrigir certo</h2>
+          <p class="group-desc">
+            Para quando é hora de colocar a mão na massa. Acessibilidade
+            incorporada no produto — não colada em cima depois.
+          </p>
+        </div>
+
+        <div class="service-cards" role="list">
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">03</span>
+            <div class="card-body">
+              <h3 class="card-name">Remediação de Documentos</h3>
+              <p class="card-desc">
+                PDFs, planilhas e apresentações transformados em documentos
+                acessíveis de verdade — com estrutura semântica, contraste
+                adequado, texto alternativo e navegação por teclado.
+              </p>
+              <span class="card-tag">Entrega pontual</span>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">04</span>
+            <div class="card-body">
+              <h3 class="card-name">Construção de Sites Acessíveis</h3>
+              <p class="card-desc">
+                Sites rápidos, semânticos e construídos desde a arquitetura
+                para incluir todos os usuários. HTML limpo, ARIA bem aplicado,
+                foco gerenciado e experiência real com leitor de tela.
+              </p>
+              <span class="card-tag">Projeto completo</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="sec-educacao">
+      <div class="service-group">
+        <div class="group-meta">
+          <span class="section-label">Educação</span>
+          <h2 class="group-title" id="sec-educacao">Capacitar para não depender</h2>
+          <p class="group-desc">
+            Acessibilidade sustentável não depende de um consultor externo
+            para sempre. Esses serviços são para times que querem aprender
+            e incorporar isso no fluxo de trabalho.
+          </p>
+        </div>
+
+        <div class="service-cards" role="list">
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">05</span>
+            <div class="card-body">
+              <h3 class="card-name">Treinamentos e Workshops</h3>
+              <p class="card-desc">
+                Capacitação prática para times de design e desenvolvimento.
+                WCAG aplicada no dia a dia, ferramentas de teste (axe, NVDA,
+                Lighthouse) e componentes acessíveis — sem enrolação.
+              </p>
+              <span class="card-tag">Equipe</span>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">06</span>
+            <div class="card-body">
+              <h3 class="card-name">Palestras</h3>
+              <p class="card-desc">
+                Para quem quer apresentar acessibilidade de forma clara e
+                motivadora para sua organização ou evento. Falo sobre
+                fundamentos, impacto real e como começar — sem o jargão
+                que afasta quem ainda não conhece o tema.
+              </p>
+              <span class="card-tag">Evento</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="sec-acomp">
+      <div class="service-group">
+        <div class="group-meta">
+          <span class="section-label">Acompanhamento</span>
+          <h2 class="group-title" id="sec-acomp">Acessibilidade como jornada</h2>
+          <p class="group-desc">
+            Para times e líderes que entendem que acessibilidade não é um
+            projeto com data de fim — é uma cultura que precisa de
+            atenção contínua.
+          </p>
+        </div>
+
+        <div class="service-cards" role="list">
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">07</span>
+            <div class="card-body">
+              <h3 class="card-name">Mentoria</h3>
+              <p class="card-desc">
+                Acompanhamento próximo e personalizado para líderes técnicos
+                que querem incorporar acessibilidade como cultura. Sessões
+                regulares, revisão de código, dúvidas em tempo real e
+                evolução medida em meses, não sprints.
+              </p>
+              <span class="card-tag">Contínuo</span>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <span class="card-num" aria-hidden="true">08</span>
+            <div class="card-body">
+              <h3 class="card-name">Consultoria Estratégica</h3>
+              <p class="card-desc">
+                Para times que precisam de alguém que entende tanto do lado
+                técnico quanto do impacto no negócio. Acessibilidade como
+                parte da estratégia do produto — não como correção tardia
+                de código.
+              </p>
+              <span class="card-tag">Estratégico</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" aria-labelledby="sec-processo">
+      <div class="process-inner">
+        <span class="section-label">Como funciona</span>
+        <h2 class="group-title" id="sec-processo" style="color:var(--white)">
+          Do primeiro contato à entrega
+        </h2>
+
+        <ol class="process-steps" aria-label="Etapas do processo">
+          <li class="process-step">
+            <span class="step-num" aria-hidden="true">01</span>
+            <p class="step-name">Alinhamento</p>
+            <p class="step-desc">
+              Conversa inicial para entender seus desafios e objetivos.
+              Sem formulários longos.
+            </p>
+          </li>
+          <li class="process-step">
+            <span class="step-num" aria-hidden="true">02</span>
+            <p class="step-name">Diagnóstico</p>
+            <p class="step-desc">
+              Avaliação técnica do produto, dos fluxos ou da maturidade
+              da equipe.
+            </p>
+          </li>
+          <li class="process-step">
+            <span class="step-num" aria-hidden="true">03</span>
+            <p class="step-name">Execução</p>
+            <p class="step-desc">
+              Aplicação prática das melhorias e treinamentos
+              necessários.
+            </p>
+          </li>
+          <li class="process-step">
+            <span class="step-num" aria-hidden="true">04</span>
+            <p class="step-name">Suporte contínuo</p>
+            <p class="step-desc">
+              Acompanhamento para garantir evolução constante e
+              evitar regressões.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="closing-section" aria-labelledby="sec-contato">
+      <div class="closing-inner">
+        <h2 id="sec-contato">Não sabe por onde começar?</h2>
+        <p>
+          Me conta um pouco sobre o seu projeto. Consigo te ajudar a entender
+          qual serviço faz mais sentido para o seu momento — sem pressão.
+        </p>
+        <a href="/contato" class="btn">
+          Entrar em contato
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="gap-6 grid grid-cols-1">
+      {% for talk in allTalks | sort(attribute="date") | reverse %}
+      <article
+        class="flex flex-col justify-between p-8 border border-brand-brand-gray-200 rounded-xl hover:ring-2 hover:ring-brand-gray-200 h-full transition-all">
+        <div class="flex justify-between items-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+          <time datetime="{{ talk.date }}" class="font-mono dt-published">{{ talk.date |
+            formatDate("MMMM D, YYYY") }}</time>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-bold group-hover:text-primary text-xl leading-tight transition-colors">
+            {{ talk.title }}
+          </h3>
+          {% if talk.location %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p class="text-brand-blue-500">{{ talk.location }}</p>
+          {% endif %}
+
+          <div class="flex flex-wrap gap-3 mt-8">
+          {% if talk.slides %}
+          <a href="{{ talk.slides }}"
+            class="border-transparent hover:border-brand-blue-500 border-b-2 text-brand-blue-500 hover:text-brand-blue-600 text-sm tracking-widest transition-all duration-300">Slides</a>
+          {% endif %}
+          {% if talk.video %}
+          <a href="{{ talk.video }}"
+            class="border-transparent hover:border-brand-blue-500 border-b-2 text-brand-blue-500 hover:text-brand-blue-600 text-sm tracking-widest transition-all duration-300">Vídeo</a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  <hr class="mb-12 border-brand-gray-200" />
+
+  {% include "components/last-update.njk" %}
+</div>

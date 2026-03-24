@@ -1,4 +1,4 @@
-import { defineConfig } from 'cypress';
+import {defineConfig} from 'cypress';
 
 export default defineConfig({
   projectId: '76rfsp',
@@ -11,12 +11,12 @@ export default defineConfig({
     viewportHeight: 720,
     video: true,
     screenshotOnRunFailure: true,
-    specPattern: 'tests/e2e/**/*.cy.js',
+    specPattern: 'tests/e2e/**/*.cy.js'
   },
   component: {
     devServer: {
       framework: null,
-      bundler: 'vite',
-    },
-  },
+      bundler: 'vite'
+    }
+  }
 });

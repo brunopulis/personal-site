@@ -9,9 +9,7 @@ layout: base
   </header>
 
   <article class="h-entry flow">
-    <div class="e-content prose flow">
-      {{ content | safe }}
-    </div>
+    <div class="e-content prose flow">{{ content | safe }}</div>
 
     {% include "components/post-engagement.njk" %}
   </article>

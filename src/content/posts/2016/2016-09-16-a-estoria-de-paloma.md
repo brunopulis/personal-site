@@ -1,7 +1,7 @@
 ---
 title: A estória de Paloma
 pubDate: 2016-09-16
-tags: ['contos', 'ficção', 'teologia']
+tags: ['contos', 'teologia']
 ---
 
 Vou contar uma estória fictícia, porém com um tom de realidade que por volta e meia tende a ser mascarada e desprezada por uma grande maioria de pessoas.

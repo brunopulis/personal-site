@@ -12,7 +12,14 @@
       "files": "*.njk",
       "options": {
         "parser": "jinja-template"
-      }
+      },
+      "excludeFiles": [
+        "**/services.njk",
+        "**/speaking.njk",
+        "**/card-tag.njk",
+        "**/base.njk",
+        "**/rss.xml.njk"
+      ]
     }
   ]
 }

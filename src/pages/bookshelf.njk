@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Meus livros"
-permalink: "{% if pagination.pageNumber > 0 %}/livros/{{ pagination.pageNumber + 1 }}/{% else %}/livros/{% endif %}"
-description: "Minha coleção de livros"
+title: 'Meus livros'
+permalink: '{% if pagination.pageNumber > 0 %}/livros/{{ pagination.pageNumber + 1 }}/{% else %}/livros/{% endif %}'
+description: 'Minha coleção de livros'
 pagination:
   data: collections.books
   size: 25
@@ -15,53 +15,57 @@ pagination:
 
 {% set booksByYear = collections.books | groupBy("attendedYear") %}
 {% for year in booksByYear | sortKeys %}
-<section class="region flow" data-year="{{ year }}">
-  <div>
-    <h2>Lidos em {{ year }}</h2>
-    <p>{{ booksByYear[year] | length }} {{ "livros" if booksByYear[year] | length > 1 else "livro" }}
-    </p>
-  </div>
+  <section class="region flow" data-year="{{ year }}">
+    <div>
+      <h2>Lidos em {{ year }}</h2>
+      <p>{{ booksByYear[year] | length }} {{ "livros" if booksByYear[year] | length > 1 else "livro" }}</p>
+    </div>
 
-  <ul class="grid" role="list">
-    {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
-    <li>
-      <article class="flow card">
-        {% if book.data.cover %}
-        <img src="{{ book.data.cover }}" alt="{{ book.data.title }}" height="270" loading="lazy" decoding="async" />
-        {% endif %}
-
-        <div class="flow">
-          <h3>
-            {% if book.data.url %}
-            <a href="{{ book.data.url }}" target="_blank" rel="noopener noreferrer">
-              {{ book.data.title }}
-            </a>
-            {% else %}
-            {{ book.data.title }}
+    <ul class="grid" role="list">
+      {% for book in booksByYear[year] | sort(attribute="data.date") | reverse %}
+        <li>
+          <article class="flow card">
+            {% if book.data.cover %}
+              <img
+                src="{{ book.data.cover }}"
+                alt="{{ book.data.title }}"
+                height="270"
+                loading="lazy"
+                decoding="async"
+              />
             {% endif %}
-          </h3>
-          {% if book.data.subtitle %}
-          <p>{{ book.data.subtitle }}</p>
-          {% endif %}
-          {% if book.data.description %}
-          <p>{{ book.data.description }}</p>
-          {% endif %}
-          {% if book.data.author %}
-          <p>{{ book.data.author }}</p>
-          {% endif %}
-          {% if book.data.rating %}
-          <p>{{ book.data.rating | starRating }}</p>
-          {% endif %}
-        </div>
-      </article>
-    </li>
-    {% endfor %}
-  </ul>
-  <hr />
-</section>
+
+            <div class="flow">
+              <h3>
+                {% if book.data.url %}
+                  <a href="{{ book.data.url }}" target="_blank" rel="noopener noreferrer">
+                    {{ book.data.title }}
+                  </a>
+                {% else %}
+                  {{ book.data.title }}
+                {% endif %}
+              </h3>
+              {% if book.data.subtitle %}
+                <p>{{ book.data.subtitle }}</p>
+              {% endif %}
+              {% if book.data.description %}
+                <p>{{ book.data.description }}</p>
+              {% endif %}
+              {% if book.data.author %}
+                <p>{{ book.data.author }}</p>
+              {% endif %}
+              {% if book.data.rating %}
+                <p>{{ book.data.rating | starRating }}</p>
+              {% endif %}
+            </div>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+    <hr />
+  </section>
 {% endfor %}
 
 {% if pagination.pages.length > 1 %}
-{% include 'components/pagination.njk' %}
+  {% include 'components/pagination.njk' %}
 {% endif %}
-</div>

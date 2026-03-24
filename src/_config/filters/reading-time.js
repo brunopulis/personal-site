@@ -4,7 +4,7 @@
  * @param {*} text
  * @returns
  */
-export const readingTime = (text) => {
+export const readingTime = text => {
   const content = new String(text);
   const speed = 230; // reading speed in words per minute
 

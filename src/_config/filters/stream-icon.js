@@ -1,5 +1,5 @@
 // Mapeamento de ícones
-export const streamIcon = (type) => {
+export const streamIcon = type => {
   const icons = {
     book: '📚',
     music: '🎵',
@@ -8,13 +8,13 @@ export const streamIcon = (type) => {
     concert: '🎤',
     link: '🔗',
     note: '💭',
-    post: '✍️',
+    post: '✍️'
   };
   return icons[type] || icons.note;
 };
 
 // Label do tipo
-export const streamTypeLabel = (type) => {
+export const streamTypeLabel = type => {
   const labels = {
     book: 'Livro',
     music: 'Música',
@@ -22,7 +22,7 @@ export const streamTypeLabel = (type) => {
     podcast: 'Podcast',
     concert: 'Show',
     link: 'Link',
-    note: 'Nota',
+    note: 'Nota'
   };
   return labels[type] || type;
 };

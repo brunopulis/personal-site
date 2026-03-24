@@ -14,8 +14,8 @@
   }
 }
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+
+<?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
@@ -29,22 +29,26 @@
   </author>
 
   {%- for book in collections.books | limit(10) %}
-  {%- set absolutePostUrl = book.url | htmlBaseUrl(metadata.base) %}
-  <entry>
-    <title>{{ book.data.title }}</title>
-    <link href="{{ absolutePostUrl }}" />
-    <updated>{{ (book.data.pubDate or book.date) | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ book.content | renderTransforms(book.data.page,
-      metadata.base) }}</content>
-    {%- if book.data.summary %}
-    <summary>{{ book.data.summary }}</summary>
-    {%- endif %}
-    {%- if book.data.tags %}
-    {%- for tag in book.data.tags %}
-    <category term="{{ tag }}" />
-    {%- endfor %}
-    {%- endif %}
-  </entry>
+    {%- set absolutePostUrl = book.url | htmlBaseUrl(metadata.base) %}
+    <entry>
+      <title>{{ book.data.title }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <updated>{{ (book.data.pubDate or book.date) | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content xml:lang="{{ metadata.language }}" type="html"
+        >{{
+          book.content | renderTransforms(book.data.page,
+          metadata.base)
+        }}</content
+      >
+      {%- if book.data.summary %}
+        <summary>{{ book.data.summary }}</summary>
+      {%- endif %}
+      {%- if book.data.tags %}
+        {%- for tag in book.data.tags %}
+          <category term="{{ tag }}" />
+        {%- endfor %}
+      {%- endif %}
+    </entry>
   {%- endfor %}
 </feed>

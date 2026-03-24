@@ -13,16 +13,16 @@ function extractPbsMediaUrls(content) {
 
 // Função para verificar o status code de uma URL
 function checkUrl(url) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const options = {
       method: 'HEAD',
       timeout: 10000,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-      },
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      }
     };
 
-    const req = https.request(url, options, (res) => {
+    const req = https.request(url, options, res => {
       resolve(res.statusCode);
     });
 
@@ -57,7 +57,7 @@ async function processFile(filePath) {
 
     if (statusCode === 404) {
       console.log(`    ❌ 404 - URL não encontrada!`);
-      return { file: filePath, url, statusCode };
+      return {file: filePath, url, statusCode};
     } else if (statusCode) {
       console.log(`    ✓ ${statusCode}`);
     } else {
@@ -65,7 +65,7 @@ async function processFile(filePath) {
     }
 
     // Pequeno delay para não sobrecarregar os servidores
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 500));
   }
 
   return null;
@@ -102,7 +102,7 @@ async function walkDir(dir) {
   if (filesToDelete.length > 0) {
     console.log(`\n❌ Encontrados ${filesToDelete.length} arquivo(s) com URLs 404:\n`);
 
-    filesToDelete.forEach(({ file, url, statusCode }) => {
+    filesToDelete.forEach(({file, url, statusCode}) => {
       console.log(`  ${file}`);
       console.log(`    URL: ${url}`);
       console.log(`    Status: ${statusCode}\n`);
@@ -110,7 +110,7 @@ async function walkDir(dir) {
 
     // Deletar os arquivos imediatamente
     console.log('\n🗑️  Deletando arquivos...\n');
-    filesToDelete.forEach(({ file }) => {
+    filesToDelete.forEach(({file}) => {
       try {
         fs.unlinkSync(file);
         console.log(`  ✓ Deletado: ${file}`);

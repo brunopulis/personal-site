@@ -14,8 +14,8 @@
   }
 }
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+
+<?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
@@ -29,22 +29,26 @@
   </author>
 
   {%- for bookmark in collections.bookmarks | reverse | limit(10) %}
-  {%- set absolutePostUrl = bookmark.url | htmlBaseUrl(metadata.base) %}
-  <entry>
-    <title>{{ bookmark.data.title }}</title>
-    <link href="{{ absolutePostUrl }}" />
-    <updated>{{ (bookmark.data.pubDate or bookmark.date) | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ bookmark.content | renderTransforms(bookmark.data.page,
-      metadata.base) }}</content>
-    {%- if bookmark.data.summary %}
-    <summary>{{ bookmark.data.summary }}</summary>
-    {%- endif %}
-    {%- if bookmark.data.tags %}
-    {%- for tag in bookmark.data.tags %}
-    <category term="{{ tag }}" />
-    {%- endfor %}
-    {%- endif %}
-  </entry>
+    {%- set absolutePostUrl = bookmark.url | htmlBaseUrl(metadata.base) %}
+    <entry>
+      <title>{{ bookmark.data.title }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <updated>{{ (bookmark.data.pubDate or bookmark.date) | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content xml:lang="{{ metadata.language }}" type="html"
+        >{{
+          bookmark.content | renderTransforms(bookmark.data.page,
+          metadata.base)
+        }}</content
+      >
+      {%- if bookmark.data.summary %}
+        <summary>{{ bookmark.data.summary }}</summary>
+      {%- endif %}
+      {%- if bookmark.data.tags %}
+        {%- for tag in bookmark.data.tags %}
+          <category term="{{ tag }}" />
+        {%- endfor %}
+      {%- endif %}
+    </entry>
   {%- endfor %}
 </feed>

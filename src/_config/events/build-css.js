@@ -10,10 +10,10 @@ export const buildAllCss = async () => {
     const path = await import('node:path');
 
     const scssFiles = await fg('src/assets/scss/**/*.scss', {
-      ignore: ['**/_*.scss'],
+      ignore: ['**/_*.scss']
     });
 
-    await fs.mkdir('src/assets/css', { recursive: true });
+    await fs.mkdir('src/assets/css', {recursive: true});
 
     for (const file of scssFiles) {
       const parsedPath = path.parse(file);
@@ -23,16 +23,13 @@ export const buildAllCss = async () => {
       const result = sass.compile(file, {
         loadPaths: ['node_modules'],
         style: 'compressed',
-        sourceMap: process.env.ELEVENTY_RUN_MODE !== 'build',
+        sourceMap: process.env.ELEVENTY_RUN_MODE !== 'build'
       });
 
-      const processed = await postcss([autoprefixer(), cssnano({ preset: 'default' })]).process(
-        result.css,
-        {
-          from: file,
-          to: destPath,
-        }
-      );
+      const processed = await postcss([autoprefixer(), cssnano({preset: 'default'})]).process(result.css, {
+        from: file,
+        to: destPath
+      });
 
       await fs.writeFile(destPath, processed.css);
 

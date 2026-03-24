@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {fileURLToPath} from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,12 +13,12 @@ export default function () {
     return [];
   }
 
-  const images = fs.readdirSync(dir).filter((file) => {
+  const images = fs.readdirSync(dir).filter(file => {
     return ['.jpg', '.jpeg', '.png', '.webp'].includes(path.extname(file).toLowerCase());
   });
 
-  return images.map((image) => ({
+  return images.map(image => ({
     src: `/assets/images/gallery/${image}`,
-    alt: '',
+    alt: ''
   }));
 }

@@ -1,46 +1,50 @@
 export default {
   top: [
     {
+      text: 'Agora',
+      url: '/now/'
+    },
+    {
       text: 'Sobre',
-      url: '/about/',
+      url: '/about/'
     },
     {
       text: 'Blog',
-      url: '/blog/',
+      url: '/blog/'
     },
     {
-      text: 'Notas',
-      url: '/notas/',
+      text: 'Serviços',
+      url: '/servicos/'
     },
     {
       text: 'Projetos',
-      url: '/projetos/',
+      url: '/projetos/'
     },
     {
       text: 'Explore',
-      url: '/explore/',
+      url: '/explore/'
     },
     {
       text: 'Contato',
-      url: '/contato/',
-    },
+      url: '/contato/'
+    }
   ],
   secondary: [
     {
       text: 'Disclaimer',
-      url: '/disclaimer/',
+      url: '/disclaimer/'
     },
     {
       text: 'Licença de uso',
-      url: '/license/',
+      url: '/license/'
     },
     {
       text: 'Política de privacidade',
-      url: '/privacy/',
+      url: '/privacy/'
     },
     {
       text: 'Declaração de acessibilidade',
-      url: '/accessibility/',
-    },
-  ],
+      url: '/accessibility/'
+    }
+  ]
 };

@@ -12,10 +12,10 @@ export const filterByMediaType = (collection, type) => {
     return [];
   }
 
-  return items.filter((item) => item.data?.type === type);
+  return items.filter(item => item.data?.type === type);
 };
 
-export const lazyGroupByWatchedYear = (collection) => {
+export const lazyGroupByWatchedYear = collection => {
   if (!collection) {
     return {};
   }

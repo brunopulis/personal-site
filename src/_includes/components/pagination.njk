@@ -1,10 +1,10 @@
 <nav aria-label="Paginação">
   {% if pagination.href.previous %}
-  <a href="{{ pagination.href.previous }}">Anterior</a>
+    <a href="{{ pagination.href.previous }}">Anterior</a>
   {% else %}
-  <span></span>
+    <span></span>
   {% endif %}
   {% if pagination.href.next %}
-  <a href="{{ pagination.href.next }}">Próximo</a>
+    <a href="{{ pagination.href.next }}">Próximo</a>
   {% endif %}
 </nav>

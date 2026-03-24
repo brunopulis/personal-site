@@ -14,37 +14,24 @@
   }
 }
 ---
-{
-  "version": "https://jsonfeed.org/version/1.1",
-  "title": "{{ metadata.title }}",
-  "description": "{{ metadata.description }}",
-  "home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}",
-  "feed_url": "{{ permalink | htmlBaseUrl(metadata.base) }}",
-  "language": "{{ metadata.language }}",
-  "authors": [
-    {
-      "name": "{{ metadata.author.name }}",
-      "url": "{{ metadata.base | addPathPrefixToFullUrl }}"
-    }
-  ],
-  "items": [
-    {%- for note in collections.notes | reverse | limit(10) %}
-    {%- set absolutePostUrl = note.url | htmlBaseUrl(metadata.base) %}
-    {
-      "id": "{{ absolutePostUrl }}",
-      "url": "{{ absolutePostUrl }}",
-      "title": {{ (note.data.title or (note.data.pubDate or note.date) | toRfc822Date) | dump | safe }},
-      "content_html": {{ note.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
-      {%- if note.data.summary %}
-        "summary": {{ note.data.summary | dump | safe }},
-      {%- endif %}
-      "date_published": "{{ (note.data.pubDate or note.date) | toRfc822Date }}",
-      "date_modified": "{{ note.data.updated | default(note.date) | toRfc822Date }}"
-      {%- if note.data.tags %},
-        "tags": {{ note.data.tags | dump | safe }}
-      {%- endif %}
-    }
-    {% if not loop.last %},{% endif %}
-    {%- endfor %}
-  ]
-}
+
+{ "version": "https://jsonfeed.org/version/1.1", "title": "{{ metadata.title }}", "description":
+"{{ metadata.description }}", "home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}", "feed_url":
+"{{ permalink | htmlBaseUrl(metadata.base) }}", "language": "{{ metadata.language }}", "authors": [ { "name":
+"{{ metadata.author.name }}", "url": "{{ metadata.base | addPathPrefixToFullUrl }}" } ], "items": [
+{%- for note in collections.notes | reverse | limit(10) %}
+  {%- set absolutePostUrl = note.url | htmlBaseUrl(metadata.base) %}
+  { "id": "{{ absolutePostUrl }}", "url": "{{ absolutePostUrl }}", "title":
+  {{ (note.data.title or (note.data.pubDate or note.date) | toRfc822Date) | dump | safe }}, "content_html":
+  {{ note.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
+  {%- if note.data.summary %}
+    "summary": {{ note.data.summary | dump | safe }},
+  {%- endif %}
+  "date_published": "{{ (note.data.pubDate or note.date) | toRfc822Date }}", "date_modified":
+  "{{ note.data.updated | default(note.date) | toRfc822Date }}"
+  {%- if note.data.tags %}
+    , "tags": {{ note.data.tags | dump | safe }}
+  {%- endif %}
+  } {% if not loop.last %},{% endif %}
+{%- endfor %}
+] }

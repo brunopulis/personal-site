@@ -1,11 +1,11 @@
 {% set metaDescription %}
-{%- if discover.description -%}
-{{- discover.description -}}
-{%- elif description -%}
-{{- description -}}
-{%- else -%}
-{{- meta.siteDescription -}}
-{%- endif -%}
+  {%- if discover.description -%}
+    {{- discover.description -}}
+  {%- elif description -%}
+    {{- description -}}
+  {%- else -%}
+    {{- meta.siteDescription -}}
+  {%- endif -%}
 {% endset %}
 
 <meta name="description" content="{{ metaDescription }}" />
@@ -18,42 +18,60 @@
 
 <!-- Made with Eleventy! -->
 <meta name="generator" content="{{ eleventy.generator }}" />
+
+<!-- supports both dark and light color schemes, page author prefers light as default. -->
 <meta name="color-scheme" content="light dark" />
+
+<!-- Helps prevent duplicate content issues -->
 <link rel="canonical" href="{{ meta.url }}{{ page.url }}" />
+
+<!-- Links to information about the author(s) of the document -->
 <link rel="author" href="humans.txt" />
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=no" />
 
 <!-- webmention -->
 <link rel="webmention" href="https://webmention.io/brunopulis.com/webmention" />
 <link rel="pingback" href="https://webmention.io/brunopulis.com/xmlrpc" />
 
 {% if personal.platforms.mastodon %}
-<link rel="me" href="{{ personal.platforms.mastodon }}" />
+  <link rel="me" href="{{ personal.platforms.mastodon }}" />
 {% endif %}
 
 {% if meta.author.fediverse %}
-<meta name="fediverse:creator" content="{{ meta.author.fediverse }}" />
+  <meta name="fediverse:creator" content="{{ meta.author.fediverse }}" />
 {% endif %}
 
 <!-- Open Graph meta  -->
 <meta property="og:url" content="{{ meta.url }}{{ page.url }}" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="{%- if discover.title -%}
+<meta
+  property="og:title"
+  content="{%- if discover.title -%}
     {{- discover.title -}}
   {%- elif title -%}
     {{- title -}}
   {%- else -%}
     {{- meta.siteName -}}
-  {%- endif -%}" />
-<meta property="og:image" content="{%- if layout == 'post' -%}
+  {%- endif -%}"
+/>
+<meta
+  property="og:image"
+  content="{%- if layout == 'post' -%}
     {{- meta.url -}}{{- title | ogImage() -}}
   {%- else -%}
     {{- meta.url -}}{{- meta.opengraph_default -}}
-  {%- endif -%}" />
-<meta property="og:image:alt" content="{%- if layout == 'post' -%}
+  {%- endif -%}"
+/>
+<meta
+  property="og:image:alt"
+  content="{%- if layout == 'post' -%}
     {{- title -}}
   {%- else -%}
     {{- meta.opengraph_default_alt -}}
-  {%- endif -%}" />
+  {%- endif -%}"
+/>
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:description" content="{{ metaDescription }}" />
@@ -62,24 +80,59 @@
 <meta property="article:author" content="{{ meta.author.name }}" />
 
 <!-- Blog -->
-<link rel="alternate" type="application/atom+xml" title="Blog de Bruno Pulis (Atom)" href="/feeds/blog/atom.xml">
-<link rel="alternate" type="application/rss+xml" title="Blog de Bruno Pulis (RSS)" href="/feeds/blog/rss.xml">
-<link rel="alternate" type="application/json" title="Blog de Bruno Pulis (JSON)" href="/feeds/blog/feed.json">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Blog de Bruno Pulis (Atom)"
+  href="/feeds/blog/atom.xml"
+/>
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Blog de Bruno Pulis (RSS)"
+  href="/feeds/blog/rss.xml"
+/>
+<link
+  rel="alternate"
+  type="application/json"
+  title="Blog de Bruno Pulis (JSON)"
+  href="/feeds/blog/feed.json"
+/>
 
 <!-- Bookmarks -->
-<link rel="alternate" type="application/atom+xml" title="Bookmarks - Atom" href="/feeds/bookmarks/atom.xml">
-<link rel="alternate" type="application/rss+xml" title="Bookmarks - RSS" href="/feeds/bookmarks/rss.xml">
-<link rel="alternate" type="application/feed+json" title="Bookmarks - JSON" href="/feeds/bookmarks/feed.json">
+<link rel="alternate" type="application/atom+xml" title="Bookmarks - Atom" href="/feeds/bookmarks/atom.xml" />
+<link rel="alternate" type="application/rss+xml" title="Bookmarks - RSS" href="/feeds/bookmarks/rss.xml" />
+<link
+  rel="alternate"
+  type="application/feed+json"
+  title="Bookmarks - JSON"
+  href="/feeds/bookmarks/feed.json"
+/>
 
 <!-- Books -->
-<link rel="alternate" type="application/atom+xml" title="Minha biblioteca - Bruno Pulis" href="/feeds/books/atom.xml">
-<link rel="alternate" type="application/rss+xml" title="Minha biblioteca - Bruno Pulis" href="/feeds/books/rss.xml">
-<link rel="alternate" type="application/json" title="Minha biblioteca - Bruno Pulis" href="/feeds/books/feed.json">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Minha biblioteca - Bruno Pulis"
+  href="/feeds/books/atom.xml"
+/>
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Minha biblioteca - Bruno Pulis"
+  href="/feeds/books/rss.xml"
+/>
+<link
+  rel="alternate"
+  type="application/json"
+  title="Minha biblioteca - Bruno Pulis"
+  href="/feeds/books/feed.json"
+/>
 
 <!-- Notes -->
-<link rel="alternate" type="application/atom+xml" title="Notas - Atom" href="/notes/feed.atom">
-<link rel="alternate" type="application/rss+xml" title="Notas - RSS" href="/notes/feed.xml">
-<link rel="alternate" type="application/feed+json" title="Notas - JSON" href="/notes/feed.json">
+<link rel="alternate" type="application/atom+xml" title="Notas - Atom" href="/notes/feed.atom" />
+<link rel="alternate" type="application/rss+xml" title="Notas - RSS" href="/notes/feed.xml" />
+<link rel="alternate" type="application/feed+json" title="Notas - JSON" href="/notes/feed.json" />
 
 <!-- Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
 <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="any" />

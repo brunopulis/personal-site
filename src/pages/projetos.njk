@@ -1,10 +1,11 @@
 ---
 layout: base
-title: "Meus trabalhos"
-permalink: "/projetos/index.html"
+title: 'Meus trabalhos'
+permalink: '/projetos/index.html'
 date: Last Modified
-description: "Uma seleção de projetos variando de desenvolvimento front-end ao design de interface, focada em
-performance e usabilidade."
+description: >-
+  Uma seleção de projetos variando de desenvolvimento front-end ao design de interface,
+  focada em performance e usabilidade.
 ---
 
 {% set projects = portfolio.projects %}
@@ -19,17 +20,15 @@ performance e usabilidade."
   <div class="h-feed region flow">
     <ul class="grid" data-layout="50-50" role="list">
       {% for project in projects %}
-      <li class="card">
-        <img alt="{{ project.imageAlt or project.title }}" src="{{ project.image }}">
-        <div class="flow">
-          <h2>
-            <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
-          </h2>
-          <p>
-            {{ project.description }}
-          </p>
-        </div>
-      </li>
+        <li class="card">
+          <img alt="{{ project.imageAlt or project.title }}" src="{{ project.image }}" />
+          <div class="flow">
+            <h2>
+              <a href="{{ project.url or project.links.demo }}">{{ project.title }}</a>
+            </h2>
+            <p>{{ project.description }}</p>
+          </div>
+        </li>
       {% endfor %}
     </ul>
   </div>
@@ -37,8 +36,9 @@ performance e usabilidade."
   <aside class="card">
     <div class="flow">
       <h2>Vamos construir algo juntos?</h2>
-      <p>Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de
-        software e design.
+      <p>
+        Estou sempre aberto a novos projetos, mentorias e colaborações interessantes em engenharia de software
+        e design.
       </p>
 
       <div class="cluster | repel">

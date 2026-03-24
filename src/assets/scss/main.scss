@@ -1,5 +1,5 @@
-/* 
-* The variables/tokens (or whatever you 
+/*
+* The variables/tokens (or whatever you
 * wish to call them) that power the rest of your styles
 */
 @import './abstracts/_fonts.scss';
@@ -7,9 +7,9 @@
 @import './abstracts/_theme.scss';
 @import './abstracts/_type.scss';
 
-/* 
-* Embrace the cascade and inheritance to 
-* style as much as possible at a global level 
+/*
+* Embrace the cascade and inheritance to
+* style as much as possible at a global level
 */
 @import './base/_reset.scss';
 @import './base/_global.scss';
@@ -20,7 +20,7 @@
 @import './base/_button.scss';
 @import './base/_nav.scss';
 
-/* 
+/*
 * Skeletal components or organisational structures.
 */
 @import './blocks/_prose.scss';
@@ -28,10 +28,11 @@
 @import './blocks/_callout.scss';
 @import './blocks/_card.scss';
 @import './blocks/_interstitial.scss';
+@import './blocks/_footer.scss';
 @import './blocks/_blog.scss';
 
-/* 
-* High level, flexible layouts that provide a 
+/*
+* High level, flexible layouts that provide a
 * skeleton to support any variant of a component
 */
 @import './compositions/_grid.scss';
@@ -42,8 +43,8 @@
 @import './compositions/_switcher.scss';
 @import './compositions/_frame.scss';
 
-/* 
-* Classes that do one job and one job well 
+/*
+* Classes that do one job and one job well
 */
 @import './utilities/_visually-hidden.scss';
 @import './utilities/_flow.scss';
