@@ -1,21 +1,76 @@
 <div
-  style="background: rgb(255, 253, 214); color: rgb(30, 30, 30); padding: 1rem 0.5rem; text-align: center; font-size: 0.9rem; font-family: system-ui, sans-serif;">
+  style="background: rgb(255, 253, 214); color: rgb(30, 30, 30); padding: 1rem 0.5rem; text-align: center; font-size: 0.9rem; font-family: system-ui, sans-serif;"
+>
   Este site está em redesign aberto, então se parecer estranho, é por isso.
 </div>
 <header class="wrapper region repel" style="--region-space: 1.5rem;" id="main-nav">
-  <a class="u-url" data-variant="naked" href="/">
-    <img src="/assets/images/pulis.webp" alt="" srcset="" style="max-width: 100%; width: 64px; height: 64px; border-radius: 50%;">
-  </a>
+  <div class="flex items-center gap-3 mx-auto px-4 py-3 container">
+    <a class="u-url" data-variant="naked" href="/">
+      <img
+        src="/assets/images/pulis.webp"
+        alt=""
+        srcset=""
+        style="max-width: 100%; width: 64px; height: 64px; border-radius: 50%;"
+      />
+    </a>
 
-  <nav data-variant="main">
-    <ul class="cluster" style="--region-space: 1.5rem;" role="list">
-      {% for item in navigation.top %}
-      <li>
-        <a href="{{ item.url }}" data-variant="naked" {% if item.url==url %}aria-current="page" {% endif %}>
-          {{ item.text }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
+    <form class="hidden sm:block ml-auto" role="search" aria-label="Site" action="/search/" method="get">
+      <label class="sr-only" for="q">Search</label>
+      <input id="q" name="q" type="search" placeholder="Search…" class="px-3 py-2 border rounded w-64" />
+    </form>
+    <div class="flex items-center gap-2 ml-2">
+      <button
+        id="dark-toggle"
+        class="px-2 py-1 border rounded text-sm"
+        aria-pressed="false"
+        aria-label="Switch to dark mode"
+      >
+        🌙
+      </button>
+      <div class="relative">
+        <button
+          id="a11y-toggle"
+          class="px-2 py-1 border rounded text-sm"
+          aria-expanded="false"
+          aria-controls="a11y-menu"
+        >
+          A11y
+        </button>
+        <div
+          id="a11y-menu"
+          class="hidden right-0 absolute space-x-2 bg-[var(--surface)] mt-1 p-2 border rounded text-sm whitespace-nowrap"
+        >
+          <button id="font-dec" class="px-2 py-1 border rounded">A-</button>
+          <button id="font-inc" class="px-2 py-1 border rounded">A+</button>
+          <button id="contrast-toggle" class="px-2 py-1 border rounded">Contrast</button>
+          <button id="motion-toggle" class="px-2 py-1 border rounded">Reduce motion</button>
+          <button
+            id="font-toggle"
+            type="button"
+            aria-pressed="false"
+            class="hidden md:inline-block px-2 py-1 border rounded"
+          >
+            System Fonts
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <nav data-variant="main">
+      <ul class="cluster" style="--region-space: 1.5rem;" role="list">
+        {% for item in navigation.top %}
+          <li>
+            <a
+              href="{{ item.url }}"
+              data-variant="naked"
+              {% if item.url==url %}aria-current="page"{% endif %}
+            >
+              {{ item.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>

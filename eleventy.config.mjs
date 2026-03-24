@@ -46,7 +46,6 @@ export default async function eleventy(eleventyConfig) {
   eleventyConfig.addCollection('medias', collections.medias);
   eleventyConfig.addCollection('likes', collections.likes);
   eleventyConfig.addCollection('games', collections.games);
-  eleventyConfig.addCollection('bookmarks', collections.bookmarks);
   eleventyConfig.addCollection('showInSitemap', collections.showInSitemap);
   eleventyConfig.addCollection('tagList', collections.tagList);
 

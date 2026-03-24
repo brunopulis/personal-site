@@ -14,18 +14,18 @@ function extractUrls(content) {
 
 // Função para verificar o status code de uma URL
 function checkUrl(url) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const protocol = url.startsWith('https') ? https : http;
 
     const options = {
       method: 'HEAD',
       timeout: 10000,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-      },
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      }
     };
 
-    const req = protocol.request(url, options, (res) => {
+    const req = protocol.request(url, options, res => {
       resolve(res.statusCode);
     });
 
@@ -60,7 +60,7 @@ async function processFile(filePath) {
 
     if (statusCode === 404 || statusCode === 403) {
       console.log(`    ❌ ${statusCode} - URL inacessível!`);
-      return { file: filePath, url, statusCode };
+      return {file: filePath, url, statusCode};
     } else if (statusCode) {
       console.log(`    ✓ ${statusCode}`);
     } else {
@@ -68,7 +68,7 @@ async function processFile(filePath) {
     }
 
     // Pequeno delay para não sobrecarregar os servidores
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 500));
   }
 
   return null;
@@ -103,11 +103,9 @@ async function walkDir(dir) {
   console.log('='.repeat(60));
 
   if (filesToDelete.length > 0) {
-    console.log(
-      `\n❌ Encontrados ${filesToDelete.length} arquivo(s) com URLs inacessíveis (403/404):\n`
-    );
+    console.log(`\n❌ Encontrados ${filesToDelete.length} arquivo(s) com URLs inacessíveis (403/404):\n`);
 
-    filesToDelete.forEach(({ file, url, statusCode }) => {
+    filesToDelete.forEach(({file, url, statusCode}) => {
       console.log(`  ${file}`);
       console.log(`    URL: ${url}`);
       console.log(`    Status: ${statusCode}\n`);
@@ -115,7 +113,7 @@ async function walkDir(dir) {
 
     // Salvar lista de arquivos para deletar
     const listPath = './files-to-delete-404.txt';
-    fs.writeFileSync(listPath, filesToDelete.map((f) => f.file).join('\n'));
+    fs.writeFileSync(listPath, filesToDelete.map(f => f.file).join('\n'));
 
     console.log(`\n📝 Lista salva em: ${listPath}`);
     console.log('\nPara deletar os arquivos, execute:');

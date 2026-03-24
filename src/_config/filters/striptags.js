@@ -1,4 +1,4 @@
-export const striptags = (string) => {
+export const striptags = string => {
   let prev;
   do {
     prev = string;

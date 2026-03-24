@@ -6,33 +6,44 @@
 
   {% set posts = collections.notes %}
   {% if (posts | length) == 0 %}
-  {% set posts = collections.searchIndex | default([]) %}
+    {% set posts = collections.searchIndex | default([]) %}
   {% endif %}
 
   {% if posts %}
-  <div class="grid" data-layout="33x3">
-    {% for post in posts.slice(0, 3) %}
-    {% set title = post.data.title %}
-    {% set dateVal = post.data.pubDate %}
-    {% set desc = post.templateContent | striptags | truncate(80) %}
-    {% set tags = post.data.tags %}
-    <article class="h-entry card">
-      <div class="flow">
-        <div class="e-content">
-          {{ desc }}
-        </div>
-        <time class="dt-published" datetime="{{ dateVal | toISOString }}">
-          {{ dateVal | readableDate }}
-        </time>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
+    <div class="grid" data-layout="33x3">
+      {% for post in posts.slice(0, 3) %}
+        {% set title = post.data.title %}
+        {% set dateVal = post.data.pubDate %}
+        {% set desc = post.templateContent | striptags | truncate(80) %}
+        {% set tags = post.data.tags %}
+        <article class="h-entry card">
+          <div class="flow">
+            <div class="e-content">{{ desc }}</div>
+            <time class="dt-published" datetime="{{ dateVal | toISOString }}">
+              {{ dateVal | readableDate }}
+            </time>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
   {% endif %}
 
   <div class="region | flow">
     <a href="/notas" class="button">
-      ver todas as notas <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      ver todas as notas
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
     </a>
   </div>
 </section>

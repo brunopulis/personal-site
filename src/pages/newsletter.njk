@@ -1,9 +1,8 @@
 ---
 layout: base
-title: "Filtro digital"
-description: "Sua fonte de notícias sobre tecnologia, acessibilidade e desenvolvimento web"
-permalink: "{% if pagination.pageNumber > 0 %}/newsletter/page/{{ pagination.pageNumber + 1 }}/{% else %}/newsletter/{%
-endif %}"
+title: 'Filtro digital'
+description: 'Sua fonte de notícias sobre tecnologia, acessibilidade e desenvolvimento web'
+permalink: '{% if pagination.pageNumber > 0 %}/newsletter/page/{{ pagination.pageNumber + 1 }}/{% else %}/newsletter/{% endif %}'
 date: Last Modified
 pagination:
   data: collections.newsletters
@@ -20,18 +19,16 @@ pagination:
 
   <ol class="region flow h-feed" role="list">
     {% for item in pagination.items %}
-    <li class="card h-entry">
-      <div class="flow">
-        <h2 class="p-name">
-          <a href="{{ item.url | url }}" class="u-url">
-            {{ item.data.title }}
-          </a>
-        </h2>
-        <time class="dt-published" datetime="{{ item.data.pubDate | toISOString }}">
-          {{ item.data.pubDate | readableDate }}
-        </time>
-      </div>
-    </li>
+      <li class="card h-entry">
+        <div class="flow">
+          <h2 class="p-name">
+            <a href="{{ item.url | url }}" class="u-url"> {{ item.data.title }} </a>
+          </h2>
+          <time class="dt-published" datetime="{{ item.data.pubDate | toISOString }}">
+            {{ item.data.pubDate | readableDate }}
+          </time>
+        </div>
+      </li>
     {% endfor %}
   </ol>
 

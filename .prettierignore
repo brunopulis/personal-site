@@ -2,7 +2,3 @@ src/**/*.md
 src/_includes/components/**/custom-*.njk
 src/common/*
 src/_includes/scripts/*
-
-pnpm-lock.yaml
-yarn.lock
-package-lock.json

@@ -15,7 +15,7 @@ async function fetchScreenshot(url, filePath) {
 
   const buffer = await fetch(apiUrl, {
     duration: '1d',
-    type: 'buffer',
+    type: 'buffer'
   });
 
   await fs.writeFile(filePath, buffer);
@@ -28,11 +28,11 @@ async function generateScreenshots() {
   try {
     await fs.access(screenshotDir);
   } catch {
-    await fs.mkdir(screenshotDir, { recursive: true });
+    await fs.mkdir(screenshotDir, {recursive: true});
   }
 
   for (const item of jsonData) {
-    const { name, link, filename } = item;
+    const {name, link, filename} = item;
     const filePath = path.join(screenshotDir, `${filename}.jpg`);
     try {
       await fetchScreenshot(link, filePath);

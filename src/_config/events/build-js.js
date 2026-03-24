@@ -33,7 +33,7 @@ export const buildAllJs = async () => {
   const componentFiles = await fg(['src/assets/scripts/components/**/*.js']);
   for (const inputPath of componentFiles) {
     const baseName = path.basename(inputPath);
-    const outputPath = `dist/assets/scripts/components/${baseName}`;
+    const outputPath = `_site/assets/scripts/components/${baseName}`;
     tasks.push(buildJs(inputPath, outputPath));
   }
 

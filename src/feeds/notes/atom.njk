@@ -14,8 +14,8 @@
   }
 }
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+
+<?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
@@ -29,22 +29,26 @@
   </author>
 
   {%- for note in collections.notes | limit(10) %}
-  {%- set absolutePostUrl = note.url | htmlBaseUrl(metadata.base) %}
-  <entry>
-    <title>{{ note.data.title or (note.data.pubDate or note.date) | dateToRfc3339 }}</title>
-    <link href="{{ absolutePostUrl }}" />
-    <updated>{{ (note.data.pubDate or note.date) | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ note.content | renderTransforms(note.data.page,
-      metadata.base) }}</content>
-    {%- if note.data.summary %}
-    <summary>{{ note.data.summary }}</summary>
-    {%- endif %}
-    {%- if note.data.tags %}
-    {%- for tag in note.data.tags %}
-    <category term="{{ tag }}" />
-    {%- endfor %}
-    {%- endif %}
-  </entry>
+    {%- set absolutePostUrl = note.url | htmlBaseUrl(metadata.base) %}
+    <entry>
+      <title>{{ note.data.title or (note.data.pubDate or note.date) | dateToRfc3339 }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <updated>{{ (note.data.pubDate or note.date) | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content xml:lang="{{ metadata.language }}" type="html"
+        >{{
+          note.content | renderTransforms(note.data.page,
+          metadata.base)
+        }}</content
+      >
+      {%- if note.data.summary %}
+        <summary>{{ note.data.summary }}</summary>
+      {%- endif %}
+      {%- if note.data.tags %}
+        {%- for tag in note.data.tags %}
+          <category term="{{ tag }}" />
+        {%- endfor %}
+      {%- endif %}
+    </entry>
   {%- endfor %}
 </feed>

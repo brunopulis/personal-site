@@ -10,7 +10,7 @@ export const lazyPaginate = (collection, page = 1, perPage = 10) => {
   return items.slice(start, end);
 };
 
-export const lazyGroupByYear = (collection) => {
+export const lazyGroupByYear = collection => {
   if (!collection || typeof collection.toArray !== 'function') {
     return {};
   }

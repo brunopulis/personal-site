@@ -7,25 +7,41 @@ permalink: /fotos/
 
 <header>
   <h1>Fotos</h1>
-  <p>Fotos publicadas no <a href="https://pixelfed.social/brunopulis" rel="me noopener" target="_blank">Pixelfed</a>.
+  <p>
+    Fotos publicadas no
+    <a href="https://pixelfed.social/brunopulis" rel="me noopener" target="_blank">Pixelfed</a>.
   </p>
 </header>
 
 {% if pixelfed and pixelfed.length > 0 %}
-<div class="photo-grid">
-  {% for photo in pixelfed %}
-  <a href="{{ photo.postUrl }}" target="_blank" rel="noopener" class="photo-item" aria-label="Ver foto no Pixelfed">
-    <img src="{{ photo.preview }}" alt="{{ photo.alt }}" loading="lazy" decoding="async" width="400" height="400">
-  </a>
-  {% endfor %}
-</div>
+  <div class="photo-grid">
+    {% for photo in pixelfed %}
+      <a
+        href="{{ photo.postUrl }}"
+        target="_blank"
+        rel="noopener"
+        class="photo-item"
+        aria-label="Ver foto no Pixelfed"
+      >
+        <img
+          src="{{ photo.preview }}"
+          alt="{{ photo.alt }}"
+          loading="lazy"
+          decoding="async"
+          width="400"
+          height="400"
+        />
+      </a>
+    {% endfor %}
+  </div>
 
-<p class="photo-footer">
-  <a href="https://pixelfed.social/brunopulis" rel="me noopener" target="_blank">Ver todas as fotos no Pixelfed →</a>
-</p>
-
+  <p class="photo-footer">
+    <a href="https://pixelfed.social/brunopulis" rel="me noopener" target="_blank"
+      >Ver todas as fotos no Pixelfed →</a
+    >
+  </p>
 {% else %}
-<p>Nenhuma foto encontrada no momento. Tente novamente mais tarde.</p>
+  <p>Nenhuma foto encontrada no momento. Tente novamente mais tarde.</p>
 {% endif %}
 
 <style>

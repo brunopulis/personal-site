@@ -1,9 +1,10 @@
 ---
 layout: base
-title: "Contato"
-description: "Adoraria ouvir sua voz! Se você tiver alguma dúvida, feedback ou apenas quiser cumprimentar, sinta-se à
-vontade para me contatar por qualquer um dos canais abaixo."
-permalink: "/contato/index.html"
+title: 'Contato'
+description: >-
+  Adoraria ouvir sua voz! Se você tiver alguma dúvida, feedback ou apenas quiser
+  cumprimentar, sinta-se à vontade para me contatar por qualquer um dos canais abaixo.
+permalink: '/contato/index.html'
 hasForm: true
 date: Last Modified
 ---
@@ -17,23 +18,35 @@ date: Last Modified
   <ul>
     <li class="flex items-center gap-3">
       <span class="text-brand-red-600">📧</span>
-      <a href="mailto:{{ site.email }}"
-        class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">{{ site.email
-        }}</a>
+      <a
+        href="mailto:{{ site.email }}"
+        class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline"
+        >{{ site.email }}</a
+      >
     </li>
     {% if site.social.github %}
-    <li class="flex items-center gap-3">
-      <span class="text-brand-red-600">🐙</span>
-      <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener"
-        class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">GitHub</a>
-    </li>
+      <li class="flex items-center gap-3">
+        <span class="text-brand-red-600">🐙</span>
+        <a
+          href="https://github.com/{{ site.social.github }}"
+          target="_blank"
+          rel="noopener"
+          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline"
+          >GitHub</a
+        >
+      </li>
     {% endif %}
     {% if site.social.mastodon %}
-    <li class="flex items-center gap-3">
-      <span class="text-brand-red-600">🐘</span>
-      <a href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}" target="_blank" rel="noopener"
-        class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline">Mastodon</a>
-    </li>
+      <li class="flex items-center gap-3">
+        <span class="text-brand-red-600">🐘</span>
+        <a
+          href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}"
+          target="_blank"
+          rel="noopener"
+          class="text-brand-red-500 hover:text-brand-red-600 underline hover:no-underline"
+          >Mastodon</a
+        >
+      </li>
     {% endif %}
   </ul>
 </div>

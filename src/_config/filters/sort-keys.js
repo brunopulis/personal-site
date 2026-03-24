@@ -1,4 +1,4 @@
-export const sortKeys = (obj) => {
+export const sortKeys = obj => {
   return Object.keys(obj).sort((a, b) => b - a);
 };
 

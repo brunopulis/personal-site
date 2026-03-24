@@ -1,13 +1,10 @@
-<article class="card">
-  <div class="flow">
-    <h3>
-      <a href="{{ item.url }}">{{ item.data.title }}</a>
-    </h3>
-    <time class="dt-published" datetime="{{ item.date | toISOString }}">
-      {{ item.date | readableDate }}
-    </time>
-    {% if item.data.description %}
-    <p>{{ item.data.description | striptags | truncate(160) }}</p>
-    {% endif %}
-  </div>
-</article>
+{% set headingLevel = headingLevel | default("h2") %}
+{% set definedDate = definedDate | default(item.date) %}
+
+<custom-card clickable>
+  <{{ headingLevel }} slot="headline" class="text-step-2">
+    <a href="{{ item.url | url }}">{{ item.data.title }}</a>
+  </{{ headingLevel }}>
+  <span slot="date">{{ definedDate | readableDate }}</span>
+  <p slot="content">{{ item.data.description }}</p>
+</custom-card>
