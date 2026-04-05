@@ -1,10 +1,10 @@
 ---
-layout: base.njk
+layout: base
 ---
 
 <article class="h-entry page">
   <header class="page-header">
-    <h1 class="p-name font-bold text-4xl mb-4" data-pagefind-meta="title">{{ title }}</h1>
+    <h1 class="mb-4 p-name font-bold text-4xl" data-pagefind-meta="title">{{ title }}</h1>
   </header>
 
   <div class="prose e-content">{{ content | safe }}</div>
@@ -23,7 +23,7 @@ layout: base.njk
   <a class="u-uid" href="{{ site.url }}{{ page.url }}" style="display:none;">{{ site.url }}{{ page.url }}</a>
 
   <div class="p-author h-card" style="display:none;">
-    <a class="u-url p-name" rel="author" href="{{ site.url }}">{{ site.author.name }}</a>
+    <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ site.author.name }}</a>
     <img class="u-photo" src="{{ site.author.photo }}" alt="{{ site.author.name }}" style="display:none;" />
   </div>
 </article>
