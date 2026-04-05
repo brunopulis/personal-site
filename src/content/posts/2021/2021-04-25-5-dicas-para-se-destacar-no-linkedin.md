@@ -34,7 +34,7 @@ Cada usuário na rede tem uma pontuação, a partir dela, seu posicionamento é 
 
 Para utilizá-lo basta selecionar o botão **“Get your score free”**, conforme a imagem abaixo:
 
-![Ferramenta do Linkedin que avalia suas estatísticas. Nela existe um botão com o rótulo "Get your score free"](/assets/images/blog/ssi-linkedin.png)
+![Ferramenta do Linkedin que avalia suas estatísticas. Nela existe um botão com o rótulo Get your score free](/assets/images/blog/ssi-linkedin.png)
 
 O resultado do meu _score_, no momento da escrita desse artigo, foi:
 
