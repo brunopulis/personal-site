@@ -1,0 +1,29 @@
+---
+layout: base.njk
+---
+
+<article class="h-entry page">
+  <header class="page-header">
+    <h1 class="p-name font-bold text-4xl mb-4" data-pagefind-meta="title">{{ title }}</h1>
+  </header>
+
+  <div class="prose e-content">{{ content | safe }}</div>
+
+  {% set lastMod = page.inputPath | lastModified %}
+  {% if lastMod %}
+    <footer class="page-footer">
+      <p class="page-meta">
+        <span aria-hidden="true">🖋️</span>
+        <span>Última modificação: {{ lastMod | readableDate }}</span>
+      </p>
+    </footer>
+  {% endif %}
+
+  <a class="u-url" href="{{ site.url }}{{ page.url }}" style="display:none;">Permalink</a>
+  <a class="u-uid" href="{{ site.url }}{{ page.url }}" style="display:none;">{{ site.url }}{{ page.url }}</a>
+
+  <div class="p-author h-card" style="display:none;">
+    <a class="u-url p-name" rel="author" href="{{ site.url }}">{{ site.author.name }}</a>
+    <img class="u-photo" src="{{ site.author.photo }}" alt="{{ site.author.name }}" style="display:none;" />
+  </div>
+</article>
