@@ -1,0 +1,73 @@
+{
+  "name": "Bruno Pulis",
+  "description": "Pare de navegar sem parar em busca de notícias ruins, comece a criar. Aproprie-se de uma parte da internet novamente.",
+  "url": "https://brunopulis.com",
+  "author": "Bruno Pulis",
+  "email": "brunopulis@protonmail.com",
+  "social": {
+    "github": "brunopulis",
+    "mastodon": "@brunopulis@mastodon.social",
+    "twitter": "@brunopulis"
+  },
+  "repo": {
+    "url": "https://github.com/brunopulis/personal-site",
+    "branch": "main"
+  },
+  "bio": {
+    "short": "Engenheiro de software, focado em experiências inclusivas, teólogo, pensador e minimalista digital.",
+    "long": "Apaixonado por escrita reflexiva, conexões significativas e pela construção de uma internet mais humana. Este é o meu cantinho na internet, onde compartilho ideias, experiências e descobertas."
+  },
+  "location": {
+    "city": "Belo Horizonte",
+    "country": "Brasil"
+  },
+  "timezone": "America/Sao_Paulo",
+  "newsletter": {
+    "enabled": true,
+    "provider": "buttondown",
+    "action": "https://buttondown.email/api/emails/embed-subscribe/brunopulis",
+    "title": "Assine minha newsletter",
+    "description": "Receba atualizações direto no seu e-mail. Sem spam, apenas conteúdo significativo."
+  },
+  "donate": {
+    "enabled": true,
+    "kofi": "brunopulis",
+    "paypal": "7YBCWD8WYY4ZA",
+    "github": "brunopulis",
+    "message": "Se você valoriza meus textos, considere apoiar meu trabalho. Cada contribuição me ajuda a continuar criando conteúdo relevante."
+  },
+  "analytics": {
+    "enabled": false,
+    "provider": "umami",
+    "domain": "",
+    "siteId": ""
+  },
+  "webmentions": {
+    "enabled": true,
+    "domain": ""
+  },
+  "webring": {
+    "enabled": false,
+    "url": "https://indieweb.org/webring"
+  },
+  "lighthouse": {
+    "enabled": false,
+    "url": "https://pagespeed.web.dev/"
+  },
+  "indieweb": {
+    "h_card": true,
+    "rel_me": true,
+    "microformats": true
+  },
+  "sections": {
+    "notes": {"enabled": true, "title": "Notes", "path": "/notes/"},
+    "journal": {"enabled": true, "title": "Journal", "path": "/journal/"},
+    "poetry": {"enabled": true, "title": "Poetry", "path": "/poetry/"},
+    "portfolio": {"enabled": true, "title": "Portfolio", "path": "/portfolio/"},
+    "projects": {"enabled": true, "title": "Projects", "path": "/projects/"},
+    "resume": {"enabled": true, "title": "Résumé", "path": "/resume/"},
+    "type": {"enabled": true, "title": "Type", "path": "/type/"},
+    "links": {"enabled": true, "title": "Links", "path": "/links/"},
+    "bookshelf": {"enabled": true, "title": "Bookshelf", "path": "/bookshelf/"}
+  }
+}
