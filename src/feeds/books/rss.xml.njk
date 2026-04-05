@@ -1,17 +1,17 @@
 ---json
 {
-"permalink": "/feeds/books/rss.xml",
-"eleventyExcludeFromCollections": true,
-"metadata": {
-"title": "Bruno Pulis - Biblioteca",
-"description": "Minha biblioteca de leitura",
-"language": "pt-br",
-"base": "https://www.brunopulis.com",
-"author": {
-"name": "Bruno Pulis",
-"email": "brunopulis@protonmail.com"
-}
-}
+  "permalink": "/feeds/books/rss.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Meus livros",
+    "description": "Minha biblioteca de leitura",
+    "language": "pt-br",
+    "base": "https://www.brunopulis.com",
+    "author": {
+      "name": "Bruno Pulis",
+      "email": "brunopulis@protonmail.com"
+    }
+  }
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -30,7 +30,7 @@
     <item>
       <title>{{ book.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ book.content | renderTransforms(book.data.page, metadata.base) }}</description>
+      <description>{{ book.content | safe }}</description>
       <pubDate>{{ (book.data.pubDate or book.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>

@@ -30,7 +30,7 @@
     <item>
       <title>{{ bookmark.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ bookmark.content | renderTransforms(bookmark.data.page, metadata.base) }}</description>
+      <description>{{ bookmark.content | safe }}</description>
       <pubDate>{{ (bookmark.data.pubDate or bookmark.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
