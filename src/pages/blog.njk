@@ -1,66 +1,44 @@
 ---
-layout: base
-title: 'Blog'
-description: 'Escrevo para organizar ideias, questionar práticas comuns da web e compartilhar aprendizados sobre acessibilidade, front-end e pensamento crítico.'
-permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}'
+layout: base.njk
 pagination:
   data: collections.posts
   size: 10
+  alias: posts
+permalink: "/blog/{% if pagination.pageNumber >= 1 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+title: Blog
 ---
 
-<section class="wrapper region">
-  <header class="flow">
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
-    <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
-    <nav class="interstitial | flow box" aria-label="Navegação rápida">
-      <p class="font-bold text-brand text-step-0">Explore também:</p>
-      <ul class="cluster" role="list" style="--gutter: var(--space-s)">
-        <li><a href="/poemas/">Poemas</a></li>
-        <li><a href="/tags/">Tags</a></li>
-        <li><a href="/notas/">Notas</a></li>
-        <li><a href="/now/">O que estou fazendo agora</a></li>
-      </ul>
-    </nav>
-    <nav aria-label="Navegação por ano">
-      <ul class="cluster" role="list">
-        {% for y in collections.postYears %}
-          <li><a href="/blog/{{ y }}/">{{ y }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </header>
+<div class="h-feed">
+  <h1 class="mb-6 p-name font-bold text-2xl">Blog</h1>
+  <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
 
-  <div class="h-feed flow region" style="--flow-space: var(--space-xl)">
-    {% for post in pagination.items %}
-      <article class="{% if loop.first %}featured-post{% else %}standard-post{% endif %} | flow h-entry">
-        <header class="flow">
-          <h2 class="p-name">
-            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-          </h2>
-          <time class="text-step--1 dt-published" datetime="{{ post.data.pubDate | toISOString }}">
-            {{ post.data.pubDate | readableDate }}
-          </time>
-        </header>
-
-        <div class="prose">
-          <p class="p-summary">
-            {{ post.data.description or (post.templateContent | striptags | truncate(200)) }}
-          </p>
-        </div>
-
-        <div class="tags-list | cluster" role="list">
-          {% for tag in post.data.tags %}
-            <a class="p-category" href="/tag/{{ tag | slug }}/">#{{ tag }}</a>
-          {% endfor %}
-        </div>
-
-        {% if not loop.last %}<hr class="post-separator" />{% endif %}
+  <div class="space-y-8">
+    {% for post in collections.posts %}
+      <article class="pb-6 border-b h-entry">
+        <h3 class="p-name font-semibold text-xl"><a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <time class="text-gray-500 dark:text-gray-400 text-sm dt-published" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        <div class="mt-2 p-summary text-gray-700 dark:text-gray-300">{{ post.data.description or (post.templateContent | striptags | truncate(160)) }}</div>
+        {% if tags %}
+          <div class="flex flex-wrap gap-2">
+            {% for tag in tags %}
+              <a class="hover:opacity-80 p-category px-2 py-1 rounded text-white text-xs transition-opacity"
+                 style="background-color: {{ tag | tagColor }}"
+                 href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
       </article>
     {% endfor %}
   </div>
 
-  {% if pagination.pages.length > 1 %}
-    {% include 'components/pagination.njk' %}
-  {% endif %}
-</section>
+  <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
+    {% if pagination.href.previous %}
+      <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Newer</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if pagination.href.next %}
+      <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Older</a>
+    {% endif %}
+  </nav>
+</div>

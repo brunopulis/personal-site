@@ -1,0 +1,278 @@
+---
+layout: base.njk
+permalink: "/search/"
+title: "Search Results"
+---
+<div class="max-w-4xl">
+  <h1 class="flex items-center gap-2 mb-6 font-bold text-3xl">
+    <span aria-hidden="true">🔍</span> Resultados da pesquisa
+  </h1>
+
+  <!-- Search form -->
+  <form class="mb-8" role="search" aria-label="Site search">
+    <div class="flex gap-2">
+      <input
+        id="search-query"
+        name="q"
+        type="search"
+        placeholder="Search posts, pages, and content..."
+        class="flex-1 bg-white dark:bg-gray-800 px-4 py-3 border border-gray-300 focus:border-transparent dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 text-gray-900 dark:text-gray-100"
+        autocomplete="off"
+      />
+      <button
+        type="submit"
+        class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg font-medium text-white transition-colors"
+      >
+        Pesquisar
+      </button>
+    </div>
+  </form>
+
+  <!-- Search results container -->
+  <div id="search-results-container" class="hidden">
+    <div class="mb-4">
+      <p id="results-count" class="text-gray-600 dark:text-gray-400"></p>
+    </div>
+
+    <div id="search-results-list" class="space-y-6">
+      <!-- Results will be populated here -->
+    </div>
+  </div>
+
+  <!-- No results message -->
+  <div id="no-results" class="hidden py-12 text-center">
+    <div class="mb-4 text-6xl">🔍</div>
+    <h2 class="mb-2 font-semibold text-xl">Nenhum resultado encontrado</h2>
+    <p class="mb-6 text-gray-600 dark:text-gray-400">
+      Tente palavras-chave diferente ou navegue pelo conteúdo abaixo.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/blog/" class="bg-purple-100 hover:bg-purple-200 dark:bg-purple-900/30 dark:hover:bg-purple-900/50 px-4 py-2 rounded-lg text-purple-800 dark:text-purple-200 transition-colors">
+        Navegar em todos os artigos
+      </a>
+      <a href="/archive/" class="bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-4 py-2 rounded-lg text-blue-800 dark:text-blue-200 transition-colors">
+        Ver arquivo
+      </a>
+      <a href="/sitemap/" class="bg-green-100 hover:bg-green-200 dark:bg-green-900/30 dark:hover:bg-green-900/50 px-4 py-2 rounded-lg text-green-800 dark:text-green-200 transition-colors">
+        Mapa do site
+      </a>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <div id="search-loading" class="hidden py-12 text-center">
+    <div class="mb-4 text-4xl">⏳</div>
+    <p class="text-gray-600 dark:text-gray-400">Searching...</p>
+  </div>
+
+  <!-- Default content when no search -->
+  <div id="default-content">
+    <div class="py-12 text-center">
+      <div class="mb-4 text-6xl">🔍</div>
+      <h2 class="mb-2 font-semibold text-xl">Search the site</h2>
+      <p class="mb-6 text-gray-600 dark:text-gray-400">
+        Find posts, pages, and content across the entire site.
+      </p>
+    </div>
+
+    <!-- Popular content -->
+    <div class="gap-6 grid grid-cols-1 md:grid-cols-2 mb-8">
+      <div class="bg-[var(--surface)] p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+        <h3 class="mb-4 font-semibold text-purple-700 dark:text-purple-300 text-lg">📝 Recent Posts</h3>
+        {% if collections.posts.length > 0 %}
+        <ul class="space-y-2">
+          {% for post in collections.posts | slice(0, 5) %}
+          <li>
+            <a href="{{ post.url }}" class="block hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+              <span class="font-medium">{{ post.data.title }}</span>
+              <span class="block text-gray-500 dark:text-gray-400 text-sm">{{ post.date | readableDate }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-gray-500 dark:text-gray-400 italic">No posts yet.</p>
+        {% endif %}
+      </div>
+
+      <div class="bg-[var(--surface)] p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+        <h3 class="mb-4 font-semibold text-blue-700 dark:text-blue-300 text-lg">🏷️ Popular Tags</h3>
+        {% if collections.tagList.length > 0 %}
+        <div class="flex flex-wrap gap-2">
+          {% for tag in collections.tagList | slice(0, 10) %}
+          <a href="/tags/{{ tag | slug }}/" class="bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-2 py-1 rounded text-blue-800 dark:text-blue-200 text-sm transition-colors">
+            #{{ tag }}
+          </a>
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-gray-500 dark:text-gray-400 italic">No tags yet.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Search tips -->
+    <div class="bg-gradient-to-r from-purple-100 dark:from-purple-900/20 to-pink-100 dark:to-pink-900/20 p-6 rounded-lg">
+      <h3 class="mb-3 font-semibold text-lg">💡 Search Tips</h3>
+      <ul class="space-y-1 text-gray-700 dark:text-gray-300 text-sm">
+        <li>• Use specific keywords for better results</li>
+        <li>• Search works across post titles, content, and tags</li>
+        <li>• Try different variations of your search terms</li>
+        <li>• Browse by tags or the archive for discovery</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+// Search results page functionality
+(function() {
+  let searchIndex = null;
+  let flexSearch = null;
+
+  // Get query parameter from URL
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Initialize search on page load
+  async function initSearchPage() {
+    try {
+      // Load search index
+      const response = await fetch('/search.json');
+      searchIndex = await response.json();
+
+      // Initialize FlexSearch
+      if (typeof FlexSearch !== 'undefined') {
+        flexSearch = new FlexSearch.Index({
+          tokenize: 'forward',
+          cache: true,
+          resolution: 9
+        });
+
+        // Add documents to search index
+        searchIndex.forEach((item, index) => {
+          if (item && item.title) {
+            const searchText = `${item.title} ${item.description || ''} ${item.content || ''} ${(item.tags || []).join(' ')}`;
+            flexSearch.add(index, searchText);
+          }
+        });
+      }
+
+      // Check for query parameter and perform search
+      const query = getQueryParam('q');
+      if (query) {
+        document.getElementById('search-query').value = query;
+        performSearch(query);
+      }
+
+      // Set up form submission
+      const form = document.querySelector('form[role="search"]');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = document.getElementById('search-query').value.trim();
+        if (query) {
+          // Update URL
+          const newUrl = new URL(window.location);
+          newUrl.searchParams.set('q', query);
+          window.history.pushState({}, '', newUrl);
+
+          performSearch(query);
+        }
+      });
+
+    } catch (error) {
+      console.error('Search initialization failed:', error);
+    }
+  }
+
+  function performSearch(query) {
+    if (!flexSearch || !searchIndex) return;
+
+    // Show loading
+    showElement('search-loading');
+    hideElement('default-content');
+    hideElement('search-results-container');
+    hideElement('no-results');
+
+    setTimeout(() => {
+      try {
+        const results = flexSearch.search(query, { limit: 20 });
+        const items = results.map(index => searchIndex[index]);
+
+        displayResults(items, query);
+      } catch (error) {
+        console.error('Search failed:', error);
+        showNoResults();
+      }
+    }, 300); // Small delay for better UX
+  }
+
+  function displayResults(items, query) {
+    hideElement('search-loading');
+    hideElement('default-content');
+
+    if (items.length === 0) {
+      showNoResults();
+      return;
+    }
+
+    // Show results container
+    showElement('search-results-container');
+
+    // Update results count
+    const count = document.getElementById('results-count');
+    count.textContent = `Found ${items.length} result${items.length === 1 ? '' : 's'} for "${query}"`;
+
+    // Display results
+    const container = document.getElementById('search-results-list');
+    container.innerHTML = items.map(item => `
+      <article class="pb-6 border-gray-200 dark:border-gray-700 border-b last:border-b-0">
+        <h2 class="mb-2 font-semibold text-xl">
+          <a href="${item.id}" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+            ${highlightMatch(item.title, query)}
+          </a>
+        </h2>
+        <p class="mb-3 text-gray-600 dark:text-gray-400 leading-relaxed">
+          ${highlightMatch(item.description || item.content, query)}
+        </p>
+        ${item.tags && item.tags.length > 0 ? `
+          <div class="flex flex-wrap gap-2">
+            ${item.tags.map(tag => `
+              <a href="/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/" class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 px-2 py-1 rounded text-gray-700 dark:text-gray-300 text-xs transition-colors">
+                #${tag}
+              </a>
+            `).join('')}
+          </div>
+        ` : ''}
+      </article>
+    `).join('');
+  }
+
+  function showNoResults() {
+    hideElement('search-loading');
+    hideElement('default-content');
+    hideElement('search-results-container');
+    showElement('no-results');
+  }
+
+  function showElement(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function hideElement(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+
+  function highlightMatch(text, query) {
+    if (!text || !query) return text || '';
+
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(regex, '<mark class="bg-yellow-200 dark:bg-yellow-800 px-1 rounded">$1</mark>');
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', initSearchPage);
+})();
+</script>

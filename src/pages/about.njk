@@ -1,104 +1,123 @@
 ---
-layout: base
-title: 'Sobre mim'
-permalink: '/about/index.html'
-description: 'A história de quem escreve neste site. Uma jornada focada em tornar a web acessível para todos.'
-date: Last Modified
+layout: base.njk
+permalink: "/about/"
+title: About
 ---
+<div class="h-card">
+  <img class="rounded-full w-24 h-24 u-photo" src="/assets/images/pulis.webp" alt="{{ site.author }}" />
+  <h1 class="my-2 p-name font-bold text-4xl">{{ site.author }}</h1>
+  <p class="mt-2 p-note">A história de quem escreve neste site. Uma jornada focada em tornar a web acessível para todos.</p>
+  <p class="mt-2 p-note">
+    Nem sempre eu trabalhei com tecnologia.
 
-<div class="region">
-  <article class="prose wrapper flow">
-    <h1 class="p-name">{{ title }}</h1>
-    <p class="p-note">{{ description }}</p>
+    Em 2006, meu trabalho era simples: servir hambúrguer no Burger King.
+  </p>
+  <p class="my-2 p-note">Hoje, meu trabalho é outro — mas continua sendo sobre pessoas.</p>
 
-    <p>Nem sempre eu trabalhei com tecnologia.</p>
-    <p>
-      Em 2006, meu trabalho era simples: servir hambúrguer no Burger King. Hoje, meu trabalho é outro — mas
-      continua sendo sobre pessoas.
-    </p>
+  <h2 class="p-name py-4 font-bold text-3xl">Minha missão</h2>
+  <p class="mb-2 p-note">Ao longo da minha carreira, vi muitos produtos tecnicamente "bons" falharem no mais importante: as pessoas.
+  <p class="my-2 p-note">
+    Sites bonitos, rápidos, bem escritos — mas impossíveis de usar para alguém com deficiência, com limitações temporárias ou simplesmente em um contexto diferente do esperado.
+  </p>
+  <p class="my-2 p-note">
+    Foi aí que entendi algo simples, mas fácil de ignorar: tecnologia boa é tecnologia que inclui pessoas.
+  </p>
 
-    <h2>Minha missão</h2>
-    <p>
-      Ao longo da minha carreira, vi muitos produtos tecnicamente "bons" falharem no mais importante: as
-      pessoas.
-    </p>
-    <p>
-      Sites bonitos, rápidos, bem escritos — mas impossíveis de usar para alguém com deficiência, com
-      limitações temporárias ou simplesmente em um contexto diferente do esperado.
-    </p>
-    <p>
-      Foi aí que entendi algo simples, mas fácil de ignorar:
-      <strong>tecnologia boa é tecnologia que inclui pessoas.</strong>
-    </p>
+  <h2 class="p-name py-4 font-bold text-3xl">O que eu faço:</h2>
+  <ul class="space-y-1 list-inside">
+    <li class="list-disc">Dou palestras e treinamentos;</li>
+    <li class="list-disc">Ofereço mentorias personalizadas;</li>
+    <li class="list-disc">Desenvolvo sites acessíveis;</li>
+    <li class="list-disc">Faço auditoria e remediação de sites e documentos.</li>
+  </ul>
 
-    <h3>O que eu faço:</h3>
-    <ul>
-      <li>Dou palestras e treinamentos;</li>
-      <li>Ofereço mentorias personalizadas;</li>
-      <li>Desenvolvo sites acessíveis;</li>
-      <li>Faço auditoria e remediação de sites e documentos.</li>
-    </ul>
+  <p class="my-2 p-note">
+    Se você precisa de algum desses serviços me <a href="mailto:brunopulis@protonmail.com" class="underline underline-offset-4">mande um e-mail</a>.
+  </p>
 
-    <p>
-      Se você precisa de algum desses serviços me mande um
-      <a href="mailto:brunopulis@protonmail.com?subject=Serviços%20de%20acessibilidade">e-mail</a>.
-    </p>
+  <h2 class="p-name py-4 font-bold text-3xl">Como cheguei aqui</h2>
+  <p class="my-2 p-note">
+    Minha jornada não começou no código. Em 2010, formado em <strong>Sistemas
+    para Internet</strong>, passei a viver a web no dia a dia.
+  </p>
+  <p class="my-2 p-note">
+    Trabalhei em agências, startups e projetos de diferentes tamanhos. Aprendi muito — e também vi muita gente
+    ficando de fora.
+  </p>
 
-    <h2 id="how-i-reached-here">Como cheguei até aqui</h2>
-    <p>
-      Minha jornada não começou no código. Em 2010, formado em <strong>Sistemas para Internet</strong>, passei
-      a viver a web no dia a dia.
-    </p>
-    <p>
-      Trabalhei em agências, startups e projetos de diferentes tamanhos. Aprendi muito — e também vi muita
-      gente ficando de fora.
-    </p>
+  <p class="my-2 p-note">Alguns projetos que tenho orgulho de ter feito:</p>
+  <ul class="space-y-1 list-inside">
+    <li class="list-disc"><a href="https://github.com/brunopulis/awesome-a11y-br" class="underline underline-offset-4">Awesome A11y</a>;</li>
+    <li class="list-disc"><a href="https://github.com/brunopulis/awesome-cypress" class="underline underline-offset-4">Awesome Cypress</a>;</li>
+    <li class="list-disc"><a href="https://github.com/brunopulis/v0-xp-ath-vs-css-selectors" class="underline underline-offset-4">XPath vs CSS Selectors</a>.</li>
+  </ul>
 
-    <p>Alguns projetos que tenho orgulho de ter feito:</p>
-    <ul>
-      <li><a href="https://github.com/brunopulis/awesome-a11y-br">Awesome A11y</a>;</li>
-      <li><a href="https://github.com/brunopulis/awesome-cypress">Awesome Cypress</a>;</li>
-      <li><a href="https://github.com/brunopulis/v0-xp-ath-vs-css-selectors">XPath vs CSS Selectors</a>.</li>
-    </ul>
+  <h2 class="p-name py-4 font-bold text-3xl">O que me guia</h2>
+  <p class="my-2 p-note">
+    Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.
+  </p>
+  <p class="my-2 p-note">
+    Para mim, criar uma web acessível não é apenas uma decisão técnica.
+  </p>
+  <p class="my-2 p-note">
+    É uma expressão prática do chamado bíblico ao amor ao próximo. É garantir dignidade também no ambiente digital.
+  </p>
 
-    <h2 id="guiding-principles">O que me guia</h2>
-    <p>Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.</p>
-    <p>Para mim, criar uma web acessível não é apenas uma decisão técnica.</p>
-    <p>
-      É uma expressão prática do chamado bíblico ao amor ao próximo. É garantir dignidade também no ambiente
-      digital.
-    </p>
+  <ul class="space-y-1 list-inside">
+    <li class="list-disc">Fé e trabalho juntos;</li>
+    <li class="list-disc">Inclusão acima de tudo;</li>
+    <li class="list-disc">Educação e não julgamento;</li>
+    <li class="list-disc">Qualidade sem desculpas.</li>
+  </ul>
 
-    <ul>
-      <li>Fé e trabalho juntos</li>
-      <li>Inclusão acima de tudo</li>
-      <li>Educação e não julgamento</li>
-      <li>Qualidade sem desculpas</li>
-    </ul>
+  <h2 class="p-name py-4 font-bold text-3xl">Fora da tela</h2>
+  <p class="my-2 p-note">
+    Minha vida é muito maior que minha profissão, a família é minha prioridade.
+  </p>
+  <p class="my-2 p-note">
+    Por isso sou bastante rigoroso com meus horários e limites.
+  </p>
 
-    <h2 id="offscreen-title">Fora da tela</h2>
-    <p>
-      Minha vida é muito maior que minha profissão. Minha família é minha prioridade, e por isso sou bastante
-      rigoroso com meus horários e limites.
-    </p>
+  <p class="my-2 p-note">Sou um leitor compulsivo. Leio de tudo, mas especialmente:</p>
+  <ul class="space-y-1 list-inside">
+    <li class="list-disc">Teologia;</li>
+    <li class="list-disc">Ficção Científica;</li>
+    <li class="list-disc">Biografias;</li>
+    <li class="list-disc">Produtividade.</li>
+  </ul>
 
-    <p>Sou um leitor compulsivo. Leio de tudo, mas especialmente:</p>
+  <p class="my-2 p-note">
+    Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações.
+  </p>
+  <p class="my-2 p-note">
+    E adoro música: violão flamenco, instrumental, chorinho e música clássica.
+  </p>
 
-    <ul>
-      <li>Teologia;</li>
-      <li>Ficção Científica;</li>
-      <li>Biografias;</li>
-      <li>Produtividade.</li>
-    </ul>
-
-    <p>
-      Você pode conferir os meus <a href="/livros">livros</a>, <a href="/media">filmes e séries</a>,
-      <a href="/notas">notas</a>, <a href="/fotos">fotos</a> e <a href="/jogos">jogos</a>.
-    </p>
-
-    <p>
-      Também sou apaixonado por filmes — principalmente ficção científica, dramas históricos e animações. E
-      adoro música: violão flamenco, instrumental, chorinho e música clássica.
-    </p>
+  <hr />
+  <article class="flex flex-wrap items-center gap-3 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 mt-4 p-4 rounded-lg transition-colors contact-info">
+    {% from "partials/icons.njk" import icon %}
+    <a class="inline-flex items-center gap-1 u-url" href="{{ site.url }}" rel="me">
+      {{ icon('link','w-4 h-4') }} <span>{{ site.url | replace('https://', '') | replace('http://', '') }}</span>
+    </a>
+    <a class="inline-flex items-center gap-1 u-email" href="mailto:{{ site.email }}">
+      {{ icon('mail','w-4 h-4') }} <span>{{ site.email }}</span>
+    </a>
+    {% if site.social.mastodon %}
+    <a class="inline-flex items-center gap-1 u-url" rel="me" href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}">
+      {{ icon('mastodon','w-4 h-4') }} <span>Mastodon</span>
+    </a>
+    {% endif %}
+    {% if site.social.github %}
+    <a class="inline-flex items-center gap-1 u-url" rel="me" href="https://github.com/{{ site.social.github }}">
+      {{ icon('github','w-4 h-4') }} <span>GitHub</span>
+    </a>
+    {% endif %}
+    {% if site.social.twitter %}
+    <a class="inline-flex items-center gap-1 u-url" rel="me" href="https://twitter.com/{{ site.social.twitter | replace('@','') }}">
+      {{ icon('x','w-4 h-4') }} <span>Twitter</span>
+    </a>
+    {% endif %}
   </article>
+  <p class="mt-2 p-locality">{{ site.location.city }}</p>
+  <p class="p-country-name">{{ site.location.country }}</p>
 </div>
