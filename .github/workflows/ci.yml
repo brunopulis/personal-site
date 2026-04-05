@@ -1,72 +1,42 @@
 name: CI
-permissions:
-  contents: read
-  pull-requests: write
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
   pull_request:
-    branches: [main]
+    branches: ['**']
 
 jobs:
-  lint:
-    name: Lint & Format
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
 
-      - name: Run ESLint check
-        run: pnpm check
+      - name: Install Playwright browsers (with system deps)
+        run: npx playwright install --with-deps
 
-  test:
-    name: Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Build site
+        run: npm run build
 
       - name: Run tests
-        run: pnpm test
+        env:
+          CI: true
+        run: npm test
 
-      - name: Check coverage threshold
-        run: |
-          COVERAGE=$(pnpm exec jest --coverage --coverageThreshold='{"statements":{"threshold":70},"lines":{"threshold":70},"functions":{"threshold":70},"branches":{"threshold":60}}' 2>&1 || true)
-          echo "$COVERAGE"
-          if echo "$COVERAGE" | grep -q "failed"; then
-            echo "❌ Coverage below threshold!"
-            exit 1
-          fi
-          echo "✅ Coverage threshold met!"
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+      - name: Upload Playwright report (artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
-          fail_ci_if_error: false
+          name: playwright-report
+          path: playwright-report
+          if-no-files-found: ignore

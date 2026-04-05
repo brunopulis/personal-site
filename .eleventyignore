@@ -1,3 +1,8 @@
-src/assets/css/
-node_modules/
-.git/
+node_modules
+_site
+old
+11ty-excellent
+11ty-starter
+docs
+tests
+scripts
