@@ -1,10 +1,10 @@
 ---
-layout: base.njk
+layout: base
 ---
 
-<a href="/notes/" class="inline-flex items-center text-blue-600 hover:text-blue-800 mb-3">← Back to Notes</a>
+<a href="/notes/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">← Back to Notes</a>
 
-<nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
+<nav class="mb-4 text-gray-600 text-sm" aria-label="Breadcrumb">
   <ol class="flex space-x-2">
     <li><a href="/" class="hover:text-blue-600">Home</a></li>
     <li><span aria-hidden="true">›</span></li>
@@ -16,13 +16,13 @@ layout: base.njk
 
 <article class="h-entry">
   <header class="mb-4">
-    <h1 class="p-name text-2xl font-bold mb-2">{{ title }}</h1>
-    <div class="text-sm text-gray-600 dark:text-gray-400">
+    <h1 class="mb-2 p-name font-bold text-2xl">{{ title }}</h1>
+    <div class="text-gray-600 dark:text-gray-400 text-sm">
       <time class="dt-published" datetime="{{ page.date | htmlDateString }}"
         >{{ page.date | readableDate }}</time
       >
-      <a class="u-url hidden" href="{{ page.url }}">Permalink</a>
+      <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
     </div>
   </header>
-  <div class="e-content prose max-w-none">{{ content | safe }}</div>
+  <div class="max-w-none e-content prose">{{ content | safe }}</div>
 </article>
