@@ -1,46 +1,48 @@
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import postcss from 'postcss';
+import postcssImport from 'postcss-import';
+import postcssImportExtGlob from 'postcss-import-ext-glob';
+import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import postcss from 'postcss';
-import sass from 'sass';
+import fg from 'fast-glob';
+
+const buildCss = async (inputPath, outputPaths) => {
+  const inputContent = await fs.readFile(inputPath, 'utf-8');
+
+  const result = await postcss([
+    postcssImportExtGlob,
+    postcssImport,
+    tailwindcss,
+    autoprefixer,
+    cssnano
+  ]).process(inputContent, {from: inputPath});
+
+  for (const outputPath of outputPaths) {
+    await fs.mkdir(path.dirname(outputPath), {recursive: true});
+    await fs.writeFile(outputPath, result.css);
+  }
+
+  return result.css;
+};
 
 export const buildAllCss = async () => {
-  try {
-    const fg = (await import('fast-glob')).default;
-    const path = await import('node:path');
+  const tasks = [];
 
-    const scssFiles = await fg('src/assets/scss/**/*.scss', {
-      ignore: ['**/_*.scss']
-    });
+  tasks.push(buildCss('src/assets/css/global/global.css', ['src/_includes/css/global.css']));
 
-    await fs.mkdir('src/assets/css', {recursive: true});
-
-    for (const file of scssFiles) {
-      const parsedPath = path.parse(file);
-      const cssFilename = `${parsedPath.name}.css`;
-      const destPath = path.posix.join('src/assets/css', cssFilename);
-
-      const result = sass.compile(file, {
-        loadPaths: ['node_modules'],
-        style: 'compressed',
-        sourceMap: process.env.ELEVENTY_RUN_MODE !== 'build'
-      });
-
-      const processed = await postcss([autoprefixer(), cssnano({preset: 'default'})]).process(result.css, {
-        from: file,
-        to: destPath
-      });
-
-      await fs.writeFile(destPath, processed.css);
-
-      console.log(`✅ CSS compilado com sucesso em ${destPath}`);
-
-      if (process.env.ELEVENTY_RUN_MODE !== 'build' && result.sourceMap) {
-        await fs.writeFile(`${destPath}.map`, JSON.stringify(result.sourceMap));
-      }
-    }
-  } catch (error) {
-    console.error('❌ Erro ao compilar SCSS:', error);
-    throw error;
+  const localCssFiles = await fg(['src/assets/css/local/**/*.css']);
+  for (const inputPath of localCssFiles) {
+    const baseName = path.basename(inputPath);
+    tasks.push(buildCss(inputPath, [`src/_includes/css/${baseName}`]));
   }
+
+  const componentCssFiles = await fg(['src/assets/css/components/**/*.css']);
+  for (const inputPath of componentCssFiles) {
+    const baseName = path.basename(inputPath);
+    tasks.push(buildCss(inputPath, [`_site/assets/css/components/${baseName}`]));
+  }
+
+  await Promise.all(tasks);
 };

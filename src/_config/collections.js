@@ -1,47 +1,18 @@
-import {slugifyString} from './filters/slugify.js';
-
 /** All blog posts as a collection. */
-export const posts = collectionApi => {
-  const allPosts = collectionApi.getFilteredByGlob('./src/content/posts/**/*');
-  return allPosts.sort((a, b) => {
-    const dateA = a.data.pubDate || a.data.date;
-    const dateB = b.data.pubDate || b.data.date;
-    return new Date(dateB).getTime() - new Date(dateA).getTime();
-  });
+export const getAllPosts = collection => {
+  return collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
 
-/** All notes posts as a collection. */
-export const notes = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/notes/**/*').reverse();
+export const getAllBooks = collection => {
+  return collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
 };
 
-/** All poems as a collection. */
-export const poems = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/poems/**/*').reverse();
+export const getAllNotes = collection => {
+  return collection.getFilteredByGlob('./src/content/notes/**/*.md').reverse();
 };
 
-export const likes = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/likes/**/*').reverse();
-};
-
-export const photos = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/photos/**/*').reverse();
-};
-
-export const medias = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/medias/**/*').reverse();
-};
-
-export const books = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/books/**/*').reverse();
-};
-
-export const newsletters = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/newsletter/**/*').reverse();
-};
-
-export const games = collectionApi => {
-  return collectionApi.getFilteredByGlob('./src/content/games/**/*').reverse();
+export const getAllPoetry = collection => {
+  return collection.getFilteredByGlob('./src/content/poetry/**/*.md').reverse();
 };
 
 /** All relevant pages as a collection for sitemap.xml */
@@ -49,14 +20,11 @@ export const showInSitemap = collection => {
   return collection.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
-/** All tags from all posts as a collection - excluding custom collections */
-export const tagList = collection => {
+export const allTags = collection => {
   const tagsSet = new Set();
-
   collection.getAll().forEach(item => {
     if (!item.data.tags) return;
     item.data.tags.filter(tag => !['posts', 'docs', 'all'].includes(tag)).forEach(tag => tagsSet.add(tag));
   });
-
   return Array.from(tagsSet).sort();
 };

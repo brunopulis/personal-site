@@ -47,27 +47,15 @@ export const markdownLib = markdownIt({
   .use(md => {
     md.renderer.rules.image = (tokens, idx) => {
       const token = tokens[idx];
-      let src = token.attrGet('src');
+      const src = token.attrGet('src');
       const alt = token.content || '';
       const caption = token.attrGet('title');
 
-      // Convert @assets paths to /assets for static serving
-      if (src && src.startsWith('@assets/')) {
-        src = src.replace('@assets/', '/assets/');
-      }
-
-      // Skip eleventy-img processing for external URLs
-      const isExternalUrl = src && (src.startsWith('http://') || src.startsWith('https://'));
-
       // Collect attributes
       const attributes = token.attrs || [];
-
-      // Only add eleventy:widths for local images
-      if (!isExternalUrl) {
-        const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
-        if (!hasEleventyWidths) {
-          attributes.push(['eleventy:widths', '650,960,1400']);
-        }
+      const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
+      if (!hasEleventyWidths) {
+        attributes.push(['eleventy:widths', '650,960,1400']);
       }
 
       const attributesString = attributes.map(([key, value]) => `${key}="${value}"`).join(' ');
