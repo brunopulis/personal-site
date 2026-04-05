@@ -1,66 +1,46 @@
 ---
-layout: base
-title: 'Blogroll'
-description: 'Pessoas e blogs incríveis que acompanho na web.'
-permalink: '/blogroll/index.html'
-date: Last Modified
+layout: base.njk
+permalink: "/blogroll/"
+title: Blogroll
+eleventyComputed:
+  description: "Blogs e sites que sigo e recomendo na comunidade de desenvolvimento web, acessibilidade e IndieWeb."
 ---
+<h1 class="mb-6 font-bold text-2xl">Blogroll</h1>
 
-<section class="wrapper region">
-  <header class="flow">
-    <h1 class="p-name">Blogroll</h1>
-    <p class="p-note">Uma lista curada de pessoas, blogs e recursos que acompanho e recomendo.</p>
-  </header>
+<div class="dark:prose-invert max-w-none prose prose-lg">
+  <p>Aqui estão alguns blogs e sites que sigo e recomendo. Esta é uma lista selecionada de criadores de conteúdo de qualidade nas comunidades de desenvolvimento web, acessibilidade e IndieWeb.</p>
+</div>
 
-  {% set groupedBlogs = blogroll | groupBy('category') %}
-  <div class="h-feed">
-    {% for category, blogs in groupedBlogs | dictsort %}
-      <section class="region flow" aria-labelledby="cat-{{ category | slugifyString }}">
-        <h2
-          id="cat-{{ category | slugifyString }}"
-          class="flex items-center gap-3 mb-8 font-bold text-brand-red-500 text-2xl"
-        >
-          {{ category }}
-        </h2>
+<div class="space-y-8 mt-8">
+  {% for category in collections.blogrollCategories %}
+    <section>
+      <h2 class="mb-4 font-semibold text-xl">{{ category }}</h2>
+      <div class="gap-4 grid grid-cols-1 md:grid-cols-2">
+        {% for item in blogroll %}
+          {% if item.category == category %}
+            <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
+              <h3 class="font-semibold">
+                <a href="{{ item.url }}" target="_blank" rel="noopener me" class="hover:text-blue-600 dark:hover:text-blue-400">{{ item.title }}</a>
+                {% if item.rss %}
+                  <a href="{{ item.rss }}" class="text-xs ml-2 opacity-60 hover:opacity-100" aria-label="RSS Feed">
+                    <svg class="inline w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
+                  </a>
+                {% endif %}
+              </h3>
+              {% if item.description %}
+                <p class="mt-1 text-gray-600 dark:text-gray-400 text-sm">{{ item.description }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</div>
 
-        <div class="grid" data-layout="33x3">
-          {% for blog in blogs %}
-            <article class="card">
-              <div class="flow">
-                <h3>
-                  <a href="{{ blog.url }}" target="_blank" rel="noopener noreferrer"> {{ blog.title }} </a>
-                </h3>
-                <p>{{ blog.description }}</p>
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-      </section>
-    {% endfor %}
-  </div>
-
-  {% if (blogroll | length) == 0 %}
-    <div
-      class="bg-gray-50 dark:bg-gray-900 py-20 border-2 border-gray-200 dark:border-gray-800 border-dashed rounded-3xl text-center"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="48"
-        height="48"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="w-12 h-12 mx-auto text-gray-400 mb-4"
-      >
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.3-4.3" />
-        <path d="M8 8h6" />
-      </svg>
-      <p class="text-gray-500 dark:text-gray-400 text-lg">Nenhum blog encontrado no momento.</p>
-    </div>
-  {% endif %}
-  {% include "components/last-update.njk" %}
-</section>
+<div class="bg-blue-50 dark:bg-blue-900/20 mt-8 p-4 rounded-lg">
+  <p class="text-sm">
+    <strong>Quer ser adicionado?</strong> Se você tem um blog que se encaixa nessas categorias, fique à vontade para
+    <a href="/contact/" class="text-blue-600 hover:text-blue-800">entrar em contato</a> e me contar!
+  </p>
+</div>

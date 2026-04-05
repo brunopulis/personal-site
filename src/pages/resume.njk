@@ -1,161 +1,45 @@
 ---
-layout: base
-title: Currículo
-description: Resumo da minha trajetória profissional.
+layout: base.njk
+title: Résumé
 permalink: /resume/
-date: Last Modified
 ---
 
-<div class="wrapper region">
-  <header class="flow">
-    <h1 class="p-name">{{ title }}</h1>
-    <p>{{ description }}</p>
-  </header>
+<h1 class="text-2xl font-bold mb-4">Résumé</h1>
+<p class="text-gray-600 dark:text-gray-400 mb-6">A template CV you can adapt. Replace section content with your details or link to a PDF.</p>
 
-  <div class="flow prose">
-    <a href="#" title="formato: PDF, tamanho: 31.2kb" target="_blank"> Baixar currículo (PT-BR) </a>
-
-    <a href="#" title="formato: PDF, tamanho: 31.2kb" target="_blank"> Baixar currículo (EN) </a>
-
-    <section class="flow" aria-labelledby="resumo-title">
-      <h2 id="resumo-title">Bruno Pulis</h2>
-      <p>Analista de Qualidade (QA) & Especialista em Acessibilidade Digital</p>
-      <p>
-        Belo Horizonte, MG | <span aria-hidden="true">📧</span>
-        <a href="mailto:brunopulis@protonmail.com">brunopulis@protonmail.com</a> |
-        <span aria-hidden="true">📱</span>
-        <a href="tel:+5531973438008">+55 31 97343-8008</a>
-      </p>
-      <p>
-        <span aria-hidden="true">🔗</span>
-        <a href="https://linkedin.com/in/pulis">LinkedIn</a> |
-        <span aria-hidden="true">🔗</span>
-        <a href="https://github.com/pulis">GitHub</a>
-      </p>
-      <p>
-        Especialista em QA com <strong>15 anos de experiência em TI</strong>, sendo 5 dedicados exclusivamente
-        à Garantia de Qualidade e Acessibilidade Digital.
-      </p>
-
-      <p>
-        Foco em <strong>WCAG 2.2</strong>, automação de testes e liderança técnica. Histórico comprovado de
-        otimização de pipelines (CI/CD) e mentoria de equipes em grandes instituições financeiras.
-      </p>
-
-      <p><strong>Premiado como Top Performance</strong> na NTT DATA.</p>
-    </section>
-
-    <section class="flow" aria-labelledby="habilidades-tecnicas-title">
-      <h2 id="habilidades-tecnicas-title">Habilidades Técnicas</h2>
-      <ul>
-        <li>
-          <strong>Acessibilidade:</strong> WCAG 2.2, WAI-ARIA, Leitores de tela (VoiceOver, Talkback, NVDA),
-          Axe Dev Tools, Access Monitor, WAVE, ANDI, Colour Contrast Analyzer, Lighthouse.
-        </li>
-        <li>
-          <strong>Automação e Testes:</strong> Cypress, Selenium, Jest, Capybara, Cucumber (BDD/Gherkin),
-          Postman/Insomnia.
-        </li>
-        <li><strong>Linguagens:</strong> JavaScript, Ruby, PHP.</li>
-        <li>
-          <strong>DevOps e Ferramentas:</strong> AWS, Docker, GitlabCI, Jenkins, Jira, Confluence, NewRelic.
-        </li>
-        <li><strong>Metodologias:</strong> Scrum, Kanban, XP, Shift Left Testing.</li>
-      </ul>
-    </section>
-
-    <section class="flow" aria-labelledby="experiencia-title">
-      <h2 id="experiencia-title">Experiência</h2>
-
-      <article>
-        <h3>Especialista em Testes (QA Lead)</h3>
-        <p class="text-sm">NTT DATA Europe & LATAM | Jun 2021 – Atualmente</p>
-        <p>Atuação como Consultor Sênior em um dos maiores bancos da América Latina.</p>
-
-        <ul>
-          <li>
-            <strong>Mentoria e Cultura:</strong> Lidero a mentoria técnica da equipe, estabelecendo melhores
-            práticas de QA e Acessibilidade.
-          </li>
-          <li>
-            <strong>Educação Corporativa:</strong> Desenvolvi e ministrei treinamentos internos sobre
-            Tecnologias Assistivas e Automação com foco em Acessibilidade.
-          </li>
-          <li>
-            <strong>Inovação:</strong> Membro ativo do Centro de Excelência (CoE) em pesquisa e inovação.
-          </li>
-          <li>
-            <strong>Resultado:</strong> Vencedor do prêmio <strong>Top Performance</strong>, reconhecido como
-            um dos profissionais de maior destaque da empresa.
-          </li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Concrete Solutions</h3>
-        <p class="text-sm">Analista de QA | Jan 2021 – Jun 2021</p>
-        <p>Responsável pela qualidade do produto _Membertizze_.</p>
-
-        <ul>
-          <li>
-            <strong>Previsibilidade:</strong> Atuei na identificação precoce de cenários críticos, garantindo
-            testabilidade e aumentando a previsibilidade das entregas em squads ágeis.
-          </li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Monetizze</h3>
-        <p class="text-sm">Analista de QA | Ago 2017 – Dez 2020</p>
-        <p>Responsável pela qualidade do produto Membertizze.</p>
-
-        <ul>
-          <li>
-            <strong>Performance (STAR):</strong> Identifiquei gargalos na integração contínua e otimizei os
-            testes de serviço (API).
-          </li>
-          <li>
-            <strong>Resultado:</strong> <strong>Ganho de 80% na performance</strong> dos testes, reduzindo
-            drasticamente o tempo de execução do pipeline.
-          </li>
-          <li>
-            <strong>Acessibilidade:</strong> Implementei testes automatizados focados em validação de
-            acessibilidade e defini padrões de Code Review.
-          </li>
-          <li><strong>Liderança:</strong> Membro dos comitês de Qualidade e Engenharia de Software.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="flow" aria-labelledby="educacao-title">
-      <h2 id="educacao-title">Educação</h2>
-      <p><strong>Sistemas para Internet</strong> | Faculdade Pitágoras (2010)</p>
-    </section>
-
-    <section class="flow" aria-labelledby="idiomas-title">
-      <h2 id="idiomas-title">Idiomas</h2>
-      <ul>
-        <li>Português: Nativo</li>
-        <li>Inglês: Intermediário (B2)</li>
-      </ul>
-    </section>
-
-    <section class="flow" aria-labelledby="certificacoes-title">
-      <h2 id="certificacoes-title">Certificações e Cursos Recentes</h2>
-      <ul>
-        <li><strong>Scrum Foundation Professional Certificate (SFPC)</strong></li>
-        <li><strong>QA em Acessibilidade Digital</strong> – INSEP (Jul 2021)</li>
-        <li><strong>Liderando Iniciativas de Acessibilidade Digital</strong> (Dez 2024)</li>
-        <li>
-          <strong>Profissional Adaptável: Inteligência emocional, finanças pessoais e liderança </strong> (Ago
-          2022)
-        </li>
-        <li><strong>Curso de História de Usuários</strong> – Wildtech (Out 2020)</li>
-        <li>
-          <strong>Testes de software para iniciantes</strong> – Júlio de Lima Consultoria e Treinamentos (Out
-          2020)
-        </li>
-      </ul>
-    </section>
+<div class="flex items-center gap-3 mb-8">
+  <a href="#" class="inline-flex items-center px-3 py-1.5 rounded bg-blue-600 text-white hover:bg-blue-700">Download PDF</a>
+  <span class="text-sm text-gray-500">Add your static PDF at <code>src/assets/</code> and update this link.</span>
   </div>
-</div>
+
+<section class="prose dark:prose-invert">
+  <h2>Summary</h2>
+  <p>Front-end oriented web developer focused on accessibility, performance, and maintainable static sites. Comfortable with modern tooling and progressive enhancement.</p>
+
+  <h2>Experience</h2>
+  <h3>Senior Web Developer · Company Name</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400">2023 — Present</p>
+  <ul>
+    <li>Built static-first sites with Eleventy and automated deployments.</li>
+    <li>Established a11y testing and CI checks.</li>
+    <li>Collaborated with design on a living style guide.</li>
+  </ul>
+
+  <h3>Front-end Engineer · Organization</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400">2020 — 2023</p>
+  <ul>
+    <li>Implemented component libraries with semantic HTML and utility CSS.</li>
+    <li>Optimized web vitals via preloading and code-splitting.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML, CSS (Tailwind), JavaScript</li>
+    <li>Eleventy, Nunjucks, Markdown</li>
+    <li>Accessibility, Testing (Playwright)</li>
+    <li>SEO, Open Graph, microformats2</li>
+  </ul>
+  
+  <h2>Education</h2>
+  <p>Degree / Program — School Name</p>
+</section>
