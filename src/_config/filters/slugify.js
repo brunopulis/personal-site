@@ -1,27 +1,10 @@
-import slugifyFn from 'slugify';
+import slugify from 'slugify';
 
-const slugify = str => {
-  return slugifyFn(str, {
+/** Converts string to a slug form. */
+export const slugifyString = str => {
+  return slugify(str, {
     replacement: '-',
     remove: /[#,&,+()$~%.'":*¿?¡!<>{}]/g,
     lower: true
   });
-};
-
-export const slugifyString = str => {
-  if (typeof str !== 'string') {
-    return '';
-  }
-  return slugify(str);
-};
-
-export const postSlug = data => {
-  const title = data?.page?.title || data?.title || '';
-  const fileSlug = data?.page?.fileSlug || '';
-
-  if (title) {
-    return slugify(title);
-  }
-
-  return slugify(fileSlug);
 };
