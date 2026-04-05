@@ -1,8 +1,9 @@
 ---
 layout: base.njk
-permalink: "/"
-title: "Indieweb Starter Blog"
+permalink: '/'
+title: 'Indieweb Starter Blog'
 ---
+
 <div class="h-feed">
   <!-- Hero Section -->
   <div class="mb-12 py-8 text-center">
@@ -12,31 +13,43 @@ title: "Indieweb Starter Blog"
 
     <div class="mx-auto mb-8 max-w-2xl">
       <p class="mb-6 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-        Bem-vindo ao meu canto na web! Aqui compartilho pensamentos, descobertas e conversas
-        longe do ruído dos algoritmos das redes sociais.
+        Bem-vindo ao meu canto na web! Aqui compartilho pensamentos, descobertas e conversas longe do ruído
+        dos algoritmos das redes sociais.
       </p>
 
       <div class="flex flex-wrap justify-center gap-4 text-sm">
-        <span class="bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full text-purple-800 dark:text-purple-200">
+        <span
+          class="bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full text-purple-800 dark:text-purple-200"
+        >
           <span aria-hidden="true">🌱</span> <em lang="en">IndieWeb</em>
         </span>
         <span class="bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full text-blue-800 dark:text-blue-200">
           <span aria-hidden="true">📡</span> Suporte a <abbr title="Really Simple Syndication">RSS</abbr>
         </span>
-        <span class="bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full text-green-800 dark:text-green-200">
+        <span
+          class="bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full text-green-800 dark:text-green-200"
+        >
           <span aria-hidden="true">🔒</span> <em lang="en">Privacy First</em>
         </span>
-        <span class="bg-orange-100 dark:bg-orange-900/30 px-3 py-1 rounded-full text-orange-800 dark:text-orange-200">
-         <span aria-hidden="true">♿</span> Acessível
+        <span
+          class="bg-orange-100 dark:bg-orange-900/30 px-3 py-1 rounded-full text-orange-800 dark:text-orange-200"
+        >
+          <span aria-hidden="true">♿</span> Acessível
         </span>
       </div>
     </div>
 
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="/about/" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg text-white transition-colors">
+      <a
+        href="/about/"
+        class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg text-white transition-colors"
+      >
         <span aria-hidden="true">👋</span> Saiba mais sobre mim
       </a>
-      <a href="/feed.xml" class="hover:bg-purple-50 dark:hover:bg-purple-900/20 px-6 py-2 border border-purple-600 rounded-lg text-purple-600 transition-colors">
+      <a
+        href="/feed.xml"
+        class="hover:bg-purple-50 dark:hover:bg-purple-900/20 px-6 py-2 border border-purple-600 rounded-lg text-purple-600 transition-colors"
+      >
         <span aria-hidden="true">📡</span> Se inscreva vai RSS.
       </a>
     </div>
@@ -48,76 +61,93 @@ title: "Indieweb Starter Blog"
       <span aria-hidden="true">✍️</span> Últimos artigos
     </h2>
 
-    {% set recent = collections.posts  %}
-    {% if (recent | length) == 0 %}
-      {% set recent = collections.searchIndex | default([]) %}
-    {% endif %}
-
+    {% set recent = collections.posts %}
     {% if recent | length > 0 %}
-    <div class="space-y-8">
-      {% for post in recent | head(5) %}
-        {% set url = post.url or post.id %}
-        {% set title = (post.data and post.data.title) or post.title %}
-        {% set dateVal = post.date %}
-        {% set desc = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
-        {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-        <article class="pb-6 border-gray-200 dark:border-gray-700 border-b last:border-b-0 h-entry">
-          <h3 class="mb-2 p-name font-semibold text-xl">
-            <a class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors u-url" href="{{ url }}">
-              {{ title }}
-            </a>
-          </h3>
-          {% if dateVal %}
-          <time class="block mb-3 text-gray-500 dark:text-gray-400 text-sm dt-published" datetime="{{ dateVal | htmlDateString }}">
-            {{ dateVal | readableDate }}
-          </time>
-          {% endif %}
-          {% if desc %}
-          <p class="mb-3 p-summary text-gray-700 dark:text-gray-300 leading-relaxed">
-            {{ desc }}
-          </p>
-          {% endif %}
-          {% if tags %}
-          <div class="flex flex-wrap gap-2">
-            {% for tag in tags %}
-              <a class="hover:opacity-80 p-category px-2 py-1 rounded text-white text-xs transition-opacity"
-                 style="background-color: {{ tag | tagColor }}"
-                 href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-            {% endfor %}
-          </div>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </div>
+      <div class="space-y-8">
+        {% for post in recent | head(5) %}
+          {% set url = post.url or post.id %}
+          {% set title = (post.data and post.data.title) or post.title %}
+          {% set dateVal = post.date %}
+          {% set desc = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
+          {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+          <article class="pb-6 border-gray-200 dark:border-gray-700 border-b last:border-b-0 h-entry">
+            <h3 class="mb-2 p-name font-semibold text-xl">
+              <a
+                class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors u-url"
+                href="{{ url }}"
+              >
+                {{ title }}
+              </a>
+            </h3>
+            {% if dateVal %}
+              <time
+                class="block mb-3 text-gray-500 dark:text-gray-400 text-sm dt-published"
+                datetime="{{ dateVal | htmlDateString }}"
+              >
+                {{ dateVal | readableDate }}
+              </time>
+            {% endif %}
+            {% if desc %}
+              <p class="mb-3 p-summary text-gray-700 dark:text-gray-300 leading-relaxed">{{ desc }}</p>
+            {% endif %}
+            {% if tags %}
+              <div class="flex flex-wrap gap-2">
+                {% for tag in tags %}
+                  <a
+                    class="hover:opacity-80 p-category px-2 py-1 rounded text-white text-xs transition-opacity"
+                    style="background-color: {{ tag | tagColor }}"
+                    href="/tags/{{ tag | slug }}/"
+                    >#{{ tag }}</a
+                  >
+                {% endfor %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
 
-    <div class="mt-8">
-      <a href="/blog/" class="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:underline">
-        Ver todos os artigos <span aria-hidden="true">→</span>
-      </a>
-    </div>
+      <div class="mt-8">
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:underline"
+        >
+          Ver todos os artigos <span aria-hidden="true">→</span>
+        </a>
+      </div>
     {% else %}
-    <div class="bg-gray-50 dark:bg-gray-800/50 py-12 rounded-lg text-center">
-      <p class="mb-4 text-gray-500 dark:text-gray-400 text-lg">Nenhum artigo ainda!</p>
-      <p class="text-gray-600 dark:text-gray-300">É aqui que surgirão textos reflexivos. Fiquem ligados! <span aria-hidden="true">📝</span></p>
-    </div>
+      <div class="bg-gray-50 dark:bg-gray-800/50 py-12 rounded-lg text-center">
+        <p class="mb-4 text-gray-500 dark:text-gray-400 text-lg">Nenhum artigo ainda!</p>
+        <p class="text-gray-600 dark:text-gray-300">
+          É aqui que surgirão textos reflexivos. Fiquem ligados! <span aria-hidden="true">📝</span>
+        </p>
+      </div>
     {% endif %}
   </div>
 
   <!-- Quick Links -->
   <div class="gap-4 grid grid-cols-1 md:grid-cols-3 mt-12">
-    <a href="/now/" class="block bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 p-4 rounded-lg transition-colors">
+    <a
+      href="/now/"
+      class="block bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 p-4 rounded-lg transition-colors"
+    >
       <span aria-hidden="true" class="mb-4 text-xl">📍</span>
       <h3 class="font-semibold text-blue-800 dark:text-blue-200">O que estou fazendo agora</h3>
       <p class="text-blue-600 dark:text-blue-300 text-sm">Foco e projetos ativos</p>
     </a>
 
-    <a href="/uses/" class="block bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30 p-4 rounded-lg transition-colors">
+    <a
+      href="/uses/"
+      class="block bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30 p-4 rounded-lg transition-colors"
+    >
       <span aria-hidden="true" class="mb-4 text-xl">🛠️</span>
       <h3 class="font-semibold text-green-800 dark:text-green-200">Ferramentas que uso</h3>
       <p class="text-green-600 dark:text-green-300 text-sm">Hardware, software e <em lang="en">setup</em></p>
     </a>
 
-    <a href="/sitemap/" class="block bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/20 dark:hover:bg-purple-900/30 p-4 rounded-lg transition-colors">
+    <a
+      href="/sitemap/"
+      class="block bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/20 dark:hover:bg-purple-900/30 p-4 rounded-lg transition-colors"
+    >
       <span aria-hidden="true" class="mb-4 text-xl">🗺️</span>
       <h3 class="font-semibold text-purple-800 dark:text-purple-200">Explore esse site</h3>
       <p class="text-purple-600 dark:text-purple-300 text-sm">Diretório completo de todas as páginas</p>

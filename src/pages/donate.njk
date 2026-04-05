@@ -1,53 +1,72 @@
 ---
 layout: base.njk
-permalink: "/donate/"
+permalink: '/donate/'
 title: Apoie meu trabalho
 ---
+
 <h1 class="mb-6 font-bold text-2xl">Apoie meu trabalho</h1>
 
 <div class="dark:prose-invert max-w-none prose prose-lg">
   {% if site.donate.message %}
-  <p>{{ site.donate.message }}</p>
+    <p>{{ site.donate.message }}</p>
   {% else %}
-  <p>If you find value in my writing and want to support my work, there are several ways you can help:</p>
+    <p>If you find value in my writing and want to support my work, there are several ways you can help:</p>
   {% endif %}
 
   {% if site.donate.enabled %}
-  <h2>Suporte único</h2>
-  <p>Compre-me um café ou faça uma doação única para me ajudar a continuar escrevendo:</p>
+    <h2>Suporte único</h2>
+    <p>Compre-me um café ou faça uma doação única para me ajudar a continuar escrevendo:</p>
 
-  <div class="flex flex-wrap gap-4 my-6">
-    {% if site.donate.kofi %}
-    <a href="https://ko-fi.com/{{ site.donate.kofi }}" target="_blank" rel="noopener"
-       class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors">
-      <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">Ko-fi</span>
-    </a>
-    {% endif %}
-    {% if site.donate.paypal %}
-    <a href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}" target="_blank" rel="noopener"
-       class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors">
-      <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">PayPal</span>
-    </a>
-    {% endif %}
-    {% if site.donate.buymeacoffee %}
-    <a href="https://buymeacoffee.com/{{ site.donate.buymeacoffee }}" target="_blank" rel="noopener"
-       class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 px-6 py-3 rounded-lg text-white transition-colors">
-      <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">Buy me a coffee</span>
-    </a>
-    {% endif %}
-  </div>
+    <div class="flex flex-wrap gap-4 my-6">
+      {% if site.donate.kofi %}
+        <a
+          href="https://ko-fi.com/{{ site.donate.kofi }}"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+        >
+          <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">Ko-fi</span>
+        </a>
+      {% endif %}
+      {% if site.donate.paypal %}
+        <a
+          href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+        >
+          <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">PayPal</span>
+        </a>
+      {% endif %}
+      {% if site.donate.buymeacoffee %}
+        <a
+          href="https://buymeacoffee.com/{{ site.donate.buymeacoffee }}"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 px-6 py-3 rounded-lg text-white transition-colors"
+        >
+          <span aria-hidden="true">☕</span>
+          <span class="mr-2 ml-2 font-bold text-white">Buy me a coffee</span>
+        </a>
+      {% endif %}
+    </div>
 
-  {% if site.donate.github %}
-  <h2>Contribuição contínua</h2>
-  <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
+    {% if site.donate.github %}
+      <h2>Contribuição contínua</h2>
+      <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
 
-  <div class="my-6">
-    <a href="https://github.com/sponsors/{{ site.donate.github }}" target="_blank" rel="noopener"
-       class="inline-flex items-center bg-gray-800 hover:bg-gray-900 px-6 py-3 rounded-lgtransition-colors">
-      <span aria-hidden="true">💖</span> <span class="mr-2 ml-2 font-bold text-white" lang="en">GitHub Sponsors</span>
-    </a>
-  </div>
-  {% endif %}
+      <div class="my-6">
+        <a
+          href="https://github.com/sponsors/{{ site.donate.github }}"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center bg-gray-800 hover:bg-gray-900 px-6 py-3 rounded-lgtransition-colors"
+        >
+          <span aria-hidden="true">💖</span>
+          <span class="mr-2 ml-2 font-bold text-white" lang="en">GitHub Sponsors</span>
+        </a>
+      </div>
+    {% endif %}
   {% endif %}
 
   <h2>Outras formas de ajudar:</h2>
@@ -55,10 +74,14 @@ title: Apoie meu trabalho
     <li><strong>Compartilhe meus artigos</strong> com outras pessoas que possam achá-las valiosas;</li>
     <li><strong>Se inscreva na minha newsletter</strong> para ficar por dentro das novidades;</li>
     <li><strong>Me siga nas redes sociais</strong> e engaje com meu conteúdo;</li>
-    <li><strong>Envie <em lang="en">feedback</em></strong> via email ou <em lang="en">webmentions</em>.</li>
+    <li>
+      <strong>Envie <em lang="en">feedback</em></strong> via email ou <em lang="en">webmentions</em>.
+    </li>
   </ul>
 
   <p class="mt-8 dark:text-gray-400">
-    Toda contribuição, por menor que seja, me ajuda a continuar criando conteúdo relevante e mantendo este blog. <br/> Obrigado pelo seu apoio! 🙏
+    Toda contribuição, por menor que seja, me ajuda a continuar criando conteúdo relevante e mantendo este
+    blog. <br />
+    Obrigado pelo seu apoio! 🙏
   </p>
 </div>
