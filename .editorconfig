@@ -1,7 +1,8 @@
-# EditorConfig: https://editorconfig.org
+# EditorConfig for Eleventy projects
+# https://editorconfig.org
+
 root = true
 
-# Padrões para todos os arquivos
 [*]
 charset = utf-8
 end_of_line = lf
@@ -10,36 +11,20 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
-# Arquivos JavaScript, TypeScript e JSON
-[*.{js,mjs,cjs,ts,json,jsonc}]
-indent_size = 2
-quote_type = single
+[*.md]
+trim_trailing_whitespace = false
 
-# Arquivos de template (Nunjucks, Liquid, etc)
-[*.{njk,liquid,html,webc}]
+[*.njk]
 indent_size = 2
 
-# Arquivos de estilo
-[*.{css,scss,sass}]
+[*.{js,json,yml,yaml,css,scss,sass}]
 indent_size = 2
 
-# Arquivos YAML
+[*.html]
+indent_size = 2
+
 [*.{yml,yaml}]
 indent_size = 2
 
-# Arquivo package.json (convenção npm)
-[package.json]
-indent_size = 2
-
-# Arquivos de configuração do Tina CMS
-[.tina/**]
-indent_size = 2
-
-# Arquivos gerados - não formatar
-[{*.min.*,*.lock}]
-insert_final_newline = false
-trim_trailing_whitespace = false
-
-# Arquivos bash
-[*.sh]
-end_of_line = lf
+[Makefile]
+indent_style = tab
