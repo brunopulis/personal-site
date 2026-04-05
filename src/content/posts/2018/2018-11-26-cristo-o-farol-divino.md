@@ -5,11 +5,11 @@ pubDate: 2018-11-26T02:16:04.828Z
 tags: ['teologia']
 ---
 
-## Cristo, o farol divino
+## Cristo, o farol divino
 
-![](https://cdn-images-1.medium.com/max/2560/1*uclq_6gBkZ89-jeMmI1KxQ.jpeg)
+![Farol à beira-mar ao entardecer, iluminando a escuridão](/assets/images/blog/lighthouse.jpg)
 
-Foto por [Evgeni Tcherkasski](https://unsplash.com/photos/SHA85I0G8K4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/lighthouse?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Foto por [Evgeni Tcherkasski](https://unsplash.com/photos/SHA85I0G8K4) em [Unsplash](https://unsplash.com)
 
 > O povo que andava em trevas, viu uma grande luz, e sobre os que habitavam na região da sombra da morte, resplandeceu a luz — Isaías 9:2
 

@@ -1,4 +1,4 @@
 {
-  "layout": "post",
-  "permalink": "/jogos/{{ page.fileSlug }}/"
+  "layout": "base.njk",
+  "permalink": "/games/{{ page.fileSlug }}/"
 }

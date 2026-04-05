@@ -18,9 +18,9 @@ Você pode conferir uma lista completa na [categoria de livros no Awesome A11y](
 
 Vamos as indicações!
 
-![Garoto comemorando na arquibancada de um time de futebol. Ele está vestido com uma blusa azul e boné. Gesticula com as mãos vibrando e dizendo "Sim, vamos lá"](/assets/images/blog/giphy.gif)
+![Garoto comemorando na arquibancada de um time de futebol. Ele está vestido com uma blusa azul e boné. Gesticula com as mãos vibrando e dizendo Sim, vamos lá](/assets/images/blog/giphy.gif)
 
-## [Acessibilidade na web](https://amzn.to/3MlXvVo)
+## Acessibilidade na web
 
 Autor: Reinaldo Ferraz
 
@@ -32,7 +32,7 @@ Além disso, a obra traz diversas barreiras de acessos e as principais soluçõe
 
 ---
 
-## [GAIA: Um Guia de Recomendações Sobre Design Digital Inclusivo para Pessoas com Autismo](https://amzn.to/3rOOZFb)
+## GAIA: Um Guia de Recomendações Sobre Design Digital Inclusivo para Pessoas com Autismo
 
 Autor: Talita Pagani
 
@@ -42,7 +42,7 @@ A obra busca equalizar aspectos psicopedagógicos sobre o autismo, mais conhecid
 
 ---
 
-## [Inclusive Design Patterns](https://amzn.to/3rMryfG)
+## Inclusive Design Patterns
 
 Autor: Heydon Pickering
 
@@ -52,7 +52,7 @@ O livro explora como podemos criar interfaces acessíveis sem esforço extra –
 
 ---
 
-## [Agile Accessibility Handbook](https://accessibility.deque.com/agile-accessibility-handbook)
+## Agile Accessibility Handbook
 
 Autor: Dylan Barrel
 
@@ -66,7 +66,7 @@ O e-book é disponibilizado **gratuitamente** pela Deque System.
 
 ---
 
-## [Accessibility for Everyone](https://amzn.to/3TflZBV)
+## Accessibility for Everyone
 
 Autor: Laura Kalbag
 

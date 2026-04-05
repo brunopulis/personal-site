@@ -5,11 +5,9 @@ pubDate: 2018-11-13T02:27:11.760Z
 tags: ['reflexão', 'pessoal']
 ---
 
-## Eu e meus 30 anos
+## Eu e meus 30 anos
 
-![](https://cdn-images-1.medium.com/max/2560/1*lzQNIuXO-9mYRg7yaUBG5g.jpeg)
-
-Foto por [Clément M.](https://unsplash.com/photos/sNyFgVJ72is?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/road?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+*Foto por [Clément M.](https://unsplash.com/photos/sNyFgVJ72is) em [Unsplash](https://unsplash.com)*
 
 A alma já não tem o folêgo da juventude poeril,
 o cansaço toma conta…
