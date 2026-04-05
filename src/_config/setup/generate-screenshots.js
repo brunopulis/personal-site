@@ -1,6 +1,6 @@
+import fetch from '@11ty/eleventy-fetch';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import fetch from '@11ty/eleventy-fetch';
 
 const dataPath = './src/_data/builtwith.json';
 const screenshotDir = path.join(
