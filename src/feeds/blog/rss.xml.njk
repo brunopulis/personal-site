@@ -3,7 +3,7 @@
   "permalink": "/feeds/blog/rss.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Bruno Pulis - Blog",
+    "title": "Artigos do Blog",
     "subtitle": "Artigos sobre acessibilidade web, teologia e tecnologia",
     "description": "Artigos sobre teologia, frontend e qualidade de software",
     "language": "pt-br",
@@ -26,7 +26,7 @@
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
     {%- set posts = collections.posts %}
-    {%- for post in posts.slice(0, 10) %}
+    {%- for post in posts | reverse | limit(10) %}
     {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
     <item>
       <title>{{ post.data.title }}</title>

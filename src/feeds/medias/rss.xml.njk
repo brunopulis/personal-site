@@ -3,7 +3,7 @@
   "permalink": "/feeds/medias/rss.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Bruno Pulis - Filmes e séries",
+    "title": "Filmes e séries",
     "description": "Filmes e séries que consumo",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
@@ -30,7 +30,7 @@
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}</description>
+      <description>{{ post.content | safe }}</description>
       <pubDate>{{ (post.data.pubDate or post.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>

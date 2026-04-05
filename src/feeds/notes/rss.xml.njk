@@ -3,7 +3,7 @@
   "permalink": "/feeds/notes/rss.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-  "title": "Bruno Pulis - Notas",
+  "title": "Notas",
     "description": "Posts curtos, estilo twitter, pensamentos e qualquer comentário aleatório",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
@@ -30,7 +30,7 @@
     <item>
       <title>{{ note.data.title or (note.data.pubDate or note.date) | toRfc822Date }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ note.content | renderTransforms(note.data.page, metadata.base) }}</description>
+      <description>{{ note.content | safe }}</description>
       <pubDate>{{ (note.data.pubDate or note.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>

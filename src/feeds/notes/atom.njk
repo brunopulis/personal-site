@@ -3,7 +3,7 @@
   "permalink": "/feeds/notes/atom.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Bruno Pulis - Notas",
+    "title": "Notas",
     "subtitle": "Posts curtos, estilo twitter, pensamentos e qualquer comentário aleatório",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
@@ -35,12 +35,7 @@
       <link href="{{ absolutePostUrl }}" />
       <updated>{{ (note.data.pubDate or note.date) | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <content xml:lang="{{ metadata.language }}" type="html"
-        >{{
-          note.content | renderTransforms(note.data.page,
-          metadata.base)
-        }}</content
-      >
+      <content xml:lang="{{ metadata.language }}" type="html">{{ note.content | safe }}</content>
       {%- if note.data.summary %}
         <summary>{{ note.data.summary }}</summary>
       {%- endif %}
