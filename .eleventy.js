@@ -185,12 +185,15 @@ export default async function (eleventyConfig) {
     return categories.sort();
   });
 
+  // General Settings
   return {
+    markdownTemplateEngine: 'njk',
+
     dir: {
+      output: '_site',
       input: 'src',
       includes: '_includes',
-      layouts: '_includes/layouts',
-      data: '_data'
+      layouts: '_layouts'
     }
   };
 }
