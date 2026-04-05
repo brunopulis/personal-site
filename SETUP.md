@@ -46,10 +46,10 @@ Create a new file in `src/blog/` with this format:
 
 ```markdown
 ---
-title: "My First Post"
+title: 'My First Post'
 date: 2024-01-01
-tags: ["hello", "blogging"]
-description: "My journey into the IndieWeb"
+tags: ['hello', 'blogging']
+description: 'My journey into the IndieWeb'
 ---
 
 Hello world! This is my first post on my new blog.
@@ -60,6 +60,7 @@ I'm excited to own my content and join the IndieWeb community.
 ## Optional: Enable Features
 
 ### Newsletter Signup
+
 ```json
 "newsletter": {
   "enabled": true,
@@ -71,6 +72,7 @@ I'm excited to own my content and join the IndieWeb community.
 ```
 
 ### Placeholder Assets (Profile/OG/Background)
+
 During the build, a small script fetches placeholders so your site looks complete without committing images. You can:
 
 - **Drop in your own files** in `src/assets/` named `profile.jpg`, `og-default.png`, `retro-stars.png`.
@@ -90,6 +92,7 @@ During the build, a small script fetches placeholders so your site looks complet
 - **Skip entirely** by setting `SKIP_FETCH_ASSETS=1` in your environment.
 
 ### Analytics (Privacy-Friendly)
+
 ```json
 "analytics": {
   "enabled": true,
@@ -98,6 +101,7 @@ During the build, a small script fetches placeholders so your site looks complet
 ```
 
 ### Webmentions
+
 ```json
 "webmentions": {
   "enabled": true,
@@ -108,11 +112,13 @@ During the build, a small script fetches placeholders so your site looks complet
 ## Deploy
 
 ### GitHub Pages
+
 1. Push to GitHub
 2. Enable Pages in repository settings
 3. Done! Auto-deploys on every push
 
 ### Netlify
+
 1. Connect GitHub repo
 2. Build: `npm run build`
 3. Publish: `_site`

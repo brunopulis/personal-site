@@ -77,6 +77,7 @@ Then use it in Markdown by adding raw HTML:
 You don’t need to learn everything. Copy, paste, tweak one thing at a time.
 
 Resources:
+
 - Markdown basics: https://www.markdownguide.org/basic-syntax/
 - Learn HTML (MDN): https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content
 - Learn CSS (MDN): https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics
@@ -91,6 +92,7 @@ Resources:
 - Webmentions let other sites reply/like/bookmark your posts—across the web.
 
 Minimum IndieWeb setup:
+
 - Set `site.url` in `src/_data/site.json` (your domain).
 - Optional webmentions: create an account on webmention.io and add to `site.json`:
   ```json
@@ -99,6 +101,7 @@ Minimum IndieWeb setup:
 - Your posts already include h‑entry microformats. Nothing else to do.
 
 Resources:
+
 - IndieWeb: Getting Started — https://indieweb.org/Getting_Started
 - IndieWebify Me — https://indiewebify.me/
 - Microformats h-entry — http://microformats.org/wiki/h-entry
@@ -118,6 +121,7 @@ Resources:
 - Add pages by duplicating a file in `src/` (e.g., `about.njk`) and editing the text
 
 Resources:
+
 - Eleventy docs — https://www.11ty.dev/docs/
 - Tailwind CSS docs — https://tailwindcss.com/docs
 
@@ -130,6 +134,7 @@ Resources:
 - Search is automatic—no setup required.
 
 Resources:
+
 - Eleventy collections (tags) — https://www.11ty.dev/docs/collections/
 
 ---
@@ -139,6 +144,7 @@ Resources:
 Badges are tiny images that show info (e.g., “Built with Eleventy”, “RSS”). They work anywhere you can put an image/link.
 
 Where to find badges:
+
 - Shields.io badge builder: https://shields.io/
 - Big list of ready‑made Markdown badges: https://ileriayo.github.io/markdown-badges/
 
@@ -159,6 +165,7 @@ Add a badge to a page (HTML):
 Tip: Change the text and color directly in the Shields.io URL.
 
 Resources:
+
 - Shields.io — https://shields.io/
 - Markdown Badges list — https://ileriayo.github.io/markdown-badges/
 
@@ -175,6 +182,7 @@ No code required for these simple tweaks:
 Low‑code ideas (copy/paste):
 
 - Custom background image: open `src/assets/css/tailwind.css` and add:
+
   ```css
   .retro-bg {
     background-image: url('/assets/retro-stars.png');
@@ -182,9 +190,11 @@ Low‑code ideas (copy/paste):
     background-attachment: fixed;
   }
   ```
+
   Then wrap your content in a div with `class="retro-bg"` in `src/_includes/layouts/base.njk` or any page.
 
 - Animated marquee (accessible flavor):
+
   ```html
   <div role="marquee" aria-label="Scrolling message" class="overflow-hidden whitespace-nowrap py-2">
     <div class="inline-block animate-[marquee_18s_linear_infinite]">
@@ -192,11 +202,17 @@ Low‑code ideas (copy/paste):
     </div>
   </div>
   ```
+
   And in `tailwind.css` add a keyframes block:
+
   ```css
   @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
   ```
 
@@ -211,9 +227,9 @@ These tiny 88×31 pixel buttons were everywhere in the 1990s/2000s. They’re a 
 
 How to add them (simple):
 
-1) Put button images in `src/assets/buttons/` (create the folder).
+1. Put button images in `src/assets/buttons/` (create the folder).
 
-2) Add this HTML where you want them to appear (e.g., in a page or the footer template `src/_includes/layouts/base.njk`):
+2. Add this HTML where you want them to appear (e.g., in a page or the footer template `src/_includes/layouts/base.njk`):
 
 ```html
 <div class="badges">
@@ -226,19 +242,28 @@ How to add them (simple):
 </div>
 ```
 
-3) Optional CSS for neat layout and crisp pixels (add to `src/assets/css/tailwind.css`):
+3. Optional CSS for neat layout and crisp pixels (add to `src/assets/css/tailwind.css`):
 
 ```css
-.badges { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.badges img { image-rendering: pixelated; }
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.badges img {
+  image-rendering: pixelated;
+}
 ```
 
 Tips:
+
 - Prefer hosting locally (`/assets/buttons/...`) so the images don’t disappear.
 - Always include `alt` text and `width/height` for accessibility and layout stability.
 - Use `loading="lazy"` so they don’t slow the page.
 
 More 88×31 resources:
+
 - Gallery: https://cyber.dabamos.de/88x31/
 - Button maker: https://websetsbylynn.neocities.org/88x31-button-maker/
 - Curated collections: https://anlucas.neocities.org/88x31Buttons
@@ -248,12 +273,14 @@ More 88×31 resources:
 Webrings connect sites in a circle with simple “Previous/Next” links.
 
 Popular option:
+
 - XXIIVV Webring: https://webring.xxiivv.com/ (rules + join instructions in the repo)
 
 How to join (high level):
-1) Make a pull request to add your site to the webring list: https://github.com/XXIIVV/webring
-2) Choose an ID (often your domain without dots). You’ll use it in the links below.
-3) Add the webring links to your footer or a page.
+
+1. Make a pull request to add your site to the webring list: https://github.com/XXIIVV/webring
+2. Choose an ID (often your domain without dots). You’ll use it in the links below.
+3. Add the webring links to your footer or a page.
 
 Copy/paste HTML (replace `your-id` with your chosen ID):
 
@@ -264,31 +291,41 @@ Copy/paste HTML (replace `your-id` with your chosen ID):
     <img src="https://webring.xxiivv.com/icon.black.svg" alt="XXIIVV Webring" width="24" height="24" />
   </a>
   <a href="https://webring.xxiivv.com/next/your-id" rel="nofollow" title="Next site">Next →</a>
-  </nav>
+</nav>
 ```
 
 Optional CSS (add to `src/assets/css/tailwind.css`):
 
 ```css
-.webring { display: inline-flex; gap: 12px; align-items: center; }
-.webring a { text-decoration: none; }
+.webring {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+.webring a {
+  text-decoration: none;
+}
 ```
 
 Notes:
+
 - Keep the links visible so visitors can actually use the ring.
 - Use `rel="nofollow"` if you prefer; some rings recommend it.
 - If you leave the ring later, simply remove the links.
 
 Resources:
+
 - XXIIVV Webring — https://webring.xxiivv.com/
 - Join via GitHub — https://github.com/XXIIVV/webring
 
 Keep it accessible:
+
 - Ensure sufficient color contrast.
 - Don’t rely only on color to convey meaning.
 - Prefer CSS animations that respect “reduce motion”.
 
 Accessibility resources:
+
 - W3C WAI Accessibility Fundamentals — https://www.w3.org/WAI/fundamentals/
 - WAI Tutorials — https://www.w3.org/WAI/tutorials/
 
