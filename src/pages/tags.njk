@@ -1,0 +1,59 @@
+---
+layout: base.njk
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+permalink: /tags/{{ tag | slug }}/
+eleventyComputed:
+  title: "Posts tagged '{{ tag }}'"
+---
+
+<h1 class="mb-6 font-bold text-2xl">Posts tagged
+  <span class="inline-block px-3 py-1 rounded-full text-white text-sm"
+        style="background-color: {{ tag | tagColor }}">#{{ tag }}</span>
+</h1>
+
+{% set currentSlug = (tag | slug) %}
+{% set taggedPosts = [] %}
+{% for post in collections.posts %}
+  {% set matched = false %}
+  {% if post.data.tags %}
+    {% for t in post.data.tags %}
+      {% if (t | slug) == currentSlug %}
+        {% set matched = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if matched %}
+    {% set taggedPosts = (taggedPosts.push(post), taggedPosts) %}
+  {% endif %}
+{% endfor %}
+
+{% if taggedPosts.length > 0 %}
+<div class="space-y-6">
+  {% for post in taggedPosts %}
+    <article class="pb-6 border-b">
+      <h2 class="font-semibold text-xl">
+        <a href="{{ post.url }}" class="hover:text-blue-600">{{ post.data.title }}</a>
+      </h2>
+      <time class="text-gray-500 text-sm" datetime="{{ post.date | htmlDateString }}">
+        {{ post.date | readableDate }}
+      </time>
+      <p class="mt-2 text-gray-700 dark:text-gray-300">
+        {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+      </p>
+      <div class="space-x-2 mt-2 text-sm">
+        {% for postTag in post.data.tags %}
+          <a class="hover:opacity-80 px-2 py-0.5 rounded text-white text-xs"
+             style="background-color: {{ postTag | tagColor }}"
+             href="/tags/{{ postTag | slug }}/">#{{ postTag }}</a>
+        {% endfor %}
+      </div>
+    </article>
+  {% endfor %}
+</div>
+{% else %}
+  <p class="text-gray-500">No posts found with this tag.</p>
+{% endif %}

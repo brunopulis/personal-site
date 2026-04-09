@@ -21,6 +21,7 @@ import {
   getAllBooks,
   getAllNotes,
   getAllPoetry,
+  getAllTags,
   showInSitemap,
   allTags
 } from './src/_config/collections.js';
@@ -152,18 +153,20 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('books', getAllBooks);
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
+  eleventyConfig.addCollection('tagList', getAllTags);
+
   eleventyConfig.addCollection('medias', collectionApi => {
     return collectionApi
       .getFilteredByGlob('src/content/medias/**/*.md')
       .sort((a, b) => (a.date > b.date ? -1 : 1));
   });
+
   eleventyConfig.addCollection('bookmarks', collectionApi => {
     return collectionApi
       .getFilteredByGlob('src/content/bookmarks/**/*.md')
       .sort((a, b) => (a.date > b.date ? -1 : 1));
   });
   eleventyConfig.addCollection('showInSitemap', showInSitemap);
-  eleventyConfig.addCollection('tagList', allTags);
 
   eleventyConfig.addCollection('searchIndex', collectionApi => {
     const posts = collectionApi

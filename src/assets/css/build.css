@@ -1256,10 +1256,6 @@ a:hover:not(.nav-item) {
   padding: 0.5rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -2417,11 +2413,6 @@ body {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
 }
 
-.dark\:hover\:bg-gray-800:hover:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
-}
-
 .dark\:hover\:bg-green-900\/30:hover:is(.dark *) {
   background-color: rgb(20 83 45 / 0.3);
 }
@@ -2475,10 +2466,6 @@ body {
 @media (min-width: 640px) {
   .sm\:block {
     display: block;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
