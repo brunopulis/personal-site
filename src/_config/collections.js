@@ -20,6 +20,34 @@ export const showInSitemap = collection => {
   return collection.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
+export const getAllTags = collection => {
+  const ignore = new Set(['all', 'nav', 'post', 'posts']);
+  const seenSlugs = new Set();
+  const list = [];
+
+  const toSlug = s =>
+    String(s)
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+  collection.getFilteredByGlob('src/content/posts/**/*.md').forEach(item => {
+    const t = item.data && item.data.tags;
+    if (Array.isArray(t)) {
+      t.forEach(tag => {
+        if (!tag || ignore.has(tag)) return;
+        const slug = toSlug(tag);
+        if (!slug || seenSlugs.has(slug)) return;
+        seenSlugs.add(slug);
+        list.push(tag);
+      });
+    }
+  });
+
+  return list.sort((a, b) => String(a).localeCompare(String(b)));
+};
+
 export const allTags = collection => {
   const tagsSet = new Set();
   collection.getAll().forEach(item => {
