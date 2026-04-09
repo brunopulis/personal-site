@@ -1,0 +1,136 @@
+ <footer class="bg-[var(--surface)] mt-12 border-gray-200 dark:border-gray-700 border-t">
+    <div class="mx-auto px-4 py-8 max-w-4xl container">
+      <div class="gap-6 grid grid-cols-1 md:grid-cols-3 text-sm">
+        <div>
+          <h3 class="mb-2 font-semibold">Technical</h3>
+          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
+            <li><a href="https://11ty.dev" target="_blank" rel="noopener">Built with Eleventy</a></li>
+            <li><a href="/style/" class="hover:text-blue-600">Style Guide</a></li>
+            {% set cleanedPath = (page.inputPath or '') | replace('./', '') %}
+            {% if site.repo and site.repo.url %}
+              {% set editUrl = site.repo.url + '/edit/' + (site.repo.branch or 'main') + '/' + cleanedPath %}
+              {% set guideUrl = site.repo.url + '/blob/' + (site.repo.branch or 'main') + '/GUIDE.md' %}
+            {% else %}
+              {% set editUrl = '#' %}
+              {% set guideUrl = '#' %}
+            {% endif %}
+            <li><a href="{{ editUrl }}" class="hover:text-blue-600" target="_blank" rel="noopener">Edit This Page</a></li>
+            <li><a href="{{ guideUrl }}" class="hover:text-blue-600" target="_blank" rel="noopener">Project Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-2 font-semibold">Navigation</h3>
+          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
+            <li><a href="/sitemap/" class="hover:text-blue-600">Sitemap</a></li>
+            <li><a href="/archive/" class="hover:text-blue-600">Archive</a></li>
+            <li><a href="/categories/" class="hover:text-blue-600">Categories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-2 font-semibold">Connect</h3>
+          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
+            {% from "partials/icons.njk" import icon %}
+            {% if site.webring and site.webring.enabled %}
+            <li><a href="{{ site.webring.url }}" target="_blank" rel="noopener" class="hover:text-blue-600">Indie Webring</a></li>
+            {% endif %}
+            <li>
+              <a href="mailto:{{ site.email }}" rel="me" class="inline-flex items-center gap-2 hover:text-blue-600">
+                {{ icon('mail', 'w-4 h-4') }} <span>Email</span>
+              </a>
+            </li>
+            {% if site.social.github %}
+            <li>
+              <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener" class="inline-flex items-center gap-2 hover:text-blue-600">
+                {{ icon('github', 'w-4 h-4') }} <span>GitHub</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if site.social.mastodon %}
+            <li>
+              <a href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}" target="_blank" rel="me noopener" class="inline-flex items-center gap-2 hover:text-blue-600">
+                {{ icon('mastodon', 'w-4 h-4') }} <span>Mastodon</span>
+              </a>
+            </li>
+            {% endif %}
+            {% if site.social.twitter %}
+            <li>
+              <a href="https://twitter.com/{{ site.social.twitter | replace('@','') }}" target="_blank" rel="me noopener" class="inline-flex items-center gap-2 hover:text-blue-600">
+                {{ icon('x', 'w-4 h-4') }} <span>Twitter</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-gray-200 dark:border-gray-700 border-t text-gray-500 text-center">
+        <p>
+          2025 {{ site.name }} •
+          <a href="/feed.xml" class="hover:text-blue-600">RSS</a> •
+          Code: <a href="https://opensource.org/license/mit" target="_blank" rel="noopener" class="hover:text-blue-600">MIT</a> •
+          Content: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" class="hover:text-blue-600">CC BY-NC-SA 4.0</a>
+        </p>
+      </div>
+
+      <div class="mt-6 py-6 border-gray-200 dark:border-gray-700 border-t">
+        <h2 class="mb-2 font-bold text-2xl">Webring</h2>
+        <p>Webrings que faço parte</p>
+        <div class="gap-4 grid grid-cols-1 md:grid-cols-3 mt-12">
+          <div class="bg-white p-4 rounded-lg">
+            <h2 class="mb-2 font-bold text-2xl" id="a11y-webring-club">A11Y Webring</h2>
+            <ul class="flex gap-2">
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev" aria-label="Site anterior">🔙</a></li>
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/random" aria-label="Site aleatório">🔄</a></li>
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/next" aria-label="Próximo site">🔜</a></li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg">
+            <h2 class="mb-2 font-bold text-2xl" id="a11y-webring-club">IndieWeb Webring</h2>
+            <ul class="flex gap-2">
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://xn--sr8hvo.ws/previous" aria-label="Site anterior">🔙</a></li>
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://xn--sr8hvo.ws/next" aria-label="Próximo site">🔜</a></li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg">
+            <h2 class="mb-2 font-bold text-2xl" id="a11y-webring-club">Fediring Webring</h2>
+            <ul class="flex gap-2">
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/prev" aria-label="Site anterior">🔙</a></li>
+              <li><a class="underline" rel="external" referrerpolicy="strict-origin" href="https://fediring.net/">Fediring</a></li>
+              <li><a rel="external" referrerpolicy="strict-origin" href="https://a11y-webring.club/next" aria-label="Próximo site">🔜</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-6 border-gray-200 dark:border-gray-700 border-t text-gray-500 text-center">
+        <ul class="flex flex-wrap gap-2">
+          <li><img src="/assets/images/badges/11ty.gif" width="88" height="31" loading="lazy" alt="Criado com eleventy"></li>
+          <li><img src="/assets/images/badges/cc.png" width="88" height="31" loading="lazy" alt="Creative Commons"></li>
+          <li><img src="/assets/images/badges/faith-tech.png" width="88" height="31" loading="lazy" alt="Fé e tecnologia"></li>
+          <li><img src="/assets/images/badges/obsidian-user.png" width="88" height="31" loading="lazy" alt="Usuário de Obsidian"></li>
+          <li><img src="/assets/images/badges/coffee-powered.png" width="88" height="31" loading="lazy" alt="Powered by coffee"></li>
+          <li><img src="/assets/images/badges/88x31.gif" width="88" height="31" loading="lazy" alt="Badges 88x31"></li>
+          <li><img src="/assets/images/badges/internetarchive.jpg" width="88" height="31" loading="lazy" alt=""></li>
+          <li><img src="/assets/images/badges/indieweb.png" width="88" height="31" loading="lazy" alt="Esse site faz parte da indieweb"></li>
+          <li><img src="/assets/images/badges/webmentions.png" width="88" height="31" loading="lazy" alt="Esse site suporta webmentions"></li>
+          <li><img src="/assets/images/badges/valid-html5.gif" width="88" height="31" loading="lazy" alt="HTML5 validado"></li>
+          <li><img src="/assets/images/badges/valid-css.gif" width="88" height="31" loading="lazy" alt="CSS validado"></li>
+          <li><img src="/assets/images/badges/wcag-aa.png" width="88" height="31" loading="lazy" alt="WCAG 2.2 AA"></li>
+          <li><img src="/assets/images/badges/valid-rss.png" width="88" height="31" loading="lazy" alt="RSS validado"></li>
+          <li><img src="/assets/images/badges/valid-atom.png" width="88" height="31" loading="lazy" alt="Atom validado"></li>
+          <li><img src="/assets/images/badges/microformats.png" width="88" height="31" loading="lazy" alt="Esse site suporta microformats"></li>
+          <li><img src="/assets/images/badges/mastodon.gif" width="88" height="31" loading="lazy" alt="Mastodon"></li>
+          <li><img src="/assets/images/badges/vscodium.jpg" width="88" height="31" loading="lazy" alt="Desenvolvido com VSCodium"></li>
+          <li><img src="/assets/images/badges/human.svg" width="88" height="31" loading="lazy" alt="Feito por um humano"></li>
+          <li><img src="/assets/images/badges/fediring.gif" width="88" height="31" loading="lazy" alt="Fediring"></li>
+          <li><img src="/assets/images/badges/people-pledge.png" width="88" height="31" loading="lazy" alt="People Pledge"></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/flexsearch.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/easter-eggs.js"></script>
