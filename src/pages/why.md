@@ -2,13 +2,17 @@
 title: "Por que esse site existe?"
 ---
 
-Essa declaração de acessibilidade se aplica ao site [brunopulis.com](https://brunopulis.com), o site pessoal de Bruno Pulis.
+Esse existe porque não quero postar em redes sociais e perder meu conteúdo posteriormente.
 
-O design de acessibilidade visa garantir acesso igualitário para pessoas com deficiência. Trata-se de remover barreiras ao acesso.
+Como todos nós sabemos, redes sociais vem e vão.
 
-Estou muito comprometido com esse princípio e procuro continuamente melhorar a experiência do usuário para todos.
+Por isso, esse site existe como meu repositório oficial de produção de conteúdo, seja ele qual for.
 
-## Status de conformidade
+## O que tendo trazer por aqui
+
+- **Escrever** de forma pública com minhas opiniões e impressões;
+- **Criar conteúdo** perene que vai ficar melhor ao longo dos anos;
+- **Criar ferramentas úteis** a
 
 As [Diretrizes de Acessibilidade para Conteúdo Web (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) definem requisitos para designers e desenvolvedores melhorarem a acessibilidade para pessoas com deficiência. Elas definem três níveis de conformidade: Nível A, Nível AA e Nível AAA.
 
