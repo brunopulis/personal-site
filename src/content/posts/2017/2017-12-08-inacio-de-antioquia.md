@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## Inácio de Antioquia
 
-![](https://cdn-images-1.medium.com/max/800/1*1FLiWcDHKFHED_Pq-EWdww.jpeg)
+
 
 Santo Inácio de Antioquia
 

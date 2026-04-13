@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## Hulk e a nova natureza
 
-![](https://cdn-images-1.medium.com/max/2560/1*BF2k_Lef94da_Hf3LLhzqg.jpeg)
+
 
 ## O que Hulk, pode nos ensinar acerca da temperança da vida?
 

@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## Apolinário Cláudio
 
-![](https://cdn-images-1.medium.com/max/800/1*Agje7Iw1HkZzWYVgXR8RuQ.jpeg)
+
 
 ### Vida
 

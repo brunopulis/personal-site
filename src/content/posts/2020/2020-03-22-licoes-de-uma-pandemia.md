@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## As lições de uma pandemia
 
-![Mão de uma pessoa aberta com um broto de uma árvore, simbolizando a esperança](https://cdn-images-1.medium.com/max/2560/1*FHzIQTlOW6OiZsjG1vxL-Q.jpeg)
+
 
 Foto por [Ravi Roshan](https://unsplash.com/@ravi_roshan_inc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/s/photos/hope?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

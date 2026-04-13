@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## Aristides de Atenas
 
-![](https://cdn-images-1.medium.com/max/800/1*9t9kc5E88xde3bEyn3Gw7g.jpeg)
+
 
 **Aristides de Atenas** (ou **Aristides, o ateniense**, **Santo Aristides** ou **Marcianus Aristides**) foi um autor cristão grego do século II dC que é primordialmente conhecido por sua obra _Apologia de Aristides_.
 

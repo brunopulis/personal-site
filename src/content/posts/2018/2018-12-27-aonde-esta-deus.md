@@ -8,7 +8,7 @@ tags: ['teologia']
 
 ## Aonde está Deus?
 
-![](https://cdn-images-1.medium.com/max/2560/1*cdA_eph3sZR1B1AYGwnd4Q.jpeg)
+
 
 Obra A criação de Adão — Michelangelo
 

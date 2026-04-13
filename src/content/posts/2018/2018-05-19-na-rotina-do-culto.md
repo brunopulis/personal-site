@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## Na rotina do culto
 
-![](https://cdn-images-1.medium.com/max/2560/1*5U97Vzx2Mec3vFmRzBmjGA.jpeg)
+
 
 Foto de [Michael D Beckwith](https://unsplash.com/photos/O-9Z_N0mRqw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/black-and-white?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

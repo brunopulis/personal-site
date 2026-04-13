@@ -7,7 +7,7 @@ tags: ['pessoal', 'teologia']
 
 ## Como a teologia me ajudou a palestrar
 
-![](https://cdn-images-1.medium.com/max/800/1*j6waA8yUK6-6Zq1Wo0FU_Q.jpeg)
+
 
 Palestra no DevFest Nordest 2017.
 
@@ -47,7 +47,7 @@ Os princípios da homilética auxiliam na comunicação da mensagem. Já perdi a
 
 Me arrisquei como palestrante algumas vezes. Em 2017 palestrei em dois eventos: DevFest Nordeste e o DevFest Belo Horizonte (agradecimentos a: [Jader Gomes](https://medium.com/u/701a37cf217b), [Marcus Silva](https://medium.com/u/beb873442672), [Yan Magalhães](https://medium.com/u/25bed43650d1) e [Thiago Almeida](https://medium.com/u/7f6c6ed77f79)).
 
-![](https://cdn-images-1.medium.com/max/800/1*LuDidRIPZozWGy76nUVV9Q.jpeg)
+
 
 DevFest BH 2017
 
@@ -55,7 +55,7 @@ Como eu tinha uma prévia experiência em pregar na igreja, encarar o público n
 
 Você é o comunicador que irá transmitir uma mensagem e sua desenvoltura para isso pode te levar ao sucesso ou ao fracasso. O conteúdo pode ser excelente, porém se a forma de comunicar for ruim, todo o trabalho é levado água abaixo.
 
-![](https://cdn-images-1.medium.com/max/800/1*UZJb9PQbEcW0hwMUBM7g6w.jpeg)
+
 
 Uma pregação na igreja.
 
@@ -123,7 +123,7 @@ Devemos encontrar essa “conexão” ou contexto com o ouvinte e, assim, conseg
 - **Atualize-se:** estude sobre o assunto, invista tempo pesquisando, lendo, estudando, testando e codando principalmente. O hábito da leitura é primordial para ser um palestrante que sabe comunicar. Quem lê mais, sabe mais.
 - **Faça com amor:** compartilhar conhecimento é uma das melhores coisas da nossa área, ver o crescimento das pessoas por algo que ensinamos não há dinheiro que pague. E também se divirta!
 
-![](https://cdn-images-1.medium.com/max/800/1*pqOfrll9YlPMQFCTVl-Y7w.jpeg)
+
 
 # paracegover: Várias pessoas em posições diferente fazendo caretas, entra elas está: [Rafael Nunes Verger](https://medium.com/u/269b6f73f06c), [Yan Magalhães](https://medium.com/u/25bed43650d1), [Thiago Almeida](https://medium.com/u/7f6c6ed77f79), [Bruno Pulis](https://medium.com/u/41ab4fae1431), [Diego Leite](https://medium.com/u/6d523822402e) e [Marcus Silva](https://medium.com/u/beb873442672)
 

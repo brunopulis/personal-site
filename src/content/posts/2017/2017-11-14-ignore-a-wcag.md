@@ -17,7 +17,7 @@ Eu sei que é uma declaração ousada. Mas o [WCAG](https://www.w3.org/TR/WCAG20
 
 O quê mais? Bem, peguei as WCAG, coloquei no Microsoft Word e baixei todo o documento. Voilà, aqui estão as 98 páginas:
 
-![](https://cdn-images-1.medium.com/max/800/1*mdQ3dAcbGJcTUe7vyRBewA.png)
+
 
 98 páginas da documentação do WCAG 2.0
 

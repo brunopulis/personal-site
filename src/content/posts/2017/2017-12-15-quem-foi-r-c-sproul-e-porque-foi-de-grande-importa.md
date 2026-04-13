@@ -7,17 +7,17 @@ tags: ['teologia']
 
 ## Quem foi R C Sproul? E porque foi de grande importância
 
-![](https://cdn-images-1.medium.com/max/2560/1*3WFFfzeWtCxkeNVecMpy4w.jpeg)
+
 
 **Robert Charles Sproul**, nasceu em 13 de fevereiro de 1939, em Pittsburgh, Pensilvânia. Foi teólogo calvinista e pastor. Ele é o fundador e presidente da _Ligonier Ministries_ (uma organização reformada sem fins lucrativos, sediada em Orlando) e podia ser ouvido diariamente sobre no programa de rádio _Renewing Your Mind_ difundido nos Estados Unidos e em mais 60 países. A _Ligonier_ realiza várias conferências teológicas a cada ano, incluindo a principal conferência realizada anualmente em Orlando, [Flórida](https://pt.wikipedia.org/wiki/Fl%C3%B3rida 'Flórida'), em que Sproul é um dos principais oradores. Quando o assunto é Soberania de Deus, ele é considerado a maior referência no assunto.
 
 Casou-se com Vesta em 1960. Serviu no Gordon College em Massachusetts, Conwell Theological Seminary na Filadélfia, e depois pastoreou em Cincinnati.
 
-![](https://cdn-images-1.medium.com/max/800/1*pqQt-ETTtc6q1VI6NjAhFA.jpeg)
+
 
 Em 1971, Sproul, Vesta e seus dois filhos, Sherrie e R.C. Jr. instalaram-se nas montanhas do oeste da Pensilvânia para servir no recém-estabelecido Centro de Estudo do Vale de Ligonier. R.C. publicou seu primeiro livro em 1973, **The Symbol**, uma exposição do Credo dos Apóstolos, ganhando um prêmio de livro do Christianity Today.
 
-![](https://cdn-images-1.medium.com/max/800/1*kkVuMAqPymNVAc6lXwfB-w.jpeg)
+
 
 R.C. liderou uma equipe de acadêmicos e escritores cristãos, o que viria a ser um dos documentos mais significativos da igreja do século XX, The Chicago Statement on Biblical Inerrancy. Em 1984, a equipe de Sprouls e Ligonier mudou-se para Orlando, Flórida. Além de liderar um ministério de rápido crescimento e entregar palestras para ensinar séries, Sproul também serviu como professor de teologia para um seminário reformado.
 

@@ -11,7 +11,7 @@ canonicalUrl: "https://medium.com/@brunopulis/in-memorian-b462c5572cc4"
 
 ### In Memorian
 
-![](https://cdn-images-1.medium.com/max/2560/1*oUvNq0jyWwaQusWZVaoEuw.jpeg)
+
 
 [https://unsplash.com/photos/FtZL0r4DZYk](https://unsplash.com/photos/FtZL0r4DZYk)
 
@@ -42,6 +42,6 @@ O vazio que meu filho me deixou…
 
 Em memória e homenagem às famílias de Janaúba
 
-![](https://cdn-images-1.medium.com/max/800/1*Xs_n7rUQRbe-EszCS4oXRg.gif)
+
 
 Se você gostou, clique no ❤ aí embaixo para que mais pessoas possam ler.

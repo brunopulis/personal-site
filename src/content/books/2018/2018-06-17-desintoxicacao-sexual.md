@@ -17,13 +17,13 @@ pubDate: 2018-06-17
 
 ### Desintoxicação sexual: um guia para homens que querem fugir da imoralidade sexual
 
-![](https://cdn-images-1.medium.com/max/2560/1*HBW70ofCfZd40Ea2LMsUbQ.jpeg)
+
 
 A criação de Adão, obra de [Michelangelo Buonarotti](https://pt.wikipedia.org/wiki/Michelangelo 'Michelangelo')
 
 O **_Saber Indica_** de hoje traz a resenha do livro Desintoxicação Sexual: um guia para homens que querem fugir da imoralidade sexual de Tim Challies.
 
-![](https://cdn-images-1.medium.com/max/800/1*eaU-C0tbKjCKoG3pwR1Q3g.jpeg)
+
 
 ### Você não aguenta mais a pornografia?
 
@@ -39,7 +39,7 @@ Possui 112 páginas com uma leitura agradável, sem linguagem técnica e direto 
 
 ### A realidade
 
-![](https://cdn-images-1.medium.com/max/1200/1*BUA0Pq-I3lEqnFv1sVl47w.jpeg)
+
 
 Foto por [David Travis](https://unsplash.com/photos/aVvZJC0ynBQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -74,7 +74,7 @@ Como todo pecado, ele necessita ser alimentado para se satisfazer. A pornografia
 
 ### Pornografia vs Casamento
 
-![](https://cdn-images-1.medium.com/max/2560/1*gQatXqlugmRKs3D_z9LPcg.jpeg)
+
 
 Foto por [Petr Ovralov](https://unsplash.com/photos/jNpttMRlb_Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -90,7 +90,7 @@ Outro ponto importante é: **casamento não é a solu**ç**ão** para problemas 
 
 ### Uma teologia da masturbação
 
-![](https://cdn-images-1.medium.com/max/800/1*oUp9LiQ6u29H1E7QQaup0g.jpeg)
+
 
 Foto por [Jamie Taylor](https://unsplash.com/photos/-9C3TMXwQjQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -112,7 +112,7 @@ Outros pontos importantes que Tim aborta são as consequências da masturbação
 
 ### As três dádivas do sexo
 
-![](https://cdn-images-1.medium.com/max/2560/1*FSzJe_MYDnWHA7bOgknN-Q.jpeg)
+
 
 Foto por [Bridget Flohe](https://unsplash.com/photos/o-OrN4VRVG4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -136,7 +136,7 @@ Frutificando assim um relacionamento saudável entre os cônjuges.
 
 ### Desintoxicação no quarto
 
-![](https://cdn-images-1.medium.com/max/2560/1*mewu_hlDunnsnZkkfFEgvw.jpeg)
+
 
 Foto por [Goh Rhy Yan](https://unsplash.com/photos/FFgcWvplwsc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

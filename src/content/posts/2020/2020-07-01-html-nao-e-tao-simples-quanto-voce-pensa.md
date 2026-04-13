@@ -65,7 +65,7 @@ Já no bom e velho HTML, o componente de select se parece com isso.
 
 Abaixo uma tabela demonstrando os problemas mais recorrentes nas páginas.
 
-![Tabela com amostragem da pesquisa realizada pelo WAI, disponível em https://webaim.org/projects/million/#intro](https://cdn-images-1.medium.com/max/800/1*UwX1C6BHTV1SHyyF690PxQ.png)
+
 
 Fica nítido uma coisa, **temos um problema gritante com a semântica e estrutura**
 

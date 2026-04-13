@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## Paulo de Tarso
 
-![](https://cdn-images-1.medium.com/max/2560/1*3vqa--cU1EU0MFLzgbNAfQ.jpeg)
+
 
 **Paulo de Tarso** é uma das figuras mais icônicas do Novo Testamento. Escritor de boa parte do Novo Testamento, fariseu, antes perseguidor agora perseguido por amor do Evangelho, foi dado a ele o título de apóstolo por Deus, sendo missionário radical levando o Evangelho a lugares inimagináveis para o período histórico que vivia.
 

@@ -7,7 +7,7 @@ tags: ['teologia']
 
 ## O cristão e sua ignorância literária
 
-![](https://cdn-images-1.medium.com/max/2560/1*w3toaGngMtx_o5B1bQAT1A.jpeg)
+
 
 Coletânea de livros com capas coloridas em uma estante. Foto por [Karim Ghantous](https://unsplash.com/photos/JHTlgIpNyQA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) disponível no site [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
