@@ -3,6 +3,11 @@ export const getAllPosts = collection => {
   return collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
 
+/** All newsletters as a collection. */
+export const getAllNewsletters = collection => {
+  return collection.getFilteredByGlob('./src/content/newsletters/**/*.md').reverse();
+};
+
 export const getAllBooks = collection => {
   return collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
 };
