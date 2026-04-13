@@ -201,11 +201,6 @@
   <div id="progress-bar" aria-hidden="true"></div>
   <header class="bg-[var(--surface)] border-gray-200 dark:border-gray-700 border-b">
     <div class="flex items-center gap-3 mx-auto px-4 py-3 container">
-      <button id="hamburger" class="md:hidden p-2 border border-gray-300 dark:border-gray-600 rounded" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
-        <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
-        <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
-        <span class="block bg-gray-700 dark:bg-gray-200 w-5 h-0.5 transition-transform bar-3"></span>
-      </button>
       <a class="font-semibold text-lg" href="/">
         <img src="/assets/images/pulis.webp" alt="" srcset="" style="max-width: 100%; width: 64px; height: 64px; border-radius: 50%;">
       </a>
@@ -213,19 +208,11 @@
         <label class="sr-only" for="q">Pesquisar</label>
         <input id="q" name="q" type="search" placeholder="pesquise um termo..." class="px-3 py-2 border rounded w-64" />
       </form>
-      <div class="flex items-center gap-2 ml-2">
-        <button id="dark-toggle" class="px-2 py-1 border rounded text-sm" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
-        <div class="relative">
-          <button id="a11y-toggle" class="px-2 py-1 border rounded text-sm" aria-expanded="false" aria-controls="a11y-menu">A11y</button>
-          <div id="a11y-menu" class="hidden right-0 absolute space-x-2 bg-[var(--surface)] mt-1 p-2 border rounded text-sm whitespace-nowrap">
-            <button id="font-dec" class="px-2 py-1 border rounded">A-</button>
-            <button id="font-inc" class="px-2 py-1 border rounded">A+</button>
-            <button id="contrast-toggle" class="px-2 py-1 border rounded">Contrast</button>
-            <button id="motion-toggle" class="px-2 py-1 border rounded">Reduce motion</button>
-            <button id="font-toggle" type="button" aria-pressed="false" class="hidden md:inline-block px-2 py-1 border rounded">System Fonts</button>
-          </div>
-        </div>
-      </div>
+      <button id="hamburger" class="md:hidden p-2 border border-gray-300 dark:border-gray-600 rounded" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
+        <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
+        <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
+        <span class="block bg-gray-700 dark:bg-gray-200 w-5 h-0.5 transition-transform bar-3"></span>
+      </button>
     </div>
   </header>
 

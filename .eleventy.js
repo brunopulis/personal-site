@@ -13,6 +13,8 @@ dotenv.config();
 import {DateTime} from 'luxon';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 import filters from './src/_config/filters.js';
+import plugins from './src/_config/plugins.js';
+import shortcodes from './src/_config/shortcodes.js';
 import tagColors from './src/_data/tagColors.json' with {type: 'json'};
 import blogroll from './src/_data/blogroll.json' with {type: 'json'};
 
@@ -148,6 +150,31 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
   eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
 
+  // Plugins
+  eleventyConfig.addPlugin(plugins.htmlConfig);
+  eleventyConfig.addPlugin(plugins.drafts);
+
+  eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
+  eleventyConfig.addPlugin(plugins.rss);
+  eleventyConfig.addPlugin(plugins.syntaxHighlight);
+
+  eleventyConfig.addPlugin(plugins.webc, {
+    components: ['./src/_includes/webc/**/*.webc'],
+    useTransform: true
+  });
+
+  eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
+    formats: ['webp', 'jpeg'],
+    widths: ['auto'],
+    htmlOptions: {
+      imgAttributes: {
+        loading: 'lazy',
+        decoding: 'async'
+      },
+      pictureAttributes: {}
+    }
+  });
+
   // Collections
   eleventyConfig.addCollection('posts', getAllPosts);
   eleventyConfig.addCollection('books', getAllBooks);
@@ -187,6 +214,16 @@ export default async function (eleventyConfig) {
     const categories = [...new Set(blogroll.map(item => item.category))];
     return categories.sort();
   });
+
+  // Library and Data
+  eleventyConfig.setLibrary('md', plugins.markdownLib);
+  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
+
+  // Shortcodes
+  eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);
+  eleventyConfig.addShortcode('image', shortcodes.imageShortcode);
+  eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeysShortcode);
+  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
   // General Settings
   return {
