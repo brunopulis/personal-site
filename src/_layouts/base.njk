@@ -221,6 +221,7 @@
       {% set url = page.url or '/' %}
       {% set isHome = url == '/' %}
       {% set isBlog = (url and (url | slice(0, 6) == '/blog/')) %}
+      {% set isNewsletter = (url and (url | slice(0, 6) == '/newsletters/')) %}
       {% set isAbout = url == '/about/' %}
       {% set isNotes = url == '/notes/' %}
       {% set isNow = url == '/now/' %}
@@ -230,27 +231,33 @@
       <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
         <li>
           <a href="/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isHome %}underline font-semibold{% endif %}"
-             {% if isHome %}aria-current="page"{% endif %}><span aria-hidden="true">🏠</span> Home</a>
+            {% if isHome %}aria-current="page"{% endif %}><span aria-hidden="true">🏠</span> Home</a>
         </li>
         <li>
           <a href="/about/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isAbout %}underline font-semibold{% endif %}"
-             {% if isAbout %}aria-current="page"{% endif %}><span aria-hidden="true">👋</span> Sobre</a>
+            {% if isAbout %}aria-current="page"{% endif %}><span aria-hidden="true">👋</span> Sobre</a>
         </li>
         <li>
           <a href="/now/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNow %}underline font-semibold{% endif %}"
-             {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">📍</span> Agora</a>
+            {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">📍</span> Agora</a>
         </li>
         <li>
           <a href="/blog/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isBlog %}underline font-semibold{% endif %}"
-             {% if isBlog %}aria-current="page"{% endif %}><span aria-hidden="true">✍️</span> Blog</a>
+            {% if isBlog %}aria-current="page"{% endif %}><span aria-hidden="true">✍️</span> Blog
+          </a>
+        </li>
+        <li>
+          <a href="/newsletters/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNewsletter %}underline font-semibold{% endif %}"
+            {% if isNewsletter %}aria-current="page"{% endif %}><span aria-hidden="true">📥</span> Newsletter
+          </a>
         </li>
         <li>
           <a href="/sitemap/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
-             {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
+            {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
         </li>
         <li>
           <a href="/now/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNow %}underline font-semibold{% endif %}"
-             {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">💬</span> Livro de visitas</a>
+            {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">💬</span> Livro de visitas</a>
         </li>
       </ul>
     </div>
