@@ -7,7 +7,7 @@ tags: []
 
 ## As chamas da desesperança
 
-![](https://cdn-images-1.medium.com/max/2560/1*IdaYlyH-R-KS5tkgsi10mA.jpeg)
+
 
 Museu Nacional em chamas localizado no Rio de Janeiro.
 

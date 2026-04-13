@@ -7,7 +7,7 @@ tags: ['reflexão', 'carreira', 'tecnologia']
 
 ## Precisamos urgente de equilíbrio
 
-![](https://cdn-images-1.medium.com/max/2560/1*gfbbLk3tdt3mbJ5eiPuR3w.jpeg)
+
 
 Mulher sentada no fundo do quarto com cara de cansaço
 

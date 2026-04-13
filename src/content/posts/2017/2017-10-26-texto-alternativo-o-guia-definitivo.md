@@ -25,11 +25,11 @@ Muitas vezes o texto alternativo não ajuda, sendo um desperdício do meu tempo 
 
 Deixe-me ilustrar isso na [página inicial do The Verge](https://www.theverge.com/). Isto é o que exibe para pessoas com visão:
 
-![](https://cdn-images-1.medium.com/max/800/1*wA4SL_9BCXv4ffG7WbjeiA.png)
+
 
 Abaixo é o que eu vejo. Eu substituí as imagens com o que meu leitor de tela lê:
 
-![](https://cdn-images-1.medium.com/max/800/1*UhOwXDzDJu784R3jZUxDrw.png)
+
 
 Não ajuda muito, não é?
 
@@ -68,7 +68,7 @@ No HTML, um texto alternativo é um atributo em um elemento de imagem:
 
 A maioria dos gerenciadores de conteúdo, como WordPress, permite você criar um texto alternativo quando subir a imagem:
 
-![](https://cdn-images-1.medium.com/max/800/1*TEigDTXo8iVNPrFitKWe8Q.png)
+
 
 Esse campo geralmente é chamado de Texto Alternativo mas em algumas interfaces é chamado de “descrição da imagem” ou algo similar.
 
@@ -99,7 +99,7 @@ As coisas que não pertencem a um texto alternativo são:
 
 Como você descreve a imagem depende do seu contexto. Deixe-me dar-lhe um exemplo:
 
-![](https://cdn-images-1.medium.com/max/800/1*byAJdcewCuUQD4UHvKZlbA.jpeg)
+
 
 Se essa imagem fosse exibida em um artigo sobre fotografia, o texto alternativo poderia ser algo ao longo das linhas de:
 
@@ -169,7 +169,7 @@ Você [sempre deve ter labels ao lado de ícones](https://axesslab.com/icons-rui
 
 Vamos dar um exemplo de mídia social como exemplo:
 
-![](https://cdn-images-1.medium.com/max/800/1*9w7litIOUbtr5qbAlJJLBA.png)
+
 
 Se você escrevesse um texto alternativo para o ícone do Facebook, um leitor de tela diria algo ao longo da linha: “Facebook Facebook”. Muito redundante!
 
@@ -181,7 +181,7 @@ OK, isso não é tecnicamente sobre textos alternativos, mas ainda é importante
 
 Outro erro comum está nos botões de menus:
 
-![](https://cdn-images-1.medium.com/max/800/1*1ZgwwDXalXRP7B8yQLhDQQ.png)
+
 
 Se o botão de menu não tiver um label visual — o que, de maneira direta, é realmente ruim para a experiência do usuário, ele precisa de um texto alternativo (ou outra maneira de descrever sua função no código, como aria-label). Explique a função do ícone, como “Menu”. Não escreva “Três linhas horizontais” ou “Hambúrguer principal”, que infelizmente são exemplos reais em que eu tropecei.
 
@@ -191,7 +191,7 @@ Se o ícone do menu tiver um label, você deve deixar o texto alternativo em bra
 
 Geralmente uma imagem com um link é acompanhado com um texto. Como o exemplo abaixo:
 
-![](https://cdn-images-1.medium.com/max/800/1*U3ikf_qtYq3q3Ar0nFw1ow.png)
+
 
 Nesse caso, a imagem e o link **devem estar na mesma tag de link no html**. Você pode simplesmente deixar o texto alternativo em branco. O importante para o usuário é ouvir o texto do link.
 
@@ -205,7 +205,7 @@ De preferência, as imagens decorativas que não transmitem qualquer significado
 
 Eu classificaria a maioria das imagens nas quais você coloca o texto como decorativo. Você não precisa de um texto alternativo neles. Um exemplo é a imagem de fundo na página inicial do Netflix:
 
-![](https://cdn-images-1.medium.com/max/800/1*IDmNaiu38Zw2-X4n3DP_Xw.png)
+
 
 ### Casos especiais
 

@@ -7,7 +7,7 @@ tags: ['reflexão']
 
 ## Mais uma luz — o valor da vida
 
-![](https://cdn-images-1.medium.com/max/2560/1*aBnCW2ku2lG2yviLuCZAyg.jpeg)
+
 
 Foto por [Kristine Weilert](https://unsplash.com/photos/tLNRTxieD7k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/light?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

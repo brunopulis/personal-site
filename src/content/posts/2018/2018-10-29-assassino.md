@@ -6,7 +6,7 @@ tags: []
 
 ## Assassino?
 
-![](https://cdn-images-1.medium.com/max/2560/1*ziDu7Y_wJwNvdQ3WlEfEMw.jpeg)
+
 
 Houve um dia, enquanto eu fazia meus passeios no exterior, quando eu fui por um lugar, para sempre gravado em minha memória, pois lá vi esse amigo, o meu melhor, o meu único Amigo… Assassinado!
 

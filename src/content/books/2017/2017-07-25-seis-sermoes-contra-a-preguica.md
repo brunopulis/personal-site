@@ -15,7 +15,7 @@ tags: ['teologia']
 
 ## Seis sermões contra a preguiça
 
-![](https://cdn-images-1.medium.com/max/800/1*r2nWNAtgeqUYzmyZ6S6d1A.jpeg)
+
 
 Hoje o Saber Indica vem recomendar o **Seis Sermões contra a preguiça** de Tiago Cavaco. Um livro provocativo e reflexivo, daquelas obras que vale cada centavo investido. Um choque de realidade a uma geração afundada na preguiça.
 
@@ -29,7 +29,7 @@ Existe uma opção interessante de compra do Kit Cavaco pela editora. (ps: se pu
 
 A leitura do livro é extremamente provocativa e intensa, Tiago nos provoca a todo momento, cada frase e oração a reflexão profunda sobre o tema. Impossível não marcar o livro eis como o meu está:
 
-![](https://cdn-images-1.medium.com/max/800/1*rHP06dhUpkG4fd8zjPVo3A.jpeg)
+
 
 Além de ter marcações com post-it's está todo marcado de caneta.
 

@@ -7,7 +7,7 @@ tags: ['a11y']
 
 ## Seis maiores erros de acessibilidade digital
 
-![Seis maiores erros de acessibilidade digital](https://cdn-images-1.medium.com/max/800/1*gEAqPCtml_CoO4YW7a2X-Q.jpeg)
+
 
 _Desde a fundação da web, Tim Berners-Lee acreditava na universalidade do acesso. Mas que a web. Seguiu o desejo do seu criador? Nesse artigo eu te mostro os seis maiores erros em acessibilidade digital e como eles podem ser corrigidos._
 
@@ -38,7 +38,7 @@ Atualmente estou usando o [Accessible Colors](https://accessible-colors.com/) go
 
 Para exemplificar, imagine que você foi contratado para validar o contraste do menu de um site. Você iria inspecionar a cor usada no background do menu e as cores de cada item de menu, usando o Acessible Colors, o resultado será semelhante a:
 
-![](https://cdn-images-1.medium.com/max/800/0*IjjLzGcCeDTHYBex.png)
+
 
 Resultado de uma avaliação das cores: #ccc para textos do tamanho de fonte 16px e background do site #fff
 
@@ -48,13 +48,13 @@ Tendo o resultado em mãos, você pode reportar as inconsistências. Essas corre
 
 ### Imagens sem texto alternativo
 
-![](https://cdn-images-1.medium.com/max/800/1*PK4XKLYNXsLLIxINUBtF7Q.jpeg)
+
 
 Segundo uma pesquisa do [Web AIM](https://webaim.org/projects/million/#wcag), em uma amostragem de **1 milhão** de páginas iniciais dos sites mais populares do mundo. Foram encontradas **38,426,701** imagens, ou **38.4%** por página inicial em média.
 
 Cerca de **31.3%** de todas as páginas iniciais (12 por página em média) **não possuíam texto alternativo** (sem contar o `alt=""`) que é uma forma válida. **Mais da metade das imagens sem texto alternativo**.
 
-![](https://cdn-images-1.medium.com/max/800/0*nhad92HKKumo_4HB.gif)
+
 
 Existe uma grande discussão ao redor do atributo `alt`, [Reinaldo Ferraz](https://medium.com/u/e50fe7665605) escreveu [um artigo](http://reinaldoferraz.com.br/explorando-o-atributo-alt/), onde demonstra os benefícios do atributo. Além de contribuir para a **acessibilidade** ele também ajuda no **SEO** das páginas.
 
@@ -96,7 +96,7 @@ Com essa abordagem os validadores de acessibilidade não encontrarão nenhum pro
 
 ### Labels de formulários ausentes
 
-![Imagem de um formulário HTML](https://cdn-images-1.medium.com/max/800/1*WKSfn3CASCjOSkNBNLYLOQ.jpeg)
+
 
 55% dos 4,2 milhões de formulário identificados na pesquisa do WebAIM, não estavam usando o elemento `<label>` ou `aria-label` ou `aria-labelledby`. Páginas com pelo menos um controle de formulário sem rótulo tiveram em média mais 43 erros detectáveis do que páginas sem nenhum erro de rótulo.
 
@@ -131,7 +131,7 @@ Qualquer validador de acessibilidade notificará a inconsistência da violação
 
 ### Documentos HTML sem definição de linguagem
 
-![](https://cdn-images-1.medium.com/max/800/1*kRX78qCJxzQiok4TKNxzEg.jpeg)
+
 
 A linguagem do documento HTML na maioria das vezes é ignorada ou esquecida. Já fiz diversas avaliações em sites com conteúdos totalmente em português e a definição do idioma em inglês.
 

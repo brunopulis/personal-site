@@ -7,7 +7,7 @@ tags: ['a11y']
 
 ## Dica matadora: 6 livros para estudar acessibilidade web
 
-![](https://cdn-images-1.medium.com/max/2560/1*M1MRvrZVPQL-r7yO6NGygg.jpeg)
+
 
 Foto por [Kimberly Farmer](https://unsplash.com/photos/lUaaKCUANVI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) [em Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText). Seis livros empilhados num fundo cinza
 
