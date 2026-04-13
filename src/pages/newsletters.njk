@@ -1,33 +1,30 @@
 ---
 layout: base.njk
 pagination:
-  data: collections.posts
+  data: collections.newsletters
   size: 10
-  alias: posts
-permalink: '/blog/{% if pagination.pageNumber >= 1 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
-title: Blog
+  alias: newsletters
+permalink: '/newsletters/{% if pagination.pageNumber >= 1 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+title: Newsletters
 ---
 
 <div class="h-feed">
-  <h1 class="mb-6 p-name font-bold text-2xl">Blog</h1>
-  <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
+  <h1 class="mb-6 p-name font-bold text-2xl">Newsletters</h1>
+  <a class="hidden u-url" href="{{ site.url }}/newsletters/"></a>
 
   <div class="space-y-8">
-    {% for post in posts %}
-      <article class="pb-6 border-b h-entry">
+    {% for newsletter in newsletters %}
+      <article class="flex align-items-center justify-content-end pb-6 border-b h-entry">
         <h3 class="p-name font-semibold text-xl">
-          <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+          <a class="u-url" href="{{ newsletter.url }}">Edição #{{ newsletter.data.issue }}</a>
         </h3>
         <time
           class="text-gray-500 dark:text-gray-400 text-sm dt-published"
-          datetime="{{ post.date | htmlDateString }}"
-          >{{ post.date | readableDate }}</time
+          datetime="{{ newsletter.date | htmlDateString }}"
+          >{{ newsletter.date | readableDate }}</time
         >
-        <div class="mt-2 p-summary text-gray-700 dark:text-gray-300">
-          {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-        </div>
         <div class="space-x-2 mt-2 text-sm">
-          {% for tag in post.data.tags %}
+          {% for tag in newsletter.data.tags %}
             <a class="bg-gray-100 dark:bg-gray-800 p-category px-2 py-0.5 rounded" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
           {% endfor %}
         </div>

@@ -20,6 +20,7 @@ import blogroll from './src/_data/blogroll.json' with {type: 'json'};
 
 import {
   getAllPosts,
+  getAllNewsletters,
   getAllBooks,
   getAllNotes,
   getAllPoetry,
@@ -177,6 +178,7 @@ export default async function (eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection('posts', getAllPosts);
+  eleventyConfig.addCollection('newsletters', getAllNewsletters);
   eleventyConfig.addCollection('books', getAllBooks);
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
