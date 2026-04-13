@@ -1,0 +1,64 @@
+<svg viewBox="0 0 700 420"
+     xmlns="http://www.w3.org/2000/svg"
+     role="img"
+     aria-labelledby="chart-title"
+     aria-describedby="chart-desc" font-family="sans-serif" style="background:#ffffff">
+  <title id="chart-title">Tendência de uso diário de celular — 4 semanas</title>
+  <desc id="chart-desc">Gráfico de linha mostrando a média diária de uso do celular por semana: semana 1 6h30m, semana 2 5h22m, semana 3 7h15m, semana 4 8h40m. Linha de tendência vermelha tracejada mostra crescimento geral de aproximadamente 45 minutos por semana.</desc>
+
+  <rect width="700" height="420" fill="#ffffff"/>
+
+  <line x1="80" y1="50" x2="80" y2="310" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="80" y1="310" x2="640" y2="310" stroke="#ccc" stroke-width="0.5"/>
+
+  <line x1="80" y1="266.7" x2="640" y2="266.7" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <line x1="80" y1="223.3" x2="640" y2="223.3" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <line x1="80" y1="180"   x2="640" y2="180"   stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <line x1="80" y1="136.7" x2="640" y2="136.7" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <line x1="80" y1="93.3"  x2="640" y2="93.3"  stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>
+  <line x1="80" y1="50"    x2="640" y2="50"    stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>
+
+  <text x="70" y="314" text-anchor="end" font-size="12" fill="#888">4h</text>
+  <text x="70" y="270" text-anchor="end" font-size="12" fill="#888">5h</text>
+  <text x="70" y="227" text-anchor="end" font-size="12" fill="#888">6h</text>
+  <text x="70" y="184" text-anchor="end" font-size="12" fill="#888">7h</text>
+  <text x="70" y="141" text-anchor="end" font-size="12" fill="#888">8h</text>
+  <text x="70" y="97"  text-anchor="end" font-size="12" fill="#888">9h</text>
+  <text x="70" y="54"  text-anchor="end" font-size="12" fill="#888">10h</text>
+
+  <polygon
+    points="200,201.8 333,250.7 467,169.3 600,107.9 600,310 200,310"
+    fill="#378ADD" fill-opacity="0.08"/>
+
+  <polyline
+    points="200,201.8 333,250.7 467,169.3 600,107.9"
+    fill="none" stroke="#378ADD" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <line x1="200" y1="224.3" x2="600" y2="107.9"
+    stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="7 4"/>
+
+  <circle cx="200" cy="201.8" r="7" fill="#378ADD" stroke="white" stroke-width="2"/>
+  <circle cx="333" cy="250.7" r="7" fill="#378ADD" stroke="white" stroke-width="2"/>
+  <circle cx="467" cy="169.3" r="7" fill="#378ADD" stroke="white" stroke-width="2"/>
+  <circle cx="600" cy="107.9" r="7" fill="#378ADD" stroke="white" stroke-width="2"/>
+
+  <text x="200" y="192" text-anchor="middle" font-size="12" font-weight="500" fill="#185FA5">6h 30m</text>
+  <text x="333" y="265" text-anchor="middle" font-size="12" font-weight="500" fill="#185FA5">5h 22m</text>
+  <text x="467" y="159" text-anchor="middle" font-size="12" font-weight="500" fill="#185FA5">7h 15m</text>
+  <text x="600" y="98"  text-anchor="middle" font-size="12" font-weight="500" fill="#185FA5">8h 40m</text>
+
+  <text x="200" y="330" text-anchor="middle" font-size="13" fill="#888">Semana 1</text>
+  <text x="333" y="330" text-anchor="middle" font-size="13" fill="#888">Semana 2</text>
+  <text x="467" y="330" text-anchor="middle" font-size="13" fill="#888">Semana 3</text>
+  <text x="600" y="330" text-anchor="middle" font-size="13" fill="#888">Semana 4</text>
+
+  <text x="360" y="28" text-anchor="middle" font-size="15" font-weight="500" fill="#2C2C2A">Tendência de uso diário de celular</text>
+
+  <rect x="165" y="360" width="12" height="3" rx="1" fill="#378ADD"/>
+  <text x="182" y="370" font-size="12" fill="#888">Média diária</text>
+
+  <line x1="270" y1="362" x2="282" y2="362" stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="287" y="370" font-size="12" fill="#888">Linha de tendência</text>
+
+  <text x="18" y="185" text-anchor="middle" font-size="12" fill="#aaa" transform="rotate(-90 18 185)">Horas por dia</text>
+</svg>
