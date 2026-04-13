@@ -586,6 +586,22 @@ a:hover:not(.nav-item) {
   color: var(--accent-light);
 }
 
+.indicator::after,
+  a[href^="http"]:not([href*="localhost:8080"]):not([href*="brunopulis.com"]):not(.no-indicator)::after {
+  background-image: url(/assets/images/template/external.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+  block-size: 1em;
+  content: "(external link)";
+  display: inline-block;
+  inline-size: 1em;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 1em;
+  white-space: nowrap;
+}
+
 .container {
   width: 100%;
 }
@@ -691,14 +707,6 @@ a:hover:not(.nav-item) {
 
 .absolute {
   position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.right-0 {
-  right: 0px;
 }
 
 .mx-auto {
@@ -1045,10 +1053,6 @@ a:hover:not(.nav-item) {
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.whitespace-nowrap {
   white-space: nowrap;
 }
 
@@ -1620,8 +1624,8 @@ a:hover:not(.nav-item) {
 }
 
 .prose h1 {
-  margin-bottom: 1.5rem;
   margin-top: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 700;
@@ -1635,8 +1639,8 @@ a:hover:not(.nav-item) {
 }
 
 .prose h2 {
-  margin-bottom: 1rem;
   margin-top: 2rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -1650,8 +1654,8 @@ a:hover:not(.nav-item) {
 }
 
 .prose h3 {
-  margin-bottom: 0.75rem;
   margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1665,8 +1669,8 @@ a:hover:not(.nav-item) {
 }
 
 .prose h4 {
-  margin-bottom: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1680,8 +1684,8 @@ a:hover:not(.nav-item) {
 }
 
 .prose h5 {
-  margin-bottom: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -1695,8 +1699,8 @@ a:hover:not(.nav-item) {
 }
 
 .prose h6 {
-  margin-bottom: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -2476,10 +2480,6 @@ body {
 @media (min-width: 768px) {
   .md\:block {
     display: block;
-  }
-
-  .md\:inline-block {
-    display: inline-block;
   }
 
   .md\:hidden {
