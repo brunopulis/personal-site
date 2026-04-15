@@ -1,36 +1,29 @@
 ---
 layout: base.njk
-title: Notas
 pagination:
   data: collections.notes
   size: 10
-  alias: items
-  reverse: true
+  alias: notes
 permalink: '/notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
+title: Notas
 ---
 
-<h1 class="mb-4 font-bold text-2xl">Notas</h1>
-<p class="mb-6 text-gray-600 dark:text-gray-400">
-  Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
-</p>
-
-{% set items = items | default([]) %}
-{% if (items | length) == 0 %}
-  <p class="text-gray-500 dark:text-gray-400 italic">
-    Ainda não há anotações. Adicione arquivos em <code>src/notes/</code>.
+<div class="h-feed">
+  <h1 class="mb-4 font-bold text-2xl">Notas</h1>
+  <a class="hidden u-url" href="{{ site.url }}/notes/"></a>
+  <p class="mb-6 text-gray-600 dark:text-gray-400">
+    Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
   </p>
-{% else %}
-  <section class="space-y-6">
-    {% for item in items %}
+
+  <section class="space-y-8">
+    {% for note in notes %}
       <article class="bg-[var(--surface)] p-6 border border-purple-200 dark:border-purple-800 border-b rounded-lg h-entry">
-        {% if item.date %}
-          <time class="pb-4 text-xs dt-published" datetime="{{ item.date | htmlDateString }}">
-            {{ item.date | readableDate }}
-          </time>
-        {% endif %}
+        <time class="pb-4 text-xs dt-published" datetime="{{ note.date | htmlDateString }}">
+          {{ note.date | readableDate }}
+        </time>
 
         <div class="max-w-none e-content prose">
-          {{ item.content | safe }}
+          {{ note.content | safe }}
         </div>
       </article>
     {% endfor %}
@@ -38,27 +31,12 @@ permalink: '/notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumb
 
   <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a
-        class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded"
-        href="{{ pagination.href.previous }}"
-        >← Anterior</a
-      >
+      <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Anterior</a>
     {% else %}
-      <span class="px-4 py-2 text-gray-400">← Anterior</span>
+      <span></span>
     {% endif %}
-
-    <span class="text-gray-600 dark:text-gray-400 text-sm"
-      >Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages | length }}</span
-    >
-
     {% if pagination.href.next %}
-      <a
-        class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded"
-        href="{{ pagination.href.next }}"
-        >Próximo →</a
-      >
-    {% else %}
-      <span class="px-4 py-2 text-gray-400">Próximo →</span>
+      <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Próximo</a>
     {% endif %}
   </nav>
-{% endif %}
+</div>
