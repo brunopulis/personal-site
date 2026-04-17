@@ -1,15 +1,25 @@
-/** All blog posts as a collection. */
 export const getAllPosts = collection => {
   return collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
 
-/** All newsletters as a collection. */
 export const getAllNewsletters = collection => {
   return collection.getFilteredByGlob('./src/content/newsletters/**/*.md').reverse();
 };
 
 export const getAllBooks = collection => {
   return collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
+};
+
+export const getAllMovies = collection => {
+  return collection.getFilteredByGlob('./src/content/movies/**/*.md').reverse();
+};
+
+export const getAllShows = collection => {
+  return collection.getFilteredByGlob('./src/content/shows/**/*.md').reverse();
+};
+
+export const getAllGames = collection => {
+  return collection.getFilteredByGlob('./src/content/games/**/*.md').reverse();
 };
 
 export const getAllNotes = collection => {
@@ -20,7 +30,6 @@ export const getAllPoetry = collection => {
   return collection.getFilteredByGlob('./src/content/poetry/**/*.md').reverse();
 };
 
-/** All relevant pages as a collection for sitemap.xml */
 export const showInSitemap = collection => {
   return collection.getFilteredByGlob('./src/**/*.{md,njk}');
 };
@@ -65,20 +74,20 @@ export const allTags = collection => {
 export const getBooksByYear = collection => {
   const books = collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
   const readBooks = books.filter(book => book.data?.status === 'lido');
-  
+
   const grouped = readBooks.reduce((acc, book) => {
     const year = book.data?.attendedYear;
     if (!year) return acc;
-    
+
     if (!acc[year]) {
       acc[year] = [];
     }
     acc[year].push(book);
     return acc;
   }, {});
-  
+
   const years = Object.keys(grouped).sort((a, b) => b - a);
-  
+
   return {
     byYear: grouped,
     years: years
