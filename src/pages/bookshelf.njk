@@ -24,17 +24,17 @@ permalink: /bookshelf/
       </span>
     </div>
 
-    <div class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
       {% for book in yearBooks | reverse %}
         {% set hasReview = book.content | striptags | trim | length > 0 %}
-        <article class="bg-[var(--surface)] hover:shadow-lg border rounded-lg overflow-hidden transition-shadow">
-          <div class="gap-4 p-4">
+        <article>
+          <div class="gap-4 py-4">
             {% if book.data.cover %}
               <div class="flex-shrink-0">
                 <img
                   src="{{ book.data.cover }}"
                   alt="{{ book.data.title }}"
-                  class="rounded w-20 h-30 object-cover"
+                  class="w-32 h-58 object-fit-cover"
                   loading="lazy"
                 >
               </div>

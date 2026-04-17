@@ -10,6 +10,9 @@ import {renderTransforms} from './filters/render-transforms.js';
 import {lastModified} from './filters/last-modified.js';
 import {where, keys, concat} from './filters/where.js';
 import {booksByYear} from './filters/books.js';
+import {moviesByYear} from './filters/movies.js';
+import {showsByYear} from './filters/shows.js';
+import {gamesByYear} from './filters/games.js';
 
 export default {
   toISOString,
@@ -26,10 +29,15 @@ export default {
   where,
   keys,
   concat,
-  booksByYear
+  booksByYear,
+  moviesByYear,
+  showsByYear,
+  gamesByYear
 };
 
 export function formatNumber(num) {
   if (num === undefined || num === null) return '0';
-  return Number(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return Number(num)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
