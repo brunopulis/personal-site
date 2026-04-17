@@ -18,10 +18,11 @@
     "dev": "run-p dev:*",
     "dev:css": "tailwindcss -i src/assets/css/tailwind.css -o src/assets/css/build.css --watch",
     "dev:11ty": "eleventy --serve --port=8080",
-    "build": "npm run build:stats && npm run build:icons && npm run build:assets && npm run build:css && cross-env ELEVENTY_ENV=production eleventy",
+    "build": "npm run build:stats && npm run build:icons && npm run build:highlight && npm run build:assets && npm run build:css && cross-env ELEVENTY_ENV=production eleventy",
     "build:stats": "node scripts/generate-stats.js",
     "build:icons": "node scripts/generate-icons.js",
     "build:assets": "node scripts/fetch-assets.js",
+    "build:highlight": "node scripts/fetch-highlight.js",
     "build:css": "tailwindcss -i src/assets/css/tailwind.css -o src/assets/css/build.css --minify"
   },
   "dependencies": {
