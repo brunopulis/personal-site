@@ -8,6 +8,8 @@ import {slugifyString} from './filters/slugify.js';
 import {limit} from './filters/limit.js';
 import {renderTransforms} from './filters/render-transforms.js';
 import {lastModified} from './filters/last-modified.js';
+import {where, keys, concat} from './filters/where.js';
+import {booksByYear} from './filters/books.js';
 
 export default {
   toISOString,
@@ -20,5 +22,14 @@ export default {
   slugifyString,
   limit,
   renderTransforms,
-  lastModified
+  lastModified,
+  where,
+  keys,
+  concat,
+  booksByYear
 };
+
+export function formatNumber(num) {
+  if (num === undefined || num === null) return '0';
+  return Number(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}

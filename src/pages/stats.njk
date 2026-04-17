@@ -1,0 +1,65 @@
+---
+layout: base.njk
+title: Estatísticas
+permalink: /stats/
+---
+
+{% set stats = siteStats %}
+<section class="mb-12">
+  <h2 class="mb-4 font-bold text-2xl">Estatísticas Gerais</h2>
+  <dl class="gap-4 grid grid-cols-1 md:grid-cols-2">
+    <div class="bg-[var(--surface)] p-4 border rounded-lg">
+      <dt class="text-[var(--text-secondary)] text-sm">Total de posts</dt>
+      <dd class="font-bold text-purple-600 dark:text-purple-400 text-3xl">{{ stats.totalPosts }}</dd>
+    </div>
+    <div class="bg-[var(--surface)] p-4 border rounded-lg">
+      <dt class="text-[var(--text-secondary)] text-sm">Total de newsletters</dt>
+      <dd class="font-bold text-purple-600 dark:text-purple-400 text-3xl">{{ stats.totalNewsletters }}</dd>
+    </div>
+    <div class="bg-[var(--surface)] p-4 border rounded-lg">
+      <dt class="text-[var(--text-secondary)] text-sm">Total de palavras</dt>
+      <dd class="font-bold text-purple-600 dark:text-purple-400 text-3xl">{{ stats.totalWords | formatNumber }}</dd>
+    </div>
+    <div class="bg-[var(--surface)] p-4 border rounded-lg">
+      <dt class="text-[var(--text-secondary)] text-sm">Média de palavras por post</dt>
+      <dd class="font-bold text-purple-600 dark:text-purple-400 text-3xl">{{ stats.averageWordsPerPost }}</dd>
+    </div>
+    <div class="bg-[var(--surface)] p-4 border rounded-lg">
+      <dt class="text-[var(--text-secondary)] text-sm">Total de tags</dt>
+      <dd class="font-bold text-purple-600 dark:text-purple-400 text-3xl">{{ stats.totalTags }}</dd>
+    </div>
+    <div class="bg-[var(--surface)] p-4 border rounded-lg">
+      <dt class="text-[var(--text-secondary)] text-sm">Livros lidos</dt>
+      <dd class="font-bold text-purple-600 dark:text-purple-400 text-3xl">{{ stats.totalBooks }}</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="mb-12">
+  <h2 class="mb-4 font-bold text-2xl">Posts por ano</h2>
+  <ul class="space-y-2">
+    {% for year in stats.yearsSorted %}
+      <li class="flex justify-between items-center py-2 border-gray-200 dark:border-gray-700 border-b">
+        <span class="font-medium">{{ year }}</span>
+        <span class="font-bold text-purple-600 dark:text-purple-400">{{ stats.postsByYear[year] }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="mb-12">
+  <h2 class="mb-4 font-bold text-2xl">Nuvem de tags</h2>
+  <div class="flex flex-wrap gap-2">
+    {% for tag in stats.allTags %}
+      <a href="/tags/{{ tag | slugify }}/" class="inline-block bg-[var(--surface)] hover:bg-purple-100 dark:hover:bg-purple-900/30 px-3 py-1 border rounded-full text-sm transition-colors" style="border-color: {{ tag | tagColor }}">
+        {{ tag }}
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="mb-8">
+  <p class="text-[var(--text-secondary)] text-sm italic">
+    Copiei essas estatísticas do <a href="https://kevquirk.com/stats/" class="underline">Kev Quirk</a> porque sim, ele provavelmente pegou de algum outro lugar também. Viva o Open Source!
+  </p>
+</section>

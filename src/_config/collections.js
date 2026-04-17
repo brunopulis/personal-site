@@ -61,3 +61,26 @@ export const allTags = collection => {
   });
   return Array.from(tagsSet).sort();
 };
+
+export const getBooksByYear = collection => {
+  const books = collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
+  const readBooks = books.filter(book => book.data?.status === 'lido');
+  
+  const grouped = readBooks.reduce((acc, book) => {
+    const year = book.data?.attendedYear;
+    if (!year) return acc;
+    
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(book);
+    return acc;
+  }, {});
+  
+  const years = Object.keys(grouped).sort((a, b) => b - a);
+  
+  return {
+    byYear: grouped,
+    years: years
+  };
+};

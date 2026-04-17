@@ -12,7 +12,7 @@ dotenv.config();
 
 import {DateTime} from 'luxon';
 import pluginRss from '@11ty/eleventy-plugin-rss';
-import filters from './src/_config/filters.js';
+import filters, {formatNumber} from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
 import tagColors from './src/_data/tagColors.json' with {type: 'json'};
@@ -28,6 +28,7 @@ import {
   showInSitemap,
   allTags
 } from './src/_config/collections.js';
+import {groupBy} from './src/_config/filters/groupBy.js';
 
 export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
@@ -41,6 +42,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('shuffle', filters.shuffleArray);
   eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
   eleventyConfig.addFilter('slugify', filters.slugifyString);
+  eleventyConfig.addFilter('where', filters.where);
+  eleventyConfig.addFilter('keys', filters.keys);
+  eleventyConfig.addFilter('concat', filters.concat);
+  eleventyConfig.addFilter('groupBy', groupBy);
+  eleventyConfig.addFilter('booksByYear', filters.booksByYear);
+  eleventyConfig.addFilter('formatNumber', formatNumber);
 
   eleventyConfig.addFilter('limit', (arr, n) => {
     if (!Array.isArray(arr)) return arr;
@@ -226,6 +233,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addShortcode('image', shortcodes.imageShortcode);
   eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeysShortcode);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode('groupBooksByYear', shortcodes.groupBooksByYear);
 
   // General Settings
   return {
