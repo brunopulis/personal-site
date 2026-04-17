@@ -22,11 +22,13 @@ import {
   getAllPosts,
   getAllNewsletters,
   getAllBooks,
+  getAllMovies,
+  getAllShows,
+  getAllGames,
   getAllNotes,
   getAllPoetry,
   getAllTags,
-  showInSitemap,
-  allTags
+  showInSitemap
 } from './src/_config/collections.js';
 import {groupBy} from './src/_config/filters/groupBy.js';
 
@@ -47,6 +49,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('concat', filters.concat);
   eleventyConfig.addFilter('groupBy', groupBy);
   eleventyConfig.addFilter('booksByYear', filters.booksByYear);
+  eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
+  eleventyConfig.addFilter('showsByYear', filters.showsByYear);
+  eleventyConfig.addFilter('gamesByYear', filters.gamesByYear);
   eleventyConfig.addFilter('formatNumber', formatNumber);
 
   eleventyConfig.addFilter('limit', (arr, n) => {
@@ -187,6 +192,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('posts', getAllPosts);
   eleventyConfig.addCollection('newsletters', getAllNewsletters);
   eleventyConfig.addCollection('books', getAllBooks);
+  eleventyConfig.addCollection('movies', getAllMovies);
+  eleventyConfig.addCollection('shows', getAllShows);
+  eleventyConfig.addCollection('games', getAllGames);
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
   eleventyConfig.addCollection('tagList', getAllTags);
