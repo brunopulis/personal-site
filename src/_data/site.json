@@ -6,7 +6,10 @@
   "email": "brunopulis@protonmail.com",
   "social": {
     "github": "brunopulis",
-    "mastodon": "@brunopulis@mastodon.social",
+    "mastodon": "https://mastodon.social/@brunopulis",
+    "bluesky": "https://bsky.app/profile/brunopulis.com",
+    "youtube": "https://youtube.com/c/BrunoPulis",
+    "linkedin": "https://linkedin.com/in/pulis",
     "twitter": "@brunopulis"
   },
   "repo": {

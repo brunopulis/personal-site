@@ -256,8 +256,12 @@
             {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
         </li>
         <li>
-          <a href="/now/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNow %}underline font-semibold{% endif %}"
-            {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">💬</span> Livro de visitas</a>
+          <a href="/guestbook/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isGuestBook %}underline font-semibold{% endif %}"
+            {% if isGuestBook %}aria-current="page"{% endif %}><span aria-hidden="true">💬</span> Livro de visitas</a>
+        </li>
+        <li>
+          <a href="/contact/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isContact %}underline font-semibold{% endif %}"
+            {% if isContact %}aria-current="page"{% endif %}><span aria-hidden="true">📱</span> Contato</a>
         </li>
       </ul>
     </div>

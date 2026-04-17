@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: Filmes
+permalink: /movies/
+---
+
+<div class="h-feed">
+  <h1 class="mb-4 font-bold text-2xl">Filmes</h1>
+  <p class="mb-6 text-gray-600 dark:text-gray-400">
+    A living reading list. Track what you're reading, want to read, and your notes/reviews.
+  </p>
+
+  <section class="gap-6 grid md:grid-cols-4">
+    <div class="bg-[var(--surface)] p-4 border rounded">
+      <h2 class="mb-2 font-semibold">Reading</h2>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <span class="font-medium">Designing for Accessibility</span>
+          <div class="text-gray-500">Notes: practical patterns for forms and focus</div>
+        </li>
+        <li>
+          <span class="font-medium">The Pragmatic Programmer</span>
+          <div class="text-gray-500">Notes: small steps, continuous improvement</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-[var(--surface)] p-4 border rounded">
+      <h2 class="mb-2 font-semibold">Finished</h2>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <span class="font-medium">Atomic Habits</span>
+          <div class="text-gray-500">Takeaway: environment design beats willpower</div>
+        </li>
+        <li>
+          <span class="font-medium">Refactoring UI</span>
+          <div class="text-gray-500">Takeaway: spacing & contrast are the 80/20</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-[var(--surface)] p-4 border rounded">
+      <h2 class="mb-2 font-semibold">Want to Read</h2>
+      <ul class="space-y-2 text-sm">
+        <li><span class="font-medium">Inclusive Components</span></li>
+        <li><span class="font-medium">Every Layout</span></li>
+      </ul>
+    </div>
+  </section>
+</div>
