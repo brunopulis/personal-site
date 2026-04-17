@@ -2,10 +2,10 @@
     <div class="mx-auto px-4 py-8 max-w-4xl container">
       <div class="gap-6 grid grid-cols-1 md:grid-cols-3 text-sm">
         <div>
-          <h3 class="mb-2 font-semibold">Technical</h3>
-          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
-            <li><a href="https://11ty.dev" target="_blank" rel="noopener">Built with Eleventy</a></li>
-            <li><a href="/style/" class="hover:text-blue-600">Style Guide</a></li>
+          <h3 class="mb-2 font-semibold">Técnico</h3>
+          <ul class="space-y-1">
+            <li><a href="https://11ty.dev" target="_blank" rel="noopener">Feito com Eleventy</a></li>
+            <li><a href="/style/" class="hover:text-blue-600">Guia de estilo</a></li>
             {% set cleanedPath = (page.inputPath or '') | replace('./', '') %}
             {% if site.repo and site.repo.url %}
               {% set editUrl = site.repo.url + '/edit/' + (site.repo.branch or 'main') + '/' + cleanedPath %}
@@ -14,21 +14,20 @@
               {% set editUrl = '#' %}
               {% set guideUrl = '#' %}
             {% endif %}
-            <li><a href="{{ editUrl }}" class="hover:text-blue-600" target="_blank" rel="noopener">Edit This Page</a></li>
-            <li><a href="{{ guideUrl }}" class="hover:text-blue-600" target="_blank" rel="noopener">Project Guide</a></li>
+            <li><a href="{{ editUrl }}" class="hover:text-blue-600" target="_blank" rel="noopener">Edite essa página</a></li>
+            <li><a href="{{ guideUrl }}" class="hover:text-blue-600" target="_blank" rel="noopener">Guia do projeto</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="mb-2 font-semibold">Navigation</h3>
-          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
+          <h3 class="mb-2 font-semibold">Navegação</h3>
+          <ul class="space-y-1">
             <li><a href="/sitemap/" class="hover:text-blue-600">Sitemap</a></li>
-            <li><a href="/archive/" class="hover:text-blue-600">Archive</a></li>
-            <li><a href="/categories/" class="hover:text-blue-600">Categories</a></li>
+            <li><a href="/archive/" class="hover:text-blue-600">Arquivo</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="mb-2 font-semibold">Connect</h3>
-          <ul class="space-y-1 text-gray-600 dark:text-gray-400">
+          <h3 class="mb-2 font-semibold">Se conecte</h3>
+          <ul class="space-y-1">
             {% from "partials/icons.njk" import icon %}
             {% if site.webring and site.webring.enabled %}
             <li><a href="{{ site.webring.url }}" target="_blank" rel="noopener" class="hover:text-blue-600">Indie Webring</a></li>
@@ -45,6 +44,18 @@
               </a>
             </li>
             {% endif %}
+            {% if site.social.bluesky %}
+            <li class="flex items-center gap-3">
+              <span class="text-blue-600">🦋</span>
+              <a
+                href="{{ site.social.bluesky }}"
+                target="_blank"
+                rel="noopener"
+                class="hover:text-blue-600"
+                >Bluesky</a
+              >
+            </li>
+            {% endif %}
             {% if site.social.mastodon %}
             <li>
               <a href="{{ site.social.mastodon | replace('@', 'https://') | replace('@', '/') }}" target="_blank" rel="me noopener" class="inline-flex items-center gap-2 hover:text-blue-600">
@@ -57,6 +68,30 @@
               <a href="https://twitter.com/{{ site.social.twitter | replace('@','') }}" target="_blank" rel="me noopener" class="inline-flex items-center gap-2 hover:text-blue-600">
                 {{ icon('x', 'w-4 h-4') }} <span>Twitter</span>
               </a>
+            </li>
+            {% endif %}
+            {% if site.social.youtube %}
+            <li class="flex items-center gap-3">
+              <span class="text-blue-600">📺</span>
+              <a
+                href="{{ site.social.youtube  }}"
+                target="_blank"
+                rel="noopener"
+                class="hover:text-blue-600"
+                >YouTube</a
+              >
+            </li>
+            {% endif %}
+            {% if site.social.linkedin %}
+            <li class="flex items-center gap-3">
+              <span class="text-blue-600">🎓</span>
+              <a
+                href="{{ site.social.linkedin | replace('@', 'https://') | replace('@', '/') }}"
+                target="_blank"
+                rel="noopener"
+                class="hover:text-blue-600"
+                >LinkedIn</a
+              >
             </li>
             {% endif %}
           </ul>
@@ -76,7 +111,7 @@
       {% include "partials/badges.njk" %}
   </footer>
 
-  <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/flexsearch.min.js"></script>
-  <script src="/assets/js/search.js"></script>
-  <script src="/assets/js/easter-eggs.js"></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/flexsearch.min.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/easter-eggs.js" defer></script>
