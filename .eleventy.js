@@ -164,6 +164,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
   eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
+  eleventyConfig.addPassthroughCopy({'api': 'api'});
 
   // Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);

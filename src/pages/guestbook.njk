@@ -1,0 +1,141 @@
+---
+layout: base.njk
+title: Livro de visitas
+permalink: /guestbook/
+eleventyExcludeFromCollections: true
+---
+
+<section class="mb-8">
+  <h1 class="mb-2 font-bold text-3xl">{{ title }}</h1>
+  <p class="text-[var(--text-secondary)] mb-6">
+    Bem-vindo(a) ao meu livro de visitas! Sinta-se à vontade para deixar uma mensagem, dizer olá ou compartilhar seus pensamentos. Adoraria receber notícias suas.
+  </p>
+</section>
+
+<section class="mb-12">
+  <h2 class="mb-4 font-semibold text-xl">Deixe uma mensagem</h2>
+
+  <form id="guestbook-form" class="space-y-4 max-w-xl">
+    <div class="hidden">
+      <label for="honeypot">Não preencha este campo</label>
+      <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div>
+      <label for="name" class="block mb-1 font-medium">Nome *</label>
+      <input type="text" id="name" name="name" required
+        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition">
+    </div>
+
+    <div>
+      <label for="message" class="block mb-1 font-medium">Mensagem *</label>
+      <textarea id="message" name="message" rows="4" required
+        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition resize-y"></textarea>
+    </div>
+
+    <button type="submit" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition">
+      Enviar mensagem
+    </button>
+
+    <p id="form-status" class="text-sm hidden" aria-live="polite"></p>
+  </form>
+</section>
+
+<section id="messages-section">
+  <h2 class="mb-4 font-semibold text-xl">Mensagens</h2>
+  <div id="messages-list" class="space-y-6">
+    <p class="text-[var(--text-secondary)]">Carregando mensagens...</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  const form = document.getElementById('guestbook-form');
+  const statusEl = document.getElementById('form-status');
+  const messagesEl = document.getElementById('messages-list');
+
+  function showStatus(msg, isError) {
+    statusEl.textContent = msg;
+    statusEl.classList.remove('hidden', 'text-green-600', 'text-red-600');
+    statusEl.classList.add(isError ? 'text-red-600' : 'text-green-600');
+  }
+
+  function formatDate(isoString) {
+    const date = new Date(isoString);
+    return date.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  function renderMessages(messages) {
+    if (!messages || messages.length === 0) {
+      messagesEl.innerHTML = '<p class="text-[var(--text-secondary)]">Seja o primeiro a deixar uma mensagem!</p>';
+      return;
+    }
+
+    messagesEl.innerHTML = messages.map(msg => `
+      <article class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+        <div class="flex items-baseline justify-between mb-2">
+          <strong class="text-lg">${msg.name}</strong>
+          <time class="text-sm text-gray-500" datetime="${msg.timestamp}">${formatDate(msg.timestamp)}</time>
+        </div>
+        <p class="text-[var(--text-secondary)] whitespace-pre-wrap">${msg.message}</p>
+      </article>
+    `).join('');
+  }
+
+  async function loadMessages() {
+    try {
+      const res = await fetch('/api/guestbook');
+      const data = await res.json();
+      renderMessages(data.messages || []);
+    } catch (e) {
+      messagesEl.innerHTML = '<p class="text-red-600">Erro ao carregar mensagens. Tente novamente mais tarde.</p>';
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get('name'),
+      message: formData.get('message'),
+      honeypot: formData.get('honeypot')
+    };
+
+    try {
+      const res = await fetch('/api/guestbook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        showStatus(data.error || 'Erro ao enviar', true);
+        return;
+      }
+
+      showStatus('Mensagem enviada com sucesso!', false);
+      form.reset();
+      loadMessages();
+    } catch (e) {
+      showStatus('Erro ao enviar. Tente novamente.', true);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensagem';
+    }
+  });
+
+  loadMessages();
+})();
+</script>
