@@ -1,0 +1,40 @@
+---
+layout: base.njk
+pagination:
+  data: collections.likes
+  size: 10
+  alias: likes
+permalink: '/likes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
+title: Likes
+---
+
+<div class="h-feed">
+  <h1 class="mb-4 font-bold text-2xl" lang="en">{{ title }}</h1>
+  <a class="hidden u-url" href="{{ site.url }}/likes/"></a>
+  <p class="mb-6">Uma coleção de links e ideias que gostei.</p>
+
+  <section class="space-y-8">
+    {% for like in likes %}
+      <article class="bg-[var(--surface)] p-6 border border-purple-200 dark:border-purple-800 border-b rounded-lg h-entry">
+        <time class="pb-4 text-xs dt-published" datetime="{{ like.date | htmlDateString }}">
+          {{ like.date | readableDate }}
+        </time>
+
+        <div class="max-w-none e-content prose">
+          {{ like.content | safe }}
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+
+  <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
+    {% if pagination.href.previous %}
+      <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Anterior</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if pagination.href.next %}
+      <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Próximo</a>
+    {% endif %}
+  </nav>
+</div>

@@ -22,6 +22,7 @@ import {
   getAllPosts,
   getAllNewsletters,
   getAllBooks,
+  getAllLikes,
   getAllMovies,
   getAllShows,
   getAllGames,
@@ -30,6 +31,7 @@ import {
   getAllTags,
   showInSitemap
 } from './src/_config/collections.js';
+
 import {groupBy} from './src/_config/filters/groupBy.js';
 
 export default async function (eleventyConfig) {
@@ -192,6 +194,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('posts', getAllPosts);
   eleventyConfig.addCollection('newsletters', getAllNewsletters);
   eleventyConfig.addCollection('books', getAllBooks);
+  eleventyConfig.addCollection('likes', getAllLikes);
   eleventyConfig.addCollection('movies', getAllMovies);
   eleventyConfig.addCollection('shows', getAllShows);
   eleventyConfig.addCollection('games', getAllGames);

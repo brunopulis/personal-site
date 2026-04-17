@@ -2,6 +2,10 @@ export const getAllPosts = collection => {
   return collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
 
+export const getAllLikes = collection => {
+  return collection.getFilteredByGlob('./src/content/likes/**/*.md').reverse();
+};
+
 export const getAllNewsletters = collection => {
   return collection.getFilteredByGlob('./src/content/newsletters/**/*.md').reverse();
 };
