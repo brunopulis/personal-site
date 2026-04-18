@@ -225,7 +225,7 @@
       {% set isAbout = url == '/about/' %}
       {% set isNotes = url == '/notes/' %}
       {% set isNow = url == '/now/' %}
-      {% set isExplore = url == '/slash-pages/' %}
+      {% set isExplore = url == '/explore/' %}
       {% set isGuestBook = url == '/guestbook/' %}
       {% set isContact = url == '/contact/' %}
       <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
@@ -252,7 +252,7 @@
           </a>
         </li>
         <li>
-          <a href="/sitemap/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
+          <a href="/explore/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
             {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
         </li>
         <li>
