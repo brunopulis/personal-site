@@ -11,7 +11,7 @@ import {lastModified} from './filters/last-modified.js';
 import {where, keys, concat} from './filters/where.js';
 import {booksByYear} from './filters/books.js';
 import {moviesByYear} from './filters/movies.js';
-import {showsByYear} from './filters/shows.js';
+import {showsByYear, showsByStatusAndYear} from './filters/shows.js';
 import {gamesByYear} from './filters/games.js';
 
 export default {
@@ -31,7 +31,8 @@ export default {
   concat,
   booksByYear,
   moviesByYear,
-  showsByYear,
+showsByYear,
+  showsByStatusAndYear,
   gamesByYear
 };
 
