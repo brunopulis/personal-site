@@ -6,7 +6,7 @@ layout: base
   <span aria-hidden="true">←</span> Voltar para o blog
 </a>
 
-<nav class="mb-4 text-gray-600 text-sm" aria-label="Breadcrumb">
+<nav class="mb-4 text-sm" aria-label="Breadcrumb">
   <ol class="flex space-x-2">
     <li><a href="/" class="hover:text-blue-600">Home</a></li>
     <li><span aria-hidden="true">›</span></li>
@@ -45,10 +45,12 @@ layout: base
     <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
   </header>
 
-  <div class="max-w-none e-content prose">{{ content | safe }}</div>
+  <div class="max-w-none e-content prose">
+    {{ content | safe }}
+  </div>
 
   {% if tags %}
-    <div class="mt-8 pt-6 border-gray-200 dark:border-gray-700 border-t post-tags">
+    <div class="gap-6 bg-blue-50 my-6 p-6 pt-6 border-gray-200 dark:border-gray-700 border-t rounded-xl post-tags">
       <h3 class="mb-2 font-semibold text-gray-500 text-sm uppercase tracking-wide">Tags</h3>
       <div class="flex flex-wrap gap-2">
         {% for tag in tags %}
@@ -63,69 +65,12 @@ layout: base
     </div>
   {% endif %}
 
-  <section class="mt-8 pt-6 border-gray-200 dark:border-gray-700 border-t">
-    {% include "partials/share-links.njk" %}
-  </section>
+  {% include "partials/reply-email.njk" %}
+  {% include "partials/share-links.njk" %}
+  {% include "partials/author.njk" %}
+  {% if site.newsletter.enabled %}
+    {% include "partials/newsletter.njk" %}
+  {% endif %}
 
-  <section class="mt-12 pt-8 border-gray-200 dark:border-gray-700 border-t">
-    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-      <div class="flex items-start space-x-4">
-        <img class="rounded-full w-16 h-16" src="/assets/images/pulis.webp" alt="{{ site.author }}" />
-        <div>
-          <h3 class="font-semibold text-lg">Sobre {{ site.author }}</h3>
-          <p class="mt-1 text-gray-600 dark:text-gray-400">{{ site.bio.short }}</p>
-          <div class="flex space-x-4 mt-3 text-sm">
-            <a href="/about/" class="text-blue-600 hover:text-blue-800 underline underline-offset-4"
-              >Mais sobre mim</a
-            >
-            <a href="/donate/" class="text-green-600 hover:text-green-800 underline underline-offset-4"
-              >Apoie meu trabalho</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-8">
-    {% if site.bio.long %}
-      <div class="bg-blue-50 dark:bg-blue-900/20 mb-8 p-6 rounded-lg">
-        <h3 class="mb-2 font-semibold text-lg">Sobre {{ site.author }}</h3>
-        <p class="text-gray-700 dark:text-gray-300">{{ site.bio.long }}</p>
-      </div>
-    {% endif %}
-    {% if site.newsletter.enabled %}
-      <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
-        <h3 class="mb-2 font-semibold text-lg">{{ site.newsletter.title }}</h3>
-        <p class="mb-4 text-gray-600 dark:text-gray-400">{{ site.newsletter.description }}</p>
-        <form
-          action="{{ site.newsletter.action }}"
-          method="post"
-          class="flex sm:flex-row flex-col gap-3 mx-auto max-w-md"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            class="flex-1 px-4 py-2 border rounded-lg"
-            required
-          />
-          <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg text-white">
-            Se inscreva
-          </button>
-        </form>
-      </div>
-    {% endif %}
-  </section>
-
-  {% include "partials/related-posts.njk" %}
-
-  <section id="webmentions" class="mt-12">
-    <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
-    <div id="webmentions-list">
-      <div class="py-4 text-gray-500 text-center">
-        <div class="animate-pulse">Carregando <em lang="en">webmentions</em>...</div>
-      </div>
-    </div>
-  </section>
+  {% include "partials/webmentions.njk" %}
 </article>

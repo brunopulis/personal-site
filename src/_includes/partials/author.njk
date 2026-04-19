@@ -1,0 +1,51 @@
+<section class="gap-6 bg-blue-50 p-6 rounded-xl prose">
+  <div class="gap-3">
+    <img class="rounded-full w-16 h-16 object-cover shrink-0" src="/assets/images/pulis.webp" alt="{{ site.author }}" />
+    <div>
+      <h3 class="font-semibold text-lg">Sobre {{ site.author }}</h3>
+      <p class="mt-1">{{ site.bio.short }}</p>
+    </div>
+    <hr class="my-6 border-1 border-gray-200 h-1" />
+
+    <div class="mt-6">
+      <p class="">O site <strong>brunopulis.com</strong> é independente, sem anúncios, sem trackeamento de informações e aberto para todos. Sem <em>paywalls</em> e anunciantes, com exceção de livros sugeridos na Amazon.</p>
+      <p>Você pode também apoiar meu trabalho através de doações pontuais ou regulares, através dos canais:</p>
+
+      {% if site.donate.enabled %}
+        <div class="flex flex-wrap gap-4 my-6">
+          {% if site.donate.kofi %}
+            <a
+              href="https://ko-fi.com/{{ site.donate.kofi }}"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+            >
+              <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">Ko-fi</span>
+            </a>
+          {% endif %}
+          {% if site.donate.paypal %}
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+            >
+              <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">PayPal</span>
+            </a>
+          {% endif %}
+          {% if site.donate.buymeacoffee %}
+            <a
+              href="https://buymeacoffee.com/{{ site.donate.buymeacoffee }}"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 px-6 py-3 rounded-lg text-white transition-colors"
+            >
+              <span aria-hidden="true">☕</span>
+              <span class="mr-2 ml-2 font-bold text-white">Buy me a coffee</span>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
