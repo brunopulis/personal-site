@@ -1,10 +1,10 @@
 ---json
 {
-  "permalink": "/feeds/medias/feed.json",
+  "permalink": "/feeds/games/feed.json",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Filmes e séries",
-    "description": "Filmes e séries que consumo",
+    "title": "Bruno Pulis - Jogos",
+    "description": "Minha coleção de jogos ao longo dos anos",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
     "author": {
@@ -19,18 +19,18 @@
 "{{ metadata.description }}", "home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}", "feed_url":
 "{{ permalink | htmlBaseUrl(metadata.base) }}", "language": "{{ metadata.language }}", "authors": [ { "name":
 "{{ metadata.author.name }}", "url": "{{ metadata.base | addPathPrefixToFullUrl }}" } ], "items": [
-{%- for post in collections.medias | reverse | limit(10) %}
-  {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+{%- for game in collections.games | reverse | limit(10) %}
+  {%- set absolutePostUrl = game.url | htmlBaseUrl(metadata.base) %}
   { "id": "{{ absolutePostUrl }}", "url": "{{ absolutePostUrl }}", "title":
-  {{ post.data.title | dump | safe }}, "content_html":
-  {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
-  {%- if post.data.summary %}
-    "summary": {{ post.data.summary | dump | safe }},
+  {{ game.data.title | dump | safe }}, "content_html":
+  {{ game.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
+  {%- if game.data.summary %}
+    "summary": {{ game.data.summary | dump | safe }},
   {%- endif %}
-  "date_published": "{{ post.date | toRfc822Date }}", "date_modified":
-  "{{ post.data.updated | default(post.date) | toRfc822Date }}"
-  {%- if post.data.tags %}
-    , "tags": {{ post.data.tags | dump | safe }}
+  "date_published": "{{ game.date | toRfc822Date }}", "date_modified":
+  "{{ game.data.updated | default(game.date) | toRfc822Date }}"
+  {%- if game.data.tags %}
+    , "tags": {{ game.data.tags | dump | safe }}
   {%- endif %}
   } {% if not loop.last %},{% endif %}
 {%- endfor %}
