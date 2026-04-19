@@ -1,6 +1,6 @@
 ---
 title: 'Grimm: Contos de Terror'
-watchedDate: 2026-04-18
+watchedDatewatchedDate: 2026-04-18
 watchedYear: 2026
 director: "David Greenwalt"
 category: 'Fantasia'
