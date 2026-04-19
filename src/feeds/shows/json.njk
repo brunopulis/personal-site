@@ -1,0 +1,37 @@
+---json
+{
+  "permalink": "/feeds/shows/feed.json",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Bruno Pulis - Seriados",
+    "description": "Minha coleção de seriados",
+    "language": "pt-br",
+    "base": "https://www.brunopulis.com",
+    "author": {
+      "name": "Bruno Pulis",
+      "email": "brunopulis@protonmail.com"
+    }
+  }
+}
+---
+
+{ "version": "https://jsonfeed.org/version/1.1", "title": "{{ metadata.title }}", "description":
+"{{ metadata.description }}", "home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}", "feed_url":
+"{{ permalink | htmlBaseUrl(metadata.base) }}", "language": "{{ metadata.language }}", "authors": [ { "name":
+"{{ metadata.author.name }}", "url": "{{ metadata.base | addPathPrefixToFullUrl }}" } ], "items": [
+{%- for show in collections.shows | reverse | limit(10) %}
+  {%- set absoluteShowUrl = show.url | htmlBaseUrl(metadata.base) %}
+  { "id": "{{ absoluteShowUrl }}", "url": "{{ absoluteShowUrl }}", "title":
+  {{ show.data.title | dump | safe }}, "content_html":
+  {{ show.templateContent | htmlToAbsoluteUrls(absoluteShowUrl) | dump | safe }},
+  {%- if show.data.description %}
+    "summary": {{ show.data.description | dump | safe }},
+  {%- endif %}
+  "date_published": "{{ show.date | toRfc822Date }}", "date_modified":
+  "{{ show.data.updated | default(show.date) | toRfc822Date }}"
+  {%- if show.data.category %}
+    , "tags": {{ [show.data.category, show.data.status] | dump | safe }}
+  {%- endif %}
+  } {% if not loop.last %},{% endif %}
+{%- endfor %}
+] }

@@ -53,6 +53,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('booksByYear', filters.booksByYear);
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
   eleventyConfig.addFilter('showsByYear', filters.showsByYear);
+  eleventyConfig.addFilter('showsByStatusAndYear', filters.showsByStatusAndYear);
   eleventyConfig.addFilter('gamesByYear', filters.gamesByYear);
   eleventyConfig.addFilter('formatNumber', formatNumber);
 
@@ -164,7 +165,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
   eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
-  eleventyConfig.addPassthroughCopy({'api': 'api'});
+  eleventyConfig.addPassthroughCopy({api: 'api'});
 
   // Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);
@@ -202,12 +203,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
   eleventyConfig.addCollection('tagList', getAllTags);
-
-  eleventyConfig.addCollection('medias', collectionApi => {
-    return collectionApi
-      .getFilteredByGlob('src/content/medias/**/*.md')
-      .sort((a, b) => (a.date > b.date ? -1 : 1));
-  });
 
   eleventyConfig.addCollection('bookmarks', collectionApi => {
     return collectionApi

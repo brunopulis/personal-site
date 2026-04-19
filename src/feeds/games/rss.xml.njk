@@ -1,10 +1,10 @@
 ---json
 {
-  "permalink": "/feeds/medias/rss.xml",
+  "permalink": "/feeds/games/rss.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Filmes e séries",
-    "description": "Filmes e séries que consumo",
+    "title": "Bruno Pulis - Jogos",
+    "description": "Minha coleção de jogos ao longo dos anos",
     "language": "pt-br",
     "base": "https://www.brunopulis.com",
     "author": {
@@ -24,19 +24,19 @@
     <atom:link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
-    {%- set posts = collections.medias %}
-    {%- for post in posts.slice(0, 10) %}
-    {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+    {%- set games = collections.games %}
+    {%- for game in games | reverse | limit(10) %}
+    {%- set absolutePostUrl = game.url | htmlBaseUrl(metadata.base) %}
     <item>
-      <title>{{ post.data.title }}</title>
+      <title>{{ game.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.content | safe }}</description>
-      <pubDate>{{ (post.data.pubDate or post.date) | toRfc822Date }}</pubDate>
+      <description>{{ game.content | renderTransforms(game.data.page, metadata.base) }}</description>
+      <pubDate>{{ (game.data.releaseDate or game.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
-      {%- if post.data.tags %}
-      {%- for tag in post.data.tags %}
-      {%- if tag not in ["posts", "all"] %}
+      {%- if game.data.tags %}
+      {%- for tag in game.data.tags %}
+      {%- if tag not in ["games", "all"] %}
       <category>{{ tag }}</category>
       {%- endif %}
       {%- endfor %}
