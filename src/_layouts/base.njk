@@ -54,16 +54,13 @@
   <link rel="pingback" href="https://webmention.io/{{ site.url | replace('https://', '') | replace('http://', '') }}/xmlrpc" />
   <link rel="stylesheet" href="/assets/css/build.css" />
 
-
   <!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
-  {% for feedLink in meta.blog.feedLinks %}
-    <link
-      rel="alternate"
-      type="{{ feedLink.type }}"
-      title="{{ feedLink.title }}: {{ meta.siteName }}"
-      href="{{ feedLink.url }}"
-    />
-  {% endfor %}
+  <link rel="alternate" href="{{ site.url }}/feeds/blog/rss.xml" title="Artigos do Blog - Bruno Pulis" type="application/rss+xml">
+  <link rel="alternate" href="{{ site.url }}/feeds/notes/rss.xml" title="Notas - Bruno Pulis" type="application/rss+xml">
+  <link rel="alternate" href="{{ site.url }}/feeds/bookmarks/rss.xml" title="Links interessantes - Bruno Pulis" type="application/rss+xml">
+  <link rel="alternate" href="{{ site.url }}/feeds/books/rss.xml" title="Minha biblioteca de livros - Bruno Pulis" type="application/rss+xml">
+  <link rel="alternate" href="{{ site.url }}/feeds/games/rss.xml" title="Minha coleção de jogos - Bruno Pulis" type="application/rss+xml">
+  <link rel="alternate" href="{{ site.url }}/feeds/shows/rss.xml" title="Meus seriados - Bruno Pulis" type="application/rss+xml">
 
   {# Favicon and theme color #}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
