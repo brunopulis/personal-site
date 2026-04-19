@@ -4,7 +4,7 @@ watchedDate: 2024-01-10
 watchedYear: 2024
 director: "David Benioff"
 category: 'Fantasia'
-status: 'assistindo'
+status: 'assistido'
 rating: 5
 type: show
 poster: 'https://image.tmdb.org/t/p/w600_and_h900_face/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg'
