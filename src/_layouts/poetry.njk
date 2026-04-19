@@ -3,10 +3,10 @@ layout: base
 ---
 
 <a href="/poetry/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800"
-  >← Back to Poetry</a
+  >← </a
 >
 
-<nav class="mb-4 text-gray-600 text-sm" aria-label="Breadcrumb">
+<nav class="mb-4 text-sm" aria-label="Breadcrumb">
   <ol class="flex space-x-2">
     <li><a href="/" class="hover:text-blue-600">Home</a></li>
     <li><span aria-hidden="true">›</span></li>
@@ -19,10 +19,10 @@ layout: base
 <article class="h-entry">
   <header class="mb-4">
     <h1 class="mb-2 p-name font-bold text-2xl">{{ title }}</h1>
-    <div class="text-gray-600 dark:text-gray-400 text-sm">
-      <time class="dt-published" datetime="{{ page.date | htmlDateString }}"
-        >{{ page.date | readableDate }}</time
-      >
+    <div class="text-sm">
+      <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
+        {{ page.date | readableDate }}
+      </time>
       <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
     </div>
   </header>

@@ -1,17 +1,26 @@
+<section id="webmentions" class="mt-12">
+  <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
+  <div id="webmentions-list">
+    <div class="py-4 text-gray-500 text-center">
+      <div class="animate-pulse">Carregando <em lang="en">webmentions</em>...</div>
+    </div>
+  </div>
+</section>
+
 {% if webmentions and webmentions.length > 0 %}
   <div class="space-y-4">
     {% for mention in webmentions %}
-      <article class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+      <article class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
         <div class="flex items-start space-x-3">
           {% if mention.author.photo %}
             <img
               src="{{ mention.author.photo }}"
               alt="{{ mention.author.name }}"
-              class="w-10 h-10 rounded-full"
+              class="rounded-full w-10 h-10"
             />
           {% else %}
-            <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-              <span class="text-sm font-medium">{{ mention.author.name | first }}</span>
+            <div class="flex justify-center items-center bg-gray-300 dark:bg-gray-600 rounded-full w-10 h-10">
+              <span class="font-medium text-sm">{{ mention.author.name | first }}</span>
             </div>
           {% endif %}
           <div class="flex-1 min-w-0">
@@ -49,7 +58,7 @@
             <div class="mt-2">
               <a
                 href="{{ mention.url }}"
-                class="text-sm text-blue-600 hover:text-blue-800"
+                class="text-blue-600 hover:text-blue-800 text-sm"
                 target="_blank"
                 rel="noopener"
               >
@@ -62,9 +71,9 @@
     {% endfor %}
   </div>
 {% else %}
-  <div class="text-center py-8 text-gray-500">
+  <div class="py-8 text-gray-500 text-center">
     <p>No webmentions yet. Be the first to respond!</p>
-    <p class="text-sm mt-2">
+    <p class="mt-2 text-sm">
       <a
         href="https://indieweb.org/Webmention"
         target="_blank"

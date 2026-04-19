@@ -42,7 +42,7 @@
   "analytics": {
     "enabled": false,
     "provider": "umami",
-    "domain": "",
+    "domain": "https://brunopulis.com",
     "siteId": ""
   },
   "webmentions": {

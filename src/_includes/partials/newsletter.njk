@@ -1,0 +1,18 @@
+<section class="mt-8">
+  <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+    <form
+      action="{{site.newsletter.action}}"
+      method="post"
+      class="embeddable-buttondown-form"
+    >
+      <fieldset>
+        <legend class="mb-2 font-semibold text-lg">{{ site.newsletter.title }}</legend>
+        <p class="mb-4 text-gray-600 dark:text-gray-400">{{ site.newsletter.description }}</p>
+
+        <label class="block mb-2 font-bold" for="bd-email">E-mail</label>
+        <input type="email" class="block p-2 border-1 border-black rounded-xl w-96" placeholder="leopoldo@mail.com" name="email" id="bd-email" />
+        <input type="submit" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 my-2 p-3 rounded-lg font-bold text-white transition-colors" value="Se inscreva" />
+      </fieldset>
+    </form>
+  </div>
+</section>
