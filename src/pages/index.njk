@@ -5,30 +5,23 @@ title: 'Página inicial'
 ---
 
 <div class="h-feed">
-  <!-- Hero Section -->
-  <div class="mb-12 py-8 text-center">
-    <h1 class="float-animation mb-4 p-name font-bold text-4xl">{{ site.name }}</h1>
-    <p class="mb-6 p-summary text-gray-600 dark:text-gray-400 text-xl">{{ site.description }}</p>
+  <section class="mb-12 py-8 text-center" aria-labelledby="hero-title">
+    <h1 class="float-animation mb-4 p-name font-bold text-4xl" id="hero-title">{{ site.name }}</h1>
+    <p class="mb-6 p-summary text-xl">{{ site.description }}</p>
     <a class="hidden u-url" href="{{ site.url }}/"></a>
 
     <div class="mx-auto mb-8 max-w-2xl">
       <div class="flex flex-wrap justify-center gap-4 text-sm">
-        <span
-          class="bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full text-purple-800 dark:text-purple-200"
-        >
+        <span class="bg-secondary/50 px-3 py-1 rounded-full text-black">
           <span aria-hidden="true">🌱</span> <em lang="en">IndieWeb</em>
         </span>
-        <span class="bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full text-blue-800 dark:text-blue-200">
+        <span class="bg-secondary/50 px-3 py-1 rounded-full text-black">
           <span aria-hidden="true">📡</span> Suporte a <abbr title="Really Simple Syndication">RSS</abbr>
         </span>
-        <span
-          class="bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full text-green-800 dark:text-green-200"
-        >
+        <span class="bg-secondary/50 px-3 py-1 rounded-full text-black">
           <span aria-hidden="true">🔒</span> <em lang="en">Privacy First</em>
         </span>
-        <span
-          class="bg-orange-100 dark:bg-orange-900/30 px-3 py-1 rounded-full text-orange-800 dark:text-orange-200"
-        >
+        <span class="bg-secondary/50 px-3 py-1 rounded-full text-black">
           <span aria-hidden="true">♿</span> Acessível
         </span>
       </div>
@@ -37,22 +30,22 @@ title: 'Página inicial'
     <div class="flex flex-wrap justify-center gap-4">
       <a
         href="/about/"
-        class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg text-white transition-colors"
+        class="bg-primary hover:bg-primary/90 px-6 py-2 rounded-lg font-bold text-white transition-colors"
       >
         <span aria-hidden="true">👋</span> Saiba mais sobre mim
       </a>
       <a
-        href="/feed.xml"
-        class="hover:bg-purple-50 dark:hover:bg-purple-900/20 px-6 py-2 border border-purple-600 rounded-lg text-purple-600 transition-colors"
+        href="/feeds"
+        class="bg-primary hover:bg-primary/90 px-6 py-2 rounded-lg font-bold text-white transition-colors"
       >
-        <span aria-hidden="true">📡</span> Se inscreva vai RSS.
+        <span aria-hidden="true">📡</span> Se inscreva via RSS.
       </a>
     </div>
-  </div>
+  </section>
 
   <!-- Recent Posts -->
-  <div class="mb-8">
-    <h2 class="flex items-center gap-2 mb-6 font-semibold text-2xl">
+  <section class="mb-8" aria-labelledby="recent-posts-title">
+    <h2 class="flex items-center gap-2 mb-6 font-semibold text-2xl" id="recent-posts-title">
       <span aria-hidden="true">✍️</span> Últimos artigos
     </h2>
 
@@ -117,35 +110,8 @@ title: 'Página inicial'
         </p>
       </div>
     {% endif %}
-  </div>
+  </section>
 
   <!-- Quick Links -->
-  <div class="gap-4 grid grid-cols-1 md:grid-cols-3 mt-12">
-    <a
-      href="/now/"
-      class="block bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 p-4 rounded-lg transition-colors"
-    >
-      <span aria-hidden="true" class="mb-4 text-xl">📍</span>
-      <h3 class="font-semibold text-blue-800 dark:text-blue-200">O que estou fazendo agora</h3>
-      <p class="text-blue-600 dark:text-blue-300 text-sm">Foco e projetos ativos</p>
-    </a>
-
-    <a
-      href="/uses/"
-      class="block bg-green-50 hover:bg-green-100 dark:bg-green-900/20 dark:hover:bg-green-900/30 p-4 rounded-lg transition-colors"
-    >
-      <span aria-hidden="true" class="mb-4 text-xl">🛠️</span>
-      <h3 class="font-semibold text-green-800 dark:text-green-200">Ferramentas que uso</h3>
-      <p class="text-green-600 dark:text-green-300 text-sm">Hardware, software e <em lang="en">setup</em></p>
-    </a>
-
-    <a
-      href="/sitemap/"
-      class="block bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/20 dark:hover:bg-purple-900/30 p-4 rounded-lg transition-colors"
-    >
-      <span aria-hidden="true" class="mb-4 text-xl">🗺️</span>
-      <h3 class="font-semibold text-purple-800 dark:text-purple-200">Explore esse site</h3>
-      <p class="text-purple-600 dark:text-purple-300 text-sm">Diretório completo de todas as páginas</p>
-    </a>
-  </div>
+  {% include "partials/quick-links.njk" %}
 </div>

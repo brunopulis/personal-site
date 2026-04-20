@@ -54,6 +54,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
   eleventyConfig.addFilter('showsByYear', filters.showsByYear);
   eleventyConfig.addFilter('showsByStatusAndYear', filters.showsByStatusAndYear);
+  eleventyConfig.addFilter('showsByYearAndStatus', filters.showsByYearAndStatus);
   eleventyConfig.addFilter('gamesByYear', filters.gamesByYear);
   eleventyConfig.addFilter('formatNumber', formatNumber);
 
