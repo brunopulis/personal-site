@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: {
-          light: '#F8F8F8',
-          dark: '#0f1115'
-        }
+        primary: '#610404',
+        secondary: '#849cdb',
+        neutral: '#171e1e',
+        outline: '#d9d9d9'
       },
       maxWidth: {
         prose: '64ch'

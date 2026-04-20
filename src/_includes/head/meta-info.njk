@@ -1,0 +1,107 @@
+{% set metaDescription %}
+  {%- if discover.description -%}
+    {{- discover.description -}}
+  {%- elif description -%}
+    {{- description -}}
+  {%- else -%}
+    {{- meta.siteDescription -}}
+  {%- endif -%}
+{% endset %}
+
+<meta name="description" content="{{ metaDescription }}" />
+<meta name="theme-color" content="{{ meta.themeDark }}" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="{{ meta.themeLight }}" media="(prefers-color-scheme: light)" />
+
+<!-- Search Engines -->
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+<!-- Made with Eleventy! -->
+<meta name="generator" content="{{ eleventy.generator }}" />
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=no" />
+
+<!-- supports both dark and light color schemes, page author prefers light as default. -->
+<meta name="color-scheme" content="light dark" />
+
+<!-- Helps prevent duplicate content issues -->
+<link rel="canonical" href="{{ meta.url }}{{ page.url }}" />
+
+<!-- Links to information about the author(s) of the document -->
+<link rel="author" href="humans.txt" />
+
+{% if personal.platforms.mastodon %}
+  <!-- Mastodon verified site -->
+  <link rel="me" href="{{ personal.platforms.mastodon }}" />
+{% endif %}
+
+{% if meta.author.fediverse %}
+  <!-- fediverse creator tag -->
+  <meta name="fediverse:creator" content="{{ meta.author.fediverse }}" />
+{% endif %}
+
+<!-- Open Graph meta  -->
+<meta property="og:url" content="{{ meta.url }}{{ page.url }}" />
+<meta property="og:type" content="website" />
+<meta
+  property="og:title"
+  content="{%- if discover.title -%}
+    {{- discover.title -}}
+  {%- elif title -%}
+    {{- title -}}
+  {%- else -%}
+    {{- meta.siteName -}}
+  {%- endif -%}"
+/>
+<meta
+  property="og:image"
+  content="{%- if layout == 'post' -%}
+    {{- meta.url -}}/assets/og-images/{{ title | slugify }}-preview.jpeg
+  {%- else -%}
+    {{- meta.url -}}{{- meta.opengraph_default -}}
+  {%- endif -%}"
+/>
+<meta
+  property="og:image:alt"
+  content="{%- if layout == 'post' -%}
+    {{- title -}}
+  {%- else -%}
+    {{- meta.opengraph_default_alt -}}
+  {%- endif -%}"
+/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:description" content="{{ metaDescription }}" />
+<meta property="og:site_name" content="{{ meta.siteName }}" />
+<meta property="og:locale" content="{{ meta.locale }}" />
+<meta property="article:author" content="{{ meta.author.name }}" />
+
+<!-- Twitter specific head data was removed in v2 -->
+<meta name="twitter:card" content="summary_large_image" />
+{% if site.social and site.social.twitter %}
+  <meta name="twitter:site" content="{{ site.social.twitter }}" />
+  <meta name="twitter:creator" content="{{ site.social.twitter }}" />
+{% endif %}
+<meta name="twitter:title" content="{{ ogTitle }}" />
+<meta name="twitter:description" content="{{ ogDescription }}" />
+<meta name="twitter:image" content="{{ ogImage }}" />
+<meta name="twitter:image:alt" content="{{ site.name }} preview" />
+
+<!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
+<link rel="alternate" href="{{ site.url }}/feeds/blog/rss.xml" title="Artigos do Blog - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ site.url }}/feeds/notes/rss.xml" title="Notas - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ site.url }}/feeds/bookmarks/rss.xml" title="Links interessantes - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ site.url }}/feeds/books/rss.xml" title="Minha biblioteca de livros - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ site.url }}/feeds/games/rss.xml" title="Minha coleção de jogos - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ site.url }}/feeds/shows/rss.xml" title="Meus seriados - Bruno Pulis" type="application/rss+xml">
+
+<!-- Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="shortcut icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="/assets/favicon.svg" color="#a78bfa">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#a78bfa" />
+<link rel="manifest" href="/manifest.webmanifest">

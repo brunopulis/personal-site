@@ -14,6 +14,7 @@ title: Blog
 
   <div class="space-y-8">
     {% for post in posts %}
+      {% set tags = (post.data and post.data.tags) or post.tags or [] %}
       <article class="pb-6 border-b h-entry">
         <h3 class="p-name font-semibold text-xl">
           <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
@@ -26,11 +27,18 @@ title: Blog
         <div class="mt-2 p-summary text-gray-700 dark:text-gray-300">
           {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
         </div>
-        <div class="space-x-2 mt-2 text-sm">
-          {% for tag in post.data.tags %}
-            <a class="bg-gray-100 dark:bg-gray-800 p-category px-2 py-0.5 rounded" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-          {% endfor %}
-        </div>
+        {% if tags %}
+          <div class="flex flex-wrap gap-2 my-2">
+            {% for tag in tags %}
+              <a
+                class="hover:opacity-80 p-category px-2 py-1 rounded text-white text-xs transition-opacity"
+                style="background-color: {{ tag | tagColor }}"
+                href="/tags/{{ tag | slug }}/"
+                >#{{ tag }}</a
+              >
+            {% endfor %}
+          </div>
+        {% endif %}
       </article>
     {% endfor %}
   </div>
