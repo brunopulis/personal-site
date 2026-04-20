@@ -1,4 +1,5 @@
 {
   "layout": "post.njk",
-  "permalink": "/movies/{{ title | slugify }}/index.html"
+  "permalink": "/shows/{{ title | slugify }}/index.html",
+  "tags": ["shows"]
 }
