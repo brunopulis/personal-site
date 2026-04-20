@@ -13,4 +13,3 @@ thoughts: 'Excelente trama envolvente do início ao fim.'
 tags: ['Fantasia']
 url: 'https://www.themoviedb.org/tv/39351-grimm'
 ---
-

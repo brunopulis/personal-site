@@ -19,6 +19,41 @@ export const showsByYear = shows => {
   return {byYear: grouped, years};
 };
 
+export const showsByYearAndStatus = shows => {
+  if (!shows || !Array.isArray(shows)) {
+    return {byYear: {}, years: [], statusLabels: {}};
+  }
+
+  const statusOrder = ['assistindo', 'reassistindo', 'quero-assistir', 'assistido', 'abandonei'];
+  const statusLabels = {
+    'assistindo': 'Assistindo',
+    'reassistindo': 'Reassistindo',
+    'quero-assistir': 'Quero assistir',
+    'assistido': 'Assistido',
+    'abandonei': 'Abandonei'
+  };
+
+  const grouped = shows.reduce((acc, show) => {
+    const year = show.data?.watchedYear;
+    if (!year) return acc;
+
+    if (!acc[year]) {
+      acc[year] = {};
+    }
+
+    const status = show.data?.status || 'outros';
+    if (!acc[year][status]) {
+      acc[year][status] = [];
+    }
+    acc[year][status].push(show);
+    return acc;
+  }, {});
+
+  const years = Object.keys(grouped).sort((a, b) => b - a);
+
+  return {byYear: grouped, years, statusLabels, statusOrder};
+};
+
 export const showsByStatusAndYear = shows => {
   if (!shows || !Array.isArray(shows)) {
     return {byStatus: {}, statuses: []};
