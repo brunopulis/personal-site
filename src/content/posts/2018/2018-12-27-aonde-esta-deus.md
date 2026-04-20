@@ -3,12 +3,10 @@ title: "Aonde está Deus?"
 excerpt: "Quando nossas desesperanças sufocam nossa fé? 
  uando nossa confiança é abalada por situações que parecem não terem soluções?"
 pubDate: 2018-12-27T02:12:18.439Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Aonde está Deus?
-
-
 
 Obra A criação de Adão — Michelangelo
 

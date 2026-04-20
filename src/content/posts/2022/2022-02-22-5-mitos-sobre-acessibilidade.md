@@ -4,7 +4,7 @@ pubDate: 2022-02-22
 tags: ['a11y']
 ---
 
-Ao longo da minha carreira já ouvi muita bobagem sobre acessibilidade.  
+Ao longo da minha carreira já ouvi muita bobagem sobre acessibilidade.
 Hoje vou mostrar os 5 mitos sobre acessibilidade.
 
 Vamos lá…
@@ -20,7 +20,7 @@ Vamos lá…
 
 ## 1\. Acessibilidade é somente para deficiente
 
-O objetivo da acessibilidade é garantir que o conteúdo da web seja acessível por todos.  
+O objetivo da acessibilidade é garantir que o conteúdo da web seja acessível por todos.
 Um grupo de pessoas são mais beneficiadas, como, por exemplo:
 
 - alguém com mãos ocupadas;
@@ -33,7 +33,7 @@ Um grupo de pessoas são mais beneficiadas, como, por exemplo:
 
 Entretanto, Tim Berns-Lee certa vez comentou sobre o tema:
 
-> O poder da Web está em sua universalidade. O acesso de todos, independentemente da deficiência, é um aspecto essencial.  
+> O poder da Web está em sua universalidade. O acesso de todos, independentemente da deficiência, é um aspecto essencial.
 > Tim Berns-Lee, citado em 1989.
 
 Quando contemplamos acessibilidade, **pensamos em todos.**

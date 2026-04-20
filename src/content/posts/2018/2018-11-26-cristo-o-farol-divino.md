@@ -2,7 +2,7 @@
 title: 'Cristo, o farol divino'
 excerpt: 'Como Cristo pode ser um farol em tempos sombrios onde a desesperança fala mais alto do que a própria esperança?'
 pubDate: 2018-11-26T02:16:04.828Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Cristo, o farol divino

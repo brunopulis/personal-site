@@ -5,14 +5,14 @@ pubDate: 2017-10-02T23:28:46.808Z
 tags: ['a11y']
 ---
 
-### Como criar botões acessíveis
+## Como criar botões acessíveis
 
 Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante.
  Hoje, vou falar sobre como **criar botões acessíveis** sem prejudicar a estética e/ou seu comportamento.
 
 Estruturalmente **botões** são links estilizados via CSS e tem um valor muito importante para fazerem conversões de cliques, mas, a maioria deles são aplicados de forma incorreta. Nesse post vou mostrar a correção para esse problema.
 
-### O cenário
+## O cenário
 
 Em diversos sites, nos deparamos com _call to actions_ (como: ‘Clique aqui’; ‘Saiba mais’; ‘Continue lendo’ e etc). Estes botões geram algumas barreiras de acessibilidade quando não são feitos da forma correta.
 
@@ -28,13 +28,13 @@ Da forma que foi feita a marcação, o usuário que utiliza leitor de tela, como
 
 Sendo assim, ao chegar no link de “Leia mais” o usuário não saberá porque ele deve clicar ali qual a finalidade daquele link.
 
-### A correção
+## A correção
 
 A correção para essa situação é bastante simples. Basta incluir uma tag span e colocar uma classe para ocultar a informação, sendo assim, ela ficará disponível somente para quem não pode enxergar.
 
 O exemplo abaixo mostra de forma clara como fazer.
 
-### Markup
+## Markup
 
 ```html
 <div class=”card-action”>
@@ -48,7 +48,7 @@ ou
 <button>Leia mais <span class="sr-only">sobre o Galo na libertadores</span></button>
 ```
 
-### CSS
+## CSS
 
 ```css
 .sr-only {
@@ -63,7 +63,7 @@ ou
 }
 ```
 
-### Conclusão
+## Conclusão
 
 Construir botões acessíveis é de suma importância para todas as pessoas terem acesso as informações e como vimos é uma técnica muito simples, então, a partir de hoje superamos mais uma barreira e poderemos fazer botões mais acessíveis para todos.
 

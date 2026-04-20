@@ -2,12 +2,10 @@
 title: 'As lições de uma pandemia'
 excerpt: 'O mundo hoje enfrenta um inimigo silencioso e mortal, o COVID-19 ou popularmente chamado de “corona vírus”. Sua forma de contágio é brutal…'
 pubDate: 2020-03-22T16:57:56.220Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## As lições de uma pandemia
-
-
 
 Foto por [Ravi Roshan](https://unsplash.com/@ravi_roshan_inc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/s/photos/hope?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

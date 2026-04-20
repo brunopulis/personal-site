@@ -1,7 +1,7 @@
 ---
 title: A teologia por trás do Pokémon Go
 pubDate: 2016-08-13
-tags: ['Teologia']
+tags: ['cristianismo']
 ---
 
 “Eu temo o dia em que a tecnologia ultrapasse nossa interação humana, e o mundo terá uma geração de idiotas. — Albert Einstein”

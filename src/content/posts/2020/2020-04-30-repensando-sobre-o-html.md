@@ -1,7 +1,7 @@
 ---
 title: 'HTML Semântico: repensando sobre seu uso'
 pubDate: 2020-04-30
-tags: [frontend, a11y]
+tags: ['frontend', 'a11y']
 ---
 
 ## Introdução

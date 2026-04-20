@@ -7,8 +7,6 @@ tags: ['reflexão', 'carreira', 'tecnologia']
 
 ## Precisamos urgente de equilíbrio
 
-
-
 Mulher sentada no fundo do quarto com cara de cansaço
 
 Esse artigo não será técnico, mas uma reflexão sobre um tema pouco tocado, mas que todos passam em suas carreiras na área de TI.
@@ -22,10 +20,8 @@ Mas, como lidar com o preço profissional que nos é exigido quando tudo está e
 No meu ponto de vista, pecamos quando achamos que somos multi-tarefas. Podemos fazer diversas coisas ao longo do dia, mas o corpo chega a seu limite pedindo um alento de **equilíbrio**. Interessante é que a Bíblia traz uma reflexão sobre o tema:
 
 > Meu filho, guarde consigo a sensatez e o equilíbrio, nunca os perca de vista;
->  trarão vida a você e serão um enfeite para o seu pescoço.
-
+> trarão vida a você e serão um enfeite para o seu pescoço.
 > Então você seguirá o seu caminho em segurança e não tropeçará;quando se deitar, não terá medo, e o seu sono será tranquilo.
-
 > Provérbios 3:21–24
 
 ### Desequilíbrio
@@ -34,8 +30,7 @@ O desequilíbrio vem acompanhado de uma agonia e frustação pessoal/profissiona
 
 O [Bernard De Luna](https://medium.com/u/101a148eb371) escreveu um texto excelente sobre estresse e ansiedade.
 
-[**Olá Devs, precisamos falar sobre estresse e ansiedade**
-\_A programação é um trabalho incrível e pode ser muito relacionada ao trabalho de um artista. O desenvolvedor, ou…\_medium.com](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e 'https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e')[](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e)
+[Olá Devs, precisamos falar sobre estresse e ansiedade](https://medium.com/@bernarddeluna/ol%C3%A1-devs-precisamos-falar-sobre-estresse-e-ansiedade-bde1b04f897e)
 
 Compreender que o desequilíbrio é algo externo afetando o seu “eu interno” é primordial para um tratamento adequado. Existem diversas formas de tratar esse desequilíbrio, pois varia entre cada indivíduo.
 

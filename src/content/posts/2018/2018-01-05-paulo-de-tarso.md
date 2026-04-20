@@ -2,12 +2,10 @@
 title: 'Paulo de Tarso'
 excerpt: 'A vida e obra do apostolo Paulo'
 pubDate: 2018-01-05T12:50:25.961Z
-tags: ['teologia']
+tags: ['cristianismo', 'biografia']
 ---
 
 ## Paulo de Tarso
-
-
 
 **Paulo de Tarso** é uma das figuras mais icônicas do Novo Testamento. Escritor de boa parte do Novo Testamento, fariseu, antes perseguidor agora perseguido por amor do Evangelho, foi dado a ele o título de apóstolo por Deus, sendo missionário radical levando o Evangelho a lugares inimagináveis para o período histórico que vivia.
 
@@ -57,7 +55,6 @@ Nem a Bíblia e nem outra história qualquer conta explicitamente como ou quando
 Vários autores cristãos da Antiguidade já propuseram mais detalhes sobre a morte de Paulo. I Clemente, uma carta escrita pelo bispo de Roma, Clemente, por volta do ano 90 relata o seguinte sobre Paulo:
 
 > Por causa de inveja e brigas, Paulo, pelo exemplo, mostrou a recompensa da resistência paciente. Após ele ter sido preso por sete vezes, ter sido exilado, apedrejado e ter pregado no ocidente e no oriente, ele recebeu o reconhecimento que era o prêmio da sua fé, tendo ensinado a retidão para o mundo inteiro e tendo chegado aos confins do ocidente. E quando ele já tinha dado seu testemunho perante os governantes, partiu deste mundo e foi para um lugar sagrado, tendo encontrado um notável padrão de resistência paciente.
-
 > I Clemente, Clemente de Roma.
 
 Gostou deste texto? Nos ajude a espalhar a palavra do Reino! Deixe seu comentário e compartilhe nossas publicações!

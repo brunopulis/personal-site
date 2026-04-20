@@ -2,7 +2,7 @@
 title: 'Defraudação: devemos falar sobre isso'
 excerpt: 'Antes de mais nada, gostaria de colocar a definição do Dicionário Aurélio da Língua Portuguesa para sanar o entendimento de uma vez por…'
 pubDate: 2016-09-19T17:22:19.628Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Defraudação: devemos falar sobre isso

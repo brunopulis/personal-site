@@ -1,7 +1,7 @@
 ---
 title: 8 Princípios da Qualidade de Software
 pubDate: 2021-01-05
-tags: ['qa']
+tags: ['qa', 'tech']
 ---
 
 Construir um software envolve diversas áreas: comunicação, marketing, equipe de negócios, design, experiência do usuário, equipe técnica e tantos outros envolvidos.

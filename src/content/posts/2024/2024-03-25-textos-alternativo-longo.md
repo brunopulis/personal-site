@@ -1,7 +1,7 @@
 ---
 title: Como criar texto alternativo longo
 pubDate: 2024-03-25
-category: 'Frontend'
+tags: 'frontend'
 ---
 
 Esse final de semana estava atualizando o site do meu casamento e me deparei com um problema.

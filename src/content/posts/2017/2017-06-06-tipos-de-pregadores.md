@@ -2,7 +2,7 @@
 title: 'Tipos de pregadores'
 excerpt: 'O pregador de tópicos'
 pubDate: 2017-06-06T22:00:52.760Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Tipos de pregadores
@@ -14,9 +14,7 @@ Hoje iremos analisar os tipos de pregadores existentes dentro da igreja e como i
 Geralmente é um tipo de pregador que analisa o texto e extraí dele um determinado tema e expõe e divide o seu sermão em tópicos, por exemplo:
 
 > O espírito do Senhor DEUS está sobre mim; porque o SENHOR me ungiu, para pregar boas novas aos mansos; enviou-me a restaurar os contritos de coração, a proclamar liberdade aos cativos, e a abertura de prisão aos presos;
-
 > A apregoar o ano aceitável do Senhor e o dia da vingança do nosso Deus; a consolar todos os tristes;
-
 > A ordenar acerca dos tristes de Sião que se lhes dê glória em vez de cinza, óleo de gozo em vez de tristeza, vestes de louvor em vez de espírito angustiado; a fim de que se chamem árvores de justiça, plantações do Senhor, para que ele seja glorificado.
 > [Isaías 61:1–3](https://www.bibliaonline.com.br/acf/is/61/1-3)
 

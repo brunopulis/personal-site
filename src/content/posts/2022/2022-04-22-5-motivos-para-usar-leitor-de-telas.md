@@ -1,7 +1,7 @@
 ---
 title: 5 motivos para testar acessibilidade com leitor de telas
 pubDate: 2022-04-22T01:20:29.949Z
-category: 'Acessibilidade'
+tags: ['a11y']
 ---
 
 Testar acessibilidade é quase uma arte, ela encontra-se nos detalhes. Alguns comportamentos são reconhecidos somente com muita prática e experiência.
