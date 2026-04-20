@@ -13,7 +13,7 @@ Nesse artigo vou te mostrar **5 tags que ajudam na acessibilidade**.
 
 Vamos lá?
 
-## 1\. \<header>
+## 1\. `<header>`
 
 O **elemento HTML** **`<header>`** representa um grupo introdutório ou navegacional. Pode conter alguns elementos, como:
 

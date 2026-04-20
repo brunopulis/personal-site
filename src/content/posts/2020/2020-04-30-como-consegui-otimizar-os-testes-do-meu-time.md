@@ -4,6 +4,7 @@ pubDate: 2020-04-30
 tags:
   - QA
   - Automação
+  - tech
 ---
 
 Testes são uma das partes mais importantes na concepção de um produto digital. Através deles obtemos garantia que determinada funcionalidade cumpre com os requisitos e atende ao cliente de maneira satisfatória.

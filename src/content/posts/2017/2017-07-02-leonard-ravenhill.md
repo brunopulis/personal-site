@@ -2,7 +2,7 @@
 title: 'Leonard Ravenhill'
 excerpt: 'O profeta do avivamento'
 pubDate: 2017-07-02T05:34:13.519Z
-tags: ['teologia']
+tags: ['cristianismo', 'biografia']
 ---
 
 ## Leonard Ravenhill
@@ -60,6 +60,4 @@ Se posso de dar um conselho, ouça, veja e medite nas palavras desse servo inspi
 - [Defesa do Evangelho](https://defesadoevangelho.com.br/categoria/leonard-ravenhill/)
 
 Soli Deo Glória,
-@brunopulis
-
-Nos ajude a espalhar a palavra do Reino, deixe seu comentário e compartilhe nossas publicações.
+Bruno Pulis

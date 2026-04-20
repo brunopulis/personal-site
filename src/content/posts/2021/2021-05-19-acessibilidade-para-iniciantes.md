@@ -4,7 +4,7 @@ pubDate: 2021-05-19
 tags: ['a11y']
 ---
 
-## **Importante**
+## Importante
 
 Este artigo foi originalmente escrito por [Karina Chow](https://karomancer.medium.com/) e traduzido e adaptado por mim. Houve a autorização da autora para realizar a tradução.
 

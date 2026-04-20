@@ -2,17 +2,14 @@
 title: 'Na rotina do culto'
 excerpt: 'Quanto a mim, os meus pés quase que se desviaram; pouco faltou para que escorregassem os meus passos.'
 pubDate: 2018-05-19T03:17:43.383Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Na rotina do culto
 
-
-
 Foto de [Michael D Beckwith](https://unsplash.com/photos/O-9Z_N0mRqw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/black-and-white?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 > Quanto a mim, os meus pés quase que se desviaram; pouco faltou para que escorregassem os meus passos.
-
 > [Salmos 73:2](https://www.bibliaonline.com.br/acf/sl/73/2+)
 
 A caminhada cristã é recheada de obstáculos que, em diversas vezes, pensamos ser impossíveis de vencê-los. Como lidar com o sentimento de desistência e abatimento perante a nossa realidade?
@@ -97,7 +94,6 @@ Asafe, porém, contemplou a glória de Deus e sua visão de mundo foi totalmente
 Alguns personagens bíblicos foram marcados pela a glória de Deus, homens que tiveram seu destino transformados por encontrarem com a presença Dele. Jacó, tido como trapaceiro, ladrão e mau caráter teve sua vida tocada e seu nome mudado para Israel, que significa Príncipe de Deus.
 
 > E chamou Jacó o nome daquele lugar Peniel, porque dizia: Tenho visto a Deus face a face, e a minha alma foi salva.
-
 > [Gênesis 32:30](https://www.bibliaonline.com.br/acf/gn/32/30+)
 
 O profeta Isaías encontra-se com a presença de Deus e logo recai o peso do seu pecado e sua culpa perante ao Eterno Deus:
@@ -109,10 +105,8 @@ O que Asafe compreende é que necessitamos do assombro da presença, a revelaç�
 Após sua vida ser restaurada, ele recorda da passagem da escritura que diz:
 
 > Porque ainda que a figueira não floresça, nem haja fruto na vide; ainda que decepcione o produto da oliveira, e os campos não produzam mantimento; ainda que as ovelhas da malhada sejam arrebatadas, e nos currais não haja gado;
-
 > Todavia eu me alegrarei no Senhor; exultarei no Deus da minha salvação.
 > O Senhor Deus é a minha força, e fará os meus pés como os das cervas, e me fará andar sobre as minhas alturas
-
 > [Habacuque 3:17-19](https://www.bibliaonline.com.br/acf/hc/3/18,19+)
 
 Na paz,

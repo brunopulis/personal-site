@@ -2,12 +2,10 @@
 title: 'A mentira merece um dia?'
 excerpt: 'O dia 1º de abril “comemora-se” o dia mentira, mas será que de fato a mentira precisa de um dia especifico para ser celebrada, ou ela é…'
 pubDate: 2019-04-01T13:43:06.969Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## A mentira merece um dia?
-
-
 
 No dia 1º de abril “comemora-se” o dia mentira, mas será que de fato a mentira precisa de um dia especifico para ser celebrada, ou ela é parte do nosso cotidiano?
 

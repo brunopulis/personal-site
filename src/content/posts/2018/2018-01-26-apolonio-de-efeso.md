@@ -2,7 +2,7 @@
 title: 'Apolônio de Éfeso'
 excerpt: 'Ele estava completamente familiarizado com a história de Éfeso e com os feitos dos montanistas frígios. O autor desconhecido de…'
 pubDate: 2018-01-26T12:01:01.524Z
-tags: ['teologia']
+tags: ['cristianismo', 'biografia']
 ---
 
 ## Apolônio de Éfeso

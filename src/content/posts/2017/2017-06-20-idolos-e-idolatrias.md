@@ -16,9 +16,7 @@ Muito dos grandes momentos de justiça e fúria divina, foram ocasionados pela p
 Na promulgação das leis divinas existe uma separada somente para a atenção desse pecado:
 
 > 3 Não terás outros deuses diante de mim.
-
 > 4 Não farás para ti imagem de escultura, nem alguma semelhança do que há em cima nos céus, nem em baixo na terra, nem nas águas debaixo da terra.
-
 > 5 Não te encurvarás a elas nem as servirás; porque eu, o Senhor teu Deus, sou Deus zeloso, que visito a iniqüidade dos pais nos filhos, até a terceira e quarta geração daqueles que me odeiam.
 > Êxodo 20:3–5
 
@@ -29,7 +27,6 @@ Segundo o dicionário idolatria é: **culto que se presta a ídolos ou amor exce
 O Catecismo da Igreja Católica afirma:
 
 > “Idolatria não se refere apenas aos falsos cultos do paganismo. Idolatria também é quando **o homem presta honra e veneração a uma criatura em lugar de Deus**, quer se trate de deuses ou demônios, do poder, raça, prazer, antepassados, do Estado, dinheiro, etc.
-
 > Catechism of The Catholic Church, passage 2113, pp.460, Geoffrey Chapman, 1999
 
 Já na tradição teológica reformada o Breve Catecismo de Westminster, comenta sobre a idolatria de uma forma mais completa.
@@ -69,4 +66,4 @@ Para concluir, devemos retornar para a adoração pura e simples ao Cordeiro que
 Confessar e deixar o pecado que tão de perto nos seduz e rodeia e trilhar caminhos rumo a adoração sublime ao Todo Poderoso.
 
 Soli Deo Glória,
-@brunopulis
+Bruno Pulis

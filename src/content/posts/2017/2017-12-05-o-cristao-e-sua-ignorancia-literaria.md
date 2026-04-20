@@ -2,12 +2,10 @@
 title: 'O cristão e sua ignorância literária'
 excerpt: 'E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo…'
 pubDate: 2017-12-05T03:36:32.790Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## O cristão e sua ignorância literária
-
-
 
 Coletânea de livros com capas coloridas em uma estante. Foto por [Karim Ghantous](https://unsplash.com/photos/JHTlgIpNyQA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) disponível no site [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -61,7 +59,6 @@ Nossa fé deve ser racionalizada. Não devemos ir pelos embalos de um sábado a 
 Um outro fator que ajudar o analfabetismo bíblico é a falta de tempo, ou pelo menos a mentira que contamos para nós mesmos. John Piper, um pastor norte americano, comenta magistralmente esse fator:
 
 > [](https://twitter.com/JohnPiper/status/5027319857)
-
 > Um dos grandes usos do Twitter e do Facebook será provar no último dia que a oração não era da falta de tempo — John Piper.
 
 Aparentemente temos tempo de sobra para as futilidades e banalidades da internet, mas quando o assunto é estudo bíblico, chega a ser lamentável. Gastamos um tempo que não temos, pois, as Escrituras nos afirmam:

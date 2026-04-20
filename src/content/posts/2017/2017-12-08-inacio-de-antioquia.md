@@ -2,12 +2,10 @@
 title: 'Inácio de Antioquia'
 excerpt: 'Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu Paulo e foi sucessor de Pedro na…'
 pubDate: 2017-12-08T12:01:01.591Z
-tags: ['teologia']
+tags: ['cristianismo', 'biografia']
 ---
 
 ## Inácio de Antioquia
-
-
 
 Santo Inácio de Antioquia
 
@@ -27,7 +25,7 @@ E na iminência do martírio prometeu aos cristãos que mesmo depois da morte co
 
 ### **Obras**
 
-Atribui-se sete obra a Inácio, conhecidas como _Epístolas de Inácio,_ preservadas no [_Codex Hierosolymitanus_](https://pt.wikipedia.org/wiki/Codex_Hierosolymitanus 'Codex Hierosolymitanus')_._
+Atribui-se sete obra a Inácio, conhecidas como _Epístolas de Inácio,_ preservadas no [_Codex Hierosolymitanus_](https://pt.wikipedia.org/wiki/Codex_Hierosolymitanus 'Codex Hierosolymitanus')_.
 
 - Epístola a Policarpo de Esmirna;
 - Epístola aos Efésios;
@@ -43,7 +41,6 @@ No ano 106, Santo Inácio está em Roma, onde, no ano seguinte, foram lançados 
 
 Bibliografia
 
-- [**Esboços da História da Igreja - CAPÍTULO 2: INÁCIO DE ANTIOQUIA (116 dC)**
-\_Esboços da Historia da Igreja J.C.Robertson CAPÍTULO II: INÁCIO DE ANTIOQUIA (116 dC) Quando nosso Senhor subiu ao céu…\_projetocasteloforte.com.br](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/ 'http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/')[](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/)
-- [**Inácio de Antioquia - Wikipédia, a enciclopédia livre**
-\_Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu São Paulo e…\_pt.wikipedia.org](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia 'https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia')[](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia)
+- [Esboços da Historia da Igreja J.C.Robertson CAPÍTULO II: INÁCIO DE ANTIOQUIA (116 dC) Quando nosso Senhor subiu ao céu…\_projetocasteloforte.com.br](http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/)
+- [http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/'](<http://projetocasteloforte.com.br/esbocos-da-historia-da-igreja-capitulo-ii-inacio-de-antioquia-116-dc/>)
+- [Inácio de Antioquia](https://pt.wikipedia.org/wiki/In%C3%A1cio_de_Antioquia)

@@ -65,8 +65,6 @@ Já no bom e velho HTML, o componente de select se parece com isso.
 
 Abaixo uma tabela demonstrando os problemas mais recorrentes nas páginas.
 
-
-
 Fica nítido uma coisa, **temos um problema gritante com a semântica e estrutura**
 
 ## HTML semântico

@@ -2,7 +2,7 @@
 title: Stranger Things
 description: 'Minhas impressões sobre a série e o que aprendi'
 pubDate: 2026-01-06
-tags: ['100DaysToOffLoad']
+tags: ['100DaysToOffLoad', 'pessoal']
 ---
 
 A série finalmente terminou, muitas pessoas na internet odiaram.

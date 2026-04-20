@@ -2,12 +2,10 @@
 title: 'Clemente de Roma'
 excerpt: 'São Clemente I, também conhecido como Clemente Romano (em latim, Clemens Romanus), foi o quarto papa do Cristianismo da Igreja Romana…'
 pubDate: 2017-11-30T23:59:03.350Z
-tags: ['teologia']
+tags: ['cristianismo', 'biografia']
 ---
 
 ## Clemente de Roma
-
-
 
 **São Clemente I**, também conhecido como **Clemente Romano** (em latim, _Clemens Romanus_), foi o quarto papa do Cristianismo da Igreja Romana, entre 88 e 97. Nascido em Roma, nos arredores do Coliseu, de família hebraica, foi um dos primeiros a receber o batismo de São Pedro. Foi sucessor de Anacleto I (ou Cleto) e autor da _Epístola de Clemente aos Coríntios_ (segundo Clemente de Alexandria e Orígenes), o primeiro documento de literatura cristã, endereçada à Igreja de Corinto.
 

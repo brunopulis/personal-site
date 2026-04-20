@@ -7,8 +7,6 @@ tags: ['a11y']
 
 ## Dica matadora: 6 livros para estudar acessibilidade web
 
-
-
 Foto por [Kimberly Farmer](https://unsplash.com/photos/lUaaKCUANVI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) [em Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText). Seis livros empilhados num fundo cinza
 
 Neste artigo irei mostrar uma lista de livros para você que se interessa pelo assunto, são livros excelentes e recomendados internacionalmente.

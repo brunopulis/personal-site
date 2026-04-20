@@ -2,14 +2,10 @@
 title: 'Hulk e a nova natureza'
 excerpt: 'O que Hulk, pode nos ensinar acerca da temperança da vida?'
 pubDate: 2019-05-14T01:10:02.997Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Hulk e a nova natureza
-
-
-
-## O que Hulk, pode nos ensinar acerca da temperança da vida?
 
 Hulk talvez seja uma das figuras mais marcantes do mundo dos quadrinhos. Sempre se apresenta com expressões bem traçadas e vívidas. Uma de suas grandes características é a raiva — essa que, quando motivada, toma conta de todo o ser de Bruce Banner, enquanto sua genialidade sai de cena.
 

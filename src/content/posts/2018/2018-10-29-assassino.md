@@ -1,12 +1,10 @@
 ---
 title: 'Assassino?'
 pubDate: 2018-10-29T16:40:54.968Z
-tags: []
+tags: ['cristianismo']
 ---
 
 ## Assassino?
-
-
 
 Houve um dia, enquanto eu fazia meus passeios no exterior, quando eu fui por um lugar, para sempre gravado em minha memória, pois lá vi esse amigo, o meu melhor, o meu único Amigo… Assassinado!
 

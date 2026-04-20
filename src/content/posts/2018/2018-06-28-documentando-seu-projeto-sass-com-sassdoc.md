@@ -39,8 +39,6 @@ Algumas vantagens de utilizar ele, são:
 
 Ele analisa a pasta de origem é busca comentários específicos para a documentação. A partir disso, ele gera um **data tree**, que é aprimorada e filtrada antes de ser parseada para a exibição. E o resultado fica assim:
 
-
-
 ### Instalando
 
 ```shell
@@ -101,8 +99,6 @@ _/// _@param_ _{Length}_ _$size_ — Tamanho da tipografia
 ```
 
 Criei [um projeto no Github](https://github.com/brunopulis/sassdoc-example) com o exemplo desenvolvido, com a tarefa do Gulp foi gerar a documentação e o resultado será:
-
-
 
 Documentação gerada pelo SassDocs.
 

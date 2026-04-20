@@ -7,8 +7,6 @@ tags: ['reflexão']
 
 ## Mais uma luz — o valor da vida
 
-
-
 Foto por [Kristine Weilert](https://unsplash.com/photos/tLNRTxieD7k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) em [Unsplash](https://unsplash.com/search/photos/light?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Hoje quero indicar uma música que o [Carlos André Rodrigues Couto](https://medium.com/u/1c0248cbbd79) me mostrou. A música é a One More Light da banda Linkin Park. No vídeo, podemos ver Chester, vocalista da banda, visivelmente abalado e abatido com a morte do seu amigo pessoal, Chris Cornell que foi vocalista do Soundgarden e Audioslave.
