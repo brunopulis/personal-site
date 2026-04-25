@@ -2,6 +2,9 @@
 {
   "permalink": "/feeds/shows/feed.json",
   "eleventyExcludeFromCollections": true,
+  "eleventyImport": {
+    "collections": ["shows"]
+  },
   "metadata": {
     "title": "Bruno Pulis - Seriados",
     "description": "Minha coleção de seriados",
@@ -23,7 +26,7 @@
   {%- set absoluteShowUrl = show.url | htmlBaseUrl(metadata.base) %}
   { "id": "{{ absoluteShowUrl }}", "url": "{{ absoluteShowUrl }}", "title":
   {{ show.data.title | dump | safe }}, "content_html":
-  {{ show.templateContent | htmlToAbsoluteUrls(absoluteShowUrl) | dump | safe }},
+  {{ show.content | renderTransforms(show.data.page, metadata.base) | htmlToAbsoluteUrls(absoluteShowUrl) | dump | safe }},
   {%- if show.data.description %}
     "summary": {{ show.data.description | dump | safe }},
   {%- endif %}
