@@ -29,6 +29,7 @@ import {
   getAllNotes,
   getAllPoetry,
   getAllTags,
+  getWatchingYears,
   showInSitemap
 } from './src/_config/collections.js';
 
@@ -52,6 +53,10 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('groupBy', groupBy);
   eleventyConfig.addFilter('booksByYear', filters.booksByYear);
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
+  eleventyConfig.addFilter('filterFavorites', (items) => filters.filterFavorites(items));
+  eleventyConfig.addFilter('filterNonFavorites', (items) => filters.filterNonFavorites(items));
+  eleventyConfig.addFilter('groupByYear', (items) => filters.groupByYear(items));
+  eleventyConfig.addFilter('filterByYear', (items, year) => filters.filterByYear(items, year));
   eleventyConfig.addFilter('showsByYear', filters.showsByYear);
   eleventyConfig.addFilter('showsByStatusAndYear', filters.showsByStatusAndYear);
   eleventyConfig.addFilter('showsByYearAndStatus', filters.showsByYearAndStatus);
@@ -204,6 +209,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
   eleventyConfig.addCollection('tagList', getAllTags);
+  eleventyConfig.addCollection('watchingYears', getWatchingYears);
 
   eleventyConfig.addCollection('bookmarks', collectionApi => {
     return collectionApi
