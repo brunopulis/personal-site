@@ -1,0 +1,69 @@
+---
+layout: base
+---
+
+<a href="/watching/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">
+  <span aria-hidden="true">←</span> Voltar para o Filmes e Séries
+</a>
+
+<nav class="mb-4 text-sm" aria-label="Breadcrumb">
+  <ol class="flex space-x-2">
+    <li><a href="/" class="hover:text-blue-600">Home</a></li>
+    <li><span aria-hidden="true">›</span></li>
+    <li><a href="/blog/" class="hover:text-blue-600">Filmes e Séries</a></li>
+    <li><span aria-hidden="true">›</span></li>
+    <li class="font-bold text-gray-900 dark:text-gray-100">{{ title }}</li>
+  </ol>
+</nav>
+
+<article class="h-entry">
+  {% if featuredImage %}
+    <img
+      class="mb-6 rounded-lg w-full u-photo"
+      src="{{ featuredImage }}"
+      alt="Featured image for {{ title }}"
+    />
+  {% endif %}
+
+  <header class="mb-6">
+    <h1 class="mb-2 p-name font-bold text-3xl">{{ title }}</h1>
+    {% if subtitle %}
+      <p class="mb-4 text-gray-600 dark:text-gray-400 text-xl">{{ subtitle }}</p>
+    {% endif %}
+    <div class="text-gray-600 dark:text-gray-400 text-sm">
+      Publicado em:
+      <time class="dt-published" datetime="{{ page.date | htmlDateString }}"
+        >{{ page.date | readableDate }}</time
+      >
+      por
+      <span class="p-author h-card"
+        ><a class="p-name hover:text-blue-600 u-url" href="/about/">{{ author or site.author }}</a></span
+      >
+      <span aria-hidden="true">•</span>
+      <span class="reading-time">{{ content | readingTime }} min de leitura</span>
+    </div>
+    <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
+  </header>
+
+  <div class="max-w-none e-content prose">
+    {{ content | safe }}
+  </div>
+
+  {% if tags %}
+    <div class="gap-6 bg-blue-50 my-6 p-6 pt-6 border-gray-200 dark:border-gray-700 border-t rounded-xl post-tags">
+      <h3 class="mb-2 font-semibold text-gray-500 text-sm uppercase tracking-wide">Tags</h3>
+      <div class="flex flex-wrap gap-2">
+        {% for tag in tags %}
+          <a
+            class="hover:opacity-80 p-category px-3 py-1 rounded-full text-white text-sm"
+            style="background-color: {{ tag | tagColor }}"
+            href="/tags/{{ tag | slug }}/"
+            >#{{ tag }}</a
+          >
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% include "partials/reply-email.njk" %}
+</article>
