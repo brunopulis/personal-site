@@ -1,0 +1,108 @@
+---
+layout: base.njk
+pagination:
+  data: collections.watchingYears
+  size: 1
+  alias: year
+permalink: /watching/years/{{ year }}/
+generate: true
+---
+
+<section class="mb-8">
+  <nav class="text-sm mb-4">
+    <a href="/watching/" class="text-purple-600 dark:text-purple-400 hover:underline">Watching</a>
+    <span class="mx-2">→</span>
+    <span>{{ year }}</span>
+  </nav>
+  <h1 class="mb-2 font-bold text-3xl">{{ year }}</h1>
+  <p class="text-[var(--text-secondary)]">
+    Filmes e séries assistidos em {{ year }}.
+  </p>
+</section>
+
+{% set yearMovies = collections.movies | filterByYear(year) %}
+{% set yearShows = collections.shows | filterByYear(year) %}
+
+{% if yearMovies.length > 0 %}
+<section class="mb-12">
+  <h2 class="font-bold text-xl mb-6">Filmes</h2>
+  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {% for item in yearMovies | reverse %}
+      <article>
+        <a href="{{ item.url }}" class="block">
+          {% if item.data.poster %}
+            <img
+              src="{{ item.data.poster }}"
+              alt="{{ item.data.title }}"
+              class="rounded w-full aspect-[2/3] object-cover"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <span class="font-bold text-white text-2xl">{{ item.data.title | truncate(1, true, "") }}</span>
+            </div>
+          {% endif %}
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ item.data.title }}</h3>
+            {% if item.data.director %}
+              <p class="text-[var(--text-secondary)] text-xs">{{ item.data.director }}</p>
+            {% endif %}
+            {% if item.data.rating %}
+              <p class="text-yellow-500 text-xs flex items-center gap-1">
+                {% for i in range(1, 6) %}
+                  {% if i <= item.data.rating %}⭐{% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if yearShows.length > 0 %}
+<section class="mb-12">
+  <h2 class="font-bold text-xl mb-6">Séries</h2>
+  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {% for item in yearShows | reverse %}
+      <article>
+        <a href="{{ item.url }}" class="block">
+          {% if item.data.poster %}
+            <img
+              src="{{ item.data.poster }}"
+              alt="{{ item.data.title }}"
+              class="rounded w-full aspect-[2/3] object-cover"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <span class="font-bold text-white text-2xl">{{ item.data.title | truncate(1, true, "") }}</span>
+            </div>
+          {% endif %}
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ item.data.title }}</h3>
+            {% if item.data.category %}
+              <p class="text-[var(--text-secondary)] text-xs">{{ item.data.category }}</p>
+            {% endif %}
+            {% if item.data.rating %}
+              <p class="text-yellow-500 text-xs flex items-center gap-1">
+                {% for i in range(1, 6) %}
+                  {% if i <= item.data.rating %}⭐{% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if yearMovies.length == 0 and yearShows.length == 0 %}
+<p class="py-12 text-[var(--text-secondary)] text-center">
+  Nenhum filme ou série registrado para {{ year }}.
+</p>
+{% endif %}

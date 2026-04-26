@@ -1,0 +1,203 @@
+---
+layout: base.njk
+title: Watching
+permalink: /watching/
+---
+
+<section class="mb-8">
+  <h1 class="mb-2 font-bold text-3xl">Watching</h1>
+  <p class="text-[var(--text-secondary)] mb-4">
+    TV e filmes que assisti, apresentados de forma organizada.
+  </p>
+
+  {% set allMovies = collections.movies %}
+  {% set allShows = collections.shows %}
+  {% set allItems = allMovies | concat(allShows) %}
+  {% set yearsGrouped = allItems | groupByYear %}
+  {% set years = yearsGrouped.years %}
+  {% set currentYear = years[0] %}
+
+  {% if years.length > 0 %}
+  <div class="flex flex-wrap gap-2">
+    {% for year in years %}
+      <a
+        href="/watching/years/{{ year }}/"
+        class="px-3 py-1 text-sm rounded-full border transition-colors {% if year == currentYear %}bg-purple-600 text-white border-purple-600{% else %}bg-[var(--surface)] text-[var(--text-secondary)] border-gray-300 dark:border-gray-600 hover:border-purple-600 hover:text-purple-600{% endif %}"
+      >
+        {{ year }}
+      </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+{% set recentMovies = collections.movies | reverse | limit(6) %}
+{% set recentShows = collections.shows | reverse | limit(6) %}
+{% set favoriteMovies = collections.movies | filterFavorites | reverse | limit(6) %}
+{% set favoriteShows = collections.shows | filterFavorites | reverse | limit(6) %}
+
+<section class="mb-12">
+  <div class="flex items-center gap-3 mb-6">
+    <h2 class="font-bold text-2xl">Filmes Recentes</h2>
+    <a href="/watching/movies/" class="text-purple-600 dark:text-purple-400 text-sm hover:underline">Ver todos →</a>
+  </div>
+
+  {% if recentMovies.length > 0 %}
+  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+    {% for movie in recentMovies %}
+      <article>
+        <a href="{{ movie.url }}" class="block">
+          {% if movie.data.poster %}
+            <img
+              src="{{ movie.data.poster }}"
+              alt="{{ movie.data.title }}"
+              class="rounded w-full aspect-[2/3] object-cover"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
+            </div>
+          {% endif %}
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ movie.data.title }}</h3>
+            {% if movie.data.rating %}
+              <p class="text-yellow-500 text-xs flex items-center gap-1">
+                {% for i in range(1, 6) %}
+                  {% if i <= movie.data.rating %}⭐{% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-[var(--text-secondary)]">Nenhum filme registrado ainda.</p>
+  {% endif %}
+</section>
+
+<section class="mb-12">
+  <div class="flex items-center gap-3 mb-6">
+    <h2 class="font-bold text-2xl">Séries Recentes</h2>
+    <a href="/watching/shows/" class="text-purple-600 dark:text-purple-400 text-sm hover:underline">Ver todos →</a>
+  </div>
+
+  {% if recentShows.length > 0 %}
+  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+    {% for show in recentShows %}
+      <article>
+        <a href="{{ show.url }}" class="block">
+          {% if show.data.poster %}
+            <img
+              src="{{ show.data.poster }}"
+              alt="{{ show.data.title }}"
+              class="rounded w-full aspect-[2/3] object-cover"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
+            </div>
+          {% endif %}
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ show.data.title }}</h3>
+            {% if show.data.rating %}
+              <p class="text-yellow-500 text-xs flex items-center gap-1">
+                {% for i in range(1, 6) %}
+                  {% if i <= show.data.rating %}⭐{% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-[var(--text-secondary)]">Nenhum seriado registrado ainda.</p>
+  {% endif %}
+</section>
+
+<section class="mb-12">
+  <div class="flex items-center gap-3 mb-6">
+    <h2 class="font-bold text-2xl">Filmes Favoritos</h2>
+  </div>
+
+  {% if favoriteMovies.length > 0 %}
+  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+    {% for movie in favoriteMovies %}
+      <article>
+        <a href="{{ movie.url }}" class="block">
+          {% if movie.data.poster %}
+            <img
+              src="{{ movie.data.poster }}"
+              alt="{{ movie.data.title }}"
+              class="rounded w-full aspect-[2/3] object-cover"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
+            </div>
+          {% endif %}
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ movie.data.title }}</h3>
+            {% if movie.data.rating %}
+              <p class="text-yellow-500 text-xs flex items-center gap-1">
+                {% for i in range(1, 6) %}
+                  {% if i <= movie.data.rating %}⭐{% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-[var(--text-secondary)]">Nenhum filme favorito ainda.</p>
+  {% endif %}
+</section>
+
+<section class="mb-12">
+  <div class="flex items-center gap-3 mb-6">
+    <h2 class="font-bold text-2xl">Séries Favoritas</h2>
+  </div>
+
+  {% if favoriteShows.length > 0 %}
+  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+    {% for show in favoriteShows %}
+      <article>
+        <a href="{{ show.url }}" class="block">
+          {% if show.data.poster %}
+            <img
+              src="{{ show.data.poster }}"
+              alt="{{ show.data.title }}"
+              class="rounded w-full aspect-[2/3] object-cover"
+              loading="lazy"
+            >
+          {% else %}
+            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
+            </div>
+          {% endif %}
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ show.data.title }}</h3>
+            {% if show.data.rating %}
+              <p class="text-yellow-500 text-xs flex items-center gap-1">
+                {% for i in range(1, 6) %}
+                  {% if i <= show.data.rating %}⭐{% endif %}
+                {% endfor %}
+              </p>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-[var(--text-secondary)]">Nenhuma série favorita ainda.</p>
+  {% endif %}
+</section>

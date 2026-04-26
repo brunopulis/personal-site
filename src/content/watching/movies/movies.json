@@ -1,0 +1,5 @@
+{
+  "layout": "watching.njk",
+  "permalink": "/watching/movies/{{ title | slugify }}/index.html",
+  "favorite": false
+}
