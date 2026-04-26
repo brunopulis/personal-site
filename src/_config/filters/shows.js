@@ -14,23 +14,26 @@ export const showsByYear = shows => {
     return acc;
   }, {});
 
-  const years = Object.keys(grouped).sort((a, b) => b - a);
+  const years = Object.keys(grouped)
+    .filter(year => grouped[year].length > 0)
+    .sort((a, b) => b - a);
 
   return {byYear: grouped, years};
 };
 
 export const showsByYearAndStatus = shows => {
   if (!shows || !Array.isArray(shows)) {
-    return {byYear: {}, years: [], statusLabels: {}};
+    return {byYear: {}, years: [], statusLabels: {}, statusOrder: []};
   }
 
-  const statusOrder = ['assistindo', 'reassistindo', 'quero-assistir', 'assistido', 'abandonei'];
+  const statusOrder = ['Quero assistir', 'assistindo', 'abandonei', 'assistido', 'reassistindo', 'favorito'];
   const statusLabels = {
+    'Quero assistir': 'Quero assistir',
     'assistindo': 'Assistindo',
-    'reassistindo': 'Reassistindo',
-    'quero-assistir': 'Quero assistir',
+    'abandonei': 'Abandonei',
     'assistido': 'Assistido',
-    'abandonei': 'Abandonei'
+    'reassistindo': 'Reassistindo',
+    'favorito': 'Favorito'
   };
 
   const grouped = shows.reduce((acc, show) => {
@@ -49,23 +52,29 @@ export const showsByYearAndStatus = shows => {
     return acc;
   }, {});
 
-  const years = Object.keys(grouped).sort((a, b) => b - a);
+  const years = Object.keys(grouped)
+    .filter(year => {
+      const hasItems = Object.values(grouped[year]).some(arr => arr.length > 0);
+      return hasItems;
+    })
+    .sort((a, b) => b - a);
 
   return {byYear: grouped, years, statusLabels, statusOrder};
 };
 
 export const showsByStatusAndYear = shows => {
   if (!shows || !Array.isArray(shows)) {
-    return {byStatus: {}, statuses: []};
+    return {byStatus: {}, statuses: [], statusLabels: {}};
   }
 
-  const statusOrder = ['assistindo', 'reassistindo', 'quero-assistir', 'assistido', 'abandonei'];
+  const statusOrder = ['Quero assistir', 'assistindo', 'abandonei', 'assistido', 'reassistindo', 'favorito'];
   const statusLabels = {
+    'Quero assistir': 'Quero assistir',
     'assistindo': 'Assistindo',
-    'reassistindo': 'Reassistindo',
-    'quero-assistir': 'Quero assistir',
+    'abandonei': 'Abandonei',
     'assistido': 'Assistido',
-    'abandonei': 'Abandonei'
+    'reassistindo': 'Reassistindo',
+    'favorito': 'Favorito'
   };
 
   const grouped = shows.reduce((acc, show) => {
@@ -87,7 +96,9 @@ export const showsByStatusAndYear = shows => {
   const statuses = statusOrder.filter(s => grouped[s]);
 
   statuses.forEach(status => {
-    grouped[status].years = Object.keys(grouped[status].byYear).sort((a, b) => b - a);
+    grouped[status].years = Object.keys(grouped[status].byYear)
+      .filter(year => grouped[status].byYear[year].length > 0)
+      .sort((a, b) => b - a);
   });
 
   return {byStatus: grouped, statuses, statusLabels};
