@@ -61,7 +61,7 @@ title: 'Página inicial'
           <article class="pb-6 border-gray-200 dark:border-gray-700 border-b last:border-b-0 h-entry">
             <h3 class="mb-2 p-name font-semibold text-xl">
               <a
-                class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors u-url"
+                class="underline hover:no-underline transition-colors u-url"
                 href="{{ url }}"
               >
                 {{ title }}
@@ -69,20 +69,20 @@ title: 'Página inicial'
             </h3>
             {% if dateVal %}
               <time
-                class="block mb-3 text-gray-500 dark:text-gray-400 text-sm dt-published"
+                class="block mb-3 text-errie-black-950 text-sm dt-published"
                 datetime="{{ dateVal | htmlDateString }}"
               >
                 {{ dateVal | readableDate }}
               </time>
             {% endif %}
             {% if desc %}
-              <p class="mb-3 p-summary text-gray-700 dark:text-gray-300 leading-relaxed">{{ desc }}</p>
+              <p class="mb-3 p-summary text-errie-black-950 leading-relaxed">{{ desc }}</p>
             {% endif %}
             {% if tags %}
               <div class="flex flex-wrap gap-2">
                 {% for tag in tags %}
                   <a
-                    class="bg-vista-blue-500 p-category px-2 py-1 rounded text-errie-black-950 text-xs transition-opacity"
+                    class="bg-vista-blue-500 p-category px-2 py-1 rounded font-bold text-errie-black-950 text-xs transition-colors"
                     href="/tags/{{ tag | slug }}/"
                     >#{{ tag }}</a
                   >

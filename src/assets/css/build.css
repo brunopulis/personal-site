@@ -1565,6 +1565,13 @@
       }
     }
   }
+  .hover\:bg-vista-blue-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-vista-blue-600);
+      }
+    }
+  }
   .hover\:bg-yellow-700 {
     &:hover {
       @media (hover: hover) {
