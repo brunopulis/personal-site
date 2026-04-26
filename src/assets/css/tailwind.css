@@ -1,6 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Blood Red Colors */
+  --color-blood-red-50: #fff1f1;
+  --color-blood-red-100: #ffdfdf;
+  --color-blood-red-200: #ffc4c4;
+  --color-blood-red-300: #ff9b9b;
+  --color-blood-red-400: #ff6161;
+  --color-blood-red-500: #ff3030;
+  --color-blood-red-600: #f11111;
+  --color-blood-red-700: #cb0a0a;
+  --color-blood-red-800: #a80c0c;
+  --color-blood-red-900: #8a1212;
+  --color-blood-red-950: #610404;
+
+  /* Vista Blue Colors */
+  --color-vista-blue-50: #f1f6fc;
+  --color-vista-blue-100: #e5effa;
+  --color-vista-blue-200: #d0e1f5;
+  --color-vista-blue-300: #b4cced;
+  --color-vista-blue-400: #96b1e3;
+  --color-vista-blue-500: #849cdb;
+  --color-vista-blue-600: #6176ca;
+  --color-vista-blue-700: #5162b1;
+  --color-vista-blue-800: #44538f;
+  --color-vista-blue-900: #3c4873;
+  --color-vista-blue-950: #232943;
+
+  /* Errie Black Colors */
+  --color-errie-black-50: #fafafa;
+  --color-errie-black-100: #f3f6f6;
+  --color-errie-black-200: #e2e9e9;
+  --color-errie-black-300: #d2dada;
+  --color-errie-black-400: #9bb0b0;
+  --color-errie-black-500: #6b8080;
+  --color-errie-black-600: #4c6161;
+  --color-errie-black-700: #3b4a4a;
+  --color-errie-black-800: #252c2c;
+  --color-errie-black-900: #171e1e;
+  --color-errie-black-950: #080c0c;
+
+  /* Light Silver Colors */
+  --color-light-silver-50: #fafafa;
+  --color-light-silver-100: #f5f5f5;
+  --color-light-silver-200: #e6e6e6;
+  --color-light-silver-300: #d9d9d9;
+  --color-light-silver-400: #a3a3a3;
+  --color-light-silver-500: #727272;
+  --color-light-silver-600: #535353;
+  --color-light-silver-700: #404040;
+  --color-light-silver-800: #272727;
+  --color-light-silver-900: #1a1a1a;
+  --color-light-silver-950: #0b0b0b;
+}
 
 /* Blog post typography styles */
 .prose {
@@ -223,26 +275,11 @@ body {
     text-decoration: none;
   }
   a:focus-visible {
-    outline: 2px solid #7c3aed; /* purple accent focus ring */
+    outline: 2px solid #7c3aed;
     outline-offset: 2px;
     border-radius: 2px;
   }
   /* Global link hover/active behavior (non-prose, non-nav links) */
-  a:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  a:active {
-    text-decoration-thickness: 2px;
-  }
-  a:hover:not(.nav-item) {
-    color: var(--accent);
-    transition: color 150ms ease-in-out;
-  }
-  .dark a:hover:not(.nav-item) {
-    color: var(--accent-light);
-  }
-
   .indicator::after,
   a[href^="http"]:not([href*="localhost:8080"]):not([href*="brunopulis.com"]):not(.no-indicator)::after {
     background-image: url(/assets/images/template/external.svg);
@@ -274,11 +311,11 @@ body {
     color: var(--text);
   }
   .prose a {
-    color: #2563eb; /* readable blue on light */
+    color: #2563eb;
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1.5px;
-    transition: color 150ms ease-in-out; /* color-only to avoid layout shift */
+    transition: color 150ms ease-in-out;
   }
   .prose a:hover {
     color: #1d4ed8;
