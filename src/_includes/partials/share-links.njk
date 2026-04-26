@@ -1,37 +1,37 @@
-<section class="mt-8 py-6 border-gray-200 dark:border-gray-700 border-t">
+<section class="mt-8 py-6 border-gray-200 border-t">
   <div class="">
-    <h3 class="mb-2 font-semibold text-gray-500 text-sm uppercase tracking-wide">Compartilhe</h3>
+    <h3 class="mb-2 font-semibold text-errie-black-950 text-sm uppercase tracking-wide">Compartilhe</h3>
     <div class="flex flex-wrap gap-2">
       {% from "partials/icons.njk" import icon %}
       <a
         href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ title | urlencode }}"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-1 text-blue-500 hover:text-blue-700"
+        class="inline-flex items-center gap-1 text-blue-500 hover:text-blue-700 underline"
       >
-        {{ icon('x', 'w-4 h-4') }} <span>Twitter</span>
+        Twitter
       </a>
       <a
         href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800"
+        class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 underline"
       >
-        {{ icon('linkedin', 'w-4 h-4') }} <span>LinkedIn</span>
+        LinkedIn
       </a>
       <a
         href="https://mastodon.social/share?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800"
+        class="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 underline"
       >
-        {{ icon('mastodon', 'w-4 h-4') }} <span>Mastodon</span>
+        Mastodon
       </a>
       <button
         onclick="navigator.share ? navigator.share({title: '{{ title }}', url: '{{ site.url }}{{ page.url }}'}) : navigator.clipboard.writeText('{{ site.url }}{{ page.url }}')"
         class="inline-flex items-center gap-1 text-gray-600 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-400"
       >
-        {{ icon('copy', 'w-4 h-4') }} <span>Copy Link</span>
+        Copiar Link
       </button>
     </div>
   </div>
