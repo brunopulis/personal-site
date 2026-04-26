@@ -1,13 +1,13 @@
 ---
 layout: base.njk
-title: Watching
+title: "Filmes e Séries"
 permalink: /watching/
 ---
 
 <section class="mb-8">
-  <h1 class="mb-2 font-bold text-3xl">Watching</h1>
-  <p class="text-[var(--text-secondary)] mb-4">
-    TV e filmes que assisti, apresentados de forma organizada.
+  <h1 class="mb-2 font-bold text-3xl">Filmes e Séries</h1>
+  <p class="mb-4 text-errie-black-900">
+    Filmes e séries que assisti, apresentados de forma organizada.
   </p>
 
   {% set allMovies = collections.movies %}
@@ -18,11 +18,11 @@ permalink: /watching/
   {% set currentYear = years[0] %}
 
   {% if years.length > 0 %}
-  <div class="flex flex-wrap gap-2">
+  <div class="flex items-center content-between gap-2">
     {% for year in years %}
       <a
-        href="/watching/years/{{ year }}/"
-        class="px-3 py-1 text-sm rounded-full border transition-colors {% if year == currentYear %}bg-purple-600 text-white border-purple-600{% else %}bg-[var(--surface)] text-[var(--text-secondary)] border-gray-300 dark:border-gray-600 hover:border-purple-600 hover:text-purple-600{% endif %}"
+        href="/watching/{{ year }}/"
+        class="px-3 py-1 text-sm rounded-full border transition-colors {% if year == currentYear %}bg-vista-blue-600 font-bold text-white border-vista-blue-600{% else %}bg-vista-blue-100 font-bold text-errie-black-950 border-vista-blue-100 hover:border-vista-blue-500 hover:text-errie-black-950{% endif %}"
       >
         {{ year }}
       </a>
@@ -36,10 +36,13 @@ permalink: /watching/
 {% set favoriteMovies = collections.movies | filterFavorites | reverse | limit(6) %}
 {% set favoriteShows = collections.shows | filterFavorites | reverse | limit(6) %}
 
-<section class="mb-12">
+{% if recentMovies.length > 0 %}
+<section class="mb-12" aria-labelledby="recent-movies">
   <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-2xl">Filmes Recentes</h2>
-    <a href="/watching/movies/" class="text-purple-600 dark:text-purple-400 text-sm hover:underline">Ver todos →</a>
+    <h2 class="font-bold text-blood-red-950 text-2xl" id="recent-movies">
+      <span aria-hidden="true">🍿</span> Filmes Recentes
+    </h2>
+    <a href="/watching/movies/" class="text-vistaBlue-600 dark:text-vistaBlue-400 text-sm hover:underline">Ver todos →</a>
   </div>
 
   {% if recentMovies.length > 0 %}
@@ -51,18 +54,19 @@ permalink: /watching/
             <img
               src="{{ movie.data.poster }}"
               alt="{{ movie.data.title }}"
-              class="rounded w-full aspect-[2/3] object-cover"
+              class="rounded w-full object-cover aspect-2/3"
               loading="lazy"
             >
           {% else %}
-            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+            <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-2/3">
               <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
+          <p>{{ movie.data.director }}</p>
           <div class="mt-2">
             <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ movie.data.title }}</h3>
             {% if movie.data.rating %}
-              <p class="text-yellow-500 text-xs flex items-center gap-1">
+              <p class="flex items-center gap-1 text-yellow-500 text-xs">
                 {% for i in range(1, 6) %}
                   {% if i <= movie.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -74,14 +78,18 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-  <p class="text-[var(--text-secondary)]">Nenhum filme registrado ainda.</p>
+  <p class="text-errie-black-900">Nenhum filme registrado ainda.</p>
   {% endif %}
 </section>
+{% endif %}
 
-<section class="mb-12">
+{% if recentShows.length > 0 %}
+<section class="mb-12" aria-labelledby="shows-title">
   <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-2xl">Séries Recentes</h2>
-    <a href="/watching/shows/" class="text-purple-600 dark:text-purple-400 text-sm hover:underline">Ver todos →</a>
+    <h2 class="font-bold text-blood-red-950 text-2xl" id="shows-title">
+      <span aria-hidden="true">📺</span> Séries Recentes
+    </h2>
+    <a href="/watching/shows/" class="text-vistaBlue-600 dark:text-vistaBlue-400 text-sm hover:underline">Ver todos →</a>
   </div>
 
   {% if recentShows.length > 0 %}
@@ -93,18 +101,18 @@ permalink: /watching/
             <img
               src="{{ show.data.poster }}"
               alt="{{ show.data.title }}"
-              class="rounded w-full aspect-[2/3] object-cover"
+              class="rounded w-full object-cover aspect-[2/3]"
               loading="lazy"
             >
           {% else %}
-            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+            <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
               <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
             <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ show.data.title }}</h3>
             {% if show.data.rating %}
-              <p class="text-yellow-500 text-xs flex items-center gap-1">
+              <p class="flex items-center gap-1 text-yellow-500 text-xs">
                 {% for i in range(1, 6) %}
                   {% if i <= show.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -116,13 +124,17 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-  <p class="text-[var(--text-secondary)]">Nenhum seriado registrado ainda.</p>
+  <p class="text-errie-black-950">Nenhum seriado registrado ainda.</p>
   {% endif %}
 </section>
+{% endif %}
 
-<section class="mb-12">
-  <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-2xl">Filmes Favoritos</h2>
+{% if favoriteMovies.length > 0 %}
+<section class="mb-12" aria-labelledby="favorite-movies">
+  <div class="flex items-center gap-3 mb-6" id="favorite-movies">
+    <h2 class="font-bold text-blood-red-950 text-2xl">
+      <span aria-hidden="true">⭐</span> Filmes Favoritos
+    </h2>
   </div>
 
   {% if favoriteMovies.length > 0 %}
@@ -134,18 +146,18 @@ permalink: /watching/
             <img
               src="{{ movie.data.poster }}"
               alt="{{ movie.data.title }}"
-              class="rounded w-full aspect-[2/3] object-cover"
+              class="rounded w-full object-cover aspect-[2/3]"
               loading="lazy"
             >
           {% else %}
-            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+            <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
               <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
             <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ movie.data.title }}</h3>
             {% if movie.data.rating %}
-              <p class="text-yellow-500 text-xs flex items-center gap-1">
+              <p class="flex items-center gap-1 text-yellow-500 text-xs">
                 {% for i in range(1, 6) %}
                   {% if i <= movie.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -157,13 +169,17 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-  <p class="text-[var(--text-secondary)]">Nenhum filme favorito ainda.</p>
+  <p class="text-errie-black-950">Nenhum filme favorito ainda.</p>
   {% endif %}
 </section>
+{% endif %}
 
-<section class="mb-12">
+{% if favoriteShows.length > 0 %}
+<section class="mb-12" aria-labelledby="favorite-shows">
   <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-2xl">Séries Favoritas</h2>
+    <h2 class="font-bold text-blood-red-950 text-2xl" id="favorite-shows">
+      <span aria-hidden="true">⭐</span> Séries Favoritas
+    </h2>
   </div>
 
   {% if favoriteShows.length > 0 %}
@@ -175,18 +191,18 @@ permalink: /watching/
             <img
               src="{{ show.data.poster }}"
               alt="{{ show.data.title }}"
-              class="rounded w-full aspect-[2/3] object-cover"
+              class="rounded w-full object-cover aspect-[2/3]"
               loading="lazy"
             >
           {% else %}
-            <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+            <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
               <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
             <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ show.data.title }}</h3>
             {% if show.data.rating %}
-              <p class="text-yellow-500 text-xs flex items-center gap-1">
+              <p class="flex items-center gap-1 text-yellow-500 text-xs">
                 {% for i in range(1, 6) %}
                   {% if i <= show.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -198,6 +214,13 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-  <p class="text-[var(--text-secondary)]">Nenhuma série favorita ainda.</p>
+  <p class="text-errie-black-950">Nenhuma série favorita ainda.</p>
   {% endif %}
 </section>
+{% endif %}
+
+{% if yearMovies.length == 0 and yearShows.length == 0 %}
+<p class="py-12 text-errie-black-950 text-center">
+  Nenhum filme ou série registrado para {{ year }}.
+</p>
+{% endif %}

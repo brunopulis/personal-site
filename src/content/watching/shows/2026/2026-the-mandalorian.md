@@ -3,7 +3,8 @@ title: "The Mandalorian"
 director: Jon Favreau
 category: Sci-Fi & Fantasy, Action & Adventure
 status: Quero assistir
-rating: 
+rating: 5
+favorite: true
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg

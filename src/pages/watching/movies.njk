@@ -5,8 +5,8 @@ permalink: /watching/movies/
 ---
 
 <section class="mb-8">
-  <nav class="text-sm mb-4">
-    <a href="/watching/" class="text-purple-600 dark:text-purple-400 hover:underline">Watching</a>
+  <nav class="mb-4 text-sm">
+    <a href="/watching/" class="text-vistaBlue-600 dark:text-vistaBlue-400 hover:underline">Filmes e Séries</a>
     <span class="mx-2">→</span>
     <span>Filmes</span>
   </nav>
@@ -38,11 +38,11 @@ permalink: /watching/movies/
               <img
                 src="{{ movie.data.poster }}"
                 alt="{{ movie.data.title }}"
-                class="rounded w-full aspect-[2/3] object-cover"
+                class="rounded w-full object-cover aspect-[2/3]"
                 loading="lazy"
               >
             {% else %}
-              <div class="flex justify-center items-center bg-gradient-to-br from-purple-500 to-pink-500 rounded w-full aspect-[2/3]">
+              <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
                 <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
               </div>
             {% endif %}
@@ -52,7 +52,7 @@ permalink: /watching/movies/
                 <p class="text-[var(--text-secondary)] text-xs">{{ movie.data.director }}</p>
               {% endif %}
               {% if movie.data.rating %}
-                <p class="text-yellow-500 text-xs flex items-center gap-1">
+                <p class="flex items-center gap-1 text-yellow-500 text-xs">
                   {% for i in range(1, 6) %}
                     {% if i <= movie.data.rating %}⭐{% endif %}
                   {% endfor %}
