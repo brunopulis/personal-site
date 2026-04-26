@@ -195,17 +195,17 @@
   {% endif %}
   {% endif %}
 </head>
-<body class="flex flex-col bg-[var(--bg)] min-h-screen text-[var(--text)]">
+<body class="flex flex-col bg-white min-h-screen text-errie-black-950">
   <a href="#main-content" class="sr-only">Ir para conteúdo principal</a>
   <div id="progress-bar" aria-hidden="true"></div>
-  <header class="bg-[var(--surface)] border-gray-200 dark:border-gray-700 border-b">
+  <header class="bg-light-silver-100 border-gray-200 dark:border-gray-700 border-b">
     <div class="flex items-center gap-3 mx-auto px-4 py-3 container">
       <a class="font-semibold text-lg" href="/">
-        <img src="/assets/images/pulis.webp" alt="" srcset="" style="max-width: 100%; width: 64px; height: 64px; border-radius: 50%;">
+        <img src="/assets/images/pulis-8bits.png" alt="" class="rounded-full" style="max-width: 100%; width: 64px; height: 64px;">
       </a>
       <form class="hidden sm:block ml-auto" role="search" aria-label="Site" action="/search/" method="get">
         <label class="sr-only" for="q">Pesquisar</label>
-        <input id="q" name="q" type="search" placeholder="pesquise um termo..." class="px-3 py-2 border rounded w-64" />
+        <input id="q" name="q" type="search" placeholder="pesquise um termo..." class="bg-white px-3 py-2 border rounded w-64" />
       </form>
       <button id="hamburger" class="md:hidden p-2 border border-gray-300 dark:border-gray-600 rounded" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
         <span class="block bg-gray-700 dark:bg-gray-200 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
@@ -215,7 +215,7 @@
     </div>
   </header>
 
-  <nav class="bg-[var(--surface)] border-gray-200 dark:border-gray-700 border-b">
+  <nav class="bg-light-silver-100 border-gray-200 dark:border-gray-700 border-b">
     <div id="primary-nav" class="hidden md:block mx-auto px-4 py-2 container">
       {% set url = page.url or '/' %}
       {% set isHome = url == '/' %}
@@ -227,6 +227,7 @@
       {% set isExplore = url == '/explore/' %}
       {% set isGuestBook = url == '/guestbook/' %}
       {% set isContact = url == '/contact/' %}
+      {% set isWatching = (url and (url | slice(0, 9) == '/watching/')) %}
       <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
         <li>
           <a href="/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isHome %}underline font-semibold{% endif %}"
@@ -246,13 +247,14 @@
           </a>
         </li>
         <li>
-          <a href="/newsletters/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNewsletter %}underline font-semibold{% endif %}"
-            {% if isNewsletter %}aria-current="page"{% endif %}><span aria-hidden="true">📥</span> Newsletter
+          <a href="/watching/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isWatching %}underline font-semibold{% endif %}"
+            {% if isWatching %}aria-current="page"{% endif %}><span aria-hidden="true">🍿</span> Filmes e Séries
           </a>
         </li>
         <li>
-          <a href="/explore/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
-            {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
+          <a href="/newsletters/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNewsletter %}underline font-semibold{% endif %}"
+            {% if isNewsletter %}aria-current="page"{% endif %}><span aria-hidden="true">📥</span> Newsletter
+          </a>
         </li>
         <li>
           <a href="/guestbook/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isGuestBook %}underline font-semibold{% endif %}"
@@ -261,6 +263,10 @@
         <li>
           <a href="/contact/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isContact %}underline font-semibold{% endif %}"
             {% if isContact %}aria-current="page"{% endif %}><span aria-hidden="true">📱</span> Contato</a>
+        </li>
+        <li>
+          <a href="/explore/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
+            {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
         </li>
       </ul>
     </div>
