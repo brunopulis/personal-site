@@ -3,7 +3,7 @@ title: "Casa de Davi"
 director: Jon Erwin
 category: Drama
 status: assistindo
-rating: 
+rating: 5
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/fazOtYrDnlDi3YXdJeBSdr51exl.jpg

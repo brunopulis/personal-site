@@ -3,7 +3,8 @@ title: "Reacher"
 director: Nick Santora
 category: Action & Adventure, Drama, Crime
 status: assistido
-rating: 
+rating: 5
+favorite: true
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/c9JwFbaBWarL9fwo1NSqsiTj7Zh.jpg

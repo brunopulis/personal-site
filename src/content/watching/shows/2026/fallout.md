@@ -3,7 +3,8 @@ title: "Fallout"
 director: Graham Wagner, Geneva Robertson-Dworet
 category: Action & Adventure, Sci-Fi & Fantasy
 status: assistindo
-rating: 
+rating: 5
+favorite: true
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/tQRX6GbYooU7kUaarKf5YXDTONy.jpg
