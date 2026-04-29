@@ -4,7 +4,7 @@ author: 'Tony Reinke'
 category: ''
 status: 'lido'
 rating: 5
-cover: 'https://m.media-amazon.com/images/I/91Xrc4wuPqL._SL1500_.jpg'
+poster: 'https://m.media-amazon.com/images/I/91Xrc4wuPqL._SL1500_.jpg'
 description: 'Que imagens devem alimentar nossos olhos? Nunca paramos para considerar os efeitos de nossa dieta visual sobre nossos hábitos, desejos e anseios'
 thoughts: ''
 quotes: ''

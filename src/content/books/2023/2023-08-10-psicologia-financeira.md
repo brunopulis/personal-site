@@ -5,7 +5,7 @@ author: 'Morgan Housel'
 category: 'Finanças'
 status: 'lido'
 rating: 5
-cover: 'https://m.media-amazon.com/images/I/71vZp6yONLL._SL1500_.jpg'
+poster: 'https://m.media-amazon.com/images/I/71vZp6yONLL._SL1500_.jpg'
 description: ''
 thoughts: ''
 quotes: ''

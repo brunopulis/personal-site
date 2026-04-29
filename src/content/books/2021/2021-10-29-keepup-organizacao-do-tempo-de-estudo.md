@@ -4,7 +4,7 @@ author: ''
 category: ''
 status: 'lido'
 rating: 4
-cover: ''
+poster: ''
 description: ''
 thoughts: 'Excelente livro, cumpre o que propõe dando dicas valiosas sobre organização de tempo, estudo e prioridades nas atividades acadêmicas.'
 quotes: ''

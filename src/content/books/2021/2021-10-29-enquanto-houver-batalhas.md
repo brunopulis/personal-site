@@ -4,7 +4,7 @@ author: ''
 category: ''
 status: 'lido'
 rating: 5
-cover: ''
+poster: ''
 description: ''
 thoughts: 'Uma brilhante forma de usar personagens bíblicos com a história do nosso país'
 quotes: ''

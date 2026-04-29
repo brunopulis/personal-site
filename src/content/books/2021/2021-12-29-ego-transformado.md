@@ -4,7 +4,7 @@ author: ''
 category: ''
 status: 'lido'
 rating: 5
-cover: ''
+poster: ''
 description: ''
 thoughts: 'De maneira clara e objetiva Keller escancara as raízes do orgulho e demonstra que o nosso problema maior encontra-se em um ego insaciável e ferido.'
 quotes: ''

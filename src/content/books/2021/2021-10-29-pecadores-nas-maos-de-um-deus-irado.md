@@ -4,7 +4,7 @@ author: ''
 category: ''
 status: 'lido'
 rating: 5
-cover: ''
+poster: ''
 description: ''
 thoughts: 'Um dos maiores clássicos da literatura cristã. Edwards de forma direta e sucinta nos aponta a nossa natureza corrompida perante a ira latente do Deus vivo. Um sermão impactante e profundo que vale nossa reflexão constante.'
 quotes: ''
