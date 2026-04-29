@@ -1,10 +1,10 @@
 {
-  "totalPosts": 110,
+  "totalPosts": 111,
   "totalNewsletters": 51,
-  "totalContent": 161,
-  "totalWords": 88238,
-  "averageWordsPerPost": 802,
-  "totalTags": 43,
+  "totalContent": 162,
+  "totalWords": 88333,
+  "averageWordsPerPost": 796,
+  "totalTags": 44,
   "allTags": [
     "100DaysToOffLoad",
     "11ty",
@@ -12,6 +12,7 @@
     "Automação",
     "IA",
     "Minimalismo Digital",
+    "Pessoal",
     "QA",
     "Redes Sociais",
     "Reflexão",
@@ -63,7 +64,7 @@
     "2023": 4,
     "2024": 10,
     "2025": 2,
-    "2026": 11
+    "2026": 12
   },
   "yearsSorted": [
     "2026",
