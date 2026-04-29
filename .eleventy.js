@@ -195,6 +195,12 @@ export default async function (eleventyConfig) {
         decoding: 'async'
       },
       pictureAttributes: {}
+    },
+    cacheOptions: {
+      duration: '30d'
+    },
+    fetchOptions: {
+      timeout: 60000
     }
   });
 
