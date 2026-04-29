@@ -36,7 +36,7 @@ permalink: /watching/movies/
           <a href="{{ movie.url }}" class="block">
             {% if movie.data.poster %}
               <img
-                src="{{ movie.data.poster }}"
+                src="{{ movie.data.poster | localPoster }}"
                 alt="{{ movie.data.title }}"
                 class="rounded w-full object-cover aspect-[2/3]"
                 loading="lazy"

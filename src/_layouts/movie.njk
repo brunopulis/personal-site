@@ -6,7 +6,7 @@ layout: base.njk
     <div class="flex gap-6 mb-6">
       {% if poster %}
         <img
-          src="{{ poster }}"
+          src="{{ poster | localPoster }}"
           alt="{{ title }}"
           class="w-48 h-72 object-cover rounded-lg shadow-lg"
           loading="lazy"

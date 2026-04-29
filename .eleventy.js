@@ -40,6 +40,12 @@ export default async function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter('toIsoString', filters.toISOString);
+
+  eleventyConfig.addFilter('localPoster', (url) => {
+    if (!url || !url.includes('image.tmdb.org')) return url;
+    const filename = url.split('/').pop();
+    return `/assets/images/posters/${filename}`;
+  });
   eleventyConfig.addFilter('formatDate', filters.formatDate);
   eleventyConfig.addFilter('markdownFormat', filters.markdownFormat);
   eleventyConfig.addFilter('splitlines', filters.splitlines);
