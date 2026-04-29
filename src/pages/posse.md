@@ -12,7 +12,7 @@ Estou num processo de transição e a intenção é que todas as minhas postagen
 meu site e depois compartilhadas automaticamente (ou "sindicadas") em vários sites de mídia social
 usando.
 
-Isso geralmente é chamado <abbr title="Publique em seu próprio site, Sindique em outro lugar">*[POSSE]: </abbr>
+Isso geralmente é chamado *[POSSE]:
 
 POSSE é uma abreviação de Publicar (em seu) próprio site, Sindicar em outro lugar, a prática de postar
 conteúdo em seu próprio site primeiro e depois publicar cópias ou compartilhar links com terceiros
