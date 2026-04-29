@@ -5,7 +5,7 @@ author: 'Fiola Publishing'
 category: 'produtividade'
 status: 'lido'
 rating: 4
-cover: 'https://m.media-amazon.com/images/I/81hJoh5BK4L._SL1500_.jpg'
+poster: 'https://m.media-amazon.com/images/I/81hJoh5BK4L._SL1500_.jpg'
 description: ''
 thoughts: ''
 quotes: ''

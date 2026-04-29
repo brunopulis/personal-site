@@ -4,7 +4,7 @@ author: 'Masami Kurumada'
 category: ''
 status: 'lido'
 rating: 5
-cover: 'https://m.media-amazon.com/images/I/710nJRuFLOL._SL1000_.jpg'
+poster: 'https://m.media-amazon.com/images/I/710nJRuFLOL._SL1000_.jpg'
 description: 'Dégel, o Cavaleiro de Ouro de Aquário, tem uma importante missão dada pelo Santuário: encontrar seu mestre, que está desaparecido. '
 thoughts: ''
 quotes: ''

@@ -5,7 +5,7 @@ author: 'William H. Mcraven'
 category: ''
 status: 'lido'
 rating: 5
-cover: 'https://m.media-amazon.com/images/I/81C7jAnjS3L._SL1500_.jpg'
+poster: 'https://m.media-amazon.com/images/I/81C7jAnjS3L._SL1500_.jpg'
 description: 'Quando foi convidado para proferir a aula inaugural dos alunos de graduação da Universidade do Texas, o almirante William McRaven pensou em compartilhar suas lições sobre liderança.'
 thoughts: ''
 quotes: ''

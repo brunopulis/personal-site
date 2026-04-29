@@ -1,0 +1,71 @@
+---
+layout: base.njk
+title: Séries
+permalink: /watching/shows/
+---
+
+<section class="mb-8">
+  <nav class="text-sm mb-4">
+    <a href="/watching/" class="text-vistaBlue-600 dark:text-vistaBlue-400 hover:underline">Watching</a>
+    <span class="mx-2">→</span>
+    <span>Séries</span>
+  </nav>
+  <h1 class="mb-2 font-bold text-3xl">Séries</h1>
+  <p class="text-[var(--text-secondary)]">
+    Todas as séries que assisti.
+  </p>
+</section>
+
+{% set showsGrouped = collections.shows | showsByYear %}
+
+{% for year in showsGrouped.years %}
+  {% set yearShows = showsGrouped.byYear[year] %}
+  {% set showCount = yearShows | length %}
+
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <h2 class="font-bold text-2xl">{{ year }}</h2>
+      <span class="bg-[var(--surface)] px-3 py-1 border rounded-full text-[var(--text-secondary)] text-sm">
+        {{ showCount }} {{ "série" if showCount == 1 else "séries" }}
+      </span>
+    </div>
+
+    <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {% for show in yearShows | reverse %}
+        <article>
+          <a href="{{ show.url }}" class="block">
+            {% if show.data.poster %}
+              <img
+                src="{{ show.data.poster | localPoster }}"
+                alt="{{ show.data.title }}"
+                class="rounded w-full aspect-[2/3] object-cover"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
+                <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
+              </div>
+            {% endif %}
+            <div class="mt-2">
+              <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ show.data.title }}</h3>
+              {% if show.data.category %}
+                <p class="text-[var(--text-secondary)] text-xs">{{ show.data.category }}</p>
+              {% endif %}
+              {% if show.data.rating %}
+                <p class="text-yellow-500 text-xs flex items-center gap-1">
+                  {% for i in range(1, 6) %}
+                    {% if i <= show.data.rating %}⭐{% endif %}
+                  {% endfor %}
+                </p>
+              {% endif %}
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% else %}
+  <p class="py-12 text-[var(--text-secondary)] text-center">
+    Nenhuma série registrada ainda.
+  </p>
+{% endfor %}

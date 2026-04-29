@@ -4,9 +4,9 @@ author: ""
 category: ""
 status: "lido"
 rating: 5
-cover: ""
+poster: ""
 description: ""
-thoughts: "Um dos melhores livros sobre masculinidade bíblica, direto e objetivo a pontos cruciais que nossa sociedade esqueceu.  
+thoughts: "Um dos melhores livros sobre masculinidade bíblica, direto e objetivo a pontos cruciais que nossa sociedade esqueceu.
 
 É uma pedida urgente para os homens de nossa geração."
 quotes: ""

@@ -4,7 +4,7 @@ author: ''
 category: ''
 status: 'lido'
 rating: 1
-cover: ''
+poster: ''
 description: ''
 thoughts: ''
 quotes: ''
