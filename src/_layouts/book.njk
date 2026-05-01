@@ -1,6 +1,22 @@
 ---
-layout: base.njk
+layout: base
+title: "Livros"
 ---
+
+<a href="/bookshelf/" class="inline-flex items-center mb-3 text-vista-blue-500 hover:text-vista-blue-600">
+  <span aria-hidden="true">←</span> Voltar para Livros
+</a>
+
+<nav class="mb-4 text-sm" aria-label="Breadcrumb">
+  <ol class="flex space-x-2">
+    <li><a href="/" class="hover:text-blue-600">Home</a></li>
+    <li><span aria-hidden="true">›</span></li>
+    <li><a href="/blog/" class="hover:text-blue-600">Filmes e Séries</a></li>
+    <li><span aria-hidden="true">›</span></li>
+    <li class="font-bold text-gray-900">{{ title }}</li>
+  </ol>
+</nav>
+
 <article class="mx-auto max-w-4xl">
   <header class="mb-8">
     <div class="flex gap-6 mb-6">
@@ -15,7 +31,7 @@ layout: base.njk
       <div>
         <h1 class="mb-2 font-bold text-4xl">{{ title }}</h1>
         {% if director %}
-          <p class="text-[var(--text-secondary)] text-lg">Dirigido por {{ director }}</p>
+          <p class="text-lg">Dirigido por {{ director }}</p>
         {% endif %}
         {% if rating %}
           <div class="flex items-center gap-1 mt-2" aria-label="Nota: {{ rating }} de 5">
