@@ -1,5 +1,5 @@
 ---
-title: 'Roube Como Um Artista: 10 Dicas Sobre Criatividade'
+title: 'A Arte não Precisa de Justificativa'
 author: ''
 category: ''
 status: 'lido'
@@ -8,9 +8,8 @@ poster: ''
 description: ''
 thoughts: ''
 quotes: ''
-attendedYear: '2023'
+attendedYear: '2018'
 recommendBy: ''
 tags: []
 url: ''
-pubDate: 2023-11-24
 ---

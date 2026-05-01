@@ -6,9 +6,7 @@ status: "lido"
 rating: 5
 poster: ""
 description: ""
-thoughts: "Um dos melhores livros sobre masculinidade bíblica, direto e objetivo a pontos cruciais que nossa sociedade esqueceu.
-
-É uma pedida urgente para os homens de nossa geração."
+thoughts: "Um dos melhores livros sobre masculinidade bíblica, direto e objetivo a pontos cruciais que nossa sociedade esqueceu. É uma pedida urgente para os homens de nossa geração."
 quotes: ""
 attendedYear: "2021"
 recommendBy: ""

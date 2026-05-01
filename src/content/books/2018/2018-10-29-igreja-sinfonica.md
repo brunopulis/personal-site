@@ -1,9 +1,9 @@
 ---
-title: 'Contra o Fluxo'
+title: 'Igreja sinfônica: Um chamado radical pela unidade dos cristãos'
 author: ''
 category: ''
 status: 'lido'
-rating: 4
+rating: 5
 poster: ''
 description: ''
 thoughts: ''
@@ -12,5 +12,4 @@ attendedYear: '2018'
 recommendBy: ''
 tags: []
 url: ''
-pubDate: 2021-10-29
 ---

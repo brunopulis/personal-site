@@ -1,7 +1,7 @@
 ---
 title: 'Enquanto houver batalhas'
-author: ''
-category: ''
+author: 'Emilio Garofalo Neto'
+category: 'Fantasia'
 status: 'lido'
 rating: 5
 poster: ''

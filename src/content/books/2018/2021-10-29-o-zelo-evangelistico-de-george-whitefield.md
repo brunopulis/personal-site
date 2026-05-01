@@ -1,5 +1,5 @@
 ---
-title: 'Igreja sinfônica: Um chamado radical pela unidade dos cristãos'
+title: 'O zelo evangelístico de George Whitefield'
 author: ''
 category: ''
 status: 'lido'

@@ -1,7 +1,7 @@
 ---
-title: 'Estratégias de leitura para ler e compreender melhor (Super Aprendizado)'
-author: ''
-category: ''
+title: 'Cartas de um Diabo a Seu Aprendiz'
+author: 'C.S.Lewis'
+category: 'Fantasia'
 status: 'lido'
 rating: 5
 poster: ''

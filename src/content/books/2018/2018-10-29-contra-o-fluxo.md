@@ -1,9 +1,9 @@
 ---
-title: 'Cinco pontos: Em direção a uma experiência mais profunda da graça de Deus'
-author: ''
+title: 'Contra o Fluxo'
+author: 'Augustus Nicodemus'
 category: ''
 status: 'lido'
-rating: 5
+rating: 4
 poster: ''
 description: ''
 thoughts: ''
