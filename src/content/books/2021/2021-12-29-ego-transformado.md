@@ -1,7 +1,7 @@
 ---
 title: 'Ego transformado'
-author: ''
-category: ''
+author: 'Timothy Keller'
+category: 'Teologia'
 status: 'lido'
 rating: 5
 poster: ''

@@ -1,5 +1,6 @@
 ---
-title: 'KeepUp: Organização do Tempo de Estudo'
+title: 'KeepUp'
+subtitle: 'Organização do Tempo de Estudo'
 author: ''
 category: ''
 status: 'lido'

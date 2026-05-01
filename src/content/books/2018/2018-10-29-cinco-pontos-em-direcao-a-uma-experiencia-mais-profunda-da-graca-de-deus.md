@@ -1,9 +1,10 @@
 ---
-title: 'O Retorno do Rei (O Senhor dos Anéis, #3)'
+title: 'Cinco pontos'
+subtitle: 'Em direção a uma experiência mais profunda da graça de Deus'
 author: ''
 category: ''
 status: 'lido'
-rating: 0
+rating: 5
 poster: ''
 description: ''
 thoughts: ''
@@ -12,5 +13,5 @@ attendedYear: '2018'
 recommendBy: ''
 tags: []
 url: ''
-pubDate: 2021-07-18
+pubDate: 2021-10-29
 ---

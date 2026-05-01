@@ -1,5 +1,6 @@
 ---
-title: 'O zelo evangelístico de George Whitefield (Um Perfil de Homens Piedosos)'
+title: 'Minimalismo 2.0'
+subtitle: 'Como simplificar sua vida no século XXI (e diminuir seu impacto no meio ambiente)'
 author: ''
 category: ''
 status: 'lido'
@@ -8,7 +9,7 @@ poster: ''
 description: ''
 thoughts: ''
 quotes: ''
-attendedYear: '2018'
+attendedYear: '2019'
 recommendBy: ''
 tags: []
 url: ''

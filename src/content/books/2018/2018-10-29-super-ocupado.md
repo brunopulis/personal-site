@@ -1,8 +1,9 @@
 ---
-title: "Super ocupado: Um livro (misericordiosamente) pequeno sobre um problema (realmente) grande"
-author: "Kevin DeYoung"
+title: 'Super ocupado'
+subtitle: 'Um livro (misericordiosamente) pequeno sobre um problema (realmente) grande'
+author: 'Kevin DeYoung'
 category: ""
-status: "lido"
+status: 'lido'
 rating: 5
 poster: "https://m.media-amazon.com/images/I/81sOuZIb0aL._SL1500_.jpg"
 description: "Mais do que dar dicas batidas de gerenciamento de tempo, DeYoung oferece princípios bíblicos que nos ajudam a entender o motivo de estarmos tão ocupados"
