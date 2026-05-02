@@ -1,0 +1,26 @@
+<section class="mb-8" aria-labelledby="notes-title">
+  <h2 class="flex items-center gap-2 mb-6 font-semibold text-2xl" id="posts-title">
+    <span aria-hidden="true">🗒️</span> Últimas notas
+  </h2>
+
+  {% set notes = collections.notes %}
+  <div class="space-y-8">
+    {% for note in notes | head(3)  %}
+      <article class="bg-light-silver-100 p-6 border border-light-silver-100 border-b rounded-lg h-entry">
+        <time class="pb-4 text-xs dt-published" datetime="{{ note.date | htmlDateString }}">
+          {{ note.date | readableDate }}
+        </time>
+
+        <div class="max-w-none e-content prose">
+          {{ note.content | safe }}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="mt-8">
+    <a href="/notes" class="inline-flex items-center gap-2 text-vista-blue-600 underline hover:no-underline">
+      Ver todas as notas
+    </a>
+  </div>
+</section>
