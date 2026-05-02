@@ -2,7 +2,7 @@
 title: 'Ídolos e idolatrias'
 excerpt: 'Desde o Gênese da criação, o homem tem a tendência maligna em criar ídolos para si, João Calvino costuma dizer: "O coração do homem é uma…'
 pubDate: 2017-06-20T04:21:26.070Z
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 ## Ídolos e idolatrias

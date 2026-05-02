@@ -1,11 +1,11 @@
 ---
-title: 'Como a teologia me ajudou a palestrar'
+title: 'Como a cristianismo me ajudou a palestrar'
 excerpt: 'Disclaimer'
 pubDate: 2018-06-14T04:06:47.968Z
 tags: ['pessoal', 'cristianismo']
 ---
 
-## Como a teologia me ajudou a palestrar
+## Como a cristianismo me ajudou a palestrar
 
 Palestra no DevFest Nordest 2017.
 
@@ -21,15 +21,15 @@ Uma das coisas que senti mais falta foi a interação da comunidade de desenvolv
 
 Retornando, me deparei com a iniciativa [help4Papers](https://twitter.com/help4papers) que tem como objetivo auxiliar desenvolvedores que querem começar a palestrar, achei fantástico a disponibilidade e boa vontade dos fundadores em ajudar as pessoas. Eles têm algumas dicas bem legais e vale a pena segui-los.
 
-## O que teologia tem haver com isso?
+## O que cristianismo tem haver com isso?
 
-TTalvez você estranhou o título desse post, mas irei explicar. Para quem me conhece, sabe que sou apaixonado por duas coisas: **teologia** e **frontend.** Minha história com teologia vem desde a adolescência, sempre fui uma pessoa curiosa que procurava conhecer os princípios e fundamentos de como o mundo funciona. Aprendi um pouco de grego e hebraico e fui tomando gosto pela coisa.
+TTalvez você estranhou o título desse post, mas irei explicar. Para quem me conhece, sabe que sou apaixonado por duas coisas: **cristianismo** e **frontend.** Minha história com cristianismo vem desde a adolescência, sempre fui uma pessoa curiosa que procurava conhecer os princípios e fundamentos de como o mundo funciona. Aprendi um pouco de grego e hebraico e fui tomando gosto pela coisa.
 
 Na faculdade de TI me interessei mais pelo o frontend, pelo fato de lidar com problemas reais que os usuários passam com interfaces. O fascínio pela experiência do usuário e as possibilidades que o CSS oferecia me encantou na época e, mais tarde, me apaixonei por acessibilidade web.
 
 ## Unindo paixões
 
-Na teologia não estudamos somente a Bíblia, temos diversas matérias como: sociologia, psicologia, antropologia e filosofia. Uma das matérias que me ajudou foi a Homilética, que por definição é:
+Na cristianismo não estudamos somente a Bíblia, temos diversas matérias como: sociologia, psicologia, antropologia e filosofia. Uma das matérias que me ajudou foi a Homilética, que por definição é:
 
 > _É a_ **_arte de pregar_**_, ou seja,_ **_utilizar os princípios da retórica com a finalidade específica de falar sobre o conteúdo da bíblia_** _sagrada cristã._
 

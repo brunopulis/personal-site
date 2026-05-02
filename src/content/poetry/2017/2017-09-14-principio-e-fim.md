@@ -2,7 +2,7 @@
 title: "Princípio e fim"
 excerpt: "Há de raiar um novo dia, onde o princípio não terá mais fim."
 pubDate: 2017-09-14T16:26:27.288Z
-tags: ['poesia', 'teologia']
+tags: ['poesia', 'cristianismo']
 ---
 
 ## Princípio e fim

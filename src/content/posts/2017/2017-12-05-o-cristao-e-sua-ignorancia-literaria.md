@@ -48,9 +48,9 @@ O grande problema sobre isso é a falta de fundamentação bíblica. Se não há
 
 Além desse fato, vivem uma fé sem bases morais/éticas indo à deriva como um barco sem velas em alto mar. Qualquer alimento que venha de "Deus" está bom, pois a capacidade de racionalização da fé é quase nula.
 
-Para tratar esse problema a teologia é a solução, parafraseando Chesterton:
+Para tratar esse problema a cristianismo é a solução, parafraseando Chesterton:
 
-> A teologia é a parte da fé que nos faz pensar.
+> A cristianismo é a parte da fé que nos faz pensar.
 
 Nossa fé deve ser racionalizada. Não devemos ir pelos embalos de um sábado a noite, mas sim, temos que reter o que é bom. Cristo não nos salvou para nos tornamos pessoas burras, mas sim sábias.
 

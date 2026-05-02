@@ -9,13 +9,18 @@ pagination:
 permalink: '/poetry/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
 ---
 
-<h1 class="mb-4 font-bold text-2xl">Poetry</h1>
-<p class="mb-6 text-gray-600 dark:text-gray-400">Collected poems with their own pages.</p>
+<h1 class="mb-4 font-bold text-blood-red-950 text-2xl">
+  {{ title }}
+</h1>
+
+<p class="mb-6">
+  Coleção de poemas que escrevi ou que gostei.
+</p>
 
 {% set items = items | default([]) %}
 {% if items | length == 0 %}
-  <p class="text-gray-500 dark:text-gray-400 italic">
-    No poems yet. Add files under <code>src/poetry/</code>.
+  <p class="italic">
+    Nenhum poema cadastrado.
   </p>
 {% else %}
   <section class="space-y-6">
@@ -25,36 +30,39 @@ permalink: '/poetry/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNum
           <a href="{{ item.url }}">{{ item.data.title or 'Untitled' }}</a>
         </h2>
         {% if item.date %}
-          <time class="text-gray-500 text-xs" datetime="{{ item.date | htmlDateString }}"
+          <time class="text-xs" datetime="{{ item.date | htmlDateString }}"
             >{{ item.date | readableDate }}</time
           >
         {% endif %}
       </article>
     {% endfor %}
   </section>
+
   <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
     {% if pagination.href.previous %}
       <a
-        class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded"
+        class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white"
         href="{{ pagination.href.previous }}"
-        >← Newer</a
+        >Anterior</a
       >
     {% else %}
-      <span class="px-4 py-2 text-gray-400">← Newer</span>
+      <span class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white">Anterior</span>
     {% endif %}
 
-    <span class="text-gray-600 dark:text-gray-400 text-sm"
-      >Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}</span
-    >
+    <span class="text-sm">
+      Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages | length }}
+    </span>
 
     {% if pagination.href.next %}
       <a
-        class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded"
-        href="{{ pagination.href.next }}"
-        >Older →</a
-      >
+        class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white"
+        href="{{ pagination.href.next }}">
+        Próximo
+      </a>
     {% else %}
-      <span class="px-4 py-2 text-gray-400">Older →</span>
+      <span class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white">
+        Próximo
+      </span>
     {% endif %}
   </nav>
 {% endif %}

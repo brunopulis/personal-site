@@ -2,7 +2,7 @@
 title: 'Razões para se orar'
 excerpt: 'Você já parou para pensar, porque devemos orar, quando e como? Confira nesse artigos as respostas para essas e outras perguntas.'
 pubDate: 2017-08-01T03:26:54.826Z
-tags: ['teologia', 'oração']
+tags: ['cristianismo', 'oração']
 ---
 
 ## Razões para se orar

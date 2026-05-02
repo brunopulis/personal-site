@@ -57,7 +57,7 @@ O problema do desfile, assim como o corinthianismo, é o desrespeito aos símbol
 
 ### Jesus e o Diabo e a Soberania de Deus
 
-A cena do desfile é uma inverdade. A teologia bíblica em nenhum momento relata uma luta onde o bem e o mal tem forças equiparadas.
+A cena do desfile é uma inverdade. A cristianismo bíblica em nenhum momento relata uma luta onde o bem e o mal tem forças equiparadas.
 
 Pelo contrário, as escrituras mostram o diabo como um ser finito, dotado de limitações. Enquanto Deus domina soberanamente em glória, onipotente, onipresente e onisciente.
 

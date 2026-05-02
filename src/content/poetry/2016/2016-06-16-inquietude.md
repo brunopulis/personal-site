@@ -2,7 +2,7 @@
 title: Inquietude
 pubDate: 2016-06-16
 url: https://brunopulis.com/inquietude/
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 E quando tudo fica meio bagunçado e você sem saber para onde correr?

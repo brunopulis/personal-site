@@ -20,19 +20,18 @@ title: Blog
           <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
         </h3>
         <time
-          class="text-gray-500 dark:text-gray-400 text-sm dt-published"
-          datetime="{{ post.date | htmlDateString }}"
-          >{{ post.date | readableDate }}</time
-        >
-        <div class="mt-2 p-summary text-gray-700 dark:text-gray-300">
+          class="text-sm dt-published"
+          datetime="{{ post.date | htmlDateString }}">
+          {{ post.date | readableDate }}
+        </time>
+        <div class="mt-2 p-summary">
           {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
         </div>
         {% if tags %}
           <div class="flex flex-wrap gap-2 my-2">
             {% for tag in tags %}
               <a
-                class="hover:opacity-80 p-category px-2 py-1 rounded text-white text-xs transition-opacity"
-                style="background-color: {{ tag | tagColor }}"
+                class="bg-vista-blue-500 p-category px-2 py-1 rounded font-bold text-errie-black-950 text-xs transition-colors"
                 href="/tags/{{ tag | slug }}/"
                 >#{{ tag }}</a
               >
@@ -45,12 +44,12 @@ title: Blog
 
   <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Anterior</a>
+      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.previous }}">Anterior</a>
     {% else %}
       <span></span>
     {% endif %}
     {% if pagination.href.next %}
-      <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Próximo</a>
+      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.next }}">Próximo</a>
     {% endif %}
   </nav>
 </div>

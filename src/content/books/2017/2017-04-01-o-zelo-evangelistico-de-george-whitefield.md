@@ -1,7 +1,7 @@
 ---
 title: 'O zelo evangelístico de George Whitefield'
 author: 'Steven J Lawson'
-category: 'Teologia'
+category: 'cristianismo'
 status: 'lido'
 rating: 5
 poster: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1469991419i/31303912.jpg'

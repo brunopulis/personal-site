@@ -41,7 +41,7 @@ export default async function (eleventyConfig) {
   // Filters
   eleventyConfig.addFilter('toIsoString', filters.toISOString);
 
-  eleventyConfig.addFilter('localPoster', (url) => {
+  eleventyConfig.addFilter('localPoster', url => {
     if (!url || !url.includes('image.tmdb.org')) return url;
     const filename = url.split('/').pop();
     return `/assets/images/posters/${filename}`;
@@ -59,9 +59,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('groupBy', groupBy);
   eleventyConfig.addFilter('booksByYear', filters.booksByYear);
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
-  eleventyConfig.addFilter('filterFavorites', (items) => filters.filterFavorites(items));
-  eleventyConfig.addFilter('filterNonFavorites', (items) => filters.filterNonFavorites(items));
-  eleventyConfig.addFilter('groupByYear', (items) => filters.groupByYear(items));
+  eleventyConfig.addFilter('filterFavorites', items => filters.filterFavorites(items));
+  eleventyConfig.addFilter('filterNonFavorites', items => filters.filterNonFavorites(items));
+  eleventyConfig.addFilter('groupByYear', items => filters.groupByYear(items));
   eleventyConfig.addFilter('filterByYear', (items, year) => filters.filterByYear(items, year));
   eleventyConfig.addFilter('showsByYear', filters.showsByYear);
   eleventyConfig.addFilter('showsByStatusAndYear', filters.showsByStatusAndYear);

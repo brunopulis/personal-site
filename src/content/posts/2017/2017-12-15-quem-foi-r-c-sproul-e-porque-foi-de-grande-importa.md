@@ -13,7 +13,7 @@ Casou-se com Vesta em 1960. Serviu no Gordon College em Massachusetts, Conwell T
 
 Em 1971, Sproul, Vesta e seus dois filhos, Sherrie e R.C. Jr. instalaram-se nas montanhas do oeste da Pensilvânia para servir no recém-estabelecido Centro de Estudo do Vale de Ligonier. R.C. publicou seu primeiro livro em 1973, **The Symbol**, uma exposição do Credo dos Apóstolos, ganhando um prêmio de livro do Christianity Today.
 
-R.C. liderou uma equipe de acadêmicos e escritores cristãos, o que viria a ser um dos documentos mais significativos da igreja do século XX, The Chicago Statement on Biblical Inerrancy. Em 1984, a equipe de Sprouls e Ligonier mudou-se para Orlando, Flórida. Além de liderar um ministério de rápido crescimento e entregar palestras para ensinar séries, Sproul também serviu como professor de teologia para um seminário reformado.
+R.C. liderou uma equipe de acadêmicos e escritores cristãos, o que viria a ser um dos documentos mais significativos da igreja do século XX, The Chicago Statement on Biblical Inerrancy. Em 1984, a equipe de Sprouls e Ligonier mudou-se para Orlando, Flórida. Além de liderar um ministério de rápido crescimento e entregar palestras para ensinar séries, Sproul também serviu como professor de cristianismo para um seminário reformado.
 
 ### Bibliografia
 
@@ -25,7 +25,7 @@ Em 1995 é lançada A Nova Bíblia de Estudo de Genebra, editada por R.C, introd
 
 Um traço distintivo do ensino de R.C. é o entendimento do fluxo de idéias. As Consequências das Idéias (2000) oferecem uma visão perspicaz da história da filosofia desde uma perspectiva cristã.
 
-O último livro lançado por Sproul é o “**Somos Todos Teólogos**”, uma abordagem a introdução a teologia sistemática.
+O último livro lançado por Sproul é o “**Somos Todos Teólogos**”, uma abordagem a introdução a cristianismo sistemática.
 
 Sproul também lançou uma série de livretos com temas sucintos, no qual, li sobre o tema de arrependimento. A série está disponibilizada para compra na Editora Fiel. A seguir, listo alguns títulos da série:
 
