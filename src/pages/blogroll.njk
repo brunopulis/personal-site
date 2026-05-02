@@ -6,9 +6,11 @@ eleventyComputed:
   description: 'Blogs e sites que sigo e recomendo na comunidade de desenvolvimento web, acessibilidade e IndieWeb.'
 ---
 
-<h1 class="mb-6 font-bold text-2xl">Blogroll</h1>
+<h1 class="mb-6 font-bold text-blood-red-950 text-2xl">
+  {{ title }}
+</h1>
 
-<div class="dark:prose-invert max-w-none prose prose-lg">
+<div class="max-w-none prose prose-lg">
   <p>
     Aqui estão alguns blogs e sites que sigo e recomendo. Esta é uma lista selecionada de criadores de
     conteúdo de qualidade nas comunidades de desenvolvimento web, acessibilidade e IndieWeb.
@@ -18,25 +20,25 @@ eleventyComputed:
 <div class="space-y-8 mt-8">
   {% for category in collections.blogrollCategories %}
     <section>
-      <h2 class="mb-4 font-semibold text-xl">{{ category }}</h2>
+      <h2 class="mb-4 font-semibold text-blood-red-950 text-xl">{{ category }}</h2>
       <div class="gap-4 grid grid-cols-1 md:grid-cols-2">
         {% for item in blogroll %}
           {% if item.category == category %}
-            <div
-              class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+            <article
+              class="bg-light-silver-100 p-4 border border-gray-200 hover:border-blood-red-950 dark:border-gray-700 dark:hover:border-blue-500 rounded-lg transition-colors"
             >
-              <h3 class="font-semibold">
+              <h3 class="font-semibold text-blood-red-950">
                 <a
                   href="{{ item.url }}"
                   target="_blank"
                   rel="noopener me"
-                  class="hover:text-blue-600 dark:hover:text-blue-400"
+                  class="underline hover:no-underline"
                   >{{ item.title }}</a
                 >
                 {% if item.rss %}
                   <a
                     href="{{ item.rss }}"
-                    class="text-xs ml-2 opacity-60 hover:opacity-100"
+                    class="opacity-60 hover:opacity-100 ml-2 text-xs"
                     aria-label="RSS Feed"
                   >
                     <svg class="inline w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -48,9 +50,9 @@ eleventyComputed:
                 {% endif %}
               </h3>
               {% if item.description %}
-                <p class="mt-1 text-gray-600 dark:text-gray-400 text-sm">{{ item.description }}</p>
+                <p class="mt-1 text-sm">{{ item.description }}</p>
               {% endif %}
-            </div>
+            </article>
           {% endif %}
         {% endfor %}
       </div>
@@ -61,7 +63,7 @@ eleventyComputed:
 <div class="bg-blue-50 dark:bg-blue-900/20 mt-8 p-4 rounded-lg">
   <p class="text-sm">
     <strong>Quer ser adicionado?</strong> Se você tem um blog que se encaixa nessas categorias, fique à
-    vontade para <a href="/contact/" class="text-blue-600 hover:text-blue-800">entrar em contato</a> e me
+    vontade para <a href="/contact/" class="text-blue-600 hover:text-blue-800 underline">entrar em contato</a> e me
     contar!
   </p>
 </div>

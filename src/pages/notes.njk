@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: base
 pagination:
   data: collections.notes
   size: 10
@@ -17,7 +17,7 @@ title: Notas
 
   <section class="space-y-8">
     {% for note in notes %}
-      <article class="bg-[var(--surface)] p-6 border border-purple-200 dark:border-purple-800 border-b rounded-lg h-entry">
+      <article class="bg-light-silver-100 p-6 border border-light-silver-100 border-b rounded-lg h-entry">
         <time class="pb-4 text-xs dt-published" datetime="{{ note.date | htmlDateString }}">
           {{ note.date | readableDate }}
         </time>
@@ -31,12 +31,12 @@ title: Notas
 
   <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Anterior</a>
+      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.previous }}">Anterior</a>
     {% else %}
       <span></span>
     {% endif %}
     {% if pagination.href.next %}
-      <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Próximo</a>
+      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.next }}">Próximo</a>
     {% endif %}
   </nav>
 </div>
