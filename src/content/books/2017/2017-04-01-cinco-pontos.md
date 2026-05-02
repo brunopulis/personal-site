@@ -1,17 +1,16 @@
 ---
 title: 'Cinco pontos'
 subtitle: 'Em direção a uma experiência mais profunda da graça de Deus'
-author: ''
+author: 'John Piper'
 category: ''
 status: 'lido'
 rating: 5
-poster: ''
+poster: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1423621987i/24907010.jpg'
 description: ''
 thoughts: ''
 quotes: ''
-attendedYear: '2018'
+attendedYear: '2017'
 recommendBy: ''
 tags: []
 url: ''
-pubDate: 2021-10-29
 ---
