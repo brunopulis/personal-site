@@ -1,0 +1,68 @@
+<header class="order-b bg-light-silver-100 border-gray-200">
+  <div class="flex justify-between items-center gap-4 mx-auto px-4 py-3 container">
+    <a class="font-semibold text-lg" href="/">
+      <img src="/assets/images/pulis-8bits.png" alt="" class="rounded-full" style="max-width: 100%; width: 64px; height: 64px;">
+    </a>
+    <nav>
+      <div id="primary-nav" class="hidden md:block mx-auto px-4 py-2 container">
+        {% set url = page.url or '/' %}
+        {% set isBlog = (url and (url | slice(0, 6) == '/blog/')) %}
+        {% set isNewsletter = (url and (url | slice(0, 6) == '/newsletters/')) %}
+        {% set isAbout = url == '/about/' %}
+        {% set isNotes = url == '/notes/' %}
+        {% set isNow = url == '/now/' %}
+        {% set isExplore = url == '/explore/' %}
+        {% set isGuestBook = url == '/guestbook/' %}
+        {% set isContact = url == '/contact/' %}
+        {% set isWatching = (url and (url | slice(0, 9) == '/watching/')) %}
+        <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
+          <li>
+            <a href="/about/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isAbout %}underline font-semibold{% endif %}"
+              {% if isAbout %}aria-current="page"{% endif %}><span aria-hidden="true">👋</span> Sobre</a>
+          </li>
+          <li>
+            <a href="/now/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNow %}underline font-semibold{% endif %}"
+              {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">📍</span> Agora</a>
+          </li>
+          <li>
+            <a href="/blog/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isBlog %}underline font-semibold{% endif %}"
+              {% if isBlog %}aria-current="page"{% endif %}><span aria-hidden="true">✍️</span> Blog
+            </a>
+          </li>
+          <li>
+            <a href="/notes/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNotes %}underline font-semibold{% endif %}"
+              {% if isNotes %}aria-current="page"{% endif %}><span aria-hidden="true">🗒️</span> Notas
+            </a>
+          </li>
+          <li>
+            <a href="/watching/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isWatching %}underline font-semibold{% endif %}"
+              {% if isWatching %}aria-current="page"{% endif %}><span aria-hidden="true">🍿</span> Filmes e Séries
+            </a>
+          </li>
+          <li>
+            <a href="/newsletters/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNewsletter %}underline font-semibold{% endif %}"
+              {% if isNewsletter %}aria-current="page"{% endif %}><span aria-hidden="true">📥</span> Newsletter
+            </a>
+          </li>
+          <li>
+            <a href="/guestbook/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isGuestBook %}underline font-semibold{% endif %}"
+              {% if isGuestBook %}aria-current="page"{% endif %}><span aria-hidden="true">💬</span> Livro de visitas</a>
+          </li>
+          <li>
+            <a href="/contact/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isContact %}underline font-semibold{% endif %}"
+              {% if isContact %}aria-current="page"{% endif %}><span aria-hidden="true">📱</span> Contato</a>
+          </li>
+          <li>
+            <a href="/explore/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
+              {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <button id="hamburger" class="md:hidden p-2 border border-gray-300 dark:border-gray-600 rounded" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
+      <span class="block bg-gray-700 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
+      <span class="block bg-gray-700 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
+      <span class="block bg-gray-700 w-5 h-0.5 transition-transform bar-3"></span>
+    </button>
+  </div>
+</header>

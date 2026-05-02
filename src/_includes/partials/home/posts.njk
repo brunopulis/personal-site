@@ -1,0 +1,66 @@
+<section class="mb-8" aria-labelledby="recent-posts-title">
+  <h2 class="flex items-center gap-2 mb-6 font-semibold text-2xl" id="recent-posts-title">
+    <span aria-hidden="true">✍️</span> Últimos artigos
+  </h2>
+
+  {% set recent = collections.posts %}
+  {% if recent | length > 0 %}
+    <div class="space-y-8">
+      {% for post in recent | head(5) %}
+        {% set url = post.url or post.id %}
+        {% set title = (post.data and post.data.title) or post.title %}
+        {% set dateVal = post.date %}
+        {% set desc = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
+        {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+        <article class="pb-6 border-gray-200 dark:border-gray-700 border-b last:border-b-0 h-entry">
+          <h3 class="mb-2 p-name font-semibold text-xl">
+            <a
+              class="underline hover:no-underline transition-colors u-url"
+              href="{{ url }}"
+            >
+              {{ title }}
+            </a>
+          </h3>
+          {% if dateVal %}
+            <time
+              class="block mb-3 text-errie-black-950 text-sm dt-published"
+              datetime="{{ dateVal | htmlDateString }}"
+            >
+              {{ dateVal | readableDate }}
+            </time>
+          {% endif %}
+          {% if desc %}
+            <p class="mb-3 p-summary text-errie-black-950 leading-relaxed">{{ desc }}</p>
+          {% endif %}
+          {% if tags %}
+            <div class="flex flex-wrap gap-2">
+              {% for tag in tags %}
+                <a
+                  class="bg-vista-blue-500 p-category px-2 py-1 rounded font-bold text-errie-black-950 text-xs transition-colors"
+                  href="/tags/{{ tag | slug }}/"
+                  >#{{ tag }}</a
+                >
+              {% endfor %}
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="mt-8">
+      <a
+        href="/blog/"
+        class="inline-flex items-center gap-2 text-vista-blue-600 underline hover:no-underline"
+      >
+        Ver todos os artigos
+      </a>
+    </div>
+  {% else %}
+    <div class="bg-light-silver-300 py-12 rounded-lg text-center">
+      <p class="mb-4 text-errie-black-950 text-lg">Nenhum artigo ainda!</p>
+      <p class="text-errie-black-950">
+        É aqui que surgirão textos reflexivos. Fiquem ligados! <span aria-hidden="true">📝</span>
+      </p>
+    </div>
+  {% endif %}
+</section>
