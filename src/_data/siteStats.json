@@ -4,7 +4,7 @@
   "totalContent": 162,
   "totalWords": 88333,
   "averageWordsPerPost": 796,
-  "totalTags": 44,
+  "totalTags": 43,
   "allTags": [
     "100DaysToOffLoad",
     "11ty",
@@ -43,7 +43,6 @@
     "review",
     "tech",
     "tecnologia",
-    "cristianismo",
     "texto alternativo",
     "til",
     "tools",
@@ -82,5 +81,5 @@
     "2014"
   ],
   "totalBooks": 70,
-  "totalNotes": 14
+  "totalNotes": 17
 }
