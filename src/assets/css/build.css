@@ -899,6 +899,9 @@
   .border-light-silver-200 {
     border-color: var(--color-light-silver-200);
   }
+  .border-light-silver-500 {
+    border-color: var(--color-light-silver-500);
+  }
   .border-vista-blue-100 {
     border-color: var(--color-vista-blue-100);
   }
@@ -1358,6 +1361,9 @@
   .underline-offset-4 {
     text-underline-offset: 4px;
   }
+  .underline-offset-8 {
+    text-underline-offset: 8px;
+  }
   .opacity-60 {
     opacity: 60%;
   }
@@ -1524,6 +1530,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-yellow-700);
+      }
+    }
+  }
+  .hover\:text-blood-red-900 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blood-red-900);
       }
     }
   }

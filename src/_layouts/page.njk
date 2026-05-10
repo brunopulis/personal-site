@@ -4,10 +4,14 @@ layout: base
 
 <article class="h-entry page">
   <header class="page-header">
-    <h1 class="mb-4 p-name font-bold text-4xl" data-pagefind-meta="title">{{ title }}</h1>
+    <h1 class="mb-4 p-name font-bold text-blood-red-950 text-4xl" data-pagefind-meta="title">
+      {{ title }}
+    </h1>
   </header>
 
-  <div class="prose e-content">{{ content | safe }}</div>
+  <div class="prose e-content">
+    {{ content | safe }}
+  </div>
 
   {% set lastMod = page.inputPath | lastModified %}
   {% if lastMod %}
