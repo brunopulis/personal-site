@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 
 <section class="mb-8">
   <h1 class="mb-2 font-bold text-3xl">{{ title }}</h1>
-  <p class="text-[var(--text-secondary)] mb-6">
+  <p class="mb-6">
     Bem-vindo(a) ao meu livro de visitas! Sinta-se à vontade para deixar uma mensagem, dizer olá ou compartilhar seus pensamentos. Adoraria receber notícias suas.
   </p>
 </section>
@@ -24,20 +24,20 @@ eleventyExcludeFromCollections: true
     <div>
       <label for="name" class="block mb-1 font-medium">Nome *</label>
       <input type="text" id="name" name="name" required
-        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition">
+        class="bg-white px-3 py-2 border border-light-silver-500 focus:border-transparent rounded outline-none focus:ring-2 focus:ring-purple-500 w-full transition">
     </div>
 
     <div>
       <label for="message" class="block mb-1 font-medium">Mensagem *</label>
       <textarea id="message" name="message" rows="4" required
-        class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition resize-y"></textarea>
+        class="bg-white px-3 py-2 border border-light-silver-500 focus:border-transparent rounded outline-none focus:ring-2 focus:ring-purple-500 w-full transition resize-y"></textarea>
     </div>
 
-    <button type="submit" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition">
+    <button type="submit" class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-boldṕ text-white transition">
       Enviar mensagem
     </button>
 
-    <p id="form-status" class="text-sm hidden" aria-live="polite"></p>
+    <p id="form-status" class="hidden text-sm" aria-live="polite"></p>
   </form>
 </section>
 
@@ -79,9 +79,9 @@ eleventyExcludeFromCollections: true
 
     messagesEl.innerHTML = messages.map(msg => `
       <article class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-        <div class="flex items-baseline justify-between mb-2">
+        <div class="flex justify-between items-baseline mb-2">
           <strong class="text-lg">${msg.name}</strong>
-          <time class="text-sm text-gray-500" datetime="${msg.timestamp}">${formatDate(msg.timestamp)}</time>
+          <time class="text-gray-500 text-sm" datetime="${msg.timestamp}">${formatDate(msg.timestamp)}</time>
         </div>
         <p class="text-[var(--text-secondary)] whitespace-pre-wrap">${msg.message}</p>
       </article>
