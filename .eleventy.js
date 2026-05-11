@@ -17,6 +17,7 @@ import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
 import tagColors from './src/_data/tagColors.json' with {type: 'json'};
 import blogroll from './src/_data/blogroll.json' with {type: 'json'};
+import {svgToJpeg} from './src/_config/events/svg-to-jpeg.js';
 
 import {
   getAllPosts,
@@ -174,6 +175,7 @@ export default async function (eleventyConfig) {
 
   // addPassthroughCopy
   eleventyConfig.addPassthroughCopy({'src/assets': 'assets'});
+  eleventyConfig.addPassthroughCopy('src/assets/og-images');
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
   eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
@@ -260,6 +262,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeysShortcode);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode('groupBooksByYear', shortcodes.groupBooksByYear);
+
+  // Events: after build (convert OG SVG to JPEG)
+  if (process.env.ELEVENTY_RUN_MODE === 'serve') {
+    eleventyConfig.on('eleventy.after', svgToJpeg);
+  }
 
   // General Settings
   return {

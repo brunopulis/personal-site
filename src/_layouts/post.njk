@@ -30,7 +30,7 @@ layout: base
     {% if subtitle %}
       <p class="mb-4 text-errie-black-950 text-xl">{{ subtitle }}</p>
     {% endif %}
-    <div class="text-gray-600 dark:text-gray-400 text-sm">
+    <div class="text-sm">
       Publicado em:
       <time class="dt-published" datetime="{{ page.date | htmlDateString }}"
         >{{ page.date | readableDate }}</time

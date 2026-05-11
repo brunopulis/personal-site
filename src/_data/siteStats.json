@@ -1,10 +1,10 @@
 {
-  "totalPosts": 111,
+  "totalPosts": 112,
   "totalNewsletters": 51,
-  "totalContent": 162,
-  "totalWords": 88333,
-  "averageWordsPerPost": 796,
-  "totalTags": 43,
+  "totalContent": 163,
+  "totalWords": 88579,
+  "averageWordsPerPost": 791,
+  "totalTags": 44,
   "allTags": [
     "100DaysToOffLoad",
     "11ty",
@@ -17,6 +17,7 @@
     "Redes Sociais",
     "Reflexão",
     "Smartphone",
+    "TIL",
     "WordPress",
     "a11y",
     "biografia",
@@ -63,7 +64,7 @@
     "2023": 4,
     "2024": 10,
     "2025": 2,
-    "2026": 12
+    "2026": 13
   },
   "yearsSorted": [
     "2026",
