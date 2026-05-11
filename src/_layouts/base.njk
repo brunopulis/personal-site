@@ -19,8 +19,15 @@
   {% set ogTitle = title or site.name %}
   {% set ogDescription = description or site.description %}
   {% set ogUrl = (site.url and (site.url + (page.url or '/'))) or '' %}
-  {# Resolve image: allow per-page front matter `image` or default to /screenshot.png #}
-  {% set rawImage = image or '/screenshot.png' %}
+  {# Resolve image: per-page image, or generated OG for posts, or default #}
+  {% set rawImage = image %}
+  {% if not rawImage %}
+    {% if page.url | slice(0, 6) == '/blog/' %}
+      {% set rawImage = '/assets/og-images/' + (title | slugify) + '-preview.jpeg' %}
+    {% else %}
+      {% set rawImage = '/screenshot.png' %}
+    {% endif %}
+  {% endif %}
   {% if site.url %}
     {% if rawImage | slice(0,4) == 'http' %}
       {% set ogImage = rawImage %}

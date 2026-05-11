@@ -27,8 +27,8 @@
   "timezone": "America/Sao_Paulo",
   "newsletter": {
     "enabled": true,
-    "provider": "buttondown",
-    "action": "https://buttondown.email/api/emails/embed-subscribe/brunopulis",
+    "provider": "substack",
+    "action": "https://brunopulis.subtack.com",
     "title": "Assine minha newsletter",
     "description": "Receba atualizações direto no seu e-mail. Sem spam, apenas conteúdo significativo."
   },
