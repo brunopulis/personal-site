@@ -17,49 +17,49 @@
         {% set isWatching = (url and (url | slice(0, 9) == '/watching/')) %}
         <ul class="flex md:flex-row flex-col md:space-x-6 space-y-3 md:space-y-0 md:text-sm text-base">
           <li>
-            <a href="/about/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isAbout %}underline font-semibold{% endif %}"
-              {% if isAbout %}aria-current="page"{% endif %}><span aria-hidden="true">👋</span> Sobre</a>
+            <a href="/about/" class="nav-item block py-2 underline hover:no-underline {% if isAbout %}underline font-semibold{% endif %}"
+              {% if isAbout %}aria-current="page"{% endif %}>Sobre</a>
           </li>
           <li>
-            <a href="/now/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNow %}underline font-semibold{% endif %}"
-              {% if isNow %}aria-current="page"{% endif %}><span aria-hidden="true">📍</span> Agora</a>
+            <a href="/now/" class="nav-item block py-2 underline hover:no-underline {% if isNow %}underline font-semibold{% endif %}"
+              {% if isNow %}aria-current="page"{% endif %}> Agora</a>
           </li>
           <li>
-            <a href="/blog/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isBlog %}underline font-semibold{% endif %}"
-              {% if isBlog %}aria-current="page"{% endif %}><span aria-hidden="true">✍️</span> Blog
+            <a href="/blog/" class="nav-item block py-2 underline hover:no-underline {% if isBlog %}underline font-semibold{% endif %}"
+              {% if isBlog %}aria-current="page"{% endif %}> Blog
             </a>
           </li>
           <li>
-            <a href="/notes/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNotes %}underline font-semibold{% endif %}"
-              {% if isNotes %}aria-current="page"{% endif %}><span aria-hidden="true">🗒️</span> Notas
+            <a href="/notes/" class="nav-item block py-2 underline hover:no-underline {% if isNotes %}underline font-semibold{% endif %}"
+              {% if isNotes %}aria-current="page"{% endif %}> Notas
             </a>
           </li>
           <li>
-            <a href="/watching/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isWatching %}underline font-semibold{% endif %}"
-              {% if isWatching %}aria-current="page"{% endif %}><span aria-hidden="true">🍿</span> Filmes e Séries
+            <a href="/watching/" class="nav-item block py-2 underline hover:no-underline {% if isWatching %}underline font-semibold{% endif %}"
+              {% if isWatching %}aria-current="page"{% endif %}> Filmes e Séries
             </a>
           </li>
           <li>
-            <a href="/newsletters/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isNewsletter %}underline font-semibold{% endif %}"
-              {% if isNewsletter %}aria-current="page"{% endif %}><span aria-hidden="true">📥</span> Newsletter
+            <a href="/newsletters/" class="nav-item block py-2 underline hover:no-underline {% if isNewsletter %}underline font-semibold{% endif %}"
+              {% if isNewsletter %}aria-current="page"{% endif %}> Newsletter
             </a>
           </li>
           <li>
-            <a href="/guestbook/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isGuestBook %}underline font-semibold{% endif %}"
-              {% if isGuestBook %}aria-current="page"{% endif %}><span aria-hidden="true">💬</span> Livro de visitas</a>
+            <a href="/guestbook/" class="nav-item block py-2 underline hover:no-underline {% if isGuestBook %}underline font-semibold{% endif %}"
+              {% if isGuestBook %}aria-current="page"{% endif %}> Livro de visitas</a>
           </li>
           <li>
-            <a href="/contact/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isContact %}underline font-semibold{% endif %}"
-              {% if isContact %}aria-current="page"{% endif %}><span aria-hidden="true">📱</span> Contato</a>
+            <a href="/contact/" class="nav-item block py-2 underline hover:no-underline {% if isContact %}underline font-semibold{% endif %}"
+              {% if isContact %}aria-current="page"{% endif %}> Contato</a>
           </li>
           <li>
-            <a href="/explore/" class="nav-item block py-2 text-purple-600 dark:text-purple-400 {% if isExplore %}underline font-semibold{% endif %}"
-              {% if isExplore %}aria-current="page"{% endif %}><span aria-hidden="true">🗺️</span> Explore</a>
+            <a href="/explore/" class="nav-item block py-2 underline hover:no-underline {% if isExplore %}underline font-semibold{% endif %}"
+              {% if isExplore %}aria-current="page"{% endif %}> Explore</a>
           </li>
         </ul>
       </div>
     </nav>
-    <button id="hamburger" class="md:hidden p-2 border border-gray-300 dark:border-gray-600 rounded" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
+    <button id="hamburger" class="md:hidden p-2 border border-gray-300 rounded" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
       <span class="block bg-gray-700 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
       <span class="block bg-gray-700 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
       <span class="block bg-gray-700 w-5 h-0.5 transition-transform bar-3"></span>
