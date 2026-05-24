@@ -1,15 +1,17 @@
 {
-  "totalPosts": 112,
+  "totalPosts": 113,
   "totalNewsletters": 51,
-  "totalContent": 163,
-  "totalWords": 88579,
-  "averageWordsPerPost": 791,
-  "totalTags": 44,
+  "totalContent": 164,
+  "totalWords": 89309,
+  "averageWordsPerPost": 790,
+  "totalTags": 46,
   "allTags": [
     "100DaysToOffLoad",
     "11ty",
+    "A11y",
     "Apps",
     "Automação",
+    "GAAD",
     "IA",
     "Minimalismo Digital",
     "Pessoal",
@@ -64,7 +66,7 @@
     "2023": 4,
     "2024": 10,
     "2025": 2,
-    "2026": 13
+    "2026": 14
   },
   "yearsSorted": [
     "2026",
@@ -82,5 +84,5 @@
     "2014"
   ],
   "totalBooks": 70,
-  "totalNotes": 17
+  "totalNotes": 18
 }

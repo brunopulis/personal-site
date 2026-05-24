@@ -7,6 +7,8 @@
  * @returns {Object} -
  */
 
+import fs from 'node:fs';
+import path from 'node:path';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -96,6 +98,9 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addFilter('readableDate', dateObj => {
     try {
+      if (typeof dateObj === 'string') {
+        return DateTime.fromISO(dateObj, {zone: 'utc'}).toFormat('LLLL d, yyyy');
+      }
       return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LLLL d, yyyy');
     } catch {
       return '';
@@ -268,6 +273,13 @@ export default async function (eleventyConfig) {
     eleventyConfig.on('eleventy.after', svgToJpeg);
   }
 
+  // Dev server: serve API routes locally (Vercel serverless proxy)
+  if (process.env.ELEVENTY_RUN_MODE === 'serve') {
+    eleventyConfig.setServerOptions({
+      middleware: [guestbookApiHandler]
+    });
+  }
+
   // General Settings
   return {
     markdownTemplateEngine: 'njk',
@@ -279,4 +291,76 @@ export default async function (eleventyConfig) {
       layouts: '_layouts'
     }
   };
+};
+
+function guestbookApiHandler(req, res, next) {
+  const DATA_FILE = path.resolve('src/_data/guestbook.json');
+
+  if (req.url === '/api/guestbook') {
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204, {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      });
+      return res.end();
+    }
+
+    if (req.method === 'GET') {
+      try {
+        const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+        const messages = (data.messages || []).slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ messages }));
+      } catch {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ messages: [] }));
+      }
+    }
+
+    if (req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => body += chunk);
+      req.on('end', () => {
+        try {
+          const { name, message, honeypot } = JSON.parse(body);
+
+          if (honeypot) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ error: 'Spam detected' }));
+          }
+
+          if (!name || !message) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ error: 'Nome e mensagem são obrigatórios' }));
+          }
+
+          if (name.length > 100 || message.length > 2000) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ error: 'Nome ou mensagem muito longos' }));
+          }
+
+          const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+          const newMessage = {
+            id: Date.now().toString(36) + Math.random().toString(36).substring(2),
+            name: name.trim().replace(/[&<>"']/g, ''),
+            message: message.trim().replace(/[&<>"']/g, ''),
+            timestamp: new Date().toISOString()
+          };
+
+          data.messages.push(newMessage);
+          fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+
+          res.writeHead(201, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ success: true, message: newMessage }));
+        } catch {
+          res.writeHead(500, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ error: 'Erro ao salvar mensagem' }));
+        }
+      });
+      return;
+    }
+  }
+
+  next();
 }
