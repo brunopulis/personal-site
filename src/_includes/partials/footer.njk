@@ -3,28 +3,16 @@
     <div class="gap-6 grid grid-cols-1 md:grid-cols-2">
       <div>
         <h3 class="font-semibold">Links</h3>
-        <p class="mt-2 text-sm leading-relaxed">
-          {% set cleanedPath = (page.inputPath or '') | replace('./', '') %}
-          {% if site.repo and site.repo.url %}
-            {% set editUrl = site.repo.url + '/edit/' + (site.repo.branch or 'main') + '/' + cleanedPath %}
-            {% set guideUrl = site.repo.url + '/blob/' + (site.repo.branch or 'main') + '/GUIDE.md' %}
-          {% else %}
-            {% set editUrl = '#' %}
-            {% set guideUrl = '#' %}
-          {% endif %}
-          <a href="/explore/" class="text-errie-black-950 underline hover:no-underline">Explore</a> ·
-          <a href="/archive/" class="text-errie-black-950 underline hover:no-underline">Arquivo</a> ·
-          <a href="/guestbook/" class="text-errie-black-950 underline hover:no-underline">Livro de visitas</a> ·
-          <a href="/contact/" class="text-errie-black-950 underline hover:no-underline">Contato</a><br>
-          <a href="https://11ty.dev" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener noreferrer">Feito com Eleventy</a> ·
-          <a href="/style/" class="text-errie-black-950 underline hover:no-underline">Guia de estilo</a> ·
-          <a href="{{ editUrl }}" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener">Edite essa página</a> ·
-          <a href="{{ guideUrl }}" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener">Guia do projeto</a>
-        </p>
+        <ul class="flex gap-2 mt-2 text-sm leading-relaxed">
+          <li><a href="/explore/" class="text-errie-black-950 underline hover:no-underline">Explore</a></li>
+          <li><a href="/archive/" class="text-errie-black-950 underline hover:no-underline">Arquivo</a></li>
+          <li><a href="/guestbook/" class="text-errie-black-950 underline hover:no-underline">Livro de visitas</a></li>
+          <li><a href="/contact/" class="text-errie-black-950 underline hover:no-underline">Contato</a></li>
+        </ul>
       </div>
       <div class="md:text-right">
         <h3 class="font-semibold">Se conecte</h3>
-        <div class="mt-2 inline-flex flex-wrap items-center gap-3 text-sm">
+        <div class="inline-flex flex-wrap items-center gap-3 mt-2 text-sm">
           {% from "partials/icons.njk" import icon %}
           {% if site.webring and site.webring.enabled %}
           <a href="{{ site.webring.url }}" target="_blank" rel="noopener" class="text-errie-black-950 underline hover:no-underline">Indie Webring</a>
@@ -71,7 +59,7 @@
 
     <hr class="mt-6 pt-6 border-gray-200 border-t">
 
-    <p class="text-center text-sm text-errie-black-950">
+    <p class="text-errie-black-950 text-sm text-center">
       2012 {{ site.name }} •
       <a href="/feed.xml" class="underline hover:no-underline">RSS</a> •
       Código: <a href="https://opensource.org/license/mit" target="_blank" rel="noopener" class="underline hover:no-underline">MIT</a> •
