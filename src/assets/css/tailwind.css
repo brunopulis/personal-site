@@ -259,6 +259,48 @@ body {
   line-height: 1.6;
 }
 
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  :root {
+    --text: #000;
+    --bg: #fff;
+    --surface: #f0f0f0;
+    --border: #000;
+  }
+  .dark {
+    --text: #fff;
+    --bg: #000;
+    --surface: #1a1a1a;
+    --border: #fff;
+  }
+  a, a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+@supports (forced-colors: active) {
+  .contrast {
+    forced-color-adjust: auto;
+  }
+}
+
+/* Windows High Contrast Mode */
+@media (forced-colors: active) {
+  .prose .header-anchor {
+    opacity: 1;
+  }
+}
+
+/* Enhanced contrast toggle (overrides filter approach) */
+.contrast {
+  filter: contrast(1.2) saturate(1.1);
+}
+.contrast a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Base accessibility improvements */
 @layer base {
   a {
