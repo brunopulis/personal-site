@@ -1,11 +1,9 @@
 <footer class="bg-light-silver-100 mt-12 border-gray-200 border-t">
   <div class="mx-auto px-4 py-8 max-w-4xl container">
-    <div class="gap-6 grid grid-cols-1 md:grid-cols-3 text-sm">
+    <div class="gap-6 grid grid-cols-1 md:grid-cols-2">
       <div>
-        <h3 class="mb-2 font-semibold">Técnico</h3>
-        <ul class="space-y-1">
-          <li><a href="https://11ty.dev" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener noreferrer">Feito com Eleventy</a></li>
-          <li><a href="/style/" class="text-errie-black-950 underline hover:no-underline">Guia de estilo</a></li>
+        <h3 class="font-semibold">Links</h3>
+        <p class="mt-2 text-sm leading-relaxed">
           {% set cleanedPath = (page.inputPath or '') | replace('./', '') %}
           {% if site.repo and site.repo.url %}
             {% set editUrl = site.repo.url + '/edit/' + (site.repo.branch or 'main') + '/' + cleanedPath %}
@@ -14,92 +12,71 @@
             {% set editUrl = '#' %}
             {% set guideUrl = '#' %}
           {% endif %}
-          <li><a href="{{ editUrl }}" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener">Edite essa página</a></li>
-          <li><a href="{{ guideUrl }}" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener">Guia do projeto</a></li>
-        </ul>
+          <a href="/explore/" class="text-errie-black-950 underline hover:no-underline">Explore</a> ·
+          <a href="/archive/" class="text-errie-black-950 underline hover:no-underline">Arquivo</a> ·
+          <a href="/guestbook/" class="text-errie-black-950 underline hover:no-underline">Livro de visitas</a> ·
+          <a href="/contact/" class="text-errie-black-950 underline hover:no-underline">Contato</a><br>
+          <a href="https://11ty.dev" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener noreferrer">Feito com Eleventy</a> ·
+          <a href="/style/" class="text-errie-black-950 underline hover:no-underline">Guia de estilo</a> ·
+          <a href="{{ editUrl }}" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener">Edite essa página</a> ·
+          <a href="{{ guideUrl }}" class="text-errie-black-950 underline hover:no-underline" target="_blank" rel="noopener">Guia do projeto</a>
+        </p>
       </div>
-      <div>
-        <h3 class="mb-2 font-semibold">Navegação</h3>
-        <ul class="space-y-1">
-          <li><a href="/explore/" class="text-errie-black-950 underline hover:no-underline">Explore</a></li>
-          <li><a href="/archive/" class="text-errie-black-950 underline hover:no-underline">Arquivo</a></li>
-          <li><a href="/guestbook/" class="text-errie-black-950 underline hover:no-underline">Livro de visitas</a></li>
-          <li><a href="/contact/" class="text-errie-black-950 underline hover:no-underline">Contato</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="mb-2 font-semibold">Se conecte</h3>
-        <ul class="space-y-1">
+      <div class="md:text-right">
+        <h3 class="font-semibold">Se conecte</h3>
+        <div class="mt-2 inline-flex flex-wrap items-center gap-3 text-sm">
           {% from "partials/icons.njk" import icon %}
           {% if site.webring and site.webring.enabled %}
-          <li><a href="{{ site.webring.url }}" target="_blank" rel="noopener" class="text-errie-black-950 underline hover:no-underline">Indie Webring</a></li>
+          <a href="{{ site.webring.url }}" target="_blank" rel="noopener" class="text-errie-black-950 underline hover:no-underline">Indie Webring</a>
           {% endif %}
-          <li>
-            <a href="mailto:{{ site.email }}" rel="me" class="inline-flex items-center gap-2 text-errie-black-950 underline hover:no-underline">
-              Email
-            </a>
-          </li>
+          <a href="mailto:{{ site.email }}" rel="me" class="text-errie-black-950 hover:text-errie-black-900" aria-label="Email">
+            {{ icon('mail', 'w-5 h-5 inline') }}
+          </a>
           {% if site.social.github %}
-          <li>
-            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer" class="inline-flex items-center gap-2 text-errie-black-950 underline hover:no-underline">
-              GitHub
-            </a>
-          </li>
+          <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="GitHub">
+            {{ icon('github', 'w-5 h-5 inline') }}
+          </a>
           {% endif %}
           {% if site.social.bluesky %}
-          <li class="flex items-center gap-3">
-            <a
-              href="{{ site.social.bluesky }}"
-              target="_blank"
-              rel="me noopener noreferrer"
-              class="text-errie-black-950 underline hover:no-underline"
-              >Bluesky</a
-            >
-          </li>
+          <a href="{{ site.social.bluesky }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="Bluesky">
+            {{ icon('bluesky', 'w-5 h-5 inline') }}
+          </a>
           {% endif %}
           {% if site.social.mastodon %}
-          <li>
-            <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer" class="inline-flex items-center gap-2 text-errie-black-950 underline hover:no-underline">
-              Mastodon
-            </a>
-          </li>
+          <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="Mastodon">
+            {{ icon('mastodon', 'w-5 h-5 inline') }}
+          </a>
           {% endif %}
           {% if site.social.youtube %}
-          <li class="flex items-center gap-3">
-            <a
-              href="{{ site.social.youtube }}"
-              target="_blank"
-              rel="me noopener noreferrer"
-              class="text-errie-black-950 underline hover:no-underline"
-              >YouTube</a
-            >
-          </li>
+          <a href="{{ site.social.youtube }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="YouTube">
+            {{ icon('youtube', 'w-5 h-5 inline') }}
+          </a>
           {% endif %}
           {% if site.social.linkedin %}
-          <li class="flex items-center gap-3">
-            <a
-              href="{{ site.social.linkedin }}"
-              target="_blank"
-              rel="me noopener noreferrer"
-              class="text-errie-black-950 underline hover:no-underline"
-              >LinkedIn</a
-            >
-          </li>
+          <a href="{{ site.social.linkedin }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="LinkedIn">
+            {{ icon('linkedin', 'w-5 h-5 inline') }}
+          </a>
           {% endif %}
-        </ul>
+        </div>
       </div>
     </div>
 
-    <div class="mt-6 pt-6 border-gray-200 border-t text-errie-black-950 text-center">
-      <p>
-        2012 {{ site.name }} •
-        <a href="/feed.xml" class="underline hover:no-underline">RSS</a> •
-        Código: <a href="https://opensource.org/license/mit" target="_blank" rel="noopener" class="underline hover:no-underline">MIT</a> •
-        Conteúdo: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" class="underline hover:no-underline">CC BY-NC-SA 4.0</a>
-      </p>
-    </div>
+    <hr class="mt-6 pt-6 border-gray-200 border-t">
+
     {% include "partials/webrings.njk" %}
+
+    <hr class="mt-6 pt-6 border-gray-200 border-t">
+
     {% include "partials/badges.njk" %}
+
+    <hr class="mt-6 pt-6 border-gray-200 border-t">
+
+    <p class="text-center text-sm text-errie-black-950">
+      2012 {{ site.name }} •
+      <a href="/feed.xml" class="underline hover:no-underline">RSS</a> •
+      Código: <a href="https://opensource.org/license/mit" target="_blank" rel="noopener" class="underline hover:no-underline">MIT</a> •
+      Conteúdo: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" class="underline hover:no-underline">CC BY-NC-SA 4.0</a>
+    </p>
   </div>
 </footer>
 
