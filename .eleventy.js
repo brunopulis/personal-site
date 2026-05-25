@@ -162,6 +162,16 @@ export default async function (eleventyConfig) {
     return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
   });
 
+  eleventyConfig.addFilter('xmlEscape', text => {
+    if (!text || typeof text !== 'string') return '';
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+  });
+
+  eleventyConfig.addFilter('hasCode', content => {
+    if (!content || typeof content !== 'string') return false;
+    return /<pre(?:\s[^>]*)?>/i.test(content);
+  });
+
   eleventyConfig.addFilter('head', (arr, n) => {
     if (!Array.isArray(arr)) return arr;
     if (n < 0) {

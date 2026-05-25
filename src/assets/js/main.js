@@ -44,10 +44,12 @@
   const contrastToggle = document.getElementById('contrast-toggle');
   const motionToggle = document.getElementById('motion-toggle');
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const applyA11y = () => {
     const size = parseFloat(localStorage.getItem('fontScale') || '1');
     const highContrast = localStorage.getItem('highContrast') === '1';
-    const reduceMotion = localStorage.getItem('reduceMotion') === '1';
+    const reduceMotion = localStorage.getItem('reduceMotion') === '1' || (!localStorage.getItem('reduceMotion') && prefersReducedMotion);
 
     // Apply all changes in a single batch to prevent layout thrashing
     requestAnimationFrame(() => {
@@ -83,16 +85,62 @@
       applyA11y();
     });
 
-  // Mobile navigation toggle
+  // Mobile navigation toggle + focus trap
   const hamburger = document.getElementById('hamburger');
   const primaryNav = document.getElementById('primary-nav');
   if (hamburger && primaryNav) {
-    // Ensure initial aria state
+    const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    let lastFocusedElement = null;
+
+    const trapFocus = e => {
+      const focusable = primaryNav.querySelectorAll(focusableSelectors);
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    };
+
+    const openNav = () => {
+      primaryNav.classList.remove('hidden');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      lastFocusedElement = document.activeElement;
+      const firstLink = primaryNav.querySelector(focusableSelectors);
+      if (firstLink) firstLink.focus();
+      document.addEventListener('keydown', trapFocus);
+    };
+
+    const closeNav = () => {
+      primaryNav.classList.add('hidden');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('keydown', trapFocus);
+      if (lastFocusedElement) lastFocusedElement.focus();
+    };
+
     hamburger.setAttribute('aria-expanded', primaryNav.classList.contains('hidden') ? 'false' : 'true');
     hamburger.addEventListener('click', () => {
-      const isHidden = primaryNav.classList.toggle('hidden');
-      hamburger.classList.toggle('open', !isHidden);
-      hamburger.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+      const isHidden = primaryNav.classList.contains('hidden');
+      if (isHidden) openNav();
+      else closeNav();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !primaryNav.classList.contains('hidden')) {
+        closeNav();
+      }
     });
   }
 
