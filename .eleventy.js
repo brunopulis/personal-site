@@ -249,7 +249,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addCollection('searchIndex', collectionApi => {
     const posts = collectionApi
-      .getFilteredByGlob('src/blog/**/*.md')
+      .getFilteredByGlob('src/content/posts/**/*.md')
       .sort((a, b) => (a.date > b.date ? -1 : 1));
 
     return posts.map(p => ({
