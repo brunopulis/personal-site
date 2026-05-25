@@ -144,6 +144,81 @@
     });
   }
 
+  // Dropdown menus (Biblioteca, Sobre)
+  const dropdowns = document.querySelectorAll('.dropdown');
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const arrow = dropdown.querySelector('.dropdown-arrow');
+    let closeTimeout;
+
+    if (!toggle || !menu) return;
+
+    const openMenu = () => {
+      clearTimeout(closeTimeout);
+      menu.classList.remove('hidden');
+      toggle.setAttribute('aria-expanded', 'true');
+      if (arrow) arrow.classList.add('rotate-180');
+    };
+
+    const closeMenu = () => {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (arrow) arrow.classList.remove('rotate-180');
+    };
+
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) closeMenu();
+      else openMenu();
+    });
+
+    // Close on Escape
+    toggle.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    // Close on Tab outside
+    menu.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeMenu();
+        toggle.focus();
+      }
+      if (e.key === 'Tab' && !e.shiftKey && e.target === menu.querySelector('li:last-child a, li:last-child button')) {
+        closeMenu();
+      }
+      if (e.key === 'Tab' && e.shiftKey && e.target === menu.querySelector('li:first-child a, li:first-child button')) {
+        e.preventDefault();
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    // Desktop: hover to open, delay on leave
+    dropdown.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 768) {
+        clearTimeout(closeTimeout);
+        openMenu();
+      }
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      if (window.innerWidth >= 768) {
+        closeTimeout = setTimeout(closeMenu, 200);
+      }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', e => {
+      if (!dropdown.contains(e.target) && !menu.classList.contains('hidden')) {
+        closeMenu();
+      }
+    });
+  });
+
   // A11y popover (button + menu)
   const a11yToggle = document.getElementById('a11y-toggle');
   const a11yMenu = document.getElementById('a11y-menu');
