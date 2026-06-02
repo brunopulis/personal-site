@@ -8,7 +8,14 @@ To enable, uncomment one of the sections below and configure in site.json
 #}
 
 {% if site.analytics and site.analytics.enabled %}
-  {% if site.analytics.provider == 'plausible' %}
+  {% if site.analytics.provider == 'umami' %}
+    <!-- Umami Analytics -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"
+    ></script>
+  {% elif site.analytics.provider == 'plausible' %}
     <!-- Plausible Analytics -->
     <script
       defer
