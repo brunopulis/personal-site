@@ -31,10 +31,10 @@ permalink: /watching/
   {% endif %}
 </section>
 
-{% set recentMovies = collections.movies | reverse | limit(6) %}
-{% set recentShows = collections.shows | reverse | limit(6) %}
-{% set favoriteMovies = collections.movies | filterFavorites | reverse | limit(6) %}
-{% set favoriteShows = collections.shows | filterFavorites | reverse | limit(6) %}
+{% set recentMovies = collections.movies | sortByDate | limit(6) %}
+{% set recentShows = collections.shows | sortByDate | limit(6) %}
+{% set favoriteMovies = collections.movies | filterFavorites | sortByDate | limit(6) %}
+{% set favoriteShows = collections.shows | filterFavorites | sortByDate | limit(6) %}
 
 {% if recentMovies.length > 0 %}
 <section class="mb-12" aria-labelledby="recent-movies">
