@@ -1,4 +1,9 @@
 {
+  "build": {
+    "env": {
+      "ELEVENTY_CACHE_DIR": ".vercel/cache/eleventy"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",

@@ -3,7 +3,7 @@ title: "Jovem Sheldon"
 director: Steven Molaro, Chuck Lorre
 category: Comédia, Família, Drama
 status: assistido
-rating: 
+rating:
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/cVz8OISt8MoZ4ioDjcYi2XIKOdn.jpg

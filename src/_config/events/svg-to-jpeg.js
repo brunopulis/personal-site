@@ -8,7 +8,7 @@ export const svgToJpeg = async () => {
   const socialPreviewImagesDir = '_site/assets/og-images/';
 
   if (!existsSync(socialPreviewImagesDir)) {
-    console.log('⚠ No OG images dir found');
+    console.log('No OG images dir found');
     return;
   }
 
@@ -28,6 +28,6 @@ export const svgToJpeg = async () => {
       }
     });
   } else {
-    console.log('⚠ No images found on OG images dir');
+    console.log('No images found on OG images dir');
   }
 };

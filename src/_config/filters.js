@@ -14,6 +14,7 @@ import {moviesByYear} from './filters/movies.js';
 import {showsByYear, showsByStatusAndYear, showsByYearAndStatus} from './filters/shows.js';
 import {filterFavorites, filterNonFavorites, groupByYear, filterByYear} from './filters/media.js';
 import {gamesByYear} from './filters/games.js';
+import {sortByDate} from './filters/sort-by-date.js';
 
 export default {
   toISOString,
@@ -23,6 +24,7 @@ export default {
   striptags,
   shuffleArray,
   sortAlphabetically,
+  sortByDate,
   slugifyString,
   limit,
   renderTransforms,
