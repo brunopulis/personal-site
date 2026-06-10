@@ -41,10 +41,10 @@ generate: true
 
 {% set yearMovies = collections.movies | filterByYear(year) %}
 {% set yearShows = collections.shows | filterByYear(year) %}
-{% set recentMovies = yearMovies | reverse | limit(6) %}
-{% set recentShows = yearShows | reverse | limit(6) %}
-{% set favoriteMovies = yearMovies | filterFavorites | reverse | limit(6) %}
-{% set favoriteShows = yearShows | filterFavorites | reverse | limit(6) %}
+{% set recentMovies = yearMovies | sortByDate | limit(6) %}
+{% set recentShows = yearShows | sortByDate | limit(6) %}
+{% set favoriteMovies = yearMovies | filterFavorites | sortByDate | limit(6) %}
+{% set favoriteShows = yearShows | filterFavorites | sortByDate | limit(6) %}
 
 {% if recentMovies.length > 0 %}
 <section class="mb-12" aria-labelledby="recent-movies">

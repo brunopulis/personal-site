@@ -1,15 +1,17 @@
 {
-  "totalPosts": 111,
+  "totalPosts": 114,
   "totalNewsletters": 51,
-  "totalContent": 162,
-  "totalWords": 88333,
-  "averageWordsPerPost": 796,
-  "totalTags": 44,
+  "totalContent": 165,
+  "totalWords": 89470,
+  "averageWordsPerPost": 785,
+  "totalTags": 46,
   "allTags": [
     "100DaysToOffLoad",
     "11ty",
+    "A11y",
     "Apps",
     "Automação",
+    "GAAD",
     "IA",
     "Minimalismo Digital",
     "Pessoal",
@@ -17,6 +19,7 @@
     "Redes Sociais",
     "Reflexão",
     "Smartphone",
+    "TIL",
     "WordPress",
     "a11y",
     "biografia",
@@ -43,7 +46,6 @@
     "review",
     "tech",
     "tecnologia",
-    "cristianismo",
     "texto alternativo",
     "til",
     "tools",
@@ -64,7 +66,7 @@
     "2023": 4,
     "2024": 10,
     "2025": 2,
-    "2026": 12
+    "2026": 15
   },
   "yearsSorted": [
     "2026",
@@ -82,5 +84,5 @@
     "2014"
   ],
   "totalBooks": 70,
-  "totalNotes": 14
+  "totalNotes": 18
 }
