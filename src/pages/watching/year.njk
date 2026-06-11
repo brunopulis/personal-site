@@ -41,10 +41,10 @@ generate: true
 
 {% set yearMovies = collections.movies | filterByYear(year) %}
 {% set yearShows = collections.shows | filterByYear(year) %}
-{% set recentMovies = yearMovies | reverse | limit(6) %}
-{% set recentShows = yearShows | reverse | limit(6) %}
-{% set favoriteMovies = yearMovies | filterFavorites | reverse | limit(6) %}
-{% set favoriteShows = yearShows | filterFavorites | reverse | limit(6) %}
+{% set recentMovies = yearMovies | sortByDate | limit(6) %}
+{% set recentShows = yearShows | sortByDate | limit(6) %}
+{% set favoriteMovies = yearMovies | filterFavorites | sortByDate | limit(6) %}
+{% set favoriteShows = yearShows | filterFavorites | sortByDate | limit(6) %}
 
 {% if recentMovies.length > 0 %}
 <section class="mb-12" aria-labelledby="recent-movies">
@@ -63,7 +63,7 @@ generate: true
         <a href="{{ movie.url }}" class="block">
           {% if movie.data.poster %}
             <img
-              src="{{ movie.data.poster }}"
+              src="{{ movie.data.poster | localPoster }}"
               alt="{{ movie.data.title }}"
               class="rounded w-full object-cover aspect-2/3"
               loading="lazy"
@@ -110,7 +110,7 @@ generate: true
         <a href="{{ show.url }}" class="block">
           {% if show.data.poster %}
             <img
-              src="{{ show.data.poster }}"
+              src="{{ show.data.poster | localPoster }}"
               alt="{{ show.data.title }}"
               class="rounded w-full object-cover aspect-2/3"
               loading="lazy"
@@ -157,7 +157,7 @@ generate: true
         <a href="{{ movie.url }}" class="block">
           {% if movie.data.poster %}
             <img
-              src="{{ movie.data.poster }}"
+              src="{{ movie.data.poster | localPoster }}"
               alt="{{ movie.data.title }}"
               class="rounded w-full object-cover aspect-[2/3]"
               loading="lazy"
@@ -204,7 +204,7 @@ generate: true
         <a href="{{ show.url }}" class="block">
           {% if show.data.poster %}
             <img
-              src="{{ show.data.poster }}"
+              src="{{ show.data.poster | localPoster }}"
               alt="{{ show.data.title }}"
               class="rounded w-full object-cover aspect-[2/3]"
               loading="lazy"

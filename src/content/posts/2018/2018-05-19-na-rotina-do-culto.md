@@ -100,7 +100,7 @@ O profeta Isaías encontra-se com a presença de Deus e logo recai o peso do seu
 
 > Então disse eu: **Ai de mim! Pois estou perdido**; porque sou um homem de lábios impuros, e habito no meio de um povo de impuros lábios; **os meus olhos viram o Rei**, o Senhor dos Exércitos. [Isaías 6:5](https://www.bibliaonline.com.br/acf/is/6/5+)
 
-O que Asafe compreende é que necessitamos do assombro da presença, a revelação suficiente do seu filho Cristo Jesus, em nossas vidas. Uma revelação que gere uma teologia saudável e viva, um coração pulsante e apaixonado pelo Salvador, compreendendo que Ele é suficiente e supremo em nossas vidas.
+O que Asafe compreende é que necessitamos do assombro da presença, a revelação suficiente do seu filho Cristo Jesus, em nossas vidas. Uma revelação que gere uma cristianismo saudável e viva, um coração pulsante e apaixonado pelo Salvador, compreendendo que Ele é suficiente e supremo em nossas vidas.
 
 Após sua vida ser restaurada, ele recorda da passagem da escritura que diz:
 

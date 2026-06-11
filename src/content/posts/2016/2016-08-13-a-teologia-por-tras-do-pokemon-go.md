@@ -1,5 +1,5 @@
 ---
-title: A teologia por trás do Pokémon Go
+title: A cristianismo por trás do Pokémon Go
 pubDate: 2016-08-13
 tags: ['cristianismo']
 ---

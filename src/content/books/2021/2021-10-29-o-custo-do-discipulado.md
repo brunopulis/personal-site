@@ -1,10 +1,11 @@
 ---
-title: 'O Custo Do Discipulado: A Doutrina Da Imitação De Cristo'
+title: 'O Custo Do Discipulado'
+subtitle: 'A Doutrina Da Imitação De Cristo'
 author: ''
 category: ''
 status: 'lido'
 rating: 0
-cover: ''
+poster: ''
 description: ''
 thoughts: ''
 quotes: ''

@@ -1,13 +1,13 @@
 ---
 title: 'O zelo a pregação'
-excerpt: 'De uns tempos pra cá venho lendo bons livros e materiais relacionados a Teologia Reformada que me fizeram argumentar alguns posicionamentos…'
+excerpt: 'De uns tempos pra cá venho lendo bons livros e materiais relacionados a cristianismo Reformada que me fizeram argumentar alguns posicionamentos…'
 pubDate: 2017-05-12T16:54:25.411Z
 tags: ['cristianismo']
 ---
 
 ## O zelo a pregação
 
-De uns tempos pra cá venho lendo bons livros e materiais relacionados a Teologia Reformada que me fizeram argumentar alguns posicionamentos do pitoresco meio evangélico brasileiro.
+De uns tempos pra cá venho lendo bons livros e materiais relacionados a cristianismo Reformada que me fizeram argumentar alguns posicionamentos do pitoresco meio evangélico brasileiro.
 
 Uma das coisas que tenho me atentado é sobre o **púlpito** ou a exposição das Escrituras, de fato, é a posição mais perigosa Spurgeon já nos alertava sobre:
 

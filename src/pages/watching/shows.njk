@@ -31,12 +31,12 @@ permalink: /watching/shows/
     </div>
 
     <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {% for show in yearShows | reverse %}
+      {% for show in yearShows | sortByDate %}
         <article>
           <a href="{{ show.url }}" class="block">
             {% if show.data.poster %}
               <img
-                src="{{ show.data.poster }}"
+                src="{{ show.data.poster | localPoster }}"
                 alt="{{ show.data.title }}"
                 class="rounded w-full aspect-[2/3] object-cover"
                 loading="lazy"
