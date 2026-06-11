@@ -2,7 +2,7 @@
 title: Carta ao amado
 pubDate: 2016-07-07
 url: https://brunopulis.com/carta-ao-amado/
-tags: ['teologia']
+tags: ['cristianismo']
 ---
 
 Dessas noites memoráveis,

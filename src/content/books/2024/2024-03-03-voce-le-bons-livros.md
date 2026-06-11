@@ -4,7 +4,7 @@ author: 'Sinclair B. Ferguson'
 category: ''
 status: 'lido'
 rating: 3
-cover: 'https://m.media-amazon.com/images/I/61HYRvVnkHL._SY522_.jpg'
+poster: 'https://m.media-amazon.com/images/I/61HYRvVnkHL._SY522_.jpg'
 description: ''
 thoughts: ''
 quotes: ''

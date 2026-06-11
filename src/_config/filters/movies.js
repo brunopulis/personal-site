@@ -14,7 +14,9 @@ export const moviesByYear = movies => {
     return acc;
   }, {});
 
-  const years = Object.keys(grouped).sort((a, b) => b - a);
+  const years = Object.keys(grouped)
+    .filter(year => grouped[year].length > 0)
+    .sort((a, b) => b - a);
 
   return {byYear: grouped, years};
 };

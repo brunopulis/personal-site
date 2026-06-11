@@ -1,0 +1,5 @@
+{
+  "layout": "book.njk",
+  "permalink": "/book/{{ title | slugify }}/index.html",
+  "favorite": false
+}

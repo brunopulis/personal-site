@@ -15,11 +15,26 @@ export const getAllBooks = collection => {
 };
 
 export const getAllMovies = collection => {
-  return collection.getFilteredByGlob('./src/content/movies/**/*.md').reverse();
+  return collection.getFilteredByGlob('./src/content/watching/movies/**/*.md').reverse();
 };
 
 export const getAllShows = collection => {
-  return collection.getFilteredByGlob('./src/content/shows/**/*.md').reverse();
+  return collection.getFilteredByGlob('./src/content/watching/shows/**/*.md').reverse();
+};
+
+export const getWatchingYears = collection => {
+  const movies = collection.getFilteredByGlob('./src/content/watching/movies/**/*.md');
+  const shows = collection.getFilteredByGlob('./src/content/watching/shows/**/*.md');
+  const allItems = [...movies, ...shows];
+  const yearsSet = new Set();
+
+  allItems.forEach(item => {
+    if (item.data?.watchedYear) {
+      yearsSet.add(String(item.data.watchedYear));
+    }
+  });
+
+  return Array.from(yearsSet).sort((a, b) => b - a);
 };
 
 export const getAllGames = collection => {
@@ -39,7 +54,7 @@ export const showInSitemap = collection => {
 };
 
 export const getAllTags = collection => {
-  const ignore = new Set(['all', 'nav', 'post', 'posts']);
+  const ignore = new Set(['all', 'nav', 'post', 'posts', 'notes']);
   const seenSlugs = new Set();
   const list = [];
 
@@ -50,17 +65,31 @@ export const getAllTags = collection => {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
 
-  collection.getFilteredByGlob('src/content/posts/**/*.md').forEach(item => {
-    const t = item.data && item.data.tags;
-    if (Array.isArray(t)) {
-      t.forEach(tag => {
-        if (!tag || ignore.has(tag)) return;
-        const slug = toSlug(tag);
-        if (!slug || seenSlugs.has(slug)) return;
-        seenSlugs.add(slug);
-        list.push(tag);
-      });
-    }
+  const globs = [
+    'src/content/posts/**/*.md',
+    'src/content/notes/**/*.md',
+    'src/content/books/**/*.md',
+    'src/content/watching/movies/**/*.md',
+    'src/content/watching/shows/**/*.md',
+    'src/content/games/**/*.md',
+    'src/content/likes/**/*.md',
+    'src/content/newsletters/**/*.md',
+    'src/content/poetry/**/*.md'
+  ];
+
+  globs.forEach(glob => {
+    collection.getFilteredByGlob(glob).forEach(item => {
+      const t = item.data && item.data.tags;
+      if (Array.isArray(t)) {
+        t.forEach(tag => {
+          if (!tag || ignore.has(tag)) return;
+          const slug = toSlug(tag);
+          if (!slug || seenSlugs.has(slug)) return;
+          seenSlugs.add(slug);
+          list.push(tag);
+        });
+      }
+    });
   });
 
   return list.sort((a, b) => String(a).localeCompare(String(b)));

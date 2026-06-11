@@ -12,7 +12,9 @@ import {where, keys, concat} from './filters/where.js';
 import {booksByYear} from './filters/books.js';
 import {moviesByYear} from './filters/movies.js';
 import {showsByYear, showsByStatusAndYear, showsByYearAndStatus} from './filters/shows.js';
+import {filterFavorites, filterNonFavorites, groupByYear, filterByYear} from './filters/media.js';
 import {gamesByYear} from './filters/games.js';
+import {sortByDate} from './filters/sort-by-date.js';
 
 export default {
   toISOString,
@@ -22,17 +24,22 @@ export default {
   striptags,
   shuffleArray,
   sortAlphabetically,
+  sortByDate,
   slugifyString,
   limit,
   renderTransforms,
   lastModified,
   where,
-  keys,
+keys,
   concat,
   booksByYear,
   moviesByYear,
-showsByYear,
-showsByStatusAndYear,
+  filterFavorites,
+  filterNonFavorites,
+  groupByYear,
+  filterByYear,
+  showsByYear,
+  showsByStatusAndYear,
   showsByYearAndStatus,
   gamesByYear
 };
