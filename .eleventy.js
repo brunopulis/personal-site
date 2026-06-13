@@ -72,6 +72,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('gamesByYear', filters.gamesByYear);
   eleventyConfig.addFilter('formatNumber', formatNumber);
 
+  eleventyConfig.addFilter('sortByDate', filters.sortByDate);
+
   eleventyConfig.addFilter('limit', (arr, n) => {
     if (!Array.isArray(arr)) return arr;
     return arr.slice(0, n);
