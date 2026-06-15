@@ -1,11 +1,4 @@
 {
-  "build": {
-    "env": {
-      "ELEVENTY_CACHE_DIR": ".vercel/cache/eleventy",
-      "PUPPETEER_SKIP_DOWNLOAD": "true",
-      "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
