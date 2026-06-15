@@ -190,8 +190,16 @@ export default async function (eleventyConfig) {
     });
   });
 
-  // addPassthroughCopy
-  eleventyConfig.addPassthroughCopy({'src/assets': 'assets'});
+  // addPassthroughCopy — selective, not the entire src/assets/
+  eleventyConfig.addPassthroughCopy({'src/assets/css/build.css': 'assets/css/build.css'});
+  eleventyConfig.addPassthroughCopy({'src/assets/css/highlight': 'assets/css/highlight'});
+  eleventyConfig.addPassthroughCopy({'src/assets/js': 'assets/js'});
+  eleventyConfig.addPassthroughCopy({'src/assets/images': 'assets/images'});
+  eleventyConfig.addPassthroughCopy({'src/assets/og-images': 'assets/og-images'});
+  eleventyConfig.addPassthroughCopy({'src/assets/favicon.svg': 'assets/favicon.svg'});
+  eleventyConfig.addPassthroughCopy({'src/assets/favicon-32x32.png': 'assets/favicon-32x32.png'});
+  eleventyConfig.addPassthroughCopy({'src/assets/favicon-16x16.png': 'assets/favicon-16x16.png'});
+  eleventyConfig.addPassthroughCopy({'src/assets/apple-touch-icon.png': 'assets/apple-touch-icon.png'});
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
   eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
