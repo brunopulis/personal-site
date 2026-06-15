@@ -1,9 +1,9 @@
 {
-  "totalPosts": 114,
+  "totalPosts": 115,
   "totalNewsletters": 51,
-  "totalContent": 165,
-  "totalWords": 89470,
-  "averageWordsPerPost": 785,
+  "totalContent": 166,
+  "totalWords": 89771,
+  "averageWordsPerPost": 781,
   "totalTags": 46,
   "allTags": [
     "100DaysToOffLoad",
@@ -66,7 +66,7 @@
     "2023": 4,
     "2024": 10,
     "2025": 2,
-    "2026": 15
+    "2026": 16
   },
   "yearsSorted": [
     "2026",
