@@ -17,7 +17,6 @@ import pluginRss from '@11ty/eleventy-plugin-rss';
 import filters, {formatNumber} from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
-import tagColors from './src/_data/tagColors.json' with {type: 'json'};
 import blogroll from './src/_data/blogroll.json' with {type: 'json'};
 import {svgToJpeg} from './src/_config/events/svg-to-jpeg.js';
 
@@ -124,49 +123,14 @@ export default async function (eleventyConfig) {
     return Math.max(1, minutes);
   });
 
-  eleventyConfig.addFilter('tagColor', tag => {
-    if (!tag) return '#6b7280';
-    const key = String(tag).toLowerCase();
-    if (tagColors[key]) return tagColors[key];
-    const str = key;
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
-    }
-    const hue = hash % 360;
-    const sat = 65;
-    const light = 45;
-    const h = hue / 360;
-    const s = sat / 100;
-    const l = light / 100;
-    const hue2rgb = (p, q, t) => {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1 / 6) return p + (q - p) * 6 * t;
-      if (t < 1 / 2) return q;
-      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-      return p;
-    };
-    let r, g, b;
-    if (s === 0) {
-      r = g = b = l;
-    } else {
-      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-      const p = 2 * l - q;
-      r = hue2rgb(p, q, h + 1 / 3);
-      g = hue2rgb(p, q, h);
-      b = hue2rgb(p, q, h - 1 / 3);
-    }
-    const toHex = x => {
-      const v = Math.round(x * 255);
-      return (v < 16 ? '0' : '') + v.toString(16);
-    };
-    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-  });
-
   eleventyConfig.addFilter('xmlEscape', text => {
     if (!text || typeof text !== 'string') return '';
-    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
   });
 
   eleventyConfig.addFilter('hasCode', content => {
@@ -256,21 +220,6 @@ export default async function (eleventyConfig) {
   });
   eleventyConfig.addCollection('showInSitemap', showInSitemap);
 
-  eleventyConfig.addCollection('searchIndex', collectionApi => {
-    const posts = collectionApi
-      .getFilteredByGlob('src/content/posts/**/*.md')
-      .sort((a, b) => (a.date > b.date ? -1 : 1));
-
-    return posts.map(p => ({
-      id: p.url,
-      title: (p.data && p.data.title) || '',
-      description: (p.data && p.data.description) || '',
-      tags: Array.isArray(p.data?.tags) ? p.data.tags : [],
-      content: '',
-      date: p.date
-    }));
-  });
-
   eleventyConfig.addCollection('blogrollCategories', () => {
     const categories = [...new Set(blogroll.map(item => item.category))];
     return categories.sort();
@@ -310,7 +259,7 @@ export default async function (eleventyConfig) {
       layouts: '_layouts'
     }
   };
-};
+}
 
 function guestbookApiHandler(req, res, next) {
   const DATA_FILE = path.resolve('src/_data/guestbook.json');
@@ -328,35 +277,37 @@ function guestbookApiHandler(req, res, next) {
     if (req.method === 'GET') {
       try {
         const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-        const messages = (data.messages || []).slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ messages }));
+        const messages = (data.messages || [])
+          .slice()
+          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        return res.end(JSON.stringify({messages}));
       } catch {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ messages: [] }));
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        return res.end(JSON.stringify({messages: []}));
       }
     }
 
     if (req.method === 'POST') {
       let body = '';
-      req.on('data', chunk => body += chunk);
+      req.on('data', chunk => (body += chunk));
       req.on('end', () => {
         try {
-          const { name, message, honeypot } = JSON.parse(body);
+          const {name, message, honeypot} = JSON.parse(body);
 
           if (honeypot) {
-            res.writeHead(400, { 'Content-Type': 'application/json' });
-            return res.end(JSON.stringify({ error: 'Spam detected' }));
+            res.writeHead(400, {'Content-Type': 'application/json'});
+            return res.end(JSON.stringify({error: 'Spam detected'}));
           }
 
           if (!name || !message) {
-            res.writeHead(400, { 'Content-Type': 'application/json' });
-            return res.end(JSON.stringify({ error: 'Nome e mensagem são obrigatórios' }));
+            res.writeHead(400, {'Content-Type': 'application/json'});
+            return res.end(JSON.stringify({error: 'Nome e mensagem são obrigatórios'}));
           }
 
           if (name.length > 100 || message.length > 2000) {
-            res.writeHead(400, { 'Content-Type': 'application/json' });
-            return res.end(JSON.stringify({ error: 'Nome ou mensagem muito longos' }));
+            res.writeHead(400, {'Content-Type': 'application/json'});
+            return res.end(JSON.stringify({error: 'Nome ou mensagem muito longos'}));
           }
 
           const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
@@ -370,11 +321,11 @@ function guestbookApiHandler(req, res, next) {
           data.messages.push(newMessage);
           fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 
-          res.writeHead(201, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify({ success: true, message: newMessage }));
+          res.writeHead(201, {'Content-Type': 'application/json'});
+          return res.end(JSON.stringify({success: true, message: newMessage}));
         } catch {
-          res.writeHead(500, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify({ error: 'Erro ao salvar mensagem' }));
+          res.writeHead(500, {'Content-Type': 'application/json'});
+          return res.end(JSON.stringify({error: 'Erro ao salvar mensagem'}));
         }
       });
       return;
