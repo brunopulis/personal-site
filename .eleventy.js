@@ -55,6 +55,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('shuffle', filters.shuffleArray);
   eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
   eleventyConfig.addFilter('slugify', filters.slugifyString);
+  eleventyConfig.addFilter('startsWith', filters.startsWith);
   eleventyConfig.addFilter('where', filters.where);
   eleventyConfig.addFilter('keys', filters.keys);
   eleventyConfig.addFilter('concat', filters.concat);
@@ -164,10 +165,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/assets/favicon-32x32.png': 'assets/favicon-32x32.png'});
   eleventyConfig.addPassthroughCopy({'src/assets/favicon-16x16.png': 'assets/favicon-16x16.png'});
   eleventyConfig.addPassthroughCopy({'src/assets/apple-touch-icon.png': 'assets/apple-touch-icon.png'});
+  eleventyConfig.addPassthroughCopy({'src/assets/og-default.png': 'assets/og-default.png'});
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
   eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
   eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
   eleventyConfig.addPassthroughCopy({api: 'api'});
+  eleventyConfig.addPassthroughCopy({'src/.well-known': '.well-known'});
 
   // Plugins
   eleventyConfig.addPlugin(plugins.htmlConfig);
