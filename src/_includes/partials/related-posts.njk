@@ -36,7 +36,7 @@
             <div class="flex flex-wrap gap-1 mt-3">
               {% for tag in post.data.tags | slice(0, 2) %}
                 <span class="px-2 py-0.5 rounded text-white text-xs"
-                      style="background-color: {{ tag | tagColor }}">#{{ tag }}</span>
+                      style="background-color: var(--color-vista-blue-600)">#{{ tag }}</span>
               {% endfor %}
             </div>
           {% endif %}
