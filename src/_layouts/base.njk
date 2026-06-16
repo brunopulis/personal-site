@@ -30,16 +30,16 @@
   {# Resolve image: per-page image, or generated OG for posts, or default #}
   {% set rawImage = image %}
   {% if not rawImage %}
-    {% if page.url | slice(0, 6) == '/blog/' %}
+    {% if page.url | startsWith('/blog/') %}
       {% set rawImage = '/assets/og-images/' + (title | slugify) + '-preview.jpeg' %}
     {% else %}
-      {% set rawImage = '/screenshot.png' %}
+      {% set rawImage = '/assets/og-default.png' %}
     {% endif %}
   {% endif %}
   {% if site.url %}
-    {% if rawImage | slice(0,4) == 'http' %}
+    {% if rawImage | startsWith('http') %}
       {% set ogImage = rawImage %}
-    {% elseif rawImage | slice(0,1) == '/' %}
+    {% elseif rawImage | startsWith('/') %}
       {% set ogImage = site.url + rawImage %}
     {% else %}
       {% set ogImage = site.url + '/' + rawImage %}
@@ -195,7 +195,7 @@
 
   {# BlogPosting for content pages (#blog, #notes, #poetry, #journal) #}
   {% set url = page.url or '/' %}
-  {% set isPostLike = (url | slice(0,6) == '/blog/' ) or (url | slice(0,7) == '/notes/' ) or (url | slice(0,8) == '/poetry/' ) or (url | slice(0,9) == '/journal/' ) %}
+  {% set isPostLike = (url | startsWith('/blog/') ) or (url | startsWith('/notes/') ) or (url | startsWith('/poetry/') ) or (url | startsWith('/journal/') ) %}
   {% if isPostLike %}
   <script type="application/ld+json">
   {

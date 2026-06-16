@@ -15,6 +15,7 @@ import {showsByYear, showsByStatusAndYear, showsByYearAndStatus} from './filters
 import {filterFavorites, filterNonFavorites, groupByYear, filterByYear} from './filters/media.js';
 import {gamesByYear} from './filters/games.js';
 import {sortByDate} from './filters/sort-by-date.js';
+import {startsWith} from './filters/starts-with.js';
 
 export default {
   toISOString,
@@ -41,7 +42,8 @@ keys,
   showsByYear,
   showsByStatusAndYear,
   showsByYearAndStatus,
-  gamesByYear
+  gamesByYear,
+  startsWith
 };
 
 export function formatNumber(num) {
