@@ -40,7 +40,7 @@ eleventyComputed:
             {% for postTag in post.data.tags %}
               <a
                 class="px-2 py-0.5 rounded text-white text-xs hover:opacity-80"
-                style="background-color: {{ postTag | tagColor }}"
+                style="background-color: var(--color-vista-blue-600)"
                 href="/tags/{{ postTag | slug }}/"
                 >#{{ postTag }}</a
               >
