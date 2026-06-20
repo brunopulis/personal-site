@@ -1,20 +1,24 @@
-<section class="mb-12 py-8 text-center" aria-labelledby="hero-title">
-  <h1 class="mb-4 p-name font-bold text-4xl" id="hero-title">{{ site.name }}</h1>
-  <p class="mb-6 p-summary text-xl">{{ site.description }}</p>
+<section class="mb-12 py-8" aria-labelledby="hero-title">
+  <h1 class="mb-4 p-name font-bold text-blood-red-950 text-4xl" id="hero-title">
+    {{ site.name }}
+  </h1>
+  <p class="mb-6 p-summary text-xl">
+    {{ site.description }}
+  </p>
   <a class="hidden u-url" href="{{ site.url }}/"></a>
 
-  <div class="flex flex-wrap justify-center gap-4">
+  <div class="flex flex-wrap gap-4">
     <a
       href="/about/"
-      class="bg-blood-red-950 hover:bg-blood-red-900 px-6 py-2 rounded-lg font-bold text-white transition-colors"
+      class="font-bold text-blood-red-950 hover:text-blood-red-900 underline transition-colors"
     >
-      <span aria-hidden="true">👋</span> Saiba mais sobre mim
+      Sobre mim
     </a>
     <a
       href="/feeds"
-      class="bg-blood-red-950 hover:bg-blood-red-900 px-6 py-2 rounded-lg font-bold text-white transition-colors"
+      class="font-bold text-blood-red-950 hover:text-blood-red-900 underline transition-colors"
     >
-      <span aria-hidden="true">📡</span> Se inscreva via RSS.
+      Se inscreva via RSS
     </a>
   </div>
 </section>
