@@ -1,62 +1,66 @@
 <footer class="bg-light-silver-100 mt-12 border-gray-200 border-t">
   <div class="mx-auto px-4 py-8 max-w-4xl container">
-    <div class="gap-6 grid grid-cols-1 md:grid-cols-2">
+    <div class="justify-around gap-2 grid grid-cols-1 md:grid-cols-2">
       <div>
         <h3 class="font-semibold">Links</h3>
         <ul class="flex gap-2 mt-2 text-sm leading-relaxed">
           <li><a href="/explore/" class="text-errie-black-950 underline hover:no-underline">Explore</a></li>
           <li><a href="/archive/" class="text-errie-black-950 underline hover:no-underline">Arquivo</a></li>
           <li><a href="/guestbook/" class="text-errie-black-950 underline hover:no-underline">Livro de visitas</a></li>
-          <li><a href="/contact/" class="text-errie-black-950 underline hover:no-underline">Contato</a></li>
+          <li><a href="/accessibility/" class="text-errie-black-950 underline hover:no-underline">Acessibilidade</a></li>
+          <li><a href="/stats/" class="text-errie-black-950 underline hover:no-underline">Estatísticas</a></li>
         </ul>
       </div>
-      <div class="md:text-right">
+      <div>
         <h3 class="font-semibold">Se conecte</h3>
-        <div class="inline-flex flex-wrap items-center gap-3 mt-2 text-sm">
-          {% from "partials/icons.njk" import icon %}
-          {% if site.webring and site.webring.enabled %}
-          <a href="{{ site.webring.url }}" target="_blank" rel="noopener" class="text-errie-black-950 underline hover:no-underline">Indie Webring</a>
-          {% endif %}
-          <a href="mailto:{{ site.email }}" rel="me" class="text-errie-black-950 hover:text-errie-black-900" aria-label="Email">
-            {{ icon('mail', 'w-5 h-5 inline') }}
-          </a>
+        <ul class="flex gap-2 mt-2 text-sm leading-relaxed">
           {% if site.social.github %}
-          <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="GitHub">
-            {{ icon('github', 'w-5 h-5 inline') }}
-          </a>
+          <li>
+            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900 underline">
+              GitHub
+            </a>
+          </li>
           {% endif %}
+
           {% if site.social.bluesky %}
-          <a href="{{ site.social.bluesky }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="Bluesky">
-            {{ icon('bluesky', 'w-5 h-5 inline') }}
-          </a>
+          <li>
+            <a href="{{ site.social.bluesky }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900 underline">
+              Bluesky
+            </a>
+          </li>
           {% endif %}
+
           {% if site.social.mastodon %}
-          <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="Mastodon">
-            {{ icon('mastodon', 'w-5 h-5 inline') }}
-          </a>
+          <li>
+            <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900 underline">
+              Mastodon
+            </a>
+          </li>
           {% endif %}
+
           {% if site.social.youtube %}
-          <a href="{{ site.social.youtube }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="YouTube">
-            {{ icon('youtube', 'w-5 h-5 inline') }}
-          </a>
+          <li>
+            <a href="{{ site.social.youtube }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900 underline">
+              YouTube
+            </a>
+          </li>
           {% endif %}
+
           {% if site.social.linkedin %}
-          <a href="{{ site.social.linkedin }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900" aria-label="LinkedIn">
-            {{ icon('linkedin', 'w-5 h-5 inline') }}
-          </a>
+          <li>
+            <a href="{{ site.social.linkedin }}" target="_blank" rel="me noopener noreferrer" class="text-errie-black-950 hover:text-errie-black-900 underline">
+              LinkedIn
+            </a>
+          </li>
           {% endif %}
-        </div>
+        </ul>
       </div>
     </div>
-
     <hr class="mt-6 pt-6 border-gray-200 border-t">
 
     {% include "partials/webrings.njk" %}
-
     <hr class="mt-6 pt-6 border-gray-200 border-t">
-
     {% include "partials/badges.njk" %}
-
     <hr class="mt-6 pt-6 border-gray-200 border-t">
 
     <p class="text-errie-black-950 text-sm text-center">
