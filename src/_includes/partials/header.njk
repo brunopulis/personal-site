@@ -3,13 +3,13 @@
     <a class="font-semibold text-lg" href="/">
       <img src="/assets/images/pulis-8bits.png" alt="" class="rounded-full" style="max-width: 100%; width: 64px; height: 64px;">
     </a>
-    <nav aria-label="Navegação principal">
+    <nav>
       <div id="primary-nav" class="hidden md:block">
         {% set url = page.url or '/' %}
         {% set isBlog = (url and (url | startsWith('/blog/'))) %}
         {% set isBiblioteca = (url and (url | startsWith('/bookshelf/') or url | startsWith('/watching/') or url | startsWith('/games/') or url | startsWith('/newsletters/'))) %}
         {% set isSobre = (url == '/about/' or url == '/now/' or url == '/uses/') %}
-        {% set isExplore = url == '/explore/' %}
+        {% set isContact = url == '/contact/' %}
         {% set isNotes = url == '/notes/' %}
 
         <ul class="flex md:flex-row flex-col md:items-center md:space-x-1 space-y-1 md:space-y-0 md:text-sm text-base">
@@ -59,8 +59,8 @@
           </li>
 
           <li>
-            <a href="/explore/" class="nav-item block px-3 py-2 underline hover:no-underline {% if isExplore %}underline font-semibold{% endif %}"
-              {% if isExplore %}aria-current="page"{% endif %}>Explore</a>
+            <a href="/contact/" class="nav-item block px-3 py-2 underline hover:no-underline {% if isContact %}underline font-semibold{% endif %}"
+              {% if isContact %}aria-current="page"{% endif %}>Contato</a>
           </li>
         </ul>
       </div>
