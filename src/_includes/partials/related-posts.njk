@@ -17,29 +17,26 @@
 
 {% if relatedPosts.length > 0 %}
   {% set sortedPosts = relatedPosts | sort(false, false, 'score') | reverse %}
-  <section class="mt-12 pt-8 border-gray-200 dark:border-gray-700 border-t">
-    <h2 class="mb-6 font-semibold text-xl">Related Posts</h2>
+  <section class="mt-12 pt-8 border-gray-200 border-t">
+    <h2 class="mb-6 font-semibold text-blood-red-950 text-xl">
+      Posts relacionados
+    </h2>
+
     <div class="gap-6 grid grid-cols-1 md:grid-cols-3">
       {% for item in sortedPosts | limit(3) %}
         {% set post = item.post %}
-        <article class="hover:shadow-md p-4 border border-gray-200 dark:border-gray-700 rounded-lg transition-shadow">
+        <article class="hover:shadow-md p-4 border border-gray-200 rounded-lg transition-shadow">
           <h3 class="mb-2 font-semibold">
-            <a href="{{ post.url }}" class="hover:text-blue-600">{{ post.data.title }}</a>
+            <a href="{{ post.url }}" class="text-blood-red-950 hover:text-blood-red-900 underline underline-offset-4 hover:no-underline">
+              {{ post.data.title }}
+            </a>
           </h3>
-          <time class="text-gray-500 text-sm" datetime="{{ post.date | htmlDateString }}">
+          <time class="font-bold text-sm" datetime="{{ post.date | htmlDateString }}">
             {{ post.date | readableDate }}
           </time>
-          <p class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+          <p class="mt-2 text-sm">
             {{ post.data.description or (post.templateContent | striptags | truncate(100)) }}
           </p>
-          {% if post.data.tags %}
-            <div class="flex flex-wrap gap-1 mt-3">
-              {% for tag in post.data.tags | limit(2) %}
-                <span class="px-2 py-0.5 rounded text-white text-xs"
-                      style="background-color: var(--color-vista-blue-600)">#{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
         </article>
       {% endfor %}
     </div>

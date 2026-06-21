@@ -1,45 +1,38 @@
-<section class="bg-light-silver-100 p-6 rounded-xl">
-  <div class="items-center gap-6 grid md:grid-cols-2">
-    <div class="flex justify-center">
-      <img class="w-32 h-32 object-cover" src="/assets/images/pulis.webp" alt="" />
-    </div>
-    <div class="prose">
-      <h3 class="font-serif text-lg">Sobre {{ site.author }}</h3>
-      <p class="mt-1">{{ site.bio.short }}</p>
+<section class="flex items-start gap-4 mt-10 p-5 border border-border rounded-md">
+  <div>
+    <h3 class="font-serif text-lg">Sobre {{ site.author }}</h3>
+    <p class="my-1">{{ site.bio.short }}</p>
 
-      <div class="mt-6">
-        <p>O site <strong>brunopulis.com</strong> é independente, sem anúncios, sem trackeamento de informações e aberto para todos. Sem <em>paywalls</em> e anunciantes, com exceção de livros sugeridos na Amazon.</p>
-        <p>Você pode também apoiar meu trabalho através de doações pontuais ou regulares, através dos canais:</p>
+    <p>Esse site é independente, sem anúncios, sem trackeamento de informações e aberto para todos. Sem <em>paywalls</em> e anunciantes, com exceção de livros sugeridos na Amazon.</p>
+    <p class="py-2">Você pode também apoiar meu trabalho através de doações pontuais ou regulares, através dos canais:</p>
 
-        {% if site.donate.enabled %}
-          <ul class="flex flex-wrap gap-4 my-6">
-            <li>
-              {% if site.donate.kofi %}
-                <a
-                  href="https://ko-fi.com/{{ site.donate.kofi }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="font-bold text-blood-red-950 underline underline-offset-4 hover:no-underline"
-                >
-                  Ko-fi
-                </a>
-              {% endif %}
-            </li>
-            <li>
-              {% if site.donate.paypal %}
-                <a
-                  href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="font-bold text-blood-red-950 underline underline-offset-4 hover:no-underline"
-                >
-                  PayPal
-                </a>
-              {% endif %}
-            </li>
-          </ul>
-        {% endif %}
-      </div>
-    </div>
+    {% if site.donate.enabled %}
+      <ul class="flex flex-wrap gap-4 my-3">
+        <li>
+          {% if site.donate.kofi %}
+            <a
+              href="https://ko-fi.com/{{ site.donate.kofi }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-bold text-blood-red-950 underline underline-offset-4 hover:no-underline"
+            >
+              Ko-fi
+            </a>
+          {% endif %}
+        </li>
+        <li>
+          {% if site.donate.paypal %}
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-bold text-blood-red-950 underline underline-offset-4 hover:no-underline"
+            >
+              PayPal
+            </a>
+          {% endif %}
+        </li>
+      </ul>
+    {% endif %}
   </div>
 </section>
