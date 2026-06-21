@@ -18,7 +18,7 @@ const GLOBS = [
   'src/content/poetry/**/*.md'
 ];
 
-function toSlug(s) {
+export function toSlug(s) {
   return String(s)
     .toLowerCase()
     .trim()
@@ -44,7 +44,7 @@ function getAllFiles(dir) {
   return files;
 }
 
-function extractTags(content) {
+export function extractTags(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---/);
   if (!match) return [];
 
@@ -53,12 +53,10 @@ function extractTags(content) {
 
   const lines = frontmatter.split('\n');
   let inTags = false;
-  let currentKey = null;
 
   for (const line of lines) {
     const keyMatch = line.match(/^(\w+):\s*(.*)$/);
     if (keyMatch) {
-      currentKey = keyMatch[0];
       const key = keyMatch[1];
       const value = keyMatch[2].trim();
       inTags = key === 'tags';
@@ -84,7 +82,7 @@ export default function () {
   const tagMap = new Map(); // slug -> { name, slug, count, names: [] }
 
   GLOBS.forEach(glob => {
-    const baseDir = path.join(rootDir, path.dirname(glob.replace('/**/*.md', '')));
+    const baseDir = path.join(rootDir, glob.replace('/**/*.md', ''));
     if (!fs.existsSync(baseDir)) return;
     const files = getAllFiles(baseDir);
 
