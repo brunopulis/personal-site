@@ -4,7 +4,7 @@ permalink: '/donate/'
 title: Apoie meu trabalho
 ---
 
-<h1 class="mb-6 font-bold text-2xl">Apoie meu trabalho</h1>
+<h1 class="mb-6 font-bold text-blood-red-950 text-2xl">Apoie meu trabalho</h1>
 
 <div class="dark:prose-invert max-w-none prose prose-lg">
   {% if site.donate.message %}
@@ -22,31 +22,20 @@ title: Apoie meu trabalho
         <a
           href="https://ko-fi.com/{{ site.donate.kofi }}"
           target="_blank"
-          rel="noopener"
-          class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+          rel="noopener noreferrer"
+          class="font-bold text-blood-red-950 underline underline-offset-4"
         >
-          <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">Ko-fi</span>
+          Ko-fi
         </a>
       {% endif %}
       {% if site.donate.paypal %}
         <a
           href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
           target="_blank"
-          rel="noopener"
-          class="inline-flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+          rel="noopener noreferrer"
+          class="font-bold text-blood-red-950 underline underline-offset-4"
         >
-          <span aria-hidden="true">☕</span> <span class="mr-2 ml-2 font-bold text-white">PayPal</span>
-        </a>
-      {% endif %}
-      {% if site.donate.buymeacoffee %}
-        <a
-          href="https://buymeacoffee.com/{{ site.donate.buymeacoffee }}"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center bg-yellow-600 hover:bg-yellow-700 px-6 py-3 rounded-lg text-white transition-colors"
-        >
-          <span aria-hidden="true">☕</span>
-          <span class="mr-2 ml-2 font-bold text-white">Buy me a coffee</span>
+          PayPal
         </a>
       {% endif %}
     </div>
@@ -59,11 +48,10 @@ title: Apoie meu trabalho
         <a
           href="https://github.com/sponsors/{{ site.donate.github }}"
           target="_blank"
-          rel="noopener"
-          class="inline-flex items-center bg-gray-800 hover:bg-gray-900 px-6 py-3 rounded-lgtransition-colors"
+          rel="noopener noreferrer"
+          class="font-bold text-blood-red-950 underline underline-offset-4"
         >
-          <span aria-hidden="true">💖</span>
-          <span class="mr-2 ml-2 font-bold text-white" lang="en">GitHub Sponsors</span>
+          <span lang="en">GitHub Sponsors</span>
         </a>
       </div>
     {% endif %}
