@@ -13,15 +13,12 @@ description: Todas as tags usadas no site, organizadas com contagem de publicaç
   {% for tag in tagsData %}
     {% set tagCount = tag.count %}
     <a href="/tags/{{ tag.name | slug }}/"
-       class="group inline-flex items-center gap-1.5 bg-light-silver-100 hover:bg-vista-blue-500 px-3 py-1.5 rounded-full hover:text-white text-sm transition-colors">
-      <span>#{{ tag.name }}</span>
-      <span class="bg-white group-hover:bg-vista-blue-600 px-1.5 py-0.5 rounded-full font-bold tabular-nums text-errie-black-950 text-xs transition-colors">
-        {{ tagCount }}
-      </span>
+       class="p-category px-2 py-1 border border-border hover:border-primary rounded-full text-muted-foreground hover:text-primary text-xs">
+      #{{ tag.name }} {{ tagCount }}
     </a>
   {% endfor %}
 </div>
 
 {% if tagsData.length == 0 %}
-  <p class="py-4 text-errie-black-950">Nenhuma tag encontrada.</p>
+  <p class="py-4">Nenhuma tag encontrada.</p>
 {% endif %}
