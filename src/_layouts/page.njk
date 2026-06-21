@@ -15,7 +15,7 @@ layout: base
 
   {% set lastMod = page.inputPath | lastModified %}
   {% if lastMod %}
-    <footer class="page-footer">
+    <footer class="mt-4 py-8 border-border border-gray-200 border-y page-footer">
       <p class="page-meta">
         <span aria-hidden="true">🖋️</span>
         <span>Última modificação: {{ lastMod | readableDate }}</span>
