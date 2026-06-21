@@ -2,17 +2,15 @@
   <h2 class="mb-4 font-semibold text-blood-red-950 text-xl">
     Respostas via <em>webmention's</em>
   </h2>
-  <div id="webmentions-list">
-    <div class="py-4 text-center">
-      <div class="animate-pulse">Carregando <em lang="en">webmentions</em>...</div>
-    </div>
+  <div class="py-4" id="webmentions-list">
+    <p class="animate-pulse">Carregando <em lang="en">webmentions</em>...</p>
   </div>
 </section>
 
 {% if webmentions and webmentions.length > 0 %}
   <div class="space-y-4">
     {% for mention in webmentions %}
-      <article class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+      <article class="p-4 border border-gray-200 rounded-lg">
         <div class="flex items-start space-x-3">
           {% if mention.author.photo %}
             <img
@@ -21,8 +19,10 @@
               class="rounded-full w-10 h-10"
             />
           {% else %}
-            <div class="flex justify-center items-center bg-gray-300 dark:bg-gray-600 rounded-full w-10 h-10">
-              <span class="font-medium text-sm">{{ mention.author.name | first }}</span>
+            <div class="flex justify-center items-center bg-gray-300rounded-full w-10 h-10">
+              <span class="font-medium text-sm">
+                {{ mention.author.name | first }}
+              </span>
             </div>
           {% endif %}
           <div class="flex-1 min-w-0">
@@ -35,17 +35,17 @@
               >
                 {{ mention.author.name }}
               </a>
-              <span class="text-gray-500">
+              <span>
                 {% if mention['wm-property'] == 'like-of' %}
-                  liked this
+                  gostei disso
                 {% elif mention['wm-property'] == 'repost-of' %}
-                  reposted this
+                  repostei isso
                 {% elif mention['wm-property'] == 'bookmark-of' %}
-                  bookmarked this
+                  favoritei isso
                 {% elif mention['wm-property'] == 'mention-of' %}
-                  mentioned this
+                  mencionei isso
                 {% else %}
-                  replied
+                  respondi
                 {% endif %}
               </span>
               <time class="text-gray-500" datetime="{{ mention.published }}">
@@ -53,7 +53,7 @@
               </time>
             </div>
             {% if mention.content and mention.content.text %}
-              <div class="mt-2 text-gray-700 dark:text-gray-300">
+              <div class="mt-2">
                 {{ mention.content.text | truncate(280) | safe }}
               </div>
             {% endif %}
@@ -64,7 +64,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                View original
+                Ver o original
               </a>
             </div>
           </div>

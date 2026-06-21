@@ -2,10 +2,6 @@
 layout: base
 ---
 
-<a href="/blog/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">
-  <span aria-hidden="true">←</span> Voltar para o blog
-</a>
-
 <nav class="mb-4 text-sm" aria-label="Breadcrumb">
   <ol class="flex space-x-2">
     <li><a href="/" class="hover:text-blue-600">Home</a></li>
@@ -16,7 +12,7 @@ layout: base
   </ol>
 </nav>
 
-<article class="h-entry">
+<article class="py-10 h-entry">
   {% if featuredImage %}
     <img
       class="mb-6 rounded-lg w-full u-photo"
@@ -32,13 +28,15 @@ layout: base
     {% endif %}
     <div class="text-sm">
       Publicado em:
-      <time class="dt-published" datetime="{{ page.date | htmlDateString }}"
-        >{{ page.date | readableDate }}</time
-      >
+      <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
+        {{ page.date | readableDate }}
+      </time>
       por
-      <span class="p-author h-card"
-        ><a class="p-name hover:text-blue-600 u-url" href="/about/">{{ author or site.author }}</a></span
-      >
+      <span class="p-author h-card">
+        <a class="p-name hover:text-blue-600 u-url" href="/about/">
+          {{ author or site.author }}
+        </a>
+      </span>
       <span aria-hidden="true">•</span>
       <span class="reading-time">{{ content | readingTime }} min de leitura</span>
     </div>
@@ -50,17 +48,17 @@ layout: base
   </div>
 
   {% if tags %}
-    <nav class="inline-flex gap-4 py-4" aria-label="Tags">
-      <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
-      <div class="flex flex-wrap gap-2">
-        {% for tag in tags %}
-          <a
-            class="p-category font-bold text-errie-black-950 text-xs transition-colors"
-            href="/tags/{{ tag | slug }}/"
-            >#{{ tag }}</a
-          >
-        {% endfor %}
-      </div>
+    <nav class="flex flex-wrap items-center gap-2 mt-10 py-4">
+      <span class="text-muted-foreground text-xs uppercase tracking-wider">
+        Tags
+      </span>
+      {% for tag in tags %}
+        <a
+          class="p-category px-2 py-1 border border-border hover:border-primary rounded-full text-muted-foreground hover:text-primary text-xs"
+          href="/tags/{{ tag | slug }}/"
+          >#{{ tag }}</a
+        >
+      {% endfor %}
     </nav>
   {% endif %}
 
