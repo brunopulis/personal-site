@@ -5,9 +5,9 @@ permalink: /watching/
 ---
 
 <section class="mb-8">
-  <h1 class="mb-2 font-bold text-3xl">Filmes e Séries</h1>
-  <p class="mb-4 text-errie-black-900">
-    Uma lista de filmes e séries que assisti, com avaliações e algumas resenhas.
+  <h1 class="mb-2 font-bold text-blood-red-950 text-2xl">Filmes e Séries</h1>
+  <p class="mb-4">
+    Filmes e séries que assisti, apresentados de forma organizada.
   </p>
 
   {% set allMovies = collections.movies %}
@@ -42,7 +42,7 @@ permalink: /watching/
     <h2 class="font-bold text-blood-red-950 text-2xl" id="recent-movies">
       <span aria-hidden="true">🍿</span> Filmes Recentes
     </h2>
-    <a href="/watching/movies/" class="text-vista-blue-600 text-sm hover:underline">Ver todos →</a>
+    <a href="/watching/movies/" class="text-vista-blue-600 dark:text-vista-blue-400 text-sm hover:underline">Ver todos →</a>
   </div>
 
   {% if recentMovies.length > 0 %}
@@ -58,16 +58,15 @@ permalink: /watching/
               loading="lazy"
             >
           {% else %}
-            <!-- Fallback -->
             <div class="flex justify-center items-center bg-linear-to-br from-vista-blue-500 to-blood-red-500 rounded w-full aspect-2/3">
               <span class="font-bold text-white text-2xl">
                 {{ movie.data.title | truncate(1, true, "") }}
               </span>
             </div>
           {% endif %}
-
-          <div class="py-2">
-            <h3 class="p-name py-2 font-bold text-sm line-clamp-2 leading-tight">
+          <p>{{ movie.data.director }}</p>
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">
               {{ movie.data.title }}
             </h3>
             {% if movie.data.rating %}
@@ -83,7 +82,7 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-  <p class="text-errie-black-900">Nenhum filme registrado ainda.</p>
+    <p>Nenhum filme registrado ainda.</p>
   {% endif %}
 </section>
 {% endif %}
@@ -111,9 +110,7 @@ permalink: /watching/
             >
           {% else %}
             <div class="flex justify-center items-center bg-linear-to-br from-vista-blue-500 to-blood-red-500 rounded w-full aspect-2/3">
-              <span class="font-bold text-white text-2xl">
-                {{ show.data.title | truncate(1, true, "") }}
-              </span>
+              <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="py-2">
@@ -133,7 +130,7 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-  <p class="text-errie-black-950">Nenhum seriado registrado ainda.</p>
+    <p>Nenhum seriado registrado ainda.</p>
   {% endif %}
 </section>
 {% endif %}
@@ -165,8 +162,8 @@ permalink: /watching/
               </span>
             </div>
           {% endif %}
-          <div class="py-2">
-            <h3 class="font-bold text-sm line-clamp-2 leading-tight">
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">
               {{ movie.data.title }}
             </h3>
             {% if movie.data.rating %}
@@ -216,8 +213,8 @@ permalink: /watching/
               </span>
             </div>
           {% endif %}
-          <div class="py-2">
-            <h3 class="font-bold text-sm line-clamp-2 leading-tight">
+          <div class="mt-2">
+            <h3 class="font-semibold text-sm line-clamp-2 leading-tight">
               {{ show.data.title }}
             </h3>
             {% if show.data.rating %}
@@ -233,15 +230,13 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-    <p class="text-errie-black-950">
-      Nenhuma série favorita ainda.
-    </p>
+    <p>Nenhuma série favorita ainda.</p>
   {% endif %}
 </section>
 {% endif %}
 
 {% if yearMovies.length == 0 and yearShows.length == 0 %}
-  <p class="py-12 text-errie-black-950 text-center">
-    Nenhum filme ou série registrado para {{ year }}.
-  </p>
+<p class="py-12 text-center">
+  Nenhum filme ou série registrado para {{ year }}.
+</p>
 {% endif %}
