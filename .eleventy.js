@@ -180,11 +180,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(plugins.rss);
   eleventyConfig.addPlugin(plugins.syntaxHighlight);
 
-  eleventyConfig.addPlugin(plugins.webc, {
-    components: ['./src/_includes/webc/**/*.webc'],
-    useTransform: true
-  });
-
   eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
     formats: ['avif', 'webp', 'jpeg'],
     widths: [650, 960, 1400],

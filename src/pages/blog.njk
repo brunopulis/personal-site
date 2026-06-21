@@ -28,16 +28,19 @@ title: Blog
           {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
         </div>
         {% if tags %}
-          <div class="flex flex-wrap gap-2 my-2">
-            {% for tag in tags %}
-              <a
-                class="bg-vista-blue-500 p-category px-2 py-1 rounded font-bold text-errie-black-950 text-xs transition-colors"
-                href="/tags/{{ tag | slug }}/"
-                >#{{ tag }}</a
-              >
-            {% endfor %}
-          </div>
-        {% endif %}
+            <div class="inline-flex gap-4 py-4">
+              <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+              <div class="flex flex-wrap gap-2">
+                {% for tag in tags %}
+                  <a
+                    class="p-category font-bold text-errie-black-950 text-xs transition-colors"
+                    href="/tags/{{ tag | slug }}/"
+                    >#{{ tag }}</a
+                  >
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
       </article>
     {% endfor %}
   </div>

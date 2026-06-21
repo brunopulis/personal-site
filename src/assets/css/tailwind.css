@@ -315,18 +315,20 @@ body {
   /* Global link hover/active behavior (non-prose, non-nav links) */
   .indicator::after,
   a[href^="http"]:not([href*="localhost:8080"]):not([href*="brunopulis.com"]):not(.no-indicator)::after {
-    background-image: url(/assets/images/template/external.svg);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 60% auto;
-    block-size: 1em;
-    content: "(external link)";
+    content: "";
     display: inline-block;
-    inline-size: 1em;
-    overflow: hidden;
-    position: absolute;
-    text-indent: 1em;
-    white-space: nowrap;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 0.15em;
+    vertical-align: 0.05em;
+    background-color: currentColor;
+    mask-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E");
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    opacity: 0.6;
   }
 
   p {
