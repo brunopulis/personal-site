@@ -9,7 +9,7 @@ title: Blog
 ---
 
 <div class="h-feed">
-  <h1 class="mb-6 p-name font-bold text-2xl">Blog</h1>
+  <h1 class="mb-6 p-name font-bold text-blood-red-950 text-2xl">Blog</h1>
   <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
 
   <div class="space-y-8">
@@ -44,12 +44,12 @@ title: Blog
 
   <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.previous }}">Anterior</a>
+      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.previous }}" rel="prev">Anterior</a>
     {% else %}
       <span></span>
     {% endif %}
     {% if pagination.href.next %}
-      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.next }}">Próximo</a>
+      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.next }}" rel="next">Próximo</a>
     {% endif %}
   </nav>
 </div>

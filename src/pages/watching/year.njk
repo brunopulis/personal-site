@@ -10,9 +10,8 @@ generate: true
 
 <section class="mb-8">
   <nav class="mb-4 text-sm">
-    <a href="/watching/" class="text-vistaBlue-600 dark:text-vistaBlue-400 hover:underline">Watching</a>
-    <span class="mx-2">→</span>
-    <span>{{ year }}</span>
+    <a href="/watching/" class="text-blood-red-950 hover:underline">Filmes e séries em:</a>
+    <strong>{{ year }}</strong>
   </nav>
 
   {% set allMovies = collections.movies %}
@@ -25,8 +24,8 @@ generate: true
   <div class="flex items-center content-between gap-2 mb-6">
     {% for year in years %}
       <a
-        href="/watching/{{ y }}/"
-        class="px-3 py-1 text-sm rounded-full border transition-colors {% if y == currentYear %}bg-vistaBlue-600 font-bold text-white border-vistaBlue-600{% else %}bg-vistaBlue-100 font-bold text-errieBlack-950 border-vistaBlue-100 hover:border-vistaBlue-500 hover:text-errieBlack-950{% endif %}"
+        href="/watching/{{ year }}/"
+        class="px-3 py-1 text-sm rounded-full border transition-colors {% if y == currentYear %}bg-vista-blue-600 font-bold text-white border-vista-blue-600{% else %}bg-vista-blue-100 font-bold text-errie-black-950 border-vista-blue-100 hover:border-vista-blue-500 hover:text-errie-black-950{% endif %}"
       >
         {{ year }}
       </a>
@@ -34,17 +33,17 @@ generate: true
   </div>
 
   <h1 class="mb-2 font-bold text-3xl">{{ year }}</h1>
-  <p class="mb-4 text-errieBlack-900">
+  <p class="mb-4 text-errie-black-900">
     Filmes e séries assistidos em {{ year }}.
   </p>
 </section>
 
 {% set yearMovies = collections.movies | filterByYear(year) %}
 {% set yearShows = collections.shows | filterByYear(year) %}
-{% set recentMovies = yearMovies | reverse | limit(6) %}
-{% set recentShows = yearShows | reverse | limit(6) %}
-{% set favoriteMovies = yearMovies | filterFavorites | reverse | limit(6) %}
-{% set favoriteShows = yearShows | filterFavorites | reverse | limit(6) %}
+{% set recentMovies = yearMovies | sortByDate | limit(6) %}
+{% set recentShows = yearShows | sortByDate | limit(6) %}
+{% set favoriteMovies = yearMovies | filterFavorites | sortByDate | limit(6) %}
+{% set favoriteShows = yearShows | filterFavorites | sortByDate | limit(6) %}
 
 {% if recentMovies.length > 0 %}
 <section class="mb-12" aria-labelledby="recent-movies">

@@ -1,0 +1,34 @@
+---
+layout: base
+---
+
+<a href="/notes/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800">
+  <span aria-hidden="true">←</span> Voltar para as notas
+</a>
+
+<article class="h-entry">
+  <header class="mb-4">
+    <p class="text-sm">
+      <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
+        {{ page.date | readableDate }}
+      </time>
+      <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
+    </p>
+  </header>
+
+  <div class="max-w-none e-content prose">
+    {{ content | safe }}
+  </div>
+
+  {% if tags %}
+    <div class="flex flex-wrap gap-2 mt-6">
+      {% for tag in tags %}
+        <a
+          class="bg-vista-blue-500 p-category px-2 py-1 rounded font-bold text-errie-black-950 text-xs transition-colors"
+          href="/tags/{{ tag | slug }}/"
+          >#{{ tag }}</a
+        >
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>

@@ -1,7 +1,29 @@
-<section class="gap-6 bg-light-silver-100 p-6 rounded-xl">
-  <h2 class="mb-2 font-bold text-errie-black-950 text-sm tracking-wide">Responda este artigo</h2>
-  <p>Compartilhe suas ideias em português ou inglês por e-mail. <span aria-hidden="true">💙</span></p>
-  <a class="inline-flex items-center bg-vista-blue-500 hover:bg-vista-blue-600 my-2 px-2 py-1 rounded font-bold text-errie-black-950 transition-colors" href="mailto:{{site.email}}?subject=Resposta para {{title}}">
-    Responder por e-mail
-  </a>
+<section class="">
+  <h2 class="mb-2 font-bold text-errie-black-950 text-sm tracking-wide">
+    Entre na conversa
+  </h2>
+
+  <div class="bg-light-silver-100 p-4">
+    <ul class="list-disc list-inside">
+      <li><a class="text-vista-blue-500 underline hover:no-underline" href="mailto:{{site.email}}?subject=Resposta para {{title}}">Responder via e-mail</a></li>
+      <li>
+        <a class="text-vista-blue-500 underline hover:no-underline"
+           href="https://mastodon.social/share?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}"
+           target="_blank"
+           rel="noopener noreferrer">Discuta no Mastodon
+        </a>
+      </li>
+      <li><a class="text-vista-blue-500 underline hover:no-underline" href="#">Discuta no Bluesky</a></li>
+      <li>
+        <a
+        href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+        target="_blank"
+        rel="noopener"
+        class="text-vista-blue-500 underline hover:no-underline"
+      >
+        LinkedIn
+      </a>
+      </li>
+    </ul>
+  </div>
 </section>

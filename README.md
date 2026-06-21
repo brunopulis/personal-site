@@ -180,7 +180,7 @@ Quick reference (matches the code in `src/_includes/layouts/post.njk`, `src/cont
 src/
 ├── _data/
 │   ├── site.json       # 🎯 Main config file (edit this!)
-│   └── tagColors.json  # Tag color mappings
+
 ├── _includes/
 │   ├── layouts/        # Page layouts
 │   └── partials/       # Reusable components
@@ -282,7 +282,7 @@ This template includes IndieWeb features out of the box:
 
 - Edit `tailwind.config.cjs` for theme colors
 - Modify `src/assets/css/build.css` for custom styles
-- Update `src/_data/tagColors.json` for tag colors
+
 
 ### Adding Pages
 

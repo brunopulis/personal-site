@@ -10,6 +10,14 @@
   {% endif %}
   <meta name="description" content="{{ description or site.description }}" />
   <meta name="generator" content="Eleventy" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="author" href="humans.txt" />
+  {% if site.social and site.social.mastodon %}
+    <link rel="me" href="{{ site.social.mastodon }}" />
+  {% endif %}
   {# Canonical URL #}
   {% if site.url %}
   <link rel="canonical" href="{{ site.url }}{{ page.url or '/' }}" />
@@ -19,12 +27,19 @@
   {% set ogTitle = title or site.name %}
   {% set ogDescription = description or site.description %}
   {% set ogUrl = (site.url and (site.url + (page.url or '/'))) or '' %}
-  {# Resolve image: allow per-page front matter `image` or default to /screenshot.png #}
-  {% set rawImage = image or '/screenshot.png' %}
+  {# Resolve image: per-page image, or generated OG for posts, or default #}
+  {% set rawImage = image %}
+  {% if not rawImage %}
+    {% if page.url | startsWith('/blog/') %}
+      {% set rawImage = '/assets/og-images/' + (title | slugify) + '-preview.jpeg' %}
+    {% else %}
+      {% set rawImage = '/assets/og-default.png' %}
+    {% endif %}
+  {% endif %}
   {% if site.url %}
-    {% if rawImage | slice(0,4) == 'http' %}
+    {% if rawImage | startsWith('http') %}
       {% set ogImage = rawImage %}
-    {% elseif rawImage | slice(0,1) == '/' %}
+    {% elseif rawImage | startsWith('/') %}
       {% set ogImage = site.url + rawImage %}
     {% else %}
       {% set ogImage = site.url + '/' + rawImage %}
@@ -73,6 +88,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
 
   {# Syntax highlighting via Highlight.js local #}
+  {% if content | hasCode %}
   <link id="hljs-light" rel="stylesheet" href="/assets/css/highlight/tokyo-night-light.min.css">
   <link id="hljs-dark" rel="stylesheet" href="/assets/css/highlight/tokyo-night-dark.min.css" disabled>
 
@@ -89,12 +105,9 @@
           dark.disabled = !isDark;
         }
       }
-      // Initial apply
       applyTheme();
-      // Observe class changes on <html> to react to dark-mode toggle
       const observer = new MutationObserver(applyTheme);
       observer.observe(html, { attributes: true, attributeFilter: ['class'] });
-      // Highlight code blocks
       document.querySelectorAll('pre code').forEach((el) => {
         if (window.hljs && typeof window.hljs.highlightElement === 'function') {
           window.hljs.highlightElement(el);
@@ -102,8 +115,23 @@
       });
     });
   </script>
+  {% endif %}
   <style>
-    .contrast { filter: contrast(1.2) saturate(1.1); }
+    .contrast {
+      filter: contrast(1.2) saturate(1.1);
+      --text: #000;
+      --bg: #fff;
+      --border: #000;
+    }
+    html.dark .contrast {
+      --text: #fff;
+      --bg: #000;
+      --border: #fff;
+    }
+    .contrast a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     .reduce-motion * { transition: none !important; animation: none !important; }
   </style>
   {% include "partials/analytics.njk" %}
@@ -167,7 +195,7 @@
 
   {# BlogPosting for content pages (#blog, #notes, #poetry, #journal) #}
   {% set url = page.url or '/' %}
-  {% set isPostLike = (url | slice(0,6) == '/blog/' ) or (url | slice(0,7) == '/notes/' ) or (url | slice(0,8) == '/poetry/' ) or (url | slice(0,9) == '/journal/' ) %}
+  {% set isPostLike = (url | startsWith('/blog/') ) or (url | startsWith('/notes/') ) or (url | startsWith('/poetry/') ) or (url | startsWith('/journal/') ) %}
   {% if isPostLike %}
   <script type="application/ld+json">
   {

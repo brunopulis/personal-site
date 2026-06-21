@@ -56,7 +56,7 @@
 
 /* Blog post typography styles */
 .prose {
-  @apply max-w-none text-gray-900 dark:text-gray-100;
+  @apply max-w-none text-errie-black-950;
 }
 
 .prose p {
@@ -64,27 +64,27 @@
 }
 
 .prose h1 {
-  @apply mt-8 mb-6 font-bold text-gray-900 dark:text-gray-100 text-3xl;
+  @apply mt-8 mb-6 font-bold text-blood-red-950 text-3xl;
 }
 
 .prose h2 {
-  @apply mt-8 mb-4 font-bold text-gray-900 dark:text-gray-100 text-2xl;
+  @apply mt-8 mb-4 font-bold text-blood-red-950 text-2xl;
 }
 
 .prose h3 {
-  @apply mt-6 mb-3 font-semibold text-gray-900 dark:text-gray-100 text-xl;
+  @apply mt-6 mb-3 font-semibold text-blood-red-950 text-xl;
 }
 
 .prose h4 {
-  @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-lg;
+  @apply mt-4 mb-2 font-semibold text-blood-red-950 text-lg;
 }
 
 .prose h5 {
-  @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-base;
+  @apply mt-4 mb-2 font-semibold text-blood-red-950 text-base;
 }
 
 .prose h6 {
-  @apply mt-4 mb-2 font-semibold text-gray-900 dark:text-gray-100 text-sm;
+  @apply mt-4 mb-2 font-semibold text-blood-red-950 text-sm;
 }
 
 .prose ul {
@@ -108,15 +108,15 @@
 }
 
 .prose blockquote {
-  @apply border-l-4 border-purple-500 pl-6 py-2 mb-6 italic text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800/50;
+  @apply bg-white mb-6 py-2 pl-6 border-blood-red-950 border-l-4 text-errie-black-950 italic;
 }
 
 .prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded font-mono text-purple-700 dark:text-purple-300 text-sm;
+  @apply bg-gray-100 px-2 py-1 rounded font-mono text-errie-black-950 text-sm;
 }
 
 .prose pre {
-  @apply bg-gray-100 dark:bg-gray-900 mb-6 p-4 rounded-lg overflow-x-auto text-gray-900 dark:text-gray-100;
+  @apply bg-gray-100 mb-6 p-4 rounded-lg overflow-x-auto text-errie-black-950;
 }
 
 .prose pre code {
@@ -166,19 +166,19 @@
 }
 
 .prose th {
-  @apply bg-gray-100 dark:bg-gray-800 px-4 py-2 border border-gray-300 dark:border-gray-600 font-semibold text-left;
+  @apply bg-gray-100 px-4 py-2 border border-gray-300 font-semibold text-left;
 }
 
 .prose td {
-  @apply px-4 py-2 border border-gray-300 dark:border-gray-600;
+  @apply px-4 py-2 border border-gray-300;
 }
 
 .prose hr {
-  @apply my-8 border-gray-300 dark:border-gray-600;
+  @apply my-8 border-gray-300;
 }
 
 .prose strong {
-  @apply font-bold text-gray-900 dark:text-gray-100;
+  @apply font-bold text-gray-900;
 }
 
 .prose em {
@@ -186,12 +186,12 @@
 }
 
 .prose del {
-  @apply text-gray-500 dark:text-gray-400 line-through;
+  @apply text-gray-500 line-through;
 }
 
 /* Header anchors */
 .prose .header-anchor {
-  @apply opacity-0 ml-2 text-purple-500 hover:text-purple-700 dark:hover:text-purple-200 dark:text-purple-400 no-underline transition-opacity;
+  @apply opacity-0 ml-2 text-blood-red-950 hover:text-errie-black-950 no-underline transition-opacity;
 }
 
 .prose h1:hover .header-anchor,
@@ -208,15 +208,6 @@
   --accent: #7c3aed;
   --accent-light: #a855f7;
   --border: #e9d5ff;
-}
-
-.dark {
-  --bg: #0f0a1a;
-  --text: #f1e8ff;
-  --surface: #1a0f2e;
-  --accent: #a855f7;
-  --accent-light: #c084fc;
-  --border: #4c1d95;
 }
 
 #progress-bar {
@@ -268,6 +259,48 @@ body {
   line-height: 1.6;
 }
 
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  :root {
+    --text: #000;
+    --bg: #fff;
+    --surface: #f0f0f0;
+    --border: #000;
+  }
+  .dark {
+    --text: #fff;
+    --bg: #000;
+    --surface: #1a1a1a;
+    --border: #fff;
+  }
+  a, a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+@supports (forced-colors: active) {
+  .contrast {
+    forced-color-adjust: auto;
+  }
+}
+
+/* Windows High Contrast Mode */
+@media (forced-colors: active) {
+  .prose .header-anchor {
+    opacity: 1;
+  }
+}
+
+/* Enhanced contrast toggle (overrides filter approach) */
+.contrast {
+  filter: contrast(1.2) saturate(1.1);
+}
+.contrast a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Base accessibility improvements */
 @layer base {
   a {
@@ -295,6 +328,10 @@ body {
     text-indent: 1em;
     white-space: nowrap;
   }
+
+  p {
+    color: var(--color-errie-black-900);
+  }
 }
 
 /* Prose improvements */
@@ -311,14 +348,14 @@ body {
     color: var(--text);
   }
   .prose a {
-    color: #2563eb;
+    color: var(--color-vista-blue-500);
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1.5px;
     transition: color 150ms ease-in-out;
   }
   .prose a:hover {
-    color: #1d4ed8;
+    color: var(--color-vista-blue-600);
   }
   .prose a:active {
     text-decoration-thickness: 2px;
@@ -327,14 +364,5 @@ body {
     outline: 2px solid #7c3aed;
     outline-offset: 2px;
     border-radius: 2px;
-  }
-  .dark .prose a {
-    color: #60a5fa;
-  }
-  .dark .prose a:hover {
-    color: #93c5fd;
-  }
-  .dark .prose a:focus-visible {
-    outline-color: #a855f7;
   }
 }

@@ -1,7 +1,9 @@
 <section id="webmentions" class="mt-12">
-  <h2 class="mb-4 font-semibold text-xl">Respostas</h2>
+  <h2 class="mb-4 font-semibold text-blood-red-950 text-xl">
+    Respostas via <em>webmention's</em>
+  </h2>
   <div id="webmentions-list">
-    <div class="py-4 text-gray-500 text-center">
+    <div class="py-4 text-center">
       <div class="animate-pulse">Carregando <em lang="en">webmentions</em>...</div>
     </div>
   </div>
@@ -71,16 +73,16 @@
     {% endfor %}
   </div>
 {% else %}
-  <div class="py-8 text-gray-500 text-center">
-    <p>No webmentions yet. Be the first to respond!</p>
+  <div class="py-8">
+    <p>Ainda não há menções via webmention. Seja o primeiro a responder!</p>
     <p class="mt-2 text-sm">
       <a
         href="https://indieweb.org/Webmention"
         target="_blank"
-        rel="noopener"
-        class="text-blue-600 hover:text-blue-800"
+        rel="noopener noreferrer"
+        class="text-blood-red-950 underline hover:no-underline"
       >
-        Learn about webmentions
+        Aprenda sobre <em>webmentions</em>
       </a>
     </p>
   </div>

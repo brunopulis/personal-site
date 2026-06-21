@@ -20,7 +20,7 @@
   <section class="mt-12 pt-8 border-gray-200 dark:border-gray-700 border-t">
     <h2 class="mb-6 font-semibold text-xl">Related Posts</h2>
     <div class="gap-6 grid grid-cols-1 md:grid-cols-3">
-      {% for item in sortedPosts | slice(0, 3) %}
+      {% for item in sortedPosts | limit(3) %}
         {% set post = item.post %}
         <article class="hover:shadow-md p-4 border border-gray-200 dark:border-gray-700 rounded-lg transition-shadow">
           <h3 class="mb-2 font-semibold">
@@ -34,9 +34,9 @@
           </p>
           {% if post.data.tags %}
             <div class="flex flex-wrap gap-1 mt-3">
-              {% for tag in post.data.tags | slice(0, 2) %}
+              {% for tag in post.data.tags | limit(2) %}
                 <span class="px-2 py-0.5 rounded text-white text-xs"
-                      style="background-color: {{ tag | tagColor }}">#{{ tag }}</span>
+                      style="background-color: var(--color-vista-blue-600)">#{{ tag }}</span>
               {% endfor %}
             </div>
           {% endif %}

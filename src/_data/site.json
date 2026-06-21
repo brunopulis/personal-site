@@ -27,8 +27,8 @@
   "timezone": "America/Sao_Paulo",
   "newsletter": {
     "enabled": true,
-    "provider": "buttondown",
-    "action": "https://buttondown.email/api/emails/embed-subscribe/brunopulis",
+    "provider": "substack",
+    "action": "https://brunopulis.subtack.com",
     "title": "Assine minha newsletter",
     "description": "Receba atualizações direto no seu e-mail. Sem spam, apenas conteúdo significativo."
   },
@@ -40,10 +40,10 @@
     "message": "Se você valoriza meus textos, considere apoiar meu trabalho. Cada contribuição me ajuda a continuar criando conteúdo relevante."
   },
   "analytics": {
-    "enabled": false,
+    "enabled": true,
     "provider": "umami",
     "domain": "https://brunopulis.com",
-    "siteId": ""
+    "siteId": "88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"
   },
   "webmentions": {
     "enabled": true,
