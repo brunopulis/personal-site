@@ -328,6 +328,10 @@ body {
     text-indent: 1em;
     white-space: nowrap;
   }
+
+  p {
+    color: var(--color-errie-black-900);
+  }
 }
 
 /* Prose improvements */
