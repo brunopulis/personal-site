@@ -85,6 +85,7 @@
     --color-blood-red-900: #8a1212;
     --color-blood-red-950: #610404;
     --color-vista-blue-100: #e5effa;
+    --color-vista-blue-400: #96b1e3;
     --color-vista-blue-500: #849cdb;
     --color-vista-blue-600: #6176ca;
     --color-vista-blue-700: #5162b1;
@@ -1488,13 +1489,6 @@
       }
     }
   }
-  .hover\:bg-vista-blue-600 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-vista-blue-600);
-      }
-    }
-  }
   .hover\:text-blood-red-900 {
     &:hover {
       @media (hover: hover) {
@@ -1562,6 +1556,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-vista-blue-600);
+      }
+    }
+  }
+  .hover\:text-vista-blue-700 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-vista-blue-700);
       }
     }
   }
@@ -1814,6 +1815,11 @@
       background-color: var(--color-purple-900);
     }
   }
+  .dark\:bg-vista-blue-900 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-vista-blue-900);
+    }
+  }
   .dark\:bg-yellow-800 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-yellow-800);
@@ -1862,6 +1868,11 @@
   .dark\:text-purple-400 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-purple-400);
+    }
+  }
+  .dark\:text-vista-blue-400 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-vista-blue-400);
     }
   }
   .dark\:hover\:border-blue-500 {

@@ -1,4 +1,3 @@
 allowBuilds:
-  '@parcel/watcher': true
-  puppeteer: true
-  sharp: true
+  '@parcel/watcher': set this to true or false
+  sharp: set this to true or false
