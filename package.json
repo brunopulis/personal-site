@@ -36,7 +36,7 @@
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@11ty/is-land": "^5.0.1",
-    "liquidjs": "10.26.0",
+    "liquidjs": "10.27.0",
     "lite-youtube-embed": "^0.3.4"
   },
   "devDependencies": {
