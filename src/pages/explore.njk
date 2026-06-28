@@ -5,236 +5,176 @@ title: Explorar
 ---
 
 <div class="max-w-4xl">
-  <h1 class="flex items-center gap-2 mb-2 font-bold text-3xl">
+  <h1 class="font-bold text-3xl">
     <span aria-hidden="true">🗺️</span> {{ title }}
   </h1>
-  <p class="mb-8 text-gray-600 dark:text-gray-400">
+  <p class="mb-8">
     Um mapa completo com tudo nesse site. Explore e descubra!
   </p>
 
-  <div class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">📚</span>
-        Sobre mim
-      </h2>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">👋</span>
-          <a href="/about/" class="underline hover:no-underline">Sobre</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📍</span>
-          <a href="/now/" class="underline hover:no-underline">Agora</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">💬</span>
-          <a href="/why/" class="underline hover:no-underline">Por que esse site existe?</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">💬</span>
-          <a href="/values/" class="underline hover:no-underline">Valores</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">♿</span>
-          <a href="/disability/" class="underline hover:no-underline">Deficiência</a>
-        </li>
+  {% set cardGrid = "gap-3 grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3" %}
+  {% set cardClass = "flex items-center gap-2 bg-light-silver-100 p-2 border border-light-silver-200 rounded-lg" %}
 
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">💖</span>
-          <a href="/donate/" class="underline hover:no-underline">Me apoie</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">👤</span>
-        Pessoal
-      </h2>
-
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">✍️</span>
-          <a href="/blog/" class="underline hover:no-underline">Blog</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🗒️</span>
-          <a href="/notes/" class="underline hover:no-underline">Notas</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🔗</span>
-          <a href="/blogroll/" class="underline hover:no-underline">Blogroll</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🖋️</span>
-          <a href="/poetry/" class="underline hover:no-underline">Poemas</a>
-        </li>
-
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🎤</span>
-          <a href="/talks/" class="underline hover:no-underline">Palestras</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📅</span>
-          <a href="/archive/" class="underline hover:no-underline">Arquivos</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">🔍</span>
-        Coleções
-      </h2>
-
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🔖</span>
-          <a href="/links/" class="underline hover:no-underline">Favoritos</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🏷️</span>
-          <a href="/tags/" class="underline hover:no-underline">Tags</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">👍</span>
-          <a href="/likes" class="underline hover:no-underline" lang="en">Likes</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📚</span>
-          <a href="/bookshelf" class="underline hover:no-underline">Livros</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🎮</span>
-          <a href="/games" class="underline hover:no-underline">Jogos</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🍿</span>
-          <a href="/watching" class="underline hover:no-underline">Filmes e Séries</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📈</span>
-          <a href="/stats" class="underline hover:no-underline">Estatísticas do site</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">⚙️</span>
-        Ferramentas
-      </h2>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📅</span>
-          <a href="/uses/" class="underline hover:no-underline"> O que uso</a>
-        </li>
-
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📡</span>
-          <a href="/projects" class="underline hover:no-underline">Projetos</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🧭</span>
-          <a href="/resume/" class="underline hover:no-underline">Currículo</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">⚙️</span> Meta
-      </h2>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🎨</span>
-          <a href="/style/" class="underline hover:no-underline">Guia de estilo</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🗒️</span>
-          <a href="/posse/" class="underline hover:no-underline">POSSE</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">♿</span>
-          <a href="/accessibility/" class="underline hover:no-underline">Acessibilidade</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🔍</span>
-          <a href="/search/" class="underline hover:no-underline">Busca</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">⚙️</span> Coisas sérias
-      </h2>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">💀</span>
-          <a href="/style/" class="underline hover:no-underline">O que fazer se eu morrer?</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🫶</span>
-          <a href="/giving/" class="underline hover:no-underline">Causas que apoio</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">🧰</span>
-        Trabalho
-      </h2>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🧩</span>
-          <a href="/portfolio/" class="underline hover:no-underline">Portfolio</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🛠️</span>
-          <a href="/projects/" class="underline hover:no-underline">Projetos</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">📄</span>
-          <a href="/resume/" class="underline hover:no-underline">Currículo</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="bg-light-silver-100 p-6 border border-light-silver-200 rounded-lg">
-      <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-        <span aria-hidden="true">🎪</span>
-        Coisas engraçadas
-      </h2>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🎮</span>
-          Tente o Konami code
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">🖱️</span>
-          Clique na logo sete vezes
-        </li>
-        <li class="flex items-center gap-2">
-          <span aria-hidden="true">⌨️</span>
-          Digite "blog" em qualquer lugar
-        </li>
-      </ul>
-    </section>
-  </div>
-
-  <section class="bg-light-silver-100 mt-6 p-6 border border-light-silver-200 rounded-lg">
+  <!-- Sobre mim -->
+  <section class="mb-6">
     <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
-      <span aria-hidden="true">🧭</span> Perdido?
+      <span aria-hidden="true">👤</span>
+      Sobre mim
     </h2>
+    <ul class="{{ cardGrid }}">
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">👋</span>
+        <a href="/about/" class="underline hover:no-underline">Sobre</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📍</span>
+        <a href="/now/" class="underline hover:no-underline">Agora</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">💬</span>
+        <a href="/why/" class="underline hover:no-underline">Por que esse site existe?</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">💬</span>
+        <a href="/values/" class="underline hover:no-underline">Valores</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">♿</span>
+        <a href="/disability/" class="underline hover:no-underline">Deficiência</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">💖</span>
+        <a href="/donate/" class="underline hover:no-underline">Me apoie</a>
+      </li>
+    </ul>
+  </section>
 
-    <p class="text-gray-700">
-      Este site foi criado
-      <a href="https://11ty.dev" class="text-blood-red-950 underline hover:no-underline" lang="en">Eleventy</a> e segue os princípios da
-      <a href="https://indieweb.org" class="text-blood-red-950 underline hover:no-underline" lang="en">IndieWeb</a>.
-      Ele foi projetado para ser um espaço tranquilo e reflexivo para escrever e se conectar.
-    </p>
+  <!-- Conteúdo -->
+  <section class="mb-6">
+    <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
+      <span aria-hidden="true">✍️</span>
+      Conteúdo
+    </h2>
+    <ul class="{{ cardGrid }}">
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">✍️</span>
+        <a href="/blog/" class="underline hover:no-underline">Blog</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🗒️</span>
+        <a href="/notes/" class="underline hover:no-underline">Notas</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🖋️</span>
+        <a href="/poetry/" class="underline hover:no-underline">Poemas</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📰</span>
+        <a href="/newsletters/" class="underline hover:no-underline">Newsletter</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🗂️</span>
+        <a href="/archive/" class="underline hover:no-underline">Arquivos</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🏷️</span>
+        <a href="/tags/" class="underline hover:no-underline">Tags</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Profissional -->
+  <section class="mb-6">
+    <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
+      <span aria-hidden="true">💼</span>
+      Profissional
+    </h2>
+    <ul class="{{ cardGrid }}">
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📄</span>
+        <a href="/resume/" class="underline hover:no-underline">Currículo</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">💻</span>
+        <a href="/uses/" class="underline hover:no-underline">O que uso</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🛠️</span>
+        <a href="/projects/" class="underline hover:no-underline">Projetos</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Coleções -->
+  <section class="mb-6">
+    <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
+      <span aria-hidden="true">📚</span>
+      Coleções
+    </h2>
+    <ul class="{{ cardGrid }}">
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📚</span>
+        <a href="/bookshelf" class="underline hover:no-underline">Livros</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🎮</span>
+        <a href="/games" class="underline hover:no-underline">Jogos</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🍿</span>
+        <a href="/watching" class="underline hover:no-underline">Filmes e Séries</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">👍</span>
+        <a href="/likes" class="underline hover:no-underline" lang="en">Likes</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🔖</span>
+        <a href="/links/" class="underline hover:no-underline">Favoritos</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🔗</span>
+        <a href="/blogroll/" class="underline hover:no-underline">Blogroll</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sobre o site -->
+  <section class="mb-6">
+    <h2 class="mb-4 font-semibold text-blood-red-950 text-lg">
+      <span aria-hidden="true">🔧</span>
+      Sobre o site
+    </h2>
+    <ul class="{{ cardGrid }}">
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📈</span>
+        <a href="/stats" class="underline hover:no-underline">Estatísticas</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🔍</span>
+        <a href="/search/" class="underline hover:no-underline">Busca</a>
+      </li>
+
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">♿</span>
+        <a href="/accessibility/" class="underline hover:no-underline">Acessibilidade</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🗒️</span>
+        <a href="/posse/" class="underline hover:no-underline">POSSE</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🫶</span>
+        <a href="/giving/" class="underline hover:no-underline">Causas que apoio</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">💬</span>
+        <a href="/guestbook/" class="underline hover:no-underline">Livro de visitas</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📧</span>
+        <a href="/contact/" class="underline hover:no-underline">Contato</a>
+      </li>
+    </ul>
   </section>
 </div>
