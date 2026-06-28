@@ -30,7 +30,6 @@ import {
   getAllGames,
   getAllNotes,
   getAllPoetry,
-  getAllTags,
   getWatchingYears,
   showInSitemap
 } from './src/_config/collections.js';
@@ -208,7 +207,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('games', getAllGames);
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
-  eleventyConfig.addCollection('tagList', getAllTags);
   eleventyConfig.addCollection('watchingYears', getWatchingYears);
 
   eleventyConfig.addCollection('bookmarks', collectionApi => {

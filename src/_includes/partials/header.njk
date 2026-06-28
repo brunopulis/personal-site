@@ -13,11 +13,13 @@
         {% set url = page.url or '/' %}
         {% set isNow = (url and (url | startsWith('/now/'))) %}
         {% set isBlog = (url and (url | startsWith('/blog/'))) %}
-        {% set isBiblioteca = (url and (url | startsWith('/bookshelf/') or url | startsWith('/watching/') or url | startsWith('/games/') or url | startsWith('/newsletters/'))) %}
+        {% set isBiblioteca = (url and (url | startsWith('/bookshelf/') or url | startsWith('/watching/') or url | startsWith('/games/') or url | startsWith('/newsletters/') or url | startsWith('/notes/') or url | startsWith('/likes/') or url | startsWith('/poetry/') or url | startsWith('/talks/'))) %}
         {% set isSobre = (url and (url | startsWith('/about/'))) %}
         {% set isContact = url == '/contact/' %}
 
         <ul class="flex md:flex-row flex-col md:items-center md:space-x-1 space-y-1 md:space-y-0 md:text-sm text-base">
+
+
           <li>
             <a href="/now/" class="nav-item block px-3 py-2 underline hover:no-underline{% if isNow %} underline font-semibold{% endif %}"
               {% if isNow %}aria-current="page"{% endif %}> Agora
@@ -43,6 +45,10 @@
               <li>{{ dropdownLink('/watching/', 'Filmes e Séries', url and url | startsWith('/watching/')) }}</li>
               <li>{{ dropdownLink('/games/', 'Jogos', url and url | startsWith('/games/')) }}</li>
               <li>{{ dropdownLink('/newsletters/', 'Newsletter', url and url | startsWith('/newsletters/')) }}</li>
+              <li>{{ dropdownLink('/notes/', 'Notas', url and url | startsWith('/notes/')) }}</li>
+              <li>{{ dropdownLink('/likes/', 'Likes', url and url | startsWith('/likes/')) }}</li>
+              <li>{{ dropdownLink('/poetry/', 'Poemas', url and url | startsWith('/poetry/')) }}</li>
+              <li>{{ dropdownLink('/talks/', 'Palestras', url and url | startsWith('/talks/')) }}</li>
             </ul>
           </li>
 
@@ -54,6 +60,15 @@
           <li>
             <a href="/contact/" class="nav-item block px-3 py-2 underline hover:no-underline{% if isContact %} underline font-semibold{% endif %}"
               {% if isContact %}aria-current="page"{% endif %}>Contato</a>
+          </li>
+          <li>
+            <a href="/search/" class="nav-item block px-3 py-2 underline hover:no-underline{% if url and url | startsWith('/search/') %} underline font-semibold{% endif %}"
+              {% if url and url | startsWith('/search/') %}aria-current="page"{% endif %} aria-label="Buscar">
+              <svg class="inline-block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span class="md:hidden">Buscar</span>
+            </a>
           </li>
         </ul>
       </div>
