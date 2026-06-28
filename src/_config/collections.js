@@ -53,57 +53,6 @@ export const showInSitemap = collection => {
   return collection.getFilteredByGlob('./src/**/*.{md,njk}');
 };
 
-export const getAllTags = collection => {
-  const ignore = new Set(['all', 'nav', 'post', 'posts', 'notes']);
-  const seenSlugs = new Set();
-  const list = [];
-
-  const toSlug = s =>
-    String(s)
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
-
-  const globs = [
-    'src/content/posts/**/*.md',
-    'src/content/notes/**/*.md',
-    'src/content/books/**/*.md',
-    'src/content/watching/movies/**/*.md',
-    'src/content/watching/shows/**/*.md',
-    'src/content/games/**/*.md',
-    'src/content/likes/**/*.md',
-    'src/content/newsletters/**/*.md',
-    'src/content/poetry/**/*.md'
-  ];
-
-  globs.forEach(glob => {
-    collection.getFilteredByGlob(glob).forEach(item => {
-      const t = item.data && item.data.tags;
-      if (Array.isArray(t)) {
-        t.forEach(tag => {
-          if (!tag || ignore.has(tag)) return;
-          const slug = toSlug(tag);
-          if (!slug || seenSlugs.has(slug)) return;
-          seenSlugs.add(slug);
-          list.push(tag);
-        });
-      }
-    });
-  });
-
-  return list.sort((a, b) => String(a).localeCompare(String(b)));
-};
-
-export const allTags = collection => {
-  const tagsSet = new Set();
-  collection.getAll().forEach(item => {
-    if (!item.data.tags) return;
-    item.data.tags.filter(tag => !['posts', 'docs', 'all'].includes(tag)).forEach(tag => tagsSet.add(tag));
-  });
-  return Array.from(tagsSet).sort();
-};
-
 export const getBooksByYear = collection => {
   const books = collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
   const readBooks = books.filter(book => book.data?.status === 'lido');
