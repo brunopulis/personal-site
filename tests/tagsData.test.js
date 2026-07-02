@@ -33,6 +33,30 @@ describe('toSlug', () => {
   it('handle tag with numbers only', () => {
     expect(toSlug('100')).toBe('100');
   });
+
+  it('replace accented characters with ASCII equivalents via NFD', () => {
+    expect(toSlug('Educação')).toBe('educacao');
+  });
+
+  it('handle Portuguese words with cedilha', () => {
+    expect(toSlug('Coração')).toBe('coracao');
+  });
+
+  it('handle multiple accented words', () => {
+    expect(toSlug('Vida Cristã')).toBe('vida-crista');
+  });
+
+  it('handle mixed ASCII and accented text', () => {
+    expect(toSlug('São Paulo')).toBe('sao-paulo');
+  });
+
+  it('handle words with tilde', () => {
+    expect(toSlug('Ação')).toBe('acao');
+  });
+
+  it('handle words with acute and circumflex accents', () => {
+    expect(toSlug('Você está ótimo')).toBe('voce-esta-otimo');
+  });
 });
 
 describe('extractTags', () => {
