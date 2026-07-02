@@ -71,7 +71,7 @@
     "sharp-ico": "^0.1.5",
     "slugify": "^1.6.9",
     "svgo": "^4.0.1",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.3.2",
     "vitest": "^4.1.8"
   }
 }
