@@ -1,54 +1,152 @@
 ---
 layout: base.njk
-title: Résumé
+title: Currículo
 permalink: /resume/
 ---
 
-<h1 class="text-2xl font-bold mb-4">Résumé</h1>
-<p class="text-gray-600 dark:text-gray-400 mb-6">
-  A template CV you can adapt. Replace section content with your details or link to a PDF.
-</p>
+<div class="max-w-4xl h-card">
+  <h1 class="p-name font-bold text-blood-red-950 text-4xl">{{ site.author }}</h1>
+  <p class="mb-1 font-semibold text-lg">Engenheiro de Acessibilidade, Analista de Qualidade</p>
+  <p class="mb-1 p-locality">Belo Horizonte – MG – Brasil</p>
+  <ul class="flex flex-wrap gap-x-4 gap-y-1 mb-6">
+    <li>
+      <a class="underline underline-offset-4 u-email" href="mailto:brunopulis@protonmail.com">
+        brunopulis@protonmail.com
+      </a>
+    </li>
+    <li>
+      <a class="underline underline-offset-4 u-url" href="https://linkedin.com/in/pulis" rel="me noopener noreferrer" target="_blank">
+        linkedin.com/in/pulis
+      </a>
+    </li>
+    <li>
+      <span class="u-tel">+55 31 97343-8008</span>
+    </li>
+  </ul>
 
-<div class="flex items-center gap-3 mb-8">
-  <a href="#" class="inline-flex items-center px-3 py-1.5 rounded bg-blue-600 text-white hover:bg-blue-700"
-    >Download PDF</a
-  >
-  <span class="text-sm text-gray-500"
-    >Add your static PDF at <code>src/assets/</code> and update this link.</span
-  >
-</div>
+  <div class="flex flex-wrap items-center gap-3 mb-8">
+    {% set pdf = "inline-flex items-center bg-blood-red-950 hover:bg-blood-red-900 px-3 py-1.5 rounded font-bold text-white" %}
+    <a href="/assets/files/bruno_pulis_pt_br.pdf" class="{{ pdf }}" download>
+      <span class="mr-2" aria-hidden="true">📄</span> Baixar em PDF (PT-BR)
+    </a>
+    <a href="/assets/files/bruno_pulis_en.pdf" class="{{ pdf }}" download>
+      <span class="mr-2" aria-hidden="true">📄</span> Baixar em PDF (EN)</a>
+  </div>
 
-<section class="prose dark:prose-invert">
-  <h2>Summary</h2>
-  <p>
-    Front-end oriented web developer focused on accessibility, performance, and maintainable static sites.
-    Comfortable with modern tooling and progressive enhancement.
+  <h2 class="py-4 font-bold text-blood-red-950 text-3xl">Resumo Profissional</h2>
+  <p class="my-2">
+    Sou apaixonado por tecnologia e como ela pode facilitar a vida das pessoas. Tenho experiência em qualidade de software e desenvolvimento de software com ênfase em acessibilidade digital. Sou um entusiasta da acessibilidade e tenho interesse em áreas relacionadas. Além disso, tenho 15 anos de experiência em TI e mais de 5 anos como analista de qualidade profissional.
   </p>
 
-  <h2>Experience</h2>
-  <h3>Senior Web Developer · Company Name</h3>
-  <p class="text-sm text-gray-600 dark:text-gray-400">2023 — Present</p>
-  <ul>
-    <li>Built static-first sites with Eleventy and automated deployments.</li>
-    <li>Established a11y testing and CI checks.</li>
-    <li>Collaborated with design on a living style guide.</li>
+  <h2 class="py-4 font-bold text-blood-red-950 text-3xl">Habilidades Técnicas</h2>
+
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Acessibilidade</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>WCAG 2.2, WAI-ARIA, VoiceOver, Talkback, NVDA</li>
+    <li>Axe Dev Tools, Access Monitor, WAVE Evaluation Tool</li>
+    <li>Colour Contrast Analyzer, WAVE, Google Lighthouse</li>
   </ul>
 
-  <h3>Front-end Engineer · Organization</h3>
-  <p class="text-sm text-gray-600 dark:text-gray-400">2020 — 2023</p>
-  <ul>
-    <li>Implemented component libraries with semantic HTML and utility CSS.</li>
-    <li>Optimized web vitals via preloading and code-splitting.</li>
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Qualidade de Software</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>Jira, SilkTest, Mantis, Confluence, Cucumber, Gherkin</li>
+    <li>Shift Left, BDD, TDD</li>
   </ul>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>HTML, CSS (Tailwind), JavaScript</li>
-    <li>Eleventy, Nunjucks, Markdown</li>
-    <li>Accessibility, Testing (Playwright)</li>
-    <li>SEO, Open Graph, microformats2</li>
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Automação de Testes</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>Cypress, Selenium WebDriver, Postman, Insomnia</li>
+    <li>Jest, RSpec, Capybara, PHPUnit</li>
   </ul>
 
-  <h2>Education</h2>
-  <p>Degree / Program — School Name</p>
-</section>
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Linguagens</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>JavaScript;</li>
+    <li>PHP;</li>
+    <li>Kotlin;</li>
+    <li>Ruby.</li>
+  </ul>
+
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Sistemas Operacionais</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>Windows, Linux, Unix</li>
+  </ul>
+
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Metodologias</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>Scrum, Kanban, XP</li>
+  </ul>
+
+  <h3 class="mt-4 mb-2 font-semibold text-blood-red-950 text-lg">Outras Ferramentas</h3>
+  <ul class="space-y-1 mb-4 list-disc list-inside">
+    <li>AWS, Git, GitlabCI, NewRelic, Laravel, Jenkins</li>
+    <li>BrowserStack, Maven, NPM, Yarn, Gulp, Vite</li>
+    <li>Composer, Docker</li>
+  </ul>
+
+  <h2 class="py-4 font-bold text-blood-red-950 text-3xl">Experiência Profissional</h2>
+
+  <article class="mb-6">
+    <h3 class="font-semibold text-blood-red-950 text-xl">Especialista em testes</h3>
+    <p class="font-medium">NTT DATA Europe & LATAM</p>
+    <p class="mb-2 text-sm">junho de 2021 — fev 2026</p>
+    <p class="mb-2">
+      Como consultor sênior de QA com foco em acessibilidade, sou mentor de toda a equipe de uma perspectiva de qualidade e carreira. Uso as melhores práticas do setor para criar e manter uma cultura de qualidade sustentável.
+    </p>
+    <ul class="space-y-1 list-disc list-inside">
+      <li>Produzi vários cursos de treinamento interno sobre tecnologias assistivas e testes automatizados com foco em acessibilidade.</li>
+      <li>Fui membro do centro de excelência em pesquisa e inovação e ajudei com propostas de testes técnicos.</li>
+      <li>Ganhei o prêmio Top Performance e fui considerado um dos artistas mais destacados.</li>
+      <li>Atualmente trabalho para um dos maiores bancos da América Latina, garantindo que a jornada do usuário seja acessível a qualquer pessoa.</li>
+    </ul>
+  </article>
+
+  <article class="mb-6">
+    <h3 class="font-semibold text-blood-red-950 text-xl">Analista de QA</h3>
+    <p class="font-medium">Concrete Solutions</p>
+    <p class="mb-2 text-sm">janeiro de 2021 — junho de 2021</p>
+    <ul class="space-y-1 list-disc list-inside">
+      <li>Garantia a testabilidade e a qualidade do software, ajudando a identificar cenários críticos e fornecer previsibilidade em nossas entregas.</li>
+    </ul>
+  </article>
+
+  <article class="mb-6">
+    <h3 class="font-semibold text-blood-red-950 text-xl">Analista de QA</h3>
+    <p class="font-medium">Monetizze</p>
+    <p class="mb-2 text-sm">agosto de 2017 — dezembro de 2020</p>
+    <p class="mb-2">
+      Responsável por garantir a qualidade do Membertizze, um dos produtos mais importantes da empresa.
+    </p>
+    <ul class="space-y-1 list-disc list-inside">
+      <li>Contribui significativamente para a agilidade da equipe.</li>
+      <li>Fui membro dos comitês de Qualidade e Engenharia de Software, fomentando discussões e soluções para problemas diários.</li>
+      <li>Escrevi testes automatizados para validar a acessibilidade da aplicação.</li>
+      <li>Auxiliei a equipe de desenvolvimento e participei da construção de padrões para revisão de código e testes eficazes.</li>
+      <li>Obtive ganho de 80% na performance dos testes de serviço (API) em integração contínua, reduzindo drasticamente o tempo de execução no pipeline.</li>
+    </ul>
+  </article>
+
+  <h2 class="py-4 font-bold text-blood-red-950 text-3xl">Formação Acadêmica</h2>
+  <p class="font-medium">Sistemas para Internet</p>
+  <p>Faculdade Pitágoras — Concluído em 2010</p>
+
+  <h2 class="py-4 font-bold text-blood-red-950 text-3xl">Idiomas</h2>
+  <ul class="space-y-1 list-disc list-inside">
+    <li>Inglês — Intermediário (B2)</li>
+    <li>Português — Nativo</li>
+  </ul>
+
+  <h2 class="py-4 font-bold text-blood-red-950 text-3xl">Cursos Livres</h2>
+  <ul class="space-y-1 list-disc list-inside">
+    <li>Liderando Iniciativas de Acessibilidade Digital — Dez 2024</li>
+    <li>Treinamento de Kick-off de Acessibilidade — Abr 2023</li>
+    <li>Profissional Adaptável: Inteligência Emocional, Finanças Pessoais e Liderança — Ago 2022</li>
+    <li>Estrutura Semântica e Navegação, Deque University — Nov 2021</li>
+    <li>Acessibilidade Digital em QA, INSEP — Jul 2021</li>
+    <li>Fundamentos de Acessibilidade de Aplicativos Móveis, Deque University — Jan 2021</li>
+    <li>Certificado Profissional em Fundamentos Scrum (SFPC)</li>
+    <li>Testes de Software para Iniciantes</li>
+    <li>Acessibilidade Digital em QA</li>
+    <li>Codificação Essencial e Melhores Práticas em HTML 5</li>
+  </ul>
+</div>
