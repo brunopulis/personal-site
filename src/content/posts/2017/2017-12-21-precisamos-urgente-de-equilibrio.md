@@ -2,6 +2,7 @@
 title: 'Precisamos urgente de equilíbrio'
 excerpt: 'Esse artigo não será técnico, mas uma reflexão sobre um tema pouco tocado, mas que todos passam em suas carreiras na área de TI.'
 pubDate: 2017-12-21T14:03:35.906Z
+category: Carreira
 tags: ['reflexão', 'carreira', 'tecnologia']
 ---
 

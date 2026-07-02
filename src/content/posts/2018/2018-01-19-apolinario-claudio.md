@@ -2,6 +2,7 @@
 title: 'Apolinário Cláudio'
 excerpt: 'Vida'
 pubDate: 2018-01-19T03:46:54.296Z
+category: Teologia
 tags: ['cristianismo', 'biografia']
 ---
 

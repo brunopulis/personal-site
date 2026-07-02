@@ -1,6 +1,7 @@
 ---
 title: 'Acessibilidade e critérios de aceite: o quê eles tem um comum?'
 pubDate: 2021-04-25
+category: Acessibilidade
 tags: ['a11y']
 ---
 

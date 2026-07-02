@@ -2,6 +2,7 @@
 title: 5 motivos para não automatizar testes em linguagem diferente do time
 excerpt: Descobertas com automacao de software
 pubDate: 2020-11-16
+category: Carreira
 tags:
   - QA
   - Automação

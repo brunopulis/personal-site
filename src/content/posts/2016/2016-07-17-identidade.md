@@ -1,7 +1,7 @@
 ---
 title: Identidade
 pubDate: 2016-07-17
-tags: ['pessoal']
+category: Pessoal
 ---
 
 E quando perdemos a identidade e somos apenas cópias dos outros?

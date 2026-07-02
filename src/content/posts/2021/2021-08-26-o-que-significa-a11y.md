@@ -1,6 +1,7 @@
 ---
 title: 'Afinal, o quê significa A11y?'
 pubDate: 2021-08-26
+category: Acessibilidade
 tags: ['a11y']
 ---
 

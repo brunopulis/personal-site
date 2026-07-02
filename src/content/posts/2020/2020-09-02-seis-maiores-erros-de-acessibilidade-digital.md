@@ -2,6 +2,7 @@
 title: 'Seis maiores erros de acessibilidade digital'
 excerpt: 'Os seis maiores erros de acessibilidade digital e como podemos corrigí-los.'
 pubDate: 2020-09-02T21:13:07.000Z
+category: Acessibilidade
 tags: ['a11y']
 ---
 

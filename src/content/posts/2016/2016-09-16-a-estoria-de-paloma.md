@@ -1,6 +1,7 @@
 ---
 title: A estória de Paloma
 pubDate: 2016-09-16
+category: Teologia
 tags: ['contos', 'cristianismo']
 ---
 

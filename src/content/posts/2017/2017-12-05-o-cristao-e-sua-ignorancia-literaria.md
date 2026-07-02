@@ -2,6 +2,7 @@
 title: 'O cristão e sua ignorância literária'
 excerpt: 'E, desde menino, você conhece as Escrituras Sagradas , as quais lhe podem dar a sabedoria que leva à salvação, por meio da fé em Cristo…'
 pubDate: 2017-12-05T03:36:32.790Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

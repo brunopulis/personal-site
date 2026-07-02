@@ -2,6 +2,7 @@
 title: 'Aprendendo a caminhar'
 excerpt: 'Como Foo Fighters descreveu o novo nascimento.'
 pubDate: 2017-08-11T15:06:01.957Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

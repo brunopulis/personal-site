@@ -2,6 +2,7 @@
 title: "Eu e meus 30 anos"
 excerpt: "A alma já não tem o folêgo da juventude poeril, o cansaço toma conta…"
 pubDate: 2018-11-13T02:27:11.760Z
+category: Pessoal
 tags: ['reflexão', 'pessoal']
 ---
 

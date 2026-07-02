@@ -1,6 +1,7 @@
 ---
 title: Como construir um LinkedIn campeão
 pubDate: 2021-04-25
+category: Carreira
 tags: ['carreira']
 ---
 

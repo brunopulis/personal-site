@@ -2,6 +2,7 @@
 title: 'Como a cristianismo me ajudou a palestrar'
 excerpt: 'Disclaimer'
 pubDate: 2018-06-14T04:06:47.968Z
+category: Teologia
 tags: ['pessoal', 'cristianismo']
 ---
 

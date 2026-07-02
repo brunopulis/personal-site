@@ -1,6 +1,7 @@
 ---
 title: 'Assassino?'
 pubDate: 2018-10-29T16:40:54.968Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

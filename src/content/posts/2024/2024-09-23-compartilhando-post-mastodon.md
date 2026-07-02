@@ -1,6 +1,7 @@
 ---
 title: Compartilhando post no Mastodon
 pubDate: 2024-09-23
+category: Pessoal
 tags:
   - fediverso
   - indie web

@@ -2,6 +2,7 @@
 title: 'Como buscar tags do Wordpress sem link padrão'
 excerpt: 'Esse artigo visa mostrar de forma clara como é possível retornar o nome das tags do Wordpress sem o link padrão. É uma técnica…'
 pubDate: 2017-10-03T00:00:20.969Z
+category: Frontend
 tags: ['wordpress']
 ---
 

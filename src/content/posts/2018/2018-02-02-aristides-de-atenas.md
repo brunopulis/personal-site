@@ -2,6 +2,7 @@
 title: 'Aristides de Atenas'
 excerpt: 'Aristides de Atenas (ou Aristides, o ateniense, Santo Aristides ou Marcianus Aristides) foi um autor cristão grego do século II dC que é…'
 pubDate: 2018-02-02T13:24:46.083Z
+category: Teologia
 tags: ['cristianismo', 'biografia']
 ---
 

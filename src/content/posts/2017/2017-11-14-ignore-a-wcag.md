@@ -2,7 +2,8 @@
 title: 'Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez disso.'
 excerpt: 'Se você está tentando tornar seu site ou aplicativo acessível, você provavelmente se atrapalhou nas Diretrizes de Acessibilidade para o…'
 pubDate: 2017-11-14T01:24:43.278Z
-tags: ['a11y']
+category: Acessibilidade
+tags: ['wcag']
 ---
 
 ## Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez disso
@@ -16,8 +17,6 @@ Texto postado originalmente em [https://axesslab.com/skip-the-wcag/](https://axe
 Eu sei que é uma declaração ousada. Mas o [WCAG](https://www.w3.org/TR/WCAG20/) irá confundi-lo. E provavelmente assustá-lo. É realmente um documento longo e difícil de compreender.
 
 O quê mais? Bem, peguei as WCAG, coloquei no Microsoft Word e baixei todo o documento. Voilà, aqui estão as 98 páginas:
-
-
 
 98 páginas da documentação do WCAG 2.0
 

@@ -2,6 +2,7 @@
 title: 'Avaliadores automáticos'
 excerpt: "procurando bug's de acessibilidade no seu site"
 pubDate: 2014-02-19
+category: Acessibilidade
 tags: ['a11y']
 ---
 

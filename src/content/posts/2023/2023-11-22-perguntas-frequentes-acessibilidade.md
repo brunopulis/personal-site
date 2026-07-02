@@ -1,6 +1,7 @@
 ---
 title: 11 Perguntas frequentes sobre acessibilidade
 pubDate: 2023-11-22
+category: Acessibilidade
 tags: ['dúvidas', 'a11y']
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Primeiros passos com Flutter
 pubDate: 2021-11-16
+category: Frontend
 tags: ['mobile', 'frontend']
 ---
 

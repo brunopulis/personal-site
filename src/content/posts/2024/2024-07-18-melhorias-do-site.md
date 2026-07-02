@@ -1,6 +1,7 @@
 ---
 title: Melhorias do meu site
 pubDate: 2024-07-18
+category: Pessoal
 tags:
   - pessoal
 ---

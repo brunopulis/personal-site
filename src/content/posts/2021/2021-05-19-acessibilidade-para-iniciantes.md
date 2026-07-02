@@ -1,6 +1,7 @@
 ---
 title: Acessibilidade para iniciantes
 pubDate: 2021-05-19
+category: Acessibilidade
 tags: ['a11y']
 ---
 
