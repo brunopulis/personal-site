@@ -130,7 +130,7 @@ Resources:
 ## 6) Tags, categories, and search
 
 - Add tags: `tags: [thoughts, notes]` → your post appears on `/tags/thoughts/` automatically.
-- Add one category: `category: tutorials` → shows up on `/categories/tutorials/` and the index `/categories/`.
+- Add one category: `category: tutorials` → shows up on `/blog/category/tutorials/` and the index `/blog/category/`.
 - Search is automatic—no setup required.
 
 Resources:
@@ -343,6 +343,6 @@ Accessibility resources:
 
 - Write a welcome post: why your site exists and what you’ll write about.
 - Add a “Blogroll” (`src/blogroll.njk`) – link to sites you enjoy.
-- Explore the Categories page at `/categories/` and tag pages at `/tags/`.
+- Explore the Categories page at `/blog/category/` and tag pages at `/tags/`.
 
 You’ve got this. The web needs more personal, weird, welcoming spaces.
