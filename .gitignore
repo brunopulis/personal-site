@@ -54,6 +54,9 @@ lerna-debug.log*
 *.log
 
 # ----------------------------
+# Generated category pages
+src/content/categories-pages/
+
 # Tailwind build output (generated)
 src/assets/css/build.css
 

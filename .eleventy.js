@@ -19,6 +19,7 @@ import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
 import blogroll from './src/_data/blogroll.json' with {type: 'json'};
 import {svgToJpeg} from './src/_config/events/svg-to-jpeg.js';
+import {toSlug} from './src/_data/tags-helpers.js';
 
 import {
   getAllPosts,
@@ -221,6 +222,21 @@ export default async function (eleventyConfig) {
     return categories.sort();
   });
 
+  eleventyConfig.addCollection('catpages', function(collectionApi) {
+    const posts = collectionApi.getFilteredByGlob('src/content/posts/**/*.md');
+    const map = new Map();
+    for (const post of posts) {
+      const cat = post.data.category;
+      if (!cat) continue;
+      const slug = toSlug(cat);
+      if (!map.has(slug)) {
+        map.set(slug, { name: cat, slug, count: 0 });
+      }
+      map.get(slug).count++;
+    }
+    return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+  });
+
   // Library and Data
   eleventyConfig.setLibrary('md', plugins.markdownLib);
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
@@ -253,7 +269,9 @@ export default async function (eleventyConfig) {
       input: 'src',
       includes: '_includes',
       layouts: '_layouts'
-    }
+    },
+
+    useGitIgnore: false
   };
 }
 
