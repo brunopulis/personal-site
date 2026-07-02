@@ -87,12 +87,14 @@
     --color-blood-red-900: #8a1212;
     --color-blood-red-950: #610404;
     --color-vista-blue-100: #e5effa;
+    --color-vista-blue-200: #d0e1f5;
     --color-vista-blue-400: #96b1e3;
     --color-vista-blue-500: #849cdb;
     --color-vista-blue-600: #6176ca;
     --color-vista-blue-700: #5162b1;
     --color-vista-blue-900: #3c4873;
     --color-vista-blue-950: #232943;
+    --color-errie-black-500: #6b8080;
     --color-errie-black-900: #171e1e;
     --color-errie-black-950: #080c0c;
     --color-light-silver-100: #f5f5f5;
@@ -689,6 +691,9 @@
   .animate-pulse {
     animation: var(--animate-pulse);
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .resize {
     resize: both;
   }
@@ -897,6 +902,9 @@
     --tw-border-style: dashed;
     border-style: dashed;
   }
+  .border-blood-red-950 {
+    border-color: var(--color-blood-red-950);
+  }
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }
@@ -974,6 +982,9 @@
   }
   .bg-red-600 {
     background-color: var(--color-red-600);
+  }
+  .bg-transparent {
+    background-color: transparent;
   }
   .bg-vista-blue-100 {
     background-color: var(--color-vista-blue-100);
@@ -1296,6 +1307,9 @@
   .text-blue-800 {
     color: var(--color-blue-800);
   }
+  .text-errie-black-500 {
+    color: var(--color-errie-black-500);
+  }
   .text-errie-black-900 {
     color: var(--color-errie-black-900);
   }
@@ -1337,6 +1351,9 @@
   }
   .text-vista-blue-600 {
     color: var(--color-vista-blue-600);
+  }
+  .text-vista-blue-700 {
+    color: var(--color-vista-blue-700);
   }
   .text-vista-blue-950 {
     color: var(--color-vista-blue-950);
@@ -1470,6 +1487,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-light-silver-100);
+      }
+    }
+  }
+  .hover\:bg-vista-blue-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-vista-blue-200);
       }
     }
   }
