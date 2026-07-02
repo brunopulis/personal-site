@@ -1,6 +1,7 @@
 ---
 title: Como criar gráficos acessíveis
 pubDate: 2022-06-23
+category: Acessibilidade
 tags: ['a11y']
 ---
 

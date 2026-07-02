@@ -1,6 +1,7 @@
 ---
 title: Ídolos de bolso
 pubDate: 2016-09-05
+category: Teologia
 tags: ['cristianismo']
 ---
 

@@ -2,6 +2,7 @@
 title: 'Eu tenho um sonho'
 excerpt: 'Onde as pessoas retirem a distração do culto público.'
 pubDate: 2016-11-22T18:49:08.939Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

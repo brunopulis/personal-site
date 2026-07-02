@@ -2,6 +2,7 @@
 title: Stranger Things
 description: 'Minhas impressões sobre a série e o que aprendi'
 pubDate: 2026-01-06
+category: Pessoal
 tags: ['100DaysToOffLoad', 'pessoal']
 ---
 

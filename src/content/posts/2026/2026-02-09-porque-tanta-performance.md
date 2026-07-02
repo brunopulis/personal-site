@@ -2,6 +2,7 @@
 title: Por que tanta peformance?
 description: 'E porque isso pode estar te matando lentamente'
 pubDate: 2026-02-09
+category: Pessoal
 tags: ['100DaysToOffLoad', 'pessoal']
 ---
 

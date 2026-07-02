@@ -2,6 +2,7 @@
 title: 'Uma doença chamada conteúdo curto'
 pubDate: 2024-10-02
 excerpt: 'Como o conteúdo curto nos viciou e quais são as alternativas para sair dessa loucura.'
+category: Pessoal
 tags:
   - Reflexão
   - Redes Sociais

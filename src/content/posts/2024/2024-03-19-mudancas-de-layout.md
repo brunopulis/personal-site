@@ -1,6 +1,7 @@
 ---
 title: Mudanças de layout
 pubDate: 2024-03-19
+category: Pessoal
 tags:
   - pessoal
 ---

@@ -2,6 +2,7 @@
 title: 'A Soberania divina em frente ao escárnio público'
 excerpt: 'Em tempos festivos como o carnaval, a máxima de “tudo é permitido” povoa as avenidas, ruas e bares espalhados pelas cidades.'
 pubDate: 2019-03-06T14:21:01.615Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

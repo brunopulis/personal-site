@@ -1,6 +1,7 @@
 ---
 title: Geração da distração
 pubDate: 2016-03-07
+category: Teologia
 tags: ['cristianismo']
 ---
 

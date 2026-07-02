@@ -2,6 +2,7 @@
 title: 'O zelo a pregação'
 excerpt: 'De uns tempos pra cá venho lendo bons livros e materiais relacionados a cristianismo Reformada que me fizeram argumentar alguns posicionamentos…'
 pubDate: 2017-05-12T16:54:25.411Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

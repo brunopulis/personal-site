@@ -1,6 +1,7 @@
 ---
 title: Alternativas ao Google Analytics
 pubDate: 2024-05-09
+category: Carreira
 tags: ['web analytics', 'tools', 'tech']
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 'GitHub Profile: dicas para se destacar'
 pubDate: 2024-07-07
+category: Carreira
 tags:
   - carreira
 ---

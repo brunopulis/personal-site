@@ -1,6 +1,7 @@
 ---
 title: Como criar texto alternativo longo
 pubDate: 2024-03-25
+category: Acessibilidade
 tags: 'frontend'
 ---
 

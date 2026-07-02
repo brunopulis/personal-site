@@ -2,6 +2,7 @@
 title: 'A crença na descrença'
 excerpt: 'Quando a descrença se torna sua crença moral e religiosa'
 pubDate: 2017-08-04T11:59:46.389Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

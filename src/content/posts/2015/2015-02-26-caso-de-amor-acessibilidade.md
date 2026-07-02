@@ -1,6 +1,7 @@
 ---
 title: Um caso de amor chamado acessibilidade
 pubDate: 2015-02-26
+category: Acessibilidade
 tags: ['a11y']
 ---
 

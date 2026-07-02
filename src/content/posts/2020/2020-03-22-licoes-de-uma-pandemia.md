@@ -2,6 +2,7 @@
 title: 'As lições de uma pandemia'
 excerpt: 'O mundo hoje enfrenta um inimigo silencioso e mortal, o COVID-19 ou popularmente chamado de “corona vírus”. Sua forma de contágio é brutal…'
 pubDate: 2020-03-22T16:57:56.220Z
+category: Teologia
 tags: ['cristianismo']
 ---
 

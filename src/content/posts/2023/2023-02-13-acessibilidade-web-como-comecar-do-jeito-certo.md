@@ -1,6 +1,7 @@
 ---
 title: 'Acessibilidade Web: como começar do jeito certo'
 pubDate: 2023-02-13
+category: Acessibilidade
 tags: ['a11y']
 ---
 

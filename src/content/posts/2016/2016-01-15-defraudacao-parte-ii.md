@@ -2,7 +2,8 @@
 title: 'Defraudação Parte II: As consequências daquilo que você chama de joguinho'
 excerpt: 'Pois bem no artigo passado retratamos a definição e conceito de defraudação do ponto de vista bíblico e como sua prática é corriqueira nos…'
 pubDate: 2016-01-15
-tags: ['cristianismo']
+category: Teologia
+tags: ['cristianismo', 'teologia']
 ---
 
 ## Defraudação Parte II: As consequências daquilo que você chama de joguinho

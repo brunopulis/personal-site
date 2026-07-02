@@ -2,6 +2,7 @@
 title: 'Quem foi R C Sproul? E porque foi de grande importância'
 excerpt: 'Robert Charles Sproul, nasceu em 13 de fevereiro de 1939, em Pittsburgh, Pensilvânia. Foi teólogo calvinista e pastor. Ele é o fundador e…'
 pubDate: 2017-12-15T15:35:14.611Z
+category: Teologia
 tags: ['cristianismo', 'biografia']
 ---
 

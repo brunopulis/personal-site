@@ -1,6 +1,7 @@
 ---
 title: 5 mitos sobre acessibilidade que você precisa esclarecer
 pubDate: 2022-02-22
+category: Acessibilidade
 tags: ['a11y']
 ---
 

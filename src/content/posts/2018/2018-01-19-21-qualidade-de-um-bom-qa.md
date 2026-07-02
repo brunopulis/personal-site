@@ -1,6 +1,7 @@
 ---
 title: 21 qualidades de um bom QA
 pubDate: 2018-01-19
+category: Carreira
 tags: ['qa', 'tech']
 ---
 
