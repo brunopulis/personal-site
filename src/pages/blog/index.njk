@@ -12,9 +12,29 @@ title: Blog
   <h1 class="mb-6 p-name font-bold text-blood-red-950 text-2xl">Blog</h1>
   <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
 
-  <div class="space-y-8">
+  <nav class="mb-8" aria-label="Filtrar por categoria">
+    <div class="flex flex-wrap gap-2">
+      <a
+        href="/blog/"
+        class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors bg-blood-red-950 text-white border-blood-red-950"
+      >
+        Todas
+      </a>
+      {% for cat in collections.catpages -%}
+        <a
+          href="/blog/category/{{ cat.slug }}/"
+          class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors bg-transparent text-errie-black-950 border-light-silver-300 hover:border-blood-red-950"
+        >
+          {{ cat.name }}
+        </a>
+      {%- endfor %}
+    </div>
+  </nav>
+
+  <div class="space-y-8" id="posts-list">
     {% for post in posts %}
       {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+      {% set postCategory = (post.data and post.data.category) or '' %}
       <article class="pb-6 border-b h-entry">
         <h3 class="p-name font-semibold text-xl">
           <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
@@ -27,6 +47,16 @@ title: Blog
         <div class="mt-2 p-summary">
           {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
         </div>
+        {% if postCategory %}
+          <div class="mt-2">
+            <a
+              class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-vista-blue-100 text-vista-blue-700 hover:bg-vista-blue-200 transition-colors"
+              href="/blog/category/{{ postCategory | slugify }}/"
+            >
+              {{ postCategory }}
+            </a>
+          </div>
+        {% endif %}
         {% if tags %}
           <div class="inline-flex gap-4 py-4">
             <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
@@ -56,3 +86,4 @@ title: Blog
     {% endif %}
   </nav>
 </div>
+
