@@ -1,0 +1,17 @@
+{
+  "$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
+  "siteUrl": "https://brunopulis.com",
+  "contentDir": "./src/content/posts/",
+  "outputDir": "./_site",
+  "pathPrefix": "/blog",
+  "publicationUri": "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.publication/3mpu4cswflk2h",
+  "frontmatter": {
+    "title": "Bruno Pulis",
+    "description": "Engenheiro de Acessibilidade",
+    "publishDate": "pubDate"
+  },
+  "publishContent": true,
+  "bluesky": {
+    "enabled": true
+  }
+}
