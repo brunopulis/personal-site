@@ -6,6 +6,7 @@ tags:
   - fediverso
   - indie web
   - til
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fi5sh32x"
 ---
 
 ## Introdução

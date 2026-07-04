@@ -3,6 +3,7 @@ title: Geração da distração
 pubDate: 2016-03-07
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fzzxw32i"
 ---
 
 Nesse estudo vamos abordar um tópico onde todos nós somos vítimas a **distração.**

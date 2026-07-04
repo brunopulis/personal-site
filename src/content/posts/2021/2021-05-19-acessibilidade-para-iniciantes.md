@@ -3,6 +3,7 @@ title: Acessibilidade para iniciantes
 pubDate: 2021-05-19
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fmaqrl2i"
 ---
 
 ## Importante

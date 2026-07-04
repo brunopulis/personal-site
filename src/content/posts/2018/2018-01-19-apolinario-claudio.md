@@ -4,6 +4,7 @@ excerpt: 'Vida'
 pubDate: 2018-01-19T03:46:54.296Z
 category: Teologia
 tags: ['cristianismo', 'biografia']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4frxzp425"
 ---
 
 ## Apolinário Cláudio

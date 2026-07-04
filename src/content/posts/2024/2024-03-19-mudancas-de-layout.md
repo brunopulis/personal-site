@@ -4,6 +4,7 @@ pubDate: 2024-03-19
 category: Pessoal
 tags:
   - pessoal
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fjemj52j"
 ---
 
 Há tempos não estou satisfeito com a aparência visual do meu site. Já pensei e pesquisei diversas referências mas sempre empacava na mesma coisa **perfeccionismo.**

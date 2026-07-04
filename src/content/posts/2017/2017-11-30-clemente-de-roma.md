@@ -4,6 +4,7 @@ excerpt: 'São Clemente I, também conhecido como Clemente Romano (em latim, Cle
 pubDate: 2017-11-30T23:59:03.350Z
 category: Teologia
 tags: ['cristianismo', 'biografia']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4ftftal2k"
 ---
 
 ## Clemente de Roma

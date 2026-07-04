@@ -4,6 +4,7 @@ excerpt: 'Como Cristo pode ser um farol em tempos sombrios onde a desesperança 
 pubDate: 2018-11-26T02:16:04.828Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fq4c7g2w"
 ---
 
 ## Cristo, o farol divino

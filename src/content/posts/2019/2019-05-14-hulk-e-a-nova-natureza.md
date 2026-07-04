@@ -4,6 +4,7 @@ excerpt: 'O que Hulk, pode nos ensinar acerca da temperança da vida?'
 pubDate: 2019-05-14T01:10:02.997Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fpbtgd2v"
 ---
 
 ## Hulk e a nova natureza

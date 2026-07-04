@@ -6,6 +6,7 @@ tags:
   - desenvolvimento-web
   - WordPress
   - 11ty
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fl7eek24"
 ---
 
 Um ano novo começou e seguimos o velho mantra de todos os anos, aquele famoso ditado popular:

@@ -4,6 +4,7 @@ excerpt: 'E, desde menino, você conhece as Escrituras Sagradas , as quais lhe p
 pubDate: 2017-12-05T03:36:32.790Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4ft7ern2j"
 ---
 
 ## O cristão e sua ignorância literária

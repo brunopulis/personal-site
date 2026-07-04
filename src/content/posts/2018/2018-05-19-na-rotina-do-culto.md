@@ -4,6 +4,7 @@ excerpt: 'Quanto a mim, os meus pés quase que se desviaram; pouco faltou para q
 pubDate: 2018-05-19T03:17:43.383Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4frejvl2o"
 ---
 
 ## Na rotina do culto

@@ -6,6 +6,7 @@ category: Pessoal
 tags:
   - Reflexão
   - Redes Sociais
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fhqtxu25"
 ---
 
 Nesse artigo vou te contar a minha história com produção de conteúdo e como o conteúdo curto me atrapalhou.

@@ -4,6 +4,7 @@ excerpt: 'Em tempos festivos como o carnaval, a máxima de “tudo é permitido�
 pubDate: 2019-03-06T14:21:01.615Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fpos6d2o"
 ---
 
 ## A Soberania divina em frente ao escárnio público

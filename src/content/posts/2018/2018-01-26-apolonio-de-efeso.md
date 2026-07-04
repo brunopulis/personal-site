@@ -4,6 +4,7 @@ excerpt: 'Ele estava completamente familiarizado com a história de Éfeso e com
 pubDate: 2018-01-26T12:01:01.524Z
 category: Teologia
 tags: ['cristianismo', 'biografia']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4frri5l2x"
 ---
 
 ## Apolônio de Éfeso

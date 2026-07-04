@@ -4,6 +4,7 @@ excerpt: 'O mundo hoje enfrenta um inimigo silencioso e mortal, o COVID-19 ou po
 pubDate: 2020-03-22T16:57:56.220Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fokuju25"
 ---
 
 ## As lições de uma pandemia

@@ -3,6 +3,7 @@ title: Um caso de amor chamado acessibilidade
 pubDate: 2015-02-26
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g2i3i32k"
 ---
 
 ![Stormtropper saindo de dentro do teclado segurando a letra S em uma mão. ](/assets/images/blog/stormtropper.avif)

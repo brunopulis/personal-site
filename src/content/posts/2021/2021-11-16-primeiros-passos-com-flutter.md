@@ -3,6 +3,7 @@ title: Primeiros passos com Flutter
 pubDate: 2021-11-16
 category: Frontend
 tags: ['mobile', 'frontend']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4flmkfd2x"
 ---
 
 Recentemente fiquei com vontade aprender sobre desenvolvimento mobile. Vários fatores contribuíram para isso, um deles foi entender o contexto de desenvolvimento mobile, pois trabalho diaramente com mobile.

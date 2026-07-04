@@ -4,6 +4,7 @@ excerpt: 'Breve descrição'
 pubDate: 2014-02-03
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g34mcz2l"
 ---
 
 Sou um defensor da acessibilidade digital em sua na totalidade. Devemos tornar nossas ferramentas inclusivas a qualquer tipo de público.

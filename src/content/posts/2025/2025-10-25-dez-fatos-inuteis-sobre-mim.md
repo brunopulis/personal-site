@@ -4,6 +4,7 @@ description: 'Descubra fatos inúteis sobre mim e quem sabe você não encontre 
 pubDate: 2025-10-25
 category: Pessoal
 tags: ['pessoal', 'indie web']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fhdpcd2o"
 ---
 
 Lendo meu RSS, vi um post do [Kev Quirk bem interessante](https://kevquirk.com/blog/ten-pointless-facts-about-me/) e resolvi participar da brincadeira.
