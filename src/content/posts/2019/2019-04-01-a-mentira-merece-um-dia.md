@@ -4,6 +4,7 @@ excerpt: 'O dia 1º de abril “comemora-se” o dia mentira, mas será que de f
 pubDate: 2019-04-01T13:43:06.969Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fpies72q"
 ---
 
 ## A mentira merece um dia?

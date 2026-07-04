@@ -4,6 +4,7 @@ excerpt: 'Disclaimer'
 pubDate: 2018-06-14T04:06:47.968Z
 category: Teologia
 tags: ['pessoal', 'cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fqx3mw2w"
 ---
 
 ## Como a cristianismo me ajudou a palestrar

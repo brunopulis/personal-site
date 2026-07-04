@@ -4,6 +4,7 @@ excerpt: 'Aprenda a documentar seus projetos sass de forma prática e concisa.'
 pubDate: 2018-06-28T02:21:08.130Z
 category: Frontend
 tags: ['css', 'frontend']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fqq2d72q"
 ---
 
 ## Documentando seu projeto sass com SassDoc

@@ -7,6 +7,7 @@ tags:
   - QA
   - Automação
   - tech
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fnc6ct2v"
 ---
 
 Automatizar cenários de teste é uma parte integrante de nossa atuação como profissionais focados em qualidade. Em um contexto ágil é de extrema importância, pois, contribui para promover e permear a qualidade no projeto.

@@ -4,6 +4,7 @@ excerpt: 'De uns tempos pra cá venho lendo bons livros e materiais relacionados
 pubDate: 2017-05-12T16:54:25.411Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fxy4nm24"
 ---
 
 ## O zelo a pregação

@@ -3,6 +3,7 @@ title: Como criar gráficos acessíveis
 pubDate: 2022-06-23
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fklnpm24"
 ---
 
 Gráficos, mapas e infográficos estão presentes em nossas vidas, mas é quando essas informações não estão acessíveis?

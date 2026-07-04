@@ -6,6 +6,7 @@ tags:
   - pessoal
   - Apps
 excerpt: 'Confira os aplicativos que mais usei em 2024.'
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fhkcad2o"
 ---
 
 Estava navegando pelo meu RSS e vi um post do Kev Quirk que me despertou curiosidade. O Kev fez [uma lista de aplicativos que usou ao longo do ano](https://kevquirk.com/blog/my-default-apps-at-the-end-of-2024).

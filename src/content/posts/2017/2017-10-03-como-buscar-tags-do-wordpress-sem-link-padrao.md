@@ -4,6 +4,7 @@ excerpt: 'Esse artigo visa mostrar de forma clara como é possível retornar o n
 pubDate: 2017-10-03T00:00:20.969Z
 category: Frontend
 tags: ['wordpress']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fv2tzt2o"
 ---
 
 ## Como buscar tags do Wordpress sem link padrão

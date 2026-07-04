@@ -4,6 +4,7 @@ excerpt: 'O cenário moderno permeia a justiça própria e um censo de moralismo
 pubDate: 2017-06-11T19:02:56.289Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fxe2sl2o"
 ---
 
 ## Pecados expostos

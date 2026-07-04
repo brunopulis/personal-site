@@ -4,6 +4,7 @@ pubDate: 2024-07-07
 category: Carreira
 tags:
   - carreira
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fir5ij2l"
 ---
 
 Que o [GitHub](https://github.com) é extremamente importante para a carreira de um desenvolvedor, todos nós sabemos. Mas o que faz um perfil ser relevante e competitivo na rede?

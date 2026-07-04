@@ -3,6 +3,7 @@ title: 'Afinal, o quê significa A11y?'
 pubDate: 2021-08-26
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fltdoh2q"
 ---
 
 Talvez você já tenha visto pessoas utilizando o termo a11y ou até mesmo a hashtag **#a11y** e não compreendeu a correlação dele com acessibilidade. Este termo refere-se a palavra inglesa _accessibility_.

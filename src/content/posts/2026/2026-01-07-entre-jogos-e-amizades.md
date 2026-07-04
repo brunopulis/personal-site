@@ -4,6 +4,7 @@ description: 'O que máquinas de pinball, arcades, video games podem nos ensinar
 pubDate: 2026-01-07
 category: Pessoal
 tags: ['100DaysToOffLoad', 'pessoal']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fgpgx32i"
 ---
 
 Uma quarta comum, com pessoas comuns.

@@ -3,6 +3,7 @@ title: 'Review: Node School BH 17'
 pubDate: 2017-11-15
 category: Eventos
 tags: ['review', 'nodejs']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fu7uat2k"
 ---
 
 Fala galera, nos dois últimos sábados aconteceram o Node School BH uma iniciativa open-source para promover workshop’s presenciais e partilhar conhecimento.

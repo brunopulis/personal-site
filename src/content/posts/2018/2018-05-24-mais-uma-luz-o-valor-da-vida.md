@@ -4,6 +4,7 @@ excerpt: 'Hoje quero indicar uma música que o Carlos André Rodrigues Couto me 
 pubDate: 2018-05-24T05:14:52.301Z
 category: Pessoal
 tags: ['reflexão']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fr5mvl2g"
 ---
 
 ## Mais uma luz — o valor da vida

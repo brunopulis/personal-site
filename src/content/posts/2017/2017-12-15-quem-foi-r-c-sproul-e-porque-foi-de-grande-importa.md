@@ -4,6 +4,7 @@ excerpt: 'Robert Charles Sproul, nasceu em 13 de fevereiro de 1939, em Pittsburg
 pubDate: 2017-12-15T15:35:14.611Z
 category: Teologia
 tags: ['cristianismo', 'biografia']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fssfh425"
 ---
 
 ## Quem foi R C Sproul? E porque foi de grande importância

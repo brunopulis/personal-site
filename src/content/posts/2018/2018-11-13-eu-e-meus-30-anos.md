@@ -4,6 +4,7 @@ excerpt: "A alma já não tem o folêgo da juventude poeril, o cansaço toma con
 pubDate: 2018-11-13T02:27:11.760Z
 category: Pessoal
 tags: ['reflexão', 'pessoal']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fqctrl2o"
 ---
 
 ## Eu e meus 30 anos

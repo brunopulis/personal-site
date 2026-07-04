@@ -3,6 +3,7 @@ title: 'Acessibilidade Web: como começar do jeito certo'
 pubDate: 2023-02-13
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fk6o7e25"
 ---
 
 A **acessibilidade web** é um assunto cada vez mais importante para as pessoas interessadas em tornar a internet mais inclusiva. É essencial compreender como criar conteúdo acessível para que todos possam contar com a mesma experiência de navegação.

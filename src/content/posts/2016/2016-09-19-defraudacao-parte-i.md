@@ -4,6 +4,7 @@ excerpt: 'Antes de mais nada, gostaria de colocar a definição do Dicionário A
 pubDate: 2016-09-19T17:22:19.628Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fysvvf2j"
 ---
 
 ## Defraudação: devemos falar sobre isso

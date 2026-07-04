@@ -3,6 +3,7 @@ title: Ídolos de bolso
 pubDate: 2016-09-05
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fz7t432x"
 ---
 
 Neste estudo, iremos abordar como o avanço da tecnologia trouxe grandes benefícios e malefícios para a humanidade e como podemos combate-los e vencer o mal que é depender estritamente de algo que deveria ser uma ferramenta, um meio e não um fim.

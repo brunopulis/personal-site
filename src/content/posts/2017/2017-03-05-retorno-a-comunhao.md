@@ -4,6 +4,7 @@ excerpt: 'O tempo passa, o início era perfeito, horas pareciam minutos, mas ao 
 pubDate: 2017-03-05T04:48:59.168Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fy7dkc2h"
 ---
 
 ## Retorno a comunhão

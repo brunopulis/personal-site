@@ -4,6 +4,7 @@ pubDate: 2024-07-18
 category: Pessoal
 tags:
   - pessoal
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fikqsd2k"
 ---
 
 Não é segredo para ninguém que acompanha esse site/blog que mudava constantemente.  

@@ -4,6 +4,7 @@ excerpt: 'Aristides de Atenas (ou Aristides, o ateniense, Santo Aristides ou Mar
 pubDate: 2018-02-02T13:24:46.083Z
 category: Teologia
 tags: ['cristianismo', 'biografia']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4frkzyr2l"
 ---
 
 ## Aristides de Atenas

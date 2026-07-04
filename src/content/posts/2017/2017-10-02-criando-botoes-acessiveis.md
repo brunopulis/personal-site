@@ -4,6 +4,7 @@ excerpt: 'Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um 
 pubDate: 2017-10-02T23:28:46.808Z
 category: Acessibilidade
 tags: ['buttons']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fvbi532x"
 ---
 
 ## Como criar botões acessíveis

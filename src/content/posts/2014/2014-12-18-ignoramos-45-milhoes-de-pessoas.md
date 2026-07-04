@@ -4,6 +4,7 @@ excerpt: 'Breve descrição'
 pubDate: 2014-12-18
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g2oplt2g"
 ---
 
 Este post é um alerta, provavelmente você está excluindo **45 milhões** de usuários nas suas aplicações e websites.

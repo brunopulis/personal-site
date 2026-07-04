@@ -3,6 +3,7 @@ title: 'HTML Semântico: repensando sobre seu uso'
 pubDate: 2020-04-30
 category: Frontend
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fo4tzd2k"
 ---
 
 ## Introdução

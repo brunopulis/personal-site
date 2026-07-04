@@ -4,6 +4,7 @@ excerpt: 'Pois bem no artigo passado retratamos a definição e conceito de defr
 pubDate: 2016-01-15
 category: Teologia
 tags: ['cristianismo', 'teologia']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g2bmh32k"
 ---
 
 ## Defraudação Parte II: As consequências daquilo que você chama de joguinho

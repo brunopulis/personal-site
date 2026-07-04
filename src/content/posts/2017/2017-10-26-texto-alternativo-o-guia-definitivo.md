@@ -4,6 +4,7 @@ excerpt: 'Esta publicação contém tudo o que você precisa saber sobre texto a
 pubDate: 2017-10-26T12:47:26.632Z
 category: Acessibilidade
 tags: ['texto alternativo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fuu6tp2q"
 ---
 
 ## Texto alternativo: o guia definitivo

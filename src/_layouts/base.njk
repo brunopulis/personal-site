@@ -18,6 +18,10 @@
   {% if site.social and site.social.mastodon %}
     <link rel="me" href="{{ site.social.mastodon }}" />
   {% endif %}
+  <link
+    rel="site.standard.document"
+    href="at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/rkey"
+  />
   {# Canonical URL #}
   {% if site.url %}
   <link rel="canonical" href="{{ site.url }}{{ page.url or '/' }}" />

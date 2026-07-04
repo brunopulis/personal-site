@@ -4,6 +4,7 @@ excerpt: 'Desde o Gênese da criação, o homem tem a tendência maligna em cria
 pubDate: 2017-06-20T04:21:26.070Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fx5kcd2k"
 ---
 
 ## Ídolos e idolatrias

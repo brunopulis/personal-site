@@ -4,6 +4,7 @@ excerpt: "procurando bug's de acessibilidade no seu site"
 pubDate: 2014-02-19
 category: Acessibilidade
 tags: ['a11y']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g2w2ck24"
 ---
 
 ## Avaliadores automáticos

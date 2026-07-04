@@ -5,6 +5,7 @@ category: 'Pessoal'
 url: https://brunopulis.com/o-que-blogroll/
 tags:
   - indie web
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fieb2u25"
 ---
 
 A web antiga me fascina, talvez seja porque era feita **de pessoas para pessoas** e não existia essa web corporativa. Um dos conceitos mais legais dela é o **blogroll.**

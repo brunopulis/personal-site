@@ -4,6 +4,7 @@ excerpt: 'Onde as pessoas retirem a distração do culto público.'
 pubDate: 2016-11-22T18:49:08.939Z
 category: Teologia
 tags: ['cristianismo']
+atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fyfw2m24"
 ---
 
 ## Eu tenho um sonho
