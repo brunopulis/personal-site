@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {slugifyString} from '../../src/_config/filters/slugify.js';
+import {slugifyString} from '../../../src/_config/filters/slugify.js';
 
 describe('slugifyString', () => {
   it('convert string to lowercase slug', () => {

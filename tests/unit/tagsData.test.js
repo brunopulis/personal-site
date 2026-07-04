@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { toSlug, extractTags } from '../src/_data/tags-helpers.js';
+import {describe, it, expect} from 'vitest';
+import {toSlug, extractTags} from '../../src/_data/tags-helpers.js';
 
 describe('toSlug', () => {
   it('convert to lowercase', () => {

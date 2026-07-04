@@ -5,11 +5,11 @@ import {
   groupByYear,
   filterByYear,
   filterFavorites,
-  filterNonFavorites,
-} from '../../src/_config/filters/media.js';
+  filterNonFavorites
+} from '../../../src/_config/filters/media.js';
 
 const makeItem = (watchedYear, favorite = false) => ({
-  data: {watchedYear, favorite},
+  data: {watchedYear, favorite}
 });
 
 describe('moviesByYear', () => {

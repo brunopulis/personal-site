@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {startsWith} from '../../src/_config/filters/starts-with.js';
+import {startsWith} from '../../../src/_config/filters/starts-with.js';
 
 describe('startsWith', () => {
   it('return true when string starts with prefix', () => {

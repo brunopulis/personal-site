@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {striptags} from '../../src/_config/filters/striptags.js';
+import {striptags} from '../../../src/_config/filters/striptags.js';
 
 describe('striptags', () => {
   it('remove HTML tags from string', () => {

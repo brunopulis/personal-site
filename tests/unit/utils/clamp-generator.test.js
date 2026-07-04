@@ -1,10 +1,6 @@
-import {describe, it, expect, vi} from 'vitest';
+import {describe, it, expect} from 'vitest';
 
-vi.mock('../../_data/designTokens/viewports.json', () => ({
-  default: {min: 320, max: 1440},
-}));
-
-import {clampGenerator} from '../../src/_config/utils/clamp-generator.js';
+import {clampGenerator} from '../../../src/_config/utils/clamp-generator.js';
 
 describe('clampGenerator', () => {
   it('generate clamp value for different min/max', () => {
@@ -23,7 +19,7 @@ describe('clampGenerator', () => {
   it('handle multiple tokens', () => {
     const tokens = [
       {name: 'small', min: 12, max: 16},
-      {name: 'large', min: 24, max: 48},
+      {name: 'large', min: 24, max: 48}
     ];
     const result = clampGenerator(tokens);
     expect(result).toHaveLength(2);

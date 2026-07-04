@@ -148,3 +148,5 @@ temp/
 # (Allow package-lock.json specifically)
 !package-lock.json
 .vercel
+
+.sequoia-state.json

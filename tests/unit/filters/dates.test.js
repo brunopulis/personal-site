@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {toISOString, formatDate} from '../../src/_config/filters/dates.js';
+import {toISOString, formatDate} from '../../../src/_config/filters/dates.js';
 
 describe('toISOString', () => {
   it('convert date string to ISO format', () => {

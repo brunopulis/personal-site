@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {formatNumber} from '../../src/_config/filters.js';
+import {formatNumber} from '../../../src/_config/filters.js';
 
 describe('formatNumber', () => {
   it('format number with dot as thousands separator', () => {

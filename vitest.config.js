@@ -4,10 +4,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    include: ['tests/**/*.test.js'],
+    include: ['tests/unit/**/*.test.js'],
     coverage: {
       include: ['src/_config/**', 'src/_data/**'],
-      reporter: ['text', 'lcov'],
-    },
-  },
+      reporter: ['text', 'lcov']
+    }
+  }
 });
