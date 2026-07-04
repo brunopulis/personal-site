@@ -33,22 +33,23 @@ describe('aggregateCategories', () => {
     const result = aggregateCategories(posts, slugFn);
     expect(result).toEqual([
       {name: 'Acessibilidade', slug: 'acessibilidade', count: 1},
-      {name: 'Frontend', slug: 'frontend', count: 2},
+      {name: 'Frontend', slug: 'frontend', count: 2}
     ]);
   });
 
   it('sort categories alphabetically by name', () => {
-    const posts = [makePost('Teologia'), makePost('Acessibilidade'), makePost('Carreira'), makePost('Eventos')];
+    const posts = [
+      makePost('Teologia'),
+      makePost('Acessibilidade'),
+      makePost('Carreira'),
+      makePost('Eventos')
+    ];
     const result = aggregateCategories(posts, slugFn);
     expect(result.map(c => c.name)).toEqual(['Acessibilidade', 'Carreira', 'Eventos', 'Teologia']);
   });
 
   it('skip posts without category', () => {
-    const posts = [
-      {data: {}},
-      makePost('Frontend'),
-      {data: {category: ''}},
-    ];
+    const posts = [{data: {}}, makePost('Frontend'), {data: {category: ''}}];
     const result = aggregateCategories(posts, slugFn);
     expect(result).toHaveLength(1);
     expect(result[0].name).toBe('Frontend');
@@ -68,7 +69,7 @@ describe('aggregateCategories', () => {
     const result = aggregateCategories(posts, slugFn);
     expect(result).toEqual([
       {name: 'Coração', slug: 'coracao', count: 1},
-      {name: 'Educação', slug: 'educacao', count: 1},
+      {name: 'Educação', slug: 'educacao', count: 1}
     ]);
   });
 

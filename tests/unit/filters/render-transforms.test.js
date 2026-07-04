@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {renderTransforms} from '../../src/_config/filters/render-transforms.js';
+import {renderTransforms} from '../../../src/_config/filters/render-transforms.js';
 
 describe('renderTransforms', () => {
   it('wrap content in CDATA tag', () => {

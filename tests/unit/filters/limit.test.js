@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {limit} from '../../src/_config/filters/limit.js';
+import {limit} from '../../../src/_config/filters/limit.js';
 
 describe('limit', () => {
   it('return first n items of array', () => {

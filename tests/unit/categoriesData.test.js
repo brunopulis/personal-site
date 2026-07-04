@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { extractCategory } from '../src/_data/categoriesData.js';
+import {describe, it, expect} from 'vitest';
+import {extractCategory} from '../../src/_data/categoriesData.js';
 
 describe('extractCategory', () => {
   it('extract category from frontmatter with YAML value', () => {

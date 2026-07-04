@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {splitlines} from '../../src/_config/filters/splitlines.js';
+import {splitlines} from '../../../src/_config/filters/splitlines.js';
 
 describe('splitlines', () => {
   it('split text into lines based on max character length', () => {

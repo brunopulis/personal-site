@@ -1,11 +1,11 @@
 import {describe, it, expect} from 'vitest';
-import {where, keys, concat} from '../../src/_config/filters/where.js';
+import {where, keys, concat} from '../../../src/_config/filters/where.js';
 
 describe('where', () => {
   const items = [
     {type: 'book', title: 'A'},
     {type: 'movie', title: 'B'},
-    {type: 'book', title: 'C'},
+    {type: 'book', title: 'C'}
   ];
 
   it('filter items by key-value pair', () => {

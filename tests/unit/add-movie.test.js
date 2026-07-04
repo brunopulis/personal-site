@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {buildFrontmatter, buildFilePath, computeDefaults} from '../scripts/lib/add-movie.js';
+import {buildFrontmatter, buildFilePath, computeDefaults} from '../../scripts/lib/add-movie.js';
 
 describe('buildFrontmatter', () => {
   it('generate frontmatter for a movie with all fields', () => {
@@ -13,7 +13,7 @@ describe('buildFrontmatter', () => {
       watchedYear: '2024',
       poster: 'https://image.tmdb.org/t/p/w600_and_h900_face/poster.jpg',
       url: 'https://www.themoviedb.org/movie/123-duna',
-      watchedDate: '2024-03-15T10:00:00.000Z',
+      watchedDate: '2024-03-15T10:00:00.000Z'
     });
 
     expect(result).toContain('title: "Duna"');
@@ -39,7 +39,7 @@ describe('buildFrontmatter', () => {
       watchedYear: '2026',
       poster: 'https://image.tmdb.org/t/p/w600_and_h900_face/poster2.jpg',
       url: 'https://www.themoviedb.org/tv/66732-stranger-things',
-      watchedDate: '2026-06-15T12:00:00.000Z',
+      watchedDate: '2026-06-15T12:00:00.000Z'
     });
 
     expect(result).toContain('title: "Stranger Things"');
@@ -65,7 +65,7 @@ describe('buildFrontmatter', () => {
   it('handle title with special characters', () => {
     const result = buildFrontmatter({
       title: 'O Contador 2: The Sequel',
-      watchedDate: '2026-01-01T00:00:00.000Z',
+      watchedDate: '2026-01-01T00:00:00.000Z'
     });
 
     expect(result).toContain('title: "O Contador 2: The Sequel"');
@@ -75,7 +75,7 @@ describe('buildFrontmatter', () => {
     const result = buildFrontmatter({
       title: 'Test',
       status: 'abandonei',
-      watchedDate: '2026-01-01T00:00:00.000Z',
+      watchedDate: '2026-01-01T00:00:00.000Z'
     });
 
     expect(result).toContain('status: abandonei');
@@ -84,7 +84,7 @@ describe('buildFrontmatter', () => {
   it('always generate valid YAML frontmatter delimiters', () => {
     const result = buildFrontmatter({
       title: 'Test',
-      watchedDate: '2026-01-01T00:00:00.000Z',
+      watchedDate: '2026-01-01T00:00:00.000Z'
     });
 
     expect(result.startsWith('---\n')).toBe(true);
@@ -129,8 +129,8 @@ describe('computeDefaults', () => {
     poster_path: '/abc123.jpg',
     genres: [{name: 'Ficção Científica'}, {name: 'Aventura'}],
     credits: {
-      crew: [{job: 'Director', name: 'Denis Villeneuve'}],
-    },
+      crew: [{job: 'Director', name: 'Denis Villeneuve'}]
+    }
   };
 
   const showDetails = {
@@ -139,7 +139,7 @@ describe('computeDefaults', () => {
     first_air_date: '2016-07-15',
     poster_path: '/def456.jpg',
     genres: [{name: 'Sci-Fi & Fantasy'}],
-    created_by: [{name: 'Ross Duffer'}, {name: 'Matt Duffer'}],
+    created_by: [{name: 'Ross Duffer'}, {name: 'Matt Duffer'}]
   };
 
   it('compute defaults for a movie selection', () => {
@@ -178,7 +178,7 @@ describe('computeDefaults', () => {
   it('handle missing created_by for shows', () => {
     const result = computeDefaults(
       {id: 1, name: 'Test Show', genres: []},
-      {resultType: 'show', displayTitle: 'Test Show'},
+      {resultType: 'show', displayTitle: 'Test Show'}
     );
     expect(result.defaultDirector).toBe('');
   });
@@ -189,7 +189,10 @@ describe('computeDefaults', () => {
   });
 
   it('fall back to selected displayTitle when details have no title/name', () => {
-    const result = computeDefaults({id: 1, genres: []}, {resultType: 'movie', displayTitle: 'Fallback Title'});
+    const result = computeDefaults(
+      {id: 1, genres: []},
+      {resultType: 'movie', displayTitle: 'Fallback Title'}
+    );
     expect(result.defaultTitle).toBe('Fallback Title');
   });
 });
@@ -206,7 +209,7 @@ describe('buildFrontmatter + buildFilePath integrados', () => {
       watchedYear: '2024',
       poster: 'https://image.tmdb.org/t/p/w600_and_h900_face/abc.jpg',
       url: 'https://www.themoviedb.org/movie/123-duna',
-      watchedDate: '2024-03-15T10:00:00.000Z',
+      watchedDate: '2024-03-15T10:00:00.000Z'
     };
 
     const frontmatter = buildFrontmatter(fields);
@@ -229,7 +232,7 @@ describe('buildFrontmatter + buildFilePath integrados', () => {
       watchedYear: '2026',
       poster: 'https://image.tmdb.org/t/p/w600_and_h900_face/def.jpg',
       url: 'https://www.themoviedb.org/tv/66732-stranger-things',
-      watchedDate: '2026-06-15T12:00:00.000Z',
+      watchedDate: '2026-06-15T12:00:00.000Z'
     };
 
     const frontmatter = buildFrontmatter(fields);

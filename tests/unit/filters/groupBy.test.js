@@ -1,12 +1,12 @@
 import {describe, it, expect} from 'vitest';
-import {groupBy, groupByYear, groupByMonth} from '../../src/_config/filters/groupBy.js';
+import {groupBy, groupByYear, groupByMonth} from '../../../src/_config/filters/groupBy.js';
 
 describe('groupBy', () => {
   it('group items by a key', () => {
     const items = [
       {type: 'book', title: 'A'},
       {type: 'movie', title: 'B'},
-      {type: 'book', title: 'C'},
+      {type: 'book', title: 'C'}
     ];
     const result = groupBy(items, 'type');
     expect(result.book).toHaveLength(2);
@@ -27,11 +27,7 @@ describe('groupBy', () => {
 
 describe('groupByYear', () => {
   it('group items by year from date', () => {
-    const items = [
-      {date: '2024-06-15'},
-      {date: '2024-07-20'},
-      {date: '2023-08-10'},
-    ];
+    const items = [{date: '2024-06-15'}, {date: '2024-07-20'}, {date: '2023-08-10'}];
     const result = groupByYear(items);
     expect(result[2024]).toHaveLength(2);
     expect(result[2023]).toHaveLength(1);
