@@ -64,7 +64,7 @@
     "lint-staged": "^17.0.8",
     "liquidjs": "10.27.1",
     "luxon": "^3.7.2",
-    "markdown-it": "^14.2.0",
+    "markdown-it": "^14.3.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^5.0.0",
