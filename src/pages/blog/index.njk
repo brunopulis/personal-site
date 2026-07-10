@@ -11,24 +11,30 @@ title: Blog
 <div class="h-feed">
   <h1 class="mb-6 p-name font-bold text-blood-red-950 text-2xl">Blog</h1>
   <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
+  <p class="pb-4">Artigos e conteúdos longos sobre diversas coisas.</p>
 
-  <nav class="mb-8" aria-label="Filtrar por categoria">
-    <div class="flex flex-wrap gap-2">
-      <a
-        href="/blog/"
-        class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors bg-blood-red-950 text-white border-blood-red-950"
-      >
-        Todas
-      </a>
-      {% for cat in collections.catpages -%}
+  <p class="pb-4">Filtre pelas categorias:</p>
+  <nav class="mb-8">
+    <ul class="inline-flex gap-2">
+      <li>
         <a
-          href="/blog/category/{{ cat.slug }}/"
-          class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors bg-transparent text-errie-black-950 border-light-silver-300 hover:border-blood-red-950"
+          href="/blog/"
+          class="bg-blood-red-950 px-3 py-1.5 border border-blood-red-950 rounded-full font-semibold text-white text-xs transition-colors"
         >
-          {{ cat.name }}
+          Todas
         </a>
+      </li>
+      {% for category in collections.catpages -%}
+        <li>
+          <a
+            href="/blog/category/{{ category.slug }}/"
+            class="bg-transparent hover:bg-blood-red-950 px-3 py-1.5 border border-light-silver-300 rounded-full font-semibold text-errie-black-950 hover:text-white text-xs transition-colors"
+          >
+            {{ category.name }}
+          </a>
+        </li>
       {%- endfor %}
-    </div>
+    </ul>
   </nav>
 
   <div class="space-y-8" id="posts-list">
@@ -44,21 +50,11 @@ title: Blog
           datetime="{{ post.date | htmlDateString }}">
           {{ post.date | readableDate }}
         </time>
-        <div class="mt-2 p-summary">
+        <p class="mt-2 p-summary">
           {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-        </div>
-        {% if postCategory %}
-          <div class="mt-2">
-            <a
-              class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-vista-blue-100 text-vista-blue-700 hover:bg-vista-blue-200 transition-colors"
-              href="/blog/category/{{ postCategory | slugify }}/"
-            >
-              {{ postCategory }}
-            </a>
-          </div>
-        {% endif %}
+        </p>
         {% if tags %}
-          <div class="inline-flex gap-4 py-4">
+          <div class="inline-flex gap-2 py-4">
             <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
             <div class="flex flex-wrap gap-2">
               {% for tag in tags %}
