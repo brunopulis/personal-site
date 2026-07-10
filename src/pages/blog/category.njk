@@ -1,11 +1,12 @@
 ---
 layout: base.njk
-title: "Posts em {{ category.name }}"
 pagination:
   data: collections.catpages
   size: 1
   alias: category
 permalink: "/blog/category/{{ category.slug }}/index.html"
+eleventyComputed:
+  title: "Posts em {{ category.name }}"
 ---
 
 <h1 class="mb-6 p-name font-bold text-blood-red-950 text-2xl">Posts em {{ category.name }}</h1>
