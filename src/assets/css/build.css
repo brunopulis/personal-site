@@ -1,4 +1,4 @@
-/*! tailwindcss v4.3.1 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.3.2 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -94,7 +94,6 @@
     --color-vista-blue-700: #5162b1;
     --color-vista-blue-900: #3c4873;
     --color-vista-blue-950: #232943;
-    --color-errie-black-500: #6b8080;
     --color-errie-black-900: #171e1e;
     --color-errie-black-950: #080c0c;
     --color-light-silver-100: #f5f5f5;
@@ -691,9 +690,6 @@
   .animate-pulse {
     animation: var(--animate-pulse);
   }
-  .cursor-pointer {
-    cursor: pointer;
-  }
   .resize {
     resize: both;
   }
@@ -979,9 +975,6 @@
   }
   .bg-purple-100 {
     background-color: var(--color-purple-100);
-  }
-  .bg-purple-600 {
-    background-color: var(--color-purple-600);
   }
   .bg-red-100 {
     background-color: var(--color-red-100);
@@ -1313,9 +1306,6 @@
   .text-blue-800 {
     color: var(--color-blue-800);
   }
-  .text-errie-black-500 {
-    color: var(--color-errie-black-500);
-  }
   .text-errie-black-900 {
     color: var(--color-errie-black-900);
   }
@@ -1577,13 +1567,6 @@
     &:hover {
       @media (hover: hover) {
         text-decoration-line: underline;
-      }
-    }
-  }
-  .hover\:opacity-80 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 80%;
       }
     }
   }
