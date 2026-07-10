@@ -2,15 +2,13 @@
 title: Melhorias do meu site
 pubDate: 2024-07-18
 category: Pessoal
-tags:
-  - pessoal
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fikqsd2k"
 ---
 
-Não é segredo para ninguém que acompanha esse site/blog que mudava constantemente.  
+Não é segredo para ninguém que acompanha esse site/blog que mudava constantemente.
 Era uma tentativa de deixar o mais acessível e otimizado possível, só que acabei caindo em uma espiral de mudanças sem sentido.
 
-Comecei a perceber que as propostas de mudanças eram tolas.  
+Comecei a perceber que as propostas de mudanças eram tolas.
 Agora entrei em uma nova fase, estou pensando com estratégia sobre o conteúdo e a forma em si do site.
 
 Ele vai deixar de ser somente um blog educativo/informativo e passará a também mostrar os serviços que presto. Atualmente estou trabalho em:

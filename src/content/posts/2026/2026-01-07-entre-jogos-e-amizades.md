@@ -3,7 +3,8 @@ title: Entre jogos e amizades
 description: 'O que máquinas de pinball, arcades, video games podem nos ensinar sobre amizades'
 pubDate: 2026-01-07
 category: Pessoal
-tags: ['100DaysToOffLoad', 'pessoal']
+tags:
+  - 100DaysToOffLoad
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fgpgx32i"
 ---
 

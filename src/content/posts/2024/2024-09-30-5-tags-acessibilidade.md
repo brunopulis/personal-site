@@ -3,7 +3,6 @@ title: 5 tags que ajudam na acessibilidade
 excerpt: 'Breve descrição'
 pubDate: 2024-09-30
 category: Acessibilidade
-tags: 'a11y'
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fhxbje24"
 ---
 

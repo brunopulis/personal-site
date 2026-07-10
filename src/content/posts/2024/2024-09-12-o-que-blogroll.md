@@ -1,8 +1,7 @@
 ---
 title: O que é blogroll?
 pubDate: 2024-09-12
-category: 'Pessoal'
-url: https://brunopulis.com/o-que-blogroll/
+category: Pessoal
 tags:
   - indie web
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fieb2u25"

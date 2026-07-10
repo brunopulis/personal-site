@@ -2,7 +2,6 @@
 title: 'Acessibilidade Web: como começar do jeito certo'
 pubDate: 2023-02-13
 category: Acessibilidade
-tags: ['a11y']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fk6o7e25"
 ---
 

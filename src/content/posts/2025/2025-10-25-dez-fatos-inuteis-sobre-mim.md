@@ -3,7 +3,8 @@ title: Dez fatos inúteis sobre mim
 description: 'Descubra fatos inúteis sobre mim e quem sabe você não encontre algo curioso.'
 pubDate: 2025-10-25
 category: Pessoal
-tags: ['pessoal', 'indie web']
+tags:
+  - indie web
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fhdpcd2o"
 ---
 

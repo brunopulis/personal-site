@@ -2,8 +2,6 @@
 title: Mudanças de layout
 pubDate: 2024-03-19
 category: Pessoal
-tags:
-  - pessoal
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fjemj52j"
 ---
 
