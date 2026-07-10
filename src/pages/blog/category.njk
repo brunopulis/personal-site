@@ -8,15 +8,64 @@ pagination:
 permalink: "/blog/category/{{ category.slug }}/index.html"
 ---
 
-<h1>Posts em {{ category.name }}</h1>
+<h1 class="mb-6 p-name font-bold text-blood-red-950 text-2xl">Posts em {{ category.name }}</h1>
 
 {% set catPosts = collections.posts | where('data.category', category.name) %}
 
-<ul>
-{% for post in catPosts %}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ul>
+<p class="pb-4">Filtre pelas categorias:</p>
+<nav class="mb-8">
+  <ul class="inline-flex gap-2">
+    <li>
+      <a
+        href="/blog/"
+        class="bg-transparent hover:bg-blood-red-950 px-3 py-1.5 border border-light-silver-300 rounded-full font-semibold text-errie-black-950 hover:text-white text-xs transition-colors"
+      >
+        Todas
+      </a>
+    </li>
+    {% for cat in collections.catpages -%}
+      <li>
+        <a
+          href="/blog/category/{{ cat.slug }}/"
+          class="{% if cat.slug == category.slug %}bg-blood-red-950 border-blood-red-950 text-white{% else %}bg-transparent border-light-silver-300 text-errie-black-950 hover:bg-blood-red-950 hover:text-white{% endif %} px-3 py-1.5 border rounded-full font-semibold text-xs transition-colors"
+        >
+          {{ cat.name }}
+        </a>
+      </li>
+    {%- endfor %}
+  </ul>
+</nav>
+
+<div class="space-y-8" id="posts-list">
+  {% for post in catPosts %}
+    {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+    <article class="pb-6 border-b h-entry">
+      <h3 class="p-name font-semibold text-xl">
+        <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <time
+        class="text-sm dt-published"
+        datetime="{{ post.date | htmlDateString }}">
+          {{ post.date | readableDate }}
+      </time>
+      <p class="mt-2 p-summary">
+        {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+      </p>
+      {% if tags.length %}
+        <div class="inline-flex gap-2 py-4">
+          <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+          <div class="flex flex-wrap gap-2">
+            {% for tag in tags %}
+              <a class="p-category font-bold text-errie-black-950 text-xs transition-colors" href="/tags/{{ tag | slug }}/">
+                #{{ tag }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
 
 <nav>
   <a href="/blog/">Todos os posts</a>
