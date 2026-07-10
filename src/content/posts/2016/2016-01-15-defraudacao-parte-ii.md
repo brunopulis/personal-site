@@ -3,7 +3,7 @@ title: 'Defraudação Parte II: As consequências daquilo que você chama de jog
 excerpt: 'Pois bem no artigo passado retratamos a definição e conceito de defraudação do ponto de vista bíblico e como sua prática é corriqueira nos…'
 pubDate: 2016-01-15
 category: Teologia
-tags: ['cristianismo', 'teologia']
+tags: ['cristianismo']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g2bmh32k"
 ---
 

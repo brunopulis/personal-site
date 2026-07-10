@@ -3,7 +3,6 @@ title: Meus aplicativos de 2024
 pubDate: 2024-12-31
 category: Pessoal
 tags:
-  - pessoal
   - Apps
 excerpt: 'Confira os aplicativos que mais usei em 2024.'
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fhkcad2o"

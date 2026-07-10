@@ -2,7 +2,9 @@
 title: 5 livros de acessibilidade digital
 pubDate: 2021-07-01
 category: Acessibilidade
-tags: ['livros', 'tech', 'a11y']
+tags:
+  - livros
+  - tech
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fm23tk24"
 ---
 

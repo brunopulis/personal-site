@@ -2,7 +2,9 @@
 title: 10 dicas de acessibilidade para desenvolvedores
 pubDate: 2023-05-18
 category: Acessibilidade
-tags: ['fronted', 'wcag', 'a11y']
+tags:
+  - fronted
+  - wcag
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fjxzmt2i"
 ---
 

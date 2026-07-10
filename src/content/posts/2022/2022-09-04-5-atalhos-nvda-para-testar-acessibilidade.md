@@ -3,7 +3,9 @@ title: 5 atalhos do NVDA para testar acessibilidade
 excerpt: Atalhos rapidos para o NVDA
 pubDate: 2022-09-04
 category: Acessibilidade
-tags: ['a11y', 'nvda', 'leitor de tela']
+tags:
+  - leitores de tela
+  - tecnologia assistiva
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fkf6tg2w"
 ---
 

@@ -3,7 +3,6 @@ title: 'Um ano de novidades'
 excerpt: 'Novidades de um ano que iniciou a todo vapor'
 pubDate: 2021-01-06T12:55:00.000Z
 category: Pessoal
-tags: ['pessoal']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fmutcj22"
 ---
 
