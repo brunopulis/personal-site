@@ -14,7 +14,7 @@ description: Todas as tags usadas no site, organizadas com contagem de publicaç
     {% set tagCount = tag.count %}
     <a href="/tags/{{ tag.name | slug }}/"
        class="p-category px-2 py-1 border border-border hover:border-primary rounded-full text-muted-foreground hover:text-primary text-xs">
-      #{{ tag.name }} {{ tagCount }}
+      #{{ tag.name }}
     </a>
   {% endfor %}
 </div>

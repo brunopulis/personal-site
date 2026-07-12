@@ -6,7 +6,7 @@ permalink: /stats/
 
 {% set stats = siteStats %}
 <section class="mb-12">
-  <h2 class="mb-4 font-bold text-blood-red-950 text-2xl">Estatísticas Gerais</h2>
+  <h2 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">Estatísticas Gerais</h2>
   <dl class="gap-4 grid grid-cols-1 md:grid-cols-2">
     <div class="bg-light-silver-100 p-4 border rounded-lg">
       <dt class="mb-1 font-bold text-blood-red-950 text-sm">Total de posts</dt>
@@ -36,7 +36,7 @@ permalink: /stats/
 </section>
 
 <section class="mb-12">
-  <h2 class="mb-4 font-bold text-blood-red-950 text-2xl">Posts por ano</h2>
+  <h2 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">Posts por ano</h2>
   <ul class="space-y-2">
     {% for year in stats.yearsSorted %}
       <li class="flex justify-between items-center py-2 border-gray-200 dark:border-gray-700 border-b">

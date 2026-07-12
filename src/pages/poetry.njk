@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Poesias
+title: Poemas
 pagination:
   data: collections.poetry
   size: 10
@@ -9,7 +9,7 @@ pagination:
 permalink: '/poetry/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
 ---
 
-<h1 class="mb-4 font-bold text-blood-red-950 text-2xl">
+<h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">
   {{ title }}
 </h1>
 
