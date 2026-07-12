@@ -4,11 +4,11 @@ permalink: '/archive/'
 title: Arquivo
 ---
 
-<h1 class="mb-6 font-bold text-blood-red-950 text-2xl">
+<h1 class="mb-6 font-bold text-blood-red-950 text-4xl">
   {{ title }}
 </h1>
 
-<div class="dark:prose-invert mb-8 max-w-none prose prose-lg">
+<div class="dark:prose-invert mb-8 max-w-none prose">
   <p>Um arquivo cronológico de todas as postagens, organizado por ano e mês.</p>
 </div>
 
@@ -18,7 +18,7 @@ title: Arquivo
   {% set postsByMonth = posts | groupby("date.getMonth()") %}
   {% for month, monthPosts in postsByMonth %}
   <div class="mb-6">
-    <h2 class="mb-3 font-medium text-gray-700 dark:text-gray-300 text-lg">
+    <h2 class="mb-3 font-medium text-lg">
       {{ monthPosts[0].date | readableDate("MMMM") }}
     </h2>
 

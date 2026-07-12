@@ -9,9 +9,32 @@ title: Blog
 ---
 
 <div class="h-feed">
-  <h1 class="mb-6 p-name font-bold text-blood-red-950 text-2xl">Blog</h1>
+  <h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">Blog</h1>
   <a class="hidden u-url" href="{{ site.url }}/blog/"></a>
   <p class="pb-4">Artigos e conteúdos longos sobre diversas coisas.</p>
+
+  <div class="bg-vista-blue-300 py-4 border-2 border-vista-blue-700 text-errie-black-900 banner rss">
+    <p>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="inline-block mr-2 w-4 h-4" aria-hidden="true">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M4 19a1 1 0 102 0 1 1 0 10-2 0"></path>
+          <path d="M4 4a16 16 0 0116 16"></path>
+          <path d="M4 11a9 9 0 019 9"></path>
+      </svg>
+      <a href="/feeds/blog/rss.xml" class="underline underline-offset-4">
+        Assine o meu feed de publicações ou acompanhe nesta página.
+      </a>
+    </p>
+  </div>
 
   <p class="pb-4">Filtre pelas categorias:</p>
   <nav class="mb-8">
