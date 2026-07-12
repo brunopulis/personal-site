@@ -98,8 +98,16 @@ async function fetchAssets(root) {
 
   const targets = [
     cfg.profileUrl && {url: cfg.profileUrl, file: 'profile.jpg', desc: 'profile image placeholder'},
-    cfg.ogDefaultUrl && {url: cfg.ogDefaultUrl, file: 'og-default.png', desc: 'default Open Graph image placeholder'},
-    cfg.retroStarsUrl && {url: cfg.retroStarsUrl, file: 'retro-stars.png', desc: 'retro stars background tile'}
+    cfg.ogDefaultUrl && {
+      url: cfg.ogDefaultUrl,
+      file: 'og-default.png',
+      desc: 'default Open Graph image placeholder'
+    },
+    cfg.retroStarsUrl && {
+      url: cfg.retroStarsUrl,
+      file: 'retro-stars.png',
+      desc: 'retro stars background tile'
+    }
   ].filter(Boolean);
 
   for (const t of targets) {
@@ -118,41 +126,10 @@ async function fetchAssets(root) {
   }
 }
 
-async function fetchHighlight(root) {
-  const jsDir = path.join(root, 'src', 'assets', 'js');
-  const cssDir = path.join(root, 'src', 'assets', 'css', 'highlight');
-  ensureDirSync(jsDir);
-  ensureDirSync(cssDir);
-
-  const version = '11.9.0';
-  const baseUrl = `https://unpkg.com/@highlightjs/cdn-assets@${version}`;
-
-  const targets = [
-    {url: `${baseUrl}/highlight.min.js`, file: path.join(jsDir, 'highlight.min.js')},
-    {url: `${baseUrl}/styles/tokyo-night-light.min.css`, file: path.join(cssDir, 'tokyo-night-light.min.css')},
-    {url: `${baseUrl}/styles/tokyo-night-dark.min.css`, file: path.join(cssDir, 'tokyo-night-dark.min.css')}
-  ];
-
-  for (const t of targets) {
-    try {
-      await fs.promises.access(t.file);
-      console.log('[setup] Exists, skipping', path.basename(t.file));
-    } catch {
-      try {
-        await download(t.url, t.file);
-        console.log('[setup] Downloaded', path.basename(t.file));
-      } catch (e) {
-        console.warn('[setup] Failed:', e.message);
-      }
-    }
-  }
-}
-
 async function main() {
   const root = process.cwd();
   await generateIcons(root);
   await fetchAssets(root);
-  await fetchHighlight(root);
   console.log('[setup] Done');
 }
 
