@@ -12,7 +12,7 @@ describe('Navigation', () => {
   it('navigates to Sobre', () => {
     cy.contains('a', 'Sobre').click();
     cy.url().should('include', '/about/');
-    cy.contains('h1', 'Bruno Pulis').should('be.visible');
+    cy.contains('h1', 'Sobre mim').should('be.visible');
   });
 
   it('navigates to Contato', () => {

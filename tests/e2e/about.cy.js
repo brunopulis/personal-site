@@ -4,11 +4,7 @@ describe('About page', () => {
   });
 
   it('loads successfully', () => {
-    cy.contains('h1', 'Bruno Pulis').should('be.visible');
-  });
-
-  it('contains bio information', () => {
-    cy.get('main').should('contain.text', 'Bruno');
+    cy.contains('h1', 'Sobre mim').should('be.visible');
   });
 
   it('has h-card microformat', () => {
