@@ -28,7 +28,7 @@
   "newsletter": {
     "enabled": true,
     "provider": "substack",
-    "action": "https://brunopulis.subtack.com",
+    "action": "https://brunopulis.substack.com",
     "title": "Assine minha newsletter",
     "description": "Receba atualizações direto no seu e-mail. Sem spam, apenas conteúdo significativo."
   },

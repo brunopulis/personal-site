@@ -43,7 +43,7 @@ package-lock.json.*   # partial/backup locks created by tools
 
 # If you standardize on npm, ignore other lockfiles:
 yarn.lock
-pnpm-lock.yaml
+# pnpm-lock.yaml — tracked for reproducible builds
 
 # Logs
 npm-debug.log*

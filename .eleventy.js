@@ -157,7 +157,6 @@ export default async function (eleventyConfig) {
 
   // addPassthroughCopy — selective, not the entire src/assets/
   eleventyConfig.addPassthroughCopy({'src/assets/css/build.css': 'assets/css/build.css'});
-  eleventyConfig.addPassthroughCopy({'src/assets/css/highlight': 'assets/css/highlight'});
   eleventyConfig.addPassthroughCopy({'src/assets/js': 'assets/js'});
   eleventyConfig.addPassthroughCopy({'src/assets/images': 'assets/images'});
   eleventyConfig.addPassthroughCopy({'src/assets/og-images': 'assets/og-images'});
@@ -168,8 +167,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/assets/og-default.png': 'assets/og-default.png'});
   eleventyConfig.addPassthroughCopy({'src/assets/files': 'assets/files'});
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
-  eleventyConfig.addPassthroughCopy({'src/manifest.webmanifest': 'manifest.webmanifest'});
-  eleventyConfig.addPassthroughCopy({'src/sw.js': 'sw.js'});
+
   eleventyConfig.addPassthroughCopy({api: 'api'});
   eleventyConfig.addPassthroughCopy({'src/.well-known': '.well-known'});
 
@@ -223,7 +221,7 @@ export default async function (eleventyConfig) {
     return categories.sort();
   });
 
-  eleventyConfig.addCollection('catpages', function(collectionApi) {
+  eleventyConfig.addCollection('catpages', function (collectionApi) {
     const posts = collectionApi.getFilteredByGlob('src/content/posts/**/*.md');
     const map = new Map();
     for (const post of posts) {
@@ -231,7 +229,7 @@ export default async function (eleventyConfig) {
       if (!cat) continue;
       const slug = toSlug(cat);
       if (!map.has(slug)) {
-        map.set(slug, { name: cat, slug, count: 0 });
+        map.set(slug, {name: cat, slug, count: 0});
       }
       map.get(slug).count++;
     }
@@ -240,8 +238,6 @@ export default async function (eleventyConfig) {
 
   // Library and Data
   eleventyConfig.setLibrary('md', plugins.markdownLib);
-  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
-
   // Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);
   eleventyConfig.addShortcode('image', shortcodes.imageShortcode);
@@ -282,7 +278,7 @@ function guestbookApiHandler(req, res, next) {
   if (req.url === '/api/guestbook') {
     if (req.method === 'OPTIONS') {
       res.writeHead(204, {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'http://localhost:8080',
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type'
       });

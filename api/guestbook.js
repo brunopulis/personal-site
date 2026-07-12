@@ -22,7 +22,7 @@ function readMessages() {
     const data = fs.readFileSync(DATA_FILE, 'utf8');
     return JSON.parse(data);
   } catch {
-    return { messages: [] };
+    return {messages: []};
   }
 }
 
@@ -31,8 +31,8 @@ function writeMessages(data) {
 }
 
 export default async function handler(req, res) {
-  const origin = req.headers.origin || '*';
-  res.setHeader('Access-Control-Allow-Origin', origin);
+  const ALLOWED_ORIGIN = 'https://brunopulis.com';
+  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -42,28 +42,26 @@ export default async function handler(req, res) {
 
   if (req.method === 'GET') {
     const data = readMessages();
-    const messages = data.messages
-      .slice()
-      .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    const messages = data.messages.slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-    return res.status(200).json({ messages });
+    return res.status(200).json({messages});
   }
 
   if (req.method === 'POST') {
     try {
       const body = await req.json();
-      const { name, message, honeypot } = body;
+      const {name, message, honeypot} = body;
 
       if (honeypot) {
-        return res.status(400).json({ error: 'Spam detected' });
+        return res.status(400).json({error: 'Spam detected'});
       }
 
       if (!name || !message) {
-        return res.status(400).json({ error: 'Nome e mensagem são obrigatórios' });
+        return res.status(400).json({error: 'Nome e mensagem são obrigatórios'});
       }
 
       if (name.length > 100 || message.length > 2000) {
-        return res.status(400).json({ error: 'Nome ou mensagem muito longos' });
+        return res.status(400).json({error: 'Nome ou mensagem muito longos'});
       }
 
       const data = readMessages();
@@ -77,11 +75,11 @@ export default async function handler(req, res) {
       data.messages.push(newMessage);
       writeMessages(data);
 
-      return res.status(201).json({ success: true, message: newMessage });
+      return res.status(201).json({success: true, message: newMessage});
     } catch (e) {
-      return res.status(500).json({ error: 'Erro ao salvar mensagem' });
+      return res.status(500).json({error: 'Erro ao salvar mensagem'});
     }
   }
 
-  return res.status(405).json({ error: 'Método não permitido' });
+  return res.status(405).json({error: 'Método não permitido'});
 }
