@@ -1,0 +1,10 @@
+{% set lastMod = page.inputPath | lastModified %}
+{% if lastMod %}
+  <footer class="region" style="--region-space: var(--space-l)">
+    <hr>
+    <p class="meta">
+      <span aria-hidden="true">🖋️</span>
+      <span>Última modificação: {{ lastMod | readableDate }}</span>
+    </p>
+  </footer>
+{% endif %}

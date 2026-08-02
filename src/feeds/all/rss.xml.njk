@@ -1,0 +1,40 @@
+---json
+{
+  "permalink": "/feeds/all/rss.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Bruno Pulis - Todo o conteúdo",
+    "description": "Artigos, notas, links, livros, filmes, séries, jogos e poemas",
+    "language": "pt-br",
+    "base": "https://brunopulis.com",
+    "author": {
+      "name": "Bruno Pulis",
+      "email": "brunopulis@protonmail.com"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.base | addPathPrefixToFullUrl }}"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ metadata.title }}</title>
+    <link>{{ metadata.base | addPathPrefixToFullUrl }}</link>
+    <atom:link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" type="application/rss+xml" />
+    <description>{{ metadata.description }}</description>
+    <language>{{ metadata.language or page.lang }}</language>
+    {%- for item in allFeed %}
+    {%- set absoluteUrl = item.url | htmlBaseUrl(metadata.base) %}
+    <item>
+      <title>{{ item.data.title }}</title>
+      <link>{{ absoluteUrl }}</link>
+      <description><![CDATA[{{ item._content | safe }}]]></description>
+      <pubDate>{{ item._sortDate | toRfc822Date }}</pubDate>
+      <dc:creator>{{ metadata.author.name }}</dc:creator>
+      <guid>{{ absoluteUrl }}</guid>
+      <category>{{ item._feedType }}</category>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

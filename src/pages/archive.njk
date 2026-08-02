@@ -4,56 +4,61 @@ permalink: '/archive/'
 title: Arquivo
 ---
 
-<h1 class="mb-6 font-bold text-blood-red-950 text-4xl">
-  {{ title }}
-</h1>
+<div class="flow" style="--flow-space: var(--space-l)">
+  <div class="flow" style="--flow-space: var(--space-m)">
+    <h1>
+      {{ title }}
+    </h1>
 
-<div class="dark:prose-invert mb-8 max-w-none prose">
-  <p>Um arquivo cronológico de todas as postagens, organizado por ano e mês.</p>
-</div>
-
-{% set postsByYear = collections.posts | groupby("date.getFullYear()") %}
-{% for year, posts in postsByYear %}
-<section class="mb-8">
-  {% set postsByMonth = posts | groupby("date.getMonth()") %}
-  {% for month, monthPosts in postsByMonth %}
-  <div class="mb-6">
-    <h2 class="mb-3 font-medium text-lg">
-      {{ monthPosts[0].date | readableDate("MMMM") }}
-    </h2>
-
-    <div class="space-y-8">
-      {% for post in monthPosts %}
-        <article class="py-6 border-b h-entry">
-          <h3 class="p-name font-semibold text-xl">
-            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-          </h3>
-          <time class="text-sm dt-published" datetime="{{ post.date | htmlDateString }}">
-            {{ post.date | readableDate }}
-          </time>
-          <div class="mt-2 p-summary">
-            {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-          </div>
-          {% if post.data.tags %}
-          <div class="flex flex-wrap gap-2 my-2">
-            {% for tag in post.data.tags %}
-            <a class="bg-vista-blue-500 p-category px-2 py-1 rounded font-bold text-errie-black-950 text-xs transition-colors"
-              href="/tags/{{ tag | slug }}/">
-              #{{ tag }}
-            </a>
-            {% endfor %}
-          </div>
-          {% endif %}
-        </article>
-      {% endfor %}
+    <div class="prose">
+      <p>Um arquivo cronológico de todas as postagens, organizado por ano e mês.</p>
     </div>
   </div>
-  {% endfor %}
-</section>
-{% endfor %}
 
-{% if collections.posts.length == 0 %}
-<div class="py-12 text-center">
-  <p>Nenhum post encontrado.</p>
+  {% set postsByYear = collections.posts | groupby("date.getFullYear()") %}
+  {% for year, posts in postsByYear %}
+  <section class="flow" style="--flow-space: var(--space-m)">
+    {% set postsByMonth = posts | groupby("date.getMonth()") %}
+    {% for month, monthPosts in postsByMonth %}
+    <div class="flow" style="--flow-space: var(--space-xs)">
+      <h2>
+        {{ monthPosts[0].date | readableDate("MMMM") }}
+      </h2>
+
+      <div class="flow" style="--flow-space: var(--space-l)">
+        {% for post in monthPosts %}
+          <article class="h-entry region flow" style="--region-space: var(--space-m); --flow-space: var(--space-2xs)">
+            <h3 class="p-name">
+              <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <time class="meta dt-published" datetime="{{ post.date | htmlDateString }}">
+              {{ post.date | readableDate }}
+            </time>
+            <div class="p-summary">
+              {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+            </div>
+            {% if post.data.tags %}
+            <ul class="tag-list" data-variant="accent" role="list">
+              {% for tag in post.data.tags %}
+              <li>
+                <a class="p-category" href="/tags/{{ tag | slug }}/">
+                  #{{ tag }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  {% if collections.posts.length == 0 %}
+  <div class="region text-center" style="--region-space: var(--space-2xl)">
+    <p>Nenhum post encontrado.</p>
+  </div>
+  {% endif %}
 </div>
-{% endif %}

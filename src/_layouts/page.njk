@@ -2,32 +2,24 @@
 layout: base
 ---
 
-<article class="h-entry page">
-  <header class="page-header">
-    <h1 class="mb-4 p-name font-bold text-blood-red-950 text-4xl" data-pagefind-meta="title">
+<article class="h-entry region flow" style="--region-space: var(--space-l)">
+  <header class="flow" style="--flow-space: var(--space-s)">
+    <h1 class="p-name" data-pagefind-meta="title">
       {{ title }}
     </h1>
   </header>
 
-  <div class="prose e-content">
+  <div class="prose flow e-content">
     {{ content | safe }}
+
+    {% include "partials/last-modified.njk" %}
   </div>
 
-  {% set lastMod = page.inputPath | lastModified %}
-  {% if lastMod %}
-    <footer class="mt-4 py-8 border-border border-gray-200 border-y page-footer">
-      <p class="page-meta">
-        <span aria-hidden="true">🖋️</span>
-        <span>Última modificação: {{ lastMod | readableDate }}</span>
-      </p>
-    </footer>
-  {% endif %}
+  <a class="visually-hidden u-url" href="{{ site.url }}{{ page.url }}">Permalink</a>
+  <a class="visually-hidden u-uid" href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
 
-  <a class="u-url" href="{{ site.url }}{{ page.url }}" style="display:none;">Permalink</a>
-  <a class="u-uid" href="{{ site.url }}{{ page.url }}" style="display:none;">{{ site.url }}{{ page.url }}</a>
-
-  <div class="p-author h-card" style="display:none;">
+  <div class="visually-hidden p-author h-card">
     <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ site.author.name }}</a>
-    <img class="u-photo" src="{{ site.author.photo }}" alt="{{ site.author.name }}" style="display:none;" />
+    <img class="u-photo" src="{{ site.author.photo }}" alt="{{ site.author.name }}" />
   </div>
 </article>

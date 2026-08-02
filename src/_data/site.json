@@ -1,6 +1,6 @@
 {
   "name": "Bruno Pulis",
-  "description": "Bem-vindo ao meu canto na web! Aqui compartilho pensamentos, descobertas e conversas longe do ruído dos algoritmos das redes sociais.",
+  "description": "Olá, seja bem-vindo ao meu canto na web! Aqui compartilho pensamentos, descobertas e conversas longe do ruído dos algoritmos das redes sociais.",
   "url": "https://brunopulis.com",
   "author": "Bruno Pulis",
   "email": "brunopulis@protonmail.com",
@@ -61,16 +61,5 @@
     "h_card": true,
     "rel_me": true,
     "microformats": true
-  },
-  "sections": {
-    "notes": {"enabled": true, "title": "Notes", "path": "/notes/"},
-    "journal": {"enabled": true, "title": "Journal", "path": "/journal/"},
-    "poetry": {"enabled": true, "title": "Poetry", "path": "/poetry/"},
-    "portfolio": {"enabled": true, "title": "Portfolio", "path": "/portfolio/"},
-    "projects": {"enabled": true, "title": "Projects", "path": "/projects/"},
-    "resume": {"enabled": true, "title": "Résumé", "path": "/resume/"},
-    "type": {"enabled": true, "title": "Type", "path": "/type/"},
-    "links": {"enabled": true, "title": "Links", "path": "/links/"},
-    "bookshelf": {"enabled": true, "title": "Bookshelf", "path": "/bookshelf/"}
   }
 }

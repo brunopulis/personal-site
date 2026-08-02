@@ -1,98 +1,18 @@
-{% macro dropdownLink(href, text, activeCondition) %}
-<a href="{{ href }}"
-  class="block px-4 py-2 underline hover:no-underline hover:bg-light-silver-100{% if activeCondition %} font-semibold{% endif %}"
-  {% if activeCondition %}aria-current="page"{% endif %}>{{ text }}</a>
-{% endmacro %}
-<header class="bg-light-silver-100 border-gray-200 border-b">
-  <div class="flex justify-between items-center gap-4 mx-auto px-4 py-3 max-w-4xl">
-    <a class="font-semibold text-lg" href="/" aria-label="Página inicial">
-      <img src="/assets/images/pulis-8bits.png" alt="" class="rounded-full w-16 max-w-full h-16">
-    </a>
-    <nav>
-      <div id="primary-nav" class="hidden md:block">
-        {% set url = page.url or '/' %}
-        {% set isNow = (url and (url | startsWith('/now/'))) %}
-        {% set isBlog = (url and (url | startsWith('/blog/'))) %}
-        {% set isBiblioteca = (url and (url | startsWith('/bookshelf/') or url | startsWith('/watching/') or url | startsWith('/games/') or url | startsWith('/newsletters/') or url | startsWith('/notes/') or url | startsWith('/likes/') or url | startsWith('/poetry/') or url | startsWith('/talks/'))) %}
-        {% set isSobre = (url and (url | startsWith('/about/'))) %}
-        {% set isContact = url == '/contact/' %}
-
-        <ul class="flex md:flex-row flex-col md:items-center md:space-x-1 space-y-1 md:space-y-0 md:text-sm text-base">
-          <li>
-            <a href="/now/" class="nav-item block px-3 py-2 underline hover:no-underline{% if isNow %} underline font-semibold{% endif %}"
-              {% if isNow %}aria-current="page"{% endif %}> Agora
-            </a>
-          </li>
-
-          <li>
-            <a href="/blog/" class="nav-item block px-3 py-2 underline hover:no-underline{% if isBlog %} underline font-semibold{% endif %}"
-              {% if isBlog %}aria-current="page"{% endif %}>Blog
-            </a>
-          </li>
-
-          <li class="relative dropdown">
-            <button type="button" class="dropdown-toggle nav-item flex items-center gap-1 w-full md:w-auto px-3 py-2 underline hover:no-underline{% if isBiblioteca %} underline font-semibold{% endif %}"
-              aria-haspopup="true" aria-expanded="false">
-              Conteúdos
-              <svg class="mt-0.5 w-4 h-4 transition-transform dropdown-arrow" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <ul class="hidden md:top-full md:left-0 md:z-50 md:absolute space-y-1 md:space-y-0 md:bg-white md:shadow-lg md:mt-1 md:py-1 pl-4 md:pl-0 md:border md:border-gray-200 md:rounded-lg md:min-w-[180px] dropdown-menu" role="list">
-              <li>{{ dropdownLink('/bookshelf/', 'Livros', url and url | startsWith('/bookshelf/')) }}</li>
-              <li>{{ dropdownLink('/watching/', 'Filmes e Séries', url and url | startsWith('/watching/')) }}</li>
-              <li>{{ dropdownLink('/games/', 'Jogos', url and url | startsWith('/games/')) }}</li>
-              <li>{{ dropdownLink('/newsletters/', 'Newsletter', url and url | startsWith('/newsletters/')) }}</li>
-              <li>{{ dropdownLink('/notes/', 'Notas', url and url | startsWith('/notes/')) }}</li>
-              <li>{{ dropdownLink('/likes/', 'Likes', url and url | startsWith('/likes/')) }}</li>
-              <li>{{ dropdownLink('/poetry/', 'Poemas', url and url | startsWith('/poetry/')) }}</li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="/about/" class="nav-item block px-3 py-2 underline hover:no-underline{% if isSobre %} underline font-semibold{% endif %}"
-              {% if isSobre %}aria-current="page"{% endif %}> Sobre
-            </a>
-          </li>
-          <li>
-            <a href="/contact/" class="nav-item block px-3 py-2 underline hover:no-underline{% if isContact %} underline font-semibold{% endif %}"
-              {% if isContact %}aria-current="page"{% endif %}>Contato</a>
-          </li>
-          <li>
-            <a href="/search/" class="nav-item block px-3 py-2 underline hover:no-underline{% if url and url | startsWith('/search/') %} underline font-semibold{% endif %}"
-              {% if url and url | startsWith('/search/') %}aria-current="page"{% endif %} aria-label="Buscar">
-              <svg class="inline-block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-              </svg>
-              <span class="md:hidden">Buscar</span>
-            </a>
-          </li>
-          <li>
-            <a href="/feeds" class="nav-item block px-3 py-2 underline hover:no-underline{% if url and url | startsWith('/feeds/') %} underline font-semibold{% endif %}">
-              <svg width="24"
-                   height="24"
-                   viewBox="0 0 24 24"
-                   fill="none"
-                   stroke="currentColor"
-                   stroke-width="2"
-                   stroke-linecap="round"
-                   stroke-linejoin="round"
-                   class="inline-block w-4 h-4" aria-hidden="true">
-                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                   <path d="M4 19a1 1 0 102 0 1 1 0 10-2 0"></path>
-                   <path d="M4 4a16 16 0 0116 16"></path>
-                   <path d="M4 11a9 9 0 019 9"></path>
-              </svg>
-              <span class="sr-only">Feeds</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <button id="hamburger" class="md:hidden p-2 border border-gray-300 rounded" aria-label="Abrir ou fechar menu" aria-controls="primary-nav" aria-expanded="false">
-      <span class="block bg-gray-700 mb-1 w-5 h-0.5 transition-transform bar-1"></span>
-      <span class="block bg-gray-700 mb-1 w-5 h-0.5 transition-opacity bar-2"></span>
-      <span class="block bg-gray-700 w-5 h-0.5 transition-transform bar-3"></span>
-    </button>
-  </div>
+<a href="#main-content" class="skip-link">Ir para conteúdo principal</a>
+<header class="wrapper region repel" style="--region-space: 1.5rem;">
+  <a class="p-name u-url logo | cluster" href="/">
+    <img src="/assets/images/pulis-8bits.png" class="rounded" alt="" width="32" height="32">
+  </a>
+  <nav class="mainnav" id="mainnav">
+    <ul class="cluster" role="list" style="--gutter: 1.5rem">
+      <li><a data-variant="naked" href="/about/">Sobre</a></li>
+      <li><a data-variant="naked" href="/blog/">Blog</a></li>
+      <li><a data-variant="naked" href="/notes/">Notas</a></li>
+      <li><a data-variant="naked" href="/bookshelf/">Livros</a></li>
+      <li><a data-variant="naked" href="/watching/">Filmes e Séries</a></li>
+      <li><a data-variant="naked" href="/links/">Favoritos</a></li>
+      <li><a data-variant="naked" href="/explore/">Mais</a></li>
+      <li><a data-variant="naked" href="/search/">Busca</a></li>
+    </ul>
+  </nav>
 </header>

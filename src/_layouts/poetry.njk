@@ -2,29 +2,29 @@
 layout: base
 ---
 
-<a href="/poetry/" class="inline-flex items-center mb-3 text-blue-600 hover:text-blue-800"
-  >← </a
->
+<a href="/poetry/" class="cluster" style="--gutter: var(--space-2xs)">
+  <span aria-hidden="true">←</span> Poesias
+</a>
 
-<nav class="mb-4 text-sm" aria-label="Breadcrumb">
-  <ol class="flex space-x-2">
-    <li><a href="/" class="hover:text-blue-600">Home</a></li>
+<nav class="region" style="--region-space: var(--space-s)" aria-label="Breadcrumb">
+  <ol class="cluster" role="list" style="--gutter: var(--space-2xs)">
+    <li><a href="/">Home</a></li>
     <li><span aria-hidden="true">›</span></li>
-    <li><a href="/poetry/" class="hover:text-blue-600">Poetry</a></li>
+    <li><a href="/poetry/">Poesias</a></li>
     <li><span aria-hidden="true">›</span></li>
-    <li class="text-gray-900 dark:text-gray-100">{{ title }}</li>
+    <li>{{ title }}</li>
   </ol>
 </nav>
 
 <article class="h-entry">
-  <header class="mb-4">
-    <h1 class="mb-2 p-name font-bold text-2xl">{{ title }}</h1>
-    <div class="text-sm">
+  <header class="flow" style="--flow-space: var(--space-2xs)">
+    <h1 class="p-name">{{ title }}</h1>
+    <p class="meta">
       <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
         {{ page.date | readableDate }}
       </time>
-      <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
-    </div>
+      <a class="visually-hidden u-url" href="{{ page.url }}">Permalink</a>
+    </p>
   </header>
-  <div class="max-w-none e-content prose">{{ content | safe }}</div>
+  <div class="e-content prose">{{ content | safe }}</div>
 </article>

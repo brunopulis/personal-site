@@ -2,8 +2,9 @@
 title: 'Miséria do Coração'
 excerpt: 'Ide, porém, e aprendei o que significa: Misericórdia quero, e não sacrifício. Porque eu não vim a chamar os justos, mas os pecadores, ao…'
 pubDate: 2016-10-08T18:20:22.348Z
-category: Teologia
-tags: ['cristianismo']
+tags:
+  - teologia
+  - cristianismo
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fymgik2h"
 ---
 

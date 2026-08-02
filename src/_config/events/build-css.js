@@ -1,47 +1,43 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import postcss from 'postcss';
-import postcssImport from 'postcss-import';
-import postcssImportExtGlob from 'postcss-import-ext-glob';
-import tailwindcss from 'tailwindcss';
+import * as sass from 'sass';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import fg from 'fast-glob';
 
 const buildCss = async (inputPath, outputPaths) => {
-  const inputContent = await fs.readFile(inputPath, 'utf-8');
+  const result = sass.compile(inputPath, {
+    loadPaths: ['src/assets/css'],
+    style: 'compressed',
+    silenceDeprecations: ['import']
+  });
 
-  const result = await postcss([
-    postcssImportExtGlob,
-    postcssImport,
-    tailwindcss,
-    autoprefixer,
-    cssnano
-  ]).process(inputContent, {from: inputPath});
+  const processed = await postcss([autoprefixer, cssnano]).process(result.css, {from: inputPath});
 
   for (const outputPath of outputPaths) {
     await fs.mkdir(path.dirname(outputPath), {recursive: true});
-    await fs.writeFile(outputPath, result.css);
+    await fs.writeFile(outputPath, processed.css);
   }
 
-  return result.css;
+  return processed.css;
 };
 
 export const buildAllCss = async () => {
   const tasks = [];
 
-  tasks.push(buildCss('src/assets/css/global/global.css', ['src/_includes/css/global.css']));
+  tasks.push(buildCss('src/assets/css/app.scss', ['src/_includes/css/global.css']));
 
-  const localCssFiles = await fg(['src/assets/css/local/**/*.css']);
+  const localCssFiles = await fg(['src/assets/css/local/**/*.{css,scss}']);
   for (const inputPath of localCssFiles) {
-    const baseName = path.basename(inputPath);
-    tasks.push(buildCss(inputPath, [`src/_includes/css/${baseName}`]));
+    const baseName = path.basename(inputPath, path.extname(inputPath));
+    tasks.push(buildCss(inputPath, [`src/_includes/css/${baseName}.css`]));
   }
 
-  const componentCssFiles = await fg(['src/assets/css/components/**/*.css']);
+  const componentCssFiles = await fg(['src/assets/css/components/**/*.{css,scss}']);
   for (const inputPath of componentCssFiles) {
-    const baseName = path.basename(inputPath);
-    tasks.push(buildCss(inputPath, [`_site/assets/css/components/${baseName}`]));
+    const baseName = path.basename(inputPath, path.extname(inputPath));
+    tasks.push(buildCss(inputPath, [`_site/assets/css/components/${baseName}.css`]));
   }
 
   await Promise.all(tasks);

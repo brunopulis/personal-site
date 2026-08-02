@@ -8,9 +8,9 @@ permalink: /watching/{{ year }}/
 generate: true
 ---
 
-<section class="mb-8">
-  <nav class="mb-4 text-sm">
-    <a href="/watching/" class="text-blood-red-950 hover:underline">Filmes e séries em:</a>
+<section class="region" style="--region-space: var(--space-l)">
+  <nav class="mb-4 text-sm" aria-label="Breadcrumb">
+    <a href="/watching/">Filmes e séries em:</a>
     <strong>{{ year }}</strong>
   </nav>
 
@@ -21,7 +21,7 @@ generate: true
   {% set years = yearsGrouped.years %}
   {% set currentYear = year %}
 
-  <div class="flex items-center content-between gap-2 mb-6">
+  <div class="cluster mb-6" style="--gutter: var(--space-2xs)">
     {% for year in years %}
       <a
         href="/watching/{{ year }}/"
@@ -32,7 +32,7 @@ generate: true
     {% endfor %}
   </div>
 
-  <h1 class="mb-2 font-bold text-3xl">{{ year }}</h1>
+  <h1 class="mb-2">{{ year }}</h1>
   <p class="mb-4 text-errie-black-900">
     Filmes e séries assistidos em {{ year }}.
   </p>
@@ -46,39 +46,40 @@ generate: true
 {% set favoriteShows = yearShows | filterFavorites | sortByDate | limit(6) %}
 
 {% if recentMovies.length > 0 %}
-<section class="mb-12" aria-labelledby="recent-movies">
-  <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-blood-red-950 text-2xl" id="recent-movies">
+<section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="recent-movies">
+  <div class="cluster mb-6" style="--gutter: var(--space-xs)">
+    <h2 id="recent-movies">
       <span aria-hidden="true">🍿</span> Filmes Recentes
     </h2>
-    <a href="/watching/movies/" class="text-vista-blue-500 text-sm underline hover:no-underline">
-      Ver todos <span class="sr-only">os filmes recentes</span>
+    <a href="/watching/movies/" class="text-vista-blue-500 text-sm">
+      Ver todos <span class="visually-hidden">os filmes recentes</span>
     </a>
   </div>
 
-  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+  <div class="grid" style="--grid-min-item-size: 12rem; --gutter: var(--space-xs)">
     {% for movie in recentMovies %}
       <article>
         <a href="{{ movie.url }}" class="block">
           {% if movie.data.poster %}
-            <img
-              src="{{ movie.data.poster | localPoster }}"
-              alt="{{ movie.data.title }}"
-              class="rounded w-full object-cover aspect-2/3"
-              loading="lazy"
-            >
+            <div class="frame" style="--n: 7; --d: 10;">
+              <img
+                src="{{ movie.data.poster | localPoster }}"
+                alt="{{ movie.data.title }}"
+                loading="lazy"
+              >
+            </div>
           {% else %}
-            <div class="flex justify-center items-center rounded w-full aspect-2/3">
+            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
               <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
-            <h3 class="font-bold text-blood-red-950 text-sm line-clamp-2 leading-tight">
+            <h3 class="text-sm line-clamp-2">
               {{ movie.data.title }}
             </h3>
-            <p class="py-2">{{ movie.data.director }}</p>
+            <p class="py-2 meta">{{ movie.data.director }}</p>
             {% if movie.data.rating %}
-              <p class="flex items-center gap-1 text-yellow-500 text-xs">
+              <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
                   {% if i <= movie.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -93,39 +94,40 @@ generate: true
 {% endif %}
 
 {% if recentShows.length > 0 %}
-<section class="mb-12" aria-labelledby="recent-shows">
-  <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-2xl" id="recent-shows">
+<section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="recent-shows">
+  <div class="cluster mb-6" style="--gutter: var(--space-xs)">
+    <h2 id="recent-shows">
       <span aria-hidden="true">📺</span> Séries Recentes
     </h2>
-    <a href="/watching/shows/" class="text-vista-blue-500 text-sm underline hover:no-underline">
-      Ver todas <span class="sr-only">as séries recentes</span>
+    <a href="/watching/shows/" class="text-vista-blue-500 text-sm">
+      Ver todas <span class="visually-hidden">as séries recentes</span>
     </a>
   </div>
 
-  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+  <div class="grid" style="--grid-min-item-size: 12rem; --gutter: var(--space-xs)">
     {% for show in recentShows %}
       <article>
         <a href="{{ show.url }}" class="block">
           {% if show.data.poster %}
-            <img
-              src="{{ show.data.poster | localPoster }}"
-              alt="{{ show.data.title }}"
-              class="rounded w-full object-cover aspect-2/3"
-              loading="lazy"
-            >
+            <div class="frame" style="--n: 7; --d: 10;">
+              <img
+                src="{{ show.data.poster | localPoster }}"
+                alt="{{ show.data.title }}"
+                loading="lazy"
+              >
+            </div>
           {% else %}
-            <div class="flex justify-center items-center rounded w-full aspect-2/3">
+            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
               <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
-            <h3 class="font-bold text-blood-red-950 text-sm line-clamp-2 leading-tight">
+            <h3 class="text-sm line-clamp-2">
               {{ show.data.title }}
             </h3>
-            <p class="py-2">{{ show.data.director }}</p>
+            <p class="py-2 meta">{{ show.data.director }}</p>
             {% if show.data.rating %}
-              <p class="flex items-center gap-1 text-yellow-500 text-xs">
+              <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
                   {% if i <= show.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -140,39 +142,40 @@ generate: true
 {% endif %}
 
 {% if favoriteMovies.length > 0 %}
-<section class="mb-12" aria-labelledby="favorite-movies">
-  <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-2xl" id="favorite-movies">
+<section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="favorite-movies">
+  <div class="cluster mb-6" style="--gutter: var(--space-xs)">
+    <h2 id="favorite-movies">
       <span aria-hidden="true">⭐</span> Filmes Favoritos
     </h2>
-    <a href="/watching/movies/" class="text-vista-blue-500 text-sm underline hover:no-underline">
-      Ver todos <span class="sr-only">os filmes favoritos</span>
+    <a href="/watching/movies/" class="text-vista-blue-500 text-sm">
+      Ver todos <span class="visually-hidden">os filmes favoritos</span>
     </a>
   </div>
 
-  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+  <div class="grid" style="--grid-min-item-size: 12rem; --gutter: var(--space-xs)">
     {% for movie in favoriteMovies %}
       <article>
         <a href="{{ movie.url }}" class="block">
           {% if movie.data.poster %}
-            <img
-              src="{{ movie.data.poster | localPoster }}"
-              alt="{{ movie.data.title }}"
-              class="rounded w-full object-cover aspect-[2/3]"
-              loading="lazy"
-            >
+            <div class="frame" style="--n: 7; --d: 10;">
+              <img
+                src="{{ movie.data.poster | localPoster }}"
+                alt="{{ movie.data.title }}"
+                loading="lazy"
+              >
+            </div>
           {% else %}
-            <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
+            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
               <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
-            <h3 class="font-bold text-blood-red-950 text-sm line-clamp-2 leading-tight">
+            <h3 class="text-sm line-clamp-2">
               {{ movie.data.title }}
             </h3>
-            <p class="py-2">{{ movie.data.director }}</p>
+            <p class="py-2 meta">{{ movie.data.director }}</p>
             {% if movie.data.rating %}
-              <p class="flex items-center gap-1 text-yellow-500 text-xs">
+              <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
                   {% if i <= movie.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -187,39 +190,40 @@ generate: true
 {% endif %}
 
 {% if favoriteShows.length > 0 %}
-<section class="mb-12" aria-labelledby="favorite-shows">
-  <div class="flex items-center gap-3 mb-6">
-    <h2 class="font-bold text-blood-red-950 text-2xl" id="favorite-shows">
+<section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="favorite-shows">
+  <div class="cluster mb-6" style="--gutter: var(--space-xs)">
+    <h2 id="favorite-shows">
       <span aria-hidden="true">⭐</span> Séries Favoritas
     </h2>
-    <a href="/watching/shows/" class="text-vista-blue-500 text-sm underline hover:no-underline">
-      Ver todas <span class="sr-only">as séries favoritas</span>
+    <a href="/watching/shows/" class="text-vista-blue-500 text-sm">
+      Ver todas <span class="visually-hidden">as séries favoritas</span>
     </a>
   </div>
 
-  <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+  <div class="grid" style="--grid-min-item-size: 12rem; --gutter: var(--space-xs)">
     {% for show in favoriteShows %}
       <article>
         <a href="{{ show.url }}" class="block">
           {% if show.data.poster %}
-            <img
-              src="{{ show.data.poster | localPoster }}"
-              alt="{{ show.data.title }}"
-              class="rounded w-full object-cover aspect-[2/3]"
-              loading="lazy"
-            >
+            <div class="frame" style="--n: 7; --d: 10;">
+              <img
+                src="{{ show.data.poster | localPoster }}"
+                alt="{{ show.data.title }}"
+                loading="lazy"
+              >
+            </div>
           {% else %}
-            <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
+            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
               <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
-            <h3 class="font-bold text-blood-red-950 text-sm line-clamp-2 leading-tight">
+            <h3 class="text-sm line-clamp-2">
               {{ show.data.title }}
             </h3>
-            <p class="py-2">{{ show.data.director }}</p>
+            <p class="py-2 meta">{{ show.data.director }}</p>
             {% if show.data.rating %}
-              <p class="flex items-center gap-1 text-yellow-500 text-xs">
+              <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
                   {% if i <= show.data.rating %}⭐{% endif %}
                 {% endfor %}
@@ -234,7 +238,7 @@ generate: true
 {% endif %}
 
 {% if yearMovies.length == 0 and yearShows.length == 0 %}
-<p class="py-12 text-errieBlack-900 text-center">
+<p class="py-12 text-errie-black-900 text-center">
   Nenhum filme ou série registrado para {{ year }}.
 </p>
 {% endif %}

@@ -4,176 +4,194 @@ permalink: '/explore/'
 title: Explorar
 ---
 
-<div class="max-w-4xl">
-  <h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">
+<div style="max-width: 56rem;">
+  <h1>
     <span aria-hidden="true">🗺️</span> {{ title }}
   </h1>
-  <p class="mb-8">
+  <p class="lede">
     Um mapa completo com tudo nesse site. Explore e descubra!
   </p>
 
-  {% set cardGrid = "gap-3 grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3" %}
-  {% set cardClass = "flex items-center gap-2 bg-light-silver-100 p-2 border border-light-silver-200 rounded-lg" %}
+  {% set cardGrid = "grid" %}
+  {% set cardGridStyle = "--grid-min-item-size: 12rem; --gutter: var(--space-2xs);" %}
+  {% set cardClass = "link-card" %}
+
+  <!-- Acesso rápido -->
+  <section class="region" style="--region-space: var(--space-m)">
+    <h2>
+      <span aria-hidden="true">⚡</span>
+      Acesso rápido
+    </h2>
+    <ul class="{{ cardGrid }}" style="{{ cardGridStyle }}">
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">✍️</span>
+        <a href="/blog/">Blog</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🗒️</span>
+        <a href="/notes/">Notas</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🔗</span>
+        <a href="/content/">Conteúdos</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">🔍</span>
+        <a href="/search/">Busca</a>
+      </li>
+    </ul>
+  </section>
 
   <!-- Sobre mim -->
-  <section class="mb-6">
-    <h2 class="mb-4 font-semibold text-blood-red-950 text-2xl">
+  <section class="region" style="--region-space: var(--space-m)">
+    <h2>
       <span aria-hidden="true">👤</span>
       Sobre mim
     </h2>
-    <ul class="{{ cardGrid }}">
+    <ul class="{{ cardGrid }}" style="{{ cardGridStyle }}">
       <li class="{{ cardClass }}">
         <span aria-hidden="true">👋</span>
-        <a href="/about/" class="underline hover:no-underline">Sobre</a>
+        <a href="/about/">Sobre</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">📍</span>
-        <a href="/now/" class="underline hover:no-underline">Agora</a>
+        <a href="/now/">Agora</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">💬</span>
-        <a href="/why/" class="underline hover:no-underline">Por que esse site existe?</a>
+        <a href="/why/">Por que esse site existe?</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">💬</span>
-        <a href="/values/" class="underline hover:no-underline">Valores</a>
+        <a href="/values/">Valores</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">♿</span>
-        <a href="/disability/" class="underline hover:no-underline">Deficiência</a>
+        <a href="/disability/">Deficiência</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">💖</span>
-        <a href="/donate/" class="underline hover:no-underline">Me apoie</a>
+        <a href="/donate/">Me apoie</a>
       </li>
     </ul>
   </section>
 
   <!-- Conteúdo -->
-  <section class="mb-6">
-    <h2 class="mb-4 font-semibold text-blood-red-950 text-2xl">
+  <section class="region" style="--region-space: var(--space-m)">
+    <h2>
       <span aria-hidden="true">✍️</span>
       Conteúdo
     </h2>
-    <ul class="{{ cardGrid }}">
+    <ul class="{{ cardGrid }}" style="{{ cardGridStyle }}">
       <li class="{{ cardClass }}">
         <span aria-hidden="true">✍️</span>
-        <a href="/blog/" class="underline hover:no-underline">Blog</a>
+        <a href="/blog/">Blog</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🗒️</span>
-        <a href="/notes/" class="underline hover:no-underline">Notas</a>
+        <a href="/notes/">Notas</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🖋️</span>
-        <a href="/poetry/" class="underline hover:no-underline">Poemas</a>
+        <a href="/poetry/">Poemas</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">📰</span>
-        <a href="/newsletters/" class="underline hover:no-underline">Newsletter</a>
+        <a href="/newsletters/">Newsletter</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🗂️</span>
-        <a href="/archive/" class="underline hover:no-underline">Arquivos</a>
+        <a href="/archive/">Arquivos</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🏷️</span>
-        <a href="/tags/" class="underline hover:no-underline">Tags</a>
+        <a href="/tags/">Tags</a>
       </li>
     </ul>
   </section>
 
   <!-- Profissional -->
-  <section class="mb-6">
-    <h2 class="mb-4 font-semibold text-blood-red-950 text-2xl">
+  <section class="region" style="--region-space: var(--space-m)">
+    <h2>
       <span aria-hidden="true">💼</span>
       Profissional
     </h2>
-    <ul class="{{ cardGrid }}">
+    <ul class="{{ cardGrid }}" style="{{ cardGridStyle }}">
       <li class="{{ cardClass }}">
         <span aria-hidden="true">📄</span>
-        <a href="/resume/" class="underline hover:no-underline">Currículo</a>
+        <a href="/resume/">Currículo</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">💻</span>
-        <a href="/uses/" class="underline hover:no-underline">O que uso</a>
+        <a href="/uses/">O que uso</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🛠️</span>
-        <a href="/projects/" class="underline hover:no-underline">Projetos</a>
+        <a href="/projects/">Projetos</a>
+      </li>
+      <li class="{{ cardClass }}">
+        <span aria-hidden="true">📁</span>
+        <a href="/portfolio/">Portfólio</a>
       </li>
     </ul>
   </section>
 
   <!-- Coleções -->
-  <section class="mb-6">
-    <h2 class="mb-4 font-semibold text-blood-red-950 text-2xl">
+  <section class="region" style="--region-space: var(--space-m)" id="coleções">
+    <h2>
       <span aria-hidden="true">📚</span>
       Coleções
     </h2>
-    <ul class="{{ cardGrid }}">
+    <ul class="{{ cardGrid }}" style="{{ cardGridStyle }}">
       <li class="{{ cardClass }}">
         <span aria-hidden="true">📚</span>
-        <a href="/bookshelf" class="underline hover:no-underline">Livros</a>
-      </li>
-      <li class="{{ cardClass }}">
-        <span aria-hidden="true">🎮</span>
-        <a href="/games" class="underline hover:no-underline">Jogos</a>
+        <a href="/bookshelf/">Livros</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🍿</span>
-        <a href="/watching" class="underline hover:no-underline">Filmes e Séries</a>
+        <a href="/watching/">Filmes e Séries</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">👍</span>
-        <a href="/likes" class="underline hover:no-underline" lang="en">Likes</a>
+        <a href="/likes/" lang="en">Likes</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🔖</span>
-        <a href="/links/" class="underline hover:no-underline">Favoritos</a>
+        <a href="/links/">Favoritos</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🔗</span>
-        <a href="/blogroll/" class="underline hover:no-underline">Blogroll</a>
+        <a href="/blogroll/">Blogroll</a>
       </li>
     </ul>
   </section>
 
   <!-- Sobre o site -->
-  <section class="mb-6">
-    <h2 class="mb-4 font-semibold text-blood-red-950 text-2xl">
+  <section class="region" style="--region-space: var(--space-m)">
+    <h2>
       <span aria-hidden="true">🔧</span>
       Sobre o site
     </h2>
-    <ul class="{{ cardGrid }}">
+    <ul class="{{ cardGrid }}" style="{{ cardGridStyle }}">
       <li class="{{ cardClass }}">
         <span aria-hidden="true">📈</span>
-        <a href="/stats" class="underline hover:no-underline">Estatísticas</a>
+        <a href="/stats/">Estatísticas</a>
       </li>
-      <li class="{{ cardClass }}">
-        <span aria-hidden="true">🔍</span>
-        <a href="/search/" class="underline hover:no-underline">Busca</a>
-      </li>
-
       <li class="{{ cardClass }}">
         <span aria-hidden="true">♿</span>
-        <a href="/accessibility/" class="underline hover:no-underline">Acessibilidade</a>
+        <a href="/accessibility/">Acessibilidade</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🗒️</span>
-        <a href="/posse/" class="underline hover:no-underline">POSSE</a>
+        <a href="/posse/">POSSE</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">🫶</span>
-        <a href="/giving/" class="underline hover:no-underline">Causas que apoio</a>
+        <a href="/giving/">Causas que apoio</a>
       </li>
       <li class="{{ cardClass }}">
         <span aria-hidden="true">💬</span>
-        <a href="/guestbook/" class="underline hover:no-underline">Livro de visitas</a>
-      </li>
-      <li class="{{ cardClass }}">
-        <span aria-hidden="true">📧</span>
-        <a href="/contact/" class="underline hover:no-underline">Contato</a>
+        <a href="/guestbook/">Livro de visitas</a>
       </li>
     </ul>
   </section>

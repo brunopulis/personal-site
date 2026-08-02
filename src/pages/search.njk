@@ -5,12 +5,12 @@ title: Busca
 description: Pesquise conteúdo em todo o site.
 ---
 
-<div class="max-w-2xl">
-  <h1 class="mb-2 font-bold text-blood-red-950 text-3xl">Busca</h1>
-  <p class="mb-8 text-gray-600">Pesquise por artigos, notas, livros, filmes e mais.</p>
+<div class="max-w-2xl flow" style="--flow-space: var(--space-2xs)">
+  <h1>Busca</h1>
+  <p class="meta">Pesquise por artigos, notas, livros, filmes e mais.</p>
 
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-  <div id="search"></div>
+  <div id="search" class="region" style="--region-space: var(--space-l)"></div>
   <script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
   <script>
     window.addEventListener('DOMContentLoaded', () => {

@@ -1,35 +1,37 @@
-<section id="webmentions" class="mt-12">
-  <h2 class="mb-4 font-semibold text-blood-red-950 text-xl">
-    Respostas via <em>webmention's</em>
-  </h2>
-  <div class="py-4" id="webmentions-list">
-    <p class="animate-pulse">Carregando <em lang="en">webmentions</em>...</p>
+<section id="webmentions" class="region" style="--region-space: var(--space-xl)">
+  <div class="flow" style="--flow-space: var(--space-xs)">
+    <h2>
+      Respostas via <em>webmention's</em>
+    </h2>
+    <div id="webmentions-list">
+      <p>Carregando <em lang="en">webmentions</em>...</p>
+    </div>
   </div>
 </section>
 
 {% if webmentions and webmentions.length > 0 %}
-  <div class="space-y-4">
+  <div class="flow" style="--flow-space: var(--space-s)">
     {% for mention in webmentions %}
-      <article class="p-4 border border-gray-200 rounded-lg">
-        <div class="flex items-start space-x-3">
+      <article class="callout flow">
+        <div class="cluster" style="--gutter: var(--space-xs); --cluster-vertical-alignment: flex-start;">
           {% if mention.author.photo %}
             <img
+              class="avatar"
               src="{{ mention.author.photo }}"
               alt="{{ mention.author.name }}"
-              class="rounded-full w-10 h-10"
+              loading="lazy"
             />
           {% else %}
-            <div class="flex justify-center items-center bg-gray-300 rounded-full w-10 h-10">
-              <span class="font-medium text-sm">
+            <div class="avatar center" style="background-color: var(--color-surface-raised);">
+              <span class="meta">
                 {{ mention.author.name | first }}
               </span>
             </div>
           {% endif %}
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center space-x-2 text-sm">
+          <div style="flex: 1 1 16rem; min-width: 0;">
+            <div class="cluster" style="--gutter: var(--space-2xs)">
               <a
                 href="{{ mention.author.url }}"
-                class="font-medium hover:text-blue-600"
                 target="_blank"
                 rel="noopener"
               >
@@ -48,39 +50,35 @@
                   respondi
                 {% endif %}
               </span>
-              <time class="text-gray-500" datetime="{{ mention.published }}">
+              <time class="meta" datetime="{{ mention.published }}">
                 {{ mention.published | readableDate }}
               </time>
             </div>
             {% if mention.content and mention.content.text %}
-              <div class="mt-2">
+              <p>
                 {{ mention.content.text | truncate(280) | safe }}
-              </div>
+              </p>
             {% endif %}
-            <div class="mt-2">
-              <a
-                href="{{ mention.url }}"
-                class="text-blue-600 hover:text-blue-800 text-sm"
-                target="_blank"
-                rel="noopener"
-              >
-                Ver o original
-              </a>
-            </div>
+            <a
+              href="{{ mention.url }}"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver o original
+            </a>
           </div>
         </div>
       </article>
     {% endfor %}
   </div>
 {% else %}
-  <div class="py-8">
+  <div class="region flow" style="--region-space: var(--space-l)">
     <p>Ainda não há menções via webmention. Seja o primeiro a responder!</p>
-    <p class="mt-2 text-sm">
+    <p>
       <a
         href="https://indieweb.org/Webmention"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-blood-red-950 underline hover:no-underline"
       >
         Aprenda sobre <em>webmentions</em>
       </a>

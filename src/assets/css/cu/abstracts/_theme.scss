@@ -1,0 +1,154 @@
+/*
+THEME tokens
+Includes primitive tokens for color and semantic tokens.
+Customized for brunopulis/personal-site
+*/
+:root {
+  /*
+  Color primitive tokens
+  Blood Red palette
+  */
+  --color-blood-red-50: #fff1f1;
+  --color-blood-red-100: #ffdfdf;
+  --color-blood-red-200: #ffc4c4;
+  --color-blood-red-300: #ff9b9b;
+  --color-blood-red-400: #ff6161;
+  --color-blood-red-500: #ff3030;
+  --color-blood-red-600: #f11111;
+  --color-blood-red-700: #cb0a0a;
+  --color-blood-red-800: #a80c0c;
+  --color-blood-red-900: #8a1212;
+  --color-blood-red-950: #610404;
+
+  /*
+  Vista Blue palette
+  */
+  --color-vista-blue-50: #f1f6fc;
+  --color-vista-blue-100: #e5effa;
+  --color-vista-blue-200: #d0e1f5;
+  --color-vista-blue-300: #b4cced;
+  --color-vista-blue-400: #96b1e3;
+  --color-vista-blue-500: #849cdb;
+  --color-vista-blue-600: #6176ca;
+  --color-vista-blue-700: #5162b1;
+  --color-vista-blue-800: #44538f;
+  --color-vista-blue-900: #3c4873;
+  --color-vista-blue-950: #232943;
+
+  /*
+  Errie Black palette
+  */
+  --color-errie-black-50: #fafafa;
+  --color-errie-black-100: #f3f6f6;
+  --color-errie-black-200: #e2e9e9;
+  --color-errie-black-300: #d2dada;
+  --color-errie-black-400: #9bb0b0;
+  --color-errie-black-500: #6b8080;
+  --color-errie-black-600: #4c6161;
+  --color-errie-black-700: #3b4a4a;
+  --color-errie-black-800: #252c2c;
+  --color-errie-black-900: #171e1e;
+  --color-errie-black-950: #080c0c;
+
+  /*
+  Light Silver palette
+  */
+  --color-light-silver-50: #fafafa;
+  --color-light-silver-100: #f5f5f5;
+  --color-light-silver-200: #e6e6e6;
+  --color-light-silver-300: #d9d9d9;
+  --color-light-silver-400: #a3a3a3;
+  --color-light-silver-500: #727272;
+  --color-light-silver-600: #535353;
+  --color-light-silver-700: #404040;
+  --color-light-silver-800: #272727;
+  --color-light-silver-900: #1a1a1a;
+  --color-light-silver-950: #0b0b0b;
+
+  /*
+  Semantic color tokens
+  */
+  --color-text: var(--color-errie-black-950);
+  --color-text-subtle: var(--color-errie-black-500);
+  --color-text-invert: var(--color-light-silver-50);
+  --color-canvas: var(--color-light-silver-50);
+  --color-surface: var(--color-light-silver-100);
+  --color-surface-raised: var(--color-light-silver-200);
+  --color-border: var(--color-errie-black-950);
+  --color-brand: var(--color-blood-red-950);
+  --color-accent: var(--color-vista-blue-600);
+  --color-highlight: var(--color-vista-blue-300);
+
+  /* Typography semantic tokens */
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-display: var(--font-base);
+  --font-accent: 'Menlo', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', 'Courier New', monospace;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-base: var(--step-0);
+  --font-size-lede: var(--step-1);
+  --font-size-meta: var(--step--1);
+  --font-size-2xl: var(--step-4);
+  --font-size-xl: var(--step-3);
+  --font-size-l: var(--step-2);
+  --font-size-m: var(--step-1);
+  --font-size-s: var(--step-0);
+  --font-size-xs: var(--step--1);
+  --line-height-flat: 1;
+  --line-height-compact: 1.2;
+  --line-height-base: 1.5;
+  --line-height-loose: 1.7;
+  --measure-compact: 35ch;
+  --measure-longform: 65ch;
+  --tracking: -0.04ch;
+  --tracking-compact: -0.05ch;
+  --text-decoration-color: currentColor;
+  --text-decoration-line: underline;
+  --text-decoration-style: solid;
+  --text-decoration-thickness: 2px;
+
+  /* UI semantic tokens */
+  --gutter: var(--space-s-m);
+  --focus-ring-width: 2px;
+  --focus-ring-color: currentColor;
+  --focus-ring-offset: 2px;
+  --focus-ring-style: dotted;
+  --stroke-style: solid;
+  --stroke-width: .1rem;
+  --stroke-color: var(--color-border, currentColor);
+  --radius: 0;
+  --shadow: 0px 3px 7px rgba(0, 0, 0, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.025);
+
+  /* Project-specific tokens */
+  --color-muted: var(--color-light-silver-500);
+  --color-link: var(--color-vista-blue-600);
+  --color-link-hover: var(--color-vista-blue-700);
+  --color-star: #f59e0b;
+  --color-star-empty: var(--color-light-silver-300);
+}
+
+/*
+DARK MODE
+*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: var(--color-light-silver-300);
+    --color-text-subtle: var(--color-light-silver-500);
+    --color-text-invert: var(--color-errie-black-950);
+    --color-canvas: var(--color-errie-black-950);
+    --color-surface: var(--color-errie-black-900);
+    --color-surface-raised: var(--color-errie-black-800);
+    --color-border: var(--color-light-silver-300);
+    --color-brand: var(--color-blood-red-400);
+    --color-accent: var(--color-vista-blue-400);
+    --color-highlight: var(--color-vista-blue-900);
+    --text-decoration-color: currentColor;
+    --focus-ring-color: currentColor;
+    --stroke-color: currentColor;
+    --color-muted: var(--color-light-silver-400);
+    --color-link: var(--color-vista-blue-400);
+    --color-link-hover: var(--color-vista-blue-300);
+    --color-star: #facc15;
+    --color-star-empty: var(--color-errie-black-700);
+  }
+}

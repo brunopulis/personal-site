@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath }from 'node:url';
-import { toSlug } from './tags-helpers.js';
+import {fileURLToPath} from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..', '..');
@@ -10,7 +9,7 @@ function getAllFiles(dir) {
   const files = [];
   function walk(dir) {
     if (!fs.existsSync(dir)) return;
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    const entries = fs.readdirSync(dir, {withFileTypes: true});
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
@@ -55,7 +54,7 @@ export default function () {
       const entry = categoryMap.get(slug);
       entry.count++;
     } else {
-      categoryMap.set(slug, { name: category, slug, count: 1 });
+      categoryMap.set(slug, {name: category, slug, count: 1});
     }
   });
 

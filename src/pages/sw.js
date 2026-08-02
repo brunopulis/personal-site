@@ -3,7 +3,6 @@ const CACHE_NAME = 'indieweb-blog-v1';
 const OFFLINE_URLS = [
   '/',
   '/assets/css/build.css',
-  '/assets/js/main.js',
   '/assets/favicon-32x32.png',
   '/assets/apple-touch-icon.png'
 ];

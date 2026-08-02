@@ -4,9 +4,9 @@ permalink: '/donate/'
 title: Apoie meu trabalho
 ---
 
-<h1 class="mb-6 font-bold text-blood-red-950 text-2xl">Apoie meu trabalho</h1>
+<h1>Apoie meu trabalho</h1>
 
-<div class="dark:prose-invert max-w-none prose prose-lg">
+<div class="prose flow">
   {% if site.donate.message %}
     <p>{{ site.donate.message }}</p>
   {% else %}
@@ -17,13 +17,13 @@ title: Apoie meu trabalho
     <h2>Suporte único</h2>
     <p>Compre-me um café ou faça uma doação única para me ajudar a continuar escrevendo:</p>
 
-    <div class="flex flex-wrap gap-4 my-6">
+    <div class="cluster" style="--gutter: var(--space-s)">
       {% if site.donate.kofi %}
         <a
           href="https://ko-fi.com/{{ site.donate.kofi }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-bold text-blood-red-950 underline underline-offset-4"
+          class="font-bold"
         >
           Ko-fi
         </a>
@@ -33,7 +33,7 @@ title: Apoie meu trabalho
           href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-bold text-blood-red-950 underline underline-offset-4"
+          class="font-bold"
         >
           PayPal
         </a>
@@ -44,12 +44,12 @@ title: Apoie meu trabalho
       <h2>Contribuição contínua</h2>
       <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
 
-      <div class="my-6">
+      <div>
         <a
           href="https://github.com/sponsors/{{ site.donate.github }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-bold text-blood-red-950 underline underline-offset-4"
+          class="font-bold"
         >
           <span lang="en">GitHub Sponsors</span>
         </a>
@@ -67,7 +67,7 @@ title: Apoie meu trabalho
     </li>
   </ul>
 
-  <p class="mt-8 dark:text-gray-400">
+  <p class="meta" style="margin-block-start: var(--space-l);">
     Toda contribuição, por menor que seja, me ajuda a continuar criando conteúdo relevante e mantendo este
     blog. <br />
     Obrigado pelo seu apoio! 🙏

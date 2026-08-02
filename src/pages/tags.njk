@@ -5,19 +5,20 @@ title: Tags
 description: Todas as tags usadas no site, organizadas com contagem de publicações.
 ---
 
-<div class="mb-8 max-w-none prose prose-lg">
-  <p>Uma lista de todas as tags usadas no site, com a quantidade de publicações associadas a cada uma.</p>
-</div>
+<p class="lede mb-8">
+  Uma lista de todas as tags usadas no site, com a quantidade de publicações associadas a cada uma.
+</p>
 
-<div class="flex flex-wrap gap-3">
+<ul class="tag-list" role="list">
   {% for tag in tagsData %}
-    {% set tagCount = tag.count %}
-    <a href="/tags/{{ tag.name | slug }}/"
-       class="p-category px-2 py-1 border border-border hover:border-primary rounded-full text-muted-foreground hover:text-primary text-xs">
-      #{{ tag.name }}
-    </a>
+    <li>
+      <a class="p-category" href="/tags/{{ tag.slug }}/">
+        #{{ tag.name }}
+        <span class="meta">({{ tag.count }})</span>
+      </a>
+    </li>
   {% endfor %}
-</div>
+</ul>
 
 {% if tagsData.length == 0 %}
   <p class="py-4">Nenhuma tag encontrada.</p>

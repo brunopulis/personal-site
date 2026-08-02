@@ -1,0 +1,40 @@
+/*
+TAG-LIST
+A flexible list of tags/labels
+*/
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-list a {
+  display: inline-block;
+  padding: var(--space-3xs) var(--space-2xs);
+  font-size: var(--font-size-meta);
+  text-decoration: none;
+  border: var(--stroke-width) var(--stroke-style) var(--stroke-color);
+  border-radius: 100vmax;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tag-list a:hover {
+  background-color: var(--color-brand);
+  color: var(--color-text-invert);
+  border-color: var(--color-brand);
+}
+
+/* Accent variant for filled pills (e.g. tags on notes) */
+.tag-list[data-variant='accent'] a {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-invert);
+}
+
+.tag-list[data-variant='accent'] a:hover {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+}

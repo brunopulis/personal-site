@@ -4,14 +4,16 @@ title: Séries
 permalink: /watching/shows/
 ---
 
-<section class="mb-8">
-  <nav class="text-sm mb-4">
-    <a href="/watching/" class="text-vistaBlue-600 dark:text-vistaBlue-400 hover:underline">Watching</a>
-    <span class="mx-2">→</span>
-    <span>Séries</span>
+<section class="region" style="--region-space: var(--space-l)">
+  <nav class="text-sm mb-4" aria-label="Breadcrumb">
+    <div class="cluster" style="--gutter: var(--space-2xs)">
+      <a href="/watching/" class="text-vista-blue-600">Watching</a>
+      <span aria-hidden="true">→</span>
+      <span>Séries</span>
+    </div>
   </nav>
-  <h1 class="mb-2 font-bold text-3xl">Séries</h1>
-  <p class="text-[var(--text-secondary)]">
+  <h1 class="mb-2">Séries</h1>
+  <p class="meta">
     Todas as séries que assisti.
   </p>
 </section>
@@ -22,37 +24,38 @@ permalink: /watching/shows/
   {% set yearShows = showsGrouped.byYear[year] %}
   {% set showCount = yearShows | length %}
 
-  <section class="mb-12">
-    <div class="flex items-center gap-3 mb-6">
-      <h2 class="font-bold text-2xl">{{ year }}</h2>
-      <span class="bg-[var(--surface)] px-3 py-1 border rounded-full text-[var(--text-secondary)] text-sm">
+  <section class="region" style="--region-space: var(--space-2xl)">
+    <div class="cluster mb-6" style="--gutter: var(--space-xs)">
+      <h2>{{ year }}</h2>
+      <span class="meta bg-surface px-3 py-1 border rounded-full">
         {{ showCount }} {{ "série" if showCount == 1 else "séries" }}
       </span>
     </div>
 
-    <div class="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="grid" style="--grid-min-item-size: 12rem; --gutter: var(--space-xs)">
       {% for show in yearShows | sortByDate %}
         <article>
           <a href="{{ show.url }}" class="block">
             {% if show.data.poster %}
-              <img
-                src="{{ show.data.poster | localPoster }}"
-                alt="{{ show.data.title }}"
-                class="rounded w-full aspect-[2/3] object-cover"
-                loading="lazy"
-              >
+              <div class="frame" style="--n: 7; --d: 10;">
+                <img
+                  src="{{ show.data.poster | localPoster }}"
+                  alt="{{ show.data.title }}"
+                  loading="lazy"
+                >
+              </div>
             {% else %}
-              <div class="flex justify-center items-center bg-gradient-to-br from-vistaBlue-500 to-bloodRed-500 rounded w-full aspect-[2/3]">
+              <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
                 <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
               </div>
             {% endif %}
             <div class="mt-2">
-              <h3 class="font-semibold text-sm line-clamp-2 leading-tight">{{ show.data.title }}</h3>
+              <h3 class="text-sm line-clamp-2">{{ show.data.title }}</h3>
               {% if show.data.category %}
-                <p class="text-[var(--text-secondary)] text-xs">{{ show.data.category }}</p>
+                <p class="meta">{{ show.data.category }}</p>
               {% endif %}
               {% if show.data.rating %}
-                <p class="text-yellow-500 text-xs flex items-center gap-1">
+                <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                   {% for i in range(1, 6) %}
                     {% if i <= show.data.rating %}⭐{% endif %}
                   {% endfor %}
@@ -65,7 +68,7 @@ permalink: /watching/shows/
     </div>
   </section>
 {% else %}
-  <p class="py-12 text-[var(--text-secondary)] text-center">
+  <p class="py-12 meta text-center">
     Nenhuma série registrada ainda.
   </p>
 {% endfor %}

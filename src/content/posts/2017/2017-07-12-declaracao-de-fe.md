@@ -2,8 +2,9 @@
 title: 'Declaração de fé'
 excerpt: 'Cremos em Deus Pai, Todo-poderoso, Criador dos céus e da terra.'
 pubDate: 2017-07-12T00:06:17.767Z
-category: Teologia
-tags: ['cristianismo']
+tags:
+  - teologia
+  - cristianismo
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fwp7lm25"
 ---
 
