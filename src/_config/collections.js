@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import blogroll from '../_data/blogroll.json' with {type: 'json'};
 
 export const getAllPosts = collection => {
@@ -47,31 +48,35 @@ export const getAllPoetry = collection => {
   return collection.getFilteredByGlob('./src/content/poetry/**/*.md').reverse();
 };
 
-export const showInSitemap = collection => {
-  return collection.getFilteredByGlob('./src/**/*.{md,njk}');
-};
+const FEED_SOURCES = [
+  {glob: './src/content/posts/**/*.md', type: 'post'},
+  {glob: './src/content/notes/**/*.md', type: 'note'},
+  {glob: './src/content/likes/**/*.md', type: 'like'},
+  {glob: './src/content/newsletters/**/*.md', type: 'newsletter'},
+  {glob: './src/content/books/**/*.md', type: 'book'},
+  {glob: './src/content/watching/movies/**/*.md', type: 'movie'},
+  {glob: './src/content/watching/shows/**/*.md', type: 'show'},
+  {glob: './src/content/poetry/**/*.md', type: 'poem'}
+];
 
-export const getBooksByYear = collection => {
-  const books = collection.getFilteredByGlob('./src/content/books/**/*.md').reverse();
-  const readBooks = books.filter(book => book.data?.status === 'lido');
+const stripFrontmatter = content => content.replace(/^---\n[\s\S]*?\n---/, '').trim();
 
-  const grouped = readBooks.reduce((acc, book) => {
-    const year = book.data?.attendedYear;
-    if (!year) return acc;
+export const getAllFeed = collection => {
+  const items = FEED_SOURCES.flatMap(source =>
+    collection.getFilteredByGlob(source.glob).map(item => ({
+      item,
+      type: source.type,
+      raw: stripFrontmatter(fs.readFileSync(item.inputPath, 'utf-8'))
+    }))
+  );
 
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(book);
-    return acc;
-  }, {});
-
-  const years = Object.keys(grouped).sort((a, b) => b - a);
-
-  return {
-    byYear: grouped,
-    years: years
-  };
+  return items
+    .sort((a, b) => {
+      const dateA = a.item.data?.watchedDate || a.item.data?.pubDate || a.item.date;
+      const dateB = b.item.data?.watchedDate || b.item.data?.pubDate || b.item.date;
+      return new Date(dateB) - new Date(dateA);
+    })
+    .slice(0, 20);
 };
 
 export const tagList = collection => {
