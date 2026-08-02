@@ -4,7 +4,7 @@
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "Bruno Pulis - Todo o conteúdo",
-    "description": "Artigos, notas, links, livros, filmes, séries, jogos e poemas",
+    "description": "Artigos, notas, likes, livros, filmes, séries e poemas",
     "language": "pt-br",
     "base": "https://brunopulis.com",
     "author": {
@@ -24,16 +24,16 @@
     <atom:link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
-    {%- for item in allFeed %}
-    {%- set absoluteUrl = item.url | htmlBaseUrl(metadata.base) %}
+    {%- for entry in collections.allFeed %}
+    {%- set absoluteItemUrl = entry.item.url | htmlBaseUrl(metadata.base) %}
     <item>
-      <title>{{ item.data.title }}</title>
-      <link>{{ absoluteUrl }}</link>
-      <description><![CDATA[{{ item._content | safe }}]]></description>
-      <pubDate>{{ item._sortDate | toRfc822Date }}</pubDate>
+      <title>{{ entry.item.data.title }}</title>
+      <link>{{ absoluteItemUrl }}</link>
+      <description>{{ entry.raw | renderTransforms(entry.item.data.page, metadata.base) }}</description>
+      <pubDate>{{ (entry.item.data.watchedDate or entry.item.data.pubDate or entry.item.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
-      <guid>{{ absoluteUrl }}</guid>
-      <category>{{ item._feedType }}</category>
+      <guid>{{ absoluteItemUrl }}</guid>
+      <category>{{ entry.type }}</category>
     </item>
     {%- endfor %}
   </channel>

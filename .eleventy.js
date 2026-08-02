@@ -19,6 +19,7 @@ import {
   getAllPosts,
   getAllNewsletters,
   getAllBooks,
+  getAllFeed,
   blogrollCategories,
   getAllLikes,
   getAllMovies,
@@ -26,7 +27,6 @@ import {
   getAllNotes,
   getAllPoetry,
   getWatchingYears,
-  showInSitemap,
   tagList
 } from './src/_config/collections.js';
 
@@ -72,7 +72,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('poetry', getAllPoetry);
   eleventyConfig.addCollection('tagList', tagList);
   eleventyConfig.addCollection('watchingYears', getWatchingYears);
-  eleventyConfig.addCollection('showInSitemap', showInSitemap);
+  eleventyConfig.addCollection('allFeed', getAllFeed);
   eleventyConfig.addCollection('blogrollCategories', blogrollCategories);
 
   // Plugins
