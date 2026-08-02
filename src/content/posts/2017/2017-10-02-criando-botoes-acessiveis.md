@@ -2,8 +2,8 @@
 title: 'Como criar botões acessíveis'
 excerpt: 'Fala pessoal! Depois de algum tempo sem postar nada, resolvi fazer um post rapidinho mas muito importante. Hoje, vou falar sobre como…'
 pubDate: 2017-10-02T23:28:46.808Z
-category: Acessibilidade
-tags: ['buttons']
+tags:
+  - a11y
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fvbi532x"
 ---
 

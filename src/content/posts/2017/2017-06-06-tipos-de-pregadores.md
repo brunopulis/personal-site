@@ -2,8 +2,9 @@
 title: 'Tipos de pregadores'
 excerpt: 'O pregador de tópicos'
 pubDate: 2017-06-06T22:00:52.760Z
-category: Teologia
-tags: ['cristianismo']
+tags:
+  - teologia
+  - cristianismo
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fxkjdl2k"
 ---
 

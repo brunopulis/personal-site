@@ -1,54 +1,52 @@
-import {toISOString, formatDate} from './filters/dates.js';
-import {markdownFormat} from './filters/markdown-format.js';
-import {shuffleArray} from './filters/sort-random.js';
-import {sortAlphabetically} from './filters/sort-alphabetic.js';
-import {splitlines} from './filters/splitlines.js';
-import {striptags} from './filters/striptags.js';
-import {slugifyString} from './filters/slugify.js';
-import {limit} from './filters/limit.js';
-import {renderTransforms} from './filters/render-transforms.js';
-import {lastModified} from './filters/last-modified.js';
-import {where, keys, concat} from './filters/where.js';
 import {booksByYear} from './filters/books.js';
+import {formatDate} from './filters/dates.js';
+import {head} from './filters/head.js';
+import {htmlDateString} from './filters/htmlDateString.js';
+import {htmlToAbsoluteUrls} from './filters/htmlToAbsoluteUrls.js';
+import {lastModified} from './filters/last-modified.js';
+import {limit} from './filters/limit.js';
+import {localPoster} from './filters/localPoster.js';
+import {filterByYear, filterFavorites, groupByYear} from './filters/media.js';
 import {moviesByYear} from './filters/movies.js';
-import {showsByYear, showsByStatusAndYear, showsByYearAndStatus} from './filters/shows.js';
-import {filterFavorites, filterNonFavorites, groupByYear, filterByYear} from './filters/media.js';
-import {gamesByYear} from './filters/games.js';
+import {readableDate} from './filters/readableDate.js';
+import {readingTime} from './filters/readingTime.js';
+import {renderTransforms} from './filters/render-transforms.js';
+import {showsByYear} from './filters/shows.js';
+import {slugifyString} from './filters/slugify.js';
 import {sortByDate} from './filters/sort-by-date.js';
+import {splitlines} from './filters/splitlines.js';
 import {startsWith} from './filters/starts-with.js';
+import {striptags} from './filters/striptags.js';
+import {toRfc822Date} from './filters/toRfc822Date.js';
+import {concat, where} from './filters/where.js';
+import {xmlEscape} from './filters/xmlEscape.js';
+
+export {formatNumber} from './filters/formatNumber.js';
 
 export default {
-  toISOString,
-  formatDate,
-  markdownFormat,
-  splitlines,
-  striptags,
-  shuffleArray,
-  sortAlphabetically,
-  sortByDate,
-  slugifyString,
-  limit,
-  renderTransforms,
-  lastModified,
-  where,
-keys,
-  concat,
   booksByYear,
-  moviesByYear,
-  filterFavorites,
-  filterNonFavorites,
-  groupByYear,
+  formatDate,
+  head,
+  htmlDateString,
+  htmlToAbsoluteUrls,
+  lastModified,
+  limit,
+  localPoster,
   filterByYear,
+  filterFavorites,
+  groupByYear,
+  moviesByYear,
+  readableDate,
+  readingTime,
+  renderTransforms,
   showsByYear,
-  showsByStatusAndYear,
-  showsByYearAndStatus,
-  gamesByYear,
-  startsWith
+  slugifyString,
+  sortByDate,
+  striptags,
+  splitlines,
+  startsWith,
+  toRfc822Date,
+  concat,
+  where,
+  xmlEscape
 };
-
-export function formatNumber(num) {
-  if (num === undefined || num === null) return '0';
-  return Number(num)
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}

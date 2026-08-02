@@ -5,7 +5,8 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{%- for page in collections.showInSitemap %}
+{%- for page in collections.all %}
+  {%- if page.inputPath != './src/pages/tag.njk' and page.inputPath != './src/pages/watching/year.njk' %}
   {%- set pageUrl = site.url ~ page.url %}
   <url>
     <loc>{{ pageUrl | xmlEscape }}</loc>
@@ -13,5 +14,41 @@ eleventyExcludeFromCollections: true
     <changefreq>{% if page.url == '/' %}weekly{% else %}monthly{% endif %}</changefreq>
     <priority>{% if page.url == '/' %}1.0{% else %}0.5{% endif %}</priority>
   </url>
+  {%- endif %}
+{%- endfor %}
+{%- for tag in tagsData %}
+  <url>
+    <loc>{{ site.url }}/tags/{{ tag.slug }}/</loc>
+    <lastmod>{{ page.date | htmlDateString }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+{%- endfor %}
+{%- for year in collections.watchingYears %}
+  <url>
+    <loc>{{ site.url }}/watching/{{ year }}/</loc>
+    <lastmod>{{ page.date | htmlDateString }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+{%- endfor %}
+{%- set pageSize = 10 %}
+{%- set paginated = [
+  {name: 'blog', items: collections.posts},
+  {name: 'notes', items: collections.notes},
+  {name: 'poetry', items: collections.poetry},
+  {name: 'likes', items: collections.likes},
+  {name: 'newsletters', items: collections.newsletters}
+] %}
+{%- for section in paginated %}
+  {%- set totalPages = (section.items.length / pageSize) | round(0, 'ceil') %}
+  {%- for pageNumber in range(2, totalPages + 1) %}
+  <url>
+    <loc>{{ site.url }}/{{ section.name }}/page/{{ pageNumber }}/</loc>
+    <lastmod>{{ page.date | htmlDateString }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  {%- endfor %}
 {%- endfor %}
 </urlset>

@@ -2,8 +2,10 @@
 title: 'Leonard Ravenhill'
 excerpt: 'O profeta do avivamento'
 pubDate: 2017-07-02T05:34:13.519Z
-category: Teologia
-tags: ['cristianismo', 'biografia']
+tags:
+  - teologia
+  - cristianismo
+  - biografia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fwwvm22h"
 ---
 

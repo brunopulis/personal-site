@@ -1,9 +1,10 @@
-<section class="mt-4 py-8 border-border border-gray-200 border-y">
-  <div class="">
-    <h3 class="mb-2 font-semibold text-errie-black-950 text-sm uppercase tracking-wide">Compartilhe</h3>
-    <ul class="flex flex-wrap gap-2">
+<section class="region" style="--region-space: var(--space-m)">
+  <hr>
+  <div class="flow" style="--flow-space: var(--space-xs)">
+    <p class="meta uppercase">Compartilhe</p>
+    <ul class="cluster" role="list" style="--gutter: var(--space-s)">
       <li>
-        <a class="text-vista-blue-600 underline underline-offset-4 hover:no-underline" href="mailto:{{site.email}}?subject=Resposta para {{title}}">
+        <a href="mailto:{{site.email}}?subject=Resposta para {{title}}">
           Responder via e-mail
         </a>
       </li>
@@ -12,13 +13,13 @@
           href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ title | urlencode }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-vista-blue-600 underline underline-offset-4 hover:no-underline u-syndication"
+          class="u-syndication"
         >
           Twitter
         </a>
       </li>
       <li>
-        <a class="text-vista-blue-600 underline underline-offset-4 hover:no-underline u-syndication"
+        <a class="u-syndication"
            href="https://mastodon.social/share?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}"
            target="_blank"
            rel="noopener noreferrer">
@@ -30,7 +31,7 @@
           href="https://bsky.app/intent/compose?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-vista-blue-600 underline underline-offset-4 hover:no-underline u-syndication"
+          class="u-syndication"
         >
           Bluesky
         </a>
@@ -40,7 +41,7 @@
           href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
           target="_blank"
           rel="noopener"
-          class="text-vista-blue-600 underline underline-offset-4 hover:no-underline u-syndication"
+          class="u-syndication"
         >
           LinkedIn
         </a>

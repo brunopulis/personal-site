@@ -1,0 +1,29 @@
+/*
+META
+Secondary/auxiliary text used for metadata such as dates, authors,
+reading time and page information.
+*/
+.meta {
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-meta);
+}
+
+/*
+LEDE
+Introductory/lead paragraph.
+*/
+.lede {
+  font-size: var(--font-size-lede);
+}
+
+/*
+AVATAR
+Circular user avatar used in webmentions.
+*/
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100vmax;
+  object-fit: cover;
+  flex-shrink: 0;
+}

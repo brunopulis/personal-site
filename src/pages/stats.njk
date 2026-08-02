@@ -5,41 +5,41 @@ permalink: /stats/
 ---
 
 {% set stats = siteStats %}
-<section class="mb-12">
-  <h2 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">Estatísticas Gerais</h2>
-  <dl class="gap-4 grid grid-cols-1 md:grid-cols-2">
-    <div class="bg-light-silver-100 p-4 border rounded-lg">
-      <dt class="mb-1 font-bold text-blood-red-950 text-sm">Total de posts</dt>
+<section class="region flow" style="--region-space: var(--space-2xl); --flow-space: var(--space-m)">
+  <h2 class="p-name">Estatísticas Gerais</h2>
+  <dl class="grid" style="--grid-min-item-size: 20rem; --gutter: var(--space-s)">
+    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+      <dt class="mb-1 font-bold meta">Total de posts</dt>
       <dd class="font-bold text-3xl">{{ stats.totalPosts }}</dd>
     </div>
-    <div class="bg-light-silver-100 p-4 border rounded-lg">
-      <dt class="mb-1 font-bold text-blood-red-950 text-sm">Total de newsletters</dt>
+    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+      <dt class="mb-1 font-bold meta">Total de newsletters</dt>
       <dd class="font-bold text-3xl">{{ stats.totalNewsletters }}</dd>
     </div>
-    <div class="bg-light-silver-100 p-4 border rounded-lg">
-      <dt class="mb-1 font-bold text-blood-red-950 text-sm">Total de palavras</dt>
+    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+      <dt class="mb-1 font-bold meta">Total de palavras</dt>
       <dd class="font-bold text-3xl">{{ stats.totalWords | formatNumber }}</dd>
     </div>
-    <div class="bg-light-silver-100 p-4 border rounded-lg">
-      <dt class="mb-1 font-bold text-blood-red-950 text-sm">Média de palavras por post</dt>
+    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+      <dt class="mb-1 font-bold meta">Média de palavras por post</dt>
       <dd class="font-bold text-3xl">{{ stats.averageWordsPerPost }}</dd>
     </div>
-    <div class="bg-light-silver-100 p-4 border rounded-lg">
-      <dt class="mb-1 font-bold text-blood-red-950 text-sm">Total de tags</dt>
+    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+      <dt class="mb-1 font-bold meta">Total de tags</dt>
       <dd class="font-bold text-3xl">{{ stats.totalTags }}</dd>
     </div>
-    <div class="bg-light-silver-100 p-4 border rounded-lg">
-      <dt class="mb-1 font-bold text-blood-red-950 text-sm">Livros lidos</dt>
+    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+      <dt class="mb-1 font-bold meta">Livros lidos</dt>
       <dd class="font-bold text-3xl">{{ stats.totalBooks }}</dd>
     </div>
   </dl>
 </section>
 
-<section class="mb-12">
-  <h2 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">Posts por ano</h2>
-  <ul class="space-y-2">
+<section class="region flow" style="--region-space: var(--space-2xl); --flow-space: var(--space-m)">
+  <h2 class="p-name">Posts por ano</h2>
+  <ul class="flow" role="list">
     {% for year in stats.yearsSorted %}
-      <li class="flex justify-between items-center py-2 border-gray-200 dark:border-gray-700 border-b">
+      <li class="py-2 border-b repel" style="--stroke-color: var(--color-light-silver-200);">
         <span class="font-bold">{{ year }}</span>
         <span class="font-bold text-blood-red-950">
           {{ stats.postsByYear[year] }}
@@ -49,19 +49,21 @@ permalink: /stats/
   </ul>
 </section>
 
-<section class="mb-12">
-  <h2 class="mb-4 font-bold text-blood-red-950 text-2xl">Nuvem de tags</h2>
-  <div class="flex flex-wrap gap-2">
+<section class="region flow" style="--region-space: var(--space-2xl); --flow-space: var(--space-s)">
+  <h2>Nuvem de tags</h2>
+  <ul class="tag-list" role="list">
     {% for tag in stats.allTags %}
-      <a href="/tags/{{ tag | slugify }}/" class="inline-block bg-light-silver-100 hover:bg-vista-blue-500 px-3 py-1 border-light-silver-100 rounded-full font-bold text-sm transition-colors">
-        {{ tag }}
-      </a>
+      <li>
+        <a class="font-bold" href="/tags/{{ tag | slugify }}/">
+          {{ tag }}
+        </a>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 </section>
 
-<section class="mb-8">
-  <p class="text-sm italic">
-    Copiei essas estatísticas do <a href="https://kevquirk.com/stats/" class="underline">Kev Quirk</a> porque sim, ele provavelmente pegou de algum outro lugar também. Viva o Open Source!
+<section class="region" style="--region-space: var(--space-l)">
+  <p class="italic meta">
+    Copiei essas estatísticas do <a href="https://kevquirk.com/stats/">Kev Quirk</a> porque sim, ele provavelmente pegou de algum outro lugar também. Viva o Open Source!
   </p>
 </section>

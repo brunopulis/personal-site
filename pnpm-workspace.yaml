@@ -1,4 +1,4 @@
 allowBuilds:
-  '@parcel/watcher': true
+  '@parcel/watcher': set this to true or false
   cypress: true
   sharp: true

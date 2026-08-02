@@ -2,62 +2,56 @@
 layout: base
 ---
 
-<nav class="mb-4 text-sm" aria-label="Breadcrumb">
-  <ol class="flex space-x-2">
-    <li><a href="/" class="hover:text-blue-600">Home</a></li>
+<nav class="region" style="--region-space: var(--space-s)" aria-label="Breadcrumb">
+  <ol class="cluster" role="list" style="--gutter: var(--space-2xs)">
+    <li><a href="/">Home</a></li>
     <li><span aria-hidden="true">›</span></li>
-    <li><a href="/blog/" class="hover:text-blue-600">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><span aria-hidden="true">›</span></li>
-    <li class="font-bold text-errie-black-950">{{ title }}</li>
+    <li>{{ title }}</li>
   </ol>
 </nav>
 
-<article class="py-10 h-entry">
+<article class="region h-entry" style="--region-space: var(--space-xl)">
   {% if featuredImage %}
     <img
-      class="mb-6 rounded-lg w-full u-photo"
+      class="u-photo"
       src="{{ featuredImage }}"
       alt="Featured image for {{ title }}"
     />
   {% endif %}
 
-  <header class="mb-6">
-    <h1 class="mb-2 p-name font-bold text-3xl">{{ title }}</h1>
+  <header class="flow" style="--flow-space: var(--space-s)">
+    <h1 class="p-name">{{ title }}</h1>
     {% if subtitle %}
-      <p class="mb-4 text-errie-black-950 text-xl">{{ subtitle }}</p>
+      <p class="lede">{{ subtitle }}</p>
     {% endif %}
-    <div class="text-sm">
+    <p class="meta">
       Publicado em:
       <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
         {{ page.date | readableDate }}
       </time>
       por
       <span class="p-author h-card">
-        <a class="p-name hover:text-blue-600 u-url" href="/about/">
+        <a class="p-name u-url" href="/about/">
           {{ author or site.author }}
         </a>
       </span>
       <span aria-hidden="true">•</span>
-      <span class="reading-time">{{ content | readingTime }} min de leitura</span>
-    </div>
-    <a class="hidden u-url" href="{{ page.url }}">Permalink</a>
+      <span>{{ content | readingTime }} min de leitura</span>
+    </p>
+    <a class="visually-hidden u-url" href="{{ page.url }}">Permalink</a>
   </header>
 
-  <div class="max-w-none e-content prose">
+  <div class="e-content prose">
     {{ content | safe }}
   </div>
 
   {% if tags %}
-    <nav class="flex flex-wrap items-center gap-2 mt-10 py-4">
-      <span class="text-muted-foreground text-xs uppercase tracking-wider">
-        Tags
-      </span>
+    <nav class="cluster" style="--gutter: var(--space-2xs)" aria-label="Tags">
+      <span class="meta uppercase">Tags</span>
       {% for tag in tags %}
-        <a
-          class="p-category px-2 py-1 border border-border hover:border-primary rounded-full text-muted-foreground hover:text-primary text-xs"
-          href="/tags/{{ tag | slug }}/"
-          >#{{ tag }}</a
-        >
+        <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
       {% endfor %}
     </nav>
   {% endif %}
@@ -69,5 +63,4 @@ layout: base
   {% endif %}
 
   {% include "partials/webmentions.njk" %}
-  {% include "partials/related-posts.njk" %}
 </article>

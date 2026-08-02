@@ -1,12 +1,10 @@
 ---
-layout: base.njk
+layout: page
 permalink: "/now/"
 title: Agora
 ---
 
-<h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">O que estou fazendo agora</h1>
-
-<div class="prose prose-lg">
+<div class="prose flow">
   <p>Esta é uma página <a href="https://nownownow.com/about" target="_blank" rel="noopener">/now</a>, inspirada por Derek Sivers. É um retrato daquilo em que estou focado neste momento.</p>
 
   <h2>Meu foco atual:</h2>
@@ -20,7 +18,7 @@ title: Agora
   <h2>Localização</h2>
   <p>Atualmente baseado em: <address>Belo Horizonte</address></p>
 
-  <p class="mt-8text-sm">
+  <p class="meta" style="margin-block-start: var(--space-l);">
     Última atualização: <time datetime="2024-01-01">{{ page.date | formatDate('MMMM D, YYYY') }}</time>
   </p>
 </div>

@@ -6,14 +6,14 @@ pagination:
   size: 10
   alias: items
   reverse: true
-permalink: '/poetry/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
+permalink: '/poetry/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}'
 ---
 
-<h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">
+<h1 class="p-name">
   {{ title }}
 </h1>
 
-<p class="mb-6">
+<p>
   Coleção de poemas que escrevi ou que gostei.
 </p>
 
@@ -23,14 +23,14 @@ permalink: '/poetry/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNum
     Nenhum poema cadastrado.
   </p>
 {% else %}
-  <section class="space-y-6">
+  <section class="flow" style="--flow-space: var(--space-m)">
     {% for item in items %}
-      <article class="pb-4 border-b">
-        <h2 class="font-semibold text-lg">
+      <article class="flow pb-4 border-b" style="--flow-space: var(--space-2xs)">
+        <h2>
           <a href="{{ item.url }}">{{ item.data.title or 'Untitled' }}</a>
         </h2>
         {% if item.date %}
-          <time class="text-xs" datetime="{{ item.date | htmlDateString }}"
+          <time class="meta" datetime="{{ item.date | htmlDateString }}"
             >{{ item.date | readableDate }}</time
           >
         {% endif %}
@@ -38,29 +38,23 @@ permalink: '/poetry/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNum
     {% endfor %}
   </section>
 
-  <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
+  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a
-        class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white"
-        href="{{ pagination.href.previous }}"
-        >Anterior</a
-      >
+      <a class="button" href="{{ pagination.href.previous }}">Anterior</a>
     {% else %}
-      <span class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white">Anterior</span>
+      <span class="button" aria-disabled="true">Anterior</span>
     {% endif %}
 
-    <span class="text-sm">
+    <span class="meta">
       Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages | length }}
     </span>
 
     {% if pagination.href.next %}
-      <a
-        class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white"
-        href="{{ pagination.href.next }}">
+      <a class="button" href="{{ pagination.href.next }}">
         Próximo
       </a>
     {% else %}
-      <span class="bg-blood-red-950 hover:bg-blood-red-900 px-4 py-2 rounded font-bold text-white">
+      <span class="button" aria-disabled="true">
         Próximo
       </span>
     {% endif %}

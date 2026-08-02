@@ -4,39 +4,39 @@ pagination:
   data: collections.notes
   size: 10
   alias: notes
-permalink: '/notes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
+permalink: '/notes/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}'
 title: Notas
 ---
 
 <div class="h-feed">
-  <h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl">Notas</h1>
-  <a class="hidden u-url" href="{{ site.url }}/notes/"></a>
-  <p class="mb-6">
+  <h1 class="p-name">Notas</h1>
+  <a class="visually-hidden u-url" href="{{ site.url }}/notes/"></a>
+  <p>
     Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
   </p>
 
-  <section class="space-y-8">
+  <section class="flow" style="--flow-space: var(--space-l)">
     {% for note in notes %}
-      <article class="bg-light-silver-100 p-6 border border-light-silver-100 border-b rounded-lg h-entry">
-        <time class="pb-4 text-xs dt-published" datetime="{{ note.date | htmlDateString }}">
+      <article class="callout flow h-entry" style="background-color: var(--color-light-silver-100); border-color: var(--color-light-silver-100); border-style: solid; --flow-space: var(--space-s);">
+        <time class="meta dt-published" datetime="{{ note.date | htmlDateString }}">
           {{ note.date | readableDate }}
         </time>
 
-        <div class="max-w-none e-content prose">
+        <div class="e-content prose">
           {{ note.content | safe }}
         </div>
       </article>
     {% endfor %}
   </section>
 
-  <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
+  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.previous }}">Anterior</a>
+      <a class="button" href="{{ pagination.href.previous }}">Anterior</a>
     {% else %}
       <span></span>
     {% endif %}
     {% if pagination.href.next %}
-      <a class="bg-blood-red-950 hover:bg-blood-red-900 px-3 py-2 border rounded font-bold text-white" href="{{ pagination.href.next }}">Próximo</a>
+      <a class="button" href="{{ pagination.href.next }}">Próximo</a>
     {% endif %}
   </nav>
 </div>

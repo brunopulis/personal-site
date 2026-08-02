@@ -1,13 +1,24 @@
 <!doctype html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {% if title %}
-  <title>{{ title }} • {{ site.name }}</title>
-  {% else %}
-  <title>{{ site.name }}</title>
-  {% endif %}
+  <!-- 1 charset/viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 2 title -->
+  <title>
+    {%- if title -%}
+      {{- title -}} • {{ site.name }}
+    {%- else -%}
+      {{- site.name -}}
+    {%- endif -%}
+  </title>
+
+  <base href="{{ page.url }}" />
+
+  <!-- 3 synchronous js  -->
+  {% include "head/js-inline.njk" %}
+
   <meta name="description" content="{{ description or site.description }}" />
   <meta name="generator" content="Eleventy" />
   <meta name="robots" content="index,follow" />
@@ -71,14 +82,16 @@
   <meta name="twitter:image:alt" content="{{ site.name }} preview" />
   <link rel="webmention" href="https://webmention.io/{{ site.url | replace('https://', '') | replace('http://', '') }}/webmention" />
   <link rel="pingback" href="https://webmention.io/{{ site.url | replace('https://', '') | replace('http://', '') }}/xmlrpc" />
-  <link rel="stylesheet" href="/assets/css/build.css" />
+
+  <!-- 5 CSS  -->
+  <!-- <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}" /> -->
+  {% include "head/css-inline.njk" %}
 
   <!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
+  <link rel="alternate" href="{{ site.url }}/feeds/all/rss.xml" title="Todo o conteúdo - Bruno Pulis" type="application/rss+xml">
   <link rel="alternate" href="{{ site.url }}/feeds/blog/rss.xml" title="Artigos do Blog - Bruno Pulis" type="application/rss+xml">
   <link rel="alternate" href="{{ site.url }}/feeds/notes/rss.xml" title="Notas - Bruno Pulis" type="application/rss+xml">
-  <link rel="alternate" href="{{ site.url }}/feeds/bookmarks/rss.xml" title="Links interessantes - Bruno Pulis" type="application/rss+xml">
   <link rel="alternate" href="{{ site.url }}/feeds/books/rss.xml" title="Minha biblioteca de livros - Bruno Pulis" type="application/rss+xml">
-  <link rel="alternate" href="{{ site.url }}/feeds/games/rss.xml" title="Minha coleção de jogos - Bruno Pulis" type="application/rss+xml">
   <link rel="alternate" href="{{ site.url }}/feeds/shows/rss.xml" title="Meus seriados - Bruno Pulis" type="application/rss+xml">
 
   {# Favicon and theme color #}
@@ -90,24 +103,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#a78bfa" />
 
-  <style>
-    .contrast {
-      filter: contrast(1.2) saturate(1.1);
-      --text: #000;
-      --bg: #fff;
-      --border: #000;
-    }
-    html.dark .contrast {
-      --text: #fff;
-      --bg: #000;
-      --border: #fff;
-    }
-    .contrast a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .reduce-motion * { transition: none !important; animation: none !important; }
-  </style>
   {% include "partials/analytics.njk" %}
 
   {# SEO: Structured Data (JSON-LD) #}
@@ -167,9 +162,9 @@
   }
   </script>
 
-  {# BlogPosting for content pages (#blog, #notes, #poetry, #journal) #}
+  {# BlogPosting for content pages (#blog, #notes, #poetry) #}
   {% set url = page.url or '/' %}
-  {% set isPostLike = (url | startsWith('/blog/') ) or (url | startsWith('/notes/') ) or (url | startsWith('/poetry/') ) or (url | startsWith('/journal/') ) %}
+  {% set isPostLike = (url | startsWith('/blog/') ) or (url | startsWith('/notes/') ) or (url | startsWith('/poetry/') ) %}
   {% if isPostLike %}
   <script type="application/ld+json">
   {
@@ -197,17 +192,13 @@
   {% endif %}
   {% endif %}
 </head>
-<body class="flex flex-col bg-white min-h-screen text-errie-black-950">
-  <a href="#main-content" class="sr-only">Ir para conteúdo principal</a>
-  <div id="progress-bar" aria-hidden="true"></div>
+<body>
   {% include "partials/header.njk" %}
-
-  <div class="flex-1 mx-auto px-4 py-6 max-w-4xl container">
-    <main id="main-content">
+  <main id="main-content" class="flow">
+    <div class="wrapper">
       {{ content | safe }}
-    </main>
-  </div>
-
+    </div>
+  </main>
   {% include "partials/footer.njk" %}
 </body>
 </html>

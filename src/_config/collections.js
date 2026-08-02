@@ -1,3 +1,5 @@
+import blogroll from '../_data/blogroll.json' with {type: 'json'};
+
 export const getAllPosts = collection => {
   return collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 };
@@ -37,10 +39,6 @@ export const getWatchingYears = collection => {
   return Array.from(yearsSet).sort((a, b) => b - a);
 };
 
-export const getAllGames = collection => {
-  return collection.getFilteredByGlob('./src/content/games/**/*.md').reverse();
-};
-
 export const getAllNotes = collection => {
   return collection.getFilteredByGlob('./src/content/notes/**/*.md').reverse();
 };
@@ -74,4 +72,23 @@ export const getBooksByYear = collection => {
     byYear: grouped,
     years: years
   };
+};
+
+export const tagList = collection => {
+  const tagsSet = new Set();
+  collection.getAll().forEach(item => {
+    if (!item.data.tags) return;
+    item.data.tags.filter(tag => !['posts', 'docs', 'all'].includes(tag)).forEach(tag => tagsSet.add(tag));
+  });
+  return Array.from(tagsSet).sort();
+};
+
+export const blogrollCategories = () => {
+  const categoriesSet = new Set();
+  blogroll.forEach(entry => {
+    if (entry.category) {
+      categoriesSet.add(entry.category);
+    }
+  });
+  return Array.from(categoriesSet).sort();
 };

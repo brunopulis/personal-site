@@ -1,0 +1,105 @@
+---
+layout: base.njk
+title: Conteúdos
+permalink: /content/
+---
+
+<section class="region" style="--region-space: var(--space-l)">
+  <h1>
+    {{ title }}
+  </h1>
+  <p>Artigos, vídeos e podcasts onde participei ou fui referenciado.</p>
+</section>
+
+{# Tab bar #}
+<nav
+  aria-label="Filtrar por tipo"
+  class="sticky top-0 z-30 bg-surface border-b mb-8"
+  style="--stroke-color: var(--color-light-silver-200);"
+  id="content-tabs">
+  <div
+    class="tablist"
+    role="tablist"
+    aria-label="Tipos de conteúdo">
+    <button role="tab" data-tab="todos" aria-selected="true" tabindex="0">
+      Todos
+    </button>
+    <button role="tab" data-tab="artigo" aria-selected="false" tabindex="-1">
+      Artigos
+    </button>
+    <button role="tab" data-tab="video" aria-selected="false" tabindex="-1">
+      Vídeos
+    </button>
+    <button role="tab" data-tab="podcast" aria-selected="false" tabindex="-1">
+      Podcasts
+    </button>
+  </div>
+</nav>
+
+{# Content grid #}
+<div class="grid" style="--grid-min-item-size: 20rem; --gutter: var(--space-s);" id="content-grid">
+  {% for item in externalContent %}
+    <a
+      class="card"
+      href="{{ item.url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-type="{{ item.type }}">
+      {% if item.thumbnail %}
+        <img src="{{ item.thumbnail }}" alt="{{ item.title }}" loading="lazy">
+      {% else %}
+        <div
+          class="frame"
+          style="--n: 3; --d: 2; {% if item.type == 'podcast' %}background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-vista-blue-700)); {% elif item.type == 'video' %}background: linear-gradient(to bottom right, var(--color-errie-black-700), var(--color-errie-black-900)); {% else %}background: linear-gradient(to bottom right, var(--color-blood-red-500), var(--color-blood-red-700));{% endif %}">
+          <svg
+            width="40"
+            height="40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            style="color: rgba(255, 255, 255, 0.7);">
+            {% if item.type == 'podcast' %}
+              <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+            {% elif item.type == 'video' %}
+              <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            {% else %}
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            {% endif %}
+          </svg>
+        </div>
+      {% endif %}
+
+      <div class="flow" style="--flow-space: var(--space-2xs)">
+        <p class="meta uppercase tracking-wider" style="{% if item.type == 'podcast' %}color: var(--color-vista-blue-600); {% elif item.type == 'video' %}color: var(--color-errie-black-600); {% else %}color: var(--color-blood-red-600);{% endif %}">
+          {{ item.type }}
+          {% if item.platform %}
+            <span class="text-muted">· {{ item.platform }}</span>
+          {% endif %}
+        </p>
+
+        <h3>{{ item.title }}</h3>
+
+        {% if item.description %}
+          <p class="meta">{{ item.description }}</p>
+        {% endif %}
+
+        {% if item.date %}
+          <time class="meta" datetime="{{ item.date }}">
+            {{ item.date | readableDate }}
+          </time>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+<p id="no-results" class="hidden callout text-center">
+  Nenhum conteúdo encontrado para este filtro.
+</p>
+
+<script src="/assets/js/content-filter.js" defer></script>

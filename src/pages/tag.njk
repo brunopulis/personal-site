@@ -1,0 +1,37 @@
+---
+layout: base.njk
+pagination:
+  data: tagsData
+  size: 1
+  alias: tagData
+permalink: /tags/{{ tagData.slug }}/
+eleventyComputed:
+  title: "#{{ tagData.name }}"
+  description: "Conteúdos marcados com a tag #{{ tagData.name }}."
+---
+
+<div class="h-feed region" style="--region-space: var(--space-l)">
+  <h1 class="p-name">#{{ tagData.name }}</h1>
+  <a class="visually-hidden u-url" href="{{ site.url }}/tags/{{ tagData.slug }}/"></a>
+  <p class="pb-4">Conteúdos marcados com a tag <strong>#{{ tagData.name }}</strong>.</p>
+
+  <div class="flow" style="--flow-space: var(--space-l)">
+    {%- for item in collections.all -%}
+      {%- if item.data.tags and tagData.name in item.data.tags -%}
+        <article class="pb-6 border-b h-entry flow" style="--flow-space: var(--space-2xs)">
+          <h3 class="p-name">
+            <a class="u-url" href="{{ item.url }}">{{ item.data.title }}</a>
+          </h3>
+          <time
+            class="meta dt-published"
+            datetime="{{ item.date | htmlDateString }}">
+            {{ item.date | readableDate }}
+          </time>
+          <p class="p-summary">
+            {{ item.data.description or (item.templateContent | striptags | truncate(160)) }}
+          </p>
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>

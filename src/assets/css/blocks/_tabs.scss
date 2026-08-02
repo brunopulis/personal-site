@@ -1,0 +1,33 @@
+/*
+TABLIST
+Tab bar used to filter content (e.g. /content/)
+*/
+.tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  overflow-x: auto;
+  padding-bottom: var(--space-3xs);
+}
+
+.tablist [role='tab'] {
+  background-color: var(--color-light-silver-100);
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--color-light-silver-600);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: var(--font-size-meta);
+  font-weight: var(--font-weight-bold);
+  padding: var(--space-2xs) var(--space-xs);
+  text-transform: capitalize;
+}
+
+.tablist [role='tab']:hover {
+  background-color: var(--color-light-silver-200);
+}
+
+.tablist [role='tab'][aria-selected='true'] {
+  background-color: var(--color-blood-red-950);
+  color: var(--color-text-invert);
+}

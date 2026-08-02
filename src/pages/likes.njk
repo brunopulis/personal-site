@@ -4,39 +4,39 @@ pagination:
   data: collections.likes
   size: 10
   alias: likes
-permalink: '/likes/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}'
+permalink: '/likes/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}'
 title: Likes
 ---
 
 <div class="h-feed">
-  <h1 class="mb-6 p-name font-bold text-blood-red-950 text-4xl" lang="en">
+  <h1 class="p-name" lang="en">
     {{ title }}
   </h1>
-  <a class="hidden u-url" href="{{ site.url }}/likes/"></a>
-  <p class="mb-6">Uma coleção de links e ideias que gostei.</p>
+  <a class="visually-hidden u-url" href="{{ site.url }}/likes/"></a>
+  <p>Uma coleção de links e ideias que gostei.</p>
 
-  <section class="space-y-8">
+  <section class="flow" style="--flow-space: var(--space-l)">
     {% for like in likes %}
-      <article class="bg-light-silver-100 p-6 border border-light-silver-100 border-b rounded-lg h-entry">
-        <time class="pb-4 font-bold text-xs dt-published" datetime="{{ like.date | htmlDateString }}">
+      <article class="callout flow h-entry" style="background-color: var(--color-light-silver-100); border-color: var(--color-light-silver-100); border-style: solid; --flow-space: var(--space-s);">
+        <time class="meta font-bold dt-published" datetime="{{ like.date | htmlDateString }}">
           {{ like.date | readableDate }}
         </time>
 
-        <div class="max-w-none e-content prose">
+        <div class="e-content prose">
           {{ like.content | safe }}
         </div>
       </article>
     {% endfor %}
   </section>
 
-  <nav class="flex justify-between items-center mt-8" aria-label="Pagination">
+  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Pagination">
     {% if pagination.href.previous %}
-      <a class="px-3 py-2 border rounded" href="{{ pagination.href.previous }}">Anterior</a>
+      <a class="button" href="{{ pagination.href.previous }}">Anterior</a>
     {% else %}
       <span></span>
     {% endif %}
     {% if pagination.href.next %}
-      <a class="px-3 py-2 border rounded" href="{{ pagination.href.next }}">Próximo</a>
+      <a class="button" href="{{ pagination.href.next }}">Próximo</a>
     {% endif %}
   </nav>
 </div>
