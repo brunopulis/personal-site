@@ -15,9 +15,9 @@ describe('Navigation', () => {
     cy.contains('h1', 'Notas').should('be.visible');
   });
 
-  it('navigates to Contato', () => {
-    cy.contains('a', 'Contato').click();
-    cy.url().should('include', '/contact/');
-    cy.contains('h1', 'Entre em contato').should('be.visible');
+  it('navigates to Privacidade', () => {
+    cy.contains('a', 'Privacidade').click();
+    cy.url().should('include', '/privacy/');
+    cy.contains('h1', 'Privacidade').should('be.visible');
   });
 });

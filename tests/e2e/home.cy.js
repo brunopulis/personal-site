@@ -15,7 +15,7 @@ describe('Home page', () => {
     cy.contains('a', 'Blog').should('be.visible');
   });
 
-  it('links to contact page', () => {
-    cy.contains('a', 'Contato').should('be.visible');
+  it('links to privacy page', () => {
+    cy.contains('a', 'Privacidade').should('be.visible');
   });
 });
