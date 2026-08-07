@@ -75,14 +75,14 @@ permalink: /content/
       {% endif %}
 
       <div class="flow" style="--flow-space: var(--space-2xs)">
-        <p class="meta uppercase tracking-wider" style="{% if item.type == 'podcast' %}color: var(--color-vista-blue-600); {% elif item.type == 'video' %}color: var(--color-errie-black-600); {% else %}color: var(--color-blood-red-600);{% endif %}">
+        <p class="meta uppercase tracking-wider" style="{% if item.type == 'podcast' %}color: var(--color-link); {% elif item.type == 'video' %}color: var(--color-text-subtle); {% else %}color: var(--color-brand);{% endif %}">
           {{ item.type }}
           {% if item.platform %}
             <span class="text-muted">· {{ item.platform }}</span>
           {% endif %}
         </p>
 
-        <h3>{{ item.title }}</h3>
+        <h2>{{ item.title }}</h2>
 
         {% if item.description %}
           <p class="meta">{{ item.description }}</p>

@@ -86,6 +86,7 @@ Custom utility classes for the project
 /* Color utilities */
 .text-white { color: var(--color-light-silver-50); }
 .text-blood-red-950 { color: var(--color-blood-red-950); }
+.text-brand { color: var(--color-brand); }
 .text-vista-blue-600 { color: var(--color-vista-blue-600); }
 .text-vista-blue-500 { color: var(--color-vista-blue-500); }
 .text-errie-black-950 { color: var(--color-errie-black-950); }
@@ -158,3 +159,10 @@ Custom utility classes for the project
 .focus\:outline-none:focus { outline: none; }
 .focus\:ring-2:focus { box-shadow: 0 0 0 2px var(--focus-ring-color, currentColor); }
 .focus\:ring-vista-blue-500:focus { --focus-ring-color: var(--color-vista-blue-500); }
+
+/* Pagefind search input */
+#search .pagefind-ui__search-input {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}

@@ -12,7 +12,7 @@ eleventyComputed:
 
 <div class="h-feed region" style="--region-space: var(--space-l)">
   <h1 class="p-name">#{{ tagData.name }}</h1>
-  <a class="visually-hidden u-url" href="{{ site.url }}/tags/{{ tagData.slug }}/"></a>
+  <a class="visually-hidden u-url" href="{{ site.url }}/tags/{{ tagData.slug }}/" aria-label="{{ tagData.slug }}"></a>
   <p class="pb-4">Conteúdos marcados com a tag <strong>#{{ tagData.name }}</strong>.</p>
 
   <div class="flow" style="--flow-space: var(--space-l)">

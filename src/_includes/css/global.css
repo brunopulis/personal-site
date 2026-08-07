@@ -40,7 +40,7 @@
   --color-vista-blue-300: #b4cced;
   --color-vista-blue-400: #96b1e3;
   --color-vista-blue-500: #849cdb;
-  --color-vista-blue-600: #6176ca;
+  --color-vista-blue-600: #5468c4;
   --color-vista-blue-700: #5162b1;
   --color-vista-blue-800: #44538f;
   --color-vista-blue-900: #3c4873;
@@ -68,7 +68,7 @@
   --color-light-silver-900: #1a1a1a;
   --color-light-silver-950: #0b0b0b;
   --color-text: var(--color-errie-black-950);
-  --color-text-subtle: var(--color-errie-black-500);
+  --color-text-subtle: var(--color-errie-black-600);
   --color-text-invert: var(--color-light-silver-50);
   --color-canvas: var(--color-light-silver-50);
   --color-surface: var(--color-light-silver-100);
@@ -126,7 +126,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: var(--color-light-silver-300);
-    --color-text-subtle: var(--color-light-silver-500);
+    --color-text-subtle: var(--color-light-silver-400);
     --color-text-invert: var(--color-errie-black-950);
     --color-canvas: var(--color-errie-black-950);
     --color-surface: var(--color-errie-black-900);
@@ -1081,6 +1081,9 @@ nav[data-variant='sidebar'] ul > li ul {
 .text-blood-red-950 {
   color: var(--color-blood-red-950);
 }
+.text-brand {
+  color: var(--color-brand);
+}
 .text-vista-blue-600 {
   color: var(--color-vista-blue-600);
 }
@@ -1221,6 +1224,11 @@ nav[data-variant='sidebar'] ul > li ul {
 }
 .focus\:ring-vista-blue-500:focus {
   --focus-ring-color: var(--color-vista-blue-500);
+}
+#search .pagefind-ui__search-input {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
 }
 .badge {
   display: inline-block;
@@ -1367,6 +1375,6 @@ nav[data-variant='sidebar'] ul > li ul {
   background-color: var(--color-light-silver-200);
 }
 .tablist [role='tab'][aria-selected='true'] {
-  background-color: var(--color-blood-red-950);
+  background-color: var(--color-brand);
   color: var(--color-text-invert);
 }

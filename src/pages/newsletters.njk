@@ -10,12 +10,12 @@ title: Newsletters
 
 <div class="h-feed">
   <h1 class="p-name">Newsletters</h1>
-  <a class="visually-hidden u-url" href="{{ site.url }}/newsletters/"></a>
+  <a class="visually-hidden u-url" href="{{ site.url }}/newsletters/" aria-label="Newsletters"></a>
 
   <div class="flow" style="--flow-space: var(--space-l)">
     {% for newsletter in newsletters %}
       <article class="flow h-entry pb-6 border-b" style="--flow-space: var(--space-2xs)">
-        <h3 class="p-name">
+        <h2 class="p-name">
           <a class="u-url" href="{{ newsletter.url }}">Edição #{{ newsletter.data.issue }}</a>
         </h3>
         <time

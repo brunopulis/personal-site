@@ -20,6 +20,19 @@ description: Pesquise conteúdo em todo o site.
         showImages: false,
         resetStyles: false
       });
+
+      const search = document.querySelector('#search');
+      const patchInput = () => {
+        const input = search && search.querySelector('input');
+        if (input && !input.hasAttribute('aria-label')) {
+          input.setAttribute('aria-label', 'Pesquisar no site');
+          input.removeAttribute('title');
+        }
+      };
+      if (search) {
+        new MutationObserver(patchInput).observe(search, {childList: true, subtree: true});
+      }
+      patchInput();
     });
   </script>
 </div>

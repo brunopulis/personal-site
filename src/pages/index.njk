@@ -6,10 +6,11 @@ title: 'Página inicial'
 
 <div class="h-feed">
   <section class="region" aria-labelledby="hero-title">
+    <h1 id="hero-title">{{ site.name }}</h1>
     <p class="p-summary">
       {{ site.description }} Descubra mais <a href="/about/">sobre mim</a>, <a href="/colophon/">esse site</a>, ou <a href="/uses/">as ferramentas que uso</a>.
     </p>
-    <a class="visually-hidden u-url" href="{{ site.url }}/"></a>
+    <a class="visually-hidden u-url" href="{{ site.url }}/" aria-label="Início"></a>
   </section>
 
   <section class="prose region flow" aria-labelledby="recent-posts-title">

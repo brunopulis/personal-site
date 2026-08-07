@@ -6,6 +6,8 @@ export default defineConfig({
     specPattern: 'tests/e2e/**/*.cy.js',
     supportFile: 'tests/e2e/support/e2e.js',
     fixturesFolder: false,
+    videosFolder: 'tests/e2e/videos',
+    screenshotsFolder: 'tests/e2e/screenshots',
     viewportWidth: 1280,
     viewportHeight: 720
   }
