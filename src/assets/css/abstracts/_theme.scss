@@ -4,10 +4,8 @@ Includes primitive tokens for color and semantic tokens.
 Customized for brunopulis/personal-site
 */
 :root {
-  /*
-  Color primitive tokens
-  Blood Red palette
-  */
+
+  // Blood red
   --color-blood-red-50: #fff1f1;
   --color-blood-red-100: #ffdfdf;
   --color-blood-red-200: #ffc4c4;
@@ -20,9 +18,7 @@ Customized for brunopulis/personal-site
   --color-blood-red-900: #8a1212;
   --color-blood-red-950: #610404;
 
-  /*
-  Vista Blue palette
-  */
+  // Vista Blue
   --color-vista-blue-50: #f1f6fc;
   --color-vista-blue-100: #e5effa;
   --color-vista-blue-200: #d0e1f5;
@@ -35,9 +31,7 @@ Customized for brunopulis/personal-site
   --color-vista-blue-900: #3c4873;
   --color-vista-blue-950: #232943;
 
-  /*
-  Errie Black palette
-  */
+  // Errie Black palette
   --color-errie-black-50: #fafafa;
   --color-errie-black-100: #f3f6f6;
   --color-errie-black-200: #e2e9e9;
@@ -50,9 +44,7 @@ Customized for brunopulis/personal-site
   --color-errie-black-900: #171e1e;
   --color-errie-black-950: #080c0c;
 
-  /*
-  Light Silver palette
-  */
+  // Light Silver palette
   --color-light-silver-50: #fafafa;
   --color-light-silver-100: #f5f5f5;
   --color-light-silver-200: #e6e6e6;
@@ -135,11 +127,11 @@ DARK MODE
     --color-text: var(--color-light-silver-300);
     --color-text-subtle: var(--color-light-silver-400);
     --color-text-invert: var(--color-errie-black-950);
-    --color-canvas: var(--color-errie-black-950);
+    --color-canvas: var(--color-errie-black-900);
     --color-surface: var(--color-errie-black-900);
     --color-surface-raised: var(--color-errie-black-800);
     --color-border: var(--color-light-silver-300);
-    --color-brand: var(--color-blood-red-400);
+    --color-brand: var(--color-vista-blue-500);
     --color-accent: var(--color-vista-blue-400);
     --color-highlight: var(--color-vista-blue-900);
     --text-decoration-color: currentColor;
