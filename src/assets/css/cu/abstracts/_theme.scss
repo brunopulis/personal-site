@@ -29,7 +29,7 @@ Customized for brunopulis/personal-site
   --color-vista-blue-300: #b4cced;
   --color-vista-blue-400: #96b1e3;
   --color-vista-blue-500: #849cdb;
-  --color-vista-blue-600: #6176ca;
+  --color-vista-blue-600: #5468c4;
   --color-vista-blue-700: #5162b1;
   --color-vista-blue-800: #44538f;
   --color-vista-blue-900: #3c4873;
@@ -69,7 +69,7 @@ Customized for brunopulis/personal-site
   Semantic color tokens
   */
   --color-text: var(--color-errie-black-950);
-  --color-text-subtle: var(--color-errie-black-500);
+  --color-text-subtle: var(--color-errie-black-600);
   --color-text-invert: var(--color-light-silver-50);
   --color-canvas: var(--color-light-silver-50);
   --color-surface: var(--color-light-silver-100);
@@ -133,7 +133,7 @@ DARK MODE
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: var(--color-light-silver-300);
-    --color-text-subtle: var(--color-light-silver-500);
+    --color-text-subtle: var(--color-light-silver-400);
     --color-text-invert: var(--color-errie-black-950);
     --color-canvas: var(--color-errie-black-950);
     --color-surface: var(--color-errie-black-900);

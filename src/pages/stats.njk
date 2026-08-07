@@ -6,29 +6,29 @@ permalink: /stats/
 
 {% set stats = siteStats %}
 <section class="region flow" style="--region-space: var(--space-2xl); --flow-space: var(--space-m)">
-  <h2 class="p-name">Estatísticas Gerais</h2>
+  <h1 class="p-name">Estatísticas Gerais</h1>
   <dl class="grid" style="--grid-min-item-size: 20rem; --gutter: var(--space-s)">
-    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+    <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Total de posts</dt>
       <dd class="font-bold text-3xl">{{ stats.totalPosts }}</dd>
     </div>
-    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+    <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Total de newsletters</dt>
       <dd class="font-bold text-3xl">{{ stats.totalNewsletters }}</dd>
     </div>
-    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+    <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Total de palavras</dt>
       <dd class="font-bold text-3xl">{{ stats.totalWords | formatNumber }}</dd>
     </div>
-    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+    <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Média de palavras por post</dt>
       <dd class="font-bold text-3xl">{{ stats.averageWordsPerPost }}</dd>
     </div>
-    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+    <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Total de tags</dt>
       <dd class="font-bold text-3xl">{{ stats.totalTags }}</dd>
     </div>
-    <div class="callout" style="background-color: var(--color-light-silver-100); border-style: solid;">
+    <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Livros lidos</dt>
       <dd class="font-bold text-3xl">{{ stats.totalBooks }}</dd>
     </div>
@@ -41,7 +41,7 @@ permalink: /stats/
     {% for year in stats.yearsSorted %}
       <li class="py-2 border-b repel" style="--stroke-color: var(--color-light-silver-200);">
         <span class="font-bold">{{ year }}</span>
-        <span class="font-bold text-blood-red-950">
+        <span class="font-bold text-brand">
           {{ stats.postsByYear[year] }}
         </span>
       </li>

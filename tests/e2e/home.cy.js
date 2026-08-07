@@ -1,10 +1,15 @@
 describe('Home page', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.injectAxe();
   });
 
   it('loads successfully', () => {
     cy.contains('Bruno Pulis').should('be.visible');
+  });
+
+  it('No A11Y issues', () => {
+    cy.checkA11y();
   });
 
   it('has working navigation', () => {

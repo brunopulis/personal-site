@@ -10,14 +10,14 @@ title: Notas
 
 <div class="h-feed">
   <h1 class="p-name">Notas</h1>
-  <a class="visually-hidden u-url" href="{{ site.url }}/notes/"></a>
+  <a class="visually-hidden u-url" href="{{ site.url }}/notes/" aria-label="Notas"></a>
   <p>
     Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
   </p>
 
   <section class="flow" style="--flow-space: var(--space-l)">
     {% for note in notes %}
-      <article class="callout flow h-entry" style="background-color: var(--color-light-silver-100); border-color: var(--color-light-silver-100); border-style: solid; --flow-space: var(--space-s);">
+      <article class="callout flow h-entry" style="background-color: var(--color-surface); border-color: var(--color-surface-raised); border-style: solid; --flow-space: var(--space-s);">
         <time class="meta dt-published" datetime="{{ note.date | htmlDateString }}">
           {{ note.date | readableDate }}
         </time>
