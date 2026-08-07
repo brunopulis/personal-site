@@ -1,159 +1,82 @@
 ---
-layout: base.njk
+layout: page
 permalink: '/colophon/'
 title: Colophon
 ---
 
-# Colophon
+Uma breve página sobre a criação deste site.
 
-A short "how it's made" page for this site.
-How this site is built
+## Como este site é construído
 
-This website is currently built with 🎈 Eleventy (11ty) v3.1.5, a wonderful static site generator that prioritizes speed and simplicity. The domain brennan.day is registered on Porkbun and hosted on Netlify with automatic HTTPS via Let's Encrypt. The site uses Deflect.ca nameservers for enhanced DDoS protection and digital security.
+Este site é construído com [Eleventy](https://www.11ty.dev/), um excelente gerador de sites estáticos que prioriza velocidade e simplicidade.
 
-The CSS is custom-built with a Gruvbox-inspired colour scheme and no external frameworks, prioritizing performance and maintainability. The typefaces* use modern font stacks from Modern Font Stacks: Geometric Humanist (Avenir, Montserrat, Corbel) for headings, Old Style (Iowan Old Style, Palatino Linotype) for body text, and Monospace Code (Cascadia Code, Source Code Pro, Menlo) for code and metadata. These system fonts eliminate external dependencies and improve page load performance.
+O domínio brunopulis.com está registrado na Godaddy e hospedado na Vercel, com HTTPS automático via _Let’s Encrypt_.
 
-The site features the Tomatic cursor set by JefTriforce, available at RW-Designer. These cute, fat cursors are licensed under Creative Commons - Attribution + Noncommercial.
+O CSS foi desenvolvido sob medida, com um esquema de cores inspirado no Gruvbox e sem frameworks externos, priorizando desempenho e facilidade de manutenção. As fontes* utilizam as pilhas modernas do projeto Modern Font Stacks: _Geometric Humanist_ (Avenir, Montserrat, Corbel) para títulos, _Old Style_ (Iowan Old Style, Palatino Linotype) para o corpo do texto e _Monospace Code_ (Cascadia Code, Source Code Pro, Menlo) para códigos e metadados. Essas fontes do sistema eliminam dependências externas e melhoram o desempenho de carregamento da página.
 
-The site's 88x31 button was created using the Button Generator from Ritual.
+O site utiliza o conjunto de cursores "Tomatic", criado por JefTriforce e disponível no RW-Designer. Esses cursores, com visual arredondado e traços mais grossos, estão licenciados sob a licença Creative Commons - Atribuição + Não Comercial.
 
-Drafts are usually written first as Markdown files in 750 Words, a practice of mine since September 2011. Other times, I write in Bear for note-taking and idea capture.
+Os rascunhos são geralmente escritos primeiro como arquivos Markdown no 750 Words, uma prática que mantenho desde setembro de 2011. Em outras ocasiões, escrevo no Bear para fazer anotações e registrar ideias.
 
-Content is then transferred to the local git repository on GitLab, with changes saved using git. Development and formatting done in Sublime Text 4.
+O conteúdo é então transferido para o repositório Git local no GitLab, com as alterações salvas utilizando o Git. Desenvolvimento e formatação realizados no Sublime Text 4.
 
-Tech stack for brennan.day:
+## Stack tecnológica do brunopulis.com
 
-    Static Site Generator: Eleventy (11ty) v3.1.5
-    Template Engine: Nunjucks for layouts and partials
-    Markdown: Content written in Markdown with YAML front matter
-    Styling: Custom CSS (Gruvbox-inspired color scheme) with no framework dependencies
-    Search: Pagefind for static, client-side search
-    Syntax Highlighting: @11ty/eleventy-plugin-syntaxhighlight
-    RSS/JSON Feeds: @11ty/eleventy-plugin-rss for RSS/Atom/JSON feeds
-    Math Rendering: @vscode/markdown-it-katex for LaTeX equations
-    Emoji Support: markdown-it-emoji for emoji shortcodes
-    Footnotes: markdown-it-footnote for standard markdown footnotes
-    Diagrams: Mermaid.js for flowcharts and diagrams
-    Like Button: iine for post engagement tracking
-    Hosting: Netlify with continuous deployment
-    DNS Security: Deflect.ca nameservers for DDoS protection
-    Version Control: Git + GitLab
+- Gerador de sites estáticos: Eleventy (11ty) v3.1.5
+- Motor de templates: Nunjucks para layouts e parciais
+- Markdown: Conteúdo escrito em Markdown com _front matter_ em YAML
+- Estilização: CSS personalizado (esquema de cores inspirado no Gruvbox) sem dependências de frameworks
+- Busca: Pagefind para busca estática no lado do cliente (_client-side_)
+- Realce de sintaxe: @11ty/eleventy-plugin-syntaxhighlight
+- Feeds RSS/JSON: @11ty/eleventy-plugin-rss para feeds RSS/Atom/JSON
+- Renderização matemática: @vscode/markdown-it-katex para equações LaTeX
+- Suporte a emojis: markdown-it-emoji para _shortcodes_ de emojis
+- Notas de rodapé: markdown-it-footnote para notas de rodapé padrão Markdown
+- Diagramas: Mermaid.js para fluxogramas e diagramas
+- Botão de curtida: iine para rastreamento de engajamento nas postagens
+- Hospedagem: Netlify com implantação contínua (_continuous deployment_)
+- Segurança de DNS: Servidores de nomes (nameservers) da Deflect.ca para proteção contra DDoS
+- Controle de versão: Git + GitHub
 
-Digital Security & Resilience
+## Segurança Digital e Resiliência
 
-This site uses Deflect.ca for DNS management and DDoS protection. Deflect is a Canadian social enterprise by eQualitie that provides free DDoS mitigation and website security services to civil society organizations, independent media, and human rights groups worldwide. Founded in 2011, Deflect protects organizations facing digital threats and censorship, supporting approximately 2% of the global internet population annually. Their work has defended sites like Black Lives Matter, Ukrainian independent media, and countless human rights organizations against cyber attacks.
-Enhanced Markdown Capabilities
+Este site utiliza a Deflect.ca para gerenciamento de DNS e proteção contra DDoS. A Deflect é uma empresa social canadense da eQualitie que fornece serviços gratuitos de mitigação de DDoS e segurança de sites para organizações da sociedade civil, mídia independente e grupos de direitos humanos em todo o mundo. Fundada em 2011, a Deflect protege organizações que enfrentam ameaças digitais e censura, apoiando aproximadamente 2% da população global da internet anualmente. Seu trabalho já defendeu sites como o Black Lives Matter, veículos de mídia independentes da Ucrânia e inúmeras organizações de direitos humanos contra ataques cibernéticos.
+Recursos Avançados de Markdown
 
-The site supports extended markdown features for rich content creation:
+O site suporta recursos estendidos de Markdown para a criação de conteúdo rico:
 
-    Mathematical expressions via KaTeX (inline $ and block $$ delimiters)
-    Emoji shortcodes that automatically convert to emoji characters
-    Standard markdown footnotes with proper styling and backlinks
-    Mermaid diagrams for visual representations of processes and relationships
-    Custom CSS classes for styled components (alerts, buttons, color utilities)
+Expressões matemáticas via KaTeX (delimitadores `$` em linha e `$$` em bloco)
+_Shortcodes_ de emojis que são convertidos automaticamente em caracteres de emoji
+Notas de rodapé padrão Markdown com estilização adequada e _backlinks_
+Diagramas Mermaid para representações visuais de processos e relacionamentos
+Classes CSS personalizadas para componentes estilizados (alertas, botões, utilitários de cores)
 
-These features enable technical writing, academic content, and expressive formatting while maintaining the simplicity of plain text authoring. See the style guide for a complete demonstration of all markdown capabilities.
-IndieWeb Features
+Esses recursos possibilitam a escrita técnica, a produção de conteúdo acadêmico e uma formatação expressiva, mantendo a simplicidade da criação de conteúdo em texto simples. Consulte o guia de estilo para uma demonstração completa de todos os recursos de Markdown. Recursos IndieWeb
 
-This site follows IndieWeb principles:
+Este site segue os princípios da IndieWeb:
 
-    Microformats2: Proper h-card, h-entry, and h-feed markup for machine-readable content
-    Webmentions: Configured with webmention.io for receiving interactions
-    POSSE: Publish (Own Site, Syndicate Elsewhere) - canonical content lives here first
-    IndieAuth: 20+ rel-me verification links establishing identity across the web
-    WebSub: Hub and self links configured for instant feed push notifications to subscribers
-    RSS/Atom/JSON Feeds: Multiple feed formats at /feed.xml and /feed.json
-    Semantic HTML: Proper landmarks, ARIA labels, and accessibility features
+Microformats2: Marcação adequada de h-card, h-entry e h-feed para conteúdo legível por máquinas
+Webmentions: Configurado com webmention.io para receber interações
+POSSE: Publicar (Site Próprio, Distribuir em Outros Lugares) – o conteúdo canônico reside aqui primeiro
+IndieAuth: Mais de 20 links de verificação `rel-me` estabelecendo identidade em toda a web
+WebSub: Links de hub e _self_ configurados para notificações _push_ instantâneas de feed aos assinantes
+Feeds RSS/Atom/JSON: Múltiplos formatos de feed em `/feed.xml` e `/feed.json`
+HTML Semântico: Marcos (_landmarks_), rótulos ARIA e recursos de acessibilidade adequados
 
-All 9 of 9 key IndieWeb building blocks are implemented, as verified by an IndieWeb checker.
-Principles
+Todos os 9 componentes fundamentais da IndieWeb foram implementados, conforme verificado por uma ferramenta de validação IndieWeb.
+Princípios
 
-    Plain text survives. Markdown + git keeps the work portable and future-proof.
-    Performance matters. Shipping less is a form of respect. Target: 95+ Lighthouse scores.
-    Accessibility is non-negotiable. Sites that work for people, not screens. WCAG 2.1 AA compliance.
-    Progressive enhancement. Start with what works everywhere, enhance from there.
-    Own your data. Canonical content on my domain, syndicated elsewhere as desired.
-    Build in the open. Source code available on GitLab, documented for others to learn from.
+Texto simples perdura. Markdown + git mantêm o trabalho portátil e preparado para o futuro.
+Desempenho importa. Enviar menos dados é uma forma de respeito. Meta: pontuação acima de 95 no Lighthouse.
+Acessibilidade é inegociável. Sites feitos para pessoas, não para telas. Conformidade com WCAG 2.1 AA.
+Aprimoramento progressivo. Comece com o que funciona em toda parte e aprimore a partir daí.
+Seja dono dos seus dados. Conteúdo canônico no meu domínio, distribuído em outros lugares conforme desejado.
+Construa de forma aberta. Código-fonte disponível no GitLab e documentado para que outros possam aprender.
 
-Current Site Statistics
+## Estatísticas Atuais do Site
 
-    Build time: ~4.6 seconds (including search indexing)
-    Pages generated: 425
-    Blog posts: 185+ and growing
-    Static pages: 45+
-    Tag pages: 80+ with h-feed markup
-    Search index: 30,335 words across 422 pages
-    rel-me links: 20+ verified profiles across the web
-
-Performance Optimizations
-
-The site has been optimized for faster builds and better development experience:
-
-    Filter caching: lastModified batches all git queries into a single process at startup; assetHash caches MD5 results to avoid redundant disk reads — cutting cold-start time from 13.99s to under 3s
-    Disk-persistent git cache: Timestamp data is written to .cache/git-timestamps.json keyed by HEAD SHA, making repeated cold starts nearly free once the cache is warm
-    EleventyFetch for remote data: Guestbook and webmention fetches are cached to disk for 6 hours, skipping live network requests on successive builds
-    Modular config: .eleventy.js refactored from an 866-line monolith into four focused modules (config/filters.js, config/shortcodes.js, config/collections.js, config/markdown.js) — easier to read, easier to extend
-    Incremental builds: Only rebuilds changed files during development
-
-See I Made My Eleventy Build 5× Faster for build-time benchmarks and Cleaning House for the config refactor.
-Operational Notes
-
-These details are mostly for future-me (or anyone curious enough to poke at the source).
-Commit Conventions
-
-All commits follow type: description in lowercase, imperative tense. The types are tailored to a personal blog so the changelog is readable at a glance. Each type has a clear, non-overlapping job:
-Type 	Purpose
-post: 	New essay, blog post, or other published written content
-edit: 	Corrections, revisions, or expansions to existing written content
-update: 	Routine data refreshes like comments, stats, now page, friends list
-design: 	Visual, layout, or CSS changes
-build: 	Site infrastructure, config, tooling, or dependency changes
-fix: 	Code bugs only; prose corrections use edit: instead
-ci: 	CI/CD pipeline changes (GitLab CI, Netlify config)
-a11y: 	Accessibility improvements like ARIA, contrast, alt text, semantics
-perf: 	Performance improvements like build speed, asset size, caching
-refactor: 	Code restructuring without behaviour change
-revert: 	Undoing a previous commit
-
-The distinction between post: and edit: matters most: someone scanning the changelog can immediately see which days had new writing versus housekeeping. update: absorbs all the automated, timestamped noise (comment syncs, stats refreshes) without polluting either. fix: is reserved strictly for broken code.
-Local Development
-
-Prerequisites:
-
-    Node.js 18+ and npm
-
-Commands:
-
-npm install
-npm start              # Standard development server
-npm run start:fast     # Quieter development output
-npm run start:clean    # Start with clean cache
-
-The dev server runs at http://localhost:8081 with incremental builds enabled.
-
-To build the site:
-
-npm run build          # Production build
-npm run build:clean    # Clean build from scratch
-npm run build:perf     # Test build speed without writing files
-
-For debugging and performance profiling:
-
-npm run debug          # Verbose Eleventy output
-npm run debug:perf     # Performance profiling with timing
-
-Webmentions
-
-Webmentions are fetched from webmention.io at build time. The build expects a token:
-
-export WEBMENTION_IO_TOKEN=your_token_here
-
-Deployment
-
-Hosting is on Netlify with continuous deployment from GitLab.
-
-Build settings:
-
-    Build command: npm run build
-    Publish directory: _site
-
+- Tempo de construção: ~4,6 segundos (incluindo indexação de busca)
+- Páginas geradas: 425
+- Posts no blog: Mais de 185 e aumentando
+- Páginas estáticas: Mais de 45
+- Páginas de tags: Mais de 80 com h-feed
