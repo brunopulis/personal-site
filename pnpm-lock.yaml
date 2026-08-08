@@ -58,11 +58,11 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(postcss@8.5.26)
       cypress:
-        specifier: ^15.18.1
-        version: 15.18.1
+        specifier: ^15.19.0
+        version: 15.19.0
       cypress-axe:
         specifier: ^1.7.0
-        version: 1.7.0(axe-core@4.13.0)(cypress@15.18.1)
+        version: 1.7.0(axe-core@4.13.0)(cypress@15.19.0)
       dayjs:
         specifier: ^1.11.21
         version: 1.11.21
@@ -1454,8 +1454,8 @@ packages:
       axe-core: ^3 || ^4
       cypress: ^10 || ^11 || ^12 || ^13 || ^14 || ^15
 
-  cypress@15.18.1:
-    resolution: {integrity: sha512-JtkTVtUE2lvLYgZCaug+Uai0H9IqsJirlBO49c87QwG0bJUGvAUVBz1EJve0b0oaYP244Ew9M0BkrHpcqkYxmw==}
+  cypress@15.19.0:
+    resolution: {integrity: sha512-kjy1u3SWlMRWS5qffH3U+bXx1PqPP7qwhIzEY3UtERcW2r/8zy5uk6uSwa75pYXJyYFVP1SO8mAn/avZUvUbfg==}
     engines: {node: ^20.1.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
 
@@ -2400,8 +2400,8 @@ packages:
       '@types/markdown-it': '*'
       markdown-it: '*'
 
-  markdown-it-attrs@5.0.1:
-    resolution: {integrity: sha512-dTP49/FLERwbgqmfIG5LwnC99qecIJYalKQbl3pY+7Hajk+Z+cazeEZaKwofpM9KFxvfRVF0UN9GYxKKAakfNg==}
+  markdown-it-attrs@5.0.0:
+    resolution: {integrity: sha512-7Wvp3Fc1YsHsj1oRKli1DGAMyGhozldtU99wEl4plc6OBsv1WZB+zT3Lgm1/49rVMvXWiYXbUU8rz3X6VVGKaQ==}
     engines: {node: '>=6'}
     peerDependencies:
       markdown-it: '>= 9.0.0'
@@ -3304,9 +3304,9 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  systeminformation@5.31.16:
-    resolution: {integrity: sha512-37NsFaeaqwYxanLgdJAGWj8OXIRgvSBsDXGhlC0uUoHyl9nf4HrNsZjqtQ9Gc99bj9FQpffzYccPVuQ6gpjfqg==}
-    engines: {node: '>=8.0.0'}
+  systeminformation@5.33.1:
+    resolution: {integrity: sha512-DEN6ICHk3Tk0Uf/hrAHh7xlt7iL5CJFBtPZinA0H62DrGG/KPKqq/Nzj6lCXPS4Ay/sf/14zNnk9LpqKzBIc+w==}
+    engines: {node: '>=10.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
 
@@ -4769,12 +4769,12 @@ snapshots:
     dependencies:
       css-tree: 2.2.1
 
-  cypress-axe@1.7.0(axe-core@4.13.0)(cypress@15.18.1):
+  cypress-axe@1.7.0(axe-core@4.13.0)(cypress@15.19.0):
     dependencies:
       axe-core: 4.13.0
-      cypress: 15.18.1
+      cypress: 15.19.0
 
-  cypress@15.18.1:
+  cypress@15.19.0:
     dependencies:
       '@cypress/request': 4.0.1
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
@@ -4809,7 +4809,7 @@ snapshots:
       proxy-from-env: 1.0.0
       request-progress: 3.0.0
       supports-color: 8.1.1
-      systeminformation: 5.31.16
+      systeminformation: 5.33.1
       tmp: 0.2.7
       tree-kill: 1.2.2
       tslib: 1.14.1
@@ -5913,6 +5913,8 @@ snapshots:
 
   nanoid@3.3.17: {}
 
+  nanoid@3.3.17: {}
+
   nanoid@4.0.2: {}
 
   nice-try@1.0.5: {}
@@ -6256,6 +6258,12 @@ snapshots:
       postcss-selector-parser: 7.1.4
 
   postcss-value-parser@4.2.0: {}
+
+  postcss@8.5.26:
+    dependencies:
+      nanoid: 3.3.17
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
 
   postcss@8.5.26:
     dependencies:
@@ -6802,7 +6810,7 @@ snapshots:
       picocolors: 1.1.1
       sax: 1.6.0
 
-  systeminformation@5.31.16: {}
+  systeminformation@5.33.1: {}
 
   terser@5.49.0:
     dependencies:
