@@ -1,0 +1,239 @@
+/*
+HOME — “a prova”
+
+The homepage is set like a proof sheet from a quiet study: ink on
+unbleached linen, with the proofreader's red pencil marking structure
+(section dashes, hover underline) instead of decorating words.
+*/
+
+/* ---------- Hero ---------- */
+
+.home-hero {
+  position: relative;
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+}
+
+.home-greeting {
+  margin-block-start: var(--space-s-m);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: clamp(2.5rem, 1.1rem + 5.4vw, 4.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.home-lede {
+  margin-block-start: var(--space-l);
+  max-width: var(--home-lede-measure);
+}
+
+.home-lede-copy {
+  font-size: var(--font-size-lede);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.home-follow {
+  margin-block-start: var(--space-s);
+  font-size: var(--font-size-meta);
+  color: var(--color-ink-soft);
+}
+
+.home-follow a {
+  color: var(--color-ink);
+}
+
+/* The dotted rule that closes the opening page. */
+.home-hero::after {
+  content: '';
+  display: block;
+  margin-block-start: clamp(3rem, 6vw, 5rem);
+  border-block-start: 1px dotted var(--color-ink-soft);
+  opacity: 0.55;
+}
+
+/* ---------- Sections ---------- */
+
+.home-section {
+  margin-block-start: clamp(3.5rem, 7vw, 6rem);
+}
+
+.home-section-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs-s);
+}
+
+/* The red pencil marks the structure, not the words. */
+.home-section-title::before {
+  content: '——';
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-proof);
+}
+
+/* ---------- Room index ---------- */
+
+.home-index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-block-start: var(--space-s-m);
+}
+
+.home-index-row {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto auto;
+  column-gap: var(--space-s);
+  row-gap: 0.15rem;
+  align-items: baseline;
+  padding-block: var(--space-s-m);
+  border-block-start: 1px solid var(--color-rule);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.home-index-list li:last-child .home-index-row {
+  border-block-end: 1px solid var(--color-rule);
+}
+
+.home-index-name {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-m);
+  color: var(--color-ink);
+}
+
+.home-index-desc {
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+/* The stock count — inventory in the margin, quiet as data. */
+.home-index-count {
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-soft);
+}
+
+.home-index-arrow {
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+  transition: transform 0.2s ease;
+}
+
+.home-index-row:hover .home-index-name,
+.home-index-row:focus-visible .home-index-name {
+  text-decoration: underline;
+  text-decoration-color: var(--color-proof);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+.home-index-row:hover .home-index-arrow,
+.home-index-row:focus-visible .home-index-arrow {
+  transform: translateX(4px);
+}
+
+/* ---------- Recent posts ---------- */
+
+.home-posts {
+  margin-block-start: var(--space-s-m);
+}
+
+.home-post {
+  padding-block: var(--space-s-m);
+  border-block-start: 1px solid var(--color-rule);
+}
+
+.home-post:last-child {
+  border-block-end: 1px solid var(--color-rule);
+}
+
+.home-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em var(--space-s);
+  align-items: baseline;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.home-post-meta a {
+  color: var(--color-ink-soft);
+}
+
+.home-post-title {
+  margin-block-start: var(--space-xs-s);
+}
+
+.home-post-title a {
+  color: var(--color-ink);
+}
+
+.home-post-summary {
+  margin-block-start: var(--space-2xs);
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-meta);
+  max-width: var(--measure-longform);
+}
+
+.home-more {
+  display: inline-block;
+  margin-block-start: var(--space-s-m);
+}
+
+/* ---------- Motion: one orchestrated moment ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero > *,
+  .home-index-list li {
+    animation: home-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .home-greeting {
+    animation-delay: 0.1s;
+  }
+
+  .home-lede {
+    animation-delay: 0.2s;
+  }
+
+  .home-index-list li:nth-child(1) {
+    animation-delay: 0.25s;
+  }
+
+  .home-index-list li:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .home-index-list li:nth-child(3) {
+    animation-delay: 0.35s;
+  }
+
+  .home-index-list li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  .home-index-list li:nth-child(5) {
+    animation-delay: 0.45s;
+  }
+
+  .home-index-list li:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes home-rise {
+    from {
+      transform: translateY(10px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}

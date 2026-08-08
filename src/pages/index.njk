@@ -4,40 +4,90 @@ permalink: '/'
 title: 'Página inicial'
 ---
 
-<div class="h-feed">
-  <section class="region" aria-labelledby="hero-title">
-    <h1 id="hero-title">{{ site.name }}</h1>
-    <p class="p-summary">
-      {{ site.description }} Descubra mais <a href="/about/">sobre mim</a>, <a href="/colophon/">esse site</a>, ou <a href="/uses/">as ferramentas que uso</a>.
-    </p>
-    <a class="visually-hidden u-url" href="{{ site.url }}/" aria-label="Início"></a>
+<div class="h-feed home">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="home-greeting">
+      Olá, eu sou o {{ site.name }}.
+    </h1>
+
+    <div class="home-lede">
+      <p class="p-summary home-lede-copy">{{ site.description }}</p>
+      <p class="home-follow">
+        Descubra mais <a href="/about/">sobre mim</a>,
+        <a href="/colophon/">este site</a> ou <a href="/uses/">as ferramentas que uso</a>.
+      </p>
+    </div>
   </section>
 
-  <section class="prose region flow" aria-labelledby="recent-posts-title">
-    <h2 id="recent-posts-title">Últimos artigos</h2>
+  <section class="home-section" aria-labelledby="index-title">
+    <h2 id="index-title" class="home-section-title">O que mora aqui</h2>
+
+    <ul class="home-index-list" role="list">
+      <li>
+        <a class="home-index-row" href="/blog/">
+          <span class="home-index-name">Artigos</span>
+          <span class="home-index-desc">reflexões longas, sem pressa</span>
+          <span class="home-index-count">{{ collections.posts | length }}<span class="visually-hidden"> artigos publicados</span></span>
+          <span class="home-index-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-index-row" href="/notes/">
+          <span class="home-index-name">Notas</span>
+          <span class="home-index-desc">registros curtos do cotidiano</span>
+          <span class="home-index-count">{{ collections.notes | length }}<span class="visually-hidden"> notas publicadas</span></span>
+          <span class="home-index-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-index-row" href="/poetry/">
+          <span class="home-index-name">Poesia</span>
+          <span class="home-index-desc">versos e silêncios</span>
+          <span class="home-index-count">{{ collections.poetry | length }}<span class="visually-hidden"> poemas publicados</span></span>
+          <span class="home-index-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-index-row" href="/bookshelf/">
+          <span class="home-index-name">Livros</span>
+          <span class="home-index-desc">a estante aberta</span>
+          <span class="home-index-count">{{ collections.books | length }}<span class="visually-hidden"> livros na estante</span></span>
+          <span class="home-index-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-index-row" href="/watching/">
+          <span class="home-index-name">Filmes e séries</span>
+          <span class="home-index-desc">o que assisti e ficou</span>
+          <span class="home-index-count">{{ collections.movies | length + collections.shows | length }}<span class="visually-hidden"> títulos assistidos</span></span>
+          <span class="home-index-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="home-index-row" href="/likes/">
+          <span class="home-index-name">Favoritos</span>
+          <span class="home-index-desc">links guardados com carinho</span>
+          <span class="home-index-count">{{ collections.likes | length }}<span class="visually-hidden"> favoritos guardados</span></span>
+          <span class="home-index-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="home-section" aria-labelledby="recent-posts-title">
+    <h2 id="recent-posts-title" class="home-section-title">Últimos artigos</h2>
 
     {% set recent = collections.posts %}
     {% if recent | length > 0 %}
-      <div class="flow" style="--flow-space: var(--space-xs)">
+      <div class="home-posts">
         {% for post in recent | head(5) %}
           {% set url = post.url or post.id %}
           {% set title = (post.data and post.data.title) or post.title %}
           {% set dateVal = post.date %}
           {% set description = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
           {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-          <article class="h-entry region flow" style="--region-space: var(--space-xs)">
-            <h3 class="p-name">
-              <a class="u-url" href="{{ url }}">
-                {{ title }}
-              </a>
-            </h3>
-            {% if description %}
-              <p class="p-summary">
-                {{ description }}
-              </p>
-            {% endif %}
-
-            <p class="meta">
+          <article class="home-post h-entry">
+            <p class="home-post-meta">
               {% if dateVal %}
                 <time class="dt-published" datetime="{{ dateVal | htmlDateString }}">
                   {{ dateVal | readableDate }}
@@ -46,25 +96,25 @@ title: 'Página inicial'
 
               {% if tags %}
                 {% for tag in tags %}
-                  <a
-                    class="p-category"
-                    href="/tags/{{ tag | slug }}/"
-                    >#{{ tag }}</a
-                  >
+                  <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
                 {% endfor %}
               {% endif %}
             </p>
+
+            <h3 class="home-post-title p-name">
+              <a class="u-url" href="{{ url }}">{{ title }}</a>
+            </h3>
+
+            {% if description %}
+              <p class="home-post-summary p-summary">{{ description }}</p>
+            {% endif %}
           </article>
-          {% if not loop.last %}<hr>{% endif %}
         {% endfor %}
       </div>
 
-      <div>
-        <a href="/blog/">
-          Ver todos os artigos
-        </a>
-      </div>
-      <hr>
+      <p class="home-more">
+        <a href="/blog/">Ver todos os artigos</a>
+      </p>
     {% else %}
       <div class="callout text-center">
         <p>Nenhum artigo ainda!</p>
