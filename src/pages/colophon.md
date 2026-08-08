@@ -12,20 +12,22 @@ Este site é construído com [Eleventy](https://www.11ty.dev/), um excelente ger
 
 O domínio brunopulis.com está registrado na Godaddy e hospedado na Vercel, com HTTPS automático via _Let’s Encrypt_.
 
-O CSS foi desenvolvido sob medida, com um esquema de cores inspirado no Gruvbox e sem frameworks externos, priorizando desempenho e facilidade de manutenção. As fontes* utilizam as pilhas modernas do projeto Modern Font Stacks: _Geometric Humanist_ (Avenir, Montserrat, Corbel) para títulos, _Old Style_ (Iowan Old Style, Palatino Linotype) para o corpo do texto e _Monospace Code_ (Cascadia Code, Source Code Pro, Menlo) para códigos e metadados. Essas fontes do sistema eliminam dependências externas e melhoram o desempenho de carregamento da página.
+O CSS foi desenvolvido sob medida, sem frameworks, priorizando desempenho e facilidade de manutenção. A identidade visual é a *prova tipográfica*: tinta sobre papel, com o vinho da marca — o único acento — reservado para marcar estrutura (os traços que antecedem títulos de seção e o sublinhado de foco no índice), em vez de decorar palavras. A paleta segue o guia de marca: cinza-claro `#d9d9d9`, preto `#171e1e` e vinho `#610404` (coral no modo escuro).
+
+A fonte primária é a *Source Sans 3*, escolhida pela alta legibilidade em ambientes digitais e pelo traço limpo e moderno, usada em títulos, textos e interfaces. A secundária é a *Noto Serif*, que empresta um toque editorial de formalidade e acolhimento às citações. Ambas são auto-hospedadas em WOFF2 (subset latin), eliminando dependências externas e melhorando o desempenho de carregamento.
 
 O site utiliza o conjunto de cursores "Tomatic", criado por JefTriforce e disponível no RW-Designer. Esses cursores, com visual arredondado e traços mais grossos, estão licenciados sob a licença Creative Commons - Atribuição + Não Comercial.
 
 Os rascunhos são geralmente escritos primeiro como arquivos Markdown no 750 Words, uma prática que mantenho desde setembro de 2011. Em outras ocasiões, escrevo no Bear para fazer anotações e registrar ideias.
 
-O conteúdo é então transferido para o repositório Git local no GitLab, com as alterações salvas utilizando o Git. Desenvolvimento e formatação realizados no Sublime Text 4.
+O conteúdo é então transferido para o repositório Git local no GitHub, com as alterações salvas utilizando o Git. Desenvolvimento e formatação realizados no Sublime Text 4.
 
 ## Stack tecnológica do brunopulis.com
 
 - Gerador de sites estáticos: Eleventy (11ty) v3.1.5
 - Motor de templates: Nunjucks para layouts e parciais
 - Markdown: Conteúdo escrito em Markdown com _front matter_ em YAML
-- Estilização: CSS personalizado (esquema de cores inspirado no Gruvbox) sem dependências de frameworks
+- Estilização: CSS personalizado (identidade *prova tipográfica* — paleta da marca: cinza-claro, preto e vinho) sem dependências de frameworks
 - Busca: Pagefind para busca estática no lado do cliente (_client-side_)
 - Realce de sintaxe: @11ty/eleventy-plugin-syntaxhighlight
 - Feeds RSS/JSON: @11ty/eleventy-plugin-rss para feeds RSS/Atom/JSON
@@ -34,7 +36,7 @@ O conteúdo é então transferido para o repositório Git local no GitLab, com a
 - Notas de rodapé: markdown-it-footnote para notas de rodapé padrão Markdown
 - Diagramas: Mermaid.js para fluxogramas e diagramas
 - Botão de curtida: iine para rastreamento de engajamento nas postagens
-- Hospedagem: Netlify com implantação contínua (_continuous deployment_)
+- Hospedagem: Vercel com implantação contínua (_continuous deployment_)
 - Segurança de DNS: Servidores de nomes (nameservers) da Deflect.ca para proteção contra DDoS
 - Controle de versão: Git + GitHub
 
@@ -71,7 +73,7 @@ Desempenho importa. Enviar menos dados é uma forma de respeito. Meta: pontuaç�
 Acessibilidade é inegociável. Sites feitos para pessoas, não para telas. Conformidade com WCAG 2.1 AA.
 Aprimoramento progressivo. Comece com o que funciona em toda parte e aprimore a partir daí.
 Seja dono dos seus dados. Conteúdo canônico no meu domínio, distribuído em outros lugares conforme desejado.
-Construa de forma aberta. Código-fonte disponível no GitLab e documentado para que outros possam aprender.
+Construa de forma aberta. Código-fonte disponível no GitHub e documentado para que outros possam aprender.
 
 ## Estatísticas Atuais do Site
 
