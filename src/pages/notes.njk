@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: note
 pagination:
   data: collections.notes
   size: 10
@@ -8,12 +8,9 @@ permalink: '/notes/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumb
 title: Notas
 ---
 
+<p>Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.</p>
 <div class="h-feed">
-  <h1 class="p-name">Notas</h1>
-  <a class="visually-hidden u-url" href="{{ site.url }}/notes/" aria-label="Notas"></a>
-  <p>
-    Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
-  </p>
+
 
   <section class="flow" style="--flow-space: var(--space-l)">
     {% for note in notes %}

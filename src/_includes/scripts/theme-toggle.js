@@ -1,7 +1,7 @@
 const storageKey = 'theme-preference';
 const themeColors = {
-  dark: '{{ meta.themeLight }}',
-  light: '{{ meta.themeDark }}'
+  dark: '#171e1e',
+  light: '#d9d9d9'
 };
 
 const theme = {

@@ -4,7 +4,6 @@ Includes primitive tokens for color and semantic tokens.
 Customized for brunopulis/personal-site
 */
 :root {
-
   // Blood red
   --color-blood-red-50: #fff1f1;
   --color-blood-red-100: #ffdfdf;
@@ -57,24 +56,37 @@ Customized for brunopulis/personal-site
   --color-light-silver-900: #1a1a1a;
   --color-light-silver-950: #0b0b0b;
 
+  // Paper / Ink / Proof — the reading-room palette, mapped to the brand palette
+  --color-paper: #d9d9d9; /* brand cinza claro — neutral background */
+  --color-paper-raised: #e3e3e1; /* raised surface, slightly lighter */
+  --color-ink: #171e1e; /* brand preto */
+  --color-ink-soft: #565c5c; /* muted secondary ink (AA on paper) */
+  --color-proof: #610404; /* brand vinho — the single accent */
+  --color-proof-soft: #e9d8d5; /* pale wine tint */
+  --color-rule: #b9bcb2; /* hairline between entries */
+
   /*
   Semantic color tokens
   */
-  --color-text: var(--color-errie-black-950);
-  --color-text-subtle: var(--color-errie-black-600);
-  --color-text-invert: var(--color-light-silver-50);
-  --color-canvas: var(--color-light-silver-50);
-  --color-surface: var(--color-light-silver-100);
-  --color-surface-raised: var(--color-light-silver-200);
-  --color-border: var(--color-errie-black-950);
-  --color-brand: var(--color-blood-red-950);
-  --color-accent: var(--color-vista-blue-600);
-  --color-highlight: var(--color-vista-blue-300);
+  --color-text: var(--color-ink);
+  --color-text-subtle: var(--color-ink-soft);
+  --color-text-invert: var(--color-paper);
+  --color-canvas: var(--color-paper);
+  --color-surface: var(--color-paper-raised);
+  --color-surface-raised: var(--color-rule);
+  --color-border: var(--color-ink);
+  --color-brand: var(--color-ink);
+  --color-accent: var(--color-ink-soft);
+  --color-highlight: var(--color-proof-soft);
 
   /* Typography semantic tokens */
-  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-display: var(--font-base);
-  --font-accent: 'Menlo', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', 'Courier New', monospace;
+  --font-base:
+    'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-display:
+    'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Noto Serif', Georgia, 'Iowan Old Style', 'Times New Roman', serif;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --font-size-base: var(--step-0);
@@ -106,17 +118,17 @@ Customized for brunopulis/personal-site
   --focus-ring-offset: 2px;
   --focus-ring-style: dotted;
   --stroke-style: solid;
-  --stroke-width: .1rem;
+  --stroke-width: 0.1rem;
   --stroke-color: var(--color-border, currentColor);
   --radius: 0;
   --shadow: 0px 3px 7px rgba(0, 0, 0, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.025);
 
   /* Project-specific tokens */
-  --color-muted: var(--color-light-silver-500);
-  --color-link: var(--color-vista-blue-600);
-  --color-link-hover: var(--color-vista-blue-700);
-  --color-star: #f59e0b;
-  --color-star-empty: var(--color-light-silver-300);
+  --color-muted: var(--color-ink-soft);
+  --color-link: var(--color-ink);
+  --color-link-hover: var(--color-ink-soft);
+  --color-star: #d97706;
+  --color-star-empty: var(--color-rule);
 }
 
 /*
@@ -124,23 +136,31 @@ DARK MODE
 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: var(--color-light-silver-300);
-    --color-text-subtle: var(--color-light-silver-400);
-    --color-text-invert: var(--color-errie-black-950);
-    --color-canvas: var(--color-errie-black-900);
-    --color-surface: var(--color-errie-black-900);
-    --color-surface-raised: var(--color-errie-black-800);
-    --color-border: var(--color-light-silver-300);
-    --color-brand: var(--color-vista-blue-500);
-    --color-accent: var(--color-vista-blue-400);
-    --color-highlight: var(--color-vista-blue-900);
+    --color-paper: #171e1e; /* brand preto */
+    --color-paper-raised: #222626; /* raised surface, slightly lighter */
+    --color-ink: #d9d9d9; /* brand cinza — light text on dark */
+    --color-ink-soft: #a9aead; /* muted secondary ink (AA on preto) */
+    --color-proof: #ff8f7e; /* coral — brand support color on dark */
+    --color-proof-soft: #2c0000; /* brand maroon — wine tint */
+    --color-rule: #353a3a; /* hairline between entries */
+
+    --color-text: var(--color-ink);
+    --color-text-subtle: var(--color-ink-soft);
+    --color-text-invert: var(--color-paper);
+    --color-canvas: var(--color-paper);
+    --color-surface: var(--color-paper-raised);
+    --color-surface-raised: var(--color-rule);
+    --color-border: var(--color-ink);
+    --color-brand: var(--color-ink);
+    --color-accent: var(--color-ink-soft);
+    --color-highlight: var(--color-proof-soft);
     --text-decoration-color: currentColor;
     --focus-ring-color: currentColor;
     --stroke-color: currentColor;
-    --color-muted: var(--color-light-silver-400);
-    --color-link: var(--color-vista-blue-400);
-    --color-link-hover: var(--color-vista-blue-300);
-    --color-star: #facc15;
-    --color-star-empty: var(--color-errie-black-700);
+    --color-muted: var(--color-ink-soft);
+    --color-link: var(--color-ink);
+    --color-link-hover: var(--color-ink-soft);
+    --color-star: #fbbf24;
+    --color-star-empty: var(--color-rule);
   }
 }

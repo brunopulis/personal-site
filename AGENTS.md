@@ -3,7 +3,7 @@
 ## Stack
 
 - **Eleventy v3** (ESM, `"type": "module"`) — static site generator
-- **Tailwind CSS v4** — CSS-based config via `@import "tailwindcss"` + `@theme` in `src/assets/css/tailwind.css` (no `tailwind.config.js`)
+- **Custom SCSS** (cu.css-style, no framework) — `sass src/assets/css/app.scss → src/_includes/css/global.css`; tokens in `src/assets/css/abstracts/_theme.scss`
 - **Nunjucks** (.njk) templates + **WebC** components
 - **Vitest** for unit tests; **pa11y-ci** for a11y smoke tests
 - **Vercel** deployment — build command `npm run build`, output `_site/`
@@ -12,7 +12,7 @@
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Tailwind watch + Eleventy dev server (port 8080) in parallel |
+| `npm run dev` | `sass --watch` + Eleventy dev server (port 8080) in parallel |
 | `npm run build` | Full production build: `stats → css → parallel(icons,highlight,assets) → eleventy` |
 | `npm test` | `vitest run` (tests in `tests/**/*.test.js`) |
 | `npm run test:watch` | `vitest` (watch mode) |
@@ -34,7 +34,7 @@
 ## Quirks & Gotchas
 
 - **No ESLint** — only Prettier for formatting. Prettier config at `.prettierrc` (110 print width, single quotes, no trailing commas). Prettier **ignores** `.md` and `.njk` files (see `.prettierignore`).
-- **Tailwind v4 config is in CSS only** — do not look for `tailwind.config.js` (it does not exist). Theme tokens are in `src/assets/css/tailwind.css` with custom color palettes.
+- **CSS is SCSS, not Tailwind** — do not look for `tailwind.config.js` (it does not exist). Tokens are in `src/assets/css/abstracts/_theme.scss`. Never introduce Tailwind or utility classes.
 - **Build uses `npm-run-all`** — `build:stats` must run before Eleventy (generates `siteStats.json`). `cross-env ELEVENTY_ENV=production` is set for production builds.
 - **OG images**: SVG→JPEG conversion only runs during dev serve (`ELEVENTY_RUN_MODE === 'serve'`).
 - **Image transform plugin** auto-converts images to avif/webp/jpeg at 650/960/1400px widths (30-day cache).
@@ -42,6 +42,12 @@
 - **Content is in Portuguese** — site.json, pages, and error messages are in pt-BR.
 - **Guestbook API** stores data in `src/_data/guestbook.json` (committed file — data persists in git).
 - **No GitHub Actions workflows** currently configured (only Dependabot for npm updates).
+
+## Design
+
+- Brand source of truth: `docs/design.md` (brand guide — essence, palette, typography, voice). The site implements it with the **"a prova tipográfica"** art direction: brand palette (paper `#d9d9d9`, preto `#171e1e`, accent vinho `#610404` / coral `#ff8f7e` on dark), red marks only structural (section dashes, focus underline).
+- Before touching any UI/visual, load the project skill **`design`** (`.opencode/skill/design/SKILL.md`).
+- Type system: **Source Sans 3** (primary — body, headings, UI) + **Noto Serif** (secondary — only blockquotes). Two families, self-hosted, no mono.
 
 ## Testing Notes
 

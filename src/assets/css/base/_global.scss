@@ -6,9 +6,9 @@ project: https://cube.fyi/css.html
 */
 
 @media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -70,7 +70,7 @@ blockquote:not([class]) {
 hr {
   border: none;
   border-top: 2px dotted;
-} 
+}
 
 kbd {
   --stroke-color: var(--color-surface-raised);
@@ -80,14 +80,13 @@ kbd {
   border-width: var(--stroke-width);
   border-style: var(--stroke-style);
   border-color: var(--stroke-color);
-  font-family: var(--font-accent);
   font-size: 1rem;
-  padding: .115rem .25rem;
-  }
+  padding: 0.115rem 0.25rem;
+}
 
 figcaption {
   font-size: var(--font-size-meta);
-  margin-block-start: .5rem;
+  margin-block-start: 0.5rem;
   text-align: center;
 }
 
@@ -98,7 +97,7 @@ small {
 /* More generic elements */
 blockquote:not([class]) {
   border-left: solid 3px var(--color-text);
-  font-family: var(--font-display);
+  font-family: var(--font-accent);
   font-size: var(--font-size-lede);
   line-height: var(--line-height-base);
   padding-inline-start: var(--space-s);
@@ -162,14 +161,14 @@ a:hover {
 }
 
 /* Use naked variant to style links as regular text */
-a[data-variant="naked"] {
+a[data-variant='naked'] {
   color: var(--color-text);
   text-decoration: none;
 }
 
 /* Add underline when naked variant link state is hover or focus */
-a[data-variant="naked"]:hover,
-a[data-variant="naked"]:focus {
+a[data-variant='naked']:hover,
+a[data-variant='naked']:focus {
   background-color: unset;
   text-decoration-color: var(--text-decoration-color, currentColor);
   text-decoration-line: var(--text-decoration-line, underline);
@@ -185,7 +184,7 @@ when an element receives focus via the mouse. */
 
 /* Show focus styles on keyboard focus. */
 :focus-visible {
-  outline-color: var(--focus-ring-color,currentColor);
+  outline-color: var(--focus-ring-color, currentColor);
   outline-offset: var(--focus-ring-offset, 2px);
   outline-style: var(--focus-ring-style, solid);
   outline-width: var(--focus-ring-width, 2px);
@@ -217,6 +216,6 @@ mark,
 @media (prefers-color-scheme: dark) {
   img,
   picture {
-    filter: brightness(.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
   }
 }
