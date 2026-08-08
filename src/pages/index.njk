@@ -18,14 +18,14 @@ title: 'Página inicial'
 
     {% set recent = collections.posts %}
     {% if recent | length > 0 %}
-      <div class="flow" style="--flow-space: var(--space-s)">
+      <div class="flow" style="--flow-space: var(--space-xs)">
         {% for post in recent | head(5) %}
           {% set url = post.url or post.id %}
           {% set title = (post.data and post.data.title) or post.title %}
           {% set dateVal = post.date %}
           {% set description = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
           {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-          <article class="h-entry region flow" style="--region-space: var(--space-s)">
+          <article class="h-entry region flow" style="--region-space: var(--space-xs)">
             <h3 class="p-name">
               <a class="u-url" href="{{ url }}">
                 {{ title }}
@@ -64,6 +64,7 @@ title: 'Página inicial'
           Ver todos os artigos
         </a>
       </div>
+      <hr>
     {% else %}
       <div class="callout text-center">
         <p>Nenhum artigo ainda!</p>
