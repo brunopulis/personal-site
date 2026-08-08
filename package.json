@@ -67,7 +67,7 @@
     "fast-glob": "^3.3.3",
     "html-minifier-terser": "^7.2.0",
     "husky": "^9.1.7",
-    "js-yaml": "^5.2.2",
+    "js-yaml": "^5.2.3",
     "lint-staged": "^17.0.8",
     "luxon": "^3.7.2",
     "markdown-it": "^14.3.0",
