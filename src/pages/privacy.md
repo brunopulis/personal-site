@@ -9,7 +9,7 @@ Sua privacidade é importante. Este site foi construído para ser leve e respeit
 
 ## Analytics
 
-Este site utiliza [Umami](https://umami.is), uma ferramenta de análise focada em privacidade.
+Este site utiliza [Umami](https://cloud.umami.is/analytics/us/share/JWxWUgpWDJBQZcAi), uma ferramenta de análise focada em privacidade.
 
 - Não utiliza cookies
 - Não coleta dados pessoais
