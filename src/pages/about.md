@@ -2,9 +2,10 @@
 layout: page
 permalink: '/about/'
 title: Sobre mim
+description: 'Quem sou eu, como cheguei na tecnologia, o que eu faço e o que me guia'
 ---
 
-Essa página conta um pouco sobre o humano que criou isso e algumas informações extras sobre esse site.
+Sou Bruno Pulis, consultor e desenvolvedor focado em acessibilidade. Esta página conta como cheguei aqui e o que eu faço hoje.
 Nem sempre eu trabalhei com tecnologia. Em 2006, meu trabalho era simples: servir hambúrguer no Burger King.
 
 Hoje, meu trabalho é outro — mas continua sendo sobre pessoas.
@@ -24,7 +25,7 @@ Foi aí que entendi algo simples, mas fácil de ignorar: **tecnologia boa é que
 - Desenvolvo sites acessíveis;
 - Faço auditoria e remediação de sites e documentos.
 
-Se você precisa de algum desses serviços [acesse meu portfólio](https://brunopulis.dev.br)
+Se você precisa de algum desses serviços, [acesse meu portfólio](https://brunopulis.dev.br).
 
 ## Como cheguei aqui
 
@@ -43,11 +44,9 @@ Alguns projetos que tenho orgulho de ter feito:
 
 ## O que me guia
 
-Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo
-Para mim, criar uma web acessível não é apenas uma decisão técnica
-
-É uma expressão prática do chamado bíblico ao amor ao próximo. É garantir dignidade também no ambiente
-digital.
+Sou cristão, e minha fé molda a forma como eu enxergo o trabalho e o mundo.
+Para mim, criar uma web acessível não é apenas uma decisão técnica.
+É uma expressão prática do chamado bíblico ao amor ao próximo. É garantir dignidade também no ambiente digital.
 
 - Fé e trabalho juntos;
 - Inclusão acima de tudo;
@@ -56,8 +55,7 @@ digital.
 
 ## Fora da tela
 
-Minha vida é muito maior que minha profissão, a família é minha prioridade
-Por isso sou bastante rigoroso com meus horários e limites.
+Minha vida é muito maior que minha profissão. A família é minha prioridade — por isso sou bastante rigoroso com meus horários e limites.
 
 Sou um leitor compulsivo. Leio de tudo, mas especialmente:
 
