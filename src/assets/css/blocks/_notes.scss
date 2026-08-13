@@ -1,0 +1,142 @@
+/*
+NOTES — the annotated index
+
+A sibling of the blog index: each note is a ruled hairline whose
+date sits in the proof-sheet margin, baseline-aligned with the
+note's first line. The note text leads in ink; the tags follow in
+quiet ink-soft. The proof pencil stays on the two marks: the
+section dash on the page title and nothing else — the date link
+dims to ink-soft until hover.
+*/
+
+/* ---------- Header ---------- */
+
+.notes-header {
+  margin-block-end: var(--space-l);
+}
+
+/* The section mark — the red pencil flags the room, not the words. */
+.notes-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs-s);
+}
+
+.notes-title::before {
+  content: '——';
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-proof);
+}
+
+.notes-lede {
+  margin-block-start: var(--space-xs-s);
+  font-size: var(--font-size-lede);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* The folio — inventory in the margin, quiet as data. */
+.notes-count {
+  margin-block-start: var(--space-2xs);
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- The index ---------- */
+
+.notes-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.note-entry {
+  display: grid;
+  grid-template-columns: minmax(7rem, max-content) minmax(0, 1fr);
+  column-gap: var(--space-s);
+  row-gap: var(--space-2xs);
+  align-items: baseline;
+  padding-block: var(--space-s-m);
+  border-block-start: 1px solid var(--color-rule);
+}
+
+.notes-index li:last-child .note-entry {
+  border-block-end: 1px solid var(--color-rule);
+}
+
+/* The date in the margin — the spine of the index. */
+.note-date {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+/* The index mark — proof underline on hover/focus, as on the blog. */
+a.note-date:hover,
+a.note-date:focus-visible {
+  text-decoration-color: var(--color-proof);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+.note-content {
+  grid-column: 2;
+  margin: 0;
+  max-width: var(--measure-longform);
+}
+
+.note-entry-tags,
+.note-tags {
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.note-entry-tags {
+  grid-column: 2;
+}
+
+.note-entry-tags a,
+.note-tags a {
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Single note page ---------- */
+
+.note {
+  margin-block-start: var(--space-m);
+}
+
+.note .note-date {
+  margin-block-end: var(--space-2xs);
+}
+
+/* ---------- Mobile: the margin folds into the flow ---------- */
+
+@media (max-width: 47.99rem) {
+  .note-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .note-content,
+  .note-entry-tags {
+    grid-column: 1;
+  }
+
+  .note-date {
+    grid-row: 1;
+    margin-block-end: var(--space-3xs);
+  }
+}
+
+/* ---------- Pagination folio ---------- */
+
+.notes-folio {
+  font-variant-numeric: tabular-nums;
+}

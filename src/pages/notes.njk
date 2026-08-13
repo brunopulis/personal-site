@@ -1,5 +1,5 @@
 ---
-layout: note
+layout: base
 pagination:
   data: collections.notes
   size: 10
@@ -8,32 +8,55 @@ permalink: '/notes/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumb
 title: Notas
 ---
 
-<p>Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.</p>
 <div class="h-feed">
+  <header class="notes-header">
+    <h1 class="notes-title">Notas</h1>
+    <p class="notes-lede">
+      Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
+    </p>
+    <p class="notes-count">{{ collections.notes | length }} notas publicadas</p>
+  </header>
 
-
-  <section class="flow" style="--flow-space: var(--space-l)">
+  <ol class="notes-index" role="list">
     {% for note in notes %}
-      <article class="callout flow h-entry" style="background-color: var(--color-surface); border-color: var(--color-surface-raised); border-style: solid; --flow-space: var(--space-s);">
-        <time class="meta dt-published" datetime="{{ note.date | htmlDateString }}">
-          {{ note.date | readableDate }}
-        </time>
-
-        <div class="e-content prose">
-          {{ note.content | safe }}
-        </div>
-      </article>
+      {% set tags = ((note.data and note.data.tags) or note.tags or []) | reject('equalto', 'notes') | list %}
+      <li>
+        <article class="note-entry h-entry">
+          <a class="note-date u-url" href="{{ note.url }}">
+            <time class="dt-published" datetime="{{ note.date | htmlDateString }}">
+              {{ note.date | readableDate }}
+            </time>
+          </a>
+          <div class="note-content e-content prose">
+            {{ note.content | safe }}
+          </div>
+          {% if tags %}
+            <ul class="cluster note-entry-tags" role="list" style="--gutter: var(--space-2xs)">
+              {% for tag in tags %}
+                <li><a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </article>
+      </li>
     {% endfor %}
-  </section>
+  </ol>
 
-  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Pagination">
+  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Paginação">
     {% if pagination.href.previous %}
-      <a class="button" href="{{ pagination.href.previous }}">Anterior</a>
+      <a class="button" href="{{ pagination.href.previous }}" rel="prev">Anterior</a>
     {% else %}
-      <span></span>
+      <span class="button" aria-disabled="true">Anterior</span>
     {% endif %}
+
+    <span class="notes-folio">
+      Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages | length }}
+    </span>
+
     {% if pagination.href.next %}
-      <a class="button" href="{{ pagination.href.next }}">Próximo</a>
+      <a class="button" href="{{ pagination.href.next }}" rel="next">Próximo</a>
+    {% else %}
+      <span class="button" aria-disabled="true">Próximo</span>
     {% endif %}
   </nav>
 </div>
