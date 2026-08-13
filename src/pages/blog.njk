@@ -9,78 +9,83 @@ title: Blog
 ---
 
 <div class="h-feed">
-  <h1 class="p-name">Blog</h1>
-  <a class="visually-hidden u-url" href="{{ site.url }}/blog/" aria-label="Blog"></a>
-  <p>Artigos e conteúdos longos sobre diversas coisas.</p>
+  <header class="blog-header">
+    <h1 class="p-name blog-title">Blog</h1>
+    <a class="visually-hidden u-url" href="{{ site.url }}/blog/" aria-label="Blog"></a>
+    <p class="blog-lede">
+      Artigos e conteúdos longos sobre acessibilidade, desenvolvimento web e a vida por trás da tela.
+    </p>
+    <p class="blog-count">{{ collections.posts | length }} artigos publicados</p>
 
-  <div class="callout flow" style="background-color: var(--color-surface); border-color: var(--color-surface-raised); border-style: solid;">
-    <p class="cluster" style="--gutter: var(--space-2xs);">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true">
+    <div class="callout flow blog-rss">
+      <p class="cluster" style="--gutter: var(--space-2xs)">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M4 19a1 1 0 102 0 1 1 0 10-2 0"></path>
           <path d="M4 4a16 16 0 0116 16"></path>
           <path d="M4 11a9 9 0 019 9"></path>
-      </svg>
-      <a href="/feeds/blog/rss.xml">
-        Assine o meu feed de publicações ou acompanhe nesta página.
-      </a>
-    </p>
-  </div>
+        </svg>
+        <a href="/feeds/blog/rss.xml">
+          Assine o meu feed de publicações ou acompanhe nesta página.
+        </a>
+      </p>
+    </div>
+  </header>
 
-  <div class="flow" style="--flow-space: var(--space-l)" id="posts-list">
+  <ol class="blog-index" role="list">
     {% for post in posts %}
       {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-      {% set postCategory = (post.data and post.data.category) or '' %}
-      <article class="h-entry flow" style="--flow-space: var(--space-2xs)">
-        <h3 class="p-name">
-          <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-        </h3>
-        <time
-          class="meta dt-published"
-          datetime="{{ post.date | htmlDateString }}">
-          {{ post.date | readableDate }}
-        </time>
-        <p class="p-summary">
-          {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-        </p>
-        {% if tags %}
-          <div class="cluster" style="--gutter: var(--space-2xs)">
-            <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
-            <ul class="cluster" role="list" style="--gutter: var(--space-2xs)">
+      <li>
+        <article class="blog-entry h-entry">
+          <time
+            class="blog-date dt-published"
+            datetime="{{ post.date | htmlDateString }}">
+            {{ post.date | readableDate }}
+          </time>
+          <h3 class="blog-entry-title p-name">
+            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <p class="blog-entry-summary p-summary">
+            {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+          </p>
+          {% if tags %}
+            <ul class="cluster blog-entry-tags" role="list" style="--gutter: var(--space-2xs)">
               {% for tag in tags %}
                 <li>
-                  <a
-                    class="p-category"
-                    href="/tags/{{ tag | slug }}/"
-                    >#{{ tag }}</a
-                  >
+                  <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
                 </li>
               {% endfor %}
             </ul>
-          </div>
-        {% endif %}
-      </article>
-      {% if not loop.last %}<hr>{% endif %}
+          {% endif %}
+        </article>
+      </li>
     {% endfor %}
-  </div>
+  </ol>
 
-  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Pagination">
+  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Paginação">
     {% if pagination.href.previous %}
       <a class="button" href="{{ pagination.href.previous }}" rel="prev">Anterior</a>
     {% else %}
-      <span></span>
+      <span class="button" aria-disabled="true">Anterior</span>
     {% endif %}
+
+    <span class="meta blog-folio">
+      Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages | length }}
+    </span>
+
     {% if pagination.href.next %}
       <a class="button" href="{{ pagination.href.next }}" rel="next">Próximo</a>
+    {% else %}
+      <span class="button" aria-disabled="true">Próximo</span>
     {% endif %}
   </nav>
 </div>
