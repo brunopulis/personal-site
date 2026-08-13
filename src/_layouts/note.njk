@@ -1,14 +1,18 @@
 ---
-layout: page
+layout: base
 ---
 
 <a href="/notes/" class="cluster" style="--gutter: var(--space-2xs)">
   <span aria-hidden="true">←</span> Voltar para as notas
 </a>
 
-<article class="h-entry prose">
-  <header>
-    <p class="meta">
+<article class="h-entry region note" style="--region-space: var(--space-l)">
+  <h1 class="visually-hidden p-name" data-pagefind-meta="title">
+    {{ page.date | readableDate }}
+  </h1>
+
+  <header class="flow" style="--flow-space: var(--space-2xs)">
+    <p class="note-date">
       <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
         {{ page.date | readableDate }}
       </time>
@@ -20,8 +24,9 @@ layout: page
     {{ content | safe }}
   </div>
 
+  {% set tags = (tags or []) | reject('equalto', 'notes') | list %}
   {% if tags %}
-    <ul class="tag-list" data-variant="accent" role="list">
+    <ul class="cluster note-tags" role="list" style="--gutter: var(--space-2xs)">
       {% for tag in tags %}
         <li><a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a></li>
       {% endfor %}
