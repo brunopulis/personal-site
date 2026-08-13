@@ -51,7 +51,7 @@ generate: true
     <h2 id="recent-movies">
       <span aria-hidden="true">🍿</span> Filmes Recentes
     </h2>
-    <a href="/watching/movies/" class="text-vista-blue-500 text-sm">
+    <a href="/watching/movies/" class="text-sm" style="color: var(--color-link)">
       Ver todos <span class="visually-hidden">os filmes recentes</span>
     </a>
   </div>
@@ -69,8 +69,8 @@ generate: true
               >
             </div>
           {% else %}
-            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
-              <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
+            <div class="frame" style="--n: 7; --d: 10; background-color: var(--color-surface);">
+              <span class="font-bold text-brand text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
@@ -99,7 +99,7 @@ generate: true
     <h2 id="recent-shows">
       <span aria-hidden="true">📺</span> Séries Recentes
     </h2>
-    <a href="/watching/shows/" class="text-vista-blue-500 text-sm">
+    <a href="/watching/shows/" class="text-sm" style="color: var(--color-link)">
       Ver todas <span class="visually-hidden">as séries recentes</span>
     </a>
   </div>
@@ -117,8 +117,8 @@ generate: true
               >
             </div>
           {% else %}
-            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
-              <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
+            <div class="frame" style="--n: 7; --d: 10; background-color: var(--color-surface);">
+              <span class="font-bold text-brand text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
@@ -147,7 +147,7 @@ generate: true
     <h2 id="favorite-movies">
       <span aria-hidden="true">⭐</span> Filmes Favoritos
     </h2>
-    <a href="/watching/movies/" class="text-vista-blue-500 text-sm">
+    <a href="/watching/movies/" class="text-sm" style="color: var(--color-link)">
       Ver todos <span class="visually-hidden">os filmes favoritos</span>
     </a>
   </div>
@@ -165,8 +165,8 @@ generate: true
               >
             </div>
           {% else %}
-            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
-              <span class="font-bold text-white text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
+            <div class="frame" style="--n: 7; --d: 10; background-color: var(--color-surface);">
+              <span class="font-bold text-brand text-2xl">{{ movie.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
@@ -195,7 +195,7 @@ generate: true
     <h2 id="favorite-shows">
       <span aria-hidden="true">⭐</span> Séries Favoritas
     </h2>
-    <a href="/watching/shows/" class="text-vista-blue-500 text-sm">
+    <a href="/watching/shows/" class="text-sm" style="color: var(--color-link)">
       Ver todas <span class="visually-hidden">as séries favoritas</span>
     </a>
   </div>
@@ -213,8 +213,8 @@ generate: true
               >
             </div>
           {% else %}
-            <div class="frame" style="--n: 7; --d: 10; background: linear-gradient(to bottom right, var(--color-vista-blue-500), var(--color-blood-red-500));">
-              <span class="font-bold text-white text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
+            <div class="frame" style="--n: 7; --d: 10; background-color: var(--color-surface);">
+              <span class="font-bold text-brand text-2xl">{{ show.data.title | truncate(1, true, "") }}</span>
             </div>
           {% endif %}
           <div class="mt-2">
