@@ -28,7 +28,9 @@ title: 'Página inicial'
           <span class="home-index-name">Artigos</span>
           <span class="home-index-desc">reflexões longas, sem pressa</span>
           <span class="home-index-count">{{ collections.posts | length }}<span class="visually-hidden"> artigos publicados</span></span>
-          <span class="home-index-arrow" aria-hidden="true">→</span>
+          <span class="home-index-arrow" aria-hidden="true">
+            {% faIcon 'arrow-right', 'solid', '1em' %}
+          </span>
         </a>
       </li>
       <li>
@@ -36,7 +38,7 @@ title: 'Página inicial'
           <span class="home-index-name">Notas</span>
           <span class="home-index-desc">registros curtos do cotidiano</span>
           <span class="home-index-count">{{ collections.notes | length }}<span class="visually-hidden"> notas publicadas</span></span>
-          <span class="home-index-arrow" aria-hidden="true">→</span>
+          <span class="home-index-arrow" aria-hidden="true">{% faIcon 'arrow-right', 'solid', '1em' %}</span>
         </a>
       </li>
       <li>
@@ -44,7 +46,7 @@ title: 'Página inicial'
           <span class="home-index-name">Poesia</span>
           <span class="home-index-desc">versos e silêncios</span>
           <span class="home-index-count">{{ collections.poetry | length }}<span class="visually-hidden"> poemas publicados</span></span>
-          <span class="home-index-arrow" aria-hidden="true">→</span>
+          <span class="home-index-arrow" aria-hidden="true">{% faIcon 'arrow-right', 'solid', '1em' %}</span>
         </a>
       </li>
       <li>
@@ -52,7 +54,7 @@ title: 'Página inicial'
           <span class="home-index-name">Livros</span>
           <span class="home-index-desc">a estante aberta</span>
           <span class="home-index-count">{{ collections.books | length }}<span class="visually-hidden"> livros na estante</span></span>
-          <span class="home-index-arrow" aria-hidden="true">→</span>
+          <span class="home-index-arrow" aria-hidden="true">{% faIcon 'arrow-right', 'solid', '1em' %}</span>
         </a>
       </li>
       <li>
@@ -60,7 +62,7 @@ title: 'Página inicial'
           <span class="home-index-name">Filmes e séries</span>
           <span class="home-index-desc">o que assisti e ficou</span>
           <span class="home-index-count">{{ collections.movies | length + collections.shows | length }}<span class="visually-hidden"> títulos assistidos</span></span>
-          <span class="home-index-arrow" aria-hidden="true">→</span>
+          <span class="home-index-arrow" aria-hidden="true">{% faIcon 'arrow-right', 'solid', '1em' %}</span>
         </a>
       </li>
       <li>
@@ -68,7 +70,7 @@ title: 'Página inicial'
           <span class="home-index-name">Favoritos</span>
           <span class="home-index-desc">links guardados com carinho</span>
           <span class="home-index-count">{{ collections.likes | length }}<span class="visually-hidden"> favoritos guardados</span></span>
-          <span class="home-index-arrow" aria-hidden="true">→</span>
+          <span class="home-index-arrow" aria-hidden="true">{% faIcon 'arrow-right', 'solid', '1em' %}</span>
         </a>
       </li>
     </ul>
@@ -119,7 +121,7 @@ title: 'Página inicial'
       <div class="callout text-center">
         <p>Nenhum artigo ainda!</p>
         <p>
-          É aqui que surgirão textos reflexivos. Fiquem ligados! <span aria-hidden="true">📝</span>
+          É aqui que surgirão textos reflexivos. Fiquem ligados! {% faIcon 'pen', 'solid', '1em' %}
         </p>
       </div>
     {% endif %}

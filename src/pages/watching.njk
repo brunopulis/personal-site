@@ -40,7 +40,7 @@ permalink: /watching/
 <section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="recent-movies">
   <div class="cluster mb-6" style="--gutter: var(--space-xs)">
     <h2 id="recent-movies">
-      <span aria-hidden="true">🍿</span> Filmes Recentes
+      {% faIcon 'film', 'solid', '1em' %} Filmes Recentes
     </h2>
     <a href="/watching/movies/" class="text-sm" style="color: var(--color-link)">Ver todos →</a>
   </div>
@@ -73,7 +73,7 @@ permalink: /watching/
             {% if movie.data.rating %}
               <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
-                  {% if i <= movie.data.rating %}⭐{% endif %}
+                  {% if i <= movie.data.rating %}{% faIcon 'star', 'solid', '0.75em' %}{% endif %}
                 {% endfor %}
               </p>
             {% endif %}
@@ -92,7 +92,7 @@ permalink: /watching/
 <section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="shows-title">
   <div class="cluster mb-6" style="--gutter: var(--space-xs)">
     <h2 id="shows-title">
-      <span aria-hidden="true">📺</span> Séries Recentes
+      {% faIcon 'tv', 'solid', '1em' %} Séries Recentes
     </h2>
     <a href="/watching/shows/" class="text-sm" style="color: var(--color-link)">Ver todos →</a>
   </div>
@@ -122,7 +122,7 @@ permalink: /watching/
             {% if show.data.rating %}
               <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
-                  {% if i <= show.data.rating %}⭐{% endif %}
+                  {% if i <= show.data.rating %}{% faIcon 'star', 'solid', '0.75em' %}{% endif %}
                 {% endfor %}
               </p>
             {% endif %}
@@ -141,7 +141,7 @@ permalink: /watching/
 <section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="favorite-movies">
   <div class="cluster mb-6" style="--gutter: var(--space-xs)" id="favorite-movies">
     <h2>
-      <span aria-hidden="true">⭐</span> Filmes Favoritos
+      {% faIcon 'star', 'solid', '1em' %} Filmes Favoritos
     </h2>
   </div>
 
@@ -172,7 +172,7 @@ permalink: /watching/
             {% if movie.data.rating %}
               <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
-                  {% if i <= movie.data.rating %}⭐{% endif %}
+                  {% if i <= movie.data.rating %}{% faIcon 'star', 'solid', '0.75em' %}{% endif %}
                 {% endfor %}
               </p>
             {% endif %}
@@ -193,7 +193,7 @@ permalink: /watching/
 <section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="favorite-shows">
   <div class="cluster mb-6" style="--gutter: var(--space-xs)">
     <h2 id="favorite-shows">
-      <span aria-hidden="true">⭐</span> Séries Favoritas
+      {% faIcon 'star', 'solid', '1em' %} Séries Favoritas
     </h2>
   </div>
 
@@ -224,7 +224,7 @@ permalink: /watching/
             {% if show.data.rating %}
               <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                 {% for i in range(1, 6) %}
-                  {% if i <= show.data.rating %}⭐{% endif %}
+                  {% if i <= show.data.rating %}{% faIcon 'star', 'solid', '0.75em' %}{% endif %}
                 {% endfor %}
               </p>
             {% endif %}

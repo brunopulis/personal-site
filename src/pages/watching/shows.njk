@@ -8,7 +8,7 @@ permalink: /watching/shows/
   <nav class="text-sm mb-4" aria-label="Breadcrumb">
     <div class="cluster" style="--gutter: var(--space-2xs)">
       <a href="/watching/" class="font-bold">Watching</a>
-      <span aria-hidden="true">→</span>
+      {% faIcon 'arrow-right', 'solid', '1em' %}
       <span>Séries</span>
     </div>
   </nav>
@@ -57,7 +57,7 @@ permalink: /watching/shows/
               {% if show.data.rating %}
                 <p class="cluster text-xs" style="--gutter: var(--space-3xs); color: var(--color-star);">
                   {% for i in range(1, 6) %}
-                    {% if i <= show.data.rating %}⭐{% endif %}
+                    {% if i <= show.data.rating %}{% faIcon 'star', 'solid', '0.75em' %}{% endif %}
                   {% endfor %}
                 </p>
               {% endif %}
