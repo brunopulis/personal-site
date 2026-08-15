@@ -25,6 +25,9 @@ importers:
       '@11ty/is-land':
         specifier: ^5.0.1
         version: 5.0.1
+      '@fortawesome/fontawesome-free':
+        specifier: ^7.3.1
+        version: 7.3.1
       lite-youtube-embed:
         specifier: ^0.3.4
         version: 0.3.4
@@ -601,6 +604,13 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fortawesome/fontawesome-free@7.3.1':
+    resolution:
+      {
+        integrity: sha512-wmglKKPDIkgV3aWlZzWECCPoGIkYCulzBwxG9+w7rc5BGapZ6cPMpoPOT8k36J0Ni7PPX6c/rsoMWfS4d1MUMg==
+      }
+    engines: {node: '>=6'}
 
   '@hapi/address@5.1.1':
     resolution:
@@ -6094,6 +6104,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.28.2':
     optional: true
+
+  '@fortawesome/fontawesome-free@7.3.1': {}
 
   '@hapi/address@5.1.1':
     dependencies:

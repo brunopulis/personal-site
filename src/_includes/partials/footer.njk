@@ -1,4 +1,3 @@
-{% import "partials/icons.njk" as icons %}
 <footer class="region" style="--region-space: var(--space-s-m)">
   <div class="wrapper flow" style="--flow-space: var(--space-s)">
     <nav aria-label="Links do rodapé">
@@ -25,24 +24,24 @@
       <ul class="cluster" role="list" aria-label="Redes sociais" style="--gutter: var(--space-s)">
         {% if site.social.github %}
           <li>
-            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer" title="GitHub">
-              {{ icons.icon('github', size=20) }}
+            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer">
+              {% faIcon 'github', 'brands', 20 %}
               <span class="visually-hidden">GitHub</span>
             </a>
           </li>
         {% endif %}
         {% if site.social.mastodon %}
           <li>
-            <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer" title="Mastodon">
-              {{ icons.icon('mastodon', size=20) }}
+            <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer">
+              {% faIcon 'mastodon', 'brands', 20 %}
               <span class="visually-hidden">Mastodon</span>
             </a>
           </li>
         {% endif %}
         {% if site.social.bluesky %}
           <li>
-            <a href="{{ site.social.bluesky }}" target="_blank" rel="me noopener noreferrer" title="Bluesky">
-              {{ icons.icon('bluesky', size=20) }}
+            <a href="{{ site.social.bluesky }}" target="_blank" rel="me noopener noreferrer">
+              {% faIcon 'bluesky', 'brands', 20 %}
               <span class="visually-hidden">Bluesky</span>
             </a>
           </li>
@@ -50,7 +49,7 @@
         {% if site.social.youtube %}
           <li>
             <a href="{{ site.social.youtube }}" target="_blank" rel="me noopener noreferrer" title="YouTube">
-              {{ icons.icon('youtube', size=20) }}
+              {% faIcon 'youtube', 'brands', 20 %}
               <span class="visually-hidden">YouTube</span>
             </a>
           </li>
@@ -58,14 +57,14 @@
         {% if site.social.linkedin %}
           <li>
             <a href="{{ site.social.linkedin }}" target="_blank" rel="me noopener noreferrer" title="LinkedIn">
-              {{ icons.icon('linkedin', size=20) }}
+              {% faIcon 'linkedin', 'brands', 20 %}
               <span class="visually-hidden">LinkedIn</span>
             </a>
           </li>
         {% endif %}
         <li>
           <a href="/feeds/"{% if url and url | startsWith('/feeds/') %} class="font-bold"{% endif %} title="Feeds">
-            {{ icons.icon('rss', size=20) }}
+            {% faIcon 'rss', 'solid', 20 %}
             <span class="visually-hidden">Feeds</span>
           </a>
         </li>

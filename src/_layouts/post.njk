@@ -5,9 +5,9 @@ layout: base
 <nav class="region" style="--region-space: var(--space-s)" aria-label="Breadcrumb">
   <ol class="cluster" role="list" style="--gutter: var(--space-2xs)">
     <li><a href="/">Home</a></li>
-    <li><span aria-hidden="true">›</span></li>
+    <li>{% faIcon 'chevron-right', 'solid', '0.8em' %}</li>
     <li><a href="/blog/">Blog</a></li>
-    <li><span aria-hidden="true">›</span></li>
+    <li>{% faIcon 'chevron-right', 'solid', '0.8em' %}</li>
     <li>{{ title }}</li>
   </ol>
 </nav>
