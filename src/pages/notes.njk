@@ -12,9 +12,20 @@ title: Notas
   <header class="notes-header">
     <h1 class="notes-title">Notas</h1>
     <p class="notes-lede">
-      Ideias curtas e fáceis de conectar. Cada nota tem seu próprio link permanente.
+      Ideias curtas e fáceis de conectar, cada nota tem seu próprio link permanente.
     </p>
-    <p class="notes-count">{{ collections.notes | length }} notas publicadas</p>
+    <p class="notes-count">
+      {{ collections.notes | length }} notas publicadas
+    </p>
+
+    <div class="callout flow blog-rss">
+      <p class="cluster" style="--gutter: var(--space-2xs)">
+        {% faIcon 'rss', 'solid', 24 %}
+        <a href="/feeds/notes/rss.xml">
+          Assine o meu feed de notas ou acompanhe nesta página.
+        </a>
+      </p>
+    </div>
   </header>
 
   <ol class="notes-index" role="list">
