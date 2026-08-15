@@ -1,5 +1,6 @@
 src/**/*.md
 src/**/*.njk
 src/_includes/components/**/custom-*.njk
+src/_includes/css/*
 src/common/*
 src/_includes/scripts/*
