@@ -3,7 +3,7 @@
 ## Stack
 
 - **Eleventy v3** (ESM, `"type": "module"`) — static site generator
-- **Custom SCSS** (cu.css-style, no framework) — `sass src/assets/css/app.scss → src/_includes/css/global.css`; tokens in `src/assets/css/abstracts/_theme.scss`
+- **Custom SCSS** (cu.css-style, no framework) — single pipeline in `src/_config/events/build-css.js` (`sass.compile` compressed + autoprefixer + cssnano) builds `src/assets/css/app.scss → src/_includes/css/global.css`; tokens in `src/assets/css/abstracts/_theme.scss`
 - **Nunjucks** (.njk) templates + **WebC** components
 - **Vitest** for unit tests; **pa11y-ci** for a11y smoke tests
 - **Vercel** deployment — build command `npm run build`, output `_site/`
@@ -12,7 +12,7 @@
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | `sass --watch` + Eleventy dev server (port 8080) in parallel |
+| `npm run dev` | `node scripts/build-css.js --watch` + Eleventy dev server (port 8080) in parallel |
 | `npm run build` | Full production build: `stats → css → parallel(icons,highlight,assets) → eleventy` |
 | `npm test` | `vitest run` (tests in `tests/**/*.test.js`) |
 | `npm run test:watch` | `vitest` (watch mode) |
