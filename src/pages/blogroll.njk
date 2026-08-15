@@ -7,60 +7,64 @@ eleventyComputed:
 ---
 
 <div class="flow" style="--flow-space: var(--space-l)">
-  <div class="flow" style="--flow-space: var(--space-m)">
-    <h1>
+  <header class="blogroll-header">
+    <h1 class="blogroll-title">
       {{ title }}
     </h1>
+    <p class="blogroll-lede">
+      Aqui estão alguns blogs e sites que sigo e recomendo. Esta é uma lista selecionada de criadores de
+      conteúdo de qualidade nas comunidades de desenvolvimento web, acessibilidade e IndieWeb.
+    </p>
+    <p class="blogroll-count">{{ blogroll | length }} blogs e sites recomendados</p>
+  </header>
 
-    <div class="prose">
-      <p>
-        Aqui estão alguns blogs e sites que sigo e recomendo. Esta é uma lista selecionada de criadores de
-        conteúdo de qualidade nas comunidades de desenvolvimento web, acessibilidade e IndieWeb.
-      </p>
-    </div>
-  </div>
-
-  <div class="flow" style="--flow-space: var(--space-l)">
-    {% for category in collections.blogrollCategories %}
-      <section class="flow" style="--flow-space: var(--space-s)">
-        <h2>{{ category }}</h2>
-        <div class="grid" style="--grid-min-item-size: 20rem; --gutter: var(--space-s)">
-          {% for item in blogroll %}
-            {% if item.category == category %}
-              <article
-                class="callout flow"
-                style="background-color: var(--color-surface); border-color: var(--color-surface-raised); border-style: solid; --flow-space: var(--space-3xs);"
-              >
-                <h3>
-                  <a
-                    href="{{ item.url }}"
-                    target="_blank"
-                    rel="noopener me"
-                    >{{ item.title }}</a
-                  >
-                  {% if item.rss %}
-                    <a
-                      href="{{ item.rss }}"
-                      class="text-muted ml-2"
-                      aria-label="RSS Feed"
-                    >
-                      {% faIcon 'rss', 'solid', 16, 'text-muted' %}
-                    </a>
-                  {% endif %}
-                </h3>
-                {% if item.description %}
-                  <p class="meta">{{ item.description }}</p>
-                {% endif %}
-              </article>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </section>
+  {% for category in collections.blogrollCategories %}
+    {% set categoryItems = [] %}
+    {% for item in blogroll %}
+      {% if item.category == category %}
+        {% set categoryItems = categoryItems.concat([item]) %}
+      {% endif %}
     {% endfor %}
-  </div>
+    <section class="blogroll-section">
+      <h2 class="blogroll-category">
+        {{ category }}
+        <span class="blogroll-category-count">
+          {{ categoryItems | length }}<span class="visually-hidden"> sites nesta categoria</span>
+        </span>
+      </h2>
 
-  <div class="callout" style="background-color: var(--color-surface); border-color: var(--color-surface-raised);">
-    <p class="meta">
+      <ul class="blogroll-index" role="list">
+        {% for item in categoryItems %}
+          <li>
+            <article class="blogroll-entry">
+              <h3 class="blogroll-entry-title">
+                <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+              </h3>
+
+              {% if item.rss %}
+                <a
+                  class="blogroll-entry-rss"
+                  href="{{ item.rss }}"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Feed RSS de {{ item.title }}"
+                >
+                  {% faIcon 'rss', 'solid', 16 %}
+                </a>
+              {% endif %}
+
+              {% if item.description %}
+                <p class="blogroll-entry-desc">{{ item.description }}</p>
+              {% endif %}
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+
+  <div class="callout">
+    <p>
       <strong>Quer ser adicionado?</strong> Se você tem um blog que se encaixa nessas categorias, fique à
       vontade para <a href="/contact/">entrar em contato</a> e me contar!
     </p>
