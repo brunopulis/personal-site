@@ -63,7 +63,7 @@
     "cssnano": "^8.0.5",
     "cypress": "^15.20.1",
     "cypress-axe": "^1.7.0",
-    "dayjs": "^1.11.21",
+    "dayjs": "^1.11.22",
     "dotenv": "^17.4.2",
     "esbuild": "^0.28.2",
     "fast-glob": "^3.3.3",
