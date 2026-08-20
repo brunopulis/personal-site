@@ -1,0 +1,117 @@
+/*
+BOOKSHELF — the reading log
+
+A grid of covers grouped by year, inspired by the quiet inventory
+of a personal library. Each cover links to its entry; a small badge
+marks books with a review. The proof marks stay structural.
+*/
+
+/* ---------- Page header ---------- */
+
+.bookshelf-header {
+  --region-space: var(--space-l);
+}
+
+.bookshelf-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs-s);
+}
+
+.bookshelf-title::before {
+  content: '——';
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-proof);
+}
+
+.bookshelf-lede {
+  margin-block-start: var(--space-xs-s);
+  font-size: var(--font-size-lede);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* ---------- Year section ---------- */
+
+.bookshelf-year {
+  --region-space: var(--space-2xl);
+}
+
+.bookshelf-year-header {
+  --gutter: var(--space-xs);
+  margin-block-end: var(--space-m);
+}
+
+.bookshelf-year-count {
+  display: inline-block;
+  padding: var(--space-3xs) var(--space-2xs);
+  font-size: var(--font-size-meta);
+  line-height: 1;
+  color: var(--color-proof);
+  background-color: var(--color-proof-soft);
+}
+
+/* ---------- Book grid ---------- */
+
+.bookshelf-grid {
+  --grid-min-item-size: 10rem;
+  --gutter: var(--space-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Cover link ---------- */
+
+.bookshelf-cover-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.bookshelf-cover-link:hover .bookshelf-cover,
+.bookshelf-cover-link:focus-visible .bookshelf-cover {
+  opacity: 0.85;
+}
+
+.bookshelf-cover {
+  --n: 2;
+  --d: 3;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.bookshelf-cover-placeholder {
+  --n: 2;
+  --d: 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-light-silver-500);
+  color: var(--color-paper);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ---------- Review badge ---------- */
+
+.bookshelf-review-badge {
+  position: absolute;
+  inset-block-end: var(--space-3xs);
+  inset-inline-end: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-2xs);
+  font-size: var(--font-size-xs);
+  line-height: 1;
+  color: var(--color-proof);
+  background-color: var(--color-proof-soft);
+}
+
+/* ---------- Empty state ---------- */
+
+.bookshelf-empty {
+  padding-block: var(--space-2xl);
+  text-align: center;
+  color: var(--color-ink-soft);
+}
