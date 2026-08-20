@@ -60,7 +60,7 @@
     "axe-core": "^4.13.0",
     "colorjs.io": "^0.7.1",
     "cross-env": "^10.1.0",
-    "cssnano": "^8.0.5",
+    "cssnano": "^8.0.6",
     "cypress": "^15.20.1",
     "cypress-axe": "^1.7.0",
     "dayjs": "^1.11.21",
