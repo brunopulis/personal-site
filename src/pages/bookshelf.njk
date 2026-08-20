@@ -4,11 +4,11 @@ title: Estante de Livros
 permalink: /bookshelf/
 ---
 
-<section class="region" style="--region-space: var(--space-l)">
-  <h1>
+<section class="region bookshelf-header">
+  <h1 class="bookshelf-title">
     {{ title }}
   </h1>
-  <p>Livros que li, organizados por ano de leitura.</p>
+  <p class="bookshelf-lede">Livros que li, organizados por ano de leitura.</p>
 </section>
 
 {% set booksGrouped = collections.books | booksByYear %}
@@ -16,21 +16,21 @@ permalink: /bookshelf/
   {% set yearBooks = booksGrouped.byYear[year] %}
   {% set bookCount = yearBooks | length %}
 
-  <section class="region" style="--region-space: var(--space-2xl)">
-    <div class="cluster mb-6" style="--gutter: var(--space-xs)">
+  <section class="region bookshelf-year">
+    <div class="cluster bookshelf-year-header">
       <h2>{{ year }}</h2>
-      <span class="badge p-category" data-variant="accent">
+      <span class="bookshelf-year-count p-category">
         {{ bookCount }} {{ "livro" if bookCount == 1 else "livros" }}
       </span>
     </div>
 
-    <div class="grid" style="--grid-min-item-size: 13.5rem; --gutter: var(--space-m);">
+    <ul class="grid bookshelf-grid" role="list">
       {% for book in yearBooks | reverse %}
         {% set hasReview = book.content | striptags | trim | length > 0 %}
-        <article>
-          <div class="py-4">
+        <li>
+          <a href="{{ book.url }}" class="bookshelf-cover-link" aria-label="{{ book.data.title }}">
             {% if book.data.poster %}
-              <div class="frame" style="--n: 2; --d: 3; width: 100%;">
+              <div class="frame bookshelf-cover">
                 <img
                   src="{{ book.data.poster }}"
                   alt="{{ book.data.title }}"
@@ -38,53 +38,20 @@ permalink: /bookshelf/
                 >
               </div>
             {% else %}
-              <div class="frame" style="--n: 2; --d: 3; width: 100%; background-color: var(--color-light-silver-500);">
-                <span class="font-bold text-white text-2xl">{{ book.data.title | truncate(1, true, "") }}</span>
+              <div class="frame bookshelf-cover-placeholder">
+                <span>{{ book.data.title | truncate(1, true, "") }}</span>
               </div>
             {% endif %}
-
-            <div class="flow" style="--flow-space: var(--space-2xs); margin-block: var(--space-s);">
-              <h3 class="line-clamp-2">
-                {{ book.data.title }}
-              </h3>
-
-              {% if book.data.subtitle %}
-                <p class="meta">
-                  {{ book.data.subtitle }}
-                </p>
-              {% endif %}
-            </div>
-
-            {% if book.data.author %}
-              <p class="mb-2 meta">
-                {{ book.data.author }}
-              </p>
-            {% endif %}
-
-            {% if book.data.rating %}
-              <div class="cluster mb-2" style="--gutter: var(--space-3xs)" role="img" aria-label="Nota: {{ book.data.rating }} de 5">
-                {% for ratingCount in range(1, 6) %}
-                  {% if ratingCount <= book.data.rating %}
-                    {% faIcon 'star', 'solid', 20, '', '', 'color: var(--color-star)' %}
-                  {% else %}
-                    {% faIcon 'star', 'solid', 20, '', '', 'color: var(--color-star-empty)' %}
-                  {% endif %}
-                {% endfor %}
-              </div>
-            {% endif %}
-
             {% if hasReview %}
-              <a href="{{ book.url }}" class="text-sm">
-                Leia a minha resenha
-              </a>
+              <span class="bookshelf-review-badge">resenha</span>
             {% endif %}
-          </div>
-        </article>
+          </a>
+        </li>
       {% endfor %}
-    </div>
+    </ul>
   </section>
 {% else %}
-  <p class="py-12 meta text-center">
+  <p class="bookshelf-empty">
     Nenhum livro registrado ainda.
   </p>
 {% endfor %}

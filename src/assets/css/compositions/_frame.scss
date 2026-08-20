@@ -9,8 +9,8 @@ CUSTOM PROPERTIES AND CONFIGURATION
 */
 
 .frame {
-  --n: 16;
-  --d: 9;
+  --n: 2;
+  --d: 3;
   aspect-ratio: var(--n) / var(--d);
   overflow: hidden;
   display: flex;

@@ -104,6 +104,25 @@ Custom utility classes for the project
 
 .rounded-full { border-radius: 100vmax; }
 
+/* Component utilities */
+.meta {
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--space-3xs) var(--space-2xs);
+  font-size: var(--font-size-meta);
+  line-height: 1;
+}
+
+.badge[data-variant='accent'] {
+  color: var(--color-proof);
+  background-color: var(--color-proof-soft);
+}
+
 .transition-colors { transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out; }
 
 /* Spacing utilities */

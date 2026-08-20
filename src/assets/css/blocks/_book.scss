@@ -1,0 +1,98 @@
+/*
+BOOK — single book review page
+
+The book page presents a cover alongside its metadata, then the
+review content flows beneath. The layout reuses the site's existing
+compositions (frame, cluster, flow, region, prose) with minimal
+additions. The proof marks stay structural.
+*/
+
+/* ---------- Page layout ---------- */
+
+.book-layout {
+  max-width: 56rem;
+}
+
+/* ---------- Navigation ---------- */
+
+.book-nav {
+  --region-space: var(--space-s);
+  margin-block-end: var(--space-m);
+}
+
+.book-breadcrumb {
+  --gutter: var(--space-2xs);
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.book-breadcrumb a {
+  color: var(--color-ink-soft);
+}
+
+.book-breadcrumb a:hover,
+.book-breadcrumb a:focus-visible {
+  color: var(--color-ink);
+}
+
+/* ---------- Header ---------- */
+
+.book-header {
+  --region-space: var(--space-m);
+}
+
+.book-header-inner {
+  --gutter: var(--space-s-m);
+  --cluster-vertical-alignment: flex-start;
+}
+
+.book-cover {
+  --n: 2;
+  --d: 3;
+  flex: 0 0 12rem;
+}
+
+.book-meta {
+  flex: 1 1 16rem;
+}
+
+.book-title {
+  margin: 0;
+}
+
+.book-author {
+  margin-block-start: var(--space-2xs);
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.book-rating {
+  --gutter: var(--space-3xs);
+  margin-block-start: var(--space-2xs);
+}
+
+.book-purchase {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin-block-start: var(--space-s);
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.book-purchase:hover,
+.book-purchase:focus-visible {
+  text-decoration-color: var(--color-proof);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+/* ---------- Review content ---------- */
+
+.book-review {
+  margin-block-start: var(--space-l);
+}
