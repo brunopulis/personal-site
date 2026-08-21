@@ -3,33 +3,112 @@ BOOKSHELF — the reading log
 
 A grid of covers grouped by year, inspired by the quiet inventory
 of a personal library. Each cover links to its entry; a small badge
-marks books with a review. The proof marks stay structural.
+marks books with a review. A "reading now" shelf sits above the
+inventory and year tabs filter it. The proof marks stay structural.
 */
 
-/* ---------- Page header ---------- */
+/* ---------- Reading now ---------- */
 
-.bookshelf-header {
-  --region-space: var(--space-l);
-}
-
-.bookshelf-title {
+.bookshelf-section-title {
   display: flex;
   align-items: baseline;
   gap: var(--space-xs-s);
 }
 
-.bookshelf-title::before {
+.bookshelf-section-title::before {
   content: '——';
   font-size: var(--font-size-meta);
   letter-spacing: 0;
   color: var(--color-proof);
 }
 
-.bookshelf-lede {
-  margin-block-start: var(--space-xs-s);
-  font-size: var(--font-size-lede);
-  line-height: 1.7;
-  color: var(--color-text);
+.bookshelf-reading {
+  --region-space: var(--space-2xl);
+}
+
+.bookshelf-reading-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-l);
+}
+
+.bookshelf-reading-item {
+  display: grid;
+  grid-template-columns: minmax(7rem, 10rem) minmax(0, 1fr);
+  gap: var(--space-m);
+  align-items: start;
+}
+
+.bookshelf-reading-meta {
+  --flow-space: var(--space-2xs);
+}
+
+.bookshelf-reading-meta h3 {
+  margin: 0;
+}
+
+/* The index mark — proof underline on hover/focus. */
+.bookshelf-reading-meta h3 a:hover,
+.bookshelf-reading-meta h3 a:focus-visible {
+  text-decoration-color: var(--color-proof);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+.bookshelf-reading-author {
+  margin: 0;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.bookshelf-reading-description {
+  margin: 0;
+  max-width: var(--measure-longform, 40rem);
+  color: var(--color-text-subtle);
+}
+
+@media (max-width: 39.99rem) {
+  .bookshelf-reading-item {
+    grid-template-columns: minmax(6rem, 8rem) minmax(0, 1fr);
+    gap: var(--space-s);
+  }
+}
+
+/* ---------- Year tabs ---------- */
+
+.bookshelf-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.bookshelf-tablist [role='tab'] {
+  padding: var(--space-3xs) var(--space-xs);
+  font-size: var(--font-size-meta);
+  line-height: 1.4;
+  color: var(--color-ink);
+  background-color: transparent;
+  border: 1px solid var(--color-rule);
+  cursor: pointer;
+}
+
+.bookshelf-tablist [role='tab']:hover {
+  border-color: var(--color-ink-soft);
+}
+
+.bookshelf-tablist [role='tab'][aria-selected='true'] {
+  color: var(--color-proof);
+  background-color: var(--color-proof-soft);
+  border-color: var(--color-proof-soft);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.bookshelf-tablist [role='tab']:focus-visible {
+  outline: 2px solid var(--color-proof);
+  outline-offset: 2px;
 }
 
 /* ---------- Year section ---------- */
