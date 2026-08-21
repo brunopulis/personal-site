@@ -27,6 +27,7 @@
     "build:screenshots": "node src/_config/setup/generate-screenshots.js",
     "build:css": "node scripts/build-css.js",
     "add-movie": "node scripts/add-movie.js",
+    "add-book": "node scripts/add-book.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
