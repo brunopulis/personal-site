@@ -52,7 +52,7 @@ permalink: /bookshelf/
   {% if lendo.length > 0 %}
     <section class="region bookshelf-reading" data-year="lendo" aria-labelledby="reading-now-title">
       <h2 id="reading-now-title" class="bookshelf-section-title">Lendo atualmente</h2>
-      <ul class="bookshelf-reading-list" role="list">
+      <ul class="bookshelf-reading-list region" role="list">
         {% for book in lendo %}
           <li class="bookshelf-reading-item h-entry">
             {% if book.data.poster %}
@@ -60,7 +60,10 @@ permalink: /bookshelf/
                 <img
                   src="{{ book.data.poster }}"
                   alt="{{ book.data.title }}"
-                  loading="lazy"
+                  eleventy:widths="480"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
                 >
               </div>
             {% else %}
@@ -107,7 +110,9 @@ permalink: /bookshelf/
                   <img
                     src="{{ book.data.poster }}"
                     alt="{{ book.data.title }}"
+                    eleventy:widths="480"
                     loading="lazy"
+                    decoding="async"
                   >
                 </div>
               {% else %}
