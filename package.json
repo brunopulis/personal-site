@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/brunopulis/personal-site.git"
   },
-  "packageManager": "pnpm@11.21.0",
+  "packageManager": "pnpm@11.22.0",
   "scripts": {
     "clean": "rimraf _site",
     "clean:og": "rimraf src/assets/og-images",
@@ -50,7 +50,7 @@
     "@11ty/is-land": "^5.0.1",
     "@fortawesome/fontawesome-free": "^7.3.1",
     "lite-youtube-embed": "^0.3.4",
-    "sass": "^1.102.0"
+    "sass": "^1.103.1"
   },
   "devDependencies": {
     "@11ty/eleventy-img": "^7.0.0",
@@ -60,7 +60,7 @@
     "axe-core": "^4.13.0",
     "colorjs.io": "^0.7.1",
     "cross-env": "^10.1.0",
-    "cssnano": "^8.0.6",
+    "cssnano": "^8.0.7",
     "cypress": "^15.21.0",
     "cypress-axe": "^1.7.0",
     "dayjs": "^1.11.23",
