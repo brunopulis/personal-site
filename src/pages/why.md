@@ -1,4 +1,6 @@
 ---
+layout: page
+permalink: '/why/'
 title: "Por que esse site existe?"
 ---
 
