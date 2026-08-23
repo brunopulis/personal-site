@@ -1,7 +1,7 @@
 ---
 title: 'Frankencity'
 author: 'Emilio Garofalo Neto'
-category: 'fantasia'
+category: Fantasia
 status: 'lido'
 rating: 5
 poster: 'https://m.media-amazon.com/images/I/91EJxLDbOrL._SL1500_.jpg'

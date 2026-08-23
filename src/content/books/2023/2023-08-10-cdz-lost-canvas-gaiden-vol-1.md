@@ -1,7 +1,7 @@
 ---
 title: 'Lost Canvas Gaiden, vol 1'
 author: 'Masami Kurumada'
-category: ''
+category: Quadrinhos
 status: 'lido'
 rating: 5
 poster: 'https://m.media-amazon.com/images/I/81yeCGpVwPL._SL1500_.jpg'

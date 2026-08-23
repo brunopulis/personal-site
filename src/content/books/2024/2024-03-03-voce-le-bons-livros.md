@@ -1,7 +1,7 @@
 ---
 title: 'Você Lê Bons Livros?: A Relação da Leitura e a Vida Cristã'
 author: 'Sinclair B. Ferguson'
-category: ''
+category: Cristianismo
 status: 'lido'
 rating: 3
 poster: 'https://m.media-amazon.com/images/I/61HYRvVnkHL._SY522_.jpg'
