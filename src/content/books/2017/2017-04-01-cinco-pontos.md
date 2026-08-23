@@ -9,7 +9,7 @@ poster: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/book
 description: ''
 thoughts: ''
 quotes: ''
-attendedYear: '2017'
+attendedYear: 2017
 recommendBy: ''
 tags: []
 url: ''
