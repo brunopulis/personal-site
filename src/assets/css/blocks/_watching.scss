@@ -1,0 +1,29 @@
+/*
+WATCHING — filmes e séries
+
+Os anos formam um índice tipográfico: sem pills, sem preenchimento.
+O ano corrente recebe o sublinhado ondulado da marca (proof); os
+demais ficam em tinta suave e escurecem no hover.
+*/
+
+.watching-years {
+  --gutter: var(--space-xs-s);
+}
+
+.watching-years a {
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.watching-years a:hover,
+.watching-years a:focus-visible {
+  color: var(--color-ink);
+}
+
+.watching-years a[data-state='active'] {
+  color: var(--color-ink);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline wavy var(--color-proof) 2px;
+  text-underline-offset: 0.22em;
+}

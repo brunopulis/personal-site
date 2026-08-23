@@ -18,13 +18,10 @@ permalink: /watching/
   {% set currentYear = years[0] %}
 
   {% if years.length > 0 %}
-  <div class="cluster" style="--gutter: var(--space-2xs)">
-    {% for year in years %}
-      <a
-        href="/watching/{{ year }}/"
-        class="px-3 py-1 text-sm rounded-full border transition-colors {% if year == currentYear %}bg-vista-blue-600 font-bold text-white border-vista-blue-600{% else %}bg-vista-blue-100 font-bold text-errie-black-950 border-vista-blue-100 hover:border-vista-blue-500 hover:text-errie-black-950{% endif %}"
-      >
-        {{ year }}
+  <div class="cluster watching-years">
+    {% for item in years %}
+      <a href="/watching/{{ item }}/" data-state="{{ 'active' if item == currentYear }}">
+        {{ item }}
       </a>
     {% endfor %}
   </div>
@@ -182,7 +179,7 @@ permalink: /watching/
     {% endfor %}
   </div>
   {% else %}
-    <p class="text-errie-black-950">
+    <p>
       Nenhum filme favorito ainda.
     </p>
   {% endif %}

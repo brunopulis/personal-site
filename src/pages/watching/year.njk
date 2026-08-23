@@ -21,13 +21,10 @@ generate: true
   {% set years = yearsGrouped.years %}
   {% set currentYear = year %}
 
-  <div class="cluster mb-6" style="--gutter: var(--space-2xs)">
-    {% for year in years %}
-      <a
-        href="/watching/{{ year }}/"
-        class="px-3 py-1 text-sm rounded-full border transition-colors {% if y == currentYear %}bg-vista-blue-600 font-bold text-white border-vista-blue-600{% else %}bg-vista-blue-100 font-bold text-errie-black-950 border-vista-blue-100 hover:border-vista-blue-500 hover:text-errie-black-950{% endif %}"
-      >
-        {{ year }}
+  <div class="cluster mb-6 watching-years">
+    {% for item in years %}
+      <a href="/watching/{{ item }}/" data-state="{{ 'active' if item == currentYear }}">
+        {{ item }}
       </a>
     {% endfor %}
   </div>
