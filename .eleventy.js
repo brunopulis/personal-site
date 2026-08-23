@@ -118,6 +118,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('where', filters.where);
   eleventyConfig.addFilter('concat', filters.concat);
   eleventyConfig.addFilter('booksByYear', filters.booksByYear);
+  eleventyConfig.addFilter('bookCategories', filters.bookCategories);
   eleventyConfig.addFilter('currentlyReading', books => filters.currentlyReading(books));
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
   eleventyConfig.addFilter('filterFavorites', items => filters.filterFavorites(items));
@@ -173,11 +174,6 @@ export default async function (eleventyConfig) {
     // -- node_modules
     'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': `assets/components/`
   });
-
-  // ignore test files
-  if (process.env.ELEVENTY_ENV != 'test') {
-    eleventyConfig.ignores.add('src/common/pa11y.njk');
-  }
 
   // General Settings
   return {

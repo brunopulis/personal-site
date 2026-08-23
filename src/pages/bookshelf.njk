@@ -1,6 +1,6 @@
 ---
-layout: base.njk
-title: Estante de Livros
+layout: base
+title: Meus livros
 permalink: /bookshelf/
 ---
 
@@ -8,6 +8,7 @@ permalink: /bookshelf/
   {% set booksGrouped = collections.books | booksByYear %}
   {% set lendo = collections.books | currentlyReading %}
   {% set lidos = collections.books | where('data.status', 'lido') %}
+  {% set categories = lidos | bookCategories %}
   {% set latestYear = booksGrouped.years[0] %}
   {% set latestYearBooks = booksGrouped.byYear[latestYear] or [] %}
   {% set latestYearCount = latestYearBooks | length %}
@@ -24,68 +25,34 @@ permalink: /bookshelf/
       {{ lidos | length }} livros lidos
     </p>
 
-    {% if lendo.length > 0 or booksGrouped.years.length > 0 %}
-      <nav id="bookshelf-tabs" class="region" style="--region-space: var(--space-xs)" aria-label="Filtrar leituras">
-        <div class="bookshelf-tablist" role="tablist" aria-label="Leituras por ano">
-          <button type="button" role="tab" data-tab="lendo" aria-selected="true" tabindex="0">
-            Lendo agora
-          </button>
-          {% for year in booksGrouped.years %}
-            <button type="button" role="tab" data-tab="{{ year }}" aria-selected="false" tabindex="-1">
-              {{ year }}
-            </button>
-          {% endfor %}
-        </div>
-      </nav>
-    {% endif %}
-
     <div class="callout flow blog-rss">
       <p class="cluster" style="--gutter: var(--space-2xs)">
         {% faIcon 'rss', 'solid', 24 %}
         <a href="/feeds/books/rss.xml">
-          Inscreva-se no <span lang="en">feed</span> dos meus livros ou acompanhe essa página.
+          Acompanhe <span lang="en">feed</span> dos meus livros.
         </a>
       </p>
     </div>
   </header>
 
-  {% if lendo.length > 0 %}
-    <section class="region bookshelf-reading" data-year="lendo" aria-labelledby="reading-now-title">
-      <h2 id="reading-now-title" class="bookshelf-section-title">Lendo atualmente</h2>
-      <ul class="bookshelf-reading-list region" role="list">
-        {% for book in lendo %}
-          <li class="bookshelf-reading-item h-entry">
-            {% if book.data.poster %}
-              <div class="frame bookshelf-cover">
-                <img
-                  src="{{ book.data.poster }}"
-                  alt="{{ book.data.title }}"
-                  eleventy:widths="480"
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                >
-              </div>
-            {% else %}
-              <div class="frame bookshelf-cover-placeholder">
-                <span>{{ book.data.title | truncate(1, true, "") }}</span>
-              </div>
-            {% endif %}
-            <div class="bookshelf-reading-meta flow">
-              <h3 class="p-name">
-                <a href="{{ book.url }}" class="u-url">{{ book.data.title }}</a>
-              </h3>
-              {% if book.data.author %}
-                <p class="bookshelf-reading-author">{{ book.data.author }}</p>
-              {% endif %}
-              {% if book.data.description %}
-                <p class="bookshelf-reading-description">{{ book.data.description }}</p>
-              {% endif %}
-            </div>
-          </li>
+  {% if categories.length > 0 %}
+    <fieldset class="bookshelf-filter" data-bookshelf-filter>
+      <legend class="bookshelf-filter-legend">Filtrar por:</legend>
+      <div class="bookshelf-filter-options repel" style="gap: 1rem 0.85rem;">
+        <input class="visually-hidden bookshelf-filter-input" type="radio" name="categoria" id="filter-todos" value="todos" checked>
+        <label class="bookshelf-filter-label" for="filter-todos">Todos</label>
+        {% for cat in categories %}
+          <input
+            class="visually-hidden bookshelf-filter-input"
+            type="radio"
+            name="categoria"
+            id="filter-{{ cat.name | slugify }}"
+            value="{{ cat.name | slugify }}"
+          >
+          <label class="bookshelf-filter-label" for="filter-{{ cat.name | slugify }}">{{ cat.name }}</label>
         {% endfor %}
-      </ul>
-    </section>
+      </div>
+    </fieldset>
   {% endif %}
 
   {% for year in booksGrouped.years %}
@@ -100,17 +67,21 @@ permalink: /bookshelf/
         </span>
       </div>
 
-      <ul class="grid bookshelf-grid" role="list">
+      <ul class="grid bookshelf-books" role="list">
         {% for book in yearBooks | reverse %}
           {% set hasReview = book.content | striptags | trim | length > 0 %}
-          <li>
-            <a href="{{ book.url }}" class="bookshelf-cover-link" aria-label="{{ book.data.title }}">
+          <li class="bookshelf-book h-entry" data-category="{{ book.data.category | slugify }}">
+            <a
+              href="{{ book.url }}"
+              class="bookshelf-cover-link"
+              aria-label="Capa do livro: {{ book.data.title }}"
+            >
               {% if book.data.poster %}
                 <div class="frame bookshelf-cover">
                   <img
                     src="{{ book.data.poster }}"
-                    alt="{{ book.data.title }}"
-                    eleventy:widths="480"
+                    alt=""
+                    eleventy:widths="360"
                     loading="lazy"
                     decoding="async"
                   >
@@ -120,10 +91,23 @@ permalink: /bookshelf/
                   <span>{{ book.data.title | truncate(1, true, "") }}</span>
                 </div>
               {% endif %}
-              {% if hasReview %}
-                <span class="bookshelf-review-badge">resenha</span>
-              {% endif %}
             </a>
+            <div class="bookshelf-info flow">
+              <h3 class="p-name">{{ book.data.title }}</h3>
+              {% if book.data.author %}
+                <p class="bookshelf-author">{{ book.data.author }}</p>
+              {% endif %}
+              {% if book.data.rating %}
+                <p class="bookshelf-rating" role="img" aria-label="Nota {{ book.data.rating }} de 5">
+                  {% for i in range(1, 6) %}{{ '★' if i <= book.data.rating else '☆' }}{% endfor %}
+                </p>
+              {% endif %}
+              {% if hasReview %}
+                <a href="{{ book.url }}" class="bookshelf-review-link">
+                  Leia minha resenha <span class="visually-hidden">do livro: {{ book.data.title }}</span>
+                </a>
+              {% endif %}
+            </div>
           </li>
         {% endfor %}
       </ul>
@@ -131,6 +115,6 @@ permalink: /bookshelf/
   {% endfor %}
 </div>
 
-{% if lendo.length > 0 or booksGrouped.years.length > 0 %}
+{% if booksGrouped.years.length > 0 %}
   <script src="/assets/js/bookshelf-filter.js" defer></script>
 {% endif %}

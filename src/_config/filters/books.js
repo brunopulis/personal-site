@@ -28,3 +28,21 @@ export const booksByYear = (books, status = 'lido') => {
 
   return {byYear: grouped, years};
 };
+
+export const bookCategories = books => {
+  if (!books || !Array.isArray(books)) {
+    return [];
+  }
+
+  const counts = books.reduce((acc, book) => {
+    const category = (book.data?.category || '').trim();
+    if (!category) return acc;
+
+    acc[category] = (acc[category] || 0) + 1;
+    return acc;
+  }, {});
+
+  return Object.entries(counts)
+    .map(([name, count]) => ({name, count}))
+    .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+};

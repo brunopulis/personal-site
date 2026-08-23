@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {booksByYear, currentlyReading} from '../../../src/_config/filters/books.js';
+import {bookCategories, booksByYear, currentlyReading} from '../../../src/_config/filters/books.js';
 
 const makeBook = (status, attendedYear = 2026) => ({
   data: {status, attendedYear}
@@ -53,5 +53,37 @@ describe('booksByYear', () => {
     const books = [{data: {status: 'lido'}}, makeBook('lido', 2024)];
     const result = booksByYear(books);
     expect(result.years).toEqual(['2024']);
+  });
+});
+
+describe('bookCategories', () => {
+  it('count books per category sorted alphabetically (pt-BR)', () => {
+    const books = [
+      {data: {category: 'Fantasia'}},
+      {data: {category: 'Cristianismo'}},
+      {data: {category: 'Fantasia'}},
+      {data: {category: 'Ficção'}}
+    ];
+    const result = bookCategories(books);
+    expect(result).toEqual([
+      {name: 'Cristianismo', count: 1},
+      {name: 'Fantasia', count: 2},
+      {name: 'Ficção', count: 1}
+    ]);
+  });
+
+  it('skip books without category', () => {
+    const books = [{data: {}}, {data: {category: ''}}, makeBook('lido')];
+    expect(bookCategories(books)).toEqual([]);
+  });
+
+  it('trim whitespace around category names', () => {
+    const books = [{data: {category: ' Fantasia '}}, {data: {category: 'Fantasia'}}];
+    expect(bookCategories(books)).toEqual([{name: 'Fantasia', count: 2}]);
+  });
+
+  it('return empty array for null or non-array input', () => {
+    expect(bookCategories(null)).toEqual([]);
+    expect(bookCategories('string')).toEqual([]);
   });
 });

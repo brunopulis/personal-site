@@ -1,13 +1,14 @@
 /*
-BOOKSHELF — the reading log
+BOOKSHELF — o inventário de leitura
 
-A grid of covers grouped by year, inspired by the quiet inventory
-of a personal library. Each cover links to its entry; a small badge
-marks books with a review. A "reading now" shelf sits above the
-inventory and year tabs filter it. The proof marks stay structural.
+Anos empilhados como uma estante pública: cada livro é um cartão
+com capa, título, autoria e nota. O filtro por categoria usa um
+grupo de radios nativo estilizado como texto — sem tabs, sem ARIA
+extra — e os anos ficam vazios via :has(). "Lendo atualmente"
+permanece sempre visível acima do filtro.
 */
 
-/* ---------- Reading now ---------- */
+/* ---------- Lendo atualmente ---------- */
 
 .bookshelf-section-title {
   display: flex;
@@ -23,7 +24,7 @@ inventory and year tabs filter it. The proof marks stay structural.
 }
 
 .bookshelf-reading {
-  --region-space: var(--space-2xl);
+  --region-space: var(--space-xl);
 }
 
 .bookshelf-reading-list {
@@ -31,14 +32,20 @@ inventory and year tabs filter it. The proof marks stay structural.
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var(--space-l);
+  gap: var(--space-m);
 }
 
 .bookshelf-reading-item {
   display: grid;
-  grid-template-columns: minmax(7rem, 10rem) minmax(0, 1fr);
-  gap: var(--space-m);
+  grid-template-columns: minmax(6rem, 9rem) minmax(0, 1fr);
+  gap: var(--space-s);
   align-items: start;
+}
+
+@media (max-width: 39.99rem) {
+  .bookshelf-reading-item {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bookshelf-reading-meta {
@@ -46,108 +53,155 @@ inventory and year tabs filter it. The proof marks stay structural.
 }
 
 .bookshelf-reading-meta h3 {
-  margin: 0;
-}
-
-/* The index mark — proof underline on hover/focus. */
-.bookshelf-reading-meta h3 a:hover,
-.bookshelf-reading-meta h3 a:focus-visible {
-  text-decoration-color: var(--color-proof);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.22em;
+  margin-block-start: 0;
 }
 
 .bookshelf-reading-author {
-  margin: 0;
+  margin-block: 0;
   font-size: var(--font-size-meta);
   letter-spacing: 0;
   color: var(--color-ink-soft);
 }
 
 .bookshelf-reading-description {
-  margin: 0;
+  margin-block: 0;
   max-width: var(--measure-longform, 40rem);
-  color: var(--color-text-subtle);
+  color: var(--color-ink-soft);
 }
 
-@media (max-width: 39.99rem) {
-  .bookshelf-reading-item {
-    grid-template-columns: minmax(6rem, 8rem) minmax(0, 1fr);
-    gap: var(--space-s);
-  }
+/* ---------- Filtro por categoria ---------- */
+
+.bookshelf-filter {
+  margin-block-start: var(--space-m);
+  border: 0;
+  padding: 0;
 }
 
-/* ---------- Year tabs ---------- */
+.bookshelf-filter-legend {
+  padding: 0;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
 
-.bookshelf-tablist {
+.bookshelf-filter-options {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2xs);
+  gap: var(--space-xs) var(--space-s);
 }
 
-.bookshelf-tablist [role='tab'] {
-  padding: var(--space-3xs) var(--space-xs);
-  font-size: var(--font-size-meta);
-  line-height: 1.4;
-  color: var(--color-ink);
-  background-color: transparent;
-  border: 1px solid var(--color-rule);
+/*
+  Os inputs são visualmente escondidos pelo utilitário .visually-hidden;
+  os labels carregam toda a interação (:checked + label).
+*/
+.bookshelf-filter-label {
   cursor: pointer;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
 }
 
-.bookshelf-tablist [role='tab']:hover {
-  border-color: var(--color-ink-soft);
+.bookshelf-filter-input:hover + .bookshelf-filter-label,
+.bookshelf-filter-label:hover {
+  color: var(--color-ink);
 }
 
-.bookshelf-tablist [role='tab'][aria-selected='true'] {
-  color: var(--color-proof);
-  background-color: var(--color-proof-soft);
-  border-color: var(--color-proof-soft);
-  font-weight: var(--font-weight-bold, 700);
+/* Selecionado — mesmo sublinhado ondulado vinho do índice */
+.bookshelf-filter-input:checked + .bookshelf-filter-label {
+  color: var(--color-ink);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline wavy var(--color-proof) 2px;
+  text-underline-offset: 0.22em;
 }
 
-.bookshelf-tablist [role='tab']:focus-visible {
+.bookshelf-filter-input:focus-visible + .bookshelf-filter-label {
   outline: 2px solid var(--color-proof);
   outline-offset: 2px;
 }
 
-/* ---------- Year section ---------- */
+/* ---------- Anos ---------- */
 
 .bookshelf-year {
-  --region-space: var(--space-2xl);
+  --region-space: var(--space-xl);
+}
+
+@supports (content-visibility: auto) {
+  .bookshelf-year {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
+}
+
+/* Ano cujos livros estão todos filtrados desaparece */
+.bookshelf-year:not(:has(.bookshelf-book:not([hidden]))) {
+  display: none;
 }
 
 .bookshelf-year-header {
-  --gutter: var(--space-xs);
-  margin-block-end: var(--space-m);
+  gap: var(--space-xs);
+  align-items: baseline;
 }
 
 .bookshelf-year-count {
-  display: inline-block;
-  padding: var(--space-3xs) var(--space-2xs);
   font-size: var(--font-size-meta);
-  line-height: 1;
-  color: var(--color-proof);
-  background-color: var(--color-proof-soft);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
 }
 
-/* ---------- Book grid ---------- */
+/* ---------- Grade de livros ---------- */
 
-.bookshelf-grid {
-  --grid-min-item-size: 10rem;
+.bookshelf-books {
   --gutter: var(--space-m);
+  --grid-min-item-size: 11rem;
+
   list-style: none;
+  padding-inline-start: 0;
   margin: 0;
-  padding: 0;
 }
 
-/* ---------- Cover link ---------- */
+/* Cartão: coluna (capa em cima) no desktop */
+.bookshelf-book {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+/* Mobile: linhas horizontais — capa pequena à esquerda, info à direita */
+@media (max-width: 39.99rem) {
+  .bookshelf-books {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .bookshelf-book {
+    display: grid;
+    grid-template-columns: minmax(6rem, 7.5rem) minmax(0, 1fr);
+    gap: var(--space-s);
+    align-items: start;
+  }
+}
+
+/* ---------- Capa ---------- */
 
 .bookshelf-cover-link {
   display: block;
   text-decoration: none;
   color: inherit;
-  position: relative;
+}
+
+.bookshelf-cover {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bookshelf-cover {
+    transition: opacity 150ms ease;
+  }
 }
 
 .bookshelf-cover-link:hover .bookshelf-cover,
@@ -155,42 +209,55 @@ inventory and year tabs filter it. The proof marks stay structural.
   opacity: 0.85;
 }
 
-.bookshelf-cover {
-  --n: 2;
-  --d: 3;
-  width: 100%;
-  transition: opacity 0.2s ease;
-}
-
 .bookshelf-cover-placeholder {
-  --n: 2;
-  --d: 3;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-light-silver-500);
-  color: var(--color-paper);
-  font-weight: var(--font-weight-bold);
+  display: grid;
+  place-items: center;
+  background: var(--color-light-silver-500);
+
+  span {
+    font-size: var(--step--1);
+    color: var(--color-paper-raised);
+  }
 }
 
-/* ---------- Review badge ---------- */
+/* ---------- Info do cartão ---------- */
 
-.bookshelf-review-badge {
-  position: absolute;
-  inset-block-end: var(--space-3xs);
-  inset-inline-end: var(--space-3xs);
-  padding: var(--space-3xs) var(--space-2xs);
-  font-size: var(--font-size-xs);
-  line-height: 1;
-  color: var(--color-proof);
-  background-color: var(--color-proof-soft);
+.bookshelf-info {
+  --flow-space: var(--space-3xs);
+  min-width: 0;
 }
 
-/* ---------- Empty state ---------- */
+.bookshelf-info h3 {
+  margin-block-start: 0;
+  font-size: var(--step--1);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
 
-.bookshelf-empty {
-  padding-block: var(--space-2xl);
-  text-align: center;
+.bookshelf-author {
+  margin-block: 0;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
   color: var(--color-ink-soft);
+}
+
+.bookshelf-rating {
+  margin-block: 0;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0.125em;
+  color: var(--color-star);
+}
+
+.bookshelf-review-link {
+  justify-self: start;
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  text-underline-offset: 0.22em;
+}
+
+.bookshelf-review-link:hover,
+.bookshelf-review-link:focus-visible {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-proof);
+  text-decoration-thickness: 2px;
 }

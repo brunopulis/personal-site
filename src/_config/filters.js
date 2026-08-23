@@ -1,4 +1,4 @@
-import {booksByYear, currentlyReading} from './filters/books.js';
+import {bookCategories, booksByYear, currentlyReading} from './filters/books.js';
 import {formatDate} from './filters/dates.js';
 import {head} from './filters/head.js';
 import {htmlDateString} from './filters/htmlDateString.js';
@@ -24,6 +24,7 @@ import {xmlEscape} from './filters/xmlEscape.js';
 export {formatNumber} from './filters/formatNumber.js';
 
 export default {
+  bookCategories,
   booksByYear,
   currentlyReading,
   formatDate,
