@@ -1,7 +1,7 @@
 ---
 title: 'Estratégias de leitura para ler e compreender melhor'
 author: 'Ismar Souza'
-category: 'Leitura'
+category: Diversos
 status: 'lido'
 rating: 4
 poster: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1509123211i/36487222.jpg'

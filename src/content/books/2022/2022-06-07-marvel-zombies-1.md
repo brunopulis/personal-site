@@ -1,7 +1,7 @@
 ---
 title: 'Marvel Zombies #1'
 author: ''
-category: ''
+category: Quadrinhos
 status: 'lido'
 rating: 5
 poster: 'https://m.media-amazon.com/images/I/81S37Wqbs+L._SL1500_.jpg'

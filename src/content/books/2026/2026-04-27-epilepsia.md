@@ -2,7 +2,7 @@
 title: 'Epilepsia'
 subtitle: 'O que seu médico quer que você saiba'
 author: 'José Ferreira, Nathália Ferreira'
-category: 'Vida Saudável'
+category: Saúde
 status: 'lido'
 rating: 5
 poster: 'https://m.media-amazon.com/images/I/810+9VeousL._SL1500_.jpg'

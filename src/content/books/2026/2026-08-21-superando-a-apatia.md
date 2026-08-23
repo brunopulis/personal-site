@@ -2,7 +2,7 @@
 title: "Superando a apatia"
 subtitle: "A esperança do evangelho para a frieza espiritual"
 author: "Uche Anizor"
-category: "Teologia"
+category: Cristianismo
 status: lendo
 rating:
 poster: "https://images.tcdn.com.br/img/img_prod/803335/superando_a_apatia_1_20260312160129_56778cff0ca3.jpg"
