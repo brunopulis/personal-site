@@ -21,12 +21,6 @@ Este site participa da [IndieWeb](https://indieweb.org/) e pode exibir interaç�
 
 Essas interações são públicas na origem. Se você desejar a remoção de alguma interação exibida aqui, entre em contato por e-mail.
 
-## Livro de visitas
-
-As mensagens enviadas no [livro de visitas](/guestbook/) são armazenadas publicamente em um arquivo de dados do site. Cada mensagem contém nome, texto e data de envio.
-
-O conteúdo é sanitizado antes de ser salvo para evitar scripts maliciosos.
-
 ## Cookies
 
 Este site não utiliza cookies de rastreamento.

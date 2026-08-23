@@ -51,5 +51,4 @@ Um mapa completo com tudo nesse site. Explore e descubra!
 - [Acessibilidade](/accessibility/) ♿
 - [POSSE](/posse/) 🗒️
 - [Causas que apoio](/giving/) 🫶
-- [Livro de visitas](/guestbook/) 💬
 - [Privacidade](/privacy/) 🔒

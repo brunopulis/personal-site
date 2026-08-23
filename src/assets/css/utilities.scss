@@ -3,18 +3,6 @@ UTILITY CLASSES
 Custom utility classes for the project
 */
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-
 .w-full {
   width: 100%;
   max-width: unset;
@@ -84,23 +72,14 @@ Custom utility classes for the project
 }
 
 /* Color utilities */
-.text-white { color: var(--color-light-silver-50); }
-.text-blood-red-950 { color: var(--color-blood-red-950); }
 .text-brand { color: var(--color-brand); }
-.text-vista-blue-600 { color: var(--color-vista-blue-600); }
-.text-vista-blue-500 { color: var(--color-vista-blue-500); }
-.text-errie-black-950 { color: var(--color-errie-black-950); }
 .text-errie-black-900 { color: var(--color-errie-black-900); }
 .text-muted { color: var(--color-muted); }
 
-.bg-vista-blue-600 { background-color: var(--color-vista-blue-600); }
-.bg-vista-blue-100 { background-color: var(--color-vista-blue-100); }
 .bg-surface { background-color: var(--color-surface); }
 
 .border { border: var(--stroke-width) var(--stroke-style) var(--stroke-color); }
 .border-b { border-bottom: var(--stroke-width) var(--stroke-style) var(--stroke-color); }
-.border-vista-blue-600 { border-color: var(--color-vista-blue-600); }
-.border-vista-blue-100 { border-color: var(--color-vista-blue-100); }
 
 .rounded-full { border-radius: 100vmax; }
 
@@ -122,8 +101,6 @@ Custom utility classes for the project
   color: var(--color-proof);
   background-color: var(--color-proof-soft);
 }
-
-.transition-colors { transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out; }
 
 /* Spacing utilities */
 .px-3 { padding-inline: var(--space-2xs); }
@@ -159,10 +136,6 @@ Custom utility classes for the project
 /* Grid utilities */
 .grid { display: grid; }
 
-/* Hover utilities */
-.hover\:border-vista-blue-500:hover { border-color: var(--color-vista-blue-500); }
-.hover\:text-errie-black-950:hover { color: var(--color-errie-black-950); }
-
 /* List utilities */
 .list-disc { list-style-type: disc; }
 
@@ -173,11 +146,6 @@ Custom utility classes for the project
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-/* Focus utilities */
-.focus\:outline-none:focus { outline: none; }
-.focus\:ring-2:focus { box-shadow: 0 0 0 2px var(--focus-ring-color, currentColor); }
-.focus\:ring-vista-blue-500:focus { --focus-ring-color: var(--color-vista-blue-500); }
 
 /* Pagefind search input */
 #search .pagefind-ui__search-input {
