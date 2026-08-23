@@ -160,11 +160,11 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/assets/images': 'assets/images'});
   eleventyConfig.addPassthroughCopy({'src/assets/og-images': 'assets/og-images'});
   eleventyConfig.addPassthroughCopy({'src/assets/apple-touch-icon.png': 'assets/apple-touch-icon.png'});
+  eleventyConfig.addPassthroughCopy({'src/assets/favicon*': 'assets/'});
   eleventyConfig.addPassthroughCopy({'src/assets/og-default.png': 'assets/og-default.png'});
   eleventyConfig.addPassthroughCopy({'src/assets/files': 'assets/files'});
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
 
-  eleventyConfig.addPassthroughCopy({api: 'api'});
   eleventyConfig.addPassthroughCopy({'src/.well-known': '.well-known'});
 
   eleventyConfig.addPassthroughCopy({
