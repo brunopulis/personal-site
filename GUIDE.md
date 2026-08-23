@@ -16,30 +16,37 @@ If you can edit a text file, you can publish.
 
 ## 2) The absolute minimum to publish
 
-1. Open `src/_data/site.json` and change:
-   - `name`, `author`, `email`, `url`
+1. Open `src/_data/site.json` and change: - `name`, `author`, `email`, `url`
 2. Start the site locally:
+
    ```bash
    npm install
    npm run dev
    ```
+
 3. Write your first post:
-   - Duplicate any file in `src/blog/` and edit the front matter at the top:
-     ```yaml
-     ---
-     layout: layouts/post.njk
-     title: My First Post
-     description: What this site is about
-     date: 2025-01-01
-     tags: [intro]
-     category: announcements
-     ---
-     ```
-   - Then write your content below the `---` line in normal text.
-4. Deploy (when ready):
+
+- Duplicate any file in `src/blog/` and edit the front matter at the top:
+
+  ```yaml
+  ---
+  layout: layouts/post.njk
+  title: My First Post
+  description: What this site is about
+  date: 2025-01-01
+  tags: [intro]
+  category: announcements
+  ---
+  ```
+
+  - Then write your content below the `---` line in normal text.
+
+1. Deploy (when ready):
+
    ```bash
    npm run build
    ```
+
    Upload the `_site/` folder to your host or use Netlify.
 
 ---
@@ -78,9 +85,9 @@ You don’t need to learn everything. Copy, paste, tweak one thing at a time.
 
 Resources:
 
-- Markdown basics: https://www.markdownguide.org/basic-syntax/
-- Learn HTML (MDN): https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content
-- Learn CSS (MDN): https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics
+- Markdown basics: <https://www.markdownguide.org/basic-syntax/>
+- Learn HTML (MDN): <https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content>
+- Learn CSS (MDN): <https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics>
 
 ---
 
@@ -95,19 +102,21 @@ Minimum IndieWeb setup:
 
 - Set `site.url` in `src/_data/site.json` (your domain).
 - Optional webmentions: create an account on webmention.io and add to `site.json`:
+
   ```json
   "webmentions": { "enabled": true, "domain": "yourdomain.com" }
   ```
+
 - Your posts already include h‑entry microformats. Nothing else to do.
 
 Resources:
 
-- IndieWeb: Getting Started — https://indieweb.org/Getting_Started
-- IndieWebify Me — https://indiewebify.me/
-- Microformats h-entry — http://microformats.org/wiki/h-entry
-- Microformats h-card — https://microformats.org/wiki/h-card
-- Microformats on MDN — https://developer.mozilla.org/en-US/docs/Web/HTML/microformats
-- Webmention.io — https://webmention.io/
+- IndieWeb: Getting Started — <https://indieweb.org/Getting_Started>
+- IndieWebify Me — <https://indiewebify.me/>
+- Microformats h-entry — <http://microformats.org/wiki/h-entry>
+- Microformats h-card — <https://microformats.org/wiki/h-card>
+- Microformats on MDN — <https://developer.mozilla.org/en-US/docs/Web/HTML/microformats>
+- Webmention.io — <https://webmention.io/>
 
 ---
 
@@ -122,8 +131,8 @@ Resources:
 
 Resources:
 
-- Eleventy docs — https://www.11ty.dev/docs/
-- Tailwind CSS docs — https://tailwindcss.com/docs
+- Eleventy docs — <https://www.11ty.dev/docs/>
+- Tailwind CSS docs — <https://tailwindcss.com/docs>
 
 ---
 
@@ -135,7 +144,7 @@ Resources:
 
 Resources:
 
-- Eleventy collections (tags) — https://www.11ty.dev/docs/collections/
+- Eleventy collections (tags) — <https://www.11ty.dev/docs/collections/>
 
 ---
 
@@ -145,8 +154,8 @@ Badges are tiny images that show info (e.g., “Built with Eleventy”, “RSS�
 
 Where to find badges:
 
-- Shields.io badge builder: https://shields.io/
-- Big list of ready‑made Markdown badges: https://ileriayo.github.io/markdown-badges/
+- Shields.io badge builder: <https://shields.io/>
+- Big list of ready‑made Markdown badges: <https://ileriayo.github.io/markdown-badges/>
 
 Add a badge to `README.md` (Markdown):
 
@@ -166,8 +175,8 @@ Tip: Change the text and color directly in the Shields.io URL.
 
 Resources:
 
-- Shields.io — https://shields.io/
-- Markdown Badges list — https://ileriayo.github.io/markdown-badges/
+- Shields.io — <https://shields.io/>
+- Markdown Badges list — <https://ileriayo.github.io/markdown-badges/>
 
 ---
 
@@ -223,7 +232,7 @@ Low‑code ideas (copy/paste):
 
 These tiny 88×31 pixel buttons were everywhere in the 1990s/2000s. They’re a fun way to show your vibe.
 
-- Big gallery: https://cyber.dabamos.de/88x31/
+- Big gallery: <https://cyber.dabamos.de/88x31/>
 
 How to add them (simple):
 
@@ -242,7 +251,7 @@ How to add them (simple):
 </div>
 ```
 
-3. Optional CSS for neat layout and crisp pixels (add to `src/assets/css/tailwind.css`):
+1. Optional CSS for neat layout and crisp pixels (add to `src/assets/css/tailwind.css`):
 
 ```css
 .badges {
@@ -264,9 +273,9 @@ Tips:
 
 More 88×31 resources:
 
-- Gallery: https://cyber.dabamos.de/88x31/
-- Button maker: https://websetsbylynn.neocities.org/88x31-button-maker/
-- Curated collections: https://anlucas.neocities.org/88x31Buttons
+- Gallery: <https://cyber.dabamos.de/88x31/>
+- Button maker: <https://websetsbylynn.neocities.org/88x31-button-maker/>
+- Curated collections: <https://anlucas.neocities.org/88x31Buttons>
 
 ### Join a Webring (share visitors with friendly sites)
 
@@ -274,11 +283,11 @@ Webrings connect sites in a circle with simple “Previous/Next” links.
 
 Popular option:
 
-- XXIIVV Webring: https://webring.xxiivv.com/ (rules + join instructions in the repo)
+- XXIIVV Webring: <https://webring.xxiivv.com/> (rules + join instructions in the repo)
 
 How to join (high level):
 
-1. Make a pull request to add your site to the webring list: https://github.com/XXIIVV/webring
+1. Make a pull request to add your site to the webring list: <https://github.com/XXIIVV/webring>
 2. Choose an ID (often your domain without dots). You’ll use it in the links below.
 3. Add the webring links to your footer or a page.
 
@@ -315,8 +324,8 @@ Notes:
 
 Resources:
 
-- XXIIVV Webring — https://webring.xxiivv.com/
-- Join via GitHub — https://github.com/XXIIVV/webring
+- XXIIVV Webring — <https://webring.xxiivv.com/>
+- Join via GitHub — <https://github.com/XXIIVV/webring>
 
 Keep it accessible:
 
@@ -326,8 +335,8 @@ Keep it accessible:
 
 Accessibility resources:
 
-- W3C WAI Accessibility Fundamentals — https://www.w3.org/WAI/fundamentals/
-- WAI Tutorials — https://www.w3.org/WAI/tutorials/
+- W3C WAI Accessibility Fundamentals — <https://www.w3.org/WAI/fundamentals/>
+- WAI Tutorials — <https://www.w3.org/WAI/tutorials/>
 
 ---
 
