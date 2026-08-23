@@ -14,13 +14,15 @@ const buildCss = async (inputPath, outputPaths) => {
   });
 
   const processed = await postcss([autoprefixer, cssnano]).process(result.css, {from: inputPath});
+  // Dart Sass compressed mode emits a BOM when the source has non-ASCII characters.
+  const css = processed.css.replace(/^\uFEFF/, '');
 
   for (const outputPath of outputPaths) {
     await fs.mkdir(path.dirname(outputPath), {recursive: true});
-    await fs.writeFile(outputPath, processed.css);
+    await fs.writeFile(outputPath, css);
   }
 
-  return processed.css;
+  return css;
 };
 
 export const buildAllCss = async () => {
