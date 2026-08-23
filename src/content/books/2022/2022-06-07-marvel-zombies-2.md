@@ -8,7 +8,7 @@ poster: 'https://m.media-amazon.com/images/I/51DtJhX4uLL._SY445_SX342_QL70_ML2_.
 description: ''
 thoughts: ''
 quotes: ''
-attendedYear: '2022'
+attendedYear: 2022
 recommendBy: ''
 tags: []
 url: ''
