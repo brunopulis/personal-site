@@ -7,20 +7,20 @@ title: Apoie meu trabalho
 <h1>Apoie meu trabalho</h1>
 
 <div class="prose flow">
-  {% if site.donate.message %}
-    <p>{{ site.donate.message }}</p>
+  {% if meta.author.donate.message %}
+    <p>{{ meta.author.donate.message }}</p>
   {% else %}
     <p>If you find value in my writing and want to support my work, there are several ways you can help:</p>
   {% endif %}
 
-  {% if site.donate.enabled %}
+  {% if meta.author.donate.enabled %}
     <h2>Suporte único</h2>
     <p>Compre-me um café ou faça uma doação única para me ajudar a continuar escrevendo:</p>
 
     <div class="cluster" style="--gutter: var(--space-s)">
-      {% if site.donate.kofi %}
+      {% if meta.author.donate.kofi %}
         <a
-          href="https://ko-fi.com/{{ site.donate.kofi }}"
+          href="https://ko-fi.com/{{ meta.author.donate.kofi }}"
           target="_blank"
           rel="noopener noreferrer"
           class="font-bold"
@@ -28,9 +28,9 @@ title: Apoie meu trabalho
           Ko-fi
         </a>
       {% endif %}
-      {% if site.donate.paypal %}
+      {% if meta.author.donate.paypal %}
         <a
-          href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
+          href="https://www.paypal.com/donate/?hosted_button_id={{ meta.author.donate.paypal }}"
           target="_blank"
           rel="noopener noreferrer"
           class="font-bold"
@@ -40,13 +40,13 @@ title: Apoie meu trabalho
       {% endif %}
     </div>
 
-    {% if site.donate.github %}
+    {% if meta.author.donate.github %}
       <h2>Contribuição contínua</h2>
       <p>Para contribuição contínua, considere me apoiar no GitHub:</p>
 
       <div>
         <a
-          href="https://github.com/sponsors/{{ site.donate.github }}"
+          href="https://github.com/sponsors/{{ meta.author.donate.github }}"
           target="_blank"
           rel="noopener noreferrer"
           class="font-bold"

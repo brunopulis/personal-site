@@ -1,6 +1,15 @@
+{% set metaDescription %}
+  {%- if discover.description -%}
+    {{- discover.description -}}
+  {%- elif description -%}
+    {{- description -}}
+  {%- else -%}
+    {{- meta.siteDescription -}}
+  {%- endif -%}
+{% endset %}
+
 <meta name="description" content="{{ metaDescription }}" />
-<meta name="theme-color" content="{{ meta.themeDark }}" media="(prefers-color-scheme: dark)" />
-<meta name="theme-color" content="{{ meta.themeLight }}" media="(prefers-color-scheme: light)" />
+
 <!-- Search Engines -->
 <meta name="robots" content="index,follow" />
 <meta name="googlebot" content="index,follow" />
@@ -12,8 +21,6 @@
 <meta name="color-scheme" content="light dark" />
 <!-- Helps prevent duplicate content issues -->
 <link rel="canonical" href="{{ meta.url }}{{ page.url }}" />
-<!-- Links to information about the author(s) of the document -->
-<link rel="author" href="humans.txt" />
 
 {% if meta.author.me and meta.author.me.length %}
   <!-- rel=me profiles -->
@@ -22,64 +29,71 @@
   {% endfor %}
 {% endif %}
 
-{% if meta.author.fediverse %}
-  <!-- fediverse creator tag -->
-  <meta name="fediverse:creator" content="{{ meta.author.fediverse }}" />
+{% if meta.author.social and meta.author.social.mastodon %}
+  <link rel="me" href="{{ meta.author.social.mastodon }}" />
 {% endif %}
+<link
+  rel="site.standard.document"
+  href="at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/rkey"
+/>
 
-<!-- Open Graph meta  -->
-<meta property="og:url" content="{{ meta.url }}{{ page.url }}" />
+{# Open Graph (Facebook, LinkedIn, etc.) #}
+{% set ogTitle = title or meta.siteName %}
+{% set ogDescription = description or meta.siteDescription %}
+{% set ogUrl = (meta.url and (meta.url + (page.url or '/'))) or '' %}
+{# Resolve image: per-page image, or generated OG for posts, or default #}
+{% set rawImage = image %}
+{% if not rawImage %}
+  {% if page.url | startsWith('/blog/') %}
+    {% set rawImage = '/assets/og-images/' + (title | slugify) + '-preview.jpeg' %}
+  {% else %}
+    {% set rawImage = '/assets/og-default.png' %}
+  {% endif %}
+{% endif %}
+{% if meta.url %}
+  {% if rawImage | startsWith('http') %}
+    {% set ogImage = rawImage %}
+  {% elseif rawImage | startsWith('/') %}
+    {% set ogImage = meta.url + rawImage %}
+  {% else %}
+    {% set ogImage = meta.url + '/' + rawImage %}
+  {% endif %}
+{% else %}
+  {% set ogImage = rawImage %}
+{% endif %}
 <meta property="og:type" content="website" />
-<meta
-  property="og:title"
-  content="{%- if discover.title -%}
-    {{- discover.title -}}
-  {%- elif title -%}
-    {{- title -}}
-  {%- else -%}
-    {{- meta.siteName -}}
-  {%- endif -%}"
-/>
-<meta
-  property="og:image"
-  content="{%- if layout == 'post' -%}
-    {{- meta.url -}}/assets/og-images/{{ title | slugify }}-preview.jpeg
-  {%- else -%}
-    {{- meta.url -}}{{- meta.opengraph_default -}}
-  {%- endif -%}"
-/>
-<meta
-  property="og:image:alt"
-  content="{%- if layout == 'post' -%}
-    {{- title -}}
-  {%- else -%}
-    {{- meta.opengraph_default_alt -}}
-  {%- endif -%}"
-/>
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:description" content="{{ metaDescription }}" />
 <meta property="og:site_name" content="{{ meta.siteName }}" />
-<meta property="og:locale" content="{{ meta.locale }}" />
-<meta property="article:author" content="{{ meta.author.name }}" />
+{% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}" />{% endif %}
+<meta property="og:title" content="{{ ogTitle }}" />
+<meta property="og:description" content="{{ ogDescription }}" />
+<meta property="og:image" content="{{ ogImage }}" />
+<meta property="og:image:alt" content="{{ meta.siteName }} preview" />
 
-<!-- Twitter specific head data was removed in v2 -->
+<!-- Twitter specific head -->
+<meta name="twitter:card" content="summary_large_image" />
+{% if meta.author.social and meta.author.social.twitter %}
+  <meta name="twitter:site" content="{{ meta.author.social.twitter }}" />
+  <meta name="twitter:creator" content="{{ meta.author.social.twitter }}" />
+{% endif %}
+<meta name="twitter:title" content="{{ ogTitle }}" />
+<meta name="twitter:description" content="{{ ogDescription }}" />
+<meta name="twitter:image" content="{{ ogImage }}" />
+<meta name="twitter:image:alt" content="{{ meta.siteName }} preview" />
+<link rel="webmention" href="https://webmention.io/{{ meta.url | replace('https://', '') | replace('http://', '') }}/webmention" />
+<link rel="pingback" href="https://webmention.io/{{ meta.url | replace('https://', '') | replace('http://', '') }}/xmlrpc" />
 
 <!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
-{% for feedLink in meta.blog.feedLinks %}
-  <link
-    rel="alternate"
-    type="{{ feedLink.type }}"
-    title="{{ feedLink.title }}: {{ meta.siteName }}"
-    href="{{ feedLink.url }}"
-  />
-{% endfor %}
+<link rel="alternate" href="{{ meta.url }}/feeds/all/rss.xml" title="Todo o conteúdo - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ meta.url }}/feeds/blog/rss.xml" title="Artigos do Blog - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ meta.url }}/feeds/notes/rss.xml" title="Notas - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ meta.url }}/feeds/books/rss.xml" title="Minha biblioteca de livros - Bruno Pulis" type="application/rss+xml">
+<link rel="alternate" href="{{ meta.url }}/feeds/shows/rss.xml" title="Meus seriados - Bruno Pulis" type="application/rss+xml">
 
-<!-- Favicon: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs -->
+{# Favicon and theme color #}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="shortcut icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="mask-icon" href="/assets/favicon.svg" color="#171e1e">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="{{ '/site.webmanifest' | url }}" />
+<meta name="theme-color" content="#d9d9d9" />

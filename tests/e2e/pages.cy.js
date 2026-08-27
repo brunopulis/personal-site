@@ -4,7 +4,6 @@ const PAGES = [
   {path: '/blogroll/', heading: 'Blogroll'},
   {path: '/bookshelf/', heading: 'Meus livros'},
   {path: '/colophon/', heading: 'Colophon'},
-  {path: '/content/', heading: 'Conteúdos'},
   {path: '/disability/', heading: 'Minhas deficiências'},
   {path: '/donate/', heading: 'Apoie meu trabalho'},
   {path: '/explore/', heading: 'Explorar'},

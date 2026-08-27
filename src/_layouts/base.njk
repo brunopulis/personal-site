@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <!-- 1 charset/viewport -->
   <meta charset="UTF-8" />
@@ -8,189 +8,26 @@
   <!-- 2 title -->
   <title>
     {%- if title -%}
-      {{- title -}}   -   {{ site.name }}
+      {{ title }} - {{ meta.siteName }}
     {%- else -%}
-      {{- site.name -}}
+      {{ meta.siteName }}
     {%- endif -%}
   </title>
-
-  <base href="{{ page.url }}" />
 
   <!-- 3 synchronous js  -->
   {% include "head/js-inline.njk" %}
 
-  <meta name="description" content="{{ description or site.description }}" />
-  <meta name="generator" content="Eleventy" />
-  <meta name="robots" content="index,follow" />
-  <meta name="googlebot" content="index,follow" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="author" href="humans.txt" />
-  {% if site.social and site.social.mastodon %}
-    <link rel="me" href="{{ site.social.mastodon }}" />
-  {% endif %}
-  <link
-    rel="site.standard.document"
-    href="at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/rkey"
-  />
-  {# Canonical URL #}
-  {% if site.url %}
-  <link rel="canonical" href="{{ site.url }}{{ page.url or '/' }}" />
-  {% endif %}
-
-  {# Open Graph (Facebook, LinkedIn, etc.) #}
-  {% set ogTitle = title or site.name %}
-  {% set ogDescription = description or site.description %}
-  {% set ogUrl = (site.url and (site.url + (page.url or '/'))) or '' %}
-  {# Resolve image: per-page image, or generated OG for posts, or default #}
-  {% set rawImage = image %}
-  {% if not rawImage %}
-    {% if page.url | startsWith('/blog/') %}
-      {% set rawImage = '/assets/og-images/' + (title | slugify) + '-preview.jpeg' %}
-    {% else %}
-      {% set rawImage = '/assets/og-default.png' %}
-    {% endif %}
-  {% endif %}
-  {% if site.url %}
-    {% if rawImage | startsWith('http') %}
-      {% set ogImage = rawImage %}
-    {% elseif rawImage | startsWith('/') %}
-      {% set ogImage = site.url + rawImage %}
-    {% else %}
-      {% set ogImage = site.url + '/' + rawImage %}
-    {% endif %}
-  {% else %}
-    {% set ogImage = rawImage %}
-  {% endif %}
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="{{ site.name }}" />
-  {% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}" />{% endif %}
-  <meta property="og:title" content="{{ ogTitle }}" />
-  <meta property="og:description" content="{{ ogDescription }}" />
-  <meta property="og:image" content="{{ ogImage }}" />
-  <meta property="og:image:alt" content="{{ site.name }} preview" />
-
-  {# Twitter Card #}
-  <meta name="twitter:card" content="summary_large_image" />
-  {% if site.social and site.social.twitter %}
-    <meta name="twitter:site" content="{{ site.social.twitter }}" />
-    <meta name="twitter:creator" content="{{ site.social.twitter }}" />
-  {% endif %}
-  <meta name="twitter:title" content="{{ ogTitle }}" />
-  <meta name="twitter:description" content="{{ ogDescription }}" />
-  <meta name="twitter:image" content="{{ ogImage }}" />
-  <meta name="twitter:image:alt" content="{{ site.name }} preview" />
-  <link rel="webmention" href="https://webmention.io/{{ site.url | replace('https://', '') | replace('http://', '') }}/webmention" />
-  <link rel="pingback" href="https://webmention.io/{{ site.url | replace('https://', '') | replace('http://', '') }}/xmlrpc" />
+  <!-- 4 schema settings -->
+  {% include "head/schemas.njk" %}
 
   <!-- 5 CSS  -->
-  <!-- <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}" /> -->
   {% include "head/css-inline.njk" %}
 
-  <!-- RSS Autodiscovery. Loops over meta.blog.feedLinks -->
-  <link rel="alternate" href="{{ site.url }}/feeds/all/rss.xml" title="Todo o conteúdo - Bruno Pulis" type="application/rss+xml">
-  <link rel="alternate" href="{{ site.url }}/feeds/blog/rss.xml" title="Artigos do Blog - Bruno Pulis" type="application/rss+xml">
-  <link rel="alternate" href="{{ site.url }}/feeds/notes/rss.xml" title="Notas - Bruno Pulis" type="application/rss+xml">
-  <link rel="alternate" href="{{ site.url }}/feeds/books/rss.xml" title="Minha biblioteca de livros - Bruno Pulis" type="application/rss+xml">
-  <link rel="alternate" href="{{ site.url }}/feeds/shows/rss.xml" title="Meus seriados - Bruno Pulis" type="application/rss+xml">
+  <!-- 6 preloads  -->
+  {% include "head/preloads.njk" %}
 
-  {# Favicon and theme color #}
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#171e1e">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#d9d9d9" />
-
-  {% include "partials/analytics.njk" %}
-
-  {# SEO: Structured Data (JSON-LD) #}
-  {% if site.url %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "url": "{{ site.url }}",
-        "name": "{{ site.name }}",
-        "description": "{{ site.description }}"
-      },
-      {
-        "@type": "Organization",
-        "name": "{{ site.author }}",
-        "url": "{{ site.url }}",
-        "sameAs": [
-          {% set sameAs = [] %}
-          {% if site.social and site.social.github %}
-            {% set sameAs = sameAs.concat(['https://github.com/' + site.social.github]) %}
-          {% endif %}
-          {% if site.social and site.social.twitter %}
-            {% set sameAs = sameAs.concat(['https://twitter.com/' + (site.social.twitter | replace('@',''))]) %}
-          {% endif %}
-          {% for link in sameAs %}
-            "{{ link }}"{% if not loop.last %},{% endif %}
-          {% endfor %}
-        ]
-      }
-    ]
-  }
-  </script>
-
-  {# Breadcrumbs: Home > Current #}
-  {% set isHome = (page.url or '/') == '/' %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "{{ site.url }}"
-      }{% if not isHome %},
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "{{ title or site.name }}",
-        "item": "{{ site.url }}{{ page.url or '/' }}"
-      }
-      {% endif %}
-    ]
-  }
-  </script>
-
-  {# BlogPosting for content pages (#blog, #notes, #poetry) #}
-  {% set url = page.url or '/' %}
-  {% set isPostLike = (url | startsWith('/blog/') ) or (url | startsWith('/notes/') ) or (url | startsWith('/poetry/') ) %}
-  {% if isPostLike %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "{{ (site.url and (site.url + (page.url or '/'))) or '' }}"
-    },
-    "headline": "{{ title or site.name }}",
-    {% if ogImage %}"image": ["{{ ogImage }}"],{% endif %}
-    "datePublished": "{{ page.date | htmlDateString }}",
-    "dateModified": "{{ page.date | htmlDateString }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ author or site.author }}"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ site.name }}"
-    },
-    "description": "{{ description or site.description }}"
-  }
-  </script>
-  {% endif %}
-  {% endif %}
+  {% include "head/meta-info.njk" %}
+  {% include "head/analytics.njk" %}
 </head>
 <body>
   {% include "partials/header.njk" %}

@@ -1,0 +1,86 @@
+{# SEO: Structured Data (JSON-LD) #}
+{% if meta.url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": "{{ meta.url }}",
+      "name": "{{ meta.siteName }}",
+      "description": "{{ meta.siteDescription }}"
+    },
+    {
+      "@type": "Organization",
+      "name": "{{ meta.author.name }}",
+      "url": "{{ meta.url }}",
+      "sameAs": [
+        {% set sameAs = [] %}
+        {% if meta.author.social and meta.author.social.github %}
+          {% set sameAs = sameAs.concat(['https://github.com/' + meta.author.social.github]) %}
+        {% endif %}
+        {% if meta.author.social and meta.author.social.twitter %}
+          {% set sameAs = sameAs.concat(['https://twitter.com/' + (meta.author.social.twitter | replace('@',''))]) %}
+        {% endif %}
+        {% for link in sameAs %}
+          "{{ link }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+
+{# Breadcrumbs: Home > Current #}
+{% set isHome = (page.url or '/') == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ meta.url }}"
+    }{% if not isHome %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ title or meta.siteName }}",
+      "item": "{{ meta.url }}{{ page.url or '/' }}"
+    }
+    {% endif %}
+  ]
+}
+</script>
+
+{# BlogPosting for content pages (#blog, #notes, #poetry) #}
+{% set url = page.url or '/' %}
+{% set isPostLike = (url | startsWith('/blog/') ) or (url | startsWith('/notes/') ) or (url | startsWith('/poetry/') ) %}
+{% if isPostLike %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ (meta.url and (meta.url + (page.url or '/'))) or '' }}"
+    },
+    "headline": "{{ title or meta.siteName }}",
+    {% if ogImage %}"image": ["{{ ogImage }}"],{% endif %}
+    "datePublished": "{{ page.date | htmlDateString }}",
+    "dateModified": "{{ page.date | htmlDateString }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ author or meta.author.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ meta.siteName }}"
+    },
+    "description": "{{ description or meta.siteDescription }}"
+  }
+  </script>
+{% endif %}
+{% endif %}

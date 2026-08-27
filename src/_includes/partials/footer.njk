@@ -15,47 +15,47 @@
 
     <div class="cluster" style="--gutter: var(--space-m); --cluster-horizontal-alignment: space-between">
       <p class="meta">
-        2012 {{ site.name }} •
+        2012 {{ meta.siteName }} •
         <a href="/feeds/all/rss.xml">RSS</a> •
         Conteúdo: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>
       </p>
 
       <ul class="cluster" role="list" aria-label="Redes sociais" style="--gutter: var(--space-s)">
-        {% if site.social.github %}
+        {% if meta.author.social.github %}
           <li>
-            <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="me noopener noreferrer">
+            <a href="https://github.com/{{ meta.author.social.github }}" target="_blank" rel="me noopener noreferrer">
               {% faIcon 'github', 'brands', 20 %}
               <span class="visually-hidden">GitHub</span>
             </a>
           </li>
         {% endif %}
-        {% if site.social.mastodon %}
+        {% if meta.author.social.mastodon %}
           <li>
-            <a href="{{ site.social.mastodon }}" target="_blank" rel="me noopener noreferrer">
+            <a href="{{ meta.author.social.mastodon }}" target="_blank" rel="me noopener noreferrer">
               {% faIcon 'mastodon', 'brands', 20 %}
               <span class="visually-hidden">Mastodon</span>
             </a>
           </li>
         {% endif %}
-        {% if site.social.bluesky %}
+        {% if meta.author.social.bluesky %}
           <li>
-            <a href="{{ site.social.bluesky }}" target="_blank" rel="me noopener noreferrer">
+            <a href="{{ meta.author.social.bluesky }}" target="_blank" rel="me noopener noreferrer">
               {% faIcon 'bluesky', 'brands', 20 %}
               <span class="visually-hidden">Bluesky</span>
             </a>
           </li>
         {% endif %}
-        {% if site.social.youtube %}
+        {% if meta.author.social.youtube %}
           <li>
-            <a href="{{ site.social.youtube }}" target="_blank" rel="me noopener noreferrer" title="YouTube">
+            <a href="{{ meta.author.social.youtube }}" target="_blank" rel="me noopener noreferrer" title="YouTube">
               {% faIcon 'youtube', 'brands', 20 %}
               <span class="visually-hidden">YouTube</span>
             </a>
           </li>
         {% endif %}
-        {% if site.social.linkedin %}
+        {% if meta.author.social.linkedin %}
           <li>
-            <a href="{{ site.social.linkedin }}" target="_blank" rel="me noopener noreferrer" title="LinkedIn">
+            <a href="{{ meta.author.social.linkedin }}" target="_blank" rel="me noopener noreferrer" title="LinkedIn">
               {% faIcon 'linkedin', 'brands', 20 %}
               <span class="visually-hidden">LinkedIn</span>
             </a>

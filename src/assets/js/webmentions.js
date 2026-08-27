@@ -15,7 +15,7 @@
       const data = await response.json();
 
       if (data.children && data.children.length > 0) {
-        displayWebmentions(data.children, webmentionsContainer);
+        displayWebmentions(data.children, webmentionsContainer, currentUrl);
       } else {
         showEmptyState(webmentionsContainer);
       }
@@ -25,7 +25,7 @@
     }
   }
 
-  function displayWebmentions(mentions, container) {
+  function displayWebmentions(mentions, container, url) {
     const likes = mentions.filter(m => m['wm-property'] === 'like-of');
     const reposts = mentions.filter(m => m['wm-property'] === 'repost-of');
     const replies = mentions.filter(m => m['wm-property'] === 'in-reply-to');
@@ -58,7 +58,7 @@
       html += '</div>';
     }
 
-    container.innerHTML = html;
+    container.innerHTML = html || url;
   }
 
   function renderMention(mention) {

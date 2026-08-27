@@ -8,13 +8,6 @@ export const where = (items, key, value) => {
   });
 };
 
-export const keys = obj => {
-  if (!obj || typeof obj !== 'object') {
-    return [];
-  }
-  return Object.keys(obj);
-};
-
 export const concat = (arr1, arr2) => {
   if (!Array.isArray(arr1)) arr1 = [];
   if (!Array.isArray(arr2)) arr2 = [];

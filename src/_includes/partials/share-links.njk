@@ -4,13 +4,13 @@
     <p class="meta uppercase">Compartilhe</p>
     <ul class="cluster" role="list" style="--gutter: var(--space-s)">
       <li>
-        <a href="mailto:{{site.email}}?subject=Resposta para {{title}}">
+        <a href="mailto:{{meta.author.email}}?subject=Resposta para {{title}}">
           Responder via e-mail
         </a>
       </li>
       <li>
         <a
-          href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ title | urlencode }}"
+          href="https://twitter.com/intent/tweet?url={{ meta.url }}{{ page.url }}&text={{ title | urlencode }}"
           target="_blank"
           rel="noopener noreferrer"
           class="u-syndication"
@@ -20,7 +20,7 @@
       </li>
       <li>
         <a class="u-syndication"
-           href="https://mastodon.social/share?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}"
+           href="https://mastodon.social/share?text={{ title | urlencode }}%20{{ meta.url }}{{ page.url }}"
            target="_blank"
            rel="noopener noreferrer">
           Mastodon
@@ -28,7 +28,7 @@
       </li>
       <li>
         <a
-          href="https://bsky.app/intent/compose?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}"
+          href="https://bsky.app/intent/compose?text={{ title | urlencode }}%20{{ meta.url }}{{ page.url }}"
           target="_blank"
           rel="noopener noreferrer"
           class="u-syndication"
@@ -38,7 +38,7 @@
       </li>
       <li>
         <a
-          href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+          href="https://www.linkedin.com/sharing/share-offsite/?url={{ meta.url }}{{ page.url }}"
           target="_blank"
           rel="noopener"
           class="u-syndication"

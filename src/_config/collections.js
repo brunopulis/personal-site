@@ -79,15 +79,6 @@ export const getAllFeed = collection => {
     .slice(0, 20);
 };
 
-export const tagList = collection => {
-  const tagsSet = new Set();
-  collection.getAll().forEach(item => {
-    if (!item.data.tags) return;
-    item.data.tags.filter(tag => !['posts', 'docs', 'all'].includes(tag)).forEach(tag => tagsSet.add(tag));
-  });
-  return Array.from(tagsSet).sort();
-};
-
 export const blogrollCategories = () => {
   const categoriesSet = new Set();
   blogroll.forEach(entry => {

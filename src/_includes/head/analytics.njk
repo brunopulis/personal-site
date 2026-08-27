@@ -4,28 +4,28 @@ Analytics integration - Choose one:
 2. Fathom Analytics (privacy-friendly)
 3. Simple Analytics (privacy-friendly)
 
-To enable, uncomment one of the sections below and configure in site.json
+To enable, uncomment one of the sections below and configure in _data/meta.js
 #}
 
-{% if site.analytics and site.analytics.enabled %}
-  {% if site.analytics.provider == 'umami' %}
+{% if meta.author.analytics and meta.author.analytics.enabled %}
+  {% if meta.author.analytics.provider == 'umami' %}
     <!-- Umami Analytics -->
     <script
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="88ff3bbf-61c5-4303-bea2-f0da4f5dbb53"
     ></script>
-  {% elif site.analytics.provider == 'plausible' %}
+  {% elif meta.author.analytics.provider == 'plausible' %}
     <!-- Plausible Analytics -->
     <script
       defer
-      data-domain="{{ site.analytics.domain or (site.url | replace('https://', '') | replace('http://', '')) }}"
+      data-domain="{{ meta.author.analytics.domain or (meta.url | replace('https://', '') | replace('http://', '')) }}"
       src="https://plausible.io/js/script.js"
     ></script>
-  {% elif site.analytics.provider == 'fathom' %}
+  {% elif meta.author.analytics.provider == 'fathom' %}
     <!-- Fathom Analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="{{ site.analytics.siteId }}" defer></script>
-  {% elif site.analytics.provider == 'simple' %}
+    <script src="https://cdn.usefathom.com/script.js" data-site="{{ meta.author.analytics.siteId }}" defer></script>
+  {% elif meta.author.analytics.provider == 'simple' %}
     <!-- Simple Analytics -->
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript
