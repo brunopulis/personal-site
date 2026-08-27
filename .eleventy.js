@@ -26,8 +26,7 @@ import {
   getAllShows,
   getAllNotes,
   getAllPoetry,
-  getWatchingYears,
-  tagList
+  getWatchingYears
 } from './src/_config/collections.js';
 
 import events from './src/_config/events.js';
@@ -54,12 +53,10 @@ export default async function (eleventyConfig) {
   // Layout alias
   eleventyConfig.addLayoutAlias('base', 'base.njk');
   eleventyConfig.addLayoutAlias('book', 'book.njk');
-  eleventyConfig.addLayoutAlias('movie', 'movie.njk');
   eleventyConfig.addLayoutAlias('note', 'note.njk');
   eleventyConfig.addLayoutAlias('page', 'page.njk');
   eleventyConfig.addLayoutAlias('poetry', 'poetry.njk');
   eleventyConfig.addLayoutAlias('watching', 'watching.njk');
-  eleventyConfig.addLayoutAlias('tags', 'tags.njk');
 
   // Collections
   eleventyConfig.addCollection('posts', getAllPosts);
@@ -70,7 +67,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addCollection('shows', getAllShows);
   eleventyConfig.addCollection('notes', getAllNotes);
   eleventyConfig.addCollection('poetry', getAllPoetry);
-  eleventyConfig.addCollection('tagList', tagList);
   eleventyConfig.addCollection('watchingYears', getWatchingYears);
   eleventyConfig.addCollection('allFeed', getAllFeed);
   eleventyConfig.addCollection('blogrollCategories', blogrollCategories);
@@ -141,9 +137,6 @@ export default async function (eleventyConfig) {
   // Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);
   eleventyConfig.addShortcode('faIcon', shortcodes.faIconShortcode);
-  eleventyConfig.addShortcode('image', shortcodes.imageShortcode);
-  eleventyConfig.addShortcode('imageKeys', shortcodes.imageKeysShortcode);
-  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode('groupBooksByYear', shortcodes.groupBooksByYear);
 
   // Events: after build
@@ -161,6 +154,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/assets/og-images': 'assets/og-images'});
   eleventyConfig.addPassthroughCopy({'src/assets/apple-touch-icon.png': 'assets/apple-touch-icon.png'});
   eleventyConfig.addPassthroughCopy({'src/assets/favicon*': 'assets/'});
+  eleventyConfig.addPassthroughCopy({'src/assets/favicon.ico': 'favicon.ico'});
   eleventyConfig.addPassthroughCopy({'src/assets/og-default.png': 'assets/og-default.png'});
   eleventyConfig.addPassthroughCopy({'src/assets/files': 'assets/files'});
   eleventyConfig.addPassthroughCopy({'src/feeds/pretty-feed-v3.xsl': 'feeds/pretty-feed-v3.xsl'});
@@ -168,9 +162,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({'src/.well-known': '.well-known'});
 
   eleventyConfig.addPassthroughCopy({
-    // -- to root
-    'src/assets/images/favicon/*': '/',
-
     // -- node_modules
     'node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}': `assets/components/`
   });

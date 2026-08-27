@@ -34,7 +34,7 @@ layout: base
       por
       <span class="p-author h-card">
         <a class="p-name u-url" href="/about/">
-          {{ author or site.author }}
+          {{ author or meta.author.name }}
         </a>
       </span>
       <span aria-hidden="true">•</span>
@@ -58,7 +58,7 @@ layout: base
 
   {% include "partials/share-links.njk" %}
   {% include "partials/author.njk" %}
-  {% if site.newsletter.enabled %}
+  {% if meta.author.newsletter.enabled %}
     {% include "partials/newsletter.njk" %}
   {% endif %}
 

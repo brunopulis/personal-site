@@ -1,17 +1,17 @@
 <section class="callout flow">
   <div class="flow" style="--flow-space: var(--space-2xs)">
-    <h3>Sobre {{ site.author }}</h3>
-    <p>{{ site.bio.short }}</p>
+    <h3>Sobre {{ meta.author.name }}</h3>
+    <p>{{ meta.author.bio.short }}</p>
 
     <p>Esse site é independente, sem anúncios, sem trackeamento de informações e aberto para todos. Sem <em>paywalls</em> e anunciantes, com exceção de livros sugeridos na Amazon.</p>
     <p>Você pode também apoiar meu trabalho através de doações pontuais ou regulares, através dos canais:</p>
 
-    {% if site.donate.enabled %}
+    {% if meta.author.donate.enabled %}
       <ul class="cluster" role="list" style="--gutter: var(--space-s)">
         <li>
-          {% if site.donate.kofi %}
+          {% if meta.author.donate.kofi %}
             <a
-              href="https://ko-fi.com/{{ site.donate.kofi }}"
+              href="https://ko-fi.com/{{ meta.author.donate.kofi }}"
               target="_blank"
               rel="noopener noreferrer"
               class="font-bold"
@@ -21,9 +21,9 @@
           {% endif %}
         </li>
         <li>
-          {% if site.donate.paypal %}
+          {% if meta.author.donate.paypal %}
             <a
-              href="https://www.paypal.com/donate/?hosted_button_id={{ site.donate.paypal }}"
+              href="https://www.paypal.com/donate/?hosted_button_id={{ meta.author.donate.paypal }}"
               target="_blank"
               rel="noopener noreferrer"
               class="font-bold"

@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {where, keys, concat} from '../../../src/_config/filters/where.js';
+import {where, concat} from '../../../src/_config/filters/where.js';
 
 describe('where', () => {
   const items = [
@@ -27,20 +27,6 @@ describe('where', () => {
   it('support nested key access with dot notation', () => {
     const nested = [{data: {type: 'book'}}, {data: {type: 'movie'}}];
     expect(where(nested, 'data.type', 'book')).toEqual([nested[0]]);
-  });
-});
-
-describe('keys', () => {
-  it('return keys of an object', () => {
-    expect(keys({a: 1, b: 2})).toEqual(['a', 'b']);
-  });
-
-  it('return empty array for null', () => {
-    expect(keys(null)).toEqual([]);
-  });
-
-  it('return empty array for non-object', () => {
-    expect(keys('string')).toEqual([]);
   });
 });
 

@@ -15,11 +15,11 @@ layout: base
     {% include "partials/last-modified.njk" %}
   </div>
 
-  <a class="visually-hidden u-url" href="{{ site.url }}{{ page.url }}">Permalink</a>
-  <a class="visually-hidden u-uid" href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
+  <a class="visually-hidden u-url" href="{{ meta.url }}{{ page.url }}">Permalink</a>
+  <a class="visually-hidden u-uid" href="{{ meta.url }}{{ page.url }}">{{ meta.url }}{{ page.url }}</a>
 
   <div class="visually-hidden p-author h-card">
-    <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ site.author }}</a>
-    <img class="u-photo" src="{{ site.author.photo }}" alt="{{ site.author }}" />
+    <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.author.name }}</a>
+    <img class="u-photo" src="{{ meta.author.photo }}" alt="{{ meta.author.name }}" />
   </div>
 </article>

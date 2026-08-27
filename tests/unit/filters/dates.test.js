@@ -1,12 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {toISOString, formatDate} from '../../../src/_config/filters/dates.js';
-
-describe('toISOString', () => {
-  it('convert date string to ISO format', () => {
-    const result = toISOString('2024-01-15');
-    expect(result).toMatch(/^2024-01-1[45]T/);
-  });
-});
+import {formatDate} from '../../../src/_config/filters/dates.js';
 
 describe('formatDate', () => {
   it('format date with custom format', () => {
