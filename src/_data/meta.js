@@ -15,7 +15,7 @@ export const pathToSvgLogo = 'src/assets/favicon.svg';
 export const author = {
   name: 'Bruno Pulis',
   description:
-    'Olá, seja bem-vindo ao meu canto na web! Aqui compartilho pensamentos, descobertas e conversas longe do ruído dos algoritmos das redes sociais.',
+    'Aqui compartilho pensamentos, descobertas e conversas longe do ruído dos algoritmos das redes sociais.',
   url: 'https://brunopulis.com',
   author: 'Bruno Pulis',
   email: 'brunopulis@protonmail.com',
