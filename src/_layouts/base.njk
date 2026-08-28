@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <!-- 1 charset/viewport -->
   <meta charset="UTF-8" />
@@ -8,11 +8,13 @@
   <!-- 2 title -->
   <title>
     {%- if title -%}
-      {{ title }} - {{ meta.siteName }}
+      {{- title -}}   -   {{ meta.siteName }}
     {%- else -%}
-      {{ meta.siteName }}
+      {{- meta.siteName -}}
     {%- endif -%}
   </title>
+
+  <base href="{{ page.url }}" />
 
   <!-- 3 synchronous js  -->
   {% include "head/js-inline.njk" %}
@@ -21,6 +23,7 @@
   {% include "head/schemas.njk" %}
 
   <!-- 5 CSS  -->
+  <!-- <link rel="stylesheet" href="/assets/css/global.css?{{ assetHash }}" /> -->
   {% include "head/css-inline.njk" %}
 
   <!-- 6 preloads  -->
