@@ -1,11 +1,6 @@
 /* Basic offline-first service worker */
 const CACHE_NAME = 'indieweb-blog-v1';
-const OFFLINE_URLS = [
-  '/',
-  '/assets/css/global.css',
-  '/assets/favicon-32x32.png',
-  '/assets/apple-touch-icon.png'
-];
+const OFFLINE_URLS = ['/', '/assets/favicon-32x32.png', '/assets/apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
