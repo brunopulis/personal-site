@@ -136,7 +136,6 @@ export default async function (eleventyConfig) {
   // Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);
   eleventyConfig.addShortcode('faIcon', shortcodes.faIconShortcode);
-  eleventyConfig.addShortcode('groupBooksByYear', shortcodes.groupBooksByYear);
 
   // Events: after build
   if (process.env.ELEVENTY_RUN_MODE === 'serve') {
