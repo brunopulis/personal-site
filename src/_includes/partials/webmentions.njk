@@ -56,7 +56,7 @@
             </div>
             {% if mention.content and mention.content.text %}
               <p>
-                {{ mention.content.text | truncate(280) | safe }}
+                {{ mention.content.text | truncate(280) }}
               </p>
             {% endif %}
             <a
