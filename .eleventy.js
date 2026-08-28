@@ -43,7 +43,6 @@ export default async function (eleventyConfig) {
     // build scripts handle it in production.
     if (process.env.ELEVENTY_RUN_MODE !== 'serve') {
       await events.buildAllCss();
-      await events.buildAllJs();
     }
   });
 
@@ -145,10 +144,7 @@ export default async function (eleventyConfig) {
   }
 
   // addPassthroughCopy — selective, not the entire src/assets/
-  ['src/assets/fonts/', 'src/assets/images/template', 'src/assets/og-images'].forEach(path =>
-    eleventyConfig.addPassthroughCopy(path)
-  );
-  eleventyConfig.addPassthroughCopy({'src/assets/css/global.css': 'assets/css/global.css'});
+  ['src/assets/fonts/', 'src/assets/og-images'].forEach(path => eleventyConfig.addPassthroughCopy(path));
   eleventyConfig.addPassthroughCopy({'src/assets/js': 'assets/js'});
   eleventyConfig.addPassthroughCopy({'src/assets/images': 'assets/images'});
   eleventyConfig.addPassthroughCopy({'src/assets/og-images': 'assets/og-images'});
