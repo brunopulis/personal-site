@@ -1,4 +1,5 @@
 import slugify from 'slugify';
+import {safeYear, slugToSegment} from './path-safety.js';
 
 export function buildFrontmatter(fields) {
   const {
@@ -11,7 +12,7 @@ export function buildFrontmatter(fields) {
     watchedYear = String(new Date().getFullYear()),
     poster = '',
     url = '',
-    watchedDate = new Date().toISOString(),
+    watchedDate = new Date().toISOString()
   } = fields;
 
   return `---
@@ -31,9 +32,10 @@ watchedDate: ${watchedDate}
 
 export function buildFilePath({title, type, watchedYear}) {
   const contentDir = type === 'movie' ? 'movies' : 'shows';
-  const slug = slugify(title, {lower: true, strict: true});
-  const fileName = type === 'movie' ? `${slug}.md` : `${watchedYear}-${slug}.md`;
-  return {contentDir, fileName};
+  const year = safeYear(watchedYear);
+  const slug = slugToSegment(slugify(title, {lower: true, strict: true}));
+  const fileName = type === 'movie' ? `${slug}.md` : `${year}-${slug}.md`;
+  return {contentDir, fileName, year};
 }
 
 export function computeDefaults(details, selected) {
@@ -62,6 +64,6 @@ export function computeDefaults(details, selected) {
     defaultYear,
     defaultPoster,
     defaultUrl,
-    type,
+    type
   };
 }

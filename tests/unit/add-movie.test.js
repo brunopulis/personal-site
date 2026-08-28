@@ -117,7 +117,21 @@ describe('buildFilePath', () => {
 
   it('handle empty title gracefully', () => {
     const result = buildFilePath({title: '', type: 'movie', watchedYear: '2026'});
-    expect(result.fileName).toBe('.md');
+    expect(result.fileName).toBe('untitled.md');
+    expect(result.year).toBe('2026');
+  });
+
+  it('neutralize path traversal in the title', () => {
+    const result = buildFilePath({title: '../../etc/passwd', type: 'movie', watchedYear: '2024'});
+    expect(result.fileName).toMatch(/^[a-z0-9][a-z0-9._-]*\.md$/);
+    expect(result.fileName).not.toContain('..');
+    expect(result.year).toBe('2024');
+  });
+
+  it('replace a traversal-looking year with the current year', () => {
+    const result = buildFilePath({title: 'Duna', type: 'movie', watchedYear: '../../../tmp'});
+    expect(result.year).toBe(String(new Date().getFullYear()));
+    expect(result.fileName).toBe('duna.md');
   });
 });
 

@@ -5,6 +5,7 @@ import path from 'path';
 import {createInterface} from 'readline';
 import dotenv from 'dotenv';
 import {buildFrontmatter, buildFilePath, computeDefaults} from './lib/add-movie.js';
+import {resolveInside, slugToSegment} from './lib/path-safety.js';
 
 dotenv.config();
 
@@ -116,7 +117,8 @@ async function main() {
   console.log('\n--- Preencha os campos (Enter para aceitar o valor sugerido) ---\n');
 
   const title = (await ask(`Título (${defaults.defaultTitle}): `)) || defaults.defaultTitle;
-  const director = (await ask(`Diretor(a) (${defaults.defaultDirector || '—'}): `)) || defaults.defaultDirector;
+  const director =
+    (await ask(`Diretor(a) (${defaults.defaultDirector || '—'}): `)) || defaults.defaultDirector;
 
   let category = await ask(`Categoria (${defaults.defaultCategory || '—'}): `);
   if (!category) category = defaults.defaultCategory;
@@ -143,44 +145,51 @@ async function main() {
     type: defaults.type,
     watchedYear,
     poster,
-    url,
+    url
   });
 
-  const {contentDir, fileName} = buildFilePath({title, type: defaults.type, watchedYear});
+  const {contentDir, fileName, year} = buildFilePath({title, type: defaults.type, watchedYear});
   const baseDir = path.resolve(`src/content/watching/${contentDir}`);
-  const yearDir = path.join(baseDir, watchedYear);
+  const yearDir = resolveInside(baseDir, year);
 
   if (!fs.existsSync(yearDir)) {
     fs.mkdirSync(yearDir, {recursive: true});
   }
 
-  const filePath = path.join(yearDir, fileName);
+  const filePath = resolveInside(yearDir, fileName);
   fs.writeFileSync(filePath, frontmatter);
   console.log(`\n✓ Arquivo criado: ${filePath}`);
 
   // Download poster image for local processing
-  if (poster && poster.includes('image.tmdb.org')) {
+  let posterUrl;
+  try {
+    posterUrl = new URL(poster);
+  } catch {
+    posterUrl = null;
+  }
+
+  if (posterUrl && posterUrl.hostname === 'image.tmdb.org') {
     const postersDir = path.resolve('src/assets/images/posters');
     if (!fs.existsSync(postersDir)) {
       fs.mkdirSync(postersDir, {recursive: true});
     }
 
-    const posterFilename = poster.split('/').pop();
-    const localPath = path.join(postersDir, posterFilename);
+    const posterName = slugToSegment(posterUrl.pathname.split('/').pop());
+    const localPath = resolveInside(postersDir, posterName);
 
     if (!fs.existsSync(localPath)) {
       try {
-        const res = await fetch(poster);
+        const res = await fetch(posterUrl);
         if (res.ok) {
           const buffer = Buffer.from(await res.arrayBuffer());
           fs.writeFileSync(localPath, buffer);
-          console.log(`  🖼️ Poster baixado: ${posterFilename}`);
+          console.log(`  🖼️ Poster baixado: ${posterName}`);
         }
       } catch (err) {
         console.log(`  ⚠️ Falha ao baixar poster: ${err.message}`);
       }
     } else {
-      console.log(`  🖼️ Poster já existe: ${posterFilename}`);
+      console.log(`  🖼️ Poster já existe: ${posterName}`);
     }
   }
 }

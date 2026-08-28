@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
-import path from 'path';
 import {buildFrontmatter, buildFilePath, createPrompter, parseChoice, parseRating} from './lib/add-book.js';
+import {resolveInside} from './lib/path-safety.js';
 
 const prompter = createPrompter(process.stdin);
 const ask = question => prompter.ask(question);
@@ -65,13 +65,13 @@ async function main() {
   });
 
   const {contentDir, fileName} = buildFilePath({title, attendedYear, pubDate});
-  const yearDir = path.resolve(`src/content/books/${contentDir}`);
+  const yearDir = resolveInside('src/content/books', contentDir);
 
   if (!fs.existsSync(yearDir)) {
     fs.mkdirSync(yearDir, {recursive: true});
   }
 
-  const filePath = path.join(yearDir, fileName);
+  const filePath = resolveInside(yearDir, fileName);
   fs.writeFileSync(filePath, frontmatter);
   console.log(`\n✓ Arquivo criado: ${filePath}`);
   prompter.close();

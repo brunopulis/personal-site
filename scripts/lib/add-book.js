@@ -1,5 +1,6 @@
 import slugify from 'slugify';
 import {createInterface} from 'readline';
+import {safeDate, safeYear, slugToSegment} from './path-safety.js';
 
 export function createPrompter(input, output = process.stdout) {
   const rl = createInterface({input});
@@ -112,7 +113,9 @@ pubDate: ${pubDate}
 }
 
 export function buildFilePath({title, attendedYear, pubDate}) {
-  const slug = slugify(title, {lower: true, strict: true});
-  const fileName = `${pubDate}-${slug}.md`;
-  return {contentDir: attendedYear || String(new Date().getFullYear()), fileName};
+  const year = safeYear(attendedYear);
+  const date = safeDate(pubDate);
+  const slug = slugToSegment(slugify(title, {lower: true, strict: true}));
+  const fileName = `${date}-${slug}.md`;
+  return {contentDir: year, fileName};
 }
