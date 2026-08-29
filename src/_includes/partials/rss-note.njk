@@ -1,0 +1,4 @@
+{% macro rssNote(rssItemTitle) %}
+  <p>Obrigado por ler via RSS. Você é incrível. <span aria-hidden="true">❤️</span></p>
+  <p>Você pode <a href="mailto:{{ meta.author.email }}?subject=Resposta para {{ rssItemTitle }}">responder este artigo por email</a>, com o <code>subject</code> contendo o nome do post.</p>
+{% endmacro %}

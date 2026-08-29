@@ -17,6 +17,7 @@
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/feeds/pretty-feed-v3.xsl" type="text/xsl"?>
+{% from "partials/rss-note.njk" import rssNote %}
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.base | addPathPrefixToFullUrl }}"
   xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -31,7 +32,7 @@
     <item>
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
-      <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}</description>
+      <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}{{ rssNote(post.data.title) }}</description>
       <pubDate>{{ (post.data.pubDate or post.date) | toRfc822Date }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
