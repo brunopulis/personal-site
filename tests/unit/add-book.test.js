@@ -1,11 +1,9 @@
 import {describe, it, expect} from 'vitest';
-import {PassThrough} from 'node:stream';
 import {
   buildFrontmatter,
   buildFilePath,
-  createPrompter,
-  parseChoice,
-  parseRating
+  buildReviewBody,
+  collectBookInput
 } from '../../scripts/lib/add-book.js';
 
 describe('buildFrontmatter', () => {
@@ -114,98 +112,86 @@ describe('buildFilePath', () => {
   });
 });
 
-describe('createPrompter', () => {
-  const makeOutput = () => {
-    const out = {writes: []};
-    out.write = text => out.writes.push(text);
-    return out;
+describe('buildReviewBody', () => {
+  it('include all review sections', () => {
+    const body = buildReviewBody();
+
+    expect(body).toContain('## O livro em 3 frases');
+    expect(body).toContain('## Impressões');
+    expect(body).toContain('## Como eu descobri esse livro?');
+    expect(body).toContain('## Quem deve ler?');
+    expect(body).toContain('## Como o livro me mudou');
+    expect(body).toContain('## Minhas 3 melhores citações');
+    expect(body).toContain('## Resumo + Notas');
+  });
+});
+
+describe('collectBookInput', () => {
+  const makeAsk = answers => {
+    const queue = [...answers];
+    return async () => queue.shift() ?? '';
   };
 
-  it('resolve answers in order when lines arrive before ask', async () => {
-    const input = new PassThrough();
-    const prompter = createPrompter(input, makeOutput());
-    input.write('primeira\nsegunda\n');
+  it('collect all book fields from prompted answers', async () => {
+    const ask = makeAsk([
+      'Livro Título',
+      '',
+      'Autor',
+      'Categoria',
+      '2',
+      '4',
+      '2024',
+      '',
+      'Descrição',
+      '',
+      '',
+      '',
+      'Ficção, Drama',
+      '',
+      '2024-03-10'
+    ]);
 
-    expect(await prompter.ask('Q1: ')).toBe('primeira');
-    expect(await prompter.ask('Q2: ')).toBe('segunda');
-    prompter.close();
+    const book = await collectBookInput(ask, 'Sugerido');
+
+    expect(book.title).toBe('Livro Título');
+    expect(book.subtitle).toBe('');
+    expect(book.author).toBe('Autor');
+    expect(book.category).toBe('Categoria');
+    expect(book.status).toBe('lendo');
+    expect(book.rating).toBe(4);
+    expect(book.attendedYear).toBe('2024');
+    expect(book.description).toBe('Descrição');
+    expect(book.pubDate).toBe('2024-03-10');
   });
 
-  it('resolve a pending ask when a line arrives after', async () => {
-    const input = new PassThrough();
-    const prompter = createPrompter(input, makeOutput());
-    const pending = prompter.ask('Q1: ');
-
-    input.write('resposta\n');
-    expect(await pending).toBe('resposta');
-    prompter.close();
+  it('use suggested title when answer is empty', async () => {
+    const ask = makeAsk(['']);
+    const book = await collectBookInput(ask, 'Título Sugerido');
+    expect(book.title).toBe('Título Sugerido');
   });
 
-  it('write questions to the output stream', async () => {
-    const input = new PassThrough();
-    const output = makeOutput();
-    const prompter = createPrompter(input, output);
-    input.write('x\n');
+  it('fall back to defaults for empty answers', async () => {
+    let titleAsked = false;
+    const askFor = async question => {
+      if (question.startsWith('Título')) {
+        if (!titleAsked) {
+          titleAsked = true;
+          return 'Livro';
+        }
+        return '';
+      }
+      if (question.startsWith('Escolha')) return '1';
+      if (question.startsWith('Ano de leitura')) return '';
+      if (question.startsWith('Data de leitura')) return '';
+      return '';
+    };
 
-    await prompter.ask('Título: ');
-    expect(output.writes).toEqual(['Título: ']);
-    prompter.close();
-  });
+    const book = await collectBookInput(askFor, '');
 
-  it('resolve with empty string on EOF while a question is pending', async () => {
-    const input = new PassThrough();
-    const prompter = createPrompter(input, makeOutput());
-    const pending = prompter.ask('Q1: ');
-
-    input.end();
-    expect(await pending).toBe('');
-    prompter.close();
-  });
-
-  it('resolve remaining asks with empty string after the stream closes', async () => {
-    const input = new PassThrough();
-    const prompter = createPrompter(input, makeOutput());
-    input.end();
-
-    expect(await prompter.ask('Q1: ')).toBe('');
-    expect(await prompter.ask('Q2: ')).toBe('');
-    prompter.close();
-  });
-});
-
-describe('parseChoice', () => {
-  const options = ['lido', 'lendo'];
-
-  it('pick the option by number', () => {
-    expect(parseChoice('1', options)).toBe('lido');
-    expect(parseChoice('2', options)).toBe('lendo');
-  });
-
-  it('fall back to the default for empty answer', () => {
-    expect(parseChoice('', options)).toBe('lido');
-  });
-
-  it('fall back to the default for out-of-range numbers', () => {
-    expect(parseChoice('0', options)).toBe('lido');
-    expect(parseChoice('99', options)).toBe('lido');
-  });
-
-  it('fall back to the default for non-numeric answers', () => {
-    expect(parseChoice('abc', options)).toBe('lido');
-  });
-});
-
-describe('parseRating', () => {
-  it('return empty string for empty answer', () => {
-    expect(parseRating('')).toBe('');
-  });
-
-  it('parse a numeric note', () => {
-    expect(parseRating('4')).toBe(4);
-  });
-
-  it('return empty string for non-numeric answers', () => {
-    expect(parseRating('bom')).toBe('');
+    expect(book.title).toBe('Livro');
+    expect(book.status).toBe('lido');
+    expect(book.attendedYear).toBe(String(new Date().getFullYear()));
+    expect(book.pubDate).toBe(new Date().toISOString().slice(0, 10));
   });
 });
 
