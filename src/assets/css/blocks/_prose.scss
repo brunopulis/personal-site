@@ -1,6 +1,6 @@
 .prose {
-  --flow-space: var(--space-s-m);
-  line-height: var(--line-height-loose);
+  --flow-space: var(--space-2xl);
+  line-height: var(--line-height-base);
 }
 
 .prose :is(p, ul:not([class]), ol:not([class])) {
@@ -8,9 +8,10 @@
 }
 
 .prose :is(blockquote) {
-  max-width: 52ch;
+  line-height: var(--line-height-base);
+  max-width: 55ch;
 }
 
-.prose :is(pre,pre+*,figure,figure+*,h2,h3,h4) {
+.prose :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
   --flow-space: var(--space-l-xl);
 }
