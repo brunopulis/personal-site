@@ -4,7 +4,7 @@ permalink: '/contact/'
 title: Contato
 ---
 
-# Entre em contato
+## Entre em contato
 
 Se você quiser conversar comigo ou me dar sugestões, este é o lugar certo. Siga qualquer link abaixo para encontrar os lugares aonde costumo estar.
 

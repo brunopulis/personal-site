@@ -4,7 +4,7 @@ describe('Contact page', () => {
   });
 
   it('loads successfully', () => {
-    cy.contains('h1', 'Entre em contato').should('be.visible');
+    cy.contains('h2', 'Entre em contato').should('be.visible');
   });
 
   it('has social media links', () => {

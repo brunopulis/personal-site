@@ -8,9 +8,9 @@ export function buildFrontmatter(fields) {
     category = '',
     status = 'assistindo',
     rating = '',
+    poster = '',
     type = 'movie',
     watchedYear = String(new Date().getFullYear()),
-    poster = '',
     url = '',
     watchedDate = new Date().toISOString()
   } = fields;
