@@ -6,7 +6,13 @@ import {htmlToAbsoluteUrls} from './filters/htmlToAbsoluteUrls.js';
 import {lastModified} from './filters/last-modified.js';
 import {limit} from './filters/limit.js';
 import {localPoster} from './filters/localPoster.js';
-import {filterByYear, filterFavorites, groupByYear} from './filters/media.js';
+import {
+  categoriesSlugs,
+  filterByYear,
+  filterFavorites,
+  groupByYear,
+  mediaCategories
+} from './filters/media.js';
 import {moviesByYear} from './filters/movies.js';
 import {readableDate} from './filters/readableDate.js';
 import {readingTime} from './filters/readingTime.js';
@@ -26,6 +32,7 @@ export {formatNumber} from './filters/formatNumber.js';
 export default {
   bookCategories,
   booksByYear,
+  categoriesSlugs,
   currentlyReading,
   formatDate,
   head,
@@ -37,6 +44,7 @@ export default {
   filterByYear,
   filterFavorites,
   groupByYear,
+  mediaCategories,
   moviesByYear,
   readableDate,
   readingTime,

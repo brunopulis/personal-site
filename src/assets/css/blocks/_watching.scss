@@ -27,3 +27,9 @@ demais ficam em tinta suave e escurecem no hover.
   text-decoration: underline wavy var(--color-proof) 2px;
   text-underline-offset: 0.22em;
 }
+
+/* Itens filtrados por categoria — mesmo mecanismo da estante: o atributo
+   hidden esconde o artigo sem quebrar a grade. */
+.watching-filter-item[hidden] {
+  display: none;
+}

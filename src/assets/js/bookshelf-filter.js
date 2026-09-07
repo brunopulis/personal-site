@@ -5,14 +5,21 @@
   if (!filter) return;
 
   const radios = Array.from(filter.querySelectorAll('input[type="radio"]'));
-  const books = document.querySelectorAll('[data-category]');
-  if (!radios.length || !books.length) return;
+  const items = document.querySelectorAll('[data-category], [data-categories]');
+  if (!radios.length || !items.length) return;
+
+  function itemCategories(item) {
+    if (item.dataset.categories) {
+      return item.dataset.categories.split(/\s+/).filter(Boolean);
+    }
+    return item.dataset.category ? [item.dataset.category] : [];
+  }
 
   function applyFilter(value) {
     const showAll = value === 'todos';
 
-    books.forEach(book => {
-      book.hidden = !showAll && book.dataset.category !== value;
+    items.forEach(item => {
+      item.hidden = !showAll && !itemCategories(item).includes(value);
     });
 
     const url = showAll

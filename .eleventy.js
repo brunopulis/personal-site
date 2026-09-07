@@ -114,6 +114,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('concat', filters.concat);
   eleventyConfig.addFilter('booksByYear', filters.booksByYear);
   eleventyConfig.addFilter('bookCategories', filters.bookCategories);
+  eleventyConfig.addFilter('mediaCategories', filters.mediaCategories);
+  eleventyConfig.addFilter('categoriesSlugs', filters.categoriesSlugs);
   eleventyConfig.addFilter('currentlyReading', books => filters.currentlyReading(books));
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
   eleventyConfig.addFilter('filterFavorites', items => filters.filterFavorites(items));

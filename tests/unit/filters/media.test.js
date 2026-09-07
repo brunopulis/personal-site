@@ -1,5 +1,11 @@
 import {describe, it, expect} from 'vitest';
-import {groupByYear, filterByYear, filterFavorites} from '../../../src/_config/filters/media.js';
+import {
+  categoriesSlugs,
+  groupByYear,
+  filterByYear,
+  filterFavorites,
+  mediaCategories
+} from '../../../src/_config/filters/media.js';
 
 const makeItem = (watchedYear, favorite = false) => ({
   data: {watchedYear, favorite}
@@ -58,5 +64,69 @@ describe('filterByYear', () => {
 
   it('return empty array for null', () => {
     expect(filterByYear(null, 2024)).toEqual([]);
+  });
+});
+
+describe('mediaCategories', () => {
+  const makeCategory = category => ({data: {category}});
+
+  it('count single categories', () => {
+    const items = [makeCategory('Drama'), makeCategory('Drama'), makeCategory('Comédia')];
+    expect(mediaCategories(items)).toEqual([
+      {name: 'Comédia', count: 1},
+      {name: 'Drama', count: 2}
+    ]);
+  });
+
+  it('split comma-separated categories per item', () => {
+    const items = [makeCategory('Drama, Crime'), makeCategory('Crime')];
+    expect(mediaCategories(items)).toEqual([
+      {name: 'Crime', count: 2},
+      {name: 'Drama', count: 1}
+    ]);
+  });
+
+  it('skip empty categories', () => {
+    const items = [makeCategory(''), makeCategory('   '), makeCategory('Drama')];
+    expect(mediaCategories(items)).toEqual([{name: 'Drama', count: 1}]);
+  });
+
+  it('handle array categories', () => {
+    const items = [{data: {category: ['Aventura', 'Thriller']}}, makeCategory('Thriller')];
+    expect(mediaCategories(items)).toEqual([
+      {name: 'Aventura', count: 1},
+      {name: 'Thriller', count: 2}
+    ]);
+  });
+
+  it('return empty array for null', () => {
+    expect(mediaCategories(null)).toEqual([]);
+  });
+});
+
+describe('categoriesSlugs', () => {
+  it('slugify single category', () => {
+    expect(categoriesSlugs('Drama')).toBe('drama');
+  });
+
+  it('slugify each comma-separated category', () => {
+    expect(categoriesSlugs('Mistério, Crime, Thriller')).toBe('misterio crime thriller');
+  });
+
+  it('strip ampersands in English categories', () => {
+    expect(categoriesSlugs('Action & Adventure, Sci-Fi & Fantasy')).toBe(
+      'action-and-adventure sci-fi-and-fantasy'
+    );
+  });
+
+  it('return empty string for empty input', () => {
+    expect(categoriesSlugs('')).toBe('');
+    expect(categoriesSlugs(null)).toBe('');
+  });
+
+  it('slugify array categories', () => {
+    expect(categoriesSlugs(['Aventura', 'Thriller', 'Ficção científica'])).toBe(
+      'aventura thriller ficcao-cientifica'
+    );
   });
 });
