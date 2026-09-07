@@ -1,16 +1,6 @@
 <footer class="region" style="--region-space: var(--space-s-m)">
   <div class="wrapper flow" style="--flow-space: var(--space-s)">
-    <nav aria-label="Links do rodapé">
-      <ul class="cluster" role="list" style="--gutter: var(--space-m)">
-        <li><a href="/explore/">Explorar</a></li>
-        <li><a href="/blogroll/" lang="en">Blogroll</a></li>
-        <li><a href="/accessibility/">Declaração de Acessibilidade</a></li>
-        <li><a href="/stats/">Estatísticas</a></li>
-        <li><a href="/privacy/">Privacidade</a></li>
-      </ul>
-    </nav>
     <hr>
-
     {% include "partials/webrings.njk" %}
 
     <div class="cluster" style="--gutter: var(--space-m); --cluster-horizontal-alignment: space-between">
@@ -69,5 +59,15 @@
         </li>
       </ul>
     </div>
+  </div>
+
+  <div class="wrapper flow">
+    <ul class="cluster" role="list" style="--gutter: var(--space-m)">
+      <li><a href="/accessibility/">Declaração de Acessibilidade</a></li>
+      <li><a href="/privacy/">Privacidade</a></li>
+      <li><a href="/stats/">Estatísticas</a></li>
+      <li><a href="/blogroll/" lang="en">Blogroll</a></li>
+      <li><a href="/explore/">Explorar</a></li>
+    </ul>
   </div>
 </footer>
