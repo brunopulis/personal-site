@@ -1,7 +1,7 @@
 ---
 title: "Flash"
 director: Geoff Johns, Greg Berlanti, Andrew Kreisberg
-category: Drama, Sci-Fi & Fantasy
+category: HQ
 status: Quero assistir
 rating: 3
 type: tv

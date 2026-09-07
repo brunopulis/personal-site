@@ -1,9 +1,9 @@
 ---
 title: "Sherlock"
 director: Mark Gatiss, Steven Moffat
-category: Crime, Drama, Mistério
+category: Crime
 status: assistido
-rating: 
+rating:
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/7WTsnHkbA0FaG6R9twfFde0I9hl.jpg

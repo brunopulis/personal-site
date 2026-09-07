@@ -1,9 +1,9 @@
 ---
 title: "Grimm: Contos de Terror"
 director: David Greenwalt, Jim Kouf, Stephen Carpenter
-category: Drama, Mistério, Sci-Fi & Fantasy
+category: Fantasia
 status: reassistindo
-rating: 
+rating: 4
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/5hC8CertBqHbXNPcfm1LZ18VcjD.jpg

@@ -1,7 +1,7 @@
 ---
 title: "O Contador"
 director: Gavin O'Connor
-category: Crime, Thriller, Drama
+category: Ação
 status: assistido
 rating: 3
 type: movie

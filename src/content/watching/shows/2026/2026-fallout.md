@@ -1,7 +1,7 @@
 ---
 title: "Fallout"
 director: Graham Wagner, Geneva Robertson-Dworet
-category: Action & Adventure, Sci-Fi & Fantasy
+category: Sci-Fi
 status: assistindo
 rating: 5
 favorite: true

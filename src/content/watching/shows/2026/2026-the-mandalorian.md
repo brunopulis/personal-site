@@ -1,7 +1,7 @@
 ---
 title: "The Mandalorian"
 director: Jon Favreau
-category: Sci-Fi & Fantasy, Action & Adventure
+category: Sci-Fi
 status: Quero assistir
 rating: 5
 favorite: true

@@ -1,7 +1,7 @@
 ---
 title: "O Contador 2"
 director: Gavin O'Connor
-category: Mistério, Crime, Thriller
+category: Ação
 status: assistido
 rating: 3
 type: movie

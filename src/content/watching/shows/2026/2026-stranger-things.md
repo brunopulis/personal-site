@@ -1,9 +1,9 @@
 ---
 title: "Stranger Things"
 director: Ross Duffer, Matt Duffer
-category: Sci-Fi & Fantasy, Mistério, Action & Adventure
+category: Fantasia
 status: assistido
-rating: 
+rating: 4
 type: tv
 watchedYear: 2026
 poster: https://image.tmdb.org/t/p/w600_and_h900_face/twfKp60THrcOIep9sjHODOOfO8d.jpg

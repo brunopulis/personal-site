@@ -1,7 +1,7 @@
 ---
 title: "Game of Thrones"
 director: David Benioff, D. B. Weiss
-category: Sci-Fi & Fantasy, Drama, Action & Adventure
+category: Fantasia
 status: assistido
 rating: 5
 favorite: true

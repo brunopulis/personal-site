@@ -1,7 +1,7 @@
 ---
 title: "Até o Último Homem"
 director: Mel Gibson
-category: Drama, História, Guerra
+category: Guerra
 status: assistido
 rating: 5
 favorite: true

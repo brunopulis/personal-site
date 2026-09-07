@@ -1,7 +1,7 @@
 ---
 title: "The Last of Us"
 director: Neil Druckmann, Craig Mazin
-category: Drama
+category: Sci-Fi
 status: Quero assistir
 rating: 4
 type: tv

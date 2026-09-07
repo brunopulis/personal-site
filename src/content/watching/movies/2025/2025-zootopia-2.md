@@ -1,7 +1,7 @@
 ---
 title: "Zootopia 2"
 director: Jared Bush
-category: Animação, Família, Mistério, Aventura, Comédia
+category: Animação
 status: assistido
 rating: 3
 type: movie

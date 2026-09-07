@@ -1,10 +1,7 @@
 ---
 title: "Destruição Final 2"
 director: Ric Roman Waugh
-category:
-  - Aventura
-  - Thriller
-  - Ficção científica
+category: Sci-Fi
 rating: 4
 type: movie
 watchedYear: 2026

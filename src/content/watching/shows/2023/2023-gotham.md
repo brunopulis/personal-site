@@ -1,7 +1,7 @@
 ---
 title: "Gotham"
 director: Bruno Heller
-category: Drama, Crime, Sci-Fi & Fantasy
+category: HQ
 status: assistido
 rating: 5
 favorite: true

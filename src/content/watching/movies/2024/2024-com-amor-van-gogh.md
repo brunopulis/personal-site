@@ -1,7 +1,7 @@
 ---
 title: "Com Amor, Van Gogh"
 director: DK Welchman
-category: Animação, Drama, História
+category: História
 status: assistido
 rating: 5
 favorite: true

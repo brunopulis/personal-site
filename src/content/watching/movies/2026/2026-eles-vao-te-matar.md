@@ -1,7 +1,7 @@
 ---
 title: "Eles vão te matar"
 director: Kirill Sokolov
-category: Terror, Comédia, Ação
+category: Comédia
 status: assistido
 rating: 3
 type: movie

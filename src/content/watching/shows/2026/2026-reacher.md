@@ -1,7 +1,7 @@
 ---
 title: "Reacher"
 director: Nick Santora
-category: Action & Adventure, Drama, Crime
+category: Ação
 status: assistido
 rating: 5
 favorite: true

@@ -1,7 +1,7 @@
 ---
 title: "Warrior Nun"
 director: Simon Barry
-category: Action & Adventure, Drama, Sci-Fi & Fantasy
+category: Fantasia
 status: assistido
 rating: 3
 type: tv

@@ -1,7 +1,7 @@
 ---
 title: "Os Miseráveis"
 director: Tom Hooper
-category: História, Drama
+category: Drama
 status: assistido
 rating: 5
 favorite: true

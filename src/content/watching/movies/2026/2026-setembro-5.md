@@ -1,7 +1,7 @@
 ---
 title: "Setembro 5"
 director: Tim Fehlbaum
-category: Thriller, Drama, História
+category: História
 status: assistido
 rating: 5
 type: movie

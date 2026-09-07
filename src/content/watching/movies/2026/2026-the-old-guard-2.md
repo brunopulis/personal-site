@@ -1,7 +1,7 @@
 ---
 title: "The Old Guard 2"
 director: Victoria Mahoney
-category: Ação, Fantasia
+category: Ação
 status: assistido
 rating: 4
 type: movie
