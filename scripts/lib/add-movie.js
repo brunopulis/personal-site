@@ -1,5 +1,6 @@
 import slugify from 'slugify';
 import {safeYear, slugToSegment} from './path-safety.js';
+import {currentYear, formatTags, parseChoice, parseRating, quote, todayString} from './util.js';
 
 export function buildFrontmatter(fields) {
   const {
@@ -10,7 +11,7 @@ export function buildFrontmatter(fields) {
     rating = '',
     poster = '',
     type = 'movie',
-    watchedYear = String(new Date().getFullYear()),
+    watchedYear = currentYear(),
     url = '',
     watchedDate = new Date().toISOString()
   } = fields;
