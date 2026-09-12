@@ -25,17 +25,7 @@ describe('filterFeatured', () => {
   });
 
   it('return empty array when no featured items', () => {
-    const items = [
-      {
-        data: {featured: false}
-      },
-      {
-        data: {}
-      },
-      {
-        title: 'sem front matter'
-      }
-    ];
+    const items = [{data: {featured: false}}, {data: {}}, {title: 'sem front matter'}];
 
     expect(filterFeatured(items)).toEqual([]);
   });
