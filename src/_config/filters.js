@@ -1,5 +1,6 @@
 import {bookCategories, booksByYear, currentlyReading} from './filters/books.js';
 import {formatDate} from './filters/dates.js';
+import {filterFeatured} from './filters/featured.js';
 import {head} from './filters/head.js';
 import {htmlDateString} from './filters/htmlDateString.js';
 import {htmlToAbsoluteUrls} from './filters/htmlToAbsoluteUrls.js';
@@ -43,6 +44,7 @@ export default {
   localPoster,
   filterByYear,
   filterFavorites,
+  filterFeatured,
   groupByYear,
   mediaCategories,
   moviesByYear,

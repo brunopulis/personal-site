@@ -27,6 +27,38 @@ title: Blog
     </div>
   </header>
 
+  {% set featuredPosts = collections.posts | featured %}
+  {% if featuredPosts | length > 0 %}
+    <section class="blog-featured" aria-labelledby="featured-posts-title">
+      <h2 id="featured-posts-title" class="blog-featured-title">Em destaque</h2>
+      {% for post in featuredPosts %}
+        {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+        <article class="blog-entry h-entry">
+          <time
+            class="blog-date dt-published"
+            datetime="{{ post.date | htmlDateString }}">
+            {{ post.date | readableDate }}
+          </time>
+          <h3 class="blog-entry-title p-name">
+            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <p class="blog-entry-summary p-summary">
+            {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+          </p>
+          {% if tags %}
+            <ul class="cluster blog-entry-tags" role="list" style="--gutter: var(--space-2xs)">
+              {% for tag in tags %}
+                <li>
+                  <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </section>
+  {% endif %}
+
   <ol class="blog-index" role="list">
     {% for post in posts %}
       {% set tags = (post.data and post.data.tags) or post.tags or [] %}

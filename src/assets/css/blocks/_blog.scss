@@ -53,6 +53,29 @@ on each entry title.
 
 /* ---------- The index ---------- */
 
+.blog-featured {
+  margin-block-end: var(--space-l);
+}
+
+/* The section mark — proof pencil on the structure, not the words. */
+.blog-featured-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs-s);
+  margin-block-end: var(--space-2xs);
+}
+
+.blog-featured-title::before {
+  content: '——';
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-proof);
+}
+
+.blog-featured .blog-entry {
+  border-block-end: 1px solid var(--color-rule);
+}
+
 .blog-index {
   list-style: none;
   margin: 0;
