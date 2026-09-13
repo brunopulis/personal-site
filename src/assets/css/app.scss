@@ -1,6 +1,7 @@
 // Tokens/Abstracts
 @import 'abstracts/space';
 @import 'abstracts/type';
+@import 'abstracts/fonts';
 @import 'abstracts/theme';
 
 // Base
@@ -41,6 +42,4 @@
 
 // Utilities
 @import 'utilities/visually-hidden';
-@import 'utilities/width';
-@import 'utilities/text';
-@import 'utilities/center';
+@import 'utilities';
