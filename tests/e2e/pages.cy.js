@@ -1,10 +1,9 @@
 const PAGES = [
   {path: '/accessibility/', heading: 'Declaração de Acessibilidade'},
-  {path: '/archive/', heading: 'Arquivo'},
   {path: '/blogroll/', heading: 'Blogroll'},
   {path: '/bookshelf/', heading: 'Meus livros'},
   {path: '/colophon/', heading: 'Colophon'},
-  {path: '/disability/', heading: 'Minhas deficiências'},
+  {path: '/deficiencias/', heading: 'Minhas deficiências'},
   {path: '/donate/', heading: 'Apoie meu trabalho'},
   {path: '/explore/', heading: 'Explorar'},
   {path: '/feeds/', heading: 'Feeds'},
