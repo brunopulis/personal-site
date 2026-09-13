@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Estratégia POSSE
 description: 'O que faço para fazer POSSE com meu conteúdo'
 ---

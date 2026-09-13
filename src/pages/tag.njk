@@ -7,15 +7,16 @@ pagination:
 permalink: '{{ tagPage.subPagination.pageHref }}'
 eleventyComputed:
   title: "Tag: {{ tagPage.name }}"
-  description: "Conteúdos marcados com a tag #{{ tagPage.name }}."
+  description: "Conteúdos marcados com a tag: {{ tagPage.name }}."
 ---
 
 <div class="h-feed region" style="--region-space: var(--space-l)">
   <h1 class="p-name">Tag: {{ tagPage.name }}</h1>
   <a class="u-url" href="/tags/">
+    {% faIcon 'angles-left', 'solid', 20 %}
     Todas tags
   </a>
-  <p class="pb-4">Conteúdos marcados com a tag <strong>#{{ tagPage.name }}</strong>.</p>
+  <p>Conteúdos marcados com a tag <strong>{{ tagPage.name }}</strong>.</p>
 
   {% set groups = tagPage.items | groupByContentType %}
   {% for group in groups %}

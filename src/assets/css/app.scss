@@ -1,14 +1,9 @@
-/*
-cu.css — A modern CSS boilerplate
-Customized for brunopulis/personal-site
-*/
-
-/* Tokens/Abstracts */
+// Tokens/Abstracts
 @import 'abstracts/space';
 @import 'abstracts/type';
 @import 'abstracts/theme';
 
-/* Generic/Base */
+// Base
 @import 'base/reset';
 @import 'base/global';
 @import 'base/form';
@@ -18,7 +13,7 @@ Customized for brunopulis/personal-site
 @import 'base/button';
 @import 'base/nav';
 
-/* Blocks/Components */
+// Blocks
 @import 'blocks/prose';
 @import 'blocks/hero';
 @import 'blocks/home';
@@ -29,10 +24,10 @@ Customized for brunopulis/personal-site
 @import 'blocks/card';
 @import 'blocks/bookshelf';
 @import 'blocks/book';
+@import 'blocks/tags';
 @import 'blocks/watching';
-@import 'blocks/skip-link';
 
-/* Compositions/Layouts */
+// Compositions
 @import 'compositions/flow';
 @import 'compositions/region';
 @import 'compositions/wrapper';
@@ -44,11 +39,8 @@ Customized for brunopulis/personal-site
 @import 'compositions/switcher';
 @import 'compositions/frame';
 
-/* Utilities */
+// Utilities
 @import 'utilities/visually-hidden';
 @import 'utilities/width';
 @import 'utilities/text';
 @import 'utilities/center';
-
-/* Project utilities */
-@import 'utilities';

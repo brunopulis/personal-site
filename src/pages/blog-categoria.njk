@@ -17,7 +17,10 @@ eleventyComputed:
       {{ categoryData.items.length }} {{ "artigo" if categoryData.items.length == 1 else "artigos" }} na categoria <strong>{{ categoryData.name }}</strong>.
     </p>
     <p class="blog-count">
-      <a href="/blog/categorias/">Todas as categorias</a>
+      <a href="/blog/categorias/">
+        {% faIcon 'angles-left', 'solid', 20 %}
+        Todas as categorias
+      </a>
     </p>
   </header>
 

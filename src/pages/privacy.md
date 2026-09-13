@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Privacidade
 description: 'Como este site coleta e utiliza seus dados'
 ---

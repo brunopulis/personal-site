@@ -1,4 +1,6 @@
 ---
+layout: page
+permalink: '/deficiencias/'
 title: Minhas deficiências
 ---
 
