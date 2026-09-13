@@ -1,0 +1,25 @@
+---
+layout: page
+permalink: '/blog/categorias/'
+title: Categorias
+description: Categorias do blog, organizadas com contagem de artigos.
+---
+
+<p>
+  Uma lista das categorias do blog, com a quantidade de artigos em cada uma.
+</p>
+
+<ul class="tag__list" role="list">
+  {% for category in collections.postCategories %}
+    <li class="tag__item">
+      <a class="p-category tag__link" href="/blog/categoria/{{ category.slug }}/">
+        {{ category.name }}
+        <span class="meta">({{ category.items.length }})</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if collections.postCategories | length == 0 %}
+  <p>Nenhuma categoria encontrada.</p>
+{% endif %}

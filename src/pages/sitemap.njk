@@ -16,9 +16,9 @@ eleventyExcludeFromCollections: true
   </url>
   {%- endif %}
 {%- endfor %}
-{%- for tag in tagsData %}
+{%- for tagPage in collections.tagsPages %}
   <url>
-    <loc>{{ meta.url }}/tags/{{ tag.slug }}/</loc>
+    <loc>{{ meta.url }}{{ tagPage.subPagination.pageHref }}</loc>
     <lastmod>{{ page.date | htmlDateString }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
@@ -34,7 +34,6 @@ eleventyExcludeFromCollections: true
 {%- endfor %}
 {%- set pageSize = 10 %}
 {%- set paginated = [
-  {name: 'blog', items: collections.posts},
   {name: 'notes', items: collections.notes},
   {name: 'poetry', items: collections.poetry},
   {name: 'likes', items: collections.likes},

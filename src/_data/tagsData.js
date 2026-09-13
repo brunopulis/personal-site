@@ -1,12 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import slugify from 'slugify';
+import {buildTagGroups} from '../_config/taxonomy/tags-core.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..', '..');
 
-const RESERVED_TAGS = ['posts', 'docs', 'all'];
 const CONTENT_DIRS = [
   'src/content/posts',
   'src/content/notes',
@@ -14,18 +13,9 @@ const CONTENT_DIRS = [
   'src/content/likes',
   'src/content/newsletters',
   'src/content/poetry',
-  'src/content/talks',
   'src/content/watching/movies',
   'src/content/watching/shows'
 ];
-
-function toSlug(str) {
-  return slugify(str, {
-    replacement: '-',
-    remove: /[#,&,+()$~%.'":*¿?¡!<>{}]/g,
-    lower: true
-  });
-}
 
 function extractTags(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---/);
@@ -75,7 +65,7 @@ function getAllFiles(dir) {
 }
 
 export default function () {
-  const tagMap = new Map();
+  const rows = [];
 
   CONTENT_DIRS.forEach(dir => {
     const baseDir = path.join(rootDir, dir);
@@ -84,20 +74,13 @@ export default function () {
     const files = getAllFiles(baseDir);
     files.forEach(file => {
       const content = fs.readFileSync(file, 'utf-8');
-      const tags = extractTags(content);
+      const tags = new Set(extractTags(content));
 
-      tags.forEach(tag => {
-        if (RESERVED_TAGS.includes(tag)) return;
-        const slug = toSlug(tag);
-
-        if (tagMap.has(slug)) {
-          tagMap.get(slug).count++;
-        } else {
-          tagMap.set(slug, {name: tag, slug, count: 1});
-        }
-      });
+      tags.forEach(tag => rows.push({tag, item: file}));
     });
   });
 
-  return Array.from(tagMap.values()).sort((a, b) => b.count - a.count);
+  return buildTagGroups(rows)
+    .map(({name, slug, items}) => ({name, slug, count: items.length}))
+    .sort((a, b) => b.count - a.count);
 }

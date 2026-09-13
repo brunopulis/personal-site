@@ -1,9 +1,14 @@
 import fs from 'node:fs';
 import blogroll from '../_data/blogroll.json' with {type: 'json'};
+import {excludeFeatured} from './filters/featured.js';
+import {slugifyString} from './filters/slugify.js';
+import {buildTagGroups, chunk} from './taxonomy/tags-core.js';
 
-export const getAllPosts = collection => {
-  return collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
-};
+const getPosts = collection => collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
+
+export const getAllPosts = getPosts;
+
+export const getPostListing = collection => excludeFeatured(getPosts(collection));
 
 export const getAllLikes = collection => {
   return collection.getFilteredByGlob('./src/content/likes/**/*.md').reverse();
@@ -87,4 +92,80 @@ export const blogrollCategories = () => {
     }
   });
   return Array.from(categoriesSet).sort();
+};
+
+const TAG_PAGE_SIZE = 10;
+const TAG_CONTENT_GLOBS = [
+  './src/content/posts/**/*.md',
+  './src/content/notes/**/*.md',
+  './src/content/books/**/*.md',
+  './src/content/likes/**/*.md',
+  './src/content/newsletters/**/*.md',
+  './src/content/poetry/**/*.md',
+  './src/content/watching/movies/**/*.md',
+  './src/content/watching/shows/**/*.md'
+];
+
+const tagContentDate = item => new Date(item.data?.watchedDate || item.data?.pubDate || item.date);
+
+export const getTagsPages = collection => {
+  const items = TAG_CONTENT_GLOBS.flatMap(glob => collection.getFilteredByGlob(glob));
+
+  const rows = [];
+  items.forEach(item => {
+    const tags = item.data?.tags;
+    if (!Array.isArray(tags) || tags.length === 0) return;
+    [...new Set(tags)].forEach(tag => rows.push({tag, item}));
+  });
+
+  const groups = buildTagGroups(rows).map(group => ({
+    ...group,
+    items: [...group.items].sort((a, b) => tagContentDate(b) - tagContentDate(a))
+  }));
+
+  const pages = [];
+  groups.forEach(group => {
+    const pageHref = pageNumber => `/tags/${group.slug}/${pageNumber === 0 ? '' : `page/${pageNumber + 1}/`}`;
+
+    const chunks = chunk(group.items, TAG_PAGE_SIZE);
+    chunks.forEach((items, pageIndex, allChunks) => {
+      pages.push({
+        name: group.name,
+        slug: group.slug,
+        items,
+        subPagination: {
+          pageNumber: pageIndex,
+          pageHref: pageHref(pageIndex),
+          previous: pageIndex > 0,
+          next: pageIndex + 1 < allChunks.length,
+          href: {
+            first: pageHref(0),
+            previous: pageIndex > 0 ? pageHref(pageIndex - 1) : null,
+            current: pageHref(pageIndex),
+            next: pageIndex + 1 < allChunks.length ? pageHref(pageIndex + 1) : null,
+            last: pageHref(allChunks.length - 1)
+          },
+          hrefs: allChunks.map((_, i) => pageHref(i)),
+          pages: allChunks
+        }
+      });
+    });
+  });
+
+  return pages;
+};
+
+export const getPostCategories = collection => {
+  const byCategory = new Map();
+
+  getPosts(collection).forEach(post => {
+    const label = post.data?.category;
+    if (!label) return;
+    if (!byCategory.has(label)) byCategory.set(label, []);
+    byCategory.get(label).push(post);
+  });
+
+  return Array.from(byCategory.entries())
+    .map(([name, items]) => ({name, slug: slugifyString(name), items}))
+    .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
 };

@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {filterFeatured} from '../../../src/_config/filters/featured.js';
+import {excludeFeatured, filterFeatured} from '../../../src/_config/filters/featured.js';
 
 describe('filterFeatured', () => {
   it('return only featured items regardless of content type', () => {
@@ -28,5 +28,25 @@ describe('filterFeatured', () => {
     const items = [{data: {featured: false}}, {data: {}}, {title: 'sem front matter'}];
 
     expect(filterFeatured(items)).toEqual([]);
+  });
+});
+
+describe('excludeFeatured', () => {
+  it('return only non-featured items', () => {
+    const items = [
+      {data: {featured: true}, title: 'Destaque'},
+      {data: {featured: false}, title: 'Normal'},
+      {data: {}, title: 'Sem front matter'}
+    ];
+
+    expect(excludeFeatured(items).map(item => item.title)).toEqual(['Normal', 'Sem front matter']);
+  });
+
+  it('return empty array for null', () => {
+    expect(excludeFeatured(null)).toEqual([]);
+  });
+
+  it('return empty array for non-array', () => {
+    expect(excludeFeatured('string')).toEqual([]);
   });
 });

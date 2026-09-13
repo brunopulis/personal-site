@@ -1,19 +1,19 @@
 ---
-layout: page.njk
+layout: page
 permalink: '/tags/'
 title: Tags
-description: Todas as tags usadas no site, organizadas com contagem de publicações.
+description: Todas as tags de tópicos usadas nas publicações, com a quantidade de itens associados.
 ---
 
-<p class="lede mb-8">
-  Uma lista de todas as tags usadas no site, com a quantidade de publicações associadas a cada uma.
+<p>
+  Todas as tags de tópicos usadas nas publicações, com a quantidade de itens associados a cada uma.
 </p>
 
-<ul class="tag-list" role="list">
+<ul class="tag__list" role="list">
   {% for tag in tagsData %}
-    <li>
-      <a class="p-category" href="/tags/{{ tag.slug }}/">
-        #{{ tag.name }}
+    <li class="tag__item">
+      <a class="p-category tag__link" href="/tags/{{ tag.slug }}/">
+        {{ tag.name }}
         <span class="meta">({{ tag.count }})</span>
       </a>
     </li>
@@ -21,5 +21,5 @@ description: Todas as tags usadas no site, organizadas com contagem de publicaç
 </ul>
 
 {% if tagsData.length == 0 %}
-  <p class="py-4">Nenhuma tag encontrada.</p>
+  <p>Nenhuma tag encontrada.</p>
 {% endif %}

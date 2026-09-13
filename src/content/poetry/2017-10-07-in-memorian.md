@@ -5,7 +5,6 @@ sorriso se rompeu em pranto
 Dia marcado por dor…"
 pubDate: 2017-10-07T19:19:50.565Z
 tags: []
-category: "blog"
 canonicalUrl: "https://medium.com/@brunopulis/in-memorian-b462c5572cc4"
 ---
 

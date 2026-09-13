@@ -1,10 +1,6 @@
 ---
 layout: base.njk
-pagination:
-  data: collections.posts
-  size: 10
-  alias: posts
-permalink: '/blog/{% if pagination.pageNumber >= 1 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+permalink: '/blog/index.html'
 title: Blog
 ---
 
@@ -21,89 +17,57 @@ title: Blog
       <p class="cluster" style="--gutter: var(--space-2xs)">
         {% faIcon 'rss', 'solid', 24 %}
         <a href="/feeds/blog/rss.xml">
-          Assine o meu feed de publicações ou acompanhe nesta página.
+          Assine o meu feed do blog.
         </a>
       </p>
     </div>
   </header>
 
-  {% set featuredPosts = collections.posts | featured %}
-  {% if featuredPosts | length > 0 %}
-    <section class="blog-featured" aria-labelledby="featured-posts-title">
-      <h2 id="featured-posts-title" class="blog-featured-title">Em destaque</h2>
-      {% for post in featuredPosts %}
-        {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-        <article class="blog-entry h-entry">
-          <time
-            class="blog-date dt-published"
-            datetime="{{ post.date | htmlDateString }}">
-            {{ post.date | readableDate }}
-          </time>
-          <h3 class="blog-entry-title p-name">
-            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-          </h3>
-          <p class="blog-entry-summary p-summary">
-            {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-          </p>
-          {% if tags %}
-            <ul class="cluster blog-entry-tags" role="list" style="--gutter: var(--space-2xs)">
-              {% for tag in tags %}
-                <li>
-                  <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </section>
-  {% endif %}
+  {% set yearGroups = collections.posts | archiveByYear %}
 
-  <ol class="blog-index" role="list">
-    {% for post in posts %}
-      {% set tags = (post.data and post.data.tags) or post.tags or [] %}
-      <li>
-        <article class="blog-entry h-entry">
-          <time
-            class="blog-date dt-published"
-            datetime="{{ post.date | htmlDateString }}">
-            {{ post.date | readableDate }}
-          </time>
-          <h3 class="blog-entry-title p-name">
-            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-          </h3>
-          <p class="blog-entry-summary p-summary">
-            {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
-          </p>
-          {% if tags %}
-            <ul class="cluster blog-entry-tags" role="list" style="--gutter: var(--space-2xs)">
-              {% for tag in tags %}
-                <li>
-                  <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </article>
-      </li>
-    {% endfor %}
-  </ol>
-
-  <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Paginação">
-    {% if pagination.href.previous %}
-      <a class="button" href="{{ pagination.href.previous }}" rel="prev">Anterior</a>
-    {% else %}
-      <span class="button" aria-disabled="true">Anterior</span>
-    {% endif %}
-
-    <span class="meta blog-folio">
-      Página {{ pagination.pageNumber + 1 }} de {{ pagination.pages | length }}
-    </span>
-
-    {% if pagination.href.next %}
-      <a class="button" href="{{ pagination.href.next }}" rel="next">Próximo</a>
-    {% else %}
-      <span class="button" aria-disabled="true">Próximo</span>
-    {% endif %}
+  <nav class="cluster blog-subnav" style="--gutter: var(--space-s-m)" aria-label="Navegação do arquivo">
+    <span class="blog-subnav-current" aria-current="true">Todas as postagens</span>
+    <a href="/blog/categorias/">Categorias</a>
+    <a href="/tags/">Tags</a>
   </nav>
+
+  <p class="blog-count blog-archive-count">
+    Arquivo completo: {{ collections.posts | length }} artigos publicados desde {{ (yearGroups | last).year }}.
+  </p>
+
+  <nav class="blog-jump" aria-label="Pular para o ano">
+    <span class="meta blog-jump-label">Pular para o ano</span>
+    <ol class="cluster blog-jump-list" role="list" style="--gutter: var(--space-s-m)">
+      {% for yearGroup in yearGroups %}
+        <li>
+          <a href="#year-{{ yearGroup.year }}">{{ yearGroup.year }}</a>
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+
+  {% for yearGroup in yearGroups %}
+    <section
+      id="year-{{ yearGroup.year }}"
+      class="blog-year"
+      aria-labelledby="year-{{ yearGroup.year }}-title">
+      <h2 id="year-{{ yearGroup.year }}-title" class="blog-year-title">{{ yearGroup.year }}</h2>
+      <ol class="blog-index" role="list">
+        {% for post in yearGroup.items %}
+          <li>
+            <article class="blog-entry h-entry">
+              <time
+                class="blog-date dt-published"
+                datetime="{{ post.date | htmlDateString }}">
+                {{ post.date | readableDate('DD de MMM') }}
+              </time>
+              <h3 class="blog-entry-title p-name">
+                <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+              </h3>
+            </article>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endfor %}
 </div>

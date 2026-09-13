@@ -1,0 +1,53 @@
+---
+layout: base
+pagination:
+  data: collections.postCategories
+  size: 1
+  alias: categoryData
+permalink: '/blog/categoria/{{ categoryData.slug }}/'
+eleventyComputed:
+  title: "Categoria: {{ categoryData.name }}"
+  description: "Artigos publicados na categoria {{ categoryData.name }}."
+---
+
+<div class="h-feed">
+  <header class="blog-header">
+    <h1 class="p-name blog-title">Categoria: {{ categoryData.name }}</h1>
+    <p class="blog-lede">
+      {{ categoryData.items.length }} {{ "artigo" if categoryData.items.length == 1 else "artigos" }} na categoria <strong>{{ categoryData.name }}</strong>.
+    </p>
+    <p class="blog-count">
+      <a href="/blog/categorias/">Todas as categorias</a>
+    </p>
+  </header>
+
+  <ol class="blog-index" role="list">
+    {% for post in categoryData.items %}
+      {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+      <li>
+        <article class="blog-entry h-entry">
+          <time
+            class="blog-date dt-published"
+            datetime="{{ post.date | htmlDateString }}">
+            {{ post.date | readableDate }}
+          </time>
+          <h3 class="blog-entry-title p-name">
+            <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <p class="blog-entry-summary p-summary">
+            {{ post.data.description or (post.templateContent | striptags | truncate(160)) }}
+          </p>
+          {% if tags %}
+            <ul class="cluster blog-entry-tags" role="list" style="--gutter: var(--space-2xs)">
+              {% for tag in tags %}
+                <li>
+                  <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </article>
+      </li>
+    {% endfor %}
+  </ol>
+</div>

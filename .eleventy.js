@@ -17,6 +17,7 @@ import {load as yamlLoad} from 'js-yaml';
 
 import {
   getAllPosts,
+  getPostListing,
   getAllNewsletters,
   getAllBooks,
   getAllFeed,
@@ -26,7 +27,9 @@ import {
   getAllShows,
   getAllNotes,
   getAllPoetry,
-  getWatchingYears
+  getWatchingYears,
+  getTagsPages,
+  getPostCategories
 } from './src/_config/collections.js';
 
 import events from './src/_config/events.js';
@@ -36,6 +39,7 @@ import shortcodes from './src/_config/shortcodes.js';
 
 import blogroll from './src/_data/blogroll.json' with {type: 'json'};
 import {svgToJpeg} from './src/_config/events/svg-to-jpeg.js';
+import {validateCategories} from './src/_config/taxonomy/validate.js';
 
 export default async function (eleventyConfig) {
   eleventyConfig.on('eleventy.before', async () => {
@@ -44,6 +48,10 @@ export default async function (eleventyConfig) {
     if (process.env.ELEVENTY_RUN_MODE !== 'serve') {
       await events.buildAllCss();
     }
+
+    validateCategories().forEach(({file, category}) => {
+      console.warn(`[taxonomia] "${category}" fora do vocabulário em ${file}`);
+    });
   });
 
   eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
@@ -59,6 +67,9 @@ export default async function (eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection('posts', getAllPosts);
+  eleventyConfig.addCollection('postListing', getPostListing);
+  eleventyConfig.addCollection('postCategories', getPostCategories);
+  eleventyConfig.addCollection('tagsPages', getTagsPages);
   eleventyConfig.addCollection('newsletters', getAllNewsletters);
   eleventyConfig.addCollection('books', getAllBooks);
   eleventyConfig.addCollection('likes', getAllLikes);
@@ -105,6 +116,7 @@ export default async function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter('localPoster', filters.localPoster);
+  eleventyConfig.addFilter('contentType', filters.contentType);
   eleventyConfig.addFilter('formatDate', filters.formatDate);
   eleventyConfig.addFilter('splitlines', filters.splitlines);
   eleventyConfig.addFilter('striptags', filters.striptags);
@@ -120,6 +132,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
   eleventyConfig.addFilter('filterFavorites', items => filters.filterFavorites(items));
   eleventyConfig.addFilter('featured', items => filters.filterFeatured(items));
+  eleventyConfig.addFilter('excludeFeatured', items => filters.excludeFeatured(items));
   eleventyConfig.addFilter('groupByYear', items => filters.groupByYear(items));
   eleventyConfig.addFilter('filterByYear', (items, year) => filters.filterByYear(items, year));
   eleventyConfig.addFilter('showsByYear', filters.showsByYear);
@@ -129,6 +142,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('renderTransforms', filters.renderTransforms);
   eleventyConfig.addFilter('lastModified', filters.lastModified);
   eleventyConfig.addFilter('toRfc822Date', filters.toRfc822Date);
+  eleventyConfig.addFilter('groupByContentType', filters.groupByContentType);
+  eleventyConfig.addFilter('archiveByYear', filters.archiveByYear);
   eleventyConfig.addFilter('readableDate', filters.readableDate);
   eleventyConfig.addFilter('htmlDateString', filters.htmlDateString);
   eleventyConfig.addFilter('readingTime', filters.readingTime);

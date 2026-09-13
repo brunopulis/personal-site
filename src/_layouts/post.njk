@@ -47,6 +47,13 @@ layout: base
     {{ content | safe }}
   </div>
 
+  {% if category %}
+    <nav class="cluster" style="--gutter: var(--space-2xs)" aria-label="Categoria">
+      <span class="meta uppercase">Categoria</span>
+      <a class="p-category" href="/blog/categoria/{{ category | slugify }}/">{{ category }}</a>
+    </nav>
+  {% endif %}
+
   {% if tags %}
     <nav class="cluster" style="--gutter: var(--space-2xs)" aria-label="Tags">
       <span class="meta uppercase">Tags</span>

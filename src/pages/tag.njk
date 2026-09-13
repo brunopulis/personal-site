@@ -1,23 +1,27 @@
 ---
-layout: base.njk
+layout: base
 pagination:
-  data: tagsData
+  data: collections.tagsPages
   size: 1
-  alias: tagData
-permalink: /tags/{{ tagData.slug }}/
+  alias: tagPage
+permalink: '{{ tagPage.subPagination.pageHref }}'
 eleventyComputed:
-  title: "#{{ tagData.name }}"
-  description: "Conteúdos marcados com a tag #{{ tagData.name }}."
+  title: "Tag: {{ tagPage.name }}"
+  description: "Conteúdos marcados com a tag #{{ tagPage.name }}."
 ---
 
 <div class="h-feed region" style="--region-space: var(--space-l)">
-  <h1 class="p-name">#{{ tagData.name }}</h1>
-  <a class="visually-hidden u-url" href="{{ meta.url }}/tags/{{ tagData.slug }}/" aria-label="{{ tagData.slug }}"></a>
-  <p class="pb-4">Conteúdos marcados com a tag <strong>#{{ tagData.name }}</strong>.</p>
+  <h1 class="p-name">Tag: {{ tagPage.name }}</h1>
+  <a class="u-url" href="/tags/">
+    Todas tags
+  </a>
+  <p class="pb-4">Conteúdos marcados com a tag <strong>#{{ tagPage.name }}</strong>.</p>
 
-  <div class="flow" style="--flow-space: var(--space-l)">
-    {%- for item in collections.all -%}
-      {%- if item.data.tags and tagData.name in item.data.tags -%}
+  {% set groups = tagPage.items | groupByContentType %}
+  {% for group in groups %}
+    <h2 class="meta">{{ group.type }}</h2>
+    <div class="flow" style="--flow-space: var(--space-l)">
+      {% for item in group.items %}
         <article class="pb-6 border-b h-entry flow" style="--flow-space: var(--space-2xs)">
           <h3 class="p-name">
             <a class="u-url" href="{{ item.url }}">{{ item.data.title }}</a>
@@ -31,7 +35,27 @@ eleventyComputed:
             {{ item.data.description or (item.templateContent | striptags | truncate(160)) }}
           </p>
         </article>
-      {%- endif -%}
-    {%- endfor -%}
-  </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+  {% if tagPage.subPagination.pages.length > 1 %}
+    <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Paginação">
+      {% if tagPage.subPagination.previous %}
+        <a class="button" href="{{ tagPage.subPagination.href.previous }}" rel="prev">Anterior</a>
+      {% else %}
+        <span class="button" aria-disabled="true">Anterior</span>
+      {% endif %}
+
+      <span class="meta">
+        Página {{ tagPage.subPagination.pageNumber + 1 }} de {{ tagPage.subPagination.pages.length }}
+      </span>
+
+      {% if tagPage.subPagination.next %}
+        <a class="button" href="{{ tagPage.subPagination.href.next }}" rel="next">Próximo</a>
+      {% else %}
+        <span class="button" aria-disabled="true">Próximo</span>
+      {% endif %}
+    </nav>
+  {% endif %}
 </div>

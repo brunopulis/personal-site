@@ -1,6 +1,9 @@
 import {bookCategories, booksByYear, currentlyReading} from './filters/books.js';
+import {contentType} from './filters/content-type.js';
 import {formatDate} from './filters/dates.js';
-import {filterFeatured} from './filters/featured.js';
+import {archiveByYear} from './filters/archive-by-year.js';
+import {excludeFeatured, filterFeatured} from './filters/featured.js';
+import {groupByContentType} from './filters/groupByContentType.js';
 import {head} from './filters/head.js';
 import {htmlDateString} from './filters/htmlDateString.js';
 import {htmlToAbsoluteUrls} from './filters/htmlToAbsoluteUrls.js';
@@ -31,10 +34,13 @@ import {xmlEscape} from './filters/xmlEscape.js';
 export {formatNumber} from './filters/formatNumber.js';
 
 export default {
+  archiveByYear,
   bookCategories,
   booksByYear,
   categoriesSlugs,
+  contentType,
   currentlyReading,
+  excludeFeatured,
   formatDate,
   head,
   htmlDateString,
@@ -45,6 +51,7 @@ export default {
   filterByYear,
   filterFavorites,
   filterFeatured,
+  groupByContentType,
   groupByYear,
   mediaCategories,
   moviesByYear,

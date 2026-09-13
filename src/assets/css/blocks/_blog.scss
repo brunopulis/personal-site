@@ -1,12 +1,12 @@
 /*
-BLOG — the annotated index
+BLOG — the annotated archive
 
-The long-form room is set as a ruled card index: each entry is a
-hairline row whose date sits in the proof-sheet margin, baseline-
-aligned with the title. The title leads in ink; the abstract and
-the tags follow beneath. The proof pencil stays on the two marks:
-the section dash on the page title and the hover/focus underline
-on each entry title.
+The long-form room is set as a ruled index: every post sits in a
+hairline row whose date is set in the proof-sheet margin,
+baseline-aligned with the title. The years are sections headed by
+the proof dash; the jump-to-year list leads the reader down the
+column. The proof pencil stays on the two marks: the section dash
+and the hover/focus underline on each title.
 */
 
 /* ---------- Header ---------- */
@@ -44,6 +44,10 @@ on each entry title.
   color: var(--color-ink-soft);
 }
 
+.blog-archive-count {
+  margin-block: var(--space-s-m);
+}
+
 .blog-rss {
   margin-block-start: var(--space-s-m);
   background-color: var(--color-surface);
@@ -51,30 +55,73 @@ on each entry title.
   border-style: solid;
 }
 
-/* ---------- The index ---------- */
+/* ---------- Sub-navigation ---------- */
 
-.blog-featured {
+.blog-subnav {
+  margin-block-start: var(--space-l);
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+}
+
+.blog-subnav a {
+  color: var(--color-ink-soft);
+}
+
+.blog-subnav a:hover,
+.blog-subnav a:focus-visible {
+  color: var(--color-ink);
+}
+
+/* The current pillar — ink, against the meta of the alternatives. */
+.blog-subnav-current {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* ---------- Jump to year ---------- */
+
+.blog-jump {
   margin-block-end: var(--space-l);
 }
 
+.blog-jump-list {
+  margin-block-start: var(--space-2xs);
+  font-size: var(--font-size-meta);
+  letter-spacing: 0;
+  color: var(--color-ink-soft);
+}
+
+.blog-jump-list a {
+  color: var(--color-ink-soft);
+}
+
+.blog-jump-list a:hover,
+.blog-jump-list a:focus-visible {
+  color: var(--color-ink);
+}
+
+/* ---------- The years ---------- */
+
+.blog-year {
+  scroll-margin-block: var(--space-l);
+}
+
 /* The section mark — proof pencil on the structure, not the words. */
-.blog-featured-title {
+.blog-year-title {
   display: flex;
   align-items: baseline;
   gap: var(--space-xs-s);
-  margin-block-end: var(--space-2xs);
+  margin-block: var(--space-m-l) var(--space-2xs);
 }
 
-.blog-featured-title::before {
+.blog-year-title::before {
   content: '——';
   font-size: var(--font-size-meta);
   letter-spacing: 0;
   color: var(--color-proof);
 }
 
-.blog-featured .blog-entry {
-  border-block-end: 1px solid var(--color-rule);
-}
+/* ---------- The index ---------- */
 
 .blog-index {
   list-style: none;
@@ -162,10 +209,4 @@ on each entry title.
     grid-row: 1;
     margin-block-end: var(--space-3xs);
   }
-}
-
-/* ---------- Pagination folio ---------- */
-
-.blog-folio {
-  font-variant-numeric: tabular-nums;
 }

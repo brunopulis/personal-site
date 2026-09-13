@@ -1,19 +1,49 @@
-export const categories = {
-  movies: [
-    {slug: 'acao', label: 'Ação'},
-    {slug: 'aventura', label: 'Aventura'},
-    {slug: 'comedia', label: 'Comédia'},
-    {slug: 'documentario', label: 'Documentário'},
-    {slug: 'ficcao', label: 'Ficção'}
-  ],
+const genre = (...labels) => labels.map(label => ({label}));
 
-  tv: [
-    {slug: 'acao', label: 'Ação'},
-    {slug: 'aventura', label: 'Aventura'},
-    {slug: 'comedia', label: 'Comédia'},
-    {slug: 'documentario', label: 'Documentário'},
-    {slug: 'ficcao', label: 'Ficção'}
-  ]
+export const categories = {
+  posts: genre('Acessibilidade', 'Teologia', 'Pessoal', 'Dev', 'QA', 'Produtividade', 'Eventos', 'Carreira'),
+
+  books: genre(
+    'Cristianismo',
+    'Fantasia',
+    'Produtividade',
+    'Quadrinhos',
+    'Finanças',
+    'Diversos',
+    'Tecnologia',
+    'Saúde',
+    'Ficção'
+  ),
+
+  movies: genre(
+    'Ação',
+    'Animação',
+    'Comédia',
+    'Crime',
+    'Documentário',
+    'Drama',
+    'Fantasia',
+    'Ficção',
+    'Guerra',
+    'História',
+    'HQ',
+    'Sci-Fi'
+  ),
+
+  shows: genre(
+    'Ação',
+    'Animação',
+    'Comédia',
+    'Crime',
+    'Documentário',
+    'Drama',
+    'Fantasia',
+    'Ficção',
+    'Guerra',
+    'História',
+    'HQ',
+    'Sci-Fi'
+  )
 };
 
 export default {categories};
