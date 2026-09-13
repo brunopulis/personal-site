@@ -1,17 +1,6 @@
-/*
-HOME — “a prova”
-
-The homepage is set like a proof sheet from a quiet study: ink on
-unbleached linen, with the proofreader's red pencil marking structure
-(section dashes, hover underline) instead of decorating words.
-*/
-
-// Hero
-
-.home-hero {
-  position: relative;
-  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
-}
+// =============================================================================
+// Home
+// =============================================================================
 
 .home-greeting {
   margin-block-start: var(--space-s-m);
@@ -59,6 +48,7 @@ unbleached linen, with the proofreader's red pencil marking structure
 }
 
 .home-section-title {
+  color: var(--color-proof);
   display: flex;
   align-items: baseline;
   gap: var(--space-xs-s);
