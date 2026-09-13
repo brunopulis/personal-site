@@ -1,7 +1,7 @@
 ---
 title: Alternativas ao Google Analytics
 pubDate: 2024-05-09
-category: Dev
+category: Desenvolvimento Web
 tags:
   - web analytics
   - tools

@@ -2,9 +2,6 @@
 title: 'GitHub Profile: dicas para se destacar'
 pubDate: 2024-07-07
 category: Carreira
-tags:
-  - versionamento
-  - github
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fir5ij2l"
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: Primeiros passos com Flutter
 pubDate: 2021-11-16
-category: Dev
-tags:
-  - mobile
+category: Desenvolvimento Mobile
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4flmkfd2x"
 ---
 

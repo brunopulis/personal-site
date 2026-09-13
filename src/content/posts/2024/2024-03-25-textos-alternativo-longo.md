@@ -1,7 +1,7 @@
 ---
 title: Como criar texto alternativo longo
 pubDate: 2024-03-25
-category: Dev
+category: Acessibilidade
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fj67tl2u"
 ---
 

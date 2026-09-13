@@ -1,7 +1,7 @@
 ---
 title: 'WordPress vs. Eleventy: Qual é a melhor opção para o seu blog?'
 pubDate: 2022-02-02
-category: Dev
+category: Desenvolvimento Web
 tags:
   - WordPress
   - 11ty

@@ -1,11 +1,9 @@
 ---
 title: Compartilhando post no Mastodon
 pubDate: 2024-09-23
-category: Dev
+category: Desenvolvimento Web
 tags:
-  - fediverso
   - indie web
-  - til
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fi5sh32x"
 ---
 
