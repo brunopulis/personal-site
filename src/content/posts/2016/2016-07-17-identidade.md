@@ -1,8 +1,7 @@
 ---
 title: Identidade
 pubDate: 2016-07-17
-tags:
-  - pessoal
+category: Pessoal
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fzmtmd2g"
 ---
 

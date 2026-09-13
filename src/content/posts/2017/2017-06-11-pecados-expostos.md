@@ -2,9 +2,7 @@
 title: 'Pecados expostos'
 excerpt: 'O cenário moderno permeia a justiça própria e um censo de moralismo onde a punição é aplicada de acordo com o que se acha prudente, fato…'
 pubDate: 2017-06-11T19:02:56.289Z
-tags:
-  - teologia
-  - cristianismo
+category: Teologia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fxe2sl2o"
 ---
 

@@ -2,7 +2,6 @@
 title: Minas Test Conference 20
 pubDate: 2020-08-22
 category: Eventos
-tags: ['indicações', 'review', 'eventos']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fnpb2l2i"
 ---
 

@@ -2,9 +2,7 @@
 title: 'Retorno a comunhão'
 excerpt: 'O tempo passa, o início era perfeito, horas pareciam minutos, mas ao poucos a comunhão foi sendo aniquilada pela rotina, cansaço e…'
 pubDate: 2017-03-05T04:48:59.168Z
-tags:
-  - teologia
-  - cristianismo
+category: Teologia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fy7dkc2h"
 ---
 

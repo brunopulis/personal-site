@@ -2,10 +2,7 @@
 title: Ignoramos 45 milhões de pessoas
 excerpt: 'Breve descrição'
 pubDate: 2014-12-18
-tags:
-  - a11y
-  - inclusão
-  - equidade
+category: Acessibilidade
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g2oplt2g"
 ---
 

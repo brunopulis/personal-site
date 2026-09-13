@@ -1,7 +1,7 @@
 ---
 title: 21 qualidades de um bom QA
 pubDate: 2018-01-19
-category: QA
+category: Qualidade de Software
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fs6njx2q"
 ---
 

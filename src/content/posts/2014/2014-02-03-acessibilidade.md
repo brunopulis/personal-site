@@ -2,8 +2,7 @@
 title: 'Acessibilidade'
 excerpt: 'o caminho para uma web inclusiva'
 pubDate: 2014-02-03
-tags:
-  - a11y
+category: Acessibilidade
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4g3d2zu25"
 ---
 

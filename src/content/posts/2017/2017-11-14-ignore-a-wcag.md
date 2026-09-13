@@ -3,7 +3,6 @@ title: 'Ignore o WCAG! Teste de usuários com pessoas com deficiência em vez di
 excerpt: 'Se você está tentando tornar seu site ou aplicativo acessível, você provavelmente se atrapalhou nas Diretrizes de Acessibilidade para o…'
 pubDate: 2017-11-14T01:24:43.278Z
 category: Acessibilidade
-tags: ['wcag']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fugetz2l"
 ---
 

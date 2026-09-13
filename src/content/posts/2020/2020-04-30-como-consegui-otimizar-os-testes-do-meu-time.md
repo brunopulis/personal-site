@@ -1,7 +1,7 @@
 ---
 title: 'PHPUnit: como otimizar a performance dos testes'
 pubDate: 2020-04-30
-category: QA
+category: Qualidade de Software
 tags:
   - phpunit
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fodg6l2g"

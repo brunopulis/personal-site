@@ -3,7 +3,6 @@ title: 'Pontes versus muros'
 excerpt: 'E ali haverá uma grande estrada, um caminho que será chamado Caminho de Santidade. Os impuros não passarão por ele; servirá apenas aos que…'
 pubDate: 2017-10-30T10:54:16.036Z
 category: Teologia
-tags: ['cristianismo']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fumuub2l"
 ---
 

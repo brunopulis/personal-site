@@ -3,7 +3,8 @@ title: 'João, o Evangelista'
 excerpt: 'João, filho de Zebedeu e Salomé, foi o discípulo mais novo dos doze. Juntamente com seu irmão Tiago, foi convidado a peregrinar com Jesus…'
 pubDate: 2017-11-17T13:51:51.663Z
 category: Teologia
-tags: ['cristianismo', 'biografia']
+tags:
+  - Biografia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4ftzfz32v"
 ---
 

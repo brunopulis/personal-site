@@ -2,9 +2,7 @@
 title: 'O grito da alma'
 excerpt: 'Quando tudo se faz sem sentido'
 pubDate: 2017-08-13T18:39:00.167Z
-tags:
-  - teologia
-  - cristianismo
+category: Teologia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fvoiy224"
 ---
 

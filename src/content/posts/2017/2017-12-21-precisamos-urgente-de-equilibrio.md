@@ -3,9 +3,6 @@ title: 'Precisamos urgente de equilíbrio'
 excerpt: 'Esse artigo não será técnico, mas uma reflexão sobre um tema pouco tocado, mas que todos passam em suas carreiras na área de TI.'
 pubDate: 2017-12-21T14:03:35.906Z
 category: Teologia
-tags:
-  - reflexão
-  - tecnologia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fslqur2l"
 ---
 

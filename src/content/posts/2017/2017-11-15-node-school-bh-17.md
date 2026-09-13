@@ -2,7 +2,6 @@
 title: 'Review: Node School BH 17'
 pubDate: 2017-11-15
 category: Eventos
-tags: ['review', 'nodejs']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fu7uat2k"
 ---
 

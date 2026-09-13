@@ -3,7 +3,8 @@ title: 'Paulo de Tarso'
 excerpt: 'A vida e obra do apostolo Paulo'
 pubDate: 2018-01-05T12:50:25.961Z
 category: Teologia
-tags: ['cristianismo', 'biografia']
+tags:
+  - Biografia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fsf4l32g"
 ---
 

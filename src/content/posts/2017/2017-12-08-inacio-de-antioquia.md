@@ -3,7 +3,6 @@ title: 'Inácio de Antioquia'
 excerpt: 'Inácio foi bispo de Antioquia da Síria entre 68 e 100 ou 107, discípulo do apóstolo João, também conheceu Paulo e foi sucessor de Pedro na…'
 pubDate: 2017-12-08T12:01:01.591Z
 category: Teologia
-tags: ['cristianismo', 'biografia']
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fsyrsr22"
 ---
 

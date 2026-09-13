@@ -1,10 +1,7 @@
 ---
 title: A estória de Paloma
 pubDate: 2016-09-16
-tags:
-  - teologia
-  - cristianismo
-  - contos
+category: Teologia
 atUri: "at://did:plc:jtwk3253wycggbzl3sr7b6gi/site.standard.document/3mpu4fyzfzl2x"
 ---
 
