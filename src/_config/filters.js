@@ -1,8 +1,6 @@
 import {bookCategories, booksByYear, currentlyReading} from './filters/books.js';
-import {contentType} from './filters/content-type.js';
 import {formatDate} from './filters/dates.js';
 import {archiveByYear} from './filters/archive-by-year.js';
-import {excludeFeatured, filterFeatured} from './filters/featured.js';
 import {groupByContentType} from './filters/groupByContentType.js';
 import {head} from './filters/head.js';
 import {htmlDateString} from './filters/htmlDateString.js';
@@ -38,9 +36,7 @@ export default {
   bookCategories,
   booksByYear,
   categoriesSlugs,
-  contentType,
   currentlyReading,
-  excludeFeatured,
   formatDate,
   head,
   htmlDateString,
@@ -50,7 +46,6 @@ export default {
   localPoster,
   filterByYear,
   filterFavorites,
-  filterFeatured,
   groupByContentType,
   groupByYear,
   mediaCategories,

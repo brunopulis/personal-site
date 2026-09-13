@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import Color from 'colorjs.io';
 
-const colorsBase = JSON.parse(fs.readFileSync('./src/_data/designTokens/colorsBase.json', 'utf-8'));
+const colorsBase = JSON.parse(fs.readFileSync('./src/_data/designTokens/colorBase.json', 'utf-8'));
 
 const generatePalette = (baseColorHex, steps) => {
   const baseColor = new Color(baseColorHex).to('oklch');

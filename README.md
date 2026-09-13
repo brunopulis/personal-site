@@ -280,8 +280,8 @@ This template includes IndieWeb features out of the box:
 
 ### Colors & Styling
 
-- Edit `tailwind.config.cjs` for theme colors
-- Modify `src/assets/css/build.css` for custom styles
+- Edit `src/assets/css/abstracts/_theme.scss` for theme colors and tokens
+- Modify `src/assets/css/app.scss` for custom styles
 
 
 ### Adding Pages

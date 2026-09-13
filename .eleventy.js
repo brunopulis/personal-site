@@ -17,7 +17,6 @@ import {load as yamlLoad} from 'js-yaml';
 
 import {
   getAllPosts,
-  getPostListing,
   getAllNewsletters,
   getAllBooks,
   getAllFeed,
@@ -55,7 +54,6 @@ export default async function (eleventyConfig) {
   });
 
   eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
-  eleventyConfig.addWatchTarget('./src/_includes/**/*.{webc}');
 
   // Layout alias
   eleventyConfig.addLayoutAlias('base', 'base.njk');
@@ -67,7 +65,6 @@ export default async function (eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection('posts', getAllPosts);
-  eleventyConfig.addCollection('postListing', getPostListing);
   eleventyConfig.addCollection('postCategories', getPostCategories);
   eleventyConfig.addCollection('tagsPages', getTagsPages);
   eleventyConfig.addCollection('newsletters', getAllNewsletters);
@@ -116,7 +113,6 @@ export default async function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter('localPoster', filters.localPoster);
-  eleventyConfig.addFilter('contentType', filters.contentType);
   eleventyConfig.addFilter('formatDate', filters.formatDate);
   eleventyConfig.addFilter('splitlines', filters.splitlines);
   eleventyConfig.addFilter('striptags', filters.striptags);
@@ -131,8 +127,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('currentlyReading', books => filters.currentlyReading(books));
   eleventyConfig.addFilter('moviesByYear', filters.moviesByYear);
   eleventyConfig.addFilter('filterFavorites', items => filters.filterFavorites(items));
-  eleventyConfig.addFilter('featured', items => filters.filterFeatured(items));
-  eleventyConfig.addFilter('excludeFeatured', items => filters.excludeFeatured(items));
   eleventyConfig.addFilter('groupByYear', items => filters.groupByYear(items));
   eleventyConfig.addFilter('filterByYear', (items, year) => filters.filterByYear(items, year));
   eleventyConfig.addFilter('showsByYear', filters.showsByYear);

@@ -1,14 +1,11 @@
 import fs from 'node:fs';
 import blogroll from '../_data/blogroll.json' with {type: 'json'};
-import {excludeFeatured} from './filters/featured.js';
 import {slugifyString} from './filters/slugify.js';
 import {buildTagGroups, chunk} from './taxonomy/tags-core.js';
 
 const getPosts = collection => collection.getFilteredByGlob('./src/content/posts/**/*.md').reverse();
 
 export const getAllPosts = getPosts;
-
-export const getPostListing = collection => excludeFeatured(getPosts(collection));
 
 export const getAllLikes = collection => {
   return collection.getFilteredByGlob('./src/content/likes/**/*.md').reverse();

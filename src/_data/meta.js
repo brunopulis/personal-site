@@ -9,9 +9,6 @@ export const locale = 'pt_BR';
 export const lang = 'pt-br';
 export const skipContent = 'Ir para conteúdo principal';
 
-// Source logo used by the favicon generation script
-export const pathToSvgLogo = 'src/assets/favicon.svg';
-
 export const author = {
   name: 'Bruno Pulis',
   description:
@@ -99,7 +96,6 @@ export default {
   locale,
   lang,
   skipContent,
-  pathToSvgLogo,
   author,
   creator
 };
