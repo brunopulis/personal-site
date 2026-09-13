@@ -1,15 +1,6 @@
-/*
-BLOG — the annotated archive
-
-The long-form room is set as a ruled index: every post sits in a
-hairline row whose date is set in the proof-sheet margin,
-baseline-aligned with the title. The years are sections headed by
-the proof dash; the jump-to-year list leads the reader down the
-column. The proof pencil stays on the two marks: the section dash
-and the hover/focus underline on each title.
-*/
-
-/* ---------- Header ---------- */
+// =============================================================================
+// Blog
+// =============================================================================
 
 .blog-header {
   margin-block-end: var(--space-l);
@@ -20,13 +11,6 @@ and the hover/focus underline on each title.
   display: flex;
   align-items: baseline;
   gap: var(--space-xs-s);
-}
-
-.blog-title::before {
-  content: '——';
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-proof);
 }
 
 .blog-lede {
@@ -109,16 +93,11 @@ and the hover/focus underline on each title.
 /* The section mark — proof pencil on the structure, not the words. */
 .blog-year-title {
   display: flex;
+  color: var(--color-blood-red-950);
+  font-weight: 700;
   align-items: baseline;
   gap: var(--space-xs-s);
   margin-block: var(--space-m-l) var(--space-2xs);
-}
-
-.blog-year-title::before {
-  content: '——';
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-proof);
 }
 
 /* ---------- The index ---------- */
@@ -127,6 +106,11 @@ and the hover/focus underline on each title.
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.blog__post {
+  padding-block: var(--space-s-m);
+  border-block-start: 1px solid var(--color-rule);
 }
 
 .blog-entry {
@@ -166,7 +150,7 @@ and the hover/focus underline on each title.
 /* The index mark — proof underline on hover/focus. */
 .blog-entry-title a:hover,
 .blog-entry-title a:focus-visible {
-  text-decoration-color: var(--color-proof);
+  text-decoration-color: var(--color-blood-red-950);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.22em;
 }

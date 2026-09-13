@@ -1,8 +1,5 @@
-/*
-THEME tokens
-Includes primitive tokens for color and semantic tokens.
-Customized for brunopulis/personal-site
-*/
+// THEME tokens
+// Includes primitive tokens for color and semantic tokens.
 :root {
   // Blood red
   --color-blood-red-50: #fff1f1;
@@ -132,9 +129,7 @@ Customized for brunopulis/personal-site
   --color-star-empty: var(--color-rule);
 }
 
-/*
-DARK MODE
-*/
+// DARK MODE
 @media (prefers-color-scheme: dark) {
   :root {
     --color-paper: #171e1e; /* brand preto */

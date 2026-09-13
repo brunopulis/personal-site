@@ -4,7 +4,7 @@ title: "Filmes e Séries"
 permalink: /watching/
 ---
 
-<div class="h-feed">
+<div class="h-feed region flow">
   {% set allMovies = collections.movies %}
   {% set allShows = collections.shows %}
   {% set watchedMidia = collections.books | where('data.status', 'lido') %}
@@ -64,9 +64,7 @@ permalink: /watching/
   {% if recentMovies.length > 0 %}
   <section class="region" style="--region-space: var(--space-2xl)" aria-labelledby="recent-movies">
     <div class="cluster mb-6" style="--gutter: var(--space-xs)">
-      <h2 id="recent-movies">
-        {% faIcon 'film', 'solid', '1em' %} Filmes Recentes
-      </h2>
+      <h2 id="recent-movies">Filmes Recentes</h2>
       <a href="/watching/movies/" class="text-sm" style="color: var(--color-link)">Ver todos →</a>
     </div>
 

@@ -4,21 +4,12 @@ title: Filmes
 permalink: /watching/movies/
 ---
 
-<section class="region" style="--region-space: var(--space-l)">
-  <nav class="mb-4 text-sm" aria-label="Breadcrumb">
-    <div class="cluster" style="--gutter: var(--space-2xs)">
-      <a href="/watching/" class="font-bold text-2xl">
-        Filmes e Séries
-      </a>
-      {% faIcon 'arrow-right', 'solid', '1em' %}
-      <span>Filmes</span>
-    </div>
-  </nav>
+<header class="region flow">
   <h1 class="mb-2">Filmes</h1>
   <p class="meta">
     Todos os filmes que assisti.
   </p>
-</section>
+</header>
 
 {% set moviesGrouped = collections.movies | moviesByYear %}
 
@@ -26,7 +17,7 @@ permalink: /watching/movies/
   {% set yearMovies = moviesGrouped.byYear[year] %}
   {% set movieCount = yearMovies | length %}
 
-  <section class="region" style="--region-space: var(--space-2xl)">
+  <section class="h-feed">
     <div class="cluster mb-6" style="--gutter: var(--space-xs)">
       <h2>{{ year }}</h2>
       <span class="meta bg-surface px-3 py-1 border rounded-full">

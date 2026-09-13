@@ -22,13 +22,6 @@ dims to ink-soft until hover.
   gap: var(--space-xs-s);
 }
 
-.notes-title::before {
-  content: '——';
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-proof);
-}
-
 .notes-lede {
   margin-block-start: var(--space-xs-s);
   font-size: var(--font-size-lede);

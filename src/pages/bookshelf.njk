@@ -4,7 +4,7 @@ title: Meus livros
 permalink: /bookshelf/
 ---
 
-<div class="h-feed">
+<div class="h-feed region flow">
   {% set booksGrouped = collections.books | booksByYear %}
   {% set lendo = collections.books | currentlyReading %}
   {% set lidos = collections.books | where('data.status', 'lido') %}

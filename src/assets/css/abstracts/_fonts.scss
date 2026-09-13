@@ -1,11 +1,10 @@
-/*
-FONTS
-Subset using Google Webfonts Helper
-@link https://gwfh.mranftl.com/fonts/source-sans-3/source-sans-3?subsets=latin
-@link https://gwfh.mranftl.com/fonts/noto-serif?subsets=latin
-*/
+//
+// FONTS
+// Subset using Google Webfonts Helper
+//  @link https://gwfh.mranftl.com/fonts/source-sans-3/source-sans-3?subsets=latin
+// @link https://gwfh.mranftl.com/fonts/noto-serif?subsets=latin
 
-/* Source Sans 3 — primary typeface: clean, legible across screens and interfaces */
+// Source Sans 3 — primary typeface: clean, legible across screens and interfaces
 @font-face {
   font-display: swap;
   font-family: 'Source Sans 3';
@@ -30,7 +29,7 @@ Subset using Google Webfonts Helper
   src: url('../fonts/source-sans-3/bold.woff2') format('woff2');
 }
 
-/* Noto Serif — secondary typeface: editorial warmth for printed, dense content */
+// Noto Serif — secondary typeface: editorial warmth for printed, dense content
 @font-face {
   font-display: swap;
   font-family: 'Noto Serif';

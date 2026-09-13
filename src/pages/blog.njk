@@ -4,7 +4,7 @@ permalink: '/blog/index.html'
 title: Blog
 ---
 
-<div class="h-feed">
+<div class="h-feed region flow">
   <header class="blog-header">
     <h1 class="p-name blog-title">Blog</h1>
     <a class="visually-hidden u-url" href="{{ meta.url }}/blog/" aria-label="Blog"></a>
@@ -35,8 +35,8 @@ title: Blog
     Arquivo completo: {{ collections.posts | length }} artigos publicados desde {{ (yearGroups | last).year }}.
   </p>
 
-  <nav class="blog-jump" aria-label="Pular para o ano">
-    <span class="meta blog-jump-label">Pular para o ano</span>
+  <nav class="blog-jump" aria-labelledby="blog-jump-label">
+    <span class="meta blog-jump-label" id="blog-jump-label">Navegar por ano</span>
     <ol class="cluster blog-jump-list" role="list" style="--gutter: var(--space-s-m)">
       {% for yearGroup in yearGroups %}
         <li>
@@ -47,27 +47,41 @@ title: Blog
   </nav>
 
   {% for yearGroup in yearGroups %}
-    <section
-      id="year-{{ yearGroup.year }}"
+    <div
       class="blog-year"
+      id="year-{{ yearGroup.year }}"
       aria-labelledby="year-{{ yearGroup.year }}-title">
-      <h2 id="year-{{ yearGroup.year }}-title" class="blog-year-title">{{ yearGroup.year }}</h2>
-      <ol class="blog-index" role="list">
-        {% for post in yearGroup.items %}
-          <li>
-            <article class="blog-entry h-entry">
-              <time
-                class="blog-date dt-published"
-                datetime="{{ post.date | htmlDateString }}">
-                {{ post.date | readableDate('DD de MMM') }}
+      <h2 class="blog-year-title" id="year-{{ yearGroup.year }}-title">{{ yearGroup.year }}</h2>
+      {% for post in yearGroup.items %}
+        {% set dateVal = post.date %}
+        {% set url = post.url or post.id %}
+        {% set title = (post.data and post.data.title) or post.title %}
+        {% set description = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
+        {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+        <article class="blog__post h-entry">
+          <p class="home-post-meta">
+            {% if dateVal %}
+              <time class="dt-published" datetime="{{ dateVal | htmlDateString }}">
+                {{ dateVal | readableDate }}
               </time>
-              <h3 class="blog-entry-title p-name">
-                <a class="u-url" href="{{ post.url }}">{{ post.data.title }}</a>
-              </h3>
-            </article>
-          </li>
-        {% endfor %}
-      </ol>
-    </section>
+            {% endif %}
+
+            {% if tags %}
+              {% for tag in tags %}
+                <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+              {% endfor %}
+            {% endif %}
+          </p>
+
+          <h3 class="home-post-title p-name">
+            <a class="u-url" href="{{ url }}">{{ title }}</a>
+          </h3>
+
+          {% if description %}
+            <p class="home-post-summary p-summary">{{ description }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
   {% endfor %}
 </div>
