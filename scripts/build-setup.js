@@ -12,26 +12,74 @@ async function ensureDir(p) {
   await fs.promises.mkdir(p, {recursive: true});
 }
 
-function download(url, dest) {
+const MAX_REDIRECTS = 5;
+const DOWNLOAD_TIMEOUT_MS = 30000;
+const MAX_BYTES = 25 * 1024 * 1024;
+
+function download(url, dest, redirects = 0) {
   return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(dest);
-    https
-      .get(url, res => {
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          return resolve(download(res.headers.location, dest));
+    let parsed;
+    try {
+      parsed = new URL(url);
+    } catch {
+      return reject(new Error(`Invalid download URL: ${url}`));
+    }
+    if (parsed.protocol !== 'https:') {
+      return reject(new Error(`Download URL must use https: ${url}`));
+    }
+
+    const req = https.request(parsed, res => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        res.resume();
+        if (redirects >= MAX_REDIRECTS) {
+          return reject(new Error(`Too many redirects for ${url}`));
         }
-        if (res.statusCode !== 200) {
-          file.close();
+        return resolve(download(new URL(res.headers.location, parsed).href, dest, redirects + 1));
+      }
+      if (res.statusCode !== 200) {
+        res.resume();
+        return reject(new Error(`Failed to download ${url}: ${res.statusCode}`));
+      }
+
+      const declaredLength = Number(res.headers['content-length'] || 0);
+      if (declaredLength > MAX_BYTES) {
+        res.resume();
+        return reject(new Error(`Download too large: ${url} (${declaredLength} bytes)`));
+      }
+
+      const contentType = res.headers['content-type'] || '';
+      if (!contentType.startsWith('image/')) {
+        res.resume();
+        return reject(new Error(`Unexpected content-type: ${contentType || 'none'}`));
+      }
+
+      const file = fs.createWriteStream(dest);
+      let received = 0;
+      res.on('data', chunk => {
+        received += chunk.length;
+        if (received > MAX_BYTES) {
+          file.destroy();
+          res.destroy();
           fs.unlink(dest, () => {});
-          return reject(new Error(`Failed to download ${url}: ${res.statusCode}`));
+          return reject(new Error(`Download exceeded size limit: ${url}`));
         }
-        res.pipe(file);
-        file.on('finish', () => file.close(resolve));
-      })
-      .on('error', err => {
+      });
+      res.pipe(file);
+      file.on('finish', () => file.close(resolve));
+      file.on('error', err => {
         fs.unlink(dest, () => {});
         reject(err);
       });
+    });
+
+    req.setTimeout(DOWNLOAD_TIMEOUT_MS, () => {
+      req.destroy(new Error(`Download timed out: ${url}`));
+    });
+    req.on('error', err => {
+      fs.unlink(dest, () => {});
+      reject(err);
+    });
+    req.end();
   });
 }
 
