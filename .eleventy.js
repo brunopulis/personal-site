@@ -39,6 +39,7 @@ import shortcodes from './src/_config/shortcodes.js';
 import blogroll from './src/_data/blogroll.json' with {type: 'json'};
 import {svgToJpeg} from './src/_config/events/svg-to-jpeg.js';
 import {validateCategories} from './src/_config/taxonomy/validate.js';
+import {syncPosters} from './scripts/sync-posters.js';
 
 export default async function (eleventyConfig) {
   eleventyConfig.on('eleventy.before', async () => {
@@ -47,6 +48,8 @@ export default async function (eleventyConfig) {
     if (process.env.ELEVENTY_RUN_MODE !== 'serve') {
       await events.buildAllCss();
     }
+
+    await syncPosters();
 
     validateCategories().forEach(({file, category}) => {
       console.warn(`[taxonomia] "${category}" fora do vocabulário em ${file}`);
@@ -88,6 +91,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
     formats: ['avif', 'webp', 'jpeg'],
     widths: ['auto'],
+    failOnError: false,
     htmlOptions: {
       imgAttributes: {
         loading: 'lazy',
