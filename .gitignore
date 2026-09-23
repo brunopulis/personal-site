@@ -56,6 +56,9 @@ lerna-debug.log*
 # Tailwind build output (generated)
 src/assets/css/build.css
 
+# TinaCMS local state (generated; tina-lock.json and tina/config.ts are tracked)
+tina/__generated__/
+
 # Eleventy / Build Outputs
 # ----------------------------
 # Default Eleventy output (change if custom in .eleventy.js)

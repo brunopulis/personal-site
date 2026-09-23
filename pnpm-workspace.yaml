@@ -1,8 +1,14 @@
 allowBuilds:
   '@parcel/watcher': false
+  better-sqlite3: true
+  core-js: true
   cypress: true
   esbuild: true
   sharp: true
+
+minimumReleaseAgeExclude:
+  - '@tinacms/cli@3.1.0'
+  - tinacms@3.14.1
 
 overrides:
   '@11ty/eleventy>js-yaml': 4.3.2

@@ -8,13 +8,15 @@
 - **Vitest** for unit tests; **Cypress + cypress-axe** for e2e and a11y smoke tests
 - **Pagefind** for static search (runs after Eleventy on `_site/`)
 - **Vercel** deployment — build command `npm run build`, output `_site/`
+- **TinaCMS** — Git-based CMS (admin em `_site/admin/`) para criar posts, notas e filmes; schema em `tina/config.ts` (configuração the Tina ao lado do Eleventy)
 
 ## Commands
 
 | Command | What it does |
 |---|---|
 | `npm run dev` | `node scripts/build-css.js --watch` + Eleventy dev server (port 8080) in parallel |
-| `npm run build` | Full production build: `clean → eleventy (ELEVENTY_ENV=production) → pagefind search index` |
+| `npm run build` | Full production build: `clean → eleventy (ELEVENTY_ENV=production) → Tina admin → pagefind search index` |
+| `npm run cms` | TinaCMS dev server (port 4001, `/admin/index.html`) rodando `npm run dev` em paralelo |
 | `npm test` | `vitest run` (tests in `tests/**/*.test.js`) |
 | `npm run test:watch` | `vitest` (watch mode) |
 | `npm run test:coverage` | `vitest run --coverage` (covers `src/_config/**`) |
@@ -35,7 +37,11 @@
 
 - **No ESLint** — only Prettier for formatting. Prettier config at `.prettierrc` (110 print width, single quotes, no trailing commas). Prettier **ignores** `.md` and `.njk` files (see `.prettierignore`).
 - **CSS is SCSS, not Tailwind** — do not look for `tailwind.config.js` (it does not exist). Tokens are in `src/assets/css/abstracts/_theme.scss`. Never introduce Tailwind or utility classes.
-- **Build is sequential**: `clean → build:11ty → build:search`. Stats are computed at build time by the `src/_data/siteStats.js` data file — no separate pre-build step needed. `cross-env ELEVENTY_ENV=production` is set for production builds.
+- **Build is sequential**: `clean → build:11ty → build:admin → build:search`. Stats are computed at build time by the `src/_data/siteStats.js` data file — no separate pre-build step needed. `cross-env ELEVENTY_ENV=production` is set for production builds.
+- **TinaCMS admin** é gerado em `_site/admin/` pelo `build:admin` (`tinacms build`). Como o Pagefind não tem flag de exclusão de diretório, `scripts/tina-admin-ignore.js` injeta `data-pagefind-ignore` no `_site/admin/index.html` logo após o build (e antes do `dev:search`). O Eleventy não suporta visual editing (TinaProvider), então o CMS é a edição por formulários em `/admin/`.
+- **TinaCMS em produção**: com `TINA_CLIENT_ID`/`TINA_TOKEN` no ambiente, o `build:admin` gera o admin vinculado ao Tina Cloud (commits via GitHub). Sem essas vars, cai no modo `--local` (sem registro de commits no GitHub). O schema vive em `tina/config.ts` e gera `tina/__generated__/` (gitignored); `tina-lock.json` é versionado.
+- **Datetime no Tina**: campos `datetime` são normalizados para ISO (ex.: `pubDate: 2025-01-03 22:53:00` vira `2025-01-04T01:53:00.000Z`). Para posts/notas a data exibida vem do nome do arquivo (`page.date`), então não muda a navegação; apenas feeds RSS de notas antigas com hora podem deslocar 1 dia. Novos conteúdos criados no CMS já nascem em ISO.
+- **Campos fora do schema são preservados** no frontmatter ao salvar (ex.: `excerpt` em posts antigos). Por isso, campos usados pelos arquivos existentes precisam existir no schema — `type: movie` está lá justamente para não ser descartado.
 - **OG images**: SVG→JPEG conversion only runs during dev serve (`ELEVENTY_RUN_MODE === 'serve'`).
 - **Image transform plugin** auto-converts images to avif/webp/jpeg at 650/960/1400px widths (30-day cache).
 - **`.env` file** is loaded by dotenv in `.eleventy.js`. Used by asset-fetch scripts (profile image, OG default, etc.) — set `SKIP_FETCH_ASSETS=1` to bypass in CI/offline.
