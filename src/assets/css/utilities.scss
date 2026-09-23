@@ -3,85 +3,13 @@ UTILITY CLASSES
 Custom utility classes for the project
 */
 
-.w-full {
-  width: 100%;
-  max-width: unset;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.font-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.font-medium {
-  font-weight: 500;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.italic {
-  font-style: italic;
-}
-
 .tracking-wider {
   letter-spacing: 0.05em;
 }
 
-.sr-only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
+.rounded-full {
+  border-radius: 100vmax;
 }
-
-.sticky {
-  position: sticky;
-}
-
-.top-0 {
-  top: 0;
-}
-
-.z-30 {
-  z-index: 30;
-}
-
-.block {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Color utilities */
-.text-brand { color: var(--color-brand); }
-.text-errie-black-900 { color: var(--color-errie-black-900); }
-.text-muted { color: var(--color-muted); }
-
-.bg-surface { background-color: var(--color-surface); }
-
-.border { border: var(--stroke-width) var(--stroke-style) var(--stroke-color); }
-.border-b { border-bottom: var(--stroke-width) var(--stroke-style) var(--stroke-color); }
-
-.rounded-full { border-radius: 100vmax; }
 
 /* Component utilities */
 .meta {
@@ -102,42 +30,29 @@ Custom utility classes for the project
   background-color: var(--color-proof-soft);
 }
 
-/* Spacing utilities */
-.px-3 { padding-inline: var(--space-2xs); }
-.py-1 { padding-block: var(--space-3xs); }
-.py-2 { padding-block: var(--space-2xs); }
-.py-4 { padding-block: var(--space-s); }
-.py-8 { padding-block: var(--space-l); }
-.py-12 { padding-block: var(--space-2xl); }
-.pb-4 { padding-bottom: var(--space-s); }
-.pb-6 { padding-bottom: var(--space-m); }
-.pl-5 { padding-left: var(--space-s); }
-
-.mt-2 { margin-top: var(--space-2xs); }
-.mt-4 { margin-top: var(--space-s); }
-.mb-1 { margin-bottom: var(--space-3xs); }
-.mb-2 { margin-bottom: var(--space-2xs); }
-.mb-4 { margin-bottom: var(--space-s); }
-.mb-5 { margin-bottom: var(--space-s); }
-.mb-6 { margin-bottom: var(--space-m); }
-.mb-8 { margin-bottom: var(--space-l); }
-.ml-2 { margin-left: var(--space-2xs); }
-.my-2 { margin-block: var(--space-2xs); }
-
 /* Typography size utilities */
-.text-xs { font-size: var(--font-size-xs); }
-.text-sm { font-size: var(--font-size-meta); }
-.text-2xl { font-size: var(--font-size-xl); }
-.text-3xl { font-size: var(--font-size-2xl); }
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+.text-sm {
+  font-size: var(--font-size-meta);
+}
+.text-2xl {
+  font-size: var(--font-size-xl);
+}
+.text-3xl {
+  font-size: var(--font-size-2xl);
+}
 
 /* Layout utilities */
-.max-w-2xl { max-width: 42rem; }
-
-/* Grid utilities */
-.grid { display: grid; }
+.max-w-2xl {
+  max-width: 42rem;
+}
 
 /* List utilities */
-.list-disc { list-style-type: disc; }
+.list-disc {
+  list-style-type: disc;
+}
 
 /* Line clamp */
 .line-clamp-2 {

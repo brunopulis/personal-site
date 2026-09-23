@@ -4,7 +4,7 @@ title: Meus livros
 permalink: /bookshelf/
 ---
 
-<div class="h-feed region flow">
+<div class="h-feed flow">
   {% set booksGrouped = collections.books | booksByYear %}
   {% set lendo = collections.books | currentlyReading %}
   {% set lidos = collections.books | where('data.status', 'lido') %}
@@ -16,9 +16,9 @@ permalink: /bookshelf/
   <header class="blog-header">
     <h1 class="p-name blog-title">{{ title }}</h1>
     <p class="blog-lede">
-      Aqui está o que estou lendo no momento.
+      Minha biblioteca pessoal,
       {% if latestYear %}
-        Já terminei {{ latestYearCount }} {{ "livro" if latestYearCount == 1 else "livros" }} em {{ latestYear }}.
+        já terminei {{ latestYearCount }} {{ "livro" if latestYearCount == 1 else "livros" }} em {{ latestYear }}.
       {% endif %}
     </p>
     <p class="blog-count">
@@ -29,7 +29,7 @@ permalink: /bookshelf/
       <p class="cluster" style="--gutter: var(--space-2xs)">
         {% faIcon 'rss', 'solid', 24 %}
         <a href="/feeds/books/rss.xml">
-          Acompanhe <span lang="en">feed</span> dos meus livros.
+          Acompanhe o que eu leio.
         </a>
       </p>
     </div>

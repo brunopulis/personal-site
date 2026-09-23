@@ -54,14 +54,6 @@
   gap: var(--space-xs-s);
 }
 
-/* The red pencil marks the structure, not the words. */
-.home-section-title::before {
-  content: '__';
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-proof);
-}
-
 /* ---------- Room index ---------- */
 
 .home-index-list {

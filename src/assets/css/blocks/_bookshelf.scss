@@ -16,13 +16,6 @@ permanece sempre visível acima do filtro.
   gap: var(--space-xs-s);
 }
 
-.bookshelf-section-title::before {
-  content: '——';
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-proof);
-}
-
 .bookshelf-reading {
   --region-space: var(--space-xl);
 }

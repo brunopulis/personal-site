@@ -5,9 +5,9 @@ permalink: /stats/
 ---
 
 {% set stats = siteStats %}
-<section class="region flow" style="--region-space: var(--space-2xl); --flow-space: var(--space-m)">
+<section class="flow" style="--flow-space: var(--space-m)">
   <h1 class="p-name">Estatísticas Gerais</h1>
-  <dl class="grid" style="--grid-min-item-size: 20rem; --gutter: var(--space-s)">
+  <dl class="grid" data-layout='33x3'>
     <div class="callout" style="background-color: var(--color-surface); border-style: solid;">
       <dt class="mb-1 font-bold meta">Total de posts</dt>
       <dd class="font-bold text-3xl">{{ stats.totalPosts }}</dd>
@@ -49,9 +49,9 @@ permalink: /stats/
   </ul>
 </section>
 
-<section class="region flow" style="--region-space: var(--space-2xl); --flow-space: var(--space-s)">
+<section class="flow" style="--flow-space: var(--space-s)">
   <h2>Nuvem de tags</h2>
-  <ul class="tag-list" role="list">
+  <ul class="tag-list grid" role="list">
     {% for tag in stats.allTags %}
       <li>
         <a class="font-bold" href="/tags/{{ tag | slugify }}/">

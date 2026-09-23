@@ -4,7 +4,7 @@ title: "Filmes e Séries"
 permalink: /watching/
 ---
 
-<div class="h-feed region flow">
+<div class="h-feed flow">
   {% set allMovies = collections.movies %}
   {% set allShows = collections.shows %}
   {% set watchedMidia = collections.books | where('data.status', 'lido') %}
@@ -30,7 +30,7 @@ permalink: /watching/
       <p class="cluster" style="--gutter: var(--space-2xs)">
         {% faIcon 'rss', 'solid', 24 %}
         <a href="/feeds/shows/rss.xml">
-          Acompanhe <span lang="en">feed</span> dos filmes e séries.
+          Acompanhe os filmes e séries que vi.
         </a>
       </p>
     </div>

@@ -14,7 +14,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://plausible.io https://cdn.usefathom.com https://scripts.simpleanalyticscdn.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:; frame-src https://webmention.io https://buttondown.email; upgrade-insecure-requests;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://plausible.io https://cdn.usefathom.com https://scripts.simpleanalyticscdn.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https:; frame-src https://webmention.io https://buttondown.email; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;"
         },
         {
           "key": "X-Content-Type-Options",
