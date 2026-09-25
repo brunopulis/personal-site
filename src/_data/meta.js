@@ -11,8 +11,7 @@ export const skipContent = 'Ir para conteúdo principal';
 
 export const author = {
   name: 'Bruno Pulis',
-  description:
-    'Aqui compartilho pensamentos, descobertas e conversas longe do ruído dos algoritmos das redes sociais.',
+  description: 'Aqui compartilho pensamentos, descobertas e conversas longe do ruído das redes sociais.',
   url: 'https://brunopulis.com',
   author: 'Bruno Pulis',
   email: 'brunopulis@protonmail.com',

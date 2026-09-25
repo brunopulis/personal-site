@@ -36,7 +36,7 @@ describe('Home page', () => {
 
   it('shows the hero greeting with author description', () => {
     const descricao =
-      'Aqui compartilho pensamentos, descobertas e conversas longe do ruído dos algoritmos das redes sociais.';
+      'Aqui compartilho pensamentos, descobertas e conversas longe do ruído das redes sociais.';
 
     cy.get('[aria-labelledby="hero-title"]');
     cy.get('.home-lede-copy').should('contain.text', descricao).and('be.visible');
