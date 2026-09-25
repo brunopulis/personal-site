@@ -23,13 +23,50 @@ title: Blog
     </div>
   </header>
 
-  {% set yearGroups = collections.posts | archiveByYear %}
+  {% set featuredPosts = collections.posts | featuredPosts %}
+  {% set yearGroups = collections.posts | nonFeaturedPosts | archiveByYear %}
 
   <nav class="cluster blog-subnav" style="--gutter: var(--space-s-m)" aria-label="Navegação do arquivo">
     <span class="blog-subnav-current" aria-current="true">Todas as postagens</span>
     <a href="/blog/categorias/">Categorias</a>
     <a href="/tags/">Tags</a>
   </nav>
+
+  {% if featuredPosts | length > 0 %}
+    <section class="blog-featured" aria-labelledby="blog-featured-title">
+      <h2 class="blog-featured-title" id="blog-featured-title">Em destaque</h2>
+      {% for post in featuredPosts %}
+        {% set dateVal = post.date %}
+        {% set url = post.url or post.id %}
+        {% set title = (post.data and post.data.title) or post.title %}
+        {% set description = (post.data and post.data.description) or post.description or (post.templateContent | default('') | striptags | truncate(160)) %}
+        {% set tags = (post.data and post.data.tags) or post.tags or [] %}
+        <article class="blog__post h-entry">
+          <p class="home-post-meta">
+            {% if dateVal %}
+              <time class="dt-published" datetime="{{ dateVal | htmlDateString }}">
+                {{ dateVal | readableDate }}
+              </time>
+            {% endif %}
+
+            {% if tags %}
+              {% for tag in tags %}
+                <a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a>
+              {% endfor %}
+            {% endif %}
+          </p>
+
+          <h3 class="home-post-title p-name">
+            <a class="u-url" href="{{ url }}">{{ title }}</a>
+          </h3>
+
+          {% if description %}
+            <p class="home-post-summary p-summary">{{ description }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </section>
+  {% endif %}
 
   <p class="blog-count blog-archive-count">
     Arquivo completo: {{ collections.posts | length }} artigos publicados desde {{ (yearGroups | last).year }}.
