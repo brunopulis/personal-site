@@ -29,6 +29,13 @@ body {
   text-wrap: balance;
 }
 
+// On dark paper the vinho headings fall to ~1.2:1; use the light ink instead
+@media (prefers-color-scheme: dark) {
+  :is(h1, h2, h3) {
+    color: var(--color-ink);
+  }
+}
+
 h1,
 .h1 {
   font-size: var(--font-size-2xl);
@@ -207,7 +214,7 @@ mark,
   background-color: var(--color-highlight);
   /* Reverse text colour in dark mode */
   @media (prefers-color-scheme: dark) {
-    color: var(--color-canvas);
+    color: var(--color-ink);
   }
 }
 

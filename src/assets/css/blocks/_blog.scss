@@ -98,6 +98,10 @@
   align-items: baseline;
   gap: var(--space-xs-s);
   margin-block: var(--space-m-l) var(--space-2xs);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-ink);
+  }
 }
 
 /* ---------- The index ---------- */
