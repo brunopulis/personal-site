@@ -56,6 +56,18 @@ export default async function (eleventyConfig) {
     });
   });
 
+  // Drafts in `src/drafts/` must never publish: ignore them outside serve/watch
+  // (unless explicitly enabled via BUILD_DRAFTS). Eleventy v3 ignores the
+  // `eleventyComputed.permalink: false` for layout-less markdown, leaking the
+  // rendered draft (and sitemap/feed entries) into production builds.
+  if (
+    process.env.ELEVENTY_RUN_MODE !== 'serve' &&
+    process.env.ELEVENTY_RUN_MODE !== 'watch' &&
+    !process.env.BUILD_DRAFTS
+  ) {
+    eleventyConfig.ignores.add('src/drafts/**');
+  }
+
   eleventyConfig.addWatchTarget('./src/assets/**/*.{css,js,svg,png,jpeg}');
 
   // Layout alias
