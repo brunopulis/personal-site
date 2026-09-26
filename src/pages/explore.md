@@ -52,3 +52,4 @@ Um mapa completo com tudo nesse site. Explore e descubra!
 - [POSSE](/posse/)
 - [Causas que apoio](/giving/)
 - [Privacidade](/privacy/)
+- [Aviso legal](/disclaimer/)
