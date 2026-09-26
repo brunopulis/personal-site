@@ -54,77 +54,6 @@
   gap: var(--space-xs-s);
 }
 
-/* ---------- Room index ---------- */
-
-.home-index-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-block-start: var(--space-s-m);
-}
-
-.home-index-list li {
-  --measure-longform: 100%;
-  max-width: var(--measure-longform);
-}
-
-.home-index-row {
-  display: grid;
-  grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto auto;
-  column-gap: var(--space-s);
-  row-gap: 0.15rem;
-  align-items: baseline;
-  padding-block: var(--space-s-m);
-  border-block-start: 1px solid var(--color-rule);
-  color: var(--color-text);
-  text-decoration: none;
-}
-
-.home-index-list li:last-child .home-index-row {
-  border-block-end: 1px solid var(--color-rule);
-}
-
-.home-index-name {
-  font-family: var(--font-display);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-m);
-  color: var(--color-ink);
-}
-
-.home-index-desc {
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-ink-soft);
-}
-
-/* The stock count — inventory in the margin, quiet as data. */
-.home-index-count {
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
-  color: var(--color-ink-soft);
-}
-
-.home-index-arrow {
-  font-size: var(--font-size-meta);
-  letter-spacing: 0;
-  color: var(--color-ink-soft);
-  transition: transform 0.2s ease;
-}
-
-.home-index-row:hover .home-index-name,
-.home-index-row:focus-visible .home-index-name {
-  text-decoration: underline;
-  text-decoration-color: var(--color-proof);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.22em;
-}
-
-.home-index-row:hover .home-index-arrow,
-.home-index-row:focus-visible .home-index-arrow {
-  transform: translateX(4px);
-}
-
 /* ---------- Recent posts ---------- */
 
 .home-posts {
@@ -176,8 +105,7 @@
 
 /* ---------- Motion: one orchestrated moment ---------- */
 @media (prefers-reduced-motion: no-preference) {
-  .home-hero > *,
-  .home-index-list li {
+  .home-hero > * {
     animation: home-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -187,30 +115,6 @@
 
   .home-lede {
     animation-delay: 0.2s;
-  }
-
-  .home-index-list li:nth-child(1) {
-    animation-delay: 0.25s;
-  }
-
-  .home-index-list li:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-
-  .home-index-list li:nth-child(3) {
-    animation-delay: 0.35s;
-  }
-
-  .home-index-list li:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-
-  .home-index-list li:nth-child(5) {
-    animation-delay: 0.45s;
-  }
-
-  .home-index-list li:nth-child(6) {
-    animation-delay: 0.5s;
   }
 
   @keyframes home-rise {

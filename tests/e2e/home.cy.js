@@ -35,8 +35,7 @@ describe('Home page', () => {
   });
 
   it('shows the hero greeting with author description', () => {
-    const descricao =
-      'Aqui compartilho pensamentos, descobertas e conversas longe do ruído das redes sociais.';
+    const descricao = 'Compartilhando pensamentos e conversas longe do ruído das redes sociais.';
 
     cy.get('[aria-labelledby="hero-title"]');
     cy.get('.home-lede-copy').should('contain.text', descricao).and('be.visible');
@@ -48,35 +47,6 @@ describe('Home page', () => {
     cy.get('.home-follow');
     hrefs.forEach(href => {
       cy.get(`.home-follow a[href="${href}"]`).should('be.visible');
-    });
-  });
-
-  it('shows the content index section', () => {
-    const itens = [
-      {href: '/blog/', nome: 'Artigos', desc: 'reflexões longas, sem pressa'},
-      {href: '/notes/', nome: 'Notas', desc: 'registros curtos do cotidiano'},
-      {href: '/poetry/', nome: 'Poesia', desc: 'versos e silêncios'},
-      {href: '/bookshelf/', nome: 'Livros', desc: 'a estante aberta'},
-      {href: '/watching/', nome: 'Filmes e séries', desc: 'o que assisti e ficou'},
-      {href: '/likes/', nome: 'Favoritos', desc: 'links guardados com carinho'}
-    ];
-
-    cy.get('.home-index-list');
-
-    cy.contains('h2', 'O que mora aqui').should('be.visible');
-    cy.get('.home-index-row').should('have.length', itens.length);
-    itens.forEach(({href, nome, desc}) => {
-      cy.get(`a.home-index-row[href="${href}"]`)
-        .should('be.visible')
-        .within(() => {
-          cy.contains('.home-index-name', nome);
-          cy.contains('.home-index-desc', desc);
-          cy.get('.home-index-count')
-            .invoke('text')
-            .then(txt => {
-              expect(txt).to.match(/\d+/);
-            });
-        });
     });
   });
 
@@ -102,14 +72,17 @@ describe('Home page', () => {
   });
 
   it('uses the expected microformats', () => {
-    const arrowCount = 6;
-
     cy.get('.h-feed');
 
     cy.get('.h-feed.home').should('be.visible');
-    cy.get('.home-index-arrow').should('have.length', arrowCount);
-    cy.get('.home-index-arrow').each($arrow => {
-      expect($arrow).to.have.attr('aria-hidden', 'true');
+    cy.get('h1.home-greeting').should('be.visible');
+    cy.get('.home-lede-copy.p-summary').should('be.visible');
+    cy.get('.home-post.h-entry').should('have.length.at.least', 1);
+    cy.get('.home-post.h-entry').each($post => {
+      cy.wrap($post).within(() => {
+        cy.get('time.dt-published').should('have.attr', 'datetime');
+        cy.get('h3.home-post-title.p-name a.u-url').should('have.attr', 'href');
+      });
     });
   });
 

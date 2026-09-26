@@ -25,7 +25,7 @@ describe('Blog page', () => {
     cy.get('.blog-header .blog-count')
       .invoke('text')
       .then(texto => {
-        const esperado = parseInt(texto, 10);
+        const esperado = Number(texto.match(/(\d+)\s+artigos/)[1]);
         cy.get('.blog__post').should('have.length', esperado);
       });
   });
@@ -52,9 +52,12 @@ describe('Blog page', () => {
   });
 
   it('shows the archive info', () => {
-    cy.get('.blog-archive-count');
+    cy.get('.blog-header .blog-count');
 
-    cy.get('.blog-archive-count').should('contain.text', 'Arquivo completo').and('be.visible');
+    cy.get('.blog-header .blog-count').should('contain.text', 'Arquivo completo').and('be.visible');
+    cy.get('.blog-header .blog-count')
+      .invoke('text')
+      .should('match', /artigos publicados desde \d{4}/);
   });
 
   it('has jump-to-year links for each year section', () => {
