@@ -6,11 +6,13 @@ title: Explorar
 
 Um mapa completo com tudo nesse site. Explore e descubra!
 
-## Acesso rápido
+## Conteúdo
 
-- [Blog](/blog)
-- [Notas](/notes)
-- [Busca](/search)
+- [Blog](/blog/)
+- [Newsletter](/newsletters/)
+- [Notas](/notes/)
+- [Poemas](/poetry/)
+- [Tags](/tags/)
 
 ## Sobre mim
 
@@ -21,21 +23,11 @@ Um mapa completo com tudo nesse site. Explore e descubra!
 - [Deficiência](/disability/)
 - [Me apoie](/donate/)
 
-## Conteúdo
-
-- [Blog](/blog/)
-- [Notas](/notes/)
-- [Poemas](/poetry/)
-- [Newsletter](/newsletters/)
-- [Arquivos](/archive/)
-- [Tags](/tags/)
-
 ## Profissional
 
 - [Currículo](/resume/)
 - [O que uso](/uses/)
 - [Projetos](/projects/)
-- [Portfólio](/portfolio/)
 
 ## Coleções
 
