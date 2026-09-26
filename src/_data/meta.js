@@ -11,7 +11,7 @@ export const skipContent = 'Ir para conteúdo principal';
 
 export const author = {
   name: 'Bruno Pulis',
-  description: 'Aqui compartilho pensamentos, descobertas e conversas longe do ruído das redes sociais.',
+  description: 'Compartilhando pensamentos e conversas longe do ruído das redes sociais.',
   url: 'https://brunopulis.com',
   author: 'Bruno Pulis',
   email: 'brunopulis@protonmail.com',
@@ -79,10 +79,10 @@ export const author = {
 
 // for the site developer, used for footer credits and humans.txt info
 export const creator = {
-  name: 'Bruno Pulis', // i.e. Lene Saile - creator's (developer) name.
+  name: 'Bruno Pulis',
   email: 'brunopulis@protonmail.com',
   website: 'https://www.brunopulis.com',
-  social: 'https://front-end.social/@lene'
+  social: 'https://mastodon.social/@brunopulis'
 };
 
 // Eleventy global data: only the default export is exposed as `meta`
