@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: '/deficiencias/'
+permalink: '/disability/'
 title: Minhas deficiências
 ---
 
