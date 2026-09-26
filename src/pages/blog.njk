@@ -4,6 +4,9 @@ permalink: '/blog/index.html'
 title: Blog
 ---
 
+{% set featuredPosts = collections.posts | featuredPosts %}
+{% set yearGroups = collections.posts | nonFeaturedPosts | archiveByYear %}
+
 <div class="h-feed flow">
   <header class="blog-header">
     <h1 class="p-name blog-title">Blog</h1>
@@ -11,7 +14,9 @@ title: Blog
     <p class="blog-lede">
       Artigos e conteúdos longos sobre acessibilidade, desenvolvimento web e a vida por trás da tela.
     </p>
-    <p class="blog-count">{{ collections.posts | length }} artigos publicados</p>
+    <p class="blog-count">
+      Arquivo completo: {{ collections.posts | length }} artigos publicados desde {{ (yearGroups | last).year }}.
+    </p>
 
     <div class="callout flow blog-rss">
       <p class="cluster" style="--gutter: var(--space-2xs)">
@@ -22,9 +27,6 @@ title: Blog
       </p>
     </div>
   </header>
-
-  {% set featuredPosts = collections.posts | featuredPosts %}
-  {% set yearGroups = collections.posts | nonFeaturedPosts | archiveByYear %}
 
   <nav class="cluster blog-subnav" style="--gutter: var(--space-s-m)" aria-label="Navegação do arquivo">
     <span class="blog-subnav-current" aria-current="true">Todas as postagens</span>
@@ -67,10 +69,6 @@ title: Blog
       {% endfor %}
     </section>
   {% endif %}
-
-  <p class="blog-count blog-archive-count">
-    Arquivo completo: {{ collections.posts | length }} artigos publicados desde {{ (yearGroups | last).year }}.
-  </p>
 
   <nav class="blog-jump" aria-labelledby="blog-jump-label">
     <span class="meta blog-jump-label" id="blog-jump-label">Navegar por ano</span>
