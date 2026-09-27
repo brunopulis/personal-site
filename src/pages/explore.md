@@ -39,9 +39,9 @@ Um mapa completo com tudo nesse site. Explore e descubra!
 
 ## Sobre o site
 
-- [Estatísticas](/stats/)
-- [Acessibilidade](/accessibility/)
-- [POSSE](/posse/)
-- [Causas que apoio](/giving/)
+- [Estatísticas do site](/stats/)
+- [Declaração de Acessibilidade](/accessibility/)
 - [Privacidade](/privacy/)
 - [Aviso legal](/disclaimer/)
+- [Causas que apoio](/giving/)
+- [POSSE](/posse/)
