@@ -18,6 +18,8 @@
 | `npm run build` | Full production build: `clean → eleventy (ELEVENTY_ENV=production) → Tina admin → pagefind search index` |
 | `npm run cms` | TinaCMS dev server (port 4001, `/admin/index.html`) rodando `npm run dev` em paralelo |
 | `npm test` | `vitest run` (tests in `tests/**/*.test.js`) |
+| `npm run test:changed` | roda só os testes exigidos pelos arquivos alterados (staging) — é o que o pre-commit chama |
+| `npm run verify` | suíte completa (unit + e2e), ignorando o diff — usar antes de abrir PR |
 | `npm run test:watch` | `vitest` (watch mode) |
 | `npm run test:coverage` | `vitest run --coverage` (covers `src/_config/**`) |
 | `npm run test:e2e` | `cypress run` against an already-running dev server |
@@ -36,6 +38,7 @@
 ## Quirks & Gotchas
 
 - **No ESLint** — only Prettier for formatting. Prettier config at `.prettierrc` (110 print width, single quotes, no trailing commas). Prettier **ignores** `.md` and `.njk` files (see `.prettierignore`).
+- **Testes são filtrados por caminho** (`scripts/lib/test-gate.js`, um módulo puro; o runner é `scripts/test-changed.js`). O `.husky/pre-commit` roda `lint-staged` + os testes unitários **relacionados** aos arquivos em staging; o `.husky/pre-push` roda a mesma coisa mais o Cypress, comparando com `@{upstream}...HEAD`. Commit só de conteúdo (`src/content/`, `src/drafts/`, assets estáticos) não executa teste nenhum. Fontes sem relação estática com os testes (`src/_data/`, `.eleventy.js`, `package.json`, `*.husky*`) caem na suíte inteira. Caminho desconhecido → conservador, roda tudo. Escape hatches: `SKIP_TESTS=1`, `SKIP_E2E=1`, `FORCE_TESTS=1`, `HUSKY=0`, `git commit --no-verify`. O e2e sobe o Eleventy na porta 8080 — não deixe `npm run dev` rodando durante o push.
 - **CSS is SCSS, not Tailwind** — do not look for `tailwind.config.js` (it does not exist). Tokens are in `src/assets/css/abstracts/_theme.scss`. Never introduce Tailwind or utility classes.
 - **Build is sequential**: `clean → build:11ty → build:admin → build:search`. Stats are computed at build time by the `src/_data/siteStats.js` data file — no separate pre-build step needed. `cross-env ELEVENTY_ENV=production` is set for production builds.
 - **TinaCMS admin** é gerado em `_site/admin/` pelo `build:admin` (`tinacms build`). Como o Pagefind não tem flag de exclusão de diretório, `scripts/tina-admin-ignore.js` injeta `data-pagefind-ignore` no `_site/admin/index.html` logo após o build (e antes do `dev:search`). O Eleventy não suporta visual editing (TinaProvider), então o CMS é a edição por formulários em `/admin/`.

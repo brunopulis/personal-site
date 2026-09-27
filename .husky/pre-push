@@ -1,0 +1,7 @@
+updates=$(cat)
+case "$updates" in
+  *refs/heads/*) ;;
+  *) exit 0 ;;
+esac
+
+pnpm test:changed --range
