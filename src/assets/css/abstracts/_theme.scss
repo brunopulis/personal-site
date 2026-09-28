@@ -123,13 +123,6 @@
   --stroke-color: var(--color-border, currentColor);
   --radius: 0;
   --shadow: 0px 3px 7px rgba(0, 0, 0, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.025);
-
-  /* Project-specific tokens */
-  --color-muted: var(--color-ink-soft);
-  --color-link: var(--color-ink);
-  --color-link-hover: var(--color-ink-soft);
-  --color-star: #d97706;
-  --color-star-empty: var(--color-rule);
 }
 
 // DARK MODE

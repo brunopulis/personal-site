@@ -28,30 +28,26 @@ title: Notas
     </div>
   </header>
 
-  <ol class="notes-index" role="list">
-    {% for note in notes %}
-      {% set tags = ((note.data and note.data.tags) or note.tags or []) | reject('equalto', 'notes') | list %}
-      <li>
-        <article class="note-entry h-entry">
-          <a class="note-date u-url" href="{{ note.url }}">
-            <time class="dt-published" datetime="{{ note.date | htmlDateString }}">
-              {{ note.date | readableDate }}
-            </time>
-          </a>
-          <div class="note-content e-content prose">
-            {{ note.content | safe }}
-          </div>
-          {% if tags %}
-            <ul class="cluster note-entry-tags" role="list" style="--gutter: var(--space-2xs)">
-              {% for tag in tags %}
-                <li><a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </article>
-      </li>
-    {% endfor %}
-  </ol>
+  {% for note in notes %}
+    {% set tags = ((note.data and note.data.tags) or note.tags or []) | reject('equalto', 'notes') | list %}
+    <article class="note-entry h-entry">
+      <a class="note-date u-url" href="{{ note.url }}">
+        <time class="dt-published" datetime="{{ note.date | htmlDateString }}">
+          {{ note.date | readableDate }}
+        </time>
+      </a>
+      <div class="note-content e-content prose">
+        {{ note.content | safe }}
+      </div>
+      {% if tags %}
+        <ul class="cluster note-entry-tags" role="list" style="--gutter: var(--space-2xs)">
+          {% for tag in tags %}
+            <li><a class="p-category" href="/tags/{{ tag | slug }}/">#{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </article>
+  {% endfor %}
 
   <nav class="repel region" style="--region-space: var(--space-l)" aria-label="Paginação">
     {% if pagination.href.previous %}

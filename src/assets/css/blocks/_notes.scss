@@ -46,9 +46,6 @@ dims to ink-soft until hover.
 }
 
 .note-entry {
-  display: grid;
-  grid-template-columns: minmax(7rem, max-content) minmax(0, 1fr);
-  column-gap: var(--space-s);
   row-gap: var(--space-2xs);
   align-items: baseline;
   padding-block: var(--space-s-m);
