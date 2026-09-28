@@ -4,12 +4,14 @@ permalink: '/uses/'
 title: O que eu uso
 ---
 
+Ferramentas que utilizo no meu cotidiano.
+
 ## Desenvolvimento
 
 - **Editor:** VSCodium;
 - **IA:** OpenCode;
 - **Terminal:** GNOME Terminal;
-- **Browser:** Firefox;
+- **Browser:** Vivaldi;
 - **Version Control:** GitHub e Codeberg.
 
 ## Hardware
