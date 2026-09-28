@@ -6,7 +6,26 @@
   margin-block-end: var(--space-l);
 }
 
-/* The section mark — the red pencil flags the room, not the words. */
+/* The section mark — the red pencil flags the room, not the words.
+   The words stay ink: a wine dash in front of a wine heading would be no
+   mark at all. Drawn as a border rather than as “——” text, so it generates
+   nothing for a screen reader to announce. */
+.blog-title,
+.blog-featured-title,
+.blog-year-title {
+  color: var(--color-ink);
+}
+
+.blog-title::before,
+.blog-featured-title::before,
+.blog-year-title::before {
+  content: '';
+  flex: none;
+  align-self: center;
+  width: var(--space-s);
+  border-block-start: 2px solid var(--color-blood-red-950);
+}
+
 .blog-title {
   display: flex;
   align-items: baseline;
@@ -15,8 +34,8 @@
 
 .blog-lede {
   margin-block-start: var(--space-xs-s);
-  font-size: var(--font-size-lede);
-  line-height: 1.7;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-loose);
   color: var(--color-text);
 }
 
@@ -92,23 +111,23 @@
   align-items: baseline;
   gap: var(--space-xs-s);
   margin-block-end: var(--space-2xs);
-  color: var(--color-blood-red-950);
   font-weight: 700;
-
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-ink);
-  }
 }
 
 /* A highlighted reading-room: the featured post is raised in the sheet. */
-.blog-featured .blog__post {
+.blog-featured .blog-entry {
   border-block-start: 0;
   padding-inline: var(--space-s-m);
   background-color: var(--color-highlight);
 }
 
-.blog-featured .blog__post + .blog__post {
+.blog-featured .blog-index li + li .blog-entry {
   border-block-start: 1px solid var(--color-rule);
+}
+
+/* Raised, not detached — no rule along its trailing edge. */
+.blog-featured .blog-index li:last-child .blog-entry {
+  border-block-end: 0;
 }
 
 /* ---------- The years ---------- */
@@ -117,18 +136,19 @@
   scroll-margin-block: var(--space-l);
 }
 
+/* The hairline divides entries, never the year heading — the first entry
+   under each year opens clean. */
+.blog-year .blog-entry:first-child {
+  border-block-start: 0;
+}
+
 /* The section mark — proof pencil on the structure, not the words. */
 .blog-year-title {
   display: flex;
-  color: var(--color-blood-red-950);
   font-weight: 700;
   align-items: baseline;
   gap: var(--space-xs-s);
   margin-block: var(--space-m-l) var(--space-2xs);
-
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-ink);
-  }
 }
 
 /* ---------- The index ---------- */
@@ -137,11 +157,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.blog__post {
-  padding-block: var(--space-s-m);
-  border-block-start: 1px solid var(--color-rule);
 }
 
 .blog-entry {
@@ -172,6 +187,9 @@
 .blog-entry-title {
   grid-column: 2;
   margin: 0;
+  /* An explicit token, not the UA's implicit 1.17em — keeps the entry
+     reliably below the year heading and above the meta line. */
+  font-size: var(--font-size-m);
 }
 
 .blog-entry-title a {
