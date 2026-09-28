@@ -21,7 +21,7 @@ Um mapa completo com tudo nesse site. Explore e descubra!
 - [Por que esse site existe?](/why/)
 - [Valores](/values/)
 - [Deficiência](/disability/)
-- [Me apoie](/donate/)
+- [Me apoie](/tip/)
 
 ## Profissional
 
