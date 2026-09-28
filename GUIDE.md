@@ -125,7 +125,8 @@ Resources:
 - Edit `src/_data/site.json` – this single file controls:
   - Name, bio, social links, analytics (optional), newsletter (optional)
 - Edit colors and fonts:
-  - Use the “A11y” menu in the header: Dark mode, font size, contrast, system/web fonts
+  - Light/dark mode is a switcher in the header — no menu to configure.
+  - Colors and type tokens live in the SCSS: `src/assets/css/abstracts/_theme.scss`. The site uses **only system fonts** (no webfont files), so there is nothing to download — swap the stacks in that file.
 - Change the homepage text in `src/index.njk` (search for the hero section)
 - Add pages by duplicating a file in `src/` (e.g., `about.njk`) and editing the text
 
@@ -224,9 +225,6 @@ Low‑code ideas (copy/paste):
     }
   }
   ```
-
-- Pixel/retro font just for headings:
-  - Add a free font file to `src/assets/` and include via CSS, or use the System Fonts toggle for a simpler look.
 
 ### Classic 88×31 buttons (old‑school GIF badges)
 

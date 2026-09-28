@@ -10,7 +10,6 @@ describe('classify', () => {
       'src/drafts/2026-08-31.md',
       'src/assets/og-images/preview.jpeg',
       'src/assets/images/foto.avif',
-      'src/assets/fonts/source-sans.woff2',
       'src/assets/svg/logo.svg'
     ];
 

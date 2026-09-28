@@ -32,15 +32,19 @@ Paletas legadas (blood-red, vista-blue, errie-black, light-silver) **não
 remova** — páginas antigas as usam direto. `#849cdb` (periwinkle) fica
 disponível como fundo alternativo; ainda não há componente usando.
 
-## Tipografia (sistema de duas famílias)
+## Tipografia (só fontes do sistema — sem webfont)
 
-- **Source Sans 3** (primária) → `--font-base` e `--font-display`: corpo,
-  títulos, UI, dados, meta, kbd. Legibilidade digital, traço limpo.
-- **Noto Serif** (secundária) → `--font-accent`: **apenas** blockquotes — a voz
-  editorial/impressa.
-- Pesos 400, 400 itálico, 700; woff2 auto-hospedados em `src/assets/fonts/`.
-- **Não existe fonte mono no sistema.** Datas, tags, eyebrow, descrições e setas
-  ficam em Source Sans.
+- **Sans do sistema** → `--font-base` e `--font-display`: corpo, títulos, UI,
+  dados, meta. Ambas começam em `system-ui` (SF Pro, Segoe UI Variable,
+  Cantarell, Roboto) com cauda longa de fallback.
+- **Serif do sistema** → `--font-accent` (Georgia na frente): **apenas**
+  blockquotes — a voz editorial/impressa. Citações longas em monoespaçada são
+  ruins de ler; nunca serifar o resto do texto corrido.
+- **Mono do sistema** → `--font-mono` (`ui-monospace` na frente): **apenas**
+  `code`, `pre` e `kbd`. Datas, tags, eyebrow, descrições e setas ficam na sans.
+- **Não há `@font-face` nem arquivo de fonte no projeto.** Não reintroduza webfont:
+  o custo de payload e a inconsistência entre SOs não compensam. Tokens em
+  `_theme.scss`.
 
 ## Regras de ouro
 
@@ -59,6 +63,6 @@ disponível como fundo alternativo; ainda não há componente usando.
 
 - `src/pages/index.njk` — homepage
 - `src/assets/css/blocks/_home.scss` — bloco da homepage
-- `src/assets/css/abstracts/_theme.scss`, `_fonts.scss`, `_type.scss` — tokens
+- `src/assets/css/abstracts/_theme.scss`, `_type.scss` — tokens
 - `src/assets/css/base/_global.scss` — base de texto, blockquote, foco
 - `docs/design.md` — guia de marca (essência, paleta, tipografia, tom de voz)

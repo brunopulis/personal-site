@@ -55,7 +55,7 @@
 
 - Brand source of truth: `docs/design.md` (brand guide — essence, palette, typography, voice). The site implements it with the **"a prova tipográfica"** art direction: brand palette (paper `#d9d9d9`, preto `#171e1e`, accent vinho `#610404` / coral `#ff8f7e` on dark), red marks only structural (section dashes, focus underline).
 - Before touching any UI/visual, load the project skill **`design`** (`.opencode/skill/design/SKILL.md`).
-- Type system: **Source Sans 3** (primary — body, headings, UI) + **Noto Serif** (secondary — only blockquotes). Two families, self-hosted, no mono.
+- Type system: **system stacks only — no webfonts, no `@font-face`**. Sans (`--font-base` / `--font-display`, both `system-ui` first) for body, headings, UI and data; serif (`--font-accent`, Georgia first) for **only** blockquotes; mono (`--font-mono`) for **only** `code` / `pre` / `kbd`. Tokens live in `src/assets/css/abstracts/_theme.scss`.
 
 ## Testing Notes
 

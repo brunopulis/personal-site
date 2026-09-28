@@ -19,7 +19,6 @@ const CONTENT_DIRS = [
   'src/content/',
   'src/drafts/',
   'src/assets/files/',
-  'src/assets/fonts/',
   'src/assets/images/',
   'src/assets/og-images/',
   'src/assets/svg/'

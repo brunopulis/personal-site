@@ -63,15 +63,19 @@ As cores abaixo foram extraídas por amostragem das peças do manual. Use como r
 
 ### 3.3 Tipografia
 
-| Papel      | Fonte               | Uso                                                                                                            |
-| ---------- | ------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Primária   | **Source Sans Pro** | Títulos, textos corridos, interfaces digitais — alta legibilidade, traço limpo e moderno                       |
-| Secundária | **Noto Serif**      | Materiais editoriais, institucionais ou impressos com maior densidade textual — traz formalidade e acolhimento |
+O site usa **somente fontes do sistema** — nenhuma webfont, nenhum arquivo de fonte. Isso mantém o carregamento leve e garante consistência entre sistemas operacionais.
+
+| Papel      | Fonte                | Uso                                                                                                            |
+| ---------- | -------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Primária   | **Sans do sistema**  | Títulos, textos corridos, interfaces digitais. `system-ui` na frente (SF Pro, Segoe UI Variable, Cantarell, Roboto) |
+| Secundária | **Serif do sistema** | **Apenas** blockquotes, que pedem a voz editorial/impressa. Georgia na frente                                 |
+| Código     | **Mono do sistema**  | **Apenas** `code`, `pre` e `kbd`. `ui-monospace` na frente                                                     |
 
 **Diretrizes de uso:**
 
-- Priorize Source Sans Pro em telas/produto e textos principais.
-- Use Noto Serif apenas em conteúdos que pedem mais profundidade/formalidade, ou para gerar contraste tipográfico proposital.
+- Priorize a sans do sistema em telas/produto e textos principais.
+- Use a serif **apenas** em citações em block, ou para gerar contraste tipográfico proposital. Citações longas em monoespaçada são ruins de ler.
+- Use a mono **apenas** para trechos de código, saída de terminal e atalhos de teclado — nunca para datas, tags ou texto corrido.
 - Evite fontes decorativas ou de difícil leitura.
 - Não altere espaçamento, peso ou proporção original das fontes sem justificativa técnica.
 - Tamanho mínimo de fonte: **12px em digital**, **8pt em impressos**.
@@ -158,7 +162,7 @@ Em qualquer nova aplicação, os elementos (logotipo, cores, tipografia, grafism
 
 - [ ] O logotipo está íntegro (sem distorção, cor fora da paleta ou baixo contraste)?
 - [ ] As cores usadas pertencem à paleta da marca?
-- [ ] A tipografia é Source Sans Pro (primária) ou Noto Serif (secundária), sem alterações de peso/espaçamento indevidas?
+- [ ] A tipografia está no papel certo (sans do sistema no texto, serif só em citação, mono só em código), sem alterações de peso/espaçamento indevidas?
 - [ ] Ícones seguem o estilo Font Awesome e estão acompanhados de texto?
 - [ ] Grafismos/padrões estão sutis, sem comprometer legibilidade?
 - [ ] O texto está no tom de voz certo (claro, profissional, acolhedor, pragmático — sem clichês ou informalidade excessiva)?

@@ -14,7 +14,7 @@ O domínio brunopulis.com está registrado na Godaddy e hospedado na Vercel, com
 
 O CSS foi desenvolvido sob medida, sem frameworks, priorizando desempenho e facilidade de manutenção. A identidade visual é a *prova tipográfica*: tinta sobre papel, com o vinho da marca — o único acento — reservado para marcar estrutura (os traços que antecedem títulos de seção e o sublinhado de foco no índice), em vez de decorar palavras. A paleta segue o guia de marca: cinza-claro `#d9d9d9`, preto `#171e1e` e vinho `#610404` (coral no modo escuro).
 
-A fonte primária é a *Source Sans 3*, escolhida pela alta legibilidade em ambientes digitais e pelo traço limpo e moderno, usada em títulos, textos e interfaces. A secundária é a *Noto Serif*, que empresta um toque editorial de formalidade e acolhimento às citações. Ambas são auto-hospedadas em WOFF2 (subset latin), eliminando dependências externas e melhorando o desempenho de carregamento.
+A tipografia usa **somente fontes do sistema**, sem webfonts nem arquivos de fonte: a sans nativa do sistema (`system-ui`) nos títulos, textos e interfaces, uma serif nos blockquotes para dar a voz editorial das citações, e uma monoespaçada restrita a trechos de código e atalhos de teclado. Isso dispensa qualquer requisição de fonte, deixa o site mais rápido e garante a mesma leitura em qualquer sistema operacional.
 
 O site utiliza o conjunto de cursores "Tomatic", criado por JefTriforce e disponível no RW-Designer. Esses cursores, com visual arredondado e traços mais grossos, estão licenciados sob a licença Creative Commons - Atribuição + Não Comercial.
 

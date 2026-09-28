@@ -8,7 +8,7 @@
   <!-- 2 title -->
   <title>
     {%- if title -%}
-      {{- title -}}   -   {{ meta.siteName }}
+      {{- title -}} - {{ meta.siteName }}
     {%- else -%}
       {{- meta.siteName -}}
     {%- endif -%}
@@ -24,9 +24,6 @@
 
   <!-- 5 CSS  -->
   {% include "head/css-inline.njk" %}
-
-  <!-- 6 preloads  -->
-  {% include "head/preloads.njk" %}
 
   {% include "head/meta-info.njk" %}
   {% include "head/analytics.njk" %}

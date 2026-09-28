@@ -14,9 +14,14 @@ pre:has(code) {
   margin: 0;
 }
 
+pre {
+  font-family: var(--font-mono);
+}
+
 code {
   background: var(--color-surface);
   color: var(--color-accent);
+  font-family: var(--font-mono);
   font-size: 93%;
   /* Carry over padding when code breaks multiple lines */
   box-decoration-break: clone;
@@ -28,5 +33,5 @@ pre code {
 
 p code,
 li code {
-  padding: .125rem .35rem;
+  padding: 0.125rem 0.35rem;
 }
