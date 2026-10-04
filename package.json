@@ -64,7 +64,7 @@
     "cypress": "^16.1.0",
     "cypress-axe": "^1.7.0",
     "dayjs": "^1.11.23",
-    "dotenv": "^18.0.3",
+    "dotenv": "^18.0.5",
     "html-minifier-terser": "^7.2.0",
     "husky": "^9.1.7",
     "js-yaml": "^5.4.2",
