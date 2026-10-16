@@ -19,6 +19,7 @@ const parseDate = dateObj => {
   if (Number.isNaN(date.getTime())) throw new Error('invalid date');
   return {
     day: String(date.getUTCDate()).padStart(2, '0'),
+    dayShort: String(date.getUTCDate()),
     month: date.getUTCMonth(),
     year: String(date.getUTCFullYear())
   };
@@ -26,14 +27,15 @@ const parseDate = dateObj => {
 
 export const readableDate = (dateObj, format = 'DD de MMM, YYYY') => {
   try {
-    const {day, month, year} = parseDate(dateObj);
+    const {day, dayShort, month, year} = parseDate(dateObj);
     const tokens = {
       DD: day,
+      D: dayShort,
       MMM: MONTHS_SHORT_PT[month],
       MMMM: MONTHS_LONG_PT[month],
       YYYY: year
     };
-    return format.replace(/DD|MMMM|MMM|YYYY/g, match => tokens[match]);
+    return format.replace(/MMMM|MMM|DD|YYYY|D/g, match => tokens[match]);
   } catch {
     return '';
   }

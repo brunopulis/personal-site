@@ -17,6 +17,22 @@ body {
   letter-spacing: var(--tracking);
 }
 
+.site-header {
+  border-block-end: 1px solid var(--color-light-silver-300);
+}
+
+.site-header__brand {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+.site-header__role {
+  letter-spacing: 0;
+  font-weight: var(--font-weight-regular);
+}
+
 // Base typesetting
 :is(h1, h2, h3) {
   color: var(--color-blood-red-950);

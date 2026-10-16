@@ -1,0 +1,26 @@
+---
+layout: base
+---
+
+<a href="/likes/" class="cluster" style="--gutter: var(--space-2xs)">
+  {% faIcon 'arrow-left', 'solid', '1em' %} Voltar para os likes
+</a>
+
+<article class="h-entry region note" style="--region-space: var(--space-l)">
+  <h1 class="visually-hidden p-name" data-pagefind-meta="title">
+    {{ title }}
+  </h1>
+
+  <header class="flow" style="--flow-space: var(--space-2xs)">
+    <p class="note-date">
+      <time class="dt-published" datetime="{{ page.date | htmlDateString }}">
+        {{ page.date | readableDate }}
+      </time>
+      <a class="visually-hidden u-url" href="{{ page.url }}">Permalink</a>
+    </p>
+  </header>
+
+  <div class="e-content prose">
+    {{ content | safe }}
+  </div>
+</article>

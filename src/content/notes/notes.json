@@ -1,5 +1,8 @@
 {
   "layout": "note",
   "permalink": "/notes/{{ page.fileSlug }}/",
-  "tags": ["notes"]
+  "tags": ["notes"],
+  "eleventyComputed": {
+    "title": "{{ page.date | readableDate('D de MMMM, YYYY') }}"
+  }
 }

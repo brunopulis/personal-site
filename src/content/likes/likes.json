@@ -1,3 +1,7 @@
 {
-  "permalink": "/likes/{{ page.fileSlug }}/"
+  "layout": "like",
+  "permalink": "/likes/{{ page.fileSlug }}/",
+  "eleventyComputed": {
+    "description": "Gostei: {{ title }}"
+  }
 }

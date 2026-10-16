@@ -17,6 +17,16 @@ describe('readableDate', () => {
     expect(result).toBe('Março');
   });
 
+  it('formats day without zero padding with D', () => {
+    const result = readableDate('2026-03-01', 'D de MMMM, YYYY');
+    expect(result).toBe('1 de Março, 2026');
+  });
+
+  it('keeps zero padding with DD', () => {
+    const result = readableDate('2026-03-01', 'DD de MMMM, YYYY');
+    expect(result).toBe('01 de Março, 2026');
+  });
+
   it('returns empty string for invalid dates', () => {
     const result = readableDate('not-a-date');
     expect(result).toBe('');

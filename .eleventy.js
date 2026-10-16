@@ -73,6 +73,7 @@ export default async function (eleventyConfig) {
   // Layout alias
   eleventyConfig.addLayoutAlias('base', 'base.njk');
   eleventyConfig.addLayoutAlias('book', 'book.njk');
+  eleventyConfig.addLayoutAlias('like', 'like.njk');
   eleventyConfig.addLayoutAlias('note', 'note.njk');
   eleventyConfig.addLayoutAlias('page', 'page.njk');
   eleventyConfig.addLayoutAlias('poetry', 'poetry.njk');

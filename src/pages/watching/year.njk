@@ -6,6 +6,8 @@ pagination:
   alias: year
 permalink: /watching/{{ year }}/
 generate: true
+eleventyComputed:
+  title: 'Filmes e séries de {{ pagination.items[0] }}'
 ---
 
 <section class="region" style="--region-space: var(--space-l)">
