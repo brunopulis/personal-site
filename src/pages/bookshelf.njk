@@ -67,7 +67,7 @@ permalink: /bookshelf/
       </div>
 
       <ul class="grid bookshelf-books" role="list">
-        {% for book in yearBooks | reverse %}
+        {% for book in yearBooks %}
           {% set hasReview = book.content | striptags | trim | length > 0 %}
           <li class="bookshelf-book h-entry" data-category="{{ book.data.category | slugify }}">
             <a
