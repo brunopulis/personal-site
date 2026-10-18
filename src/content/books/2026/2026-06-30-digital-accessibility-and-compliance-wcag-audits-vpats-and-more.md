@@ -9,7 +9,7 @@ description: "Digital accessibility and compliance can seem confusing at first, 
 attendedYear: 2026
 tags: ["a11y"]
 url: "https://link.amazon/B07pCNpGD"
-pubDate: 2026-06-31
+pubDate: 2026-06-30
 ---
 
 ## O livro em 3 frases

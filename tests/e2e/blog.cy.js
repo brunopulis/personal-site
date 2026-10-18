@@ -7,8 +7,7 @@ describe('Blog page', () => {
   it('loads successfully', () => {
     const titulo = 'Blog';
 
-    cy.contains('h1', titulo);
-    cy.get('.blog-title').should('contain.text', titulo).and('be.visible');
+    cy.get('h1').should('contain.text', titulo).and('be.visible');
   });
 
   it('shows the lede description', () => {
@@ -26,7 +25,7 @@ describe('Blog page', () => {
       .invoke('text')
       .then(texto => {
         const esperado = Number(texto.match(/(\d+)\s+artigos/)[1]);
-        cy.get('.blog__post').should('have.length', esperado);
+        cy.get('.blog-entry').should('have.length', esperado);
       });
   });
 
@@ -80,19 +79,19 @@ describe('Blog page', () => {
     cy.get('.blog-year').each($section => {
       cy.wrap($section).within(() => {
         cy.get('h2.blog-year-title').should('be.visible');
-        cy.get('.blog__post').should('be.visible');
+        cy.get('.blog-entry').should('be.visible');
       });
     });
   });
 
   it('renders each post entry with date, title and link', () => {
-    cy.get('.blog__post');
+    cy.get('.blog-entry');
 
-    cy.get('.blog__post').should('have.length.at.least', 1);
-    cy.get('.blog__post').each($entry => {
+    cy.get('.blog-entry').should('have.length.at.least', 1);
+    cy.get('.blog-entry').each($entry => {
       cy.wrap($entry).within(() => {
         cy.get('time.dt-published').should('be.visible');
-        cy.get('h3.home-post-title a.u-url')
+        cy.get('h3.blog-entry-title a.u-url')
           .should('be.visible')
           .invoke('attr', 'href')
           .should('match', /^\/blog\//);
@@ -104,7 +103,7 @@ describe('Blog page', () => {
     cy.get('.h-feed');
 
     cy.get('.h-feed').should('be.visible');
-    cy.get('h1.blog-title.p-name').should('be.visible');
+    cy.get('h1.p-name').should('be.visible').and('contain.text', 'Blog');
     cy.get('header a.u-url[aria-label="Blog"]').should('have.attr', 'href');
   });
 

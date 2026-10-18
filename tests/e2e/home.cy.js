@@ -44,9 +44,9 @@ describe('Home page', () => {
   it('has follow links in the lede', () => {
     const hrefs = ['/about/', '/colophon/', '/uses/'];
 
-    cy.get('.home-follow');
+    cy.get('.home-lede');
     hrefs.forEach(href => {
-      cy.get(`.home-follow a[href="${href}"]`).should('be.visible');
+      cy.get(`.home-lede a[href="${href}"]`).should('be.visible');
     });
   });
 
@@ -74,7 +74,7 @@ describe('Home page', () => {
   it('uses the expected microformats', () => {
     cy.get('.h-feed');
 
-    cy.get('.h-feed.home').should('be.visible');
+    cy.get('.h-feed.home-section').should('be.visible');
     cy.get('h1.home-greeting').should('be.visible');
     cy.get('.home-lede-copy.p-summary').should('be.visible');
     cy.get('.home-post.h-entry').should('have.length.at.least', 1);
