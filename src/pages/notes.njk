@@ -1,19 +1,16 @@
 ---
-layout: base
+layout: page
 pagination:
   data: collections.notes
   size: 10
   alias: notes
 permalink: '/notes/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}'
 title: Notas
+description: Ideias curtas e fáceis de conectar, cada nota tem seu próprio link permanente.
 ---
 
 <div class="h-feed flow">
   <header class="notes-header">
-    <h1 class="notes-title">Notas</h1>
-    <p class="notes-lede">
-      Ideias curtas e fáceis de conectar, cada nota tem seu próprio link permanente.
-    </p>
     <p class="notes-count">
       {{ collections.notes | length }} notas publicadas
     </p>
