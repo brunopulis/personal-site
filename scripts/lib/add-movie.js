@@ -1,6 +1,10 @@
 import slugify from 'slugify';
 import {safeYear, slugToSegment} from './path-safety.js';
-import {currentYear, formatTags, parseChoice, parseRating, quote, todayString} from './util.js';
+import {currentYear, parseChoice, parseRating, quote} from './util.js';
+import {defaultPosterUrl} from './tmdb.js';
+
+export const STATUS_OPTIONS = ['assistindo', 'assistido', 'reassistindo', 'quero assistir', 'abandonei'];
+const FAVORITE_OPTIONS = ['não', 'sim'];
 
 export function buildFrontmatter(fields) {
   const {
@@ -10,25 +14,30 @@ export function buildFrontmatter(fields) {
     status = 'assistindo',
     rating = '',
     poster = '',
+    favorite = false,
     type = 'movie',
     watchedYear = currentYear(),
     url = '',
     watchedDate = new Date().toISOString()
   } = fields;
 
-  return `---
-title: "${title}"
-director: ${director}
+  let yaml = `---
+title: ${quote(title)}
+director: ${quote(director)}
 category: ${category}
 status: ${status}
 rating: ${rating}
-type: ${type}
+`;
+  if (favorite) yaml += `favorite: true\n`;
+  yaml += `type: ${type}
 watchedYear: ${watchedYear}
-poster: ${poster}
-url: ${url}
+poster: ${quote(poster)}
+url: ${quote(url)}
 watchedDate: ${watchedDate}
 ---
 `;
+
+  return yaml;
 }
 
 export function buildFilePath({title, type, watchedYear}) {
@@ -49,9 +58,7 @@ export function computeDefaults(details, selected) {
   const defaultYear = isMovie
     ? (details.release_date || '').split('-')[0] || String(new Date().getFullYear())
     : (details.first_air_date || '').split('-')[0] || String(new Date().getFullYear());
-  const defaultPoster = details.poster_path
-    ? `https://image.tmdb.org/t/p/w600_and_h900_face${details.poster_path}`
-    : '';
+  const defaultPoster = defaultPosterUrl(details.poster_path);
   const idPath = `${details.id}-${slugify(defaultTitle, {lower: true})}`;
   const defaultUrl = isMovie
     ? `https://www.themoviedb.org/movie/${idPath}`
@@ -67,4 +74,54 @@ export function computeDefaults(details, selected) {
     defaultUrl,
     type
   };
+}
+
+const TITLE_PROMPT = 'Título';
+
+async function askTitle(ask, suggestedTitle) {
+  let title = '';
+  while (!title) {
+    title = (await ask(`${TITLE_PROMPT}${suggestedTitle ? ` (${suggestedTitle})` : ''}: `)) || suggestedTitle;
+    if (!title) console.log('  ⚠️ O título é obrigatório.');
+  }
+  return title;
+}
+
+async function askChoice(ask, prompt) {
+  console.log(`${prompt.label}:`);
+  prompt.options.forEach((option, index) => console.log(`  ${index + 1}. ${option}`));
+  const answer = (await ask(`Escolha (${prompt.default}): `)) || prompt.default;
+  return parseChoice(answer, prompt.options);
+}
+
+export async function collectMovieInput(ask, defaults, suggestedTitle = '') {
+  const movie = {
+    title: await askTitle(ask, suggestedTitle || defaults.defaultTitle)
+  };
+
+  const prompts = [
+    {key: 'director', label: 'Diretor(a)', default: defaults.defaultDirector || ''},
+    {key: 'category', label: 'Categoria', default: defaults.defaultCategory || ''},
+    {key: 'status', label: 'Status', type: 'choice', options: STATUS_OPTIONS, default: '1'},
+    {key: 'rating', label: 'Nota (1-5, Enter para pular)', parse: parseRating, default: ''},
+    {key: 'favorite', label: 'Favorito?', type: 'choice', options: FAVORITE_OPTIONS, default: '1'},
+    {key: 'watchedYear', label: 'Ano', default: defaults.defaultYear || currentYear()},
+    {key: 'poster', label: 'Poster URL', default: defaults.defaultPoster || ''},
+    {key: 'url', label: 'URL', default: defaults.defaultUrl || ''}
+  ];
+
+  for (const prompt of prompts) {
+    if (prompt.type === 'choice') {
+      movie[prompt.key] = await askChoice(ask, prompt);
+      continue;
+    }
+
+    const hint = prompt.parse ? '' : prompt.default === '' ? ' (—)' : ` (${prompt.default})`;
+    const answer = (await ask(`${prompt.label}${hint}: `)) || prompt.default;
+    movie[prompt.key] = prompt.parse ? prompt.parse(answer) : answer;
+  }
+
+  movie.favorite = movie.favorite === 'sim';
+
+  return movie;
 }

@@ -1,83 +1,71 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
-import path from 'path';
-import {createInterface} from 'readline';
+import {resolve as resolvePath} from 'node:path';
 import dotenv from 'dotenv';
-import {buildFrontmatter, buildFilePath, computeDefaults} from './lib/add-movie.js';
+import {buildFrontmatter, buildFilePath, computeDefaults, collectMovieInput} from './lib/add-movie.js';
+import {searchTitles, getDetails} from './lib/tmdb.js';
+import {createPrompter} from './lib/prompter.js';
 import {resolveInside, slugToSegment} from './lib/path-safety.js';
 
 dotenv.config();
 
-const API_KEY = process.env.TMDB_API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3';
-
-function ask(question) {
-  const rl = createInterface({input: process.stdin, output: process.stdout});
-  return new Promise(resolve => {
-    rl.question(question, answer => {
-      rl.close();
-      resolve(answer);
-    });
-  });
+function writeMovieFile(input) {
+  const {contentDir, fileName, year} = buildFilePath(input);
+  const baseDir = resolveInside('src/content/watching', contentDir);
+  const yearDir = resolveInside(baseDir, year);
+  fs.mkdirSync(yearDir, {recursive: true});
+  const filePath = resolveInside(yearDir, fileName);
+  fs.writeFileSync(filePath, buildFrontmatter(input));
+  return filePath;
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+async function downloadPoster(poster) {
+  let posterUrl;
+  try {
+    posterUrl = new URL(poster);
+  } catch {
+    return;
+  }
+
+  if (posterUrl.hostname !== 'image.tmdb.org') return;
+
+  const postersDir = 'src/assets/images/posters';
+  fs.mkdirSync(postersDir, {recursive: true});
+  const posterName = slugToSegment(posterUrl.pathname.split('/').pop());
+  const localPath = resolveInside(postersDir, posterName);
+
+  if (fs.existsSync(localPath)) {
+    console.log(`  🖼️ Poster já existe: ${posterName}`);
+    return;
+  }
+
+  try {
+    const res = await fetch(posterUrl);
+    if (!res.ok) return;
+    const buffer = Buffer.from(await res.arrayBuffer());
+    fs.writeFileSync(localPath, buffer);
+    console.log(`  🖼️ Poster baixado: ${posterName}`);
+  } catch (err) {
+    console.log(`  ⚠️ Falha ao baixar poster: ${err.message}`);
+  }
 }
 
-async function searchMovies(query) {
-  const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}&language=pt-BR`;
-  const data = await fetchJson(url);
-  return (data.results || []).map(r => ({
-    ...r,
-    resultType: 'movie',
-    displayTitle: r.title,
-    year: (r.release_date || '').split('-')[0] || '?'
-  }));
-}
+async function main(argv) {
+  if (!process.env.TMDB_API_KEY) {
+    console.log('⚠️ TMDB_API_KEY não encontrada. Defina no arquivo .env.');
+    process.exit(1);
+  }
 
-async function searchShows(query) {
-  const url = `${BASE_URL}/search/tv?api_key=${API_KEY}&query=${encodeURIComponent(query)}&language=pt-BR`;
-  const data = await fetchJson(url);
-  return (data.results || []).map(r => ({
-    ...r,
-    resultType: 'show',
-    displayTitle: r.name,
-    year: (r.first_air_date || '').split('-')[0] || '?'
-  }));
-}
-
-async function getMovieDetails(movieId) {
-  const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=pt-BR&append_to_response=credits`;
-  return fetchJson(url);
-}
-
-async function getTVDetails(showId) {
-  const url = `${BASE_URL}/tv/${showId}?api_key=${API_KEY}&language=pt-BR&append_to_response=credits`;
-  return fetchJson(url);
-}
-
-async function main() {
-  const args = process.argv.slice(2);
-
-  if (args.length === 0) {
+  const suggestedTitle = argv.join(' ');
+  if (!suggestedTitle) {
     console.log('Uso: node scripts/add-movie.js <título>');
     console.log('Exemplo: node scripts/add-movie.js Duna');
     process.exit(1);
   }
 
-  const query = args.join(' ');
-  console.log(`🔍 Buscando por: "${query}"...`);
-
-  const [movies, shows] = await Promise.allSettled([searchMovies(query), searchShows(query)]);
-
-  const results = [
-    ...(movies.status === 'fulfilled' ? movies.value : []),
-    ...(shows.status === 'fulfilled' ? shows.value : [])
-  ];
+  console.log(`🔍 Buscando por: "${suggestedTitle}"...`);
+  const results = await searchTitles(suggestedTitle);
 
   if (results.length === 0) {
     console.log('Nenhum resultado encontrado.');
@@ -91,11 +79,15 @@ async function main() {
     console.log(`  ${i + 1}. [${tag}] ${r.displayTitle} (${r.year}) ${score}`);
   });
 
-  const answer = await ask('\nSelecione (número): ');
-  const index = parseInt(answer) - 1;
+  const prompter = createPrompter(process.stdin);
+  const ask = question => prompter.ask(question);
+
+  const selection = (await ask('\nSelecione (número): ')) || '1';
+  const index = parseInt(selection, 10) - 1;
 
   if (isNaN(index) || index < 0 || index >= results.length) {
     console.log('Seleção inválida.');
+    prompter.close();
     process.exit(1);
   }
 
@@ -106,9 +98,10 @@ async function main() {
 
   let details;
   try {
-    details = isMovie ? await getMovieDetails(selected.id) : await getTVDetails(selected.id);
+    details = await getDetails(selected.id, selected.resultType);
   } catch (err) {
     console.log(`Erro ao buscar detalhes: ${err.message}`);
+    prompter.close();
     process.exit(1);
   }
 
@@ -116,82 +109,16 @@ async function main() {
 
   console.log('\n--- Preencha os campos (Enter para aceitar o valor sugerido) ---\n');
 
-  const title = (await ask(`Título (${defaults.defaultTitle}): `)) || defaults.defaultTitle;
-  const director =
-    (await ask(`Diretor(a) (${defaults.defaultDirector || '—'}): `)) || defaults.defaultDirector;
-
-  let category = await ask(`Categoria (${defaults.defaultCategory || '—'}): `);
-  if (!category) category = defaults.defaultCategory;
-
-  console.log('\nStatus:');
-  const statusOptions = ['assistindo', 'reassistindo', 'abandonei'];
-  statusOptions.forEach((s, i) => console.log(`  ${i + 1}. ${s}`));
-  const statusAnswer = (await ask('Escolha (1): ')) || '1';
-  const status = statusOptions[parseInt(statusAnswer) - 1] || 'assistindo';
-
-  const ratingRaw = await ask('Nota (1-5, Enter para pular): ');
-  const rating = ratingRaw ? parseInt(ratingRaw) || '' : '';
-
-  const watchedYear = (await ask(`Ano (${defaults.defaultYear}): `)) || defaults.defaultYear;
-  const poster = (await ask(`Poster URL (${defaults.defaultPoster || '—'}): `)) || defaults.defaultPoster;
-  const url = (await ask(`URL (${defaults.defaultUrl}): `)) || defaults.defaultUrl;
-
-  const frontmatter = buildFrontmatter({
-    title,
-    director,
-    category,
-    status,
-    rating,
-    type: defaults.type,
-    watchedYear,
-    poster,
-    url
-  });
-
-  const {contentDir, fileName, year} = buildFilePath({title, type: defaults.type, watchedYear});
-  const baseDir = path.resolve(`src/content/watching/${contentDir}`);
-  const yearDir = resolveInside(baseDir, year);
-
-  if (!fs.existsSync(yearDir)) {
-    fs.mkdirSync(yearDir, {recursive: true});
-  }
-
-  const filePath = resolveInside(yearDir, fileName);
-  fs.writeFileSync(filePath, frontmatter);
+  const input = await collectMovieInput(ask, defaults);
+  const filePath = writeMovieFile(input);
   console.log(`\n✓ Arquivo criado: ${filePath}`);
 
-  // Download poster image for local processing
-  let posterUrl;
-  try {
-    posterUrl = new URL(poster);
-  } catch {
-    posterUrl = null;
-  }
+  await downloadPoster(input.poster);
 
-  if (posterUrl && posterUrl.hostname === 'image.tmdb.org') {
-    const postersDir = path.resolve('src/assets/images/posters');
-    if (!fs.existsSync(postersDir)) {
-      fs.mkdirSync(postersDir, {recursive: true});
-    }
-
-    const posterName = slugToSegment(posterUrl.pathname.split('/').pop());
-    const localPath = resolveInside(postersDir, posterName);
-
-    if (!fs.existsSync(localPath)) {
-      try {
-        const res = await fetch(posterUrl);
-        if (res.ok) {
-          const buffer = Buffer.from(await res.arrayBuffer());
-          fs.writeFileSync(localPath, buffer);
-          console.log(`  🖼️ Poster baixado: ${posterName}`);
-        }
-      } catch (err) {
-        console.log(`  ⚠️ Falha ao baixar poster: ${err.message}`);
-      }
-    } else {
-      console.log(`  🖼️ Poster já existe: ${posterName}`);
-    }
-  }
+  prompter.close();
 }
 
-main().catch(console.error);
+const isMain = process.argv[1] && resolvePath(import.meta.dirname, process.argv[1]) === import.meta.filename;
+if (isMain) {
+  main(process.argv.slice(2)).catch(console.error);
+}

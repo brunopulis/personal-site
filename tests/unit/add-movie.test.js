@@ -1,5 +1,10 @@
 import {describe, it, expect} from 'vitest';
-import {buildFrontmatter, buildFilePath, computeDefaults} from '../../scripts/lib/add-movie.js';
+import {
+  buildFrontmatter,
+  buildFilePath,
+  computeDefaults,
+  collectMovieInput
+} from '../../scripts/lib/add-movie.js';
 
 describe('buildFrontmatter', () => {
   it('generate frontmatter for a movie with all fields', () => {
@@ -17,14 +22,14 @@ describe('buildFrontmatter', () => {
     });
 
     expect(result).toContain('title: "Duna"');
-    expect(result).toContain('director: Denis Villeneuve');
+    expect(result).toContain('director: "Denis Villeneuve"');
     expect(result).toContain('category: Ficção Científica, Aventura');
     expect(result).toContain('status: assistindo');
     expect(result).toContain('rating: 5');
     expect(result).toContain('type: movie');
     expect(result).toContain('watchedYear: 2024');
-    expect(result).toContain('poster: https://image.tmdb.org/t/p/w600_and_h900_face/poster.jpg');
-    expect(result).toContain('url: https://www.themoviedb.org/movie/123-duna');
+    expect(result).toContain('poster: "https://image.tmdb.org/t/p/w600_and_h900_face/poster.jpg"');
+    expect(result).toContain('url: "https://www.themoviedb.org/movie/123-duna"');
     expect(result).toContain('watchedDate: 2024-03-15T10:00:00.000Z');
   });
 
@@ -79,6 +84,39 @@ describe('buildFrontmatter', () => {
     });
 
     expect(result).toContain('status: abandonei');
+  });
+
+  it('emit favorite: true only when favorite is truthy', () => {
+    const result = buildFrontmatter({
+      title: 'Test',
+      favorite: true,
+      watchedDate: '2026-01-01T00:00:00.000Z'
+    });
+
+    expect(result).toContain('favorite: true');
+  });
+
+  it('omit favorite when false or missing', () => {
+    const withFalse = buildFrontmatter({
+      title: 'Test',
+      favorite: false,
+      watchedDate: '2026-01-01T00:00:00.000Z'
+    });
+    const missing = buildFrontmatter({title: 'Test', watchedDate: '2026-01-01T00:00:00.000Z'});
+
+    expect(withFalse).not.toContain('favorite:');
+    expect(missing).not.toContain('favorite:');
+  });
+
+  it('escape double quotes in text fields', () => {
+    const result = buildFrontmatter({
+      title: 'O "Contador"',
+      director: 'Zack "Snipes"',
+      watchedDate: '2026-01-01T00:00:00.000Z'
+    });
+
+    expect(result).toContain('title: "O \\"Contador\\""');
+    expect(result).toContain('director: "Zack \\"Snipes\\""');
   });
 
   it('always generate valid YAML frontmatter delimiters', () => {
@@ -208,6 +246,77 @@ describe('computeDefaults', () => {
       {resultType: 'movie', displayTitle: 'Fallback Title'}
     );
     expect(result.defaultTitle).toBe('Fallback Title');
+  });
+});
+
+describe('collectMovieInput', () => {
+  const makeAsk = answers => {
+    const queue = [...answers];
+    return async () => queue.shift() ?? '';
+  };
+
+  const defaults = {
+    defaultTitle: 'Duna',
+    defaultDirector: 'Denis Villeneuve',
+    defaultCategory: 'Ficção Científica, Aventura',
+    defaultYear: '2024',
+    defaultPoster: 'https://image.tmdb.org/t/p/w600_and_h900_face/abc.jpg',
+    defaultUrl: 'https://www.themoviedb.org/movie/123-duna',
+    type: 'movie'
+  };
+
+  it('collect all fields from prompted answers', async () => {
+    const ask = makeAsk(['Duna Part Two', 'Denis V.', 'Ficção', '2', '5', '2', '2025', '', '']);
+
+    const movie = await collectMovieInput(ask, defaults);
+
+    expect(movie.title).toBe('Duna Part Two');
+    expect(movie.director).toBe('Denis V.');
+    expect(movie.category).toBe('Ficção');
+    expect(movie.status).toBe('assistido');
+    expect(movie.rating).toBe(5);
+    expect(movie.favorite).toBe(true);
+    expect(movie.watchedYear).toBe('2025');
+    expect(movie.poster).toBe(defaults.defaultPoster);
+    expect(movie.url).toBe(defaults.defaultUrl);
+  });
+
+  it('use suggested title when answer is empty', async () => {
+    const ask = makeAsk(['']);
+    const movie = await collectMovieInput(ask, defaults, 'Título Sugerido');
+    expect(movie.title).toBe('Título Sugerido');
+  });
+
+  it('retry when title is empty and no suggestion', async () => {
+    const ask = makeAsk(['', 'Título Válido']);
+    const movie = await collectMovieInput(ask, {...defaults, defaultTitle: ''});
+    expect(movie.title).toBe('Título Válido');
+  });
+
+  it('fall back to defaults for empty answers', async () => {
+    let titleAsked = false;
+    const askFor = async question => {
+      if (question.startsWith('Título')) {
+        if (!titleAsked) {
+          titleAsked = true;
+          return '';
+        }
+        return '';
+      }
+      return '';
+    };
+
+    const movie = await collectMovieInput(askFor, defaults);
+
+    expect(movie.title).toBe('Duna');
+    expect(movie.director).toBe('Denis Villeneuve');
+    expect(movie.category).toBe('Ficção Científica, Aventura');
+    expect(movie.status).toBe('assistindo');
+    expect(movie.rating).toBe('');
+    expect(movie.favorite).toBe(false);
+    expect(movie.watchedYear).toBe('2024');
+    expect(movie.poster).toBe(defaults.defaultPoster);
+    expect(movie.url).toBe(defaults.defaultUrl);
   });
 });
 
