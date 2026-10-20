@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {localPoster} from '../../../src/_config/filters/localPoster.js';
+import {safeFilename} from '../../../scripts/lib/path-safety.js';
 
 const TMDB_URL = 'https://image.tmdb.org/t/p/w600_and_h900_face/abc.jpg';
 
@@ -29,6 +30,14 @@ describe('localPoster', () => {
   it('falls back to the remote url when the local poster is missing', () => {
     const missing = 'https://image.tmdb.org/t/p/w600_and_h900_face/nao-existe.jpg';
     expect(localPoster(missing)).toBe(missing);
+  });
+
+  it('finds a poster saved under the name produced by safeFilename', () => {
+    const url = 'https://image.tmdb.org/t/p/w600_and_h900_face/Abc123XyZ.jpg';
+    const name = safeFilename(new URL(url).pathname.split('/').pop());
+    fs.writeFileSync(path.join(fixtureDir, 'src', 'assets', 'images', 'posters', name), 'conteudo');
+
+    expect(localPoster(url)).toBe('/assets/images/posters/Abc123XyZ.jpg');
   });
 
   it('leaves non-tmdb urls untouched', () => {

@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import {buildFrontmatter, buildFilePath, computeDefaults, collectMovieInput} from './lib/add-movie.js';
 import {searchTitles, getDetails} from './lib/tmdb.js';
 import {createPrompter} from './lib/prompter.js';
-import {resolveInside, slugToSegment} from './lib/path-safety.js';
+import {resolveInside, safeFilename} from './lib/path-safety.js';
 
 dotenv.config();
 
@@ -32,7 +32,7 @@ async function downloadPoster(poster) {
 
   const postersDir = 'src/assets/images/posters';
   fs.mkdirSync(postersDir, {recursive: true});
-  const posterName = slugToSegment(posterUrl.pathname.split('/').pop());
+  const posterName = safeFilename(posterUrl.pathname.split('/').pop());
   const localPath = resolveInside(postersDir, posterName);
 
   if (fs.existsSync(localPath)) {

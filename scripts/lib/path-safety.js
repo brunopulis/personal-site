@@ -10,15 +10,18 @@ export function safeDate(value) {
   return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : new Date().toISOString().slice(0, 10);
 }
 
-export function slugToSegment(value) {
+export function safeFilename(value) {
   return (
     String(value ?? '')
-      .toLowerCase()
-      .replace(/[^a-z0-9._-]+/g, '')
+      .replace(/[^A-Za-z0-9._-]+/g, '')
       .replace(/^[._-]+/, '')
       .replace(/[._-]+$/, '')
       .slice(0, 80) || 'untitled'
   );
+}
+
+export function slugToSegment(value) {
+  return safeFilename(String(value ?? '').toLowerCase());
 }
 
 export function resolveInside(root, ...names) {

@@ -1,5 +1,11 @@
 import {describe, it, expect} from 'vitest';
-import {resolveInside, safeYear, safeDate, slugToSegment} from '../../scripts/lib/path-safety.js';
+import {
+  resolveInside,
+  safeYear,
+  safeDate,
+  safeFilename,
+  slugToSegment
+} from '../../scripts/lib/path-safety.js';
 
 describe('safeYear', () => {
   it('accept a four-digit year', () => {
@@ -50,6 +56,28 @@ describe('slugToSegment', () => {
     expect(slugToSegment('')).toBe('untitled');
     expect(slugToSegment('...')).toBe('untitled');
     expect(slugToSegment('///')).toBe('untitled');
+  });
+});
+
+describe('safeFilename', () => {
+  it('keep a tmdb poster filename byte-for-byte', () => {
+    expect(safeFilename('kdERESUYePDvSrJ1kTNV8PiLOqJ.jpg')).toBe('kdERESUYePDvSrJ1kTNV8PiLOqJ.jpg');
+    expect(safeFilename('An72ZTaGuBOwsL04wJP7uZAphRa.jpg')).toBe('An72ZTaGuBOwsL04wJP7uZAphRa.jpg');
+  });
+
+  it('strip unsafe characters without changing the case', () => {
+    expect(safeFilename('My Poster (1).jpg')).toBe('MyPoster1.jpg');
+    expect(safeFilename('Capa "Final".png')).toBe('CapaFinal.png');
+  });
+
+  it('remove leading dots and dashes (no dotfiles)', () => {
+    expect(safeFilename('..secret')).toBe('secret');
+    expect(safeFilename('../../etc/passwd')).toBe('etcpasswd');
+  });
+
+  it('fall back to untitled for empty or symbol-only input', () => {
+    expect(safeFilename('')).toBe('untitled');
+    expect(safeFilename('...')).toBe('untitled');
   });
 });
 
