@@ -52,7 +52,7 @@
     "lite-youtube-embed": "^0.3.4"
   },
   "devDependencies": {
-    "@11ty/eleventy-img": "^7.0.0",
+    "@11ty/eleventy-img": "^7.1.1",
     "@tinacms/cli": "^4.0.2",
     "@toycode/markdown-it-class": "^1.2.4",
     "@vitest/coverage-v8": "^5.0.5",
