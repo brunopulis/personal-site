@@ -299,17 +299,17 @@ importers:
         specifier: ^3.7.2
         version: 3.7.2
       markdown-it:
-        specifier: ^15.0.2
-        version: 15.0.2
+        specifier: ^15.0.3
+        version: 15.0.3
       markdown-it-abbr:
         specifier: ^2.0.0
         version: 2.0.0
       markdown-it-anchor:
         specifier: ^10.0.0
-        version: 10.0.0(@types/markdown-it@14.1.2)(markdown-it@15.0.2)
+        version: 10.0.0(@types/markdown-it@14.1.2)(markdown-it@15.0.3)
       markdown-it-attrs:
         specifier: ^5.0.1
-        version: 5.0.1(markdown-it@15.0.2)
+        version: 5.0.1(markdown-it@15.0.3)
       markdown-it-emoji:
         specifier: ^3.1.0
         version: 3.1.0
@@ -324,7 +324,7 @@ importers:
         version: 4.0.0
       markdown-it-prism:
         specifier: ^4.0.0
-        version: 4.0.0(markdown-it-attrs@5.0.1(markdown-it@15.0.2))(markdown-it@15.0.2)
+        version: 4.0.0(markdown-it-attrs@5.0.1(markdown-it@15.0.3))(markdown-it@15.0.3)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -2076,8 +2076,8 @@ packages:
   '@tanstack/virtual-core@3.17.11':
     resolution: {integrity: sha512-+ILjvtHup6Y2hzQ6YzwMgX1Q+oQpxEGOXCEsCNaPoIP0VxMbizIBTmYTDtkerkIQS8/CbP1BRuyt8V/8BCsy1g==}
 
-  '@tinacms/app@2.6.0':
-    resolution: {integrity: sha512-/MCDzmgJRRoGfiaypnwWlD3Y02c27AIpM4fzbWVJte5MsomCCfUbX4motuuos6ppila0sIqZveXSX44tdL8E7w==}
+  '@tinacms/app@2.5.15':
+    resolution: {integrity: sha512-uN+7yghJy++MBe4clAyY4i4yfAIByFbnkJnlo0kV4rvHwltcUIydYjL7K8PakCPciUBCBBpxm75fQomq9dayCA==}
     peerDependencies:
       react: '>=18.3.1 <20.0.0'
       react-dom: '>=18.3.1 <20.0.0'
@@ -2085,8 +2085,8 @@ packages:
   '@tinacms/bridge@0.3.1':
     resolution: {integrity: sha512-HgFZGFec+92FvXR5NVinQtPmkidWIubkjyYkNnRWlqFmGbhzIZE6GhMX/RWZ9uNYek6kRQUtpFnGaQeBkXo95Q==}
 
-  '@tinacms/cli@4.0.3':
-    resolution: {integrity: sha512-cfdf7CtI2BkpWTKNynqZamQJGn8g+aKnocVLpmiL+FsnYo+XucluwQZcn3lr2uYJ5Ok9sKgcDkLW7Nnaon6yJg==}
+  '@tinacms/cli@4.0.2':
+    resolution: {integrity: sha512-jt27R/+jrfDrgCUDXNAImiRv67n2aigcyZ3GetiPj3fbXVyG+GRVxPTOsit8MhTztTXh1N6+VOYfavq0mf8mHw==}
     engines: {node: 22.x || 24.x}
     hasBin: true
     peerDependencies:
@@ -2096,26 +2096,14 @@ packages:
   '@tinacms/graphql@4.0.0':
     resolution: {integrity: sha512-DFgnQ1Eqhtxy/OzrnkMT0jaq2NJFj3jWSrwt9IzLVte6Z28x8cRq6R+ZY8WOzKhYtQZTIQeomWkXjEFj77U86A==}
 
-  '@tinacms/graphql@4.0.1':
-    resolution: {integrity: sha512-+gt1pNjom5MBEBqHgs1+GAeb7but/7LmAFr8Fafym48wtH0T4XBXwrLXZZGHbG66cKs8463+NpFWRNFJo03Suw==}
-
   '@tinacms/mdx@2.3.0':
     resolution: {integrity: sha512-5k+I8tPZzJwybmg1NBvn4bOoWsciuoRGtJdXelfdKx2/I5d60WIviSijsSrNJdHTFzT6wjZgyOkRWup0HqbI4Q==}
-
-  '@tinacms/mdx@2.4.0':
-    resolution: {integrity: sha512-kJFJZ2u9gYrp48CDwlx+kjG2AO86jfrNqTWKwWKZviEkbSdNzif4bLN9j2PkVPn91g9LWU67r6RSWeu1fo++tA==}
 
   '@tinacms/metrics@2.1.4':
     resolution: {integrity: sha512-Q9J4skaueRCTS5Tf2LFGzMdRDmOlDrA11y6EMd8u2/jrzQZw4XMXVhTq9aAbJ6ICmQ5PAzzSdPzMkne/XgJD6w==}
 
   '@tinacms/schema-tools@2.10.1':
     resolution: {integrity: sha512-jhLOC6r2OMjKp/2jpdFPbVyXPL1Vjbc+cFXASa/hM/FvFIkgFYWqxSbklsjP/26IEa5qXwZbMJ+nZExHoTUncg==}
-    peerDependencies:
-      react: '>=16.14.0'
-      yup: ^1.0.0
-
-  '@tinacms/schema-tools@2.11.0':
-    resolution: {integrity: sha512-bj1f2IYso/atMtTIUzEPvf3VhgMYwRU0tSH+/UW/it/O1RJgKIZeXFCCoGYqHHP9+x3uaEOn1PGppFn4h40qyg==}
     peerDependencies:
       react: '>=16.14.0'
       yup: ^1.0.0
@@ -2647,9 +2635,6 @@ packages:
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-
-  argparse@3.0.0:
-    resolution: {integrity: sha512-BOp5NMrHqKxmq/OLr+clzzrRxgOKSLkcjmkWuChp7Irqwn4s74WjOBPIgWfA/HMcBnVkZ5XEuf9uUqzlpfCQ6A==}
 
   argparse@3.0.3:
     resolution: {integrity: sha512-Sn98ftV3KfsO8xfLPHG6oT8y+b0yvbrLgZjgPDXsharNY15tTAjqIsIju4S32nl6/iEUNNE4v+yL2Zhm8ooP3w==}
@@ -3625,6 +3610,10 @@ packages:
 
   entities@8.0.0:
     resolution: {integrity: sha512-zwfzJecQ/Uej6tusMqwAqU/6KL2XaB2VZ2Jg54Je6ahNBGNH6Ek6g3jjNCF0fG9EWQKGZNddNjU5F1ZQn/sBnA==}
+    engines: {node: '>=20.19.0'}
+
+  entities@8.1.0:
+    resolution: {integrity: sha512-kxL7msIffSuh9aaFAMD7rxAIuTRMAHMeBtgHW2yUdWw732ZNh4MehkF2gdjvtdmikkaIP9bFDDJOPlsvm7avrA==}
     engines: {node: '>=20.19.0'}
 
   environment@1.1.0:
@@ -4778,8 +4767,8 @@ packages:
     resolution: {integrity: sha512-sHHjZ5fJKlgrG4qns2YwVcdNep35h5fERrfkD2YNsb9UFk0UIHarbiTaHKVMlPuWAoiilyK8Fv/jAm11slsY7Q==}
     hasBin: true
 
-  markdown-it@15.0.2:
-    resolution: {integrity: sha512-q4IGxMv56jCqT4OCRCADBoDP3LO4MhmTXjFbphHPXs4g3j9Xg5RDnxqN8IF/3vIWEU+VCnUq+7JUg/cfy2E6Qw==}
+  markdown-it@15.0.3:
+    resolution: {integrity: sha512-+Az7Ojz3iRGu8KYMvJ6xVhvrxP3eE+vEtJX75Ow88XBpcQNV/0lGX5ZynIIBftREo4DC2jsveAMDaeltmm8QvQ==}
     hasBin: true
 
   markdown-table@3.0.4:
@@ -6492,12 +6481,6 @@ packages:
 
   tinacms@3.14.4:
     resolution: {integrity: sha512-I21cDWToIgy25EMnOFfUGxl8hdeBMmKzxfXM3HHnNafWToI4DC7DXrm69syyBO6ZVSaZjOC8hP2rLbiapXuqLg==}
-    peerDependencies:
-      react: '>=16.14.0'
-      react-dom: '>=16.14.0'
-
-  tinacms@3.15.0:
-    resolution: {integrity: sha512-lpuvBl3R86ts2H9nfE0dXkzy/l24s8z9oJtZSt9Ycmyh78K+fQc2dvuFDyIXON8NltviezoPJ6LWsh41CNFzQA==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -9526,8 +9509,6 @@ snapshots:
 
   argparse@2.0.1: {}
 
-  argparse@3.0.0: {}
-
   argparse@3.0.3: {}
 
   aria-hidden@1.2.6:
@@ -10558,6 +10539,8 @@ snapshots:
   entities@6.0.1: {}
 
   entities@8.0.0: {}
+
+  entities@8.1.0: {}
 
   environment@1.1.0: {}
 
@@ -11718,14 +11701,14 @@ snapshots:
 
   markdown-it-abbr@2.0.0: {}
 
-  markdown-it-anchor@10.0.0(@types/markdown-it@14.1.2)(markdown-it@15.0.2):
+  markdown-it-anchor@10.0.0(@types/markdown-it@14.1.2)(markdown-it@15.0.3):
     dependencies:
       '@types/markdown-it': 14.1.2
-      markdown-it: 15.0.2
+      markdown-it: 15.0.3
 
-  markdown-it-attrs@5.0.1(markdown-it@15.0.2):
+  markdown-it-attrs@5.0.1(markdown-it@15.0.3):
     dependencies:
-      markdown-it: 15.0.2
+      markdown-it: 15.0.3
 
   markdown-it-emoji@3.1.0: {}
 
@@ -11735,12 +11718,12 @@ snapshots:
 
   markdown-it-mark@4.0.0: {}
 
-  markdown-it-prism@4.0.0(markdown-it-attrs@5.0.1(markdown-it@15.0.2))(markdown-it@15.0.2):
+  markdown-it-prism@4.0.0(markdown-it-attrs@5.0.1(markdown-it@15.0.3))(markdown-it@15.0.3):
     dependencies:
-      markdown-it: 15.0.2
+      markdown-it: 15.0.3
       prismjs: 1.30.0
     optionalDependencies:
-      markdown-it-attrs: 5.0.1(markdown-it@15.0.2)
+      markdown-it-attrs: 5.0.1(markdown-it@15.0.3)
 
   markdown-it@14.3.2:
     dependencies:
@@ -11751,10 +11734,10 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  markdown-it@15.0.2:
+  markdown-it@15.0.3:
     dependencies:
-      argparse: 3.0.0
-      entities: 8.0.0
+      argparse: 3.0.3
+      entities: 8.1.0
       linkify-it: 6.1.0
       mdurl: 2.1.0
       punycode.js: 2.3.1
